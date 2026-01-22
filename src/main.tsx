@@ -10,6 +10,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { ToastProvider } from './components/Toast';
 import { preloadCriticalResources } from './utils/performanceOptimizer';
 import './utils/internationalization'; // Initialize i18n
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // -------------------------------------------------------------------------------
 // ?? GLOBAL CONSOLE SUPPRESSOR - Keeps browser console clean
@@ -81,6 +82,7 @@ root.render(
       >
         <ToastProvider>
           <App />
+          <SpeedInsights />
         </ToastProvider>
       </BrowserRouter>
     </HelmetProvider>
