@@ -113,8 +113,16 @@ export default defineConfig({
     cssMinify: true,
     rollupOptions: {
       treeshake: {
-        moduleSideEffects: false,
-        propertyReadSideEffects: false,
+        // ?? FIX: crypto-js aur pako CJS libraries hain jo side effects se sub-modules register karti hain
+        // `false` set karne se CryptoJS.enc.Base64, CryptoJS.mode.CBC etc. strip ho jaate the
+        // Ab sirf crypto-related modules ko preserve karo, baaki sab tree-shake hoga
+        moduleSideEffects: (id) => {
+          if (id.includes('crypto-js') || id.includes('pako')) return true;
+          return false;
+        },
+        // ?? FIX: `false` se CryptoJS.enc property read strip ho jaati thi
+        // Default (`true`) use karo taaki property reads safe rahen
+        propertyReadSideEffects: true,
         tryCatchDeoptimization: false,
       },
       output: {
