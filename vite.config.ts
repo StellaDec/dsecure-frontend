@@ -93,11 +93,9 @@ export default defineConfig({
     minify: "terser",
     terserOptions: {
       compress: {
-        // ?? NAYA CODE: drop_console hataya — console.error production mein zaroori hai debugging ke liye
-        // Sirf specific safe functions ko strip karo, console.error ko KABHI mat hatao
-        drop_console: false,
+        // Aapke request ke anusaar: console.log disable kar diya gaya hai
+        drop_console: true,
         drop_debugger: true,
-        pure_funcs: ["console.log", "console.info", "console.debug"],
         passes: 2,
       },
       format: {
@@ -112,19 +110,8 @@ export default defineConfig({
     cssCodeSplit: true,
     cssMinify: true,
     rollupOptions: {
-      treeshake: {
-        // ?? FIX: crypto-js aur pako CJS libraries hain jo side effects se sub-modules register karti hain
-        // `false` set karne se CryptoJS.enc.Base64, CryptoJS.mode.CBC etc. strip ho jaate the
-        // Ab sirf crypto-related modules ko preserve karo, baaki sab tree-shake hoga
-        moduleSideEffects: (id) => {
-          if (id.includes('crypto-js') || id.includes('pako')) return true;
-          return false;
-        },
-        // ?? FIX: `false` se CryptoJS.enc property read strip ho jaati thi
-        // Default (`true`) use karo taaki property reads safe rahen
-        propertyReadSideEffects: true,
-        tryCatchDeoptimization: false,
-      },
+      // Aggressive tree-shaking hata diya gaya hai kyunki is se crypto-js ke modules toot rahe the
+      // Ab default Vite build tree-shaking use hogi jo safe aur stable hai
       output: {
         // [REFINE CHUNKING STRATEGY]
         manualChunks: (id) => {
@@ -186,10 +173,10 @@ export default defineConfig({
   css: {
     devSourcemap: false,
   },
-  // ?? NAYA CODE: esbuild.drop hataya kyunki ye terser ke saath conflict karta tha
-  // Aur ye SABHI console methods (including console.error) strip kar deta tha
-  // Production mein console.error chahiye login/API issues debug karne ke liye
+  // Production mein console logs completely disable karne ke liye 
+  // esbuild se bhi console aur debugger drop kar rahe hain
   esbuild: {
+    drop: process.env.NODE_ENV === "production" ? ["console", "debugger"] : [],
     legalComments: "none",
     treeShaking: true,
   },
