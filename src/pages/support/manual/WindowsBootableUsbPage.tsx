@@ -31,6 +31,7 @@ const WindowsBootableUsbPage: React.FC = memo(() => {
             </Reveal>
           </div>
         </section>
+        
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
             <Reveal>
@@ -41,6 +42,28 @@ const WindowsBootableUsbPage: React.FC = memo(() => {
                   <li className="flex items-start"><span className="text-emerald-800 mr-2">✓</span> Step-by-step instructions</li>
                   <li className="flex items-start"><span className="text-emerald-800 mr-2">✓</span> Best practices and recommendations</li>
                 </ul>
+
+                <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Required Tools: UNetbootin</h2>
+                <p className="text-slate-700 mb-4">
+                  To create a bootable USB, we recommend using UNetbootin. Please download the appropriate version for your operating system:
+                </p>
+                <div className="grid md:grid-cols-3 gap-6 mt-6 mb-12">
+                  <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-6 bg-emerald-50 border border-emerald-100 rounded-xl hover:shadow-md hover:border-emerald-300 transition-all no-underline">
+                    <span className="text-4xl mb-3">🪟</span>
+                    <span className="font-semibold text-slate-900">Windows Utility</span>
+                    <span className="text-sm text-emerald-600 mt-1">Download .exe</span>
+                  </a>
+                  <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-6 bg-emerald-50 border border-emerald-100 rounded-xl hover:shadow-md hover:border-emerald-300 transition-all no-underline">
+                    <span className="text-4xl mb-3">🐧</span>
+                    <span className="font-semibold text-slate-900">Linux Utility</span>
+                    <span className="text-sm text-emerald-600 mt-1">Download .bin</span>
+                  </a>
+                  <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-6 bg-emerald-50 border border-emerald-100 rounded-xl hover:shadow-md hover:border-emerald-300 transition-all no-underline">
+                    <span className="text-4xl mb-3">🍎</span>
+                    <span className="font-semibold text-slate-900">Mac Utility</span>
+                    <span className="text-sm text-emerald-600 mt-1">Download .dmg</span>
+                  </a>
+                </div>
               </div>
             </Reveal>
           </div>

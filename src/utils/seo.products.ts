@@ -20,6 +20,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
         os: "Windows, macOS, Linux, Bootable ISO",
         ratingValue: 4.9, 
         reviewCount: 1250,
+        price: "25.00",
+        currency: "USD",
         features: [
           "NIST 800-88 Purge & Clear",
           "Department of Defense (DoD) Wiping",
@@ -43,7 +45,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Drive Eraser Diagnostic",
       "Combined data erasure and hardware diagnostic tool for enterprises.",
-      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 320 }
+      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 320, price: "30.00", currency: "USD" }
     ),
   },
   "file-eraser": {
@@ -65,6 +67,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
         os: "Windows, Windows Server",
         ratingValue: 4.8, 
         reviewCount: 512,
+        price: "40.00",
+        currency: "USD",
         features: [
           "Secure File Shredding",
           "Free Space Wiping",
@@ -88,7 +92,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure File Eraser Network",
       "Centralized network file erasure for large enterprise environments.",
-      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 156 }
+      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 156, price: "50.00", currency: "USD" }
     ),
   },
   "hardware-diagnostics": {
@@ -104,7 +108,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Hardware Diagnostics",
       "Comprehensive hardware testing and system health diagnostic suite.",
-      { category: "UtilitiesApplication", ratingValue: 4.6, reviewCount: 220 }
+      { category: "UtilitiesApplication", ratingValue: 4.6, reviewCount: 220, price: "10.00", currency: "USD" }
     ),
   },
   "hard-drive-monitor": {
@@ -120,7 +124,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Hard Drive Monitor",
       "Real-time S.M.A.R.T monitoring and health tracking for storage drives.",
-      { category: "UtilitiesApplication", ratingValue: 4.7, reviewCount: 185 }
+      { category: "UtilitiesApplication", ratingValue: 4.7, reviewCount: 185, price: "20.00", currency: "USD" }
     ),
   },
   "autopilot-detection": {
@@ -158,6 +162,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
         os: "Android, iOS",
         ratingValue: 4.9, 
         reviewCount: 840,
+        price: "1.00",
+        currency: "USD",
         features: [
           "iOS & Android Support",
           "Factory Reset Integrated",

@@ -324,12 +324,12 @@ export default function MainLayout() {
                       <div className="flex-1 overflow-y-auto custom-scrollbar bg-white px-6 pb-6">
                         {/* Category heading - Sticky at top of the scrollable area */}
                         <div className="sticky top-0 bg-white z-20 pt-6 pb-4 -mx-6 px-6 border-b border-slate-100/50">
-                          <h3 className="text-lg font-bold text-slate-800">
+                          <div className="text-lg font-bold text-slate-800">
                             {(!productsDropdownTab || productsDropdownTab === "eraser") && "Eraser"}
                             {productsDropdownTab === "migration" && "Migration"}
                             {productsDropdownTab === "diagnostics" && "Diagnostics"}
                             {productsDropdownTab === "verification" && "Verification"}
-                          </h3>
+                          </div>
                         </div>
 
                         <div className="grid grid-cols-3 gap-4 pt-6">
@@ -1209,6 +1209,7 @@ export default function MainLayout() {
                 ) : (
                   <NavLink
                     to="/login"
+                    rel="nofollow"
                     className={({ isActive }) =>
                       (isActive
                         ? "text-brand font-medium"
@@ -1751,6 +1752,7 @@ export default function MainLayout() {
                   <div className="flex flex-col gap-3 px-4 pt-6 mt-4 border-t border-slate-200/60">
                     <NavLink
                       to="/login"
+                      rel="nofollow"
                       onClick={() => setOpen(false)}
                       className="flex items-center justify-center gap-2 px-4 py-3 text-slate-700 hover:text-slate-900 hover:bg-slate-50/80 rounded-lg transition-colors border border-slate-200"
                     >
@@ -1913,9 +1915,9 @@ export default function MainLayout() {
                 <div className="lg:col-span-9 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
                   {/* Products */}
                   <div>
-                    <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">
+                    <div className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">
                       Products
-                    </h4>
+                    </div>
                     <ul className="space-y-4 text-slate-300">
                       <li>
                         <Link
@@ -1954,9 +1956,9 @@ export default function MainLayout() {
 
                   {/* Industries */}
                   <div>
-                    <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">
+                    <div className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">
                       Industries
-                    </h4>
+                    </div>
                     <ul className="space-y-4 text-slate-300">
                       <li>
                         <Link
@@ -2015,9 +2017,9 @@ export default function MainLayout() {
 
                   {/* Resources */}
                   <div>
-                    <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">
+                    <div className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">
                       Resources
-                    </h4>
+                    </div>
                     <ul className="space-y-4 text-slate-300">
                       <li>
                         <Link
@@ -2057,9 +2059,9 @@ export default function MainLayout() {
 
                   {/* Company */}
                   <div>
-                    <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">
+                    <div className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">
                       Company
-                    </h4>
+                    </div>
                     <ul className="space-y-4 text-slate-300">
                       <li>
                         <Link

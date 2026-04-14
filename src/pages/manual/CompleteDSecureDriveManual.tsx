@@ -64,6 +64,46 @@ const navigationTree: NavItem[] = [
     title: "Getting Started",
     children: [
       {
+        id: "create-bootable-usb",
+        title: "Creating a Bootable USB",
+        content: (
+          <>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              To use <strong>D-Secure Drive Eraser</strong>, you first need to create a bootable USB drive using our provided ISO image. We recommend using <strong>UNetbootin</strong>, a reliable and easy-to-use tool for creating bootable media on any operating system.
+            </p>
+            <div className="bg-emerald-50 border-emerald-500 border rounded-lg p-6 mb-6">
+              <h4 className="text-emerald-800 font-bold mb-4">Download UNetbootin Tool:</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-emerald-200 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-all shadow-sm">
+                  🪟 Windows
+                </a>
+                <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-emerald-200 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-all shadow-sm">
+                  🐧 Linux
+                </a>
+                <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-emerald-200 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-all shadow-sm">
+                  🍎 macOS
+                </a>
+              </div>
+            </div>
+            <h4 className="text-lg font-semibold text-slate-800 mb-3">Steps to create Bootable USB:</h4>
+            <ol className="list-decimal list-inside space-y-3 text-slate-700 ml-4 mb-6">
+              <li><strong>Download</strong> the version of UNetbootin that matches your current operating system from the links above.</li>
+              <li><strong>Connect</strong> a USB flash drive (minimum 1GB) to your computer.</li>
+              <li><strong>Open</strong> UNetbootin. You may need Administrator/Root privileges.</li>
+              <li>Select <strong>"Diskimage"</strong> and ensure <strong>"ISO"</strong> is selected in the dropdown.</li>
+              <li>Click the <strong>"..."</strong> button to browse and select the <strong>D-Secure Drive Eraser ISO</strong> file you downloaded.</li>
+              <li>Ensure <strong>"USB Drive"</strong> is selected as the Type, and select the correct drive letter/name for your USB.</li>
+              <li>Click <strong>"OK"</strong> to start writing the ISO to the USB.</li>
+              <li>Once complete, you can use this USB to boot the target system for erasure.</li>
+            </ol>
+            <div className="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6">
+              <p className="text-amber-900 font-semibold mb-1">Important:</p>
+              <p className="text-amber-800 text-sm">Formatting the USB will erase all existing data on it. Please back up any important files before proceeding.</p>
+            </div>
+          </>
+        ),
+      },
+      {
         id: "welcome-screen",
         title: "Welcome Screen & System Summary",
         content: (

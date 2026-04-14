@@ -335,17 +335,7 @@ const DataGuardianAwardPage: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
-        seo={{
-          title:
-            "D-Secure Data Hygiene Assurance: Recognition for excellence in regulatory data erasure and sustainable ITAD practices.",
-          description:
-            "D-Secure Assurance Badge recognizes organizations with complete data hygiene setup and processes. Verify compliance-verified companies and get your assurance badge today.",
-          canonicalUrl: "https://dsecuretech.com/data-guardian-award",
-          keywords:
-            "D-Secure assurance badge, data hygiene certification, secure data protection, data erasure assurance, IT data security certification, trusted data partner",
-        }}
-      />
+      <SEOHead seo={getSEOForPage("data-guardian-award")} />
 
       {/* Toast Notification */}
       {toast && (

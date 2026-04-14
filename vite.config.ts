@@ -93,9 +93,11 @@ export default defineConfig({
     minify: "terser",
     terserOptions: {
       compress: {
-        drop_console: true,
+        // ?? NAYA CODE: drop_console hataya — console.error production mein zaroori hai debugging ke liye
+        // Sirf specific safe functions ko strip karo, console.error ko KABHI mat hatao
+        drop_console: false,
         drop_debugger: true,
-        pure_funcs: ["console.log", "console.info", "console.debug", "console.warn"],
+        pure_funcs: ["console.log", "console.info", "console.debug"],
         passes: 2,
       },
       format: {
@@ -176,9 +178,10 @@ export default defineConfig({
   css: {
     devSourcemap: false,
   },
-  // Drop console logs in production build
+  // ?? NAYA CODE: esbuild.drop hataya kyunki ye terser ke saath conflict karta tha
+  // Aur ye SABHI console methods (including console.error) strip kar deta tha
+  // Production mein console.error chahiye login/API issues debug karne ke liye
   esbuild: {
-    drop: process.env.NODE_ENV === "production" ? ["console", "debugger"] : [],
     legalComments: "none",
     treeShaking: true,
   },

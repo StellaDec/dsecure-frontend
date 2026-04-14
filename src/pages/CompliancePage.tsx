@@ -130,7 +130,7 @@ function CompliancePageContent() {
           <div className="text-center max-w-4xl mx-auto">
             <Reveal>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
-                Comprehensive Compliance & Standards
+                Data Erasure Compliance & Standards
               </h1>
             </Reveal>
             <Reveal delayMs={10}>

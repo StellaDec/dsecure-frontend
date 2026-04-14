@@ -110,7 +110,7 @@ const ServerErasureBlog: React.FC = () => {
                                     Create a bootable USB from the D-Secure ISO file and boot servers directly. Ideal for individual servers or small-scale operations.
                                 </p>
                                 <ul className="space-y-2 text-white/90">
-                                    <li>• Download ISO from cloud account and burn to USB using Rufus</li>
+                                    <li>• Download ISO from cloud account and burn to USB using UNetbootin (<a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe" className="text-emerald-300 hover:text-white underline" target="_blank" rel="noreferrer">Windows</a>, <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin" className="text-emerald-300 hover:text-white underline" target="_blank" rel="noreferrer">Linux</a>, <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg" className="text-emerald-300 hover:text-white underline" target="_blank" rel="noreferrer">Mac</a>)</li>
                                     <li>• Boot server from USB and connect to internet</li>
                                     <li>• RAID dismantling performed automatically</li>
                                     <li>• Select drives, choose wiping algorithm, and initiate erasure</li>

@@ -1,4 +1,4 @@
-﻿// import React from 'react';
+// import React from 'react';
 
 // const ITADSolution: React.FC = () => {
 //   return (
@@ -1039,9 +1039,9 @@ const ITADSolution: React.FC = () => {
                 </div>
                 
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
-                  Secure IT Asset{" "}
+                  ITAD Data Wiping & Security{" "}
                   <span className="block bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent pb-1">
-                    Disposition
+                    Solutions
                   </span>
                 </h1>
               </div>

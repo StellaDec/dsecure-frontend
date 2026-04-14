@@ -1,5 +1,6 @@
 import React, { memo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ARIA_LABELS } from "@/utils/aria-labels";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
@@ -557,9 +558,9 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                   </div>
 
                   <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
-                    100% Guaranteed{" "}
+                    All Data Erasure &{" "}
                     <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                      Data Wiping
+                      Diagnostic Products
                     </span>
                   </h1>
 
@@ -939,9 +940,9 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                             </span>
                           )}
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-3">
+                        <h4 className="text-xl font-bold text-slate-900 mb-3">
                           {s.title}
-                        </h3>
+                        </h4>
                         <p className="text-sm text-slate-600 leading-relaxed mb-6">
                           {s.desc}
                         </p>
@@ -1006,9 +1007,9 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                             </span>
                           )}
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-3">
+                        <h4 className="text-xl font-bold text-slate-900 mb-3">
                           {s.title}
-                        </h3>
+                        </h4>
                         <p className="text-sm text-slate-600 leading-relaxed mb-6">
                           {s.desc}
                         </p>
@@ -1057,9 +1058,9 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                     <div className="w-24 h-24 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center shadow-xl">
                       <ShieldIcon className="w-12 h-12 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-emerald-800">
+                    <div className="text-2xl font-bold text-emerald-800">
                       D-Secure Use Cases
-                    </h3>
+                    </div>
                     <p className="text-sm text-emerald-700/80 max-w-xs">
                       When to use D-Secure Data Eraser Software
                     </p>
@@ -1085,9 +1086,12 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                   <Reveal key={uc.title} delayMs={i * 80}>
                     <div className="bg-white rounded-xl border border-slate-200/60 shadow-sm overflow-hidden">
                       <button
+                        id={`use-case-trigger-${i}`}
                         onClick={() =>
                           setOpenUseCase(openUseCase === i ? -1 : i)
                         }
+                        aria-expanded={openUseCase === i}
+                        aria-controls={`use-case-content-${i}`}
                         className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
                       >
                         <span className="font-semibold text-slate-900">
@@ -1097,6 +1101,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                           className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${
                             openUseCase === i ? "rotate-180" : ""
                           }`}
+                          aria-hidden="true"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -1110,6 +1115,9 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                         </svg>
                       </button>
                       <div
+                        id={`use-case-content-${i}`}
+                        role="region"
+                        aria-labelledby={`use-case-trigger-${i}`}
                         className={`overflow-hidden transition-all duration-300 ${
                           openUseCase === i
                             ? "max-h-96 opacity-100"
@@ -1147,7 +1155,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                     Excellent Capabilities
                   </span>
                 </h2>
-                <p className="text-lg text-white/70 max-w-2xl mx-auto">
+                <p className="text-lg text-white/90 max-w-2xl mx-auto">
                   Scalable, manageable & cost-effective solution
                 </p>
               </div>
@@ -1165,7 +1173,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                       <h3 className="text-lg font-bold text-white mb-3">
                         {cap.title}
                       </h3>
-                      <p className="text-sm text-white/60 leading-relaxed">
+                      <p className="text-sm text-white/80 leading-relaxed">
                         {cap.desc}
                       </p>
                     </div>
@@ -1273,7 +1281,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                         <h3 className="font-bold text-white mb-1 leading-tight">
                           {item.title}
                         </h3>
-                        <p className="text-xs text-white/65 leading-relaxed">
+                        <p className="text-xs text-white/90 leading-relaxed">
                           {item.desc}
                         </p>
                       </div>
@@ -1317,7 +1325,10 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                 <Reveal key={`faq-${faq.q.substring(0, 20)}`} delayMs={i * 60}>
                   <div className="bg-white rounded-xl border border-slate-200/60 shadow-sm overflow-hidden">
                     <button
+                      id={`faq-trigger-${i}`}
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      aria-expanded={openFaq === i}
+                      aria-controls={`faq-content-${i}`}
                       className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
                     >
                       <span className="font-semibold text-slate-900 pr-4">
@@ -1327,6 +1338,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                         className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 ${
                           openFaq === i ? "rotate-180" : ""
                         }`}
+                        aria-hidden="true"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -1340,6 +1352,9 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                       </svg>
                     </button>
                     <div
+                      id={`faq-content-${i}`}
+                      role="region"
+                      aria-labelledby={`faq-trigger-${i}`}
                       className={`overflow-hidden transition-all duration-300 ${
                         openFaq === i
                           ? "max-h-96 opacity-100"

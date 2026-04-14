@@ -17,7 +17,6 @@ import axios, {
   AxiosInstance,
   AxiosResponse,
   InternalAxiosRequestConfig,
-  AxiosError,
 } from "axios";
 import { EncryptionService, isEncryptedResponse } from "./EncryptionService";
 import { encodeEmail } from "./encodeEmail";
@@ -121,11 +120,7 @@ function createApiInstance(): AxiosInstance {
         config.signal = controller.signal;
         controller.abort("DEMO_RESTRICTION");
 
-        return Promise.reject({
-          message: "Action restricted in Demo Mode",
-          isDemoRestriction: true,
-          config,
-        });
+        return Promise.reject(new Error("Action restricted in Demo Mode"));
       }
 
       // -------------------------------------------------------------------------
@@ -145,14 +140,16 @@ function createApiInstance(): AxiosInstance {
             userData.subuser_email ||
             "";
         } catch (e) {
-          // Ignore parse errors
+          // Ignore parse errors - Safe fallback logic
+          void e;
         }
       } else if (authUser) {
         try {
           const userData = JSON.parse(authUser);
           userEmail = userData.user_email || userData.email || "";
         } catch (e) {
-          // Ignore parse errors
+          // Ignore parse errors - Safe fallback logic
+          void e;
         }
       }
 
@@ -200,62 +197,69 @@ function createApiInstance(): AxiosInstance {
       if (typeof responseData === "string") {
         try {
           responseData = JSON.parse(responseData);
+          // JSON parse ho gaya, ab simplified response data use karein
+          response.data = responseData;
         } catch {
-          // Not JSON, return as-is
-          debugLog("API", `?? Non-JSON response: ${requestUrl}`);
+          // JSON nahi mila, ye shayad HTML error page h (e.g. Vercel SPA redirect)
+          debugLog("API", `?? Non-JSON response received from: ${requestUrl}`);
+          
+          // Agar hum API endpoint call kar rahe hain aur HTML mil raha h, toh ye ek problem h
+          if (requestUrl?.includes('/api/')) {
+            // ?? NAYA CODE: console.error use karo (production mein bhi survive karega)
+            console.error("❌ CRITICAL: Expected JSON from API but got non-JSON response.", {
+              url: requestUrl,
+              responsePreview: typeof responseData === 'string' ? responseData.substring(0, 200) : 'N/A',
+              hint: "Check VITE_API_BASE_URL - it might be pointing to wrong server or Vercel SPA redirect is intercepting API calls"
+            });
+          }
           return response;
         }
       }
 
       // -------------------------------------------------------------------------
-      // RULE 2: ENCRYPTION CHECK - Decrypt if encrypted flag is true
+      // RULE 2: ENCRYPTION CHECK - Agar response encrypted h toh decrypt karein
       // -------------------------------------------------------------------------
       if (isEncryptedResponse(responseData)) {
         try {
-          debugLog("ENCRYPT", `?? Encrypted response detected: ${requestUrl}`);
+          debugLog("ENCRYPT", `?? Encrypted response detected, decrypting...`);
 
-          // Check if data is compressed
           const isCompressed = responseData.compressed !== false;
-          debugLog("ENCRYPT", `   Compressed: ${isCompressed}`);
-
-          // Decrypt the data
           const decryptedData = EncryptionService.decrypt(
             responseData.data,
             isCompressed,
           );
 
-          // Replace response data with decrypted data
+          if (!decryptedData) {
+            throw new Error("Decryption failed or returned empty data");
+          }
+
+          // Decrypted data ko response body mein daalein
           response.data = decryptedData;
-
-          debugLog(
-            "ENCRYPT",
-            `? Decryption successful: ${requestUrl}`,
-            decryptedData,
-          );
-
+          debugLog("ENCRYPT", "✅ Decryption successful");
+          
+          // IMPORTANT: Return early so RULE 3 doesn't overwrite decrypted data
           return response;
-        } catch (decryptError) {
-          debugError(
-            "ENCRYPT",
-            `Decryption failed for ${requestUrl}`,
-            decryptError,
-          );
-
-          // Return encrypted data with error flag (graceful degradation)
+        } catch (decryptError: any) {
+          // ?? NAYA CODE: console.error use karo (production mein bhi dikhega)
+          console.error("❌ Decryption Error:", decryptError.message, {
+            url: requestUrl,
+            dataLength: responseData?.data?.length || 0,
+            compressed: responseData?.compressed,
+          });
+          
+          // Decryption fail hone pe fallback error data bhejenge
           response.data = {
-            ...responseData,
-            decryptionError: true,
-            error:
-              decryptError instanceof Error
-                ? decryptError.message
-                : "Decryption failed",
+            success: false,
+            error: "Failed to decrypt server response",
+            message: decryptError.message || "Decryption error on client side"
           };
           return response;
         }
       }
 
+
       // -------------------------------------------------------------------------
-      // RULE 3: FALLBACK - Return parsed JSON as-is
+      // RULE 3: FALLBACK - Parsed JSON return karein
       // -------------------------------------------------------------------------
       response.data = responseData;
 
@@ -293,19 +297,14 @@ function createApiInstance(): AxiosInstance {
           localStorage.removeItem("pdfExportSettingsCache");
 
           // Dispatch custom event for auth handling
-          window.dispatchEvent(
+          globalThis.dispatchEvent(
             new CustomEvent("authError", {
               detail: { status: 401, message: "Session expired" },
             }),
           );
 
           // Redirect to login page with expired flag
-          // But if it was a logout request, just redirect cleanly
-          if (error.config?.url?.includes("/logout")) {
-            window.location.href = "/login";
-          } else {
-            window.location.href = "/login";
-          }
+          globalThis.location.href = "/login";
         }
 
         // Try to parse error response
@@ -338,9 +337,7 @@ let apiInstance: AxiosInstance | null = null;
  * Get the configured Axios instance (lazy initialization)
  */
 function getApiInstance(): AxiosInstance {
-  if (!apiInstance) {
-    apiInstance = createApiInstance();
-  }
+  apiInstance ??= createApiInstance();
   return apiInstance;
 }
 
@@ -371,7 +368,6 @@ export function setAuthToken(token: string, persist: boolean = false): void {
     localStorage.setItem('D-Secure:jwt', token);
   }
   getApiInstance().defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  // console.log('?? Auth token set');
 }
 
 /**
@@ -382,7 +378,6 @@ export function clearAuthToken(): void {
   localStorage.removeItem('D-Secure:jwt');
   localStorage.removeItem('jwt_token');
   delete getApiInstance().defaults.headers.common['Authorization'];
-  // console.log('?? Auth token cleared');
 }
 
 /**
@@ -393,7 +388,7 @@ export function getApiBaseUrl(): string {
 }
 
 // Export types
-export type { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig };
+export type { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 export default api;
 

@@ -1,4 +1,5 @@
-import React, { useState, memo, useMemo, useCallback } from 'react';
+import React, { useState, memo, useMemo, useCallback, useEffect, useRef } from 'react';
+import { ARIA_LABELS } from '@/utils/aria-labels';
 
 interface CustomLicenseModalProps {
   isOpen: boolean;
@@ -23,19 +24,25 @@ export interface CustomLicenseData {
 const FormInput = memo<{
   type: string;
   name: string;
+  id: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className: string;
   placeholder: string;
   hasError?: boolean;
-}>(({ type, name, value, onChange, className, placeholder, hasError }) => (
+  required?: boolean;
+}>(({ type, name, id, value, onChange, className, placeholder, hasError, required }) => (
   <input
     type={type}
     name={name}
+    id={id}
     value={value}
     onChange={onChange}
     className={hasError ? className.replace('border-gray-300', 'border-red-500') : className}
     placeholder={placeholder}
+    aria-invalid={hasError}
+    aria-describedby={hasError ? `${id}-error` : undefined}
+    aria-required={required}
   />
 ));
 
@@ -81,6 +88,17 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
   productName,
   isLoading = false
 }) => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  
+  // Accessibility: Focus title when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        titleRef.current?.focus();
+      }, 100);
+    }
+  }, [isOpen]);
+
   const [formData, setFormData] = useState<CustomLicenseData>({
     companyName: '',
     contactName: '',
@@ -191,19 +209,33 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="custom-license-title"
+      aria-describedby="custom-license-desc"
+    >
       <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6 border-b border-gray-200">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900">Custom License Request</h2>
-              <p className="text-gray-600 mt-1">Get a personalized quote for {productName}</p>
+              <h2 
+                id="custom-license-title"
+                ref={titleRef}
+                tabIndex={-1}
+                className="text-2xl font-bold text-slate-900 focus:outline-none"
+              >
+                Custom License Request
+              </h2>
+              <p id="custom-license-desc" className="text-gray-600 mt-1">Get a personalized quote for {productName}</p>
             </div>
             <button
               onClick={onClose}
+              aria-label={ARIA_LABELS.CLOSE_MODAL}
               className="text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -213,56 +245,62 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-2">
                 Company Name *
               </label>
               <FormInput
                 type="text"
                 name="companyName"
+                id="companyName"
                 value={formData.companyName}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
                 placeholder="Enter your company name"
                 hasError={!!errors.companyName}
+                required={true}
               />
               {errors.companyName && (
-                <p className="text-red-500 text-sm mt-1">{errors.companyName}</p>
+                <p id="companyName-error" className="text-red-500 text-sm mt-1">{errors.companyName}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="contactName" className="block text-sm font-medium text-gray-700 mb-2">
                 Contact Person *
               </label>
               <FormInput
                 type="text"
                 name="contactName"
+                id="contactName"
                 value={formData.contactName}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
                 placeholder="Your full name"
                 hasError={!!errors.contactName}
+                required={true}
               />
               {errors.contactName && (
-                <p className="text-red-500 text-sm mt-1">{errors.contactName}</p>
+                <p id="contactName-error" className="text-red-500 text-sm mt-1">{errors.contactName}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                 Email Address *
               </label>
               <FormInput
                 type="email"
                 name="email"
+                id="email"
                 value={formData.email}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
                 placeholder="your.email@company.com"
                 hasError={!!errors.email}
+                required={true}
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                <p id="email-error" className="text-red-500 text-sm mt-1">{errors.email}</p>
               )}
             </div>
 
@@ -276,8 +314,13 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
                 value={formData.phone}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
-                placeholder="+1 (555) 123-4567"
+                placeholder="+1 (555) 000-0000"
+                hasError={!!errors.phone}
+                required={true}
               />
+              {errors.phone && (
+                <p id="phone-error" className="text-red-500 text-sm mt-1">{errors.phone}</p>
+              )}
             </div>
 
             {/* <div>
@@ -318,16 +361,17 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Special Requirements
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+              Additional Message
             </label>
-            <FormTextarea
-              name="requirements"
-              value={formData.requirements}
+            <textarea
+              name="message"
+              id="message"
+              value={formData.message}
               onChange={handleInputChange}
-              rows={2}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
-              placeholder="Describe any specific requirements, integrations, or features you need..."
+              rows={4}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors resize-none"
+              placeholder="Tell us about your specific requirements..."
             />
           </div>
 {/* 

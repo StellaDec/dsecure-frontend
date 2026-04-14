@@ -601,7 +601,7 @@ const WindowsSystemsPage: React.FC = memo(() => {
                           Create bootable USB
                         </div>
                         <div className="text-slate-600 text-xs sm:text-sm">
-                          Use Rufus or similar tool
+                          Use UNetbootin (<a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe" className="text-emerald-600 hover:underline" target="_blank" rel="noreferrer">Win</a>, <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin" className="text-emerald-600 hover:underline" target="_blank" rel="noreferrer">Lin</a>, <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg" className="text-emerald-600 hover:underline" target="_blank" rel="noreferrer">Mac</a>)
                         </div>
                       </div>
                     </div>

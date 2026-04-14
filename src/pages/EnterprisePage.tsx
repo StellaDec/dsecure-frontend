@@ -16,7 +16,7 @@ const EnterprisePage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              Secure Compliant
+              Enterprise Data Erasure Solutions
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl">
               Safeguard sensitive data with D-Secure's enterprise-grade data erasure platform. Ensure compliance with global data security standards and protect your organization from data breaches with regulated, permanent data erasure.

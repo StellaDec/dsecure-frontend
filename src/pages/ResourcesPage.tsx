@@ -714,7 +714,7 @@ function ResourcesPageContent() {
           <div className="text-center max-w-4xl mx-auto">
             <Reveal>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
-                Blog & Insights Hub
+                Data Security Blog & Insights Hub
               </h1>
             </Reveal>
             <Reveal delayMs={10}>

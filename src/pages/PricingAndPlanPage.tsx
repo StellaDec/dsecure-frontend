@@ -3,6 +3,7 @@ import { ENV } from "../config/env";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import { useNavigate, useLocation } from "react-router-dom";
+import { ARIA_LABELS } from "@/utils/aria-labels";
 import CustomLicenseModal, {
   CustomLicenseData,
 } from "../components/CustomLicenseModal";
@@ -1487,7 +1488,11 @@ const PricingAndPlanPage: React.FC = memo(() => {
           <div className="text-center mb-12 xs:mb-14 sm:mb-16 md:mb-16">
             {/* Tab Switcher (Sub-header position) */}
             <div className="flex justify-center mb-8">
-              <div className="bg-white/80 backdrop-blur-sm p-1.5 rounded-2xl shadow-sm border border-emerald-100/50 flex gap-2 w-full max-w-lg">
+              <div 
+                role="tablist"
+                aria-label="Product Category Switcher"
+                className="bg-white/80 backdrop-blur-sm p-1.5 rounded-2xl shadow-sm border border-emerald-100/50 flex gap-2 w-full max-w-lg"
+              >
                 <button
                   onClick={() => {
                     setActiveTab("eraser");
@@ -1496,6 +1501,9 @@ const PricingAndPlanPage: React.FC = memo(() => {
                       replace: true,
                     });
                   }}
+                  role="tab"
+                  aria-selected={activeTab === "eraser"}
+                  title={`${ARIA_LABELS.SWITCH_TAB} Eraser`}
                   className={`flex-1 py-2.5 px-6 rounded-xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
                     activeTab === "eraser"
                       ? "bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg shadow-teal-200"
@@ -1540,6 +1548,9 @@ const PricingAndPlanPage: React.FC = memo(() => {
                     // setSelectedCategory("data-migration");
                     // navigate(`/pricing-and-plan?product=data-migration`, { ... });
                   }}
+                  role="tab"
+                  aria-selected={activeTab === "migration"}
+                  title={`${ARIA_LABELS.SWITCH_TAB} Migration`}
                   className={`flex-1 py-2.5 px-6 rounded-xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
                     activeTab === "migration"
                       ? "bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg shadow-teal-200"
@@ -1573,7 +1584,11 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
           {/* Category Selection (Pill Row Switcher) */}
           <div className="flex justify-center mb-10 xs:mb-12 sm:mb-12 md:mb-12 px-2 xs:px-4">
-            <div className="bg-white/80 backdrop-blur-sm p-1.5 rounded-2xl shadow-sm border border-emerald-100/50 flex flex-wrap items-stretch gap-2 w-full max-w-5xl">
+            <div 
+              role="tablist"
+              aria-label="Product Sub-category"
+              className="bg-white/80 backdrop-blur-sm p-1.5 rounded-2xl shadow-sm border border-emerald-100/50 flex flex-wrap items-stretch gap-2 w-full max-w-5xl"
+            >
               {filteredCategories.map((category) => (
                 <button
                   key={category.id}
@@ -1590,6 +1605,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
                       replace: true,
                     });
                   }}
+                  role="tab"
+                  aria-selected={selectedCategory === category.id}
                   className={`flex-1 min-w-[140px] xs:min-w-[160px] py-2.5 xs:py-3 px-3 xs:px-4 sm:px-6 rounded-xl font-bold text-sm transition-all duration-300 flex flex-col items-center justify-center gap-1 ${
                     selectedCategory === category.id
                       ? "bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg shadow-teal-200 transform scale-[1.02]"
@@ -1712,12 +1729,18 @@ const PricingAndPlanPage: React.FC = memo(() => {
                     {/* Drive Eraser Variant Selection */}
                     {selectedCategory === "drive-eraser" && (
                       <div className="mb-6 p-4 bg-emerald-50/50 rounded-2xl border border-emerald-100">
-                        <label className="block text-xs xs:text-sm font-bold text-emerald-900 mb-3">
+                        <label id="drive-eraser-variant-label" className="block text-xs xs:text-sm font-bold text-emerald-900 mb-3">
                           Product Variant:
                         </label>
-                        <div className="grid grid-cols-1 gap-2">
+                        <div 
+                          role="radiogroup" 
+                          aria-labelledby="drive-eraser-variant-label"
+                          className="grid grid-cols-1 gap-2"
+                        >
                           <button
                             onClick={() => setDriveEraserVariant("standard")}
+                            role="radio"
+                            aria-checked={driveEraserVariant === "standard"}
                             className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
                               driveEraserVariant === "standard"
                                 ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
@@ -1756,6 +1779,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
                           <button
                             onClick={() => setDriveEraserVariant("diagnostics")}
+                            role="radio"
+                            aria-checked={driveEraserVariant === "diagnostics"}
                             className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
                               driveEraserVariant === "diagnostics"
                                 ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
@@ -1806,6 +1831,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
                         <div className="grid grid-cols-1 gap-2">
                           <button
                             onClick={() => setFileEraserVariant("standard")}
+                            role="radio"
+                            aria-checked={fileEraserVariant === "standard"}
                             className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
                               fileEraserVariant === "standard"
                                 ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
@@ -1844,6 +1871,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
                           <button
                             onClick={() => setFileEraserVariant("network")}
+                            role="radio"
+                            aria-checked={fileEraserVariant === "network"}
                             className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
                               fileEraserVariant === "network"
                                 ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
@@ -1895,6 +1924,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
                         <div className="grid grid-cols-1 gap-2">
                           <button
                             onClick={() => setFreezeStateVariant("standard")}
+                            role="radio"
+                            aria-checked={freezeStateVariant === "standard"}
                             className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
                               freezeStateVariant === "standard"
                                 ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
@@ -1933,6 +1964,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
                           <button
                             onClick={() => setFreezeStateVariant("smart")}
+                            role="radio"
+                            aria-checked={freezeStateVariant === "smart"}
                             className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
                               freezeStateVariant === "smart"
                                 ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
@@ -1974,6 +2007,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
                           <button
                             onClick={() => setFreezeStateVariant("advanced")}
+                            role="radio"
+                            aria-checked={freezeStateVariant === "advanced"}
                             className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
                               freezeStateVariant === "advanced"
                                 ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
@@ -2165,22 +2200,23 @@ const PricingAndPlanPage: React.FC = memo(() => {
                           {selectedCategory === "hardware-diagnostics" ? (
                             /* Numeric Counter for Diagnostics */
                             <div className="flex items-center gap-4 bg-gray-50 p-2 rounded-2xl border-2 border-gray-200">
-                              <button
-                                onClick={() => {
-                                  const current =
-                                    Number.parseInt(selectedLicenses) || 100;
-                                  if (current > 100) {
-                                    setSelectedLicenses(
-                                      (current - 100).toString(),
-                                    );
-                                  } else if (current === 100) {
-                                    setSelectedLicenses("1");
-                                  }
-                                }}
-                                className="w-12 h-12 rounded-xl bg-white border-2 border-gray-200 flex items-center justify-center text-2xl font-bold text-gray-600 hover:border-teal-500 hover:text-teal-600 transition-all shadow-sm active:scale-95"
-                              >
-                                −
-                              </button>
+                                <button
+                                  onClick={() => {
+                                    const current =
+                                      Number.parseInt(selectedLicenses) || 100;
+                                    if (current > 100) {
+                                      setSelectedLicenses(
+                                        (current - 100).toString(),
+                                      );
+                                    } else if (current === 100) {
+                                      setSelectedLicenses("1");
+                                    }
+                                  }}
+                                  aria-label={ARIA_LABELS.DECREASE_QUANTITY}
+                                  className="w-12 h-12 rounded-xl bg-white border-2 border-gray-200 flex items-center justify-center text-2xl font-bold text-gray-600 hover:border-teal-500 hover:text-teal-600 transition-all shadow-sm active:scale-95"
+                                >
+                                  −
+                                </button>
                               <div className="flex-1 text-center">
                                 <div className="text-xl font-bold text-gray-900">
                                   {selectedLicenses}
@@ -2189,22 +2225,23 @@ const PricingAndPlanPage: React.FC = memo(() => {
                                   Licenses
                                 </div>
                               </div>
-                              <button
-                                onClick={() => {
-                                  const current =
-                                    Number.parseInt(selectedLicenses) || 100;
-                                  if (current === 1) {
-                                    setSelectedLicenses("100");
-                                  } else {
-                                    setSelectedLicenses(
-                                      (current + 100).toString(),
-                                    );
-                                  }
-                                }}
-                                className="w-12 h-12 rounded-xl bg-white border-2 border-gray-200 flex items-center justify-center text-2xl font-bold text-gray-600 hover:border-teal-500 hover:text-teal-600 transition-all shadow-sm active:scale-95"
-                              >
-                                +
-                              </button>
+                                <button
+                                  onClick={() => {
+                                    const current =
+                                      Number.parseInt(selectedLicenses) || 100;
+                                    if (current === 1) {
+                                      setSelectedLicenses("100");
+                                    } else {
+                                      setSelectedLicenses(
+                                        (current + 100).toString(),
+                                      );
+                                    }
+                                  }}
+                                  aria-label={ARIA_LABELS.INCREASE_QUANTITY}
+                                  className="w-12 h-12 rounded-xl bg-white border-2 border-gray-200 flex items-center justify-center text-2xl font-bold text-gray-600 hover:border-teal-500 hover:text-teal-600 transition-all shadow-sm active:scale-95"
+                                >
+                                  +
+                                </button>
                             </div>
                           ) : (
                             /* Standard Dropdown for other products */
@@ -2324,34 +2361,50 @@ const PricingAndPlanPage: React.FC = memo(() => {
                 </button>
 
                 {/* Trust Indicators */}
-                <div className="space-y-3 text-center">
-                  <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-                    <svg
-                      className="w-5 h-5 text-green-500"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span>Free worldwide shipping</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-                    <svg
-                      className="w-5 h-5 text-green-500"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span>Instant activation & support</span>
+                <div className="flex flex-col items-center">
+                  <div className="space-y-3 inline-flex flex-col items-start">
+                    <div className="flex items-center space-x-2 text-sm text-gray-600">
+                      <svg
+                        className="w-5 h-5 text-green-500 shrink-0"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span>We offer discounts for multiple licenses</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-gray-600">
+                      <svg
+                        className="w-5 h-5 text-green-500 shrink-0"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span>Free worldwide shipping</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-gray-600">
+                      <svg
+                        className="w-5 h-5 text-green-500 shrink-0"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span>Instant activation & support</span>
+                    </div>
                   </div>
                 </div>
               </div>

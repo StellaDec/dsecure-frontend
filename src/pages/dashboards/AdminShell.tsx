@@ -3,7 +3,7 @@ import { getSEOForPage } from "../../utils/seo";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useEffect, Suspense } from "react";
 
-import { useAuth } from "../../auth/AuthContext";
+import { useAuth } from "@/auth/AuthContext";
 import { isDemoMode } from "../../data/demoData";
 // ********** NAYA CODE — Phase 4: Global auto-logout imports **********
 import { authService } from "../../utils/authService";
@@ -11,7 +11,9 @@ import { indexedDBService } from "../../services/indexedDBService";
 // *******************************************
 
 export default function AdminShell() {
-  const { user } = useAuth();
+  const auth = useAuth();
+  // ?? NAYA CODE: SSR ya initialization ke waqt user undefined ho sakta hai
+  const user = auth?.user;
   // ✅ NAYA CODE: useLocation for forcing Outlet re-mount on sidebar navigation
   const location = useLocation();
 
@@ -50,6 +52,12 @@ export default function AdminShell() {
     storedUserData?.is_subusers_enabled ||
     storedUserData?.isSubusersEnabled ||
     false;
+
+  // ?? NAYA CODE: SSR/SSG ke waqt agar user nahi milta aur hum login page par nahi hain
+  // toh server-side rendering ko quietly exit karne do bina crash kiye
+  if (typeof window === 'undefined' && !user && !isDemo) {
+    return null;
+  }
 
   // ********** NAYA CODE — Phase 4: Global auto-logout (max 15-min session) **********
   // ********** NAYA CODE — Phase 4: Global auto-logout (Idle Timeout) **********

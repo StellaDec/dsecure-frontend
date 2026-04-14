@@ -760,7 +760,7 @@ function ContactPageContent() {
           <div className="text-center max-w-3xl mx-auto">
             <Reveal>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
-                Get in Touch
+                Contact D-Secure for Data Erasure Solutions
               </h1>
             </Reveal>
             <Reveal delayMs={10}>

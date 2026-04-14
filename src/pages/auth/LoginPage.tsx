@@ -1,10 +1,10 @@
-﻿import { FormEvent, useState, useEffect } from "react";
+import { FormEvent, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/auth/AuthContext";
 import { useTranslation } from "react-i18next";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
-import { api, setAuthToken } from "@/utils/apiClient";
+import { api, setAuthToken, getApiBaseUrl } from "@/utils/apiClient";
 import { authService } from "@/utils/authService";
 
 import { isDemoMode } from "@/data/demoData";
@@ -552,6 +552,10 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
+      // ?? NAYA CODE: Production-safe log — ye console.error hai toh production build mein bhi dikhega
+      // Login debug karne ke liye F12 console kholo aur ye line dhundho
+      console.error("🔐 Login attempt:", { apiUrl: getApiBaseUrl(), email: email.substring(0, 3) + "***" });
+      
       // Make API call to .NET backend (auto-decryption handled by interceptor)
       const response = await api.post("/api/RoleBasedAuth/login", {
         email: email,
@@ -678,50 +682,72 @@ export default function LoginPage() {
       // This prevents double-fetching and speeds up the initial load
       // *******************************************
     } catch (err: any) {
-      // Log full error details to console for debugging
+      // ❌ Login Error ko console mein log karein debug karne ke liye
       console.error("❌ Login Error:", {
         message: err.message,
         status: err.response?.status,
         statusText: err.response?.statusText,
         serverMessage: err.response?.data?.message || err.response?.data?.error,
         url: err.config?.url,
+        baseUrl: getApiBaseUrl(), // Backend URL check karne ke liye
         data: err.response?.data,
+        // ?? NAYA CODE: Response data type bhi log karo taaki pata chale ki decrypt hua ya nahi
+        responseDataType: typeof err.response?.data,
+        responseDataPreview: typeof err.response?.data === 'string' 
+          ? err.response?.data?.substring(0, 200) 
+          : undefined,
       });
 
       let errorMessage = "Login failed. Please try again.";
 
       if (err.response) {
         const status = err.response.status;
+        const responseData = err.response.data;
         const serverMessage =
-          err.response.data?.message || err.response.data?.error;
+          responseData?.message || responseData?.error;
 
-        // Show clean, user-friendly error messages
-        if (status === 401 || status === 400) {
+        // ?? NAYA CODE: Decryption failure ko specifically detect karo
+        // Agar response data string hai (HTML/undecrypted), toh ye decryption issue hai
+        if (typeof responseData === 'string' && responseData.includes('<!')) {
+          errorMessage = "Server configuration error. Please contact support.";
+          console.error("❌ Login received HTML instead of JSON. API_BASE_URL mismatch ho sakta hai.");
+        } else if (responseData?.error === "Failed to decrypt server response") {
+          errorMessage = "Server communication error. Please try again.";
+          console.error("❌ Decryption failed - encryption keys mismatch ho sakta hai.");
+        } else if (status === 401 || status === 400) {
           errorMessage =
-            "Invalid email or password. Please check your credentials.";
+            serverMessage || "Invalid email or password. Please check your credentials.";
         } else if (status === 404) {
           errorMessage = "User not found. Please register first.";
         } else if (status === 403) {
           errorMessage =
             "Access denied. Your account may be suspended or inactive.";
         } else if (status >= 500) {
-          errorMessage = "Server error. Please try again later.";
+          errorMessage = serverMessage || "Server error. Please try again later.";
         } else if (serverMessage) {
           errorMessage = serverMessage;
         } else {
           errorMessage = "Login failed. Please try again.";
         }
       } else if (err.request) {
-        // Network error
+        // Network error (Backend tak request nahi pahonchi)
         errorMessage =
           "Cannot connect to server. Please check your internet connection.";
       } else {
-        errorMessage = "An unexpected error occurred. Please try again.";
+        // ?? NAYA CODE: Manual throw (e.g. "No JWT token") ko bhi specific handle karo
+        // Ye tab hota hai jab API response aata hai lekin token missing hota hai
+        if (err.message?.includes("No JWT token")) {
+          errorMessage = "Login failed - invalid server response. Please try again.";
+          console.error("❌ JWT token missing from response. Server ne encrypted/invalid data bheja ho sakta hai.");
+        } else {
+          errorMessage = err.message || "An unexpected error occurred. Please try again.";
+        }
       }
 
-      // Display error to user
+      // User ko error dikhayein
       setError(errorMessage);
       showToast(errorMessage, "error");
+
     } finally {
       setLoading(false);
     }

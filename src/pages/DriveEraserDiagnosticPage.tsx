@@ -406,7 +406,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
     },
     {
       name: "SSDs & NVMe Drives",
-      desc: "Specialized erasure for solid-state storage ensuring complete data destruction. Deploy via bootable USB or PXE network boot for maximum flexibility.",
+      desc: "Specialized erasure for solid-state storage ensuring complete data destruction. Deploy via bootable USB (Using UNetbootin) or PXE network boot for maximum flexibility.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -1563,9 +1563,15 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       </div>
                       {/* Title */}
                       <h3 className="font-bold text-slate-900 mb-2">Deploy</h3>
-                      <p className="text-sm text-slate-500 mb-3">
+                      <p className="text-sm text-slate-500 mb-2">
                         Multiple ways to deploy
                       </p>
+                      <div className="text-[10px] text-emerald-600 font-medium mb-3">
+                        Download USB Tool: 
+                        <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe" target="_blank" rel="noreferrer" className="hover:underline ml-1">Win</a> | 
+                        <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin" target="_blank" rel="noreferrer" className="hover:underline ml-1">Lin</a> | 
+                        <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg" target="_blank" rel="noreferrer" className="hover:underline ml-1">Mac</a>
+                      </div>
                       {/* Tags */}
                       <div className="flex flex-wrap justify-center gap-1.5">
                         <span className="text-[10px] px-2 py-1 bg-white border border-emerald-200 rounded-full text-emerald-700 font-medium">

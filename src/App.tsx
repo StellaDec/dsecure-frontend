@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/react-query";
-import { AuthProvider } from "./auth/AuthContext";
+import { AuthProvider } from "@/auth/AuthContext";
 import { NotificationProvider } from "./contexts/NotificationContext";
 import ToastContainer from "./components/ui/ToastContainer";
 import ProtectedRoute from "./components/ProtectedRoute";

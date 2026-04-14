@@ -16,7 +16,7 @@ export default function ComparisonPage() {
           {/* Header Section */}
           <div className="text-center mb-12 md:mb-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Lifecycle Governance vs. Legacy Erasure
+              Data Erasure Software Comparison: Lifecycle Governance vs. Legacy Wiping
             </h1>
             <p className="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium">
               Understand the architectural and operational differences between

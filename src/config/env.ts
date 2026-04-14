@@ -10,10 +10,21 @@
 
 
 
+/**
+ * Environment variables ko validate karne ke liye utility function
+ */
 const validateStr = (value: string | undefined, key: string, required: boolean, fallback: string): string => {
     if (!value && required) {
-        throw new Error(`CRITICAL CONFIG ERROR: Missing required environment variable: ${key}`);
+        // Production mein hum crash nahi karna chahte, but login error debug karne ke liye clear log chahiye
+        console.error(`?? CRITICAL CONFIG ERROR: Missing required environment variable: ${key}`);
+        return fallback;
     }
+    
+    // URL format check (simple)
+    if (key.includes('URL') && value && !value.startsWith('http')) {
+        console.warn(`?? CONFIG WARNING: ${key} might be invalid: ${value}. URL 'http' ya 'https' se shuru hona chahiye.`);
+    }
+
     return value || fallback;
 };
 
@@ -31,7 +42,7 @@ const validateInt = (value: string | undefined, defaultVal: number): number => {
 
 export const ENV = {
     // Core API
-    API_BASE_URL: validateStr(import.meta.env.VITE_API_BASE_URL, 'VITE_API_BASE_URL', true, ''),
+    API_BASE_URL: validateStr(import.meta.env.VITE_API_BASE_URL, 'VITE_API_BASE_URL', true, 'https://api.dsecuretech.com'),
     API_TIMEOUT: validateInt(import.meta.env.VITE_API_TIMEOUT, 60000),
 
     // Environment
@@ -61,6 +72,10 @@ export const ENV = {
 };
 
 // Validate critical secrets don't map to defaults in Production if needed
-if (ENV.IS_PROD && ENV.API_BASE_URL.includes('localhost')) {
-    console.warn('⚠️ WARNING: using localhost API in PRODUCTION mode');
-}
+// ?? NAYA CODE: HAMESHA log karo (console.error production mein survive karega)
+// Ye zaroori hai taaki Vercel pe F12 se turant pata chale ki API URL correct hai
+console.error("🔧 D-Secure Config:", {
+    apiUrl: ENV.API_BASE_URL,
+    mode: ENV.MODE,
+    isProd: ENV.IS_PROD,
+});

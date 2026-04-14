@@ -213,7 +213,7 @@ function AboutPageContent() {
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
                 The New Standard in{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand to-brand/80">
-                  Data Security
+                  Data Erasure & Sanitization
                 </span>
               </h1>
             </Reveal>

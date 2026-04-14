@@ -5,6 +5,7 @@ import {
   SEO_CONFIG,
   generateKeywords,
   generateOrganizationSchema,
+  generateFAQSchema,
 } from "./seo.core";
 import { FAQ } from "../data/blogFaqs";
 
@@ -37,11 +38,25 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   ...MANUAL_SEO,
   // Home page SEO - "D-Secure" branding use karo, "Eraser" nahi
   home: {
-    title: "D-Secure - #1 Data Erasure Software | NIST 800-88 Compliance | Secure Tech",
+    title: "D-Secure | #1 Data Erasure Software | NIST 800-88 Compliant",
     description:
-      "Looking for the best data erasure software? D-Secure is #1 for NIST 800-88 Compliance, GDPR & HIPAA compliant wiping. Securely erase HDD, SSD, and mobile devices with tamper-proof audit reports with certificate.",
+      "D-Secure is #1 data erasure software — NIST 800-88, GDPR & HIPAA compliant. Securely wipe HDDs, SSDs and mobile devices with tamper-proof audit certificates.",
     canonicalUrl: getCanonicalUrl("/"),
     breadcrumbs: [{ name: "Home", item: "/" }],
+  },
+  // All Products page — /all-products route, component mein "data-eraser-software" key use hota hai
+  "data-eraser-software": {
+    title: "All Products: Enterprise Data Erasure & Diagnostic Software | D-Secure",
+    description: "Discover D-Secure's full range of NIST-compliant data erasure software — from Drive and File Eraser to Smartphone and LUN Eraser. Complete sanitization for every device.",
+    canonicalUrl: getCanonicalUrl("/all-products"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "All Products", item: "/all-products" },
+    ],
+    structuredData: generateFAQSchema([
+      { q: "What types of devices can D-Secure erase?", a: "D-Secure can securely erase SSDs, HDDs, active LUNs, virtual machines, and mobile devices (iOS & Android)." },
+      { q: "Is D-Secure NIST 800-88 compliant?", a: "Yes, D-Secure follows NIST 800-88 'Clear' and 'Purge' standards, as well as DoD 5220.22-M." }
+    ])
   },
   // About page — company ke baare mein
   about: {
@@ -68,6 +83,10 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
     title: "D-Secure Pricing & Plans | Enterprise Data Erasure Software",
     description: "View D-Secure pricing and plans for data erasure software. Flexible licensing for Drive Eraser, File Eraser, and Smartphone Eraser with volume discounts.",
     canonicalUrl: getCanonicalUrl("/pricing-and-plan"),
+    structuredData: generateFAQSchema([
+      { q: "Do you offer custom enterprise pricing?", a: "Yes, we provide tailored licensing models for large organizations and ITAD providers based on volume." },
+      { q: "Is there a free trial or license available?", a: "We offer free evaluations for enterprise customers. Please contact our sales team to request a test license." }
+    ]),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Pricing", item: "/pricing-and-plan" },
@@ -92,6 +111,10 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Compliance", item: "/compliance" },
       { name: "NIST 800-88", item: "/compliance/nist-800-88" },
     ],
+    structuredData: generateFAQSchema([
+      { q: "What is NIST 800-88 compliance?", a: "NIST 800-88 is the US government standard for media sanitization. D-Secure follows 'Clear' and 'Purge' methods to ensure data is unrecoverable." },
+      { q: "Does D-Secure provide certificates of destruction?", a: "Yes, D-Secure generates tamper-proof audit reports and certificates of destruction for every device erased." }
+    ])
   },
   gdpr: {
     title: "GDPR Compliant Data Erasure | Right to Erasure Software | D-Secure",
@@ -414,6 +437,10 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Home", item: "/" },
       { name: "Support", item: "/support" },
     ],
+    structuredData: generateFAQSchema([
+      { q: "How do I raise a technical support ticket?", a: "You can raise a ticket directly through our Support Portal or email support@dsecuretech.com." },
+      { q: "Are your support services available 24/7?", a: "We offer 24/7 support for Enterprise Diamond plan customers. Standard support follows business hours (9 AM - 6 PM IST)." }
+    ])
   },
   "product-videos": {
     title: "Product Training Videos | D-Secure Tech",
@@ -529,6 +556,122 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Whitepapers", item: "/whitepaper" },
     ],
   },
+  "smartphone-eraser": {
+    title: "Smartphone Eraser Software | Mobile Data Wiping | D-Secure",
+    description: "Securely erase iOS and Android devices with D-Secure Smartphone Eraser. Ensure data privacy with certified wiping reports for mobile compliance.",
+    canonicalUrl: getCanonicalUrl("/products/smartphone-eraser"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Products", item: "/products" },
+      { name: "Smartphone Eraser", item: "/products/smartphone-eraser" },
+    ],
+  },
+  "smartphone-diagnostic": {
+    title: "Smartphone Diagnostics Tool | Mobile Health Check | D-Secure",
+    description: "Run advanced hardware diagnostics on iOS and Android devices. Optimize the refurbished mobile lifecycle with comprehensive reports.",
+    canonicalUrl: getCanonicalUrl("/products/smartphone-diagnostics"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Products", item: "/products" },
+      { name: "Smartphone Diagnostics", item: "/products/smartphone-diagnostics" },
+    ],
+  },
+  "hardware-diagnostics": {
+    title: "Hardware Diagnostics Software | System Health Tests | D-Secure",
+    description: "Ensure hardware reliability for PCs and servers. D-Secure Hardware Diagnostics offers detailed health checks before secure data erasure.",
+    canonicalUrl: getCanonicalUrl("/products/hardware-diagnostics"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Products", item: "/products" },
+      { name: "Hardware Diagnostics", item: "/products/hardware-diagnostics" },
+    ],
+  },
+  "drive-eraser-diagnostic": {
+    title: "Drive Eraser Diagnostic & Health | Predictive Analysis | D-Secure",
+    description: "Predictive drive health analysis capabilities bundled with D-Secure Drive Eraser. Get detailed reports before permanently sanitizing disks.",
+    canonicalUrl: getCanonicalUrl("/products/drive-eraser-diagnostic"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Products", item: "/products" },
+      { name: "Drive Eraser Diagnostic", item: "/products/drive-eraser-diagnostic" },
+    ],
+  },
+  "virtual-machine-eraser": {
+    title: "Virtual Machine Eraser | Secure Cloud & VM Data Sanitization | D-Secure",
+    description: "Certified virtual machine erasure for hypervisors like VMware and Hyper-V. Securely wipe multi-tenant cloud environments safely.",
+    canonicalUrl: getCanonicalUrl("/products/virtual-machine-eraser"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Products", item: "/products" },
+      { name: "Virtual Machine Eraser", item: "/products/virtual-machine-eraser" },
+    ],
+  },
+  "removable-media-eraser": {
+    title: "Removable Media Eraser | USB & Flash Drive Wiping | D-Secure",
+    description: "Securely erase USBs, SD cards, and flash media with certified data destruction software. Prevent portable data leaks effectively.",
+    canonicalUrl: getCanonicalUrl("/products/removable-media-eraser"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Products", item: "/products" },
+      { name: "Removable Media Eraser", item: "/products/removable-media-eraser" },
+    ],
+  },
+  "lun-eraser": {
+    title: "LUN Eraser Software | Storage Array Data Sanitization | D-Secure",
+    description: "Securely sanitize Logical Unit Numbers (LUNs) in active storage arrays without affecting adjacent data. Certified Enterprise erasure.",
+    canonicalUrl: getCanonicalUrl("/products/lun-eraser"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Products", item: "/products" },
+      { name: "LUN Eraser", item: "/products/lun-eraser" },
+    ],
+  },
+  "features": {
+    title: "Enterprise Data Erasure Features | Secure Tech | D-Secure",
+    description: "Explore the advanced features of D-Secure data erasure software: automation, API integration, tamper-proof reporting, and certified algorithms.",
+    canonicalUrl: getCanonicalUrl("/features"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Features", item: "/features" },
+    ],
+  },
+  "security": {
+    title: "Security Operations & Compliance Practices | D-Secure",
+    description: "Review our deep commitment to internal security operations, compliance practices, and infrastructure hardening for data privacy.",
+    canonicalUrl: getCanonicalUrl("/security"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Security", item: "/security" },
+    ],
+  },
+  "why-d-secure": {
+    title: "Why Choose D-Secure? | Lifecycle Data Governance Leaders",
+    description: "Discover why global enterprises and ITADs choose D-Secure over legacy erasure platforms for performance, cost, and certified compliance.",
+    canonicalUrl: getCanonicalUrl("/why-d-secure"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Why D-Secure", item: "/why-d-secure" },
+    ],
+  },
+  "what-is-d-secure": {
+    title: "What is D-Secure Technologies? | Company Overview",
+    description: "Learn about D-Secure Technologies, our mission, and our enterprise data sanitization products that safeguard organizations worldwide.",
+    canonicalUrl: getCanonicalUrl("/what-is-d-secure"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "What is D-Secure", item: "/what-is-d-secure" },
+    ],
+  },
+  "solutions-enterprise": {
+    title: "Enterprise Data Erasure Solutions | Corporate Compliance | D-Secure",
+    description: "Scale secure data destruction across your entire corporate infrastructure with D-Secure Enterprise. Automate certified data lifecycle governance.",
+    canonicalUrl: getCanonicalUrl("/solutions/enterprise"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Solutions", item: "/solutions" },
+      { name: "Enterprise", item: "/solutions/enterprise" },
+    ],
+  },
   "press-room": {
     title: "Press & Media Room | D-Secure Newsroom",
     description: "Official D-Secure newsroom for journalists. Access press releases, media kits, corporate logos, and executive bios for Dhruv Rai and team.",
@@ -538,6 +681,26 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Home", item: "/" },
       { name: "About", item: "/about" },
       { name: "Press Room", item: "/press-room" },
+    ],
+  },
+  "login": {
+    title: "Login | Secure Access to D-Secure Dashboard",
+    description: "Sign in to your D-Secure account to manage licenses, view audit reports, and configure data erasure tasks.",
+    canonicalUrl: getCanonicalUrl("/login"),
+    noindex: true,
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Login", item: "/login" },
+    ],
+  },
+  "data-guardian-award": {
+    title: "D-Secure Data Hygiene Assurance | Industry-Leading Verification",
+    description: "The D-Secure Assurance Badge recognizes organizations with superior data hygiene and sustainable ITAD practices. Verify compliance-certified partners today.",
+    canonicalUrl: getCanonicalUrl("/data-guardian-award"),
+    keywords: generateKeywords(["Data Guardian Award", "Data Hygiene Assurance", "Compliance Verification", "Sustainable ITAD", "D-Secure Badge"]),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Data Guardian Award", item: "/data-guardian-award" },
     ],
   },
 };

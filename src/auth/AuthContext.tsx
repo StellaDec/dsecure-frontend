@@ -701,7 +701,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 export function useAuth() {
   const ctx = useContext(AuthContext)
-  if (!ctx) throw new Error('useAuth must be used within AuthProvider')
+  
+  // ?? NAYA CODE: SSR/SSG ke waqt agar provider nahi milta toh crash hone se bachao
+  // Ye zaroori hai kyunki Admin pages prerender nahi ho sakte bina user session ke
+  if (!ctx) {
+    // Agar hum server (Node.js) par hain, toh error mat throw karo, empty object return karo ya warning dikhao
+    if (typeof window === 'undefined') {
+      console.warn('⚠️ useAuth called outside AuthProvider during SSR/SSG. Returning empty context.');
+      return {} as AuthContextValue;
+    }
+    throw new Error('useAuth must be used within AuthProvider')
+  }
   return ctx
 }
 

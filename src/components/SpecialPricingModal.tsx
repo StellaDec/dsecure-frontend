@@ -1,4 +1,5 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useEffect, useRef } from 'react';
+import { ARIA_LABELS } from '@/utils/aria-labels';
 
 interface SpecialPricingModalProps {
   isOpen: boolean;
@@ -21,35 +22,47 @@ export interface SpecialPricingData {
 const FormInput = memo<{
   type: string;
   name: string;
+  id: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className: string;
   placeholder: string;
   hasError?: boolean;
-}>(({ type, name, value, onChange, className, placeholder, hasError }) => (
+  required?: boolean;
+}>(({ type, name, id, value, onChange, className, placeholder, hasError, required }) => (
   <input
     type={type}
     name={name}
+    id={id}
     value={value}
     onChange={onChange}
     className={hasError ? className.replace('border-gray-300', 'border-red-500') : className}
     placeholder={placeholder}
+    aria-invalid={hasError}
+    aria-describedby={hasError ? `${id}-error` : undefined}
+    aria-required={required}
   />
 ));
 
 const FormSelect = memo<{
   name: string;
+  id: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   className: string;
   children: React.ReactNode;
   hasError?: boolean;
-}>(({ name, value, onChange, className, children, hasError }) => (
+  required?: boolean;
+}>(({ name, id, value, onChange, className, children, hasError, required }) => (
   <select
     name={name}
+    id={id}
     value={value}
     onChange={onChange}
     className={hasError ? className.replace('border-gray-300', 'border-red-500') : className}
+    aria-invalid={hasError}
+    aria-describedby={hasError ? `${id}-error` : undefined}
+    aria-required={required}
   >
     {children}
   </select>
@@ -57,14 +70,16 @@ const FormSelect = memo<{
 
 const FormTextarea = memo<{
   name: string;
+  id: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   className: string;
   placeholder: string;
   rows: number;
-}>(({ name, value, onChange, className, placeholder, rows }) => (
+}>(({ name, id, value, onChange, className, placeholder, rows }) => (
   <textarea
     name={name}
+    id={id}
     value={value}
     onChange={onChange}
     className={className}
@@ -80,6 +95,17 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
   productName,
   isLoading = false
 }) => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  
+  // Accessibility: Focus title when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        titleRef.current?.focus();
+      }, 100);
+    }
+  }, [isOpen]);
+
   const [formData, setFormData] = useState<SpecialPricingData>({
     organizationType: '',
     organizationName: '',
@@ -146,21 +172,35 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
   const labelClass = "block text-sm font-semibold text-gray-700 mb-2";
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4">
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="special-pricing-title"
+      aria-describedby="special-pricing-desc"
+    >
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 sm:p-6 rounded-t-2xl flex-shrink-0">
           <div className="flex justify-between items-start">
             <div className="flex-1 pr-4">
-              <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Special Pricing Request</h2>
-              <p className="text-blue-100 text-sm sm:text-base">MSP, Academic Institute & Non-Profit Pricing</p>
+              <h2 
+                id="special-pricing-title"
+                ref={titleRef}
+                tabIndex={-1}
+                className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2 focus:outline-none"
+              >
+                Special Pricing Request
+              </h2>
+              <p id="special-pricing-desc" className="text-blue-100 text-sm sm:text-base">MSP, Academic Institute & Non-Profit Pricing</p>
             </div>
             <button
               onClick={handleClose}
+              aria-label={ARIA_LABELS.CLOSE_MODAL}
               className="text-white hover:text-gray-200 transition-colors p-2"
               disabled={isLoading}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -182,15 +222,17 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {/* Organization Type */}
             <div>
-              <label className={labelClass}>
+              <label htmlFor="organizationType" className={labelClass}>
                 Organization Type <span className="text-red-500">*</span>
               </label>
               <FormSelect
                 name="organizationType"
+                id="organizationType"
                 value={formData.organizationType}
                 onChange={handleInputChange}
                 className={inputClass}
                 hasError={!!errors.organizationType}
+                required={true}
               >
                 <option value="">Select Organization Type</option>
                 <option value="MSP">Managed Service Provider (MSP)</option>
@@ -200,64 +242,70 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
                 <option value="Other">Other</option>
               </FormSelect>
               {errors.organizationType && (
-                <p className="text-red-500 text-sm mt-1">{errors.organizationType}</p>
+                <p id="organizationType-error" className="text-red-500 text-sm mt-1">{errors.organizationType}</p>
               )}
             </div>
 
             {/* Organization Name */}
             <div>
-              <label className={labelClass}>
+              <label htmlFor="organizationName" className={labelClass}>
                 Organization Name <span className="text-red-500">*</span>
               </label>
               <FormInput
                 type="text"
                 name="organizationName"
+                id="organizationName"
                 value={formData.organizationName}
                 onChange={handleInputChange}
                 className={inputClass}
                 placeholder="Enter your organization name"
                 hasError={!!errors.organizationName}
+                required={true}
               />
               {errors.organizationName && (
-                <p className="text-red-500 text-sm mt-1">{errors.organizationName}</p>
+                <p id="organizationName-error" className="text-red-500 text-sm mt-1">{errors.organizationName}</p>
               )}
             </div>
 
             {/* Contact Information */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div>
-                <label className={labelClass}>
+                <label htmlFor="contactName" className={labelClass}>
                   Contact Name <span className="text-red-500">*</span>
                 </label>
                 <FormInput
                   type="text"
                   name="contactName"
+                  id="contactName"
                   value={formData.contactName}
                   onChange={handleInputChange}
                   className={inputClass}
                   placeholder="Your full name"
                   hasError={!!errors.contactName}
+                  required={true}
                 />
                 {errors.contactName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.contactName}</p>
+                  <p id="contactName-error" className="text-red-500 text-sm mt-1">{errors.contactName}</p>
                 )}
               </div>
 
               <div>
-                <label className={labelClass}>
+                <label htmlFor="email" className={labelClass}>
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <FormInput
                   type="email"
                   name="email"
+                  id="email"
                   value={formData.email}
                   onChange={handleInputChange}
                   className={inputClass}
                   placeholder="your.email@organization.com"
                   hasError={!!errors.email}
+                  required={true}
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  <p id="email-error" className="text-red-500 text-sm mt-1">{errors.email}</p>
                 )}
               </div>
             </div>
@@ -265,10 +313,11 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
             {/* Phone and Number of Licenses */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div>
-                <label className={labelClass}>Phone Number</label>
+                <label htmlFor="phone" className={labelClass}>Phone Number</label>
                 <FormInput
                   type="tel"
                   name="phone"
+                  id="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
                   className={inputClass}
@@ -277,10 +326,11 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
               </div>
 
               <div>
-                <label className={labelClass}>Estimated Number of Licenses</label>
+                <label htmlFor="numberOfLicenses" className={labelClass}>Estimated Number of Licenses</label>
                 <FormInput
                   type="text"
                   name="numberOfLicenses"
+                  id="numberOfLicenses"
                   value={formData.numberOfLicenses}
                   onChange={handleInputChange}
                   className={inputClass}
@@ -291,9 +341,10 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
 
             {/* Additional Information */}
             <div>
-              <label className={labelClass}>Additional Information</label>
+              <label htmlFor="additionalInfo" className={labelClass}>Additional Information</label>
               <FormTextarea
                 name="additionalInfo"
+                id="additionalInfo"
                 value={formData.additionalInfo}
                 onChange={handleInputChange}
                 className={inputClass}

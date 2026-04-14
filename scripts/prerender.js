@@ -124,7 +124,7 @@ function isExcludedRoute(routePath) {
   const excludedExtensions = ['.txt', '.xml', '.json', '.svg', '.png'];
   if (excludedExtensions.some(ext => routePath.endsWith(ext))) return true;
   if (routePath.includes('?') || routePath.includes('#')) return true;
-  if (routePath.includes('data-guardian-award')) return true;
+  // data-guardian-award ab prerender mein include hai — Google soft 404 fix
   return false;
 }
 
@@ -377,6 +377,34 @@ async function prerender() {
       
       // data-seo-bridge div ko final HTML se hatao — production mein zaroorat nahi
       appHtml = appHtml.replace(/<div\s+data-seo-bridge(?:="")?[^>]*\/?>/g, '');
+
+      // ======================================
+      // FIX 1: Clean Up React 18 Suspense Fallbacks
+      // ======================================
+      // This ensures search engine crawlers don't see the loading skeleton
+      // and immediately find the actual text content in the DOM tree.
+      
+      // We look for the <div hidden id="S:0">...</div> and grab everything until the NEXT <script> containing $RC
+      const contentAnchorMarker = /<div hidden id="S:\d+"><\/div>([\s\S]*?)<script>[\s\S]*?\$RC\("B:\d+","S:\d+"\)/i;
+      const contentMatch = appHtml.match(contentAnchorMarker);
+      if (contentMatch && contentMatch[1]) {
+        const actualContent = contentMatch[1];
+        // Replace the fallback skeleton (between B and /$) with the actual content
+        appHtml = appHtml.replace(/<!--\$\?--><template id="B:\d+"><\/template>[\s\S]*?<!--\/\$-->/i, actualContent);
+      }
+      
+      // Now remove the streaming wrapper elements from the bottom of the document
+      appHtml = appHtml.replace(/<div hidden id="S:\d+"><\/div>[\s\S]*?<script>[\s\S]*?\$RC\("B:\d+","S:\d+"\)(?:<\/script>|;)/ig, '');
+      appHtml = appHtml.replace(/<div class="fixed z-50 top-6 right-6.*?>.*?<\/script>/ig, '');
+
+      // ======================================
+      // FIX 2: Reveal.tsx Visibility Issue
+      // ======================================
+      // Reveal uses opacity-0 on SSR, which hides content from non-JS crawlers.
+      appHtml = appHtml.replace(/opacity-0(\s)/g, 'opacity-100$1');
+      appHtml = appHtml.replace(/opacity-0"/g, 'opacity-100"');
+      appHtml = appHtml.replace(/opacity-0'/g, "opacity-100'");
+
       
       // Verification log — har 50th route + homepage par dikhao
       if (successCount % 50 === 0 || url === '/') {

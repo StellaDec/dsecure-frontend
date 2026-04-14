@@ -216,61 +216,62 @@ export const PublicRoutes = () => (
     <Route path="news" element={<Navigate to="/press-room" replace />} />
     <Route path="press" element={<Navigate to="/press-room" replace />} />
 
-    <Route path="/products/drive-eraser" element={<DriveEraserPage />} />
+    {/* ─── Products Routes — Relative paths (React Router v6 nested routing) ─── */}
+    <Route path="products/drive-eraser" element={<DriveEraserPage />} />
     <Route
-      path="/products/drive-eraser-diagnostic"
+      path="products/drive-eraser-diagnostic"
       element={<DriveEraserDiagnosticPage />}
     />
-    <Route path="/products/file-eraser" element={<FileEraserPage />} />
+    <Route path="products/file-eraser" element={<FileEraserPage />} />
     <Route
-      path="/products/file-eraser-network"
+      path="products/file-eraser-network"
       element={<FileEraserNetworkPage />}
     />
     <Route
-      path="/products/hardware-diagnostics"
+      path="products/hardware-diagnostics"
       element={<HardwareDiagnosticsPage />}
     />
     <Route
-      path="/products/hard-drive-monitor"
+      path="products/hard-drive-monitor"
       element={<HardDriveMonitorPage />}
     />
     <Route
-      path="/products/autopilot-detection"
+      path="products/autopilot-detection"
       element={<AutopilotDetectionPage />}
     />
     <Route
-      path="/products/smartphone-eraser"
+      path="products/smartphone-eraser"
       element={<SmartphoneEraserPage />}
     />
     <Route
-      path="/products/smartphone-diagnostic"
+      path="products/smartphone-diagnostic"
       element={<SmartphoneDiagnosticPage />}
     />
     <Route
-      path="/products/forensic-imaging"
+      path="products/forensic-imaging"
       element={<ForensicImagingPage />}
     />
-    <Route path="/products/freeze-state" element={<FreezeStatePage />} />
+    <Route path="products/freeze-state" element={<FreezeStatePage />} />
     <Route
-      path="/products/freeze-state-smart"
+      path="products/freeze-state-smart"
       element={<FreezeStateSmartPage />}
     />
     <Route
-      path="/products/freeze-state-advanced"
+      path="products/freeze-state-advanced"
       element={<FreezeStateAdvancedPage />}
     />
-    <Route path="/products/data-migration" element={<DataMigrationPage />} />
-    <Route path="/products/asset-reimaging" element={<AssetReimagingPage />} />
+    <Route path="products/data-migration" element={<DataMigrationPage />} />
+    <Route path="products/asset-reimaging" element={<AssetReimagingPage />} />
     <Route
-      path="/products/virtual-machine-eraser"
+      path="products/virtual-machine-eraser"
       element={<VirtualMachineEraserPage />}
     />
     <Route
-      path="/products/removable-media-eraser"
+      path="products/removable-media-eraser"
       element={<RemovableMediaEraserPage />}
     />
-    <Route path="/products/lun-eraser" element={<LUNEraserPage />} />
-    <Route path="/products/drive-verifier" element={<DriveVerifierPage />} />
+    <Route path="products/lun-eraser" element={<LUNEraserPage />} />
+    <Route path="products/drive-verifier" element={<DriveVerifierPage />} />
     <Route path="checkout" element={<CheckoutPage />} />
     <Route path="order-success" element={<OrderSuccessPage />} />
     <Route path="order-failure" element={<FailurePage />} />
