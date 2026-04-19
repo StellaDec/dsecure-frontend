@@ -46,7 +46,7 @@ export const ENV = {
     import.meta.env.VITE_API_BASE_URL,
     "VITE_API_BASE_URL",
     true,
-    "http://localhost:4000",
+    "https://api.dsecuretech.com",
   ),
   API_TIMEOUT: validateInt(import.meta.env.VITE_API_TIMEOUT, 60000),
 
