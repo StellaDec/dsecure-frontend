@@ -413,18 +413,151 @@ export class AdminDashboardAPI {
   }
 
   // Get groups data
+  // PURANA CODE: `/admin/dashboard/groups` — 404 (exist nahi karta)
+  // NAYA CODE: `/api/Group/with-users` — proven working endpoint
   static async getGroups(): Promise<ApiResponse<GroupData[]>> {
-    return apiCall<GroupData[]>("/admin/dashboard/groups");
+    try {
+      const response = await api.get("/api/Group/with-users");
+      const data = response.data;
+
+      if (!data) {
+        return { success: true, data: [] };
+      }
+
+      // Transform group data to GroupData format
+      const groups: GroupData[] = [];
+      if (data.groups && Array.isArray(data.groups)) {
+        data.groups.forEach((group: any) => {
+          groups.push({
+            id: group.groupId || group.id || "",
+            name: group.groupName || group.name || "",
+            machineCount: group.machineCount || group.users?.length || 0,
+            reportCount: group.reportCount || 0,
+            members: group.users?.length || 0,
+          });
+        });
+      } else if (Array.isArray(data)) {
+        data.forEach((group: any) => {
+          groups.push({
+            id: group.groupId || group.id || "",
+            name: group.groupName || group.name || "",
+            machineCount: group.machineCount || group.users?.length || 0,
+            reportCount: group.reportCount || 0,
+            members: group.users?.length || 0,
+          });
+        });
+      }
+
+      return { success: true, data: groups };
+    } catch (error: any) {
+      console.warn("⚠️ Groups API error:", error?.message);
+      return { success: true, data: [] };
+    }
   }
 
   // Get license data
+  // PURANA CODE: `/admin/dashboard/license-data` — 404 (exist nahi karta)
+  // NAYA CODE: Machines data se license info derive karo
   static async getLicenseData(): Promise<ApiResponse<LicenseData[]>> {
-    return apiCall<LicenseData[]>("/admin/dashboard/license-data");
+    try {
+      const storedUser = localStorage.getItem("user_data");
+      const authUser = localStorage.getItem("authUser");
+      let userEmail = "";
+
+      if (storedUser) {
+        const userData = JSON.parse(storedUser);
+        userEmail = userData.user_email || userData.email || "";
+      } else if (authUser) {
+        const userData = JSON.parse(authUser);
+        userEmail = userData.user_email || userData.email || "";
+      }
+
+      if (!userEmail) {
+        return { success: true, data: [] };
+      }
+
+      // Machines se license data derive karo
+      const response = await api.get(`/api/EnhancedMachines/all-filtered-machines?userEmail=${encodeURIComponent(userEmail)}`);
+      const data = response.data;
+
+      const machines = Array.isArray(data) ? data : (data?.machines || data?.data || []);
+      
+      const licenseData: LicenseData[] = machines
+        .filter((m: any) => m.licenseActivated || m.license_activated)
+        .map((m: any) => ({
+          id: m.machine_id || m.id || "",
+          type: m.license_details_json ? "Premium" : "Standard",
+          status: "active" as const,
+          expiryDate: m.license_activation_date || "",
+          assignedTo: m.user_email || userEmail,
+        }));
+
+      return { success: true, data: licenseData };
+    } catch (error: any) {
+      console.warn("⚠️ LicenseData API error:", error?.message);
+      return { success: true, data: [] };
+    }
   }
 
   // Get recent reports
+  // PURANA CODE: `/admin/dashboard/recent-reports` — ye endpoint backend mein exist nahi karta tha → 404
+  // NAYA CODE: `/api/EnhancedAuditReports/by-email/{email}` use karo jo sahi working endpoint hai
   static async getRecentReports(): Promise<ApiResponse<RecentReport[]>> {
-    return apiCall<RecentReport[]>("/admin/dashboard/recent-reports");
+    try {
+      // User email localStorage se lao
+      const storedUser = localStorage.getItem("user_data");
+      const authUser = localStorage.getItem("authUser");
+      let userEmail = "";
+
+      if (storedUser) {
+        const userData = JSON.parse(storedUser);
+        userEmail = userData.user_email || userData.email || "";
+      } else if (authUser) {
+        const userData = JSON.parse(authUser);
+        userEmail = userData.user_email || userData.email || "";
+      }
+
+      if (!userEmail) {
+        return { success: true, data: [] };
+      }
+
+      // PURANA CODE: `/api/EnhancedAuditReports/by-email/{email}` → 400 Bad Request
+      // NAYA CODE: `/api/EnhancedAuditReports/all-filtered-reports` — proven working endpoint
+      const response = await api.get(`/api/EnhancedAuditReports/all-filtered-reports?userEmail=${encodeURIComponent(userEmail)}`);
+      const data = response.data;
+
+      // Response { reports: [...] } ya direct array ho sakta hai
+      let reportsList: any[] = [];
+      if (data?.reports && Array.isArray(data.reports)) {
+        reportsList = data.reports;
+      } else if (Array.isArray(data)) {
+        reportsList = data;
+      } else if (data?.data && Array.isArray(data.data)) {
+        reportsList = data.data;
+      }
+
+      if (reportsList.length === 0) {
+        return { success: true, data: [] };
+      }
+
+      // Transform audit reports to RecentReport format
+      const recentReports: RecentReport[] = reportsList.map((report: any) => ({
+        id: report.report_id || report.id || "",
+        type: report.reportType || report.report_type || "Erasure",
+        devices: report.deviceCount || 1,
+        status: (report.status || "completed").toLowerCase() as "completed" | "running" | "failed",
+        date: report.report_datetime || report.reportDate || new Date().toISOString(),
+        method: report.erasure_method || report.method || "N/A",
+      }));
+
+      return { success: true, data: recentReports };
+    } catch (error: any) {
+      return {
+        success: false,
+        data: [],
+        error: error?.response?.data?.message || error?.message || "Failed to fetch recent reports",
+      };
+    }
   }
 
   // Get admin profile - Fetch from backend using user email
@@ -479,6 +612,7 @@ export class AdminDashboardAPI {
         licenses: data.licenses || 0,
         is_groups_enabled: data.is_groups_enabled,
         is_subusers_enabled: data.is_subusers_enabled,
+        is_private_cloud: data.is_private_cloud ?? data.isPrivateCloud ?? false,
       };
 
       return {

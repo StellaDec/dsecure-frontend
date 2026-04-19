@@ -52,21 +52,54 @@ export function useUserMachines(userEmail?: string, enabled: boolean = true) {
       }
       // *******************************************
 
-      const response = await apiClient.getMachinesByEmail(userEmail)
-
-      if (!response.success || !response.data) {
-        throw new Error(response.message || 'Failed to fetch machines')
+      // PURANA CODE: getMachinesByEmail → `/api/Machines/by-email/{email}` — fail hota tha
+      // NAYA CODE: getFilteredMachines → `/api/EnhancedMachines/all-filtered-machines` — working endpoint
+      let machines: Machine[] = [];
+      
+      try {
+        // Primary: Enhanced filtered endpoint use karo (proven working)
+        const response = await apiClient.getFilteredMachines({ userEmail });
+        if (response.success && response.data) {
+          const resData = response.data as any;
+          if (resData.machines && Array.isArray(resData.machines)) {
+            // Wrapped format: { machines: [...] }
+            machines = resData.machines;
+          } else if (Array.isArray(response.data)) {
+            // Direct array format
+            machines = response.data;
+          }
+        }
+      } catch (e) {
+        console.warn('⚠️ getFilteredMachines failed, trying fallback:', e);
       }
 
-      // 3. Update IDB
-      // ********** PURANA CODE (wrong store 'user_activity') **********
-      // indexedDBService.put('user_activity', userEmail, response.data).catch(e => console.error('IDB Write Failed: userMachines', e));
-      // *******************************************
-      // ********** NAYA CODE — Write to correct 'machines' store **********
-      indexedDBService.put('machines', userEmail, response.data).catch(e => console.error('IDB Write Failed: machines', e));
-      // *******************************************
+      // Fallback: Purana endpoint try karo agar primary fail ho
+      if (machines.length === 0) {
+        try {
+          const fallbackRes = await apiClient.getMachinesByEmail(userEmail);
+          if (fallbackRes.success && fallbackRes.data) {
+            const fbData = fallbackRes.data as any;
+            if (fbData.machines && Array.isArray(fbData.machines)) {
+              machines = fbData.machines;
+            } else if (Array.isArray(fallbackRes.data)) {
+              machines = fallbackRes.data;
+            }
+          }
+        } catch (e) {
+          console.warn('⚠️ getMachinesByEmail fallback also failed:', e);
+        }
+      }
 
-      return response.data
+      if (machines.length === 0) {
+        // Dono endpoints fail — empty return karo (throw nahi, taaki UI crash na ho)
+        console.warn(`⚠️ No machines found for ${userEmail} from any endpoint`);
+        return [];
+      }
+
+      // IDB mein cache karo
+      indexedDBService.put('machines', userEmail, machines).catch(e => console.error('IDB Write Failed: machines', e));
+
+      return machines;
     },
     enabled: enabled && !!userEmail,
     staleTime: Infinity,
@@ -118,7 +151,12 @@ export function useAllMachines(enabled: boolean = true) {
 export function useActiveLicensesCount(userEmail?: string) {
   const { data: machines = [] } = useUserMachines(userEmail)
 
-  return machines.filter((machine: Machine) => machine.license_activated === true).length
+  // Backend dono formats bhej sakta hai — camelCase (licenseActivated) ya snake_case (license_activated)
+  // Value boolean true ya string "true" dono ho sakta hai
+  return machines.filter((machine: Machine) => {
+    const activated = (machine as any).licenseActivated ?? machine.license_activated;
+    return activated === true || activated === "true" || activated === 1;
+  }).length
 }
 
 /**

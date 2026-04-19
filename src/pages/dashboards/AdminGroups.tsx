@@ -212,6 +212,8 @@ export default function AdminGroups() {
   }, [groupsCached, isDemo, currentUserEmail, processGroupsData]);
 
   // ✅ fetchMachinesAndReportsCount — optimized metrics
+  // PURANA CODE: getAuditReportsByEmail use karta tha jo response format mismatch ki wajah se 0 return karta tha
+  // NAYA CODE: getFilteredAuditReports use karo (same as AdminReports) + wrapped response format handle karo
   const fetchMachinesAndReportsCount = useCallback(async (silent = false) => {
     if (abortControllerRefGroups) abortControllerRefGroups.abort();
     abortControllerRefGroups = new AbortController();
@@ -228,23 +230,81 @@ export default function AdminGroups() {
         if (cached) {
           setTotalMachines(cached.totalMachines || 0);
           setTotalReports(cached.totalReports || 0);
-          const lastUpdated = cached.updatedAt ? new Date(cached.updatedAt).getTime() : 0;
-          if (Date.now() - lastUpdated < 5 * 60 * 1000) return;
+          // NOTE: Cache skip kar rahe hain — hamesha fresh fetch karo taaki stale 0 values na dikhen
         }
       }
 
+      // Sab group users ke unique emails nikalo
       const allGroupUsers = groups.flatMap((group) => group.users);
       const uniqueUserEmails = [...new Set(allGroupUsers.map((user) => user.email))].filter(Boolean);
+
+      // Admin user ka email bhi include karo agar groups mein nahi hai
+      if (email && !uniqueUserEmails.includes(email)) {
+        uniqueUserEmails.push(email);
+      }
+
       if (uniqueUserEmails.length === 0) return;
 
       const results = await Promise.all(uniqueUserEmails.map(async (uEmail) => {
         try {
-          const [mRes, rRes] = await Promise.all([apiClient.getMachinesByEmail(uEmail), apiClient.getAuditReportsByEmail(uEmail)]);
-          return {
-            machines: mRes.success && mRes.data ? mRes.data.length : 0,
-            reports: rRes.success && rRes.data ? (Array.isArray(rRes.data) ? rRes.data.length : 0) : 0
-          };
-        } catch { return { machines: 0, reports: 0 }; }
+          // Machines aur Reports parallel fetch karo — dono enhanced endpoints use karo
+          const [mRes, rRes] = await Promise.all([
+            apiClient.getFilteredMachines({ userEmail: uEmail }),
+            apiClient.getFilteredAuditReports({ userEmail: uEmail }),
+          ]);
+
+          // 🔍 DEBUG: API response structure dekhne ke liye
+          console.log(`📊 [AdminGroups] Machines API for ${uEmail}:`, {
+            success: mRes.success,
+            isArray: Array.isArray(mRes.data),
+            dataType: typeof mRes.data,
+            dataKeys: mRes.data && typeof mRes.data === 'object' ? Object.keys(mRes.data as any) : 'N/A',
+            dataLength: Array.isArray(mRes.data) ? mRes.data.length : 'not array',
+            rawData: mRes.data,
+          });
+          console.log(`📊 [AdminGroups] Reports API for ${uEmail}:`, {
+            success: rRes.success,
+            isArray: Array.isArray(rRes.data),
+            dataType: typeof rRes.data,
+            dataKeys: rRes.data && typeof rRes.data === 'object' ? Object.keys(rRes.data as any) : 'N/A',
+            rawData: rRes.data,
+          });
+
+          // Machines count — response { machines: [...] } ya direct array ho sakta hai
+          let machineCount = 0;
+          if (mRes.success && mRes.data) {
+            const mData = mRes.data as any;
+            if (mData.machines && Array.isArray(mData.machines)) {
+              // Wrapped format: { machines: [...] }
+              machineCount = mData.machines.length;
+            } else if (Array.isArray(mRes.data)) {
+              // Direct array format
+              machineCount = mRes.data.length;
+            } else if (typeof mData === 'object' && !Array.isArray(mData)) {
+              // Single object — count as 1
+              machineCount = 1;
+            }
+          }
+
+          // Reports count — response { reports: [...] } ya direct array ho sakta hai
+          let reportCount = 0;
+          if (rRes.success && rRes.data) {
+            const resData = rRes.data as any;
+            if (resData.reports && Array.isArray(resData.reports)) {
+              // Wrapped format: { reports: [...] }
+              reportCount = resData.reports.length;
+            } else if (Array.isArray(rRes.data)) {
+              // Direct array format
+              reportCount = rRes.data.length;
+            }
+          }
+
+          console.log(`✅ [AdminGroups] Counts for ${uEmail}: machines=${machineCount}, reports=${reportCount}`);
+          return { machines: machineCount, reports: reportCount };
+        } catch (err) {
+          console.error(`❌ [AdminGroups] Error fetching for ${uEmail}:`, err);
+          return { machines: 0, reports: 0 };
+        }
       }));
 
       if (currentAbort.signal.aborted) return;

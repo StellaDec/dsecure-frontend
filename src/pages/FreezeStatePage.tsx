@@ -247,7 +247,7 @@ const FreezeStatePage = memo(() => {
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-                    Patented <span className="text-emerald-700 font-bold">Reboot-to-Restore</span> technology that makes your computers bulletproof. 100% workstation recovery with every restart, ensuring configuration drift is a thing of the past.
+                    Automatically resets systems to their original state after each use, removing all data and changes. Ensures <span className="text-emerald-700 font-bold">secure, clean, and consistent</span> environments with every reboot.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -388,6 +388,27 @@ const FreezeStatePage = memo(() => {
           </div>
         </section>
 
+        {/* ================= SESSION-BASED SECURITY SECTION ================= */}
+        <section id="session-security" className="py-20 bg-emerald-900 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#064e3b_0%,transparent_100%)]"></div>
+          <div className="container mx-auto px-4 max-w-5xl relative z-10">
+            <Reveal>
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-emerald-500/20 shadow-2xl text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 mb-8 border border-emerald-500/30">
+                  <ShieldCheck className="w-8 h-8" />
+                </div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">
+                  Session-Based Data Security with <span className="text-emerald-400">Free State</span>
+                </h2>
+                <div className="w-24 h-1 bg-emerald-500 mx-auto rounded-full mb-8"></div>
+                <p className="text-lg md:text-xl text-emerald-50 leading-relaxed max-w-4xl mx-auto font-medium">
+                  Secure your workspace effortlessly with our Free State feature. Designed for session-based logic, the system proactively resets to a pristine, clean state the moment you finish your work. Upon every restart, all user data, customized settings, and temporary files are automatically erased. This eliminates the need for manual cleanups or complex IT provisioning, ensuring enterprise-grade data privacy and continuous efficiency for every new session.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
         {/* ================= CORE ARCHITECTURE SECTION ================= */}
         <section id="architecture" className="py-24 lg:py-32 bg-white relative overflow-hidden">
           <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -495,7 +516,7 @@ const FreezeStatePage = memo(() => {
                     {[
                       "Standard Shallow Reset",
                       "Full Deep Reset Capability",
-                      "MBR & GPT Protection",
+                      "Free State: Auto-Erase on Restart",
                       "Localized ThawSpaces",
                       "Windows 10/11 & Server Support"
                     ].map(feat => (
@@ -666,12 +687,12 @@ const FreezeStatePage = memo(() => {
                     </div>
                     <div className="flex gap-6 items-start">
                       <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-emerald-400 border border-white/10 shrink-0">
-                        <Search className="w-6 h-6" />
+                        <RefreshCcw className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">MBR & GPT Protection</h4>
+                        <h4 className="text-xl font-bold mb-2">Free State Automation</h4>
                         <p className="text-slate-400 leading-relaxed">
-                          Locks the Master Boot Record and partition tables to prevent low-level rootkits or malicious modification of the boot process.
+                          A session-based logic where the system instantly resets to a clean state after use. All data and settings are automatically erased upon every restart, eliminating manual cleanup.
                         </p>
                       </div>
                     </div>

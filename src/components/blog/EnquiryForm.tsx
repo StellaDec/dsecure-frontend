@@ -79,7 +79,7 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
       );
       formSubmitData.append(
         "_cc",
-        "niteshkushwaha592592@gmail.com,sainiprashant46@gmail.com,d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+        "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
       );
 
       formSubmitData.append("name", formData.name.trim());

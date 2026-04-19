@@ -552,9 +552,9 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      // ?? NAYA CODE: Production-safe log — ye console.error hai toh production build mein bhi dikhega
-      // Login debug karne ke liye F12 console kholo aur ye line dhundho
-      console.error("🔐 Login attempt:", { apiUrl: getApiBaseUrl(), email: email.substring(0, 3) + "***" });
+      if (!import.meta.env.PROD) {
+        console.log("🔐 Login attempt:", { apiUrl: getApiBaseUrl(), email: email.substring(0, 3) + "***" });
+      }
       
       // Make API call to .NET backend (auto-decryption handled by interceptor)
       const response = await api.post("/api/RoleBasedAuth/login", {

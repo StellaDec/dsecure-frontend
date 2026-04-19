@@ -55,23 +55,46 @@ export function useAuditReports(userEmail?: string, enabled: boolean = true) {
       }
       // *******************************************
 
-      const response = await apiClient.getAuditReportsByEmail(userEmail);
+      // PURANA CODE: getAuditReportsByEmail fail hota tha
+      // NAYA CODE: getFilteredAuditReports use karo (proven working)
+      let reports: AuditReport[] = [];
 
-      if (!response.success || !response.data) {
-        throw new Error(response.message || "Failed to fetch audit reports");
+      try {
+        const response = await apiClient.getFilteredAuditReports({ userEmail });
+        if (response.success && response.data) {
+          const resData = response.data as any;
+          if (resData.reports && Array.isArray(resData.reports)) {
+            reports = resData.reports;
+          } else if (Array.isArray(response.data)) {
+            reports = response.data as AuditReport[];
+          }
+        }
+      } catch (e) {
+        console.warn('⚠️ getFilteredAuditReports failed, trying fallback:', e);
       }
 
-      // 3. Update IDB
-      // ********** PURANA CODE (wrong store 'recent_reports') **********
-      // indexedDBService.put('recent_reports', userEmail, response.data).catch(e => console.error('IDB Write Failed: auditReports', e));
-      // *******************************************
-      // ********** NAYA CODE — Write to correct 'audit_reports' store **********
-      indexedDBService
-        .put("audit_reports", userEmail, response.data)
-        .catch((e) => console.error("IDB Write Failed: audit_reports", e));
-      // *******************************************
+      // Fallback: purana endpoint
+      if (reports.length === 0) {
+        try {
+          const fallbackRes = await apiClient.getAuditReportsByEmail(userEmail);
+          if (fallbackRes.success && fallbackRes.data) {
+            reports = Array.isArray(fallbackRes.data) ? fallbackRes.data : [];
+          }
+        } catch (e) {
+          console.warn('⚠️ getAuditReportsByEmail fallback also failed:', e);
+        }
+      }
 
-      return response.data;
+      if (reports.length === 0) {
+        return [];
+      }
+
+      // IDB mein cache karo
+      indexedDBService
+        .put("audit_reports", userEmail, reports)
+        .catch((e) => console.error("IDB Write Failed: audit_reports", e));
+
+      return reports;
     },
     enabled: enabled && !!userEmail,
     staleTime: Infinity,
@@ -168,25 +191,57 @@ export function useEnhancedAuditReports(userEmail?: string, enabled: boolean = t
         console.warn("IDB Read Failed: enhanced_audit_reports", e);
       }
 
-      const response = await apiClient.getAuditReportsByEmail(userEmail);
+      // PURANA CODE: getAuditReportsByEmail → fail hota tha isliye dashboard pe reports nahi aati thi
+      // NAYA CODE: getFilteredAuditReports use karo (same as AdminReports) — proven working endpoint
+      let reports: AuditReport[] = [];
 
-      if (!response.success || !response.data) {
-        throw new Error(response.message || "Failed to fetch audit reports");
+      try {
+        const response = await apiClient.getFilteredAuditReports({ userEmail });
+        if (response.success && response.data) {
+          const resData = response.data as any;
+          if (resData.reports && Array.isArray(resData.reports)) {
+            reports = resData.reports;
+          } else if (Array.isArray(response.data)) {
+            reports = response.data;
+          }
+        }
+      } catch (e) {
+        console.warn('⚠️ getFilteredAuditReports failed, trying fallback:', e);
       }
 
-      const reports = response.data;
+      // Fallback: purana endpoint try karo
+      if (reports.length === 0) {
+        try {
+          const fallbackRes = await apiClient.getAuditReportsByEmail(userEmail);
+          if (fallbackRes.success && fallbackRes.data) {
+            reports = Array.isArray(fallbackRes.data) ? fallbackRes.data : [];
+          }
+        } catch (e) {
+          console.warn('⚠️ getAuditReportsByEmail fallback also failed:', e);
+        }
+      }
+
+      if (reports.length === 0) {
+        console.warn(`⚠️ No audit reports found for ${userEmail}`);
+        return [];
+      }
 
       // Fetch device count for each report in parallel
       const reportsWithDeviceCount = await Promise.all(
         reports.map(async (report: AuditReport) => {
           try {
-            const machinesRes = await apiClient.getMachinesByEmail(
-              report.user_email,
-            );
-            const deviceCount =
-              machinesRes.success && machinesRes.data
-                ? machinesRes.data.length
-                : 0;
+            const machinesRes = await apiClient.getFilteredMachines({
+              userEmail: report.user_email,
+            });
+            let deviceCount = 0;
+            if (machinesRes.success && machinesRes.data) {
+              const mData = machinesRes.data as any;
+              if (mData.machines && Array.isArray(mData.machines)) {
+                deviceCount = mData.machines.length;
+              } else if (Array.isArray(machinesRes.data)) {
+                deviceCount = machinesRes.data.length;
+              }
+            }
 
             return {
               ...report,
@@ -205,7 +260,7 @@ export function useEnhancedAuditReports(userEmail?: string, enabled: boolean = t
         }),
       );
 
-      // 3. Update IDB cache with enhanced reports for instant loading next time
+      // IDB cache mein save karo
       indexedDBService
         .put("enhanced_audit_reports", userEmail, reportsWithDeviceCount)
         .catch((e) =>

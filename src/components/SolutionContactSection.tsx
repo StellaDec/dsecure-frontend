@@ -83,7 +83,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
       formSubmitData.append("_subject", emailSubject);
       formSubmitData.append(
         "_cc",
-        "niteshkushwaha592592@gmail.com,sainiprashant46@gmail.com,d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+        "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
       );
 
       // === Backend API ke liye submission data ===

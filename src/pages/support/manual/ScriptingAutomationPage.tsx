@@ -78,11 +78,35 @@ const ScriptingAutomationPage: React.FC = memo(() => {
  </div>
  </Reveal>
 
+ {/* Free State Automation */}
+ <Reveal>
+ <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
+ <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+ <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">2</span>
+ Automated Revert with Free State
+ </h2>
+ <div className="space-y-6">
+ <p className="text-slate-700 leading-relaxed text-lg">
+ The <strong className="text-slate-900">Free State</strong> feature serves as a proactive security mechanism designed to enforce strict session-based data privacy. Rather than relying on manual intervention to clear sensitive information, Free State automates the process by ensuring the machine restarts into a fully pristine, thoroughly erased state. This zero-trust approach guarantees that no residual data or user modifications persist across sessions.
+ </p>
+ <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+ <h4 className="font-bold text-blue-900 mb-3">Ideal Use Cases</h4>
+ <p className="text-sm text-blue-800 leading-relaxed mb-4">
+ Ideal for high-security enterprise environments, public kiosks, and shared workstations, this automated cleanup eliminates data-leakage risks while drastically reducing the IT overhead associated with system provisioning.
+ </p>
+ <p className="text-sm text-blue-800 font-semibold font-italic">
+ By automatically resetting environments upon every reboot, organizations can confidently maintain compliance and streamline operations without sacrificing security.
+ </p>
+ </div>
+ </div>
+ </div>
+ </Reveal>
+
  {/* Scripting Languages */}
  <Reveal>
  <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
  <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
- <span className="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">2</span>
+ <span className="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">3</span>
  Supported Scripting Languages
  </h2>
  <div className="grid md:grid-cols-3 gap-6">
@@ -115,7 +139,7 @@ const ScriptingAutomationPage: React.FC = memo(() => {
  <Reveal>
  <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
  <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
- <span className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">3</span>
+ <span className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">4</span>
  Configuration Management
  </h2>
  <div className="space-y-6">
@@ -148,7 +172,7 @@ const ScriptingAutomationPage: React.FC = memo(() => {
  <Reveal>
  <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
  <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
- <span className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">4</span>
+ <span className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">5</span>
  Workflow Integration
  </h2>
  <div className="grid md:grid-cols-2 gap-6">
@@ -178,7 +202,7 @@ const ScriptingAutomationPage: React.FC = memo(() => {
  <Reveal>
  <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
  <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
- <span className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">5</span>
+ <span className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">6</span>
  Error Handling & Logging
  </h2>
  <div className="space-y-6">
@@ -213,7 +237,7 @@ const ScriptingAutomationPage: React.FC = memo(() => {
  <Reveal>
  <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
  <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
- <span className="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">6</span>
+ <span className="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">7</span>
  Automation Benefits
  </h2>
  <div className="bg-gradient-to-r from-emerald-50 to-cyan-50 rounded-lg p-6">

@@ -85,6 +85,7 @@ export interface Machine {
   user_email?: string
   subuser_email?: string
   license_activated?: boolean
+  licenseActivated?: boolean  // camelCase — enhanced endpoint se aata hai
   license_activation_date?: string
   license_days_valid?: number
   license_details_json?: string
@@ -105,34 +106,36 @@ export interface Machine {
 }
 
 export interface Report {
-  id: string
-  date: string
-  devices: number
-  status: string
-  department: string
-  generatedBy?: string
-  filePath?: string
-  report_id?: string
-  computer_name?: string
-  datetime?: string
-  ersasure_type?: string
+  id: string;
+  date: string;
+  devices: number;
+  status: string;
+  department: string;
+  generatedBy?: string;
+  filePath?: string;
+  report_id?: string;
+  computer_name?: string;
+  datetime?: string;
+  ersasure_type?: string;
+  product_code?: string;
 }
 
 export interface AuditReport {
-  id: string
-  reportId: string
-  user_email: string
-  reportDate: string
-  reportType: string
-  status: string
-  deviceCount?: number
-  generatedBy?: string
-  filePath?: string
+  id: string;
+  reportId: string;
+  user_email: string;
+  reportDate: string;
+  reportType: string;
+  status: string;
+  deviceCount?: number;
+  generatedBy?: string;
+  filePath?: string;
   // New fields from API
-  report_id?: string
-  report_name?: string
-  erasure_method?: string
-  report_datetime?: string
+  report_id?: string;
+  report_name?: string;
+  erasure_method?: string;
+  report_datetime?: string;
+  product_code?: string;
 }
 
 // System Logs interface

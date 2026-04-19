@@ -1222,9 +1222,12 @@ export default function AdminDashboard() {
         setAuditReportsCount(auditReportsQuery.data.length);
       }
 
-      // Enhanced audit reports sync karo
-      if (enhancedAuditReportsQuery.data) {
+      // Enhanced audit reports sync karo — fallback: agar enhanced query fail ho toh basic query ka data use karo
+      if (enhancedAuditReportsQuery.data && enhancedAuditReportsQuery.data.length > 0) {
         setAuditReports(enhancedAuditReportsQuery.data);
+      } else if (auditReportsQuery.data && auditReportsQuery.data.length > 0) {
+        // FALLBACK: Enhanced query fail hui toh basic audit reports use karo
+        setAuditReports(auditReportsQuery.data as any);
       }
 
       // Performance data sync karo
@@ -2355,7 +2358,7 @@ export default function AdminDashboard() {
                     </p>
                   </div>
                   <p className="text-2xl lg:text-3xl font-bold text-slate-900">
-                    {activeLicensesFromCache || 0}
+                    {billingDetails?.consumedLicenses || billingDetails?.usedLicenses || dashboardStats?.licensesInUse || activeLicensesFromCache || 0}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">In use</p>
                 </div>
@@ -2409,7 +2412,7 @@ export default function AdminDashboard() {
                     </p>
                   </div>
                   <p className="text-2xl lg:text-3xl font-bold text-slate-900">
-                    {activeLicensesFromCache || 0}
+                    {billingDetails?.consumedLicenses || billingDetails?.usedLicenses || dashboardStats?.licensesInUse || activeLicensesFromCache || 0}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">Active licenses</p>
                 </div>
@@ -6164,7 +6167,8 @@ export default function AdminDashboard() {
                                           Total Licenses
                                         </p>
                                         <p className="text-lg font-bold text-slate-900">
-                                          {activeLicensesFromCache ||
+                                          {billingDetails?.totalLicenses ||
+                                            billingDetails?.total_licenses ||
                                             dashboardStats?.totalLicenses ||
                                             0}
                                         </p>
@@ -6314,16 +6318,24 @@ export default function AdminDashboard() {
                                   
                                   {/* NEW STATIC FEATURES DISPLAY */}
                                   {(() => {
-                                    const expiryRaw = dashboardLicenseList.length > 0 
-                                      ? dashboardLicenseList[0]?.expires_at || dashboardLicenseList[0]?.expiryDate 
-                                      : userLicenseDetails?.length > 0 
-                                      ? (userLicenseDetails[0] as any)?.expires_at || (userLicenseDetails[0] as any)?.expiryDate || (userLicenseDetails[0] as any)?.expiry_date
-                                      : billingDetails?.expiry_date || billingDetails?.expires_at || "N/A";
-                                      
+                                    let expiryRaw: any = "N/A";
+                                    
+                                    if (dashboardLicenseList?.length > 0 && (dashboardLicenseList[0]?.expires_at || dashboardLicenseList[0]?.expiryDate || dashboardLicenseList[0]?.expirationDate || dashboardLicenseList[0]?.expiration_date || dashboardLicenseList[0]?.valid_till)) {
+                                      expiryRaw = dashboardLicenseList[0]?.expires_at || dashboardLicenseList[0]?.expiryDate || dashboardLicenseList[0]?.expirationDate || dashboardLicenseList[0]?.expiration_date || dashboardLicenseList[0]?.valid_till;
+                                    } else if (userLicenseDetails?.length > 0 && ((userLicenseDetails[0] as any)?.expires_at || (userLicenseDetails[0] as any)?.expiryDate || (userLicenseDetails[0] as any)?.expiry_date || (userLicenseDetails[0] as any)?.expirationDate || (userLicenseDetails[0] as any)?.valid_till)) {
+                                      expiryRaw = (userLicenseDetails[0] as any)?.expires_at || (userLicenseDetails[0] as any)?.expiryDate || (userLicenseDetails[0] as any)?.expiry_date || (userLicenseDetails[0] as any)?.expirationDate || (userLicenseDetails[0] as any)?.valid_till;
+                                    } else if (billingDetails?.expiryDate || billingDetails?.expiry_date || billingDetails?.expires_at || billingDetails?.expirationDate || billingDetails?.valid_till) {
+                                      expiryRaw = billingDetails?.expiryDate || billingDetails?.expiry_date || billingDetails?.expires_at || billingDetails?.expirationDate || billingDetails?.valid_till;
+                                    }
+
+                                    if (!expiryRaw || expiryRaw === "undefined" || expiryRaw === "null") {
+                                      expiryRaw = "N/A";
+                                    }
+
                                     let displayExpiry = String(expiryRaw);
                                     let isExpired = false;
                                     
-                                    if (typeof expiryRaw === "string" && !isNaN(Date.parse(expiryRaw))) {
+                                    if (typeof expiryRaw === "string" && !isNaN(Date.parse(expiryRaw)) && expiryRaw !== "N/A") {
                                       try { 
                                         const expiryDateObj = new Date(expiryRaw);
                                         displayExpiry = expiryDateObj.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }); 
@@ -6331,7 +6343,7 @@ export default function AdminDashboard() {
                                       } catch {}
                                     }
 
-                                    const planStatus = isExpired ? "Expired" : (billingDetails?.status || (dashboardLicenseList.length > 0 ? dashboardLicenseList[0]?.status : "Active"));
+                                    const planStatus = isExpired ? "Expired" : (billingDetails?.status || (dashboardLicenseList?.length > 0 ? dashboardLicenseList[0]?.status : "Active"));
                                     const statusDisplay = String(planStatus);
 
                                     const InfoRow = ({ label, value, isStatus = false }: { label: string, value: string, isStatus?: boolean }) => {

@@ -227,8 +227,8 @@ export default function FailurePage() {
         'Payment Failure Support Request - D-Secure Tech',
       );
       formSubmitData.append(
-        '_cc',
-        'niteshkushwaha592592@gmail.com,sainiprashant46@gmail.com,d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com',
+        "_cc",
+        "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
       );
 
       // === 1. SUBMIT TO BACKEND API (DATABASE) ===
