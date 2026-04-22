@@ -87,8 +87,8 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: "assets",
     sourcemap: false,
-    // Reduce chunk size warning limit
-    chunkSizeWarningLimit: 500,
+    // Reduce chunk size warning limit - Increased to 1000 to accommodate heavy libraries like exceljs
+    chunkSizeWarningLimit: 1000,
     // Enhanced minification
     minify: "terser",
     terserOptions: {
@@ -96,7 +96,7 @@ export default defineConfig({
         // Aapke request ke anusaar: console.log disable kar diya gaya hai
         drop_console: true,
         drop_debugger: true,
-        passes: 2,
+        passes: 3, // Increased passes for better minification
       },
       format: {
         comments: false,
@@ -127,30 +127,26 @@ export default defineConfig({
               return "vendor-core";
             }
 
-            // 2. Large Visualization Libraries
-            if (id.includes("recharts")) return "vendor-recharts";
-            if (id.includes("d3")) return "vendor-d3";
+            // 2. Large Visualization & UI Libraries
+            if (id.includes("recharts") || id.includes("d3")) return "vendor-viz";
             if (id.includes("leaflet") || id.includes("react-leaflet")) return "vendor-maps";
-
-            // 3. Document Processing (Heavy)
-            if (id.includes("exceljs")) return "vendor-exceljs";
-            if (id.includes("pdfjs-dist")) return "vendor-pdfjs";
-            if (id.includes("jspdf")) return "vendor-jspdf";
-            
-            // 4. Animation & UI frameworks
             if (id.includes("framer-motion")) return "vendor-motion";
-            if (id.includes("lucide-react")) return "vendor-lucide";
+            if (id.includes("lucide-react")) return "vendor-icons";
 
-            // 5. Security & Crypto (Essential for your Login/API)
+            // 3. Document Processing (Heavy) - Keep these separate as they are rarely used together
+            if (id.includes("exceljs")) return "vendor-exceljs";
+            if (id.includes("pdfjs-dist") || id.includes("react-pdf")) return "vendor-pdf-viewer";
+            if (id.includes("jspdf")) return "vendor-jspdf";
+            if (id.includes("jszip")) return "vendor-zip";
+            
+            // 4. Cloud & Utilities
+            if (id.includes("@cloudinary") || id.includes("cloudinary")) return "vendor-cloudinary";
             if (id.includes("crypto-js")) return "vendor-crypto";
             if (id.includes("pako")) return "vendor-compression";
+            if (id.includes("@tanstack") || id.includes("axios") || id.includes("i18next")) return "vendor-utils";
 
-            // 6. Cloud & Utilities
-            if (id.includes("@tanstack") || id.includes("axios")) return "vendor-utils";
-
-            // By NOT grouping everything else into "vendor", 
-            // we allow Rollup to keep smaller specialized libraries
-            // closer to the routes that use them.
+            // 5. Catch-all for remaining node_modules (splits them into smaller chunks automatically)
+            // return 'vendor-others'; // Isko disable rakhte hain taaki Vite default logic use kare
           }
         },
 
