@@ -1,5 +1,4 @@
 import React from 'react'
-import { ENV } from '@/config/env'
 import { AdvancedImage } from '@cloudinary/react'
 import { cld, transformations, getOptimizedImageUrl, getResponsiveSrcSet } from '@/utils/cloudinary'
 import { quality } from '@cloudinary/url-gen/actions/delivery'
@@ -28,12 +27,12 @@ export const CloudinaryImage: React.FC<CloudinaryImageProps> = ({
   responsive = false,
   onClick
 }) => {
-  const cloudName = ENV.CLOUDINARY_CLOUD_NAME;
+  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
 
   // Enhanced debugging for missing cloud name
   if (!cloudName) {
     console.warn('🚨 Cloudinary Debug: VITE_CLOUDINARY_CLOUD_NAME is not set');
-    // console.warn('🔍 Environment variables available:', Object.keys(ENV));
+    // Debug log removed for security
     console.warn('📋 Expected variable: VITE_CLOUDINARY_CLOUD_NAME=dhwi5wevf');
 
     if (fallback) {

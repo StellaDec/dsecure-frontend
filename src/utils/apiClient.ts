@@ -23,11 +23,8 @@ import { encodeEmail } from "./encodeEmail";
 import { debugLog, debugError, debugWarn } from "./debugLogger";
 import { isDemoMode } from "../data/demoData";
 
-import { ENV } from "../config/env";
-
 // API Base URL from environment
-const API_BASE_URL = ENV.API_BASE_URL;
-const API_TIMEOUT = ENV.API_TIMEOUT;
+// API Base URL constants ko module level se hatakar instance creation ke time access karenge
 
 /**
  * Binary content types that should NOT be decrypted
@@ -79,9 +76,16 @@ function isBinaryUrl(url: string | undefined): boolean {
  * Create configured Axios instance
  */
 function createApiInstance(): AxiosInstance {
+  const baseURL = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+  const timeout = Number(import.meta.env.VITE_API_TIMEOUT) || 60000;
+
+  if (import.meta.env.DEV) {
+    console.log(`?? API Instance created with BaseURL: ${baseURL}`);
+  }
+
   const instance = axios.create({
-    baseURL: API_BASE_URL,
-    timeout: API_TIMEOUT,
+    baseURL: baseURL,
+    timeout: timeout,
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -384,7 +388,7 @@ export function clearAuthToken(): void {
  * Get current API base URL
  */
 export function getApiBaseUrl(): string {
-  return API_BASE_URL;
+  return import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
 }
 
 // Export types

@@ -2,10 +2,8 @@ import React from 'react';
 import SEOHead from '../components/SEOHead';
 import { getSEOForPage } from '../utils/seo';
 
-import { ENV } from '../config/env';
-
 const DiagnosticsPage: React.FC = () => {
-  const cloudName = ENV.CLOUDINARY_CLOUD_NAME;
+  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "dhwi5wevf";
 
   const testUrls = [
     {

@@ -4,7 +4,6 @@ import { ProductImage } from '@/components/ProductImage';
 import SEOHead from '../components/SEOHead';
 import { getSEOForPage } from '../utils/seo';
 import { api } from '@/utils/apiClient';
-import { ENV } from '@/config/env';
 
 // API Response interfaces matching backend schema
 interface BillingAddress {
@@ -265,7 +264,7 @@ export default function FailurePage() {
       );
       
       try {
-        const API_BASE = ENV.API_BASE_URL;
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://api.dsecuretech.com';
         const apiResponse = await fetch(
           `${API_BASE}/api/ContactFormSubmissions`,
           {
@@ -286,7 +285,7 @@ export default function FailurePage() {
         });
         
         // Microsoft Excel + Teams tracking (non-blocking)
-        fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || '', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

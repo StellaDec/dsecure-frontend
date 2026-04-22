@@ -1,5 +1,4 @@
 import React, { useState, memo, useEffect } from "react";
-import { ENV } from "../config/env";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -1381,8 +1380,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
     // CONFIGURATION: Sirf yahan apne 2 Main Product Links dalein
     // =========================================================
     const BASE_LINKS: Record<string, string> = {
-      "drive-eraser": `${ENV.DRIVE_ERASER}`, // Yahan apna Drive Eraser ka link dalein
-      "file-eraser": `${ENV.FILE_ERASER}`, // Yahan apna File Eraser ka link dalein
+      "drive-eraser": `${import.meta.env.VITE_DRIVE_ERASER}`, // Yahan apna Drive Eraser ka link dalein
+      "file-eraser": `${import.meta.env.VITE_FILE_ERASER}`, // Yahan apna File Eraser ka link dalein
       "smart-diagnostic": "https://checkout.dodopayments.com/buy/pdt_placeholder_smart_diagnostic?quantity=",
     };
 
@@ -2334,7 +2333,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
                     // ✅ Prefetch on hover for even faster response
                     if (
                       selectedLicenses !== "custom" &&
-                      selectedPlan !== "custom"
+                      selectedPlan !== "custom" &&
+                      !isBuyNowLoading
                     ) {
                       // Prefetch checkout domain connection
                       const img = new Image();
@@ -2347,7 +2347,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                     selectedLicenses !== "custom" && 
                     selectedPlan !== "custom"
                       ? "bg-gradient-to-r from-slate-300 to-slate-400 text-white cursor-not-allowed opacity-70"
-                      : "bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white hover:shadow-xl transform hover:scale-105 active:scale-95 disabled:opacity-70 disabled:cursor-wait disabled:hover:scale-100"
+                      : `bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white hover:shadow-xl transform hover:scale-105 active:scale-95 disabled:opacity-70 disabled:hover:scale-100 ${isBuyNowLoading ? "cursor-wait" : "cursor-pointer"}`
                   }`}
                 >
                   {!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 

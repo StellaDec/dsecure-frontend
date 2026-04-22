@@ -261,24 +261,27 @@ export const useEnhancedForm = (config: FormConfig) => {
 
           // Backend API + Power Automate (non-blocking)
           try {
-            const { ENV } = await import("@/config/env");
+            const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+            const powerAutomateUrl = import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL;
 
             // Backend API
-            fetch(`${ENV.API_BASE_URL}/api/ContactFormSubmissions`, {
+            fetch(`${apiBaseUrl}/api/ContactFormSubmissions`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(submissionData),
             }).catch(() => {});
 
             // Power Automate tracking
-            fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                "x-api-key": "REACT_CONTACT_2026",
-              },
-              body: JSON.stringify(submissionData),
-            }).catch(() => {});
+            if (powerAutomateUrl) {
+              fetch(powerAutomateUrl, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "x-api-key": "REACT_CONTACT_2026",
+                },
+                body: JSON.stringify(submissionData),
+              }).catch(() => {});
+            }
           } catch (e) {
             console.error("Backend/Power Automate error:", e);
           }

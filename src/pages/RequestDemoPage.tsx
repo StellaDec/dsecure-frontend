@@ -8,7 +8,6 @@ import {
   StarIcon
 } from '@/components/FlatIcons';
 import { useToast } from '@/components/Toast';
-import { ENV } from "@/config/env";
 
 export default function RequestDemoPage() {
   const { showToast } = useToast();
@@ -88,7 +87,7 @@ export default function RequestDemoPage() {
 
       try {
         // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-        const API_BASE = ENV.API_BASE_URL;
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
         const apiResponse = await fetch(
           `${API_BASE}/api/ContactFormSubmissions`,
           {
@@ -106,7 +105,7 @@ export default function RequestDemoPage() {
         });
 
         // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-        fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

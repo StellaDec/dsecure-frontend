@@ -192,17 +192,18 @@ export const useFormSubmission = (
         };
 
         try {
-          const { ENV } = await import("@/config/env");
+          const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+          const POWER_AUTOMATE_URL = import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "";
 
           // Backend API
-          fetch(`${ENV.API_BASE_URL}/api/ContactFormSubmissions`, {
+          fetch(`${API_BASE}/api/ContactFormSubmissions`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(submissionData),
           }).catch(() => {});
 
           // Power Automate tracking
-          fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+          fetch(POWER_AUTOMATE_URL, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

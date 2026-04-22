@@ -12,8 +12,6 @@ import {
 } from "@/components/forms";
 import { formConfigs } from "@/hooks/useFormSubmission";
 import { useToast } from "@/hooks";
-import { Toast } from "@/components/ui";
-import { ENV } from "@/config/env";
 import {
   ShieldIcon,
   CheckIcon,
@@ -1590,7 +1588,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
 
                       try {
                         // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-                        const API_BASE = ENV.API_BASE_URL;
+                        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
                         const apiResponse = await fetch(
                           `${API_BASE}/api/ContactFormSubmissions`,
                           {
@@ -1611,7 +1609,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                         );
 
                         // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-                        fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+                        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
                           method: "POST",
                           headers: {
                             "Content-Type": "application/json",

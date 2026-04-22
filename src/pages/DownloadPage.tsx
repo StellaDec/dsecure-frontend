@@ -3,7 +3,6 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { getProductIcon } from "@/utils/productIcons";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
-import { ENV } from "@/config/env";
 
 // --- Types Definitions (Best Practice for maintainability) ---
 interface DownloadInfo {
@@ -54,19 +53,19 @@ const PRODUCTS: Product[] = [
 const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
   "drive-eraser": {
     windowsAmd: {
-      url: ENV.DriveEraser_ISO_Download_Link,
+      url: import.meta.env.VITE_DRIVE_ERASER_ISO_DOWNLOAD_LINK || "#",
       filename: "D-Secure-Drive-Eraser-x64.iso",
       size: "450 MB",
       arch: "x64x86 (ISO Image)",
     },
     macos: {
-      url: ENV.DriveEraser_ISO_Download_Link,
+      url: import.meta.env.VITE_DRIVE_ERASER_ISO_DOWNLOAD_LINK || "#",
       filename: "D-Secure-Drive-Eraser-x64.iso",
       size: "450 MB",
       arch: "x64x86 (ISO Image)",
     },
     linux: {
-      url: ENV.DriveEraser_ISO_Download_Link,
+      url: import.meta.env.VITE_DRIVE_ERASER_ISO_DOWNLOAD_LINK || "#",
       filename: "D-Secure-Drive-Eraser-x64.iso",
       size: "450 MB",
       arch: "x64x86 (ISO Image)",
@@ -74,19 +73,19 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
   },
   "drive-eraser-diagnostic": {
     windowsAmd: {
-      url: ENV.DriveEraserDiagnostic_ISO_Download_Link,
+      url: import.meta.env.VITE_DRIVE_ERASER_DIAGNOSTIC_ISO_DOWNLOAD_LINK || "#",
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
     },
     macos: {
-      url: ENV.DriveEraserDiagnostic_ISO_Download_Link,
+      url: import.meta.env.VITE_DRIVE_ERASER_DIAGNOSTIC_ISO_DOWNLOAD_LINK || "#",
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
     },
     linux: {
-      url: ENV.DriveEraserDiagnostic_ISO_Download_Link,
+      url: import.meta.env.VITE_DRIVE_ERASER_DIAGNOSTIC_ISO_DOWNLOAD_LINK || "#",
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
@@ -94,7 +93,7 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
   },
   "file-eraser": {
     windows: {
-      url: ENV.FileEraser_Windows_Download_Link,
+      url: import.meta.env.VITE_FILE_ERASER_WINDOWS_DOWNLOAD_LINK || "#",
       filename: "D-SecureFileEraser-Setup.exe",
       size: "600 MB",
       arch: "64-bit",

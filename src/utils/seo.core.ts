@@ -78,7 +78,27 @@ export const generateOrganizationSchema = () => ({
     availableLanguage: ["English", "Hindi"],
   },
   // Global coverage signal
+  // Global coverage signal
   areaServed: "Worldwide",
+});
+
+/**
+ * WebSite schema - Google Sitelinks Search Box ke liye zaroori hai
+ * Jab koi "D-Secure" search karta hai toh search bar highlight hoga
+ */
+export const generateWebSiteSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "D-Secure Tech",
+  "url": SEO_CONFIG.baseUrl,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${SEO_CONFIG.baseUrl}/search?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
 });
 
 export const generateSoftwareProductSchema = (
@@ -105,19 +125,19 @@ export const generateSoftwareProductSchema = (
     name: productName,
     description: description,
     applicationCategory: options.category || "SecurityApplication",
-    applicationSubCategory: options.subCategory || "Data Erasure, IT Asset Disposition",
-    operatingSystem: options.os || "Windows, macOS, Linux, Android, iOS",
+    subCategory: options.subCategory || "Data Erasure Software",
+    operatingSystem: options.os || "Windows, Linux, MacOS, Android, iOS",
     sku: options.sku || productName.toLowerCase().replace(/\s+/g, '-'),
     brand: {
       "@type": "Brand",
-      name: options.brand || "D-Secure Tech"
+      name: options.brand || "D-Secure"
     },
     offers: {
       "@type": "Offer",
       price: options.price || "0.00",
       priceCurrency: options.currency || "USD",
       availability: "https://schema.org/InStock",
-      url: `${SEO_CONFIG.baseUrl}/pricing-and-plan`,
+      url: `${SEO_CONFIG.baseUrl}/pricing`,
       priceValidUntil: "2026-12-31"
     },
     publisher: {

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Reveal from "@/components/Reveal";
 import { useToast } from "@/components/Toast";
-import { ENV } from "@/config/env";
 
 interface ProductContactFormProps {
   source: string;
@@ -91,7 +90,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
 
       try {
         // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-        const API_BASE = ENV.API_BASE_URL;
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
         const apiResponse = await fetch(`${API_BASE}/api/ContactFormSubmissions`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -106,7 +105,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
         });
 
         // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-        fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

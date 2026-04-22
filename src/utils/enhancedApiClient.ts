@@ -14,17 +14,14 @@ import { authService } from './authService'
 import { EncryptionService, isEncryptedResponse } from './EncryptionService'
 import { api } from './apiClient'
 import { encodeEmail } from './encodeEmail'
-
-import { ENV } from '../config/env'
-import { ApiResponse, User, Subuser, EnhancedSubuser, license } from '../types/models'
-import { log } from 'console'
+import type { ApiResponse, User, Subuser, EnhancedSubuser, license } from '@/types/models'
 
 // API Configuration
-const API_BASE_URL = ENV.API_BASE_URL
-const API_TIMEOUT = ENV.API_TIMEOUT
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"
+const API_TIMEOUT = Number(import.meta.env.VITE_API_TIMEOUT) || 60000
 
 // Debug mode for development
-const DEBUG_MODE = ENV.DEBUG
+const DEBUG_MODE = import.meta.env.MODE === 'development' || import.meta.env.VITE_DEBUG === 'true'
 
 /**
  * Helper function to decrypt response data if encrypted
@@ -43,7 +40,7 @@ if (DEBUG_MODE) {
   // console.log('API Configuration:', {
   //   baseUrl: API_BASE_URL,
   //   timeout: API_TIMEOUT,
-  //   environment: ENV.MODE
+  //   environment: import.meta.env.MODE
   // })
 }
 
@@ -230,7 +227,7 @@ class EnhancedApiClient {
 
   constructor(baseURL?: string) {
     this.baseURL = baseURL || API_BASE_URL
-    this.timeout = ENV.API_TIMEOUT
+    this.timeout = API_TIMEOUT
     this.retryConfig = {
       maxRetries: 3,
       retryDelay: 1000,

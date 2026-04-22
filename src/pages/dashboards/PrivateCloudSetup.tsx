@@ -1,7 +1,6 @@
-import { ENV } from "@/config/env";
+import React, { useState, useEffect } from "react";
 import SEOHead from "../../components/SEOHead";
 import { getSEOForPage } from "../../utils/seo";
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/auth/AuthContext";
 import { useNotification } from "@/contexts/NotificationContext";
@@ -81,7 +80,7 @@ export default function PrivateCloudSetup() {
   });
 
   // API Base URL (without trailing slash)
-  const API_BASE = ENV.API_BASE_URL.replace(/\/$/, "");
+  const API_BASE = (import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com").replace(/\/$/, "");
 
   // Helper to format connection string
   // Converts mysql://username:password@host:port/database URI to ADO.NET format

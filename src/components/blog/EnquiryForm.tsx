@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './BlogComponents.css';
-import { ENV } from '@/config/env';
+
 
 interface EnquiryFormProps {
   blogId: string;
@@ -104,7 +104,7 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
       };
 
       // Submit to backend
-      const API_BASE = ENV.API_BASE_URL;
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
       const apiResponse = await fetch(
         `${API_BASE}/api/ContactFormSubmissions`,
         {
@@ -126,7 +126,7 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
       });
 
       // Microsoft Excel + Teams tracking (non-blocking)
-      fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+      fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

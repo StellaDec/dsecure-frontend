@@ -6,7 +6,6 @@ import { authService } from '@/utils/authService'
 import { apiClient } from '@/utils/enhancedApiClient'
 import { useState, useEffect } from 'react'
 import Reveal from '@/components/Reveal'
-import { ENV } from '@/config/env'
 interface DashboardStats {
   monthlyErasures: number
   totalDevices: number
@@ -353,7 +352,7 @@ export default function EnhancedUserDashboard() {
         </div>
 
         {/* Developer Info Panel (Only show in development) */}
-        {ENV.IS_DEV && (
+        {import.meta.env.DEV && (
           <Reveal delayMs={10}>
             <div className="bg-white rounded-lg p-6 shadow-sm border border-slate-200">
               <h3 className="text-lg font-semibold mb-4 text-slate-700 flex items-center gap-2">

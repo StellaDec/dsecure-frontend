@@ -6,7 +6,6 @@
 import { Subuser, AdminReport } from "@/types/models"
 import { api } from "@/utils/apiClient"
 import { encodeEmail } from "@/utils/encodeEmail"
-import { ENV } from "@/config/env"
 
 interface ApiResponse<T> {
   success: boolean
@@ -182,7 +181,7 @@ export interface ErasureMetricsResponse {
 // If API fails, UI will show "Data not available" message
 
 // API Configuration
-const API_BASE_URL = ENV.API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
 
 // ? Generic API call function using axios with automatic decryption
 // The `api` instance from apiClient.ts has an interceptor that automatically

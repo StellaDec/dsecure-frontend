@@ -30,21 +30,21 @@ export const PERFORMANCE_THRESHOLDS = {
   MAX_PAGE_SIZE: 200,
 };
 
-import { ENV } from './env';
+
 
 // Performance monitoring configuration
 export const PERFORMANCE_CONFIG = {
   // Enable performance monitoring in development
-  ENABLE_DEV_MONITORING: ENV.IS_DEV,
+  ENABLE_DEV_MONITORING: import.meta.env.DEV,
 
   // Enable Web Vitals tracking
   ENABLE_WEB_VITALS: true,
 
   // Enable React DevTools Profiler
-  ENABLE_PROFILER: ENV.IS_DEV,
+  ENABLE_PROFILER: import.meta.env.DEV,
 
   // Enable performance logging
-  ENABLE_PERFORMANCE_LOGS: ENV.IS_DEV,
+  ENABLE_PERFORMANCE_LOGS: import.meta.env.DEV,
 };
 
 // Component optimization settings
@@ -143,5 +143,5 @@ export const DEV_HELPERS = {
   SHOW_METRICS: true,
 
   // Bundle analyzer
-  ANALYZE_BUNDLE: false, // ENV.IS_ANALYZE not currently in env.ts, removed direct access
+  ANALYZE_BUNDLE: false, // Legacy IS_ANALYZE removed
 };

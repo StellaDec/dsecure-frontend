@@ -563,10 +563,19 @@ export default function LoginPage() {
       });
 
       const data = response.data;
-      console.log("🚀 Login Response:", data);
+      if (import.meta.env.DEV) {
+        console.log("🚀 Login Response:", data);
+      }
 
-      // ✅ Validate token presence
-      if (!data || !data.token) {
+      // ✅ Robust Token extraction: support 'token', 'jwt_token', or raw string
+      // Kuch backend versions 'jwt_token' bhejte hain, aur kuch sirf string
+      const token = data?.token || data?.jwt_token || (typeof data === 'string' ? data : null);
+
+      if (!token) {
+        // Agar decryption fail hui ho (apiClient error object), toh use specifically handle karein
+        if (data?.error) {
+          throw new Error(data.error);
+        }
         throw new Error("No JWT token received from server");
       }
 
@@ -734,11 +743,14 @@ export default function LoginPage() {
         errorMessage =
           "Cannot connect to server. Please check your internet connection.";
       } else {
-        // ?? NAYA CODE: Manual throw (e.g. "No JWT token") ko bhi specific handle karo
-        // Ye tab hota hai jab API response aata hai lekin token missing hota hai
+        // ?? NAYA CODE: Manual throw (e.g. "No JWT token") ya decryption error
+        // Ye tab hota hai jab API response aata hai lekin data invalid hota hai
         if (err.message?.includes("No JWT token")) {
           errorMessage = "Login failed - invalid server response. Please try again.";
-          console.error("❌ JWT token missing from response. Server ne encrypted/invalid data bheja ho sakta hai.");
+          console.error("❌ JWT token missing from response structure.");
+        } else if (err.message?.includes("Decryption failed")) {
+          errorMessage = `Server communication error: ${err.message}`;
+          console.error("❌ " + err.message);
         } else {
           errorMessage = err.message || "An unexpected error occurred. Please try again.";
         }

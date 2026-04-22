@@ -6,10 +6,8 @@ import { fill, scale, fit, crop } from '@cloudinary/url-gen/actions/resize'
 import { focusOn } from '@cloudinary/url-gen/qualifiers/gravity'
 import { face } from '@cloudinary/url-gen/qualifiers/focusOn'
 
-import { ENV } from '../config/env'
-
 // Initialize Cloudinary instance
-const cloudName = ENV.CLOUDINARY_CLOUD_NAME
+const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
 
 if (!cloudName) {
   console.warn('VITE_CLOUDINARY_CLOUD_NAME not found in environment variables')

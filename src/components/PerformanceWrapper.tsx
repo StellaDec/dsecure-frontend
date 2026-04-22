@@ -5,7 +5,6 @@
 
 import React, { Component } from 'react';
 import { PERFORMANCE_CONFIG, PERFORMANCE_THRESHOLDS } from '@/config/performance';
-import { ENV } from '@/config/env';
 
 interface PerformanceWrapperProps {
   children: React.ReactNode;
@@ -46,7 +45,7 @@ export class PerformanceWrapper extends Component<PerformanceWrapperProps, Perfo
     }
 
     // Report to error tracking service in production
-    if (ENV.IS_PROD) {
+    if (import.meta.env.PROD) {
       // Example: Sentry.captureException(error, { extra: errorInfo });
     }
   }

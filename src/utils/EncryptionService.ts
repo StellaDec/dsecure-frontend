@@ -20,10 +20,8 @@
 import CryptoJS from 'crypto-js';
 import pako from 'pako';
 
-import { ENV } from '../config/env';
-
 // Secret key from environment
-const SECRET_KEY = ENV.RES_KEY;
+// SECRET_KEY constant ko module level se hata diya gaya hai taaki dynamic access mil sake
 
 /**
  * Interface for encrypted response from backend
@@ -167,24 +165,27 @@ class EncryptionServiceClass {
   private rawKeyString: string;
 
   constructor() {
-    this.rawKeyString = SECRET_KEY;
+    // ? Dynamically access key from environment in constructor
+    this.rawKeyString = import.meta.env.VITE_RES_KEY || "";
 
     // Process key using PadOrTruncate logic (exactly matching .NET backend)
     this.secretKey = getZeroPaddedKey(this.rawKeyString, 32);
 
+    // Key missing warning for developers
+    if (!this.rawKeyString && import.meta.env.DEV) {
+      console.warn('?? EncryptionService: VITE_RES_KEY is missing in .env file!');
+    }
+
     // Debug logging
-    if (ENV.IS_DEV) {
-      const encoder = new TextEncoder();
-      const originalBytes = encoder.encode(this.rawKeyString);
-      // console.log('?? EncryptionService initialized');
-      // console.log(`   Original key string length: ${this.rawKeyString.length} chars`);
-      // console.log(`   Original key UTF-8 bytes: ${originalBytes.length} bytes`);
+    if (import.meta.env.DEV) {
+      const keyPrefix = this.rawKeyString ? `${this.rawKeyString.substring(0, 4)}... (length: ${this.rawKeyString.length})` : "MISSING";
+      console.log(`?? EncryptionService: Key initialized: ${keyPrefix}`);
+    }
       // console.log(`   Processed key (after PadOrTruncate): ${this.secretKey.sigBytes} bytes`);
 
       // Log first few bytes for verification (don't log full key in production!)
       const keyHex = this.secretKey.toString(CryptoJS.enc.Hex);
       // console.log(`   Key (first 16 hex chars): ${keyHex.substring(0, 16)}...`);
-    }
   }
 
   /**
@@ -198,14 +199,15 @@ class EncryptionServiceClass {
    * 5. Parse and return JSON object (or string if not valid JSON)
    * 
    * @param encryptedBase64 - Base64 encoded string containing IV + Ciphertext
+   * @param isCompressed - Whether to decompress the result
    * @returns Decrypted data (JSON object or string)
    */
-  decrypt<T = unknown>(encryptedBase64: string, isCompressed: boolean = true): T {
+  public decrypt<T>(encryptedBase64: string, isCompressed: boolean = true): T {
     try {
       // Step 1: Decode Base64 string to WordArray
       const encryptedData = CryptoJS.enc.Base64.parse(encryptedBase64);
 
-      if (ENV.IS_DEV) {
+      if (import.meta.env.DEV) {
         console.log('?? Decrypting data...');
         console.log(`   Base64 length: ${encryptedBase64.length} chars`);
         console.log(`   Total encrypted bytes: ${encryptedData.sigBytes}`);
@@ -219,7 +221,7 @@ class EncryptionServiceClass {
       // Step 2 & 3: Extract IV and Ciphertext using byte-accurate extraction
       const { iv, ciphertext } = extractIVAndCiphertext(encryptedData);
 
-      if (ENV.IS_DEV) {
+      if (import.meta.env.DEV) {
         console.log(`   IV: ${iv.sigBytes} bytes`);
         console.log(`   Ciphertext: ${ciphertext.sigBytes} bytes`);
         console.log(`   Compressed: ${isCompressed}`);
@@ -243,7 +245,7 @@ class EncryptionServiceClass {
 
       if (decryptedSigBytes === 0) {
         // Additional debugging for failed decryption
-        if (ENV.IS_DEV) {
+        if (import.meta.env.DEV) {
           console.error('? Decryption produced empty result');
           console.error('   This usually means key/IV mismatch');
         }
@@ -258,7 +260,7 @@ class EncryptionServiceClass {
         decryptedBytes[i] = (decryptedWords[wordIndex] >>> (24 - byteIndex * 8)) & 0xff;
       }
 
-      if (ENV.IS_DEV) {
+      if (import.meta.env.DEV) {
         // console.log('?? Decryption successful, now decompressing...');
         // console.log(`   Decrypted bytes: ${decryptedSigBytes}`);
       }
@@ -267,42 +269,45 @@ class EncryptionServiceClass {
       let decompressedString: string;
 
       if (isCompressed) {
-        // Gzip Decompress using pako
+        // Step 7: Decompress if data is compressed
         try {
-          decompressedString = pako.ungzip(decryptedBytes, { to: 'string' });
-          if (ENV.IS_DEV) {
-            // console.log('? Decompression successful');
-            // console.log(`   Decompressed string length: ${decompressedString.length} chars`);
+          // .NET ki different compression libraries different formats use kar sakti hain
+          try {
+            decompressedString = pako.ungzip(decryptedBytes, { to: 'string' });
+          } catch (e) {
+            // Fallback to pako.inflate
+            decompressedString = pako.inflate(decryptedBytes, { to: 'string' });
           }
         } catch (decompressError) {
-          // If decompression fails, maybe data wasn't compressed - try as raw UTF-8
-          if (ENV.IS_DEV) {
-            // console.log('?? Gzip decompression failed, trying as raw UTF-8...');
+          // ?? SMART FALLBACK: Agar decompression fail hui, toh check karein kahi raw UTF-8 toh nahi hai
+          // Ye tab hota hai jab backend payload size < 1KB hone par compression skip kar deta hai
+          if (import.meta.env.DEV) {
+            console.log('?? Decompression failed, trying as raw UTF-8 (Backend might have skipped compression for small payload)...');
           }
-          decompressedString = decrypted.toString(CryptoJS.enc.Utf8);
-
-          if (!decompressedString) {
-            throw new Error('Data is neither gzip compressed nor valid UTF-8');
-          }
-
-          if (ENV.IS_DEV) {
-            // console.log('? Raw UTF-8 decoding successful (data was not compressed)');
+          
+          try {
+            decompressedString = decrypted.toString(CryptoJS.enc.Utf8);
+            if (!decompressedString) throw new Error('Empty UTF-8 result');
+            
+            if (import.meta.env.DEV) {
+              console.log('? Successfully decoded as raw UTF-8!');
+            }
+          } catch (utfError) {
+             console.error('❌ Both decompression and UTF-8 decoding failed.');
+             throw new Error('Decryption failed (Malformed payload). VITE_RES_KEY match check karein.');
           }
         }
       } else {
         // Data is not compressed, decode as raw UTF-8 directly
-        if (ENV.IS_DEV) {
-          // console.log('?? Data is not compressed (compressed: false), decoding as UTF-8...');
-        }
-        decompressedString = decrypted.toString(CryptoJS.enc.Utf8);
-
-        if (!decompressedString) {
-          throw new Error('Failed to decode decrypted data as UTF-8');
-        }
-
-        if (ENV.IS_DEV) {
-          // console.log('? UTF-8 decoding successful (no compression)');
-          // console.log(`   String length: ${decompressedString.length} chars`);
+        try {
+          // Use try-catch for Utf8 conversion to avoid 'Malformed UTF-8' crash
+          decompressedString = decrypted.toString(CryptoJS.enc.Utf8);
+          
+          if (!decompressedString) {
+            throw new Error('Empty result after UTF-8 decoding');
+          }
+        } catch (utfError) {
+           throw new Error('Failed to decode decrypted data as UTF-8. Check your VITE_RES_KEY.');
         }
       }
 
@@ -312,7 +317,7 @@ class EncryptionServiceClass {
         return parsedData as T;
       } catch {
         // Not valid JSON, return as string (e.g., for JWT tokens)
-        if (ENV.IS_DEV) {
+        if (import.meta.env.DEV) {
           // console.log('   Response is not JSON, returning as string');
         }
         return decompressedString as T;
@@ -338,7 +343,7 @@ class EncryptionServiceClass {
    */
   decryptResponse<T = unknown>(responseData: unknown): T {
     if (this.isEncrypted(responseData)) {
-      if (ENV.IS_DEV) {
+      if (import.meta.env.DEV) {
         // console.log('?? Encrypted response detected, decrypting...');
         // console.log(`   Compressed: ${responseData.compressed !== false}`);
       }
@@ -354,7 +359,7 @@ class EncryptionServiceClass {
    * Returns null in production
    */
   getKeyInfo(): { originalLength: number; processedLength: number; keyHexPreview: string } | null {
-    if (!ENV.IS_DEV) return null;
+    if (!import.meta.env.DEV) return null;
 
     const encoder = new TextEncoder();
     const originalBytes = encoder.encode(this.rawKeyString);

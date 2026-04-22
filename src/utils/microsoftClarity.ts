@@ -41,7 +41,7 @@ class MicrosoftClarity {
     }
 
     // Skip initialization in development unless debug is on
-    if (ENV.IS_DEV && !this.debug) {
+    if (import.meta.env.DEV && !this.debug) {
       this.isInitialized = true;
       return;
     }
@@ -66,7 +66,7 @@ class MicrosoftClarity {
   // Track custom events
   trackEvent(event: ClarityEvent): void {
     if (!this.isInitialized || typeof window === "undefined") return;
-    if (ENV.IS_DEV) return;
+    if (import.meta.env.DEV) return;
 
     const clarity = (window as any).clarity;
     if (clarity) {
@@ -231,12 +231,10 @@ class MicrosoftClarity {
   }
 }
 
-import { ENV } from "../config/env";
-
 // Initialize Clarity instance
 export const clarity = new MicrosoftClarity({
-  projectId: ENV.CLARITY_ID, // Your actual Clarity Project ID
-  debug: ENV.DEBUG,
+  projectId: import.meta.env.VITE_CLARITY_ID || "XXXXXXXXXX", 
+  debug: import.meta.env.VITE_DEBUG === "true",
 });
 
 // React hook for Clarity tracking

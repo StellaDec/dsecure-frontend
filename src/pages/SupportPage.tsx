@@ -9,7 +9,6 @@ import { LicenseForm, type LicenseFormData } from "@/components/forms";
 import { PartnershipForm, type PartnershipFormData } from "@/components/forms";
 import { useToast } from "@/hooks";
 import { Toast } from "@/components/ui";
-import { ENV } from "@/config/env";
 
 // Form components - removed memo to prevent focus loss during typing
 const FormInput: React.FC<{
@@ -736,7 +735,7 @@ const SupportPage: React.FC = () => {
 
         try {
           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-          const API_BASE = ENV.API_BASE_URL;
+          const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
           const apiResponse = await fetch(
             `${API_BASE}/api/ContactFormSubmissions`,
             {
@@ -754,7 +753,7 @@ const SupportPage: React.FC = () => {
           });
 
           // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-          fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+          fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

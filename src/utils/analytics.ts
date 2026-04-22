@@ -182,12 +182,10 @@ class GoogleAnalytics {
   }
 }
 
-import { ENV } from '../config/env';
-
 // Initialize GA instance
 export const ga = new GoogleAnalytics({
-  trackingId: ENV.GA4_ID, // Your actual GA4 ID
-  debug: ENV.DEBUG
+  trackingId: import.meta.env.VITE_GA4_ID || "G-XXXXXXXXXX", 
+  debug: import.meta.env.VITE_DEBUG === "true"
 });
 
 // React hook for GA tracking

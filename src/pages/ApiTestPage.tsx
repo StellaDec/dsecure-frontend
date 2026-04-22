@@ -4,7 +4,6 @@ import { useUsers, useMachines, useReports } from '@/utils/dataService'
 
 import SEOHead from '../components/SEOHead'
 import { getSEOForPage } from '../utils/seo'
-import { ENV } from '../config/env'
 
 export default function ApiTestPage() {
   const [apiAvailable, setApiAvailable] = useState<boolean | null>(null)
@@ -69,7 +68,7 @@ export default function ApiTestPage() {
             </div>
 
             <div className="mt-4 text-sm text-slate-600">
-              API Endpoint: {ENV.API_BASE_URL}
+              API Endpoint: {import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"}
             </div>
           </div>
 

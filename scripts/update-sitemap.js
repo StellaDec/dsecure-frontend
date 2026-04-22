@@ -256,6 +256,34 @@ function extractRoutesFromFiles() {
   ];
 
   queryRoutes.forEach((r) => allRoutes.add(r));
+  // FAILSAFE: Scan src/pages/support/manual folder directly to ensure no manual pages are missed
+  const manualPagesDir = path.join(__dirname, "..", "src", "pages", "support", "manual");
+  if (fs.existsSync(manualPagesDir)) {
+    const manualFiles = fs.readdirSync(manualPagesDir).filter(f => f.endsWith(".tsx"));
+    manualFiles.forEach(file => {
+      let slug = file.replace("Page.tsx", "").replace(".tsx", "");
+      slug = slug.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+      const routePath = `/support/manual/${slug}`;
+      allRoutes.add(normalizePath(routePath));
+    });
+    console.log(`📂 Added ${manualFiles.length} manual pages from direct directory scan.`);
+  }
+
+  // BLOG SCAN: Reading src/data/blogPosts.ts to get dynamic blog slugs
+  const blogPostsPath = path.join(__dirname, "..", "src", "data", "blogPosts.ts");
+  if (fs.existsSync(blogPostsPath)) {
+    const blogContent = fs.readFileSync(blogPostsPath, "utf8");
+    // Simple regex to extract slugs: slug: "example-slug"
+    const slugRegex = /slug:\s*["']([^"']+)["']/g;
+    let match;
+    let blogCount = 0;
+    while ((match = slugRegex.exec(blogContent)) !== null) {
+      const blogRoute = `/blog/${match[1]}`;
+      allRoutes.add(normalizePath(blogRoute));
+      blogCount++;
+    }
+    console.log(`📝 Added ${blogCount} dynamic blog posts to sitemap.`);
+  }
 
   // Filter out excluded routes and prefixes, and ensure uniqueness
   const seen = new Set();

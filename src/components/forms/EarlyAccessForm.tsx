@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Check, Loader2, Rocket, Shield, Mail, Building, User } from "lucide-react";
-import { ENV } from "@/config/env";
 
 // Upcoming products based on DataEraserSoftwarePage.tsx
 const UPCOMING_PRODUCTS = [
@@ -117,7 +116,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
       };
 
       // 1. Backend Submission
-      const API_BASE = ENV.API_BASE_URL;
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
       const apiResponse = await fetch(`${API_BASE}/api/ContactFormSubmissions`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -132,7 +131,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
       });
 
       // 3. Power Automate (Non-blocking)
-      fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+      fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

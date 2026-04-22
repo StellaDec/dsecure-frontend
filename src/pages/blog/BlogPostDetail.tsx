@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 import SEOHead from "@/components/SEOHead";
-import { getSEOForPage } from "@/utils/seo";
+import { getSEOForPage, getBlogSEO } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { 
   ShieldIcon, 
@@ -41,14 +41,17 @@ const BlogPostDetail: React.FC = () => {
     return <Navigate to="/blog" replace />;
   }
 
-  // Generate dynamic SEO if it's not explicitly in the registry
-  const seoData = getSEOForPage(`blog/${post.slug}`, {
-    title: `${post.title} | D-Secure Blog`,
-    description: post.excerpt,
-    keywords: post.keywords || `data erasure, ${post.tag}`,
-    canonicalUrl: `https://dsecuretech.com/blog/${post.slug}`,
-    ogType: 'article'
-  });
+  // Generate dynamic SEO with specialized getBlogSEO utility for Article schema support
+  const seoData = React.useMemo(() => getBlogSEO({
+    title: post.title,
+    excerpt: post.excerpt,
+    slug: post.slug,
+    author: post.author,
+    publishDate: post.publishDate,
+    keywords: post.keywords,
+    tag: post.tag,
+    faqs: post.faqs // If post has specific FAQs
+  }), [post]);
 
   return (
     <div className="min-h-screen bg-white">

@@ -1,4 +1,4 @@
-import { ENV } from "@/config/env";
+
 import SEOHead from "../../components/SEOHead";
 import { getSEOForPage } from "../../utils/seo";
 import { useMemo, useState, useRef, useCallback, useEffect } from "react";
@@ -642,7 +642,7 @@ export default function AdminReports() {
           return;
         }
 
-        const API_BASE = ENV.API_BASE_URL;
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
         const response = await fetch(
           `${API_BASE}/api/EnhancedAuditReports/export-settings`,
           {
@@ -788,7 +788,7 @@ export default function AdminReports() {
   // Save PDF settings to API using FormData (server expects multipart/form-data)
   const savePdfSettingsToServer = useCallback(async (): Promise<boolean> => {
     try {
-      const API_BASE = ENV.API_BASE_URL;
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
 
       // Build FormData for server
       const formData = new FormData();

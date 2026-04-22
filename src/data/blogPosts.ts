@@ -24,7 +24,7 @@ export const blogPosts: BlogPost[] = [
     link: "/blog/nist-800-88-compliance-india",
     tag: "Compliance",
     category: "Regulatory",
-    keywords: "NIST 800-88, DPDP Act 2023, data erasure India, enterprise security",
+    keywords: "NIST 800-88 compliant data erasure software India, DPDP Act 2023 compliance India, secure data sanitization India, enterprise data erasure",
     publishDate: "March 27, 2026",
     author: "Nitesh Kushwaha"
   },
@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     link: "/blog/overwrite-guide",
     tag: "Data Erasure",
     category: "Data Erasure",
-    keywords: "data overwriting, NIST 800-88, DoD 5220.22-M, secure erasure standards",
+    keywords: "data overwriting standards, NIST 800-88 vs DoD 5220.22-M, secure wiping software, enterprise sanitization guide",
     publishDate: "October 15, 2024",
     author: "Nitesh Kushwaha"
   },
@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
     link: "/blog/ssd-wipe-guide",
     tag: "Storage Security",
     category: "Storage Security",
-    keywords: "SSD erasure, NVMe secure erase, cryptographic erasure, wear leveling",
+    keywords: "how to securely wipe SSD, NVMe secure erase standard, cryptographic erasure vs overwriting, SSD data destruction guide",
     publishDate: "October 22, 2024",
     author: "Nitish"
   },

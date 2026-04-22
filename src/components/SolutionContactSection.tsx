@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Reveal from "@/components/Reveal";
 import { CheckIcon, ArrowRightIcon } from "@/components/FlatIcons";
 import { useToast } from "@/components/Toast";
-import { ENV } from "@/config/env";
 
 // Solution Contact Section ka props interface
 interface SolutionContactSectionProps {
@@ -112,7 +111,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
 
       try {
         // === 1. Backend API (Database) ===
-        const API_BASE = ENV.API_BASE_URL;
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
         const apiResponse = await fetch(
           `${API_BASE}/api/ContactFormSubmissions`,
           {
@@ -130,7 +129,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
         });
 
         // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-        fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -5,6 +5,7 @@ import {
   SEO_CONFIG,
   generateKeywords,
   generateOrganizationSchema,
+  generateWebSiteSchema,
   generateFAQSchema,
 } from "./seo.core";
 import { FAQ } from "../data/blogFaqs";
@@ -43,6 +44,10 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       "D-Secure is #1 data erasure software — NIST 800-88, GDPR & HIPAA compliant. Securely wipe HDDs, SSDs and mobile devices with tamper-proof audit certificates.",
     canonicalUrl: getCanonicalUrl("/"),
     breadcrumbs: [{ name: "Home", item: "/" }],
+    structuredData: [
+      generateWebSiteSchema(),
+      generateOrganizationSchema(),
+    ]
   },
   // All Products page — /all-products route, component mein "data-eraser-software" key use hota hai
   "data-eraser-software": {
@@ -713,7 +718,15 @@ export const getSEOForPage = (
   const defaultSEO = getDefaultSEO();
   
   // If the page is not in the registry, attempt to dynamically deduce a title to prevent Homepage Leaks
+  // Try direct match. 
+  // If not found, try stripping or adding 'support-manual-' prefix for compatibility.
   let pageSEO = PAGE_SEO[pageName];
+  if (!pageSEO && pageName.startsWith("support-manual-")) {
+    pageSEO = PAGE_SEO[pageName.replace("support-manual-", "")];
+  }
+  if (!pageSEO && !pageName.startsWith("support-manual-")) {
+    pageSEO = PAGE_SEO[`support-manual-${pageName}`];
+  }
   if (!pageSEO) {
       const generatedTitle = pageName
         .split('-')

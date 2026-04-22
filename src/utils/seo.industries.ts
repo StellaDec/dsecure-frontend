@@ -8,11 +8,13 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
     keywords: generateKeywords([
       "banking data erasure",
       "financial data destruction",
+      "best data erasure software for banks",
       "PCI-DSS compliance",
       "SOX data erasure",
       "GLBA compliance",
       "FACTA disposal rule",
-      "banking ITAD",
+      "banking ITAD solutions",
+      "certified financial data wiping",
     ]),
     canonicalUrl: getCanonicalUrl("/solutions/data-erasure-banking-finance"),
     breadcrumbs: [
@@ -27,10 +29,12 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
       "Secure medical record sanitization and PHI erasure. HIPAA-compliant data sanitization for hospitals and clinics.",
     keywords: generateKeywords([
       "healthcare data privacy",
-      "HIPAA compliance",
+      "HIPAA compliant data sanitization",
+      "best medical data erasure software",
       "PHI erasure",
       "HITECH compliance",
       "secure medical record disposal",
+      "hospital data destruction",
     ]),
     canonicalUrl: getCanonicalUrl("/solutions/healthcare"),
     breadcrumbs: [
@@ -45,11 +49,12 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
       "Secure data destruction for government and defense. Meet NIST 800-88, DoD 5220.22-M, and CMMC standards with tamper-proof audit trails.",
     keywords: generateKeywords([
       "government data security",
-      "NIST 800-88",
-      "military data erasure",
-      "DoD 5220.22-M",
-      "CMMC compliance",
+      "NIST 800-88 certified wiping",
+      "military data erasure software",
+      "DoD 5220.22-M standard",
+      "CMMC compliance data sanitization",
       "classified data destruction",
+      "government ITAD",
     ]),
     canonicalUrl: getCanonicalUrl("/solutions/government"),
     breadcrumbs: [
@@ -122,13 +127,14 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
     description:
       "Enterprise-grade data erasure for large organizations. Wipe up to 65,000 drives simultaneously with PXE boot, RAID support, and tamper-proof audit trails. NIST 800-88, GDPR, HIPAA compliant.",
     keywords: generateKeywords([
-      "enterprise data erasure",
-      "enterprise data sanitization",
-      "large scale data wiping",
-      "PXE boot erasure",
+      "enterprise data erasure software",
+      "best enterprise data sanitization",
+      "large scale data wiping solutions",
+      "PXE boot erasure for servers",
       "network server wiping",
-      "NIST 800-88 enterprise",
-      "corporate data destruction",
+      "NIST 800-88 enterprise software",
+      "corporate data destruction solutions",
+      "scalable data sanitization",
     ]),
     canonicalUrl: getCanonicalUrl("/solutions/enterprise"),
     breadcrumbs: [

@@ -10,7 +10,6 @@ import {
   GlobeIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
-import { ENV } from "@/config/env";
 // Lazy load map component to avoid SSR issues with Leaflet
 const DataGuardianMap = React.lazy(() => import("../components/DataGuardianMap"));
 
@@ -296,7 +295,7 @@ const DataGuardianAwardPage: React.FC = () => {
       };
 
       try {
-        const API_BASE = ENV.API_BASE_URL;
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
         await fetch(`${API_BASE}/api/ContactFormSubmissions`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -310,7 +309,7 @@ const DataGuardianAwardPage: React.FC = () => {
         });
 
         // Power Automate tracking (non-blocking)
-        fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

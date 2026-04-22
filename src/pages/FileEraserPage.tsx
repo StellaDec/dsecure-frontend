@@ -19,7 +19,6 @@ import { blogPosts } from "@/data/blogPosts";
 import { FileTextIcon, Monitor, Download, X } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
 import { useToast } from "@/components/Toast";
-import { ENV } from "@/config/env";
 
 const getReadTime = (text: string) => {
   const wordsPerMinute = 200;
@@ -1945,7 +1944,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
                         try {
                           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-                          const API_BASE = ENV.API_BASE_URL;
+                          const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
                           const apiResponse = await fetch(
                             `${API_BASE}/api/ContactFormSubmissions`,
                             {
@@ -1966,7 +1965,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           );
 
                           // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-                          fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+                          fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
                             method: "POST",
                             headers: {
                               "Content-Type": "application/json",

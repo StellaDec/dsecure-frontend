@@ -4,7 +4,6 @@ import { useAuth } from '@/auth/AuthContext'
 import { SkeletonForm } from '@/components/Skeleton'
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
-import { ENV } from "@/config/env";
 
 export default function RegisterPage() {
   const { register, loading: authLoading } = useAuth()
@@ -53,7 +52,8 @@ export default function RegisterPage() {
       }
 
       // Direct API call to your endpoint
-      const response = await fetch(`${ENV.API_BASE_URL}/api/Users`, {
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+      const response = await fetch(`${API_BASE}/api/Users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

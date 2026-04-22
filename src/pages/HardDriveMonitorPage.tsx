@@ -1,6 +1,5 @@
 import React, { memo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ENV } from "@/config/env";
 import { CloudinaryImage } from "@/components/CloudinaryImage";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";

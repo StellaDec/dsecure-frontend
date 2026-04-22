@@ -14,7 +14,6 @@ import {
 } from "@/components/FlatIcons";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
-import { ENV } from "@/config/env";
 
 // Mapping of country codes to their respective country names
 const COUNTRY_CODE_MAP: Record<string, string> = {
@@ -287,7 +286,7 @@ function ContactPageContent() {
         "success",
       );
       try {
-        const API_BASE = ENV.API_BASE_URL;
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
         const apiResponse = await fetch(
           `${API_BASE}/api/ContactFormSubmissions`,
           {
@@ -306,7 +305,7 @@ function ContactPageContent() {
           },
         });
         // Microsoft Excel + Teams tracking (non-blocking)
-        fetch(ENV.POWER_AUTOMATE_HTTP_URL, {
+        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

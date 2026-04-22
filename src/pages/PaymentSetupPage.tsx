@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { ENV } from '../config/env'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '@/auth/AuthContext'
 import { SetupStatusAlert, useSetupStatus } from '@/components/PaymentLicenseGuard'
@@ -508,7 +507,7 @@ export default function PaymentSetupPage() {
         </div>
 
         {/* Setup Status Info */}
-        {ENV.IS_DEV && (
+        {import.meta.env.DEV && (
           <div className="mt-8 bg-gray-100 rounded-lg p-4">
             <h4 className="font-medium text-gray-700 mb-2">🔧 Setup Status Debug</h4>
             <pre className="text-xs text-gray-600 overflow-auto">

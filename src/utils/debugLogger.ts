@@ -9,13 +9,12 @@
  *   debugLog('API', 'Request sent', { url, method });
  *   debugError('API', 'Request failed', error);
  */
+import { isDemoMode } from '@/data/demoData';
 
-import { ENV } from '../config/env';
-import { isDemoMode } from "../data/demoData";
 
 // Check if debug mode is enabled (always true in dev, or via VITE_DEBUG=true)
 const isDebugEnabled = (): boolean => {
-  return ENV.DEBUG;
+  return import.meta.env.DEV || import.meta.env.VITE_DEBUG === "true";
 };
 
 // Color codes for different log types
