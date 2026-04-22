@@ -3,7 +3,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import { MANUAL_COMPONENTS } from '../../../routes/manualRegistry';
 import SEOHead from '../../../components/SEOHead';
 import { getSEOForPage } from '../../../utils/seo';
-import Loading from '../../../components/Loading'; // Use existing loading component if available
+import PageLoadingSkeleton from '../../../components/PageLoadingSkeleton';
 
 // Manual Page Renderer Component
 // Yeh component URL slug ke basis pe correct manual page render karta hai aur SEO apply karta hai.
@@ -25,7 +25,7 @@ const ManualPageRenderer: React.FC = () => {
   return (
     <>
       <SEOHead seo={seoData} />
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<PageLoadingSkeleton />}>
         <Component />
       </Suspense>
     </>
