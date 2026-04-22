@@ -924,6 +924,7 @@ export default function AdminSubusers() {
                         }
                         className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                         placeholder="John Doe"
+                        autoComplete="name"
                       />
                     </div>
                   </div>
@@ -1016,6 +1017,7 @@ export default function AdminSubusers() {
                         }
                         className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                         placeholder="+1 234 567 8900"
+                        autoComplete="tel"
                       />
                     </div>
                     <div>

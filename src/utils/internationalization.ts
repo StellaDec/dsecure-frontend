@@ -36,6 +36,7 @@ i18n
     backend: {
       loadPath: "/locales/{{lng}}/translation.json",
     },
+    load: "languageOnly", // Avoid loading region-specific codes like en-GB
 
     interpolation: {
       escapeValue: false, // React already escapes values

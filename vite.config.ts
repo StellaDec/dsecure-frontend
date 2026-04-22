@@ -141,8 +141,11 @@ export default defineConfig({
             if (id.includes("framer-motion")) return "vendor-motion";
             if (id.includes("lucide-react")) return "vendor-lucide";
 
-            // 5. Cloud & Utilities
-            if (id.includes("cloudinary-build")) return "vendor-cloudinary";
+            // 5. Security & Crypto (Essential for your Login/API)
+            if (id.includes("crypto-js")) return "vendor-crypto";
+            if (id.includes("pako")) return "vendor-compression";
+
+            // 6. Cloud & Utilities
             if (id.includes("@tanstack") || id.includes("axios")) return "vendor-utils";
 
             // By NOT grouping everything else into "vendor", 

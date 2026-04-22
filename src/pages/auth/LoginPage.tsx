@@ -877,6 +877,7 @@ export default function LoginPage() {
                       onChange={(e) => setForgotEmail(e.target.value)}
                       className="input-field"
                       placeholder={t("auth.enterRegisteredEmail")}
+                      autoComplete="email"
                       required
                     />
                     <p className="text-xs text-slate-500 mt-2">
@@ -1074,6 +1075,7 @@ export default function LoginPage() {
                       className="input-field"
                       placeholder={t("auth.enterNewPasswordPlaceholder")}
                       minLength={6}
+                      autoComplete="new-password"
                       required
                     />
                   </div>
@@ -1106,6 +1108,7 @@ export default function LoginPage() {
                       className="input-field"
                       placeholder={t("auth.reEnterNewPassword")}
                       minLength={6}
+                      autoComplete="new-password"
                       required
                     />
                     {confirmPassword && newPassword !== confirmPassword && (
