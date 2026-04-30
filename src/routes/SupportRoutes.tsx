@@ -14,6 +14,7 @@ const HelpManualIndexPage = lazy(() => import("../pages/manual/HelpManualIndexPa
 const CompleteDSecureManual = lazy(() => import("../pages/manual/CompleteDSecureManual"));
 const CompleteDSecureDriveManual = lazy(() => import("../pages/manual/CompleteDSecureDriveManual"));
 const CompleteFreezeStateManual = lazy(() => import("../pages/manual/CompleteFreezeStateManual"));
+const CompleteDSecureDaignosticManual = lazy(() => import("../pages/manual/CompleteDSecureDaignosticManual"));
 const ManualPageRenderer = lazy(() => import("../pages/support/manual/ManualPageRenderer"));
 const NetworkFileManualLayout = lazy(() => import("../pages/manual/NetworkFileManualLayout"));
 const NetworkFileQuickOverview = lazy(
@@ -335,6 +336,10 @@ export const SupportRoutes = () => (
     <Route
       path="/support/help-manual/complete-freeze-state-manual"
       element={<CompleteFreezeStateManual />}
+    />
+    <Route
+      path="/support/help-manual/complete-diagnostic-manual"
+      element={<CompleteDSecureDaignosticManual />}
     />
 
     <Route

@@ -113,6 +113,18 @@ function DocumentationResourcesContent() {
       time: "5 min",
       link: "/support/help-manual/complete-drive-manual",
     },
+    {
+      title: "D-Secure Drive Diagnostic Setup",
+      description: "Quick setup guide for D-Secure Drive Diagnostic",
+      steps: [
+        "Download software",
+        "Install and configure",
+        "Run first diagnostic",
+        "Generate report",
+      ],
+      time: "5 min",
+      link: "/support/help-manual/complete-diagnostic-manual",
+    },
     // {
     //   title: "Enterprise Setup",
     //   description: "Quick setup guide for enterprise-grade deployment",

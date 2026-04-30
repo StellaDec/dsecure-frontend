@@ -10,6 +10,7 @@ interface DownloadInfo {
     filename: string;
     size: string;
     arch: string;
+    sha256?: string;
 }
 
 interface ProductDownloads {
@@ -69,10 +70,11 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
       arch: "x64x86 (ISO Image)",
     },
     linux: {
-      url: "https://downloads.dsecuretech.com/drive-eraser-diagnostic-x64-v1/D-SECURE-DIAGNOSTICS-v1.0.0.zip",
-      filename: "D-SECURE-DIAGNOSTICS-v1.0.0.zip",
+      url: "https://downloads.dsecuretech.com/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
+      filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
-      arch: "Linux (ZIP Archive)",
+      arch: "x64 (ISO Image)",
+      sha256: "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
     },
   },
   "drive-eraser-diagnostic": {
@@ -83,6 +85,7 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
+      sha256: "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
     },
     macos: {
       url:
@@ -91,12 +94,14 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
+      sha256: "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
     },
     linux: {
-      url: "https://downloads.dsecuretech.com/drive-eraser-diagnostic-x64-v1/D-SECURE-DIAGNOSTICS-v1.0.0.zip",
-      filename: "D-SECURE-DIAGNOSTICS-v1.0.0.zip",
+      url: "https://downloads.dsecuretech.com/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
+      filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
-      arch: "Linux (ZIP Archive)",
+      arch: "x64 (ISO Image)",
+      sha256: "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
     },
   },
   "file-eraser": {
@@ -267,32 +272,12 @@ const DownloadPage: React.FC = memo(() => {
           </div>
 
           {/* Custom Installer Note */}
-          <div className="max-w-3xl mx-auto mb-10 space-y-4">
+          <div className="max-w-3xl mx-auto mb-10">
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
               <div className="flex items-start justify-center">
                 <span className="text-blue-500 text-xl font-bold mr-2">*</span>
                 <p className="text-sm text-blue-900 font-medium pt-0.5">
                   For custom installer setup, please contact the support team.
-                </p>
-              </div>
-            </div>
-            
-            {/* Security Verification Note */}
-            <div className="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg shadow-sm">
-              <div className="flex items-start justify-center">
-                <svg className="w-5 h-5 text-emerald-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-                <p className="text-sm text-emerald-900 font-medium pt-0.5">
-                  Security Note: All our ISO installers are digitally signed. Verify them using our{" "}
-                  <a 
-                    href="/security/public-key.pem" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-emerald-700 underline hover:text-emerald-800 font-bold"
-                  >
-                    Public Key
-                  </a>.
                 </p>
               </div>
             </div>
@@ -382,6 +367,7 @@ const DownloadPage: React.FC = memo(() => {
                       title="AMD/Intel (x64x86)"
                       subtitle="For standard PCs"
                       onClick={(e) => handleDownload("windowsAmd", e)}
+                      size={currentDownloads.windowsAmd?.size}
                     />
                   </DropdownMenu>
                 )}
@@ -428,6 +414,7 @@ const DownloadPage: React.FC = memo(() => {
                           : "For Intel & M1/M2/M3"
                       }
                       onClick={(e) => handleDownload("macos", e)}
+                      size={currentDownloads.macos.size}
                     />
                   </DropdownMenu>
                 )}
@@ -474,19 +461,95 @@ const DownloadPage: React.FC = memo(() => {
                           : "For Ubuntu, Debian, Mint"
                       }
                       onClick={(e) => handleDownload("linux", e)}
+                      size={currentDownloads.linux.size}
                     />
                     {/* Add RPM logic here if URL is different, currently mapping both to 'linux' key */}
                   </DropdownMenu>
                 )}
               </div>
             </div>
-            {/* diagnostic ke liye additional notes agar chahiye toh yahan add kar sakte hain */}
+            
+            {/* --- SHA256 Verification Section --- */}
+            {currentDownloads.linux?.sha256 && (
+              <div className="mt-10 pt-8 border-t border-gray-100">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-emerald-100 p-2 rounded-lg">
+                    <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900">File Integrity Verification</h3>
+                    <p className="text-xs text-gray-500">Ensure your download is authentic and has not been tampered with.</p>
+                  </div>
+                </div>
+
+                <div className="bg-slate-900 rounded-xl p-5 border border-slate-800 shadow-2xl overflow-hidden relative group">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">SHA256 Checksum</span>
+                    </div>
+                    <CopyButton text={currentDownloads.linux.sha256} />
+                  </div>
+                  
+                  <div className="font-mono text-sm md:text-base text-emerald-400 break-all leading-relaxed bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 select-all">
+                    {currentDownloads.linux.sha256}
+                  </div>
+                  
+                  <div className="mt-4 flex items-center gap-2 text-[10px] text-slate-500 italic">
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                    </svg>
+                    Compare this hash with your downloaded file using 'certutil -hashfile filename SHA256' or similar tools.
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </>
   );
 });
+
+// --- Helper Component for Copy Logic ---
+const CopyButton: React.FC<{ text: string }> = ({ text }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <button 
+      onClick={handleCopy}
+      className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold transition-all duration-300 shadow-sm ${
+        copied 
+          ? 'bg-emerald-500 text-white scale-95' 
+          : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
+      }`}
+    >
+      {copied ? (
+        <>
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+          </svg>
+          COPIED TO CLIPBOARD
+        </>
+      ) : (
+        <>
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3" />
+          </svg>
+          COPY HASH
+        </>
+      )}
+    </button>
+  );
+};
 
 // --- Helper Components for Cleaner JSX ---
 
@@ -510,7 +573,12 @@ const DropdownMenu: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     </div>
 );
 
-const DropdownItem: React.FC<{ title: string; subtitle: string; onClick: (e: React.MouseEvent) => void }> = ({ title, subtitle, onClick }) => (
+const DropdownItem: React.FC<{ 
+    title: string; 
+    subtitle: string; 
+    size?: string;
+    onClick: (e: React.MouseEvent) => void 
+}> = ({ title, subtitle, size, onClick }) => (
     <button
         onClick={onClick}
         type="button"
@@ -518,7 +586,10 @@ const DropdownItem: React.FC<{ title: string; subtitle: string; onClick: (e: Rea
     >
         <div>
             <p className="font-semibold text-gray-900 text-sm group-hover:text-teal-600 transition-colors">{title}</p>
-            <p className="text-xs text-gray-500">{subtitle}</p>
+            <div className="flex gap-2 mt-0.5">
+                <p className="text-[10px] text-gray-500">{subtitle}</p>
+                {size && <p className="text-[10px] font-bold text-teal-600">({size})</p>}
+            </div>
         </div>
         <DownloadIcon />
     </button>

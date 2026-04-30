@@ -312,6 +312,14 @@ const HelpManualPage: React.FC = memo(() => {
           pageCount: 1,
         },
         {
+          id: 722, // Naya diagnostic manual entry
+          title: "D-Secure Diagnostic Eraser Manual",
+          description:
+            "Complete manual for D-Secure Diagnostic Eraser with all setup and operation guides",
+          url: "/support/help-manual/complete-diagnostic-manual",
+          pageCount: 1,
+        },
+        {
           id: 72,
           title: "Working with Reports",
           description: "Report generation, management, and customization guide",
