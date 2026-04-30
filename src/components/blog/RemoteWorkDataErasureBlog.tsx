@@ -13,12 +13,12 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
             <SEOHead seo={getBlogSEO({
-        title: "Remote Work Data Erasure Challenges",
-        excerpt: "Addressing data erasure challenges for remote and hybrid work environments.",
+        title: "Remote Work Data Erasure: 7 Best Practices for Secure BYOD & Hybrid Workforce | D-Secure",
+        excerpt: "Protect corporate data across remote and hybrid teams with certified remote data erasure. Enterprise best practices for BYOD device wipe, employee off-boarding data security, and distributed workforce compliance.",
         slug: "remote-work-data-erasure",
         author: "Nitesh Kushwaha",
         publishDate: "October 28, 2026",
-        keywords: "remote work, hybrid, data erasure",
+        keywords: "remote work data erasure, BYOD secure wipe, remote employee data security, hybrid workforce data destruction, endpoint data erasure compliance",
         category: "Best Practices",
         tag: "Remote Work"
       })} />

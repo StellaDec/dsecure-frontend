@@ -12,13 +12,14 @@ import { Link } from "react-router-dom";
 const LooseDrivesErasureGuideBlog: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+            {/* SEO: Page 4 — Loose Drives Erasure Guide ke liye optimized title aur description */}
             <SEOHead seo={getBlogSEO({
-        title: "Loose Drives Erasure Guide",
-        excerpt: "Best practices for erasing loose drives outside of systems.",
+        title: "How to Securely Erase Loose Drives from Data Centers & IT Assets",
+        excerpt: "Loose drives from data centers, printers & ITAD generate massive breach risk. Learn certified erasure steps for SATA, NVMe & SAS loose drives using NIST-compliant tools.",
         slug: "loose-drives-erasure-guide",
         author: "Nitish",
         publishDate: "June 18, 2025",
-        keywords: "loose drives, standalone erasure, SATA, NVMe",
+        keywords: "loose drives erasure, data center drives, ITAD, SATA NVMe erasure, secure drive sanitization",
         category: "Guide",
         tag: "Technical"
       })} />
@@ -233,7 +234,6 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
       {/* Engagement, Comments & Enquiry Section */}
       <section className="w-full px-4 md:px-8 lg:px-16 py-8">
         <Reveal>
-          
       <FAQSection faqs={blogFaqs["loose-drives-erasure-guide"]} />
       <EngagementSection blogId="loose-drives-erasure-guide" />
         </Reveal>

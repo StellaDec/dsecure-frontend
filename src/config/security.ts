@@ -1,0 +1,18 @@
+/**
+ * D-Secure Public Key Configuration
+ * Yeh key ISO signature verification aur frontend encryption ke liye use hoti hai.
+ * 
+ * Location: public/security/public-key.pem par bhi serve hoti hai.
+ */
+export const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwQ8IJ/gBu0XdOj4Zjy9IMkgMBbhDx3Gk
+k4SVha0VsLo9qsF1f3MXl+Mf/AbID6Enb/VlJwen1uwAtQxTRPFIxJPRIBezT5SajwTai25jm9Bp
+3wRDp+hBr/AyDnVB4tfRsqRSIbyib2dZadqUHq48hOMhdqtaOBmQCAw0hhFYgKJXlqli3omOxqih
+TMM2PKguA2oYdspTaniqB0PEo8qaAl/4ZuE8aOoiBDHqQqOF40n3e1JSib/aV4dNDgWKn8y+IkS7
+/4RDTQVu+1rL8teaotSdjLbNtvonH8w71WA6ugwafmhKvFgKmCqw4QxJGQQfwciji1B91WjEsvVM
++EKZBcjduMBFZcywWb+1uuSg41GgHbmj5RYVIOqMuGIPoBHbFklaso4LvKRTvVVkGAINYz9SMSE3
+9TZVU3xBeQn22mSm9kqDRU5C+ASgB6/t5NH2zdX7lhR+ZrHdOatIZ8S0UV76Kxsy7uXjc2hWBZPo
+fg3cXcBIjNcgCOGMron6+ECkUKjaLpbg8Qcaz/Eh41+OoWYpjvQcyaReW4+wSoAakpCA+oXaxOxo
+P4uAnHrwYMxE3HfXEtbHuxm0Wf4mLPPC4sEhWe84o6MItLVH9pCfH+YhW+kG9T3iTE7qAP8E0E10
+HsLqJjHGncbh3NGHNDwX5GASegzBqPbhyf1HRkvOztkCAwEAAQ==
+-----END PUBLIC KEY-----`;

@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "nist-800-88-compliance-india",
     slug: "nist-800-88-compliance-india",
-    title: "NIST 800-88 Compliance in India: The Ultimate Enterprise Guide",
+    title: "NIST 800-88 Compliance in India: Ultimate Guide",
     excerpt: "Learn how the global NIST 800-88 media sanitization standard maps perfectly to India's Digital Personal Data Protection (DPDP) Act 2023 requirements.",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600&h=900&fit=crop",
     link: "/blog/nist-800-88-compliance-india",
@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "erasure-vs-destruction",
     slug: "erasure-vs-destruction",
-    title: "Erasure vs. Physical Destruction: ROI Analysis",
+    title: "Erasure vs Physical Destruction ROI",
     excerpt: "A comparative analysis of value retention. How secure erasure allows for asset remarketing and ESG compliance, compared to the total loss of physical destruction.",
     image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=1600&h=900&fit=crop",
     link: "/blog/erasure-vs-destruction",
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "best-data-erasure-methods",
     slug: "best-data-erasure-methods",
-    title: "Best Data Erasure Method for Any Storage Media Type",
+    title: "Best Data Erasure Methods for Storage Media",
     excerpt: "One size does not fit all. Learn the correct erasure standard for HDDs, SSDs, and Mobile devices to ensure compliance.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&h=900&fit=crop",
     link: "/blog/best-data-erasure-methods",
@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "erasure-best-practices",
     slug: "erasure-best-practices",
-    title: "10 Crucial Data Erasure Best Practices for Business",
+    title: "10 Crucial Data Erasure Best Practices",
     excerpt: "From chain of custody to verification, these 10 rules will keep your organization safe from data breaches during disposal.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=900&fit=crop",
     link: "/blog/erasure-best-practices",
@@ -161,7 +161,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "msp-data-erasure",
     slug: "msp-data-erasure",
-    title: "Why MSPs Need Compliance-Verified Data Erasure",
+    title: "Why MSPs Need Verified Data Erasure",
     excerpt: "Unlock a new revenue stream and protect your clients from liability by offering compliance-verified erasure as a service.",
     image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&h=900&fit=crop",
     link: "/blog/msp-data-erasure",
@@ -394,7 +394,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "statutory-regulatory-compliance-data-erasure",
     slug: "statutory-regulatory-compliance-data-erasure",
-    title: "Statutory Regulatory Compliance Data Erasure",
+    title: "Regulatory Compliance Data Erasure",
     excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/statutory-regulatory-compliance-data-erasure",
@@ -446,7 +446,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "future-of-data-destruction-opportunities-challenges",
     slug: "future-of-data-destruction-opportunities-challenges",
-    title: "The Future of Data Destruction: Opportunities and Challenges",
+    title: "Future of Data Destruction: Trends",
     excerpt: "Market growth, regulatory pressure, cloud adoption, and emerging technologies are reshaping how organizations approach secure data destruction.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/future-of-data-destruction",
@@ -510,7 +510,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "dell-data-wipe-vs-dsecure",
     slug: "dell-data-wipe-vs-dsecure",
-    title: "Dell Data Wipe vs Professional Data Erasure: Is It Right for Your Business?",
+    title: "Dell Data Wipe vs Professional Data Erasure",
     excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/dell-data-wipe-vs-dsecure",
@@ -523,7 +523,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "common-criteria-certified-data-wiping",
     slug: "common-criteria-certified-data-wiping",
-    title: "Common Criteria Compliance-Verified Data Wiping",
+    title: "Common Criteria Verified Data Wiping",
     excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/common-criteria-certified-data-wiping",
@@ -640,7 +640,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "physical-destruction-vs-data-wiping",
     slug: "physical-destruction-vs-data-wiping",
-    title: "Physical Destruction vs Data Wiping: A Cost Analysis for IT Leaders",
+    title: "Physical Destruction vs Data Wiping: Costs",
     excerpt: "Which data destruction method provides the best ROI? We compare physical shredding vs software data wiping for enterprise IT asset disposition.",
     image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=1600&h=900&fit=crop",
     link: "/blog/physical-destruction-vs-data-wiping",

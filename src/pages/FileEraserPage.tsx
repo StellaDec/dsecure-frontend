@@ -1,4 +1,6 @@
 import React, { memo, useState, useEffect, useRef } from "react";
+import { PRODUCT_SEO } from "../utils/seo.products";
+import ProductInternalLinks from "../components/ProductInternalLinks";
 import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
@@ -1723,6 +1725,8 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
             </div>
           </div>
         </section>
+
+        <ProductInternalLinks currentProduct="file-eraser" />
 
         {/* ================= FAQ SECTION ================= */}
         <section

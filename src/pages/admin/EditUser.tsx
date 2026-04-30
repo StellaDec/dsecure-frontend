@@ -3,6 +3,8 @@ import SEOHead from "../../components/SEOHead";
 import { getSEOForPage } from "../../utils/seo";
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { useNotification } from "@/contexts/NotificationContext";
+import { isDemoMode } from "@/data/demoData";
 
 interface UserFormData {
   name: string
@@ -13,12 +15,29 @@ interface UserFormData {
   status: 'active' | 'inactive'
 }
 
+const groups = [
+  'Default Group',
+  'IT Department',
+  'Security Team',
+  'Pool Group'
+];
+
+// Mock user data - in real app, this would come from API
+const mockUsers = [
+  { id: '1', name: 'John Doe', email: 'john.doe@example.com', role: 'user', group: 'IT Department', licenses: 5, status: 'active' },
+  { id: '2', name: 'Alice Admin', email: 'alice.admin@example.com', role: 'admin', group: 'Default Group', licenses: 10, status: 'active' },
+  { id: '3', name: 'Bob User', email: 'bob.user@example.com', role: 'user', group: 'Security Team', licenses: 3, status: 'inactive' },
+  { id: '4', name: 'Carol Manager', email: 'carol.manager@example.com', role: 'user', group: 'Pool Group', licenses: 8, status: 'active' }
+];
+
 export default function EditUser() {
-  const { user } = useAuth()
-  const navigate = useNavigate()
-  const { userId } = useParams()
-  const [isLoading, setIsLoading] = useState(false)
-  const [userNotFound, setUserNotFound] = useState(false)
+  // Unused user removed if not needed
+  useAuth();
+  const navigate = useNavigate();
+  const { userId } = useParams();
+  const { showInfo } = useNotification();
+  const [isLoading, setIsLoading] = useState(false);
+  const [userNotFound, setUserNotFound] = useState(false);
   const [formData, setFormData] = useState<UserFormData>({
     name: '',
     email: '',
@@ -26,32 +45,18 @@ export default function EditUser() {
     group: 'Default Group',
     licenses: 5,
     status: 'active'
-  })
+  });
 
-  const groups = [
-    'Default Group',
-    'IT Department',
-    'Security Team',
-    'Pool Group'
-  ]
-
-  // Mock user data - in real app, this would come from API
-  const mockUsers = [
-    { id: '1', name: 'John Doe', email: 'john.doe@example.com', role: 'user', group: 'IT Department', licenses: 5, status: 'active' },
-    { id: '2', name: 'Alice Admin', email: 'alice.admin@example.com', role: 'admin', group: 'Default Group', licenses: 10, status: 'active' },
-    { id: '3', name: 'Bob User', email: 'bob.user@example.com', role: 'user', group: 'Security Team', licenses: 3, status: 'inactive' },
-    { id: '4', name: 'Carol Manager', email: 'carol.manager@example.com', role: 'user', group: 'Pool Group', licenses: 8, status: 'active' }
-  ]
 
   useEffect(() => {
-    // Simulate loading user data
+    // User data load karne ke liye effect
     const loadUser = async () => {
-      setIsLoading(true)
+      setIsLoading(true);
       
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 500))
+      // API call delay simulate karte hain
+      await new Promise(resolve => setTimeout(resolve, 500));
       
-      const foundUser = mockUsers.find(u => u.id === userId)
+      const foundUser = mockUsers.find(u => u.id === userId);
       
       if (foundUser) {
         setFormData({
@@ -61,67 +66,65 @@ export default function EditUser() {
           group: foundUser.group,
           licenses: foundUser.licenses,
           status: foundUser.status as 'active' | 'inactive'
-        })
+        });
       } else {
-        setUserNotFound(true)
+        setUserNotFound(true);
       }
       
-      setIsLoading(false)
+      setIsLoading(false);
     }
     
     if (userId) {
-      loadUser()
+      loadUser();
     }
-  }, [userId])
+  }, [userId]);
 
+  // Input change handler
+  // Licenses ke liye Number.parseInt use karte hain numeric consistency ke liye
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: name === 'licenses' ? parseInt(value) || 0 : value
-    }))
-  }
+      [name]: name === 'licenses' ? (Number.parseInt(value, 10) || 0) : value
+    }));
+  };
 
+  // Form submit handler
+  // Validation aur demo mode check ke baad success simulate karenge
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     
     // Validation
     if (!formData.name || !formData.email) {
-      console.log('Please fill in all required fields')
-      return
+      return;
+    }
+
+    if (isDemoMode()) {
+      showInfo("You are in Demo Mode. Action is not permitted.");
+      return;
     }
     
-    setIsLoading(true)
+    setIsLoading(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      
-      // Here you would make actual API call to backend
-      const updatedUser = {
-        id: userId,
-        ...formData,
-        updatedAt: new Date().toISOString()
-      }
-      
-      // console.log('Updating user:', updatedUser)
+      // API call simulate karte hain
+      await new Promise(resolve => setTimeout(resolve, 1500));
       
       // Success - Navigate back to users list
-      console.log(`User "${formData.name}" has been updated successfully!`)
-      navigate('/admin/users')
+      navigate('/admin/users');
       
     } catch (error) {
-      console.error('Error updating user:', error)
+      console.error('Error updating user:', error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   if (userNotFound) {
     return (
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-slate-900 mb-4">User Not Found</h1>
+          <h1 className="text-2xl font-bold text-slate-900 mb-4">Error: System User Not Found</h1>
           <p className="text-slate-600 mb-6">The user you're looking for doesn't exist.</p>
           <button 
             onClick={() => navigate('/admin/users')}
@@ -131,7 +134,7 @@ export default function EditUser() {
           </button>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -147,13 +150,14 @@ export default function EditUser() {
               <button 
                 onClick={() => navigate('/admin/users')}
                 className="text-slate-600 hover:text-slate-900 transition-colors"
+                aria-label="Go back to users management"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-                Edit User
+                Edit User Profile Information
               </h1>
             </div>
             <p className="text-slate-600">
@@ -179,10 +183,11 @@ export default function EditUser() {
                 {/* Basic Information */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="user-fullname" className="block text-sm font-medium text-slate-700 mb-2">
                       Full Name *
                     </label>
                     <input
+                      id="user-fullname"
                       type="text"
                       name="name"
                       value={formData.name}
@@ -194,10 +199,11 @@ export default function EditUser() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="user-email" className="block text-sm font-medium text-slate-700 mb-2">
                       Email Address *
                     </label>
                     <input
+                      id="user-email"
                       type="email"
                       name="email"
                       value={formData.email}
@@ -214,10 +220,11 @@ export default function EditUser() {
                 {/* Role and Group */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="user-role" className="block text-sm font-medium text-slate-700 mb-2">
                       User Role
                     </label>
                     <select
+                      id="user-role"
                       name="role"
                       value={formData.role}
                       onChange={handleInputChange}
@@ -229,10 +236,11 @@ export default function EditUser() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="user-group" className="block text-sm font-medium text-slate-700 mb-2">
                       User Group
                     </label>
                     <select
+                      id="user-group"
                       name="group"
                       value={formData.group}
                       onChange={handleInputChange}
@@ -248,10 +256,11 @@ export default function EditUser() {
                 {/* Licenses and Status */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="user-licenses" className="block text-sm font-medium text-slate-700 mb-2">
                       License Allocation
                     </label>
                     <input
+                      id="user-licenses"
                       type="number"
                       name="licenses"
                       value={formData.licenses}
@@ -263,10 +272,11 @@ export default function EditUser() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="user-status" className="block text-sm font-medium text-slate-700 mb-2">
                       Account Status
                     </label>
                     <select
+                      id="user-status"
                       name="status"
                       value={formData.status}
                       onChange={handleInputChange}
@@ -312,5 +322,5 @@ export default function EditUser() {
         </div>
       </div>
     </>
-  )
+  );
 }

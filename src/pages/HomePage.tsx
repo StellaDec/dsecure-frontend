@@ -826,8 +826,8 @@ const HomePage = memo(function HomePage() {
                 </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <Reveal delayMs={10}>
-                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur">
+                <Reveal delayMs={10} className="h-full">
+                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur h-full text-center">
                     {/* 🛡️ → ShieldIcon */}
                     <div className="text-2xl mb-3 text-white">
                       <ShieldIcon className="w-8 h-8 mx-auto" filled={true} />
@@ -840,8 +840,8 @@ const HomePage = memo(function HomePage() {
                     </p>
                   </div>
                 </Reveal>
-                <Reveal delayMs={20}>
-                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur">
+                <Reveal delayMs={20} className="h-full">
+                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur h-full text-center">
                     {/* ⚡ → LightningIcon */}
                     <div className="text-2xl mb-3 text-white">
                       <LightningIcon
@@ -857,8 +857,8 @@ const HomePage = memo(function HomePage() {
                     </p>
                   </div>
                 </Reveal>
-                <Reveal delayMs={30}>
-                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur">
+                <Reveal delayMs={30} className="h-full">
+                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur h-full text-center">
                     {/* 🎯 → StarIcon */}
                     <div className="text-2xl mb-3 text-white">
                       <StarIcon className="w-8 h-8 mx-auto" filled={true} />
@@ -1295,8 +1295,9 @@ const HomePage = memo(function HomePage() {
                 bgColor: "bg-gradient-to-br from-rose-500 to-rose-600",
               },
             ].map((feature, i) => (
-              <Reveal key={feature.titleKey} delayMs={i * 100}>
+              <Reveal key={feature.titleKey} delayMs={i * 100} className="h-full">
                 <div className="group card hover:shadow-lg hover:-translate-y-1 transition-transform duration-200 ease-out h-full flex flex-col relative overflow-hidden">
+                  {/* Card background overlay */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${
                       feature.bgColor.includes("blue")
@@ -1312,17 +1313,17 @@ const HomePage = memo(function HomePage() {
                                 : "from-rose-50 to-transparent"
                     } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                   ></div>
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     <div
                       className={`w-16 h-16 rounded-2xl ${feature.bgColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-200 will-change-transform`}
                     >
                       {feature.icon}
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 flex flex-col">
                       <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-brand transition-colors duration-200">
                         {t(feature.titleKey)}
                       </h3>
-                      <p className="text-slate-600 leading-relaxed">
+                      <p className="text-slate-600 leading-relaxed flex-grow">
                         {t(feature.descKey)}
                       </p>
                     </div>
@@ -1405,10 +1406,10 @@ const HomePage = memo(function HomePage() {
             </Reveal>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <Reveal delayMs={200}>
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-blue-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+            <Reveal delayMs={200} className="h-full">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-blue-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <HoverIcon>
@@ -1429,7 +1430,7 @@ const HomePage = memo(function HomePage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-slate-600 mb-4">
+                  <p className="text-slate-600 mb-4 flex-grow">
                     {t("home.healthcareDesc")}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -1443,10 +1444,10 @@ const HomePage = memo(function HomePage() {
                 </div>
               </div>
             </Reveal>
-            <Reveal delayMs={250}>
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-green-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+            <Reveal delayMs={250} className="h-full">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-green-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <svg
@@ -1472,7 +1473,7 @@ const HomePage = memo(function HomePage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-slate-600 mb-4">
+                  <p className="text-slate-600 mb-4 flex-grow">
                     {t("home.financialDesc")}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -1486,10 +1487,10 @@ const HomePage = memo(function HomePage() {
                 </div>
               </div>
             </Reveal>
-            <Reveal delayMs={300}>
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-purple-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+            <Reveal delayMs={300} className="h-full">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-purple-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <HoverIcon>
@@ -1510,7 +1511,7 @@ const HomePage = memo(function HomePage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-slate-600 mb-4">
+                  <p className="text-slate-600 mb-4 flex-grow">
                     {t("home.governmentDesc")}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -1524,10 +1525,10 @@ const HomePage = memo(function HomePage() {
                 </div>
               </div>
             </Reveal>
-            <Reveal delayMs={350}>
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+            <Reveal delayMs={350} className="h-full">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <HoverIcon>
@@ -1548,7 +1549,7 @@ const HomePage = memo(function HomePage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-slate-600 mb-4">
+                  <p className="text-slate-600 mb-4 flex-grow">
                     {t("home.enterpriseDesc")}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -1562,10 +1563,10 @@ const HomePage = memo(function HomePage() {
                 </div>
               </div>
             </Reveal>
-            <Reveal delayMs={400}>
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-orange-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+            <Reveal delayMs={400} className="h-full">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-orange-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <HoverIcon>
@@ -1586,7 +1587,7 @@ const HomePage = memo(function HomePage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-slate-600 mb-4">{t("home.itadDesc")}</p>
+                  <p className="text-slate-600 mb-4 flex-grow">{t("home.itadDesc")}</p>
                   <div className="flex flex-wrap gap-2">
                     <span className="text-xs px-2 py-1 bg-orange-100 text-orange-700 rounded-full">
                       Asset Recovery
@@ -1598,10 +1599,10 @@ const HomePage = memo(function HomePage() {
                 </div>
               </div>
             </Reveal>
-            <Reveal delayMs={450}>
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-teal-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+            <Reveal delayMs={450} className="h-full">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-teal-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <svg
@@ -1627,7 +1628,7 @@ const HomePage = memo(function HomePage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-slate-600 mb-4">
+                  <p className="text-slate-600 mb-4 flex-grow">
                     {t("home.serviceProvidersDesc")}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -1717,7 +1718,7 @@ const HomePage = memo(function HomePage() {
               >
                 {products.map((product, idx) => (
                   <div key={product.id} className="w-full md:w-1/2 flex-shrink-0 px-3 py-4">
-                    <Reveal delayMs={idx * 50}>
+                    <Reveal delayMs={idx * 50} className="h-full">
                       <div className="h-full">
                         <Link 
                           to={product.link}
@@ -1774,8 +1775,8 @@ const HomePage = memo(function HomePage() {
             </Reveal>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <Reveal delayMs={400}>
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+            <Reveal delayMs={400} className="h-full">
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 h-full">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center">
                     <svg
@@ -1799,8 +1800,8 @@ const HomePage = memo(function HomePage() {
                 <p className="text-white/90">{t("home.militaryGradeDesc")}</p>
               </div>
             </Reveal>
-            <Reveal delayMs={450}>
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+            <Reveal delayMs={450} className="h-full">
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 h-full">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center">
                     <svg
@@ -1824,8 +1825,8 @@ const HomePage = memo(function HomePage() {
                 <p className="text-white/90">{t("home.enterpriseScaleDesc")}</p>
               </div>
             </Reveal>
-            <Reveal delayMs={500}>
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 md:col-span-2 lg:col-span-1">
+            <Reveal delayMs={500} className="h-full">
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 md:col-span-2 lg:col-span-1 h-full">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center">
                     <svg

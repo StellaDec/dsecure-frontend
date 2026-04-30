@@ -39,7 +39,7 @@ const CryptoEraseSSDGuide: React.FC = () => {
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-                    CryptoEraseSSD
+                    CryptoEraseSSD: Secure Data Sanitization for SSDs
                   </span>
                 </h1>
 

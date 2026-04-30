@@ -5,6 +5,7 @@ import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
+import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import {
   Activity,
   Heart,
@@ -2052,6 +2053,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             </div>
           </div>
         </section>
+
+
+        <ProductInternalLinks currentProduct={PRODUCT_LINKS.DRIVE_ERASER_DIAGNOSTIC} />
 
         {/* ================= FAQ SECTION ================= */}
         <section id="faq" className="py-16 lg:py-24 bg-white">

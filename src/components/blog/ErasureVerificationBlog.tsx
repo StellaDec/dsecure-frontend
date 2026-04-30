@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const ErasureVerificationBlog: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
-            <SEOHead seo={getSEOForPage('blog')} />
+            <SEOHead seo={getSEOForPage('blog-erasure-verification-process')} />
 
             {/* Hero Section */}
             <section className="py-16 bg-white shadow-lg">

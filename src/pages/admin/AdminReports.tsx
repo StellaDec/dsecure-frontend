@@ -42,7 +42,7 @@ export default function AdminReports() {
     departmentId?: string;
   }>({});
 
-  // Get user's department from auth context (login response)
+  // Get user's department from auth context
   const userDepartment = user?.department || "IT Administration";
 
   // 🔐 RBAC: Role detection
@@ -73,109 +73,76 @@ export default function AdminReports() {
 
   const isDemo = isDemoMode();
 
-  // Mock data similar to D-SecureErase
-  const mockReports: ReportData[] = [
-    {
-      id: "1",
-      sNo: 91,
-      reportId: "File&Folder-20250...",
-      reportType: "File & Folder Erasure",
-      department: userDepartment,
-      totalFiles: 1,
-      erasedFiles: 0,
-      failedFiles: 1,
-      datetime: "2025-08-28 15:32:23",
-      status: "Completed",
-    },
-    {
-      id: "2",
-      sNo: 92,
-      reportId: "File&Folder-20250...",
-      reportType: "File & Folder Erasure",
-      department: userDepartment,
-      totalFiles: 1,
-      erasedFiles: 0,
-      failedFiles: 1,
-      datetime: "2025-08-28 15:34:36",
-      status: "Completed",
-    },
-    {
-      id: "3",
-      sNo: 93,
-      reportId: "File&Folder-20250...",
-      reportType: "File & Folder Erasure",
-      department: userDepartment,
-      totalFiles: 1,
-      erasedFiles: 1,
-      failedFiles: 0,
-      datetime: "2025-08-28 15:45:02",
-      status: "Completed",
-    },
-    {
-      id: "4",
-      sNo: 94,
-      reportId: "File&Folder-20250...",
-      reportType: "File & Folder Erasure",
-      department: userDepartment,
-      totalFiles: 1,
-      erasedFiles: 1,
-      failedFiles: 0,
-      datetime: "2025-08-28 15:47:46",
-      status: "Completed",
-    },
-    {
-      id: "5",
-      sNo: 95,
-      reportId: "File&Folder-20250...",
-      reportType: "File & Folder Erasure",
-      department: userDepartment,
-      totalFiles: 1,
-      erasedFiles: 1,
-      failedFiles: 0,
-      datetime: "2025-09-06 17:31:02",
-      status: "Completed",
-    },
-    {
-      id: "6",
-      sNo: 96,
-      reportId: "File&Folder-20250...",
-      reportType: "File & Folder Erasure",
-      department: userDepartment,
-      totalFiles: 46,
-      erasedFiles: 46,
-      failedFiles: 0,
-      datetime: "2025-09-20 16:07:46",
-      status: "Completed",
-    },
-    {
-      id: "7",
-      sNo: 97,
-      reportId: "File&Folder-20250...",
-      reportType: "File & Folder Erasure",
-      department: userDepartment,
-      totalFiles: 46,
-      erasedFiles: 46,
-      failedFiles: 0,
-      datetime: "2025-09-20 16:14:00",
-      status: "Completed",
-    },
-    {
-      id: "8",
-      sNo: 98,
-      reportId: "File&Folder-20250...",
-      reportType: "File & Folder Erasure",
-      department: userDepartment,
-      totalFiles: 1,
-      erasedFiles: 0,
-      failedFiles: 1,
-      datetime: "2025-09-21 17:43:22",
-      status: "Completed",
-    },
-  ];
 
   // 🔒 RBAC Filtered Reports
+  // Reports ko RBAC aur selected filters ke basis pe filter karte hain
   const filteredReports = useMemo(() => {
-    const whereClause = buildReportFilter(currentUser, {
+    const mockReports: ReportData[] = [
+      {
+        id: "1",
+        sNo: 91,
+        reportId: "File&Folder-20250...",
+        reportType: "File & Folder Erasure",
+        department: userDepartment,
+        totalFiles: 1,
+        erasedFiles: 0,
+        failedFiles: 1,
+        datetime: "2025-08-28 15:32:23",
+        status: "Completed",
+      },
+      {
+        id: "2",
+        sNo: 92,
+        reportId: "File&Folder-20250...",
+        reportType: "File & Folder Erasure",
+        department: userDepartment,
+        totalFiles: 1,
+        erasedFiles: 0,
+        failedFiles: 1,
+        datetime: "2025-08-28 15:34:36",
+        status: "Completed",
+      },
+      {
+        id: "3",
+        sNo: 93,
+        reportId: "File&Folder-20250...",
+        reportType: "File & Folder Erasure",
+        department: userDepartment,
+        totalFiles: 1,
+        erasedFiles: 0,
+        failedFiles: 1,
+        datetime: "2025-08-28 15:37:11",
+        status: "Completed",
+      },
+      {
+        id: "4",
+        sNo: 94,
+        reportId: "File&Folder-20250...",
+        reportType: "File & Folder Erasure",
+        department: "Security Team",
+        totalFiles: 5,
+        erasedFiles: 4,
+        failedFiles: 1,
+        datetime: "2025-08-29 10:15:00",
+        status: "Completed",
+      },
+      {
+        id: "5",
+        sNo: 95,
+        reportId: "File&Folder-20250...",
+        reportType: "File & Folder Erasure",
+        department: "Security Team",
+        totalFiles: 10,
+        erasedFiles: 10,
+        failedFiles: 0,
+        datetime: "2025-08-30 09:00:00",
+        status: "Completed",
+      },
+    ];
+
+    // buildReportFilter is imported but currently only used for generating SQL/query clauses in real apps
+    // yahan pe hum manual filter logic use kar rahe hain
+    buildReportFilter(currentUser, {
       eraseType: reportFilters.eraseType,
       eraseStatus: reportFilters.eraseStatus,
       email: reportFilters.email,
@@ -208,7 +175,7 @@ export default function AdminReports() {
       );
     });
   }, [
-    mockReports,
+    userDepartment,
     searchTerm,
     reportTypeFilter,
     reportFilters,
@@ -219,25 +186,23 @@ export default function AdminReports() {
 
   const handlePreview = (reportId: string) => {
     if (isDemo) return;
-    // console.log(`Opening preview for report: ${reportId}`)
+    console.log(`Opening preview for report: ${reportId}`);
   };
 
   const handleSettings = () => {
     if (isDemo) return;
-    // Open report settings modal (similar to Customize Report from D-SecureErase)
-    // console.log('Opening report settings...')
+    console.log('Opening report settings...');
   };
 
   const handleSaveReport = () => {
     if (isDemo) return;
-    // console.log('Report configuration saved successfully!')
+    console.log('Report configuration saved successfully!');
   };
 
   return (
     <>
       {/* SEO Meta Tags */}
       <SEOHead seo={getSEOForPage("admin-reports")} />
-
 
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         {/* Header */}
@@ -247,6 +212,7 @@ export default function AdminReports() {
               <button
                 onClick={() => navigate("/admin")}
                 className="text-slate-600 hover:text-slate-900 transition-colors"
+                aria-label="Go back to admin dashboard"
               >
                 <svg
                   className="w-5 h-5"
@@ -311,10 +277,11 @@ export default function AdminReports() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="report-search" className="block text-sm font-medium text-slate-700 mb-2">
                   Search
                 </label>
                 <input
+                  id="report-search"
                   type="text"
                   placeholder="Search reports..."
                   value={searchTerm}
@@ -323,10 +290,11 @@ export default function AdminReports() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="date-from" className="block text-sm font-medium text-slate-700 mb-2">
                   From Date
                 </label>
                 <input
+                  id="date-from"
                   type="date"
                   value={dateFrom}
                   onChange={(e) => setDateFrom(e.target.value)}
@@ -334,10 +302,11 @@ export default function AdminReports() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="date-to" className="block text-sm font-medium text-slate-700 mb-2">
                   To Date
                 </label>
                 <input
+                  id="date-to"
                   type="date"
                   value={dateTo}
                   onChange={(e) => setDateTo(e.target.value)}
@@ -345,10 +314,11 @@ export default function AdminReports() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="report-type-filter" className="block text-sm font-medium text-slate-700 mb-2">
                   Report Type
                 </label>
                 <select
+                  id="report-type-filter"
                   value={reportTypeFilter}
                   onChange={(e) => setReportTypeFilter(e.target.value)}
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
@@ -382,10 +352,11 @@ export default function AdminReports() {
               <div className="mt-4 pt-4 border-t border-slate-200">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="erase-type-filter" className="block text-sm font-medium text-slate-700 mb-2">
                       Erase Type
                     </label>
                     <select
+                      id="erase-type-filter"
                       value={reportFilters.eraseType || ""}
                       onChange={(e) =>
                         setReportFilters({
@@ -404,10 +375,11 @@ export default function AdminReports() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="erase-status-filter" className="block text-sm font-medium text-slate-700 mb-2">
                       Status
                     </label>
                     <select
+                      id="erase-status-filter"
                       value={reportFilters.eraseStatus || ""}
                       onChange={(e) =>
                         setReportFilters({
@@ -426,10 +398,11 @@ export default function AdminReports() {
 
                   {(isSuperAdmin || isGroupAdmin) && (
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                      <label htmlFor="dept-email-filter" className="block text-sm font-medium text-slate-700 mb-2">
                         Department/Email
                       </label>
                       <input
+                        id="dept-email-filter"
                         type="text"
                         value={reportFilters.email || ""}
                         onChange={(e) =>
@@ -500,7 +473,10 @@ export default function AdminReports() {
                     <td className="px-4 py-4 whitespace-nowrap text-sm text-slate-900">
                       {report.sNo}
                     </td>
-                    <td className="px-4 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800 cursor-pointer">
+                    <td 
+                      onClick={() => handlePreview(report.reportId)}
+                      className="px-4 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800 cursor-pointer"
+                    >
                       {report.reportId}
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap text-sm text-slate-900">

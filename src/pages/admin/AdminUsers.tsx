@@ -3,7 +3,7 @@ import { getSEOForPage } from "../../utils/seo";
 import { useAuth } from '@/auth/AuthContext'
 
 import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useNotification } from "@/contexts/NotificationContext";
 import { isDemoMode } from "@/data/demoData";
 
@@ -19,7 +19,8 @@ interface User {
 }
 
 export default function AdminUsers() {
-  const { user } = useAuth();
+  // Unused user removed
+  useAuth();
   const navigate = useNavigate();
   const { showInfo } = useNotification();
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,6 +33,7 @@ export default function AdminUsers() {
   const [licenseCount, setLicenseCount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  // Mock data for users
   const users: User[] = [
     {
       id: "1",
@@ -75,6 +77,8 @@ export default function AdminUsers() {
     },
   ];
 
+  // Users filter logic
+  // Search, Role aur Status ke basis pe users filter karte hain
   const filteredUsers = users.filter((user) => {
     const matchesSearch =
       user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -86,37 +90,36 @@ export default function AdminUsers() {
     return matchesSearch && matchesRole && matchesStatus;
   });
 
+  // User delete handler
+  // Demo mode check ke baad confirmation le kar delete karenge
   const handleDeleteUser = (userId: string) => {
     if (isDemoMode()) {
       showInfo("You are in Demo Mode. Action is not permitted.");
       return;
     }
     if (confirm("Are you sure you want to delete this user?")) {
-      // Handle user deletion
-      // console.log('Deleting user:', userId)
+      // Handle user deletion logic yahan aayegi
+      console.log('Deleting user:', userId);
     }
   };
 
+  // License assign handler
   const handleAssignLicense = (userId: string) => {
     const user = users.find((u) => u.id === userId);
-    if (!user) {
-      // console.log('User not found')
-      return;
-    }
+    if (!user) return;
 
     setSelectedUser(user);
     setLicenseCount(user.licenses.toString());
     setIsLicenseModalOpen(true);
   };
 
+  // License submit handler
+  // Input validation aur demo mode check ke baad API call simulate karenge
   const handleLicenseSubmit = async () => {
     if (!selectedUser) return;
 
-    const newCount = Number(licenseCount);
-    if (isNaN(newCount) || newCount < 0) {
-      // console.log('Please enter a valid license count (0 or greater)')
-      return;
-    }
+    const newCount = Number.parseInt(licenseCount, 10);
+    if (isNaN(newCount) || newCount < 0) return;
 
     if (isDemoMode()) {
       showInfo("You are in Demo Mode. Action is not permitted.");
@@ -126,24 +129,14 @@ export default function AdminUsers() {
 
     setIsLoading(true);
 
-    // Simulate API call
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // console.log(`Updating licenses for user ${selectedUser.id} from ${selectedUser.licenses} to ${newCount}`)
-
-      // Update the user licenses in the mock data
-      const userIndex = users.findIndex((u) => u.id === selectedUser.id);
-      if (userIndex !== -1) {
-        users[userIndex].licenses = newCount;
-      }
-
-      // console.log(`Successfully assigned ${newCount} license(s) to ${selectedUser.name}`)
+      // Success logic yahan aayegi
       setIsLicenseModalOpen(false);
       setSelectedUser(null);
       setLicenseCount("");
     } catch (error) {
-      // console.error('Failed to assign licenses. Please try again.')
+      console.error('Failed to assign licenses:', error);
     } finally {
       setIsLoading(false);
     }
@@ -154,7 +147,6 @@ export default function AdminUsers() {
       {/* SEO Meta Tags */}
       <SEOHead seo={getSEOForPage("admin-users")} />
 
-
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
@@ -163,6 +155,7 @@ export default function AdminUsers() {
               <button
                 onClick={() => navigate("/admin")}
                 className="text-slate-600 hover:text-slate-900 transition-colors"
+                aria-label="Go back to admin dashboard"
               >
                 <svg
                   className="w-5 h-5"
@@ -179,7 +172,7 @@ export default function AdminUsers() {
                 </svg>
               </button>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-                Manage Users
+                Manage User Accounts and Access Rights
               </h1>
             </div>
             <p className="text-slate-600">
@@ -214,10 +207,11 @@ export default function AdminUsers() {
           <div className="p-4 sm:p-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="search-users" className="block text-sm font-medium text-slate-700 mb-2">
                   Search Users
                 </label>
                 <input
+                  id="search-users"
                   type="text"
                   placeholder="Search by name or email..."
                   value={searchTerm}
@@ -226,10 +220,11 @@ export default function AdminUsers() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="role-filter" className="block text-sm font-medium text-slate-700 mb-2">
                   Role
                 </label>
                 <select
+                  id="role-filter"
                   value={selectedRole}
                   onChange={(e) => setSelectedRole(e.target.value)}
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
@@ -240,10 +235,11 @@ export default function AdminUsers() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="status-filter" className="block text-sm font-medium text-slate-700 mb-2">
                   Status
                 </label>
                 <select
+                  id="status-filter"
                   value={selectedStatus}
                   onChange={(e) => setSelectedStatus(e.target.value)}
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
@@ -421,13 +417,14 @@ export default function AdminUsers() {
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <span className="block text-sm font-medium text-slate-700 mb-2">
                       Current Licenses: {selectedUser.licenses}
-                    </label>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    </span>
+                    <label htmlFor="new-license-count" className="block text-sm font-medium text-slate-700 mb-2">
                       New License Count
                     </label>
                     <input
+                      id="new-license-count"
                       type="number"
                       min="0"
                       value={licenseCount}
@@ -462,10 +459,10 @@ export default function AdminUsers() {
                           {selectedUser.licenses}
                         </span>
                       </div>
-                      {licenseCount && !isNaN(Number(licenseCount)) && (
+                      {licenseCount && !isNaN(Number.parseInt(licenseCount, 10)) && (
                         <div className="flex justify-between text-emerald-800 font-medium mt-1 pt-1 border-t">
                           <span>New Licenses:</span>
-                          <span>{Number(licenseCount)}</span>
+                          <span>{Number.parseInt(licenseCount, 10)}</span>
                         </div>
                       )}
                     </div>
@@ -489,8 +486,8 @@ export default function AdminUsers() {
                     disabled={
                       isLoading ||
                       !licenseCount ||
-                      isNaN(Number(licenseCount)) ||
-                      Number(licenseCount) < 0
+                      isNaN(Number.parseInt(licenseCount, 10)) ||
+                      Number.parseInt(licenseCount, 10) < 0
                     }
                     className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
                   >

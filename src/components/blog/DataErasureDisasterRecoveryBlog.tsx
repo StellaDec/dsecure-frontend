@@ -12,13 +12,14 @@ import { Link } from "react-router-dom";
 const DataErasureDisasterRecoveryBlog: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+            {/* SEO: Page 2 — Disaster Recovery blog ke liye optimized title aur description */}
             <SEOHead seo={getBlogSEO({
-        title: "Data Erasure in Disaster Recovery",
-        excerpt: "Integrating data erasure into your disaster recovery and business continuity plans.",
+        title: "Data Erasure in Your Disaster Recovery Plan — Why It Matters",
+        excerpt: "Most DR plans overlook secure data erasure — and regulators notice. See how to embed certified erasure into your recovery workflow for GDPR, HIPAA & ISO compliance.",
         slug: "data-erasure-disaster-recovery",
         author: "Prashant Saini",
         publishDate: "January 18, 2025",
-        keywords: "disaster recovery, data erasure, business continuity",
+        keywords: "disaster recovery, data erasure, business continuity, GDPR, HIPAA, ISO compliance",
         category: "Enterprise",
         tag: "DR/BC"
       })} />
@@ -251,7 +252,6 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
       {/* Engagement, Comments & Enquiry Section */}
       <section className="w-full px-4 md:px-8 lg:px-16 py-8">
         <Reveal>
-          
       <FAQSection faqs={blogFaqs["data-erasure-disaster-recovery"]} />
       <EngagementSection blogId="data-erasure-disaster-recovery" />
         </Reveal>

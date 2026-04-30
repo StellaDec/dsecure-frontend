@@ -4,6 +4,7 @@ import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
+import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import {
   ShieldIcon,
   CheckIcon,
@@ -1891,6 +1892,8 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
           </div>
         </section>
 
+        <ProductInternalLinks currentProduct={PRODUCT_LINKS.DRIVE_ERASER} />
+
         {/* ================= FAQ SECTION ================= */}
         <section id="faq" className="py-16 lg:py-24 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
@@ -2358,6 +2361,19 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
           </div>
         </div>
       )}
+
+      {/* Related Products — SEO internal linking */}
+      <ProductInternalLinks
+        heading="Complete Your Data Security Workflow"
+        links={[
+          PRODUCT_LINKS["drive-verifier"],
+          PRODUCT_LINKS["hardware-diagnostics"],
+          PRODUCT_LINKS["file-eraser"],
+          PRODUCT_LINKS["lun-eraser"],
+          PRODUCT_LINKS["virtual-machine-eraser"],
+          PRODUCT_LINKS["forensic-imaging"],
+        ]}
+      />
     </>
   );
 });

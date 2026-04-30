@@ -261,7 +261,7 @@ export default function EditSubuser() {
             </button>
 
             <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              Edit Subuser
+              Edit Subuser Profile and Update Access Permissions
             </h1>
             <p className="text-slate-600 mt-2">
               Update user information and permissions

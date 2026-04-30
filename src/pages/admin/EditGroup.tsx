@@ -3,6 +3,8 @@ import SEOHead from "../../components/SEOHead";
 import { getSEOForPage } from "../../utils/seo";
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { useNotification } from "@/contexts/NotificationContext";
+import { isDemoMode } from "@/data/demoData";
 
 interface GroupFormData {
   name: string
@@ -11,18 +13,28 @@ interface GroupFormData {
   permissions: string[]
 }
 
+  // Mock group data - in real app, this would come from API
+  const mockGroups = [
+    { id: '0', name: 'Default Group', description: 'Default users Selection', licenses: 2322, permissions: ['basic_access', 'report_generation'] },
+    { id: '1', name: 'Pool Group', description: 'Pool users', licenses: 200, permissions: ['basic_access'] },
+    { id: '2', name: 'IT Department', description: 'IT Department Users', licenses: 150, permissions: ['basic_access', 'advanced_erasure', 'report_generation', 'system_settings'] },
+    { id: '3', name: 'Security Team', description: 'Security Operations', licenses: 75, permissions: ['basic_access', 'advanced_erasure', 'report_generation', 'user_management', 'system_settings', 'license_management'] }
+  ];
+
 export default function EditGroup() {
-  const { user } = useAuth()
-  const navigate = useNavigate()
-  const { groupId } = useParams()
-  const [isLoading, setIsLoading] = useState(false)
-  const [groupNotFound, setGroupNotFound] = useState(false)
+  // Unused user removed
+  useAuth();
+  const navigate = useNavigate();
+  const { groupId } = useParams();
+  const { showInfo } = useNotification();
+  const [isLoading, setIsLoading] = useState(false);
+  const [groupNotFound, setGroupNotFound] = useState(false);
   const [formData, setFormData] = useState<GroupFormData>({
     name: '',
     description: '',
     licenses: 100,
     permissions: ['basic_access']
-  })
+  });
 
   const availablePermissions = [
     { id: 'basic_access', name: 'Basic Access', description: 'Access to basic erasure tools' },
@@ -31,25 +43,16 @@ export default function EditGroup() {
     { id: 'user_management', name: 'User Management', description: 'Manage other users (Admin only)' },
     { id: 'system_settings', name: 'System Settings', description: 'Configure system settings' },
     { id: 'license_management', name: 'License Management', description: 'Manage license allocation' }
-  ]
-
-  // Mock group data - in real app, this would come from API
-  const mockGroups = [
-    { id: '0', name: 'Default Group', description: 'Default users Selection', licenses: 2322, permissions: ['basic_access', 'report_generation'] },
-    { id: '1', name: 'Pool Group', description: 'Pool users', licenses: 200, permissions: ['basic_access'] },
-    { id: '2', name: 'IT Department', description: 'IT Department Users', licenses: 150, permissions: ['basic_access', 'advanced_erasure', 'report_generation', 'system_settings'] },
-    { id: '3', name: 'Security Team', description: 'Security Operations', licenses: 75, permissions: ['basic_access', 'advanced_erasure', 'report_generation', 'user_management', 'system_settings', 'license_management'] }
-  ]
-
+  ];
   useEffect(() => {
-    // Simulate loading group data
+    // Group data load karne ke liye effect
     const loadGroup = async () => {
-      setIsLoading(true)
+      setIsLoading(true);
       
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 500))
+      // API call delay simulate karte hain
+      await new Promise(resolve => setTimeout(resolve, 500));
       
-      const foundGroup = mockGroups.find(g => g.id === groupId)
+      const foundGroup = mockGroups.find(g => g.id === groupId);
       
       if (foundGroup) {
         setFormData({
@@ -57,81 +60,79 @@ export default function EditGroup() {
           description: foundGroup.description,
           licenses: foundGroup.licenses,
           permissions: foundGroup.permissions
-        })
+        });
       } else {
-        setGroupNotFound(true)
+        setGroupNotFound(true);
       }
       
-      setIsLoading(false)
+      setIsLoading(false);
     }
     
     if (groupId) {
-      loadGroup()
+      loadGroup();
     }
-  }, [groupId])
+  }, [groupId]);
 
+  // Input change handler
+  // Licenses ke liye Number.parseInt use karte hain numeric consistency ke liye
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: name === 'licenses' ? parseInt(value) || 0 : value
-    }))
-  }
+      [name]: name === 'licenses' ? (Number.parseInt(value, 10) || 0) : value
+    }));
+  };
 
+  // Permission toggle handler
   const handlePermissionChange = (permissionId: string, checked: boolean) => {
     setFormData(prev => ({
       ...prev,
       permissions: checked 
         ? [...prev.permissions, permissionId]
         : prev.permissions.filter(p => p !== permissionId)
-    }))
-  }
+    }));
+  };
 
+  // Form submit handler
+  // Validation aur demo mode check ke baad success simulate karenge
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     
     // Validation
     if (!formData.name || !formData.description) {
-      console.log('Please fill in all required fields')
-      return
+      return;
     }
     
     if (formData.permissions.length === 0) {
-      console.log('Please select at least one permission')
-      return
+      return;
+    }
+
+    if (isDemoMode()) {
+      showInfo("You are in Demo Mode. Action is not permitted.");
+      return;
     }
     
-    setIsLoading(true)
+    setIsLoading(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      
-      // Here you would make actual API call to backend
-      const updatedGroup = {
-        id: groupId,
-        ...formData,
-        updatedAt: new Date().toISOString()
-      }
-      
-      // console.log('Updating group:', updatedGroup)
+      // API call simulate karte hain
+      await new Promise(resolve => setTimeout(resolve, 1500));
       
       // Success - Navigate back to admin dashboard
-      console.log(`Group "${formData.name}" has been updated successfully!`)
-      navigate('/admin')
+      navigate('/admin');
       
     } catch (error) {
-      console.error('Error updating group:', error)
+      console.error('Error updating group:', error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   if (groupNotFound) {
     return (
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-slate-900 mb-4">Group Not Found</h1>
+          <h1 className="text-2xl font-bold text-slate-900 mb-4">Error: Organization Group Not Found</h1>
           <p className="text-slate-600 mb-6">The group you're looking for doesn't exist.</p>
           <button 
             onClick={() => navigate('/admin')}
@@ -141,7 +142,7 @@ export default function EditGroup() {
           </button>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -157,13 +158,14 @@ export default function EditGroup() {
               <button 
                 onClick={() => navigate('/admin')}
                 className="text-slate-600 hover:text-slate-900 transition-colors"
+                aria-label="Go back to admin dashboard"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-                Edit Group
+                Edit Organization Group Settings
               </h1>
             </div>
             <p className="text-slate-600">
@@ -188,10 +190,11 @@ export default function EditGroup() {
               <div className="p-6 space-y-6">
                 {/* Basic Information */}
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="group-name-edit" className="block text-sm font-medium text-slate-700 mb-2">
                     Group Name *
                   </label>
                   <input
+                    id="group-name-edit"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -203,10 +206,11 @@ export default function EditGroup() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="group-desc-edit" className="block text-sm font-medium text-slate-700 mb-2">
                     Description *
                   </label>
                   <textarea
+                    id="group-desc-edit"
                     name="description"
                     value={formData.description}
                     onChange={handleInputChange}
@@ -218,10 +222,11 @@ export default function EditGroup() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="group-licenses-edit" className="block text-sm font-medium text-slate-700 mb-2">
                     License Allocation
                   </label>
                   <input
+                    id="group-licenses-edit"
                     type="number"
                     name="licenses"
                     value={formData.licenses}
@@ -310,5 +315,5 @@ export default function EditGroup() {
         </div>
       </div>
     </>
-  )
+  );
 }

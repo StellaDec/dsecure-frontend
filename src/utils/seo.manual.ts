@@ -7,7 +7,7 @@ import { SEOMetadata, generateKeywords, getCanonicalUrl } from "./seo.core";
 export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   "access-verification": {
     title: "Access Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Access Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Access Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["access", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/access-verification"),
     breadcrumbs: [
@@ -19,7 +19,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "activation-key": {
     title: "Activation Key Guide | D-Secure Tech Manual",
-    description: "Comprehensive Activation Key Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Activation Key Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["activation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/activation-key"),
     breadcrumbs: [
@@ -31,7 +31,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "api-integration": {
     title: "Api Integration Guide | D-Secure Tech Manual",
-    description: "Comprehensive Api Integration Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Api Integration Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["integration", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/api-integration"),
     breadcrumbs: [
@@ -43,7 +43,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "audit-preparation": {
     title: "Audit Preparation Guide | D-Secure Tech Manual",
-    description: "Comprehensive Audit Preparation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Audit Preparation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["audit", "preparation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/audit-preparation"),
     breadcrumbs: [
@@ -55,7 +55,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "audit-trails": {
     title: "Audit Trails Guide | D-Secure Tech Manual",
-    description: "Comprehensive Audit Trails Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Audit Trails Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["audit", "trails", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/audit-trails"),
     breadcrumbs: [
@@ -67,7 +67,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "audit-verification": {
     title: "Audit Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Audit Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Audit Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["audit", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/audit-verification"),
     breadcrumbs: [
@@ -79,7 +79,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "auto-updates": {
     title: "Auto Updates Guide | D-Secure Tech Manual",
-    description: "Comprehensive Auto Updates Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Auto Updates Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["auto", "updates", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/auto-updates"),
     breadcrumbs: [
@@ -91,7 +91,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "banking-finance": {
     title: "Banking Finance Guide | D-Secure Tech Manual",
-    description: "Comprehensive Banking Finance Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Banking Finance Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["banking", "finance", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/banking-finance"),
     breadcrumbs: [
@@ -103,7 +103,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "banking-mode": {
     title: "Banking Mode Guide | D-Secure Tech Manual",
-    description: "Comprehensive Banking Mode Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Banking Mode Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["banking", "mode", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/banking-mode"),
     breadcrumbs: [
@@ -115,7 +115,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "batch-operations": {
     title: "Batch Operations Guide | D-Secure Tech Manual",
-    description: "Comprehensive Batch Operations Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Batch Operations Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["batch", "operations", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/batch-operations"),
     breadcrumbs: [
@@ -127,7 +127,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "best-practices": {
     title: "Best Practices Guide | D-Secure Tech Manual",
-    description: "Comprehensive Best Practices Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Best Practices Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["best", "practices", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/best-practices"),
     breadcrumbs: [
@@ -139,7 +139,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "certificate-destruction": {
     title: "Certificate Destruction Guide | D-Secure Tech Manual",
-    description: "Comprehensive Certificate Destruction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Certificate Destruction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["certificate", "destruction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/certificate-destruction"),
     breadcrumbs: [
@@ -150,9 +150,9 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "certificate-generation": {
-    title: "Certificate Generation Guide | D-Secure Tech Manual",
-    description: "Comprehensive Certificate Generation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
-    keywords: generateKeywords(["certificate", "generation", "guide", "manual", "guide", "d-secure"]),
+    title: "Erasure Certificate Generation: Compliance Docs | D-Secure",
+    description: "Generate tamper-proof data erasure certificates with D-Secure. Supports PDF, XML, and JSON formats for GDPR, HIPAA & NIST 800-88 compliance.",
+    keywords: generateKeywords(["data erasure certificate generation", "tamper-proof erasure certificate", "NIST 800-88 compliance document", "GDPR data destruction certificate", "audit-ready erasure report", "ITAD compliance certificate"]),
     canonicalUrl: getCanonicalUrl("/support/manual/certificate-generation"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -163,7 +163,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "chain-custody": {
     title: "Chain Custody Guide | D-Secure Tech Manual",
-    description: "Comprehensive Chain Custody Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Chain Custody Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["chain", "custody", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/chain-custody"),
     breadcrumbs: [
@@ -175,7 +175,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "cloud-console": {
     title: "Cloud Console Guide | D-Secure Tech Manual",
-    description: "Comprehensive Cloud Console Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Cloud Console Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["cloud", "console", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/cloud-console"),
     breadcrumbs: [
@@ -187,7 +187,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "common-issues": {
     title: "Common Issues Guide | D-Secure Tech Manual",
-    description: "Comprehensive Common Issues Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Common Issues Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["common", "issues", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/common-issues"),
     breadcrumbs: [
@@ -199,7 +199,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "comparison-table": {
     title: "Comparison Table Guide | D-Secure Tech Manual",
-    description: "Comprehensive Comparison Table Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Comparison Table Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["comparison", "table", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/comparison-table"),
     breadcrumbs: [
@@ -211,7 +211,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "compliance-export": {
     title: "Compliance Export Guide | D-Secure Tech Manual",
-    description: "Comprehensive Compliance Export Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Compliance Export Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["compliance", "export", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/compliance-export"),
     breadcrumbs: [
@@ -223,7 +223,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "compliance-standards": {
     title: "Compliance Standards Guide | D-Secure Tech Manual",
-    description: "Comprehensive Compliance Standards Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Compliance Standards Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["compliance", "standards", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/compliance-standards"),
     breadcrumbs: [
@@ -235,7 +235,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "crushing-method": {
     title: "Crushing Method Guide | D-Secure Tech Manual",
-    description: "Comprehensive Crushing Method Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Crushing Method Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["crushing", "method", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/crushing-method"),
     breadcrumbs: [
@@ -247,7 +247,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "crypto-benefits": {
     title: "Crypto Benefits Guide | D-Secure Tech Manual",
-    description: "Comprehensive Crypto Benefits Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Crypto Benefits Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["crypto", "benefits", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/crypto-benefits"),
     breadcrumbs: [
@@ -259,7 +259,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "cryptographic-erasure": {
     title: "Cryptographic Erasure Guide | D-Secure Tech Manual",
-    description: "Comprehensive Cryptographic Erasure Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Cryptographic Erasure Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["cryptographic", "erasure", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/cryptographic-erasure"),
     breadcrumbs: [
@@ -271,7 +271,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "crypto-importance": {
     title: "Crypto Importance Guide | D-Secure Tech Manual",
-    description: "Comprehensive Crypto Importance Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Crypto Importance Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["crypto", "importance", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/crypto-importance"),
     breadcrumbs: [
@@ -283,7 +283,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "crypto-process": {
     title: "Crypto Process Guide | D-Secure Tech Manual",
-    description: "Comprehensive Crypto Process Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Crypto Process Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["crypto", "process", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/crypto-process"),
     breadcrumbs: [
@@ -295,7 +295,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "crypto-verification": {
     title: "Crypto Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Crypto Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Crypto Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["crypto", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/crypto-verification"),
     breadcrumbs: [
@@ -307,7 +307,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "custom-algorithms": {
     title: "Custom Algorithms Guide | D-Secure Tech Manual",
-    description: "Comprehensive Custom Algorithms Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Custom Algorithms Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["custom", "algorithms", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/custom-algorithms"),
     breadcrumbs: [
@@ -319,7 +319,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "custom-configurations": {
     title: "Custom Configurations Guide | D-Secure Tech Manual",
-    description: "Comprehensive Custom Configurations Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Custom Configurations Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["custom", "configurations", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/custom-configurations"),
     breadcrumbs: [
@@ -331,7 +331,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "custom-dashboards": {
     title: "Custom Dashboards Guide | D-Secure Tech Manual",
-    description: "Comprehensive Custom Dashboards Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Custom Dashboards Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["custom", "dashboards", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/custom-dashboards"),
     breadcrumbs: [
@@ -343,7 +343,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "degaussing-method": {
     title: "Degaussing Method Guide | D-Secure Tech Manual",
-    description: "Comprehensive Degaussing Method Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Degaussing Method Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["degaussing", "method", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/degaussing-method"),
     breadcrumbs: [
@@ -355,7 +355,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "destruction-quality": {
     title: "Destruction Quality Guide | D-Secure Tech Manual",
-    description: "Comprehensive Destruction Quality Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Destruction Quality Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["destruction", "quality", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/destruction-quality"),
     breadcrumbs: [
@@ -367,7 +367,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "destruction-standards": {
     title: "Destruction Standards Guide | D-Secure Tech Manual",
-    description: "Comprehensive Destruction Standards Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Destruction Standards Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["destruction", "standards", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/destruction-standards"),
     breadcrumbs: [
@@ -379,7 +379,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "destruction-use-cases": {
     title: "Destruction Use Cases Guide | D-Secure Tech Manual",
-    description: "Comprehensive Destruction Use Cases Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Destruction Use Cases Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["destruction", "cases", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/destruction-use-cases"),
     breadcrumbs: [
@@ -391,7 +391,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "device-selection": {
     title: "Device Selection Guide | D-Secure Tech Manual",
-    description: "Comprehensive Device Selection Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Device Selection Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["device", "selection", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/device-selection"),
     breadcrumbs: [
@@ -403,7 +403,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "dod3pass": {
     title: "Dod3pass Guide | D-Secure Tech Manual",
-    description: "Comprehensive Dod3pass Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Dod3pass Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["dod3pass", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/dod3pass"),
     breadcrumbs: [
@@ -415,7 +415,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "dod7pass": {
     title: "Dod7pass Guide | D-Secure Tech Manual",
-    description: "Comprehensive Dod7pass Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Dod7pass Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["dod7pass", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/dod7pass"),
     breadcrumbs: [
@@ -427,7 +427,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "dod-standards": {
     title: "Dod Standards Guide | D-Secure Tech Manual",
-    description: "Comprehensive Dod Standards Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Dod Standards Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["standards", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/dod-standards"),
     breadcrumbs: [
@@ -439,7 +439,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "download-installer": {
     title: "Download Installer Guide | D-Secure Tech Manual",
-    description: "Comprehensive Download Installer Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Download Installer Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["download", "installer", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/download-installer"),
     breadcrumbs: [
@@ -451,7 +451,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "dsecure-integration": {
     title: "D Secure Integration Guide | D-Secure Tech Manual",
-    description: "Comprehensive D Secure Integration Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "D Secure Integration Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["secure", "integration", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/dsecure-integration"),
     breadcrumbs: [
@@ -463,7 +463,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "enterprise-benefits": {
     title: "Enterprise Benefits Guide | D-Secure Tech Manual",
-    description: "Comprehensive Enterprise Benefits Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Enterprise Benefits Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["enterprise", "benefits", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/enterprise-benefits"),
     breadcrumbs: [
@@ -475,7 +475,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "enterprise-integration": {
     title: "Enterprise Integration Guide | D-Secure Tech Manual",
-    description: "Comprehensive Enterprise Integration Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Enterprise Integration Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["enterprise", "integration", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/enterprise-integration"),
     breadcrumbs: [
@@ -487,7 +487,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "enterprise-servers": {
     title: "Enterprise Servers Guide | D-Secure Tech Manual",
-    description: "Comprehensive Enterprise Servers Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Enterprise Servers Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["enterprise", "servers", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/enterprise-servers"),
     breadcrumbs: [
@@ -499,7 +499,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "environmental-considerations": {
     title: "Environmental Considerations Guide | D-Secure Tech Manual",
-    description: "Comprehensive Environmental Considerations Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Environmental Considerations Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["environmental", "considerations", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/environmental-considerations"),
     breadcrumbs: [
@@ -511,7 +511,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "environmental-impact": {
     title: "Environmental Impact Guide | D-Secure Tech Manual",
-    description: "Comprehensive Environmental Impact Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Environmental Impact Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["environmental", "impact", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/environmental-impact"),
     breadcrumbs: [
@@ -523,7 +523,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "erasure-preferences": {
     title: "Erasure Preferences Guide | D-Secure Tech Manual",
-    description: "Comprehensive Erasure Preferences Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Erasure Preferences Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["erasure", "preferences", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/erasure-preferences"),
     breadcrumbs: [
@@ -535,7 +535,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "erasure-process": {
     title: "Erasure Process Guide | D-Secure Tech Manual",
-    description: "Comprehensive Erasure Process Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Erasure Process Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["erasure", "process", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/erasure-process"),
     breadcrumbs: [
@@ -547,7 +547,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "erasure-reports": {
     title: "Erasure Reports Guide | D-Secure Tech Manual",
-    description: "Comprehensive Erasure Reports Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Erasure Reports Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["erasure", "reports", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/erasure-reports"),
     breadcrumbs: [
@@ -559,7 +559,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "error-codes": {
     title: "Error Codes Guide | D-Secure Tech Manual",
-    description: "Comprehensive Error Codes Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Error Codes Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["error", "codes", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/error-codes"),
     breadcrumbs: [
@@ -571,7 +571,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "faqs": {
     title: "Faqs Guide | D-Secure Tech Manual",
-    description: "Comprehensive Faqs Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Faqs Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["faqs", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/faqs"),
     breadcrumbs: [
@@ -583,7 +583,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "financial-verification": {
     title: "Financial Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Financial Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Financial Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["financial", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/financial-verification"),
     breadcrumbs: [
@@ -595,7 +595,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "firewall-config": {
     title: "Firewall Config Guide | D-Secure Tech Manual",
-    description: "Comprehensive Firewall Config Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Firewall Config Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["firewall", "config", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/firewall-config"),
     breadcrumbs: [
@@ -607,7 +607,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "firewall-setup": {
     title: "Firewall Setup Guide | D-Secure Tech Manual",
-    description: "Comprehensive Firewall Setup Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Firewall Setup Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["firewall", "setup", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/firewall-setup"),
     breadcrumbs: [
@@ -619,7 +619,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "first-run": {
     title: "First Run Guide | D-Secure Tech Manual",
-    description: "Comprehensive First Run Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "First Run Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["first", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/first-run"),
     breadcrumbs: [
@@ -631,7 +631,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "first-scan": {
     title: "First Scan Guide | D-Secure Tech Manual",
-    description: "Comprehensive First Scan Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "First Scan Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["first", "scan", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/first-scan"),
     breadcrumbs: [
@@ -643,7 +643,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "first-time-setup": {
     title: "First Time Setup Guide | D-Secure Tech Manual",
-    description: "Comprehensive First Time Setup Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "First Time Setup Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["first", "time", "setup", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/first-time-setup"),
     breadcrumbs: [
@@ -655,7 +655,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "fragment-verification": {
     title: "Fragment Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Fragment Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Fragment Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["fragment", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/fragment-verification"),
     breadcrumbs: [
@@ -667,7 +667,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "future-trends": {
     title: "Future Trends Guide | D-Secure Tech Manual",
-    description: "Comprehensive Future Trends Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Future Trends Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["future", "trends", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/future-trends"),
     breadcrumbs: [
@@ -679,7 +679,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "gdpr-verification": {
     title: "G D P R Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive G D P R Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "G D P R Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/gdpr-verification"),
     breadcrumbs: [
@@ -691,7 +691,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "general-settings": {
     title: "General Settings Guide | D-Secure Tech Manual",
-    description: "Comprehensive General Settings Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "General Settings Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["general", "settings", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/general-settings"),
     breadcrumbs: [
@@ -703,7 +703,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "government-defense": {
     title: "Government Defense Guide | D-Secure Tech Manual",
-    description: "Comprehensive Government Defense Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Government Defense Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["government", "defense", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/government-defense"),
     breadcrumbs: [
@@ -715,7 +715,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "government-verification": {
     title: "Government Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Government Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Government Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["government", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/government-verification"),
     breadcrumbs: [
@@ -727,7 +727,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "hardware-sanitization": {
     title: "Hardware Sanitization Guide | D-Secure Tech Manual",
-    description: "Comprehensive Hardware Sanitization Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Hardware Sanitization Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["hardware", "sanitization", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/hardware-sanitization"),
     breadcrumbs: [
@@ -739,7 +739,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "hdd-destruction": {
     title: "H D D Destruction Guide | D-Secure Tech Manual",
-    description: "Comprehensive H D D Destruction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "H D D Destruction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["destruction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/hdd-destruction"),
     breadcrumbs: [
@@ -751,7 +751,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "healthcare-destruction": {
     title: "Healthcare Destruction Guide | D-Secure Tech Manual",
-    description: "Comprehensive Healthcare Destruction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Healthcare Destruction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["healthcare", "destruction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/healthcare-destruction"),
     breadcrumbs: [
@@ -763,7 +763,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "healthcare-verification": {
     title: "Healthcare Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Healthcare Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Healthcare Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["healthcare", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/healthcare-verification"),
     breadcrumbs: [
@@ -775,7 +775,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "implementation-considerations": {
     title: "Implementation Considerations Guide | D-Secure Tech Manual",
-    description: "Comprehensive Implementation Considerations Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Implementation Considerations Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["implementation", "considerations", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/implementation-considerations"),
     breadcrumbs: [
@@ -787,7 +787,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "implementation-practices": {
     title: "Implementation Practices Guide | D-Secure Tech Manual",
-    description: "Comprehensive Implementation Practices Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Implementation Practices Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["implementation", "practices", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/implementation-practices"),
     breadcrumbs: [
@@ -799,7 +799,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "incineration-method": {
     title: "Incineration Method Guide | D-Secure Tech Manual",
-    description: "Comprehensive Incineration Method Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Incineration Method Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["incineration", "method", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/incineration-method"),
     breadcrumbs: [
@@ -811,7 +811,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "industry-applications": {
     title: "Industry Applications Guide | D-Secure Tech Manual",
-    description: "Comprehensive Industry Applications Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Industry Applications Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["industry", "applications", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/industry-applications"),
     breadcrumbs: [
@@ -823,7 +823,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "industry-use-cases": {
     title: "Industry Use Cases Guide | D-Secure Tech Manual",
-    description: "Comprehensive Industry Use Cases Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Industry Use Cases Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["industry", "cases", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/industry-use-cases"),
     breadcrumbs: [
@@ -835,7 +835,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "installation": {
     title: "Installation Guide | D-Secure Tech Manual",
-    description: "Comprehensive Installation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Installation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["installation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/installation"),
     breadcrumbs: [
@@ -847,7 +847,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "installation-path": {
     title: "Installation Path Guide | D-Secure Tech Manual",
-    description: "Comprehensive Installation Path Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Installation Path Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["installation", "path", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/installation-path"),
     breadcrumbs: [
@@ -859,7 +859,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "installation-progress": {
     title: "Installation Progress Guide | D-Secure Tech Manual",
-    description: "Comprehensive Installation Progress Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Installation Progress Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["installation", "progress", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/installation-progress"),
     breadcrumbs: [
@@ -871,7 +871,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "installation-settings": {
     title: "Installation Settings Guide | D-Secure Tech Manual",
-    description: "Comprehensive Installation Settings Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Installation Settings Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["installation", "settings", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/installation-settings"),
     breadcrumbs: [
@@ -883,7 +883,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "internet-requirements": {
     title: "Internet Requirements Guide | D-Secure Tech Manual",
-    description: "Comprehensive Internet Requirements Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Internet Requirements Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["internet", "requirements", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/internet-requirements"),
     breadcrumbs: [
@@ -895,7 +895,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "itad-datacenters": {
     title: "I T A D Datacenters Guide | D-Secure Tech Manual",
-    description: "Comprehensive I T A D Datacenters Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "I T A D Datacenters Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["datacenters", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/itad-datacenters"),
     breadcrumbs: [
@@ -907,7 +907,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "key-activation": {
     title: "Key Activation Guide | D-Secure Tech Manual",
-    description: "Comprehensive Key Activation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Key Activation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["activation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/key-activation"),
     breadcrumbs: [
@@ -919,7 +919,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "keyboard-shortcuts": {
     title: "Keyboard Shortcuts Guide | D-Secure Tech Manual",
-    description: "Comprehensive Keyboard Shortcuts Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Keyboard Shortcuts Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["keyboard", "shortcuts", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/keyboard-shortcuts"),
     breadcrumbs: [
@@ -931,7 +931,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "key-destruction-verify": {
     title: "Key Destruction Verify Guide | D-Secure Tech Manual",
-    description: "Comprehensive Key Destruction Verify Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Key Destruction Verify Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["destruction", "verify", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/key-destruction-verify"),
     breadcrumbs: [
@@ -943,7 +943,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "license-activation": {
     title: "License Activation Guide | D-Secure Tech Manual",
-    description: "Comprehensive License Activation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "License Activation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["license", "activation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/license-activation"),
     breadcrumbs: [
@@ -955,7 +955,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "license-agreement": {
     title: "License Agreement Guide | D-Secure Tech Manual",
-    description: "Comprehensive License Agreement Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "License Agreement Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["license", "agreement", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/license-agreement"),
     breadcrumbs: [
@@ -967,7 +967,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "license-troubleshooting": {
     title: "License Troubleshooting Guide | D-Secure Tech Manual",
-    description: "Comprehensive License Troubleshooting Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "License Troubleshooting Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["license", "troubleshooting", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/license-troubleshooting"),
     breadcrumbs: [
@@ -979,7 +979,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "limitations": {
     title: "Limitations Guide | D-Secure Tech Manual",
-    description: "Comprehensive Limitations Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Limitations Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["limitations", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/limitations"),
     breadcrumbs: [
@@ -991,7 +991,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "linux-systems": {
     title: "Linux Systems Guide | D-Secure Tech Manual",
-    description: "Comprehensive Linux Systems Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Linux Systems Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["linux", "systems", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/linux-systems"),
     breadcrumbs: [
@@ -1003,7 +1003,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-apple-silicon": {
     title: "mac O S Apple Silicon Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Apple Silicon Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Apple Silicon Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["apple", "silicon", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-apple-silicon"),
     breadcrumbs: [
@@ -1015,7 +1015,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-architecture": {
     title: "mac O S Architecture Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Architecture Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Architecture Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["architecture", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-architecture"),
     breadcrumbs: [
@@ -1027,7 +1027,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-best-practices": {
     title: "mac O S Best Practices Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Best Practices Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Best Practices Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["best", "practices", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-best-practices"),
     breadcrumbs: [
@@ -1039,7 +1039,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-builtin-tools": {
     title: "mac O S Builtin Tools Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Builtin Tools Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Builtin Tools Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["builtin", "tools", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-builtin-tools"),
     breadcrumbs: [
@@ -1051,7 +1051,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-compliance": {
     title: "mac O S Compliance Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Compliance Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Compliance Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["compliance", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-compliance"),
     breadcrumbs: [
@@ -1063,7 +1063,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-crypto-erasure": {
     title: "mac O S Crypto Erasure Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Crypto Erasure Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Crypto Erasure Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["crypto", "erasure", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-crypto-erasure"),
     breadcrumbs: [
@@ -1075,7 +1075,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-encryption": {
     title: "mac O S Encryption Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Encryption Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Encryption Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["encryption", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-encryption"),
     breadcrumbs: [
@@ -1087,7 +1087,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-enterprise": {
     title: "mac O S Enterprise Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Enterprise Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Enterprise Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["enterprise", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-enterprise"),
     breadcrumbs: [
@@ -1099,7 +1099,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-external-media": {
     title: "mac O S External Media Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S External Media Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S External Media Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["external", "media", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-external-media"),
     breadcrumbs: [
@@ -1111,7 +1111,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-faq": {
     title: "mac O S Faq Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Faq Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Faq Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-faq"),
     breadcrumbs: [
@@ -1123,7 +1123,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-filesystems": {
     title: "mac O S Filesystems Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Filesystems Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Filesystems Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["filesystems", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-filesystems"),
     breadcrumbs: [
@@ -1135,7 +1135,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-filevault": {
     title: "mac O S Filevault Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Filevault Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Filevault Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["filevault", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-filevault"),
     breadcrumbs: [
@@ -1147,7 +1147,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-intel-procedures": {
     title: "mac O S Intel Procedures Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Intel Procedures Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Intel Procedures Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["intel", "procedures", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-intel-procedures"),
     breadcrumbs: [
@@ -1159,7 +1159,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-introduction": {
     title: "mac O S Introduction Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Introduction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Introduction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["introduction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-introduction"),
     breadcrumbs: [
@@ -1171,7 +1171,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-methods-comparison": {
     title: "mac O S Methods Comparison Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Methods Comparison Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Methods Comparison Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["methods", "comparison", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-methods-comparison"),
     breadcrumbs: [
@@ -1183,7 +1183,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-preparation": {
     title: "mac O S Preparation Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Preparation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Preparation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["preparation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-preparation"),
     breadcrumbs: [
@@ -1195,7 +1195,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-resources": {
     title: "mac O S Resources Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Resources Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Resources Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["resources", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-resources"),
     breadcrumbs: [
@@ -1207,7 +1207,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-risks": {
     title: "mac O S Risks Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Risks Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Risks Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["risks", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-risks"),
     breadcrumbs: [
@@ -1219,7 +1219,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-software-erasure": {
     title: "mac O S Software Erasure Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Software Erasure Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Software Erasure Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["software", "erasure", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-software-erasure"),
     breadcrumbs: [
@@ -1231,7 +1231,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-ssd-considerations": {
     title: "mac O S S S D Considerations Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S S S D Considerations Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S S S D Considerations Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["considerations", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-ssd-considerations"),
     breadcrumbs: [
@@ -1243,7 +1243,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-storage": {
     title: "mac O S Storage Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Storage Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Storage Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["storage", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-storage"),
     breadcrumbs: [
@@ -1255,7 +1255,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-system-drive": {
     title: "mac O S System Drive Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S System Drive Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S System Drive Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["system", "drive", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-system-drive"),
     breadcrumbs: [
@@ -1267,7 +1267,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "mac-ossystems": {
     title: "Mac O S Systems Guide | D-Secure Tech Manual",
-    description: "Comprehensive Mac O S Systems Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Mac O S Systems Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["systems", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/mac-ossystems"),
     breadcrumbs: [
@@ -1279,7 +1279,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-third-party": {
     title: "mac O S Third Party Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Third Party Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Third Party Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["third", "party", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-third-party"),
     breadcrumbs: [
@@ -1291,7 +1291,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-tool-selection": {
     title: "mac O S Tool Selection Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Tool Selection Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Tool Selection Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["tool", "selection", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-tool-selection"),
     breadcrumbs: [
@@ -1303,7 +1303,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-troubleshooting": {
     title: "mac O S Troubleshooting Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Troubleshooting Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Troubleshooting Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["troubleshooting", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-troubleshooting"),
     breadcrumbs: [
@@ -1315,7 +1315,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "macos-verification": {
     title: "mac O S Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive mac O S Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "mac O S Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/macos-verification"),
     breadcrumbs: [
@@ -1327,7 +1327,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "main-dashboard": {
     title: "Main Dashboard Guide | D-Secure Tech Manual",
-    description: "Comprehensive Main Dashboard Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Main Dashboard Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["main", "dashboard", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/main-dashboard"),
     breadcrumbs: [
@@ -1339,7 +1339,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "mobile-destruction": {
     title: "Mobile Destruction Guide | D-Secure Tech Manual",
-    description: "Comprehensive Mobile Destruction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Mobile Destruction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["mobile", "destruction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/mobile-destruction"),
     breadcrumbs: [
@@ -1351,7 +1351,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "mobile-devices": {
     title: "Mobile Devices Guide | D-Secure Tech Manual",
-    description: "Comprehensive Mobile Devices Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Mobile Devices Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["mobile", "devices", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/mobile-devices"),
     breadcrumbs: [
@@ -1363,7 +1363,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "navigation": {
     title: "Navigation Guide | D-Secure Tech Manual",
-    description: "Comprehensive Navigation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Navigation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["navigation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/navigation"),
     breadcrumbs: [
@@ -1375,7 +1375,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "nist80088manual": {
     title: "N I S T80088 Manual | D-Secure Tech Manual",
-    description: "Comprehensive N I S T80088 Manual for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "N I S T80088 Manual for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["t80088", "manual", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/nist80088manual"),
     breadcrumbs: [
@@ -1387,7 +1387,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "nist80088": {
     title: "N I S T80088 Guide | D-Secure Tech Manual",
-    description: "Comprehensive N I S T80088 Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "N I S T80088 Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["t80088", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/nist80088"),
     breadcrumbs: [
@@ -1399,7 +1399,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "nist-guidelines": {
     title: "N I S T Guidelines Guide | D-Secure Tech Manual",
-    description: "Comprehensive N I S T Guidelines Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "N I S T Guidelines Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["guidelines", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/nist-guidelines"),
     breadcrumbs: [
@@ -1411,7 +1411,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "nist-modern-storage": {
     title: "N I S T Modern Storage Guide | D-Secure Tech Manual",
-    description: "Comprehensive N I S T Modern Storage Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "N I S T Modern Storage Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["modern", "storage", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/nist-modern-storage"),
     breadcrumbs: [
@@ -1423,7 +1423,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "onsite-offsite": {
     title: "Onsite Offsite Guide | D-Secure Tech Manual",
-    description: "Comprehensive Onsite Offsite Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Onsite Offsite Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["onsite", "offsite", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/onsite-offsite"),
     breadcrumbs: [
@@ -1435,7 +1435,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "operation-history": {
     title: "Operation History Guide | D-Secure Tech Manual",
-    description: "Comprehensive Operation History Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Operation History Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["operation", "history", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/operation-history"),
     breadcrumbs: [
@@ -1447,7 +1447,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "optical-tape-destruction": {
     title: "Optical Tape Destruction Guide | D-Secure Tech Manual",
-    description: "Comprehensive Optical Tape Destruction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Optical Tape Destruction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["optical", "tape", "destruction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/optical-tape-destruction"),
     breadcrumbs: [
@@ -1459,7 +1459,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "overwrite-introduction": {
     title: "Overwrite Introduction Guide | D-Secure Tech Manual",
-    description: "Comprehensive Overwrite Introduction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Overwrite Introduction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["overwrite", "introduction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/overwrite-introduction"),
     breadcrumbs: [
@@ -1471,7 +1471,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "overwrite-patterns": {
     title: "Overwrite Patterns Guide | D-Secure Tech Manual",
-    description: "Comprehensive Overwrite Patterns Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Overwrite Patterns Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["overwrite", "patterns", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/overwrite-patterns"),
     breadcrumbs: [
@@ -1483,7 +1483,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "overwrite-risks": {
     title: "Overwrite Risks Guide | D-Secure Tech Manual",
-    description: "Comprehensive Overwrite Risks Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Overwrite Risks Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["overwrite", "risks", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/overwrite-risks"),
     breadcrumbs: [
@@ -1495,7 +1495,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "parental-controls": {
     title: "Parental Controls Guide | D-Secure Tech Manual",
-    description: "Comprehensive Parental Controls Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Parental Controls Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["parental", "controls", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/parental-controls"),
     breadcrumbs: [
@@ -1507,7 +1507,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "pattern-selection": {
     title: "Pattern Selection Guide | D-Secure Tech Manual",
-    description: "Comprehensive Pattern Selection Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Pattern Selection Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["pattern", "selection", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/pattern-selection"),
     breadcrumbs: [
@@ -1519,7 +1519,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "performance-analysis": {
     title: "Performance Analysis Guide | D-Secure Tech Manual",
-    description: "Comprehensive Performance Analysis Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Performance Analysis Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["performance", "analysis", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/performance-analysis"),
     breadcrumbs: [
@@ -1531,7 +1531,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "performance-optimization": {
     title: "Performance Optimization Guide | D-Secure Tech Manual",
-    description: "Comprehensive Performance Optimization Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Performance Optimization Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["performance", "optimization", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/performance-optimization"),
     breadcrumbs: [
@@ -1543,7 +1543,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "performance-tradeoffs": {
     title: "Performance Tradeoffs Guide | D-Secure Tech Manual",
-    description: "Comprehensive Performance Tradeoffs Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Performance Tradeoffs Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["performance", "tradeoffs", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/performance-tradeoffs"),
     breadcrumbs: [
@@ -1555,7 +1555,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "performance-troubleshooting": {
     title: "Performance Troubleshooting Guide | D-Secure Tech Manual",
-    description: "Comprehensive Performance Troubleshooting Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Performance Troubleshooting Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["performance", "troubleshooting", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/performance-troubleshooting"),
     breadcrumbs: [
@@ -1567,7 +1567,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "performance-tuning": {
     title: "Performance Tuning Guide | D-Secure Tech Manual",
-    description: "Comprehensive Performance Tuning Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Performance Tuning Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["performance", "tuning", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/performance-tuning"),
     breadcrumbs: [
@@ -1579,7 +1579,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "physical-destruction-overview": {
     title: "Physical Destruction Overview Guide | D-Secure Tech Manual",
-    description: "Comprehensive Physical Destruction Overview Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Physical Destruction Overview Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["physical", "destruction", "overview", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/physical-destruction-overview"),
     breadcrumbs: [
@@ -1591,7 +1591,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "physical-destruction": {
     title: "Physical Destruction Guide | D-Secure Tech Manual",
-    description: "Comprehensive Physical Destruction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Physical Destruction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["physical", "destruction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/physical-destruction"),
     breadcrumbs: [
@@ -1603,7 +1603,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "physical-inspection": {
     title: "Physical Inspection Guide | D-Secure Tech Manual",
-    description: "Comprehensive Physical Inspection Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Physical Inspection Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["physical", "inspection", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/physical-inspection"),
     breadcrumbs: [
@@ -1615,7 +1615,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "post-install-optimization": {
     title: "Post Install Optimization Guide | D-Secure Tech Manual",
-    description: "Comprehensive Post Install Optimization Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Post Install Optimization Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["post", "install", "optimization", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/post-install-optimization"),
     breadcrumbs: [
@@ -1627,7 +1627,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "pre-installation": {
     title: "Pre Installation Guide | D-Secure Tech Manual",
-    description: "Comprehensive Pre Installation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Pre Installation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["installation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/pre-installation"),
     breadcrumbs: [
@@ -1639,7 +1639,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "progress-monitoring": {
     title: "Progress Monitoring Guide | D-Secure Tech Manual",
-    description: "Comprehensive Progress Monitoring Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Progress Monitoring Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["progress", "monitoring", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/progress-monitoring"),
     breadcrumbs: [
@@ -1651,7 +1651,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "quickstart": {
     title: "Quickstart Guide | D-Secure Tech Manual",
-    description: "Comprehensive Quickstart Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Quickstart Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["quickstart", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/quickstart"),
     breadcrumbs: [
@@ -1663,7 +1663,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "readback-verification": {
     title: "Readback Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Readback Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Readback Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["readback", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/readback-verification"),
     breadcrumbs: [
@@ -1675,7 +1675,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "real-time-monitoring": {
     title: "Real Time Monitoring Guide | D-Secure Tech Manual",
-    description: "Comprehensive Real Time Monitoring Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Real Time Monitoring Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["real", "time", "monitoring", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/real-time-monitoring"),
     breadcrumbs: [
@@ -1687,7 +1687,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "realtime-protection": {
     title: "Realtime Protection Guide | D-Secure Tech Manual",
-    description: "Comprehensive Realtime Protection Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Realtime Protection Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["realtime", "protection", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/realtime-protection"),
     breadcrumbs: [
@@ -1699,7 +1699,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "recovery-procedures": {
     title: "Recovery Procedures Guide | D-Secure Tech Manual",
-    description: "Comprehensive Recovery Procedures Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Recovery Procedures Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["recovery", "procedures", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/recovery-procedures"),
     breadcrumbs: [
@@ -1711,7 +1711,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "regulatory-compliance": {
     title: "Regulatory Compliance Guide | D-Secure Tech Manual",
-    description: "Comprehensive Regulatory Compliance Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Regulatory Compliance Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["regulatory", "compliance", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/regulatory-compliance"),
     breadcrumbs: [
@@ -1723,7 +1723,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "remote-management": {
     title: "Remote Management Guide | D-Secure Tech Manual",
-    description: "Comprehensive Remote Management Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Remote Management Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["remote", "management", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/remote-management"),
     breadcrumbs: [
@@ -1735,7 +1735,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "sampling-methodology": {
     title: "Sampling Methodology Guide | D-Secure Tech Manual",
-    description: "Comprehensive Sampling Methodology Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Sampling Methodology Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["sampling", "methodology", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/sampling-methodology"),
     breadcrumbs: [
@@ -1747,7 +1747,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "sanitization-concepts": {
     title: "Sanitization Concepts Guide | D-Secure Tech Manual",
-    description: "Comprehensive Sanitization Concepts Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Sanitization Concepts Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["sanitization", "concepts", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/sanitization-concepts"),
     breadcrumbs: [
@@ -1759,7 +1759,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "scan-exclusions": {
     title: "Scan Exclusions Guide | D-Secure Tech Manual",
-    description: "Comprehensive Scan Exclusions Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Scan Exclusions Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["scan", "exclusions", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/scan-exclusions"),
     breadcrumbs: [
@@ -1771,7 +1771,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "scan-results": {
     title: "Scan Results Guide | D-Secure Tech Manual",
-    description: "Comprehensive Scan Results Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Scan Results Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["scan", "results", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/scan-results"),
     breadcrumbs: [
@@ -1783,7 +1783,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "scan-scheduling": {
     title: "Scan Scheduling Guide | D-Secure Tech Manual",
-    description: "Comprehensive Scan Scheduling Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Scan Scheduling Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["scan", "scheduling", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/scan-scheduling"),
     breadcrumbs: [
@@ -1795,7 +1795,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "scripting-automation": {
     title: "Scripting Automation Guide | D-Secure Tech Manual",
-    description: "Comprehensive Scripting Automation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Scripting Automation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["scripting", "automation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/scripting-automation"),
     breadcrumbs: [
@@ -1807,7 +1807,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "security-assurance": {
     title: "Security Assurance Guide | D-Secure Tech Manual",
-    description: "Comprehensive Security Assurance Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Security Assurance Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["security", "assurance", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/security-assurance"),
     breadcrumbs: [
@@ -1819,7 +1819,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "security-protocols": {
     title: "Security Protocols Guide | D-Secure Tech Manual",
-    description: "Comprehensive Security Protocols Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Security Protocols Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["security", "protocols", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/security-protocols"),
     breadcrumbs: [
@@ -1831,7 +1831,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "service-workflow": {
     title: "Service Workflow Guide | D-Secure Tech Manual",
-    description: "Comprehensive Service Workflow Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Service Workflow Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["service", "workflow", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/service-workflow"),
     breadcrumbs: [
@@ -1843,7 +1843,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "setup-wizard": {
     title: "Setup Wizard Guide | D-Secure Tech Manual",
-    description: "Comprehensive Setup Wizard Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Setup Wizard Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["setup", "wizard", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/setup-wizard"),
     breadcrumbs: [
@@ -1855,7 +1855,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "shredding-method": {
     title: "Shredding Method Guide | D-Secure Tech Manual",
-    description: "Comprehensive Shredding Method Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Shredding Method Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["shredding", "method", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/shredding-method"),
     breadcrumbs: [
@@ -1867,7 +1867,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "software-supported-media": {
     title: "Software Supported Media Guide | D-Secure Tech Manual",
-    description: "Comprehensive Software Supported Media Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Software Supported Media Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["software", "supported", "media", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/software-supported-media"),
     breadcrumbs: [
@@ -1879,7 +1879,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "software-verification": {
     title: "Software Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Software Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Software Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["software", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/software-verification"),
     breadcrumbs: [
@@ -1891,7 +1891,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "ssd-challenges": {
     title: "S S D Challenges Guide | D-Secure Tech Manual",
-    description: "Comprehensive S S D Challenges Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "S S D Challenges Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["challenges", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/ssd-challenges"),
     breadcrumbs: [
@@ -1903,7 +1903,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "ssd-destruction": {
     title: "S S D Destruction Guide | D-Secure Tech Manual",
-    description: "Comprehensive S S D Destruction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "S S D Destruction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["destruction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/ssd-destruction"),
     breadcrumbs: [
@@ -1915,7 +1915,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "standards-comparison": {
     title: "Standards Comparison Guide | D-Secure Tech Manual",
-    description: "Comprehensive Standards Comparison Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Standards Comparison Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["standards", "comparison", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/standards-comparison"),
     breadcrumbs: [
@@ -1927,7 +1927,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "start-erasure": {
     title: "Start Erasure Guide | D-Secure Tech Manual",
-    description: "Comprehensive Start Erasure Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Start Erasure Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["start", "erasure", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/start-erasure"),
     breadcrumbs: [
@@ -1939,7 +1939,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "statistical-confidence": {
     title: "Statistical Confidence Guide | D-Secure Tech Manual",
-    description: "Comprehensive Statistical Confidence Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Statistical Confidence Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["statistical", "confidence", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/statistical-confidence"),
     breadcrumbs: [
@@ -1951,7 +1951,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "status-indicators": {
     title: "Status Indicators Guide | D-Secure Tech Manual",
-    description: "Comprehensive Status Indicators Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Status Indicators Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["status", "indicators", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/status-indicators"),
     breadcrumbs: [
@@ -1963,7 +1963,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "supported-devices": {
     title: "Supported Devices Guide | D-Secure Tech Manual",
-    description: "Comprehensive Supported Devices Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Supported Devices Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["supported", "devices", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/supported-devices"),
     breadcrumbs: [
@@ -1975,7 +1975,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "supported-encryption": {
     title: "Supported Encryption Guide | D-Secure Tech Manual",
-    description: "Comprehensive Supported Encryption Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Supported Encryption Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["supported", "encryption", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/supported-encryption"),
     breadcrumbs: [
@@ -1987,7 +1987,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "system-requirements": {
     title: "System Requirements Guide | D-Secure Tech Manual",
-    description: "Comprehensive System Requirements Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "System Requirements Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["system", "requirements", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/system-requirements"),
     breadcrumbs: [
@@ -1999,7 +1999,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "system-scanning": {
     title: "System Scanning Guide | D-Secure Tech Manual",
-    description: "Comprehensive System Scanning Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "System Scanning Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["system", "scanning", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/system-scanning"),
     breadcrumbs: [
@@ -2011,7 +2011,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "use-cases": {
     title: "Use Cases Guide | D-Secure Tech Manual",
-    description: "Comprehensive Use Cases Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Use Cases Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["cases", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/use-cases"),
     breadcrumbs: [
@@ -2023,7 +2023,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "user-interface": {
     title: "User Interface Guide | D-Secure Tech Manual",
-    description: "Comprehensive User Interface Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "User Interface Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["user", "interface", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/user-interface"),
     breadcrumbs: [
@@ -2035,7 +2035,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "user-management": {
     title: "User Management Guide | D-Secure Tech Manual",
-    description: "Comprehensive User Management Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "User Management Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["user", "management", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/user-management"),
     breadcrumbs: [
@@ -2047,7 +2047,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "user-profile": {
     title: "User Profile Guide | D-Secure Tech Manual",
-    description: "Comprehensive User Profile Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "User Profile Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["user", "profile", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/user-profile"),
     breadcrumbs: [
@@ -2059,7 +2059,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "verification-challenges": {
     title: "Verification Challenges Guide | D-Secure Tech Manual",
-    description: "Comprehensive Verification Challenges Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Verification Challenges Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "challenges", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/verification-challenges"),
     breadcrumbs: [
@@ -2071,7 +2071,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "verification-importance": {
     title: "Verification Importance Guide | D-Secure Tech Manual",
-    description: "Comprehensive Verification Importance Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Verification Importance Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "importance", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/verification-importance"),
     breadcrumbs: [
@@ -2083,7 +2083,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "verification-logs": {
     title: "Verification Logs Guide | D-Secure Tech Manual",
-    description: "Comprehensive Verification Logs Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Verification Logs Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "logs", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/verification-logs"),
     breadcrumbs: [
@@ -2095,7 +2095,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "verification-methods": {
     title: "Verification Methods Guide | D-Secure Tech Manual",
-    description: "Comprehensive Verification Methods Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Verification Methods Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "methods", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/verification-methods"),
     breadcrumbs: [
@@ -2107,7 +2107,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "verification-overview": {
     title: "Verification Overview Guide | D-Secure Tech Manual",
-    description: "Comprehensive Verification Overview Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Verification Overview Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "overview", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/verification-overview"),
     breadcrumbs: [
@@ -2119,7 +2119,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "verification-risks": {
     title: "Verification Risks Guide | D-Secure Tech Manual",
-    description: "Comprehensive Verification Risks Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Verification Risks Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "risks", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/verification-risks"),
     breadcrumbs: [
@@ -2131,7 +2131,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "verification-standards": {
     title: "Verification Standards Guide | D-Secure Tech Manual",
-    description: "Comprehensive Verification Standards Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Verification Standards Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "standards", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/verification-standards"),
     breadcrumbs: [
@@ -2143,7 +2143,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "verification-techniques": {
     title: "Verification Techniques Guide | D-Secure Tech Manual",
-    description: "Comprehensive Verification Techniques Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Verification Techniques Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "techniques", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/verification-techniques"),
     breadcrumbs: [
@@ -2155,7 +2155,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "verification-tools": {
     title: "Verification Tools Guide | D-Secure Tech Manual",
-    description: "Comprehensive Verification Tools Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Verification Tools Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["verification", "tools", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/verification-tools"),
     breadcrumbs: [
@@ -2167,7 +2167,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "virus-definitions": {
     title: "Virus Definitions Guide | D-Secure Tech Manual",
-    description: "Comprehensive Virus Definitions Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Virus Definitions Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["virus", "definitions", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/virus-definitions"),
     breadcrumbs: [
@@ -2179,7 +2179,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "visual-confirmation": {
     title: "Visual Confirmation Guide | D-Secure Tech Manual",
-    description: "Comprehensive Visual Confirmation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Visual Confirmation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["visual", "confirmation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/visual-confirmation"),
     breadcrumbs: [
@@ -2191,7 +2191,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "vpn-setup": {
     title: "V P N Setup Guide | D-Secure Tech Manual",
-    description: "Comprehensive V P N Setup Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "V P N Setup Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["setup", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/vpn-setup"),
     breadcrumbs: [
@@ -2203,7 +2203,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "why-physical-destruction": {
     title: "Why Physical Destruction Guide | D-Secure Tech Manual",
-    description: "Comprehensive Why Physical Destruction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Why Physical Destruction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["physical", "destruction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/why-physical-destruction"),
     breadcrumbs: [
@@ -2215,7 +2215,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-best-practices": {
     title: "Windows Best Practices Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Best Practices Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Best Practices Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "best", "practices", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-best-practices"),
     breadcrumbs: [
@@ -2227,7 +2227,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-bitlocker": {
     title: "Windows Bitlocker Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Bitlocker Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Bitlocker Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "bitlocker", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-bitlocker"),
     breadcrumbs: [
@@ -2239,7 +2239,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-bootable-usb": {
     title: "Windows Bootable Usb Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Bootable Usb Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Bootable Usb Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "bootable", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-bootable-usb"),
     breadcrumbs: [
@@ -2251,7 +2251,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-builtin-tools": {
     title: "Windows Builtin Tools Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Builtin Tools Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Builtin Tools Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "builtin", "tools", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-builtin-tools"),
     breadcrumbs: [
@@ -2263,7 +2263,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-command-line": {
     title: "Windows Command Line Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Command Line Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Command Line Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "command", "line", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-command-line"),
     breadcrumbs: [
@@ -2275,7 +2275,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-compliance": {
     title: "Windows Compliance Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Compliance Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Compliance Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "compliance", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-compliance"),
     breadcrumbs: [
@@ -2287,7 +2287,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-crypto-erasure": {
     title: "Windows Crypto Erasure Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Crypto Erasure Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Crypto Erasure Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "crypto", "erasure", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-crypto-erasure"),
     breadcrumbs: [
@@ -2299,7 +2299,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-dsecure-eraser": {
     title: "Windows Dsecure Eraser Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Dsecure Eraser Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Dsecure Eraser Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "dsecure", "eraser", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-dsecure-eraser"),
     breadcrumbs: [
@@ -2311,7 +2311,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-enterprise": {
     title: "Windows Enterprise Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Enterprise Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Enterprise Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "enterprise", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-enterprise"),
     breadcrumbs: [
@@ -2323,7 +2323,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-faq": {
     title: "Windows Faq Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Faq Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Faq Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-faq"),
     breadcrumbs: [
@@ -2335,7 +2335,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-filesystems": {
     title: "Windows Filesystems Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Filesystems Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Filesystems Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "filesystems", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-filesystems"),
     breadcrumbs: [
@@ -2347,7 +2347,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-introduction": {
     title: "Windows Introduction Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Introduction Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Introduction Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "introduction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-introduction"),
     breadcrumbs: [
@@ -2359,7 +2359,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-methods-comparison": {
     title: "Windows Methods Comparison Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Methods Comparison Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Methods Comparison Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "methods", "comparison", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-methods-comparison"),
     breadcrumbs: [
@@ -2371,7 +2371,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-preparation": {
     title: "Windows Preparation Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Preparation Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Preparation Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "preparation", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-preparation"),
     breadcrumbs: [
@@ -2383,7 +2383,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-residual-data": {
     title: "Windows Residual Data Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Residual Data Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Residual Data Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "residual", "data", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-residual-data"),
     breadcrumbs: [
@@ -2395,7 +2395,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-resources": {
     title: "Windows Resources Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Resources Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Resources Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "resources", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-resources"),
     breadcrumbs: [
@@ -2407,7 +2407,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-risks": {
     title: "Windows Risks Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Risks Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Risks Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "risks", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-risks"),
     breadcrumbs: [
@@ -2419,7 +2419,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-sed-drives": {
     title: "Windows Sed Drives Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Sed Drives Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Sed Drives Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "drives", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-sed-drives"),
     breadcrumbs: [
@@ -2431,7 +2431,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-software-erasure": {
     title: "Windows Software Erasure Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Software Erasure Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Software Erasure Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "software", "erasure", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-software-erasure"),
     breadcrumbs: [
@@ -2443,7 +2443,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-ssd-erasure": {
     title: "Windows S S D Erasure Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows S S D Erasure Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows S S D Erasure Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "erasure", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-ssd-erasure"),
     breadcrumbs: [
@@ -2455,7 +2455,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-storage": {
     title: "Windows Storage Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Storage Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Storage Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "storage", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-storage"),
     breadcrumbs: [
@@ -2467,7 +2467,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-system-files": {
     title: "Windows System Files Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows System Files Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows System Files Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "system", "files", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-system-files"),
     breadcrumbs: [
@@ -2479,7 +2479,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-systems": {
     title: "Windows Systems Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Systems Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Systems Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "systems", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-systems"),
     breadcrumbs: [
@@ -2491,7 +2491,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-third-party": {
     title: "Windows Third Party Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Third Party Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Third Party Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "third", "party", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-third-party"),
     breadcrumbs: [
@@ -2503,7 +2503,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-troubleshooting": {
     title: "Windows Troubleshooting Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Troubleshooting Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Troubleshooting Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "troubleshooting", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-troubleshooting"),
     breadcrumbs: [
@@ -2515,7 +2515,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "windows-verification": {
     title: "Windows Verification Guide | D-Secure Tech Manual",
-    description: "Comprehensive Windows Verification Guide for D-Secure data erasure software. Learn step-by-step procedures, compliance requirements, and best practices for enterprise data sanitization.",
+    description: "Windows Verification Guide for D-Secure. Learn step-by-step procedures, compliance, and best practices for enterprise data sanitization.",
     keywords: generateKeywords(["windows", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/windows-verification"),
     breadcrumbs: [

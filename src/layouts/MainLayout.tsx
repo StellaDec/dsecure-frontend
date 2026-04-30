@@ -339,7 +339,7 @@ export default function MainLayout() {
                             <>
                               {/* Drive Eraser — with 2 variants */}
                               <div 
-                                className="border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all cursor-pointer group/card"
+                                className="border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all cursor-pointer group/card h-full flex flex-col"
                                 onClick={() => {
                                   navigate('/products/drive-eraser');
                                   setProductsDropdownOpen(false);
@@ -353,7 +353,7 @@ export default function MainLayout() {
                                   </div>
                                   <h4 className="font-bold text-slate-900 group-hover/card:text-emerald-700 transition-colors">Drive Eraser</h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Erase HDD, SSD, PC, Mac & Server data
                                   permanently.
                                 </p>
@@ -384,7 +384,7 @@ export default function MainLayout() {
 
                               {/* File Eraser — with 2 variants */}
                               <div 
-                                className="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group/card"
+                                className="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group/card h-full flex flex-col"
                                 onClick={() => {
                                   navigate('/products/file-eraser');
                                   setProductsDropdownOpen(false);
@@ -398,7 +398,7 @@ export default function MainLayout() {
                                   </div>
                                   <h4 className="font-bold text-slate-900 group-hover/card:text-blue-700 transition-colors">File Eraser</h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Wipe files, folders, traces & browser history.
                                 </p>
                                 <div className="flex flex-wrap gap-2">
@@ -429,7 +429,7 @@ export default function MainLayout() {
                               {/* Smartphone Eraser */}
                               <Link
                                 to="/products/smartphone-eraser"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
@@ -440,7 +440,7 @@ export default function MainLayout() {
                                     Smartphone Eraser
                                   </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Bulk iOS & Android wiping with audit reports.
                                 </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
@@ -464,7 +464,7 @@ export default function MainLayout() {
                               {/* Virtual Machine Eraser */}
                               <Link
                                 to="/products/virtual-machine-eraser"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
@@ -473,7 +473,7 @@ export default function MainLayout() {
                                   </div>
                                   <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Virtual Machine Eraser</h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Securely wipe VMs on ESXi & Hyper-V hosts.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">Securely wipe VMs on ESXi & Hyper-V hosts.</p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
                                   Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
                                 </span>
@@ -482,7 +482,7 @@ export default function MainLayout() {
                               {/* Removable Media Eraser */}
                               <Link
                                 to="/products/removable-media-eraser"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
@@ -491,7 +491,7 @@ export default function MainLayout() {
                                   </div>
                                   <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Removable Media Eraser</h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Securely erase USB & flash storage devices.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">Securely erase USB & flash storage devices.</p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
                                   Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
                                 </span>
@@ -500,7 +500,7 @@ export default function MainLayout() {
                               {/* LUN Eraser */}
                               <Link
                                 to="/products/lun-eraser"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
@@ -509,7 +509,7 @@ export default function MainLayout() {
                                   </div>
                                   <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">LUN Eraser</h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Sanitize Logical Unit Numbers in active storage.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">Sanitize Logical Unit Numbers in active storage.</p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
                                   Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
                                 </span>
@@ -523,7 +523,7 @@ export default function MainLayout() {
                               {/* Data Migration */}
                               <Link
                                 to="/products/data-migration"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
@@ -534,7 +534,7 @@ export default function MainLayout() {
                                     Data Migration
                                   </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Secure transfer across Cloud & Infrastructure.
                                 </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
@@ -558,7 +558,7 @@ export default function MainLayout() {
                               {/* Forensic Imaging */}
                               <Link
                                 to="/products/forensic-imaging"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-cyan-300 hover:shadow-md transition-all"
+                                className="group border border-slate-200 rounded-xl p-5 hover:border-cyan-300 hover:shadow-md transition-all h-full flex flex-col"
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
@@ -569,7 +569,7 @@ export default function MainLayout() {
                                     Forensic Imaging
                                   </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Bit-for-bit acquisition & cryptographic
                                   hashing.
                                 </p>
@@ -593,7 +593,7 @@ export default function MainLayout() {
 
                               {/* FreezeState — with 2 variants */}
                               <div 
-                                className="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group/card"
+                                className="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group/card h-full flex flex-col"
                                 onClick={() => {
                                   navigate('/products/freeze-state');
                                   setProductsDropdownOpen(false);
@@ -605,7 +605,7 @@ export default function MainLayout() {
                                   </div>
                                   <h4 className="font-bold text-slate-900 group-hover/card:text-blue-700 transition-colors">FreezeState</h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Reboot-to-restore system protection.
                                 </p>
                                 <div className="flex flex-wrap gap-2">
@@ -637,7 +637,7 @@ export default function MainLayout() {
                               {/* Asset Reimaging */}
                               <Link
                                 to="/products/asset-reimaging"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
@@ -646,7 +646,7 @@ export default function MainLayout() {
                                   </div>
                                   <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Asset Reimaging</h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Automated OS deployment & imaging solution.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">Automated OS deployment & imaging solution.</p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
                                   Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
                                 </span>

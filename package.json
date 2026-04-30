@@ -20,7 +20,8 @@
     "seo:check": "echo 'SEO Status Check...' && echo 'Sitemap: https://dsecuretech.com/sitemap.xml' && echo 'Robots: https://dsecuretech.com/robots.txt'",
     "analytics:verify": "echo 'Analytics Verification...' && echo 'GA4: G-6B20XY3K81' && echo 'Clarity: tkbibktdah'",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.3",
@@ -44,7 +45,6 @@
     "jszip": "^3.10.1",
     "jwt-decode": "^4.0.0",
     "leaflet": "^1.9.4",
-    "lint": "^1.1.2",
     "lucide-react": "^0.548.0",
     "pako": "^2.1.0",
     "react": "^19.2.3",
@@ -58,6 +58,7 @@
     "recharts": "^3.3.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@fullhuman/postcss-purgecss": "^7.0.2",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -75,12 +76,17 @@
     "baseline-browser-mapping": "^2.8.29",
     "chalk": "^5.6.2",
     "dotenv": "^17.2.3",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
     "jsdom": "^29.0.1",
     "postcss": "^8.4.47",
     "rollup-plugin-visualizer": "^6.0.5",
     "tailwindcss": "^3.4.14",
     "terser": "^5.46.0",
     "typescript": "^5.6.2",
+    "typescript-eslint": "^8.59.1",
     "vite": "^7.2.2",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-css-injected-by-js": "^3.5.2",

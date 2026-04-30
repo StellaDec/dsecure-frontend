@@ -451,8 +451,8 @@ function CompliancePageContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {auditFeatures.map((feature, i) => (
-              <Reveal key={i} delayMs={i * 100}>
-                <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-lg border border-slate-200/60">
+              <Reveal key={i} delayMs={i * 100} className="h-full">
+                <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-lg border border-slate-200/60 h-full">
                   <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
                     {feature.icon}
                   </div>

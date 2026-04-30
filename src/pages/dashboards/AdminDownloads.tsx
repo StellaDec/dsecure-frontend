@@ -244,17 +244,22 @@ export default function AdminDownloads() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900">Downloads</h1>
+            <h1 className="text-2xl font-bold text-slate-900">
+              Software Download
+            </h1>
             <p className="text-slate-600 mt-1">
               Software downloads overview and statistics
             </p>
           </div>
-          <Link 
-            to="/download" 
+          <Link
+            to="/download"
             onClick={(e) => {
               if (isDemo) {
                 e.preventDefault();
-                showInfo("Demo Restricted", "Software downloads are not available in demo accounts. Please create a real account.");
+                showInfo(
+                  "Demo Restricted",
+                  "Software downloads are not available in demo accounts. Please create a real account.",
+                );
               }
             }}
             className="btn-primary flex items-center gap-2"
@@ -528,7 +533,10 @@ export default function AdminDownloads() {
                       onClick={(e) => {
                         if (isDemo) {
                           e.preventDefault();
-                          showInfo("Demo Restricted", "Software downloads are not available in demo accounts. Please create a real account.");
+                          showInfo(
+                            "Demo Restricted",
+                            "Software downloads are not available in demo accounts. Please create a real account.",
+                          );
                         }
                       }}
                       className="text-sm text-emerald-800 hover:text-emerald-700 font-medium"

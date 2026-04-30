@@ -31,7 +31,7 @@ const CookiePolicyPage: React.FC = () => {
               </span>
             </div>
             <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-              Cookie Policy
+              Cookie Policy and Tracking Technology Transparency
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               How we use cookies and tracking technologies on our website

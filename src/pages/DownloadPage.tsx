@@ -257,12 +257,32 @@ const DownloadPage: React.FC = memo(() => {
           </div>
 
           {/* Custom Installer Note */}
-          <div className="max-w-3xl mx-auto mb-10">
+          <div className="max-w-3xl mx-auto mb-10 space-y-4">
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
               <div className="flex items-start justify-center">
                 <span className="text-blue-500 text-xl font-bold mr-2">*</span>
                 <p className="text-sm text-blue-900 font-medium pt-0.5">
                   For custom installer setup, please contact the support team.
+                </p>
+              </div>
+            </div>
+            
+            {/* Security Verification Note */}
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg shadow-sm">
+              <div className="flex items-start justify-center">
+                <svg className="w-5 h-5 text-emerald-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <p className="text-sm text-emerald-900 font-medium pt-0.5">
+                  Security Note: All our ISO installers are digitally signed. Verify them using our{" "}
+                  <a 
+                    href="/security/public-key.pem" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-emerald-700 underline hover:text-emerald-800 font-bold"
+                  >
+                    Public Key
+                  </a>.
                 </p>
               </div>
             </div>

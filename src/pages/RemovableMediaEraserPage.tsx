@@ -11,6 +11,7 @@ import {
 } from "@/components/FlatIcons";
 import { FileTextIcon, Download, Zap, Database, HardDrive, Server, RefreshCcw, Activity, Usb } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
+import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
 
 const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPage() {
@@ -452,6 +453,9 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
             </div>
           </div>
         </section>
+
+
+        <ProductInternalLinks currentProduct={PRODUCT_LINKS.REMOVABLE_MEDIA} />
 
         <section id="contact" className="py-24 bg-white border-t relative overflow-hidden isolate">
           <div className="container mx-auto px-4 max-w-7xl">

@@ -12,13 +12,14 @@ import { Link } from "react-router-dom";
 const CryptographicEraseBlog: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+            {/* SEO: Page 1 — NIST SP 800-88 Cryptographic Erase ke liye optimized title aur description */}
             <SEOHead seo={getBlogSEO({
-        title: "Cryptographic Erasure Deep Dive",
-        excerpt: "Technical guide to cryptographic erasure methods and their applications for modern storage.",
+        title: "NIST SP 800-88 Cryptographic Erase Definition — Complete 2026 Guide",
+        excerpt: "Learn exactly what Cryptographic Erase means under NIST SP 800-88 — how it works, when to use it, and why it qualifies as a Purge method. Includes key destruction steps.",
         slug: "cryptographic-erase",
         author: "Prashant Saini",
         publishDate: "April 28, 2025",
-        keywords: "cryptographic erasure, encryption, key destruction",
+        keywords: "cryptographic erasure, encryption, key destruction, NIST SP 800-88, purge sanitization",
         category: "Technical Guide",
         tag: "Technical"
       })} />
@@ -27,7 +28,7 @@ const CryptographicEraseBlog: React.FC = () => {
                 <Reveal>
                     <div className="text-center px-6">
                         <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
-                            NIST Standards
+                            NIST SP 800-88 Rev.2
                         </span>
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
                             What is Cryptographic Erase as per NIST SP 800-88 Rev.2?
@@ -151,7 +152,6 @@ const CryptographicEraseBlog: React.FC = () => {
       {/* Engagement, Comments & Enquiry Section */}
       <section className="w-full px-4 md:px-8 lg:px-16 py-8">
         <Reveal>
-          
       <FAQSection faqs={blogFaqs["cryptographic-erase"]} />
       <EngagementSection blogId="cryptographic-erase" />
         </Reveal>
@@ -172,9 +172,3 @@ const CryptographicEraseBlog: React.FC = () => {
 };
 
 export default CryptographicEraseBlog;
-
-
-
-
-
-

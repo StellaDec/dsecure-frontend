@@ -109,12 +109,15 @@ const sitemapPath = toAbsolute('public/sitemap.xml');
 // Vite hashes the output file (e.g., dist/server/js/entry-server-xxxx.js)
 const serverJsDir = toAbsolute('dist/server/js');
 let serverEntryPath;
-if (fs.readdirSync(serverJsDir)) {
+if (fs.existsSync(serverJsDir)) {
   const files = fs.readdirSync(serverJsDir);
   const entryFile = files.find(f => f.startsWith('entry-server') && f.endsWith('.js'));
   if (entryFile) {
     serverEntryPath = path.join(serverJsDir, entryFile);
   }
+} else {
+  console.error('❌ dist/server/js not found. Run full build first: npm run build');
+  process.exit(1);
 }
 
 /**

@@ -5,7 +5,7 @@ import EngagementSection from "./EngagementSection";
 import FAQSection from "./FAQSection";
 import { blogFaqs } from "@/data/blogFaqs";
 import SEOHead from "@/components/SEOHead";
-import { getSEOForPage, getBlogSEO } from '@/utils/seo';
+import { getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 
@@ -13,12 +13,12 @@ const NISTVsIEEEBlog: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
             <SEOHead seo={getBlogSEO({
-        title: "NIST vs IEEE Standards Comparison",
-        excerpt: "Comparing NIST 800-88 and IEEE 2883 data sanitization standards.",
+        title: "NIST 800-88 vs IEEE 2883 Data Sanitization Standards: Key Differences | D-Secure",
+        excerpt: "Detailed comparison of NIST 800-88 and IEEE 2883 media sanitization standards — understand which applies to your organization, how they differ in scope, methods and verification requirements.",
         slug: "nist-vs-ieee",
         author: "Nitesh Kushwaha",
         publishDate: "August 1, 2025",
-        keywords: "NIST, IEEE, standards, comparison",
+        keywords: "NIST 800-88 vs IEEE 2883, data sanitization standards comparison, media sanitization guidelines, enterprise data erasure standards, NIST Clear Purge Destroy",
         category: "Comparison",
         tag: "Standards"
       })} />
@@ -295,17 +295,16 @@ const NISTVsIEEEBlog: React.FC = () => {
       {/* Engagement, Comments & Enquiry Section */}
       <section className="w-full px-4 md:px-8 lg:px-16 py-8">
         <Reveal>
-          
-      <FAQSection faqs={blogFaqs["n-i-s-t-vs-i-e-e-e"]} />
-      <EngagementSection blogId="n-i-s-t-vs-i-e-e-e" />
+          <FAQSection faqs={blogFaqs["nist-vs-ieee"]} />
+          <EngagementSection blogId="nist-vs-ieee" />
         </Reveal>
         <Reveal>
-          <CommentSection blogId="n-i-s-t-vs-i-e-e-e" />
+          <CommentSection blogId="nist-vs-ieee" />
         </Reveal>
         <Reveal>
-          <EnquiryForm 
-            blogId="n-i-s-t-vs-i-e-e-e" 
-            blogTitle="N I S T Vs I E E E" 
+          <EnquiryForm
+            blogId="nist-vs-ieee"
+            blogTitle="NIST 800-88 vs IEEE 2883 Data Sanitization Standards Comparison"
           />
         </Reveal>
       </section>
@@ -316,9 +315,3 @@ const NISTVsIEEEBlog: React.FC = () => {
 };
 
 export default NISTVsIEEEBlog;
-
-
-
-
-
-

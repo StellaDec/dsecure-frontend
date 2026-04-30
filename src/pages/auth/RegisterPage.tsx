@@ -121,7 +121,7 @@ export default function RegisterPage() {
           <>
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-brand to-brand-600 bg-clip-text text-transparent">
-                Create Account
+                Join D-Secure: Create Your Enterprise Security Account
               </h1>
               <p className="mt-3 text-sm text-slate-600">
                 Join D-Secure to secure your data management

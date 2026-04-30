@@ -15,7 +15,7 @@ export default function EventsPage() {
           <div className="container-responsive text-center max-w-4xl mx-auto">
             <Reveal>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-                Events
+                Events and Industry Conferences: D-Secure Presence
               </h1>
               <p className="text-lg md:text-xl text-slate-600 mb-8">
                 Upcoming events, conferences, and trade shows featuring D-Secure Tech. Meet us at industry events.

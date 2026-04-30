@@ -71,7 +71,7 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
   "support/help-manual/complete-drive-manual": {
     title: "D-Secure Drive Eraser Complete Manual",
     description:
-      "Complete user manual for D-Secure Drive Eraser. Detailed step-by-step instructions for booting, hardware detection, volume wiping, and compliance reporting.",
+      "User manual for D-Secure Drive Eraser. Step-by-step instructions for booting, hardware detection, volume wiping, and compliance reporting.",
     keywords: generateKeywords([
       "drive eraser manual",
       "boot drive wipe guide",

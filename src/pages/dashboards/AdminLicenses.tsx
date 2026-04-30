@@ -836,7 +836,7 @@ export default function AdminLicenses() {
         {/* Header */}
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900">Licenses</h1>
+            <h1 className="text-2xl font-bold text-slate-900">Platform License Distribution and Management</h1>
             <p className="text-slate-600 mt-1">
               License distribution and management
             </p>

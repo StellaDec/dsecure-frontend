@@ -1581,7 +1581,7 @@ export default function AdminMachines() {
         <div className="flex flex-col xs:flex-row sm:flex-row items-start xs:items-center sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-bold text-slate-900">
-              Machines
+              Registered Machines and Asset Inventory
             </h1>
             {selectedMachineIds.size > 0 && (
               <p className="text-sm text-slate-600 mt-1">

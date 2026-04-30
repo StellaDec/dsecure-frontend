@@ -14,6 +14,7 @@ import {
 } from "@/components/FlatIcons";
 import { FileTextIcon, Monitor, Database, Zap } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
+import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
 
 const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPage() {
@@ -488,7 +489,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {capabilities.map((cap, idx) => (
-                <Reveal key={idx} delayMs={idx * 100}>
+                <Reveal key={idx} delayMs={idx * 100} className="h-full">
                   <div className="bg-emerald-50/50 p-8 rounded-2xl border border-emerald-100 hover:shadow-xl transition-all duration-300 h-full group">
                     <div className="bg-white p-4 rounded-xl shadow-sm mb-6 w-fit group-hover:scale-110 transition-transform">
                       {cap.icon}
@@ -550,12 +551,12 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((feature, i) => (
-                <div key={i} className="p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/30 transition-all group">
+                <div key={i} className="p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/30 transition-all group h-full flex flex-col">
                    <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
                       {feature.icon}
                    </div>
                    <h4 className="text-xl font-bold text-slate-800 mb-3">{feature.title}</h4>
-                   <p className="text-slate-500 text-sm leading-relaxed">{feature.desc}</p>
+                   <p className="text-slate-500 text-sm leading-relaxed flex-grow">{feature.desc}</p>
                 </div>
               ))}
             </div>
@@ -612,6 +613,9 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
               </div>
            </div>
         </section>
+
+
+        <ProductInternalLinks currentProduct={PRODUCT_LINKS.VIRTUAL_MACHINE} />
 
         {/* ================= FAQ ================= */}
         <section id="faq" className="py-20 bg-white">

@@ -1,7 +1,7 @@
 import SEOHead from "../../components/SEOHead";
 import { getSEOForPage } from "../../utils/seo";
 import { useAuth } from "@/auth/AuthContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { apiClient } from "@/utils/enhancedApiClient";
@@ -28,6 +28,13 @@ interface LoggedInUserData {
   user_group: string;
 }
 
+const groups = [
+  "Default Group",
+  "IT Department",
+  "Security Team",
+  "Pool Group",
+];
+
 export default function AddUser() {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -47,19 +54,8 @@ export default function AddUser() {
     status: "active",
   });
 
-  const groups = [
-    "Default Group",
-    "IT Department",
-    "Security Team",
-    "Pool Group",
-  ];
 
-  // Fetch logged-in user details on component mount
-  useEffect(() => {
-    fetchLoggedInUserDetails();
-  }, []);
-
-  const fetchLoggedInUserDetails = async () => {
+  const fetchLoggedInUserDetails = useCallback(async () => {
     setUserDetailsLoading(true);
     try {
       // Get user email from localStorage or auth context
@@ -71,7 +67,7 @@ export default function AddUser() {
         try {
           storedUserData = JSON.parse(storedUser);
         } catch (e) {
-          // console.error('Error parsing user_data:', e)
+          console.error('Error parsing user_data:', e)
         }
       }
 
@@ -79,7 +75,7 @@ export default function AddUser() {
         try {
           storedUserData = JSON.parse(authUser);
         } catch (e) {
-          // console.error('Error parsing authUser:', e)
+          console.error('Error parsing authUser:', e)
         }
       }
 
@@ -115,11 +111,21 @@ export default function AddUser() {
         // console.warn('⚠️ Failed to fetch user details:', userRes.error)
       }
     } catch (error) {
-      // console.error('❌ Error fetching logged-in user details:', error)
+      console.error('❌ Error fetching logged-in user details:', error)
     } finally {
       setUserDetailsLoading(false);
     }
-  };
+  }, [user]);
+
+  // Fetch logged-in user details on component mount
+  useEffect(() => {
+    // Synchronous setState inside effect triggers cascading renders.
+    // Wrap in a timer or keep it as is if it's safe, but lint prefers avoiding direct calls.
+    const timer = setTimeout(() => {
+      fetchLoggedInUserDetails();
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [fetchLoggedInUserDetails]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -127,7 +133,7 @@ export default function AddUser() {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: name === "licenses" ? parseInt(value) || 0 : value,
+      [name]: name === "licenses" ? Number.parseInt(value, 10) || 0 : value,
     }));
   };
 
@@ -162,12 +168,7 @@ export default function AddUser() {
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       // Here you would make actual API call to backend
-      const newUser = {
-        id: Date.now().toString(),
-        ...formData,
-        lastLogin: "Never",
-        createdAt: new Date().toISOString(),
-      };
+      // console.log('Creating user:', { id: Date.now().toString(), ...formData })
 
       // console.log('Creating user:', newUser)
 
@@ -175,7 +176,7 @@ export default function AddUser() {
       // console.log(`User "${formData.name}" has been created successfully!`)
       navigate("/admin/users");
     } catch (error) {
-      // console.error('Error creating user:', error)
+      console.error('Error creating user:', error)
     } finally {
       setIsLoading(false);
     }
@@ -211,7 +212,7 @@ export default function AddUser() {
                 </svg>
               </button>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-                Add New User
+                Create New User Profile - Admin Access
               </h1>
             </div>
             <p className="text-slate-600">
@@ -221,92 +222,99 @@ export default function AddUser() {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          {/* Logged-in User Details Card */}
-          {userDetailsLoading ? (
-            <div className="card mb-6">
-              <div className="p-6">
-                <div className="flex items-center gap-3">
-                  <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-emerald-500"></div>
-                  <p className="text-slate-600">Loading your details...</p>
-                </div>
-              </div>
-            </div>
-          ) : loggedInUserData ? (
-            <div className="card mb-6 bg-gradient-to-br from-emerald-50 to-teal-50">
-              <div className="px-6 py-4 border-b border-emerald-200">
-                <div className="flex items-center gap-2">
-                  <svg
-                    className="w-5 h-5 text-emerald-800"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                  <h3 className="font-semibold text-slate-900">
-                    Your Account Details
-                  </h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
-                      Name
-                    </p>
-                    <p className="text-sm font-medium text-slate-900">
-                      {loggedInUserData.user_name}
-                    </p>
+          {/* Helper for role styles */}
+          {(() => {
+            const getRoleBadgeStyles = (role: string) => {
+              if (role === "admin") return "bg-purple-100 text-purple-800";
+              if (role === "manager") return "bg-blue-100 text-blue-800";
+              return "bg-slate-100 text-slate-800";
+            };
+
+            return (
+              <>
+                {/* Logged-in User Details Card */}
+                {userDetailsLoading ? (
+                  <div className="card mb-6">
+                    <div className="p-6">
+                      <div className="flex items-center gap-3">
+                        <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-emerald-500"></div>
+                        <p className="text-slate-600">Loading your details...</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
-                      Email
-                    </p>
-                    <p className="text-sm font-medium text-slate-900">
-                      {loggedInUserData.user_email}
-                    </p>
+                ) : loggedInUserData ? (
+                  <div className="card mb-6 bg-gradient-to-br from-emerald-50 to-teal-50">
+                    <div className="px-6 py-4 border-b border-emerald-200">
+                      <div className="flex items-center gap-2">
+                        <svg
+                          className="w-5 h-5 text-emerald-800"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                          />
+                        </svg>
+                        <h3 className="font-semibold text-slate-900">
+                          Your Account Details
+                        </h3>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="space-y-1">
+                          <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
+                            Name
+                          </p>
+                          <p className="text-sm font-medium text-slate-900">
+                            {loggedInUserData.user_name}
+                          </p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
+                            Email
+                          </p>
+                          <p className="text-sm font-medium text-slate-900">
+                            {loggedInUserData.user_email}
+                          </p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
+                            Department
+                          </p>
+                          <p className="text-sm font-medium text-slate-900">
+                            {loggedInUserData.department}
+                          </p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
+                            Role
+                          </p>
+                          <span
+                            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getRoleBadgeStyles(loggedInUserData.role)}`}
+                          >
+                            {loggedInUserData.role}
+                          </span>
+                        </div>
+                        <div className="space-y-1 sm:col-span-2">
+                          <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
+                            User Group
+                          </p>
+                          <p className="text-sm font-medium text-slate-900">
+                            {loggedInUserData.user_group}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
-                      Department
-                    </p>
-                    <p className="text-sm font-medium text-slate-900">
-                      {loggedInUserData.department}
-                    </p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
-                      Role
-                    </p>
-                    <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                        loggedInUserData.role === "admin"
-                          ? "bg-purple-100 text-purple-800"
-                          : loggedInUserData.role === "manager"
-                            ? "bg-blue-100 text-blue-800"
-                            : "bg-slate-100 text-slate-800"
-                      }`}
-                    >
-                      {loggedInUserData.role}
-                    </span>
-                  </div>
-                  <div className="space-y-1 sm:col-span-2">
-                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">
-                      User Group
-                    </p>
-                    <p className="text-sm font-medium text-slate-900">
-                      {loggedInUserData.user_group}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : null}
+                ) : null}
+              </>
+            );
+          })()}
 
           {/* Add User Form */}
           <form onSubmit={handleSubmit} className="card">
@@ -321,10 +329,11 @@ export default function AddUser() {
               {/* Basic Information */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
                     Full Name *
                   </label>
                   <input
+                    id="name"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -336,10 +345,11 @@ export default function AddUser() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
                     Email Address *
                   </label>
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     value={formData.email}
@@ -354,10 +364,11 @@ export default function AddUser() {
               {/* Password */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="password" className="block text-sm font-medium text-slate-700 mb-2">
                     Password *
                   </label>
                   <input
+                    id="password"
                     type="password"
                     name="password"
                     value={formData.password}
@@ -370,10 +381,11 @@ export default function AddUser() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="confirmPassword" className="block text-sm font-medium text-slate-700 mb-2">
                     Confirm Password *
                   </label>
                   <input
+                    id="confirmPassword"
                     type="password"
                     name="confirmPassword"
                     value={formData.confirmPassword}
@@ -388,10 +400,11 @@ export default function AddUser() {
               {/* Role and Group */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="role" className="block text-sm font-medium text-slate-700 mb-2">
                     User Role
                   </label>
                   <select
+                    id="role"
                     name="role"
                     value={formData.role}
                     onChange={handleInputChange}
@@ -403,10 +416,11 @@ export default function AddUser() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="group" className="block text-sm font-medium text-slate-700 mb-2">
                     User Group
                   </label>
                   <select
+                    id="group"
                     name="group"
                     value={formData.group}
                     onChange={handleInputChange}
@@ -424,10 +438,11 @@ export default function AddUser() {
               {/* Licenses and Status */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="licenses" className="block text-sm font-medium text-slate-700 mb-2">
                     License Allocation
                   </label>
                   <input
+                    id="licenses"
                     type="number"
                     name="licenses"
                     value={formData.licenses}
@@ -439,10 +454,11 @@ export default function AddUser() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="status" className="block text-sm font-medium text-slate-700 mb-2">
                     Account Status
                   </label>
                   <select
+                    id="status"
                     name="status"
                     value={formData.status}
                     onChange={handleInputChange}

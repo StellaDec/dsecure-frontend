@@ -1,0 +1,1174 @@
+﻿[
+  {
+    "file": "admin\\AdminReports.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Data Erasure Report",
+    "length": 19
+  },
+  {
+    "file": "admin\\AdminSettings.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "System Settings",
+    "length": 15
+  },
+  {
+    "file": "CheckoutPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Secure Checkout",
+    "length": 15
+  },
+  {
+    "file": "CloudConsoleGuide.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Cloud Console Guide",
+    "length": 19
+  },
+  {
+    "file": "CustomerStoriesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Customer Stories",
+    "length": 16
+  },
+  {
+    "file": "dashboards\\AdminGroups.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Groups",
+    "length": 6
+  },
+  {
+    "file": "dashboards\\AdminPerformance.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Performance",
+    "length": 11
+  },
+  {
+    "file": "dashboards\\AdminPerformance.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Performance",
+    "length": 11
+  },
+  {
+    "file": "dashboards\\AdminReports.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Audit Reports",
+    "length": 13
+  },
+  {
+    "file": "dashboards\\AdminReports.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Audit Reports",
+    "length": 13
+  },
+  {
+    "file": "dashboards\\AdminShell.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Admin Dashboard",
+    "length": 15
+  },
+  {
+    "file": "dashboards\\AdminSubusers.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Manage Subusers",
+    "length": 15
+  },
+  {
+    "file": "dashboards\\AdminSubusers.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Subusers Management",
+    "length": 19
+  },
+  {
+    "file": "dashboards\\components\\GroupsTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\components\\LicensesTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\components\\MachinesTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\components\\OverviewTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\components\\PdfPreviewModal.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\components\\PdfSettingsModal.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\components\\PerformanceTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\components\\ReportsTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\components\\UserActivityTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\components\\UsersTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "dashboards\\DownloadAgentPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Download Agents",
+    "length": 15
+  },
+  {
+    "file": "dashboards\\NewErasurePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "New Erasure Process",
+    "length": 19
+  },
+  {
+    "file": "dashboards\\PrivateCloudSetup.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Private Cloud Setup",
+    "length": 19
+  },
+  {
+    "file": "dashboards\\ReportsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Erasure Reports",
+    "length": 15
+  },
+  {
+    "file": "dashboards\\SystemLogs.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "FailurePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Payment Failed",
+    "length": 14
+  },
+  {
+    "file": "FeaturesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Advanced Features",
+    "length": 17
+  },
+  {
+    "file": "FileEraserGuide.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "File Eraser Guide",
+    "length": 17
+  },
+  {
+    "file": "ForumPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Community Forum",
+    "length": 15
+  },
+  {
+    "file": "FreezeStateAdvancedPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Advanced Eraser",
+    "length": 15
+  },
+  {
+    "file": "HealthcareServices.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Secure regulated",
+    "length": 16
+  },
+  {
+    "file": "HomePageOptimized.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "IconShowcase.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "IntegrationsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Integrations",
+    "length": 12
+  },
+  {
+    "file": "LegalPolicy.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Legal Policy",
+    "length": 12
+  },
+  {
+    "file": "MacEraseGuide.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Mac Erase Guide",
+    "length": 15
+  },
+  {
+    "file": "manual\\CompleteDocumentationPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "manual\\network-file\\About.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "About DSecureTech",
+    "length": 17
+  },
+  {
+    "file": "manual\\network-file\\QuickOverview.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Quick Overview",
+    "length": 14
+  },
+  {
+    "file": "manual\\network-file\\ReportManagement.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Report Management",
+    "length": 17
+  },
+  {
+    "file": "manual\\network-file\\Support.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Support & Updates",
+    "length": 17
+  },
+  {
+    "file": "NewsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Latest News",
+    "length": 11
+  },
+  {
+    "file": "NotFoundPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Page Not Found",
+    "length": 14
+  },
+  {
+    "file": "OrderSuccessPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Order Confirmed!",
+    "length": 16
+  },
+  {
+    "file": "OverwriteGuide.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Overwrite Guide",
+    "length": 15
+  },
+  {
+    "file": "PartnerProgramPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Partner Program",
+    "length": 15
+  },
+  {
+    "file": "PaymentSetupPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Complete Your Setup",
+    "length": 19
+  },
+  {
+    "file": "PressPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Press Room",
+    "length": 10
+  },
+  {
+    "file": "PricingPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Subscription Plans",
+    "length": 18
+  },
+  {
+    "file": "PrivacyPolicy.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Privacy Policy",
+    "length": 14
+  },
+  {
+    "file": "ProgrammaticSolutionPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "ReleaseNotesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Release Notes",
+    "length": 13
+  },
+  {
+    "file": "RequestDemoPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Request a Demo",
+    "length": 14
+  },
+  {
+    "file": "ResellersPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Reseller Program",
+    "length": 16
+  },
+  {
+    "file": "resources\\BrochuresResourcesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Product Brochures",
+    "length": 17
+  },
+  {
+    "file": "resources\\DatasheetsResourcesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Product Datasheets",
+    "length": 18
+  },
+  {
+    "file": "resources\\EbooksResourcesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Free Ebooks",
+    "length": 11
+  },
+  {
+    "file": "RetainOSGuide.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Retain OS Guide",
+    "length": 15
+  },
+  {
+    "file": "ReviewsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Customer Reviews",
+    "length": 16
+  },
+  {
+    "file": "ROICalculatorPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "ROI Calculator",
+    "length": 14
+  },
+  {
+    "file": "SecurityPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Security Practices",
+    "length": 18
+  },
+  {
+    "file": "solutions\\GetStartedPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Get Started",
+    "length": 11
+  },
+  {
+    "file": "solutions\\HelpManualPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Help Manual",
+    "length": 11
+  },
+  {
+    "file": "solutions\\KnowledgeBasePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Knowledge Base",
+    "length": 14
+  },
+  {
+    "file": "solutions\\ProductVideosPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Product Videos",
+    "length": 14
+  },
+  {
+    "file": "solutions\\VsBlancco.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "D-Secure vs Blancco",
+    "length": 19
+  },
+  {
+    "file": "solutions\\WhatIsITAD.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "What is ITAD?",
+    "length": 13
+  },
+  {
+    "file": "StatusPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "System Status",
+    "length": 13
+  },
+  {
+    "file": "support\\GetStartedPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Get Started",
+    "length": 11
+  },
+  {
+    "file": "support\\HelpManualPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Help Manual",
+    "length": 11
+  },
+  {
+    "file": "support\\KnowledgeBasePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Knowledge Base",
+    "length": 14
+  },
+  {
+    "file": "support\\manual\\AccessVerificationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Access Verification",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\ActivationKeyPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Activation Key",
+    "length": 14
+  },
+  {
+    "file": "support\\manual\\AuditPreparationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Audit Preparation",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\AuditTrailsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Audit Trails",
+    "length": 12
+  },
+  {
+    "file": "support\\manual\\AuditVerificationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Audit Verification",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\AutoUpdatesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Auto Updates",
+    "length": 12
+  },
+  {
+    "file": "support\\manual\\BankingFinancePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Banking Finance",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\BankingModePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Banking Mode",
+    "length": 12
+  },
+  {
+    "file": "support\\manual\\BatchOperationsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Batch Operations",
+    "length": 16
+  },
+  {
+    "file": "support\\manual\\BestPracticesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Best Practices",
+    "length": 14
+  },
+  {
+    "file": "support\\manual\\ChainCustodyPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Chain of Custody",
+    "length": 16
+  },
+  {
+    "file": "support\\manual\\CloudConsolePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Cloud Console",
+    "length": 13
+  },
+  {
+    "file": "support\\manual\\ComparisonTablePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Comparison Table",
+    "length": 16
+  },
+  {
+    "file": "support\\manual\\CrushingMethodPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Crushing Method",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\CryptoBenefitsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Crypto Benefits",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\CryptoImportancePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Crypto Importance",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\CryptoProcessPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Crypto Process",
+    "length": 14
+  },
+  {
+    "file": "support\\manual\\CryptoVerificationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Crypto Verification",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\CustomAlgorithmsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Custom Algorithms",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\DegaussingMethodPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Degaussing Method",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\DestructionQualityPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Destruction Quality",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\Dod3passPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Dod 3pass",
+    "length": 9
+  },
+  {
+    "file": "support\\manual\\Dod7passPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Dod 7pass",
+    "length": 9
+  },
+  {
+    "file": "support\\manual\\DodStandardsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Dod Standards",
+    "length": 13
+  },
+  {
+    "file": "support\\manual\\DSecureIntegrationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "D-SecureIntegration",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\EnterpriseBenefitsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Enterprise Benefits",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\EnterpriseServersPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Enterprise Servers",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\ErasureProcessPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Erasure Process",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\ErasureReportsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Erasure Reports",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\FaqsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Faqs",
+    "length": 4
+  },
+  {
+    "file": "support\\manual\\FirewallConfigPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Firewall Config",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\FirewallSetupPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Firewall Setup",
+    "length": 14
+  },
+  {
+    "file": "support\\manual\\FirstRunPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "First Run",
+    "length": 9
+  },
+  {
+    "file": "support\\manual\\FirstScanPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "First System Scan",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\FutureTrendsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Future Trends",
+    "length": 13
+  },
+  {
+    "file": "support\\manual\\GdprVerificationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Gdpr Verification",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\GovernmentDefensePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Government Defense",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\HddDestructionPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Hdd Destruction",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\IncinerationMethodPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Incineration Method",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\IndustryUseCasesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Industry Use Cases",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\InstallationPathPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Installation Path",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\ItadDatacentersPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Itad Datacenters",
+    "length": 16
+  },
+  {
+    "file": "support\\manual\\KeyActivationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Key Activation",
+    "length": 14
+  },
+  {
+    "file": "support\\manual\\KeyboardShortcutsPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\LicenseAgreementPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "License Agreement",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\LicenseTroubleshootingPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\LimitationsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Limitations",
+    "length": 11
+  },
+  {
+    "file": "support\\manual\\MacosAppleSiliconPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Apple Silicon",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\MacosArchitecturePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Architecture",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\MacosBuiltinToolsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Builtin Tools",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\MacosEncryptionPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Encryption",
+    "length": 16
+  },
+  {
+    "file": "support\\manual\\MacosEnterprisePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Enterprise",
+    "length": 16
+  },
+  {
+    "file": "support\\manual\\MacosFaqPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Faq",
+    "length": 9
+  },
+  {
+    "file": "support\\manual\\MacosFilesystemsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Filesystems",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\MacosFilevaultPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Filevault",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\MacosIntroductionPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Introduction",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\MacosPreparationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Preparation",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\MacosResourcesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Resources",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\MacosRisksPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Risks",
+    "length": 11
+  },
+  {
+    "file": "support\\manual\\MacosStoragePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Storage",
+    "length": 13
+  },
+  {
+    "file": "support\\manual\\MacosSystemDrivePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos System Drive",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\MacosThirdPartyPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Third Party",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\MacosVerificationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Macos Verification",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\MainDashboardPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Main Dashboard",
+    "length": 14
+  },
+  {
+    "file": "support\\manual\\ManualPageRenderer.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\MobileDestructionPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Mobile Destruction",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\Nist80088ManualPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\Nist80088Page.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Nist 800 88",
+    "length": 11
+  },
+  {
+    "file": "support\\manual\\NistGuidelinesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Nist Guidelines",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\NistModernStoragePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Nist Modern Storage",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\OnsiteOffsitePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Onsite Offsite",
+    "length": 14
+  },
+  {
+    "file": "support\\manual\\OperationHistoryPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Operation History",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\OverwriteRisksPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Overwrite Risks",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\ParentalControlsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Parental Controls",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\PatternSelectionPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Pattern Selection",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\PerformanceTroubleshootingPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\PerformanceTuningPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Performance Tuning",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\PhysicalInspectionPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Physical Inspection",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\QuickstartPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\RealTimeMonitoringPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\RealtimeProtectionPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Realtime Protection",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\RecoveryProceduresPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Recovery Procedures",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\RemoteManagementPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Remote Management",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\SanitizationConceptsPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\ScanExclusionsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Scan Exclusions",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\ScanResultsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Scan Results",
+    "length": 12
+  },
+  {
+    "file": "support\\manual\\ScanSchedulingPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Scan Scheduling",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\SecurityAssurancePage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\SecurityProtocolsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Security Protocols",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\ServiceWorkflowPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Service Workflow",
+    "length": 16
+  },
+  {
+    "file": "support\\manual\\SetupWizardPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Setup Wizard",
+    "length": 12
+  },
+  {
+    "file": "support\\manual\\ShreddingMethodPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Shredding Method",
+    "length": 16
+  },
+  {
+    "file": "support\\manual\\SsdChallengesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Ssd Challenges",
+    "length": 14
+  },
+  {
+    "file": "support\\manual\\SsdDestructionPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Ssd Destruction",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\SupportedDevicesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Supported Devices",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\SystemRequirementsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "System Requirements",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\SystemScanningPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "System Scanning",
+    "length": 15
+  },
+  {
+    "file": "support\\manual\\UseCasesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Use Cases",
+    "length": 9
+  },
+  {
+    "file": "support\\manual\\UserInterfacePage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "support\\manual\\UserProfilePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "User Profile",
+    "length": 12
+  },
+  {
+    "file": "support\\manual\\VerificationLogsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Verification Logs",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\VerificationRisksPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Verification Risks",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\VerificationToolsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Verification Tools",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\VirusDefinitionsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Virus Definitions",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\VisualConfirmationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Visual Confirmation",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\VpnSetupPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Vpn Setup",
+    "length": 9
+  },
+  {
+    "file": "support\\manual\\WindowsBitlockerPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Windows Bitlocker",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\WindowsFaqPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Windows Faq",
+    "length": 11
+  },
+  {
+    "file": "support\\manual\\WindowsMethodsComparisonPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Windows Guide",
+    "length": 13
+  },
+  {
+    "file": "support\\manual\\WindowsResidualDataPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Windows Guide",
+    "length": 13
+  },
+  {
+    "file": "support\\manual\\WindowsResourcesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Windows Resources",
+    "length": 17
+  },
+  {
+    "file": "support\\manual\\WindowsSedDrivesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Windows Sed Drives",
+    "length": 18
+  },
+  {
+    "file": "support\\manual\\WindowsSoftwareErasurePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Windows Guide",
+    "length": 13
+  },
+  {
+    "file": "support\\manual\\WindowsSsdErasurePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Windows Ssd Erasure",
+    "length": 19
+  },
+  {
+    "file": "support\\manual\\WindowsThirdPartyPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Windows Third Party",
+    "length": 19
+  },
+  {
+    "file": "support\\ProductVideosPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Product Videos",
+    "length": 14
+  },
+  {
+    "file": "TeamPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Our Team",
+    "length": 8
+  },
+  {
+    "file": "TermsConditionsPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "TermsOfServicePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Terms of Service",
+    "length": 16
+  },
+  {
+    "file": "TrainingPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Training Programs",
+    "length": 17
+  },
+  {
+    "file": "WebinarsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "Webinars",
+    "length": 8
+  },
+  {
+    "file": "WipeMacM1.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "WipeMacM1 Guide",
+    "length": 15
+  },
+  {
+    "file": "WipeSASDrive.tsx",
+    "status": "TOO_SHORT",
+    "h1Text": "WipeSASDrive",
+    "length": 12
+  },
+  {
+    "file": "__tests__\\CloneGuidePage.test.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "__tests__\\FileEraserNetwork.test.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  },
+  {
+    "file": "__tests__\\PricingAndPlan.test.tsx",
+    "status": "MISSING",
+    "h1Count": 0
+  }
+]
+

@@ -923,7 +923,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                   const c = colorMap[s.color] || colorMap.emerald;
                   const Icon = s.icon;
                   return (
-                    <Reveal key={s.title} delayMs={i * 80}>
+                    <Reveal key={s.title} delayMs={i * 80} className="h-full">
                       <Link
                         to={s.link}
                         className={`group relative bg-gradient-to-br ${c.bg} rounded-2xl p-7 border ${c.border} transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 block h-full flex flex-col`}
@@ -990,7 +990,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                   const c = colorMap[s.color] || colorMap.emerald;
                   const Icon = s.icon;
                   return (
-                    <Reveal key={s.title} delayMs={i * 80}>
+                    <Reveal key={s.title} delayMs={i * 80} className="h-full">
                       <Link
                         to={s.link}
                         className={`group relative bg-gradient-to-br ${c.bg} rounded-2xl p-7 border ${c.border} transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 block h-full flex flex-col`}

@@ -3,16 +3,6 @@ import { getSEOForPage } from "../../utils/seo";
 import { useState } from 'react';
 
 import { useParams, useNavigate } from 'react-router-dom';
-// import { usePermissions } from '@/hooks/usePermissions';
-// import {
-//     useGroupUsers,
-//     useGroupResources,
-//     useTransferResource,
-//     useMarkUserResigned,
-//     useResignedUsers,
-//     type GroupUser,
-//     type ResourceTransferRequest
-// } from '@/hooks/useGroupResources';
 
 /**
  * 🏢 GroupDetailPage
@@ -24,34 +14,72 @@ import { useParams, useNavigate } from 'react-router-dom';
  * - Resource transfer modal
  * - Resigned user resource redistribution
  */
+interface GroupUser {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  status: 'active' | 'inactive' | 'resigned';
+  allocatedLicenses: number;
+  usedLicenses: number;
+  activeKeys: number;
+}
+
+interface ResourceSummary {
+  groupName?: string;
+  totalLicenses?: number;
+  allocatedLicenses?: number;
+  availableLicenses?: number;
+  totalKeys?: number;
+  activeKeys?: number;
+  expiredKeys?: number;
+  totalUsers?: number;
+  activeUsers?: number;
+  inactiveUsers?: number;
+  resignedUsers?: number;
+}
+
 export default function GroupDetailPage() {
     const { groupId } = useParams<{ groupId: string }>();
     const navigate = useNavigate();
-    // const { hasPermission, isSuperAdmin } = usePermissions();
-
+    
     // State
     const [searchTerm, setSearchTerm] = useState('');
     const [showTransferModal, setShowTransferModal] = useState(false);
-    const [selectedUser, setSelectedUser] = useState<any | null>(null); // GroupUser
+    const [selectedUser, setSelectedUser] = useState<GroupUser | null>(null);
     const [transferTarget, setTransferTarget] = useState('');
     const [transferType, setTransferType] = useState<'license' | 'key'>('license');
     const [transferAmount, setTransferAmount] = useState(1);
     const [showResignedSection, setShowResignedSection] = useState(false);
 
-    // Hooks
-    // const { data: groupUsers = [], isLoading: usersLoading } = useGroupUsers(groupId || 'demo');
-    // const { data: resources, isLoading: resourcesLoading } = useGroupResources(groupId || 'demo');
-    // const { data: resignedUsers = [] } = useResignedUsers(groupId || 'demo');
-    // const transferMutation = useTransferResource();
-    // const resignMutation = useMarkUserResigned();
-    
     // Temporary mock data
-    const groupUsers: any[] = [];
+    const groupUsers: GroupUser[] = [
+        { id: '1', name: 'John Doe', email: 'john@example.com', role: 'admin', status: 'active', allocatedLicenses: 10, usedLicenses: 5, activeKeys: 3 },
+        { id: '2', name: 'Jane Smith', email: 'jane@example.com', role: 'manager', status: 'active', allocatedLicenses: 5, usedLicenses: 2, activeKeys: 1 },
+        { id: '3', name: 'Bob Wilson', email: 'bob@example.com', role: 'user', status: 'active', allocatedLicenses: 2, usedLicenses: 1, activeKeys: 0 },
+    ];
     const usersLoading = false;
-    const resources: any = {};
+    const resources: ResourceSummary = {
+        groupName: 'Engineering',
+        totalLicenses: 100,
+        allocatedLicenses: 45,
+        availableLicenses: 55,
+        totalKeys: 50,
+        activeKeys: 30,
+        expiredKeys: 5,
+        totalUsers: 15,
+        activeUsers: 12,
+        inactiveUsers: 3,
+        resignedUsers: 2
+    };
     const resourcesLoading = false;
-    const resignedUsers: any[] = [];
-    const hasPermission = (_: string) => true;
+    const resignedUsers: GroupUser[] = [
+        { id: '4', name: 'Alice Brown', email: 'alice@example.com', role: 'user', status: 'resigned', allocatedLicenses: 5, usedLicenses: 0, activeKeys: 2 },
+    ];
+    const hasPermission = (permissionName: string) => {
+      console.log('Checking permission:', permissionName);
+      return true;
+    };
     const isSuperAdmin = true;
     const transferMutation = { isPending: false };
 
@@ -62,18 +90,18 @@ export default function GroupDetailPage() {
     const canRedistribute = isDemoMode || hasPermission('redistribute_resources') || isSuperAdmin;
 
     // Filter users
-    const filteredUsers = groupUsers.filter((user: any) =>
+    const filteredUsers = groupUsers.filter((user: GroupUser) =>
         user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
         user.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    const activeUsers = filteredUsers.filter((u: any) => u.status === 'active');
+    const activeUsers = filteredUsers.filter((u: GroupUser) => u.status === 'active');
 
     // Handlers
     const handleTransfer = async () => {
         if (!selectedUser || !transferTarget || transferAmount < 1) return;
 
-        const request: any = { // ResourceTransferRequest
+        const request = { 
             fromUserId: selectedUser.id,
             toUserId: transferTarget,
             resourceType: transferType,
@@ -82,27 +110,25 @@ export default function GroupDetailPage() {
         };
 
         try {
-            // await transferMutation.mutateAsync(request);
             console.log('Transfer:', request);
             setShowTransferModal(false);
             setSelectedUser(null);
             setTransferAmount(1);
-        } catch (error) {
-            console.error('Transfer failed:', error);
+        } catch {
+            console.error('Transfer failed');
         }
     };
 
 
 
-    const handleMarkResigned = async (user: any) => { // GroupUser
+    const handleMarkResigned = async (user: GroupUser) => {
         if (!confirm(`Are you sure you want to mark ${user.name} as resigned? Their resources will need to be redistributed.`)) {
             return;
         }
-        // await resignMutation.mutateAsync({ userId: user.id, groupId: groupId || 'demo' });
         console.log('Mark resigned:', user);
     };
 
-    const openTransferModal = (user: any) => { // GroupUser
+    const openTransferModal = (user: GroupUser) => {
         setSelectedUser(user);
         setShowTransferModal(true);
     };
@@ -121,7 +147,10 @@ export default function GroupDetailPage() {
     return (
         <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("group-detail", { title: `${resources?.groupName || 'Group'} Resources - Admin Dashboard | DSecureTech` })} />
+      <SEOHead seo={{
+          ...getSEOForPage("admin-groups"),
+          title: `${resources?.groupName || 'Group'} Resources - Admin Dashboard | DSecureTech`
+      }} />
 
             <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/30">
                 <div className="container-app py-8">
@@ -136,7 +165,7 @@ export default function GroupDetailPage() {
                             </svg>
                         </button>
                         <div>
-                            <h1 className="text-2xl font-bold text-slate-900">{resources?.groupName || 'Group'} Resources</h1>
+                             <h1 className="text-2xl font-bold text-slate-900">{resources?.groupName || 'Group'} Resource Management and Detailed Assets</h1>
                             <p className="text-slate-600">Manage licenses, keys, and user permissions</p>
                         </div>
                     </div>
@@ -232,7 +261,7 @@ export default function GroupDetailPage() {
                                 Pending Resource Redistribution
                             </h3>
                             <div className="space-y-3">
-                                {resignedUsers.map((user: any) => (
+                                {resignedUsers.map((user: GroupUser) => (
                                     <div key={user.id} className="bg-white rounded-lg p-4 flex items-center justify-between">
                                         <div>
                                             <p className="font-medium text-slate-900">{user.name}</p>
@@ -285,7 +314,7 @@ export default function GroupDetailPage() {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
-                                    {activeUsers.map((user: any) => (
+                                    {activeUsers.map((user: GroupUser) => (
                                         <tr key={user.id} className="hover:bg-slate-50">
                                             <td className="px-6 py-4">
                                                 <div>
@@ -294,11 +323,7 @@ export default function GroupDetailPage() {
                                                 </div>
                                             </td>
                                             <td className="px-6 py-4">
-                                                <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium ${user.role === 'admin' ? 'bg-purple-100 text-purple-800' :
-                                                    user.role === 'manager' ? 'bg-blue-100 text-blue-800' :
-                                                        user.role === 'user' ? 'bg-slate-100 text-slate-800' :
-                                                            'bg-gray-100 text-gray-600'
-                                                    }`}>
+                                                <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium ${getRoleBadgeClasses(user.role)}`}>
                                                     {user.role}
                                                 </span>
                                             </td>
@@ -311,7 +336,7 @@ export default function GroupDetailPage() {
                                             </td>
                                             <td className="px-6 py-4">
                                                 <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
-                                                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                                                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
                                                     Active
                                                 </span>
                                             </td>
@@ -362,8 +387,8 @@ export default function GroupDetailPage() {
                         <div className="p-6 space-y-4">
                             {/* Resource Type */}
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 mb-2">Resource Type</label>
-                                <div className="flex gap-4">
+                                <label htmlFor="resourceType" className="block text-sm font-medium text-slate-700 mb-2">Resource Type</label>
+                                <div id="resourceType" className="flex gap-4">
                                     <label className="flex items-center gap-2 cursor-pointer">
                                         <input
                                             type="radio"
@@ -391,14 +416,15 @@ export default function GroupDetailPage() {
 
                             {/* Target User */}
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 mb-2">Transfer To</label>
+                                <label htmlFor="transferTarget" className="block text-sm font-medium text-slate-700 mb-2">Transfer To</label>
                                 <select
+                                    id="transferTarget"
                                     value={transferTarget}
                                     onChange={(e) => setTransferTarget(e.target.value)}
                                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                                 >
                                     <option value="">Select user...</option>
-                                    {activeUsers.filter((u: any) => u.id !== selectedUser.id).map((user: any) => (
+                                    {activeUsers.filter((u: GroupUser) => u.id !== selectedUser.id).map((user: GroupUser) => (
                                         <option key={user.id} value={user.id}>{user.name} ({user.email})</option>
                                     ))}
                                 </select>
@@ -406,13 +432,14 @@ export default function GroupDetailPage() {
 
                             {/* Amount */}
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 mb-2">Amount</label>
+                                <label htmlFor="transferAmount" className="block text-sm font-medium text-slate-700 mb-2">Amount</label>
                                 <input
+                                    id="transferAmount"
                                     type="number"
                                     min={1}
                                     max={transferType === 'license' ? selectedUser.allocatedLicenses : selectedUser.activeKeys}
                                     value={transferAmount}
-                                    onChange={(e) => setTransferAmount(parseInt(e.target.value) || 1)}
+                                    onChange={(e) => setTransferAmount(Number.parseInt(e.target.value, 10) || 1)}
                                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                                 />
                             </div>
@@ -446,4 +473,14 @@ export default function GroupDetailPage() {
             )}
         </>
     );
+}
+
+// --- Helper Functions ---
+function getRoleBadgeClasses(role: string): string {
+    switch (role) {
+        case 'admin': return 'bg-purple-100 text-purple-800';
+        case 'manager': return 'bg-blue-100 text-blue-800';
+        case 'user': return 'bg-slate-100 text-slate-800';
+        default: return 'bg-gray-100 text-gray-600';
+    }
 }

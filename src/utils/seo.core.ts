@@ -227,7 +227,7 @@ export const getDefaultSEO = (): SEOMetadata => ({
   title:
     "D-Secure | #1 Data Erasure Software | NIST 800-88 Compliant",
   description:
-    "D-Secure is #1 data erasure software — NIST 800-88, GDPR & HIPAA compliant. Securely wipe HDDs, SSDs and mobile devices with tamper-proof audit certificates.",
+    "D-Secure is #1 data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-proof audit certificates.",
   keywords: generateKeywords(),
   canonicalUrl: SEO_CONFIG.baseUrl,
   ogTitle: "D-Secure Tech - #1 Data Erasure Software",

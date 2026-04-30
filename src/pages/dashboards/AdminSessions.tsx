@@ -655,7 +655,7 @@ export default function AdminSessions() {
         {/* Header */}
         <div className="flex flex-col xs:flex-row sm:flex-row items-start xs:items-center sm:items-center justify-between gap-4">
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
-            Sessions
+            User Activity Sessions and Security Audit Trail
           </h1>
           <div className="flex gap-3">
             <button

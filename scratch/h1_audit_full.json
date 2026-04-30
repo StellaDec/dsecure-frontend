@@ -1,0 +1,2576 @@
+[
+  {
+    "file": "src\\pages\\About.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "The New Standard in\r\n                \r\n                  Data Erasure & Sanitization"
+  },
+  {
+    "file": "src\\pages\\admin\\AddGroup.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Add New Group"
+  },
+  {
+    "file": "src\\pages\\admin\\AddUser.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Add New User"
+  },
+  {
+    "file": "src\\pages\\admin\\AdminGroups.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Manage Groups"
+  },
+  {
+    "file": "src\\pages\\admin\\AdminProfileEdit.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Edit Profile"
+  },
+  {
+    "file": "src\\pages\\admin\\AdminReports.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Data Erasure Report"
+  },
+  {
+    "file": "src\\pages\\admin\\AdminSettings.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "System Settings"
+  },
+  {
+    "file": "src\\pages\\admin\\AdminUsers.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Manage Users"
+  },
+  {
+    "file": "src\\pages\\admin\\EditGroup.tsx",
+    "status": "MULTIPLE_H1, TOO_SHORT",
+    "h1Count": 2,
+    "h1Text": "Group Not Found | Edit Group"
+  },
+  {
+    "file": "src\\pages\\admin\\EditUser.tsx",
+    "status": "MULTIPLE_H1, TOO_SHORT, TOO_SHORT",
+    "h1Count": 2,
+    "h1Text": "User Not Found | Edit User"
+  },
+  {
+    "file": "src\\pages\\admin\\GenerateReport.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "isBulkMode\r\n                  ? `Bulk Customize Reports ($ selected)`\r\n                  : reportId\r\n                    ? `Generate Custom Report - Report #$`\r\n                    : \"Generate Report\""
+  },
+  {
+    "file": "src\\pages\\admin\\GroupDetailPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Resources"
+  },
+  {
+    "file": "src\\pages\\AIOverviewPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure: AI Overview & Entity Profile"
+  },
+  {
+    "file": "src\\pages\\ApiTestPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "API Integration Test"
+  },
+  {
+    "file": "src\\pages\\AssetReimagingPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Automated Windows \r\n                    \r\n                      Asset Reimaging"
+  },
+  {
+    "file": "src\\pages\\auth\\LoginPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "showForgotPassword\r\n                ? t(\"auth.resetPassword\")\r\n                : t(\"auth.welcomeBack\")"
+  },
+  {
+    "file": "src\\pages\\auth\\RegisterPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Create Account"
+  },
+  {
+    "file": "src\\pages\\AutopilotDetectionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Autopilot\r\n                    \r\n                      Detection"
+  },
+  {
+    "file": "src\\pages\\blog\\BlogPostDetail.tsx",
+    "status": "EMPTY_H1",
+    "h1Count": 1,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\CheckoutPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Secure Checkout"
+  },
+  {
+    "file": "src\\pages\\CloneGuidePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "How to Recover Files from \n                  \n                    Corrupt Hard Drives"
+  },
+  {
+    "file": "src\\pages\\CloudConsoleGuide.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Cloud Console Guide"
+  },
+  {
+    "file": "src\\pages\\ComparisonPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Data Erasure Software Comparison: Lifecycle Governance vs. Legacy Wiping"
+  },
+  {
+    "file": "src\\pages\\compliance\\GDPRCompliancePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Guarantee GDPR Compliance in Data Disposal"
+  },
+  {
+    "file": "src\\pages\\compliance\\NIST80088Page.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Achieve NIST 800-88 Data Erasure Compliance"
+  },
+  {
+    "file": "src\\pages\\CompliancePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Data Erasure Compliance & Standards"
+  },
+  {
+    "file": "src\\pages\\ContactPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Contact D-Secure for Data Erasure Solutions"
+  },
+  {
+    "file": "src\\pages\\CookiePolicyPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Cookie Policy"
+  },
+  {
+    "file": "src\\pages\\CryptoEraseSSD.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "CryptoEraseSSD"
+  },
+  {
+    "file": "src\\pages\\CustomerStoriesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Customer Stories"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminDashboard.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Admin Dashboard"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminDownloads.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Downloads"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminGroups.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Groups"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminLicenses.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Licenses"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminMachines.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Machines"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminPerformance.tsx",
+    "status": "MULTIPLE_H1, TOO_SHORT, TOO_SHORT",
+    "h1Count": 2,
+    "h1Text": "Performance | Performance"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminReports.tsx",
+    "status": "MULTIPLE_H1, TOO_SHORT, TOO_SHORT",
+    "h1Count": 2,
+    "h1Text": "Audit Reports | Audit Reports"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminSessions.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Sessions"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminShell.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Admin Dashboard"
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminSubusers.tsx",
+    "status": "MULTIPLE_H1",
+    "h1Count": 2,
+    "h1Text": "Manage Subusers | Subusers Management"
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\GroupsTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\LicensesTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\MachinesTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\OverviewTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\PdfPreviewModal.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\PdfSettingsModal.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\PerformanceTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\ReportsTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\UserActivityTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\components\\UsersTab.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\DownloadAgentPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Download Agents"
+  },
+  {
+    "file": "src\\pages\\dashboards\\EditSubuser.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Edit Subuser"
+  },
+  {
+    "file": "src\\pages\\dashboards\\EnhancedUserDashboard.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Welcome back,"
+  },
+  {
+    "file": "src\\pages\\dashboards\\NewErasurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "New Erasure Process"
+  },
+  {
+    "file": "src\\pages\\dashboards\\PrivateCloudSetup.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Private Cloud Setup"
+  },
+  {
+    "file": "src\\pages\\dashboards\\ReportsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Erasure Reports"
+  },
+  {
+    "file": "src\\pages\\dashboards\\SystemLogs.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\dashboards\\UserDashboard.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "`"
+  },
+  {
+    "file": "src\\pages\\DataEraserSoftwarePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "All Data Erasure &\r\n                    \r\n                      Diagnostic Products"
+  },
+  {
+    "file": "src\\pages\\DataGuardianAwardPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure \r\n                      \r\n                        Data Hygiene\r\n                      \r\n                      \r\n                      Assurance"
+  },
+  {
+    "file": "src\\pages\\DataHygieneFrameworkPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "The Data Hygiene Framework"
+  },
+  {
+    "file": "src\\pages\\DataMigrationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure \r\n                    \r\n                      Data Migration"
+  },
+  {
+    "file": "src\\pages\\DiagnosticsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Hardware Diagnostics"
+  },
+  {
+    "file": "src\\pages\\DigitalPRHub.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Direct Access to IT \n              Sanitization Authority"
+  },
+  {
+    "file": "src\\pages\\DownloadPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Download\r\n              \r\n                D-Secure\r\n              \r\n              Software"
+  },
+  {
+    "file": "src\\pages\\DriveEraserDiagnosticPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Drive Eraser\n                    \n                      Diagnostic & Health"
+  },
+  {
+    "file": "src\\pages\\DriveEraserPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure\r\n                    \r\n                      Drive Eraser"
+  },
+  {
+    "file": "src\\pages\\DriveVerifierPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Accurately Verify Erased Drives"
+  },
+  {
+    "file": "src\\pages\\EarlyAccessPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Be the First to Experience \n                  \n                    Next-Gen Data Security"
+  },
+  {
+    "file": "src\\pages\\EducationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Solutions for\r\n                    \r\n                      Educational Institutions"
+  },
+  {
+    "file": "src\\pages\\EnterprisePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Enterprise Data Erasure Solutions"
+  },
+  {
+    "file": "src\\pages\\EventsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Events"
+  },
+  {
+    "file": "src\\pages\\FailurePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Payment Failed"
+  },
+  {
+    "file": "src\\pages\\FeaturesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Advanced Features"
+  },
+  {
+    "file": "src\\pages\\FileEraserGuide.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "File Eraser Guide"
+  },
+  {
+    "file": "src\\pages\\FileEraserNetwork.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure\n                    \n                      File Eraser Network"
+  },
+  {
+    "file": "src\\pages\\FileEraserPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure\r\n                    \r\n                      File Eraser"
+  },
+  {
+    "file": "src\\pages\\FinancialServices.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Financial Services Solutions"
+  },
+  {
+    "file": "src\\pages\\ForensicImagingPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure \n                    \n                      Forensic Imaging"
+  },
+  {
+    "file": "src\\pages\\ForumPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Community Forum"
+  },
+  {
+    "file": "src\\pages\\FounderPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Dhruv Rai"
+  },
+  {
+    "file": "src\\pages\\FreeTrialPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Start Your Free Trial"
+  },
+  {
+    "file": "src\\pages\\FreezeStateAdvancedPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Advanced Eraser"
+  },
+  {
+    "file": "src\\pages\\FreezeStatePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure \r\n                    \r\n                      FreezeState"
+  },
+  {
+    "file": "src\\pages\\FreezeStateSmartPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "FreezeState \n                    Smart Diagnostic"
+  },
+  {
+    "file": "src\\pages\\GlossaryPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Data Security & Sanitization Glossary"
+  },
+  {
+    "file": "src\\pages\\GovernmentPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Solutions for\n                    \n                      Government"
+  },
+  {
+    "file": "src\\pages\\HardDriveMonitorPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Complete Smart Diagnostic \n                    \n                      Monitoring Solution"
+  },
+  {
+    "file": "src\\pages\\HardwareDiagnosticsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure\r\n                    \r\n                      Hardware Diagnostics"
+  },
+  {
+    "file": "src\\pages\\HealthcareServices.tsx",
+    "status": "MULTIPLE_H1",
+    "h1Count": 2,
+    "h1Text": "Secure regulated | Healthcare Data Privacy & PHI Erasure"
+  },
+  {
+    "file": "src\\pages\\HomePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Enterprise Data Hygiene &"
+  },
+  {
+    "file": "src\\pages\\HomePageOptimized.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\IconShowcase.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\ImplementationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Implementation Services"
+  },
+  {
+    "file": "src\\pages\\IntegrationsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Integrations"
+  },
+  {
+    "file": "src\\pages\\ITADSolution.tsx",
+    "status": "MULTIPLE_H1",
+    "h1Count": 4,
+    "h1Text": "//                 Secure IT Asset\r\n//                 Disposition\r\n// | //                   Secure IT Asset\r\n//                   \r\n//                     Disposition\r\n//                   \r\n// | //                   Secure IT Asset\r\n//                   \r\n//                     Disposition\r\n//                   \r\n// | ITAD Data Wiping & Security\r\n                  \r\n                    Solutions"
+  },
+  {
+    "file": "src\\pages\\LeadershipPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Leadership Team"
+  },
+  {
+    "file": "src\\pages\\LegalPolicy.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Legal Policy"
+  },
+  {
+    "file": "src\\pages\\LiveDemoPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Live Interactive Demo"
+  },
+  {
+    "file": "src\\pages\\LUNEraserPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Securely Sanitize Logical Unit Numbers"
+  },
+  {
+    "file": "src\\pages\\MacEraseGuide.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Mac Erase Guide"
+  },
+  {
+    "file": "src\\pages\\manual\\CompleteDocumentationPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\manual\\CompleteDSecureDriveManual.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Drive Eraser"
+  },
+  {
+    "file": "src\\pages\\manual\\CompleteDSecureManual.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure File Eraser"
+  },
+  {
+    "file": "src\\pages\\manual\\CompleteDSecureNetworkFile.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure File Eraser Network Manual"
+  },
+  {
+    "file": "src\\pages\\manual\\CompleteFreezeStateManual.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure FreezeState"
+  },
+  {
+    "file": "src\\pages\\manual\\DSecureFAQPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "How can we help you today?"
+  },
+  {
+    "file": "src\\pages\\manual\\HelpManualIndexPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Help Manual"
+  },
+  {
+    "file": "src\\pages\\manual\\InstallationGuideDetailed.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Installation Guide"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\About.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "About DSecureTech"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\CloudIntegration.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "DSecure Cloud Integration"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\ConnectingDomain.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Connect to Active Directory Domain"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\ErasingFiles.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Securely Erasing Files and Folders"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\ErasingTraces.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Erase Digital Traces and Activity History"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\FAQ.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Frequently Asked Questions"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\Installation.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Installation and Setup Guide"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\Licensing.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Software Licensing and Activation"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\QuickOverview.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Quick Overview"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\ReportManagement.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Report Management"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\SchedulingTasks.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Schedule Erasure Tasks"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\Settings.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Application Settings and Customization"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\Support.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Support & Updates"
+  },
+  {
+    "file": "src\\pages\\manual\\network-file\\UserInterface.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "User Interface Overview"
+  },
+  {
+    "file": "src\\pages\\manual\\NetworkFileManualLayout.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure File Eraser Network Manual"
+  },
+  {
+    "file": "src\\pages\\manual\\ReportManagementPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Working with Reports"
+  },
+  {
+    "file": "src\\pages\\manual\\ScheduleSettingsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Scheduling & Configuration Settings"
+  },
+  {
+    "file": "src\\pages\\manual\\SystemSetupPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "System Setup & Configuration"
+  },
+  {
+    "file": "src\\pages\\manual\\WorkingWithDSecurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Working with D-Secure File Eraser"
+  },
+  {
+    "file": "src\\pages\\MobileErasureSolutions.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Mobile Erasure Solutions"
+  },
+  {
+    "file": "src\\pages\\NewsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Latest News"
+  },
+  {
+    "file": "src\\pages\\NotFoundPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Page Not Found"
+  },
+  {
+    "file": "src\\pages\\OrderSuccessPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Order Confirmed!"
+  },
+  {
+    "file": "src\\pages\\OverwriteGuide.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Overwrite Guide"
+  },
+  {
+    "file": "src\\pages\\PartnerProgramPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Partner Program"
+  },
+  {
+    "file": "src\\pages\\PartnersPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Grow Your Business with\r\n                    \r\n                      D-Secure Partnership"
+  },
+  {
+    "file": "src\\pages\\PaymentPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Complete Your Purchase"
+  },
+  {
+    "file": "src\\pages\\PaymentSetupPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Complete Your Setup"
+  },
+  {
+    "file": "src\\pages\\PressPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Press Room"
+  },
+  {
+    "file": "src\\pages\\PricingAndPlanPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Choose Your\r\n              \r\n                D-Secure\r\n              \r\n              License"
+  },
+  {
+    "file": "src\\pages\\PricingPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Subscription Plans"
+  },
+  {
+    "file": "src\\pages\\PrivacyPolicy.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Privacy Policy"
+  },
+  {
+    "file": "src\\pages\\ProductPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Data Erasure Solutions"
+  },
+  {
+    "file": "src\\pages\\ProfessionalServicesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Professional Services"
+  },
+  {
+    "file": "src\\pages\\ProgrammaticSolutionPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\ReleaseNotesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Release Notes"
+  },
+  {
+    "file": "src\\pages\\RemovableMediaEraserPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Securely Erase USB & Flash Drives"
+  },
+  {
+    "file": "src\\pages\\RequestDemoPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Request a Demo"
+  },
+  {
+    "file": "src\\pages\\research\\ErasureBenchmarkStudy.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Speeding Past \n                Legacy Wiping."
+  },
+  {
+    "file": "src\\pages\\research\\ResearchHubPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Data Sanitization \n                    Intelligence."
+  },
+  {
+    "file": "src\\pages\\research\\StandardsComparisonInfo.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Media Sanitization \n                Standards Matrix."
+  },
+  {
+    "file": "src\\pages\\research\\StateOfDataDestruction2026.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "The State of \n                Data Destruction"
+  },
+  {
+    "file": "src\\pages\\research\\ZeroTrustSanitization.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Architecting \n                Zero-Trust Sanitization"
+  },
+  {
+    "file": "src\\pages\\ResellersPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Reseller Program"
+  },
+  {
+    "file": "src\\pages\\resources\\BrochuresResourcesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Product Brochures"
+  },
+  {
+    "file": "src\\pages\\resources\\CaseStudiesResourcesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Customer Success Stories"
+  },
+  {
+    "file": "src\\pages\\resources\\ComplianceResourcesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Compliance Guides & Standards"
+  },
+  {
+    "file": "src\\pages\\resources\\DatasheetsResourcesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Product Datasheets"
+  },
+  {
+    "file": "src\\pages\\resources\\DocumentationResourcesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Technical Documentation"
+  },
+  {
+    "file": "src\\pages\\resources\\EbooksResourcesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Free Ebooks"
+  },
+  {
+    "file": "src\\pages\\resources\\WhitepapersResourcesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Technical Whitepapers & Research"
+  },
+  {
+    "file": "src\\pages\\ResourcesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Data Security Blog & Insights Hub"
+  },
+  {
+    "file": "src\\pages\\RetainOSGuide.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Retain OS Guide"
+  },
+  {
+    "file": "src\\pages\\ReviewsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Customer Reviews"
+  },
+  {
+    "file": "src\\pages\\ROICalculatorPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "ROI Calculator"
+  },
+  {
+    "file": "src\\pages\\SearchDemoPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Advanced Search\r\n                \r\n                  Experience"
+  },
+  {
+    "file": "src\\pages\\SecureEraseHDDSDD.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Secure Erase HDD/SSD"
+  },
+  {
+    "file": "src\\pages\\SecurityPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Security Practices"
+  },
+  {
+    "file": "src\\pages\\services\\CloudErasurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Cloud Erasure Service"
+  },
+  {
+    "file": "src\\pages\\ServicesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Comprehensive Data\r\n                      \r\n                        Erasure Services"
+  },
+  {
+    "file": "src\\pages\\SmartphoneDiagnosticPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Smartphone\r\n                    \r\n                      Diagnostics"
+  },
+  {
+    "file": "src\\pages\\SmartphoneEraserPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Smartphone\r\n                    \r\n                      Eraser"
+  },
+  {
+    "file": "src\\pages\\solutions\\BlanccoAlternativePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Modern Data Erasure Without the Complexity or Cost."
+  },
+  {
+    "file": "src\\pages\\solutions\\EnterpriseSolutionsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Solutions for\n                    \n                      Enterprise"
+  },
+  {
+    "file": "src\\pages\\solutions\\FAQsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Frequently Asked Questions"
+  },
+  {
+    "file": "src\\pages\\solutions\\FinancialSolutionsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Solutions for\n                      \n                        Banking & Finance"
+  },
+  {
+    "file": "src\\pages\\solutions\\GetStartedPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Get Started"
+  },
+  {
+    "file": "src\\pages\\solutions\\HealthcareSolutionsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Solutions for\r\n                    \r\n                      Healthcare & Insurance Sector"
+  },
+  {
+    "file": "src\\pages\\solutions\\HelpManualPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Help Manual"
+  },
+  {
+    "file": "src\\pages\\solutions\\KnowledgeBasePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Knowledge Base"
+  },
+  {
+    "file": "src\\pages\\solutions\\MacErasurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Compliance Data Erasure for MacBook & iMac"
+  },
+  {
+    "file": "src\\pages\\solutions\\NonProfitSolutionsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Solutions for\n                    \n                      Non-Profit Organizations"
+  },
+  {
+    "file": "src\\pages\\solutions\\ProductVideosPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Product Videos"
+  },
+  {
+    "file": "src\\pages\\solutions\\ServiceProvidersSolutionsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Solutions for \r\n                    Managed Service Providers"
+  },
+  {
+    "file": "src\\pages\\solutions\\VsBitRaser.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure vs BitRaser"
+  },
+  {
+    "file": "src\\pages\\solutions\\VsBlancco.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure vs Blancco"
+  },
+  {
+    "file": "src\\pages\\solutions\\VsWhiteCanyon.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure vs WhiteCanyon"
+  },
+  {
+    "file": "src\\pages\\solutions\\WhatIsITAD.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "What is ITAD?"
+  },
+  {
+    "file": "src\\pages\\solutions\\WhatIsNist80088.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "What is NIST 800-88?"
+  },
+  {
+    "file": "src\\pages\\SolutionsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Tailored Data Erasure for"
+  },
+  {
+    "file": "src\\pages\\StandardsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Data Erasure Standards"
+  },
+  {
+    "file": "src\\pages\\StatusPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "System Status"
+  },
+  {
+    "file": "src\\pages\\support\\FAQsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Frequently Asked Questions"
+  },
+  {
+    "file": "src\\pages\\support\\GetStartedPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Get Started"
+  },
+  {
+    "file": "src\\pages\\support\\HelpManualPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Help Manual"
+  },
+  {
+    "file": "src\\pages\\support\\KnowledgeBasePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Knowledge Base"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\AccessVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Access Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ActivationKeyPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Activation Key"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ApiIntegrationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "API Integration Interface"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\AuditPreparationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Audit Preparation"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\AuditTrailsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Audit Trails"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\AuditVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Audit Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\AutoUpdatesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Auto Updates"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\BankingFinancePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Banking Finance"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\BankingModePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Banking Mode"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\BatchOperationsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Batch Operations"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\BestPracticesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Best Practices"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CertificateDestructionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Destruction Regulatory Document"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CertificateGenerationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Regulatory Document Generation"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ChainCustodyPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Chain of Custody"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CloudConsolePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Cloud Console"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CommonIssuesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Common\r\n                    \r\n                      Issues & Solutions"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ComparisonTablePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Comparison Table"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ComplianceExportPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Audit & Compliance Exports"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ComplianceStandardsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Erasure Algorithms & Standard Mappings"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CrushingMethodPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Crushing Method"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CryptoBenefitsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Crypto Benefits"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CryptographicErasurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Cryptographic Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CryptoImportancePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Crypto Importance"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CryptoProcessPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Crypto Process"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CryptoVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Crypto Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CustomAlgorithmsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Custom Algorithms"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CustomConfigurationsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Custom Configurations"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CustomDashboardsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Custom\r\n                \r\n                  Dashboards"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DegaussingMethodPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Degaussing Method"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DestructionQualityPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Destruction Quality"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DestructionStandardsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Destruction Standards"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DestructionUseCasesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Destruction Use Cases"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DeviceSelectionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Device Discovery &\r\n                \r\n                  Selection"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\Dod3passPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Dod 3pass"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\Dod7passPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Dod 7pass"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DodStandardsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Dod Standards"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DownloadInstallerPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Download & Run Installer"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DSecureIntegrationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-SecureIntegration"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\EnterpriseBenefitsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Enterprise Benefits"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\EnterpriseIntegrationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Enterprise Integration\r\n                \r\n                  Settings"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\EnterpriseServersPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Enterprise Servers"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\EnvironmentalConsiderationsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Environmental Considerations"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\EnvironmentalImpactPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Environmental Impact"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ErasurePreferencesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Erasure\r\n                \r\n                  Preferences"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ErasureProcessPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Erasure Process"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ErasureReportsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Erasure Reports"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ErrorCodesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Error\r\n                    \r\n                      Codes Reference"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FaqsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Faqs"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FinancialVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Financial Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FirewallConfigPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Firewall Config"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FirewallSetupPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Firewall Setup"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FirstRunPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "First Run"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FirstScanPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "First System Scan"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FirstTimeSetupPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "First Time\r\n                    \r\n                      Setup Guide"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FragmentVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Fragment Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FutureTrendsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Future Trends"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\GdprVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Gdpr Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\GeneralSettingsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "General\r\n                \r\n                  Settings"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\GovernmentDefensePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Government Defense"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\GovernmentVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Government Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\HardwareSanitizationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Hardware Sanitization"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\HddDestructionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Hdd Destruction"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\HealthcareDestructionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Healthcare Destruction"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\HealthcareVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Healthcare Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ImplementationConsiderationsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Implementation Considerations"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ImplementationPracticesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Implementation Practices"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\IncinerationMethodPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Incineration Method"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\IndustryApplicationsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Industry Applications"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\IndustryUseCasesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Industry Use Cases"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\InstallationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure\r\n                    \r\n                      Installation Guide"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\InstallationPathPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Installation Path"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\InstallationProgressPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Installation Progress"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\InstallationSettingsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Installation Settings"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\InternetRequirementsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Internet Requirements"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ItadDatacentersPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Itad Datacenters"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\KeyActivationPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Key Activation"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\KeyboardShortcutsPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\KeyDestructionVerifyPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Key Destruction Verify"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\LicenseActivationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "License Key Activation"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\LicenseAgreementPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "License Agreement"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\LicenseTroubleshootingPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\LimitationsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Limitations"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\LinuxSystemsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Linux Systems\r\n                                    Data Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosAppleSiliconPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Apple Silicon"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosArchitecturePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Architecture"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosBestPracticesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Best Practices"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosBuiltinToolsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Builtin Tools"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosCompliancePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Enterprise Data Erasure for macOS & Apple Silicon"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosCryptoErasurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Crypto Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosEncryptionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Encryption"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosEnterprisePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Enterprise"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosExternalMediaPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos External Media"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosFaqPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Macos Faq"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosFilesystemsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Filesystems"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosFilevaultPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Filevault"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosIntelProceduresPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Intel Procedures"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosIntroductionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Introduction"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosMethodsComparisonPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Methods Comparison"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosPreparationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Preparation"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosResourcesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Resources"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosRisksPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Macos Risks"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosSoftwareErasurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Software Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosSsdConsiderationsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Ssd Considerations"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosStoragePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Macos Storage"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosSystemDrivePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos System Drive"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacOSSystemsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "macOS Systems\r\n                    \r\n                      Data Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosThirdPartyPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Third Party"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosToolSelectionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Tool Selection"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosTroubleshootingPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Troubleshooting"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Macos Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MainDashboardPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Main Dashboard"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ManualPageRenderer.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MobileDestructionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Mobile Destruction"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MobileDevicesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Mobile\r\n Devices"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\NavigationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Navigation Menu System"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\Nist80088ManualPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\Nist80088Page.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Nist 800 88"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\NistGuidelinesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Nist Guidelines"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\NistModernStoragePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Nist Modern Storage"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OnsiteOffsitePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Onsite Offsite"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OperationHistoryPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Operation History"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OpticalTapeDestructionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Optical Tape Destruction"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OverwriteIntroductionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Overwrite Introduction"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OverwritePatternsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Overwrite Patterns\r\n                    \r\n                      & Data Sanitization"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OverwriteRisksPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Overwrite Risks"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ParentalControlsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Parental Controls"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PatternSelectionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Pattern Selection"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PerformanceAnalysisPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Performance Analysis"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PerformanceOptimizationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Performance\r\n                    \r\n                      Optimization"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PerformanceTradeoffsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Performance Tradeoffs"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PerformanceTroubleshootingPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PerformanceTuningPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Performance Tuning"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PhysicalDestructionOverviewPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Physical Destruction Overview"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PhysicalDestructionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Physical\r\n                    \r\n                      Destruction Methods"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PhysicalInspectionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Physical Inspection"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PostInstallOptimizationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Post Install Optimization"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PreInstallationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Pre-Installation Checklist"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ProgressMonitoringPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Real-Time Progress Monitoring"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\QuickstartPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ReadbackVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Readback\r\n                \r\n                  Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\RealTimeMonitoringPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\RealtimeProtectionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Realtime Protection"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\RecoveryProceduresPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Recovery Procedures"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\RegulatoryCompliancePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Regulatory Compliance & Legal Frameworks"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\RemoteManagementPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Remote Management"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SamplingMethodologyPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Sampling Methodology"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SanitizationConceptsPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ScanExclusionsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Scan Exclusions"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ScanResultsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Scan Results"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ScanSchedulingPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Scan Scheduling"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ScriptingAutomationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Scripting & Automation"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SecurityAssurancePage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SecurityProtocolsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Security Protocols"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ServiceWorkflowPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Service Workflow"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SetupWizardPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Setup Wizard"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ShreddingMethodPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Shredding Method"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SoftwareSupportedMediaPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Software Supported Media"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SoftwareVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Software Verification"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SsdChallengesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Ssd Challenges"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SsdDestructionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Ssd Destruction"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\StandardsComparisonPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Standards Comparison"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\StartErasurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Erasure Operation Setup"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\StatisticalConfidencePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Statistical Confidence"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\StatusIndicatorsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Status Indicators & Alerts"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SupportedDevicesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Supported Devices"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SupportedEncryptionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Supported Encryption"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SystemRequirementsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "System Requirements"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SystemScanningPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "System Scanning"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\UseCasesPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Use Cases"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\UserInterfacePage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\support\\manual\\UserManagementPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "User\r\n                \r\n                  Management"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\UserProfilePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "User Profile"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationChallengesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Verification Challenges"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationImportancePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Verification Importance"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationLogsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Verification Logs"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationMethodsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Verification\r\n                    \r\n                      Methods"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationOverviewPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Verification\r\n                \r\n                  Overview"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationRisksPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Verification Risks"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationStandardsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Verification Standards"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationTechniquesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Verification Techniques"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationToolsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Verification Tools"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VirusDefinitionsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Virus Definitions"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VisualConfirmationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Visual Confirmation"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VpnSetupPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Vpn Setup"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WhyPhysicalDestructionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Why Physical Destruction"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsBestPracticesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Best Practices"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsBitlockerPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Bitlocker"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsBootableUsbPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Bootable Usb"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsBuiltinToolsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Built-in Erasure Tools"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsCommandLinePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Command Line Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsCompliancePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Environment Security Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsCryptoErasurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Cryptographic Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsDsecureEraserPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Dsecure Eraser"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsEnterprisePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Enterprise Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsFaqPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Windows Faq"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsFilesystemsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows File Systems"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsIntroductionPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Data Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsMethodsComparisonPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Windows Guide"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsPreparationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Pre-Erasure Preparation"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsResidualDataPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Windows Guide"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsResourcesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Resources"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsRisksPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Security Risks"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsSedDrivesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Sed Drives"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsSoftwareErasurePage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Windows Guide"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsSsdErasurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Ssd Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsStoragePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Storage Architecture"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsSystemFilesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows System Files"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsSystemsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Systems\r\n                    \r\n                      Data Erasure"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsThirdPartyPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Third Party"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsTroubleshootingPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Troubleshooting"
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsVerificationPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Windows Verification"
+  },
+  {
+    "file": "src\\pages\\support\\ProductVideosPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Product Videos"
+  },
+  {
+    "file": "src\\pages\\SupportPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure\r\n                     Customer Support"
+  },
+  {
+    "file": "src\\pages\\TeamPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Our Team"
+  },
+  {
+    "file": "src\\pages\\TermsConditionsPage.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\TermsOfServicePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Terms of Service"
+  },
+  {
+    "file": "src\\pages\\TestimonialsPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Customer Testimonials"
+  },
+  {
+    "file": "src\\pages\\tools\\DataBreachCalculatorPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Data Breach Cost Calculator"
+  },
+  {
+    "file": "src\\pages\\tools\\GDPRErasureChecklistPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Right to Erasure Compliance Audit"
+  },
+  {
+    "file": "src\\pages\\tools\\NIST80088CheckerPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "NIST 800-88 Compliance Checker"
+  },
+  {
+    "file": "src\\pages\\tools\\SSDPassCalculatorPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Data Erasure Pass Calculator"
+  },
+  {
+    "file": "src\\pages\\TrainingPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Training Programs"
+  },
+  {
+    "file": "src\\pages\\TrustCenterPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Trust Center"
+  },
+  {
+    "file": "src\\pages\\UseCasesPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Enterprise Use Cases"
+  },
+  {
+    "file": "src\\pages\\VirtualMachineEraserPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure\r\n                    \r\n                      Virtual Machine Eraser"
+  },
+  {
+    "file": "src\\pages\\WebinarsPage.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "Webinars"
+  },
+  {
+    "file": "src\\pages\\WhatIsDSecurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "D-Secure Technologies – Company Definition"
+  },
+  {
+    "file": "src\\pages\\WhitepaperPage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Structural Lifecycle Governance: A New Paradigm for Verifiable Data Sanitization"
+  },
+  {
+    "file": "src\\pages\\WhyDSecurePage.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "Why Choose D-Secure for Data Lifecycle Governance?"
+  },
+  {
+    "file": "src\\pages\\WipeMacM1.tsx",
+    "status": "OK",
+    "h1Count": 1,
+    "h1Text": "WipeMacM1 Guide"
+  },
+  {
+    "file": "src\\pages\\WipeSASDrive.tsx",
+    "status": "TOO_SHORT",
+    "h1Count": 1,
+    "h1Text": "WipeSASDrive"
+  },
+  {
+    "file": "src\\pages\\__tests__\\CloneGuidePage.test.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\__tests__\\FileEraserNetwork.test.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  },
+  {
+    "file": "src\\pages\\__tests__\\PricingAndPlan.test.tsx",
+    "status": "MISSING",
+    "h1Count": 0,
+    "h1Text": ""
+  }
+]

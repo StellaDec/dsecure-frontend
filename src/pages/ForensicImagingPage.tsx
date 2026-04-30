@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import { Link } from "react-router-dom";
 import { getSEOForPage } from "@/utils/seo";
+import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import {
   ShieldIcon,
   CheckIcon,
@@ -806,6 +807,9 @@ const ForensicImagingPage = memo(() => {
             </div>
           </div>
         </section>
+
+
+        <ProductInternalLinks currentProduct={PRODUCT_LINKS.FORENSIC} />
 
         {/* ================= FAQ SECTION ================= */}
         <section id="faq" className="py-24 lg:py-32 bg-slate-50">

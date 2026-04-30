@@ -13,12 +13,12 @@ const NISTClearPurgeBlog: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
             <SEOHead seo={getBlogSEO({
-        title: "NIST Clear vs Purge Explained",
-        excerpt: "Understanding the difference between NIST 800-88 Clear and Purge methods.",
+        title: "NIST 800-88 Clear vs Purge: Which Sanitization Method Does Your Organization Need?",
+        excerpt: "Understand the critical difference between NIST 800-88 Clear and Purge methods — when to use each, applicable drive types, and how D-Secure implements both for enterprise compliance.",
         slug: "nist-clear-purge",
         author: "Prashant Saini",
         publishDate: "September 8, 2025",
-        keywords: "NIST, Clear, Purge, 800-88",
+        keywords: "NIST 800-88 Clear vs Purge, NIST data sanitization methods, Clear overwriting, Purge cryptographic erasure, NIST media sanitization enterprise compliance",
         category: "Technical Guide",
         tag: "Standards"
       })} />

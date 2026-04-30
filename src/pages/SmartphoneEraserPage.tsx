@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import { Link } from "react-router-dom";
+import { PRODUCT_SEO } from "../utils/seo.products";
+import ProductInternalLinks from "../components/ProductInternalLinks";
 import {
   TagIcon,
   ServerIcon,
@@ -481,8 +483,8 @@ const SmartphoneEraserPage = memo(() => {
                 { step: "03", title: "Erase", desc: "Run regulatory erasure in parallel across all connected devices.", icon: <Zap className="w-6 h-6" /> },
                 { step: "04", title: "Verify", desc: "Generate tamper-proof reports and print identification labels.", icon: <CheckCircle className="w-6 h-6" /> },
               ].map((item) => (
-                <Reveal key={item.title} delayMs={Number.parseInt(item.step) * 100}>
-                  <div className="relative p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-emerald-200 hover:shadow-xl transition-all group">
+                <Reveal key={item.title} delayMs={Number.parseInt(item.step) * 100} className="h-full">
+                  <div className="relative p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-emerald-200 hover:shadow-xl transition-all group h-full flex flex-col">
                     <span className="absolute top-6 right-6 text-4xl font-black text-slate-200 group-hover:text-emerald-100 transition-colors">
                       {item.step}
                     </span>
@@ -490,7 +492,7 @@ const SmartphoneEraserPage = memo(() => {
                       {item.icon}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed flex-grow">{item.desc}</p>
                   </div>
                 </Reveal>
               ))}
@@ -613,13 +615,13 @@ const SmartphoneEraserPage = memo(() => {
 
             <div className="grid md:grid-cols-3 gap-8">
               {platforms.map((p, i) => (
-                <Reveal key={p.name} delayMs={i * 100}>
-                  <div className="p-8 rounded-3xl bg-white border border-emerald-100 shadow-xl hover:shadow-2xl transition-all text-center group">
+                <Reveal key={p.name} delayMs={i * 100} className="h-full">
+                  <div className="p-8 rounded-3xl bg-white border border-emerald-100 shadow-xl hover:shadow-2xl transition-all text-center group h-full flex flex-col">
                     <div className="w-20 h-20 mx-auto bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       {p.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">{p.name}</h3>
-                    <p className="text-emerald-700 font-semibold text-sm mb-4">{p.versions}</p>
+                    <p className="text-emerald-700 font-semibold text-sm mb-4 flex-grow">{p.versions}</p>
                     <div className="h-1 w-12 bg-emerald-500 mx-auto rounded-full"></div>
                   </div>
                 </Reveal>
@@ -642,13 +644,13 @@ const SmartphoneEraserPage = memo(() => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {moreFeatures.map((feat, i) => (
-                <Reveal key={feat.title} delayMs={i * 100}>
-                  <div className="p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-emerald-200 transition-all h-full">
+                <Reveal key={feat.title} delayMs={i * 100} className="h-full">
+                  <div className="p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-emerald-200 transition-all h-full flex flex-col">
                     <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6">
                       {feat.icon}
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 mb-4">{feat.title}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">{feat.desc}</p>
+                    <p className="text-slate-600 text-sm leading-relaxed flex-grow">{feat.desc}</p>
                   </div>
                 </Reveal>
               ))}
@@ -686,6 +688,8 @@ const SmartphoneEraserPage = memo(() => {
             </div>
           </div>
         </section>
+
+        <ProductInternalLinks currentProduct="smartphone-eraser" />
 
         {/* ================= FAQ SECTION ================= */}
         <section id="faq" className="py-20 lg:py-32 bg-emerald-50/50">

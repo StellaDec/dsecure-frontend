@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, memo, useRef } from "react";
 import { Link } from "react-router-dom";
 import { getSEOForPage } from "@/utils/seo";
+import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import {
   Settings,
@@ -425,7 +426,7 @@ const FreezeStatePage = memo(() => {
 
             <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
               {/* Product 1: Admin Console */}
-              <Reveal>
+              <Reveal className="h-full">
                 <div className="p-10 rounded-[2.5rem] bg-slate-900 text-white border border-slate-800 shadow-2xl relative overflow-hidden group h-full">
                   <div className="absolute top-0 right-0 p-8 opacity-10">
                     <Layout className="w-32 h-32" />
@@ -456,7 +457,7 @@ const FreezeStatePage = memo(() => {
               </Reveal>
 
               {/* Product 2: Client Application */}
-              <Reveal delayMs={100}>
+              <Reveal delayMs={100} className="h-full">
                 <div className="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-xl relative overflow-hidden group h-full">
                   <div className="absolute top-0 right-0 p-8 opacity-5">
                     <Monitor className="w-32 h-32" />
@@ -504,7 +505,7 @@ const FreezeStatePage = memo(() => {
 
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Variant 1: Core Protection */}
-              <Reveal>
+              <Reveal className="h-full">
                 <div className="p-8 lg:p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all duration-500 flex flex-col h-full group">
                   <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-8 border border-emerald-500/20 shadow-inner">
                     <ShieldCheck className="w-7 h-7" />
@@ -543,7 +544,7 @@ const FreezeStatePage = memo(() => {
               </Reveal>
 
               {/* Variant 2: Smart Diagnostic */}
-              <Reveal delayMs={100}>
+              <Reveal delayMs={100} className="h-full">
                 <div className="p-8 lg:p-10 rounded-[2.5rem] bg-emerald-500 text-white shadow-2xl shadow-emerald-500/20 transform lg:-translate-y-4 transition-all duration-500 flex flex-col h-full group relative overflow-hidden">
                   <div className="absolute top-0 right-0 p-6 opacity-10">
                     <Activity className="w-32 h-32" />
@@ -599,7 +600,7 @@ const FreezeStatePage = memo(() => {
               </Reveal>
 
               {/* Variant 3: Advanced Eraser */}
-              <Reveal delayMs={200}>
+              <Reveal delayMs={200} className="h-full">
                 <div className="p-8 lg:p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all duration-500 flex flex-col h-full group">
                   <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-8 border border-cyan-500/20 shadow-inner">
                     <Zap className="w-7 h-7" />
@@ -1203,20 +1204,23 @@ const FreezeStatePage = memo(() => {
                  { title: "Multi-Boot Support", desc: "Compatible with multiple partitions and boot environments on a single disk.", icon: <Monitor /> },
                  { title: "Cloud Connector", desc: "Sync configurations and manage endpoints through a secure cloud interface.", icon: <Cloud /> },
                ].map((item) => (
-                 <Reveal key={item.title}>
-                    <div className="p-10 rounded-[2.5rem] border border-slate-100 bg-slate-50 hover:bg-emerald-50/40 hover:border-emerald-200 transition-all duration-500 h-full group relative overflow-hidden">
+                 <Reveal key={item.title} className="h-full">
+                    <div className="p-10 rounded-[2.5rem] border border-slate-100 bg-slate-50 hover:bg-emerald-50/40 hover:border-emerald-200 transition-all duration-500 h-full group relative overflow-hidden flex flex-col">
                        <div className="absolute -right-4 -top-4 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-colors"></div>
                        <div className="w-11 h-11 rounded-xl bg-white text-emerald-600 flex items-center justify-center mb-6 group-hover:rotate-12 group-hover:scale-110 shadow-sm transition-transform border border-slate-50">
                           {React.cloneElement(item.icon as React.ReactElement, { className: "w-5 h-5" })}
                        </div>
                        <h4 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h4>
-                       <p className="text-sm text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                       <p className="text-sm text-slate-600 leading-relaxed font-medium flex-grow">{item.desc}</p>
                     </div>
                  </Reveal>
                ))}
             </div>
           </div>
         </section>
+
+
+        <ProductInternalLinks currentProduct={PRODUCT_LINKS.FREEZE} />
 
         {/* ================= FAQ SECTION ================= */}
         <section id="faq" className="py-24 lg:py-32 bg-slate-50">

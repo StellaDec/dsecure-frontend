@@ -13,12 +13,12 @@ const HowToEraseMacBlog: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
             <SEOHead seo={getBlogSEO({
-        title: "How to Securely Erase Mac Devices",
-        excerpt: "Complete guide to secure data erasure for Mac computers including M-series chips.",
+        title: "How to Securely Erase Mac Devices (M1, M2, M3 & Intel) | Enterprise Mac Data Erasure",
+        excerpt: "Step-by-step guide for IT teams to securely erase MacBook, iMac, Mac Mini & Mac Pro — including Apple Silicon. Learn why factory reset fails compliance and how to use certified erasure tools.",
         slug: "how-to-erase-mac",
         author: "Nitesh Kushwaha",
         publishDate: "February 13, 2025",
-        keywords: "Mac, Apple, secure erase, M1, M2",
+        keywords: "how to erase Mac securely enterprise, Mac data destruction compliance, Apple Silicon M1 M2 secure wipe, MacBook NIST erasure guide, Mac data sanitization GDPR HIPAA",
         category: "Technical Guide",
         tag: "Mac"
       })} />

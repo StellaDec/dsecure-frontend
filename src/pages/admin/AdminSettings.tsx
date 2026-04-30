@@ -8,7 +8,8 @@ import { useNotification } from "@/contexts/NotificationContext";
 import { isDemoMode } from "@/data/demoData";
 
 export default function AdminSettings() {
-  const { user } = useAuth();
+  // Unused user removed if not needed, but keeping useAuth for context consistency
+  useAuth();
   const navigate = useNavigate();
   const { showInfo } = useNotification();
   const [activeTab, setActiveTab] = useState("general");
@@ -43,7 +44,9 @@ export default function AdminSettings() {
     },
   });
 
-  const handleSettingChange = (category: string, key: string, value: any) => {
+  // Settings update handler
+  // Category aur key ke basis pe state update karte hain
+  const handleSettingChange = (category: string, key: string, value: string | number | boolean) => {
     setSettings((prev) => ({
       ...prev,
       [category]: {
@@ -53,14 +56,15 @@ export default function AdminSettings() {
     }));
   };
 
+  // Settings save handler
+  // Demo mode check ke baad save logic execute karenge
   const handleSaveSettings = () => {
     if (isDemoMode()) {
       showInfo("You are in Demo Mode. Action is not permitted.");
       return;
     }
-    // Handle settings save
-    // console.log('Saving settings:', settings)
-    // console.log('Settings saved successfully!')
+    // Handle settings save logic yahan aayegi
+    console.log('Saving settings:', settings);
   };
 
   const tabs = [
@@ -75,7 +79,6 @@ export default function AdminSettings() {
       {/* SEO Meta Tags */}
       <SEOHead seo={getSEOForPage("admin-settings")} />
 
-
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
@@ -84,6 +87,7 @@ export default function AdminSettings() {
               <button
                 onClick={() => navigate("/admin")}
                 className="text-slate-600 hover:text-slate-900 transition-colors"
+                aria-label="Go back to admin dashboard"
               >
                 <svg
                   className="w-5 h-5"
@@ -167,10 +171,11 @@ export default function AdminSettings() {
                 </div>
                 <div className="p-6 space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="site-name" className="block text-sm font-medium text-slate-700 mb-2">
                       Site Name
                     </label>
                     <input
+                      id="site-name"
                       type="text"
                       value={settings.general.siteName}
                       onChange={(e) =>
@@ -184,10 +189,11 @@ export default function AdminSettings() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="site-description" className="block text-sm font-medium text-slate-700 mb-2">
                       Site Description
                     </label>
                     <textarea
+                      id="site-description"
                       value={settings.general.siteDescription}
                       onChange={(e) =>
                         handleSettingChange(
@@ -202,10 +208,11 @@ export default function AdminSettings() {
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                      <label htmlFor="default-language" className="block text-sm font-medium text-slate-700 mb-2">
                         Default Language
                       </label>
                       <select
+                        id="default-language"
                         value={settings.general.defaultLanguage}
                         onChange={(e) =>
                           handleSettingChange(
@@ -223,10 +230,11 @@ export default function AdminSettings() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                      <label htmlFor="timezone-setting" className="block text-sm font-medium text-slate-700 mb-2">
                         Timezone
                       </label>
                       <select
+                        id="timezone-setting"
                         value={settings.general.timezone}
                         onChange={(e) =>
                           handleSettingChange(
@@ -282,10 +290,11 @@ export default function AdminSettings() {
                 <div className="p-6 space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                      <label htmlFor="min-password-length" className="block text-sm font-medium text-slate-700 mb-2">
                         Password Minimum Length
                       </label>
                       <input
+                        id="min-password-length"
                         type="number"
                         min="6"
                         max="20"
@@ -294,17 +303,18 @@ export default function AdminSettings() {
                           handleSettingChange(
                             "security",
                             "passwordMinLength",
-                            parseInt(e.target.value),
+                            Number.parseInt(e.target.value, 10),
                           )
                         }
                         className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                      <label htmlFor="session-timeout" className="block text-sm font-medium text-slate-700 mb-2">
                         Session Timeout (minutes)
                       </label>
                       <input
+                        id="session-timeout"
                         type="number"
                         min="5"
                         max="480"
@@ -313,7 +323,7 @@ export default function AdminSettings() {
                           handleSettingChange(
                             "security",
                             "sessionTimeout",
-                            parseInt(e.target.value),
+                            Number.parseInt(e.target.value, 10),
                           )
                         }
                         className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
@@ -321,10 +331,11 @@ export default function AdminSettings() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="max-login-attempts" className="block text-sm font-medium text-slate-700 mb-2">
                       Max Login Attempts
                     </label>
                     <input
+                      id="max-login-attempts"
                       type="number"
                       min="3"
                       max="10"
@@ -333,7 +344,7 @@ export default function AdminSettings() {
                         handleSettingChange(
                           "security",
                           "maxLoginAttempts",
-                          parseInt(e.target.value),
+                          Number.parseInt(e.target.value, 10),
                         )
                       }
                       className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
@@ -405,7 +416,7 @@ export default function AdminSettings() {
                         className="flex items-center justify-between"
                       >
                         <div>
-                          <label className="text-sm font-medium text-slate-700">
+                          <label htmlFor={`notif-${key}`} className="text-sm font-medium text-slate-700 cursor-pointer">
                             {key
                               .replace(/([A-Z])/g, " $1")
                               .replace(/^./, (str) => str.toUpperCase())}
@@ -424,6 +435,7 @@ export default function AdminSettings() {
                           </p>
                         </div>
                         <input
+                          id={`notif-${key}`}
                           type="checkbox"
                           checked={value as boolean}
                           onChange={(e) =>
@@ -480,10 +492,11 @@ export default function AdminSettings() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="license-expiry" className="block text-sm font-medium text-slate-700 mb-2">
                       License Expiry Date
                     </label>
                     <input
+                      id="license-expiry"
                       type="date"
                       value={settings.license.expiryDate}
                       onChange={(e) =>

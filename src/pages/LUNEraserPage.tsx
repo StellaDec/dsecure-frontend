@@ -11,6 +11,7 @@ import {
 } from "@/components/FlatIcons";
 import { FileTextIcon, Download, Zap, Database, HardDrive, Server, Cloud, RefreshCcw, Activity } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
+import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
 
 const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
@@ -450,6 +451,9 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
             </div>
           </div>
         </section>
+
+
+        <ProductInternalLinks currentProduct={PRODUCT_LINKS.LUN_ERASER} />
 
         <section id="contact" className="py-24 bg-white border-t relative overflow-hidden isolate">
           <div className="container mx-auto px-4 max-w-7xl">

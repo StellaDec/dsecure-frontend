@@ -2,9 +2,9 @@ import { SEOMetadata, generateKeywords, getCanonicalUrl } from "./seo.core";
 
 export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   "solutions/data-erasure-banking-finance": {
-    title: "Banking & Financial Data Erasure - PCI-DSS & SOX Compliant | D-Secure Tech",
+    title: "Banking & Financial Data Erasure: PCI-DSS & SOX | D-Secure",
     description:
-      "Secure data erasure solutions for banks and financial institutions. Achieve 100% compliance with PCI-DSS, SOX, GLBA, and FACTA with tamper-proof audit trails.",
+      "Secure data erasure solutions for banks & financial firms. Achieve 100% compliance with PCI-DSS, SOX, and GLBA with tamper-proof audit trails.",
     keywords: generateKeywords([
       "banking data erasure",
       "financial data destruction",
@@ -44,7 +44,7 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "solutions/government": {
-    title: "Government Data Erasure - NIST 800-88 & DoD Compliant | D-Secure Tech",
+    title: "Government Data Erasure: NIST 800-88 & DoD | D-Secure",
     description:
       "Secure data destruction for government and defense. Meet NIST 800-88, DoD 5220.22-M, and CMMC standards with tamper-proof audit trails.",
     keywords: generateKeywords([
@@ -65,7 +65,7 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "solutions/itad": {
     title: "ITAD Data Erasure Solutions | Asset Disposal | D-Secure",
-    description: "Secure data wiping for IT asset disposition and recyclers. Ensure compliance sanitization with Tamper-proof audit reports (Page 1: Certificate, Page 2+: Summary) during hardware retirement.",
+    description: "Secure data wiping for ITAD and recyclers. Ensure compliance with tamper-proof audit reports and certificates during hardware retirement.",
     keywords: generateKeywords([
       "ITAD data erasure",
       "asset disposal",
@@ -81,9 +81,8 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "solutions/education": {
-    title: "Education Data Erasure & Privacy - FERPA & COPPA Compliant | D-Secure Tech",
-    description:
-      "Secure data erasure solutions for schools, universities, and research institutions. Ensure FERPA and COPPA compliance with compliance-verified student data sanitization.",
+    title: "Education Data Erasure: FERPA & COPPA Privacy | D-Secure",
+    description: "Secure data erasure for schools and universities. Ensure FERPA and COPPA compliance with verified student data sanitization solutions.",
     keywords: generateKeywords([
       "education data erasure",
       "FERPA compliance software",
@@ -102,9 +101,9 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "solutions/non-profit": {
-    title: "Non-Profit Data Erasure Solutions | Secure Device Donation & Reuse | D-Secure",
+    title: "Non-Profit Data Erasure: Secure Donation & Reuse | D-Secure",
     description:
-      "Comply with data privacy laws by securely erasing sensitive donor, beneficiary, and financial records from drives and devices. Cost-effective, audit-ready data sanitization for NGOs and charities.",
+      "Securely erase donor and beneficiary records from drives. Cost-effective, audit-ready data sanitization for NGOs and charities.",
     keywords: generateKeywords([
       "non-profit data erasure",
       "NGO data security",
@@ -123,9 +122,9 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Enterprise Solutions Page — SEO key "enterprise-solutions" se match hota hai
   "enterprise-solutions": {
-    title: "Enterprise Data Erasure Solutions | Scalable Secure Wiping | D-Secure",
+    title: "Enterprise Data Erasure: Scalable Secure Wiping | D-Secure",
     description:
-      "Enterprise-grade data erasure for large organizations. Wipe up to 65,000 drives simultaneously with PXE boot, RAID support, and tamper-proof audit trails. NIST 800-88, GDPR, HIPAA compliant.",
+      "Enterprise-grade data erasure for large organizations. Wipe servers and drives with PXE boot and tamper-proof audit trails. NIST 800-88 & GDPR compliant.",
     keywords: generateKeywords([
       "enterprise data erasure software",
       "best enterprise data sanitization",
@@ -145,9 +144,9 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Service Providers Page — SEO key "solutions/service-providers" se match hota hai
   "solutions/service-providers": {
-    title: "MSP & Service Provider Data Erasure Solutions | D-Secure Tech",
+    title: "MSP & Service Provider Data Erasure Solutions | D-Secure",
     description:
-      "Data erasure solutions for Managed Service Providers and System Integrators. Offer certified data sanitization as a service with centralized audit trails, white-label reporting, and scalable licensing.",
+      "Data erasure for MSPs. Offer certified sanitization as a service with centralized audit trails, white-label reporting, and scalable licensing.",
     keywords: generateKeywords([
       "MSP data erasure",
       "service provider data wiping",

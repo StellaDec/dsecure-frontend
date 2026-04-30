@@ -15,7 +15,8 @@ interface GroupFormData {
 }
 
 export default function AddGroup() {
-  const { user } = useAuth();
+  // Unused user removed
+  useAuth();
   const navigate = useNavigate();
   const { showInfo } = useNotification();
   const [isLoading, setIsLoading] = useState(false);
@@ -59,16 +60,20 @@ export default function AddGroup() {
     },
   ];
 
+  // Input change handler
+  // Licenses ke liye Number.parseInt use karte hain numeric consistency ke liye
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: name === "licenses" ? parseInt(value) || 0 : value,
+      [name]: name === "licenses" ? (Number.parseInt(value, 10) || 0) : value,
     }));
   };
 
+  // Permission toggle handler
+  // Checkbox toggle ke basis pe permissions array update karte hain
   const handlePermissionChange = (permissionId: string, checked: boolean) => {
     setFormData((prev) => ({
       ...prev,
@@ -78,17 +83,17 @@ export default function AddGroup() {
     }));
   };
 
+  // Form submit handler
+  // Validation aur demo mode check ke baad success simulate karenge
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validation
+    // Validation logic
     if (!formData.name || !formData.description) {
-      // console.log('Validation failed: Please fill in all required fields')
       return;
     }
 
     if (formData.permissions.length === 0) {
-      // console.log('Validation failed: Please select at least one permission')
       return;
     }
 
@@ -100,32 +105,13 @@ export default function AddGroup() {
     setIsLoading(true);
 
     try {
-      // Simulate API call
+      // API call simulate karte hain
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      // Here you would make actual API call to backend
-      const newGroup = {
-        id: Date.now().toString(),
-        ...formData,
-        userCount: 0,
-        createdAt: new Date().toISOString(),
-        date: new Date().toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        }),
-      };
-
-      // console.log('Creating group:', newGroup)
-
-      // Success - Navigate back to admin dashboard
-      // console.log(`Group "${formData.name}" has been created successfully!`)
+      // Success logic yahan aayegi
       navigate("/admin");
     } catch (error) {
-      // console.error('Error creating group:', error)
+      console.error('Error creating group:', error);
     } finally {
       setIsLoading(false);
     }
@@ -136,7 +122,6 @@ export default function AddGroup() {
       {/* SEO Meta Tags */}
       <SEOHead seo={getSEOForPage("add-group")} />
 
-
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
@@ -145,6 +130,7 @@ export default function AddGroup() {
               <button
                 onClick={() => navigate("/admin")}
                 className="text-slate-600 hover:text-slate-900 transition-colors"
+                aria-label="Go back to admin dashboard"
               >
                 <svg
                   className="w-5 h-5"
@@ -161,7 +147,7 @@ export default function AddGroup() {
                 </svg>
               </button>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-                Add New Group
+                Add New User Group
               </h1>
             </div>
             <p className="text-slate-600">
@@ -185,10 +171,11 @@ export default function AddGroup() {
             <div className="p-6 space-y-6">
               {/* Basic Information */}
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="group-name" className="block text-sm font-medium text-slate-700 mb-2">
                   Group Name *
                 </label>
                 <input
+                  id="group-name"
                   type="text"
                   name="name"
                   value={formData.name}
@@ -200,10 +187,11 @@ export default function AddGroup() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="group-description" className="block text-sm font-medium text-slate-700 mb-2">
                   Description *
                 </label>
                 <textarea
+                  id="group-description"
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
@@ -215,10 +203,11 @@ export default function AddGroup() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="group-licenses" className="block text-sm font-medium text-slate-700 mb-2">
                   License Allocation
                 </label>
                 <input
+                  id="group-licenses"
                   type="number"
                   name="licenses"
                   value={formData.licenses}
