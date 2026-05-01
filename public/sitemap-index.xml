@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main sitemap — core pages, solutions, compliance -->
+  <sitemap>
+    <loc>https://dsecuretech.com/sitemap.xml</loc>
+    <lastmod>2026-05-01</lastmod>
+  </sitemap>
+
+  <!-- Products sitemap — all 20+ product pages -->
+  <sitemap>
+    <loc>https://dsecuretech.com/sitemap-products.xml</loc>
+    <lastmod>2026-05-01</lastmod>
+  </sitemap>
+
+  <!-- Blogs sitemap — all blog posts and guides -->
+  <sitemap>
+    <loc>https://dsecuretech.com/sitemap-blogs.xml</loc>
+    <lastmod>2026-05-01</lastmod>
+  </sitemap>
+
+  <!-- Manuals sitemap — documentation pages -->
+  <sitemap>
+    <loc>https://dsecuretech.com/sitemap-manuals.xml</loc>
+    <lastmod>2026-05-01</lastmod>
+  </sitemap>
+
+</sitemapindex>

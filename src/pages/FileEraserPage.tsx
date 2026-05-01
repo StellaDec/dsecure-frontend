@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
 import SEOHead from "@/components/SEOHead";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
   ShieldIcon,
   CheckIcon,
@@ -662,6 +663,18 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
   return (
     <>
       <SEOHead seo={getSEOForPage("file-eraser")} />
+
+      {/* Breadcrumb Navigation — SEO ke liye */}
+      <div className="container mx-auto px-4 pt-4 pb-1">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'Products', path: '/products' },
+            { name: 'File Eraser', path: '/products/file-eraser' },
+          ]}
+        />
+      </div>
+
       {/* ================= STICKY SECTION NAV ================= */}
       <div
         className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${

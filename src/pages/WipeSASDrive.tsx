@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 const WipeSASDrive: React.FC = () => {
   return (
     <>
-      <SEOHead seo={getSEOForPage('wipe-sas-drive')} />
+      <SEOHead seo={getSEOForPage('wipe-sas-drive')} noindex={true} />
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         <section className="py-16 md:py-24">
@@ -15,7 +15,7 @@ const WipeSASDrive: React.FC = () => {
               <div className="text-center max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
                   <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                    WipeSASDrive
+                    How to Wipe a SAS Drive Securely
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-slate-700 mb-8 leading-relaxed">

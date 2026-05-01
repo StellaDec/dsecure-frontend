@@ -226,3 +226,6 @@ SEO_VERIFICATION_REPORT.md
 .kiro/skills
 skills/
 skills-lock.json
+
+# Git worktrees (isolated workspaces)
+.worktrees/

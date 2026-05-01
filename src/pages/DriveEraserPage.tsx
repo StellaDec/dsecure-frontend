@@ -4,6 +4,7 @@ import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import {
   ShieldIcon,
@@ -594,6 +595,17 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
   return (
     <>
       <SEOHead seo={getSEOForPage("drive-eraser")} />
+
+      {/* Breadcrumb Navigation — SEO ke liye */}
+      <div className="container mx-auto px-4 pt-4 pb-1">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'Products', path: '/products' },
+            { name: 'Drive Eraser', path: '/products/drive-eraser' },
+          ]}
+        />
+      </div>
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div

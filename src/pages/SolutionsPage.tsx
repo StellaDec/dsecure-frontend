@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { useTranslation } from "react-i18next";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import {
@@ -25,6 +26,17 @@ export default function SolutionsPage() {
     <>
       {/* SEO Meta Tags */}
       <SEOHead seo={getSEOForPage("solutions")} />
+
+      {/* Breadcrumb Navigation — SEO ke liye */}
+      <div className="container mx-auto px-4 pt-4 pb-1">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'Solutions', path: '/solutions' },
+          ]}
+        />
+      </div>
+
       <SolutionsPageContent />
     </>
   );

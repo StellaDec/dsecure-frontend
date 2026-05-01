@@ -3,7 +3,7 @@ Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
 
-# AI Crawlers — explicitly allow for Generative Engine Optimization
+# AI Crawlers — explicitly allow for Generative Engine Optimization (GEO)
 User-agent: GPTBot
 Allow: /
 
@@ -41,6 +41,7 @@ Disallow: /login
 Disallow: /register
 Disallow: /payment
 Disallow: /checkout
+Disallow: /auth/
 Disallow: /404
 Disallow: /press-room
 Disallow: /press
@@ -53,12 +54,16 @@ Disallow: /*.ts
 Disallow: /*.tsx
 Disallow: /_redirects
 Disallow: /vercel.json
+Disallow: /debug.html
 
 # Block API routes (but allow documentation)
 Allow: /api-documentation
 Disallow: /api/
 
-# Sitemap location for search engines
+# Sitemap locations for search engines
 Sitemap: https://dsecuretech.com/sitemap.xml
+Sitemap: https://dsecuretech.com/sitemap-products.xml
+Sitemap: https://dsecuretech.com/sitemap-blogs.xml
+Sitemap: https://dsecuretech.com/sitemap-manuals.xml
 
-# Last updated: 2026-04-30
+# Last updated: 2026-05-01

@@ -5,6 +5,7 @@ import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import {
   Activity,
@@ -666,6 +667,18 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
   return (
     <>
       <SEOHead seo={getSEOForPage("drive-eraser-diagnostic")} />
+
+      {/* Breadcrumb Navigation — SEO ke liye */}
+      <div className="container mx-auto px-4 pt-4 pb-1">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'Products', path: '/products' },
+            { name: 'Drive Eraser', path: '/products/drive-eraser' },
+            { name: 'Diagnostic & Health', path: '/products/drive-eraser-diagnostic' },
+          ]}
+        />
+      </div>
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div

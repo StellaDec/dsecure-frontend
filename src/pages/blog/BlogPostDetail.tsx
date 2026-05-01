@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage, getBlogSEO } from "@/utils/seo";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import { 
   ShieldIcon, 
@@ -56,6 +57,17 @@ const BlogPostDetail: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead seo={seoData} />
+
+      {/* Breadcrumb Navigation — Blog SEO ke liye */}
+      <div className="container mx-auto px-4 max-w-4xl pt-4 pb-1">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+            { name: post.title, path: `/blog/${post.slug}` },
+          ]}
+        />
+      </div>
 
       {/* Progress Bar (Subtle) */}
       <div className="fixed top-0 left-0 w-full h-1 bg-slate-100 z-50">

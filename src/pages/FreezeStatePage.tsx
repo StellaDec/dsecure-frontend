@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, memo, useRef } from "react";
 import { Link } from "react-router-dom";
 import { getSEOForPage } from "@/utils/seo";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import {
@@ -189,6 +190,17 @@ const FreezeStatePage = memo(() => {
   return (
     <>
       <SEOHead seo={getSEOForPage("freeze-state")} />
+
+      {/* Breadcrumb Navigation — SEO ke liye */}
+      <div className="container mx-auto px-4 pt-4 pb-1">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'Products', path: '/products' },
+            { name: 'Freeze State', path: '/products/freeze-state' },
+          ]}
+        />
+      </div>
       
       {/* ================= STICKY SECTION NAV ================= */}
       <div

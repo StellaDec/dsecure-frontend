@@ -254,7 +254,95 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   "edit-user": { title: "Edit User Profile | Admin Console | D-Secure", noindex: true },
   "edit-group": { title: "Edit Group Settings | Admin Console | D-Secure", noindex: true },
   "admin-groups": { title: "Group Management | Admin Console | D-Secure", noindex: true },
-  "admin-profile-edit": { title: "Edit Admin Profile | Admin Console | D-Secure", noindex: true }
+  "admin-profile-edit": { title: "Edit Admin Profile | Admin Console | D-Secure", noindex: true },
+
+  // Use Cases & Guide Pages
+  "use-cases": {
+    title: "Data Erasure Use Cases: Finance, Healthcare & ITAD | D-Secure",
+    description: "See how enterprises use D-Secure for NIST-compliant data erasure. Finance, healthcare, government, and ITAD use cases with real-world scenarios.",
+    canonicalUrl: getCanonicalUrl("/use-cases"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Use Cases", item: "/use-cases" },
+    ],
+  },
+  "wipe-sas-drive": {
+    title: "How to Wipe a SAS Drive Securely | D-Secure Guide",
+    description: "Step-by-step guide to securely wiping SAS drives using NIST 800-88 compliant methods. Ensure complete data destruction with tamper-proof audit certificates.",
+    canonicalUrl: getCanonicalUrl("/guides/wipe-sas-drive"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Guides", item: "/guides" },
+      { name: "Wipe SAS Drive", item: "/guides/wipe-sas-drive" },
+    ],
+    noindex: true, // Stub page — iske paas abhi real content nahi hai
+  },
+  "wipe-mac-m1": {
+    title: "How to Securely Wipe Apple M1/M2 Macs | D-Secure Guide",
+    description: "Complete guide to erasing Apple Silicon Macs (M1/M2/M3) using NIST-compliant cryptographic erase. Supports T2 chip and Secure Enclave data destruction.",
+    canonicalUrl: getCanonicalUrl("/guides/wipe-mac-m1"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Guides", item: "/guides" },
+      { name: "Wipe Mac M1", item: "/guides/wipe-mac-m1" },
+    ],
+  },
+
+  // Free Tools Pages
+  "ssd-pass-calculator": {
+    title: "SSD Erase Pass Calculator: NIST 800-88 Compliance | D-Secure",
+    description: "Calculate the minimum number of overwrite passes required for NIST 800-88 compliant SSD sanitization. Free tool for IT professionals.",
+    canonicalUrl: getCanonicalUrl("/tools/ssd-pass-calculator"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Tools", item: "/tools" },
+      { name: "SSD Pass Calculator", item: "/tools/ssd-pass-calculator" },
+    ],
+  },
+  "nist-80088-checker": {
+    title: "NIST 800-88 Compliance Checker: Free Data Erasure Tool | D-Secure",
+    description: "Verify your data erasure procedures meet NIST SP 800-88 Rev. 1 guidelines. Free compliance checker for IT security professionals.",
+    canonicalUrl: getCanonicalUrl("/tools/nist-80088-checker"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Tools", item: "/tools" },
+      { name: "NIST Checker", item: "/tools/nist-80088-checker" },
+    ],
+  },
+  "gdpr-erasure-checklist": {
+    title: "GDPR Data Erasure Checklist: Right to Erasure Guide | D-Secure",
+    description: "Complete GDPR Article 17 erasure checklist for IT teams. Ensure full compliance with data subject deletion requests with tamper-proof audit trails.",
+    canonicalUrl: getCanonicalUrl("/tools/gdpr-erasure-checklist"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Tools", item: "/tools" },
+      { name: "GDPR Checklist", item: "/tools/gdpr-erasure-checklist" },
+    ],
+  },
+  "data-breach-calculator": {
+    title: "Data Breach Cost Calculator: Estimate Your Risk | D-Secure",
+    description: "Calculate the potential cost of a data breach based on your industry, data volume, and security posture. Free risk assessment tool.",
+    canonicalUrl: getCanonicalUrl("/tools/data-breach-calculator"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Tools", item: "/tools" },
+      { name: "Breach Calculator", item: "/tools/data-breach-calculator" },
+    ],
+  },
+
+  // Stub pages — noindex until real content is ready
+  training: {
+    title: "D-Secure Data Erasure Training & Certification Programs",
+    description: "Professional training and certification programs for data erasure. Learn NIST 800-88, GDPR, and DoD compliance best practices.",
+    canonicalUrl: getCanonicalUrl("/training"),
+    noindex: true,
+  },
+  webinars: {
+    title: "D-Secure Webinars: Data Erasure & Compliance Events",
+    description: "Join D-Secure live webinars on data sanitization, ITAD best practices, and compliance standards.",
+    canonicalUrl: getCanonicalUrl("/webinars"),
+    noindex: true,
+  }
 };
 
 /**
