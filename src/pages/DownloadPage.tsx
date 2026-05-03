@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { getProductIcon } from "@/utils/productIcons";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
+import { showInfoToast } from "@/utils/toast";
 
 // --- Types Definitions (Best Practice for maintainability) ---
 interface DownloadInfo {
@@ -108,10 +109,11 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
     windows: {
       url:
         import.meta.env.VITE_FILE_ERASER_WINDOWS_DOWNLOAD_LINK ||
-        "https://downloads.dsecuretech.com/windows/D-SFE_installer_v1_0_0_0.exe",
-      filename: "D-SecureFileEraser-Setup.exe",
+        "https://downloads.dsecuretech.com/windows/D-Secure_Eraser_Setup_v1_0_0_0.exe",
+      filename: "D-Secure_Eraser_Setup_v1_0_0_0.exe",
       size: "600 MB",
       arch: "64-bit",
+      sha256: "98c91609b6155a1dc42d4cb20a4f0e396fa062d3dec860f480dc89f78808b77d",
     },
     macos: {
       url: "#",
@@ -231,7 +233,7 @@ const DownloadPage: React.FC = memo(() => {
       } else {
         // Fallback for missing links
         console.warn("Download link missing or invalid");
-        alert("Download link will be available soon!");
+        showInfoToast("This version will be available soon. Stay tuned!");
       }
 
       // Close dropdown after selection
@@ -246,6 +248,8 @@ const DownloadPage: React.FC = memo(() => {
     e.stopPropagation();
     setOpenDropdown((prev) => (prev === key ? null : key));
   }, []);
+
+  const currentSha256 = currentDownloads.windows?.sha256 || currentDownloads.windowsAmd?.sha256 || currentDownloads.linux?.sha256;
 
   return (
     <>
@@ -376,7 +380,15 @@ const DownloadPage: React.FC = memo(() => {
               {/* --- macOS BUTTON --- */}
               <div className="relative">
                 <button
-                  onClick={(e) => toggleDropdown("macos", e)}
+                  onClick={(e) => {
+                    if (currentDownloads.macos?.url === "#") {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      showInfoToast("macOS version will be available soon. Stay tuned!");
+                    } else {
+                      toggleDropdown("macos", e);
+                    }
+                  }}
                   type="button"
                   className="w-full flex flex-col items-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 rounded-xl border-2 border-gray-200 hover:border-gray-400 transition-all duration-300 hover:shadow-lg group"
                 >
@@ -423,7 +435,15 @@ const DownloadPage: React.FC = memo(() => {
               {/* --- LINUX BUTTON --- */}
               <div className="relative">
                 <button
-                  onClick={(e) => toggleDropdown("linux", e)}
+                  onClick={(e) => {
+                    if (currentDownloads.linux?.url === "#") {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      showInfoToast("Linux version will be available soon. Stay tuned!");
+                    } else {
+                      toggleDropdown("linux", e);
+                    }
+                  }}
                   type="button"
                   className="w-full flex flex-col items-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 rounded-xl border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg group"
                 >
@@ -470,7 +490,7 @@ const DownloadPage: React.FC = memo(() => {
             </div>
             
             {/* --- SHA256 Verification Section --- */}
-            {currentDownloads.linux?.sha256 && (
+            {currentSha256 && (
               <div className="mt-10 pt-8 border-t border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-emerald-100 p-2 rounded-lg">
@@ -490,11 +510,11 @@ const DownloadPage: React.FC = memo(() => {
                       <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
                       <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">SHA256 Checksum</span>
                     </div>
-                    <CopyButton text={currentDownloads.linux.sha256} />
+                    <CopyButton text={currentSha256} />
                   </div>
                   
                   <div className="font-mono text-sm md:text-base text-emerald-400 break-all leading-relaxed bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 select-all">
-                    {currentDownloads.linux.sha256}
+                    {currentSha256}
                   </div>
                   
                   <div className="mt-4 flex items-center gap-2 text-[10px] text-slate-500 italic">
