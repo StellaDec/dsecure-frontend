@@ -75,7 +75,8 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
-      sha256: "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
+      sha256:
+        "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
     },
   },
   "drive-eraser-diagnostic": {
@@ -86,7 +87,8 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
-      sha256: "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
+      sha256:
+        "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
     },
     macos: {
       url:
@@ -95,25 +97,28 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
-      sha256: "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
+      sha256:
+        "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
     },
     linux: {
       url: "https://downloads.dsecuretech.com/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
-      sha256: "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
+      sha256:
+        "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
     },
   },
   "file-eraser": {
     windows: {
       url:
         import.meta.env.VITE_FILE_ERASER_WINDOWS_DOWNLOAD_LINK ||
-        "https://downloads.dsecuretech.com/windows/D-Secure_Eraser_Setup_v1_0_0_0.exe",
+        "https://downloads.dsecuretech.com/windows/D-SFE_installer_v1_0_0_0.exe",
       filename: "D-Secure_Eraser_Setup_v1_0_0_0.exe",
       size: "600 MB",
       arch: "64-bit",
-      sha256: "98c91609b6155a1dc42d4cb20a4f0e396fa062d3dec860f480dc89f78808b77d",
+      sha256:
+        "5cf39efc466b36a6421e17cf64a5410e27112c6969047e230cf24ec91667f4a4",
     },
     macos: {
       url: "#",
