@@ -267,12 +267,12 @@ const FirstTimeSetupPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
+      {/* <SEOHead
         seo={getSEOForPage("support-manual-first-time-setup", {
           title: "First Time Setup | D-Secure Manual",
           canonicalUrl: "/support/manual/first-time-setup",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}

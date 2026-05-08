@@ -226,12 +226,12 @@ const CryptographicErasurePage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead 
+      {/* <SEOHead 
         seo={getSEOForPage("cryptographic-erasure", { 
           title: "Cryptographic Erasure | D-Secure Manual", 
           canonicalUrl: "/support/manual/cryptographic-erasure" 
         })} 
-      />
+      /> */}
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         {/* Hero Section */}

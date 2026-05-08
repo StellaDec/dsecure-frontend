@@ -9,11 +9,7 @@ import {
   ArrowRightIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const WipeSSDFromBIOSGuide: React.FC = () => {
   return (
@@ -178,14 +174,14 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
             {/* Professional Erasure */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
-                4. Erasing SSDs Using Professional Data Wiping Software
+                4. Erasing SSDs Using Professional <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link> Software
               </h2>
 
               <p className="text-slate-700 leading-relaxed">
                 Professional data erasure software like D-Secure provides a
                 scalable and compliant alternative to BIOS-based Secure Erase.
-                It supports a wide range of SSD types, including NVMe, SAS,
-                SED, and enterprise-grade drives.
+                It supports a wide range of SSD types, including NVMe, SAS, SED,
+                and enterprise-grade drives.
               </p>
             </div>
 
@@ -217,16 +213,12 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
                     <tr className="bg-slate-50">
                       <td className="border p-3">Erasure Standards</td>
                       <td className="border p-3">Limited</td>
-                      <td className="border p-3">
-                        NIST 800-88, DoD, and more
-                      </td>
+                      <td className="border p-3"><Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link>, DoD, and more</td>
                     </tr>
                     <tr>
                       <td className="border p-3">Erasure Reports</td>
                       <td className="border p-3">No</td>
-                      <td className="border p-3">
-                        Tamper-proof certificates
-                      </td>
+                      <td className="border p-3">Tamper-proof certificates</td>
                     </tr>
                     <tr className="bg-slate-50">
                       <td className="border p-3">Scalability</td>
@@ -247,55 +239,12 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
           </div>
         </Reveal>
 
-        {/* CTA */}
-        <Reveal>
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-8 mt-8 text-white">
-            <h2 className="text-2xl font-bold mb-4">
-              Choose the Right SSD Erasure Method
-            </h2>
-            <p className="leading-relaxed mb-6">
-              While BIOS Secure Erase is useful for personal use, organizations
-              should rely on certified data erasure solutions to meet regulatory
-              and audit requirements.
-            </p>
-
-            <Link
-              to="/#products"
-              className="inline-flex items-center bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition shadow-lg"
-            >
-              <HoverIcon>
-                {(filled) => (
-                  <ShieldIcon className="w-5 h-5 mr-2" filled={filled} />
-                )}
-              </HoverIcon>
-              Explore D-Secure Solutions
-              <HoverIcon>
-                {(filled) => (
-                  <ArrowRightIcon className="w-5 h-5 ml-2" filled={filled} />
-                )}
-              </HoverIcon>
-            </Link>
-          </div>
-        </Reveal>
       </section>
 
-      {/* Engagement */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["wipe-ssd-from-bios"]} />
-      <EngagementSection blogId="wipe-ssd-from-bios" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="wipe-ssd-from-bios" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm
-            blogId="wipe-ssd-from-bios"
-            blogTitle="How to Wipe SSD from BIOS"
-          />
-        </Reveal>
-      </section>
+      <BlogFooterStandard 
+        blogId="wipe-ssd-from-bios" 
+        blogTitle="How to Wipe SSD from BIOS: A Step-by-Step Guide" 
+      />
     </div>
   );
 };

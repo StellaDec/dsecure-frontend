@@ -901,7 +901,7 @@ const CheckoutPage = memo(function CheckoutPage() {
 
                     <div className="text-center">
                       <Link
-                        to="/#products"
+                        to="/all-products"
                         className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
                       >
                         ← Back to Products

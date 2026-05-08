@@ -1,4 +1,5 @@
 import React from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
@@ -12,11 +13,6 @@ import {
   ArrowRightIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
 
 const HealthcareRansomwareLessonsBlog: React.FC = () => {
   return (
@@ -62,9 +58,8 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
                 In early 2024, a leading healthcare transaction and payment
                 processing network faced a severe ransomware attack that brought
                 its operations to a standstill. The organization played a
-                critical role in processing insurance claims, pharmacy
-                payments, and healthcare authorizations across a large national
-                ecosystem.
+                critical role in processing insurance claims, pharmacy payments,
+                and healthcare authorizations across a large national ecosystem.
               </p>
 
               <p className="text-slate-700 leading-relaxed">
@@ -173,14 +168,14 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
 
                 <li>
                   <strong>Enforce Multi-Factor Authentication:</strong> MFA adds
-                  a critical defense layer and significantly reduces the risk
-                  of unauthorized access from stolen credentials.
+                  a critical defense layer and significantly reduces the risk of
+                  unauthorized access from stolen credentials.
                 </li>
 
                 <li>
-                  <strong>Use Strong Password Policies:</strong> Regular password
-                  rotation, complexity requirements, and avoiding credential
-                  storage on devices help minimize attack surfaces.
+                  <strong>Use Strong Password Policies:</strong> Regular
+                  password rotation, complexity requirements, and avoiding
+                  credential storage on devices help minimize attack surfaces.
                 </li>
 
                 <li>
@@ -190,7 +185,7 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
                 </li>
 
                 <li>
-                  <strong>Adopt Secure Data Erasure:</strong> Unused and retired
+                  <strong>Adopt Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>:</strong> Unused and retired
                   systems must be wiped using certified data erasure methods to
                   prevent residual data exposure.
                 </li>
@@ -258,7 +253,7 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
             </p>
 
             <Link
-              to="/#products"
+              to="/all-products"
               className="inline-flex items-center bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition shadow-lg"
             >
               <HoverIcon>
@@ -279,21 +274,11 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
 
       {/* Engagement */}
       <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["healthcare-ransomware-lessons"]} />
-      <EngagementSection blogId="healthcare-ransomware-lessons" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="healthcare-ransomware-lessons" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm
-            blogId="healthcare-ransomware-lessons"
-            blogTitle="Healthcare Ransomware Lessons"
-          />
-        </Reveal>
       </section>
+      <BlogFooterStandard 
+        blogId="healthcare-ransomware-lessons" 
+        blogTitle="D-Secure Blog" 
+      />
     </div>
   );
 };

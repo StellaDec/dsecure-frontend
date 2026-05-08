@@ -13,7 +13,6 @@ import {
   GlobeIcon,
   CloudIcon,
   GearIcon,
-  ClipboardIcon,
   LightningIcon,
   ServerIcon,
   HoverIcon,
@@ -23,12 +22,10 @@ import {
   FileTextIcon,
   LockIcon,
   RefreshCwIcon,
-  SettingsIcon,
   User,
   X,
   Activity,
 } from "lucide-react";
-import { title } from "process";
 import { useToast } from "@/components/Toast";
 import { blogPosts } from "@/data/blogPosts";
 
@@ -39,7 +36,7 @@ const getReadTime = (text: string) => {
   return `${minutes} min read`;
 };
 
-const DriveEraserPage: React.FC = memo(function FileEraserPage() {
+const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
   const { showToast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -169,6 +166,10 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
       thumbnail:
         "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto,w_400/v1773303980/gemjfmgk3cw7wnvgh2z6.png",
       alt: "Help Page - Bottom",
+    },
+   {
+      url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1778239910/dwzvvyiiyhlntaw9cheh.png",
+      alt: "Tamper-proof Erasure Report",
     },
   ];
 
@@ -531,67 +532,8 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
     link.target = "_blank";
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    link.remove();
   };
-  // Insights/Resources
-  const insights = [
-    {
-      type: "Blog",
-      title: "NIST 800-88 Explained: Complete Guide",
-      icon: () => (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-          />
-        </svg>
-      ),
-    },
-    {
-      type: "Technical Article",
-      title: "SSD vs HDD Erasure Methods",
-      icon: () => (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <rect x="4" y="4" width="16" height="16" rx="2" />
-          <path d="M9 9h.01M9 12h.01M9 15h.01M15 9h.01M15 12h.01M15 15h.01" />
-        </svg>
-      ),
-    },
-    {
-      type: "Knowledge Base",
-      title: "Deployment Best Practices",
-      icon: GlobeIcon,
-    },
-    {
-      type: "Product Video",
-      title: "Drive Eraser Demo",
-      icon: () => (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="12" r="10" />
-          <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
-        </svg>
-      ),
-    },
-  ];
   return (
     <>
       <SEOHead seo={getSEOForPage("drive-eraser")} />
@@ -680,9 +622,9 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-                    Permanently erase files, folders, system traces, and cloud
-                    data using internationally recognized erasure standards.
-                    Designed for privacy, security, and audit readiness.
+                    Securely wipe entire HDDs, SSDs, and NVMe drives with industry-leading
+                    data sanitization standards. NIST 800-88 and DoD 5220.22-M compliant
+                    erasure for enterprise data security and audit-readiness.
                   </p>
 
                   {/* Compliance Badges */}
@@ -1098,9 +1040,10 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
 
                 {!isDemoActive ? (
                   /* Demo Placeholder - Screenshot Thumbnail */
-                  <div
+                  <button
                     onClick={() => setIsDemoActive(true)}
-                    className="group relative w-full h-full flex-1 cursor-pointer overflow-hidden"
+                    className="group relative w-full h-full flex-1 cursor-pointer overflow-hidden border-none p-0 m-0 bg-transparent"
+                    aria-label="Start interactive demo"
                   >
                     {/* Screenshot Background */}
                     <img
@@ -1129,7 +1072,7 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 ) : (
                   /* Iframe Container */
                   <iframe
@@ -1157,9 +1100,9 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
               {/* Screenshot 1 */}
               <Reveal delayMs={150}>
-                <div
+                <button
                   onClick={() => setSelectedImageIndex(0)}
-                  className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img
@@ -1186,14 +1129,14 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </button>
               </Reveal>
 
               {/* Screenshot 2 */}
               <Reveal delayMs={200}>
-                <div
+                <button
                   onClick={() => setSelectedImageIndex(1)}
-                  className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img
@@ -1220,14 +1163,14 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </button>
               </Reveal>
 
               {/* Screenshot 3 */}
               <Reveal delayMs={250}>
-                <div
+                <button
                   onClick={() => setSelectedImageIndex(2)}
-                  className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img
@@ -1254,14 +1197,14 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </button>
               </Reveal>
 
               {/* Screenshot 4 - Shows "More" badge if additional images exist */}
               <Reveal delayMs={300}>
-                <div
+                <button
                   onClick={() => setSelectedImageIndex(3)}
-                  className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img
@@ -1296,7 +1239,7 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </button>
               </Reveal>
             </div>
           </div>
@@ -1335,10 +1278,10 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
                   How To Use <span className="text-emerald-800">D-Secure</span>{" "}
-                  Drive Eraser?
+                  Drive Eraser for Secure Disk Wiping?
                 </h2>
                 <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  Get started in minutes with our easy deployment options
+                  Industry-leading data sanitization in 4 simple steps. Deploy via USB, PXE, or MSI.
                 </p>
               </div>
             </Reveal>
@@ -1542,6 +1485,64 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
             </Reveal>
           </div>
         </section>
+
+          {/* ================= TAMPER PROOF REPORT ================= */}
+                <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-b border-slate-100">
+                  <div className="container mx-auto px-4 max-w-7xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                      <Reveal>
+                        <div className="space-y-6">
+                          <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold">
+                            <ShieldIcon className="w-4 h-4" />
+                            Audit-Ready Documentation
+                          </div>
+                          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+                            Tamper-proof Diagnostic Report
+                          </h2>
+                          <p className="text-lg text-slate-600 leading-relaxed">
+                            Generates digitally signed reports of erasure to help meet
+                            statutory & regulatory compliance. Option to save reports
+                            locally or on secure cloud console in PDF format
+                          </p>
+                        </div>
+                      </Reveal>
+                      <Reveal delayMs={200}>
+                        <button
+                          onClick={() =>
+                            setSelectedImageIndex(galleryImages.length - 1)
+                          }
+                          className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
+                          aria-label="View Tamper-proof Erasure Report fullscreen"
+                        >
+                          <img
+                            src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778239910/dwzvvyiiyhlntaw9cheh.png"
+                            alt="Tamper-proof Erasure Report"
+                            className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent pointer-events-none"></div>
+                          {/* Hover Overlay */}
+                          <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                              <svg
+                                className="w-6 h-6 text-emerald-800"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </button>
+                      </Reveal>
+                    </div>
+                  </div>
+                </section>
 
         {/* ================= COMPLIANCE STANDARDS ================= */}
         <section
@@ -1904,7 +1905,7 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
           </div>
         </section>
 
-        <ProductInternalLinks currentProduct={PRODUCT_LINKS.DRIVE_ERASER} />
+        {/* <ProductInternalLinks currentProduct="drive-eraser" /> */}
 
         {/* ================= FAQ SECTION ================= */}
         <section id="faq" className="py-16 lg:py-24 bg-white">
@@ -1978,6 +1979,78 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                     </div>
                   </details>
                 </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ================= RELATED FREE TOOLS (Internal Linking — Fix 4 SEO) ================= */}
+        <section className="py-14 lg:py-20 bg-slate-50 border-y border-slate-200">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="text-center mb-10">
+              <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100 rounded-full mb-3">Free Tools</span>
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
+                Plan Your Erasure Before You Start
+              </h2>
+              <p className="text-slate-600 max-w-xl mx-auto">
+                Use our free compliance tools to determine the right sanitization method, estimate costs, and check regulatory requirements.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                {
+                  title: "NIST 800-88 Checker",
+                  desc: "Find out if your media needs Clear, Purge, or Destroy per federal NIST guidelines.",
+                  href: "/tools/nist-800-88-compliance-checker",
+                  badge: "Compliance",
+                  color: "emerald",
+                },
+                {
+                  title: "Data Breach Cost Calculator",
+                  desc: "Estimate your financial exposure from improper disposal by industry and record count.",
+                  href: "/tools/data-breach-calculator",
+                  badge: "Risk & ROI",
+                  color: "rose",
+                },
+                {
+                  title: "SSD Pass Calculator",
+                  desc: "Calculate exact overwrite passes and erasure time under NIST 800-88 and DoD standards.",
+                  href: "/tools/ssd-pass-calculator",
+                  badge: "Technical",
+                  color: "blue",
+                },
+                {
+                  title: "GDPR Erasure Checklist",
+                  desc: "Audit your Article 17 'Right to Erasure' readiness with our interactive compliance checklist.",
+                  href: "/tools/gdpr-erasure-checklist",
+                  badge: "GDPR",
+                  color: "purple",
+                },
+              ].map((tool) => (
+                <Link
+                  key={tool.href}
+                  to={tool.href}
+                  className="group flex flex-col bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 hover:shadow-lg p-6 transition-all duration-300"
+                >
+                  <span className={`inline-block self-start px-2.5 py-1 text-xs font-bold rounded-full mb-4 ${
+                    tool.color === "emerald" ? "bg-emerald-100 text-emerald-700" :
+                    tool.color === "rose"    ? "bg-rose-100 text-rose-700" :
+                    tool.color === "blue"    ? "bg-blue-100 text-blue-700" :
+                    "bg-purple-100 text-purple-700"
+                  }`}>
+                    {tool.badge}
+                  </span>
+                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors text-lg leading-tight">
+                    {tool.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 leading-relaxed flex-1">{tool.desc}</p>
+                  <span className="mt-5 inline-flex items-center gap-1 text-emerald-700 font-bold text-sm group-hover:gap-2 transition-all">
+                    Try Free Tool
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -2109,19 +2182,21 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                         });
                         const timestampISO = now.toISOString();
 
-                        // === Prepare FormData for FormSubmit ===
+                        // === FormSubmit ke liye FormData taiyar karein ===
                         const formSubmitData = new FormData();
-                        // Webhook to notify backend - backend will send auto-response email
+                        // Backend ko notify karne ke liye webhook - backend auto-response email bhejega
                         formSubmitData.append(
                           "_webhook",
                           "https://api.dsecuretech.com/api/formsubmit/webhook",
                         );
                         formSubmitData.append("_captcha", "false");
                         formSubmitData.append("_template", "table");
+                        formSubmitData.append("sendAutoReply", "true"); // Auto-reply enable karein
 
                         // Form fields
                         formSubmitData.append("name", formData.name.trim());
                         formSubmitData.append("email", formData.email.trim());
+                        formSubmitData.append("customer_email", formData.email.trim()); // Customer ka email auto-reply ke liye
                         formSubmitData.append(
                           "organization",
                           formData.organization.trim(),
@@ -2131,7 +2206,7 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                           formData.message.trim(),
                         );
 
-                        // Required for autoresponse
+                        // Autoresponse ke liye reply-to zaroori hai
                         formSubmitData.append(
                           "_replyto",
                           formData.email.trim(),
@@ -2142,7 +2217,7 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
                           "Drive Eraser Page Contact",
                         );
 
-                        // Subject and CC
+                        // Subject aur CC
                         formSubmitData.append(
                           "_subject",
                           "New Inquiry - Drive Eraser Page - D-Secure Tech",
@@ -2298,8 +2373,11 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
       {/* Lightbox Modal with Gallery Navigation */}
       {selectedImageIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200 cursor-pointer"
           onClick={() => setSelectedImageIndex(null)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setSelectedImageIndex(null); }}
         >
           {/* Close Button */}
           <button
@@ -2375,7 +2453,7 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
       )}
 
       {/* Related Products — SEO internal linking */}
-      <ProductInternalLinks
+      {/* <ProductInternalLinks
         heading="Complete Your Data Security Workflow"
         links={[
           PRODUCT_LINKS["drive-verifier"],
@@ -2385,7 +2463,7 @@ const DriveEraserPage: React.FC = memo(function FileEraserPage() {
           PRODUCT_LINKS["virtual-machine-eraser"],
           PRODUCT_LINKS["forensic-imaging"],
         ]}
-      />
+      /> */}
     </>
   );
 });

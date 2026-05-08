@@ -10,6 +10,8 @@ import {
   AlertCircle
 } from "lucide-react";
 import SEOHead from "../../components/SEOHead";
+import { getSEOForPage } from "../../utils/seo";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { useFormSubmission } from "../../hooks/useFormSubmission";
 
 interface ChecklistItem {
@@ -85,10 +87,43 @@ const GDPRErasureChecklistPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       <SEOHead 
-        title="GDPR Right to Erasure (Article 17) Checklist | D-Secure"
-        description="Verify your organization's compliance with GDPR 'Right to Erasure' requirements using our interactive audit checklist."
-        canonicalUrl="https://dsecuretech.com/tools/gdpr-erasure-checklist"
+        seo={getSEOForPage("gdpr-erasure-checklist", {
+          structuredData: [
+            {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "GDPR Right to Erasure Compliance Checklist",
+              "description": "Interactive audit checklist for GDPR Article 17 'Right to Erasure' compliance readiness.",
+              "applicationCategory": "LegalApplication",
+              "operatingSystem": "Web Browser",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+              "provider": { "@type": "Organization", "name": "D-Secure" },
+              "url": "https://dsecuretech.com/tools/gdpr-erasure-checklist",
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "How to Audit GDPR Right to Erasure Compliance",
+              "step": [
+                { "@type": "HowToStep", "position": 1, "name": "Review Policy", "text": "Check whether your organization has a documented data erasure policy for handling Right to Erasure requests." },
+                { "@type": "HowToStep", "position": 2, "name": "Verify Sanitization Method", "text": "Confirm you use certified software that provides tamper-proof erasure certificates." },
+                { "@type": "HowToStep", "position": 3, "name": "Check Third Parties", "text": "Ensure downstream processors are notified and can verify data deletion." }
+              ]
+            }
+          ]
+        })}
       />
+
+      {/* Breadcrumbs — Google navigation signal */}
+      <div className="container mx-auto px-4 max-w-7xl pt-6">
+        <Breadcrumbs
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Free Tools", path: "/tools/gdpr-erasure-checklist" },
+            { name: "GDPR Erasure Checklist", path: "/tools/gdpr-erasure-checklist", isCurrentPage: true },
+          ]}
+        />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-slate-900 pt-32 pb-24 px-6 relative overflow-hidden">

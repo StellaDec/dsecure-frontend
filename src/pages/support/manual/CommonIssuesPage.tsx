@@ -163,12 +163,12 @@ const CommonIssuesPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
+      {/* <SEOHead
         seo={getSEOForPage("support-manual-common-issues", {
           title: "Common Issues | D-Secure Manual",
           canonicalUrl: "/support/manual/common-issues",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         <section className="bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50 py-8 sm:py-12 md:py-16 lg:py-24">

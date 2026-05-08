@@ -47,6 +47,15 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
 
       // === Prepare FormData for FormSubmit ===
       const formSubmitData = new FormData();
+      formSubmitData.append(
+        "_webhook",
+        "https://api.dsecuretech.com/api/formsubmit/webhook",
+      );
+      formSubmitData.append("_webhookContentType", "application/json");
+      formSubmitData.append("_webhookExtraData", "true");
+      formSubmitData.append("_captcha", "false");
+      formSubmitData.append("_template", "table");
+      formSubmitData.append("_next", window.location.href);
       formSubmitData.append("name", formData.name.trim());
       formSubmitData.append("email", formData.email.trim());
       formSubmitData.append("organization", formData.organization.trim());
@@ -58,6 +67,9 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
         "_cc",
         "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
       );
+      formSubmitData.append("sendAutoReply", "true");
+      formSubmitData.append("customer_email", formData.email.trim());
+      formSubmitData.append("_replyto", formData.email.trim());
 
       // === Prepare submission data for Backend API ===
       const submissionData = {

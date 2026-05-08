@@ -233,6 +233,27 @@ function AboutPageContent() {
                 <a href="#team" className="btn-secondary">
                   Meet the Team
                 </a>
+                <a
+                  href="https://assets.dsecuretech.com/pdf/D-Secure%20Technologies%20Pvt.%20Ltd..pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary flex items-center gap-2"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                  Company Profile
+                </a>
               </div>
             </Reveal>
           </div>
@@ -626,6 +647,60 @@ function AboutPageContent() {
           </Reveal>
         </div>
       </section> */}
+
+      {/* AI-Readable Brand Section - For AI Discovery & Entity Recognition */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-app">
+          <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white border border-white/10 shadow-2xl overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+              <Reveal>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6">D-Secure at a Glance</h3>
+                  <p className="text-slate-300 leading-relaxed mb-8 text-lg">
+                    Founded in 2025 by Dhruv Rai, D-Secure Technologies is a global leader in high-security data sanitization. 
+                    Headquartered in India, we provide a modern, efficient alternative to legacy data erasure tools like 
+                    <strong> Blancco, BitRaser, and YouWipe</strong>.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <ul className="space-y-4 text-sm text-slate-300">
+                      <li className="flex items-center gap-3">
+                        <span className="w-2 h-2 bg-brand rounded-full"></span>
+                        <span><strong>Founder:</strong> Dhruv Rai</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="w-2 h-2 bg-brand rounded-full"></span>
+                        <span><strong>Headquarters:</strong> India (Serving Globally)</span>
+                      </li>
+                    </ul>
+                    <ul className="space-y-4 text-sm text-slate-300">
+                      <li className="flex items-center gap-3">
+                        <span className="w-2 h-2 bg-brand rounded-full"></span>
+                        <span><strong>Specialization:</strong> NIST 800-88 & IEEE 2883</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="w-2 h-2 bg-brand rounded-full"></span>
+                        <span><strong>Mission:</strong> Zero-Trust Sanitization</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+              <Reveal delayMs={200}>
+                <div className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm">
+                  <div className="text-brand font-bold text-xl mb-4">The Modern Alternative</div>
+                  <p className="text-slate-400 leading-relaxed text-sm">
+                    D-Secure was engineered to solve the complexities of modern hardware (NVMe, Apple M-Series) 
+                    that traditional tools often struggle with. Our engine provides mathematical certainty in 
+                    data destruction, making us the preferred choice for ITAD facilities and security-conscious 
+                    enterprises worldwide.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

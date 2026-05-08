@@ -318,12 +318,12 @@ const MacOSSystemsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
+      {/* <SEOHead
         seo={getSEOForPage("mac-ossystems", {
           title: "Mac OSSystems | D-Secure Manual",
           canonicalUrl: "/support/manual/mac-ossystems",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}

@@ -270,12 +270,12 @@ const PhysicalDestructionPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
-        seo={getSEOForPage("support-manual-physical-destruction", {
+      {/* <SEOHead
+        // seo={getSEOForPage("support-manual-physical-destruction", {
           title: "Physical Destruction | D-Secure Manual",
           canonicalUrl: "/support/manual/physical-destruction",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}

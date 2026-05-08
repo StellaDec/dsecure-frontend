@@ -322,12 +322,12 @@ const VerificationMethodsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
+      {/* <SEOHead
         seo={getSEOForPage("support-manual-verification-methods", {
           title: "Verification Methods | D-Secure Manual",
           canonicalUrl: "/support/manual/verification-methods",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}

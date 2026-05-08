@@ -615,7 +615,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
         </section>
 
 
-        <ProductInternalLinks currentProduct={PRODUCT_LINKS.VIRTUAL_MACHINE} />
+        <ProductInternalLinks currentProduct="virtual-machine-eraser" />
 
         {/* ================= FAQ ================= */}
         <section id="faq" className="py-20 bg-white">

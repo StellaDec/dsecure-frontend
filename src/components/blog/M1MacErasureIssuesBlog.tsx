@@ -1,9 +1,5 @@
 import React from "react";
-import EnquiryForm from "./EnquiryForm";
-import CommentSection from "./CommentSection";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage, getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
@@ -18,7 +14,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
             excerpt:
               "Understanding and overcoming data erasure challenges with Apple M1 Macs.",
             slug: "m1-mac-erasure-issues",
-            author: "Nitish",
+            author: "D-Secure Editorial Team",
             publishDate: "January 26, 2025",
             keywords: "M1, Apple Silicon, Mac erasure",
             category: "Technical",
@@ -273,7 +269,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                 D-Secure Mac Erasure: Complete Solution
               </h2>
               <p className="text-slate-700 leading-loose text-lg mb-6">
-                D-Secure Drive Eraser provides comprehensive support for erasing
+                D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> provides comprehensive support for erasing
                 M1 Mac devices, with built-in intelligence to detect chip types
                 and apply the correct erasure methods automatically.
               </p>
@@ -372,7 +368,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                   Request Free Demo
                 </Link>
                 <Link
-                  to="/#products"
+                  to="/all-products"
                   className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
                 >
                   View Products
@@ -381,33 +377,12 @@ const M1MacErasureIssuesBlog: React.FC = () => {
             </div>
           </Reveal>
         </section>
-
-        {/* Engagement, Comments & Enquiry Section */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-          <Reveal>
-            
-      <FAQSection faqs={blogFaqs["m1-mac-erasure-issues"]} />
-      <EngagementSection blogId="m1-mac-erasure-issues" />
-          </Reveal>
-          <Reveal>
-            <CommentSection blogId="m1-mac-erasure-issues" />
-          </Reveal>
-          <Reveal>
-            <EnquiryForm
-              blogId="m1-mac-erasure-issues"
-              blogTitle="M1 Mac Erasure Issues"
-            />
-          </Reveal>
-        </section>
-      </div>
-    );
-
+      <BlogFooterStandard 
+        blogId="m1-mac-erasure-issues" 
+        blogTitle="M1 Mac Erasure Challenges" category="Technical" tag="Mac" 
+      />
+    </div>
+  );
 };
 
 export default M1MacErasureIssuesBlog;
-
-
-
-
-
-

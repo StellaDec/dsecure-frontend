@@ -1,6 +1,6 @@
 import React, { memo, useState, useEffect, useRef } from "react";
 import { PRODUCT_SEO } from "../utils/seo.products";
-import ProductInternalLinks from "../components/ProductInternalLinks";
+import { ProductInternalLinks } from "@/components/ProductInternalLinks";
 import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
@@ -14,9 +14,7 @@ import {
   CloudIcon,
   GearIcon,
   ClipboardIcon,
-  StarIcon,
   ServerIcon,
-  HoverIcon,
 } from "@/components/FlatIcons";
 import { blogPosts } from "@/data/blogPosts";
 import { FileTextIcon, Monitor, Download, X } from "lucide-react";
@@ -53,14 +51,12 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
   const toggleFullscreen = async () => {
     try {
-      if (!document.fullscreenElement) {
-        if (demoContainerRef.current?.requestFullscreen) {
-          await demoContainerRef.current.requestFullscreen();
-        }
-      } else {
+      if (document.fullscreenElement) {
         if (document.exitFullscreen) {
           await document.exitFullscreen();
         }
+      } else if (demoContainerRef.current?.requestFullscreen) {
+        await demoContainerRef.current.requestFullscreen();
       }
     } catch (err) {
       console.error("Error attempting to toggle fullscreen:", err);
@@ -186,6 +182,10 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     //   url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1770615238/pb9yo6kfjwz8z4shw2vz.png",
     //   alt: "File Eraser Screenshot 27",
     // },
+    {
+      url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png",
+      alt: "Tamper-proof Erasure Report",
+    },
   ];
 
   // Number of additional images beyond the 4th card (for "More" badge)
@@ -219,8 +219,8 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
       if (e.key === "ArrowRight") handleNextImage();
       if (e.key === "Escape") setSelectedImageIndex(null);
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    globalThis.addEventListener("keydown", handleKeyDown);
+    return () => globalThis.removeEventListener("keydown", handleKeyDown);
   }, [selectedImageIndex]);
 
   const sectionNavItems = [
@@ -267,9 +267,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    globalThis.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      globalThis.removeEventListener("scroll", handleScroll);
       // Reset main navbar visibility on unmount (only on desktop)
       const isDesktop = window.innerWidth >= 768;
       if (isDesktop) {
@@ -657,7 +657,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     link.target = "_blank";
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    link.remove();
   };
 
   return (
@@ -748,9 +748,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-                    Permanently erase files, folders, system traces, and cloud
-                    data using internationally recognized erasure standards.
-                    Designed for privacy, security, and audit readiness.
+                    Securely shred files, folders, and free space beyond recovery. 
+                    D-Secure File Eraser provides NIST-compliant data sanitization 
+                    with tamper-proof certificates for GDPR & HIPAA compliance.
                   </p>
 
                   {/* Compliance Badges */}
@@ -1042,10 +1042,11 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
                   {!isDemoActive ? (
                     /* Demo Placeholder - Screenshot Thumbnail */
-                    <div
-                      onClick={() => setIsDemoActive(true)}
-                      className="group relative w-full h-full min-h-[400px] flex-1 cursor-pointer overflow-hidden"
-                    >
+                  <button
+                    onClick={() => setIsDemoActive(true)}
+                    className="group relative w-full h-full min-h-[400px] flex-1 cursor-pointer overflow-hidden border-none p-0 m-0 bg-transparent text-left"
+                    aria-label="Start interactive demo"
+                  >
                       {/* Screenshot Background */}
                       <img
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/rrewuevqba6xopawa2n8.png"
@@ -1073,7 +1074,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           </span>
                         </div>
                       </div>
-                    </div>
+                    </button>
                   ) : (
                     /* Iframe Container */
                     <iframe
@@ -1171,9 +1172,10 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {/* Screenshot 1 */}
                 <Reveal delayMs={150}>
-                  <div
+                  <button
                     onClick={() => setSelectedImageIndex(0)}
-                    className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                    className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
+                    aria-label="View screenshot 1"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                       {/* Replace SCREENSHOT_1_URL with actual image */}
@@ -1199,9 +1201,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    {/* <div className="p-3">
-                      <span className="text-xs font-medium text-slate-700">Dashboard View</span>
-                    </div> */}
+
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                       <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
@@ -1220,14 +1220,15 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </svg>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 </Reveal>
 
                 {/* Screenshot 2 */}
                 <Reveal delayMs={200}>
-                  <div
+                  <button
                     onClick={() => setSelectedImageIndex(1)}
-                    className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                    className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
+                    aria-label="View screenshot 2"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                       {/* Replace SCREENSHOT_2_URL with actual image */}
@@ -1253,9 +1254,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    {/* <div className="p-3">
-                      <span className="text-xs font-medium text-slate-700">Erasure Report</span>
-                    </div> */}
+
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                       <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
@@ -1274,14 +1273,15 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </svg>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 </Reveal>
 
                 {/* Screenshot 3 */}
                 <Reveal delayMs={250}>
-                  <div
+                  <button
                     onClick={() => setSelectedImageIndex(2)}
-                    className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                    className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
+                    aria-label="View screenshot 3"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                       {/* Replace SCREENSHOT_3_URL with actual image */}
@@ -1307,9 +1307,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    {/* <div className="p-3">
-                      <span className="text-xs font-medium text-slate-700">File Selection</span>
-                    </div> */}
+
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                       <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
@@ -1328,14 +1326,15 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </svg>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 </Reveal>
 
                 {/* Screenshot 4 - Shows "More" badge if additional images exist */}
                 <Reveal delayMs={300}>
-                  <div
+                  <button
                     onClick={() => setSelectedImageIndex(3)}
-                    className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                    className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
+                    aria-label="View more screenshots"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                       {/* Replace SCREENSHOT_4_URL with actual image */}
@@ -1369,9 +1368,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </div>
                       )}
                     </div>
-                    {/* <div className="p-3">
-                      <span className="text-xs font-medium text-slate-700">Erasure Progress</span>
-                    </div> */}
+
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                       <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
@@ -1390,7 +1387,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </svg>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 </Reveal>
               </div>
             </div>
@@ -1534,6 +1531,60 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
           </div>
         </section>
 
+         {/* ================= TAMPER PROOF REPORT ================= */}
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <Reveal>
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold">
+                    <ShieldIcon className="w-4 h-4" />
+                    Audit-Ready Documentation
+                  </div>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+                    Tamper-proof Erasure Report
+                  </h2>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    Generates digitally signed reports of erasure to help meet statutory & regulatory compliance. Option to save reports locally or on secure cloud console in PDF format
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delayMs={200}>
+                <button
+                  onClick={() => setSelectedImageIndex(galleryImages.length - 1)}
+                  className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
+                  aria-label="View Tamper-proof Erasure Report fullscreen"
+                >
+                  <img
+                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png"
+                    alt="Tamper-proof Erasure Report"
+                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent pointer-events-none"></div>
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                      <svg
+                        className="w-6 h-6 text-emerald-800"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
         {/* ================= COMPLIANCE STANDARDS ================= */}
         <section
           id="compliance"
@@ -1607,6 +1658,8 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
             </div>
           </div>
         </section>
+
+       
 
         {/* ================= KEY FEATURES ================= */}
         <section id="features" className="py-16 lg:py-24 bg-white">
@@ -1789,7 +1842,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                   a: "We provide continuous support including regular software updates, technical assistance, compliance monitoring, and renewal coordination. Think of us as your ongoing partner in data hygiene.",
                 },
               ].map((faq, i) => (
-                <Reveal key={i} delayMs={i * 50}>
+                <Reveal key={faq.q} delayMs={i * 50}>
                   <details className="group bg-slate-50 rounded-xl border border-slate-200 hover:border-emerald-300 transition-colors">
                     <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                       <span className="font-semibold text-slate-900 pr-4">
@@ -1887,19 +1940,21 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         });
                         const timestampISO = now.toISOString();
 
-                        // === Prepare FormData for FormSubmit ===
+                        // === FormSubmit ke liye FormData taiyar karein ===
                         const formSubmitData = new FormData();
-                        // Webhook to notify backend - backend will send auto-response email
+                        // Backend ko notify karne ke liye webhook - backend auto-response email bhejega
                         formSubmitData.append(
                           "_webhook",
                           "https://api.dsecuretech.com/api/formsubmit/webhook",
                         );
                         formSubmitData.append("_captcha", "false");
                         formSubmitData.append("_template", "table");
+                        formSubmitData.append("sendAutoReply", "true"); // Auto-reply enable karein
 
                         // Form fields
                         formSubmitData.append("name", formData.name.trim());
                         formSubmitData.append("email", formData.email.trim());
+                        formSubmitData.append("customer_email", formData.email.trim()); // Customer ka email auto-reply ke liye
                         formSubmitData.append(
                           "organization",
                           formData.organization.trim(),
@@ -1909,7 +1964,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           formData.message.trim(),
                         );
 
-                        // Required for autoresponse
+                        // Autoresponse ke liye reply-to zaroori hai
                         formSubmitData.append(
                           "_replyto",
                           formData.email.trim(),
@@ -1920,7 +1975,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           "File Eraser Page Contact",
                         );
 
-                        // Subject and CC
+                        // Subject aur CC
                         formSubmitData.append(
                           "_subject",
                           "New Inquiry - File Eraser Page - D-Secure Tech",
@@ -1972,7 +2027,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           );
 
                           // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
-                          const response = await fetch(
+                          await fetch(
                             "https://formsubmit.co/support@dsecuretech.com",
                             {
                               method: "POST",
@@ -2076,8 +2131,16 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
       {/* Lightbox Modal with Gallery Navigation */}
       {selectedImageIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200 cursor-pointer"
           onClick={() => setSelectedImageIndex(null)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              setSelectedImageIndex(null);
+            }
+          }}
+          aria-label="Close gallery"
         >
           {/* Close Button */}
           <button
@@ -2155,8 +2218,16 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
       {/* Video Modal */}
       {showVideoModal && (
         <div
-          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200 cursor-pointer"
           onClick={() => setShowVideoModal(false)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              setShowVideoModal(false);
+            }
+          }}
+          aria-label="Close video"
         >
           {/* Close Button */}
           <button
@@ -2177,7 +2248,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
               autoPlay
               playsInline
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-200"
-            />
+            >
+              <track kind="captions" />
+            </video>
           </div>
         </div>
       )}

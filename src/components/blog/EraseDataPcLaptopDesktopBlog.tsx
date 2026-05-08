@@ -1,4 +1,5 @@
 import React from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
@@ -9,11 +10,6 @@ import {
   ArrowRightIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
 
 const EraseDataPcLaptopDesktopBlog: React.FC = () => {
   return (
@@ -25,7 +21,7 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
         <Reveal>
           <div className="text-center px-6">
             <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
-              Enterprise Data Erasure Guide
+              Enterprise <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Guide
             </span>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
@@ -84,7 +80,7 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
 
               <p className="text-slate-700 leading-relaxed">
                 This data is protected under multiple regulatory frameworks,
-                making secure erasure a mandatory responsibility rather than a
+                making <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">secure erasure</Link> a mandatory responsibility rather than a
                 best practice.
               </p>
             </div>
@@ -114,9 +110,9 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
               </h2>
 
               <p className="text-slate-700 leading-relaxed">
-                Professional data erasure software enables organizations to
-                wipe devices of any brand or model, including systems from HP,
-                Dell, Lenovo, Microsoft, Acer, ASUS, LG, Toshiba, and Fujitsu.
+                Professional data erasure software enables organizations to wipe
+                devices of any brand or model, including systems from HP, Dell,
+                Lenovo, Microsoft, Acer, ASUS, LG, Toshiba, and Fujitsu.
               </p>
 
               <p className="text-slate-700 leading-relaxed">
@@ -176,7 +172,7 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
             </p>
 
             <Link
-              to="/#products"
+              to="/all-products"
               className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition shadow-lg"
             >
               <HoverIcon>
@@ -184,7 +180,7 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
                   <ShieldIcon className="w-5 h-5 mr-2" filled={filled} />
                 )}
               </HoverIcon>
-              Explore Secure Erasure Solutions
+              Explore <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link> Solutions
               <HoverIcon>
                 {(filled) => (
                   <ArrowRightIcon className="w-5 h-5 ml-2" filled={filled} />
@@ -197,21 +193,11 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
 
       {/* Engagement */}
       <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["erase-data-pc-laptop-desktop"]} />
-      <EngagementSection blogId="erase-data-pc-laptop-desktop" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="erase-data-pc-laptop-desktop" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm
-            blogId="erase-data-pc-laptop-desktop"
-            blogTitle="Erase Data from PCs, Laptops, and Desktops"
-          />
-        </Reveal>
       </section>
+      <BlogFooterStandard 
+        blogId="erase-data-pc-laptop-desktop" 
+        blogTitle="D-Secure Blog" 
+      />
     </div>
   );
 };

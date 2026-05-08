@@ -66,4 +66,4 @@ Sitemap: https://dsecuretech.com/sitemap-products.xml
 Sitemap: https://dsecuretech.com/sitemap-blogs.xml
 Sitemap: https://dsecuretech.com/sitemap-manuals.xml
 
-# Last updated: 2026-05-01
+# Last updated: 2026-05-08

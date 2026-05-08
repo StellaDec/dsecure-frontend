@@ -9,9 +9,10 @@ interface RelatedProduct {
   icon: string;
 }
 
-interface ProductInternalLinksProps {
+export interface ProductInternalLinksProps {
   heading?: string;
-  links: RelatedProduct[];
+  links?: RelatedProduct[];
+  currentProduct?: string;
 }
 
 // Har product ke liye predefined link map
@@ -108,11 +109,27 @@ export const PRODUCT_LINKS: Record<string, RelatedProduct> = {
   },
 };
 
-const ProductInternalLinks: React.FC<ProductInternalLinksProps> = ({
+export const ProductInternalLinks: React.FC<ProductInternalLinksProps> = ({
   heading = "Related Products",
   links,
+  currentProduct,
 }) => {
-  if (!links || links.length === 0) return null;
+  // Agar links manually nahi diye gaye, toh currentProduct ke basis pe generate karte hain
+  const displayLinks = React.useMemo(() => {
+    if (links && links.length > 0) return links;
+
+    if (currentProduct) {
+      // Current product ko hata kar baaki links dikhate hain (limit to 8 for better UI)
+      return Object.entries(PRODUCT_LINKS)
+        .filter(([key]) => key !== currentProduct)
+        .slice(0, 8)
+        .map(([_, value]) => value);
+    }
+
+    return [];
+  }, [links, currentProduct]);
+
+  if (displayLinks.length === 0) return null;
 
   return (
     // Related products section — internal linking ke liye
@@ -155,7 +172,7 @@ const ProductInternalLinks: React.FC<ProductInternalLinksProps> = ({
             gap: "16px",
           }}
         >
-          {links.map((product) => (
+          {displayLinks.map((product) => (
             <Link
               key={product.href}
               to={product.href}

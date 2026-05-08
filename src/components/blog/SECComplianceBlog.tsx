@@ -2,13 +2,9 @@ import React from "react";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
+import { ShieldIcon, CheckIcon, GlobeIcon, ArrowRightIcon, HoverIcon, ClipboardIcon } from "@/components/FlatIcons";
 import { Link } from "react-router-dom";
-import { ShieldIcon, CheckIcon, GlobeIcon, StarIcon, ArrowRightIcon, HoverIcon, ClipboardIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const SECComplianceBlog: React.FC = () => {
   return (
@@ -50,6 +46,9 @@ const SECComplianceBlog: React.FC = () => {
                         </p>
                     </div>
                 </div>
+
+                {/* Expert Solution Section Integration */}
+                
 
                 {/* Who Must Comply */}
                 <div className="space-y-4">
@@ -113,9 +112,9 @@ const SECComplianceBlog: React.FC = () => {
                         For electronic storage media containing customer information, the SEC expects firms to use industry-recognized data sanitization standards:
                     </p>
                     <div className="bg-slate-900 text-slate-100 p-6 rounded-xl font-mono text-sm leading-relaxed">
-                        <p className="text-emerald-400 font-bold mb-3">// Acceptable Disposal Methods</p>
+                        <p className="text-emerald-400 font-bold mb-3">{'// Acceptable Disposal Methods'}</p>
                         <p className="mb-2">✓ DoD 5220.22-M (3 or 7-pass overwrite)</p>
-                        <p className="mb-2">✓ NIST 800-88 compliant sanitization</p>
+                        <p className="mb-2">✓ <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> compliant sanitization</p>
                         <p className="mb-2">✓ Cryptographic erasure (SEDs)</p>
                         <p className="mb-3">✓ Physical destruction (shredding, degaussing)</p>
                         <p className="text-red-400">✗ Standard delete or format (INSUFFICIENT)</p>
@@ -126,7 +125,7 @@ const SECComplianceBlog: React.FC = () => {
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">Third-Party Vendor Due Diligence</h2>
                     <p className="text-slate-700 leading-relaxed">
-                        If using ITAD vendors or disposal services, SEC requires firms to:
+                        If using <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> vendors or disposal services, SEC requires firms to:
                     </p>
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200">
                         <h4 className="font-bold text-amber-900 mb-4">Vendor Evaluation Checklist</h4>
@@ -217,7 +216,7 @@ const SECComplianceBlog: React.FC = () => {
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-4 rounded-xl border border-emerald-100">
                         <ShieldIcon className="w-6 h-6 text-emerald-800 mb-2" filled={true} />
                         <h4 className="font-bold text-slate-900 text-sm mb-1">Compliant Methods</h4>
-                        <p className="text-xs text-slate-600">DoD 5220.22-M and NIST 800-88 as standard</p>
+                        <p className="text-xs text-slate-600">DoD 5220.22-M and <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> as standard</p>
                     </div>
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-4 rounded-xl border border-emerald-100">
                         <GlobeIcon className="w-6 h-6 text-emerald-800 mb-2" filled={true} />
@@ -251,23 +250,10 @@ const SECComplianceBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* Engagement Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["sec-compliance"]} />
-      <EngagementSection blogId="sec-compliance" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="sec-compliance" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="sec-compliance" 
-            blogTitle="SEC Compliance & Data Disposal" 
-          />
-        </Reveal>
-      </section>
+      <BlogFooterStandard 
+        blogId="sec-compliance-guide" 
+        blogTitle="SEC Rule 17a-4 and Data Erasure: A Compliance Guide" 
+      />
     </div>
   );
 };

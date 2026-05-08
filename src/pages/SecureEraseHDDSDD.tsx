@@ -1,767 +1,422 @@
-import React from "react";
-import SEOHead from "@/components/SEOHead";
-import { getSEOForPage } from "@/utils/seo";
+import React, { useState, useEffect } from "react";
+import SEOHead from '../components/SEOHead';
+import { getSEOForPage } from '../utils/seo';
 import Reveal from "@/components/Reveal";
+import { Link } from "react-router-dom";
+import { ChevronRight, ArrowUp, Home, Book, Shield, HardDrive, Zap, Info, Lock, CheckCircle, Clock, FileText } from "lucide-react";
 
-const SecureEraseHDDSDD: React.FC = () => {
-  return (
-    <>
-      <SEOHead seo={getSEOForPage('help-manual')} />
+interface NavItem {
+  id: string;
+  title: string;
+  icon?: React.ReactNode;
+  content?: React.ReactNode;
+}
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
-        {/* Hero Section */}
-        <section className="py-16 md:py-24">
-          <div className="container-responsive">
-            <Reveal>
-              <div className="text-center max-w-4xl mx-auto">
-                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <svg
-                    className="w-10 h-10 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
-                    />
-                  </svg>
-                </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-                  <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                    Secure Erase HDD/SSD
-                  </span>
-                </h1>
-                <p className="text-xl md:text-2xl text-slate-700 mb-8 leading-relaxed">
-                  Complete Drive Erasure for Maximum Data Security
-                </p>
-              </div>
-            </Reveal>
+const navigationTree: NavItem[] = [
+  {
+    id: "overview",
+    title: "HDD vs SSD Overview",
+    icon: <Info className="w-5 h-5" />,
+    content: (
+      <div className="space-y-6">
+        <p className="text-slate-600 text-lg leading-relaxed">
+          Different storage technologies require different erasure approaches. Understanding the fundamental differences 
+          between HDDs and SSDs is crucial for selecting the appropriate secure erasure method.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 p-6 rounded-xl">
+            <h3 className="text-xl font-bold text-blue-900 mb-4 flex items-center">
+              <HardDrive className="w-6 h-6 mr-2" />
+              Hard Disk Drives (HDD)
+            </h3>
+            <ul className="text-blue-700 space-y-2 text-sm">
+              <li>• <strong>Technology:</strong> Magnetic storage on spinning platters</li>
+              <li>• <strong>Erasure:</strong> Multiple overwrite passes effective</li>
+              <li>• <strong>Challenges:</strong> Magnetic remanence, bad sectors</li>
+              <li>• <strong>Best Method:</strong> Multi-pass overwriting + physical destruction</li>
+              <li>• <strong>Standards:</strong> DoD 5220.22-M, <Link to="/compliance/nist-800-88" className="underline">NIST 800-88</Link></li>
+            </ul>
           </div>
-        </section>
-
-        {/* Guide Content */}
-        <section className="py-16 bg-white/50">
-          <div className="container-responsive">
-            <div className="max-w-4xl mx-auto space-y-8">
-              {/* HDD vs SSD Overview */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                        />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                      HDD vs SSD Erasure Methods
-                    </h2>
-                  </div>
-                  <div className="space-y-6">
-                    <p className="text-slate-700 text-lg leading-relaxed">
-                      Different storage technologies require different erasure
-                      approaches. Understanding the fundamental differences
-                      between HDDs and SSDs is crucial for selecting the
-                      appropriate secure erasure method.
-                    </p>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {/* HDD Section */}
-                      <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 p-6 rounded-xl">
-                        <div className="flex items-center mb-4">
-                          <div className="w-10 h-10 bg-blue-500 text-white rounded-lg flex items-center justify-center mr-3">
-                            <svg
-                              className="w-5 h-5"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </div>
-                          <h3 className="text-xl font-bold text-blue-900">
-                            Hard Disk Drives (HDD)
-                          </h3>
-                        </div>
-                        <ul className="text-blue-700 space-y-2 text-sm">
-                          <li>
-                            • <strong>Technology:</strong> Magnetic storage on
-                            spinning platters
-                          </li>
-                          <li>
-                            • <strong>Erasure:</strong> Multiple overwrite
-                            passes effective
-                          </li>
-                          <li>
-                            • <strong>Challenges:</strong> Magnetic remanence,
-                            bad sectors
-                          </li>
-                          <li>
-                            • <strong>Best Method:</strong> Multi-pass
-                            overwriting + physical destruction
-                          </li>
-                          <li>
-                            • <strong>Time:</strong> Slower but thorough erasure
-                            possible
-                          </li>
-                          <li>
-                            • <strong>Standards:</strong> DoD 5220.22-M, NIST
-                            800-88
-                          </li>
-                        </ul>
-                      </div>
-
-                      {/* SSD Section */}
-                      <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 p-6 rounded-xl">
-                        <div className="flex items-center mb-4">
-                          <div className="w-10 h-10 bg-purple-500 text-white rounded-lg flex items-center justify-center mr-3">
-                            <svg
-                              className="w-5 h-5"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </div>
-                          <h3 className="text-xl font-bold text-purple-900">
-                            Solid State Drives (SSD)
-                          </h3>
-                        </div>
-                        <ul className="text-purple-700 space-y-2 text-sm">
-                          <li>
-                            • <strong>Technology:</strong> NAND flash memory
-                            cells
-                          </li>
-                          <li>
-                            • <strong>Erasure:</strong> Crypto-erase, ATA Secure
-                            Erase
-                          </li>
-                          <li>
-                            • <strong>Challenges:</strong> Wear leveling,
-                            over-provisioning
-                          </li>
-                          <li>
-                            • <strong>Best Method:</strong> ATA Secure Erase +
-                            encryption key destruction
-                          </li>
-                          <li>
-                            • <strong>Time:</strong> Fast cryptographic erasure
-                            available
-                          </li>
-                          <li>
-                            • <strong>Standards:</strong> IEEE 2883, NIST 800-88
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Erasure Methods */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                        />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                      Secure Erasure Methods
-                    </h2>
-                  </div>
-
-                  <div className="space-y-6">
-                    {/* HDD Methods */}
-                    <div className="border border-emerald-100 rounded-xl p-6">
-                      <h3 className="text-xl font-bold text-emerald-900 mb-4 flex items-center">
-                        <svg
-                          className="w-6 h-6 mr-2"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        HDD Secure Erasure Methods
-                      </h3>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-emerald-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-emerald-900 mb-2">
-                            1. Multi-Pass Overwriting
-                          </h4>
-                          <p className="text-emerald-700 text-sm mb-2">
-                            Write random or specific patterns multiple times
-                            across entire drive surface.
-                          </p>
-                          <ul className="text-emerald-800 text-xs space-y-1">
-                            <li>• 3-pass: Random, complement, random</li>
-                            <li>• 7-pass: DoD 5220.22-M standard</li>
-                            <li>• 35-pass: Gutmann method (legacy)</li>
-                          </ul>
-                        </div>
-
-                        <div className="bg-teal-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-teal-900 mb-2">
-                            2. ATA Secure Erase
-                          </h4>
-                          <p className="text-teal-700 text-sm mb-2">
-                            Hardware-level command to erase all data including
-                            remapped sectors.
-                          </p>
-                          <ul className="text-teal-600 text-xs space-y-1">
-                            <li>• Uses drive's built-in erase function</li>
-                            <li>• Faster than software overwriting</li>
-                            <li>• Handles bad sectors automatically</li>
-                          </ul>
-                        </div>
-
-                        <div className="bg-cyan-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-cyan-900 mb-2">
-                            3. Degaussing
-                          </h4>
-                          <p className="text-cyan-700 text-sm mb-2">
-                            Apply strong magnetic field to disrupt magnetic
-                            domains on platters.
-                          </p>
-                          <ul className="text-cyan-600 text-xs space-y-1">
-                            <li>• Requires specialized equipment</li>
-                            <li>• Renders drive permanently unusable</li>
-                            <li>• Effective for classified data</li>
-                          </ul>
-                        </div>
-
-                        <div className="bg-purple-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-purple-900 mb-2">
-                            4. Physical Destruction
-                          </h4>
-                          <p className="text-purple-700 text-sm mb-2">
-                            Physical destruction of platters through shredding
-                            or incineration.
-                          </p>
-                          <ul className="text-purple-600 text-xs space-y-1">
-                            <li>• Ultimate security assurance</li>
-                            <li>• Required for highest classifications</li>
-                            <li>• Environmentally responsible disposal</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* SSD Methods */}
-                    <div className="border border-emerald-100 rounded-xl p-6">
-                      <h3 className="text-xl font-bold text-emerald-900 mb-4 flex items-center">
-                        <svg
-                          className="w-6 h-6 mr-2"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        SSD Secure Erasure Methods
-                      </h3>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-emerald-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-emerald-900 mb-2">
-                            1. ATA Secure Erase
-                          </h4>
-                          <p className="text-emerald-700 text-sm mb-2">
-                            Most effective method for SSDs, erases all cells
-                            including over-provisioned areas.
-                          </p>
-                          <ul className="text-emerald-800 text-xs space-y-1">
-                            <li>• Hardware-level secure erase</li>
-                            <li>• Handles wear leveling</li>
-                            <li>• Fast execution (minutes)</li>
-                          </ul>
-                        </div>
-
-                        <div className="bg-teal-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-teal-900 mb-2">
-                            2. Crypto-Erase
-                          </h4>
-                          <p className="text-teal-700 text-sm mb-2">
-                            Destroy encryption keys rendering all data
-                            permanently unreadable.
-                          </p>
-                          <ul className="text-teal-600 text-xs space-y-1">
-                            <li>• Instantaneous erasure</li>
-                            <li>• Requires self-encrypting drives</li>
-                            <li>• NIST 800-88 compliant</li>
-                          </ul>
-                        </div>
-
-                        <div className="bg-cyan-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-cyan-900 mb-2">
-                            3. NVMe Format
-                          </h4>
-                          <p className="text-cyan-700 text-sm mb-2">
-                            NVMe-specific secure format command for modern SSDs.
-                          </p>
-                          <ul className="text-cyan-600 text-xs space-y-1">
-                            <li>• Protocol-specific command</li>
-                            <li>• Cryptographic erasure option</li>
-                            <li>• Enterprise-grade security</li>
-                          </ul>
-                        </div>
-
-                        <div className="bg-purple-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-purple-900 mb-2">
-                            4. Physical Destruction
-                          </h4>
-                          <p className="text-purple-700 text-sm mb-2">
-                            Destruction of NAND flash memory chips and
-                            controller.
-                          </p>
-                          <ul className="text-purple-600 text-xs space-y-1">
-                            <li>• Shredding or pulverization</li>
-                            <li>• Required for highest security</li>
-                            <li>• Proper e-waste disposal</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Step-by-Step Process */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                      Step-by-Step Erasure Process
-                    </h2>
-                  </div>
-
-                  <div className="space-y-6">
-                    {[
-                      {
-                        step: 1,
-                        title: "Pre-Erasure Assessment",
-                        content:
-                          "Identify drive type, capacity, interface, and encryption status. Check for firmware updates and verify drive health.",
-                        details: [
-                          "Run drive diagnostics and health check",
-                          "Identify HDD vs SSD technology",
-                          "Check for self-encrypting drive (SED) capabilities",
-                          "Document drive serial numbers and capacity",
-                        ],
-                      },
-                      {
-                        step: 2,
-                        title: "Data Backup & Verification",
-                        content:
-                          "If any data needs preservation, create verified backups before beginning erasure process.",
-                        details: [
-                          "Identify any data requiring backup",
-                          "Create secure backup copies",
-                          "Verify backup integrity",
-                          "Store backups in secure location",
-                        ],
-                      },
-                      {
-                        step: 3,
-                        title: "Remove Drive Protection",
-                        content:
-                          "Disable any security features that might prevent erasure such as ATA passwords or encryption locks.",
-                        details: [
-                          "Unlock ATA security passwords",
-                          "Disable drive encryption if applicable",
-                          "Check for frozen drive states",
-                          "Ensure administrative privileges",
-                        ],
-                      },
-                      {
-                        step: 4,
-                        title: "Execute Secure Erasure",
-                        content:
-                          "Perform the selected erasure method appropriate for the drive technology and security requirements.",
-                        details: [
-                          "Launch D-Secure Drive Eraser tool",
-                          "Select appropriate erasure method",
-                          "Configure verification settings",
-                          "Monitor progress and completion",
-                        ],
-                      },
-                      {
-                        step: 5,
-                        title: "Verification & Documentation",
-                        content:
-                          "Verify successful erasure and generate compliance documentation for audit trails.",
-                        details: [
-                          "Perform post-erasure verification scan",
-                          "Generate erasure completion regulatory document",
-                          "Document process for compliance",
-                          "Securely store erasure records",
-                        ],
-                      },
-                      {
-                        step: 6,
-                        title: "Drive Disposition",
-                        content:
-                          "Determine final disposition - reuse, resale, recycling, or physical destruction based on security requirements.",
-                        details: [
-                          "Assess drive condition post-erasure",
-                          "Apply disposition labels if reusing",
-                          "Arrange secure recycling if disposing",
-                          "Update asset tracking records",
-                        ],
-                      },
-                    ].map((item, index) => (
-                      <div
-                        key={index}
-                        className="border border-emerald-100 rounded-xl p-6 hover:border-emerald-200 transition-all duration-300"
-                      >
-                        <div className="flex items-start space-x-4">
-                          <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                            {item.step}
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">
-                              {item.title}
-                            </h3>
-                            <p className="text-slate-700 mb-4">
-                              {item.content}
-                            </p>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                              {item.details.map((detail, detailIndex) => (
-                                <div
-                                  key={detailIndex}
-                                  className="flex items-center text-emerald-700 text-sm"
-                                >
-                                  <svg
-                                    className="w-4 h-4 mr-2 text-emerald-500"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                  {detail}
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Compliance Standards */}
-              <Reveal>
-                <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 rounded-2xl p-8 text-white">
-                  <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <svg
-                        className="w-8 h-8 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        />
-                      </svg>
-                    </div>
-                    <h2 className="text-3xl font-bold mb-4">
-                      Compliance Standards & Regulations
-                    </h2>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-white/10 rounded-xl p-6">
-                      <h3 className="text-xl font-bold mb-4">
-                        Government Standards
-                      </h3>
-                      <ul className="space-y-2 text-emerald-100">
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          NIST 800-88 Rev. 1 (U.S. Standard)
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          DoD 5220.22-M (Department of Defense)
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          CESG CPA Higher (UK Government)
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Common Criteria EAL4+
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-white/10 rounded-xl p-6">
-                      <h3 className="text-xl font-bold mb-4">
-                        Industry Standards
-                      </h3>
-                      <ul className="space-y-2 text-emerald-100">
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          IEEE 2883-2022 (SSD Sanitization)
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          ANSI X9.17 (Financial Services)
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          ISO/IEC 27040 (Storage Security)
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          FIPS 140-2 Level 3/4
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-white/10 rounded-xl p-6">
-                      <h3 className="text-xl font-bold mb-4">
-                        Regulatory Compliance
-                      </h3>
-                      <ul className="space-y-2 text-emerald-100">
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          GDPR Article 17 (Right to Erasure)
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          HIPAA 164.310 (PHI Disposal)
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          SOX Section 404 (Internal Controls)
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          PCI-DSS Requirement 3.4
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Performance Considerations */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 10V3L4 14h7v7l9-11h-7z"
-                        />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                      Performance & Time Estimates
-                    </h2>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-slate-900 mb-4">
-                        HDD Erasure Times
-                      </h3>
-                      <div className="space-y-3">
-                        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="font-semibold text-blue-900">
-                              500GB Drive - 1 Pass
-                            </span>
-                            <span className="text-blue-700 font-bold">
-                              ~2-3 hours
-                            </span>
-                          </div>
-                          <p className="text-blue-600 text-sm">
-                            Basic overwrite with random data
-                          </p>
-                        </div>
-
-                        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="font-semibold text-blue-900">
-                              1TB Drive - 3 Pass
-                            </span>
-                            <span className="text-blue-700 font-bold">
-                              ~12-18 hours
-                            </span>
-                          </div>
-                          <p className="text-blue-600 text-sm">
-                            DoD standard multiple overwrite
-                          </p>
-                        </div>
-
-                        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="font-semibold text-blue-900">
-                              2TB Drive - ATA Secure
-                            </span>
-                            <span className="text-blue-700 font-bold">
-                              ~4-8 hours
-                            </span>
-                          </div>
-                          <p className="text-blue-600 text-sm">
-                            Hardware-level secure erase
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-slate-900 mb-4">
-                        SSD Erasure Times
-                      </h3>
-                      <div className="space-y-3">
-                        <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="font-semibold text-purple-900">
-                              256GB SSD - ATA Secure
-                            </span>
-                            <span className="text-purple-700 font-bold">
-                              ~2-10 minutes
-                            </span>
-                          </div>
-                          <p className="text-purple-600 text-sm">
-                            Hardware secure erase command
-                          </p>
-                        </div>
-
-                        <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="font-semibold text-purple-900">
-                              1TB SSD - Crypto Erase
-                            </span>
-                            <span className="text-purple-700 font-bold">
-                              ~1-2 seconds
-                            </span>
-                          </div>
-                          <p className="text-purple-600 text-sm">
-                            Encryption key destruction
-                          </p>
-                        </div>
-
-                        <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="font-semibold text-purple-900">
-                              2TB NVMe - Format
-                            </span>
-                            <span className="text-purple-700 font-bold">
-                              ~5-15 minutes
-                            </span>
-                          </div>
-                          <p className="text-purple-600 text-sm">
-                            NVMe secure format command
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 p-4 bg-gradient-to-r from-amber-50 to-amber-100 border border-amber-200 rounded-xl">
-                    <div className="flex items-center mb-2">
-                      <svg
-                        className="w-5 h-5 text-amber-600 mr-2"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <h4 className="font-bold text-amber-900">
-                        Performance Factors
-                      </h4>
-                    </div>
-                    <ul className="text-amber-700 text-sm space-y-1">
-                      <li>• Drive speed and interface (SATA, NVMe, USB)</li>
-                      <li>• Number of erasure passes selected</li>
-                      <li>• Drive health and bad sector count</li>
-                      <li>• System resources and concurrent operations</li>
-                    </ul>
-                  </div>
-                </div>
-              </Reveal>
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 p-6 rounded-xl">
+            <h3 className="text-xl font-bold text-purple-900 mb-4 flex items-center">
+              <Zap className="w-6 h-6 mr-2" />
+              Solid State Drives (SSD)
+            </h3>
+            <ul className="text-purple-700 space-y-2 text-sm">
+              <li>• <strong>Technology:</strong> NAND flash memory cells</li>
+              <li>• <strong>Erasure:</strong> Crypto-erase, ATA Secure Erase</li>
+              <li>• <strong>Challenges:</strong> Wear leveling, over-provisioning</li>
+              <li>• <strong>Best Method:</strong> ATA Secure Erase + encryption key destruction</li>
+              <li>• <strong>Standards:</strong> IEEE 2883, NIST 800-88</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    id: "hdd-methods",
+    title: "HDD Erasure Methods",
+    icon: <HardDrive className="w-5 h-5" />,
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-emerald-50 p-5 rounded-xl border border-emerald-100">
+          <h4 className="font-bold text-emerald-900 mb-2">1. Multi-Pass Overwriting</h4>
+          <p className="text-emerald-700 text-sm mb-3">Writing random or specific patterns multiple times across entire drive surface.</p>
+          <ul className="text-emerald-800 text-xs space-y-1 opacity-80">
+            <li>• 3-pass: Random, complement, random</li>
+            <li>• 7-pass: DoD 5220.22-M standard</li>
+            <li>• 35-pass: Gutmann method (legacy)</li>
+          </ul>
+        </div>
+        <div className="bg-teal-50 p-5 rounded-xl border border-teal-100">
+          <h4 className="font-bold text-teal-900 mb-2">2. ATA Secure Erase</h4>
+          <p className="text-teal-700 text-sm mb-3">Hardware-level command to erase all data including remapped sectors.</p>
+          <ul className="text-teal-600 text-xs space-y-1 opacity-80">
+            <li>• Uses drive's built-in erase function</li>
+            <li>• Faster than software overwriting</li>
+            <li>• Handles bad sectors automatically</li>
+          </ul>
+        </div>
+        <div className="bg-cyan-50 p-5 rounded-xl border border-cyan-100">
+          <h4 className="font-bold text-cyan-900 mb-2">3. Degaussing</h4>
+          <p className="text-cyan-700 text-sm mb-3">Apply strong magnetic field to disrupt magnetic domains on platters.</p>
+          <ul className="text-cyan-600 text-xs space-y-1 opacity-80">
+            <li>• Renders drive permanently unusable</li>
+            <li>• Effective for classified data</li>
+          </ul>
+        </div>
+        <div className="bg-purple-50 p-5 rounded-xl border border-purple-100">
+          <h4 className="font-bold text-purple-900 mb-2">4. Physical Destruction</h4>
+          <p className="text-purple-700 text-sm mb-3">Physical destruction of platters through shredding or incineration.</p>
+          <ul className="text-purple-600 text-xs space-y-1 opacity-80">
+            <li>• Ultimate security assurance</li>
+            <li>• Required for highest classifications</li>
+          </ul>
+        </div>
+      </div>
+    )
+  },
+  {
+    id: "ssd-methods",
+    title: "SSD Erasure Methods",
+    icon: <Zap className="w-5 h-5" />,
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-emerald-50 p-5 rounded-xl border border-emerald-100">
+          <h4 className="font-bold text-emerald-900 mb-2">1. ATA Secure Erase</h4>
+          <p className="text-emerald-700 text-sm mb-3">Hardware-level secure erase for SATA SSDs, erases all cells.</p>
+          <ul className="text-emerald-800 text-xs space-y-1 opacity-80">
+            <li>• Most effective for SSDs</li>
+            <li>• Handles wear leveling natively</li>
+          </ul>
+        </div>
+        <div className="bg-teal-50 p-5 rounded-xl border border-teal-100">
+          <h4 className="font-bold text-teal-900 mb-2">2. Crypto-Erase</h4>
+          <p className="text-teal-700 text-sm mb-3">Destroy encryption keys rendering all data unreadable.</p>
+          <ul className="text-teal-600 text-xs space-y-1 opacity-80">
+            <li>• Instantaneous erasure</li>
+            <li>• <Link to="/support/ssd-cryptographic-erasure-guide" className="underline">View Crypto Guide</Link></li>
+          </ul>
+        </div>
+        <div className="bg-cyan-50 p-5 rounded-xl border border-cyan-100">
+          <h4 className="font-bold text-cyan-900 mb-2">3. NVMe Format</h4>
+          <p className="text-cyan-700 text-sm mb-3">NVMe-specific secure format command for modern M.2 SSDs.</p>
+          <ul className="text-cyan-600 text-xs space-y-1 opacity-80">
+            <li>• Protocol-specific command</li>
+            <li>• Enterprise-grade security</li>
+          </ul>
+        </div>
+        <div className="bg-purple-50 p-5 rounded-xl border border-purple-100">
+          <h4 className="font-bold text-purple-900 mb-2">4. Physical Destruction</h4>
+          <p className="text-purple-700 text-sm mb-3">Shredding NAND flash memory chips into 2mm or smaller particles.</p>
+          <ul className="text-purple-600 text-xs space-y-1 opacity-80">
+            <li>• Required for TOP SECRET data</li>
+            <li>• Specialized SSD shredders needed</li>
+          </ul>
+        </div>
+      </div>
+    )
+  },
+  {
+    id: "step-by-step",
+    title: "Step-by-Step Process",
+    icon: <CheckCircle className="w-5 h-5" />,
+    content: (
+      <div className="space-y-4">
+        {[
+          { step: "01", title: "Assessment", text: "Identify drive type (HDD/SSD), interface, and health status." },
+          { step: "02", title: "Backup", text: "Verified backup of any data that needs preservation." },
+          { step: "03", title: "Unlock", text: "Remove ATA passwords or frozen states preventing erasure." },
+          { step: "04", title: "Erase", text: "Execute selected method (e.g., NIST 800-88 Purge)." },
+          { step: "05", title: "Verify", text: "Post-erasure verification scan (10-100% of drive)." },
+          { step: "06", title: "Certify", text: "Generate tamper-proof erasure certificate for compliance." }
+        ].map((item, idx) => (
+          <div key={idx} className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <span className="text-2xl font-black text-emerald-200">{item.step}</span>
+            <div>
+              <h5 className="font-bold text-slate-900">{item.title}</h5>
+              <p className="text-sm text-slate-600">{item.text}</p>
             </div>
           </div>
-        </section>
+        ))}
       </div>
-    </>
+    )
+  },
+  {
+    id: "compliance",
+    title: "Compliance Standards",
+    icon: <Shield className="w-5 h-5" />,
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-4">
+          <h4 className="font-bold text-slate-900">Government & Military</h4>
+          <div className="space-y-2">
+            <div className="p-3 bg-slate-50 rounded-lg text-sm border border-slate-100 flex items-center justify-between">
+              <span>NIST 800-88 Rev. 1</span>
+              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-bold">GOLD STANDARD</span>
+            </div>
+            <div className="p-3 bg-slate-50 rounded-lg text-sm border border-slate-100">DoD 5220.22-M</div>
+            <div className="p-3 bg-slate-50 rounded-lg text-sm border border-slate-100">BSI-VSITR</div>
+          </div>
+        </div>
+        <div className="space-y-4">
+          <h4 className="font-bold text-slate-900">Industry Regulations</h4>
+          <div className="space-y-2">
+            <div className="p-3 bg-slate-50 rounded-lg text-sm border border-slate-100">GDPR (Right to Erasure)</div>
+            <div className="p-3 bg-slate-50 rounded-lg text-sm border border-slate-100">HIPAA (Health Data)</div>
+            <div className="p-3 bg-slate-50 rounded-lg text-sm border border-slate-100">PCI-DSS (Payment Cards)</div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    id: "performance",
+    title: "Performance Estimates",
+    icon: <Clock className="w-5 h-5" />,
+    content: (
+      <div className="space-y-4">
+        <div className="overflow-hidden rounded-xl border border-slate-200">
+          <table className="w-full text-sm text-left">
+            <thead className="bg-slate-50 text-slate-600">
+              <tr>
+                <th className="px-4 py-3 font-semibold">Drive Type</th>
+                <th className="px-4 py-3 font-semibold">Method</th>
+                <th className="px-4 py-3 font-semibold">Estimate</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              <tr>
+                <td className="px-4 py-3 font-medium">500GB HDD</td>
+                <td className="px-4 py-3 text-slate-500">1 Pass</td>
+                <td className="px-4 py-3 text-emerald-600 font-bold">2-3 Hours</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">1TB HDD</td>
+                <td className="px-4 py-3 text-slate-500">3 Pass</td>
+                <td className="px-4 py-3 text-emerald-600 font-bold">12-18 Hours</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">512GB SSD</td>
+                <td className="px-4 py-3 text-slate-500">Secure Erase</td>
+                <td className="px-4 py-3 text-emerald-600 font-bold">2-10 Minutes</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-medium">1TB NVMe</td>
+                <td className="px-4 py-3 text-slate-500">Crypto Erase</td>
+                <td className="px-4 py-3 text-emerald-600 font-bold">Instant</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-slate-400 italic">* Times vary based on drive health, interface (USB vs SATA), and system performance.</p>
+      </div>
+    )
+  }
+];
+
+const Anchor: React.FC<{ id: string }> = ({ id }) => (
+  <div id={id} className="relative -top-24" />
+);
+
+const SecureEraseHDDSDD: React.FC = () => {
+  const [activeSection, setActiveSection] = useState("overview");
+  const [shouldShowScrollTop, setShouldShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShouldShowScrollTop(window.scrollY > 400);
+      const headingElements = document.querySelectorAll('[id]');
+      let currentSection = "";
+      headingElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top <= 300) {
+          currentSection = el.id;
+        }
+      });
+      if (currentSection) setActiveSection(currentSection);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const onJump = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveSection(id);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 font-inter">
+      <SEOHead seo={getSEOForPage('help-manual')} />
+
+      <style>{`
+        .sidebar-scroll::-webkit-scrollbar { width: 4px; }
+        .sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+        .sidebar-scroll::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        html { scroll-behavior: smooth; }
+      `}</style>
+
+      {/* Breadcrumbs */}
+      <div className="bg-white border-b border-slate-200 sticky top-0 z-30">
+        <div className="container mx-auto px-4 py-3">
+          <nav className="flex items-center space-x-2 text-sm text-slate-500 overflow-x-auto whitespace-nowrap">
+            <Link to="/" className="hover:text-emerald-600 transition-colors flex items-center">
+              <Home className="w-4 h-4 mr-1" /> Home
+            </Link>
+            <ChevronRight className="w-4 h-4" />
+            <Link to="/support" className="hover:text-emerald-600 transition-colors">Support</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-slate-900 font-medium">Secure Erase HDD/SSD</span>
+          </nav>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Sidebar */}
+          <aside className="lg:w-72 shrink-0">
+            <div className="lg:sticky lg:top-24 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+              <h3 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-4 flex items-center">
+                <Book className="w-4 h-4 mr-2 text-emerald-500" /> CONTENTS
+              </h3>
+              <nav className="space-y-1">
+                {navigationTree.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => onJump(item.id)}
+                    className={`w-full flex items-center text-left px-3 py-2.5 rounded-lg text-sm transition-all ${
+                      activeSection === item.id
+                        ? "bg-emerald-50 text-emerald-700 font-bold shadow-sm"
+                        : "text-slate-600 hover:bg-slate-50 hover:text-emerald-600"
+                    }`}
+                  >
+                    <span className={`mr-3 ${activeSection === item.id ? "text-emerald-600" : "text-slate-400"}`}>
+                      {item.icon}
+                    </span>
+                    {item.title}
+                  </button>
+                ))}
+              </nav>
+
+              <div className="mt-8 pt-6 border-t border-slate-100">
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Related Resources</h4>
+                <nav className="space-y-3">
+                  <Link to="/support/overwrite-guide" className="block text-sm text-slate-600 hover:text-emerald-600 transition-colors">Overwrite Patterns Guide</Link>
+                  <Link to="/support/ssd-cryptographic-erasure-guide" className="block text-sm text-slate-600 hover:text-emerald-600 transition-colors">Crypto Erasure Guide</Link>
+                  <Link to="/compliance/nist-800-88" className="block text-sm text-slate-600 hover:text-emerald-600 transition-colors">NIST 800-88 Compliance</Link>
+                  <Link to="/products/drive-eraser" className="block text-sm text-slate-600 hover:text-emerald-600 transition-colors">Drive Eraser Software</Link>
+                </nav>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-slate-100">
+                <Link 
+                  to="/support/knowledge-base"
+                  className="flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-700"
+                >
+                  <ChevronRight className="w-4 h-4 mr-1 rotate-180" />
+                  Back to Knowledge Base
+                </Link>
+              </div>
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <main className="flex-1 min-w-0">
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-8 lg:p-12 text-white relative">
+                <div className="relative z-10">
+                  <h1 className="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight">
+                    Secure Erase <span className="text-emerald-400">HDD & SSD</span>
+                  </h1>
+                  <p className="text-lg text-slate-300 max-w-2xl leading-relaxed">
+                    Complete drive sanitization guide covering hardware-level commands, overwrite patterns, 
+                    and cryptographic erasure for modern <Link to="/products/drive-eraser" className="text-emerald-400 hover:underline">Hard Drives</Link> and <Link to="/products/file-eraser" className="text-emerald-400 hover:underline">Solid State Drives</Link>.
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-8 lg:p-12">
+                <div className="prose prose-slate max-w-none">
+                  {navigationTree.map((item) => (
+                    <section key={item.id} className="mb-16 last:mb-0">
+                      <Anchor id={item.id} />
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="p-2 bg-slate-100 rounded-lg text-slate-600">
+                          {item.icon}
+                        </div>
+                        <h2 className="text-2xl font-bold m-0">{item.title}</h2>
+                      </div>
+                      <div>{item.content}</div>
+                    </section>
+                  ))}
+                </div>
+
+                {/* Internal Links Footer */}
+                <div className="mt-16 pt-12 border-t border-slate-100 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <h4 className="font-bold text-slate-900 mb-2">Overwrite Guide</h4>
+                    <p className="text-sm text-slate-500 mb-4">Deep dive into overwrite patterns and <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline">NIST compliance</Link>.</p>
+                    <Link to="/support/overwrite-guide" className="text-emerald-600 font-bold hover:underline inline-flex items-center">
+                      Read Guide <ChevronRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <h4 className="font-bold text-slate-900 mb-2">Retain OS Guide</h4>
+                    <p className="text-sm text-slate-500 mb-4">Wipe user data while keeping the <Link to="/support/retain-os-guide" className="text-emerald-600 hover:underline">OS intact</Link>.</p>
+                    <Link to="/support/retain-os-guide" className="text-emerald-600 font-bold hover:underline inline-flex items-center">
+                      Read Guide <ChevronRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <h4 className="font-bold text-slate-900 mb-2">Product: Drive Eraser</h4>
+                    <p className="text-sm text-slate-500 mb-4">Enterprise software implementing these <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline">erasure methods</Link>.</p>
+                    <Link to="/products/drive-eraser" className="text-emerald-600 font-bold hover:underline inline-flex items-center">
+                      Learn More <ChevronRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+
+        </div>
+      </div>
+
+      {/* Scroll to Top */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className={`fixed bottom-8 right-8 p-3 rounded-full bg-emerald-600 text-white shadow-lg transition-all transform hover:scale-110 z-50 ${
+          shouldShowScrollTop ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <ArrowUp className="w-5 h-5" />
+      </button>
+    </div>
   );
 };
 

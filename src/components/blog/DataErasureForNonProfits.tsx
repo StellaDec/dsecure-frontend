@@ -1,4 +1,5 @@
 import React from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
@@ -9,16 +10,13 @@ import {
   ArrowRightIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
 
 const DataErasureForNonProfits: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      <SEOHead seo={getSEOForPage("blog-data-erasure-non-profit-organizations")} />
+      <SEOHead
+        seo={getSEOForPage("blog-data-erasure-non-profit-organizations")}
+      />
 
       {/* Hero Section */}
       <section className="py-16 bg-white shadow-lg">
@@ -30,7 +28,7 @@ const DataErasureForNonProfits: React.FC = () => {
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                Data Erasure Solutions
+                <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Solutions
               </span>
               <br />
               for Non-Profit Organizations
@@ -57,10 +55,10 @@ const DataErasureForNonProfits: React.FC = () => {
 
               <p className="text-slate-700 leading-relaxed text-lg">
                 Non-profit organizations and NGOs act as the backbone of many
-                communities by supporting social welfare, healthcare,
-                education, humanitarian aid, and environmental initiatives.
-                Unlike commercial enterprises, their primary objective is not
-                profit generation but creating long-term positive impact.
+                communities by supporting social welfare, healthcare, education,
+                humanitarian aid, and environmental initiatives. Unlike
+                commercial enterprises, their primary objective is not profit
+                generation but creating long-term positive impact.
               </p>
 
               <p className="text-slate-700 leading-relaxed">
@@ -100,10 +98,10 @@ const DataErasureForNonProfits: React.FC = () => {
               <p className="text-slate-700 leading-relaxed">
                 In addition to privacy laws, governance frameworks encourage
                 charities and NGOs to establish strong policies around data
-                integrity, retention, and destruction. Organizations with
-                higher annual receipts are often expected to define structured
-                document retention and destruction practices for both physical
-                and electronic records.
+                integrity, retention, and destruction. Organizations with higher
+                annual receipts are often expected to define structured document
+                retention and destruction practices for both physical and
+                electronic records.
               </p>
 
               <p className="text-slate-700 leading-relaxed">
@@ -128,8 +126,8 @@ const DataErasureForNonProfits: React.FC = () => {
               </p>
 
               <p className="text-slate-700 leading-relaxed">
-                Unlike commercial businesses where customers may return based
-                on convenience or pricing, non-profits rely heavily on long-term
+                Unlike commercial businesses where customers may return based on
+                convenience or pricing, non-profits rely heavily on long-term
                 trust and goodwill. A single data breach involving donor or
                 beneficiary information can severely damage credibility,
                 discourage future donations, and negatively impact funding.
@@ -137,8 +135,8 @@ const DataErasureForNonProfits: React.FC = () => {
 
               <p className="text-slate-700 leading-relaxed">
                 Secure data erasure plays a critical role in breach prevention
-                by ensuring that obsolete, unused, or end-of-life devices do
-                not become sources of data leakage.
+                by ensuring that obsolete, unused, or end-of-life devices do not
+                become sources of data leakage.
               </p>
             </div>
 
@@ -159,8 +157,8 @@ const DataErasureForNonProfits: React.FC = () => {
               <ul className="space-y-4 text-slate-700">
                 <li>
                   <strong>Lifecycle-Based Erasure:</strong> Ensure data is
-                  securely erased when devices are retired, repurposed,
-                  donated, or recycled.
+                  securely erased when devices are retired, repurposed, donated,
+                  or recycled.
                 </li>
 
                 <li>
@@ -263,7 +261,7 @@ const DataErasureForNonProfits: React.FC = () => {
             </p>
 
             <Link
-              to="/#products"
+              to="/all-products"
               className="inline-flex items-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition shadow-lg"
             >
               <HoverIcon>
@@ -281,40 +279,11 @@ const DataErasureForNonProfits: React.FC = () => {
           </div>
         </Reveal>
       </section>
-
-      {/* Engagement */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          <EngagementSection blogId="data-erasure-non-profit-organizations" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="data-erasure-non-profit-organizations" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm
-            blogId="data-erasure-non-profit-organizations"
-            blogTitle="Data Erasure Solutions for Non-Profit Organizations"
-          />
-        </Reveal>
-      </section>
-    
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          <FAQSection faqs={blogFaqs["data-erasure-for-non-profits"]} />
-          <EngagementSection blogId="data-erasure-for-non-profits" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="data-erasure-for-non-profits" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="data-erasure-for-non-profits" 
-            blogTitle="Data Erasure For Non Profits" 
-          />
-        </Reveal>
-      </section>
-</div>
+      <BlogFooterStandard 
+        blogId="data-erasure-non-profit-organizations" 
+        blogTitle="D-Secure Blog" 
+      />
+    </div>
   );
 };
 

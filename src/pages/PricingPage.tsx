@@ -350,7 +350,7 @@ function PricingPageContent() {
                 <span>
                   <img
                     src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1759503993/ec8v6wcjdpwgpplobi3w.svg"
-                    alt=""
+                    alt="D-Secure Erase Logo"
                     className="w-10 h-10 inline-block -mt-1"
                   />
                 </span>{" "}

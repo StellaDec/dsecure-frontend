@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import { Link } from "react-router-dom";
 import Reveal from "@/components/Reveal";
 import { blogPosts } from "@/data/blogPosts";
@@ -323,24 +324,60 @@ const BlogPage: React.FC = () => {
             </div>
           </Reveal>
 
-          {/* Filter Tabs */}
+          {/* Search and Filter Section */}
           <Reveal>
-            <div className="flex flex-wrap justify-center gap-2 mb-10">
-              {filterTabs.map((tab) => (
-                <button
-                  key={tab.label}
-                  onClick={() => setActiveFilter(tab.label)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    activeFilter === tab.label
-                      ? "bg-emerald-600 text-white shadow-lg shadow-emerald-200"
-                      : "bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-10">
+              {/* Search Bar */}
+              <div className="relative w-full md:w-96 group">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <svg className="w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search articles, topics, or authors..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="block w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all shadow-sm hover:shadow-md"
+                />
+              </div>
+
+              {/* Filter Tabs */}
+              <div className="flex flex-wrap justify-center md:justify-end gap-2">
+                {filterTabs.map((tab) => (
+                  <button
+                    key={tab.label}
+                    onClick={() => setActiveFilter(tab.label)}
+                    className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
+                      activeFilter === tab.label
+                        ? "bg-emerald-600 text-white shadow-lg shadow-emerald-200"
+                        : "bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </Reveal>
+
+          {/* Search Results Summary */}
+          {searchQuery && (
+            <Reveal>
+              <div className="mb-8 text-center md:text-left">
+                <p className="text-slate-600">
+                  Showing <span className="font-bold text-emerald-800">{filteredBlogs.length}</span> results for "<span className="italic">{searchQuery}</span>"
+                  <button 
+                    onClick={() => setSearchQuery("")}
+                    className="ml-4 text-emerald-600 text-sm font-semibold hover:underline"
+                  >
+                    Clear Search
+                  </button>
+                </p>
+              </div>
+            </Reveal>
+          )}
 
           {/* Blog Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -451,10 +488,12 @@ const BlogPage: React.FC = () => {
           </div>
         </Reveal>
       </section>
-
+      <BlogFooterStandard 
+        blogId="default-blog-id" 
+        blogTitle="Technical Guides" 
+      />
     </div>
   );
-
 };
 
 export default BlogPage;

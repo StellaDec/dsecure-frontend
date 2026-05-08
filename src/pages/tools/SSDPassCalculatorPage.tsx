@@ -11,6 +11,8 @@ import {
   RefreshCw
 } from "lucide-react";
 import SEOHead from "../../components/SEOHead";
+import { getSEOForPage } from "../../utils/seo";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { useFormSubmission } from "../../hooks/useFormSubmission";
 
 interface CalculationResults {
@@ -117,10 +119,33 @@ const SSDPassCalculatorPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       <SEOHead 
-        title="SSD & HDD Erasure Pass Calculator | D-Secure"
-        description="Calculate the required number of overwrite passes and estimated time for NIST 800-88 and DoD compliant data erasure."
-        canonicalUrl="https://dsecuretech.com/tools/ssd-pass-calculator"
+        seo={getSEOForPage("ssd-pass-calculator", {
+          structuredData: [
+            {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "SSD & HDD Erasure Pass Calculator",
+              "description": "Free tool to calculate the required overwrite passes and estimated erasure time for NIST 800-88 and DoD compliant data sanitization.",
+              "applicationCategory": "SecurityApplication",
+              "operatingSystem": "Web Browser",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+              "provider": { "@type": "Organization", "name": "D-Secure" },
+              "url": "https://dsecuretech.com/tools/ssd-pass-calculator",
+            }
+          ]
+        })}
       />
+
+      {/* Breadcrumbs — Google navigation signal */}
+      <div className="container mx-auto px-4 max-w-7xl pt-6">
+        <Breadcrumbs
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Free Tools", path: "/tools/ssd-pass-calculator" },
+            { name: "SSD Erasure Pass Calculator", path: "/tools/ssd-pass-calculator", isCurrentPage: true },
+          ]}
+        />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-slate-900 pt-32 pb-20 px-6 relative overflow-hidden">
@@ -287,8 +312,8 @@ const SSDPassCalculatorPage: React.FC = () => {
                     <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
                       <ShieldCheck className="w-6 h-6" />
                     </div>
-                    <p className="text-emerald-800 font-bold">Strategy Sent!</p>
-                    <p className="text-xs text-slate-500 mt-2">The customized compliance guide is on its way to your inbox.</p>
+                    <p className="text-emerald-800 font-bold">Estimation Sent!</p>
+                    <p className="text-xs text-slate-500 mt-2">The customized compliance guide and pass estimation is in your inbox.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">

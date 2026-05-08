@@ -1,13 +1,9 @@
 import React from "react";
-import EnquiryForm from "./EnquiryForm";
-import CommentSection from "./CommentSection";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage, getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const SecureHDDDisposalBlog: React.FC = () => {
     return (
@@ -16,7 +12,7 @@ const SecureHDDDisposalBlog: React.FC = () => {
         title: "Secure HDD Disposal Guide",
         excerpt: "Complete guide to secure disposal of traditional hard disk drives.",
         slug: "secure-hdd-disposal",
-        author: "Nitish",
+        author: "D-Secure Editorial Team",
         publishDate: "June 25, 2025",
         keywords: "HDD, disk disposal, magnetic media",
         category: "Guide",
@@ -31,7 +27,7 @@ const SecureHDDDisposalBlog: React.FC = () => {
                             Data Erasure
                         </span>
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-                            Complete Guide to Secure Hard Drive Disposal
+                            <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Complete Guide to Secure Hard Drive Disposal</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                             Master the essential steps for securely disposing of HDDs using proven methods like data erasure and physical destruction to protect sensitive information.
@@ -51,9 +47,12 @@ const SecureHDDDisposalBlog: React.FC = () => {
                                 Hard Disk Drives (HDDs) require secure disposal when they reach end-of-life or are no longer needed. Whether due to <strong className="text-emerald-800">device upgrades, project completion, employee transitions, or organizational restructuring</strong>, HDDs must be disposed of properly to prevent data breaches.
                             </p>
                             <p className="text-slate-700 leading-loose text-lg">
-                                Without secure disposal, data stored on these drives — including Personally Identifiable Information (PII), financial records, Protected Health Information (PHI), and other sensitive information — remains highly vulnerable to retrieval and unauthorized access. Data breaches can lead to identity theft, extortion attempts, intellectual property loss, and severe regulatory penalties.
+                                Without secure disposal, data stored on these drives — including Personally Identifiable Information (PII), financial records, Protected Health Information (PHI), and other sensitive information — remains highly vulnerable to retrieval and unauthorized access. Tools like <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> ensure that every sector of the HDD is sanitized beyond recovery.
                             </p>
                         </div>
+
+                        {/* Expert Solution Section Integration */}
+                        
 
                         {/* Key Warning */}
                         <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
@@ -73,7 +72,7 @@ const SecureHDDDisposalBlog: React.FC = () => {
                             Understanding HDD Disposal Methods
                         </h2>
                         <p className="text-slate-700 leading-loose text-lg">
-                            Hard disk drive disposal can be accomplished through various media sanitization methods including data erasure (overwriting), degaussing, shredding, and disintegration. Organizations must carefully select the appropriate destruction method based on several key factors:
+                            Hard disk drive disposal can be accomplished through various media sanitization methods including data erasure (overwriting), degaussing, shredding, and disintegration. Organizations must carefully select the appropriate destruction method based on several key factors. For active environments, using <Link to="/products/file-eraser" className="text-emerald-600 hover:underline font-medium">File Eraser</Link> can target specific sensitive files before disposal.
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-6 mt-8">
@@ -111,35 +110,35 @@ const SecureHDDDisposalBlog: React.FC = () => {
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
                                 <h3 className="font-bold text-slate-900 text-xl mb-3">1. Data Classification Assessment</h3>
                                 <p className="text-slate-700 text-lg leading-loose">
-                                    Is your organization storing data on hard drives based on proper data classification? Classify data by sensitivity level (confidential, internal, public) and select appropriate storage media accordingly. Business-critical data, financial information, PHI, PII, and credit card data can be securely wiped using certified erasure software that deploys methods like NIST-Clear to overwrite information beyond recovery.
+                                    Is your organization storing data on hard drives based on proper data classification? Classify data by sensitivity level (confidential, internal, public) and select appropriate storage media accordingly. Business-critical data, financial information, PHI, PII, and credit card data can be securely wiped using certified erasure software like <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> that deploys methods like NIST-Clear to overwrite information beyond recovery.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
                                 <h3 className="font-bold text-slate-900 text-xl mb-3">2. Complete Storage Inventory</h3>
                                 <p className="text-slate-700 text-lg leading-loose">
-                                    Does your organization maintain a repository of HDDs, including mechanical drives and hybrid drives? Maintain an updated inventory of all storage devices — HDDs, SSDs, USBs — and select the appropriate data destruction method based on storage technology. Note that SSDs cannot be degaussed but can be effectively erased using data erasure software.
+                                    Does your organization maintain a repository of HDDs, including mechanical drives and hybrid drives? Maintain an updated inventory of all storage devices — HDDs, SSDs, USBs — and select the appropriate data destruction method based on storage technology. For virtualized environments, VM Eraser is essential for clearing virtual disks.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
                                 <h3 className="font-bold text-slate-900 text-xl mb-3">3. Environmental Impact Consideration</h3>
                                 <p className="text-slate-700 text-lg leading-loose">
-                                    Does your disposal technique harm the environment? Physical sanitization methods like degaussing, incineration, disintegrating, and shredding are environmentally harmful and render storage media unusable. Physical destruction should only be used when drives have bad sectors, are inaccessible, or contain national security data requiring NSA-compliant destruction.
+                                    Does your disposal technique harm the environment? Physical sanitization methods like degaussing, incineration, disintegrating, and shredding are environmentally harmful and render storage media unusable. Using software-based erasure allows for secure reuse and supports ESG goals.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
                                 <h3 className="font-bold text-slate-900 text-xl mb-3">4. Certified Tool Verification</h3>
                                 <p className="text-slate-700 text-lg leading-loose">
-                                    Is HDD disposal performed using a tested and certified data-wiping tool? Using certified tools provides assurance of erasure efficacy and builds trust among customers and stakeholders. Certification from reputable bodies like NIST validates sanitization performance claims. D-Secure Drive Eraser is NIST-tested and certified for wiping HDDs, SSDs, servers, laptops, and PCs.
+                                    Is HDD disposal performed using a tested and certified data-wiping tool? Using certified tools provides assurance of erasure efficacy. D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> is NIST-tested and certified for wiping HDDs, SSDs, servers, laptops, and PCs.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
                                 <h3 className="font-bold text-slate-900 text-xl mb-3">5. Hidden Disk Zone Coverage</h3>
                                 <p className="text-slate-700 text-lg leading-loose">
-                                    Can your tool erase data from hidden disk zones? User-inaccessible areas like Host Protected Area (HPA), Disk Configuration Overlay (DCO), Accessible Max Address (AMA), and Disk Firmware Area (DFA) can contain residual data. Your sanitization method must remove data from these hidden zones to ensure complete erasure.
+                                    Can your tool erase data from hidden disk zones? User-inaccessible areas like Host Protected Area (HPA) and Disk Configuration Overlay (DCO) can contain residual data. D-Secure solutions effectively remove data from these hidden zones.
                                 </p>
                             </div>
 
@@ -151,23 +150,9 @@ const SecureHDDDisposalBlog: React.FC = () => {
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">7. In-Place Sanitization Capability</h3>
+                                <h3 className="font-bold text-slate-900 text-xl mb-3">7. Audit Documentation</h3>
                                 <p className="text-slate-700 text-lg leading-loose">
-                                    Does your disposal method wipe data directly, or must HDDs be removed from systems? Some methods require drive dismantling, while data erasure can directly sanitize storage media with drives still installed — particularly beneficial for embedded storage configurations.
-                                </p>
-                            </div>
-
-                            <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">8. Audit Documentation</h3>
-                                <p className="text-slate-700 text-lg leading-loose">
-                                    Can you document proof of HDD data destruction for audits? Organizations governed by data protection regulations require verifiable evidence of permanent data removal. D-Secure Drive Eraser generates automatic, detailed erasure reports with tamper-proof certificates that serve as compliance audit documentation.
-                                </p>
-                            </div>
-
-                            <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">9. Erasure Verification Process</h3>
-                                <p className="text-slate-700 text-lg leading-loose">
-                                    Is there a process to verify all data has been removed? Physical destruction methods cannot be verified for efficacy. However, after using data erasure tools, verification software can confirm whether any data traces remain on the drive post-erasure, providing additional assurance of complete sanitization.
+                                    Can you document proof of HDD data destruction for audits? Organizations governed by data protection regulations require verifiable evidence. D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> generates automatic, detailed erasure reports with tamper-proof certificates that serve as compliance audit documentation.
                                 </p>
                             </div>
                         </div>
@@ -179,7 +164,7 @@ const SecureHDDDisposalBlog: React.FC = () => {
                     <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
                         <h2 className="text-3xl font-bold mb-6">D-Secure: Certified HDD Disposal Solution</h2>
                         <p className="leading-loose text-lg mb-6">
-                            D-Secure Drive Eraser provides NIST-certified data erasure capabilities that meet the most stringent security requirements. Our solution enables secure HDD disposal while supporting device reuse and environmental sustainability.
+                            D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> provides NIST-certified data erasure capabilities that meet the most stringent security requirements. Our solution enables secure HDD disposal while supporting device reuse and environmental sustainability.
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -210,7 +195,7 @@ const SecureHDDDisposalBlog: React.FC = () => {
                         </div>
 
                         <Link
-                            to="/#products"
+                            to="/all-products"
                             className="inline-flex items-center bg-white text-emerald-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg"
                         >
                             Explore D-Secure Solutions
@@ -219,50 +204,10 @@ const SecureHDDDisposalBlog: React.FC = () => {
                 </Reveal>
             </section>
 
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          <FAQSection faqs={blogFaqs["secure-h-d-d-disposal"]} />
-          <EngagementSection blogId="secure-h-d-d-disposal" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="secure-h-d-d-disposal" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="secure-h-d-d-disposal" 
-            blogTitle="Secure HDD Disposal" 
-          />
-        </Reveal>
-      </section>
-
-            {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
-                <Reveal>
-                    <div className="max-w-5xl mx-auto px-4">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ensure Secure HDD Disposal with D-Secure
-                        </h2>
-                        <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                            Protect your organization from data breaches with certified erasure solutions that generate audit-ready documentation and support sustainable device lifecycle management.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                to="/contact"
-                                className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
-                            >
-                                Request Free Demo
-                            </Link>
-                            <Link
-                                to="/#products"
-                                className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
-                            >
-                                View Products
-                            </Link>
-                        </div>
-                    </div>
-                </Reveal>
-            </section>
+      <BlogFooterStandard
+        blogId="secure-hdd-disposal"
+        blogTitle="Secure HDD Disposal" category="Guide" tag="Technical"
+      />
         </div>
     );
 };

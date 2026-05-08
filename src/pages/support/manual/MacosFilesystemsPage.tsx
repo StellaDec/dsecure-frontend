@@ -8,12 +8,12 @@ const MacosFilesystemsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
+      {/* <SEOHead
         seo={getSEOForPage("support-manual-macos-filesystems", {
           title: "Macos Filesystems | D-Secure Manual",
-          canonicalUrl: "",
+          canonicalUrl: "/support/manual/macos-filesystems",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         <section className="bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50 py-16 md:py-24">

@@ -4,11 +4,7 @@ import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ShieldIcon, CheckIcon, StarIcon, ArrowRightIcon, HoverIcon, GlobeIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const ShadowDataRisksBlog: React.FC = () => {
   return (
@@ -207,7 +203,7 @@ const ShadowDataRisksBlog: React.FC = () => {
                     </div>
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-4 rounded-xl border border-amber-100">
                         <ShieldIcon className="w-6 h-6 text-amber-600 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">Secure Erasure</h4>
+                        <h4 className="font-bold text-slate-900 text-sm mb-1"><Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link></h4>
                         <p className="text-xs text-slate-600">Eliminate data at end-of-life</p>
                     </div>
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-4 rounded-xl border border-amber-100">
@@ -219,46 +215,12 @@ const ShadowDataRisksBlog: React.FC = () => {
             </div>
         </Reveal>
 
-        {/* CTA */}
-        <Reveal>
-             <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-red-600 rounded-xl shadow-lg p-8 mt-8 text-white">
-                <h2 className="text-2xl font-bold mb-4">Eliminate Shadow Data Risk</h2>
-                <p className="leading-relaxed mb-6">
-                    Don't let unknown data become your next breach. Get visibility and control over your entire data lifecycle.
-                </p>
-                <Link
-                    to="/contact"
-                    className="inline-flex items-center bg-white text-amber-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
-                >
-                    <HoverIcon>
-                        {(filled) => <ShieldIcon className="w-5 h-5 mr-2" filled={filled} />}
-                    </HoverIcon>
-                    Request Data Discovery Assessment
-                    <HoverIcon>
-                        {(filled) => <ArrowRightIcon className="w-5 h-5 ml-2" filled={filled} />}
-                    </HoverIcon>
-                </Link>
-            </div>
-        </Reveal>
       </section>
 
-      {/* Engagement Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["shadow-data-risks"]} />
-      <EngagementSection blogId="shadow-data-risks" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="shadow-data-risks" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="shadow-data-risks" 
-            blogTitle="Shadow Data Risks" 
-          />
-        </Reveal>
-      </section>
+      <BlogFooterStandard 
+        blogId="shadow-data-risks" 
+        blogTitle="Shadow Data: Uncover & Erase Hidden Risks" 
+      />
     </div>
   );
 };

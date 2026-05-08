@@ -30,6 +30,7 @@ interface NavItem {
 }
 
 const navigationTree: NavItem[] = [
+  // Saare "File Eraser" references ko internal product page se link kiya gaya hai SEO ke liye.
   {
     id: "about",
     number: "1",
@@ -37,19 +38,19 @@ const navigationTree: NavItem[] = [
     content: (
       <>
         <p className="text-slate-700 leading-relaxed mb-4">
-          <strong>D-Secure File Eraser</strong> is a complete solution to maintain your computer privacy by erasing unwanted information from the computer. Erased data is beyond recovery. <strong>D-Secure File Eraser</strong> can be used to erase files/folders, Unused space, and System traces.
+          <strong><Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link></strong> is a complete solution to maintain your computer privacy by erasing unwanted information from the computer. Erased data is beyond recovery. <strong><Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link></strong> can be used to erase files/folders, Unused space, and System traces.
         </p>
         <p className="text-slate-700 leading-relaxed mb-4">
-          <strong>D-Secure File Eraser</strong> erases files & folders completely from the hard drive. You can select multiple files/folders at a time for erasure. Once files/folders from the drive are erased using <strong>D-Secure File Eraser</strong> data can't be recovered back. The software allows you to generate and save the reports of the completed erasure process.
+          <strong><Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link></strong> erases files & folders completely from the hard drive. You can select multiple files/folders at a time for erasure. Once files/folders from the drive are erased using <strong><Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link></strong> data can't be recovered back. The software allows you to generate and save the reports of the completed erasure process.
         </p>
         <p className="text-slate-700 leading-relaxed mb-4">
           In addition, it can erase unused space completely such that all the traces of previously stored data are completely removed. When you delete data from a hard drive, the data content is not deleted entirely, instead the space occupied by the data is marked as unused space and the new data is written on that unused space.
         </p>
         <p className="text-slate-700 leading-relaxed mb-4">
-          <strong>D-Secure File Eraser</strong> also erases all the system traces. Operating systems store records of all activities such as browsing Internet and opening documents constantly.
+          <strong><Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link></strong> also erases all the system traces. Operating systems store records of all activities such as browsing Internet and opening documents constantly.
         </p>
         <p className="text-slate-700 leading-relaxed mb-6">
-          <strong>D-Secure File Eraser</strong> has a set of 20+ different erasure algorithms, that are accepted globally, to ensure permanent data deletion. You can choose any of the algorithms for erasure process. The software is menu driven, simple to use with an intuitive interface, and requires no prior technical skill.
+          <strong><Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link></strong> has a set of 20+ different erasure algorithms, that are accepted globally, to ensure permanent data deletion. You can choose any of the algorithms for erasure process. The software is menu driven, simple to use with an intuitive interface, and requires no prior technical skill.
         </p>
 
         <h3 className="text-lg font-semibold text-slate-800 mb-3">Key Features:</h3>
@@ -80,13 +81,13 @@ const navigationTree: NavItem[] = [
     content: (
       <>
         <p className="text-slate-700 leading-relaxed mb-6">
-          This user guide contains steps to assist you in various functions of <strong>D-Secure File Eraser</strong>. Each function is explained in detail, in the corresponding sections. This guide covers the following major topics:
+          This user guide contains steps to assist you in various functions of <strong><Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link></strong>. Each function is explained in detail, in the corresponding sections. This guide covers the following major topics:
         </p>
         <ol className="list-decimal list-inside space-y-2 text-slate-700 ml-4 mb-6">
-          <li><strong>About D-Secure File Eraser</strong></li>
+          <li><strong>About <Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link></strong></li>
           <li><strong>About the Guide</strong></li>
           <li><strong>Getting Started</strong></li>
-          <li><strong>Working with D-Secure File Eraser</strong></li>
+          <li><strong>Working with <Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link></strong></li>
           <li><strong>Frequently Asked Questions (FAQs)</strong></li>
           <li><strong>About D-Secure</strong></li>
         </ol>
@@ -117,7 +118,7 @@ const navigationTree: NavItem[] = [
         content: (
           <>
             <p className="text-slate-700 leading-relaxed mb-6">
-              Follow these comprehensive steps to successfully install D-Secure File Eraser on your system:
+              Follow these comprehensive steps to successfully install <Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link> on your system:
             </p>
             <div className="space-y-6">
               <div>
@@ -125,7 +126,7 @@ const navigationTree: NavItem[] = [
               </div>
 
               <div>
-                <p className="text-slate-700 leading-relaxed"><strong>2. Run the installer with administrator privileges:</strong> Once the download is complete, navigate to your Downloads folder and locate the D-Secure File Eraser installer file. Right-click on the installer executable and select "Run as Administrator" to ensure the installation process has the necessary permissions to install system-level components. This step is crucial for proper software integration with your operating system.</p>
+                <p className="text-slate-700 leading-relaxed"><strong>2. Run the installer with administrator privileges:</strong> Once the download is complete, navigate to your Downloads folder and locate the <Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link> installer file. Right-click on the installer executable and select "Run as Administrator" to ensure the installation process has the necessary permissions to install system-level components. This step is crucial for proper software integration with your operating system.</p>
               </div>
 
               <div>
@@ -133,7 +134,7 @@ const navigationTree: NavItem[] = [
               </div>
 
               <div>
-                <p className="text-slate-700 leading-relaxed"><strong>4. Choose installation directory:</strong> The installer will prompt you to select a destination folder where D-Secure File Eraser will be installed. You can either accept the default installation path (typically C:\Program Files\D-Secure File Eraser on Windows) or click "Browse" to choose a custom location on your hard drive. Ensure the selected drive has sufficient free space for the installation, typically requiring at least 100-200 MB of available disk space.</p>
+                <p className="text-slate-700 leading-relaxed"><strong>4. Choose installation directory:</strong> The installer will prompt you to select a destination folder where <Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link> will be installed. You can either accept the default installation path (typically C:\Program Files\<Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link> on Windows) or click "Browse" to choose a custom location on your hard drive. Ensure the selected drive has sufficient free space for the installation, typically requiring at least 100-200 MB of available disk space.</p>
               </div>
 
               <div>
@@ -146,56 +147,53 @@ const navigationTree: NavItem[] = [
       {
         id: "disk-access",
         number: "3.2",
-        title: "Assign Full Disk Access",
+        title: "Administrator Privileges",
         content: (
           <>
+            {/* Windows ke liye "Full Disk Access" ko "Administrator Privileges" mein convert kiya gaya hai */}
             <p className="text-slate-700 leading-relaxed mb-6">
-              To completely allow the software to scan and erase your data, you are required to Assign Full Disk Access.
+              To completely allow the software to scan and erase your data, you are required to provide Administrator Privileges on Windows.
             </p>
 
-            <h4 className="text-base font-semibold text-slate-800 mt-8 mb-4">Steps to Assign Full Disk Access for MacOS:</h4>
-            <p className="text-slate-600 text-sm mb-6 italic">Applicable for Macs having MacOS 15 Sequoia, MacOS 14 Sonoma and MacOS 13 Ventura.</p>
+            <h4 className="text-base font-semibold text-slate-800 mt-8 mb-4">Steps to Run as Administrator for Windows:</h4>
+            <p className="text-slate-600 text-sm mb-6 italic">Applicable for Windows 10, Windows 11 and Windows Server.</p>
 
             <div className="space-y-6">
               <div>
-                <p className="text-slate-700 mb-3"><strong>1.</strong> Click Open Full Disk Access button.</p>
+                <p className="text-slate-700 mb-3"><strong>1.</strong> Right-click on the '<Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link>' icon on your desktop or Start Menu.</p>
               </div>
 
               <div>
-                <p className="text-slate-700 mb-3"><strong>2.</strong> Full Disk Access window is displayed.</p>
+                <p className="text-slate-700 mb-3"><strong>2.</strong> Select 'Run as administrator' from the context menu.</p>
               </div>
 
               <div>
-                <p className="text-slate-700 mb-3"><strong>3.</strong> Enable the slider displayed against 'D-Secure File Eraser' and enter the administrator password when prompted.</p>
+                <p className="text-slate-700 mb-3"><strong>3.</strong> When the User Account Control (UAC) prompt appears, click 'Yes' to grant the necessary permissions.</p>
               </div>
 
               <div>
-                <p className="text-slate-700 mb-3"><strong>4.</strong> A dialog box appears on the screen with a message "D-SecureFileEraser will not have full disk access until it is quit". Click Quit & Reopen.</p>
+                <p className="text-slate-700 mb-3"><strong>4.</strong> The application will now have the required permissions to access and securely erase data from your disk.</p>
               </div>
             </div>
 
-            <h4 className="text-base font-semibold text-slate-800 mt-10 mb-4">Steps to Assign Full Disk Access For MacOS:</h4>
-            <p className="text-slate-600 text-sm mb-6 italic">Applicable for Macs having MacOS 12 Monterey, MacOS 11 Big Sur.</p>
+            <h4 className="text-base font-semibold text-slate-800 mt-10 mb-4">Setting Permanent Administrator Rights:</h4>
+            <p className="text-slate-600 text-sm mb-6 italic">To ensure the application always runs with correct permissions.</p>
 
             <div className="space-y-6">
               <div>
-                <p className="text-slate-700 mb-3"><strong>1.</strong> Click Open Full Disk Access button.</p>
+                <p className="text-slate-700 mb-3"><strong>1.</strong> Right-click the '<Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link>' shortcut and select 'Properties'.</p>
               </div>
 
               <div>
-                <p className="text-slate-700 mb-3"><strong>2.</strong> Security & Privacy window is displayed. Go to Privacy tab.</p>
+                <p className="text-slate-700 mb-3"><strong>2.</strong> Navigate to the 'Compatibility' tab.</p>
               </div>
 
               <div>
-                <p className="text-slate-700 mb-3"><strong>3.</strong> From the bottom, click lock icon and enter your administrator password.</p>
+                <p className="text-slate-700 mb-3"><strong>3.</strong> Check the box that says 'Run this program as an administrator'.</p>
               </div>
 
               <div>
-                <p className="text-slate-700 mb-3"><strong>4.</strong> From the given options on the left pane, select Full Disk Access and mark D-Secure File Eraser.</p>
-              </div>
-
-              <div>
-                <p className="text-slate-700 mb-3"><strong>5.</strong> A dialog box appears on the screen with a message "D-SecureFileEraser will not have full disk access until it is quit". Click Quit & Reopen.</p>
+                <p className="text-slate-700 mb-3"><strong>4.</strong> Click 'Apply' and then 'OK' to save the settings.</p>
               </div>
             </div>
           </>
@@ -258,7 +256,7 @@ const navigationTree: NavItem[] = [
         content: (
           <>
             <p className="text-slate-700 leading-relaxed mb-4">
-              To know more about D-Secure File Eraser, click <Link to="/products" className="text-blue-600 hover:underline">here</Link>.
+              To know more about <Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link>, click <Link to="/products" className="text-blue-600 hover:underline">here</Link>.
             </p>
             <p className="text-slate-700 leading-relaxed mb-4">
               To purchase the software online, click <Link to="/pricing-and-plan?product=file-eraser" className="text-blue-600 hover:underline">here</Link>.
@@ -491,7 +489,7 @@ const navigationTree: NavItem[] = [
         content: (
           <>
             <p className="text-slate-700 leading-relaxed mb-6">
-              D-Secure File Eraser allows you to securely erase files stored in your Google Drive cloud storage without needing to open your account manually. This feature ensures complete privacy by permanently removing cloud-stored data.
+              <Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link> allows you to securely erase files stored in your Google Drive cloud storage without needing to open your account manually. This feature ensures complete privacy by permanently removing cloud-stored data.
             </p>
             <div className="space-y-6">
               <div>
@@ -950,7 +948,7 @@ const navigationTree: NavItem[] = [
                 content: (
                   <>
                     <p className="text-slate-700 leading-relaxed mb-6">
-                      D-Secure File Eraser supports multiple visual themes to enhance user comfort and reduce eye strain during extended use. Choose from Light Mode, Dark Mode, or System Default settings.
+                      <Link to="/products/file-eraser" className="text-brand hover:underline">D-Secure File Eraser</Link> supports multiple visual themes to enhance user comfort and reduce eye strain during extended use. Choose from Light Mode, Dark Mode, or System Default settings.
                     </p>
                     <div className="space-y-6">
                       <div>
@@ -1392,7 +1390,7 @@ const CompleteDSecureManual: React.FC = () => {
           <main className="flex-1 min-w-0 bg-white rounded-xl shadow-sm border border-gray-200 p-8 lg:p-12">
             <div className="mb-12 pb-8 border-b border-gray-200">
               <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl mb-4">
-                D-Secure File Eraser
+              D-Secure File Eraser
               </h1>
               <p className="text-xl text-gray-500">
                 Complete User Guide & Documentation

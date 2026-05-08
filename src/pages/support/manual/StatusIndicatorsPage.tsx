@@ -8,12 +8,12 @@ const StatusIndicatorsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead 
+      {/* <SEOHead 
         seo={getSEOForPage("support-manual-status-indicators", { 
           title: "Status Indicators | D-Secure Manual", 
           canonicalUrl: "/support/manual/status-indicators" 
         })} 
-      />
+      /> */}
       
 
       <div className="min-h-screen bg-slate-50">

@@ -809,7 +809,7 @@ const ForensicImagingPage = memo(() => {
         </section>
 
 
-        <ProductInternalLinks currentProduct={PRODUCT_LINKS.FORENSIC} />
+        <ProductInternalLinks currentProduct="forensic-imaging" />
 
         {/* ================= FAQ SECTION ================= */}
         <section id="faq" className="py-24 lg:py-32 bg-slate-50">

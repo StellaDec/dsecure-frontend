@@ -57,20 +57,20 @@ const KnowledgeBasePage: React.FC = memo(() => {
       category: "device-guides",
       difficulty: "Intermediate",
       readTime: "8 min read",
-      url: "/support/wipe-guide",
+      url: "/support/secure-erase-hddssd",
       icon: "💾",
     },
-    // {
-    //   id: 3,
-    //   title: "How to Wipe SAS Drives Permanently?",
-    //   description:
-    //     "Enterprise-grade SAS drive erasure procedures for data centers and high-security environments.",
-    //   category: "enterprise",
-    //   difficulty: "Advanced",
-    //   readTime: "12 min read",
-    //   url: "/support/sas-wipe-guide",
-    //   icon: "🏢",
-    // },
+    {
+      id: 3,
+      title: "How to Wipe SAS Drives Permanently?",
+      description:
+        "Enterprise-grade SAS drive erasure procedures for data centers and high-security environments.",
+      category: "enterprise",
+      difficulty: "Advanced",
+      readTime: "12 min read",
+      url: "/guides/wipe-sas-drive",
+      icon: "🏢",
+    },
     {
       id: 4,
       title: "How can I wipe 12 board Mac Machines?",
@@ -79,7 +79,7 @@ const KnowledgeBasePage: React.FC = memo(() => {
       category: "device-guides",
       difficulty: "Intermediate",
       readTime: "10 min read",
-      url: "/support/mac-wipe-guide",
+      url: "/support/mac-eraser-guide",
       icon: "🍎",
     },
     {
@@ -90,7 +90,7 @@ const KnowledgeBasePage: React.FC = memo(() => {
       category: "device-guides",
       difficulty: "Intermediate",
       readTime: "7 min read",
-      url: "/support/m1-mac-wipe-guide",
+      url: "/guides/wipe-mac-m1",
       icon: "⚡",
     },
     {
@@ -135,6 +135,28 @@ const KnowledgeBasePage: React.FC = memo(() => {
       readTime: "8 min read",
       url: "/support/file-eraser-guide",
       icon: "📁",
+    },
+    {
+      id: 10,
+      title: "How to Wipe Data and Retain your OS?",
+      description:
+        "Learn how to securely sanitize your storage while keeping your operating system and essential applications intact.",
+      category: "getting-started",
+      difficulty: "Intermediate",
+      readTime: "7 min read",
+      url: "/support/retain-os-guide",
+      icon: "🖥️",
+    },
+    {
+      id: 11,
+      title: "D-Secure Diagnostic Manual",
+      description:
+        "Comprehensive guide for performing system diagnostics and hardware health checks before data erasure.",
+      category: "troubleshooting",
+      difficulty: "Advanced",
+      readTime: "20 min read",
+      url: "/support/manual/diagnostic-manual",
+      icon: "🩺",
     },
     // {
     //   id: 10,
@@ -343,10 +365,10 @@ const KnowledgeBasePage: React.FC = memo(() => {
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredArticles.map((article, index) => (
-                  <Reveal key={article.id} delayMs={index * 100}>
+                  <Reveal key={article.id} delayMs={index * 100} className="h-full flex flex-col">
                     <Link
                       to={article.url}
-                      className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-lg transition-all duration-300 block group"
+                      className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-lg transition-all duration-300 flex flex-col h-full group flex-1"
                     >
                       <div className="flex items-start gap-4 mb-4">
                         <div className="text-3xl">{article.icon}</div>
@@ -366,7 +388,7 @@ const KnowledgeBasePage: React.FC = memo(() => {
                           </h3>
                         </div>
                       </div>
-                      <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                      <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
                         {article.description}
                       </p>
                       <div className="flex items-center text-emerald-800 font-medium text-sm group-hover:text-emerald-700 transition-colors">

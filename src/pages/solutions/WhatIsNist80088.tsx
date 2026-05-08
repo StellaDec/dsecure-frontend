@@ -45,7 +45,7 @@ export default function WhatIsNist80088() {
               <div className="bg-white rounded-[2.5rem] p-10 md:p-16 shadow-xl border border-slate-100 prose prose-slate prose-lg max-w-none">
                 <h2 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">Understanding the Standard</h2>
                 <p className="text-lg text-slate-700 mb-8 leading-relaxed">
-                  Published by the National Institute of Standards and Technology, **NIST Special Publication 800-88 Rev. 1** is the industry-standard guideline for the sanitization of media. It provides a formal definition of how organizations should destroy data to ensure it is unrecoverable even through laboratory techniques.
+                  Published by the National Institute of Standards and Technology, **NIST Special Publication 800-88 Rev. 1** is the industry-standard guideline for the sanitization of media. It provides a formal definition of how organizations should destroy data to ensure it is unrecoverable even through laboratory techniques. You can view our full <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline">NIST 800-88 compliance breakdown</Link> here.
                 </p>
 
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">The Three Tiers of Sanitization</h3>

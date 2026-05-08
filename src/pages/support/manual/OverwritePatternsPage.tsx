@@ -110,7 +110,7 @@ const OverwritePatternsPage: React.FC = memo(() => {
           id: 31,
           title: "NIST SP 800-88: Clear, Purge & Destroy",
           description: "Modern guidelines for media sanitization",
-          url: "/support/manual/nist-800-88",
+          url: "/compliance/nist-800-88",
           pageCount: 2,
         },
         {
@@ -251,12 +251,12 @@ const OverwritePatternsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
+      {/* <SEOHead
         seo={getSEOForPage("support-manual-overwrite-patterns", {
           title: "Overwrite Patterns | D-Secure Manual",
           canonicalUrl: "/support/manual/overwrite-patterns",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}
@@ -851,7 +851,7 @@ const OverwritePatternsPage: React.FC = memo(() => {
                   title: "NIST Guidelines",
                   description: "Modern SP 800-88 standards",
                   icon: "📋",
-                  url: "/support/manual/nist-800-88",
+                  url: "/compliance/nist-800-88",
                   color: "bg-green-500",
                 },
                 {

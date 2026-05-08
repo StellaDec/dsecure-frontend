@@ -8,12 +8,12 @@ const MacosCryptoErasurePage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
+      {/* <SEOHead
         seo={getSEOForPage("support-manual-macos-crypto-erasure", {
           title: "Macos Crypto Erasure | D-Secure Manual",
-          canonicalUrl: "",
+          canonicalUrl: "/support/manual/macos-crypto-erasure",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         <section className="bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50 py-16 md:py-24">

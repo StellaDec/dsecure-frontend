@@ -409,11 +409,8 @@ async function prerender() {
       appHtml = appHtml.replace(/opacity-0'/g, "opacity-100'");
 
       
-      // Verification log — har 50th route + homepage par dikhao
-      if (successCount % 50 === 0 || url === '/') {
-        const logTitle = seoTitle || '(no title)';
-        console.log(`✅ [SEO] ${url} → ${logTitle}`);
-      }
+      const logTitle = seoTitle || '(no title)';
+      console.log(`✅ [SEO] ${url} → ${logTitle}`);
       
       successCount++;
     } catch (err) {

@@ -4,11 +4,7 @@ import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ShieldIcon, CheckIcon, StarIcon, ArrowRightIcon, HoverIcon, MobileIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const MobileErasureGuideBlog: React.FC = () => {
   return (
@@ -76,7 +72,7 @@ const MobileErasureGuideBlog: React.FC = () => {
                             </div>
                             <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mt-3">
                                 <p className="text-sm text-green-800">
-                                    ✅ <strong>Security Note:</strong> iOS uses hardware-based encryption. Erasing the encryption key makes all data permanently unrecoverable—equivalent to NIST 800-88 Purge level.
+                                    ✅ <strong>Security Note:</strong> iOS uses hardware-based encryption. Erasing the encryption key makes all data permanently unrecoverable—equivalent to <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> Purge level.
                                 </p>
                             </div>
                         </div>
@@ -248,23 +244,10 @@ const MobileErasureGuideBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* Engagement Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["mobile-erasure-guide"]} />
-      <EngagementSection blogId="mobile-erasure-guide" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="mobile-erasure-guide" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="mobile-erasure-guide" 
-            blogTitle="Mobile Device Erasure Guide" 
-          />
-        </Reveal>
-      </section>
+      <BlogFooterStandard 
+        blogId="mobile-erasure-guide" 
+        blogTitle="Secure Mobile Device Data Erasure: A Complete Guide" 
+      />
     </div>
   );
 };

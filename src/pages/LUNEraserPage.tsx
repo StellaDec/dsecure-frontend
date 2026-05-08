@@ -453,7 +453,7 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
         </section>
 
 
-        <ProductInternalLinks currentProduct={PRODUCT_LINKS.LUN_ERASER} />
+        <ProductInternalLinks currentProduct="lun-eraser" />
 
         <section id="contact" className="py-24 bg-white border-t relative overflow-hidden isolate">
           <div className="container mx-auto px-4 max-w-7xl">

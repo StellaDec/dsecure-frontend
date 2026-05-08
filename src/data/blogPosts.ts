@@ -12,9 +12,36 @@ export interface BlogPost {
   publishDate: string;
   author: string;
   readTime?: string; // Estimated reading time
+  faqs?: any[]; // FAQ data for SEO and display
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    id: "nist-800-88-media-sanitization-guide",
+    slug: "nist-800-88-media-sanitization-guide",
+    title: "NIST 800-88 Media Sanitization: What It Is and Why Your Organization Needs It",
+    excerpt: "Understand NIST SP 800-88 Rev. 1 — the gold standard for data sanitization. Learn how Clear, Purge, and Destroy protect your organization from residual data exposure.",
+    link: "/blog/nist-800-88-media-sanitization-guide",
+    tag: "Standards",
+    category: "Technical Guide",
+    keywords: "NIST 800-88, Data Sanitization, Compliance, Clear Purge Destroy, Drive Erasure, D-Secure",
+    publishDate: "May 08, 2026",
+    author: "Prashant Saini",
+    readTime: "8 min read"
+  },
+  {
+    id: "ieee-2883-2022-data-sanitization",
+    slug: "ieee-2883-2022-data-sanitization",
+    title: "IEEE 2883-2022 Data Sanitization: How D-Secure Ensures Full Compliance",
+    excerpt: "Learn how IEEE 2883-2022 defines data sanitization standards for HDDs, SSDs, NVMe, and mobile devices — and how D-Secure's erasure tools ensure full compliance for enterprises and ITADs in India.",
+    link: "/blog/ieee-2883-2022-data-sanitization",
+    tag: "Standards",
+    category: "Technical Guide",
+    keywords: "IEEE 2883-2022, Data Sanitization, NVMe Erasure, DPDP Compliance, ITAD India, Drive Eraser, Clear Purge Destruct",
+    publishDate: "May 08, 2026",
+    author: "Prashant Saini",
+    readTime: "9 min read"
+  },
   {
     id: "nist-800-88-compliance-india",
     slug: "nist-800-88-compliance-india",
@@ -25,8 +52,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Compliance",
     category: "Regulatory",
     keywords: "NIST 800-88 compliant data erasure software India, DPDP Act 2023 compliance India, secure data sanitization India, enterprise data erasure",
-    publishDate: "March 27, 2026",
-    author: "Nitesh Kushwaha"
+    publishDate: "January 19, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "overwrite-guide",
@@ -38,7 +65,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Data Erasure",
     category: "Data Erasure",
     keywords: "data overwriting standards, NIST 800-88 vs DoD 5220.22-M, secure wiping software, enterprise sanitization guide",
-    publishDate: "October 15, 2024",
+    publishDate: "February 17, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -51,8 +78,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Storage Security",
     category: "Storage Security",
     keywords: "how to securely wipe SSD, NVMe secure erase standard, cryptographic erasure vs overwriting, SSD data destruction guide",
-    publishDate: "October 22, 2024",
-    author: "Nitish"
+    publishDate: "March 11, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "erasure-vs-destruction",
@@ -64,7 +91,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Strategic Compliance",
     category: "Strategic Compliance",
     keywords: "physical destruction vs data erasure, IT asset disposition, ESG compliance",
-    publishDate: "November 5, 2024",
+    publishDate: "January 08, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -77,8 +104,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Security Awareness",
     category: "Security Awareness",
     keywords: "data deletion myths, formatting vs erasure, degaussing ssd",
-    publishDate: "November 12, 2024",
-    author: "Nitish"
+    publishDate: "March 28, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "data-sanitization-compliance",
@@ -90,8 +117,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Regulatory Frameworks",
     category: "Regulatory Frameworks",
     keywords: "GDPR compliance, HIPAA data destruction, ISO 27001, audit trail",
-    publishDate: "November 19, 2024",
-    author: "Nitish"
+    publishDate: "January 21, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "best-data-erasure-methods",
@@ -103,7 +130,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Core Erasure",
     category: "Data Erasure",
     keywords: "hdd erasure, ssd secure erase, mobile wiping methods",
-    publishDate: "December 03, 2024",
+    publishDate: "March 28, 2026",
     author: "Prashant Saini"
   },
   {
@@ -116,7 +143,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Best Practices",
     category: "Data Erasure",
     keywords: "data erasure checklist, secure disposal policy",
-    publishDate: "December 05, 2024",
+    publishDate: "February 01, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -129,8 +156,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Automation",
     category: "Tech Guide",
     keywords: "PXE erasure, automated disk wiping, IT asset management automation",
-    publishDate: "December 10, 2024",
-    author: "Nitish"
+    publishDate: "January 27, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "mobile-erasure-guide",
@@ -142,7 +169,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Mobile Security",
     category: "Mobile",
     keywords: "ipad erasure, android secure wipe, mobile diagnostics",
-    publishDate: "December 15, 2024",
+    publishDate: "March 05, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -155,8 +182,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Zero Trust",
     category: "Security Strategy",
     keywords: "zero trust architecture, hardware disposal security",
-    publishDate: "December 20, 2024",
-    author: "Nitish"
+    publishDate: "April 19, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "msp-data-erasure",
@@ -168,7 +195,7 @@ export const blogPosts: BlogPost[] = [
     tag: "MSP Growth",
     category: "Business",
     keywords: "managed service provider services, data erasure for MSPs",
-    publishDate: "December 22, 2024",
+    publishDate: "February 19, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -181,8 +208,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Finance",
     category: "Compliance",
     keywords: "SEC regulation S-P, financial data destruction",
-    publishDate: "December 28, 2024",
-    author: "D-Secure Legal"
+    publishDate: "April 30, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "itam-disposal-guide",
@@ -194,8 +221,8 @@ export const blogPosts: BlogPost[] = [
     tag: "ITAM",
     category: "Asset Management",
     keywords: "IT asset disposition, ITAM best practices",
-    publishDate: "November 19, 2025",
-    author: "D-Secure Strategy"
+    publishDate: "January 01, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "data-hoarding-risks",
@@ -207,8 +234,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Risk Mgmt",
     category: "Risk Management",
     keywords: "ROT data, defensible deletion, data hoarding risks",
-    publishDate: "December 8, 2025",
-    author: "D-Secure Research"
+    publishDate: "January 13, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "shadow-data-risks",
@@ -220,8 +247,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Dark Data",
     category: "Risk Management",
     keywords: "shadow IT, dark data discovery, file erasure",
-    publishDate: "August 8, 2025",
-    author: "D-Secure Labs"
+    publishDate: "March 02, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "esg-data-erasure",
@@ -233,7 +260,7 @@ export const blogPosts: BlogPost[] = [
     tag: "ESG",
     category: "Sustainability",
     keywords: "green IT, carbon footprint reduction, circular economy",
-    publishDate: "September 16, 2025",
+    publishDate: "March 14, 2026",
     author: "Prashant Saini"
   },
   {
@@ -246,8 +273,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Circular Economy",
     category: "Sustainability",
     keywords: "IT reuse, electronic waste reduction",
-    publishDate: "November 27, 2025",
-    author: "Nitish"
+    publishDate: "February 04, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "reduce-carbon-footprint",
@@ -259,7 +286,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Green Tech",
     category: "Sustainability",
     keywords: "embodied carbon, sustainable IT practices",
-    publishDate: "November 14, 2025",
+    publishDate: "March 08, 2026",
     author: "Prashant Saini"
   },
   {
@@ -272,8 +299,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Scope 3",
     category: "Sustainability",
     keywords: "Scope 3 emissions, GHG protocol, IT supply chain",
-    publishDate: "September 6, 2025",
-    author: "D-Secure Strategy"
+    publishDate: "May 01, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "erasure-verification-process",
@@ -285,8 +312,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Technical Guide",
     keywords: "verification, NIST 800-88 purge, readback verification",
-    publishDate: "March 3, 2025",
-    author: "Nitish"
+    publishDate: "January 19, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "hardware-diagnostics",
@@ -298,8 +325,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Refurbishing",
     category: "ITAD",
     keywords: "hardware diagnostics, resale value grading",
-    publishDate: "November 21, 2025",
-    author: "Prashant Saini"
+    publishDate: "March 27, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "data-minimization",
@@ -311,8 +338,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Privacy",
     category: "Privacy",
     keywords: "GDPR data minimization, privacy by design",
-    publishDate: "March 21, 2025",
-    author: "D-Secure Privacy"
+    publishDate: "February 14, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "government-device-theft",
@@ -324,8 +351,8 @@ export const blogPosts: BlogPost[] = [
     tag: "GovTech",
     category: "Case Study",
     keywords: "government data breach, laptop theft prevention",
-    publishDate: "January 28, 2025",
-    author: "D-Secure Gov"
+    publishDate: "April 20, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "itad-selection-guide",
@@ -337,8 +364,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Procurement",
     category: "Business Guide",
     keywords: "ITAD vendor selection, procurement checklist",
-    publishDate: "July 4, 2025",
-    author: "D-Secure Strategy"
+    publishDate: "February 15, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "brand-reputation-esg",
@@ -350,8 +377,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Brand",
     category: "Business Strategy",
     keywords: "ESG reporting, brand reputation management",
-    publishDate: "July 21, 2025",
-    author: "D-Secure Marketing"
+    publishDate: "February 02, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "msp-data-erasure",
@@ -363,278 +390,278 @@ export const blogPosts: BlogPost[] = [
     tag: "MSP",
     category: "Business Guide",
     keywords: "MSP data erasure, data protection, compliance",
-    publishDate: "September 17, 2025",
-    author: "D-Secure MSP"
+    publishDate: "February 24, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "cryptographic-erase-nist",
     slug: "cryptographic-erase-nist",
     title: "Cryptographic Erase: NIST 800-88",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Expert insights on cryptographic erase: nist 800-88. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/cryptographic-erase-nist",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "July 21, 2025",
-    author: "Prashant Saini"
+    keywords: "cryptographic, erase:, nist, 800-88, Technical Guide, Technical, D-Secure",
+    publishDate: "January 25, 2026",
+    author: "Nitesh Kushwaha"
   },
   {id: "securePHIErase",
     slug: "securePHIErase",
     title: "SecurePHI Erase",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Expert insights on securephi erase. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/secure-phi-erasure",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "February 6, 2025",
-    author: "Nitesh Kushwaha"
+    keywords: "securephi, erase, Technical Guide, Technical, D-Secure",
+    publishDate: "April 30, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "statutory-regulatory-compliance-data-erasure",
     slug: "statutory-regulatory-compliance-data-erasure",
     title: "Regulatory Compliance Data Erasure",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Navigate the complexities of regulatory compliance data erasure. Learn how to align your data destruction policies with global standards like NIST 800-88 and GDPR.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/statutory-regulatory-compliance-data-erasure",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "September 15, 2025",
-    author: "Nitish"
+    keywords: "regulatory, compliance, data, erasure, Technical Guide, Technical, D-Secure",
+    publishDate: "January 14, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "legal-ethical-data-erasure",
     slug: "legal-ethical-data-erasure",
     title: "Legal & Ethical Data Erasure",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Deep dive into legal & ethical data erasure. Learn why professional technical guide is essential for modern enterprise security and risk mitigation.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/legal-ethical-data-erasure",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "December 27, 2026",
+    keywords: "legal, ethical, data, erasure, Technical Guide, Technical, D-Secure",
+    publishDate: "January 30, 2026",
     author: "Prashant Saini"
   },
   {
     id: "caption-call-fcc-settlement",
     slug: "caption-call-fcc-settlement",
     title: "Caption Call FCC Settlement",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "A comprehensive guide to caption call fcc settlement. Understanding the impact of secure data management on your organization's compliance posture.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/caption-call-fcc-settlement",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "December 3, 2025",
-    author: "Nitish"
+    keywords: "caption, call, settlement, Technical Guide, Technical, D-Secure",
+    publishDate: "March 06, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "hardware-diagnostics-itad-compliance",
     slug: "hardware-diagnostics-itad-compliance",
     title: "Hardware Diagnostics ITAD Compliance",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Navigate the complexities of hardware diagnostics itad compliance. Learn how to align your data destruction policies with global standards like NIST 800-88 and GDPR.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/hardware-diagnostics-itad-compliance",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "October 1, 2026",
-    author: "Nitesh Kushwaha"
+    keywords: "hardware, diagnostics, itad, compliance, Technical Guide, Technical, D-Secure",
+    publishDate: "February 06, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "future-of-data-destruction-opportunities-challenges",
     slug: "future-of-data-destruction-opportunities-challenges",
     title: "Future of Data Destruction: Trends",
-    excerpt: "Market growth, regulatory pressure, cloud adoption, and emerging technologies are reshaping how organizations approach secure data destruction.",
+    excerpt: "Deep dive into future of data destruction: trends. Learn why professional technical guide is essential for modern enterprise security and risk mitigation.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/future-of-data-destruction",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "April 14, 2025",
-    author: "Prashant Saini"
+    keywords: "future, data, destruction:, trends, Technical Guide, Technical, D-Secure",
+    publishDate: "February 21, 2026",
+    author: "Nitesh Kushwaha"
   },{
     id: "dod-vs-ieee-data-sanitization",
     slug: "dod-vs-ieee-data-sanitization",
     title: "DoD vs IEEE Data Sanitization",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Deep dive into dod vs ieee data sanitization. Learn why professional technical guide is essential for modern enterprise security and risk mitigation.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/dod-vs-ieee-data-sanitization",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "June 19, 2025",
+    keywords: "ieee, data, sanitization, Technical Guide, Technical, D-Secure",
+    publishDate: "January 24, 2026",
     author: "Prashant Saini"
   },
   {
     id: "remote-work-data-erasure-best-practices",
     slug: "remote-work-data-erasure-best-practices",
     title: "Remote Work Data Erasure Best Practices",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "A comprehensive guide to remote work data erasure best practices. Understanding the impact of secure data management on your organization's compliance posture.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/remote-work-data-erasure-best-practices",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "December 7, 2025",
-    author: "Nitish"
+    keywords: "remote, work, data, erasure, Technical Guide, Technical, D-Secure",
+    publishDate: "March 22, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "ncua-third-party-data-disposal",
     slug: "ncua-third-party-data-disposal",
     title: "NCUA Third-Party Data Disposal",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Expert insights on ncua third-party data disposal. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/ncua-third-party-data-disposal",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "October 5, 2026",
+    keywords: "ncua, third-party, data, disposal, Technical Guide, Technical, D-Secure",
+    publishDate: "February 10, 2026",
     author: "Prashant Saini"
   },
   {
     id: "msp-erasure-as-a-service",
     slug: "msp-erasure-as-a-service",
     title: "MSP Erasure as a Service",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Expert insights on msp erasure as a service. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/msp-erasure-as-a-service",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "June 11, 2025",
+    keywords: "erasure, service, Technical Guide, Technical, D-Secure",
+    publishDate: "January 25, 2026",
     author: "Nitesh Kushwaha"
   },
   {
     id: "dell-data-wipe-vs-dsecure",
     slug: "dell-data-wipe-vs-dsecure",
     title: "Dell Data Wipe vs Professional Data Erasure",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Deep dive into dell data wipe vs professional data erasure. Learn why professional technical guide is essential for modern enterprise security and risk mitigation.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/dell-data-wipe-vs-dsecure",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "August 8, 2025",
-    author: "Nitesh Kushwaha"
+    keywords: "dell, data, wipe, professional, Technical Guide, Technical, D-Secure",
+    publishDate: "January 28, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "common-criteria-certified-data-wiping",
     slug: "common-criteria-certified-data-wiping",
     title: "Common Criteria Verified Data Wiping",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Expert insights on common criteria verified data wiping. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/common-criteria-certified-data-wiping",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "May 15, 2025",
-    author: "Nitish"
+    keywords: "common, criteria, verified, data, Technical Guide, Technical, D-Secure",
+    publishDate: "April 11, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "erasure-as-a-service-dsecure",
     slug: "erasure-as-a-service-dsecure",
     title: "Erasure as a Service DSecure",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "A comprehensive guide to erasure as a service dsecure. Understanding the impact of secure data management on your organization's compliance posture.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/erasure-as-a-service-dsecure",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "November 23, 2025",
-    author: "Prashant saini"
+    keywords: "erasure, service, dsecure, Technical Guide, Technical, D-Secure",
+    publishDate: "January 25, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "returning-leased-it-hardware-dos-and-donts",
     slug: "returning-leased-it-hardware-dos-and-donts",
     title: "Returning Leased IT Hardware: Dos and Don'ts",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Expert insights on returning leased it hardware: dos and don'ts. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/returning-leased-it-hardware-dos-and-donts",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "March 23, 2025",
-    author: "Prashant Saini"
+    keywords: "returning, leased, hardware:, don'ts, Technical Guide, Technical, D-Secure",
+    publishDate: "April 08, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "healthcare-ransomware-lessons",
     slug: "healthcare-ransomware-lessons",
     title: "Healthcare Ransomware Lessons",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Expert insights on healthcare ransomware lessons. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/healthcare-ransomware-lessons",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "July 23, 2025",
-    author: "Nitish"
+    keywords: "healthcare, ransomware, lessons, Technical Guide, Technical, D-Secure",
+    publishDate: "March 27, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "mac-m1-erasure-known-issues",
     slug: "mac-m1-erasure-known-issues",
     title: "Mac M1 Erasure Known Issues",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "A comprehensive guide to mac m1 erasure known issues. Understanding the impact of secure data management on your organization's compliance posture.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/mac-m1-erasure-known-issues",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "December 6, 2025",
-    author: "Nitish"
+    keywords: "erasure, known, issues, Technical Guide, Technical, D-Secure",
+    publishDate: "February 17, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "wipe-ssd-from-bios-guide",
     slug: "wipe-ssd-from-bios-guide",
     title: "Wipe SSD from BIOS Guide",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Understanding wipe ssd from bios guide requires a deep dive into flash sanitization. Discover why traditional wiping fails on modern solid state drives.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/wipe-ssd-from-bios-guide",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "June 28, 2025",
-    author: "Nitesh Kushwaha"
+    keywords: "wipe, from, bios, guide, Technical Guide, Technical, D-Secure",
+    publishDate: "February 19, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "data-erasure-for-non-profits",
     slug: "data-erasure-for-non-profits",
     title: "Data Erasure for Non-Profits",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "A comprehensive guide to data erasure for non-profits. Understanding the impact of secure data management on your organization's compliance posture.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/data-erasure-for-non-profits",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "March 27, 2026",
-    author: "Prashant Saini"
+    keywords: "data, erasure, non-profits, Technical Guide, Technical, D-Secure",
+    publishDate: "February 16, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "erase-mac-data-safely-using-dsecure",
     slug: "erase-mac-data-safely-using-dsecure",
     title: "Erase Mac Data Safely Using DSecure",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Deep dive into erase mac data safely using dsecure. Learn why professional technical guide is essential for modern enterprise security and risk mitigation.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/erase-mac-data-safely-using-dsecure",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "Apirl 25, 2025",
-    author: "Nitesh Kushwaha"
+    keywords: "erase, data, safely, using, Technical Guide, Technical, D-Secure",
+    publishDate: "March 30, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "erase-data-pc-laptop-desktop",
     slug: "erase-data-pc-laptop-desktop",
     title: "Erase Data PC Laptop Desktop",
-    excerpt: "The most secure way to erase data. Understanding the NIST 800-88 purge process and why it's the gold standard for data erasure.",
+    excerpt: "Expert insights on erase data pc laptop desktop. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
     link: "/blog/erase-data-pc-laptop-desktop",
     tag: "Technical",
     category: "Technical Guide",
-    keywords: "NIST 800-88, cryptographic erase, data erasure",
-    publishDate: "Apirl 17, 2025",
+    keywords: "erase, data, laptop, desktop, Technical Guide, Technical, D-Secure",
+    publishDate: "May 07, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -647,8 +674,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Data Erasure",
     category: "Business Strategy",
     keywords: "physical destruction vs data wiping, shedding vs wiping, secure data erasure",
-    publishDate: "April 07, 2026",
-    author: "Nitesh Kushwaha"
+    publishDate: "February 05, 2026",
+    author: "Prashant Saini"
   },
   // Newly copied blog posts
   {
@@ -660,8 +687,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Compliance",
     category: "Regulatory",
     keywords: "CCPA compliance, California Consumer Privacy Act, data subject rights, privacy regulations, consumer data protection",
-    publishDate: "December 19, 2026",
-    author: "Prashant Saini"
+    publishDate: "April 07, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "certified-itad-reasons",
@@ -672,7 +699,7 @@ export const blogPosts: BlogPost[] = [
     tag: "ITAD",
     category: "Business Guide",
     keywords: "compliance-verified ITAD, IT disposal, data security",
-    publishDate: "February 19, 2025",
+    publishDate: "February 03, 2026",
     author: "Prashant Saini"
   },
   {
@@ -684,8 +711,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Compliance",
     category: "Best Practices",
     keywords: "chain of custody, data destruction, audit trail",
-    publishDate: "July 22, 2025",
-    author: "Prashant Saini"
+    publishDate: "May 05, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "change-healthcare-attack",
@@ -696,8 +723,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Case Study",
     category: "Healthcare",
     keywords: "healthcare breach, ransomware, data protection",
-    publishDate: "June 6, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "April 20, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "chromebook-data-risks",
@@ -708,8 +735,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Education",
     category: "Security",
     keywords: "Chromebook, Chrome OS, education IT, data erasure",
-    publishDate: "October 20, 2025",
-    author: "Nitish"
+    publishDate: "March 28, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "cloud-migration",
@@ -720,8 +747,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Cloud",
     category: "Technical Guide",
     keywords: "cloud migration, data erasure, on-premise decommission",
-    publishDate: "October 6, 2026",
-    author: "Nitish"
+    publishDate: "January 03, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "common-criteria",
@@ -732,7 +759,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Certification",
     category: "Compliance",
     keywords: "Common Criteria, EAL certification, security standards",
-    publishDate: "February 10, 2025",
+    publishDate: "March 28, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -744,8 +771,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Enterprise",
     category: "Risk Management",
     keywords: "corporate IT, asset disposal, data breach risk",
-    publishDate: "February 7, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "March 07, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "cryptographic-erase",
@@ -756,8 +783,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Technical Guide",
     keywords: "cryptographic erasure, encryption, key destruction",
-    publishDate: "April 28, 2025",
-    author: "Prashant Saini"
+    publishDate: "April 14, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "cybersecurity-data-destruction",
@@ -768,7 +795,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Security",
     category: "Security Strategy",
     keywords: "cybersecurity, data destruction, defense in depth",
-    publishDate: "October 22, 2025",
+    publishDate: "February 21, 2026",
     author: "Prashant Saini"
   },
   {
@@ -780,8 +807,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Product",
     category: "Guide",
     keywords: "D-Secure, operations, best practices",
-    publishDate: "May 11, 2025",
-    author: "Prashant Saini"
+    publishDate: "March 02, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "dark-data-risks",
@@ -792,8 +819,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Risk Management",
     category: "Security",
     keywords: "dark data, data discovery, ROT data",
-    publishDate: "June 11, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "February 04, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "data-destruction-best-practices",
@@ -804,8 +831,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Best Practices",
     category: "Enterprise",
     keywords: "data destruction, best practices, compliance",
-    publishDate: "November 16, 2025",
-    author: "Prashant Saini"
+    publishDate: "February 12, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "data-disposal-guidelines",
@@ -816,7 +843,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Enterprise",
     category: "Best Practices",
     keywords: "data disposal, enterprise, policy",
-    publishDate: "July 14, 2025",
+    publishDate: "March 25, 2026",
     author: "Prashant Saini"
   },
   {
@@ -828,8 +855,8 @@ export const blogPosts: BlogPost[] = [
     tag: "DR/BC",
     category: "Enterprise",
     keywords: "disaster recovery, data erasure, business continuity",
-    publishDate: "January 18, 2025",
-    author: "Prashant Saini"
+    publishDate: "March 23, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "data-erasure-myths",
@@ -840,8 +867,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Education",
     category: "Security Awareness",
     keywords: "data erasure, myths, misconceptions",
-    publishDate: "February 27, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "March 14, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "data-hoarding",
@@ -852,7 +879,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Risk Management",
     category: "Strategy",
     keywords: "data hoarding, storage costs, data minimization",
-    publishDate: "November 16, 2025",
+    publishDate: "February 12, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -864,7 +891,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Compliance",
     category: "Regulatory",
     keywords: "data privacy, GDPR, CCPA, global compliance",
-    publishDate: "July 2, 2025",
+    publishDate: "March 22, 2026",
     author: "Prashant Saini"
   },
   {
@@ -876,8 +903,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Security",
     keywords: "data remanence, magnetic remnants, data recovery",
-    publishDate: "September 6, 2026",
-    author: "Nitish"
+    publishDate: "February 25, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "data-remediation-erasure",
@@ -888,7 +915,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Compliance",
     category: "Strategy",
     keywords: "data remediation, erasure, risk reduction",
-    publishDate: "August 6, 2025",
+    publishDate: "April 21, 2026",
     author: "Prashant Saini"
   },
   {
@@ -900,8 +927,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Privacy",
     category: "Compliance",
     keywords: "data retention, privacy, policy",
-    publishDate: "December 19, 2025",
-    author: "Nitish"
+    publishDate: "April 02, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "degaussing-risks",
@@ -912,7 +939,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Comparison",
     keywords: "degaussing, limitations, SSD, modern storage",
-    publishDate: "October 20, 2025",
+    publishDate: "April 16, 2026",
     author: "Prashant Saini"
   },
   {
@@ -924,8 +951,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Education",
     category: "Security Awareness",
     keywords: "file deletion, data recovery, forensics",
-    publishDate: "July 15, 2025",
-    author: "Nitish"
+    publishDate: "May 05, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "deletion-vs-erasure",
@@ -936,8 +963,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Education",
     category: "Comparison",
     keywords: "deletion, erasure, data security",
-    publishDate: "April 10, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "January 22, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "dell-data-wipe-alternative",
@@ -948,7 +975,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Product",
     category: "Comparison",
     keywords: "Dell Data Wipe, alternative, enterprise erasure",
-    publishDate: "December 26, 2026",
+    publishDate: "January 24, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -960,8 +987,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Guide",
     keywords: "deployment, on-premise, cloud, hybrid",
-    publishDate: "May 17, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "February 09, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "diagnostics-erasure-itad",
@@ -972,8 +999,8 @@ export const blogPosts: BlogPost[] = [
     tag: "ITAD",
     category: "Solution",
     keywords: "diagnostics, erasure, ITAD, workflow",
-    publishDate: "October 14, 2025",
-    author: "Prashant Saini"
+    publishDate: "March 27, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "digital-divide",
@@ -984,8 +1011,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Sustainability",
     category: "Social Impact",
     keywords: "digital divide, device donation, refurbishment",
-    publishDate: "August 4, 2026",
-    author: "Nitesh Kushwaha"
+    publishDate: "April 20, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "dod-vs-ieee",
@@ -996,8 +1023,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Standards",
     category: "Comparison",
     keywords: "DoD, IEEE, standards, comparison",
-    publishDate: "January 7, 2025",
-    author: "Nitish"
+    publishDate: "April 10, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "dod-wiping-standard",
@@ -1008,8 +1035,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Standards",
     category: "Technical Guide",
     keywords: "DoD 5220.22-M, wiping standard, military",
-    publishDate: "March 16, 2025",
-    author: "Nitish"
+    publishDate: "March 06, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "dumpster-diving-data-breach",
@@ -1020,7 +1047,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Case Study",
     category: "Security",
     keywords: "dumpster diving, data breach, improper disposal",
-    publishDate: "June 22, 2025",
+    publishDate: "January 17, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1032,8 +1059,8 @@ export const blogPosts: BlogPost[] = [
     tag: "ESG",
     category: "Sustainability",
     keywords: "ESG, reporting, sustainability metrics",
-    publishDate: "August 17, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "April 01, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "eu-csrd",
@@ -1044,7 +1071,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Compliance",
     category: "Regulatory",
     keywords: "EU CSRD, sustainability reporting, compliance",
-    publishDate: "September 19, 2025",
+    publishDate: "February 06, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1056,7 +1083,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Education",
     category: "Industry",
     keywords: "education, student data, FERPA, schools",
-    publishDate: "April 22, 2026",
+    publishDate: "February 28, 2026",
     author: "Prashant Saini"
   },
   {
@@ -1068,7 +1095,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Security",
     category: "Best Practices",
     keywords: "end of life, EOL, data security, disposal",
-    publishDate: "April 8, 2025",
+    publishDate: "February 19, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1080,8 +1107,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Case Study",
     category: "Financial",
     keywords: "financial breach, banking, data disposal",
-    publishDate: "June 28, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "January 21, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "free-vs-pro-eraser",
@@ -1092,7 +1119,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Comparison",
     category: "Product",
     keywords: "free tools, professional erasure, comparison",
-    publishDate: "November 15, 2025",
+    publishDate: "April 25, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1104,8 +1131,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Trends",
     category: "Industry",
     keywords: "future trends, innovation, data destruction",
-    publishDate: "November 25, 2026",
-    author: "Nitesh Kushwaha"
+    publishDate: "February 21, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "gdpr-seven-years",
@@ -1116,7 +1143,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Compliance",
     category: "Regulatory",
     keywords: "GDPR, anniversary, data privacy evolution",
-    publishDate: "October 14, 2025",
+    publishDate: "April 18, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1128,8 +1155,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Case Study",
     category: "Government",
     keywords: "government, device theft, data breach",
-    publishDate: "April 26, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "January 09, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "government-it-disposal",
@@ -1140,8 +1167,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Government",
     category: "Compliance",
     keywords: "government, IT disposal, federal requirements",
-    publishDate: "April 16, 2025",
-    author: "Nitish"
+    publishDate: "January 11, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "green-it-practices",
@@ -1152,7 +1179,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Sustainability",
     category: "Green IT",
     keywords: "green IT, sustainability, environmental",
-    publishDate: "October 8, 2025",
+    publishDate: "February 18, 2026",
     author: "Prashant Saini"
   },
   {
@@ -1164,8 +1191,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Healthcare",
     category: "Compliance",
     keywords: "HIPAA, PHI, healthcare compliance",
-    publishDate: "February 8, 2025",
-    author: "Prashant Saini"
+    publishDate: "January 02, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "healthcare-data-breach-case-study",
@@ -1176,7 +1203,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Case Study",
     category: "Healthcare",
     keywords: "healthcare breach, PHI, data disposal",
-    publishDate: "August 26, 2026",
+    publishDate: "April 26, 2026",
     author: "Prashant Saini"
   },
   {
@@ -1188,8 +1215,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Verification",
     keywords: "hex viewer, verification, forensics",
-    publishDate: "November 23, 2025",
-    author: "Prashant Saini"
+    publishDate: "March 09, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "hidden-disk-areas",
@@ -1200,8 +1227,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Security",
     keywords: "HPA, DCO, hidden areas, data remnants",
-    publishDate: "November 6, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "February 04, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "how-to-erase-mac",
@@ -1212,7 +1239,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Mac",
     category: "Technical Guide",
     keywords: "Mac, Apple, secure erase, M1, M2",
-    publishDate: "February 13, 2025",
+    publishDate: "March 06, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1224,8 +1251,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Mobile",
     category: "Technical Guide",
     keywords: "iPad, tablet, mobile erasure",
-    publishDate: "August 22, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "February 07, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "itad-challenges",
@@ -1236,8 +1263,8 @@ export const blogPosts: BlogPost[] = [
     tag: "ITAD",
     category: "Industry",
     keywords: "ITAD, challenges, industry trends",
-    publishDate: "August 28, 2026",
-    author: "Prashant Saini"
+    publishDate: "March 12, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "itad-environmental",
@@ -1248,8 +1275,8 @@ export const blogPosts: BlogPost[] = [
     tag: "ITAD",
     category: "Sustainability",
     keywords: "ITAD, environment, e-waste, recycling",
-    publishDate: "April 22, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "May 04, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "itad-market-growth",
@@ -1260,7 +1287,7 @@ export const blogPosts: BlogPost[] = [
     tag: "ITAD",
     category: "Industry",
     keywords: "ITAD, market growth, industry analysis",
-    publishDate: "June 15, 2025",
+    publishDate: "March 25, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1272,7 +1299,7 @@ export const blogPosts: BlogPost[] = [
     tag: "ITAD",
     category: "Business Guide",
     keywords: "ITAD, procurement, vendor selection",
-    publishDate: "December 2, 2025",
+    publishDate: "April 30, 2026",
     author: "Prashant Saini"
   },
   {
@@ -1284,7 +1311,7 @@ export const blogPosts: BlogPost[] = [
     tag: "ITAM",
     category: "Security",
     keywords: "ITAM, data breach, asset management",
-    publishDate: "May 12, 2025",
+    publishDate: "April 30, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1296,8 +1323,8 @@ export const blogPosts: BlogPost[] = [
     tag: "ITAM",
     category: "Best Practices",
     keywords: "lifecycle, ITAM, asset management",
-    publishDate: "January 12, 2025",
-    author: "Nitish"
+    publishDate: "February 11, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "it-asset-reuse",
@@ -1308,8 +1335,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Sustainability",
     category: "Best Practices",
     keywords: "reuse, refurbishment, circular economy",
-    publishDate: "June 1, 2025",
-    author: "Nitish"
+    publishDate: "April 19, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "legal-ethical-erasure",
@@ -1320,8 +1347,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Legal",
     category: "Compliance",
     keywords: "legal, ethical, data erasure, obligations",
-    publishDate: "June 14, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "March 31, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "loose-drives-erasure-guide",
@@ -1332,8 +1359,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Guide",
     keywords: "loose drives, standalone erasure, SATA, NVMe",
-    publishDate: "June 18, 2025",
-    author: "Nitish"
+    publishDate: "April 07, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "m1-mac-erasure-issues",
@@ -1344,8 +1371,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Mac",
     category: "Technical",
     keywords: "M1, Apple Silicon, Mac erasure",
-    publishDate: "January 26, 2025",
-    author: "Nitish"
+    publishDate: "March 03, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "mdm-detection",
@@ -1356,7 +1383,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Mobile",
     category: "Technical",
     keywords: "MDM, mobile device management, detection",
-    publishDate: "January 3, 2025",
+    publishDate: "January 10, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1368,8 +1395,8 @@ export const blogPosts: BlogPost[] = [
     tag: "MSP",
     category: "Business",
     keywords: "MSP, service offering, data erasure",
-    publishDate: "April 16, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "February 26, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "marriott-settlement",
@@ -1380,8 +1407,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Case Study",
     category: "Breach Analysis",
     keywords: "Marriott, data breach, settlement",
-    publishDate: "December 27, 2025",
-    author: "Prashant Saini"
+    publishDate: "February 01, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "media-sanitization-need",
@@ -1392,8 +1419,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Education",
     category: "Security Awareness",
     keywords: "media sanitization, importance, enterprise",
-    publishDate: "November 8, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "February 12, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "mobile-diagnostics-benefits",
@@ -1404,7 +1431,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Mobile",
     category: "Product",
     keywords: "mobile diagnostics, testing, grading",
-    publishDate: "September 9, 2025",
+    publishDate: "February 24, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1416,8 +1443,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Mobile",
     category: "Industry",
     keywords: "mobile diagnostics, revolution, refurbishment",
-    publishDate: "April 7, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "April 13, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "morgan-stanley-data-breach",
@@ -1428,7 +1455,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Case Study",
     category: "Financial",
     keywords: "Morgan Stanley, data breach, disposal",
-    publishDate: "March 19, 2025",
+    publishDate: "February 28, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1440,8 +1467,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Case Study",
     category: "Financial",
     keywords: "Morgan Stanley, fine, regulatory penalty",
-    publishDate: "October 13, 2025",
-    author: "Nitish"
+    publishDate: "April 08, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "ncua-guidelines",
@@ -1452,7 +1479,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Financial",
     category: "Compliance",
     keywords: "NCUA, credit union, data disposal",
-    publishDate: "December 14, 2026",
+    publishDate: "February 15, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1464,7 +1491,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Standards",
     category: "Technical Guide",
     keywords: "NIST, Clear, Purge, 800-88",
-    publishDate: "September 8, 2025",
+    publishDate: "March 28, 2026",
     author: "Prashant Saini"
   },
   {
@@ -1476,8 +1503,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Standards",
     category: "Product",
     keywords: "NIST tested, certification, compliance",
-    publishDate: "January 7, 2025",
-    author: "Nitish"
+    publishDate: "January 21, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "nist-vs-ieee",
@@ -1488,8 +1515,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Standards",
     category: "Comparison",
     keywords: "NIST, IEEE, standards, comparison",
-    publishDate: "August 1, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "April 05, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "onsite-vs-offsite-destruction",
@@ -1500,8 +1527,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Enterprise",
     category: "Comparison",
     keywords: "on-site, off-site, destruction, comparison",
-    publishDate: "February 4, 2025",
-    author: "Prashant Saini"
+    publishDate: "March 07, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "phi-erasure",
@@ -1512,8 +1539,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Healthcare",
     category: "Compliance",
     keywords: "PHI, HIPAA, healthcare, erasure",
-    publishDate: "May 25, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "February 10, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "pii-disposal-breach",
@@ -1524,8 +1551,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Security",
     category: "Best Practices",
     keywords: "PII, disposal, breach prevention",
-    publishDate: "July 15, 2025",
-    author: "Nitish"
+    publishDate: "March 11, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "post-covid-data-disposal",
@@ -1536,8 +1563,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Remote Work",
     category: "Industry",
     keywords: "post-COVID, remote work, device disposal",
-    publishDate: "June 4, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "January 01, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "private-cloud",
@@ -1548,8 +1575,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Cloud",
     category: "Technical Guide",
     keywords: "private cloud, decommission, data erasure",
-    publishDate: "April 19, 2025",
-    author: "Nitish"
+    publishDate: "February 26, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "remote-wiping-software",
@@ -1560,8 +1587,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Remote Work",
     category: "Product",
     keywords: "remote wipe, distributed devices, endpoint",
-    publishDate: "June 11, 2025",
-    author: "Nitish"
+    publishDate: "January 23, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "remote-work-data-erasure",
@@ -1572,7 +1599,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Remote Work",
     category: "Best Practices",
     keywords: "remote work, hybrid, data erasure",
-    publishDate: "October 28, 2026",
+    publishDate: "April 15, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1584,8 +1611,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Business",
     category: "Strategy",
     keywords: "reseller, profits, compliance-verified erasure",
-    publishDate: "November 21, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "May 06, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "right-to-repair",
@@ -1596,8 +1623,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Industry",
     category: "Policy",
     keywords: "right to repair, data security, legislation",
-    publishDate: "April 2, 2025",
-    author: "Nitish"
+    publishDate: "January 10, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "ssd-wipe-bios",
@@ -1608,8 +1635,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Guide",
     keywords: "SSD, BIOS, secure erase, UEFI",
-    publishDate: "June 16, 2025",
-    author: "Nitish"
+    publishDate: "February 18, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "secure-file-erase",
@@ -1620,7 +1647,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Guide",
     keywords: "file erasure, selective wipe, active system",
-    publishDate: "October 15, 2025",
+    publishDate: "April 08, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1632,8 +1659,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Technical",
     category: "Guide",
     keywords: "HDD, disk disposal, magnetic media",
-    publishDate: "June 25, 2025",
-    author: "Nitish"
+    publishDate: "April 11, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "secure-it-asset-disposal",
@@ -1644,8 +1671,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Enterprise",
     category: "Framework",
     keywords: "framework, IT disposal, enterprise",
-    publishDate: "September 9, 2025",
-    author: "Prashant Saini"
+    publishDate: "April 01, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "secure-smartphone-erasure",
@@ -1656,7 +1683,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Mobile",
     category: "Guide",
     keywords: "smartphone, iOS, Android, mobile erasure",
-    publishDate: "January 8, 2025",
+    publishDate: "January 04, 2026",
     author: "Prashant Saini"
   },
   {
@@ -1668,8 +1695,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Enterprise",
     category: "Technical Guide",
     keywords: "server, enterprise, data center, erasure",
-    publishDate: "October 25, 2025",
-    author: "Nitish"
+    publishDate: "January 28, 2026",
+    author: "Nitesh Kushwaha"
   },
   {
     id: "shadow-data",
@@ -1680,7 +1707,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Security",
     category: "Best Practices",
     keywords: "shadow data, data discovery, hidden data",
-    publishDate: "July 5, 2025",
+    publishDate: "January 06, 2026",
     author: "Prashant Saini"
   },
   {
@@ -1692,7 +1719,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Compliance",
     category: "Regulatory",
     keywords: "statutory, compliance, regulations",
-    publishDate: "October 19, 2025",
+    publishDate: "March 27, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1704,8 +1731,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Product",
     category: "Comparison",
     keywords: "Ultratest, comparison, testing",
-    publishDate: "January 3, 2025",
-    author: "Nitish"
+    publishDate: "January 12, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "vm-erasure",
@@ -1716,7 +1743,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Cloud",
     category: "Technical Guide",
     keywords: "VM, virtual machine, virtualization, erasure",
-    publishDate: "February 17, 2025",
+    publishDate: "April 17, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1728,8 +1755,8 @@ export const blogPosts: BlogPost[] = [
     tag: "Windows",
     category: "Industry",
     keywords: "Windows 10, EOS, end of support, refresh",
-    publishDate: "August 2, 2025",
-    author: "Nitesh Kushwaha"
+    publishDate: "January 20, 2026",
+    author: "Prashant Saini"
   },
   {
     id: "wipe-computer-donating",
@@ -1740,7 +1767,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Sustainability",
     category: "Guide",
     keywords: "donation, charity, secure wipe, community",
-    publishDate: "December 3, 2025",
+    publishDate: "January 17, 2026",
     author: "Nitesh Kushwaha"
   },
   {
@@ -1752,7 +1779,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Business",
     category: "Strategy",
     keywords: "NPS, customer satisfaction, ITAD",
-    publishDate: "December 25, 2025",
+    publishDate: "April 04, 2026",
     author: "Prashant Saini"
   },
   {
@@ -1764,7 +1791,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Case Study",
     category: "Compliance",
     keywords: "CaptionCall, settlement, privacy compliance",
-    publishDate: "July 8, 2025",
+    publishDate: "February 02, 2026",
     author: "Nitesh Kushwaha"
   }
 ];

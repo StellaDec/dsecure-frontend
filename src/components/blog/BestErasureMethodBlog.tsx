@@ -1,19 +1,28 @@
 import React from "react";
 import SEOHead from "@/components/SEOHead";
-import { getSEOForPage } from "@/utils/seo";
+import { getBlogSEO } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ShieldIcon, CheckIcon, GlobeIcon, StarIcon, ArrowRightIcon, HoverIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const BestErasureMethodBlog: React.FC = () => {
+  const blogId = "best-data-erasure-methods";
+  const blogTitle = "Best Data Erasure Methods";
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
-      <SEOHead seo={getSEOForPage('blog-best-erasure-methods')} />
+      <SEOHead 
+        seo={getBlogSEO({
+          title: "Best Data Erasure Methods for Enterprise Storage Media | D-Secure",
+          excerpt: "Choosing the right data erasure method for your security requirements, compliance needs, and operational constraints. Guide to NIST 800-88, DoD, and Crypto Erase.",
+          slug: "best-data-erasure-methods",
+          author: "D-Secure Editorial Team",
+          publishDate: "January 28, 2026",
+          keywords: "best data erasure methods, secure data sanitization, NIST 800-88 vs DoD, cryptographic erasure guide",
+          category: "Data Erasure"
+        })} 
+      />
 
       {/* Hero Section */}
       <section className="py-16 bg-white shadow-lg">
@@ -81,7 +90,7 @@ const BestErasureMethodBlog: React.FC = () => {
                                     <td className="p-3 border border-slate-200">General enterprise use</td>
                                 </tr>
                                 <tr className="bg-purple-50">
-                                    <td className="p-3 border border-slate-200 font-semibold">NIST 800-88 (Purge)</td>
+                                    <td className="p-3 border border-slate-200 font-semibold"><Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> (Purge)</td>
                                     <td className="p-3 border border-slate-200">High</td>
                                     <td className="p-3 border border-slate-200">Medium-Fast</td>
                                     <td className="p-3 border border-slate-200">Modern storage, compliance requirements</td>
@@ -109,7 +118,7 @@ const BestErasureMethodBlog: React.FC = () => {
                             <li>• Extremely fast (seconds vs hours)</li>
                             <li>• No wear on SSD cells</li>
                             <li>• Works on all sectors including hidden areas</li>
-                            <li>• NIST 800-88 compliant</li>
+                            <li>• <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> compliant</li>
                         </ul>
                     </div>
                     <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg mt-3">
@@ -138,7 +147,7 @@ const BestErasureMethodBlog: React.FC = () => {
                 </div>
 
                 <div className="space-y-4">
-                    <h2 className="text-2xl font-bold text-slate-900">3. NIST 800-88 Guidelines</h2>
+                    <h2 className="text-2xl font-bold text-slate-900">3. <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Guidelines</h2>
                     <p className="text-slate-700 leading-relaxed">
                         Modern standard that recognizes different storage technologies require different approaches. Categorizes erasure into Clear, Purge, and Destroy.
                     </p>
@@ -205,7 +214,7 @@ const BestErasureMethodBlog: React.FC = () => {
                             <h4 className="font-bold text-slate-900">Multiple Standards</h4>
                         </div>
                         <p className="text-sm text-slate-600">
-                            DoD 5220.22-M (3/7-pass), NIST 800-88, Gutmann 35-pass, custom patterns, and cryptographic erasure.
+                            DoD 5220.22-M (3/7-pass), <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>, Gutmann 35-pass, custom patterns, and cryptographic erasure.
                         </p>
                     </div>
                     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100">
@@ -220,47 +229,13 @@ const BestErasureMethodBlog: React.FC = () => {
                 </div>
             </div>
         </Reveal>
-
-        {/* Final CTA */}
-        <Reveal>
-             <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-xl shadow-lg p-8 mt-8 text-white">
-                <h2 className="text-2xl font-bold mb-4">Get Expert Guidance</h2>
-                <p className="leading-relaxed mb-6">
-                    Not sure which erasure method is right for your organization? Our security experts can help you assess your requirements and recommend the optimal approach.
-                </p>
-                <Link
-                    to="/contact"
-                    className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
-                >
-                    <HoverIcon>
-                        {(filled) => <ShieldIcon className="w-5 h-5 mr-2" filled={filled} />}
-                    </HoverIcon>
-                    Schedule a Consultation
-                    <HoverIcon>
-                        {(filled) => <ArrowRightIcon className="w-5 h-5 ml-2" filled={filled} />}
-                    </HoverIcon>
-                </Link>
-            </div>
-        </Reveal>
       </section>
 
-      {/* Engagement Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["best-erasure-methods"]} />
-      <EngagementSection blogId="best-erasure-methods" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="best-erasure-methods" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="best-erasure-methods" 
-            blogTitle="Best Data Erasure Methods" 
-          />
-        </Reveal>
-      </section>
+      {/* Standardized Blog Footer */}
+      <BlogFooterStandard 
+        blogId={blogId} 
+        blogTitle={blogTitle} 
+      />
     </div>
   );
 };

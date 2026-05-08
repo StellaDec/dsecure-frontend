@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { SEOHead } from "../../components/SEOHead";
+import SEOHead from "../../components/SEOHead";
+import { getSEOForPage } from "../../utils/seo";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { Calculator, ShieldAlert, TrendingUp, CheckCircle2 } from "lucide-react";
 import { useFormSubmission } from "../../hooks/useFormSubmission";
 
@@ -57,10 +59,43 @@ export default function DataBreachCalculatorPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Data Breach Cost Calculator | D-Secure Free Tool"
-        description="Estimate the financial impact of a data breach based on your industry and data volume. Industry-average cost estimator for uncertified data erasure."
-        canonicalUrl="https://dsecuretech.com/tools/data-breach-calculator"
+        seo={getSEOForPage("data-breach-calculator", {
+          structuredData: [
+            {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Data Breach Cost Calculator",
+              "description": "Free interactive tool to estimate financial exposure from a data breach based on industry and record count.",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web Browser",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+              "provider": { "@type": "Organization", "name": "D-Secure" },
+              "url": "https://dsecuretech.com/tools/data-breach-calculator",
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "How to Calculate Data Breach Cost",
+              "step": [
+                { "@type": "HowToStep", "position": 1, "name": "Select Industry", "text": "Choose your business industry from Healthcare, Financial, Tech, or Retail." },
+                { "@type": "HowToStep", "position": 2, "name": "Set Record Count", "text": "Use the slider to set the number of records potentially exposed." },
+                { "@type": "HowToStep", "position": 3, "name": "View Estimate", "text": "Instantly see your estimated breach cost based on IBM Cost of a Data Breach averages." }
+              ]
+            }
+          ]
+        })}
       />
+
+      {/* Breadcrumbs — Google navigation signal */}
+      <div className="container mx-auto px-4 max-w-7xl pt-6">
+        <Breadcrumbs
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Free Tools", path: "/tools/data-breach-calculator" },
+            { name: "Data Breach Cost Calculator", path: "/tools/data-breach-calculator", isCurrentPage: true },
+          ]}
+        />
+      </div>
 
       {/* Dark Hero Section */}
       <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 bg-slate-900 border-b border-slate-800 overflow-hidden">
@@ -189,10 +224,10 @@ export default function DataBreachCalculatorPage() {
                    </p>
                    
                    {status === "success" ? (
-                     <div className="bg-emerald-50 text-emerald-700 p-4 rounded-xl font-bold border border-emerald-200 text-center animate-in fade-in zoom-in duration-300">
-                       <CheckCircle2 className="w-6 h-6 mx-auto mb-2 text-emerald-500" />
-                       Request sent successfully! Our team will contact you shortly.
-                     </div>
+                      <div className="bg-emerald-50 text-emerald-700 p-4 rounded-xl font-bold border border-emerald-200 text-center animate-in fade-in zoom-in duration-300">
+                        <CheckCircle2 className="w-6 h-6 mx-auto mb-2 text-emerald-500" />
+                        Analysis sent! Check your inbox for the detailed report.
+                      </div>
                    ) : (
                      <div className="flex flex-col gap-3">
                        <input 

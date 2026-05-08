@@ -30,9 +30,21 @@ export const blogFaqs: Record<string, FAQ[]> = {
     {
       question: "Can data be recovered after a 1-pass zero-fill overwrite?",
       answer: "For modern hard drives, data cannot be recovered even using advanced forensic techniques after a single-pass verify-overwrite process."
+    },
+    {
+      question: "How many overwrite passes are needed for NIST compliance?",
+      answer: "NIST 800-88 requires 1 pass for 'Clear' and specialized commands or multiple passes for 'Purge'. D-Secure automates these standards to ensure you always meet the required compliance level."
+    },
+    {
+      question: "What is the difference between DoD 5220.22-M and NIST 800-88?",
+      answer: "DoD 5220.22-M is a legacy 3-pass or 7-pass military standard. NIST 800-88 is the modern global standard that accounts for different media types like SSDs and mobile devices, focusing on 'Clear, Purge, Destroy' levels."
+    },
+    {
+      question: "Does overwriting damage my hard drive?",
+      answer: "Standard overwriting does not damage HDDs. For SSDs, excessive overwriting can contribute to wear, which is why D-Secure uses specialized firmware commands like NVMe Sanitize to erase data with minimal wear."
     }
   ],
-  "blog-ssd-wipe-guide": [
+  "ssd-wipe-guide": [
     {
       question: "Why is wiping an SSD different from an HDD?",
       answer: "SSDs use NAND flash memory and internal controllers that manage data placement. Traditional overwriting tools can't reach all data blocks, making specialized SSD erasure tools necessary."
@@ -44,6 +56,26 @@ export const blogFaqs: Record<string, FAQ[]> = {
     {
       question: "Is it safe to donate an SSD after a factory reset?",
       answer: "A standard factory reset or format is often insufficient. To ensure complete privacy, use a NIST-compliant tool to perform a 'Purge' level sanitization before disposal or donation."
+    },
+    {
+      question: "How do I securely wipe an SSD?",
+      answer: "Wiping an SSD requires specialized commands (like 'Secure Erase' or 'Sanitize') rather than traditional overwriting to ensure all blocks, including over-provisioned ones, are cleared."
+    },
+    {
+      question: "Does formatting an SSD delete data?",
+      answer: "No, a standard format only removes the file index. Data remains on the NAND cells and can be recovered using forensic tools unless a secure wipe is performed."
+    },
+    {
+      question: "Why can't I use traditional wiping on an SSD?",
+      answer: "SSDs use wear-leveling and over-provisioning which hide data from standard software overwrites. You need tools that can issue firmware-level 'Secure Erase' or 'Sanitize' commands to reach all flash cells."
+    },
+    {
+      question: "Is cryptographic erasure safe for SSDs?",
+      answer: "Yes, cryptographic erasure is the most efficient method for SSDs. It destroys the encryption key on Self-Encrypting Drives (SEDs), making all data instantly unreadable without damaging the drive's lifespan."
+    },
+    {
+      question: "What is NVMe Sanitize and how does it work?",
+      answer: "NVMe Sanitize is a firmware-level command that ensures all data, including caches and over-provisioned areas, is permanently removed. It is the recommended 'Purge' method for modern NVMe solid-state drives."
     }
   ],
   "data-sanitization-compliance": [
@@ -126,6 +158,26 @@ export const blogFaqs: Record<string, FAQ[]> = {
     {
       question: "How does GDPR's right to erasure affect IT disposal?",
       answer: "Article 17 mandates permanent data destruction upon request. Organizations must prove erasure with tamper-proof documentation—making tamper-proof certificates essential for GDPR compliance."
+    },
+    {
+      question: "When did EU-GDPR come into force?",
+      answer: "EU-GDPR came into force on May 25, 2018. The regulation was adopted in April 2016, giving organizations a two-year transition period to prepare for compliance."
+    },
+    {
+      question: "Does EU-GDPR apply to the UK?",
+      answer: "Post-Brexit, EU-GDPR no longer directly applies to the UK. However, the UK has implemented its own version — the UK GDPR — which mirrors most of the EU regulation's requirements."
+    },
+    {
+      question: "What has been the highest penalty for GDPR violation?",
+      answer: "The highest GDPR penalty to date is €1.2 billion, imposed on Meta Platforms Ireland Limited in 2023 for improperly transferring personal data to the United States without adequate data protection safeguards."
+    },
+    {
+      question: "What is the maximum penalty for GDPR non-compliance?",
+      answer: "The maximum penalty under GDPR is €20 million or 4% of global annual revenue, whichever is higher. This applies to the most serious violations of the regulation."
+    },
+    {
+      question: "Will EU-GDPR be amended soon?",
+      answer: "The European Commission released the Simplification Omnibus Package in May 2025, proposing amendments including risk-based record-keeping and extended exemptions for small and mid-cap enterprises. These changes aim to reduce administrative burden while maintaining data protection standards."
     }
   ],
   "cybersecurity-data-destruction": [
@@ -188,7 +240,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, onsite erasure is recommended to prevent the risk of data loss during transit to a third-party facility."
     }
   ],
-  "v-m-erasure": [
+  "vm-erasure": [
     {
       question: "Can data reside on a virtual machine after it's deleted?",
       answer: "Yes, 'deleting' a VM only removes its registration. The underlying files (VHD/VMDK) still exist on the host storage and must be securely erased."
@@ -266,7 +318,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "D-Secure's API and cloud console integrate with major ITAM platforms—automatically updating asset records with erasure certificates and disposition status for complete lifecycle tracking."
     }
   ],
-  "corporate-i-t-asset-risks": [
+  "corporate-it-asset-risks": [
     {
       question: "What is the biggest risk in corporate IT asset disposal?",
       answer: "The biggest risk is the lack of a formal, auditable process. Many companies rely on employees or untrustworthy recyclers, leading to data surviving on retired hardware."
@@ -284,6 +336,18 @@ export const blogFaqs: Record<string, FAQ[]> = {
     {
       question: "Does drilling a hole in a hard drive securely destroy the data?",
       answer: "No, data can still be recovered from the intact parts of the magnetic platters using advanced forensic equipment. Only full sanitization or total disintegration is secure."
+    },
+    {
+      question: "Does formatting a hard drive permanently delete data?",
+      answer: "No, formatting only removes the file system index. The actual data remains on the disk sectors and can be easily recovered using forensic software until it is physically overwritten by new data."
+    },
+    {
+      question: "Is the 'Delete' key enough to destroy sensitive files?",
+      answer: "No, pressing delete simply marks the space as available. The file fragments stay on the drive. Only certified data erasure software that overwrites every sector can guarantee permanent destruction."
+    },
+    {
+      question: "Can data be recovered from a physically damaged drive?",
+      answer: "Yes, unless the platters are pulverized or the flash chips are destroyed, forensic labs can often recover data from damaged, burnt, or water-logged drives. Software erasure should always precede physical disposal."
     }
   ],
   "secure-file-erase": [
@@ -296,7 +360,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "In the cloud, you can't control the physical sectors. However, file-erasure software can often help clear the 'temporary fragments' on your local hard drive that sync with the cloud."
     }
   ],
-  "world-class-n-p-s": [
+  "world-class-nps": [
     {
       question: "What is NPS and why it matters for data erasure providers?",
       answer: "Net Promoter Score (NPS) measures customer loyalty and satisfaction. For data erasure providers, a high NPS indicates deep trust, reliability, and excellence in providing secure, compliant sanitization services."
@@ -318,6 +382,10 @@ export const blogFaqs: Record<string, FAQ[]> = {
     {
       question: "Does BIOS wiping support NVMe drives?",
       answer: "Yes, many UEFI-based BIOS versions support NVMe Format and Secure Erase commands, which are the gold standard for SSD sanitization."
+    },
+    {
+      question: "Does BIOS Secure Erase work on all SSDs?",
+      answer: "No, BIOS-level erasure depends on motherboard support and the SSD firmware. Professional software provides a more universal and verifiable solution."
     }
   ],
   "wipe-computer-donating": [
@@ -358,6 +426,14 @@ export const blogFaqs: Record<string, FAQ[]> = {
     {
       question: "How can organizations mitigate shadow data risks?",
       answer: "Organizations should implement strict governance, use discovery tools, and ensure all retired devices—including personal ones used for work—undergo compliance-verified sanitization."
+    },
+    {
+      question: "What is shadow data?",
+      answer: "Shadow data refers to unprotected information that exists outside an organization's security perimeter. This includes data shared on collaboration platforms, stored on personal devices, insecure cloud servers, or decommissioned assets."
+    },
+    {
+      question: "How can shadow data be erased securely?",
+      answer: "Shadow data can be erased securely using professional data erasure software like D-Secure Drive Eraser. The software must be NIST and ADISA tested to ensure complete removal of data from all storage areas."
     }
   ],
   "sec-compliance": [
@@ -400,7 +476,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, 'Virtual Machine Erasure' is more secure than deletion as it overwrites the specific logical sectors assigned to the VM on the physical storage."
     }
   ],
-  "p-h-i-erasure": [
+  "phi-erasure": [
     {
       question: "What is PHI and why is its disposal regulated?",
       answer: "Protected Health Information (PHI) includes identifiable health data. HIPAA and DPDP Act mandate its secure disposal to prevent medical identity theft."
@@ -408,6 +484,14 @@ export const blogFaqs: Record<string, FAQ[]> = {
     {
       question: "How does D-Secure ensure compliant PHI erasure?",
       answer: "D-Secure uses compliance-verified sanitization methods and generates detailed certificates of erasure that fulfill the audit requirements of global healthcare regulators."
+    },
+    {
+      question: "What is PHI erasure and why is it critical?",
+      answer: "PHI (Protected Health Information) erasure is the compliance-verified destruction of medical records and patient data. It is a mandatory requirement for HIPAA compliance to prevent massive fines and protect patient privacy."
+    },
+    {
+      question: "How do I ensure compliant PHI erasure on medical equipment?",
+      answer: "Use compliance-verified erasure software that supports all storage media types (embedded boards, SSDs, HDDs) found in medical devices and generates HIPAA-compliant audit reports for every asset."
     }
   ],
   "onsite-vs-offsite-destruction": [
@@ -420,7 +504,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Onsite erasure is cost-effective for large volumes as it removes logistics costs and allows immediate reuse of hardware within the organization."
     }
   ],
-  "n-i-s-t-vs-i-e-e-e": [
+  "nist-vs-ieee": [
     {
       question: "What is the difference between NIST 800-88 and IEEE 2883 standards?",
       answer: "NIST 800-88 is the industry benchmark for sanitization, while IEEE 2883 is a newer global standard providing specific depth for NVMe and modern SSDs."
@@ -440,35 +524,13 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "No, NIST provides the standards (SP 800-88). Software 'compliance' means the tool has been validated by third-party labs to meet these NIST specifications."
     },
     {
-      question: "Why use NIST-tested data erasure software?",
-      answer: "NIST-tested software ensures that the erasure commands (Clear/Purge) are executed correctly and verified. It provides the necessary documentation and tamper-proof reporting required for regulatory compliance."
-    },
-    {
       question: "What makes software 'NIST-compliant'?",
       answer: "NIST compliance means the software correctly implements the technical methods outlined in NIST SP 800-88 Rev. 1, including verification steps and generating a Certificate of Sanitization."
     }
   ],
-  "ssd-wipe-bios": [
-    {
-      question: "Can I wipe an SSD from the BIOS?",
-      answer: "Yes, many modern motherboards include 'Secure Erase' tools in the BIOS. However, for enterprise compliance and audit trails, using compliance-verified software like D-Secure is recommended."
-    },
-    {
-      question: "Does BIOS Secure Erase work on all SSDs?",
-      answer: "No, BIOS-level erasure depends on motherboard support and the SSD firmware. Professional software provides a more universal and verifiable solution."
-    }
-  ],
-  "ssd-wipe-guide": [
-    {
-      question: "How do I securely wipe an SSD?",
-      answer: "Wiping an SSD requires specialized commands (like 'Secure Erase' or 'Sanitize') rather than traditional overwriting to ensure all blocks, including over-provisioned ones, are cleared."
-    },
-    {
-      question: "Does formatting an SSD delete data?",
-      answer: "No, a standard format only removes the file index. Data remains on the NAND cells and can be recovered using forensic tools unless a secure wipe is performed."
-    }
-  ],
-  "secure-i-t-asset-disposal": [
+
+
+  "secure-it-asset-disposal": [
     {
       question: "What does ITAD stand for?",
       answer: "ITAD stands for IT Asset Disposition, the practice of securely and sustainably disposing of obsolete or unwanted IT equipment."
@@ -488,7 +550,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, professional tools like D-Secure can integrate with inventory management systems to trigger erasure and automatically update asset records with certificates of destruction."
     }
   ],
-  "best-erasure-methods": [
+  "best-data-erasure-methods": [
     {
       question: "What is the best data erasure method for enterprises?",
       answer: "For reusable media, NIST 800-88 'Purge' level (like ATA/NVMe Secure Erase) is the gold standard. For damaged or obsolete media, physical shredding to 2mm is recommended."
@@ -496,8 +558,15 @@ export const blogFaqs: Record<string, FAQ[]> = {
     {
       question: "How do I choose between overwriting and cryptographic erase?",
       answer: "Overwriting is universal but slower on high-capacity HDDs. Cryptographic erase is instant but depends on the drive's internal encryption support. D-Secure helps you choose the best method for your specific hardware mix."
+    },
+    {
+      question: "Is single-pass overwrite enough for modern hard drives?",
+      answer: "According to NIST 800-88, a single-pass overwrite (Clear) is sufficient for modern ATA drives to prevent keyboard-level recovery. However, for higher security or compliance, a multi-pass Purge level is often required."
     }
   ],
+
+
+
   "brand-reputation-esg": [
     {
       question: "How does data security impact a company's ESG score?",
@@ -508,7 +577,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, using compliance-verified erasure instead of shredding allows hardware to be refurbished and reused, directly supporting circular economy goals and reducing e-waste."
     }
   ],
-  "c-c-p-a-violation": [
+  "ccpa-violation": [
     {
       question: "What are the CCPA requirements for data disposal?",
       answer: "The California Consumer Privacy Act (CCPA) requires businesses to implement reasonable security procedures, including secure deletion of personal data when requested or at end-of-life."
@@ -528,7 +597,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Significantly. Shredding turns valuable resources into scrap and requires high energy. Erasure preserves the functional life of the asset, maximizing the environmental value of the original manufacturing energy."
     }
   ],
-  "certified-i-t-a-d-reasons": [
+  "certified-itad-reasons": [
     {
       question: "Why should I use a compliance-verified ITAD vendor?",
       answer: "Compliance-verified vendors (like those with R2 or e-Stewards) follow strict data security and environmental standards, ensuring your retired assets are handled legally and ethically."
@@ -558,14 +627,19 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "A 'Powerwash' is a good basic reset, but for enterprise or education environments, using a NIST-compliant sanitization tool ensures that no residual cryptographic keys or fragments remain."
     }
   ],
-  "caption-call-f-c-c-settlement": [
+
+  "caption-call-fcc-settlement": [
     {
       question: "What was the CaptionCall FCC settlement about?",
-      answer: "The settlement involved alleged violations of FCC rules regarding the IP Captioned Telephone Service (IP CTS) program, emphasizing the need for strict compliance in telecommunications data handling."
+      answer: "The settlement involved alleged violations of FCC rules regarding the IP Captioned Telephone Service (IP CTS) program, emphasizing the need for strict compliance in telecommunications data handling. The FCC found that CaptionCall unlawfully retained customer call data for three years, violating rules that prohibit keeping such information beyond the duration of the call."
     },
     {
       question: "How does this settlement affect data disposal policies?",
-      answer: "It serves as a warning that regulators are actively monitoring how telecommunications data is managed and disposed of, requiring organizations to maintain 'audit-ready' records."
+      answer: "It serves as a warning that regulators are actively monitoring how telecommunications data is managed and disposed of, requiring organizations to maintain 'audit-ready' records. Companies must implement strict data retention schedules and use compliance-verified automated erasure solutions to ensure data is destroyed once its legal or business purpose expires."
+    },
+    {
+      question: "How long should call data be retained under FCC rules?",
+      answer: "Under FCC IP CTS rules, providers are generally prohibited from retaining call data beyond the duration of the call for billing purposes."
     }
   ],
   "change-healthcare-attack": [
@@ -638,6 +712,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Organizations often forget about dark data, leaving it unmanaged and unprotected. If a breach occurs, this forgotten data can contain sensitive information that increases the breach impact."
     }
   ],
+
   "data-destruction-best-practices": [
     {
       question: "What are the best practices for enterprise data destruction?",
@@ -1356,17 +1431,8 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Use Purge for highly sensitive data, end-of-life SSDs/NVMe drives, or when media is being redeployed outside your organization's security boundary. Clear is generally sufficient for internal reuse of HDDs."
     }
   ],
-  "phi-erasure": [
-    {
-      question: "What is PHI erasure and why is it critical?",
-      answer: "PHI (Protected Health Information) erasure is the compliance-verified destruction of medical records and patient data. It is a mandatory requirement for HIPAA compliance to prevent massive fines and protect patient privacy."
-    },
-    {
-      question: "How do I ensure compliant PHI erasure on medical equipment?",
-      answer: "Use compliance-verified erasure software that supports all storage media types (embedded boards, SSDs, HDDs) found in medical devices and generates HIPAA-compliant audit reports for every asset."
-    }
-  ],
-  "p-i-i-disposal-breach": [
+
+  "pii-disposal-breach": [
     {
       question: "What are the risks of a PII disposal breach?",
       answer: "PII (Personally Identifiable Information) breaches caused by poor disposal lead to identity theft, massive lawsuits, regulatory fines (GDPR, DPDP), and permanent loss of customer trust."
@@ -1386,16 +1452,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Use remote erasure solutions or implement a centralized collection point where all WFH laptops are sanitized using compliance-verified software before they enter the recycling or resale stream."
     }
   ],
-  "shadow-data": [
-    {
-      question: "What is shadow data?",
-      answer: "Shadow data refers to unprotected information that exists outside an organization's security perimeter. This includes data shared on collaboration platforms, stored on personal devices, insecure cloud servers, or decommissioned assets."
-    },
-    {
-      question: "How can shadow data be erased securely?",
-      answer: "Shadow data can be erased securely using professional data erasure software like D-Secure Drive Eraser. The software must be NIST and ADISA tested to ensure complete removal of data from all storage areas."
-    }
-  ],
+
   "ultratest-comparison": [
     {
       question: "How does D-Secure compare to Ultratest for data erasure?",
@@ -1416,16 +1473,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, D-Secure generates tamper-proof, HIPAA-compliant certificates of destruction for every asset sanitized, providing the necessary audit trail for legal and regulatory compliance."
     }
   ],
-  "caption-call-fcc-settlement": [
-    {
-      question: "What was the main violation in the CaptionCall settlement?",
-      answer: "The FCC found that CaptionCall unlawfully retained customer call data for three years, violating rules that prohibit keeping such information beyond the duration of the call."
-    },
-    {
-      question: "How can organizations avoid similar data retention penalties?",
-      answer: "Companies must implement strict data retention schedules and use compliance-verified automated erasure solutions to ensure data is destroyed once its legal or business purpose expires."
-    }
-  ],
+
   "erasure-standards": [
     {
       question: "Which data erasure standard is the most secure?",

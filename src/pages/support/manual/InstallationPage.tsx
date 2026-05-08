@@ -209,12 +209,12 @@ const InstallationPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead
+      {/* <SEOHead
         seo={getSEOForPage("installation", {
           title: "Installation | D-Secure Manual",
           canonicalUrl: "/support/manual/installation",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}

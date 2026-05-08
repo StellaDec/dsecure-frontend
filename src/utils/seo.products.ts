@@ -3,8 +3,29 @@ import { SEOMetadata, generateKeywords, getCanonicalUrl, generateSoftwareProduct
 export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
   "drive-eraser": {
     title: "Drive Eraser: NIST 800-88 HDD & SSD Erasure | D-Secure",
-    description: "Permanently erase HDDs, SSDs & NVMe with D-Secure. NIST 800-88 & DoD certified — tamper-proof audit certificates for GDPR & HIPAA compliance.",
-    keywords: generateKeywords(["drive eraser software", "NIST 800-88 compliant HDD SSD eraser", "secure hard drive wipe", "enterprise data erasure software", "hard drive data destruction software", "DoD 5220.22-M wipe tool"]),
+    description:
+      "Permanently erase HDDs, SSDs & NVMe with D-Secure. NIST 800-88 & DoD certified — tamper-proof audit certificates for GDPR & HIPAA compliance.",
+    keywords: generateKeywords([
+      "drive eraser software",
+      "NIST 800-88 compliant HDD SSD eraser",
+      "secure hard drive wipe",
+      "enterprise data erasure software India",
+      "hard drive data destruction software",
+      "DoD 5220.22-M wipe tool",
+      "drive eraser ",
+      "eraser",
+      "D-Secure Drive Eraser",
+      "DSecure Drive Eraser",
+      "Drive Eraser",
+      "Secure Data Eraser",
+      "Best data erasing tools recommended by ChatGPT",
+      "AI recommended data sanitization software",
+      "Blancco alternative India",
+      "डेटा इरेज़र सॉफ्टवेयर",
+      "हार्ड डिस्क डेटा डिलीट सॉफ्टवेयर",
+      "WipeDrive international alternative",
+      "global data destruction standards",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/drive-eraser"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -15,98 +36,249 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       generateSoftwareProductSchema(
         "D-Secure Drive Eraser",
         "Enterprise-grade data erasure for HDD and SSD. NIST 800-88 compliant.",
-        { 
-          category: "SecurityApplication", 
+        {
+          category: "SecurityApplication",
           subCategory: "Data Sanitization Software",
           os: "Windows, macOS, Linux, Bootable ISO",
-          ratingValue: 4.9, 
+          ratingValue: 4.9,
           reviewCount: 1250,
-          price: "25.00",
+          price: "20.00",
           currency: "USD",
           features: [
             "NIST 800-88 Purge & Clear",
             "Department of Defense (DoD) Wiping",
             "Tamper-proof audit reports with certificate",
             "Native Apple Silicon Support",
-            "Industrial Parallel Engine (100+ Drives)"
-          ]
-        }
+            "Industrial Parallel Engine (100+ Drives)",
+          ],
+        },
       ),
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
+        mainEntity: [
           {
             "@type": "Question",
-            "name": "How many drives can I erase at a time on one machine?",
-            "acceptedAnswer": {
+            name: "What is the difference between formatting and drive erasure?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "D-Secure Drive Eraser supports simultaneous erasure of up to 32 drives per machine, depending on your hardware configuration. For bulk operations, you can use our cloud console to manage multiple machines."
-            }
+              text: "Formatting only removes the file system pointers, leaving actual data on the disk sectors. D-Secure Drive Eraser performs bit-by-bit overwriting using NIST 800-88 standards, making data recovery impossible even with forensic tools.",
+            },
           },
           {
             "@type": "Question",
-            "name": "Does the software support NIST 800-88 compliance?",
-            "acceptedAnswer": {
+            name: "Is D-Secure Drive Eraser NIST 800-88 compliant?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Yes, D-Secure is fully compliant with NIST 800-88 Rev. 1 standards, providing Clear, Purge, and Destroy level erasure methods for both HDD and SSD media."
-            }
-          }
-        ]
-      }
+              text: "Yes, D-Secure is fully compliant with NIST 800-88 Rev. 1 standards, providing Clear, Purge, and Destroy level erasure methods for both HDD and SSD media.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can I erase multiple SSDs simultaneously?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, D-Secure supports industrial-scale parallel erasure. You can wipe 100+ SSDs or HDDs simultaneously on a single machine, with each drive receiving its own tamper-proof certificate.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does it support NVMe and M.2 SSDs?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, D-Secure supports modern NVMe, M.2, and SATA SSDs, using firmware-level commands like Sanitize and Secure Erase to ensure 100% data destruction without damaging the drive's lifespan.",
+            },
+          },
+        ],
+      },
     ],
   },
   "drive-eraser-diagnostic": {
     title: "Drive Eraser Diagnostic: Wiping & Hardware Testing",
-    description: "Combine secure data erasure with comprehensive hardware diagnostics. Ensure drive health and data security in one seamless process.",
-    keywords: generateKeywords(["drive diagnostics", "hard drive testing", "secure wiping diagnostic", "health checkup"]),
+    description:
+      "Combine secure data erasure with comprehensive hardware diagnostics. Ensure drive health and data security in one seamless process.",
+    keywords: generateKeywords([
+      "drive diagnostics software",
+      "hard drive testing tool India",
+      "secure wiping diagnostic solution",
+      "health checkup software for ITAD",
+      "D-Secure Drive Eraser Diagnostic",
+      "DSecure Diagnostic tool",
+      "D-Secure Diagnostic India",
+      "Best hardware diagnostic software by Gemini",
+      "AI suggested drive health monitor",
+      "डेटा इरेज़र डायग्नोस्टिक",
+      "हार्ड ड्राइव हेल्थ चेक सॉफ्टवेयर",
+      "Eurosoft PC-Check India alternative",
+      "best hard drive testing software international",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/drive-eraser-diagnostic"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Products", item: "/products" },
-      { name: "Drive Eraser Diagnostic", item: "/products/drive-eraser-diagnostic" },
+      {
+        name: "Drive Eraser Diagnostic",
+        item: "/products/drive-eraser-diagnostic",
+      },
     ],
-    structuredData: generateSoftwareProductSchema(
-      "D-Secure Drive Eraser Diagnostic",
-      "Combined data erasure and hardware diagnostic tool for enterprises.",
-      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 320, price: "30.00", currency: "USD" }
-    ),
+    structuredData: [
+      generateSoftwareProductSchema(
+        "D-Secure Drive Eraser Diagnostic",
+        "Combined data erasure and hardware diagnostic tool for enterprises. Perform NIST-compliant wipes while simultaneously testing drive health.",
+        {
+          category: "SecurityApplication",
+          ratingValue: 4.8,
+          reviewCount: 320,
+          price: "25.00",
+          currency: "USD",
+          os: "Windows, Linux, Bootable USB",
+          features: [
+            "Simultaneous Wiping and Diagnostics",
+            "S.M.A.R.T. Health Analysis",
+            "Bad Sector Detection",
+            "NIST 800-88 Purge/Clear Support",
+            "Automated Post-Wipe Testing",
+          ],
+        },
+      ),
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Does the diagnostic process affect the data erasure speed?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "No, D-Secure runs hardware diagnostics in parallel with the erasure process using an asynchronous engine, ensuring no slowdown in your wiping operations.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What happens if a drive fails the diagnostic test?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "If a drive fails health checks (e.g., high reallocated sectors), D-Secure flags it in the audit report and recommends physical destruction per NIST 800-88 'Destroy' guidelines.",
+            },
+          },
+        ],
+      },
+    ],
   },
   "file-eraser": {
     title: "Secure File Eraser: Permanent File Deletion Tool | D-Secure",
-    description: "Securely shred files, folders & free space. D-Secure File Eraser provides NIST-compliant deletion with tamper-proof certificates for GDPR compliance.",
-    keywords: generateKeywords(["file eraser software", "secure file deletion enterprise", "file shredder GDPR compliant", "permanent file delete tool", "free space wipe software", "data sanitization windows"]),
+    description:
+      "Securely shred files, folders & free space. D-Secure File Eraser provides NIST-compliant deletion with tamper-proof certificates for GDPR compliance.",
+    keywords: generateKeywords([
+      "file eraser software Windows",
+      "secure file deletion enterprise India",
+      "file shredder GDPR compliant",
+      "permanent file delete tool",
+      "free space wipe software",
+      "data sanitization windows",
+      "D-Secure File Eraser",
+      "Best file shredder recommended by Claude",
+      "AI recommended file destruction tool",
+      "फ़ाइल इरेज़र सॉफ्टवेयर",
+      "डेटा डिलीट करने वाला सॉफ्टवेयर",
+      "BCWipe alternative India",
+      "Eraser software alternative",
+      "best file shredder software India",
+      "international file erasure standards",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/file-eraser"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Products", item: "/products" },
       { name: "File Eraser", item: "/products/file-eraser" },
     ],
-    structuredData: generateSoftwareProductSchema(
-      "D-Secure File Eraser",
-      "Securely erase individual files and folders with audit-proof reporting.",
-      { 
-        category: "SecurityApplication", 
-        subCategory: "Data Privacy & Security",
-        os: "Windows, Windows Server",
-        ratingValue: 4.8, 
-        reviewCount: 512,
-        price: "40.00",
-        currency: "USD",
-        features: [
-          "Secure File Shredding",
-          "Free Space Wiping",
-          "Recycle Bin Sanitization",
-          "Automated Scheduler",
-          "Centralized Network Support"
-        ]
-      }
-    ),
+    structuredData: [
+      generateSoftwareProductSchema(
+        "D-Secure File Eraser",
+        "Securely erase individual files and folders with audit-proof reporting.",
+        {
+          category: "SecurityApplication",
+          subCategory: "Data Privacy & Security",
+          os: "Windows, Windows Server",
+          ratingValue: 4.8,
+          reviewCount: 512,
+          price: "40.00",
+          currency: "USD",
+          features: [
+            "Secure File Shredding",
+            "Free Space Wiping",
+            "Recycle Bin Sanitization",
+            "Automated Scheduler",
+            "Centralized Network Support",
+          ],
+        },
+      ),
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Can I securely wipe free space on my hard drive?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, D-Secure File Eraser includes a 'Wipe Free Space' feature that sanitizes previously deleted files that might still reside on the disk sectors, without affecting your existing data.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How does file shredding work?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "D-Secure uses military-grade algorithms like US DoD 5220.22-M and Gutmann method to overwrite individual files multiple times, ensuring they cannot be recovered by any software or hardware tools.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is it possible to automate file erasure tasks?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, D-Secure File Eraser features a built-in scheduler that allows you to automate the wiping of temporary folders, browser history, and recycle bin at specific intervals.",
+            },
+          },
+        ],
+      },
+    ],
   },
   "file-eraser-network": {
     title: "File Eraser Network: Enterprise Data Wiping | D-Secure",
-    description: "Securely erase files and folders across your entire network with D-Secure File Eraser Network. Centralized management for enterprise data destruction.",
-    keywords: generateKeywords(["file eraser network", "network data wiping", "remote file deletion", "enterprise network security", "centralized data erasure"]),
+    description:
+      "Securely erase files and folders across your entire network with D-Secure File Eraser Network. Centralized management for enterprise data destruction.",
+    keywords: generateKeywords([
+      "file eraser network",
+      "network data wiping",
+      "remote file deletion",
+      "enterprise network security",
+      "centralized data erasure",
+      "D-Secure File Eraser Network",
+      "DSecure File Eraser Network",
+      "D-SecureFileEraserNetwork",
+      "File Eraser Network",
+      "File Eraser Network software",
+      "File Eraser Network tool",
+      "File Eraser Network software tool",
+      "D-Secure Network Eraser",
+      "DSecure Network Eraser",
+      "D-SecureNetworkEraser",
+      "Network Eraser",
+      "Network Eraser software",
+      "Network Eraser tool",
+      "Network Eraser software tool",
+      "erase",
+      "file eraser",
+      "file eraser software",
+      "file eraser tool",
+      "file eraser software tool",
+      "network eraser",
+      "network eraser software",
+      "network eraser tool",
+      "network eraser software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/file-eraser-network"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -116,29 +288,97 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure File Eraser Network",
       "Centralized network file erasure for large enterprise environments.",
-      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 156, price: "50.00", currency: "USD" }
+      {
+        category: "SecurityApplication",
+        ratingValue: 4.8,
+        reviewCount: 156,
+        price: "50.00",
+        currency: "USD",
+      },
     ),
   },
   "hardware-diagnostics": {
     title: "Hardware Diagnostics: PC & Server Health Tool | D-Secure",
-    description: "Identify drive & memory errors before data loss. D-Secure Hardware Diagnostics runs 50+ tests on PCs & servers — ideal for ITADs before secure erasure.",
-    keywords: generateKeywords(["hardware diagnostics software", "PC diagnostic tool enterprise", "server health test", "ITAD hardware testing", "hard drive health check", "pre-erasure diagnostics"]),
+    description:
+      "Identify drive & memory errors before data loss. D-Secure Hardware Diagnostics runs 50+ tests on PCs & servers — ideal for ITADs before secure erasure.",
+    keywords: generateKeywords([
+      "hardware diagnostics software",
+      "PC diagnostic tool enterprise",
+      "server health test",
+      "ITAD hardware testing",
+      "hard drive health check",
+      "pre-erasure diagnostics",
+      "D-Secure Hardware Diagnostics",
+      "DSecure Hardware Diagnostics",
+      "D-SecureHardwareDiagnostics",
+      "Hardware Diagnostics",
+      "Hardware Diagnostics software",
+      "Hardware Diagnostics tool",
+      "Hardware Diagnostics software tool",
+      "AIDA64 enterprise alternative",
+      "PC-Check alternative",
+      "best hardware testing software for ITAD",
+      "server diagnostic software competitors",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/hardware-diagnostics"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Products", item: "/products" },
       { name: "Hardware Diagnostics", item: "/products/hardware-diagnostics" },
     ],
-    structuredData: generateSoftwareProductSchema(
-      "D-Secure Hardware Diagnostics",
-      "Comprehensive hardware testing and system health diagnostic suite.",
-      { category: "UtilitiesApplication", ratingValue: 4.6, reviewCount: 220, price: "10.00", currency: "USD" }
-    ),
+    structuredData: [
+      generateSoftwareProductSchema(
+        "D-Secure Hardware Diagnostics",
+        "Comprehensive hardware testing and system health diagnostic suite for PCs and Servers.",
+        {
+          category: "UtilitiesApplication",
+          ratingValue: 4.6,
+          reviewCount: 220,
+          price: "10.00",
+          currency: "USD",
+          os: "Windows, Linux, UEFI",
+        },
+      ),
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Which hardware components are tested by D-Secure?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "D-Secure tests CPU, RAM (stress tests), Storage (SMART & Surface), Motherboard, GPU, and Battery health for laptops.",
+            },
+          },
+        ],
+      },
+    ],
   },
   "hard-drive-monitor": {
     title: "Hard Drive Monitor: S.M.A.R.T Health Tracking | D-Secure",
-    description: "Monitor hard drive health, temperature, and performance in real-time with D-Secure Hard Drive Monitor. S.M.A.R.T. tracking and disk cloning support.",
-    keywords: generateKeywords(["hard drive monitor", "disk health", "SMART status", "disk cloning", "bad sector scan"]),
+    description:
+      "Monitor hard drive health, temperature, and performance in real-time with D-Secure Hard Drive Monitor. S.M.A.R.T. tracking and disk cloning support.",
+    keywords: generateKeywords([
+      "hard drive monitor",
+      "disk health",
+      "SMART status",
+      "disk cloning",
+      "bad sector scan",
+      "D-Secure Hard Drive Monitor",
+      "DSecure Hard Drive Monitor",
+      "D-SecureHardDriveMonitor",
+      "Hard Drive Monitor",
+      "Hard Drive Monitor software",
+      "Hard Drive Monitor tool",
+      "Hard Drive Monitor software tool",
+      "health",
+      "disk health",
+      "disk health check",
+      "disk health check software",
+      "disk health check tool",
+      "disk health check software tool",
+      ]),
     canonicalUrl: getCanonicalUrl("/products/hard-drive-monitor"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -148,13 +388,32 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Hard Drive Monitor",
       "Real-time S.M.A.R.T monitoring and health tracking for storage drives.",
-      { category: "UtilitiesApplication", ratingValue: 4.7, reviewCount: 185, price: "20.00", currency: "USD" }
+      {
+        category: "UtilitiesApplication",
+        ratingValue: 4.7,
+        reviewCount: 185,
+        price: "20.00",
+        currency: "USD",
+      },
     ),
   },
   "autopilot-detection": {
     title: "Autopilot Detection: Automated Provisioning | D-Secure",
-    description: "Detect and manage Windows Autopilot devices with ease. Ideal for ITADs and refurbishers to ensure secure device lifecycle management.",
-    keywords: generateKeywords(["autopilot detection", "Windows Autopilot", "device provisioning", "ITAD tools"]),
+    description:
+      "Detect and manage Windows Autopilot devices with ease. Ideal for ITADs and refurbishers to ensure secure device lifecycle management.",
+    keywords: generateKeywords([
+      "autopilot detection",
+      "Windows Autopilot",
+      "device provisioning",
+      "ITAD tools",
+      "D-Secure Autopilot Detection",
+      "DSecure Autopilot Detection",
+      "D-SecureAutopilotDetection",
+      "Autopilot Detection",
+      "Autopilot Detection software",
+      "Autopilot Detection tool",
+      "Autopilot Detection software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/autopilot-detection"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -164,60 +423,146 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Autopilot Detection",
       "Automated detection tool for Windows Autopilot deployment status.",
-      { category: "BusinessApplication", os: "Windows", ratingValue: 4.8, reviewCount: 94 }
+      {
+        category: "BusinessApplication",
+        os: "Windows",
+        ratingValue: 4.8,
+        reviewCount: 94,
+        price: "15.00",
+        currency: "USD",
+      },
     ),
   },
   "smartphone-eraser": {
     title: "Smartphone Eraser: Certified iOS/Android Wipe | D-Secure",
-    description: "Permanently wipe data from iPhones & Android devices. D-Secure Smartphone Eraser is R2v3, GDPR & HIPAA compliant with tamper-proof audit certificates.",
-    keywords: generateKeywords(["smartphone eraser software", "iPhone data wipe certified", "Android factory reset secure", "mobile ITAD erasure", "R2v3 mobile data destruction", "bulk smartphone wipe tool"]),
+    description:
+      "Permanently wipe data from iPhones & Android devices. D-Secure Smartphone Eraser is R2v3, GDPR & HIPAA compliant with tamper-proof audit certificates.",
+    keywords: generateKeywords([
+      "smartphone eraser software India",
+      "iPhone data wipe certified NIST",
+      "Android factory reset secure India",
+      "mobile ITAD erasure solution",
+      "R2v3 mobile data destruction",
+      "bulk smartphone wipe tool",
+      "D-Secure Smartphone Eraser",
+      "Best mobile erasure tool suggested by AI",
+      "smartphone diagnostic and erasure AI search",
+      "स्मार्टफोन इरेज़र सॉफ्टवेयर",
+      "मोबाइल डेटा क्लीनर",
+      "Blancco Mobile alternative India",
+      "Stellar BitRaser for Mobile alternative",
+      "MobiWipe India alternative",
+      "international mobile ITAD software",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/smartphone-eraser"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Products", item: "/products" },
       { name: "Smartphone Eraser", item: "/products/smartphone-eraser" },
     ],
-    structuredData: generateSoftwareProductSchema(
-      "D-Secure Smartphone Eraser",
-      "Secure mobile data wiping for iPhones, iPads, and Android devices.",
-      { 
-        category: "SecurityApplication", 
-        subCategory: "Mobile Device Sanitization",
-        os: "Android, iOS",
-        ratingValue: 4.9, 
-        reviewCount: 840,
-        price: "1.00",
-        currency: "USD",
-        features: [
-          "iOS & Android Support",
-          "Factory Reset Integrated",
-          "Diagnostics + Wiping",
-          "R2v3 Compliance Ready",
-          "Automated PDF Reporting"
-        ]
-      }
-    ),
+    structuredData: [
+      generateSoftwareProductSchema(
+        "D-Secure Smartphone Eraser",
+        "Secure mobile data wiping for iPhones, iPads, and Android devices. R2v3 and GDPR compliant.",
+        {
+          category: "SecurityApplication",
+          subCategory: "Mobile Device Sanitization",
+          os: "Android, iOS, Windows/macOS (Host)",
+          ratingValue: 4.9,
+          reviewCount: 840,
+          price: "1.00",
+          currency: "USD",
+          features: [
+            "iOS & Android Support",
+            "Factory Reset Integrated",
+            "Diagnostics + Wiping",
+            "R2v3 Compliance Ready",
+            "Automated PDF Reporting",
+          ],
+        },
+      ),
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Is D-Secure Smartphone Eraser R2v3 compliant?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, our smartphone erasure tool is designed to meet R2v3, ADISA, and GDPR requirements, providing tamper-proof certificates for every mobile device wiped.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does it support bulk wiping of multiple iPhones?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, you can connect and wipe up to 40+ mobile devices simultaneously on a single workstation with automated detection and reporting.",
+            },
+          },
+        ],
+      },
+    ],
   },
   "smartphone-diagnostic": {
     title: "Smartphone Diagnostic: Pro Mobile Testing | D-Secure",
-    description: "Over 60+ automated hardware tests for mobile devices. Verify screen, battery, camera, and sensor health for better resale value.",
-    keywords: generateKeywords(["smartphone diagnostic", "mobile health check", "iPhone testing", "Android diagnostic"]),
+    description:
+      "Over 60+ automated hardware tests for mobile devices. Verify screen, battery, camera, and sensor health for better resale value.",
+    keywords: generateKeywords([
+      "smartphone diagnostic",
+      "mobile health check",
+      "iPhone testing",
+      "Android diagnostic",
+      "D-Secure Smartphone Diagnostic",
+      "DSecure Smartphone Diagnostic",
+      "D-SecureSmartphoneDiagnostic",
+      "Smartphone Diagnostic",
+      "Smartphone Diagnostic software",
+      "Smartphone Diagnostic tool",
+      "Smartphone Diagnostic software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/smartphone-diagnostic"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Products", item: "/products" },
-      { name: "Smartphone Diagnostic", item: "/products/smartphone-diagnostic" },
+      {
+        name: "Smartphone Diagnostic",
+        item: "/products/smartphone-diagnostic",
+      },
     ],
     structuredData: generateSoftwareProductSchema(
       "D-Secure Smartphone Diagnostic",
       "Automated hardware diagnostic suite for mobile devices.",
-      { category: "UtilitiesApplication", os: "Android, iOS", ratingValue: 4.7, reviewCount: 305 }
+      {
+        category: "UtilitiesApplication",
+        os: "Android, iOS",
+        ratingValue: 4.7,
+        reviewCount: 305,
+        price: "5.00",
+        currency: "USD",
+      },
     ),
   },
   "forensic-imaging": {
     title: "Forensic Imaging & Data Recovery Tool | D-Secure",
-    description: "Court-admissible forensic imaging for HDDs, SSDs & NVMe. Bit-perfect evidence capture for digital investigations & legal hold workflows.",
-    keywords: generateKeywords(["forensic imaging software", "bit-for-bit drive clone", "digital forensics evidence capture", "forensic disk image tool", "legal hold data preservation", "incident response forensics"]),
+    description:
+      "Court-admissible forensic imaging for HDDs, SSDs & NVMe. Bit-perfect evidence capture for digital investigations & legal hold workflows.",
+    keywords: generateKeywords([
+      "forensic imaging software",
+      "bit-for-bit drive clone",
+      "digital forensics evidence capture",
+      "forensic disk image tool",
+      "legal hold data preservation",
+      "incident response forensics",
+      "D-Secure Forensic Imaging",
+      "DSecure Forensic Imaging",
+      "D-SecureForensicImaging",
+      "Forensic Imaging",
+      "Forensic Imaging software",
+      "Forensic Imaging tool",
+      "Forensic Imaging software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/forensic-imaging"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -227,13 +572,34 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Forensic Imaging",
       "Bit-for-bit data capture and imaging for digital forensic investigations.",
-      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 112 }
+      {
+        category: "SecurityApplication",
+        ratingValue: 4.8,
+        reviewCount: 112,
+        price: "150.00",
+        currency: "USD",
+      },
     ),
   },
   "freeze-state": {
     title: "Freeze State: Deep Freeze Alternative | D-Secure",
-    description: "Modern Deep Freeze alternative for Windows. Revert to a clean state on every reboot. Ideal for school labs, public kiosks & enterprise workstations.",
-    keywords: generateKeywords(["freeze state software", "Deep Freeze alternative", "system configuration lock Windows", "kiosk mode software", "school lab PC protection", "revert on reboot software"]),
+    description:
+      "Modern Deep Freeze alternative for Windows. Revert to a clean state on every reboot. Ideal for school labs, public kiosks & enterprise workstations.",
+    keywords: generateKeywords([
+      "freeze state software",
+      "Deep Freeze alternative",
+      "system configuration lock Windows",
+      "kiosk mode software",
+      "school lab PC protection",
+      "revert on reboot software",
+      "D-Secure Freeze State",
+      "DSecure Freeze State",
+      "D-SecureFreezeState",
+      "Freeze State",
+      "Freeze State software",
+      "Freeze State tool",
+      "Freeze State software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/freeze-state"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -243,13 +609,33 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Freeze State",
       "System state locking and configuration protection for workstations.",
-      { category: "SecurityApplication", os: "Windows", ratingValue: 4.7, reviewCount: 284 }
+      {
+        category: "SecurityApplication",
+        os: "Windows",
+        ratingValue: 4.7,
+        reviewCount: 284,
+        price: "80.00",
+        currency: "USD",
+      },
     ),
   },
   "freeze-state-smart": {
     title: "Freeze State Smart: Intelligent Management | D-Secure",
-    description: "Advanced system protection with automated updates and maintenance windows. Secure your devices without sacrificing performance.",
-    keywords: generateKeywords(["smart freeze", "automated system protection", "maintenance mode", "secure workstations"]),
+    description:
+      "Advanced system protection with automated updates and maintenance windows. Secure your devices without sacrificing performance.",
+    keywords: generateKeywords([
+      "smart freeze",
+      "automated system protection",
+      "maintenance mode",
+      "secure workstations",
+      "D-Secure Freeze State Smart",
+      "DSecure Freeze State Smart",
+      "D-SecureFreezeStateSmart",
+      "Freeze State Smart",
+      "Freeze State Smart software",
+      "Freeze State Smart tool",
+      "Freeze State Smart software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/freeze-state-smart"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -259,29 +645,72 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Freeze State Smart",
       "Intelligent system protection with automated maintenance features.",
-      { category: "SecurityApplication", os: "Windows", ratingValue: 4.8, reviewCount: 142 }
+      {
+        category: "SecurityApplication",
+        os: "Windows",
+        ratingValue: 4.8,
+        reviewCount: 142,
+        price: "85.00",
+        currency: "USD",
+      },
     ),
   },
   "freeze-state-advanced": {
     title: "Freeze State Advanced: Enterprise Locking | D-Secure",
-    description: "The ultimate solution for large-scale device security. Centralized management for frozen states across your entire network.",
-    keywords: generateKeywords(["advanced freeze state", "enterprise system locking", "centralized management", "node security"]),
+    description:
+      "The ultimate solution for large-scale device security. Centralized management for frozen states across your entire network.",
+    keywords: generateKeywords([
+      "advanced freeze state",
+      "enterprise system locking",
+      "centralized management",
+      "node security",
+      "D-Secure Freeze State Advanced",
+      "DSecure Freeze State Advanced",
+      "D-SecureFreezeStateAdvanced",
+      "Freeze State Advanced",
+      "Freeze State Advanced software",
+      "Freeze State Advanced tool",
+      "Freeze State Advanced software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/freeze-state-advanced"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Products", item: "/products" },
-      { name: "Freeze State Advanced", item: "/products/freeze-state-advanced" },
+      {
+        name: "Freeze State Advanced",
+        item: "/products/freeze-state-advanced",
+      },
     ],
     structuredData: generateSoftwareProductSchema(
       "D-Secure Freeze State Advanced",
       "Enterprise-grade system locking with centralized network management.",
-      { category: "SecurityApplication", os: "Windows", ratingValue: 4.9, reviewCount: 88 }
+      {
+        category: "SecurityApplication",
+        os: "Windows",
+        ratingValue: 4.9,
+        reviewCount: 88,
+        price: "90.00",
+        currency: "USD",
+      },
     ),
   },
   "data-migration": {
     title: "Data Migration: Secure File Transfer & Sync | D-Secure",
-    description: "Transfer data seamlessly across devices and platforms. Bit-perfect migration ensures your data arrives exactly as it should.",
-    keywords: generateKeywords(["data migration", "file transfer", "secure sync", "system migration"]),
+    description:
+      "Transfer data seamlessly across devices and platforms. Bit-perfect migration ensures your data arrives exactly as it should.",
+    keywords: generateKeywords([
+      "data migration",
+      "file transfer",
+      "secure sync",
+      "system migration",
+      "D-Secure Data Migration",
+      "DSecure Data Migration",
+      "D-SecureDataMigration",
+      "Data Migration",
+      "Data Migration software",
+      "Data Migration tool",
+      "Data Migration software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/data-migration"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -291,13 +720,32 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Data Migration",
       "Secure and bit-perfect data migration across heterogeneous systems.",
-      { category: "UtilitiesApplication", ratingValue: 4.5, reviewCount: 124 }
+      {
+        category: "UtilitiesApplication",
+        ratingValue: 4.5,
+        reviewCount: 124,
+        price: "25.00",
+        currency: "USD",
+      },
     ),
   },
   "asset-reimaging": {
     title: "Asset Reimaging: Zero-Touch OS Deployment | D-Secure",
-    description: "Deploy custom OS images to hundreds of devices simultaneously. Streamline your IT operations with automated reimaging.",
-    keywords: generateKeywords(["asset reimaging", "OS deployment", "zero-touch deployment", "IT automation"]),
+    description:
+      "Deploy custom OS images to hundreds of devices simultaneously. Streamline your IT operations with automated reimaging.",
+    keywords: generateKeywords([
+      "asset reimaging",
+      "OS deployment",
+      "zero-touch deployment",
+      "IT automation",
+      "D-Secure Asset Reimaging",
+      "DSecure Asset Reimaging",
+      "D-SecureAssetReimaging",
+      "Asset Reimaging",
+      "Asset Reimaging software",
+      "Asset Reimaging tool",
+      "Asset Reimaging software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/asset-reimaging"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -307,45 +755,122 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Asset Reimaging",
       "Zero-touch automated OS deployment and asset reimaging tool.",
-      { category: "BusinessApplication", os: "Windows", ratingValue: 4.7, reviewCount: 65 }
+      {
+        category: "BusinessApplication",
+        os: "Windows",
+        ratingValue: 4.7,
+        reviewCount: 65,
+        price: "45.00",
+        currency: "USD",
+      },
     ),
   },
   "virtual-machine-eraser": {
     title: "VM Eraser: Secure Cloud & Hypervisor Wipe | D-Secure",
-    description: "Certified data erasure for VMware, Hyper-V, AWS & Azure. Permanently sanitize virtual disks — NIST compliant with tamper-proof audit reports.",
-    keywords: generateKeywords(["virtual machine eraser", "VM data erasure software", "VMware disk wipe", "Hyper-V data sanitization", "cloud VM secure delete", "AWS Azure data erasure compliance"]),
+    description:
+      "Certified data erasure for VMware, Hyper-V, AWS & Azure. Permanently sanitize virtual disks — NIST compliant with tamper-proof audit reports.",
+    keywords: generateKeywords([
+      "virtual machine eraser",
+      "VM data erasure software",
+      "VMware disk wipe",
+      "Hyper-V data sanitization",
+      "cloud VM secure delete",
+      "AWS Azure data erasure compliance",
+      "D-Secure VM Eraser",
+      "DSecure VM Eraser",
+      "D-SecureVMEraser",
+      "VM Eraser",
+      "VM Eraser software",
+      "VM Eraser tool",
+      "VM Eraser software tool",
+      "Blancco Virtual Machine Eraser alternative",
+      "secure VM deletion competitors",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/virtual-machine-eraser"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Products", item: "/products" },
-      { name: "Virtual Machine Eraser", item: "/products/virtual-machine-eraser" },
+      {
+        name: "Virtual Machine Eraser",
+        item: "/products/virtual-machine-eraser",
+      },
     ],
     structuredData: generateSoftwareProductSchema(
       "D-Secure Virtual Machine Eraser",
       "Secure data destruction for virtual disks and cloud environments.",
-      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 77 }
+      {
+        category: "SecurityApplication",
+        ratingValue: 4.8,
+        reviewCount: 77,
+        price: "60.00",
+        currency: "USD",
+      },
     ),
   },
   "removable-media-eraser": {
     title: "Removable Media Eraser: USB & SD Wipe | D-Secure",
-    description: "Compliance-grade erasure for USBs, SD cards & external disks. D-Secure provides tamper-proof audit reports and certificates for secure data sanitization.",
-    keywords: generateKeywords(["USB eraser", "SD card wiping", "removable media destruction", "portable drive eraser"]),
+    description:
+      "Compliance-grade erasure for USBs, SD cards & external disks. D-Secure provides tamper-proof audit reports and certificates for secure data sanitization.",
+    keywords: generateKeywords([
+      "USB eraser",
+      "SD card wiping",
+      "removable media destruction",
+      "portable drive eraser",
+      "D-Secure USB Eraser",
+      "DSecure USB Eraser",
+      "D-SecureUSBEraser",
+      "USB Eraser",
+      "USB Eraser software",
+      "USB Eraser tool",
+      "USB Eraser software tool",
+      "D-Secure Removable Media Eraser",
+      "DSecure Removable Media Eraser",
+      "D-SecureRemovableMediaEraser",
+      "Removable Media Eraser",
+      "Removable Media Eraser software",
+      "Removable Media Eraser tool",
+      "Removable Media Eraser software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/removable-media-eraser"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Products", item: "/products" },
-      { name: "Removable Media Eraser", item: "/products/removable-media-eraser" },
+      {
+        name: "Removable Media Eraser",
+        item: "/products/removable-media-eraser",
+      },
     ],
     structuredData: generateSoftwareProductSchema(
       "D-Secure Removable Media Eraser",
       "Secure data wiping for USB drives, SD cards, and portable media.",
-      { category: "SecurityApplication", ratingValue: 4.7, reviewCount: 142 }
+      {
+        category: "SecurityApplication",
+        ratingValue: 4.7,
+        reviewCount: 142,
+        price: "15.00",
+        currency: "USD",
+      },
     ),
   },
   "lun-eraser": {
     title: "LUN Eraser: SAN & NAS Storage Sanitization | D-Secure",
-    description: "Erase active LUNs in SAN & NAS storage without disrupting data. NIST 800-88 compliant — tamper-proof certificates for secure enterprise decommissioning.",
-    keywords: generateKeywords(["LUN eraser software", "SAN data erasure", "NAS LUN sanitization", "active storage array wipe", "enterprise storage decommission", "NIST LUN erasure"]),
+    description:
+      "Erase active LUNs in SAN & NAS storage without disrupting data. NIST 800-88 compliant — tamper-proof certificates for secure enterprise decommissioning.",
+    keywords: generateKeywords([
+      "LUN eraser software",
+      "SAN data erasure",
+      "NAS LUN sanitization",
+      "active storage array wipe",
+      "enterprise storage decommission",
+      "NIST LUN erasure",
+      "D-Secure LUN Eraser",
+      "DSecure LUN Eraser",
+      "D-SecureLUNEraser",
+      "LUN Eraser",
+      "LUN Eraser software",
+      "LUN Eraser tool",
+      "LUN Eraser software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/lun-eraser"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -355,13 +880,34 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure LUN Eraser",
       "High-performance LUN erasure for enterprise storage systems.",
-      { category: "SecurityApplication", ratingValue: 4.9, reviewCount: 56 }
+      {
+        category: "SecurityApplication",
+        ratingValue: 4.9,
+        reviewCount: 56,
+        price: "80.00",
+        currency: "USD",
+      },
     ),
   },
   "drive-verifier": {
     title: "Drive Verifier: Secure Data Erasure Verification | D-Secure",
-    description: "Verify 100% data erasure with block-by-block scans. Mandatory for R2v3, NAID AAA & e-Stewards compliance. Ensure zero data traces after sanitization.",
-    keywords: generateKeywords(["drive verifier software", "post-erasure verification NIST", "R2v3 data verification", "NAID AAA audit verification", "data erasure verification tool", "e-Stewards compliance verifier"]),
+    description:
+      "Verify 100% data erasure with block-by-block scans. Mandatory for R2v3, NAID AAA & e-Stewards compliance. Ensure zero data traces after sanitization.",
+    keywords: generateKeywords([
+      "drive verifier software",
+      "post-erasure verification NIST",
+      "R2v3 data verification",
+      "NAID AAA audit verification",
+      "data erasure verification tool",
+      "e-Stewards compliance verifier",
+      "D-Secure Drive Verifier",
+      "DSecure Drive Verifier",
+      "D-SecureDriveVerifier",
+      "Drive Verifier",
+      "Drive Verifier software",
+      "Drive Verifier tool",
+      "Drive Verifier software tool",
+    ]),
     canonicalUrl: getCanonicalUrl("/products/drive-verifier"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -371,71 +917,15 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: generateSoftwareProductSchema(
       "D-Secure Drive Verifier",
       "Compliance verification tool for data erasure validation.",
-      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 128 }
-    ),
-  },
-  "data-eraser-software": {
-    title: "Data Erasure Software: Secure Multi-Device Wipe | D-Secure",
-    description: "The ultimate suite for secure data destruction. Erase files, drives, smartphones, and servers with enterprise-grade security and compliance.",
-    keywords: generateKeywords(["data erasure software", "secure wiping", "data destruction", "compliance software"]),
-    canonicalUrl: getCanonicalUrl("/products/data-eraser-software"),
-    breadcrumbs: [
-      { name: "Home", item: "/" },
-      { name: "Products", item: "/products" },
-      { name: "Data Erasure Software", item: "/products/data-eraser-software" },
-    ],
-    structuredData: generateSoftwareProductSchema(
-      "D-Secure Data Erasure Suite",
-      "Complete suite for secure data sanitization across all device types.",
-      { category: "SecurityApplication", ratingValue: 4.9, reviewCount: 1250 }
-    ),
-  },
-  "mobile-erasure-solutions": {
-    title: "Mobile Erasure Solutions: Enterprise Mobile Wipe | D-Secure",
-    description: "Professional solutions for large-scale mobile device erasure. Securely wipe iPhones, iPads, and Android devices for ITAD and resale.",
-    keywords: generateKeywords(["mobile erasure", "smartphone wiping", "secure mobile disposal", "ITAD mobile solutions"]),
-    canonicalUrl: getCanonicalUrl("/products/mobile-erasure-solutions"),
-    breadcrumbs: [
-      { name: "Home", item: "/" },
-      { name: "Products", item: "/products" },
-      { name: "Mobile Erasure Solutions", item: "/products/mobile-erasure-solutions" },
-    ],
-    structuredData: generateSoftwareProductSchema(
-      "D-Secure Mobile Erasure Solutions",
-      "High-volume mobile device sanitization for iOS and Android.",
-      { category: "SecurityApplication", os: "Android, iOS", ratingValue: 4.8, reviewCount: 432 }
-    ),
-  },
-  "wipe-mac-m1": {
-    title: "Wipe M1 Mac: Secure Apple Silicon Data Erasure | D-Secure",
-    description: "Learn how to securely erase your Apple Silicon (M1/M2/M3) Mac. Professional guide for data destruction on modern macOS hardware.",
-    keywords: generateKeywords(["wipe M1 Mac", "Apple Silicon erasure", "macOS secure wipe", "Mac data destruction"]),
-    canonicalUrl: getCanonicalUrl("/products/wipe-mac-m1"),
-    breadcrumbs: [
-      { name: "Home", item: "/" },
-      { name: "Products", item: "/products" },
-      { name: "Wipe M1 Mac", item: "/products/wipe-mac-m1" },
-    ],
-    structuredData: generateSoftwareProductSchema(
-      "D-Secure Mac Eraser Guide",
-      "Professional guide and tool for erasing Apple Silicon Macs.",
-      { category: "SecurityApplication", os: "macOS", ratingValue: 4.9, reviewCount: 224 }
-    ),
-  },
-  "wipe-sas-drive": {
-    title: "Wipe SAS Drives: Enterprise SAS Data Security | D-Secure",
-    description: "Professional guide for securely erasing enterprise SAS and hardware RAID drives. Ensure data security in your data center environments.",
-    keywords: generateKeywords(["wipe SAS drive", "enterprise data erasure", "RAID wiping", "SAS disk destruction"]),
-    canonicalUrl: getCanonicalUrl("/products/wipe-sas-drive"),
-    breadcrumbs: [
-      { name: "Home", item: "/" },
-      { name: "Products", item: "/products" },
-      { name: "Wipe SAS Drive", item: "/products/wipe-sas-drive" },
-    ],
-    structuredData: generateSoftwareProductSchema(
-      "D-Secure SAS Drive Eraser Guide",
-      "Enterprise guide and tool for secure SAS drive destruction.",
-      { category: "SecurityApplication", ratingValue: 4.8, reviewCount: 110 }
+      {
+        category: "SecurityApplication",
+        ratingValue: 4.8,
+        reviewCount: 128,
+        price: "15.00",
+        currency: "USD",
+      },
     ),
   },
 };
+
+

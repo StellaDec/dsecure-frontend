@@ -1639,19 +1639,21 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         });
                         const timestampISO = now.toISOString();
 
-                        // === Prepare FormData for FormSubmit ===
+                        // === FormSubmit ke liye FormData taiyar karein ===
                         const formSubmitData = new FormData();
-                        // Webhook to notify backend - backend will send auto-response email
+                        // Backend ko notify karne ke liye webhook - backend auto-response email bhejega
                         formSubmitData.append(
                           "_webhook",
                           "https://api.dsecuretech.com/api/formsubmit/webhook",
                         );
                         formSubmitData.append("_captcha", "false");
                         formSubmitData.append("_template", "table");
+                        formSubmitData.append("sendAutoReply", "true"); // Auto-reply enable karein
 
                         // Form fields
                         formSubmitData.append("name", formData.name.trim());
                         formSubmitData.append("email", formData.email.trim());
+                        formSubmitData.append("customer_email", formData.email.trim()); // Customer ka email auto-reply ke liye
                         formSubmitData.append(
                           "organization",
                           formData.organization.trim(),
@@ -1661,7 +1663,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                           formData.message.trim(),
                         );
 
-                        // Required for autoresponse
+                        // Autoresponse ke liye reply-to zaroori hai
                         formSubmitData.append(
                           "_replyto",
                           formData.email.trim(),
@@ -1669,13 +1671,13 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         formSubmitData.append("timestamp", timestampLocal);
                         formSubmitData.append(
                           "source",
-                          "File Eraser Page Contact",
+                          "File Eraser Network Page Contact",
                         );
 
-                        // Subject and CC
+                        // Subject aur CC
                         formSubmitData.append(
                           "_subject",
-                          "New Inquiry - File Eraser Page - D-Secure Tech",
+                          "New Inquiry - File Eraser Network Page - D-Secure Tech",
                         );
                         formSubmitData.append(
                           "_cc",

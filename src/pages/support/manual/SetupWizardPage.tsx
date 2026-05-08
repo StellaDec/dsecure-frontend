@@ -8,12 +8,12 @@ const SetupWizardPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead 
+      {/* <SEOHead 
         seo={getSEOForPage("support-manual-setup-wizard", { 
           title: "Setup Wizard | D-Secure Manual", 
           canonicalUrl: "/support/manual/setup-wizard" 
         })} 
-      />
+      /> */}
       
 
       <div className="min-h-screen bg-slate-50">

@@ -1,19 +1,25 @@
 import React from "react";
 import SEOHead from "@/components/SEOHead";
-import { getSEOForPage } from "@/utils/seo";
+import { getBlogSEO } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ShieldIcon, CheckIcon, StarIcon, ArrowRightIcon, HoverIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const DataDeletionMythsBlog: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
-      <SEOHead seo={getSEOForPage('blog-data-deletion-myths')} />
+      <SEOHead 
+        seo={getBlogSEO({
+          title: "Debunking Data Deletion Myths: Formatting vs. Wiping | D-Secure",
+          excerpt: "Formatting is not erasure. We expose common misconceptions about data deletion that leave organizations vulnerable to data breaches and regulatory fines.",
+          slug: "data-deletion-myths",
+          author: "D-Secure Editorial Team",
+          publishDate: "March 28, 2026",
+          keywords: "data deletion myths, formatting vs erasure, secure data sanitization, degaussing ssd myths",
+          category: "Security Awareness"
+        })} 
+      />
 
       {/* Hero Section */}
       <section className="py-16 bg-white shadow-lg">
@@ -159,7 +165,7 @@ const DataDeletionMythsBlog: React.FC = () => {
                                 For modern drives (post-2001), single-pass overwrite is generally sufficient for most threats. However, compliance standards and high-security scenarios require multiple passes.
                             </p>
                             <div className="bg-slate-900 text-slate-100 p-3 rounded font-mono text-xs">
-                                <p className="mb-2"><strong className="text-blue-400">NIST 800-88:</strong> "For modern media, a single overwrite pass is adequate"</p>
+                                <p className="mb-2"><strong className="text-blue-400"><Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>:</strong> "For modern media, a single overwrite pass is adequate"</p>
                                 <p className="mb-2"><strong className="text-amber-400">DoD 5220.22-M:</strong> Requires 3-7 passes for classified data</p>
                                 <p className="text-green-400"><strong>Best Practice:</strong> Use 3-pass minimum for compliance and assurance</p>
                             </div>
@@ -195,7 +201,7 @@ const DataDeletionMythsBlog: React.FC = () => {
                         <div className="space-y-3">
                             <div className="bg-white p-4 rounded-lg border border-green-200">
                                 <h5 className="font-semibold text-green-900 mb-1">1. Certified Software Overwrite</h5>
-                                <p className="text-sm text-slate-700">DoD 5220.22-M (3/7-pass) or NIST 800-88 compliant tools</p>
+                                <p className="text-sm text-slate-700">DoD 5220.22-M (3/7-pass) or <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> compliant tools</p>
                             </div>
                             <div className="bg-white p-4 rounded-lg border border-green-200">
                                 <h5 className="font-semibold text-green-900 mb-1">2. Cryptographic Erasure</h5>
@@ -206,7 +212,7 @@ const DataDeletionMythsBlog: React.FC = () => {
                                 <p className="text-sm text-slate-700">Industrial shredding, degaussing, or incineration</p>
                             </div>
                             <div className="bg-white p-4 rounded-lg border border-green-200">
-                                <h5 className="font-semibold text-green-900 mb-1">4. Professional ITAD Services</h5>
+                                <h5 className="font-semibold text-green-900 mb-1">4. Professional <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Services</h5>
                                 <p className="text-sm text-slate-700">Certified vendors with chain-of-custody and audit trails</p>
                             </div>
                         </div>
@@ -266,23 +272,12 @@ const DataDeletionMythsBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* Engagement Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["data-deletion-myths"]} />
-      <EngagementSection blogId="data-deletion-myths" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="data-deletion-myths" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="data-deletion-myths" 
-            blogTitle="Data Deletion Myths Debunked" 
-          />
-        </Reveal>
-      </section>
+      {/* Standardized Blog Footer */}
+      <BlogFooterStandard 
+        blogId="data-deletion-myths"
+        blogTitle="Data Deletion Myths Debunked"
+      />
+
     </div>
   );
 };

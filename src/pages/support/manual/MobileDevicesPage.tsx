@@ -118,151 +118,173 @@ const MobileDevicesPage: React.FC = memo(() => {
  };
 
  return (
- <>
-      {/* SEO Meta Tags */}
-      <SEOHead 
+   <>
+     {/* SEO Meta Tags */}
+     {/* <SEOHead 
         seo={getSEOForPage("mobile-devices", { 
           title: "Mobile Devices | D-Secure Manual", 
           canonicalUrl: "/support/manual/mobile-devices" 
         })} 
-      />
-      {/*  */}
+      /> */}
+     {/*  */}
 
- <div className="min-h-screen bg-slate-50">
- <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-8 sm:py-12 md:py-16 lg:py-24">
- <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
- <Reveal>
- <div className="text-center">
- <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-4 leading-tight">
- D-Secure Mobile{" "}
- <span className="text-emerald-800 block sm:inline">Devices</span>
- </h1>
- <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto mb-6 md:mb-8 px-4">
- Secure Data Erasure for Mobile Devices: Complete procedures for iOS, Android, and enterprise mobile device management with D-Secure.
- </p>
- </div>
- </Reveal>
- </div>
- </section>
+     <div className="min-h-screen bg-slate-50">
+       <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-8 sm:py-12 md:py-16 lg:py-24">
+         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+           <Reveal>
+             <div className="text-center">
+               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-4 leading-tight">
+                 D-Secure Mobile{" "}
+                 <span className="text-emerald-800 block sm:inline">
+                   Devices
+                 </span>
+               </h1>
+               <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto mb-6 md:mb-8 px-4">
+                 Secure Data Erasure for Mobile Devices: Complete procedures for
+                 iOS, Android, and enterprise mobile device management with
+                 D-Secure.
+               </p>
+             </div>
+           </Reveal>
+         </div>
+       </section>
 
- <section className="py-8 sm:py-12 md:py-16 bg-white border-b border-slate-200">
- <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
- <Reveal>
- <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center">
- <div className="p-4 sm:p-6">
- <div className="text-3xl sm:text-4xl mb-4">📱</div>
- <div className="text-xl sm:text-2xl font-bold text-emerald-800 mb-2">iOS Ready</div>
- <div className="text-slate-600 text-sm sm:text-base">iPhone & iPad support</div>
- </div>
- <div className="p-4 sm:p-6">
- <div className="text-3xl sm:text-4xl mb-4">🤖</div>
- <div className="text-xl sm:text-2xl font-bold text-teal-600 mb-2">Android</div>
- <div className="text-slate-600 text-sm sm:text-base">All Android versions</div>
- </div>
- <div className="p-4 sm:p-6">
- <div className="text-3xl sm:text-4xl mb-4">🏢</div>
- <div className="text-xl sm:text-2xl font-bold text-cyan-600 mb-2">Enterprise</div>
- <div className="text-slate-600 text-sm sm:text-base">MDM integration</div>
- </div>
- </div>
- </Reveal>
- </div>
- </section>
+       <section className="py-8 sm:py-12 md:py-16 bg-white border-b border-slate-200">
+         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+           <Reveal>
+             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center">
+               <div className="p-4 sm:p-6">
+                 <div className="text-3xl sm:text-4xl mb-4">📱</div>
+                 <div className="text-xl sm:text-2xl font-bold text-emerald-800 mb-2">
+                   iOS Ready
+                 </div>
+                 <div className="text-slate-600 text-sm sm:text-base">
+                   iPhone & iPad support
+                 </div>
+               </div>
+               <div className="p-4 sm:p-6">
+                 <div className="text-3xl sm:text-4xl mb-4">🤖</div>
+                 <div className="text-xl sm:text-2xl font-bold text-teal-600 mb-2">
+                   Android
+                 </div>
+                 <div className="text-slate-600 text-sm sm:text-base">
+                   All Android versions
+                 </div>
+               </div>
+               <div className="p-4 sm:p-6">
+                 <div className="text-3xl sm:text-4xl mb-4">🏢</div>
+                 <div className="text-xl sm:text-2xl font-bold text-cyan-600 mb-2">
+                   Enterprise
+                 </div>
+                 <div className="text-slate-600 text-sm sm:text-base">
+                   MDM integration
+                 </div>
+               </div>
+             </div>
+           </Reveal>
+         </div>
+       </section>
 
- <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-slate-100">
- <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
- <div className="space-y-4 sm:space-y-6">
- {manualSections.map((section, index) => (
- <Reveal key={section.id} delayMs={index * 50}>
- <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
- <button
- onClick={() => toggleSection(section.id)}
- className="w-full px-4 sm:px-6 py-4 sm:py-6 text-left hover:bg-slate-50 transition-colors flex items-center justify-between"
- >
- <div className="flex items-center gap-3 sm:gap-4">
- <div className="text-lg sm:text-2xl">{section.icon}</div>
- <div>
- <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-1">
- {section.title}
- </h3>
- <p className="text-slate-600 text-xs sm:text-sm">
- {section.description}
- </p>
- <div className="flex items-center gap-2 sm:gap-4 mt-2 text-xs text-slate-500">
- <span>{section.subsections.length} topics</span>
- <span>{getTotalPages(section)} pages</span>
- </div>
- </div>
- </div>
- <svg
- className={`w-4 h-4 sm:w-5 sm:h-5 text-slate-500 transform transition-transform ${
- activeSection === section.id ? "rotate-180" : ""
- }`}
- fill="none"
- stroke="currentColor"
- viewBox="0 0 24 24"
- >
- <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
- </svg>
- </button>
+       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-slate-100">
+         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+           <div className="space-y-4 sm:space-y-6">
+             {manualSections.map((section, index) => (
+               <Reveal key={section.id} delayMs={index * 50}>
+                 <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                   <button
+                     onClick={() => toggleSection(section.id)}
+                     className="w-full px-4 sm:px-6 py-4 sm:py-6 text-left hover:bg-slate-50 transition-colors flex items-center justify-between"
+                   >
+                     <div className="flex items-center gap-3 sm:gap-4">
+                       <div className="text-lg sm:text-2xl">{section.icon}</div>
+                       <div>
+                         <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-1">
+                           {section.title}
+                         </h3>
+                         <p className="text-slate-600 text-xs sm:text-sm">
+                           {section.description}
+                         </p>
+                         <div className="flex items-center gap-2 sm:gap-4 mt-2 text-xs text-slate-500">
+                           <span>{section.subsections.length} topics</span>
+                           <span>{getTotalPages(section)} pages</span>
+                         </div>
+                       </div>
+                     </div>
+                     <svg
+                       className={`w-4 h-4 sm:w-5 sm:h-5 text-slate-500 transform transition-transform ${
+                         activeSection === section.id ? "rotate-180" : ""
+                       }`}
+                       fill="none"
+                       stroke="currentColor"
+                       viewBox="0 0 24 24"
+                     >
+                       <path
+                         strokeLinecap="round"
+                         strokeLinejoin="round"
+                         strokeWidth={2}
+                         d="M19 9l-7 7-7-7"
+                       />
+                     </svg>
+                   </button>
 
- {activeSection === section.id && (
- <div className="px-4 sm:px-6 pb-4 sm:pb-6">
- <div className="border-t border-slate-200 pt-4">
- <div className="grid gap-3 sm:gap-4">
- {section.subsections.map((subsection) => (
- <div
- key={subsection.id}
- className="flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-lg"
- >
- <div className="flex-1">
- <h4 className="font-medium text-slate-900 mb-1 text-sm sm:text-base">
- {subsection.title}
- </h4>
- <p className="text-xs sm:text-sm text-slate-600">
- {subsection.description}
- </p>
- </div>
- <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500">
- <span>{subsection.pageCount} pages</span>
- </div>
- </div>
- ))}
- </div>
- </div>
- </div>
- )}
- </div>
- </Reveal>
- ))}
- </div>
- </div>
- </section>
+                   {activeSection === section.id && (
+                     <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                       <div className="border-t border-slate-200 pt-4">
+                         <div className="grid gap-3 sm:gap-4">
+                           {section.subsections.map((subsection) => (
+                             <div
+                               key={subsection.id}
+                               className="flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-lg"
+                             >
+                               <div className="flex-1">
+                                 <h4 className="font-medium text-slate-900 mb-1 text-sm sm:text-base">
+                                   {subsection.title}
+                                 </h4>
+                                 <p className="text-xs sm:text-sm text-slate-600">
+                                   {subsection.description}
+                                 </p>
+                               </div>
+                               <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500">
+                                 <span>{subsection.pageCount} pages</span>
+                               </div>
+                             </div>
+                           ))}
+                         </div>
+                       </div>
+                     </div>
+                   )}
+                 </div>
+               </Reveal>
+             ))}
+           </div>
+         </div>
+       </section>
 
- <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-r from-emerald-500 to-teal-600">
- <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
- <Reveal>
- <div className="text-center text-white">
- <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
- Need D-Secure Mobile Erasure Assistance?
- </h2>
- <p className="text-base sm:text-lg md:text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
- Our D-Secure experts specialize in mobile device data erasure for iOS, Android, and enterprise environments.
- </p>
- <div className="flex flex-col sm:flex-row gap-4 justify-center">
- <button className="bg-white text-emerald-800 hover:bg-emerald-50 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-base sm:text-lg">
- D-Secure Mobile Services
- </button>
- <button className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-base sm:text-lg">
- Consult D-Secure Experts
- </button>
- </div>
- </div>
- </Reveal>
- </div>
- </section>
- </div>
- </>
+       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-r from-emerald-500 to-teal-600">
+         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+           <Reveal>
+             <div className="text-center text-white">
+               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+                 Need D-Secure Mobile Erasure Assistance?
+               </h2>
+               <p className="text-base sm:text-lg md:text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+                 Our D-Secure experts specialize in mobile device data erasure
+                 for iOS, Android, and enterprise environments.
+               </p>
+               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                 <button className="bg-white text-emerald-800 hover:bg-emerald-50 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-base sm:text-lg">
+                   D-Secure Mobile Services
+                 </button>
+                 <button className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-base sm:text-lg">
+                   Consult D-Secure Experts
+                 </button>
+               </div>
+             </div>
+           </Reveal>
+         </div>
+       </section>
+     </div>
+   </>
  );
 });
 

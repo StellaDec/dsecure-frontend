@@ -251,7 +251,7 @@ const QuickStartTutorial: React.FC = memo(() => {
       ctaButtons={[
         {
           text: "Download D-Secure Now",
-          url: "/#products",
+          url: "/all-products",
           primary: true,
         },
         {

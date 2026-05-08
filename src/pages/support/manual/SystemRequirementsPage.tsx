@@ -8,12 +8,12 @@ const SystemRequirementsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead 
+      {/* <SEOHead 
         seo={getSEOForPage("support-manual-system-requirements", { 
           title: "System Requirements | D-Secure Manual", 
           canonicalUrl: "/support/manual/system-requirements" 
         })} 
-      />
+      /> */}
       
 
       <div className="min-h-screen bg-slate-50">

@@ -4,11 +4,7 @@ import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ServerIcon, ClipboardIcon, DatabaseIcon, ShieldIcon, ArrowRightIcon, HoverIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const ITAMDisposalGuideBlog: React.FC = () => {
 
@@ -47,7 +43,7 @@ const ITAMDisposalGuideBlog: React.FC = () => {
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">Understanding IT Asset Disposition</h2>
                     <p className="text-slate-700 leading-relaxed text-lg">
-                        IT Asset Disposition (ITAD) procedures guarantee that outdated, obsolete, and end-of-life equipment undergoes secure sanitization before disposal, repurposing, or sale. ITAD's significance has increased substantially following global data protection law enforcement and is positioned to reach greater prominence with data privacy regulation enactment like GDPR, CCPA, VCDPA, and CPA. Therefore, a company's IT Asset Manager must ensure organizational adherence to best practices during IT Asset disposal while following applicable local, state, and federal rules and regulations.
+                        IT Asset Disposition (<Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>) procedures guarantee that outdated, obsolete, and end-of-life equipment undergoes secure sanitization before disposal, repurposing, or sale. ITAD's significance has increased substantially following global data protection law enforcement and is positioned to reach greater prominence with data privacy regulation enactment like GDPR, CCPA, VCDPA, and CPA. Therefore, a company's IT Asset Manager must ensure organizational adherence to best practices during IT Asset disposal while following applicable local, state, and federal rules and regulations.
                     </p>
                 </div>
 
@@ -63,7 +59,7 @@ const ITAMDisposalGuideBlog: React.FC = () => {
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-xl">
                         <h3 className="font-bold text-emerald-900 mb-2">1. Establish Clear Data Destruction Protocol</h3>
                         <p className="text-slate-700 text-sm">
-                            ITAMs should create clear and detailed ITAD protocols outlining procedures and guidelines for disposing IT assets responsibly and securely. The protocol should cover areas including data security, environmental considerations, and legal requirements.
+                            ITAMs should create clear and detailed <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> protocols outlining procedures and guidelines for disposing IT assets responsibly and securely. The protocol should cover areas including data security, environmental considerations, and legal requirements.
                         </p>
                     </div>
 
@@ -77,14 +73,14 @@ const ITAMDisposalGuideBlog: React.FC = () => {
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-xl">
                         <h3 className="font-bold text-emerald-900 mb-2">3. Device Assessment to Determine Storage Technology</h3>
                         <p className="text-slate-700 text-sm">
-                            IT Asset Managers should understand various media types comprising a device before selecting proper data destruction procedures. For example, a PC may contain SSD and HDD; while HDDs can be degaussed, degaussing is unsuitable for SSDs. ITAM may need to sanitize the SSD using appropriate data wiping tools like D-Secure.
+                            IT Asset Managers should understand various media types comprising a device before selecting proper data destruction procedures. For example, a PC may contain SSD and HDD; while HDDs can be degaussed, degaussing is unsuitable for SSDs. ITAM may need to sanitize the SSD using appropriate <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> tools like D-Secure.
                         </p>
                     </div>
 
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-xl">
                         <h3 className="font-bold text-emerald-900 mb-2">4. Execute Secure Sanitization & Avoid Native Interface Reliance</h3>
                         <p className="text-slate-700 text-sm">
-                            Read and write commands issued through device interfaces may not overwrite all storage media areas. For example, these memory locations could include remapped sectors or Host protected areas and may not be wiped using native sanitization methods. ITAMs should therefore ensure all information is securely removed from IT assets using data wiping applications or physically destroying storage media when devices are inaccessible.
+                            Read and write commands issued through device interfaces may not overwrite all storage media areas. For example, these memory locations could include remapped sectors or Host protected areas and may not be wiped using native sanitization methods. ITAMs should therefore ensure all information is securely removed from IT assets using <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> applications or physically destroying storage media when devices are inaccessible.
                         </p>
                     </div>
 
@@ -138,9 +134,9 @@ const ITAMDisposalGuideBlog: React.FC = () => {
                     </div>
 
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-xl">
-                        <h3 className="font-bold text-emerald-900 mb-2">12. Select Reputable ITAD Vendor</h3>
+                        <h3 className="font-bold text-emerald-900 mb-2">12. Select Reputable <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Vendor</h3>
                         <p className="text-slate-700 text-sm">
-                            ITAMs should choose reputable and reliable ITAD vendors to handle IT asset disposal. Additionally, the vendor should comply with relevant laws and regulations and have a proven track record of handling IT assets responsibly.
+                            ITAMs should choose reputable and reliable <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> vendors to handle IT asset disposal. Additionally, the vendor should comply with relevant laws and regulations and have a proven track record of handling IT assets responsibly.
                         </p>
                     </div>
 
@@ -154,9 +150,9 @@ const ITAMDisposalGuideBlog: React.FC = () => {
 
                 {/* Benefits */}
                  <div className="space-y-4">
-                    <h2 className="text-2xl font-bold text-slate-900">Benefits of ITAD Best Practices</h2>
+                    <h2 className="text-2xl font-bold text-slate-900">Benefits of <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Best Practices</h2>
                      <p className="text-slate-700 leading-relaxed">
-                        ITAMs can derive several inherent benefits from implementing ITAD best practices:
+                        ITAMs can derive several inherent benefits from implementing <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> best practices:
                     </p>
                     <div className="bg-slate-900 text-white p-6 rounded-xl">
                         <ul className="space-y-4">
@@ -166,7 +162,7 @@ const ITAMDisposalGuideBlog: React.FC = () => {
                                 </div>
                                 <div>
                                     <strong className="text-emerald-400">Data Security & Brand Protection:</strong>
-                                    <p className="text-slate-300 text-sm mt-1">By following ITAD best practices, ITAMs can ensure sensitive information is securely removed from IT assets before disposing them, thereby protecting organizational data from unauthorized access or misuse. A single data breach episode can have catastrophic financial and legal ramifications with loss of trust and confidence in brand value.</p>
+                                    <p className="text-slate-300 text-sm mt-1">By following <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> best practices, ITAMs can ensure sensitive information is securely removed from IT assets before disposing them, thereby protecting organizational data from unauthorized access or misuse. A single data breach episode can have catastrophic financial and legal ramifications with loss of trust and confidence in brand value.</p>
                                 </div>
                             </li>
                             <li className="flex items-start gap-3">
@@ -175,7 +171,7 @@ const ITAMDisposalGuideBlog: React.FC = () => {
                                 </div>
                                 <div>
                                     <strong className="text-teal-400">Maintain Compliance:</strong>
-                                    <p className="text-slate-300 text-sm mt-1">ITAD best practices help ITAMs ensure organizational compliance with relevant laws and regulations related to IT asset disposals, such as data protection and environmental laws.</p>
+                                    <p className="text-slate-300 text-sm mt-1"><Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> best practices help ITAMs ensure organizational compliance with relevant laws and regulations related to IT asset disposals, such as data protection and environmental laws.</p>
                                 </div>
                             </li>
                             <li className="flex items-start gap-3">
@@ -253,51 +249,11 @@ const ITAMDisposalGuideBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["itam-disposal-guide"]} />
-      <EngagementSection blogId="itam-disposal-guide" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="itam-disposal-guide" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="itam-disposal-guide" 
-            blogTitle="IT Asset Manager's Guide to Secure IT Asset Disposal" 
-          />
-        </Reveal>
-      </section>
-
-       {/* CTA Section */}
-       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
-            <Reveal>
-                <div className="max-w-5xl mx-auto px-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Strengthen Your ITAD Process
-                    </h2>
-                    <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                        Discover how D-Secure supports comprehensive IT asset disposal workflows.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            to="/contact"
-                            className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
-                        >
-                            Request Free Demo
-                        </Link>
-                        <Link
-                            to="/resources"
-                            className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
-                        >
-                            Explore Solutions
-                        </Link>
-                    </div>
-                </div>
-            </Reveal>
-        </section>
+      {/* Unified Blog Footer */}
+      <BlogFooterStandard 
+        blogId="itam-disposal-guide" 
+        blogTitle="Secure IT Asset Disposal for ITAMs" 
+      />
     </div>
   );
 };

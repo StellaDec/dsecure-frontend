@@ -455,7 +455,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
         </section>
 
 
-        <ProductInternalLinks currentProduct={PRODUCT_LINKS.REMOVABLE_MEDIA} />
+        <ProductInternalLinks currentProduct="removable-media-eraser" />
 
         <section id="contact" className="py-24 bg-white border-t relative overflow-hidden isolate">
           <div className="container mx-auto px-4 max-w-7xl">

@@ -36,7 +36,7 @@ const SanitizationConceptsPage: React.FC = () => {
           id: 21,
           title: "Logical Sanitization",
           description: "Software-based overwrite patterns (NIST Clear/Purge).",
-          url: "#logical",
+          url: "/compliance/nist-800-88",
           pageCount: 1
         },
         {

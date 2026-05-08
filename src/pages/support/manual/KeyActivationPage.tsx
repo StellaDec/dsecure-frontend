@@ -8,12 +8,12 @@ const KeyActivationPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead 
+      {/* <SEOHead 
         seo={getSEOForPage("support-manual-key-activation", { 
           title: "Key Activation | D-Secure Manual", 
           canonicalUrl: "/support/manual/key-activation" 
         })} 
-      />
+      /> */}
       
 
       <div className="min-h-screen bg-slate-50">

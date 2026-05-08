@@ -10,7 +10,11 @@ import {
   type PartnershipFormData,
   type LicenseFormData,
 } from "@/components/forms";
-import { formConfigs } from "@/hooks/useFormSubmission";
+import { useFormSubmission } from "@/hooks/useFormSubmission";
+import {
+  useEnhancedForm,
+  formConfigurations,
+} from "@/utils/enhancedFormSystem";
 import { useToast } from "@/hooks";
 import {
   ShieldIcon,
@@ -23,6 +27,7 @@ import {
   StarIcon,
   ServerIcon,
   LightningIcon,
+  HoverIcon,
 } from "@/components/FlatIcons";
 import {
   Briefcase,
@@ -32,6 +37,7 @@ import {
   User,
   X,
 } from "lucide-react";
+import { Toast } from "@/components/ui";
 
 // Partner types definition - moved to top to avoid temporal dead zone
 const partnerTypes = {
@@ -214,6 +220,27 @@ const partnerTypes = {
   },
 } as const;
 
+interface PartnerContact {
+  email: string;
+  phone: string;
+  website: string;
+  name?: string;
+}
+
+interface Partner {
+  id: string;
+  company: string;
+  name?: string; // Adding name for compatibility
+  type: string;
+  location: string;
+  description: string;
+  logo?: string;
+  rating: number;
+  projects: number;
+  verified: boolean;
+  contact: PartnerContact;
+}
+
 const PartnersPage: React.FC = memo(function PartnersPage() {
   const { toast, showToast, hideToast } = useToast();
   const [showPartnerModal, setShowPartnerModal] = useState(false);
@@ -222,9 +249,9 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
   const [showContactModal, setShowContactModal] = useState(false);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [selectedPartnerForContact, setSelectedPartnerForContact] =
-    useState<any>(null);
+    useState<Partner | null>(null);
   const [selectedPartnerForDetails, setSelectedPartnerForDetails] =
-    useState<any>(null);
+    useState<Partner | null>(null);
   const [activePartnerType, setActivePartnerType] =
     useState<keyof typeof partnerTypes>("ITAD Partner");
   const [selectedCountry, setSelectedCountry] = useState("All Countries");
@@ -305,96 +332,55 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
   };
 
   // Mock partner data based on attachment
-  const partnersList: any[] = [
-    
-    // {
-    //   company: "ABC International Trading Services Co. ltd",
-    //   type: "Reseller",
-    //   location: "Vietnam",
-    //   contact: {
-    //     name: "Nguyen Minh Duc",
-    //     email: "nguyen.duc@international.com.vn",
-    //     phone: "+84 903 447 799",
-    //     website: "https://international.vn",
-    //   },
-    // },
-    // {
-    //   company: "Advantage Industries",
-    //   type: "Distributor",
-    //   location: "United States",
-    //   contact: {
-    //     name: "Michael Johnson",
-    //     email: "michael.johnson@advantage-corp.com",
-    //     phone: "+1 763 423 5338",
-    //     website: "https://www.advantagecorp.com",
-    //   },
-    // },
-    // {
-    //   company: "Alternative Technologies SAC",
-    //   type: "Reseller",
-    //   location: "Peru",
-    //   contact: {
-    //     name: "Carlos Rodriguez",
-    //     email: "carlos.rodriguez@alternativetech.com.pe",
-    //     phone: "+511 200 6215",
-    //     website: "https://www.alternativetech.com.pe",
-    //   },
-    // },
-    // {
-    //   company: "Asociaci SE De CV",
-    //   type: "Distributor",
-    //   location: "Mexico",
-    //   contact: {
-    //     name: "Maria Elena Villegas",
-    //     email: "maria.villegas@asociaci.com",
-    //     phone: "+52 477 1395",
-    //     website: "https://www.asociaci.com",
-    //   },
-    // },
-    // {
-    //   company: "Active Link",
-    //   type: "Distributor",
-    //   location: "Italy",
-    //   contact: {
-    //     name: "Marco Rossi",
-    //     email: "marco.rossi@activelink.it",
-    //     phone: "+39 0544 236841",
-    //     website: "https://www.activelink.it",
-    //   },
-    // },
-    // {
-    //   company: "TechGuard Solutions India",
-    //   type: "ITAD Partner",
-    //   location: "India",
-    //   contact: {
-    //     name: "Priya Sharma",
-    //     email: "priya.sharma@techguard.in",
-    //     phone: "+91 98765 43210",
-    //     website: "https://www.techguard.in",
-    //   },
-    // },
-    // {
-    //   company: "SecureData UK Ltd",
-    //   type: "MSP Partner",
-    //   location: "United Kingdom",
-    //   contact: {
-    //     name: "James Wilson",
-    //     email: "james.wilson@securedata.co.uk",
-    //     phone: "+44 20 7123 4567",
-    //     website: "https://www.securedata.co.uk",
-    //   },
-    // },
-    // {
-    //   company: "DataWipe Australia Pty",
-    //   type: "ITAD Partner",
-    //   location: "Australia",
-    //   contact: {
-    //     name: "Sarah Chen",
-    //     email: "sarah.chen@datawipe.com.au",
-    //     phone: "+61 2 9876 5432",
-    //     website: "https://www.datawipe.com.au",
-    //   },
-    // },
+  const partnersList: Partner[] = [
+    {
+      id: "1",
+      company: "ABC International Trading Services",
+      name: "ABC International Trading Services",
+      type: "Reseller",
+      location: "Vietnam",
+      description: "Premier reseller specializing in enterprise-grade secure data destruction solutions for the SE Asia market.",
+      rating: 4.8,
+      projects: 120,
+      verified: true,
+      contact: {
+        email: "nguyen.duc@international.com.vn",
+        phone: "+84 903 447 799",
+        website: "https://international.vn",
+      },
+    },
+    {
+      id: "2",
+      company: "Advantage Industries",
+      name: "Advantage Industries",
+      type: "Distributor",
+      location: "United States",
+      description: "Strategic distributor providing advanced IT asset management and secure erasure technology nationwide.",
+      rating: 4.9,
+      projects: 250,
+      verified: true,
+      contact: {
+        email: "michael.johnson@advantage-corp.com",
+        phone: "+1 763 423 5338",
+        website: "https://www.advantagecorp.com",
+      },
+    },
+    {
+      id: "3",
+      company: "SafeData Europe SAC",
+      name: "SafeData Europe SAC",
+      type: "MSP Partner",
+      location: "Italy",
+      description: "Managed security services provider focusing on GDPR compliance and immutable audit trails.",
+      rating: 4.7,
+      projects: 95,
+      verified: true,
+      contact: {
+        email: "marco.rossi@activelink.it",
+        phone: "+39 0544 236841",
+        website: "https://www.activelink.it",
+      },
+    }
   ];
   const countries = [
     "All Countries",
@@ -456,12 +442,12 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
     globalThis.location.href = "/contact";
   };
   // Handle contact partner click
-  const handleContactPartner = (partner: any) => {
+  const handleContactPartner = (partner: Partner) => {
     setSelectedPartnerForContact(partner);
     setShowContactModal(true);
   };
   // Handle view details click
-  const handleViewDetails = (partner: any) => {
+  const handleViewDetails = (partner: Partner) => {
     setSelectedPartnerForDetails(partner);
     setShowDetailsModal(true);
   };
@@ -830,7 +816,10 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                   icon: <MessageSquare className="w-10 h-10 text-teal-400" />,
                 },
               ].map((benefit, idx) => (
-                <Reveal key={`partner-benefit-${benefit.title}`} delayMs={idx * 100}>
+                <Reveal
+                  key={`partner-benefit-${benefit.title}`}
+                  delayMs={idx * 100}
+                >
                   <div className="group bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:bg-white/10 hover:border-emerald-500/50 transition-all duration-300 h-full flex flex-col">
                     <div className="mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                       {benefit.icon}
@@ -1143,7 +1132,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
           onClose={() => setShowPartnerModal(false)}
           preSelectedPartnerType={activePartnerType}
           customConfig={{
-            ...formConfigs.partnership,
+            ...formConfigurations.partnership,
             endpoint: "https://formsubmit.co/support@dsecuretech.com",
             onSuccess: () => {
               setShowPartnerModal(false);
@@ -1166,8 +1155,12 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 border border-white/30 shadow-inner">
                   <GlobeIcon className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold tracking-tight">Search Our Partner Network</h2>
-                <p className="text-emerald-50/80 mt-2 text-sm font-medium">Connect with compliance security experts worldwide</p>
+                <h2 className="text-3xl font-bold tracking-tight">
+                  Search Our Partner Network
+                </h2>
+                <p className="text-emerald-50/80 mt-2 text-sm font-medium">
+                  Connect with compliance security experts worldwide
+                </p>
               </div>
               <button
                 onClick={() => setShowFindPartnerModal(false)}
@@ -1295,32 +1288,32 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             </div>
 
                             <div className="space-y-4">
-                               <div className="flex items-start gap-4">
-                                  <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100/50 flex items-center justify-center text-orange-500">
-                                    <StarIcon className="w-5 h-5" />
-                                  </div>
-                                  <div>
-                                    <p className="text-[10px] text-orange-400 uppercase font-black tracking-widest mb-1">
-                                      Mobile
-                                    </p>
-                                    <p className="font-bold text-slate-700 text-lg">
-                                      {partner.contact.phone}
-                                    </p>
-                                  </div>
+                              <div className="flex items-start gap-4">
+                                <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100/50 flex items-center justify-center text-orange-500">
+                                  <StarIcon className="w-5 h-5" />
                                 </div>
-                                <div className="flex items-start gap-4">
-                                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100/50 flex items-center justify-center text-emerald-500">
-                                    <CheckIcon className="w-5 h-5" />
-                                  </div>
-                                  <div>
-                                    <p className="text-[10px] text-emerald-400 uppercase font-black tracking-widest mb-1">
-                                      Status
-                                    </p>
-                                    <p className="font-bold text-emerald-700 text-lg flex items-center gap-1.5">
-                                      Verified Compliance
-                                    </p>
-                                  </div>
+                                <div>
+                                  <p className="text-[10px] text-orange-400 uppercase font-black tracking-widest mb-1">
+                                    Mobile
+                                  </p>
+                                  <p className="font-bold text-slate-700 text-lg">
+                                    {partner.contact.phone}
+                                  </p>
                                 </div>
+                              </div>
+                              <div className="flex items-start gap-4">
+                                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100/50 flex items-center justify-center text-emerald-500">
+                                  <CheckIcon className="w-5 h-5" />
+                                </div>
+                                <div>
+                                  <p className="text-[10px] text-emerald-400 uppercase font-black tracking-widest mb-1">
+                                    Status
+                                  </p>
+                                  <p className="font-bold text-emerald-700 text-lg flex items-center gap-1.5">
+                                    Verified Compliance
+                                  </p>
+                                </div>
+                              </div>
                             </div>
                           </div>
 
@@ -1353,7 +1346,9 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                         No Partners Available
                       </h3>
                       <p className="text-slate-400 max-w-sm mx-auto font-medium leading-relaxed">
-                        We currently have no active partners matching these specific filters. Try expanding your search area or selecting competitive partner types.
+                        We currently have no active partners matching these
+                        specific filters. Try expanding your search area or
+                        selecting competitive partner types.
                       </p>
                     </div>
                   )}
@@ -1370,7 +1365,9 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                   <button className="w-10 h-10 rounded-xl border-2 border-slate-100 bg-white text-slate-400 flex items-center justify-center text-sm font-black hover:border-emerald-300 hover:text-emerald-800 transition-all hover:scale-110">
                     3
                   </button>
-                  <span className="px-2 text-slate-300 font-black tracking-widest">...</span>
+                  <span className="px-2 text-slate-300 font-black tracking-widest">
+                    ...
+                  </span>
                   <button className="px-5 h-10 rounded-xl border-2 border-slate-100 bg-white text-slate-400 flex items-center justify-center text-xs font-black uppercase tracking-widest hover:border-emerald-300 hover:text-emerald-800 transition-all hover:scale-105">
                     Next Page
                   </button>
@@ -1386,12 +1383,12 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
           onSubmit={handleLicenseSubmit}
           onClose={() => setShowLicenseModal(false)}
           customConfig={{
-            ...formConfigs.license,
+            ...formConfigurations.license,
             endpoint: "https://formsubmit.co/support@dsecuretech.com",
             onSuccess: () => {
               setShowLicenseModal(false);
               showToast(
-                "License request submitted successfully! We'll process your request soon.",
+                "License request submitted successfully! Check your email for details.",
                 "success",
               );
             },
@@ -1404,13 +1401,24 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
           <div className="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-emerald-100/50">
             {/* Premium Header */}
             <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white p-8 rounded-t-[2rem] relative flex-shrink-0">
-              <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 25% 50%, white 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
+              <div
+                className="absolute inset-0 opacity-5"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle at 25% 50%, white 1px, transparent 1px)",
+                  backgroundSize: "20px 20px",
+                }}
+              ></div>
               <div className="flex flex-col items-center relative z-10">
                 <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 border border-white/30 shadow-inner">
                   <MessageSquare className="w-7 h-7 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold tracking-tight">Contact Partner</h2>
-                <p className="text-emerald-50/80 mt-1 text-sm font-medium">Send a direct inquiry to this partner</p>
+                <h2 className="text-2xl font-bold tracking-tight">
+                  Contact Partner
+                </h2>
+                <p className="text-emerald-50/80 mt-1 text-sm font-medium">
+                  Send a direct inquiry to this partner
+                </p>
               </div>
               <button
                 onClick={() => setShowContactModal(false)}
@@ -1444,19 +1452,29 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">Contact</p>
-                        <p className="font-bold text-slate-800 text-sm">{selectedPartnerForContact.contact.name}</p>
+                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                          Contact
+                        </p>
+                        <p className="font-bold text-slate-800 text-sm">
+                          {selectedPartnerForContact.contact.name}
+                        </p>
                       </div>
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">Location</p>
+                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                          Location
+                        </p>
                         <p className="font-bold text-slate-800 text-sm flex items-center gap-1">
                           <GlobeIcon className="w-3.5 h-3.5 text-emerald-500" />
                           {selectedPartnerForContact.location}
                         </p>
                       </div>
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">Phone</p>
-                        <p className="font-bold text-emerald-800 text-sm">{selectedPartnerForContact.contact.phone}</p>
+                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                          Phone
+                        </p>
+                        <p className="font-bold text-emerald-800 text-sm">
+                          {selectedPartnerForContact.contact.phone}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -1494,12 +1512,19 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
 
                       // === Prepare FormData for FormSubmit ===
                       const formSubmitData = new FormData();
+                      // Webhook to notify backend - backend will send auto-response email
                       formSubmitData.append(
                         "_webhook",
                         "https://api.dsecuretech.com/api/formsubmit/webhook",
                       );
+                      formSubmitData.append(
+                        "_webhookContentType",
+                        "application/json",
+                      );
+                      formSubmitData.append("_webhookExtraData", "true");
                       formSubmitData.append("_captcha", "false");
                       formSubmitData.append("_template", "table");
+                      formSubmitData.append("_next", window.location.href);
                       formSubmitData.append(
                         "name",
                         contactPartnerForm.name.trim(),
@@ -1554,6 +1579,17 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                         "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
                       );
 
+                      // Auto-response configuration for backend
+                      formSubmitData.append("sendAutoReply", "true");
+                      formSubmitData.append(
+                        "customer_email",
+                        contactPartnerForm.email.trim(),
+                      );
+                      formSubmitData.append(
+                        "_replyto",
+                        contactPartnerForm.email.trim(),
+                      );
+
                       // === Prepare submission data for Backend API ===
                       const submissionData = {
                         name: contactPartnerForm.name.trim(),
@@ -1588,7 +1624,9 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
 
                       try {
                         // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-                        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+                        const API_BASE =
+                          import.meta.env.VITE_API_BASE_URL ||
+                          "https://api.dsecuretech.com";
                         const apiResponse = await fetch(
                           `${API_BASE}/api/ContactFormSubmissions`,
                           {
@@ -1609,14 +1647,17 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                         );
 
                         // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-                        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                            "x-api-key": "REACT_CONTACT_2026",
+                        fetch(
+                          import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "",
+                          {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                              "x-api-key": "REACT_CONTACT_2026",
+                            },
+                            body: JSON.stringify(submissionData),
                           },
-                          body: JSON.stringify(submissionData),
-                        }).catch(() => {});
+                        ).catch(() => {});
 
                         if (!apiResponse.ok) {
                           const errorData = await apiResponse.json();
@@ -1698,7 +1739,10 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="contact-phone" className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
+                      <label
+                        htmlFor="contact-phone"
+                        className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2"
+                      >
                         Phone
                       </label>
                       <input
@@ -1717,7 +1761,10 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="contact-subject" className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
+                    <label
+                      htmlFor="contact-subject"
+                      className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2"
+                    >
                       Subject *
                     </label>
                     <input
@@ -1736,7 +1783,10 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="contact-message" className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
+                    <label
+                      htmlFor="contact-message"
+                      className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -1762,9 +1812,25 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     >
                       {isContactSubmitting ? (
                         <>
-                          <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          <svg
+                            className="animate-spin h-4 w-4 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
                           </svg>
                           Sending...
                         </>
@@ -1787,7 +1853,9 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
 
                 {/* Quick Contact Options - Premium */}
                 <div className="pt-6 border-t border-emerald-100/60">
-                  <p className="text-xs uppercase tracking-widest font-black text-emerald-800/50 mb-4">Or contact directly</p>
+                  <p className="text-xs uppercase tracking-widest font-black text-emerald-800/50 mb-4">
+                    Or contact directly
+                  </p>
                   <div className="flex flex-wrap gap-3">
                     <a
                       href={`mailto:${selectedPartnerForContact.contact.email}`}
@@ -1825,13 +1893,24 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
           <div className="bg-white rounded-[2rem] max-w-4xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-emerald-100/50">
             {/* Premium Header */}
             <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white p-8 rounded-t-[2rem] relative flex-shrink-0">
-              <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 25% 50%, white 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
+              <div
+                className="absolute inset-0 opacity-5"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle at 25% 50%, white 1px, transparent 1px)",
+                  backgroundSize: "20px 20px",
+                }}
+              ></div>
               <div className="flex flex-col items-center relative z-10">
                 <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 border border-white/30 shadow-inner">
                   <ShieldIcon className="w-7 h-7 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold tracking-tight">Partner Details</h2>
-                <p className="text-emerald-50/80 mt-1 text-sm font-medium">Comprehensive partner information</p>
+                <h2 className="text-2xl font-bold tracking-tight">
+                  Partner Details
+                </h2>
+                <p className="text-emerald-50/80 mt-1 text-sm font-medium">
+                  Comprehensive partner information
+                </p>
               </div>
               <button
                 onClick={() => setShowDetailsModal(false)}
@@ -1865,23 +1944,35 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       <div className="bg-white rounded-xl p-3 border border-emerald-50 shadow-sm">
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">Location</p>
+                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                          Location
+                        </p>
                         <p className="font-bold text-slate-800 text-sm flex items-center gap-1">
                           <GlobeIcon className="w-3.5 h-3.5 text-emerald-500" />
                           {selectedPartnerForDetails.location}
                         </p>
                       </div>
                       <div className="bg-white rounded-xl p-3 border border-emerald-50 shadow-sm">
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">Established</p>
+                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                          Established
+                        </p>
                         <p className="font-bold text-slate-800 text-sm">2015</p>
                       </div>
                       <div className="bg-white rounded-xl p-3 border border-emerald-50 shadow-sm">
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">Team Size</p>
-                        <p className="font-bold text-slate-800 text-sm">50-200</p>
+                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                          Team Size
+                        </p>
+                        <p className="font-bold text-slate-800 text-sm">
+                          50-200
+                        </p>
                       </div>
                       <div className="bg-white rounded-xl p-3 border border-emerald-50 shadow-sm">
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">Compliance</p>
-                        <p className="font-bold text-emerald-800 text-sm">ISO 27001, NIST</p>
+                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                          Compliance
+                        </p>
+                        <p className="font-bold text-emerald-800 text-sm">
+                          ISO 27001, NIST
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -1957,15 +2048,21 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Primary Contact */}
                     <div className="bg-white border-2 border-emerald-50 rounded-2xl p-6 shadow-sm">
-                      <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-4">Primary Contact</p>
+                      <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-4">
+                        Primary Contact
+                      </p>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400">
                             <User className="w-4 h-4" />
                           </div>
                           <div>
-                            <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">Name</p>
-                            <p className="font-bold text-slate-800 text-sm">{selectedPartnerForDetails.contact.name}</p>
+                            <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">
+                              Name
+                            </p>
+                            <p className="font-bold text-slate-800 text-sm">
+                              {selectedPartnerForDetails.contact.name}
+                            </p>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
@@ -1973,8 +2070,13 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             <MessageSquare className="w-4 h-4" />
                           </div>
                           <div>
-                            <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">Email</p>
-                            <a href={`mailto:${selectedPartnerForDetails.contact.email}`} className="font-bold text-emerald-800 hover:text-emerald-800 text-sm underline decoration-emerald-200 underline-offset-2 hover:decoration-emerald-500 transition-all">
+                            <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">
+                              Email
+                            </p>
+                            <a
+                              href={`mailto:${selectedPartnerForDetails.contact.email}`}
+                              className="font-bold text-emerald-800 hover:text-emerald-800 text-sm underline decoration-emerald-200 underline-offset-2 hover:decoration-emerald-500 transition-all"
+                            >
                               {selectedPartnerForDetails.contact.email}
                             </a>
                           </div>
@@ -1984,8 +2086,13 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             <StarIcon className="w-4 h-4" />
                           </div>
                           <div>
-                            <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">Phone</p>
-                            <a href={`tel:${selectedPartnerForDetails.contact.phone}`} className="font-bold text-emerald-800 hover:text-emerald-800 text-sm transition-all">
+                            <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">
+                              Phone
+                            </p>
+                            <a
+                              href={`tel:${selectedPartnerForDetails.contact.phone}`}
+                              className="font-bold text-emerald-800 hover:text-emerald-800 text-sm transition-all"
+                            >
                               {selectedPartnerForDetails.contact.phone}
                             </a>
                           </div>
@@ -1995,8 +2102,15 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             <GlobeIcon className="w-4 h-4" />
                           </div>
                           <div>
-                            <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">Website</p>
-                            <a href={selectedPartnerForDetails.contact.website} target="_blank" rel="nofollow noopener noreferrer" className="font-bold text-emerald-800 hover:text-emerald-800 text-sm underline decoration-emerald-200 underline-offset-2 hover:decoration-emerald-500 transition-all">
+                            <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">
+                              Website
+                            </p>
+                            <a
+                              href={selectedPartnerForDetails.contact.website}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              className="font-bold text-emerald-800 hover:text-emerald-800 text-sm underline decoration-emerald-200 underline-offset-2 hover:decoration-emerald-500 transition-all"
+                            >
                               {selectedPartnerForDetails.contact.website}
                             </a>
                           </div>
@@ -2005,22 +2119,43 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     </div>
                     {/* Business Hours */}
                     <div className="bg-white border-2 border-emerald-50 rounded-2xl p-6 shadow-sm">
-                      <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-4">Business Hours</p>
+                      <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-4">
+                        Business Hours
+                      </p>
                       <div className="space-y-3">
                         {[
-                          { day: "Monday - Friday", time: "9:00 AM - 6:00 PM", active: true },
-                          { day: "Saturday", time: "9:00 AM - 2:00 PM", active: true },
+                          {
+                            day: "Monday - Friday",
+                            time: "9:00 AM - 6:00 PM",
+                            active: true,
+                          },
+                          {
+                            day: "Saturday",
+                            time: "9:00 AM - 2:00 PM",
+                            active: true,
+                          },
                           { day: "Sunday", time: "Closed", active: false },
                         ].map((schedule, idx) => (
-                          <div key={`schedule-${schedule.day}`} className="flex items-center justify-between py-2 border-b border-emerald-50 last:border-0">
-                            <span className="text-slate-600 font-medium text-sm">{schedule.day}</span>
-                            <span className={`font-bold text-sm ${schedule.active ? "text-slate-800" : "text-slate-400"}`}>{schedule.time}</span>
+                          <div
+                            key={`schedule-${schedule.day}`}
+                            className="flex items-center justify-between py-2 border-b border-emerald-50 last:border-0"
+                          >
+                            <span className="text-slate-600 font-medium text-sm">
+                              {schedule.day}
+                            </span>
+                            <span
+                              className={`font-bold text-sm ${schedule.active ? "text-slate-800" : "text-slate-400"}`}
+                            >
+                              {schedule.time}
+                            </span>
                           </div>
                         ))}
                         <div className="bg-emerald-50 rounded-xl p-3 mt-2 border border-emerald-100">
                           <div className="flex items-center gap-2">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                            <span className="text-[10px] uppercase tracking-widest font-black text-emerald-700">Emergency: 24/7 Available</span>
+                            <span className="text-[10px] uppercase tracking-widest font-black text-emerald-700">
+                              Emergency: 24/7 Available
+                            </span>
                           </div>
                         </div>
                       </div>

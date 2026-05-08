@@ -29,6 +29,51 @@ export default function PageLoadingSkeleton() {
     )
   }
 
+  // Blog pages (listing or detail)
+  if (path.startsWith('/blog')) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/30">
+        <div className="container-app py-12 sm:py-20 space-y-12">
+          {/* Blog Hero Skeleton */}
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <Skeleton className="h-12 sm:h-16 w-3/4 mx-auto rounded-xl" />
+            <Skeleton className="h-4 sm:h-6 w-full mx-auto" />
+            <Skeleton className="h-4 sm:h-6 w-2/3 mx-auto" />
+          </div>
+
+          {/* Stats/Filter Section */}
+          <div className="flex flex-wrap justify-center gap-4 py-8">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <Skeleton key={i} className="h-10 w-24 sm:w-32 rounded-full" />
+            ))}
+          </div>
+
+          {/* Blog Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="bg-white rounded-xl border border-slate-200 p-6 space-y-4 shadow-sm">
+                <div className="flex justify-between items-center">
+                  <Skeleton className="h-10 w-10 rounded-lg" />
+                  <Skeleton className="h-6 w-20 rounded-full" />
+                </div>
+                <Skeleton className="h-6 w-full" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-2/3" />
+                <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
+                  <div className="space-y-2">
+                    <Skeleton className="h-3 w-20" />
+                    <Skeleton className="h-3 w-24" />
+                  </div>
+                  <Skeleton className="h-4 w-12" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   // Dashboard pages (keeping for backward compatibility, but routes to /admin)
   if (path === '/dashboard' || path === '/admin') {
     return (

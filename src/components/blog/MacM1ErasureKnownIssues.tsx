@@ -1,4 +1,5 @@
 import React from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
@@ -9,11 +10,6 @@ import {
   ArrowRightIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
 
 const MacM1ErasureKnownIssues: React.FC = () => {
   return (
@@ -38,8 +34,8 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               A practical guide to common challenges faced during data erasure
-              on Apple MacBooks with M1, M2, and M3 chips and how to resolve them
-              effectively.
+              on Apple MacBooks with M1, M2, and M3 chips and how to resolve
+              them effectively.
             </p>
           </div>
         </Reveal>
@@ -58,9 +54,9 @@ const MacM1ErasureKnownIssues: React.FC = () => {
               <p className="text-slate-700 leading-relaxed text-lg">
                 Apple MacBooks powered by M-series chips are built with advanced
                 security protections similar to those found in mobile devices.
-                These systems include features such as Secure Enclave,
-                full-disk encryption, secure boot, runtime protections, and
-                activation safeguards.
+                These systems include features such as Secure Enclave, full-disk
+                encryption, secure boot, runtime protections, and activation
+                safeguards.
               </p>
 
               <p className="text-slate-700 leading-relaxed">
@@ -79,7 +75,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
               </h2>
 
               <p className="text-slate-700 leading-relaxed">
-                D-Secure supports secure erasure of Apple Mac devices running on
+                D-Secure supports <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">secure erasure</Link> of Apple Mac devices running on
                 M1, M2, and M3 chips, as well as older systems based on T2, T1,
                 and Intel processors.
               </p>
@@ -114,7 +110,9 @@ const MacM1ErasureKnownIssues: React.FC = () => {
               </p>
 
               <div className="p-5 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg">
-                <strong className="block text-amber-800 mb-1">Root Cause</strong>
+                <strong className="block text-amber-800 mb-1">
+                  Root Cause
+                </strong>
                 <p className="text-sm text-amber-700">
                   This typically happens when an incompatible bootable USB is
                   created by selecting the option meant for older Mac hardware
@@ -158,18 +156,20 @@ const MacM1ErasureKnownIssues: React.FC = () => {
               </h2>
 
               <p className="text-slate-700 leading-relaxed">
-                After a successful erasure, macOS must be reinstalled before
-                the device can be reused. Occasionally, the reinstallation
-                process fails with an error indicating that the erase operation
-                could not be completed.
+                After a successful erasure, macOS must be reinstalled before the
+                device can be reused. Occasionally, the reinstallation process
+                fails with an error indicating that the erase operation could
+                not be completed.
               </p>
 
               <div className="p-5 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
-                <strong className="block text-red-800 mb-1">Why This Happens</strong>
+                <strong className="block text-red-800 mb-1">
+                  Why This Happens
+                </strong>
                 <p className="text-sm text-red-700">
                   Some portions of the storage may still be in use by low-level
-                  system processes, preventing the installer from completing
-                  the operation.
+                  system processes, preventing the installer from completing the
+                  operation.
                 </p>
               </div>
 
@@ -233,7 +233,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
                   <h4 className="font-bold">Compliance Documentation</h4>
                 </div>
                 <p className="text-sm text-slate-600">
-                  Generates secure erasure reports for ITAD, audit, and internal
+                  Generates <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">secure erasure</Link> reports for <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>, audit, and internal
                   compliance needs.
                 </p>
               </div>
@@ -245,7 +245,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
         <Reveal>
           <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 mt-8 text-white">
             <h2 className="text-2xl font-bold mb-4">
-              Simplify Apple Device Data Erasure
+              Simplify Apple Device <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>
             </h2>
             <p className="leading-relaxed mb-6">
               Use the right tools and procedures to avoid delays, errors, and
@@ -253,7 +253,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
             </p>
 
             <Link
-              to="/#products"
+              to="/all-products"
               className="inline-flex items-center bg-white text-slate-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition shadow-lg"
             >
               <HoverIcon>
@@ -271,40 +271,11 @@ const MacM1ErasureKnownIssues: React.FC = () => {
           </div>
         </Reveal>
       </section>
-
-      {/* Engagement */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          <EngagementSection blogId="mac-m1-erasure-known-issues" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="mac-m1-erasure-known-issues" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm
-            blogId="mac-m1-erasure-known-issues"
-            blogTitle="Known Issues in Erasing Apple MacBooks with M-Series Chips"
-          />
-        </Reveal>
-      </section>
-    
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          <FAQSection faqs={blogFaqs["mac-m1-erasure-known-issues"]} />
-          <EngagementSection blogId="mac-m1-erasure-known-issues" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="mac-m1-erasure-known-issues" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="mac-m1-erasure-known-issues" 
-            blogTitle="Mac M1 Erasure Known Issues" 
-          />
-        </Reveal>
-      </section>
-</div>
+      <BlogFooterStandard 
+        blogId="mac-m1-erasure-known-issues" 
+        blogTitle="D-Secure Blog" 
+      />
+    </div>
   );
 };
 

@@ -7,12 +7,12 @@ const BatchOperationsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead 
+      {/* <SEOHead 
         seo={getSEOForPage("support-manual-batch-operations", { 
           title: "Batch Operations | D-Secure Manual", 
           canonicalUrl: "/support/manual/batch-operations" 
         })} 
-      />
+      /> */}
       
 
       <div className="min-h-screen bg-slate-50">

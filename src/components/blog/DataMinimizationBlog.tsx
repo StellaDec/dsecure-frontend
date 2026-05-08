@@ -1,14 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
-import { Link } from "react-router-dom";
-import { ShieldIcon, DatabaseIcon, ArrowRightIcon, HoverIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const DataMinimizationBlog: React.FC = () => {
 
@@ -84,7 +79,7 @@ const DataMinimizationBlog: React.FC = () => {
                         </div>
                     </div>
                     <p className="text-slate-700 leading-relaxed mt-4">
-                        In case data controllers collect more information than required, organizations should remove unnecessary, irrelevant information permanently using a secure data wiping tool for wiping files and folders.
+                        In case data controllers collect more information than required, organizations should remove unnecessary, irrelevant information permanently using a secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> tool for wiping files and folders.
                     </p>
                 </div>
 
@@ -156,7 +151,7 @@ const DataMinimizationBlog: React.FC = () => {
                             <strong>Create a Data Disposal Policy:</strong> A data disposal policy must be created with procedures mentioning the handling of data when its retention period is over, when excessive data needs to be destroyed, or when a storage device needs upgrading or retirement. The policy should provide guidance on the media-specific data disposal methods, tools to be used, and people responsible.
                         </li>
                         <li>
-                            <strong>Use Data Erasure Software:</strong> Using data erasure software like D-Secure, organizations can permanently get rid of data from drives and devices. On the other hand, using D-Secure File Eraser software, businesses can remove excessive data to follow the Data Minimization Principle and fulfill 'Right to Erasure' requests. For erasing files on Mac devices, organizations can use D-Secure File Eraser for Mac.
+                            <strong>Use <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Software:</strong> Using data erasure software like D-Secure, organizations can permanently get rid of data from drives and devices. On the other hand, using D-Secure <Link to="/products/file-eraser" className="text-emerald-600 hover:underline font-medium">File Eraser</Link> software, businesses can remove excessive data to follow the Data Minimization Principle and fulfill 'Right to Erasure' requests. For erasing files on Mac devices, organizations can use D-Secure <Link to="/products/file-eraser" className="text-emerald-600 hover:underline font-medium">File Eraser</Link> for Mac.
                         </li>
                         <li>
                             <strong>Leverage Privacy by Design Tools:</strong> Privacy by Design is a framework that puts principles of data privacy into the design of the product or technology itself. By implementing this in the organization's DNA, businesses can minimize data collection. For Example, the search engine DuckDuckGo has been designed in a way that respects user privacy and doesn't track user behavior. It blocks third-party trackers, pop-up cookies, and email trackers, provides Global Privacy Controls (GPC), and all searches on it are private by default.
@@ -169,75 +164,12 @@ const DataMinimizationBlog: React.FC = () => {
 
              </div>
         </Reveal>
-
-        {/* Conclusion */}
-        <Reveal>
-             <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-8 mt-8 text-white">
-                <h2 className="text-2xl font-bold mb-4">Achieve Data Minimization Compliance</h2>
-                <p className="leading-relaxed mb-6">
-                    Implement strong data minimization practices with D-Secure's complete data erasure solutions to protect privacy, reduce risks, and ensure regulatory compliance.
-                </p>
-                <Link
-                    to="/contact"
-                    className="inline-flex items-center bg-white text-emerald-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
-                >
-                    <HoverIcon>
-                        {(filled) => <ShieldIcon className="w-5 h-5 mr-2" filled={filled} />}
-                    </HoverIcon>
-                    Get D-Secure Solutions
-                    <HoverIcon>
-                        {(filled) => <ArrowRightIcon className="w-5 h-5 ml-2" filled={filled} />}
-                    </HoverIcon>
-                </Link>
-            </div>
-        </Reveal>
       </section>
 
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["data-minimization"]} />
-      <EngagementSection blogId="data-minimization" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="data-minimization" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="data-minimization" 
-            blogTitle="Data Minimization Principle: A Key Part of Data Privacy" 
-          />
-        </Reveal>
-      </section>
-
-       {/* CTA Section */}
-       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
-            <Reveal>
-                <div className="max-w-5xl mx-auto px-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Comply with Data Minimization Requirements
-                    </h2>
-                    <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                        Securely erase excessive data, implement retention policies, and ensure compliance with global data privacy regulations using D-Secure.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            to="/contact"
-                            className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
-                        >
-                            Request Free Demo
-                        </Link>
-                        <Link
-                            to="/resources"
-                            className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
-                        >
-                            Download Compliance Guide
-                        </Link>
-                    </div>
-                </div>
-            </Reveal>
-        </section>
+      <BlogFooterStandard 
+        blogId="data-minimization" 
+        blogTitle="Data Minimization Principle: A Key Part of Data Privacy" 
+      />
     </div>
   );
 };

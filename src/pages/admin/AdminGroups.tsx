@@ -349,7 +349,7 @@ export default function AdminGroups() {
                 </svg>
                 <span>Failed to load groups. Please try again.</span>
               </div>
-              <button onClick={refetch} className="px-3 py-1 bg-red-100 hover:bg-red-200 rounded text-sm font-medium transition-colors">
+              <button onClick={fetchGroups} className="px-3 py-1 bg-red-100 hover:bg-red-200 rounded text-sm font-medium transition-colors">
                 Retry
               </button>
             </div>

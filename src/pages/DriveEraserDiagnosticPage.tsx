@@ -13,7 +13,7 @@ import {
   BarChart,
   ClipboardCheck,
   ArrowRightIcon,
-  DownloadIcon,
+  ShieldIcon,
   GlobeIcon,
   ServerIcon,
   FileTextIcon,
@@ -29,11 +29,12 @@ import {
   ClipboardList,
   CheckIcon,
   Cloud,
-  Monitor
+  Monitor,
 } from "lucide-react";
 import { ShieldIcon as FlatShieldIcon, GlobeIcon as FlatGlobeIcon, ServerIcon as FlatServerIcon } from "@/components/FlatIcons";
 import { useToast } from "@/components/Toast";
 import { blogPosts } from "@/data/blogPosts";
+import { url } from "inspector";
 
 const getReadTime = (text: string) => {
   const wordsPerMinute = 200;
@@ -196,6 +197,10 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1775658234/m7srpf8ele9ktqruglma.png",
       thumbnail: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto,w_400/v1775658234/m7srpf8ele9ktqruglma.png",
       alt: "Multiple Device Management",
+    },
+    {
+    url:"https://res.cloudinary.com/dhwi5wevf/image/upload/v1778242571/fjqwejrbgdzvvetpj7dy.png",
+    alt: "Tamper-proof Erasure Report",
     },
   ];
 
@@ -672,10 +677,13 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
       <div className="container mx-auto px-4 pt-4 pb-1">
         <Breadcrumbs
           items={[
-            { name: 'Home', path: '/' },
-            { name: 'Products', path: '/products' },
-            { name: 'Drive Eraser', path: '/products/drive-eraser' },
-            { name: 'Diagnostic & Health', path: '/products/drive-eraser-diagnostic' },
+            { name: "Home", path: "/" },
+            { name: "Products", path: "/products" },
+            { name: "Drive Eraser", path: "/products/drive-eraser" },
+            {
+              name: "Diagnostic & Health",
+              path: "/products/drive-eraser-diagnostic",
+            },
           ]}
         />
       </div>
@@ -1580,10 +1588,33 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         Multiple ways to deploy
                       </p>
                       <div className="text-[10px] text-emerald-600 font-medium mb-3">
-                        Download USB Tool: 
-                        <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe" target="_blank" rel="noreferrer" className="hover:underline ml-1">Win</a> | 
-                        <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin" target="_blank" rel="noreferrer" className="hover:underline ml-1">Lin</a> | 
-                        <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg" target="_blank" rel="noreferrer" className="hover:underline ml-1">Mac</a>
+                        Download USB Tool:
+                        <a
+                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="hover:underline ml-1"
+                        >
+                          Win
+                        </a>{" "}
+                        |
+                        <a
+                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="hover:underline ml-1"
+                        >
+                          Lin
+                        </a>{" "}
+                        |
+                        <a
+                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="hover:underline ml-1"
+                        >
+                          Mac
+                        </a>
                       </div>
                       {/* Tags */}
                       <div className="flex flex-wrap justify-center gap-1.5">
@@ -1705,7 +1736,63 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             </Reveal>
           </div>
         </section>
-
+        {/* ================= TAMPER PROOF REPORT ================= */}
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <Reveal>
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold">
+                    <ShieldIcon className="w-4 h-4" />
+                    Audit-Ready Documentation
+                  </div>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+                    Tamper-proof Diagnostic Report
+                  </h2>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    Generates digitally signed reports of erasure to help meet
+                    statutory & regulatory compliance. Option to save reports
+                    locally or on secure cloud console in PDF format
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delayMs={200}>
+                <button
+                  onClick={() =>
+                    setSelectedImageIndex(galleryImages.length - 1)
+                  }
+                  className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
+                  aria-label="View Tamper-proof Erasure Report fullscreen"
+                >
+                  <img
+                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png"
+                    alt="Tamper-proof Erasure Report"
+                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent pointer-events-none"></div>
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                      <svg
+                        className="w-6 h-6 text-emerald-800"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </Reveal>
+            </div>
+          </div>
+        </section>
         {/* ================= COMPLIANCE STANDARDS ================= */}
         <section
           id="compliance"
@@ -2067,8 +2154,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
           </div>
         </section>
 
-
-        <ProductInternalLinks currentProduct={PRODUCT_LINKS.DRIVE_ERASER_DIAGNOSTIC} />
+        <ProductInternalLinks
+          currentProduct="hardware-diagnostics"
+        />
 
         {/* ================= FAQ SECTION ================= */}
         <section id="faq" className="py-16 lg:py-24 bg-white">
@@ -2273,19 +2361,24 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         });
                         const timestampISO = now.toISOString();
 
-                        // === Prepare FormData for FormSubmit ===
+                        // === FormSubmit ke liye FormData taiyar karein ===
                         const formSubmitData = new FormData();
-                        // Webhook to notify backend - backend will send auto-response email
+                        // Backend ko notify karne ke liye webhook - backend auto-response email bhejega
                         formSubmitData.append(
                           "_webhook",
                           "https://api.dsecuretech.com/api/formsubmit/webhook",
                         );
                         formSubmitData.append("_captcha", "false");
                         formSubmitData.append("_template", "table");
+                        formSubmitData.append("sendAutoReply", "true"); // Auto-reply enable karein
 
                         // Form fields
                         formSubmitData.append("name", formData.name.trim());
                         formSubmitData.append("email", formData.email.trim());
+                        formSubmitData.append(
+                          "customer_email",
+                          formData.email.trim(),
+                        ); // Customer ka email auto-reply ke liye
                         formSubmitData.append(
                           "organization",
                           formData.organization.trim(),
@@ -2295,7 +2388,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           formData.message.trim(),
                         );
 
-                        // Required for autoresponse
+                        // Autoresponse ke liye reply-to zaroori hai
                         formSubmitData.append(
                           "_replyto",
                           formData.email.trim(),
@@ -2303,13 +2396,13 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         formSubmitData.append("timestamp", timestampLocal);
                         formSubmitData.append(
                           "source",
-                          "Drive Eraser Page Contact",
+                          "Drive Eraser Diagnostic Page Contact",
                         );
 
-                        // Subject and CC
+                        // Subject aur CC
                         formSubmitData.append(
                           "_subject",
-                          "New Inquiry - Drive Eraser Page - D-Secure Tech",
+                          "New Inquiry - Drive Eraser Diagnostic Page - D-Secure Tech",
                         );
                         formSubmitData.append(
                           "_cc",
@@ -2347,7 +2440,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
                         try {
                           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-                          const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+                          const API_BASE =
+                            import.meta.env.VITE_API_BASE_URL ||
+                            "https://api.dsecuretech.com";
                           const apiResponse = await fetch(
                             `${API_BASE}/api/ContactFormSubmissions`,
                             {
@@ -2368,14 +2463,17 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           );
 
                           // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-                          fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                              "x-api-key": "REACT_CONTACT_2026",
+                          fetch(
+                            import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "",
+                            {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                                "x-api-key": "REACT_CONTACT_2026",
+                              },
+                              body: JSON.stringify(submissionData),
                             },
-                            body: JSON.stringify(submissionData),
-                          }).catch(() => {});
+                          ).catch(() => {});
 
                           if (!apiResponse.ok) {
                             const errorData = await apiResponse.json();

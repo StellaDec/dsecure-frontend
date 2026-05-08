@@ -4,11 +4,7 @@ import { getSEOForPage, getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { CloudIcon, LightningIcon, ShieldIcon, ArrowRightIcon, HoverIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const RisksOfDataHoardingBlog: React.FC = () => {
 
@@ -18,7 +14,7 @@ const RisksOfDataHoardingBlog: React.FC = () => {
         title: "The Cost of Data Hoarding",
         excerpt: "Understanding the financial and security costs of keeping unnecessary data.",
         slug: "data-hoarding",
-        author: "Nitesh Kushwaha",
+        author: "D-Secure Editorial Team",
         publishDate: "November 16, 2025",
         keywords: "data hoarding, storage costs, data minimization",
         category: "Strategy",
@@ -156,8 +152,8 @@ const RisksOfDataHoardingBlog: React.FC = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold mb-2 text-blue-400">Data Destruction Policy</h3>
-                                    <p className="text-slate-300 text-sm mb-3">In order to keep relevant information safe and dispose of irrelevant information before the retention period gets over, a data destruction policy needs to be formed. It must define the purpose, scope, provisions, and approved standard methods of data destruction, along with the responsibilities of the people involved, such as the CIO and CISO. Whether the data destruction procedure is carried out within the premises of the organization, i.e., onsite, or an external party has been hired, such as an ITAD, there will be a detailed description of both scenarios in the policy.</p>
-                                    <p className="text-slate-300 text-sm">Professional data wiping tools like D-Secure provide a data destruction certificate along with a detailed removal report. Empowered with automation, scalability, and remote wiping, this tool supports globally recognized standards such as NIST 800-88 Clear and NIST 800-88 Purge. It works with diverse storage devices, regardless of operating systems. The software provides 360-degree protection by making information irrecoverable.</p>
+                                    <p className="text-slate-300 text-sm mb-3">In order to keep relevant information safe and dispose of irrelevant information before the retention period gets over, a data destruction policy needs to be formed. It must define the purpose, scope, provisions, and approved standard methods of data destruction, along with the responsibilities of the people involved, such as the CIO and CISO. Whether the data destruction procedure is carried out within the premises of the organization, i.e., onsite, or an external party has been hired, such as an <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>, there will be a detailed description of both scenarios in the policy.</p>
+                                    <p className="text-slate-300 text-sm">Professional <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> tools like D-Secure provide a data destruction certificate along with a detailed removal report. Empowered with automation, scalability, and remote wiping, this tool supports globally recognized standards such as <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Clear and <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Purge. It works with diverse storage devices, regardless of operating systems. The software provides 360-degree protection by making information irrecoverable.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
@@ -199,51 +195,12 @@ const RisksOfDataHoardingBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["data-hoarding-risks"]} />
-      <EngagementSection blogId="data-hoarding-risks" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="data-hoarding-risks" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="data-hoarding-risks" 
-            blogTitle="Understanding Data Hoarding Risks and Mitigation Strategies" 
-          />
-        </Reveal>
-      </section>
+      {/* Unified Blog Footer */}
+      <BlogFooterStandard 
+        blogId="data-hoarding-risks" 
+        blogTitle="The Security Risks of Data Hoarding" category="Strategy" tag="Risk Management" 
+      />
 
-       {/* CTA Section */}
-       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
-            <Reveal>
-                <div className="max-w-5xl mx-auto px-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Reduce Your Data Footprint
-                    </h2>
-                    <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                        Discover how D-Secure helps organizations implement effective data minimization strategies.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            to="/contact"
-                            className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
-                        >
-                            Request Free Demo
-                        </Link>
-                        <Link
-                            to="/services"
-                            className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
-                        >
-                            Explore Solutions
-                        </Link>
-                    </div>
-                </div>
-            </Reveal>
-        </section>
     </div>
   );
 };

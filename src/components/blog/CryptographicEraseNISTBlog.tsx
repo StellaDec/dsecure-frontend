@@ -1,15 +1,9 @@
-// File: cryptographicEraseNISTBlog.tsx
-
 import React from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
-import { getSEOForPage } from "@/utils/seo";
+import { getSEOForPage } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
-import EngagementSection from "./EngagementSection";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
 
 const CryptographicEraseNISTBlog: React.FC = () => {
     return (
@@ -55,7 +49,25 @@ const CryptographicEraseNISTBlog: React.FC = () => {
                                 Because only key material is sanitized, CE is significantly faster than
                                 overwrite-based techniques and can provide a high level of assurance,
                                 provided that strong cryptographic algorithms, secure key management, and
-                                proper verification mechanisms are in place.
+                                proper verification mechanisms are in place. Solutions like <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> automate this process for enterprise-grade SSDs and NVMe drives.
+                            </p>
+                        </div>
+
+                        {/* Expert Solution Section Integration */}
+                        
+
+                        {/* Encryption on ISM */}
+                        <div className="space-y-6">
+                            <h2 className="text-3xl font-bold text-slate-900">
+                                Encrypted Information System Media
+                            </h2>
+                            <p className="text-slate-700 leading-loose text-lg">
+                                Many modern ISMs employ always-on symmetric-key encryption, meaning that
+                                all data written to the media is automatically encrypted. Self-encrypting
+                                drives (SEDs) are a common example and typically include built-in
+                                sanitization functions. In such environments, Cryptographic Erase is
+                                performed by sanitizing the internal encryption keys, thereby preventing
+                                any future access to the stored data. For virtualized environments, using a <Link to="/products/virtual-machine-eraser" className="text-emerald-600 hover:underline font-medium">Virtual Machine Eraser</Link> ensures that individual instances are sanitized without affecting the underlying host.
                             </p>
                         </div>
 
@@ -193,75 +205,21 @@ const CryptographicEraseNISTBlog: React.FC = () => {
                             efficient media sanitization.
                         </p>
                         <Link
-                            to="/#products"
+                            to="/compliance/nist-800-88"
                             className="inline-flex items-center bg-white text-emerald-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg"
                         >
-                            Explore Certified Data Erasure Solutions
+                            Explore <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Compliance Guidelines
                         </Link>
                     </div>
                 </Reveal>
             </section>
 
-            {/* Engagement, Comments & Enquiry Section */}
-            <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-              <Reveal>
-                <EngagementSection blogId="cryptographic-erase-nist" />
-              </Reveal>
-              <Reveal>
-                <CommentSection blogId="cryptographic-erase-nist" />
-              </Reveal>
-              <Reveal>
-                <EnquiryForm 
-                  blogId="cryptographic-erase-nist" 
-                  blogTitle="Cryptographic Erase (CE) – Purge Sanitization Method" 
-                />
-              </Reveal>
-            </section>
 
-            {/* Final CTA Section */}
-            <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
-                <Reveal>
-                    <div className="max-w-5xl mx-auto px-4">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Implement NIST-Compliant Cryptographic Erasure
-                        </h2>
-                        <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                            Ensure your organization meets NIST SP 800-88 requirements with certified cryptographic erasure solutions.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                to="/contact"
-                                className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
-                            >
-                                Request Free Demo
-                            </Link>
-                            <Link
-                                to="/resources"
-                                className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
-                            >
-                                Download NIST Guidelines
-                            </Link>
-                        </div>
-                    </div>
-                </Reveal>
-            </section>
         
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          <FAQSection faqs={blogFaqs["cryptographic-erase-nist"]} />
-          <EngagementSection blogId="cryptographic-erase-nist" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="cryptographic-erase-nist" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="cryptographic-erase-nist" 
-            blogTitle="Cryptographic Erase Nist" 
-          />
-        </Reveal>
-      </section>
+      <BlogFooterStandard 
+        blogId="cryptographic-erase-nist" 
+        blogTitle="Cryptographic Erase (CE): Purge Sanitization Method" 
+      />
 </div>
     );
 };

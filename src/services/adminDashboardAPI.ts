@@ -35,28 +35,41 @@ interface UserActivity {
   email: string;
   loginTime: string;
   logoutTime: string;
-  status: "active" | "offline";
+  status: UserStatus;
 }
 
+// Reports aur users ke liye status types taaki union duplication na ho
+type ReportStatus = "completed" | "running" | "failed";
+type UserStatus = "active" | "offline";
+
 interface GroupData {
+  id: string;
   name: string;
-  description: string;
-  licenses: number;
-  date: string;
+  description?: string;
+  licenses?: number;
+  date?: string;
+  machineCount: number;
+  reportCount: number;
+  members: number;
 }
 
 interface LicenseData {
+  id?: string;
   product: string;
+  type?: string;
   total: number;
   consumed: number;
   available: number;
+  status?: "active" | "inactive" | "expired";
+  expiryDate?: string;
+  assignedTo?: string;
 }
 
 interface RecentReport {
   id: string;
   type: string;
   devices: number;
-  status: "completed" | "running" | "failed";
+  status: ReportStatus;
   date: string;
   method: string;
 }
@@ -134,7 +147,7 @@ interface User {
 interface Report {
   id: string;
   type: string;
-  status: "completed" | "running" | "failed";
+  status: ReportStatus;
   date: string;
   devices: number;
   method: string;
@@ -389,9 +402,9 @@ export class AdminDashboardAPI {
                 hour12: true,
               })
             : "-",
-          status: (subuser.calculated_status === "online"
+          status: subuser.calculated_status === "online"
             ? "active"
-            : "offline") as "active" | "offline",
+            : "offline",
         }),
       );
 
@@ -485,7 +498,11 @@ export class AdminDashboardAPI {
         .filter((m: any) => m.licenseActivated || m.license_activated)
         .map((m: any) => ({
           id: m.machine_id || m.id || "",
+          product: m.license_type || "Premium Eraser",
           type: m.license_details_json ? "Premium" : "Standard",
+          total: 1, // Individual machine license
+          consumed: 1,
+          available: 0,
           status: "active" as const,
           expiryDate: m.license_activation_date || "",
           assignedTo: m.user_email || userEmail,
@@ -581,13 +598,13 @@ export class AdminDashboardAPI {
         throw new Error("User email not found in stored data");
       }
 
-      // console.log('?? Fetching profile for email:', userEmail);
+
 
       // ? Use axios api instance with automatic decryption
       const response = await api.get(`/api/Users/${encodeEmail(userEmail)}`);
       const data = response.data;
 
-      // console.log('? Profile data received:', data);
+
 
       // Transform backend data to ProfileData format
       // Priority: userRole (camelCase) > user_role > user_type > role
@@ -620,7 +637,7 @@ export class AdminDashboardAPI {
         message: "Profile fetched successfully",
       };
     } catch (error: any) {
-      // console.error('? Error fetching profile:', error);
+
       return {
         success: false,
         data: {} as ProfileData,
@@ -656,7 +673,7 @@ export class AdminDashboardAPI {
         throw new Error("User email not found");
       }
 
-      // console.log('?? Updating profile for email:', userEmail);
+
 
       // Transform ProfileData to backend format
       const backendData = {
@@ -674,7 +691,7 @@ export class AdminDashboardAPI {
         backendData,
       );
       const data = response.data;
-      // console.log('? Profile updated successfully:', data);
+
 
       // Transform response back to ProfileData format
       // Priority: userRole (camelCase) > user_role > user_type > role
@@ -727,7 +744,7 @@ export class AdminDashboardAPI {
         message: "Profile updated successfully",
       };
     } catch (error) {
-      // console.error('? Error updating profile:', error);
+
       return {
         success: false,
         data: {} as ProfileData,

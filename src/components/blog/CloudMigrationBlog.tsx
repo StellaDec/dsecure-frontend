@@ -1,9 +1,5 @@
-﻿import React from "react";
-import EnquiryForm from "./EnquiryForm";
-import CommentSection from "./CommentSection";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
+import React from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage, getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
@@ -16,7 +12,7 @@ const CloudMigrationBlog: React.FC = () => {
         title: "Data Erasure During Cloud Migration",
         excerpt: "Best practices for secure data erasure when migrating to cloud infrastructure.",
         slug: "cloud-migration",
-        author: "Nitish",
+        author: "D-Secure Editorial Team",
         publishDate: "October 6, 2026",
         keywords: "cloud migration, data erasure, on-premise decommission",
         category: "Technical Guide",
@@ -30,7 +26,7 @@ const CloudMigrationBlog: React.FC = () => {
                             Cloud Security
                         </span>
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-                            Data Erasure During Cloud Migration
+                            <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> During Cloud Migration
                         </h1>
                         <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                             Essential data security practices when migrating from on-premise infrastructure to cloud environments.
@@ -71,7 +67,7 @@ const CloudMigrationBlog: React.FC = () => {
                             <div className="bg-white/10 rounded-xl p-6">
                                 <h4 className="font-bold text-lg mb-3">3. Certified Erasure</h4>
                                 <p className="text-white/90 leading-relaxed">
-                                    Apply D-Secure erasure with NIST/IEEE compliant methods.
+                                    Apply D-<Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure erasure</Link> with NIST/IEEE compliant methods.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
@@ -85,49 +81,14 @@ const CloudMigrationBlog: React.FC = () => {
                 </Reveal>
             </section>
 
-            <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
-                <Reveal>
-                    <div className="max-w-5xl mx-auto px-4">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Secure Your Cloud Migration
-                        </h2>
-                        <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                            Don't leave sensitive data behind. Ensure complete data erasure during your cloud migration with D-Secure.
-                        </p>
-                        <Link to="/contact" className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg">
-                            Get Expert Guidance
-                        </Link>
-                    </div>
-                </Reveal>
-            </section>
 
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["cloud-migration"]} />
-      <EngagementSection blogId="cloud-migration" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="cloud-migration" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="cloud-migration" 
-            blogTitle="Cloud Migration" 
-          />
-        </Reveal>
-      </section>
-
+      <BlogFooterStandard 
+        blogId="cloud-migration" 
+        blogTitle="Cloud Migration Strategy: Ensuring Data Security" category="Technical Guide" tag="Cloud" 
+      />
     </div>
   );
 
 };
 
 export default CloudMigrationBlog;
-
-
-
-
-
-

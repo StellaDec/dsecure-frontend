@@ -1,14 +1,10 @@
 import React from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ShieldIcon, CheckIcon, UsersIcon, GlobeIcon, StarIcon, ArrowRightIcon, HoverIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
 
 const MSPDataErasureBlog: React.FC = () => {
   return (
@@ -23,10 +19,10 @@ const MSPDataErasureBlog: React.FC = () => {
                     MSP Solutions
                 </span>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">Data Erasure for MSPs</span>
+                    <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent"><Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> for MSPs</span>
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                    How Managed Service Providers can deliver certified data erasure as a value-added service to their clients.
+                    How <Link to="/solutions/service-providers" className="text-emerald-600 hover:underline font-medium">Managed Service Providers</Link> can deliver certified data erasure as a value-added service to their clients.
                 </p>
             </div>
         </Reveal>
@@ -41,7 +37,7 @@ const MSPDataErasureBlog: React.FC = () => {
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">1. The MSP Opportunity</h2>
                     <p className="text-slate-700 leading-relaxed text-lg">
-                        Managed Service Providers are uniquely positioned to help their clients with secure data disposal. You already manage their IT infrastructure—extending to end-of-life management is a natural fit.
+                        <Link to="/solutions/service-providers" className="text-emerald-600 hover:underline font-medium">Managed Service Providers</Link> are uniquely positioned to help their clients with secure data disposal. You already manage their IT infrastructure—extending to end-of-life management is a natural fit.
                     </p>
                     <p className="text-slate-700 leading-relaxed">
                         Data erasure as a service creates recurring revenue, deepens client relationships, and addresses a critical security need that most SMBs lack the expertise to handle internally.
@@ -126,7 +122,7 @@ const MSPDataErasureBlog: React.FC = () => {
                         </li>
                         <li className="flex gap-3 items-start">
                              <span className="text-violet-500 font-bold text-xl">3.</span>
-                             <span><strong>Secure Erasure:</strong> Apply appropriate erasure method based on media type and client requirements.</span>
+                             <span><strong><Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link>:</strong> Apply appropriate erasure method based on media type and client requirements.</span>
                         </li>
                         <li className="flex gap-3 items-start">
                              <span className="text-violet-500 font-bold text-xl">4.</span>
@@ -248,52 +244,10 @@ const MSPDataErasureBlog: React.FC = () => {
             </div>
         </Reveal>
       </section>
-
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["msp-data-erasure"]} />
-      <EngagementSection blogId="msp-data-erasure" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="msp-data-erasure" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="msp-data-erasure" 
-            blogTitle="Data Erasure for MSPs" 
-          />
-        </Reveal>
-      </section>
-
-       {/* CTA Section */}
-       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
-            <Reveal>
-                <div className="max-w-5xl mx-auto px-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Expand Your MSP Services
-                    </h2>
-                    <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                        Add certified data erasure to your service portfolio and grow your business.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            to="/partners"
-                            className="inline-block bg-gradient-to-r from-violet-500 to-purple-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-violet-600 hover:to-purple-600 transition-all text-lg"
-                        >
-                            Become a Partner
-                        </Link>
-                         <Link
-                            to="/contact"
-                            className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
-                        >
-                            Request MSP Demo
-                        </Link>
-                    </div>
-                </div>
-            </Reveal>
-        </section>
+      <BlogFooterStandard 
+        blogId="msp-data-erasure" 
+        blogTitle="D-Secure Blog" 
+      />
     </div>
   );
 };

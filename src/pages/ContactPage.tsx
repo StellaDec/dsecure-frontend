@@ -206,10 +206,13 @@ function ContactPageContent() {
         "_webhook",
         "https://api.dsecuretech.com/api/formsubmit/webhook",
       );
+      formSubmitData.append("_webhookContentType", "application/json");
+      formSubmitData.append("_webhookExtraData", "true");
       // Disable captcha
       formSubmitData.append("_captcha", "false");
       // Table template for email
       formSubmitData.append("_template", "table");
+      formSubmitData.append("_next", window.location.href);
 
       // === FORM FIELDS ===
       formSubmitData.append("name", formData.name.trim());
@@ -247,6 +250,10 @@ function ContactPageContent() {
         "_cc",
         "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
       );
+
+      // Auto-response configuration for backend
+      formSubmitData.append("sendAutoReply", "true");
+      formSubmitData.append("customer_email", formData.email.trim());
 
       // === 1. SUBMIT TO BACKEND API (DATABASE) ===
       const timestampISO = now.toISOString(); // Format for backend

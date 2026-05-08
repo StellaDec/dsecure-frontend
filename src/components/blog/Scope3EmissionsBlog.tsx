@@ -4,11 +4,7 @@ import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ShieldIcon, CheckIcon, GlobeIcon, StarIcon, ArrowRightIcon, HoverIcon, HeartIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const Scope3EmissionsBlog: React.FC = () => {
   return (
@@ -114,7 +110,7 @@ const Scope3EmissionsBlog: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Data Erasure as Enabler */}
+                {/* <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> as Enabler */}
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">Data Erasure: The Missing Link</h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -122,7 +118,7 @@ const Scope3EmissionsBlog: React.FC = () => {
                     </p>
                     <div className="space-y-3">
                         <div className="bg-white border-l-4 border-green-500 p-4 rounded-r-lg shadow-sm">
-                            <h4 className="font-semibold text-green-900 mb-1">Without Secure Erasure</h4>
+                            <h4 className="font-semibold text-green-900 mb-1">Without <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link></h4>
                             <p className="text-sm text-slate-700">Organizations default to physical destruction to guarantee data protection → New devices must be manufactured → High Scope 3 emissions.</p>
                         </div>
                         <div className="bg-white border-l-4 border-green-500 p-4 rounded-r-lg shadow-sm">
@@ -238,23 +234,10 @@ const Scope3EmissionsBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* Engagement Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["scope3-emissions"]} />
-      <EngagementSection blogId="scope3-emissions" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="scope3-emissions" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="scope3-emissions" 
-            blogTitle="Scope 3 Emissions & Device Reuse" 
-          />
-        </Reveal>
-      </section>
+      <BlogFooterStandard 
+        blogId="scope-3-emissions-reuse" 
+        blogTitle="Reducing Scope 3 Emissions Through Secure IT Asset Reuse" 
+      />
     </div>
   );
 };

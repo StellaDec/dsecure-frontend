@@ -32,13 +32,13 @@ const RegulatoryCompliancePage: React.FC = memo(() => {
 
   return (
     <>
-      <SEOHead 
+      {/* <SEOHead 
         seo={getSEOForPage("support-manual-regulatory-compliance", { 
           title: "Legal & Regulatory Compliance Frameworks | D-Secure Manual", 
           canonicalUrl: "/support/manual/regulatory-compliance",
           description: "A comprehensive legal mapping for DPOs and CISOs. How D-Secure automates compliance for GDPR, HIPAA, PCI DSS, SOX, and international data privacy laws."
         })} 
-      />
+      /> */}
       
       <div className="min-h-screen bg-slate-50 text-left">
         <section className="bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50 py-16 md:py-24 border-b border-emerald-100 text-left">

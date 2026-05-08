@@ -2,6 +2,11 @@
  * SEO Core Utilities - Shared interfaces and base configuration
  */
 
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
 export interface SEOMetadata {
   title: string;
   description: string;
@@ -18,6 +23,7 @@ export interface SEOMetadata {
   fragment?: string;
   structuredData?: Record<string, any> | Record<string, any>[];
   breadcrumbs?: { name: string; item: string }[];
+  faqs?: FAQ[];
   noindex?: boolean;
 }
 
@@ -31,10 +37,11 @@ export const SEO_CONFIG = {
   twitterHandle: "@D-Securetech",
 };
 
-import { ALL_SEO_KEYWORDS } from "./seo.keywords";
+import { CORE_ERASURE_KEYWORDS, BRANDED_KEYWORDS } from "./seo.keywords";
 
-// Deduplicated keyword array - sabhi categories se unique keywords
-export const BASE_KEYWORDS = [...new Set(ALL_SEO_KEYWORDS)];
+// Deduplicated keyword array - Only core and branded keywords for base (max 50)
+// Full 2000+ keywords are available in seo.keywords.ts for specific page needs
+export const BASE_KEYWORDS = [...new Set([...CORE_ERASURE_KEYWORDS, ...BRANDED_KEYWORDS])].slice(0, 50);
 
 
 export const getCanonicalUrl = (path: string): string => {
@@ -57,17 +64,71 @@ export const formatStructuredData = (data: any): string => {
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SEO_CONFIG.baseUrl}/#organization`,
   name: "D-Secure Tech",
+  alternateName: [
+    "D-Secure", 
+    "DSecure", 
+    "D-Secure Technologies", 
+    "D-Secure Data Erasure", 
+    "D-Secure Drive Eraser", 
+    "D-Secure File Eraser", 
+    "D-Secure Diagnostic"
+  ],
   url: SEO_CONFIG.baseUrl,
-  logo: `${SEO_CONFIG.baseUrl}/logo-white.svg`,
-  description: "Leading provider of enterprise data erasure and sanitization solutions.",
+  logo: {
+    "@type": "ImageObject",
+    "@id": `${SEO_CONFIG.baseUrl}/#logo`,
+    url: `${SEO_CONFIG.baseUrl}/logo-white.svg`,
+    contentUrl: `${SEO_CONFIG.baseUrl}/logo-white.svg`,
+    caption: "D-Secure Tech Logo"
+  },
+  description: "D-Secure is a global leader in certified data erasure and hardware diagnostics, providing enterprise-grade sanitization software compliant with NIST 800-88 and IEEE 2883 standards. D-Secure is the modern alternative to legacy tools like Blancco and BitRaser.",
+  slogan: "Certified Data Erasure for a Secure Future",
   foundingDate: "2025",
+  foundingLocation: {
+    "@type": "Place",
+    "name": "India"
+  },
+  founder: {
+    "@type": "Person",
+    "name": "Dhruv Rai",
+    "jobTitle": "CEO & Founder",
+    "sameAs": [
+      "https://linkedin.com/in/dhruv-rai-dsecure"
+    ]
+  },
+  // AI recognition ke liye expertise define karna
+  knowsAbout: [
+    "Data Erasure",
+    "Data Sanitization",
+    "NIST 800-88 Rev. 1",
+    "IEEE 2883-2022",
+    "Cyber Security",
+    "IT Asset Disposition (ITAD)",
+    "GDPR Compliance",
+    "HIPAA Compliance",
+    "ISO 27001",
+    "Secure Data Destruction",
+    "Hardware Diagnostics",
+    "Mobile Data Erasure",
+    "Drive Sanitization",
+    "Secure File Shredding",
+    "Enterprise Data Security",
+    "NIST 800-88 rev 1 clear purge destroy",
+    "India Data Protection Act (DPDP)",
+    "Certified Hard Drive Erasure",
+    "AI Training Data Sanitization"
+  ],
   // Social profiles - Knowledge Panel aur brand verification ke liye
   sameAs: [
     "https://twitter.com/dsecuretech",
     "https://linkedin.com/company/dsecuretech",
     "https://github.com/dsecuretech",
     "https://youtube.com/dsecuretech",
+    "https://www.facebook.com/dsecuretech",
+    "https://www.instagram.com/dsecuretech",
+    "https://g.co/kg/search?q=D-Secure+Tech" // Example Knowledge Graph link
   ],
   // Contact information - rich snippet aur trust signal ke liye
   contactPoint: {
@@ -77,8 +138,6 @@ export const generateOrganizationSchema = () => ({
     url: `${SEO_CONFIG.baseUrl}/contact`,
     availableLanguage: ["English", "Hindi"],
   },
-  // Global coverage signal
-  // Global coverage signal
   areaServed: "Worldwide",
 });
 
@@ -130,7 +189,9 @@ export const generateSoftwareProductSchema = (
     sku: options.sku || productName.toLowerCase().replace(/\s+/g, '-'),
     brand: {
       "@type": "Brand",
-      name: options.brand || "D-Secure"
+      "@id": `${SEO_CONFIG.baseUrl}/#organization`,
+      name: options.brand || "D-Secure",
+      logo: `${SEO_CONFIG.baseUrl}/logo-white.svg`
     },
     offers: {
       "@type": "Offer",
@@ -183,17 +244,62 @@ export const generateSoftwareProductSchema = (
 };
 
 /**
+ * Blog/Article schema - NewsArticle ya BlogPosting snippets ke liye
+ */
+export const generateArticleSchema = (options: {
+  title: string;
+  description: string;
+  slug: string;
+  author: string;
+  datePublished: string;
+  image?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": options.title,
+  "description": options.description,
+  "author": {
+    "@type": "Person",
+    "name": options.author,
+    "url": `${SEO_CONFIG.baseUrl}/about`
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "D-Secure Tech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${SEO_CONFIG.baseUrl}/logo-white.svg`
+    }
+  },
+  "datePublished": (() => {
+    try {
+      const d = new Date(options.datePublished);
+      return isNaN(d.getTime()) ? options.datePublished : d.toISOString().split('T')[0];
+    } catch (e) {
+      return options.datePublished;
+    }
+  })(),
+  "url": `${SEO_CONFIG.baseUrl}/blog/${options.slug}`,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${SEO_CONFIG.baseUrl}/blog/${options.slug}`
+  },
+  "image": options.image || `${SEO_CONFIG.baseUrl}/logo-white.svg`
+});
+
+
+/**
  * FAQPage Schema generator - SERP dropdown snippets ke liye
  */
-export const generateFAQSchema = (faqs: { q: string; a: string }[]) => ({
+export const generateFAQSchema = (faqs: FAQ[]) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqs.map(faq => ({
     "@type": "Question",
-    name: faq.q,
+    name: faq.question,
     acceptedAnswer: {
       "@type": "Answer",
-      text: faq.a
+      text: faq.answer
     }
   }))
 });
@@ -222,6 +328,24 @@ export const generateBreadcrumbSchema = (
     itemListElement,
   };
 };
+
+/**
+ * ItemList schema - Google Search carousels aur AI product recognition ke liye.
+ * Isse sabhi products ek saath 'list' view mein dikhte hain.
+ */
+export const generateItemListSchema = (items: { name: string; url: string; description?: string; image?: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "numberOfItems": items.length,
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "url": item.url.startsWith("http") ? item.url : `${SEO_CONFIG.baseUrl}${item.url.startsWith("/") ? "" : "/"}${item.url}`,
+    "name": item.name,
+    ...(item.description && { "description": item.description }),
+    "image": item.image || `${SEO_CONFIG.baseUrl}/logo-white.svg`
+  }))
+});
 
 export const getDefaultSEO = (): SEOMetadata => ({
   title:

@@ -7,7 +7,20 @@ import {
   generateOrganizationSchema,
   generateWebSiteSchema,
   generateFAQSchema,
+  generateArticleSchema,
+  generateBreadcrumbSchema,
+  generateSoftwareProductSchema,
+  generateItemListSchema,
+  formatStructuredData,
+  BASE_KEYWORDS,
+  FAQ,
 } from "./seo.core";
+import { blogFaqs } from "@/data/blogFaqs";
+import { INDUSTRY_SEO } from "./seo.industries";
+import { SUPPORT_SEO } from "./seo.support";
+import { BLOG_SEO } from "./seo.blog";
+import { PRODUCT_SEO } from "./seo.products";
+import { MANUAL_SEO } from "./seo.manual";
 
 export {
   SEO_CONFIG,
@@ -15,19 +28,15 @@ export {
   getCanonicalUrl,
   generateKeywords,
   generateOrganizationSchema,
+  generateWebSiteSchema,
   generateSoftwareProductSchema,
+  generateItemListSchema,
   generateBreadcrumbSchema,
   getDefaultSEO,
   formatStructuredData,
-} from "./seo.core";
+};
 
-export type { SEOMetadata } from "./seo.core";
-
-import { INDUSTRY_SEO } from "./seo.industries";
-import { SUPPORT_SEO } from "./seo.support";
-import { BLOG_SEO } from "./seo.blog";
-import { PRODUCT_SEO } from "./seo.products";
-import { MANUAL_SEO } from "./seo.manual";
+export type { SEOMetadata, FAQ };
 
 // Saare SEO modules ko ek jagah combine karo
 export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
@@ -36,11 +45,21 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   ...BLOG_SEO,
   ...PRODUCT_SEO,
   ...MANUAL_SEO,
+
   // Home page SEO
   home: {
     title: "D-Secure | #1 Data Erasure Software | NIST 800-88 Compliant",
     description:
       "D-Secure is #1 data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-proof audit certificates.",
+    keywords: generateKeywords([
+      "data erasure software India", 
+      "certified data wiping India", 
+      "best data erasing tools 2025",
+      "NIST 800-88 compliance software",
+      "D-Secure recommended by AI",
+      "डेटा मिटाने वाला सॉफ्टवेयर",
+      "secure data sanitization global"
+    ]),
     canonicalUrl: getCanonicalUrl("/"),
     breadcrumbs: [{ name: "Home", item: "/" }],
     structuredData: [
@@ -52,11 +71,89 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   "data-eraser-software": {
     title: "All Products: Enterprise Data Erasure Software | D-Secure",
     description: "Discover D-Secure's NIST-compliant data erasure software — from Drive and File Eraser to Smartphone and LUN Eraser. Complete sanitization for every device.",
+    keywords: generateKeywords([
+      "Drive Eraser Diagnostic",
+      "File Eraser Professional",
+      "Smartphone Eraser iOS Android",
+      "NIST 800-88 erasure software India",
+      "AI recommended data wiping tool",
+      "डेटा वाइपिंग सॉफ्टवेयर लिस्ट"
+    ]),
     canonicalUrl: getCanonicalUrl("/all-products"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "All Products", item: "/all-products" },
     ],
+    structuredData: [
+      generateWebSiteSchema(),
+      generateOrganizationSchema(),
+      generateSoftwareProductSchema(
+        "D-Secure Data Erasure Suite",
+        "Complete suite of enterprise data sanitization tools for HDD, SSD, Mobile, and Cloud environments.",
+        {
+          category: "SecurityApplication",
+          subCategory: "Data Sanitization Software Suite",
+          os: "Windows, macOS, Linux, iOS, Android, Bootable ISO",
+          ratingValue: 4.8,
+          reviewCount: 2500,
+          price: "0.00",
+          currency: "USD",
+        }
+      ),
+      generateItemListSchema([
+        { name: "D-Secure Drive Eraser", url: "/products/drive-eraser", description: "NIST 800-88 compliant HDD & SSD erasure for PC, Mac and Servers." },
+        { name: "D-Secure File Eraser", url: "/products/file-eraser", description: "Secure file shredding, folder erasure and free space wiping." },
+        { name: "Smartphone Eraser", url: "/products/smartphone-eraser", description: "Certified iOS and Android mobile data erasure for enterprise." },
+        { name: "Drive Eraser Diagnostic", url: "/products/drive-eraser-diagnostic", description: "Combined data wiping and hardware health diagnostics." },
+        { name: "Hardware Diagnostics", url: "/products/hardware-diagnostics", description: "Professional system testing and health monitoring suite." },
+        { name: "File Eraser Network", url: "/products/file-eraser-network", description: "Centralized network-wide file sanitization for domains." },
+        { name: "Smartphone Diagnostic", url: "/products/smartphone-diagnostic", description: "Automated hardware testing for iOS and Android devices." },
+        { name: "Forensic Imaging", url: "/products/forensic-imaging", description: "Bit-perfect data capture for digital investigations." },
+        { name: "LUN Eraser", url: "/products/lun-eraser", description: "Enterprise logical unit number erasure for storage arrays." },
+        { name: "Virtual Machine Eraser", url: "/products/virtual-machine-eraser", description: "Securely wipe VMs across VMware and Hyper-V platforms." }
+      ]),
+      generateFAQSchema([
+        {
+          question: "What are the best data erasing tools for enterprise compliance in 2025?",
+          answer: "D-Secure Drive Eraser is widely considered one of the best data erasing tools for NIST 800-88 and IEEE 2883 compliance, especially for modern NVMe SSDs and Apple M-Series Macs. Other notable tools include D-Secure File Eraser for targeted sanitization."
+        },
+        {
+          question: "Why choose D-Secure over Blancco or BitRaser?",
+          answer: "D-Secure offers a more modern engine optimized for SSD and NVMe architectures, providing faster erasure speeds and better reliability than legacy tools like Blancco or BitRaser. It also features a zero-trust reporting system with tamper-proof certificates."
+        }
+      ])
+    ],
+  },
+  "mobile-erasure-solutions": {
+    title: "Mobile Erasure Solutions: Secure iOS & Android Wiping | D-Secure",
+    description: "Enterprise-grade mobile data erasure for iOS and Android devices. Securely wipe smartphones and tablets with NIST-compliant methods and tamper-proof certificates.",
+    keywords: generateKeywords(["mobile erasure", "smartphone data wipe", "iOS android sanitization", "mobile ITAD solutions"]),
+    canonicalUrl: getCanonicalUrl("/mobile-erasure-solutions"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Solutions", item: "/solutions" },
+      { name: "Mobile Erasure", item: "/mobile-erasure-solutions" },
+    ],
+    structuredData: generateSoftwareProductSchema(
+      "D-Secure Mobile Eraser",
+      "Professional data erasure software for iOS and Android mobile devices and tablets.",
+      {
+        category: "SecurityApplication",
+        subCategory: "Mobile Data Sanitization",
+        os: "iOS, Android",
+        ratingValue: 4.9,
+        reviewCount: 850,
+        price: "15.00",
+        currency: "USD",
+        features: [
+          "iOS & Android Support",
+          "Factory Reset & Overwrite",
+          "NIST 800-88 Compliant",
+          "Batch Processing",
+          "Audit-ready Certificates",
+        ],
+      }
+    ),
   },
   about: {
     title: "About D-Secure: Leading Data Sanitization Provider",
@@ -275,6 +372,25 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Guides", item: "/guides" },
       { name: "Wipe SAS Drive", item: "/guides/wipe-sas-drive" },
     ],
+    structuredData: generateSoftwareProductSchema(
+      "D-Secure SAS Drive Eraser",
+      "Specialized SAS and SCSI drive erasure solution for enterprise servers and RAID arrays.",
+      {
+        category: "SecurityApplication",
+        subCategory: "Enterprise Drive Sanitization",
+        os: "Bootable ISO, Linux Engine",
+        ratingValue: 4.9,
+        reviewCount: 420,
+        price: "25.00",
+        currency: "USD",
+        features: [
+          "SAS & SCSI Support",
+          "HBA Compatibility",
+          "RAID Dismantling & Wiping",
+          "Hardware-level Sanitize Commands",
+        ],
+      }
+    ),
     noindex: true, // Stub page — iske paas abhi real content nahi hai
   },
   "wipe-mac-m1": {
@@ -286,47 +402,70 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Guides", item: "/guides" },
       { name: "Wipe Mac M1", item: "/guides/wipe-mac-m1" },
     ],
+    structuredData: generateSoftwareProductSchema(
+      "D-Secure Mac Eraser",
+      "NIST-compliant data erasure for Apple Silicon (M1, M2, M3) and Intel-based Macs with T2 chips.",
+      {
+        category: "SecurityApplication",
+        subCategory: "macOS Data Sanitization",
+        os: "macOS",
+        ratingValue: 4.9,
+        reviewCount: 680,
+        price: "20.00",
+        currency: "USD",
+        features: [
+          "Apple Silicon Support",
+          "T2 Chip Integration",
+          "Cryptographic Erasure",
+          "Secure Enclave Sanitization",
+        ],
+      }
+    ),
   },
 
   // Free Tools Pages
   "ssd-pass-calculator": {
-    title: "SSD Erase Pass Calculator: NIST 800-88 Compliance | D-Secure",
-    description: "Calculate the minimum number of overwrite passes required for NIST 800-88 compliant SSD sanitization. Free tool for IT professionals.",
+    title: "SSD & HDD Erasure Pass Calculator — NIST 800-88 & DoD Compliance | D-Secure",
+    description: "Free online calculator: determine the exact number of overwrite passes and erasure time for HDD, SSD, and NVMe drives under NIST 800-88 and DoD 5220.22-M standards.",
+    keywords: "SSD erasure calculator, NIST 800-88 passes, DoD 5220.22-M passes, hard drive wiping time, data sanitization calculator",
     canonicalUrl: getCanonicalUrl("/tools/ssd-pass-calculator"),
     breadcrumbs: [
       { name: "Home", item: "/" },
-      { name: "Tools", item: "/tools" },
-      { name: "SSD Pass Calculator", item: "/tools/ssd-pass-calculator" },
+      { name: "Free Tools", item: "/tools/ssd-pass-calculator" },
+      { name: "SSD Erasure Pass Calculator", item: "/tools/ssd-pass-calculator" },
     ],
   },
-  "nist-80088-checker": {
-    title: "NIST 800-88 Compliance Checker: Free Data Erasure Tool | D-Secure",
-    description: "Verify your data erasure procedures meet NIST SP 800-88 Rev. 1 guidelines. Free compliance checker for IT security professionals.",
-    canonicalUrl: getCanonicalUrl("/tools/nist-80088-checker"),
+  "nist-800-88-compliance-checker": {
+    title: "NIST 800-88 Compliance Checker — Media Sanitization Audit Tool | D-Secure",
+    description: "Audit your data destruction process against NIST SP 800-88 Rev. 1 guidelines. Free compliance checker for Clear, Purge, and Destroy methods.",
+    keywords: "NIST 800-88 compliance checker, media sanitization audit, NIST 800-88 checklist, data destruction standards checker",
+    canonicalUrl: getCanonicalUrl("/tools/nist-800-88-compliance-checker"),
     breadcrumbs: [
       { name: "Home", item: "/" },
-      { name: "Tools", item: "/tools" },
-      { name: "NIST Checker", item: "/tools/nist-80088-checker" },
+      { name: "Free Tools", item: "/tools/nist-800-88-compliance-checker" },
+      { name: "NIST Compliance Checker", item: "/tools/nist-800-88-compliance-checker" },
     ],
   },
   "gdpr-erasure-checklist": {
-    title: "GDPR Data Erasure Checklist: Right to Erasure Guide | D-Secure",
-    description: "Complete GDPR Article 17 erasure checklist for IT teams. Ensure full compliance with data subject deletion requests with tamper-proof audit trails.",
+    title: "GDPR Right to Erasure Compliance Checklist — D-Secure | Data Deletion Guide",
+    description: "Free 10-point checklist to ensure your organization complies with GDPR Article 17 (Right to Erasure). Verified data deletion workflows for enterprise compliance.",
+    keywords: "GDPR article 17 checklist, right to erasure compliance, data deletion checklist, GDPR erasure workflow, data privacy compliance tool",
     canonicalUrl: getCanonicalUrl("/tools/gdpr-erasure-checklist"),
     breadcrumbs: [
       { name: "Home", item: "/" },
-      { name: "Tools", item: "/tools" },
-      { name: "GDPR Checklist", item: "/tools/gdpr-erasure-checklist" },
+      { name: "Free Tools", item: "/tools/gdpr-erasure-checklist" },
+      { name: "GDPR Erasure Checklist", item: "/tools/gdpr-erasure-checklist" },
     ],
   },
   "data-breach-calculator": {
-    title: "Data Breach Cost Calculator: Estimate Your Risk | D-Secure",
-    description: "Calculate the potential cost of a data breach based on your industry, data volume, and security posture. Free risk assessment tool.",
+    title: "Free Data Breach Cost Calculator (2026) — Industry Cost Estimator | D-Secure",
+    description: "Calculate the financial impact of a data breach by industry and record count. Free online tool using IBM & Ponemon Institute data. See your GDPR/HIPAA exposure in seconds.",
+    keywords: "data breach cost calculator, cyber risk ROI, data security financial impact, GDPR cost estimator, HIPAA breach cost",
     canonicalUrl: getCanonicalUrl("/tools/data-breach-calculator"),
     breadcrumbs: [
       { name: "Home", item: "/" },
-      { name: "Tools", item: "/tools" },
-      { name: "Breach Calculator", item: "/tools/data-breach-calculator" },
+      { name: "Free Tools", item: "/tools/data-breach-calculator" },
+      { name: "Data Breach Cost Calculator", item: "/tools/data-breach-calculator" },
     ],
   },
 
@@ -348,26 +487,90 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
 /**
  * Kisi bhi page ke liye SEO metadata fetch karne ka generic helper
  */
-export const getSEOForPage = (pageKey: string): SEOMetadata => {
+export const getSEOForPage = (pageKey: string, overrides: Partial<SEOMetadata> = {}): SEOMetadata => {
   const pageData = PAGE_SEO[pageKey] || {};
   const defaults = getDefaultSEO();
   
   return {
     ...defaults,
     ...pageData,
+    ...overrides,
   };
 };
 
 /**
  * Blog posts ke liye SEO metadata fetch karne ka helper
+ * Supports both slug lookup and direct metadata object
  */
-export const getBlogSEO = (blogSlug: string): SEOMetadata => {
-  const blogData = BLOG_SEO[blogSlug] || {};
+export interface BlogSEOOptions {
+  title: string;
+  excerpt: string;
+  slug: string;
+  author: string;
+  publishDate: string;
+  keywords: string;
+  category?: string;
+  tag?: string;
+  faqs?: FAQ[];
+}
+
+export const getBlogSEO = (blogSlugOrOptions: string | BlogSEOOptions): SEOMetadata => {
   const defaults = getDefaultSEO();
+  
+  if (typeof blogSlugOrOptions === 'string') {
+    const slugKey = blogSlugOrOptions.startsWith('blog/') ? blogSlugOrOptions : `blog/${blogSlugOrOptions}`;
+    const blogData = BLOG_SEO[slugKey] || BLOG_SEO[blogSlugOrOptions] || {};
+    return {
+      ...defaults,
+      ...blogData,
+    };
+  }
+
+  // Handle object input from direct blog components
+  const options = blogSlugOrOptions;
+  const title = options.title || "";
+  const excerpt = options.excerpt || "";
+  const slug = options.slug || "";
+  const keywords = options.keywords || "";
+  const author = options.author || "D-Secure Tech";
+  const publishDate = options.publishDate || new Date().toISOString().split('T')[0];
+  const providedFaqs = options.faqs;
+  
+  const structuredData: any[] = [
+    generateWebSiteSchema(),
+    generateOrganizationSchema(),
+  ];
+
+  // Auto-fetch FAQs from registry if not provided
+  const faqs = providedFaqs || (blogFaqs as any)[slug];
+
+  if (faqs && Array.isArray(faqs) && faqs.length > 0) {
+    structuredData.push(generateFAQSchema(faqs));
+  }
+
+  // Add Article Schema for Blog Posts
+  structuredData.push(generateArticleSchema({
+    title,
+    description: excerpt,
+    slug,
+    author,
+    datePublished: publishDate,
+  }));
   
   return {
     ...defaults,
-    ...blogData,
+    title: title ? `${title} | D-Secure Blog` : defaults.title,
+    description: excerpt || defaults.description,
+    keywords: keywords || defaults.keywords,
+    canonicalUrl: getCanonicalUrl(`/blog/${slug}`),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Blog", item: "/blog" },
+      { name: title || "Blog Post", item: `/blog/${slug}` },
+    ],
+    structuredData,
+    faqs
   };
 };
+
 

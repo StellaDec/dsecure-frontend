@@ -1052,7 +1052,7 @@ export default function FailurePage() {
           {/* Footer */}
           <div className="text-center">
             <Link
-              to="/#products"
+              to="/all-products"
               className="text-teal-600 hover:text-teal-700 font-medium transition-colors inline-flex items-center gap-1"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">

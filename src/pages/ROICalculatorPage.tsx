@@ -5,12 +5,40 @@ import Reveal from '@/components/Reveal';
 import {
   StarIcon
 } from '@/components/FlatIcons';
+import { useFormSubmission } from '@/hooks/useFormSubmission';
+import { CheckCircle2 } from 'lucide-react';
 
 export default function ROICalculatorPage() {
   const [devices, setDevices] = useState(100);
   const [costPerDevice, setCostPerDevice] = useState(50);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "success">("idle");
+  
+  const { isSubmitting, submitForm } = useFormSubmission({
+    requiredFields: ["email"],
+  });
 
   const totalSavings = devices * costPerDevice;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    await submitForm({
+      email,
+      devicesPerYear: devices,
+      savingsPerDevice: costPerDevice,
+      totalAnnualSavings: totalSavings,
+      formType: "ROI Calculator Analysis Request",
+      subject: `New Request: ROI Analysis for ${devices} devices`
+    });
+    
+    setStatus("success");
+    setTimeout(() => {
+      setStatus("idle");
+      setEmail("");
+    }, 4000);
+  };
 
   return (
     <>
@@ -35,7 +63,7 @@ export default function ROICalculatorPage() {
         <section className="py-16 bg-white">
           <div className="container-responsive max-w-2xl mx-auto">
             <Reveal>
-              <div className="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 border border-slate-200">
+              <div className="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 border border-slate-200 shadow-sm">
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Number of Devices per Year</label>
@@ -57,8 +85,41 @@ export default function ROICalculatorPage() {
                   </div>
                   <div className="pt-6 border-t border-slate-200">
                     <div className="text-center">
-                      <p className="text-slate-600 mb-2">Estimated Annual Savings</p>
-                      <p className="text-4xl font-bold text-emerald-800">${totalSavings.toLocaleString()}</p>
+                      <p className="text-slate-600 mb-2 font-medium">Estimated Annual Savings</p>
+                      <p className="text-4xl md:text-5xl font-extrabold text-emerald-800 tracking-tight">${totalSavings.toLocaleString()}</p>
+                    </div>
+                  </div>
+                  
+                  {/* Lead Capture Form */}
+                  <div className="pt-8 border-t border-slate-100 mt-8">
+                    <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100">
+                      <h3 className="font-bold text-slate-900 mb-2">Get a detailed ROI report</h3>
+                      <p className="text-sm text-slate-600 mb-4">Enter your work email and we'll send you a comprehensive breakdown of your savings strategy.</p>
+                      
+                      {status === "success" ? (
+                        <div className="bg-white text-emerald-700 p-4 rounded-xl font-bold border border-emerald-200 text-center animate-in fade-in zoom-in duration-300">
+                          <CheckCircle2 className="w-6 h-6 mx-auto mb-2 text-emerald-500" />
+                          Request sent successfully! Our team will contact you shortly.
+                        </div>
+                      ) : (
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                          <input 
+                            type="email" 
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Work email address" 
+                            className="px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+                          />
+                          <button 
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-all shadow-md disabled:opacity-50"
+                          >
+                            {isSubmitting ? "Sending..." : "Download ROI Strategy"}
+                          </button>
+                        </form>
+                      )}
                     </div>
                   </div>
                 </div>

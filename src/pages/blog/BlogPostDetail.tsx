@@ -1,14 +1,20 @@
 import React, { useMemo } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
+import BlogFooterStandard from "@/components/blog/BlogFooterStandard";
 import { blogPosts } from "@/data/blogPosts";
 import SEOHead from "@/components/SEOHead";
-import { getSEOForPage, getBlogSEO } from "@/utils/seo";
+import { getBlogSEO } from "@/utils/seo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import { 
   ShieldIcon, 
   ArrowLeftIcon,
 } from "@/components/FlatIcons";
+import ExpertSolutionSection from "@/components/blog/ExpertSolutionSection";
+import FAQSection from "@/components/blog/FAQSection";
+import { Suspense } from "react";
+import { BlogRegistry } from "@/components/blog/BlogRegistry";
+import PageLoadingSkeleton from "@/components/PageLoadingSkeleton";
 
 // Local Icons for Blog Detail
 const CalendarIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -37,22 +43,43 @@ const BlogPostDetail: React.FC = () => {
     return blogPosts.find((p) => p.slug === slug);
   }, [slug]);
 
+  // Generate dynamic SEO with specialized getBlogSEO utility for Article schema support
+  const seoData = useMemo(() => {
+    if (!post) return null;
+    
+    return getBlogSEO({
+      title: post.title,
+      excerpt: post.excerpt,
+      slug: post.slug,
+      author: post.author,
+      publishDate: post.publishDate,
+      keywords: post.keywords,
+      tag: post.tag
+    });
+  }, [post]);
+
   // If post not found, redirect to blog listing
-  if (!post) {
+  if (!post || !seoData) {
     return <Navigate to="/blog" replace />;
   }
 
-  // Generate dynamic SEO with specialized getBlogSEO utility for Article schema support
-  const seoData = React.useMemo(() => getBlogSEO({
-    title: post.title,
-    excerpt: post.excerpt,
-    slug: post.slug,
-    author: post.author,
-    publishDate: post.publishDate,
-    keywords: post.keywords,
-    tag: post.tag,
-    faqs: post.faqs // If post has specific FAQs
-  }), [post]);
+  const SpecificBlogComponent = BlogRegistry[post.slug];
+
+  if (SpecificBlogComponent) {
+    return (
+      <Suspense fallback={<PageLoadingSkeleton />}>
+        <SpecificBlogComponent />
+      </Suspense>
+    );
+  }
+
+  // Find 3 related posts (same category or tag, excluding current)
+  const relatedPosts = useMemo(() => {
+    return blogPosts
+      .filter(p => p.id !== post.id && (p.category === post.category || p.tag === post.tag))
+      .slice(0, 3);
+  }, [post]);
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -190,6 +217,17 @@ const BlogPostDetail: React.FC = () => {
             </div>
           </article>
         </Reveal>
+
+
+
+        {/* Standardized Blog Footer */}
+        <BlogFooterStandard 
+          blogId={post.id}
+          blogTitle={post.title}
+          category={post.category}
+          tag={post.tag}
+          faqs={seoData.faqs}
+        />
 
         {/* Footer Navigation */}
         <footer className="mt-20 pt-10 border-t border-slate-100">

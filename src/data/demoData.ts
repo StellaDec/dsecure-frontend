@@ -139,11 +139,11 @@ export const DEMO_LICENSE_DETAILS = [
 
 // Demo Groups
 export const DEMO_GROUPS = [
-  { name: 'IT Department', description: 'Information Technology team', licenses: 150, date: '2024-01-15' },
-  { name: 'Finance Team', description: 'Finance and accounting', licenses: 75, date: '2024-02-20' },
-  { name: 'HR Division', description: 'Human resources', licenses: 50, date: '2024-03-10' },
-  { name: 'Sales Force', description: 'Sales and marketing', licenses: 200, date: '2024-04-05' },
-  { name: 'Operations', description: 'Operations management', licenses: 100, date: '2024-05-01' },
+  { id: '1', name: 'IT Department', description: 'Information Technology team', licenses: 150, date: '2024-01-15', machineCount: 45, reportCount: 120, members: 15 },
+  { id: '2', name: 'Finance Team', description: 'Finance and accounting', licenses: 75, date: '2024-02-20', machineCount: 12, reportCount: 45, members: 8 },
+  { id: '3', name: 'HR Division', description: 'Human resources', licenses: 50, date: '2024-03-10', machineCount: 5, reportCount: 22, members: 5 },
+  { id: '4', name: 'Sales Force', description: 'Sales and marketing', licenses: 200, date: '2024-04-05', machineCount: 28, reportCount: 88, members: 20 },
+  { id: '5', name: 'Operations', description: 'Operations management', licenses: 100, date: '2024-05-01', machineCount: 18, reportCount: 65, members: 12 },
 ]
 
 // Demo Machines - Detailed for AdminMachines page

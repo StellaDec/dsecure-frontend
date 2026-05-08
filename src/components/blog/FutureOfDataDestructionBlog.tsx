@@ -1,14 +1,10 @@
 import React from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ShieldIcon, CheckIcon, LightningIcon, ArrowRightIcon, HoverIcon, StarIcon, GlobeIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
 
 const FutureOfDataDestructionBlog: React.FC = () => {
   return (
@@ -136,12 +132,12 @@ const FutureOfDataDestructionBlog: React.FC = () => {
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">Sustainability as a Driver</h2>
                     <p className="text-slate-700 leading-relaxed">
-                        ESG (Environmental, Social, Governance) pressures will make device reuse—enabled by secure erasure—the default rather than the exception.
+                        ESG (Environmental, Social, Governance) pressures will make device reuse—enabled by <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">secure erasure</Link>—the default rather than the exception.
                     </p>
                     <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
                         <strong className="text-green-800 block mb-2">🌱 The Reuse Imperative</strong>
                         <p className="text-sm text-green-700 mb-3">
-                            By 2030, investors will demand proof that organizations maximize device lifespan and minimize e-waste. Secure erasure makes this possible without compromising security.
+                            By 2030, investors will demand proof that organizations maximize device lifespan and minimize e-waste. <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure erasure</Link> makes this possible without compromising security.
                         </p>
                         <div className="grid md:grid-cols-2 gap-3">
                             <div className="bg-white p-3 rounded border border-green-200">
@@ -165,7 +161,7 @@ const FutureOfDataDestructionBlog: React.FC = () => {
                     <div className="bg-slate-900 text-slate-100 p-6 rounded-xl">
                         <p className="text-violet-400 font-bold mb-3">// Blockchain Erasure Certificate</p>
                         <p className="text-sm mb-2">Device ID: LAP2024-XYZ123</p>
-                        <p className="text-sm mb-2">Method: NIST 800-88 Purge (DoD 3-pass)</p>
+                        <p className="text-sm mb-2">Method: <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> Purge (DoD 3-pass)</p>
                         <p className="text-sm mb-2">Timestamp: 2024-11-15T14:32:01Z</p>
                         <p className="text-sm mb-2">Operator: john.doe@company.com</p>
                         <p className="text-sm mb-2">Verification: PASSED (100% sectors verified)</p>
@@ -182,7 +178,7 @@ const FutureOfDataDestructionBlog: React.FC = () => {
                         <div className="space-y-2">
                             <div className="flex items-start gap-2">
                                 <CheckIcon className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" filled={true} />
-                                <span className="text-slate-700"><strong>Fully Automated ITAD:</strong> From asset intake to erasure to resale—no human intervention</span>
+                                <span className="text-slate-700"><strong>Fully Automated <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>:</strong> From asset intake to erasure to resale—no human intervention</span>
                             </div>
                             <div className="flex items-start gap-2">
                                 <CheckIcon className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" filled={true} />
@@ -259,21 +255,11 @@ const FutureOfDataDestructionBlog: React.FC = () => {
 
       {/* Engagement Section */}
       <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["future-data-destruction"]} />
-      <EngagementSection blogId="future-data-destruction" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="future-data-destruction" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="future-data-destruction" 
-            blogTitle="Future of Data Destruction" 
-          />
-        </Reveal>
       </section>
+      <BlogFooterStandard 
+        blogId="future-data-destruction" 
+        blogTitle="D-Secure Blog" 
+      />
     </div>
   );
 };

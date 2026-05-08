@@ -325,10 +325,14 @@ export default function MainLayout() {
                         {/* Category heading - Sticky at top of the scrollable area */}
                         <div className="sticky top-0 bg-white z-20 pt-6 pb-4 -mx-6 px-6 border-b border-slate-100/50">
                           <div className="text-lg font-bold text-slate-800">
-                            {(!productsDropdownTab || productsDropdownTab === "eraser") && "Eraser"}
+                            {(!productsDropdownTab ||
+                              productsDropdownTab === "eraser") &&
+                              "Eraser"}
                             {productsDropdownTab === "migration" && "Migration"}
-                            {productsDropdownTab === "diagnostics" && "Diagnostics"}
-                            {productsDropdownTab === "verification" && "Verification"}
+                            {productsDropdownTab === "diagnostics" &&
+                              "Diagnostics"}
+                            {productsDropdownTab === "verification" &&
+                              "Verification"}
                           </div>
                         </div>
 
@@ -338,20 +342,32 @@ export default function MainLayout() {
                             productsDropdownTab === "eraser") && (
                             <>
                               {/* Drive Eraser — with 2 variants */}
-                              <div 
+                              <div
                                 className="border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all cursor-pointer group/card h-full flex flex-col"
                                 onClick={() => {
-                                  navigate('/products/drive-eraser');
+                                  navigate("/products/drive-eraser");
                                   setProductsDropdownOpen(false);
                                 }}
                               >
                                 <div className="flex items-center gap-3 mb-3">
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-200 transition-colors">
-                                    <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                                    <svg
+                                      className="w-5 h-5 text-emerald-600"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
+                                      />
                                     </svg>
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover/card:text-emerald-700 transition-colors">Drive Eraser</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover/card:text-emerald-700 transition-colors">
+                                    Drive Eraser
+                                  </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Erase HDD, SSD, PC, Mac & Server data
@@ -383,20 +399,32 @@ export default function MainLayout() {
                               </div>
 
                               {/* File Eraser — with 2 variants */}
-                              <div 
+                              <div
                                 className="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group/card h-full flex flex-col"
                                 onClick={() => {
-                                  navigate('/products/file-eraser');
+                                  navigate("/products/file-eraser");
                                   setProductsDropdownOpen(false);
                                 }}
                               >
                                 <div className="flex items-center gap-3 mb-3">
                                   <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover/card:bg-blue-200 transition-colors">
-                                    <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    <svg
+                                      className="w-5 h-5 text-blue-600"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                      />
                                     </svg>
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover/card:text-blue-700 transition-colors">File Eraser</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover/card:text-blue-700 transition-colors">
+                                    File Eraser
+                                  </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Wipe files, folders, traces & browser history.
@@ -471,11 +499,28 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Monitor className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Virtual Machine Eraser</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    Virtual Machine Eraser
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">Securely wipe VMs on ESXi & Hyper-V hosts.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
+                                  Securely wipe VMs on ESXi & Hyper-V hosts.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
 
@@ -489,11 +534,28 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Database className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Removable Media Eraser</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    Removable Media Eraser
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">Securely erase USB & flash storage devices.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
+                                  Securely erase USB & flash storage devices.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
 
@@ -507,11 +569,29 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Server className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">LUN Eraser</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    LUN Eraser
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">Sanitize Logical Unit Numbers in active storage.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
+                                  Sanitize Logical Unit Numbers in active
+                                  storage.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
                             </>
@@ -592,10 +672,10 @@ export default function MainLayout() {
                               </Link>
 
                               {/* FreezeState — with 2 variants */}
-                              <div 
+                              <div
                                 className="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group/card h-full flex flex-col"
                                 onClick={() => {
-                                  navigate('/products/freeze-state');
+                                  navigate("/products/freeze-state");
                                   setProductsDropdownOpen(false);
                                 }}
                               >
@@ -603,7 +683,9 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover/card:bg-blue-200 transition-colors">
                                     <RefreshCcw className="w-5 h-5 text-blue-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover/card:text-blue-700 transition-colors">FreezeState</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover/card:text-blue-700 transition-colors">
+                                    FreezeState
+                                  </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Reboot-to-restore system protection.
@@ -644,11 +726,28 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <RefreshCcw className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Asset Reimaging</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    Asset Reimaging
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">Automated OS deployment & imaging solution.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
+                                  Automated OS deployment & imaging solution.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
                             </>
@@ -840,11 +939,14 @@ export default function MainLayout() {
                                     <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
                                       Erasure Verification
                                     </h4>
-                                    <span className="px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[9px] font-bold uppercase tracking-wider">New</span>
+                                    <span className="px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[9px] font-bold uppercase tracking-wider">
+                                      New
+                                    </span>
                                   </div>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
-                                  Forensic verification & post-erasure audit tools.
+                                  Forensic verification & post-erasure audit
+                                  tools.
                                 </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
@@ -908,8 +1010,18 @@ export default function MainLayout() {
                         >
                           Industries
                           {solutionsDropdownTab === "industry" && (
-                            <svg className="w-3.5 h-3.5 ml-auto text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                            <svg
+                              className="w-3.5 h-3.5 ml-auto text-emerald-500"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2.5}
+                                d="M9 5l7 7-7 7"
+                              />
                             </svg>
                           )}
                         </button>
@@ -923,8 +1035,18 @@ export default function MainLayout() {
                         >
                           Specialized
                           {solutionsDropdownTab === "specialized" && (
-                            <svg className="w-3.5 h-3.5 ml-auto text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                            <svg
+                              className="w-3.5 h-3.5 ml-auto text-emerald-500"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2.5}
+                                d="M9 5l7 7-7 7"
+                              />
                             </svg>
                           )}
                         </button>
@@ -944,7 +1066,9 @@ export default function MainLayout() {
                       <div className="flex-1 overflow-y-auto custom-scrollbar bg-white px-6 pb-6">
                         <div className="sticky top-0 bg-white z-20 pt-6 pb-4 -mx-6 px-6 border-b border-slate-100/50">
                           <h3 className="text-lg font-bold text-slate-800">
-                            {solutionsDropdownTab === "industry" ? "By Industry" : "Specialized Segments"}
+                            {solutionsDropdownTab === "industry"
+                              ? "By Industry"
+                              : "Specialized Segments"}
                           </h3>
                         </div>
 
@@ -961,17 +1085,35 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Shield className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Enterprise</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    Enterprise
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Data security and sanitization for global corporations.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                  Data security and sanitization for global
+                                  corporations.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
 
                               {/* Banking & Finance */}
-                                <Link
-                                  to="/solutions/data-erasure-banking-finance"
+                              <Link
+                                to="/solutions/data-erasure-banking-finance"
                                 className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
                                 onClick={() => setSolutionsDropdownOpen(false)}
                               >
@@ -979,11 +1121,29 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Database className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Banking & Finance</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    Banking & Finance
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Compliance-driven erasure for financial institutions.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                  Compliance-driven erasure for financial
+                                  institutions.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
 
@@ -997,11 +1157,29 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Zap className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Government</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    Government
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Secure sanitization for public sector & defense.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                  Secure sanitization for public sector &
+                                  defense.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
 
@@ -1015,11 +1193,29 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Activity className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Healthcare</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    Healthcare
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Privacy-first data disposal for healthcare providers.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                  Privacy-first data disposal for healthcare
+                                  providers.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
 
@@ -1033,11 +1229,29 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Monitor className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Education</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    Education
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Managing data privacy across academic institutions.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                  Managing data privacy across academic
+                                  institutions.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
 
@@ -1051,11 +1265,28 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Heart className="w-5 h-5 text-emerald-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Non-Profit</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    Non-Profit
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Secure data disposal for NGOs & charities.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                  Secure data disposal for NGOs & charities.
+                                </p>
                                 <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
                             </>
@@ -1073,11 +1304,28 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Activity className="w-5 h-5 text-teal-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-teal-700 transition-colors">Service Providers</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-teal-700 transition-colors">
+                                    Service Providers
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Scaleable erasure services for MSPs and MSSPs.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                  Scaleable erasure services for MSPs and MSSPs.
+                                </p>
                                 <span className="text-xs font-semibold text-teal-600 group-hover:text-teal-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
 
@@ -1091,11 +1339,29 @@ export default function MainLayout() {
                                   <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <RefreshCcw className="w-5 h-5 text-cyan-600" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-cyan-700 transition-colors">ITAD</h4>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-cyan-700 transition-colors">
+                                    ITAD
+                                  </h4>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-3">Maximize asset value with secure disposal workflows.</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                                  Maximize asset value with secure disposal
+                                  workflows.
+                                </p>
                                 <span className="text-xs font-semibold text-cyan-600 group-hover:text-cyan-700 uppercase tracking-wide flex items-center gap-1">
-                                  Learn More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
                                 </span>
                               </Link>
                             </>
@@ -1290,7 +1556,7 @@ export default function MainLayout() {
                 <div className="space-y-1">
                   <NavLink
                     onClick={() => setOpen(false)}
-                    to="/#products"
+                    to="/all-products"
                     className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-slate-900 hover:bg-slate-50/80 rounded-lg transition-colors"
                   >
                     <svg
@@ -1397,7 +1663,9 @@ export default function MainLayout() {
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
                           <Database className="w-4 h-4" />
                         </div>
-                        <span className="font-medium">Removable Media Eraser</span>
+                        <span className="font-medium">
+                          Removable Media Eraser
+                        </span>
                       </Link>
                       <Link
                         onClick={() => setOpen(false)}
@@ -1570,14 +1838,54 @@ export default function MainLayout() {
                   </NavLink>
                   <div className="ml-8 space-y-1 border-l-2 border-emerald-200 pl-4">
                     {[
-                      { to: "/solutions/enterprise", title: "Enterprise", desc: "Corporate Security", color: "from-brand to-emerald-600" },
-                      { to: "/solutions/data-erasure-banking-finance", title: "Banking & Finance", desc: "Compliance First", color: "from-emerald-500 to-teal-600" },
-                      { to: "/solutions/government", title: "Government", desc: "Public Sector", color: "from-blue-500 to-indigo-600" },
-                      { to: "/solutions/healthcare", title: "Healthcare", desc: "HIPAA & GDPR", color: "from-cyan-500 to-blue-600" },
-                      { to: "/solutions/education", title: "Education", desc: "Academic Privacy", color: "from-emerald-400 to-teal-500" },
-                      { to: "/solutions/service-providers", title: "Service Providers", desc: "MSP & MSSP", color: "from-teal-500 to-emerald-600" },
-                      { to: "/solutions/itad", title: "ITAD", desc: "Asset Disposition", color: "from-cyan-400 to-blue-500" },
-                      { to: "/solutions/non-profit", title: "Non-Profit", desc: "NGO & Charity", color: "from-emerald-400 to-cyan-500" },
+                      {
+                        to: "/solutions/enterprise",
+                        title: "Enterprise",
+                        desc: "Corporate Security",
+                        color: "from-brand to-emerald-600",
+                      },
+                      {
+                        to: "/solutions/data-erasure-banking-finance",
+                        title: "Banking & Finance",
+                        desc: "Compliance First",
+                        color: "from-emerald-500 to-teal-600",
+                      },
+                      {
+                        to: "/solutions/government",
+                        title: "Government",
+                        desc: "Public Sector",
+                        color: "from-blue-500 to-indigo-600",
+                      },
+                      {
+                        to: "/solutions/healthcare",
+                        title: "Healthcare",
+                        desc: "HIPAA & GDPR",
+                        color: "from-cyan-500 to-blue-600",
+                      },
+                      {
+                        to: "/solutions/education",
+                        title: "Education",
+                        desc: "Academic Privacy",
+                        color: "from-emerald-400 to-teal-500",
+                      },
+                      {
+                        to: "/solutions/service-providers",
+                        title: "Service Providers",
+                        desc: "MSP & MSSP",
+                        color: "from-teal-500 to-emerald-600",
+                      },
+                      {
+                        to: "/solutions/itad",
+                        title: "ITAD",
+                        desc: "Asset Disposition",
+                        color: "from-cyan-400 to-blue-500",
+                      },
+                      {
+                        to: "/solutions/non-profit",
+                        title: "Non-Profit",
+                        desc: "NGO & Charity",
+                        color: "from-emerald-400 to-cyan-500",
+                      },
                     ].map((item) => (
                       <Link
                         key={item.to}
@@ -1585,11 +1893,15 @@ export default function MainLayout() {
                         to={item.to}
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
-                        <div className={`w-8 h-8 bg-gradient-to-br ${item.color} rounded-md flex items-center justify-center flex-shrink-0`}>
+                        <div
+                          className={`w-8 h-8 bg-gradient-to-br ${item.color} rounded-md flex items-center justify-center flex-shrink-0`}
+                        >
                           <Shield className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <span className="font-medium text-slate-800">{item.title}</span>
+                          <span className="font-medium text-slate-800">
+                            {item.title}
+                          </span>
                           <p className="text-[10px] text-slate-500 font-medium">
                             {item.desc}
                           </p>
@@ -1828,7 +2140,9 @@ export default function MainLayout() {
                     />
                   </Link>
                   <p className="text-slate-300 leading-relaxed mb-6 text-sm xs:text-base lg:text-base xl:text-lg">
-                    Leading provider of Compliant data erasure solutions for enterprises worldwide. Secure your data lifecycle with our enterprise-grade security solutions.
+                    Leading provider of Compliant data erasure solutions for
+                    enterprises worldwide. Secure your data lifecycle with our
+                    enterprise-grade security solutions.
                   </p>
 
                   {/* Trust Indicators */}
@@ -2053,7 +2367,6 @@ export default function MainLayout() {
                           Case Studies
                         </Link>
                       </li>
-
                     </ul>
                   </div>
 
@@ -2088,6 +2401,18 @@ export default function MainLayout() {
                         </Link>
                       </li> */}
                       <li>
+                        <a
+                          href="https://assets.dsecuretech.com/pdf/D-Secure%20Technologies%20Pvt.%20Ltd..pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-brand transition-colors hover:translate-x-1 transform duration-200 inline-flex items-center gap-1"
+                          aria-label="Download D-Secure Company Profile PDF"
+                        >
+                          Company Profile
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                      </li>
+                      <li>
                         <Link
                           to="/partners"
                           className="hover:text-brand transition-colors hover:translate-x-1 transform duration-200 inline-block"
@@ -2095,7 +2420,6 @@ export default function MainLayout() {
                           Partners
                         </Link>
                       </li>
-
                     </ul>
                   </div>
                 </div>
@@ -2107,7 +2431,8 @@ export default function MainLayout() {
               <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center text-slate-400 text-sm text-center sm:text-left">
                   <p>
-                    © {new Date().getFullYear()} D-Secure Inc. All rights reserved.
+                    © {new Date().getFullYear()} D-Secure Inc. All rights
+                    reserved.
                   </p>
                   <div className="flex items-center gap-2 text-green-400">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>

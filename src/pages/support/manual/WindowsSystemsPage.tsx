@@ -308,13 +308,12 @@ const WindowsSystemsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead 
+      {/* <SEOHead 
         seo={getSEOForPage("windows-systems", { 
           title: "Windows Systems | D-Secure Manual", 
           canonicalUrl: "/support/manual/windows-systems" 
         })} 
-      />
-      
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}
@@ -394,7 +393,7 @@ const WindowsSystemsPage: React.FC = memo(() => {
                   <OptimizedImage
                     src={CDN_IMAGES.hero}
                     alt="Windows Systems Data Erasure"
-                    fallback={getFallbackImage('technology')}
+                    fallback={getFallbackImage("technology")}
                     className="w-full h-full object-cover"
                     width={1600}
                     height={900}
@@ -601,7 +600,34 @@ const WindowsSystemsPage: React.FC = memo(() => {
                           Create bootable USB
                         </div>
                         <div className="text-slate-600 text-xs sm:text-sm">
-                          Use UNetbootin (<a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe" className="text-emerald-600 hover:underline" target="_blank" rel="noreferrer">Win</a>, <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin" className="text-emerald-600 hover:underline" target="_blank" rel="noreferrer">Lin</a>, <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg" className="text-emerald-600 hover:underline" target="_blank" rel="noreferrer">Mac</a>)
+                          Use UNetbootin (
+                          <a
+                            href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe"
+                            className="text-emerald-600 hover:underline"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Win
+                          </a>
+                          ,{" "}
+                          <a
+                            href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin"
+                            className="text-emerald-600 hover:underline"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Lin
+                          </a>
+                          ,{" "}
+                          <a
+                            href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg"
+                            className="text-emerald-600 hover:underline"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Mac
+                          </a>
+                          )
                         </div>
                       </div>
                     </div>

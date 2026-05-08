@@ -30,6 +30,8 @@ interface SEOHeadProps {
   alternateLanguages?: HreflangEntry[];
   /** Noindex override — private/auth pages ke liye */
   noindex?: boolean;
+  /** Direct structured data schemas — seo prop ke bina inline schema inject karne ke liye */
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 /**
@@ -47,6 +49,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   author,
   alternateLanguages,
   noindex,
+  structuredData: directStructuredData,
 }) => {
   const location = useLocation();
   const effectiveSeo: SEOMetadata = seo || {
@@ -228,7 +231,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         <meta name="rating" content="General" />
         <meta name="category" content="Data Security Software" />
 
-        {/* Structured Data — JSON-LD schemas */}
+        {/* Structured Data — JSON-LD schemas (seo prop se) */}
         {effectiveSeo.structuredData && (
           Array.isArray(effectiveSeo.structuredData)
             ? effectiveSeo.structuredData.map((schema, index) => (
@@ -239,6 +242,21 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
             : (
               <script type="application/ld+json">
                 {formatStructuredData(effectiveSeo.structuredData)}
+              </script>
+            )
+        )}
+
+        {/* Direct Structured Data — tools pages ke inline schema ke liye */}
+        {directStructuredData && (
+          Array.isArray(directStructuredData)
+            ? directStructuredData.map((schema, index) => (
+                <script key={`direct-schema-${index}`} type="application/ld+json">
+                  {formatStructuredData(schema)}
+                </script>
+              ))
+            : (
+              <script type="application/ld+json">
+                {formatStructuredData(directStructuredData)}
               </script>
             )
         )}

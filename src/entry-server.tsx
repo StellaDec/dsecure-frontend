@@ -90,6 +90,9 @@ export function render(url: string): Promise<RenderResult> {
         }
         didError = true;
         console.error('SSG Render Error:', error);
+        if (!piped) {
+          reject(error);
+        }
       }
     });
 

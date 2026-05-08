@@ -4,13 +4,12 @@ import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ShieldIcon, CheckIcon, GlobeIcon, StarIcon, ArrowRightIcon, HoverIcon, LightningIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const AutomatedErasureBlog: React.FC = () => {
+  const blogId = "automate-data-erasure";
+  const blogTitle = "Automate and Schedule Data Erasure Tasks";
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       <SEOHead seo={getSEOForPage('blog-automated-erasure')} />
@@ -23,7 +22,7 @@ const AutomatedErasureBlog: React.FC = () => {
                     Automation & Efficiency
                 </span>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Automate Data Erasure</span>
+                    <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Automate <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link></span>
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                     Scale your data sanitization operations with intelligent automation that reduces human error and accelerates device disposition.
@@ -242,47 +241,13 @@ const AutomatedErasureBlog: React.FC = () => {
                 </div>
             </div>
         </Reveal>
-
-        {/* CTA */}
-        <Reveal>
-             <div className="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-600 rounded-xl shadow-lg p-8 mt-8 text-white">
-                <h2 className="text-2xl font-bold mb-4">Start Automating Today</h2>
-                <p className="leading-relaxed mb-6">
-                    Transform your data erasure operations with intelligent automation. See how much time and money you can save.
-                </p>
-                <Link
-                    to="/contact"
-                    className="inline-flex items-center bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
-                >
-                    <HoverIcon>
-                        {(filled) => <LightningIcon className="w-5 h-5 mr-2" filled={filled} />}
-                    </HoverIcon>
-                    Get ROI Calculator
-                    <HoverIcon>
-                        {(filled) => <ArrowRightIcon className="w-5 h-5 ml-2" filled={filled} />}
-                    </HoverIcon>
-                </Link>
-            </div>
-        </Reveal>
       </section>
 
-      {/* Engagement Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["automated-erasure"]} />
-      <EngagementSection blogId="automated-erasure" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="automated-erasure" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="automated-erasure" 
-            blogTitle="Automate Data Erasure" 
-          />
-        </Reveal>
-      </section>
+      {/* Standardized Blog Footer */}
+      <BlogFooterStandard 
+        blogId={blogId} 
+        blogTitle={blogTitle} 
+      />
     </div>
   );
 };

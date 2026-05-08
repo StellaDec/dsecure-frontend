@@ -28,6 +28,38 @@ const EXCLUDED_ROUTES = [
   "/download",
   "/private-cloud-setup",
   "/profile",
+  "/support/manual",
+  "/support/help-manual",
+  "/support/get-started",
+  "/support/product-videos",
+  "/support/overwrite-guide",
+  "/support/wipe-guide",
+  "/support/sas-wipe-guide",
+  "/support/mac-wipe-guide",
+  "/support/mac-eraser-guide",
+  "/support/file-eraser-guide",
+  "/support/secure-erase-hddssd",
+  "/support/cloud-console-guide",
+  "/support/ssd-cryptographic-erasure-guide",
+  "/support/retain-os-guide",
+  "/supporting",
+  "/manual",
+  "/data-guardian-award",
+  "/api-documentation",
+  "/clone-guide",
+  "/cloud-console-guide",
+  "/crypto-erase-ssd",
+  "/data-eraser-software",
+  "/faq",
+  "/file-eraser-guide",
+  "/get-started",
+  "/guides/wipe-mac-m1",
+  "/guides/wipe-sas-drive",
+  "/mac-erase-guide",
+  "/retain-os-guide",
+  "/support/m1-mac-wipe-guide",
+  "/support/manual/nist-800-88",
+  "/wipe-mac-m1",
   "*",
 ];
 
@@ -36,8 +68,6 @@ const PRIORITY_ROUTES = {
   "/": { changefreq: "weekly", priority: "1.0" },
   "/services": { changefreq: "weekly", priority: "0.9" },
   "/solutions": { changefreq: "weekly", priority: "0.9" },
-  "/products": { changefreq: "weekly", priority: "0.9" },
-  "/download": { changefreq: "weekly", priority: "0.8" },
   "/support/faq": { changefreq: "weekly", priority: "0.8" },
   "/blogs": { changefreq: "weekly", priority: "0.8" },
   "/contact": { changefreq: "monthly", priority: "0.7" },
@@ -46,6 +76,11 @@ const PRIORITY_ROUTES = {
   "/data-guardian-award": { changefreq: "monthly", priority: "0.8" },
   "/llms.txt": { changefreq: "daily", priority: "0.8" },
   "/llms-full.txt": { changefreq: "daily", priority: "0.8" },
+  // Free Tools — SEO magnets, high priority
+  "/tools/data-breach-calculator": { changefreq: "monthly", priority: "0.8" },
+  "/tools/nist-800-88-compliance-checker": { changefreq: "monthly", priority: "0.8" },
+  "/tools/ssd-pass-calculator": { changefreq: "monthly", priority: "0.8" },
+  "/tools/gdpr-erasure-checklist": { changefreq: "monthly", priority: "0.8" },
 };
 
 /**
@@ -256,18 +291,6 @@ function extractRoutesFromFiles() {
   ];
 
   queryRoutes.forEach((r) => allRoutes.add(r));
-  // FAILSAFE: Scan src/pages/support/manual folder directly to ensure no manual pages are missed
-  const manualPagesDir = path.join(__dirname, "..", "src", "pages", "support", "manual");
-  if (fs.existsSync(manualPagesDir)) {
-    const manualFiles = fs.readdirSync(manualPagesDir).filter(f => f.endsWith(".tsx"));
-    manualFiles.forEach(file => {
-      let slug = file.replace("Page.tsx", "").replace(".tsx", "");
-      slug = slug.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
-      const routePath = `/support/manual/${slug}`;
-      allRoutes.add(normalizePath(routePath));
-    });
-    console.log(`📂 Added ${manualFiles.length} manual pages from direct directory scan.`);
-  }
 
   // BLOG SCAN: Reading src/data/blogPosts.ts to get dynamic blog slugs
   const blogPostsPath = path.join(__dirname, "..", "src", "data", "blogPosts.ts");
@@ -340,6 +363,10 @@ function generateSitemap() {
       ) {
         priority = "0.8";
         changefreq = "weekly";
+      } else if (routePath.startsWith("/tools")) {
+        // Tools pages — SEO magnets, high value
+        priority = "0.8";
+        changefreq = "monthly";
       } else if (routePath.includes("blog/")) {
         priority = "0.7";
         changefreq = "weekly";

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { SEOHead } from "../../components/SEOHead";
+import SEOHead from "../../components/SEOHead";
+import { getSEOForPage } from "../../utils/seo";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { Link } from "react-router-dom";
 import { AlertTriangle, HardDrive, Smartphone, Shield, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useFormSubmission } from "../../hooks/useFormSubmission";
@@ -98,10 +100,43 @@ export default function NIST80088CheckerPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="NIST 800-88 Compliance Checker | D-Secure Free Tool"
-        description="Free interactive NIST 800-88 compliance checker. Determine whether you need to Clear, Purge, or Destroy your data storage media based on official NIST guidelines."
-        canonicalUrl="https://dsecuretech.com/tools/nist-800-88-compliance-checker"
+        seo={getSEOForPage("nist-800-88-compliance-checker", {
+          structuredData: [
+            {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "NIST 800-88 Compliance Checker",
+              "description": "Interactive wizard to determine the correct NIST 800-88 data sanitization method for any storage media.",
+              "applicationCategory": "SecurityApplication",
+              "operatingSystem": "Web Browser",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+              "provider": { "@type": "Organization", "name": "D-Secure" },
+              "url": "https://dsecuretech.com/tools/nist-800-88-compliance-checker",
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "How to Check NIST 800-88 Compliance",
+              "step": [
+                { "@type": "HowToStep", "position": 1, "name": "Select Media Type", "text": "Choose the type of storage media: HDD, SSD, NVMe, or mobile device." },
+                { "@type": "HowToStep", "position": 2, "name": "Select Data Sensitivity", "text": "Specify the classification level of data stored on the media." },
+                { "@type": "HowToStep", "position": 3, "name": "Get Recommendation", "text": "Receive an instant NIST-compliant recommendation: Clear, Purge, or Destroy." }
+              ]
+            }
+          ]
+        })}
       />
+
+      {/* Breadcrumbs — Google navigation signal */}
+      <div className="container mx-auto px-4 max-w-7xl pt-6">
+        <Breadcrumbs
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Free Tools", path: "/tools/nist-800-88-compliance-checker" },
+            { name: "NIST 800-88 Compliance Checker", path: "/tools/nist-800-88-compliance-checker", isCurrentPage: true },
+          ]}
+        />
+      </div>
 
       {/* Dark Hero Section */}
       <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 bg-slate-900 border-b border-slate-800 overflow-hidden">
@@ -279,7 +314,7 @@ export default function NIST80088CheckerPage() {
                   {status === "success" ? (
                     <div className="bg-emerald-50 text-emerald-700 p-4 rounded-xl font-bold border border-emerald-200 text-center animate-in fade-in zoom-in duration-300">
                       <CheckCircle2 className="w-6 h-6 mx-auto mb-2 text-emerald-500" />
-                      Request sent successfully! Our team will contact you shortly.
+                      Report sent! The compliance breakdown is on its way to your inbox.
                     </div>
                   ) : (
                     <div className="flex flex-col sm:flex-row gap-3">

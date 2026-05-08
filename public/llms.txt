@@ -1,7 +1,7 @@
 # /public/llms.txt
 # D-Secure — AI-readable product summary for Generative Engine Optimization
 
-> D-Secure is a certified data erasure SaaS platform for enterprises and IT asset managers, ensuring 100% mathematical certainty in data destruction.
+> D-Secure is a certified data erasure SaaS platform for enterprises and IT asset managers, providing a modern alternative to legacy tools like Blancco, BitRaser, and YouWipe. Founded in 2025 by Dhruv Rai, it ensures 100% mathematical certainty in data destruction.
 
 ## Product
 - **D-Secure Drive Eraser:** Full SSD/HDD/NVMe sanitization for PC, Mac, and Servers. NIST 800-88 & DoD compliant.
@@ -10,6 +10,7 @@
 - **Diagnostics:** Comprehensive hardware health and S.M.A.R.T. monitoring for IT assets.
 - **Supports:** Windows, Linux, macOS (Intel & Apple Silicon M1-M4), Bootable ISO/PXE.
 - **Certifications:** ISO 27001, CE, RoHS, NIST 800-88 Rev. 1, GDPR Article 17, HIPAA.
+- **Origin:** Founded in India, serving a global market with modern tech stack.
 
 ## Use Cases
 - **IT Asset Disposition (ITAD):** High-volume processing for recyclers and remarketers.

@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo, memo } from "react";
-import SEOHead from '@/components/SEOHead';
-import { getSEOForPage } from '@/utils/seo';
+import SEOHead from "@/components/SEOHead";
+import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -9,6 +9,7 @@ import { LicenseForm, type LicenseFormData } from "@/components/forms";
 import { PartnershipForm, type PartnershipFormData } from "@/components/forms";
 import { useToast } from "@/hooks";
 import { Toast } from "@/components/ui";
+import { FileText, HardDrive, Activity } from "lucide-react";
 
 // Form components - removed memo to prevent focus loss during typing
 const FormInput: React.FC<{
@@ -434,14 +435,14 @@ const SupportPage: React.FC = () => {
           "solid state",
         ],
       },
-      {
-        id: "sas-wipe-guide",
-        title: "SAS Drive Wipe Guide",
-        description: "How to wipe SAS drives permanently",
-        url: "/support/sas-wipe-guide",
-        category: "Guides",
-        keywords: ["sas", "drive", "wipe", "permanent", "enterprise", "server"],
-      },
+      // {
+      //   id: "sas-wipe-guide",
+      //   title: "SAS Drive Wipe Guide",
+      //   description: "How to wipe SAS drives permanently",
+      //   url: "/support/sas-wipe-guide",
+      //   category: "Guides",
+      //   keywords: ["sas", "drive", "wipe", "permanent", "enterprise", "server"],
+      // },
       {
         id: "mac-wipe-guide",
         title: "Mac Machine Wipe Guide",
@@ -495,6 +496,22 @@ const SupportPage: React.FC = () => {
           "selective wipe",
         ],
       },
+      {
+        id: "diagnostic-manual",
+        title: "Diagnostic Manual",
+        description: "Comprehensive guide for system hardware diagnostics",
+        url: "/support/manual/diagnostic-manual",
+        category: "Manual",
+        keywords: [
+          "diagnostic",
+          "health",
+          "check",
+          "hardware",
+          "test",
+          "manual",
+          "system",
+        ],
+      },
     ],
     [],
   );
@@ -505,11 +522,11 @@ const SupportPage: React.FC = () => {
       "How many overwrites should I do on a Hard Drive?":
         "/support/overwrite-guide",
       "How can I Wipe Hard Drives and SSDs?": "/support/secure-erase-hddssd",
-      "How to Wipe SAS Drives Permanently?": "/support/sas-wipe-guide",
+      // "How to Wipe SAS Drives Permanently?": "/support/sas-wipe-guide",
       "How can I wipe 12 board Mac Machines?": "/support/mac-eraser-guide",
       // "How to customize ISO file using D-Secure?": "/support/iso-customization-guide",
       "How do I wipe everything and retain my OS?": "/support/retain-os-guide",
-      "How can I Wipe a MacOS with M1 Chip?": "/support/mac-wipe-guide",
+      "How can I Wipe a MacOS with M1 Chip?": "/support/mac-eraser-guide",
       "How to use D-Secure Cloud Console?": "/support/cloud-console-guide",
       "How do I Perform Cryptographic Erasure on SSD?":
         "/support/ssd-cryptographic-erasure-guide",
@@ -681,8 +698,11 @@ const SupportPage: React.FC = () => {
           "_webhook",
           "https://api.dsecuretech.com/api/formsubmit/webhook",
         );
+        formSubmitData.append("_webhookContentType", "application/json");
+        formSubmitData.append("_webhookExtraData", "true");
         formSubmitData.append("_captcha", "false");
         formSubmitData.append("_template", "table");
+        formSubmitData.append("_next", window.location.href);
         formSubmitData.append("name", ticketForm.name.trim());
         formSubmitData.append("email", ticketForm.email.trim());
         formSubmitData.append("subject", ticketForm.subject.trim());
@@ -690,6 +710,8 @@ const SupportPage: React.FC = () => {
         formSubmitData.append("category", ticketForm.category.trim());
         formSubmitData.append("description", ticketForm.description.trim());
         formSubmitData.append("_replyto", ticketForm.email.trim());
+        formSubmitData.append("sendAutoReply", "true");
+        formSubmitData.append("customer_email", ticketForm.email.trim());
         formSubmitData.append("timestamp", timestampLocal);
         formSubmitData.append("source", "Support Page - Ticket Form");
         formSubmitData.append(
@@ -735,7 +757,8 @@ const SupportPage: React.FC = () => {
 
         try {
           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-          const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+          const API_BASE =
+            import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
           const apiResponse = await fetch(
             `${API_BASE}/api/ContactFormSubmissions`,
             {
@@ -850,7 +873,10 @@ const SupportPage: React.FC = () => {
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}
-        <section id="overview" className="bg-gradient-to-br from-emerald-50 to-teal-50 py-16 md:py-24">
+        <section
+          id="overview"
+          className="bg-gradient-to-br from-emerald-50 to-teal-50 py-16 md:py-24"
+        >
           <div className="container-responsive">
             <Reveal>
               <div className="text-center">
@@ -1155,93 +1181,6 @@ const SupportPage: React.FC = () => {
                 </div>
               </Reveal>
 
-              {/* Get Started */}
-              <Reveal delayMs={300}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
-                    <svg
-                      className="w-8 h-8 text-green-800"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Get Started
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Learn How To Wipe PC, Mac, Server & Mobile Devices.
-                  </p>
-                  <Link
-                    to="/support/get-started"
-                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
-                  >
-                    Learn More →
-                  </Link>
-                </div>
-              </Reveal>
-
-              {/* Help Manual */}
-              <Reveal delayMs={400}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
-                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                    <svg
-                      className="w-8 h-8 text-purple-600"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
-                      <polyline points="14,2 14,8 20,8" />
-                      <line x1="16" y1="13" x2="8" y2="13" />
-                      <line x1="16" y1="17" x2="8" y2="17" />
-                      <polyline points="10,9 9,9 8,9" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Help Manual
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Complete Visual Guide To Learn More About D-Secure Products,
-                    Installation, FAQs, Report Management & Advanced Settings
-                    Configuration.
-                  </p>
-                  <Link
-                    to="/support/help-manual"
-                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
-                  >
-                    View Help Manual →
-                  </Link>
-                </div>
-              </Reveal>
-
-              {/* Product Videos */}
-              <Reveal delayMs={500}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
-                  <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-                    <svg
-                      className="w-8 h-8 text-orange-600"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Product Videos
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Product Walkthroughs & How To Videos.
-                  </p>
-                  <Link
-                    to="/support/product-videos"
-                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
-                  >
-                    Learn More →
-                  </Link>
-                </div>
-              </Reveal>
-
               {/* Technical Blog */}
               <Reveal delayMs={600}>
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
@@ -1266,6 +1205,68 @@ const SupportPage: React.FC = () => {
                     className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
                   >
                     Learn More →
+                  </Link>
+                </div>
+              </Reveal>
+
+              {/* File Eraser Manual */}
+              <Reveal delayMs={400}>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
+                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
+                    <FileText className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">
+                    D-Secure File Eraser Manual
+                  </h3>
+                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
+                    Step-by-step instructions to install, configure, and set up D-Secure File Eraser for seamless and secure file sanitization.
+                  </p>
+                  <Link
+                    to="/support/help-manual/complete-manual"
+                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
+                  >
+                    View File Eraser Manual →
+                  </Link>
+                </div>
+              </Reveal>
+
+              {/* Drive Eraser Manual */}
+              <Reveal delayMs={500}>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
+                  <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
+                    <HardDrive className="w-8 h-8 text-orange-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">
+                    Drive Eraser Manual
+                  </h3>
+                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
+                    Complete setup guide for Drive Eraser, covering everything from bootable media creation to initial software configuration.
+                  </p>
+                  <Link
+                    to="/support/help-manual/complete-drive-manual"
+                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
+                  >
+                    View Drive Eraser Manual →
+                  </Link>
+                </div>
+              </Reveal>
+              {/* Drive Diagnostics Manual */}
+              <Reveal delayMs={300}>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
+                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
+                    <Activity className="w-8 h-8 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">
+                    Drive Diagnostics Manual
+                  </h3>
+                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
+                    Detailed manual on how to set up diagnostic tools, run your first scan, and monitor your drive's health effectively.
+                  </p>
+                  <Link
+                    to="/support/help-manual/complete-diagnostic-manual"
+                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
+                  >
+                    View Drive Diagnostics Manual →
                   </Link>
                 </div>
               </Reveal>
@@ -1389,7 +1390,10 @@ const SupportPage: React.FC = () => {
         </section>
 
         {/* Let's Get Started Section */}
-        <section id="get-started" className="py-16 md:py-24 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600">
+        <section
+          id="get-started"
+          className="py-16 md:py-24 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600"
+        >
           <div className="container-responsive">
             <Reveal>
               <div className="text-center text-white">

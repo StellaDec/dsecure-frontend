@@ -311,6 +311,7 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
               <FormInput
                 type="tel"
                 name="phone"
+                id="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
@@ -361,13 +362,13 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="requirements" className="block text-sm font-medium text-gray-700 mb-2">
               Additional Message
             </label>
             <textarea
-              name="message"
-              id="message"
-              value={formData.message}
+              name="requirements"
+              id="requirements"
+              value={formData.requirements}
               onChange={handleInputChange}
               rows={4}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors resize-none"

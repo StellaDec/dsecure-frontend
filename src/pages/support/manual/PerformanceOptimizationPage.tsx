@@ -244,12 +244,12 @@ const PerformanceOptimizationPage: React.FC = memo(() => {
 
   return (
     <>
-      <SEOHead
+      {/* <SEOHead
         seo={getSEOForPage("support-manual-performance-optimization", {
           title: "Performance Optimization | D-Secure Manual",
           canonicalUrl: "/support/manual/performance-optimization",
         })}
-      />
+      /> */}
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}

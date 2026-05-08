@@ -1,11 +1,7 @@
 import React from "react";
-import EnquiryForm from "./EnquiryForm";
-import CommentSection from "./CommentSection";
-import EngagementSection from "./EngagementSection";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage, getBlogSEO } from '@/utils/seo';
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 
@@ -16,7 +12,7 @@ const ResellerProfitsBlog: React.FC = () => {
         title: "Maximizing Reseller Profits with Erasure",
         excerpt: "How certified data erasure increases IT equipment resale value.",
         slug: "reseller-profits",
-        author: "Nitesh Kushwaha",
+        author: "D-Secure Editorial Team",
         publishDate: "November 21, 2025",
         keywords: "reseller, profits, certified erasure",
         category: "Strategy",
@@ -27,10 +23,10 @@ const ResellerProfitsBlog: React.FC = () => {
                 <Reveal>
                     <div className="text-center px-6">
                         <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
-                            ITAD Business
+                            <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Business
                         </span>
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-                            How Resellers Can Maximize Profits with Data Erasure
+                            How Resellers Can Maximize Profits with <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>
                         </h1>
                         <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                             Learn how IT asset resellers can increase profit margins by offering certified data erasure services to their clients.
@@ -85,39 +81,10 @@ const ResellerProfitsBlog: React.FC = () => {
                 </Reveal>
             </section>
 
-            <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
-                <Reveal>
-                    <div className="max-w-5xl mx-auto px-4">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Partner with D-Secure
-                        </h2>
-                        <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                            Join our reseller program and add certified data erasure to your service offerings today.
-                        </p>
-                        <Link to="/contact" className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg">
-                            Become a Partner
-                        </Link>
-                    </div>
-                </Reveal>
-            </section>
-
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-      <FAQSection faqs={blogFaqs["reseller-profits"]} />
-      <EngagementSection blogId="reseller-profits" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="reseller-profits" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="reseller-profits" 
-            blogTitle="Reseller Profits" 
-          />
-        </Reveal>
-      </section>
-
+        <BlogFooterStandard
+          blogId="reseller-profits"
+          blogTitle="Reseller Profits" category="Strategy" tag="Business"
+        />
     </div>
   );
 

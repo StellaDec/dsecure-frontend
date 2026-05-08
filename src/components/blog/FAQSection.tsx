@@ -1,11 +1,8 @@
 import React, { useState } from "react";
+
+import { FAQ } from "@/utils/seo.core";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
-
-interface FAQ {
-  question: string;
-  answer: string;
-}
 
 interface FAQSectionProps {
   faqs: FAQ[];
@@ -20,27 +17,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
 
   if (!faqs || faqs.length === 0) return null;
 
-  // Schema.org FAQPage Structure
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map((faq) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
   return (
     <section className="mt-12 mb-8 px-4 md:px-0">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
-      
       <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-6 md:p-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">

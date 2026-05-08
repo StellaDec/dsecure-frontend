@@ -23,7 +23,6 @@ import {
   Cloud,
   ChevronDown,
   Zap,
-  Terminal,
   X,
   Maximize2,
 } from "lucide-react";
@@ -40,7 +39,6 @@ const FreezeStatePage = memo(() => {
   const [activeSection, setActiveSection] = useState("overview");
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [isDemoActive, setIsDemoActive] = useState(false);
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeDemoTab, setActiveDemoTab] = useState<"admin" | "endpoint">("admin"); // Demo tab manage karne ke liye state
 
   const adminDemoRef = useRef<HTMLDivElement>(null);
@@ -48,28 +46,18 @@ const FreezeStatePage = memo(() => {
 
   const toggleFullscreen = async (ref: React.RefObject<HTMLDivElement>) => {
     try {
-      if (!document.fullscreenElement) {
-        if (ref.current?.requestFullscreen) {
-          await ref.current.requestFullscreen();
-        }
-      } else {
+      if (document.fullscreenElement) {
         if (document.exitFullscreen) {
           await document.exitFullscreen();
         }
+      } else if (ref.current?.requestFullscreen) {
+        await ref.current.requestFullscreen();
       }
     } catch (err) {
       console.error("Error attempting to toggle fullscreen:", err);
     }
   };
 
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement);
-    };
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () =>
-      document.removeEventListener("fullscreenchange", handleFullscreenChange);
-  }, []);
 
   // Gallery items for Freeze State
   const galleryImages = [
@@ -94,19 +82,27 @@ const FreezeStatePage = memo(() => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const handlePrevImage = useCallback(() => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex(prev => 
-        prev === 0 ? galleryImages.length - 1 : (prev !== null ? prev - 1 : 0)
-      );
+    if (selectedImageIndex === null) {
+      setSelectedImageIndex(0);
+      return;
     }
+    
+    setSelectedImageIndex(prev => {
+      if (prev === null) return 0;
+      return prev === 0 ? galleryImages.length - 1 : prev - 1;
+    });
   }, [selectedImageIndex, galleryImages.length]);
 
   const handleNextImage = useCallback(() => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex(prev => 
-        prev === galleryImages.length - 1 ? 0 : (prev !== null ? prev + 1 : 0)
-      );
+    if (selectedImageIndex === null) {
+      setSelectedImageIndex(0);
+      return;
     }
+    
+    setSelectedImageIndex(prev => {
+      if (prev === null) return 0;
+      return prev === galleryImages.length - 1 ? 0 : prev + 1;
+    });
   }, [selectedImageIndex, galleryImages.length]);
 
   // Keyboard navigation for lightbox
@@ -117,8 +113,8 @@ const FreezeStatePage = memo(() => {
       if (e.key === "ArrowRight") handleNextImage();
       if (e.key === "Escape") setSelectedImageIndex(null);
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    globalThis.addEventListener("keydown", handleKeyDown);
+    return () => globalThis.removeEventListener("keydown", handleKeyDown);
   }, [selectedImageIndex, handlePrevImage, handleNextImage]);
 
   const sectionNavItems = [
@@ -264,12 +260,12 @@ const FreezeStatePage = memo(() => {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                    <Link
-                      to="/pricing-and-plan?product=freeze-state"
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                    <button
+                      disabled
+                      className="inline-flex items-center justify-center gap-2 bg-slate-200 text-slate-500 font-bold px-8 py-4 rounded-xl shadow-none cursor-not-allowed transition-all"
                     >
                       Buy Now
-                    </Link>
+                    </button>
                     <button
                       onClick={() => scrollToSection("technology")}
                       className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 font-bold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-all duration-300"
@@ -770,73 +766,7 @@ const FreezeStatePage = memo(() => {
 
             {/* Media Grid - Dual Demos */}
             <div className="grid grid-cols-1 gap-16 lg:gap-24">
-              {!isDemoActive ? (
-                <Reveal delayMs={100}>
-                  <div
-                    onClick={() => setIsDemoActive(true)}
-                    className="group relative w-full rounded-[2.5rem] overflow-hidden shadow-xl border border-emerald-100 cursor-pointer bg-white min-h-[500px] flex flex-col md:flex-row transition-all duration-500 hover:shadow-2xl hover:border-emerald-200"
-                  >
-                    {/* Left: Admin Preview */}
-                    <div 
-                      onClick={(e) => { e.stopPropagation(); setIsDemoActive(true); setActiveDemoTab("admin"); }}
-                      className="flex-1 relative flex flex-col items-center justify-center p-12 border-b md:border-b-0 md:border-r border-emerald-50 group/admin transition-all duration-500 hover:bg-emerald-50/50"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover/admin:opacity-100 transition-opacity"></div>
-                      <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <div className="w-20 h-20 rounded-2xl bg-slate-50 text-emerald-600 flex items-center justify-center shadow-sm border border-emerald-100 group-hover/admin:scale-110 group-hover/admin:bg-emerald-600 group-hover/admin:text-white transition-all duration-500">
-                          <Layout className="w-10 h-10" />
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-bold text-slate-900 mb-1">Admin Console</h4>
-                          <p className="text-slate-500 text-sm font-medium">Enterprise Management</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right: Endpoint Preview */}
-                    <div 
-                      onClick={(e) => { e.stopPropagation(); setIsDemoActive(true); setActiveDemoTab("endpoint"); }}
-                      className="flex-1 relative flex flex-col items-center justify-center p-12 group/endpoint transition-all duration-500 hover:bg-blue-50/50"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover/endpoint:opacity-100 transition-opacity"></div>
-                      <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <div className="w-20 h-20 rounded-2xl bg-slate-50 text-blue-600 flex items-center justify-center shadow-sm border border-blue-100 group-hover/endpoint:scale-110 group-hover/endpoint:bg-blue-600 group-hover/endpoint:text-white transition-all duration-500">
-                          <Monitor className="w-10 h-10" />
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-bold text-slate-900 mb-1">Endpoint</h4>
-                          <p className="text-slate-500 text-sm font-medium">Local Device Protection</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Centered Play Button Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-                      <div className="flex flex-col items-center gap-6">
-                        <div className="w-24 h-24 rounded-full bg-white/40 backdrop-blur-md border border-white/60 shadow-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-white/60 transition-all duration-500">
-                          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-xl pointer-events-auto shadow-emerald-500/20">
-                            <svg
-                              className="w-8 h-8 text-white ml-1"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <span className="pointer-events-auto text-sm font-black text-slate-900 bg-white/90 backdrop-blur-md px-8 py-3 rounded-full shadow-xl border border-emerald-100 uppercase tracking-[0.2em] group-hover:border-emerald-500/50 transition-all duration-300">
-                          Start Interactive Demo
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Decorative patterns */}
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
-                      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.05)_0%,transparent_70%)]"></div>
-                    </div>
-                  </div>
-                </Reveal>
-              ) : (
+              {isDemoActive ? (
                 <div className="space-y-10">
                   {/* Premium Toggle Switch - Demo switch karne ke liye */}
                   <div className="flex justify-center">
@@ -985,6 +915,93 @@ const FreezeStatePage = memo(() => {
                     </AnimatePresence>
                   </div>
                 </div>
+              ) : (
+                <Reveal delayMs={100}>
+                  <div
+                    onClick={() => setIsDemoActive(true)}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setIsDemoActive(true); }}
+                    role="button"
+                    tabIndex={0}
+                    className="group relative w-full rounded-[2.5rem] overflow-hidden shadow-xl border border-emerald-100 cursor-pointer bg-white min-h-[500px] flex flex-col md:flex-row transition-all duration-500 hover:shadow-2xl hover:border-emerald-200"
+                  >
+                    {/* Left: Admin Preview */}
+                    <div 
+                      onClick={(e) => { e.stopPropagation(); setIsDemoActive(true); setActiveDemoTab("admin"); }}
+                      onKeyDown={(e) => { 
+                        if (e.key === 'Enter' || e.key === ' ') { 
+                          e.stopPropagation(); 
+                          setIsDemoActive(true); 
+                          setActiveDemoTab("admin"); 
+                        } 
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      className="flex-1 relative flex flex-col items-center justify-center p-12 border-b md:border-b-0 md:border-r border-emerald-50 group/admin transition-all duration-500 hover:bg-emerald-50/50"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover/admin:opacity-100 transition-opacity"></div>
+                      <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                        <div className="w-20 h-20 rounded-2xl bg-slate-50 text-emerald-600 flex items-center justify-center shadow-sm border border-emerald-100 group-hover/admin:scale-110 group-hover/admin:bg-emerald-600 group-hover/admin:text-white transition-all duration-500">
+                          <Layout className="w-10 h-10" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-slate-900 mb-1">Admin Console</h4>
+                          <p className="text-slate-500 text-sm font-medium">Enterprise Management</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right: Endpoint Preview */}
+                    <div 
+                      onClick={(e) => { e.stopPropagation(); setIsDemoActive(true); setActiveDemoTab("endpoint"); }}
+                      onKeyDown={(e) => { 
+                        if (e.key === 'Enter' || e.key === ' ') { 
+                          e.stopPropagation(); 
+                          setIsDemoActive(true); 
+                          setActiveDemoTab("endpoint"); 
+                        } 
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      className="flex-1 relative flex flex-col items-center justify-center p-12 group/endpoint transition-all duration-500 hover:bg-blue-50/50"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover/endpoint:opacity-100 transition-opacity"></div>
+                      <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                        <div className="w-20 h-20 rounded-2xl bg-slate-50 text-blue-600 flex items-center justify-center shadow-sm border border-blue-100 group-hover/endpoint:scale-110 group-hover/endpoint:bg-blue-600 group-hover/endpoint:text-white transition-all duration-500">
+                          <Monitor className="w-10 h-10" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-slate-900 mb-1">Endpoint</h4>
+                          <p className="text-slate-500 text-sm font-medium">Local Device Protection</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Centered Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                      <div className="flex flex-col items-center gap-6">
+                        <div className="w-24 h-24 rounded-full bg-white/40 backdrop-blur-md border border-white/60 shadow-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-white/60 transition-all duration-500">
+                          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-xl pointer-events-auto shadow-emerald-500/20">
+                            <svg
+                              className="w-8 h-8 text-white ml-1"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                        <span className="pointer-events-auto text-sm font-black text-slate-900 bg-white/90 backdrop-blur-md px-8 py-3 rounded-full shadow-xl border border-emerald-100 uppercase tracking-[0.2em] group-hover:border-emerald-500/50 transition-all duration-300">
+                          Start Interactive Demo
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Decorative patterns */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+                      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.05)_0%,transparent_70%)]"></div>
+                    </div>
+                  </div>
+                </Reveal>
               )}
             </div>
 
@@ -1232,7 +1249,7 @@ const FreezeStatePage = memo(() => {
         </section>
 
 
-        <ProductInternalLinks currentProduct={PRODUCT_LINKS.FREEZE} />
+        <ProductInternalLinks currentProduct="freeze-state" />
 
         {/* ================= FAQ SECTION ================= */}
         <section id="faq" className="py-24 lg:py-32 bg-slate-50">

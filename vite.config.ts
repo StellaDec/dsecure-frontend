@@ -116,31 +116,41 @@ export default defineConfig({
         // [REFINE CHUNKING STRATEGY]
         manualChunks: (id) => {
           if (id.includes("node_modules")) {
-            // 1. Core React & Navigation (Essentials)
+            // 1. React Core Essentials
             if (
               id.includes("react/") ||
               id.includes("react-dom") ||
-              id.includes("react-router") ||
-              id.includes("react-helmet") ||
-              id.includes("scheduler")
+              id.includes("scheduler") ||
+              id.includes("react-is")
             ) {
-              return "vendor-core";
+              return "vendor-react";
+            }
+            
+            // 2. Navigation & Router
+            if (id.includes("react-router") || id.includes("@remix-run")) {
+              return "vendor-router";
             }
 
-            // 2. Large Visualization & UI Libraries
-            if (id.includes("recharts") || id.includes("d3")) return "vendor-viz";
-            if (id.includes("leaflet") || id.includes("react-leaflet")) return "vendor-maps";
-            if (id.includes("framer-motion")) return "vendor-motion";
-            if (id.includes("lucide-react")) return "vendor-icons";
+            // 3. SEO & Head Management
+            if (id.includes("react-helmet")) {
+              return "vendor-seo";
+            }
 
-            // 3. Document Processing (Heavy) - Keep these separate as they are rarely used together
+            // 4. Framer Motion (Heavy Animation Library)
+            if (id.includes("framer-motion")) {
+              return "vendor-motion";
+            }
+
+            // 5. Heavy Utilities (Only if not already dynamically imported)
             if (id.includes("exceljs")) return "vendor-exceljs";
-            if (id.includes("pdfjs-dist") || id.includes("react-pdf")) return "vendor-pdf-viewer";
             if (id.includes("jspdf")) return "vendor-jspdf";
+            if (id.includes("recharts")) return "vendor-recharts";
+            if (id.includes("leaflet")) return "vendor-leaflet";
+            if (id.includes("lucide-react")) return "vendor-icons";
+            if (id.includes("cloudinary")) return "vendor-cloudinary";
+            if (id.includes("i18next")) return "vendor-i18n";
+            if (id.includes("pdfjs-dist") || id.includes("react-pdf")) return "vendor-pdf-viewer";
             if (id.includes("jszip")) return "vendor-zip";
-            
-            // 4. Cloud & Utilities
-            if (id.includes("@cloudinary") || id.includes("cloudinary")) return "vendor-cloudinary";
             if (id.includes("crypto-js")) return "vendor-crypto";
             if (id.includes("pako")) return "vendor-compression";
             if (id.includes("@tanstack") || id.includes("axios") || id.includes("i18next")) return "vendor-utils";

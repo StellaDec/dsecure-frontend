@@ -1,412 +1,373 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Reveal from "@/components/Reveal";
 import SEOHead from "../components/SEOHead";
 import { getSEOForPage } from "../utils/seo";
+import { Link } from "react-router-dom";
+import { 
+  Cloud, 
+  Shield, 
+  Zap, 
+  Key, 
+  Activity, 
+  FileText, 
+  ChevronRight, 
+  BookOpen,
+  CheckCircle,
+  Settings,
+  Search,
+  Lock
+} from "lucide-react";
+
+// Navigation tree for sidebar
+const navigationTree = [
+  {
+    id: "security-management",
+    label: "Security Management",
+    icon: <Shield className="w-4 h-4" />,
+  },
+  {
+    id: "core-features",
+    label: "Core Features",
+    icon: <Settings className="w-4 h-4" />,
+    children: [
+      { id: "data-discovery", label: "Data Discovery" },
+      { id: "access-control", label: "Access Control" },
+      { id: "compliance-monitoring", label: "Compliance Monitoring" },
+    ],
+  },
+  {
+    id: "getting-started",
+    label: "Getting Started",
+    icon: <Cloud className="w-4 h-4" />,
+  },
+  {
+    id: "best-practices",
+    label: "Best Practices",
+    icon: <CheckCircle className="w-4 h-4" />,
+  },
+  {
+    id: "compliance",
+    label: "Compliance Standards",
+    icon: <FileText className="w-4 h-4" />,
+  },
+];
+
+const Anchor: React.FC<{ id: string; children: React.ReactNode }> = ({ id, children }) => (
+  <section id={id} className="scroll-mt-32 mb-16">
+    {children}
+  </section>
+);
 
 const CloudConsoleGuide: React.FC = () => {
+  const [activeSection, setActiveSection] = useState("security-management");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: "-10% 0% -70% 0%" }
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 100;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <SEOHead seo={getSEOForPage("cloud-console-guide")} />
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
-        {/* Hero Section */}
-        <section className="py-16 md:py-24">
-          <div className="container-responsive">
-            <Reveal>
-              <div className="text-center max-w-4xl mx-auto">
-                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                  </svg>
+      <div className="min-h-screen bg-white">
+        {/* Breadcrumbs */}
+        <div className="bg-slate-50 border-b border-slate-200 sticky top-0 z-30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav className="flex text-sm font-medium text-slate-500">
+              <Link to="/support" className="hover:text-emerald-600 transition-colors">Support</Link>
+              <ChevronRight className="w-4 h-4 mx-2 mt-0.5" />
+              <Link to="/support/knowledge-base" className="hover:text-emerald-600 transition-colors">Knowledge Base</Link>
+              <ChevronRight className="w-4 h-4 mx-2 mt-0.5" />
+              <span className="text-slate-900">Cloud Console Guide</span>
+            </nav>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Sidebar Navigation */}
+            <aside className="lg:w-72 flex-shrink-0 hidden lg:block">
+              <div className="sticky top-24 space-y-8">
+                <div>
+                  <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-3">
+                    Guide Navigation
+                  </h3>
+                  <nav className="space-y-1">
+                    {navigationTree.map((item) => (
+                      <div key={item.id}>
+                        <button
+                          onClick={() => scrollToSection(item.id)}
+                          className={`w-full flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                            activeSection === item.id || item.children?.some(c => c.id === activeSection)
+                              ? "bg-emerald-50 text-emerald-700"
+                              : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                          }`}
+                        >
+                          <span className="mr-3 text-slate-400">{item.icon}</span>
+                          {item.label}
+                        </button>
+                        {item.children && (
+                          <div className="ml-9 mt-1 space-y-1 border-l border-slate-200">
+                            {item.children.map((child) => (
+                              <button
+                                key={child.id}
+                                onClick={() => scrollToSection(child.id)}
+                                className={`w-full text-left px-4 py-1.5 text-xs font-medium transition-all duration-200 border-l-2 -ml-[2px] ${
+                                  activeSection === child.id
+                                    ? "border-emerald-500 text-emerald-700 bg-emerald-50/50"
+                                    : "border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-50"
+                                }`}
+                              >
+                                {child.label}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </nav>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-                  <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                    Cloud Console Guide
-                  </span>
-                </h1>
-                <p className="text-xl md:text-2xl text-slate-700 mb-8 leading-relaxed">
-                  Secure Cloud Data Management & Access Control
-                </p>
+
+                {/* Internal Links Card */}
+                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-xl">
+                  <h4 className="font-bold mb-3 flex items-center text-emerald-400">
+                    <BookOpen className="w-4 h-4 mr-2" />
+                    Deep Dive
+                  </h4>
+                  <ul className="space-y-3 text-sm">
+                    <li>
+                      <Link to="/support/ssd-cryptographic-erasure-guide" className="text-slate-300 hover:text-white transition-colors flex items-center">
+                        <ChevronRight className="w-3 h-3 mr-2 text-emerald-500" />
+                        SSD Crypto Erasure
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/support/mac-eraser-guide" className="text-slate-300 hover:text-white transition-colors flex items-center">
+                        <ChevronRight className="w-3 h-3 mr-2 text-emerald-500" />
+                        Mac Sanitization
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/support/file-eraser-guide" className="text-slate-300 hover:text-white transition-colors flex items-center">
+                        <ChevronRight className="w-3 h-3 mr-2 text-emerald-500" />
+                        File & Folder Erasure
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/support/retain-os-guide" className="text-slate-300 hover:text-white transition-colors flex items-center">
+                        <ChevronRight className="w-3 h-3 mr-2 text-emerald-500" />
+                        Retain OS Guide
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/support/help-manual/complete-diagnostic-manual" className="text-slate-300 hover:text-white transition-colors flex items-center">
+                        <ChevronRight className="w-3 h-3 mr-2 text-emerald-500" />
+                        Diagnostic Manual
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </Reveal>
-          </div>
-        </section>
+            </aside>
 
-        {/* Guide Content */}
-        <section className="py-16 bg-white/50">
-          <div className="container-responsive">
-            <div className="max-w-4xl mx-auto space-y-8">
-
-              {/* Cloud Security Overview */}
+            {/* Main Content */}
+            <main className="flex-1 min-w-0">
               <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Cloud Security Management</h2>
+                <header className="mb-12">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-6">
+                    Cloud Management
                   </div>
-                  <div className="space-y-4 text-slate-700 text-lg leading-relaxed">
-                    <p>
-                      The D-Secure Cloud Console provides a centralized platform for managing data security across
-                      multiple cloud environments. From data discovery and classification to encryption and
-                      compliance monitoring, our console ensures your cloud data remains protected.
+                  <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                    Cloud Console <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Guide</span>
+                  </h1>
+                  <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+                    Centralized platform for managing enterprise data security, compliance reporting, and access control across hybrid cloud environments.
+                  </p>
+                </header>
+              </Reveal>
+
+              <Anchor id="security-management">
+                <div className="prose prose-slate max-w-none">
+                  <h2 className="text-3xl font-bold text-slate-900 mb-6">Security Management Overview</h2>
+                  <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                    The D-Secure Cloud Console acts as the central brain for your data sanitization operations. It integrates seamlessly with our <Link to="/support/mac-eraser-guide" className="text-emerald-600 hover:underline">Mac Erase</Link> and <Link to="/support/secure-erase-hddssd" className="text-emerald-600 hover:underline">HDD/SSD Wipe</Link> tools to provide real-time visibility into every erasure task performed within your organization.
+                  </p>
+                  <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-xl mb-8">
+                    <div className="flex">
+                      <Shield className="w-6 h-6 text-emerald-600 mr-4 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-emerald-900 font-bold mb-1">Unified Protection</h4>
+                        <p className="text-emerald-800 text-sm">
+                          Our console ensures that whether data is on a physical disk or in a cloud instance, it is managed under a single, audit-ready security policy fulfilling <Link to="https://csrc.nist.gov/pubs/sp/800/88/r1/final" className="font-semibold hover:underline">NIST 800-88 standards</Link>. For comprehensive system reporting, see our <Link to="/support/manual/diagnostic-manual" className="font-semibold hover:underline text-emerald-900">Diagnostic Manual</Link>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Anchor>
+
+              <Anchor id="core-features">
+                <h2 className="text-3xl font-bold text-slate-900 mb-8 px-4 border-l-4 border-emerald-500">Core Features</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                  <div id="data-discovery" className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
+                      <Search className="w-6 h-6 text-slate-900" />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">Data Discovery</h3>
+                    <p className="text-slate-600 text-sm">
+                      Automatically identify sensitive data across all endpoints. Integrated with our <Link to="/products/file-eraser" className="text-emerald-600 hover:underline">File Eraser</Link> for targeted sanitization of discovered PII.
                     </p>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                      <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200 p-4 rounded-xl text-center">
-                        <div className="w-12 h-12 bg-emerald-500 text-white rounded-lg flex items-center justify-center mx-auto mb-3">
-                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 2L3 7v3c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-7-5z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <h3 className="text-lg font-bold text-emerald-900 mb-2">Multi-Cloud Protection</h3>
-                        <p className="text-emerald-700 text-sm">Unified security across AWS, Azure, GCP, and hybrid environments</p>
-                      </div>
-
-                      <div className="bg-gradient-to-br from-teal-50 to-teal-100 border border-teal-200 p-4 rounded-xl text-center">
-                        <div className="w-12 h-12 bg-teal-500 text-white rounded-lg flex items-center justify-center mx-auto mb-3">
-                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <h3 className="text-lg font-bold text-teal-900 mb-2">Real-time Monitoring</h3>
-                        <p className="text-teal-700 text-sm">Continuous compliance and threat detection with instant alerts</p>
-                      </div>
-
-                      <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 p-4 rounded-xl text-center">
-                        <div className="w-12 h-12 bg-cyan-500 text-white rounded-lg flex items-center justify-center mx-auto mb-3">
-                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <h3 className="text-lg font-bold text-cyan-900 mb-2">Automated Encryption</h3>
-                        <p className="text-cyan-700 text-sm">Policy-driven encryption and key management automation</p>
-                      </div>
+                  </div>
+                  <div id="access-control" className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
+                      <Lock className="w-6 h-6 text-slate-900" />
                     </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">Access Control</h3>
+                    <p className="text-slate-600 text-sm">
+                      Role-based access management (RBAC) ensures only authorized technicians can initiate high-level <Link to="/support/ssd-cryptographic-erasure-guide" className="text-emerald-600 hover:underline">Cryptographic Erasure</Link> commands.
+                    </p>
                   </div>
                 </div>
-              </Reveal>
+              </Anchor>
 
-              {/* Console Features */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                      </svg>
+              <Anchor id="getting-started">
+                <h2 className="text-3xl font-bold text-slate-900 mb-8">Getting Started</h2>
+                <div className="space-y-6">
+                  {[
+                    {
+                      step: 1,
+                      title: "Account Activation",
+                      content: "Register your organization and activate your Cloud Console instance. Link your licensing to enable remote execution capabilities for our support guides."
+                    },
+                    {
+                      step: 2,
+                      title: "License Allocation",
+                      content: "Allocate erasure licenses to specific technicians or site locations. Use these licenses to perform <Link to='/support/sas-wipe-guide' class='text-emerald-600 hover:underline'>Enterprise SAS Wiping</Link> on remote servers."
+                    },
+                    {
+                      step: 3,
+                      title: "Policy Deployment",
+                      content: "Define your global sanitization standards. Choose between single-pass overwriting or advanced <Link to='/support/ssd-cryptographic-erasure-guide' class='text-emerald-600 hover:underline'>SSD Crypto Erase</Link> methods."
+                    }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start space-x-4 p-6 bg-slate-50 rounded-2xl border border-slate-200">
+                      <div className="w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                        {item.step}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                        <p className="text-slate-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.content }} />
+                      </div>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                      Cloud Console Features
-                    </h2>
-                  </div>
+                  ))}
+                </div>
+              </Anchor>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Anchor id="best-practices">
+                <h2 className="text-3xl font-bold text-slate-900 mb-8">Best Practices</h2>
+                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 text-white shadow-xl">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-4">
-                      <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-xl border border-emerald-200">
-                        <div className="flex items-center mb-3">
-                          <div className="w-8 h-8 bg-emerald-500 text-white rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                          </div>
-                          <h3 className="text-xl font-bold text-emerald-900">Data Discovery & Classification</h3>
-                        </div>
-                        <p className="text-emerald-700 text-sm leading-relaxed">
-                          Automatically discover and classify sensitive data across all cloud repositories.
-                          AI-powered scanning identifies PII, PHI, financial data, and intellectual property.
-                        </p>
-                      </div>
-
-                      <div className="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl border border-teal-200">
-                        <div className="flex items-center mb-3">
-                          <div className="w-8 h-8 bg-teal-500 text-white rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clipRule="evenodd" />
-                            </svg>
-                          </div>
-                          <h3 className="text-xl font-bold text-teal-900">Access Control Management</h3>
-                        </div>
-                        <p className="text-teal-700 text-sm leading-relaxed">
-                          Centralized identity and access management with role-based permissions,
-                          multi-factor authentication, and privileged access controls.
-                        </p>
-                      </div>
-
-                      <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 p-6 rounded-xl border border-cyan-200">
-                        <div className="flex items-center mb-3">
-                          <div className="w-8 h-8 bg-cyan-500 text-white rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-                            </svg>
-                          </div>
-                          <h3 className="text-xl font-bold text-cyan-900">Compliance Monitoring</h3>
-                        </div>
-                        <p className="text-cyan-700 text-sm leading-relaxed">
-                          Real-time compliance tracking for GDPR, HIPAA, SOX, PCI-DSS, and other
-                          regulations with automated reporting and remediation workflows.
-                        </p>
-                      </div>
+                      <h4 className="text-emerald-400 font-bold flex items-center">
+                        <CheckCircle className="w-5 h-5 mr-2" />
+                        Operational Efficiency
+                      </h4>
+                      <ul className="space-y-3 text-sm text-slate-300">
+                        <li className="flex items-start">
+                          <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0" />
+                          Enable automated report generation for every task.
+                        </li>
+                        <li className="flex items-start">
+                          <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0" />
+                          Use batch processing for large-scale deployments.
+                        </li>
+                      </ul>
                     </div>
-
                     <div className="space-y-4">
-                      <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
-                        <div className="flex items-center mb-3">
-                          <div className="w-8 h-8 bg-purple-500 text-white rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                            </svg>
-                          </div>
-                          <h3 className="text-xl font-bold text-purple-900">Encryption Management</h3>
-                        </div>
-                        <p className="text-purple-700 text-sm leading-relaxed">
-                          Centralized encryption key management with hardware security modules (HSM),
-                          key rotation policies, and bring-your-own-key (BYOK) support.
-                        </p>
-                      </div>
-
-                      <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl border border-indigo-200">
-                        <div className="flex items-center mb-3">
-                          <div className="w-8 h-8 bg-indigo-500 text-white rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                            </svg>
-                          </div>
-                          <h3 className="text-xl font-bold text-indigo-900">Threat Detection</h3>
-                        </div>
-                        <p className="text-indigo-700 text-sm leading-relaxed">
-                          Advanced threat detection using machine learning to identify suspicious activities,
-                          data exfiltration attempts, and unauthorized access patterns.
-                        </p>
-                      </div>
-
-                      <div className="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl border border-pink-200">
-                        <div className="flex items-center mb-3">
-                          <div className="w-8 h-8 bg-pink-500 text-white rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-                            </svg>
-                          </div>
-                          <h3 className="text-xl font-bold text-pink-900">Audit & Reporting</h3>
-                        </div>
-                        <p className="text-pink-700 text-sm leading-relaxed">
-                          Comprehensive audit trails with detailed logging, customizable reports,
-                          and executive dashboards for security posture visibility.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Getting Started */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                      Getting Started with Cloud Console
-                    </h2>
-                  </div>
-
-                  <div className="space-y-6">
-                    {[
-                      {
-                        step: 1,
-                        title: "Initial Setup & Configuration",
-                        content: "Log into the D-Secure Cloud Console and complete the initial setup wizard. Connect your cloud accounts (AWS, Azure, GCP) using secure API keys or service principals.",
-                        details: [
-                          "Create organization and user accounts",
-                          "Configure cloud provider integrations",
-                          "Set up initial security policies",
-                          "Verify connectivity and permissions"
-                        ]
-                      },
-                      {
-                        step: 2,
-                        title: "Data Discovery & Assessment",
-                        content: "Run the initial data discovery scan to identify and classify sensitive data across your cloud environments. Review findings and adjust classification rules as needed.",
-                        details: [
-                          "Configure data discovery rules",
-                          "Run comprehensive environment scan",
-                          "Review classification results",
-                          "Adjust sensitivity labels and policies"
-                        ]
-                      },
-                      {
-                        step: 3,
-                        title: "Policy Implementation",
-                        content: "Define and deploy security policies based on your compliance requirements. Configure access controls, encryption rules, and monitoring thresholds.",
-                        details: [
-                          "Define data protection policies",
-                          "Configure access control rules",
-                          "Set up encryption requirements",
-                          "Enable monitoring and alerting"
-                        ]
-                      },
-                      {
-                        step: 4,
-                        title: "Monitoring & Maintenance",
-                        content: "Monitor security dashboards regularly, review compliance reports, and respond to security alerts. Maintain policies and access controls as your environment evolves.",
-                        details: [
-                          "Monitor security dashboards",
-                          "Review compliance reports",
-                          "Respond to security alerts",
-                          "Update policies and access controls"
-                        ]
-                      }
-                    ].map((item, index) => (
-                      <div key={index} className="border border-emerald-100 rounded-xl p-6 hover:border-emerald-200 transition-all duration-300">
-                        <div className="flex items-start space-x-4">
-                          <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                            {item.step}
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                            <p className="text-slate-700 mb-4">{item.content}</p>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                              {item.details.map((detail, detailIndex) => (
-                                <div key={detailIndex} className="flex items-center text-emerald-700 text-sm">
-                                  <svg className="w-4 h-4 mr-2 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                  </svg>
-                                  {detail}
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Security Best Practices */}
-              <Reveal>
-                <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 rounded-2xl p-8 text-white">
-                  <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                    </div>
-                    <h2 className="text-3xl font-bold mb-4">Cloud Security Best Practices</h2>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-white/10 rounded-xl p-6">
-                      <h3 className="text-xl font-bold mb-4">Access Management</h3>
-                      <ul className="space-y-2 text-emerald-100">
+                      <h4 className="text-emerald-400 font-bold flex items-center">
+                        <Activity className="w-5 h-5 mr-2" />
+                        Audit Readiness
+                      </h4>
+                      <ul className="space-y-3 text-sm text-slate-300">
                         <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Implement least privilege access principles
+                          <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0" />
+                          Keep historical logs for minimum 7 years.
                         </li>
                         <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Enable multi-factor authentication for all users
+                          <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0" />
+                          Verify cloud sync after each <Link to="/support/mac-eraser-guide" className="text-emerald-400 hover:underline">Mac Sanitization</Link> task.
                         </li>
                         <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Regular access reviews and regulation
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Automated provisioning and deprovisioning
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-white/10 rounded-xl p-6">
-                      <h3 className="text-xl font-bold mb-4">Data Protection</h3>
-                      <ul className="space-y-2 text-emerald-100">
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Encrypt data at rest and in transit
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Regular key rotation and management
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Data loss prevention (DLP) policies
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Regular backup and recovery testing
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-white/10 rounded-xl p-6">
-                      <h3 className="text-xl font-bold mb-4">Compliance & Monitoring</h3>
-                      <ul className="space-y-2 text-emerald-100">
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Continuous compliance monitoring
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Real-time security event logging
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Regular security assessments
-                        </li>
-                        <li className="flex items-start">
-                          <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          Automated incident response workflows
+                          <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0" />
+                          Cross-reference results with the <Link to="/support/help-manual/complete-diagnostic-manual" className="text-emerald-400 hover:underline">Diagnostic Manual</Link> for hardware health.
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-              </Reveal>
+              </Anchor>
 
-              {/* Compliance Standards */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
+              <Anchor id="compliance">
+                <h2 className="text-3xl font-bold text-slate-900 mb-8">Compliance Standards</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {["GDPR", "HIPAA", "SOX", "PCI-DSS", "ISO 27001", "NIST 800-88", "SOC 2", "CCPA"].map((standard) => (
+                    <div key={standard} className="p-4 bg-emerald-50 rounded-xl border border-emerald-100 text-center hover:bg-emerald-100 transition-colors">
+                      <span className="text-sm font-bold text-emerald-900">{standard}</span>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                      Supported Compliance Standards
-                    </h2>
-                  </div>
+                  ))}
+                </div>
+              </Anchor>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {[
-                      { name: "GDPR", description: "EU Data Protection Regulation" },
-                      { name: "HIPAA", description: "Healthcare Information Privacy" },
-                      { name: "SOX", description: "Sarbanes-Oxley Financial Controls" },
-                      { name: "PCI-DSS", description: "Payment Card Industry Standards" },
-                      { name: "ISO 27001", description: "Information Security Management" },
-                      { name: "NIST", description: "Cybersecurity Framework" },
-                      { name: "SOC 2", description: "Service Organization Controls" },
-                      { name: "CCPA", description: "California Consumer Privacy Act" }
-                    ].map((standard, index) => (
-                      <div key={index} className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-xl border border-emerald-200 text-center">
-                        <h3 className="text-lg font-bold text-emerald-900 mb-1">{standard.name}</h3>
-                        <p className="text-emerald-700 text-sm">{standard.description}</p>
-                      </div>
-                    ))}
+              {/* Bottom CTA */}
+              <Reveal>
+                <div className="mt-16 p-8 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-3xl text-white shadow-2xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+                  <div className="relative z-10">
+                    <h3 className="text-3xl font-bold mb-4">Enterprise Cloud Integration</h3>
+                    <p className="text-emerald-50 mb-8 text-lg max-w-2xl">
+                      Scale your security operations with our API-first Cloud Console.
+                    </p>
+                    <div className="flex flex-wrap gap-4">
+                      <Link to="/contact" className="px-8 py-4 bg-white text-emerald-700 rounded-xl font-bold hover:bg-emerald-50 transition-colors">
+                        Get Console Access
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </Reveal>
-            </div>
+            </main>
           </div>
-        </section>
+        </div>
       </div>
     </>
   );

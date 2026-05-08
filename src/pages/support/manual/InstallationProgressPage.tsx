@@ -8,12 +8,12 @@ const InstallationProgressPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead 
+      {/* <SEOHead 
         seo={getSEOForPage("support-manual-installation-progress", { 
           title: "Installation Progress | D-Secure Manual", 
           canonicalUrl: "/support/manual/installation-progress" 
         })} 
-      />
+      /> */}
       
 
       <div className="min-h-screen bg-slate-50">

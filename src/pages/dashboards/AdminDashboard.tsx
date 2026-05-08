@@ -462,7 +462,7 @@ export default function AdminDashboard() {
   );
   const [groups, setGroups] = useState<GroupData[]>(isDemoMode() ? DEMO_GROUPS : []);
   const [groupsWithUsers, setGroupsWithUsers] = useState<any[]>([]);
-  const [expandedGroups, setExpandedGroups] = useState<number[]>([]);
+  const [expandedGroups, setExpandedGroups] = useState<string[]>([]);
   const [groupsLoading, setGroupsLoading] = useState(false);
   const [groupsCached, setGroupsCached] = useState(false); // ✅ Cache flag
   const [licenseData, setLicenseData] = useState<LicenseData[]>(
@@ -1383,7 +1383,7 @@ export default function AdminDashboard() {
     }
   };
 
-  const toggleGroup = (groupId: number) => {
+  const toggleGroup = (groupId: string) => {
     setExpandedGroups((prev) =>
       prev.includes(groupId)
         ? prev.filter((id) => id !== groupId)

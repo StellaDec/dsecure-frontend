@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import SEOHead from '@/components/SEOHead';
 import { getSEOForPage } from '@/utils/seo';
 import { ChevronRight, ArrowUp, Download } from "lucide-react";
@@ -21,14 +22,15 @@ const ImageManual = ({ src, alt }: { src: string; alt: string }) => (
     </div>
 );
 
+// Saare "Drive Diagnostic" references ko internal product page se link kiya gaya hai SEO ke liye.
 const navigationTree: NavItem[] = [
     {
         id: "about",
         title: "About D-Secure Drive Diagnostic",
         content: (
             <>
-                <p className="text-slate-700 leading-relaxed mb-4"><strong>D-Secure Drive Diagnostic</strong> is a boot-based, enterprise-grade hardware testing solution designed to comprehensively evaluate the health and functionality of computer systems. Operating independently of the host operating system, it boots from a USB or PXE environment to ensure accurate, low-level hardware access without OS interference.</p>
-                <p className="text-slate-700 leading-relaxed mb-4">D-Secure Drive Diagnostic performs rigorous testing across <strong>21+ hardware components</strong> including Motherboard, CPU, RAM, Display, Storage, Battery, Wi-Fi, Bluetooth, Audio, USB Ports, Fingerprint Sensor, Camera, and Keyboard. Each diagnostic operation generates a Tamper-proof audit report with a definitive <strong>Pass/Fail/Warning</strong> grade that can be uploaded to the D-Secure Cloud Console for centralized reporting.</p>
+                <p className="text-slate-700 leading-relaxed mb-4"><strong><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></strong> is a boot-based, enterprise-grade hardware testing solution designed to comprehensively evaluate the health and functionality of computer systems. Operating independently of the host operating system, it boots from a USB or PXE environment to ensure accurate, low-level hardware access without OS interference.</p>
+                <p className="text-slate-700 leading-relaxed mb-4"><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link> performs rigorous testing across <strong>21+ hardware components</strong> including Motherboard, CPU, RAM, Display, Storage, Battery, Wi-Fi, Bluetooth, Audio, USB Ports, Fingerprint Sensor, Camera, and Keyboard. Each diagnostic operation generates a Tamper-proof audit report with a definitive <strong>Pass/Fail/Warning</strong> grade that can be uploaded to the D-Secure Cloud Console for centralized reporting.</p>
                 <p className="text-slate-700 leading-relaxed mb-6">The software features an intuitive graphical interface with a step-by-step wizard that guides users through component detection, test configuration, interactive testing, progress monitoring, and completion verification. It is the perfect tool for IT administrators, refurbishers, ITAD companies, and quality assurance teams.</p>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">Key Features:</h3>
                 <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4">
@@ -51,12 +53,12 @@ const navigationTree: NavItem[] = [
         title: "About the Guide",
         content: (
             <>
-                <p className="text-slate-700 leading-relaxed mb-6">This user guide provides comprehensive step-by-step instructions for every feature and function of <strong>D-Secure Drive Diagnostic</strong>. Each section includes detailed explanations accompanied by actual screenshots from the application.</p>
+                <p className="text-slate-700 leading-relaxed mb-6">This user guide provides comprehensive step-by-step instructions for every feature and function of <strong><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></strong>. Each section includes detailed explanations accompanied by actual screenshots from the application.</p>
                 <ol className="list-decimal list-inside space-y-2 text-slate-700 ml-4 mb-6">
-                    <li><strong>About D-Secure Drive Diagnostic</strong></li>
+                    <li><strong>About <Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></strong></li>
                     <li><strong>About the Guide</strong></li>
                     <li><strong>Getting Started</strong> — Boot process, system summary, hardware detection, network setup, and authentication</li>
-                    <li><strong>Working with D-Secure Drive Diagnostic</strong> — Dashboard, diagnostic wizard (5-step process), reports, and settings</li>
+                    <li><strong>Working with <Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></strong> — Dashboard, diagnostic wizard (5-step process), reports, and settings</li>
                     <li><strong>Help & Support</strong></li>
                     <li><strong>About D-Secure</strong></li>
                 </ol>
@@ -74,7 +76,7 @@ const navigationTree: NavItem[] = [
                 content: (
                     <>
                         <p className="text-slate-700 leading-relaxed mb-4">
-                            To use <strong>D-Secure Drive Diagnostic</strong>, you first need to create a bootable USB drive using our provided ISO image. We recommend using <strong>UNetbootin</strong>, a reliable and easy-to-use tool for creating bootable media on any operating system.
+                            To use <strong><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></strong>, you first need to create a bootable USB drive using our provided ISO image. We recommend using <strong>UNetbootin</strong>, a reliable and easy-to-use tool for creating bootable media on any operating system.
                         </p>
                         <div className="bg-emerald-50 border-emerald-500 border rounded-lg p-6 mb-6">
                             <h4 className="text-emerald-800 font-bold mb-4">Download UNetbootin Tool:</h4>
@@ -96,7 +98,7 @@ const navigationTree: NavItem[] = [
                             <li><strong>Connect</strong> a USB flash drive (minimum 1GB) to your computer.</li>
                             <li><strong>Open</strong> UNetbootin. You may need Administrator/Root privileges.</li>
                             <li>Select <strong>"Diskimage"</strong> and ensure <strong>"ISO"</strong> is selected in the dropdown.</li>
-                            <li>Click the <strong>"..."</strong> button to browse and select the <strong>D-Secure Drive Diagnostic ISO</strong> file you downloaded.</li>
+                            <li>Click the <strong>"..."</strong> button to browse and select the <strong><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link> ISO</strong> file you downloaded.</li>
                             <li>Ensure <strong>"USB Drive"</strong> is selected as the Type, and select the correct drive letter/name for your USB.</li>
                             <li>Click <strong>"OK"</strong> to start writing the ISO to the USB.</li>
                             <li>Once complete, you can use this USB to boot the target system for diagnostics.</li>
@@ -118,7 +120,7 @@ const navigationTree: NavItem[] = [
                         </p>
                         <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4 mb-4">
                             <li>Use your keyboard arrow keys to navigate the menu.</li>
-                            <li>Select the <strong>D-Secure Drive Diagnostic</strong> option and press <strong>Enter</strong> to proceed.</li>
+                            <li>Select the <strong><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></strong> option and press <strong>Enter</strong> to proceed.</li>
                         </ul>
 
                         {/* GRUB Menu Image */}
@@ -152,9 +154,9 @@ const navigationTree: NavItem[] = [
                 title: "Welcome Screen & System Summary",
                 content: (
                     <>
-                        <p className="text-slate-700 leading-relaxed mb-4">When the system boots using D-Secure Drive Diagnostic (via USB or PXE), the <strong>Welcome Screen</strong> is displayed. This screen provides an initial overview of your system hardware and serves as the starting point for the testing process.</p>
+                        <p className="text-slate-700 leading-relaxed mb-4">When the system boots using <Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link> (via USB or PXE), the <strong>Welcome Screen</strong> is displayed. This screen provides an initial overview of your system hardware and serves as the starting point for the testing process.</p>
                         <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4 mb-4">
-                            <li><strong>Product Name & Version</strong> — D-Secure Drive Diagnostic, Boot Edition 1.0.0vbeta</li>
+                            <li><strong>Product Name & Version</strong> — <Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link>, Boot Edition 1.0.0vbeta</li>
                             <li><strong>Boot Mode</strong> — UEFI or Legacy BIOS</li>
                             <li><strong>Memory</strong> — Total system RAM (e.g., 16 GB DDR4)</li>
                             <li><strong>CPU</strong> — Processor model (e.g., Intel Core i7-9700)</li>
@@ -424,7 +426,7 @@ const navigationTree: NavItem[] = [
                         <p className="text-slate-700 leading-relaxed mb-4">The <strong>About</strong> page provides detailed product and system hardware information.</p>
                         <h4 className="text-base font-semibold text-slate-800 mb-3">Product Information:</h4>
                         <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4 mb-4">
-                            <li><strong>Product</strong> — D-Secure Drive Diagnostic</li>
+                            <li><strong>Product</strong> — <Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></li>
                             <li><strong>Edition</strong> — Boot Edition</li>
                             <li><strong>Version</strong> — 1.0.0vbeta</li>
                             <li><strong>License Type</strong> — Hardware Diagnostic</li>
@@ -598,7 +600,7 @@ const CompleteDSecureDaignosticManual: React.FC = () => {
         const images = clone.querySelectorAll('img');
         images.forEach(img => { img.style.maxWidth = '100%'; img.style.height = 'auto'; if (img.src.startsWith('/')) img.src = globalThis.location.origin + img.src; });
         const watermarkUrl = globalThis.location.origin + '/company-logo.png';
-        const htmlContent = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset="utf-8"><title>D-Secure Drive Diagnostic - User Manual</title><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]--><style>body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:12pt;line-height:1.6;color:#1a1a1a;padding:20px 40px}h1{font-size:24pt;font-weight:bold;color:#111827;margin-top:30px;margin-bottom:12px}h2{font-size:18pt;font-weight:bold;color:#1f2937;margin-top:24px;margin-bottom:10px}h3{font-size:14pt;font-weight:bold;color:#374151;margin-top:18px;margin-bottom:8px}h4,h5,h6{font-size:12pt;font-weight:bold;color:#4b5563;margin-top:14px;margin-bottom:6px}p{margin:6px 0}ul,ol{margin:8px 0;padding-left:24px}li{margin:4px 0}img{max-width:100%;height:auto;display:block;margin:10px auto}a{color:#2563eb}.watermark{position:fixed;top:10px;right:10px;width:60px;height:60px;opacity:0.08;z-index:-1}@page{size:A4;margin:20mm 15mm}</style></head><body><img src="${watermarkUrl}" class="watermark" alt="" />${clone.innerHTML}</body></html>`;
+        const htmlContent = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset="utf-8"><title>D-Secure Drive Diagnostic - User Manual</title><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]--><style>body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:12pt;line-height:1.6;color:#1a1a1a;padding:20px 40px}h1{font-size:24pt;font-weight:bold;color:#111827;margin-top:30px;margin-bottom:12px}h2{font-size:18pt;font-weight:bold;color:#1f2937;margin-top:24px;margin-bottom:10px}h3{font-size:14pt;font-weight:bold;color:#374151;margin-top:18px;margin-bottom:8px}h4,h5,h6{font-size:12pt;font-weight:bold;color:#4b5563;margin-top:14px;margin-bottom:6px}p{margin:6px 0}ul,ol{margin:8px 0;padding-left:24px}li{margin:4px 0}img{max-width:100%;height:auto;display:block;margin:10px auto}a{color:#2563eb}.watermark{position:fixed;top:10px;right:10px;width:60px;height:60px;opacity:0.08;z-index:-1}@page{size:A4;margin:20mm 15mm}</style></head><body><img src="${watermarkUrl}" class="watermark" alt="D-Secure Watermark" />${clone.innerHTML}</body></html>`;
         const blob = new Blob(['\ufeff', htmlContent], { type: 'application/msword' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a'); a.href = url; a.download = 'D-Secure_System_Diagnostic_User_Manual.doc'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
@@ -671,8 +673,8 @@ const CompleteDSecureDaignosticManual: React.FC = () => {
                     </aside>
 
                     <main ref={contentRef} className="flex-1 min-w-0 bg-white rounded-xl shadow-sm border border-gray-200 p-8 lg:p-12">
-                        <img src="/company-logo.png" alt="" className="print-header-logo hidden" />
-                        <img src="/company-logo.png" alt="" className="print-center-watermark hidden" />
+                        <img src="/company-logo.png" alt="D-Secure Company Logo" className="print-header-logo hidden" />
+                        <img src="/company-logo.png" alt="D-Secure Watermark" className="print-center-watermark hidden" />
 
                         <table className="w-full border-collapse" style={{ tableLayout: 'fixed' }}>
                             <thead className="hidden print:table-header-group">

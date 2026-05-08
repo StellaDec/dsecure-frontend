@@ -1,4 +1,5 @@
 import React from "react";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
@@ -9,11 +10,6 @@ import {
   ArrowRightIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
 
 const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
   return (
@@ -25,7 +21,7 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
         <Reveal>
           <div className="text-center px-6">
             <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
-              Mac Data Erasure Guide
+              Mac <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Guide
             </span>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
@@ -58,18 +54,18 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
               <p className="text-slate-700 leading-relaxed text-lg">
                 In today’s data-driven and privacy-focused environment,
                 safeguarding sensitive information is a fundamental
-                responsibility for every organization. Apple Mac devices such
-                as MacBook Pro, MacBook Air, iMac, Mac Mini, and Mac Pro are
-                widely used across enterprises due to their performance,
-                reliability, and security features.
+                responsibility for every organization. Apple Mac devices such as
+                MacBook Pro, MacBook Air, iMac, Mac Mini, and Mac Pro are widely
+                used across enterprises due to their performance, reliability,
+                and security features.
               </p>
 
               <p className="text-slate-700 leading-relaxed">
                 When these Mac devices are reallocated internally, resold,
                 donated, or disposed of, it is essential to ensure that no
-                confidential or regulated data remains on them. Failure to do
-                so can expose organizations to data breaches, regulatory
-                penalties, and reputational damage.
+                confidential or regulated data remains on them. Failure to do so
+                can expose organizations to data breaches, regulatory penalties,
+                and reputational damage.
               </p>
 
               <p className="text-slate-700 leading-relaxed">
@@ -78,8 +74,8 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
                 information (PHI or ePHI), financial records, controlled
                 information, and other confidential business data. This
                 information is protected under various state, federal, and
-                international regulations, making secure data erasure a legal
-                as well as ethical requirement.
+                international regulations, making secure data erasure a legal as
+                well as ethical requirement.
               </p>
             </div>
 
@@ -91,11 +87,10 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
 
               <p className="text-slate-700 leading-relaxed">
                 Organizations handling sensitive data must comply with data
-                protection and privacy regulations such as GDPR, CPRA,
-                PCI-DSS, HIPAA, GLBA, SOX, and other industry-specific mandates.
-                These regulations emphasize not only data protection during
-                active use but also secure data disposal at the end of the data
-                lifecycle.
+                protection and privacy regulations such as GDPR, CPRA, PCI-DSS,
+                HIPAA, GLBA, SOX, and other industry-specific mandates. These
+                regulations emphasize not only data protection during active use
+                but also secure data disposal at the end of the data lifecycle.
               </p>
 
               <p className="text-slate-700 leading-relaxed">
@@ -174,7 +169,7 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
               </p>
 
               <p className="text-slate-700 leading-relaxed">
-                D-Secure erasure reports are aligned with recognized media
+                D-<Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure erasure</Link> reports are aligned with recognized media
                 sanitization guidelines and typically include details such as
                 device identification, erasure method used, verification
                 results, date and time of erasure, and operator validation.
@@ -191,7 +186,7 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
             {/* Section 6 */}
             <div className="space-y-5">
               <h2 className="text-2xl font-bold text-slate-900">
-                6. Reinstalling macOS After Secure Erasure
+                6. Reinstalling macOS After <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link>
               </h2>
 
               <p className="text-slate-700 leading-relaxed">
@@ -256,7 +251,7 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
             </p>
 
             <Link
-              to="/#products"
+              to="/all-products"
               className="inline-flex items-center bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition shadow-lg"
             >
               <HoverIcon>
@@ -274,40 +269,11 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
           </div>
         </Reveal>
       </section>
-
-      {/* Engagement */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          <EngagementSection blogId="erase-mac-data-safely" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="erase-mac-data-safely" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm
-            blogId="erase-mac-data-safely"
-            blogTitle="Erase Data from Mac Devices Safely Using D-Secure"
-          />
-        </Reveal>
-      </section>
-    
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          <FAQSection faqs={blogFaqs["erase-mac-data-safely-using-dsecure"]} />
-          <EngagementSection blogId="erase-mac-data-safely-using-dsecure" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="erase-mac-data-safely-using-dsecure" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="erase-mac-data-safely-using-dsecure" 
-            blogTitle="Erase Mac Data Safely Using Dsecure" 
-          />
-        </Reveal>
-      </section>
-</div>
+      <BlogFooterStandard 
+        blogId="erase-mac-data-safely" 
+        blogTitle="D-Secure Blog" 
+      />
+    </div>
   );
 };
 

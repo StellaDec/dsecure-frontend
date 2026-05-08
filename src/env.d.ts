@@ -17,6 +17,7 @@ interface ImportMetaEnv {
   readonly VITE_DRIVE_ERASER_ISO_DOWNLOAD_LINK: string;
   readonly VITE_DRIVE_ERASER_DIAGNOSTIC_ISO_DOWNLOAD_LINK: string;
   readonly VITE_BASE_URL: string;
+  readonly VITE_POWER_AUTOMATE_HTTP_URL: string;
 }
 
 interface ImportMeta {

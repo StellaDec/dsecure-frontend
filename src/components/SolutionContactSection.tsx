@@ -80,10 +80,12 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
         ? `${subjectPrefix} - D-Secure Tech`
         : `New Inquiry - ${source} - D-Secure Tech`;
       formSubmitData.append("_subject", emailSubject);
-      formSubmitData.append(
-        "_cc",
-        "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
-      );
+      formSubmitData.append("_cc", "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com");
+      formSubmitData.append("_webhookContentType", "application/json");
+      formSubmitData.append("_webhookExtraData", "true");
+      formSubmitData.append("sendAutoReply", "true");
+      formSubmitData.append("customer_email", formData.email.trim());
+      formSubmitData.append("_next", window.location.href);
 
       // === Backend API ke liye submission data ===
       const submissionData = {

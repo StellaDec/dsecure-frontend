@@ -4,11 +4,7 @@ import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { GlobeIcon, ShieldIcon, ArrowRightIcon, HoverIcon } from "@/components/FlatIcons";
-import EngagementSection from "./EngagementSection";
-import FAQSection from "./FAQSection";
-import { blogFaqs } from "@/data/blogFaqs";
-import CommentSection from "./CommentSection";
-import EnquiryForm from "./EnquiryForm";
+import BlogFooterStandard from "./BlogFooterStandard";
 
 const SustainableITReuseBlog: React.FC = () => {
 
@@ -53,7 +49,7 @@ const SustainableITReuseBlog: React.FC = () => {
                         When these devices reach their end-of-life cycle, they are traditionally destroyed to protect the organization's data security. The physical destruction (shredding or burning) of these devices has many negative impacts. Environmentally, it increases e-waste and releases hazardous substances, contaminating soil and water. Economically, too it leads to wastage of valuable materials and increases costs by foregoing recycling opportunities. Socially, improper device disposal poses health risks to nearby communities. Additionally, the destruction process consumes energy and generates carbon emissions, contributing to environmental degradation and climate change.
                     </p>
                     <p className="text-slate-700 leading-relaxed">
-                        Therefore, it is imperative for organizations to avoid the physical destruction of devices unless necessary to curb the generation of e-waste. Instead, organizations need to adopt secure data wiping methods to clean information stored on the device and maintain data security to promote reuse of the device.
+                        Therefore, it is imperative for organizations to avoid the physical destruction of devices unless necessary to curb the generation of e-waste. Instead, organizations need to adopt secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> methods to clean information stored on the device and maintain data security to promote reuse of the device.
                     </p>
                     <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-l-4 border-blue-500 p-6 rounded-r-xl mt-4">
                         <p className="text-slate-700 leading-relaxed">
@@ -118,7 +114,7 @@ const SustainableITReuseBlog: React.FC = () => {
                     </div>
                 </div>
 
-                 {/* Data Erasure Role */}
+                 {/* <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Role */}
                  <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">Role of Data Erasure in Reuse of IT Asset</h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -157,51 +153,10 @@ const SustainableITReuseBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          
-      <FAQSection faqs={blogFaqs["sustainable-it-reuse"]} />
-      <EngagementSection blogId="sustainable-it-reuse" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="sustainable-it-reuse" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="sustainable-it-reuse" 
-            blogTitle="Sustainable IT Asset Reuse: Environmental and Economic Benefits" 
-          />
-        </Reveal>
-      </section>
-
-       {/* CTA Section */}
-       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
-            <Reveal>
-                <div className="max-w-5xl mx-auto px-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Enable Sustainable IT Practices
-                    </h2>
-                    <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                        Discover how D-Secure supports organizations in implementing secure IT asset reuse programs.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            to="/contact"
-                            className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
-                        >
-                            Request Free Demo
-                        </Link>
-                        <Link
-                            to="/resources"
-                            className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
-                        >
-                            Explore Solutions
-                        </Link>
-                    </div>
-                </div>
-            </Reveal>
-        </section>
+      <BlogFooterStandard 
+        blogId="sustainable-it-reuse" 
+        blogTitle="The Financial Case for Sustainable IT Reuse" 
+      />
     </div>
   );
 };

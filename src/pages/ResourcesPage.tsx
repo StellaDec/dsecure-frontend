@@ -388,6 +388,19 @@ function ResourcesPageContent() {
       referenceUrl:
         "https://owasp.org/www-project-application-security-architecture/",
     },
+    {
+      id: 99,
+      title: "D-Secure Company Profile",
+      type: "whitepaper",
+      category: "business",
+      description:
+        "Comprehensive overview of D-Secure Technologies, our mission, vision, and enterprise data erasure solutions.",
+      downloadSize: "1.2 MB",
+      pages: 15,
+      featured: true,
+      referenceUrl:
+        "https://assets.dsecuretech.com/pdf/D-Secure%20Technologies%20Pvt.%20Ltd..pdf",
+    },
     // Blog Posts
     {
       id: 10,
@@ -400,7 +413,7 @@ function ResourcesPageContent() {
       pages: "1 min read",
       featured: true,
       referenceUrl: "/support/help-manual/complete-manual",
-      author: "Nitesh Kushwaha",
+      author: "D-Secure Editorial Team",
       date: "October 15, 2024"
     },
     {
@@ -428,7 +441,7 @@ function ResourcesPageContent() {
       pages: "1 min read",
       featured: true,
       referenceUrl: "/blog/erasure-vs-destruction",
-      author: "Nitesh Kushwaha",
+      author: "D-Secure Editorial Team",
       date: "November 5, 2024"
     },
     {
@@ -470,7 +483,7 @@ function ResourcesPageContent() {
       pages: "1 min read",
       featured: false,
       referenceUrl: "/blog/best-data-erasure-methods",
-      author: "Prashant Saini",
+      author: "D-Secure Editorial Team",
       date: "December 03, 2024"
     },
   ];

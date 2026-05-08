@@ -1,7 +1,5 @@
 import React from "react";
-import EnquiryForm from "./EnquiryForm";
-import CommentSection from "./CommentSection";
-import EngagementSection from "./EngagementSection";
+import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import Reveal from "@/components/Reveal";
 import OptimizedImage from "@/components/OptimizedImage";
@@ -100,29 +98,12 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
             </a>
         </Reveal>
       </section>
-
-      {/* Engagement, Comments & Enquiry Section */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
-        <Reveal>
-          <EngagementSection blogId="blog-post-template" />
-        </Reveal>
-        <Reveal>
-          <CommentSection blogId="blog-post-template" />
-        </Reveal>
-        <Reveal>
-          <EnquiryForm 
-            blogId="blog-post-template" 
-            blogTitle="Blog Post Template" 
-          />
-        </Reveal>
-      </section>
-
+      <BlogFooterStandard 
+        blogId="default-blog-id" 
+        blogTitle="D-Secure Blog" 
+      />
     </div>
   );
-
 };
 
 export default BlogPostTemplate;
-
-
-

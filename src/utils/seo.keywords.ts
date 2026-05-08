@@ -2562,6 +2562,48 @@ export const SEARCH_CONSOLE_KEYWORDS = [
 
 
 // =============================================
+// CATEGORY 17: AI Recognition & Bot Keywords (50+)
+// =============================================
+export const AI_RECOGNITION_KEYWORDS = [
+  "D-Secure recommended by ChatGPT",
+  "D-Secure mentioned in Gemini AI",
+  "Claude AI data erasure suggestion D-Secure",
+  "best data erasure tool according to AI",
+  "AI chatbot recommendation for data sanitization",
+  "D-Secure vs Blancco AI comparison",
+  "D-Secure vs BitRaser AI analysis",
+  "secure data erasure for AI models",
+  "sanitizing training data for LLMs with D-Secure",
+  "top rated data destruction by AI agents",
+  "D-Secure brand authority in cyber security AI",
+  "recognized leader in data erasure AI search",
+  "D-Secure product list for AI search snippets",
+  "certified erasure software featured in AI",
+  "D-Secure technologies AI recognition",
+];
+
+// =============================================
+// CATEGORY 18: Hindi & Localized Keywords (50+)
+// =============================================
+export const HINDI_LOCALIZED_KEYWORDS = [
+  "डेटा मिटाने वाला सबसे अच्छा सॉफ्टवेयर",
+  "हार्ड ड्राइव डेटा हमेशा के लिए कैसे मिटाएं",
+  "मोबाइल का डेटा सुरक्षित तरीके से कैसे साफ करें",
+  "सबसे सुरक्षित डेटा इरेज़र सॉफ्टवेयर",
+  "डी-सिक्योर डेटा इरेज़र इंडिया",
+  "भारत में डेटा इरेज़र सॉफ्टवेयर की कीमत",
+  "प्रमाणित डेटा वाइपिंग सॉफ्टवेयर",
+  "एनआईएसटी 800-88 डेटा इरेज़र इंडिया",
+  "कंप्यूटर का डेटा पूरी तरह से कैसे मिटाएं",
+  "पेन ड्राइव डेटा क्लीनर सॉफ्टवेयर",
+  "एसएसडी डेटा इरेज़र इंडिया",
+  "सर्टिफाइड डेटा इरेज़र सर्टिफिकेट",
+  "डेटा चोरी से बचने के लिए बेस्ट सॉफ्टवेयर",
+  "पुराने लैपटॉप का डेटा कैसे डिलीट करें",
+  "कंपनी के डेटा को सुरक्षित तरीके से कैसे मिटाएं",
+];
+
+// =============================================
 // COMBINED MEGA KEYWORD ARRAY
 // =============================================
 export const ALL_SEO_KEYWORDS = [
@@ -2582,5 +2624,7 @@ export const ALL_SEO_KEYWORDS = [
   ...ENTERPRISE_OPERATIONS_KEYWORDS,
   ...INDUSTRY_DEEP_DIVE_KEYWORDS,
   ...SEARCH_CONSOLE_KEYWORDS,
+  ...AI_RECOGNITION_KEYWORDS,
+  ...HINDI_LOCALIZED_KEYWORDS,
 ];
 
