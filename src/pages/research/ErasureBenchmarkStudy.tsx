@@ -33,7 +33,7 @@ const ErasureBenchmarkStudy: React.FC = () => {
     <div className="min-h-screen bg-slate-50">
       <SEOHead 
         title="2026 Erasure Speed Benchmark Study | D-Secure Lab Research"
-        description="A technical speed analysis comparing legacy overwriting to modern cryptographic erasure. Benchmark data for HDD, SSD, and NVMe data sanitization performance."
+        description="Speed analysis comparing legacy overwriting to cryptographic erasure. Benchmark data for HDD, SSD, and NVMe."
         canonicalUrl="https://dsecuretech.com/research/erasure-speed-benchmark-2026"
       />
 
@@ -77,7 +77,7 @@ const ErasureBenchmarkStudy: React.FC = () => {
             {/* Sidebar Stats Hub */}
             <div className="lg:col-span-4 space-y-10 order-last lg:order-first">
                <div className="bg-slate-50 border border-slate-100 rounded-[2.5rem] p-10 shadow-xl group">
-                 <h3 className="text-xs font-black text-slate-500 uppercase tracking-widest mb-10">Study Metrics</h3>
+                 <h2 className="text-xs font-black text-slate-500 uppercase tracking-widest mb-10">Study Metrics</h2>
                  <div className="space-y-8">
                     {[
                       { label: "Assets Tested", val: "1,200+", icon: Database },
@@ -99,7 +99,7 @@ const ErasureBenchmarkStudy: React.FC = () => {
                </div>
                
                <div className="bg-emerald-900 rounded-[2.5rem] p-10 text-emerald-100 shadow-3xl group">
-                  <h4 className="text-2xl font-black text-white mb-6 leading-tight uppercase">SSD Life Mastery</h4>
+                  <h3 className="text-2xl font-black text-white mb-6 leading-tight uppercase">SSD Life Mastery</h3>
                   <p className="text-xs leading-relaxed mb-10 font-medium">
                      "Unlike legacy DoD 3-pass wiping, D-Secure Crypto-E uses **zero P/E cycles**, preserving 100% of the drive's remaining useful life (RUL) for resale markets."
                   </p>
@@ -126,7 +126,7 @@ const ErasureBenchmarkStudy: React.FC = () => {
                     <div className="absolute top-0 right-0 p-10 opacity-5 group-hover:opacity-10 transition-opacity"><BarChart className="w-24 h-24" /></div>
                     <div className="space-y-6">
                        <div className="flex items-center justify-between mb-10">
-                          <h5 className="text-xs font-black text-slate-400 uppercase tracking-widest text-left">Sector Performance Matrix</h5>
+                          <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest text-left">Sector Performance Matrix</h3>
                           <span className="text-[10px] bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-black uppercase border border-emerald-100">Lab Results</span>
                        </div>
                        {benchmarkComparison.map((item, idx) => (
@@ -164,14 +164,14 @@ const ErasureBenchmarkStudy: React.FC = () => {
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 not-prose mb-20">
                     <div className="p-10 bg-slate-50 border border-slate-100 rounded-[3rem] shadow-sm hover:shadow-xl transition-all group">
                        <Settings className="w-10 h-10 text-emerald-500 mb-6 group-hover:rotate-45 transition-transform" />
-                       <h5 className="text-lg font-black text-slate-900 mb-4 uppercase">Automated Workflow</h5>
+                       <h3 className="text-lg font-black text-slate-900 mb-4 uppercase">Automated Workflow</h3>
                        <p className="text-xs text-slate-500 font-medium leading-relaxed">
                           D-Secure's API-driven sanitization removes the 'Human Latency' from the benchmarking cycle. Automatic asset detection to certification in under 60 seconds per laptop fleet.
                        </p>
                     </div>
                     <div className="p-10 bg-slate-50 border border-slate-100 rounded-[3rem] shadow-sm hover:shadow-xl transition-all group">
                        <Cpu className="w-10 h-10 text-teal-500 mb-6 group-hover:scale-110 transition-transform" />
-                       <h5 className="text-lg font-black text-slate-900 mb-4 uppercase">NVMe 2.0 Ready</h5>
+                       <h3 className="text-lg font-black text-slate-900 mb-4 uppercase">NVMe 2.0 Ready</h3>
                        <p className="text-xs text-slate-500 font-medium leading-relaxed">
                           Full support for Zoned Name Space (ZNS) sanitization protocols, ensuring that 'Purge' status is achieved across all addressable and over-provisioned sectors.
                        </p>

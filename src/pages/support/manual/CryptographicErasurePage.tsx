@@ -303,9 +303,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                   <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl text-white">⚡</span>
                   </div>
-                  <h3 className="text-xl font-bold text-emerald-900 mb-2">
+                  <h2 className="text-xl font-bold text-emerald-900 mb-2">
                     Instant
-                  </h3>
+                  </h2>
                   <p className="text-slate-600">
                     Seconds vs hours for traditional methods
                   </p>
@@ -314,9 +314,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                   <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl text-white">🔒</span>
                   </div>
-                  <h3 className="text-xl font-bold text-teal-900 mb-2">
+                  <h2 className="text-xl font-bold text-teal-900 mb-2">
                     Secure
-                  </h3>
+                  </h2>
                   <p className="text-slate-600">
                     NIST 800-88 Purge level compliance
                   </p>
@@ -325,9 +325,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                   <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl text-white">🌱</span>
                   </div>
-                  <h3 className="text-xl font-bold text-cyan-900 mb-2">
+                  <h2 className="text-xl font-bold text-cyan-900 mb-2">
                     Sustainable
-                  </h3>
+                  </h2>
                   <p className="text-slate-600">No drive wear, enables reuse</p>
                 </div>
               </div>
@@ -357,9 +357,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                     <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-2xl flex items-center justify-center text-xl mx-auto mb-4">
                       1
                     </div>
-                    <h3 className="font-semibold text-slate-900 mb-2 text-lg">
+                    <h2 className="font-semibold text-slate-900 mb-2 text-lg">
                       Encrypted Drive
-                    </h3>
+                    </h2>
                     <p className="text-slate-600">
                       Data is encrypted with AES-256 bit encryption
                     </p>
@@ -368,9 +368,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                     <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 text-white rounded-2xl flex items-center justify-center text-xl mx-auto mb-4">
                       2
                     </div>
-                    <h3 className="font-semibold text-slate-900 mb-2 text-lg">
+                    <h2 className="font-semibold text-slate-900 mb-2 text-lg">
                       Key Destruction
-                    </h3>
+                    </h2>
                     <p className="text-slate-600">
                       Encryption keys are permanently deleted
                     </p>
@@ -379,9 +379,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                     <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-2xl flex items-center justify-center text-xl mx-auto mb-4">
                       3
                     </div>
-                    <h3 className="font-semibold text-slate-900 mb-2 text-lg">
+                    <h2 className="font-semibold text-slate-900 mb-2 text-lg">
                       Data Inaccessible
-                    </h3>
+                    </h2>
                     <p className="text-slate-600">
                       All data becomes cryptographically unreadable
                     </p>
@@ -392,9 +392,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                   <div className="flex items-start">
                     <div className="text-2xl mr-4">🔑</div>
                     <div>
-                      <h4 className="font-semibold text-emerald-900 mb-2 text-lg">
+                      <h3 className="font-semibold text-emerald-900 mb-2 text-lg">
                         Analogy
-                      </h4>
+                      </h3>
                       <p className="text-emerald-800">
                         Imagine locking your vault and melting the only key —
                         the vault (drive) remains, but its contents are
@@ -499,9 +499,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                  <h2 className="text-xl font-semibold text-slate-900 mb-2">
                     No Sections Found
-                  </h3>
+                  </h2>
                   <p className="text-slate-600">
                     Try adjusting your search terms.
                   </p>
@@ -518,9 +518,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                           <div className="flex items-center gap-4">
                             <div className="text-2xl">{section.icon}</div>
                             <div>
-                              <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                              <h2 className="text-xl font-semibold text-slate-900 mb-2">
                                 {section.title}
-                              </h3>
+                              </h2>
                               <p className="text-slate-600">
                                 {section.description}
                               </p>
@@ -558,9 +558,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                                     className="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors group"
                                   >
                                     <div className="flex-1">
-                                      <h4 className="font-medium text-slate-900 group-hover:text-emerald-800 transition-colors mb-1 text-lg">
+                                      <h3 className="font-medium text-slate-900 group-hover:text-emerald-800 transition-colors mb-1 text-lg">
                                         {subsection.title}
-                                      </h4>
+                                      </h3>
                                       <p className="text-sm text-slate-600">
                                         {subsection.description}
                                       </p>
@@ -696,9 +696,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                     >
                       <span className="text-2xl text-white">{item.icon}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                    <h2 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       {item.title}
-                    </h3>
+                    </h2>
                     <p className="text-slate-600 text-sm flex-grow">
                       {item.description}
                     </p>
@@ -774,9 +774,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
               ].map((faq, index) => (
                 <Reveal key={index} delayMs={index * 100}>
                   <div className="bg-white rounded-2xl p-6 border border-emerald-100 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 className="font-semibold text-slate-900 mb-2 text-lg">
+                    <h2 className="font-semibold text-slate-900 mb-2 text-lg">
                       {faq.question}
-                    </h3>
+                    </h2>
                     <p className="text-slate-600">{faq.answer}</p>
                   </div>
                 </Reveal>

@@ -240,10 +240,9 @@ const AutopilotDetectionPage: React.FC = memo(function AutopilotDetectionPage() 
                   </div>
 
                   <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
-                    Autopilot{" "}
-                    <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                      Detection
-                    </span>
+                    D-Secure <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                      Autopilot Detection Tool
+                    </span>: Automated Windows Intune & Autopilot Verification
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">

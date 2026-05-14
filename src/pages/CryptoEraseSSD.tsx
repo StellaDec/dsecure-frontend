@@ -181,7 +181,7 @@ const CryptoEraseSSDGuide: React.FC = () => {
                   </nav>
 
                   <div className="mt-8 pt-6 border-t border-slate-100">
-                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-3">Related Resources</h4>
+                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-3">Related Resources</h3>
                     <nav className="space-y-3 px-3">
                       <Link to="/support/secure-erase-hddssd" className="block text-sm text-slate-600 hover:text-emerald-600 transition-colors">HDD & SSD Wipe Guide</Link>
                       <Link to="/support/mac-eraser-guide" className="block text-sm text-slate-600 hover:text-emerald-600 transition-colors">Mac Terminal Erase</Link>
@@ -193,10 +193,10 @@ const CryptoEraseSSDGuide: React.FC = () => {
 
                 {/* Internal Links Card */}
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-xl border border-slate-700">
-                  <h4 className="font-bold mb-3 flex items-center text-emerald-400">
+                  <h3 className="font-bold mb-3 flex items-center text-emerald-400">
                     <ShieldCheck className="w-4 h-4 mr-2" />
                     Secure Solutions
-                  </h4>
+                  </h3>
                   <ul className="space-y-3 text-sm">
                     <li>
                       <Link to="/products/drive-eraser" className="text-slate-300 hover:text-white transition-colors flex items-center">
@@ -250,17 +250,17 @@ const CryptoEraseSSDGuide: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                       <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-200 transition-colors">
                         <Zap className="w-8 h-8 text-emerald-600 mb-3" />
-                        <h4 className="font-bold text-slate-900 mb-2">Near-Instant</h4>
+                        <h3 className="font-bold text-slate-900 mb-2">Near-Instant</h3>
                         <p className="text-xs text-slate-600 leading-relaxed">Completes in seconds regardless of drive capacity.</p>
                       </div>
                       <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-200 transition-colors">
                         <ShieldCheck className="w-8 h-8 text-teal-600 mb-3" />
-                        <h4 className="font-bold text-slate-900 mb-2">Safe for Media</h4>
+                        <h3 className="font-bold text-slate-900 mb-2">Safe for Media</h3>
                         <p className="text-xs text-slate-600 leading-relaxed">Preserves flash endurance by avoiding massive write cycles.</p>
                       </div>
                       <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-200 transition-colors">
                         <Activity className="w-8 h-8 text-cyan-600 mb-3" />
-                        <h4 className="font-bold text-slate-900 mb-2">NIST Compliant</h4>
+                        <h3 className="font-bold text-slate-900 mb-2">NIST Compliant</h3>
                         <p className="text-xs text-slate-600 leading-relaxed">Meets <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline">NIST 800-88</Link> standards for SSDs.</p>
                       </div>
                     </div>
@@ -312,7 +312,7 @@ const CryptoEraseSSDGuide: React.FC = () => {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-xl font-bold text-slate-900 mb-2">The "Safe Key" Analogy</h4>
+                        <h3 className="text-xl font-bold text-slate-900 mb-2">The "Safe Key" Analogy</h3>
                         <p className="text-slate-600 italic">
                           "Imagine a safe full of documents. Instead of burning every single page (Overwriting), you simply destroy the only physical key that can open the safe. Even if someone has the safe, the contents are mathematically unreadable forever."
                         </p>
@@ -383,7 +383,7 @@ const CryptoEraseSSDGuide: React.FC = () => {
                         <div key={item.step} className="flex gap-6 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-emerald-200 transition-colors group">
                           <span className="text-2xl font-black text-emerald-200 group-hover:text-emerald-400 transition-colors">{item.step}</span>
                           <div>
-                            <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
+                            <h3 className="font-bold text-slate-900 mb-1">{item.title}</h3>
                             <p className="text-sm text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }} />
                           </div>
                         </div>
@@ -396,10 +396,10 @@ const CryptoEraseSSDGuide: React.FC = () => {
                   <h2 className="text-3xl font-bold text-slate-900 mb-8">Best Practices</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                     <div className="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-emerald-200 transition-colors">
-                      <h4 className="font-bold text-slate-900 mb-3 flex items-center">
+                      <h3 className="font-bold text-slate-900 mb-3 flex items-center">
                         <ShieldCheck className="w-5 h-5 text-emerald-500 mr-2" />
                         DO
-                      </h4>
+                      </h3>
                       <ul className="text-sm text-slate-600 space-y-2">
                         <li>• Verify drive encryption status before deployment.</li>
                         <li>• Use <Link to="/support/cloud-console-guide" className="text-emerald-600 hover:underline">D-Secure Cloud</Link> for centralized audit logs.</li>
@@ -408,10 +408,10 @@ const CryptoEraseSSDGuide: React.FC = () => {
                       </ul>
                     </div>
                     <div className="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-red-200 transition-colors">
-                      <h4 className="font-bold text-slate-900 mb-3 flex items-center">
+                      <h3 className="font-bold text-slate-900 mb-3 flex items-center">
                         <AlertCircle className="w-5 h-5 text-red-500 mr-2" />
                         DON'T
-                      </h4>
+                      </h3>
                       <ul className="text-sm text-slate-600 space-y-2">
                         <li>• Use <Link to="/support/overwrite-guide" className="text-red-600 hover:underline font-medium">DoD 5220.22-M</Link> (3-pass) on SSDs.</li>
                         <li>• Attempt software-level encryption for sanitization.</li>

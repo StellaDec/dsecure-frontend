@@ -1997,7 +1997,8 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {[
+              {/* Related Free Tools Section */}
+              { [
                 {
                   title: "NIST 800-88 Checker",
                   desc: "Find out if your media needs Clear, Purge, or Destroy per federal NIST guidelines.",
@@ -2027,10 +2028,9 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                   color: "purple",
                 },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  to={tool.href}
-                  className="group flex flex-col bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 hover:shadow-lg p-6 transition-all duration-300"
+                  className="relative group flex flex-col bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 hover:shadow-lg p-6 transition-all duration-300"
                 >
                   <span className={`inline-block self-start px-2.5 py-1 text-xs font-bold rounded-full mb-4 ${
                     tool.color === "emerald" ? "bg-emerald-100 text-emerald-700" :
@@ -2041,7 +2041,9 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                     {tool.badge}
                   </span>
                   <h3 className="font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors text-lg leading-tight">
-                    {tool.title}
+                    <Link to={tool.href} className="after:absolute after:inset-0">
+                      {tool.title}
+                    </Link>
                   </h3>
                   <p className="text-sm text-slate-500 leading-relaxed flex-1">{tool.desc}</p>
                   <span className="mt-5 inline-flex items-center gap-1 text-emerald-700 font-bold text-sm group-hover:gap-2 transition-all">
@@ -2050,7 +2052,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                   </span>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
@@ -2083,30 +2085,30 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {relatedBlogs.map((blog, i) => (
                 <Reveal key={blog.id} delayMs={i * 60}>
-                  <Link to={blog.link} className="block group h-full">
-                    <div className="bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                      <div className="mb-4">
-                        <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
-                          {blog.tag}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-800 transition-colors line-clamp-2">
-                        {blog.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm mb-4 leading-relaxed flex-grow line-clamp-3">
-                        {blog.excerpt}
-                      </p>
-                      <div className="flex items-center text-emerald-800 font-semibold text-sm mb-4 group-hover:gap-2 gap-1 transition-all">
-                        Read Article <ArrowRightIcon className="w-4 h-4" />
-                      </div>
-                      <div className="flex items-center justify-between text-xs text-slate-400 mt-auto pt-4 border-t border-slate-100">
-                        <span>{blog.publishDate}</span>
-                        <span>
-                          {blog.readTime || getReadTime(blog.excerpt)}
-                        </span>
-                      </div>
+                  <div className="relative bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
+                    <div className="mb-4">
+                      <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
+                        {blog.tag}
+                      </span>
                     </div>
-                  </Link>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-800 transition-colors line-clamp-2">
+                      <Link to={blog.link} className="after:absolute after:inset-0">
+                        {blog.title}
+                      </Link>
+                    </h3>
+                    <p className="text-slate-600 text-sm mb-4 leading-relaxed flex-grow line-clamp-3">
+                      {blog.excerpt}
+                    </p>
+                    <div className="flex items-center text-emerald-800 font-semibold text-sm mb-4 group-hover:gap-2 gap-1 transition-all">
+                      Read Article <ArrowRightIcon className="w-4 h-4" />
+                    </div>
+                    <div className="flex items-center justify-between text-xs text-slate-400 mt-auto pt-4 border-t border-slate-100">
+                      <span>{blog.publishDate}</span>
+                      <span>
+                        {blog.readTime || getReadTime(blog.excerpt)}
+                      </span>
+                    </div>
+                  </div>
                 </Reveal>
               ))}
             </div>

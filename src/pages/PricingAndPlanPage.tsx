@@ -1,6 +1,7 @@
 import React, { useState, memo, useEffect } from "react";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
+import Reveal from "@/components/Reveal";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ARIA_LABELS } from "@/utils/aria-labels";
 import CustomLicenseModal, {
@@ -1657,11 +1658,11 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
                     {/* Dynamic Product Features */}
                     <div className="space-y-3 mb-6">
-                      <h4 className="text-sm font-semibold text-gray-800 mb-3">
+                      <h3 className="text-sm font-semibold text-gray-800 mb-3">
                         {selectedCategory === "drive-eraser"
                           ? "Drive Eraser - Key Features:"
                           : `${getCurrentProduct().title} - Key Features:`}
-                      </h4>
+                      </h3>
                       
                       {/* Standard Features (always visible) */}
                       {getProductFeatures(selectedCategory, selectedPlan)
@@ -2268,10 +2269,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
                 {/* Special Pricing Section */}
                 <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
                   <div className="text-center">
-                    <h4 className="text-sm font-semibold text-blue-900 mb-2">
+                    <h3 className="text-sm font-semibold text-blue-900 mb-2">
                       Are You An MSP, Academic Institute or Non-Profit
                       Organization?
-                    </h4>
+                    </h3>
                     <button
                       onClick={() => setShowSpecialPricingModal(true)}
                       className="text-blue-600 hover:text-blue-700 font-medium underline transition-colors"
@@ -2480,6 +2481,144 @@ const PricingAndPlanPage: React.FC = memo(() => {
         />
       )}
 
+      {/* Enterprise Pricing Deep Dive & ROI Analysis */}
+      <section className="mt-20 mb-24 px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <div className="bg-slate-50 rounded-[3rem] p-10 md:p-16 border border-slate-200">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-slate-900 mb-6">Strategic Licensing & ROI Framework</h2>
+                <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
+                  Understanding the total cost of ownership (TCO) and the long-term value of data sanitization is critical for IT leaders and security officers. D-Secure offers a transparent, scalable pricing architecture designed for global enterprises.
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-16 items-start">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Choosing Your Licensing Model</h3>
+                  <div className="space-y-8 text-slate-600 leading-relaxed">
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-800 mb-2">1. Pay-Per-Use (The Consumption Model)</h4>
+                      <p className="text-sm">
+                        Ideal for ITAD (IT Asset Disposition) centers and service providers with fluctuating volumes. This model ensures you only pay for what you erase. Every successful erasure consumes one 'credit', which includes a cryptographically signed certificate. This eliminates high upfront costs and aligns spending directly with revenue-generating activities.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-800 mb-2">2. Annual Subscription (The Continuity Model)</h4>
+                      <p className="text-sm">
+                        Best for corporate environments with consistent decommissioning needs. An annual subscription provides unlimited erasures for a fixed number of workstations or servers. This model simplifies budgeting and ensures that your team never hesitates to sanitize a drive due to credit constraints, fostering a stronger security culture.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-800 mb-2">3. Site Licensing (The Enterprise Standard)</h4>
+                      <p className="text-sm">
+                        For large-scale data centers and government entities, we offer site-wide or global licenses. This provides the ultimate flexibility, allowing you to deploy D-Secure across your entire infrastructure without tracking individual disk counts, essential for rapid response scenarios and mass hardware refreshes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6">ROI Analysis: Secure Erasure vs. Shredding</h3>
+                  <div className="space-y-6">
+                    <div className="flex justify-between items-end pb-4 border-b border-slate-100">
+                      <div>
+                        <p className="font-bold text-slate-900">Hardware Resale Recovery</p>
+                        <p className="text-xs text-slate-500">Erasure keeps hardware functional for resale.</p>
+                      </div>
+                      <p className="text-emerald-600 font-bold">+45% Value</p>
+                    </div>
+                    <div className="flex justify-between items-end pb-4 border-b border-slate-100">
+                      <div>
+                        <p className="font-bold text-slate-900">Logistics & Handling Costs</p>
+                        <p className="text-xs text-slate-500">Eliminate secure transport of physical media.</p>
+                      </div>
+                      <p className="text-emerald-600 font-bold">-60% Cost</p>
+                    </div>
+                    <div className="flex justify-between items-end pb-4 border-b border-slate-100">
+                      <div>
+                        <p className="font-bold text-slate-900">E-Waste Compliance Fines</p>
+                        <p className="text-xs text-slate-500">Avoid environmental penalties from shredding.</p>
+                      </div>
+                      <p className="text-emerald-600 font-bold">-100% Risk</p>
+                    </div>
+                    <div className="mt-8 p-4 bg-blue-50 rounded-xl">
+                      <p className="text-sm text-blue-800 leading-relaxed italic">
+                        "Organizations typically realize a full ROI on D-Secure within the first 6 months by reclaiming the residual value of their decommissioned laptops and server drives, while simultaneously meeting stringent ESG (Environmental, Social, and Governance) targets."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-24">
+                <h3 className="text-3xl font-bold text-slate-900 mb-12 text-center">Enterprise Feature Deep Dive</h3>
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="p-8 bg-white rounded-2xl border border-slate-200 hover:border-blue-400 transition-colors">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h4 className="text-xl font-bold text-slate-900 mb-4">Central Management Console</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Manage 10,000+ assets from a single pane of glass. Push erasure tasks over the network, monitor progress in real-time, and aggregate reports into a unified dashboard for global compliance audits.
+                    </p>
+                  </div>
+                  <div className="p-8 bg-white rounded-2xl border border-slate-200 hover:border-emerald-400 transition-colors">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6 text-emerald-600">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                    </div>
+                    <h4 className="text-xl font-bold text-slate-900 mb-4">RESTful API Integration</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Seamlessly integrate data erasure into your existing ITAM (IT Asset Management) or ServiceNow workflows. Automate the generation of tickets and certificates without manual intervention.
+                    </p>
+                  </div>
+                  <div className="p-8 bg-white rounded-2xl border border-slate-200 hover:border-purple-400 transition-colors">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6 text-purple-600">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                    </div>
+                    <h4 className="text-xl font-bold text-slate-900 mb-4">Hardware White-Labeling</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      For service providers and hardware resellers, we offer fully white-labeled software and certificates. Maintain your brand identity while providing world-class, NIST-compliant data sanitization services.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-20 p-10 bg-slate-900 rounded-[2rem] text-white">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4">Custom Enterprise Licensing</h3>
+                    <p className="text-slate-400 mb-6">
+                      Need a global agreement or specialized deployment terms? Our sales team can design a bespoke licensing structure that fits your unique infrastructure and compliance roadmap.
+                    </p>
+                    <button 
+                      onClick={() => setShowCustomModal(true)}
+                      className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-900/40"
+                    >
+                      Talk to Enterprise Sales
+                    </button>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                      <div className="w-2 h-2 rounded-full bg-blue-400" />
+                      <p className="text-sm font-medium">Bulk License Discounts (1,000+ units)</p>
+                    </div>
+                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <p className="text-sm font-medium">Non-Profit & Educational Pricing Available</p>
+                    </div>
+                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                      <div className="w-2 h-2 rounded-full bg-purple-400" />
+                      <p className="text-sm font-medium">Government & Defense Procurement Support</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* Special Pricing Modal */}
       {showSpecialPricingModal && (
         <SpecialPricingModal
@@ -2490,6 +2629,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
           isLoading={isSpecialPricingSubmitting}
         />
       )}
+
     </>
   );
 });

@@ -136,17 +136,17 @@ const ScheduleSettingsPage: React.FC = () => {
 
                     {/* Schedule Interface Mockup */}
                     <div className="mt-8 p-6 bg-white border border-gray-300 rounded-lg">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
                         <Play className="w-5 h-5 mr-2 text-blue-600" />
                         Schedule Erasure Interface
-                      </h4>
+                      </h3>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
                         {/* Schedule Options */}
                         <div className="space-y-4">
-                          <h5 className="font-semibold text-gray-900">
+                          <h4 className="font-semibold text-gray-900">
                             Scheduling Options
-                          </h5>
+                          </h4>
 
                           <div className="space-y-3">
                             <div className="flex items-center space-x-3">
@@ -213,9 +213,9 @@ const ScheduleSettingsPage: React.FC = () => {
 
                         {/* Trace Types */}
                         <div className="space-y-4">
-                          <h5 className="font-semibold text-gray-900">
+                          <h4 className="font-semibold text-gray-900">
                             Trace Types to Erase
-                          </h5>
+                          </h4>
 
                           <div className="space-y-2 max-h-40 overflow-y-auto border border-gray-200 rounded-md p-3">
                             <div className="space-y-2 text-sm">
@@ -450,9 +450,9 @@ const ScheduleSettingsPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">
+                      <h3 className="font-semibold text-gray-900 mb-2">
                         Theme Options:
-                      </h4>
+                      </h3>
                       <ul className="space-y-1 text-sm text-gray-700">
                         <li>
                           • <span className="font-semibold">Light</span> - Sets
@@ -466,9 +466,9 @@ const ScheduleSettingsPage: React.FC = () => {
                     </div>
 
                     <div className="space-y-4">
-                      <h4 className="font-semibold text-gray-900">
+                      <h3 className="font-semibold text-gray-900">
                         Theme Preview:
-                      </h4>
+                      </h3>
                       <div className="grid grid-cols-2 gap-3">
                         <div className="bg-white border border-gray-300 rounded-lg p-4 text-center">
                           <div className="text-sm font-medium text-gray-900 mb-2">

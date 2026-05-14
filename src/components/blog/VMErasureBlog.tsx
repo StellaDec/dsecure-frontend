@@ -43,9 +43,9 @@ const VMErasureBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -73,9 +73,9 @@ const VMErasureBlog: React.FC = () => {
 
               {/* Benefits */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Virtual Machine Benefits
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   VMs deliver considerable advantages in terms of efficiency,
                   cost savings, and operational flexibility. They play a
@@ -91,7 +91,7 @@ const VMErasureBlog: React.FC = () => {
 
           {/* Overlooked Risk Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Overlooked Risk: Incomplete VM Erasure
               </h2>
@@ -107,9 +107,9 @@ const VMErasureBlog: React.FC = () => {
               </p>
 
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-8 mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Common Misconception
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg mb-4">
                   IT administrators often assume that terminating or deleting a
                   virtual machine permanently removes all associated data.
@@ -130,7 +130,7 @@ const VMErasureBlog: React.FC = () => {
 
           {/* Challenges Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Challenges in Secure VM Erasure
               </h2>
@@ -141,9 +141,9 @@ const VMErasureBlog: React.FC = () => {
 
               <div className="space-y-8 mt-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Residual Virtual Disk Files
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Virtual Machines use virtual disk files like VHDX and VMDK
                     that remain in the system or Network Attached Storage (NAS)
@@ -154,9 +154,9 @@ const VMErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-teal-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Data Recovery from Snapshots & Backups
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Simply deleting, terminating, or shutting down a VM doesn't
                     mean the data is permanently removed. Data can still be
@@ -166,9 +166,9 @@ const VMErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-cyan-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Multi-VM Environment Complexity
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Since multiple VMs can be hosted on a single physical
                     machine, it's not possible to erase a single VM securely
@@ -179,9 +179,9 @@ const VMErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-purple-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Compliance & Regulation Complexity
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     The challenges extend beyond technology into compliance and
                     regulation. Data protection laws focus on securing
@@ -196,7 +196,7 @@ const VMErasureBlog: React.FC = () => {
 
           {/* NIST & IEEE Guidelines */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 NIST & IEEE Guidelines for VM Sanitization
               </h2>
@@ -210,9 +210,9 @@ const VMErasureBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  <h2 className="text-xl font-bold text-slate-900 mb-3">
                     NIST SP 800-125
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     NIST's Special Publication 800-125 Section 5.5 (Disposition)
                     outlines procedures for virtualization environments and
@@ -222,9 +222,9 @@ const VMErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  <h2 className="text-xl font-bold text-slate-900 mb-3">
                     IEEE 2883:2022
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     The modern IEEE 2883:2022 standard explicitly focuses on
                     removing all instances of stored data, including data in
@@ -252,9 +252,9 @@ const VMErasureBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h3 className="font-bold text-lg mb-3">
+                  <h2 className="font-bold text-lg mb-3">
                     1. Incorporate VM Erasure in Data Policies
-                  </h3>
+                  </h2>
                   <p className="leading-loose">
                     Organizations must incorporate VM erasure in their
                     organizational data management policy, including specifying
@@ -263,9 +263,9 @@ const VMErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h3 className="font-bold text-lg mb-3">
+                  <h2 className="font-bold text-lg mb-3">
                     2. Erase Every Virtual Data Source
-                  </h3>
+                  </h2>
                   <p className="leading-loose">
                     Identify every location where the Virtual Machine's data
                     might be stored — including virtual disk files (VMDK, VHD,
@@ -275,9 +275,9 @@ const VMErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h3 className="font-bold text-lg mb-3">
+                  <h2 className="font-bold text-lg mb-3">
                     3. Perform Erasure — Not Deletion
-                  </h3>
+                  </h2>
                   <p className="leading-loose">
                     Similar to physical drives, deleting a VM or its disk file
                     doesn't remove data from storage; it simply marks space as
@@ -287,9 +287,9 @@ const VMErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h3 className="font-bold text-lg mb-3">
+                  <h2 className="font-bold text-lg mb-3">
                     4. Maintain Verifiable Erasure Reports
-                  </h3>
+                  </h2>
                   <p className="leading-loose">
                     VM erasure reports are crucial for meeting compliance with
                     regulations like EU-GDPR, CCPA, HIPAA, SOX, and standards
@@ -299,9 +299,9 @@ const VMErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h3 className="font-bold text-lg mb-3">
+                  <h2 className="font-bold text-lg mb-3">
                     5. Use Professional VM Eraser Software
-                  </h3>
+                  </h2>
                   <p className="leading-loose mb-4">
                     IT admins should use tested and secure software for VM
                     erasure. <strong>D-Secure <Link to="/products/virtual-machine-eraser" className="text-emerald-600 hover:underline font-medium">Virtual Machine Eraser</Link></strong>{" "}

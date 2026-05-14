@@ -25,7 +25,7 @@ export default function MacErasurePage() {
   const features = [
     {
       title: "Apple Silicon Native Support",
-      description: "Unlike legacy erasure tools that struggle with modern architecture, D-Secure natively supports M1, M2, M3, and M4 chips directly through Cryptographic Erase implementation.",
+      description: "D-Secure natively supports Apple M1, M2, M3, and M4 chips using direct Cryptographic Erase, overcoming limitations of legacy erasure tools.",
     },
     {
       title: "T2 Security Chip Integration",
@@ -86,7 +86,7 @@ export default function MacErasurePage() {
                   <div className="w-12 h-12 bg-slate-100 text-slate-800 rounded-xl flex items-center justify-center mb-6">
                     <LightningIcon className="w-6 h-6" filled={true} />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 block">{feature.title}</h3>
+                  <h2 className="text-xl font-bold text-slate-900 mb-3 block">{feature.title}</h2>
                   <p className="text-slate-600 text-sm leading-relaxed">{feature.description}</p>
                 </div>
               </Reveal>
@@ -137,7 +137,7 @@ export default function MacErasurePage() {
                 <div className="absolute top-0 right-0 p-8 opacity-5">
                   <CpuIcon className="w-64 h-64" filled={true} />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-6 relative z-10">Supported Apple Hardware</h3>
+                <h2 className="text-xl font-bold text-slate-900 mb-6 relative z-10">Supported Apple Hardware</h2>
                 <div className="grid grid-cols-2 gap-4 relative z-10">
                   <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                     <div className="font-bold text-slate-800 mb-1">MacBook Pro</div>

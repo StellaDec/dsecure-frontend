@@ -68,7 +68,7 @@ const ResearchHubPage: React.FC = () => {
     <div className="min-h-screen bg-slate-50 overflow-hidden">
       <SEOHead 
         title="D-Secure Lab | High-Authority Data Security Research Hub"
-        description="Access enterprise-grade technical research, benchmark studies, and security whitepapers. Deep-dives into NIST 800-88, ZTA sanitization, and data destruction trends."
+        description="Access technical research, benchmark studies, and whitepapers on NIST 800-88, ZTA, and data destruction."
         canonicalUrl="https://dsecuretech.com/resources/research"
       />
 
@@ -149,7 +149,7 @@ const ResearchHubPage: React.FC = () => {
 
                     <div className="mb-8">
                        <p className="text-[10px] font-black text-emerald-600 uppercase tracking-[0.3em] mb-4">{asset.category}</p>
-                       <h3 className="text-2xl font-black text-slate-900 mb-6 group-hover:text-emerald-800 transition-colors">{asset.title}</h3>
+                       <h2 className="text-2xl font-black text-slate-900 mb-6 group-hover:text-emerald-800 transition-colors">{asset.title}</h2>
                        <p className="text-slate-500 text-sm leading-relaxed font-medium">
                           {asset.desc}
                        </p>

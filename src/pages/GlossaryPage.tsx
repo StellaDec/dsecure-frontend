@@ -49,6 +49,216 @@ export default function GlossaryPage() {
       term: "Tamper-Proof Audit Log",
       definition: "A system-generated record of sanitization events that cannot be modified or deleted, ensuring the integrity of compliance evidence.",
       category: "Technical"
+    },
+    {
+      term: "ATA Secure Erase",
+      definition: "A firmware-level command used to sanitize all user-addressable storage areas on an ATA-compatible drive (HDD or SSD).",
+      category: "Technical"
+    },
+    {
+      term: "Bad Sector",
+      definition: "A section of a storage medium that has become physically damaged or is unable to store data reliably, potentially harboring residual data fragments.",
+      category: "Hardware"
+    },
+    {
+      term: "BSI (German Federal Office)",
+      definition: "The German Federal Office for Information Security, which sets rigorous standards for data security and information technology within the EU.",
+      category: "Standards"
+    },
+    {
+      term: "Certificate of Destruction (CoD)",
+      definition: "A formal, digitally signed document proving that data was sanitized according to specific standards on a specific device at a specific time.",
+      category: "Compliance"
+    },
+    {
+      term: "Chain of Custody",
+      definition: "The chronological documentation showing the seizure, custody, control, transfer, analysis, and disposition of physical assets containing data.",
+      category: "Lifecycle"
+    },
+    {
+      term: "Circular Economy",
+      definition: "An economic system aimed at eliminating waste and the continual use of resources, specifically by repurposing hardware instead of shredding it.",
+      category: "ESG"
+    },
+    {
+      term: "DCO (Device Configuration Overlay)",
+      definition: "A hidden area on a drive that allows vendors to specify a drive's capacity. D-Secure identifies and sanitizes this area to ensure zero data leakage.",
+      category: "Hardware"
+    },
+    {
+      term: "De-gaussing",
+      definition: "The process of reducing or eliminating a remnant magnetic field by applying an opposite magnetic field. Primarily used for magnetic tapes and older HDDs.",
+      category: "Technical"
+    },
+    {
+      term: "DoD 5220.22-M",
+      definition: "A 3-pass overwrite standard originally developed by the U.S. Department of Defense for sanitizing magnetic media.",
+      category: "Standards"
+    },
+    {
+      term: "E-Waste (Electronic Waste)",
+      definition: "Discarded electrical or electronic devices. D-Secure's erasure mission directly reduces e-waste by enabling the safe reuse of hardware.",
+      category: "ESG"
+    },
+    {
+      term: "ESG (Environmental, Social, and Governance)",
+      definition: "A set of standards for a company's operations that socially conscious investors use to screen potential investments.",
+      category: "ESG"
+    },
+    {
+      term: "HPA (Host Protected Area)",
+      definition: "An area on a hard drive that is typically not visible to an operating system. D-Secure unlocks and sanitizes the HPA to ensure complete data removal.",
+      category: "Hardware"
+    },
+    {
+      term: "IEEE 2883-2022",
+      definition: "The first global standard specifically focused on the sanitization of storage media, developed by the IEEE Computer Society.",
+      category: "Standards"
+    },
+    {
+      term: "ITAD (IT Asset Disposition)",
+      definition: "The practice of disposing of IT assets in a safe and ecologically responsible manner, including data destruction and hardware recycling.",
+      category: "Industry"
+    },
+    {
+      term: "LBA (Logical Block Addressing)",
+      definition: "A common scheme used for specifying the location of blocks of data stored on computer storage devices.",
+      category: "Technical"
+    },
+    {
+      term: "MEK (Media Encryption Key)",
+      definition: "The key used to encrypt the actual data on a Self-Encrypting Drive (SED). Sanitizing this key renders the data unrecoverable.",
+      category: "Technical"
+    },
+    {
+      term: "NVMe Sanitize",
+      definition: "A specialized command set for NVMe drives that ensures all user data, including that in caches and hidden areas, is completely removed.",
+      category: "Technical"
+    },
+    {
+      term: "Overwrite",
+      definition: "A sanitization method that replaces existing data with new data (typically zeros or random patterns) to prevent data recovery.",
+      category: "Core"
+    },
+    {
+      term: "P-List (Primary Defect List)",
+      definition: "A list of factory-identified bad sectors on a drive. D-Secure cross-references this list during hardware auditing.",
+      category: "Hardware"
+    },
+    {
+      term: "G-List (Grown Defect List)",
+      definition: "A list of sectors that have failed after the drive left the factory. D-Secure probes the G-List to identify hidden data risks.",
+      category: "Hardware"
+    },
+    {
+      term: "PCI DSS",
+      definition: "Payment Card Industry Data Security Standard. A set of security standards designed to ensure all companies that process credit card information maintain a secure environment.",
+      category: "Compliance"
+    },
+    {
+      term: "PXE (Preboot eXecution Environment)",
+      definition: "A protocol that allows a computer to boot from a network interface, used by D-Secure for mass data center sanitization.",
+      category: "Technical"
+    },
+    {
+      term: "SSD (Solid State Drive)",
+      definition: "A storage device that uses integrated circuit assemblies to store data persistently, typically using flash memory.",
+      category: "Hardware"
+    },
+    {
+      term: "TRIM Command",
+      definition: "An ATA command that allows an operating system to inform an SSD which blocks of data are no longer considered in use.",
+      category: "Technical"
+    },
+    {
+      term: "WWN (World Wide Name)",
+      definition: "A unique identifier used in storage technologies like Fibre Channel and SAS to identify a specific hardware target.",
+      category: "Technical"
+    },
+    {
+      term: "Zero-Fill",
+      definition: "A simple sanitization method that replaces all addressable data on a drive with zeros.",
+      category: "Technical"
+    },
+    {
+      term: "Sanitize Device",
+      definition: "An ATA/ACS command that performs a hardware-level wipe of all blocks on a drive, including those not currently mapped to LBAs.",
+      category: "Technical"
+    },
+    {
+      term: "Deduplication",
+      definition: "A specialized data compression technique for eliminating duplicate copies of repeating data. D-Secure sanitizes deduplicated storage arrays at the logical level.",
+      category: "Technical"
+    },
+    {
+      term: "Forensic Recovery",
+      definition: "The process of retrieving data from a storage medium using specialized software or hardware after the data has been 'deleted'.",
+      category: "Security Risk"
+    },
+    {
+      term: "HIPAA",
+      definition: "Health Insurance Portability and Accountability Act. U.S. legislation that provides data privacy and security provisions for safeguarding medical information.",
+      category: "Compliance"
+    },
+    {
+      term: "LUN (Logical Unit Number)",
+      definition: "A unique identifier used to designate an individual or collection of physical or virtual storage devices addressed by a network protocol.",
+      category: "Enterprise"
+    },
+    {
+      term: "NAND Flash",
+      definition: "A type of non-volatile storage technology that does not require power to retain data. Used in SSDs and mobile devices.",
+      category: "Hardware"
+    },
+    {
+      term: "Over-provisioning",
+      definition: "The inclusion of extra storage capacity in an SSD that is not visible to the user. D-Secure ensures data in these areas is sanitized.",
+      category: "Hardware"
+    },
+    {
+      term: "Purge",
+      definition: "A sanitization action that renders data recovery infeasible even using advanced laboratory techniques. (NIST 800-88 definition).",
+      category: "Core"
+    },
+    {
+      term: "Reallocated Sector",
+      definition: "A sector that has been moved by the drive controller due to a failure. These sectors are a primary target for D-Secure auditing.",
+      category: "Hardware"
+    },
+    {
+      term: "SED (Self-Encrypting Drive)",
+      definition: "A hard drive or SSD with a circuit built into the controller chip that encrypts all data written to the media.",
+      category: "Hardware"
+    },
+    {
+      term: "SIEM (Security Information and Event Management)",
+      definition: "A field within computer security where software products and services combine security information and event management.",
+      category: "Enterprise"
+    },
+    {
+      term: "SOC 2",
+      definition: "A voluntary compliance standard for service organizations, developed by the American Institute of CPAs (AICPA).",
+      category: "Compliance"
+    },
+    {
+      term: "Write-Once Media",
+      definition: "Storage media that can only be written to once and never erased. D-Secure identifies these to prevent wasted sanitization cycles.",
+      category: "Technical"
+    },
+    {
+      term: "Wear Leveling",
+      definition: "A technique used by SSD controllers to prolong the life of the flash memory by distributing writes evenly across all blocks.",
+      category: "Technical"
+    },
+    {
+      term: "Gutmann Method",
+      definition: "An algorithm for securely erasing the contents of magnetic media, typically using a 35-pass overwrite sequence.",
+      category: "Standards"
+    },
+    {
+      term: "HDP (Hard Disk Password)",
+      definition: "A hardware-level password that locks access to a drive. D-Secure can bypass or reset these in managed enterprise environments.",
+      category: "Security"
     }
   ];
 

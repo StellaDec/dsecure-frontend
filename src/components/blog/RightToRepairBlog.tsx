@@ -40,9 +40,9 @@ const RightToRepairBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Right to Repair Movement
               </h2>
@@ -68,10 +68,10 @@ const RightToRepairBlog: React.FC = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Accurate Diagnosis
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Identify hardware issues quickly without
                     manufacturer-specific tools or expensive diagnostic
@@ -79,24 +79,24 @@ const RightToRepairBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">️ Reduces E-Waste</h4>
+                  <h3 className="font-bold text-lg mb-3">️ Reduces E-Waste</h3>
                   <p className="text-white/90 leading-relaxed">
                     Enable repairs that extend device life, reducing the number
                     of devices ending up in landfills.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3"> Cost Savings</h4>
+                  <h3 className="font-bold text-lg mb-3"> Cost Savings</h3>
                   <p className="text-white/90 leading-relaxed">
                     Independent repairs are often more affordable than
                     manufacturer services, saving consumers money.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Empowers Small Businesses
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Independent repair shops can compete fairly with
                     manufacturer-authorized service centers.

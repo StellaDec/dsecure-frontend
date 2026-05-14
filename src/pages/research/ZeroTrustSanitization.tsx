@@ -79,7 +79,8 @@ const ZeroTrustSanitization: React.FC = () => {
               </div>
               <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[1.05] tracking-tight text-slate-900 uppercase">
                 Architecting <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700">Zero-Trust Sanitization</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700">Zero-Trust Sanitization Framework</span>
+                <span className="block text-2xl md:text-3xl font-bold text-slate-400 mt-4 normal-case tracking-normal">Technical Guide to Verifiable Data Destruction</span>
               </h1>
               <p className="text-slate-600 text-xl md:text-2xl leading-relaxed mb-12 max-w-4xl font-medium">
                 Establishing verifiable digital certainty at the hardware decommissioning edge through automated, hardware-bound cryptographic primitives.
@@ -111,7 +112,7 @@ const ZeroTrustSanitization: React.FC = () => {
             <div className="lg:col-span-4 space-y-10 sticky top-32">
               <div className="bg-slate-50 border border-slate-100 rounded-[3rem] p-10 shadow-xl overflow-hidden relative group">
                 <div className="absolute top-0 right-0 px-8 py-10 opacity-5 group-hover:opacity-10 transition-opacity"><BookOpen className="w-24 h-24" /></div>
-                <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-10 relative">Framework Contents</h3>
+                <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-10 relative">Framework Contents</h2>
                 <div className="space-y-4 relative">
                   {zeroTrustChapters.map(chapter => (
                     <button
@@ -141,7 +142,7 @@ const ZeroTrustSanitization: React.FC = () => {
               
               <div className="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-[3rem] p-12 text-white shadow-3xl shadow-emerald-200 group relative overflow-hidden">
                  <div className="absolute top-0 left-0 p-10 opacity-10 group-hover:rotate-12 transition-transform"><Download className="w-24 h-24" /></div>
-                 <h4 className="text-3xl font-black mb-6 relative z-10 leading-tight">Download the <br /> Technical Blueprint</h4>
+                 <h3 className="text-3xl font-black mb-6 relative z-10 leading-tight">Download the <br /> Technical Blueprint</h3>
                  <p className="text-emerald-50 text-sm mb-10 relative z-10 font-medium italic opacity-80">
                    Includes architecture diagrams, bit-level API integration hooks, and CIS benchmark audit rules.
                  </p>
@@ -214,7 +215,7 @@ const ZeroTrustSanitization: React.FC = () => {
                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 not-prose mb-20">
                           <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 relative group overflow-hidden">
                              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><AlertTriangle className="w-16 h-16 text-orange-500" /></div>
-                             <h4 className="text-xl font-black text-orange-600 mb-6 uppercase tracking-wider">Legacy: Reactive Trust</h4>
+                             <h3 className="text-xl font-black text-orange-600 mb-6 uppercase tracking-wider">Legacy: Reactive Trust</h3>
                              <ul className="space-y-4 text-sm text-slate-500 font-bold">
                                 <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-slate-200" /> Batch-level reporting</li>
                                 <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-slate-200" /> Manual asset scanning</li>
@@ -223,7 +224,7 @@ const ZeroTrustSanitization: React.FC = () => {
                           </div>
                           <div className="bg-emerald-50/50 p-10 rounded-[2.5rem] border border-emerald-100 relative group overflow-hidden">
                              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><ShieldCheck className="w-16 h-16 text-emerald-600" /></div>
-                             <h4 className="text-xl font-black text-emerald-700 mb-6 uppercase tracking-wider">ZTA: Proactive Cert</h4>
+                             <h3 className="text-xl font-black text-emerald-700 mb-6 uppercase tracking-wider">ZTA: Proactive Cert</h3>
                              <ul className="space-y-4 text-sm text-emerald-900 font-bold">
                                 <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> UUID-bound telemetry</li>
                                 <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> API-triggered destruction</li>
@@ -283,7 +284,7 @@ const ZeroTrustSanitization: React.FC = () => {
                        <div className="bg-slate-50 border border-slate-100 p-12 rounded-[3.5rem] flex flex-col md:flex-row items-center gap-12 shadow-2xl not-prose relative overflow-hidden group">
                           <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-[40px] group-hover:scale-150 transition-transform"></div>
                           <div className="flex-1">
-                             <h5 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Immutable Auditability</h5>
+                             <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Immutable Auditability</h3>
                              <p className="text-xs text-slate-500 leading-relaxed font-bold">D-Secure Erasure Certificates utilize SHA-256 hashing to bundle asset metadata with technician signatures and lab verification codes, creating a tamper-evident compliance artifact.</p>
                              <div className="mt-8 flex gap-4">
                                 <div className="px-4 py-2 bg-emerald-50 text-emerald-700 text-[9px] font-black uppercase tracking-widest rounded-lg border border-emerald-100">Audit Ready</div>
@@ -315,14 +316,14 @@ const ZeroTrustSanitization: React.FC = () => {
                                  <card.icon className="w-6 h-6 text-emerald-600" />
                                </div>
                                <div>
-                                  <h6 className="text-slate-900 font-black uppercase tracking-widest text-[10px] mb-2">{card.title}</h6>
+                                  <h4 className="text-slate-900 font-black uppercase tracking-widest text-[10px] mb-2">{card.title}</h4>
                                   <p className="text-[10px] text-slate-500 leading-relaxed font-bold">{card.d}</p>
                                </div>
                             </div>
                           ))}
                        </div>
                        <div className="text-center bg-emerald-700 rounded-[3.5rem] p-16 not-prose shadow-3xl shadow-emerald-200">
-                          <h4 className="text-3xl font-black text-white mb-6 uppercase tracking-tighter">Ready to Architect?</h4>
+                          <h3 className="text-3xl font-black text-white mb-6 uppercase tracking-tighter">Ready to Architect?</h3>
                           <p className="text-emerald-50 mb-10 max-w-xl mx-auto font-bold opacity-80 uppercase tracking-widest text-[10px]">Access the D-Secure lab's complete 2026 technical deployment guide.</p>
                           <a href="#whitepaper-download" className="px-10 py-5 bg-white text-emerald-950 font-black rounded-2xl hover:bg-emerald-50 transition-all flex items-center gap-3 mx-auto w-fit shadow-2xl">
                              Request Blueprint v2.0

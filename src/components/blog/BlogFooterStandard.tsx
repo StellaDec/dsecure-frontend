@@ -122,7 +122,7 @@ const BlogFooterStandard: React.FC<BlogFooterStandardProps> = ({
             </Reveal>
 
             <Reveal>
-              <div className="mt-4 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+              <div className="mt-4">
                 <EnquiryForm blogId={blogId} blogTitle={blogTitle} />
               </div>
             </Reveal>

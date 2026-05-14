@@ -32,9 +32,9 @@ const CaptionCallFCCSettlementBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             {/* Intro */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -75,9 +75,9 @@ const CaptionCallFCCSettlementBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mt-4">
                 <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-red-900 mb-2">
+                  <h3 className="font-bold text-red-900 mb-2">
                     FCC Requirements
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-red-800 space-y-1">
                     <li>• Customer Proprietary Network Information (CPNI)</li>
                     <li>• Privacy disclosure requirements</li>
@@ -86,9 +86,9 @@ const CaptionCallFCCSettlementBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-red-900 mb-2">
+                  <h3 className="font-bold text-red-900 mb-2">
                     Industry Standards
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-red-800 space-y-1">
                     <li>• <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> data sanitization</li>
                     <li>• State privacy laws</li>
@@ -214,7 +214,7 @@ const CaptionCallFCCSettlementBlog: React.FC = () => {
 
         {/* D-Secure Solutions Section */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               D-Secure Regulatory Compliance
             </h2>
@@ -232,7 +232,7 @@ const CaptionCallFCCSettlementBlog: React.FC = () => {
                     className="w-5 h-5 text-red-600"
                     filled={true}
                   />
-                  <h4 className="font-bold text-slate-900">Policy Templates</h4>
+                  <h3 className="font-bold text-slate-900">Policy Templates</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Pre-built policy templates aligned with FCC, PCI, HIPAA, and
@@ -242,9 +242,9 @@ const CaptionCallFCCSettlementBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-red-50 to-rose-50 p-6 rounded-xl border border-red-100">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-red-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Certified Erasure
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> compliant erasure with verification ensures data
@@ -254,9 +254,9 @@ const CaptionCallFCCSettlementBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-red-50 to-rose-50 p-6 rounded-xl border border-red-100">
                 <div className="flex items-center gap-2 mb-3">
                   <GlobeIcon className="w-5 h-5 text-red-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Audit-Ready Reports
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Tamper-proof certificates and comprehensive logs ready for
@@ -266,9 +266,9 @@ const CaptionCallFCCSettlementBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-red-50 to-rose-50 p-6 rounded-xl border border-red-100">
                 <div className="flex items-center gap-2 mb-3">
                   <StarIcon className="w-5 h-5 text-red-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Vendor Management
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Monitor and verify third-party <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> partner compliance with
@@ -278,9 +278,9 @@ const CaptionCallFCCSettlementBlog: React.FC = () => {
             </div>
 
             <div className="bg-slate-900 rounded-xl p-6 text-white">
-              <h4 className="font-bold mb-4 text-red-400">
+              <h3 className="font-bold mb-4 text-red-400">
                 Regulatory Protection with D-Secure
-              </h4>
+              </h3>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-start gap-2">
                   <CheckIcon

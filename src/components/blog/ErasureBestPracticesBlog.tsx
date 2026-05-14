@@ -35,9 +35,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             {/* Intro */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -77,9 +77,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mt-4">
                 <div className="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-indigo-900 mb-2">
+                  <h3 className="font-bold text-indigo-900 mb-2">
                     HDD (Hard Disk Drives)
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-indigo-800 space-y-1">
                     <li>• Software overwrite (1-3 passes)</li>
                     <li>• Degaussing for maximum security</li>
@@ -88,9 +88,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-indigo-900 mb-2">
+                  <h3 className="font-bold text-indigo-900 mb-2">
                     SSD (Solid State Drives)
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-indigo-800 space-y-1">
                     <li>• ATA Secure Erase command</li>
                     <li>• Cryptographic erasure (SEDs)</li>
@@ -99,9 +99,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-indigo-900 mb-2">
+                  <h3 className="font-bold text-indigo-900 mb-2">
                     Mobile Devices
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-indigo-800 space-y-1">
                     <li>• Factory reset with verification</li>
                     <li>• MDM-initiated remote wipe</li>
@@ -110,9 +110,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-indigo-900 mb-2">
+                  <h3 className="font-bold text-indigo-900 mb-2">
                     Servers & Arrays
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-indigo-800 space-y-1">
                     <li>• RAID-aware erasure</li>
                     <li>• Controller-level sanitization</li>
@@ -195,7 +195,7 @@ const ErasureBestPracticesBlog: React.FC = () => {
 
         {/* D-Secure Solutions Section */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               D-Secure Best Practice Implementation
             </h2>
@@ -213,9 +213,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
                     className="w-5 h-5 text-blue-600"
                     filled={true}
                   />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Policy Enforcement
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Configure organization-wide policies that automatically select
@@ -226,9 +226,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-blue-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Automated Verification
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Built-in verification ensures every erasure is confirmed.
@@ -238,9 +238,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100">
                 <div className="flex items-center gap-2 mb-3">
                   <GlobeIcon className="w-5 h-5 text-blue-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Compliance Templates
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Pre-configured templates for GDPR, HIPAA, PCI-DSS, and other
@@ -250,9 +250,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100">
                 <div className="flex items-center gap-2 mb-3">
                   <StarIcon className="w-5 h-5 text-blue-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Audit-Ready Reports
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Generate comprehensive reports with all required documentation
@@ -262,9 +262,9 @@ const ErasureBestPracticesBlog: React.FC = () => {
             </div>
 
             <div className="bg-slate-900 rounded-xl p-6 text-white">
-              <h4 className="font-bold mb-4 text-blue-400">
+              <h3 className="font-bold mb-4 text-blue-400">
                 Best Practices Built Into D-Secure
-              </h4>
+              </h3>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-start gap-2">
                   <CheckIcon

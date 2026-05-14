@@ -44,10 +44,10 @@ const StatutoryRegulatoryComplianceDataErasureBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         {/* Introduction */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-6">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <p className="text-slate-700 leading-loose text-xl">
               Statutory and regulatory compliance frameworks require
               organizations to protect sensitive information throughout its
@@ -71,7 +71,7 @@ const StatutoryRegulatoryComplianceDataErasureBlog: React.FC = () => {
 
         {/* Statutory Compliance */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900">
               Purpose of Statutory Compliance
             </h2>
@@ -130,7 +130,7 @@ const StatutoryRegulatoryComplianceDataErasureBlog: React.FC = () => {
 
         {/* Role of Data Erasure */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900">
               Role of Data Erasure in Compliance
             </h2>
@@ -183,7 +183,7 @@ const StatutoryRegulatoryComplianceDataErasureBlog: React.FC = () => {
 
         {/* D-Secure's Role */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900">
               Enabling Compliance with Certified Data Erasure
             </h2>

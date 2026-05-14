@@ -169,7 +169,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                 
                 <Reveal delayMs={100}>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] mb-4 tracking-tight">
-                    Securely Erase <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">USB & Flash</span> Drives
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">Removable Media Erasure</span>: Professional USB & Flash Drive Sanitization
                   </h1>
                 </Reveal>
 
@@ -236,9 +236,9 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                              <Usb className="w-16 h-16 text-white drop-shadow-xl" />
                           </div>
 
-                          <h3 className="text-white text-3xl font-bold tracking-tight text-center mb-2">
+                          <h2 className="text-white text-3xl font-bold tracking-tight text-center mb-2">
                              Removable Media
-                          </h3>
+                          </h2>
                           <p className="text-white/70 text-xs text-center tracking-wide uppercase">
                             Flash Storage Eraser
                           </p>
@@ -291,18 +291,39 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {capabilities.map((item, i) => (
-                <Reveal key={item.name} delayMs={i * 100}>
+                <Reveal key={item.name} delayMs={item.name === "USB Thumb Drives" ? 0 : item.name === "SD & MicroSD Cards" ? 100 : item.name === "CompactFlash & Micro Drives" ? 200 : 300}>
                   <div className="group bg-slate-50 hover:bg-white rounded-2xl p-8 border border-slate-200 hover:border-emerald-300 hover:shadow-2xl hover:shadow-emerald-200/20 transition-all duration-500 text-center">
                     <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
                        {item.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">{item.name}</h3>
+                    <h2 className="text-xl font-bold text-slate-900 mb-4">{item.name}</h2>
                     <p className="text-slate-600 leading-relaxed text-sm">
                       {item.desc}
                     </p>
                   </div>
                 </Reveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SEO Content Enrichment - Flash Sanitization Challenges */}
+        {/* Is section ko flash media ki technical complexity samjhane ke liye add kiya gaya hai */}
+        <section className="py-16 bg-slate-50 border-y border-slate-200">
+          <div className="container-app">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8">The Technical Challenges of Flash Media Sanitization</h2>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>
+                  Unlike traditional Hard Disk Drives (HDDs) that store data on magnetic platters, flash-based media like USB thumb drives and SD cards use NAND flash memory. This technology presents unique challenges for data erasure due to its internal architecture, specifically the role of the Flash Translation Layer (FTL). The FTL manages wear-leveling by constantly moving data across physical cells to prevent premature failure. This means that a simple "delete" or "format" command only updates the file system index, leaving the original data blocks intact and easily recoverable by forensic software.
+                </p>
+                <p>
+                  Another critical hurdle in flash sanitization is the presence of "bad blocks" and over-provisioned space. NAND flash often contains cells that are marked as unusable by the controller but may still contain readable data from previous write operations. Traditional overwriting methods frequently fail to reach these hidden areas. D-Secure's Removable Media Eraser is engineered to address these complexities by utilizing hardware-level commands such as Block Erase and Cryptographic Purge. These methods ensure that every physical cell, including hidden and retired blocks, is properly sanitized according to NIST 800-88 Revision 1 standards.
+                </p>
+                <p>
+                  Furthermore, the diversity of flash controllers in the market makes it difficult to implement a one-size-fits-all solution. Different manufacturers use proprietary wear-leveling and garbage collection algorithms that can interfere with standard erasure processes. Our solution is rigorously tested across thousands of removable media variants to guarantee that the erasure commands are executed correctly by the hardware controller. By providing a tamper-proof certificate of erasure, we give organizations the confidence that their portable storage devices are truly data-free before they are reassigned or disposed of.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -331,7 +352,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                         <Zap className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">Simultaneous Erasure</h4>
+                        <h3 className="text-xl font-bold mb-2">Simultaneous Erasure</h3>
                         <p className="text-slate-400 leading-relaxed">Permanently erase 24+ flash drives rapidly and simultaneously, drastically reducing system downtime.</p>
                       </div>
                     </div>
@@ -342,7 +363,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                         <GearIcon className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">Flexible Deployment</h4>
+                        <h3 className="text-xl font-bold mb-2">Flexible Deployment</h3>
                         <p className="text-slate-400 leading-relaxed">Deploy as a standalone desktop application or an MSI package for enterprise-wide user access.</p>
                       </div>
                     </div>
@@ -353,7 +374,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                         <CheckIcon className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">Managed Console Integration</h4>
+                        <h3 className="text-xl font-bold mb-2">Managed Console Integration</h3>
                         <p className="text-slate-400 leading-relaxed">Maximize erasure processes by integrating with D-Secure Management Console for centralized reporting.</p>
                       </div>
                     </div>
@@ -366,7 +387,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                    <div className="bg-gradient-to-br from-emerald-600 to-teal-800 p-1 rounded-3xl shadow-2xl">
                       <div className="bg-slate-900 rounded-[22px] p-8 lg:p-12 overflow-hidden relative">
                          <div className="absolute top-0 right-0 p-4 opacity-20"><RefreshCcw className="w-24 h-24 animate-spin-slow" /></div>
-                         <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6">Why Choose D-Secure?</h3>
+                         <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">Why Choose D-Secure?</h2>
                          <ul className="space-y-4">
                             {[
                               "ISO & NIST standards support",
@@ -417,7 +438,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                   <div className="lg:col-span-2">
                      <Reveal>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-4">Bulletproof Audit Trail</h3>
+                        <h2 className="text-2xl font-bold text-slate-900 mb-4">Bulletproof Audit Trail</h2>
                         <p className="text-slate-600 mb-8 leading-relaxed">
                            Every erasure process generates a digitally signed, tamper-proof certificate of erasure. This detailed report includes hardware asset identifiers, erasure standard used, and verification result, providing 100% proof of compliance for audits.
                         </p>

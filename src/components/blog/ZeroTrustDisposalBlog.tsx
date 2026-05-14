@@ -20,7 +20,7 @@ const ZeroTrustDisposalBlog: React.FC = () => {
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
               <span className="bg-gradient-to-r from-rose-600 to-red-600 bg-clip-text text-transparent">
-                Zero Trust Data Disposal
+                Zero Trust Data Disposal: A Modern Strategy for Secure ITAD
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -32,9 +32,9 @@ const ZeroTrustDisposalBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             {/* Intro */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -70,7 +70,7 @@ const ZeroTrustDisposalBlog: React.FC = () => {
               </h2>
               <div className="grid md:grid-cols-3 gap-4 mt-4">
                 <div className="bg-rose-50 border border-rose-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-rose-900 mb-2">🔐 Identity</h4>
+                  <h3 className="font-bold text-rose-900 mb-2">🔐 Identity</h3>
                   <ul className="text-sm text-rose-800 space-y-1">
                     <li>• Verify operator authorization</li>
                     <li>• Multi-factor authentication</li>
@@ -79,7 +79,7 @@ const ZeroTrustDisposalBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-orange-900 mb-2">📱 Device</h4>
+                  <h3 className="font-bold text-orange-900 mb-2">📱 Device</h3>
                   <ul className="text-sm text-orange-800 space-y-1">
                     <li>• Identify device type precisely</li>
                     <li>• Verify serial number accuracy</li>
@@ -88,9 +88,9 @@ const ZeroTrustDisposalBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-amber-900 mb-2">
+                  <h3 className="font-bold text-amber-900 mb-2">
                     ✅ Verification
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-amber-800 space-y-1">
                     <li>• Post-erasure read verification</li>
                     <li>• Sampling-based confirmation</li>
@@ -175,7 +175,7 @@ const ZeroTrustDisposalBlog: React.FC = () => {
 
         {/* D-Secure Solutions Section */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               D-Secure Zero Trust Features
             </h2>
@@ -190,9 +190,9 @@ const ZeroTrustDisposalBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-rose-50 to-red-50 p-6 rounded-xl border border-rose-100">
                 <div className="flex items-center gap-2 mb-3">
                   <LockIcon className="w-5 h-5 text-rose-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Identity Verification
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Multi-factor authentication, role-based access, and complete
@@ -203,9 +203,9 @@ const ZeroTrustDisposalBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-rose-50 to-red-50 p-6 rounded-xl border border-rose-100">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-rose-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Automated Verification
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Post-erasure verification reads sectors to confirm
@@ -216,9 +216,9 @@ const ZeroTrustDisposalBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-rose-50 to-red-50 p-6 rounded-xl border border-rose-100">
                 <div className="flex items-center gap-2 mb-3">
                   <GlobeIcon className="w-5 h-5 text-rose-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Tamper-Proof Audit Reports
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Digitally signed compliance reports with certificate stored in
@@ -229,7 +229,7 @@ const ZeroTrustDisposalBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-rose-50 to-red-50 p-6 rounded-xl border border-rose-100">
                 <div className="flex items-center gap-2 mb-3">
                   <UsersIcon className="w-5 h-5 text-rose-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">Vendor Oversight</h4>
+                  <h3 className="font-bold text-slate-900">Vendor Oversight</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Real-time visibility into <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> partner operations. Verify
@@ -239,9 +239,9 @@ const ZeroTrustDisposalBlog: React.FC = () => {
             </div>
 
             <div className="bg-slate-900 rounded-xl p-6 text-white">
-              <h4 className="font-bold mb-4 text-rose-400">
+              <h3 className="font-bold mb-4 text-rose-400">
                 Zero Trust Controls in D-Secure
-              </h4>
+              </h3>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-start gap-2">
                   <CheckIcon

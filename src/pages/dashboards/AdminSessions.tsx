@@ -683,9 +683,9 @@ export default function AdminSessions() {
         {/* Filters */}
         <div className="card p-4 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-slate-900">
               Filters & Search
-            </h3>
+            </h2>
             <button
               onClick={() => {
                 setFromDate("");

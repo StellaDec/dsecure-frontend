@@ -176,7 +176,7 @@ const FreezeStateAdvancedPage = memo(() => {
                     </div>
                   </div>
                   <h1 className="text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900">
-                    Advanced <span className="text-emerald-600">Eraser</span>
+                    <span className="text-emerald-600">Freeze State Advanced Eraser</span>: Deep-Level Sector Sanitization & Security
                   </h1>
                   <p className="text-xl text-slate-600 leading-relaxed font-medium max-w-xl">
                     For environments that demand absolute data destruction. Advanced Eraser wipes redirected sectors beyond recovery on every reboot, meeting global security standards.
@@ -394,7 +394,7 @@ const FreezeStateAdvancedPage = memo(() => {
                           ].map((item) => (
                             <div key={item.title} className="p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500 group">
                                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-slate-400 mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-sm">
-                                  {React.cloneElement(item.icon as React.ReactElement, { className: "w-6 h-6" })}
+                                  {React.cloneElement(item.icon as any, { className: "w-6 h-6" })}
                                </div>
                                <h5 className="font-black uppercase tracking-widest text-xs mb-3 text-slate-900 italic">{item.title}</h5>
                                <p className="text-[11px] text-slate-500 font-medium leading-relaxed">{item.desc}</p>
@@ -507,7 +507,7 @@ const FreezeStateAdvancedPage = memo(() => {
                           ].map((item) => (
                              <li key={item.title} className="flex gap-12">
                                 <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 shrink-0 text-emerald-400 hover:bg-emerald-600 hover:text-white transition-all">
-                                   {React.cloneElement(item.icon, { className: "w-6 h-6" })}
+                                   {React.cloneElement(item.icon as any, { className: "w-6 h-6" })}
                                 </div>
                                  <div className="space-y-1.5">
                                     <p className="text-sm font-bold uppercase tracking-widest text-emerald-400">{item.title}</p>

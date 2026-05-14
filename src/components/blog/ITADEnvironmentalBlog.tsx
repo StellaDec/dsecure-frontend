@@ -42,9 +42,9 @@ const ITADEnvironmentalBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Environmental Impact of E-Waste
               </h2>
@@ -56,9 +56,9 @@ const ITADEnvironmentalBlog: React.FC = () => {
                 in landfills.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Dangerous Recovery Methods
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Toxic substances are released into the environment when
                   approaches like open-air burning and acid baths are employed
@@ -71,7 +71,7 @@ const ITADEnvironmentalBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How E-Waste Pollutes Our Environment
               </h2>
@@ -81,36 +81,36 @@ const ITADEnvironmentalBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Land Pollution
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Toxic chemicals and non-biodegradable components seep into
                     and pollute the land
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Air Pollution
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     When e-waste is heated, toxic melted plastic fumes rise and
                     pollute the atmosphere
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Water Pollution
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Hazardous chemicals from landfills seep downwards to pollute
                     underground water
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Biodiversity Loss
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Rain causes polluted soil to release heavy metals into water
                     systems, harming marine life
@@ -159,7 +159,7 @@ const ITADEnvironmentalBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Services Drive Environmental Sustainability
               </h2>
@@ -170,9 +170,9 @@ const ITADEnvironmentalBlog: React.FC = () => {
               </p>
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Compliance with Regulations
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Certified ITADs utilize systems and procedures that adhere
                     to local, national, and international e-waste disposal
@@ -180,9 +180,9 @@ const ITADEnvironmentalBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Data Sanitization Over Destruction
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     ITADs opt for data sanitization instead of physical
                     destruction as a last resort. This approach destroys data
@@ -190,9 +190,9 @@ const ITADEnvironmentalBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Residual Value Recovery
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Once media devices have been sanitized, they can be resold,
                     donated, or repurposed. Businesses can derive residual value
@@ -200,9 +200,9 @@ const ITADEnvironmentalBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Component Recycling
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Even when devices are too old for reuse, motherboards and
                     chips may contain reusable parts. Various materials can be
@@ -214,7 +214,7 @@ const ITADEnvironmentalBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Circular Economy and <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
               </h2>
@@ -226,9 +226,9 @@ const ITADEnvironmentalBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Market Growth
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     At a CAGR of 12%, the global IT asset disposal market was
                     estimated at USD 18,572 million in 2021 and is anticipated
@@ -236,9 +236,9 @@ const ITADEnvironmentalBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Recycling Gap
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Only <strong>17% of the 53.6 million tonnes</strong> of
                     e-waste produced in 2019 was recycled. ITADs have the

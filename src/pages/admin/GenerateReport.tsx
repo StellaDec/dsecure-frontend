@@ -77,7 +77,7 @@ export default function GenerateReport() {
     }
   };
 
-  const handleFileSelect = (ref: React.RefObject<HTMLInputElement>) => {
+  const handleFileSelect = (ref: React.RefObject<HTMLInputElement | null>) => {
     ref.current?.click();
   };
 

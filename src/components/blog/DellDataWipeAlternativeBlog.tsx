@@ -40,9 +40,9 @@ const DellDataWipeAlternativeBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding Dell Data Wipe Feature
               </h2>
@@ -60,9 +60,9 @@ const DellDataWipeAlternativeBlog: React.FC = () => {
                 unauthorized data wipes.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Important Limitation
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Dell Data Wipe may not be suitable for businesses looking to
                   comply with data protection regulations like GDPR, CCPA,
@@ -75,7 +75,7 @@ const DellDataWipeAlternativeBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Is Dell Data Wipe Suitable for Enterprise Use?
               </h2>
@@ -88,9 +88,9 @@ const DellDataWipeAlternativeBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Time-Consuming Process
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     If your organization has hundreds of Dell devices, wiping
                     every device individually becomes extremely time-consuming
@@ -98,9 +98,9 @@ const DellDataWipeAlternativeBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     No Certificate of Destruction
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Dell Data Wipe does not generate any Certificate of
                     Destruction (CoD), which acts as proof of erasure and is
@@ -110,9 +110,9 @@ const DellDataWipeAlternativeBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Limited Device Support
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Organizations typically have devices from multiple
                     manufacturers, servers, and various storage types. Dell Data
@@ -121,9 +121,9 @@ const DellDataWipeAlternativeBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     No Standardization
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Without a unified tool, organizations cannot establish a
                     standardized data-wiping process across physically
@@ -193,7 +193,7 @@ const DellDataWipeAlternativeBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Importance of Certificate of Destruction
               </h2>

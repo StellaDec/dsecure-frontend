@@ -41,9 +41,9 @@ const DataRemediationErasureBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding Data Remediation
               </h2>
@@ -56,9 +56,9 @@ const DataRemediationErasureBlog: React.FC = () => {
                 classification, secure handling, and cleansing.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Why It Matters
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   No organization today can afford to ignore data remediation —
                   it reduces dirty data, storage footprints, and associated
@@ -173,7 +173,7 @@ const DataRemediationErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 6 Key Benefits of Data Remediation
               </h2>
@@ -183,9 +183,9 @@ const DataRemediationErasureBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Reduce Costs
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Reduce overall costs of storing and managing data when
                     remediation is undertaken at regular intervals.
@@ -193,9 +193,9 @@ const DataRemediationErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Protect Sensitive Data
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Segmenting and classifying data helps protect highly
                     confidential information and enables appropriate risk
@@ -204,9 +204,9 @@ const DataRemediationErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Prevent Penalties
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Data breach risks, financial loss through fines and
                     lawsuits, and brand damage can be prevented through
@@ -215,9 +215,9 @@ const DataRemediationErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Compliance with Laws
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Holding data beyond recommended retention periods creates
                     greater risks. Cleaning up data reduces exposure and
@@ -226,9 +226,9 @@ const DataRemediationErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Mitigate Leakage Risks
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Remediation protects both structured and unstructured
                     sensitive information through periodic technical evaluation
@@ -237,9 +237,9 @@ const DataRemediationErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Save Time and Resources
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Data remediation accelerates retrieval of relevant
                     information in structured format, enabling teams to
@@ -251,7 +251,7 @@ const DataRemediationErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Role of Data Sanitization in Remediation
               </h2>
@@ -261,9 +261,9 @@ const DataRemediationErasureBlog: React.FC = () => {
                 changes to efficiently drive data remediation efforts.
               </p>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Compliance with Sanitization Standards
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed mb-4">
                   As part of data cleansing obligations, organizations must
                   ensure their media sanitization efforts comply with global

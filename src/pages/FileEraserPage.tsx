@@ -867,9 +867,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </div>
 
                         {/* Product Name */}
-                        <h3 className="text-white text-xl lg:text-3xl font-bold tracking-tight text-center mb-1 lg:mb-2">
+                        <h2 className="text-white text-xl lg:text-3xl font-bold tracking-tight text-center mb-1 lg:mb-2">
                           File Eraser
-                        </h3>
+                        </h2>
 
                         {/* Tagline */}
                         <p className="text-white/70 text-[10px] lg:text-xs text-center tracking-wide uppercase">
@@ -952,9 +952,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     >
                       {item.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    <h2 className="text-xl font-bold text-slate-900 mb-3">
                       {item.name}
-                    </h3>
+                    </h2>
                     <p className="text-slate-600 leading-relaxed">
                       {item.desc}
                     </p>
@@ -1124,9 +1124,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <h4 className="text-white font-bold text-lg">
+                          <h3 className="text-white font-bold text-lg">
                             File Eraser
-                          </h4>
+                          </h3>
                           <p className="text-emerald-400 text-sm font-medium">
                             Product Demo
                           </p>
@@ -1157,9 +1157,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                       </span>
                       <span className="text-slate-400 text-xs">6:10</span>
                     </div>
-                    <h3 className="font-bold text-slate-900 mb-1">
+                    <h2 className="font-bold text-slate-900 mb-1">
                       Product Demo
-                    </h3>
+                    </h2>
                     <p className="text-sm text-slate-500">
                       Complete walkthrough of File Eraser features
                     </p>
@@ -1611,7 +1611,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     <div className="w-12 h-12 mx-auto mb-3 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckIcon className="w-6 h-6 text-emerald-400" />
                     </div>
-                    <h3 className="font-bold text-white mb-2">{std.name}</h3>
+                    <h2 className="font-bold text-white mb-2">{std.name}</h2>
                     <p className="text-xs text-slate-300 leading-relaxed flex-grow">
                       {std.desc}
                     </p>
@@ -1647,9 +1647,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                       {p.icon}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">
+                      <h2 className="text-xl font-bold text-slate-900 mb-2">
                         {p.name}
-                      </h3>
+                      </h2>
                       <p className="text-sm text-slate-500">{p.versions}</p>
                     </div>
                   </div>
@@ -1683,7 +1683,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     <div className="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors flex-shrink-0">
                       {f.icon}
                     </div>
-                    <h3 className="font-bold text-slate-900 mb-2">{f.title}</h3>
+                    <h2 className="font-bold text-slate-900 mb-2">{f.title}</h2>
                     <p className="text-sm text-slate-600 leading-relaxed flex-grow">
                       {f.desc}
                     </p>
@@ -1720,9 +1720,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         {u.icon}
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">
+                        <h2 className="text-xl font-bold text-slate-900 mb-2">
                           {u.title}
-                        </h3>
+                        </h2>
                         <p className="text-slate-600 leading-relaxed">
                           {u.desc}
                         </p>
@@ -1762,30 +1762,30 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedBlogs.map((blog, i) => (
                 <Reveal key={blog.id} delayMs={i * 60}>
-                  <Link to={blog.link} className="block group h-full">
-                    <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                      <div className="mb-4">
-                        <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
-                          {blog.tag}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-800 transition-colors line-clamp-2">
-                        {blog.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm mb-4 leading-relaxed flex-grow line-clamp-3">
-                        {blog.excerpt}
-                      </p>
-                      <div className="flex items-center text-emerald-800 font-semibold text-sm mb-4 group-hover:gap-2 gap-1 transition-all">
-                        Read Article <ArrowRightIcon className="w-4 h-4" />
-                      </div>
-                      <div className="flex items-center justify-between text-xs text-slate-400 mt-auto pt-4 border-t border-slate-100">
-                        <span>{blog.publishDate}</span>
-                        <span>
-                          {blog.readTime || getReadTime(blog.excerpt)}
-                        </span>
-                      </div>
+                  <div className="relative bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
+                    <div className="mb-4">
+                      <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
+                        {blog.tag}
+                      </span>
                     </div>
-                  </Link>
+                    <h2 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-800 transition-colors line-clamp-2">
+                      <Link to={blog.link} className="after:absolute after:inset-0">
+                        {blog.title}
+                      </Link>
+                    </h2>
+                    <p className="text-slate-600 text-sm mb-4 leading-relaxed flex-grow line-clamp-3">
+                      {blog.excerpt}
+                    </p>
+                    <div className="flex items-center text-emerald-800 font-semibold text-sm mb-4 group-hover:gap-2 gap-1 transition-all">
+                      Read Article <ArrowRightIcon className="w-4 h-4" />
+                    </div>
+                    <div className="flex items-center justify-between text-xs text-slate-400 mt-auto pt-4 border-t border-slate-100">
+                      <span>{blog.publishDate}</span>
+                      <span>
+                        {blog.readTime || getReadTime(blog.excerpt)}
+                      </span>
+                    </div>
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -1918,9 +1918,9 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
               <Reveal delayMs={100}>
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 lg:p-10 shadow-2xl">
-                  <h3 className="text-2xl font-bold text-white mb-6">
+                  <h2 className="text-2xl font-bold text-white mb-6">
                     Request Information
-                  </h3>
+                  </h2>
                   <form
                     className="space-y-5"
                     onSubmit={async (e) => {

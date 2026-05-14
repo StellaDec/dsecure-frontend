@@ -132,7 +132,7 @@ export default function EditGroup() {
     return (
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-slate-900 mb-4">Error: Organization Group Not Found</h1>
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Error: Organization Group Not Found</h2>
           <p className="text-slate-600 mb-6">The group you're looking for doesn't exist.</p>
           <button 
             onClick={() => navigate('/admin')}
@@ -267,7 +267,7 @@ export default function EditGroup() {
                 {/* Selected Permissions Summary */}
                 {formData.permissions.length > 0 && (
                   <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                    <h4 className="text-sm font-medium text-emerald-800 mb-2">Selected Permissions:</h4>
+                    <h3 className="text-sm font-medium text-emerald-800 mb-2">Selected Permissions:</h3>
                     <div className="flex flex-wrap gap-2">
                       {formData.permissions.map(permissionId => {
                         const permission = availablePermissions.find(p => p.id === permissionId)

@@ -433,9 +433,9 @@ const ErrorCodesPage: React.FC = memo(() => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-2">
+                  <h2 className="text-lg sm:text-xl font-semibold text-slate-900 mb-2">
                     No Error Codes Found
-                  </h3>
+                  </h2>
                   <p className="text-slate-600 text-sm sm:text-base">
                     Try adjusting your search terms or category filter.
                   </p>
@@ -463,9 +463,9 @@ const ErrorCodesPage: React.FC = memo(() => {
                                 {error.severity}
                               </span>
                             </div>
-                            <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-1">
+                            <h2 className="text-base sm:text-lg font-semibold text-slate-900 mb-1">
                               {error.title}
-                            </h3>
+                            </h2>
                             <p className="text-slate-600 text-xs sm:text-sm">
                               {error.description}
                             </p>
@@ -498,7 +498,7 @@ const ErrorCodesPage: React.FC = memo(() => {
                           <div className="border-t border-slate-200 pt-4 space-y-4">
                             {/* Solution */}
                             <div>
-                              <h4 className="font-semibold text-slate-900 mb-3 text-sm sm:text-base flex items-center">
+                              <h3 className="font-semibold text-slate-900 mb-3 text-sm sm:text-base flex items-center">
                                 <svg
                                   className="w-4 h-4 mr-2 text-emerald-800"
                                   fill="none"
@@ -513,7 +513,7 @@ const ErrorCodesPage: React.FC = memo(() => {
                                   />
                                 </svg>
                                 Step-by-Step Solution:
-                              </h4>
+                              </h3>
                               <div className="text-slate-700 text-sm sm:text-base leading-relaxed space-y-2">
                                 {error.solution
                                   .split("Step ")
@@ -537,7 +537,7 @@ const ErrorCodesPage: React.FC = memo(() => {
                             {/* Common Causes */}
                             {error.causes && (
                               <div className="bg-orange-50 rounded-lg p-4">
-                                <h5 className="font-medium text-orange-900 mb-2 flex items-center">
+                                <h4 className="font-medium text-orange-900 mb-2 flex items-center">
                                   <svg
                                     className="w-4 h-4 mr-2"
                                     fill="none"
@@ -552,7 +552,7 @@ const ErrorCodesPage: React.FC = memo(() => {
                                     />
                                   </svg>
                                   Common Causes:
-                                </h5>
+                                </h4>
                                 <ul className="text-sm text-orange-800 space-y-1">
                                   {error.causes.map((cause, index) => (
                                     <li key={index}>• {cause}</li>
@@ -564,7 +564,7 @@ const ErrorCodesPage: React.FC = memo(() => {
                             {/* Prevention */}
                             {error.prevention && (
                               <div className="bg-green-50 rounded-lg p-4">
-                                <h5 className="font-medium text-green-900 mb-2 flex items-center">
+                                <h4 className="font-medium text-green-900 mb-2 flex items-center">
                                   <svg
                                     className="w-4 h-4 mr-2"
                                     fill="none"
@@ -579,7 +579,7 @@ const ErrorCodesPage: React.FC = memo(() => {
                                     />
                                   </svg>
                                   Prevention:
-                                </h5>
+                                </h4>
                                 <p className="text-sm text-green-800">
                                   {error.prevention}
                                 </p>

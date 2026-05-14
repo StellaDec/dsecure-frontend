@@ -24,7 +24,7 @@ const DataSanitizationComplianceBlog: React.FC = () => {
                     Regulatory Compliance
                 </span>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Data Sanitization Compliance Guide</span>
+                    <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Enterprise Data Sanitization Compliance Guide: GDPR, HIPAA & NIST</span>
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                     Navigating GDPR, HIPAA, and <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> in the modern data landscape. A comprehensive framework for enterprise data destruction.
@@ -34,9 +34,9 @@ const DataSanitizationComplianceBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Intro */}
                 <div className="space-y-4">
@@ -129,7 +129,7 @@ const DataSanitizationComplianceBlog: React.FC = () => {
 
         {/* D-Secure Solutions Section */}
         <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">How D-Secure Solves Your Compliance Challenges</h2>
                 
                 <p className="text-slate-700 leading-relaxed mb-6">
@@ -140,7 +140,7 @@ const DataSanitizationComplianceBlog: React.FC = () => {
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl border border-emerald-100">
                         <div className="flex items-center gap-2 mb-3">
                             <ClipboardIcon className="w-5 h-5 text-emerald-800" filled={true} />
-                            <h4 className="font-bold text-slate-900">Automated Compliance Reporting</h4>
+                            <h3 className="font-bold text-slate-900">Automated Compliance Reporting</h3>
                         </div>
                         <p className="text-sm text-slate-600">
                             Tamper-proof certificates with SHA-256 digital signatures for every asset sanitized.

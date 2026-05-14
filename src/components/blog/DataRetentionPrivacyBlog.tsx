@@ -41,9 +41,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding Data Retention
               </h2>
@@ -55,9 +55,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
                 efficiency while meeting legal obligations.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Key Privacy Law Requirements
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   GDPR mandates businesses retain data only as long as it serves
                   the purpose of collection. Laws following GDPR — including
@@ -71,7 +71,7 @@ const DataRetentionPrivacyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Core Principles of Data Privacy Laws
               </h2>
@@ -81,27 +81,27 @@ const DataRetentionPrivacyBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Data Minimization
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Collect only the data that is absolutely necessary for your
                     stated purpose
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Purpose Limitation
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Use data only for the purpose for which it was originally
                     collected
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Storage Limitation
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Store data only until the purpose of collection is fulfilled
                   </p>
@@ -111,7 +111,7 @@ const DataRetentionPrivacyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding Data Disposal
               </h2>
@@ -124,9 +124,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Right to Deletion (CCPA)
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     CCPA gives consumers the right to have their data deleted.
                     Companies must comply by following proper disposal
@@ -136,9 +136,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Right to Erasure (GDPR Article 17)
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Under GDPR, data subjects have the right to have their
                     personal information deleted. Deletion requests must be
@@ -147,9 +147,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Right to Be Forgotten
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     GDPR's framework mandates businesses honor erasure requests
                     in a time-bound manner, ensuring disposal is secure, beyond
@@ -232,7 +232,7 @@ const DataRetentionPrivacyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Real-World Penalties for Non-Compliance
               </h2>
@@ -244,9 +244,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                  <h4 className="font-bold text-red-700 text-xl mb-2">
+                  <h3 className="font-bold text-red-700 text-xl mb-2">
                     €134,000 Fine — Denmark DPA
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     A publishing company was fined for violating GDPR Article
                     5.1(e) by keeping data of 685,000 unsubscribed members
@@ -255,9 +255,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                  <h4 className="font-bold text-red-700 text-xl mb-2">
+                  <h3 className="font-bold text-red-700 text-xl mb-2">
                     €9 Million Fine — UK DPA
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     An AI company was fined for failing to provide a data
                     retention policy, making them unable to ensure data wasn't
@@ -266,9 +266,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                  <h4 className="font-bold text-red-700 text-xl mb-2">
+                  <h3 className="font-bold text-red-700 text-xl mb-2">
                     €10 Million Fine — Spanish DPA
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     A major tech company was fined for violating GDPR Article 17
                     by not providing data subjects any means to exercise their
@@ -277,9 +277,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                  <h4 className="font-bold text-red-700 text-xl mb-2">
+                  <h3 className="font-bold text-red-700 text-xl mb-2">
                     €27.8 Million Fine — Italian DPA
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     A telecommunications operator was fined for multiple
                     violations of data retention and deletion guidelines under
@@ -291,7 +291,7 @@ const DataRetentionPrivacyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Recommended Data Disposal Method
               </h2>
@@ -301,9 +301,9 @@ const DataRetentionPrivacyBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Software-Based Overwriting
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Overwrites data using standard patterns, rendering it
                     completely unrecoverable while preserving device
@@ -311,27 +311,27 @@ const DataRetentionPrivacyBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Verification Process
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Confirms that all data has been erased and no remnants
                     remain on the storage media.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Tamper-Proof Certification
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Generates certificates of destruction for compliance
                     verification and audit trails.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Multi-Regulation Support
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Ensures compliance with GDPR, CCPA, HIPAA, and other global
                     data protection laws.

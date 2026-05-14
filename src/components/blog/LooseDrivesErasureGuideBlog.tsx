@@ -14,7 +14,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
             title:
               "How to Securely Erase Loose Drives from Data Centers & IT Assets",
             excerpt:
-              "Loose drives from data centers, printers & ITAD generate massive breach risk. Learn certified erasure steps for SATA, NVMe & SAS loose drives using NIST-compliant tools.",
+              "Learn certified erasure steps for SATA, NVMe & SAS loose drives using NIST-compliant tools to prevent breaches.",
             slug: "loose-drives-erasure-guide",
             author: "D-Secure Editorial Team",
             publishDate: "June 18, 2025",
@@ -45,9 +45,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -77,7 +77,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Types of Loose Drives */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Types of Loose Drives and Their Risks
               </h2>
@@ -157,9 +157,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Alarming Research Findings
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Independent studies reveal that 7 out of 10 storage devices
                     are vulnerable to data breaches and privacy risks. In one
@@ -170,9 +170,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Secondary Market Risks
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Studies conducted on hard drives purchased from online
                     marketplaces found that approximately 40 percent contained
@@ -183,9 +183,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Consequences of Inadequate Erasure
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Improper drive disposal can jeopardize customer privacy,
                     create substantial brand reputation risks, and result in
@@ -200,7 +200,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* How to Erase Loose Drives */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How to Properly Erase Loose Drives
               </h2>
@@ -253,9 +253,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     <span className="inline-block w-8 h-8 bg-emerald-500 text-white rounded-full text-center leading-8 font-bold mb-3">
                       1
                     </span>
-                    <h4 className="font-bold text-slate-900 mb-2">
+                    <h3 className="font-bold text-slate-900 mb-2">
                       Extract the Drive
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-loose">
                       Carefully remove the loose drive from its host device,
                       server, printer, or other equipment following proper
@@ -266,9 +266,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     <span className="inline-block w-8 h-8 bg-emerald-500 text-white rounded-full text-center leading-8 font-bold mb-3">
                       2
                     </span>
-                    <h4 className="font-bold text-slate-900 mb-2">
+                    <h3 className="font-bold text-slate-900 mb-2">
                       Connect to Erasure System
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-loose">
                       Connect the drive to a workstation running D-Secure Drive
                       Eraser using appropriate SATA, SAS, or USB adapters.
@@ -278,9 +278,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     <span className="inline-block w-8 h-8 bg-emerald-500 text-white rounded-full text-center leading-8 font-bold mb-3">
                       3
                     </span>
-                    <h4 className="font-bold text-slate-900 mb-2">
+                    <h3 className="font-bold text-slate-900 mb-2">
                       Select Erasure Standard
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-loose">
                       Choose the appropriate erasure standard based on your
                       regulatory requirements and organizational security
@@ -291,9 +291,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     <span className="inline-block w-8 h-8 bg-emerald-500 text-white rounded-full text-center leading-8 font-bold mb-3">
                       4
                     </span>
-                    <h4 className="font-bold text-slate-900 mb-2">
+                    <h3 className="font-bold text-slate-900 mb-2">
                       Generate Certificate
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-loose">
                       Upon completion, generate tamper-proof erasure
                       certificates for compliance documentation and audit trail
@@ -307,7 +307,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Best Practices */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Best Practices for Loose Drive Management
               </h2>

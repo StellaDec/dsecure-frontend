@@ -509,7 +509,7 @@ export default function PaymentSetupPage() {
         {/* Setup Status Info */}
         {import.meta.env.DEV && (
           <div className="mt-8 bg-gray-100 rounded-lg p-4">
-            <h4 className="font-medium text-gray-700 mb-2">🔧 Setup Status Debug</h4>
+            <h2 className="font-medium text-gray-700 mb-2">🔧 Setup Status Debug</h2>
             <pre className="text-xs text-gray-600 overflow-auto">
               {JSON.stringify(setupStatus, null, 2)}
             </pre>

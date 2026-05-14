@@ -117,9 +117,9 @@ const WindowsBuiltinToolsPage: React.FC = memo(() => {
                       </code>
                     </div>
                     <div className="bg-cyan-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-cyan-900 mb-2">
+                      <h3 className="font-semibold text-cyan-900 mb-2">
                         Command Options:
-                      </h4>
+                      </h3>
                       <ul className="space-y-1 text-cyan-800 text-sm">
                         <li>• /w - Wipes unused space</li>
                         <li>• Three-pass overwrite</li>
@@ -169,9 +169,9 @@ const WindowsBuiltinToolsPage: React.FC = memo(() => {
                             {item.step}
                           </div>
                           <div className="flex-1">
-                            <h4 className="font-semibold text-slate-900">
+                            <h3 className="font-semibold text-slate-900">
                               {item.title}
-                            </h4>
+                            </h3>
                             <code className="text-sm text-slate-600 bg-slate-200 px-2 py-1 rounded">
                               {item.desc}
                             </code>

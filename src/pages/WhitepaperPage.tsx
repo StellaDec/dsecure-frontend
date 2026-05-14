@@ -102,7 +102,7 @@ export default function WhitepaperPage() {
             {/* Footer CTA */}
             <div className="p-8 md:p-12 bg-slate-50 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
                <div>
-                  <h4 className="font-bold text-slate-900">Want the full PDF version?</h4>
+                  <h3 className="font-bold text-slate-900">Want the full PDF version?</h3>
                   <p className="text-sm text-slate-500">Includes raw data tables and implementation guides.</p>
                </div>
                <button className="px-8 py-3 bg-brand text-white font-bold rounded-lg hover:shadow-lg transition-all">

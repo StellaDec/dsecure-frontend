@@ -50,7 +50,7 @@ const EarlyAccessPage: React.FC = () => {
                         <Zap className="w-6 h-6" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-black text-slate-900 mb-1">Impact Roadmap</h3>
+                        <h2 className="text-lg font-black text-slate-900 mb-1">Impact Roadmap</h2>
                         <p className="text-slate-600 font-medium text-sm leading-relaxed">Early users get a direct line to our engineers to request features and suggest improvements.</p>
                       </div>
                     </div>
@@ -60,7 +60,7 @@ const EarlyAccessPage: React.FC = () => {
                         <Shield className="w-6 h-6" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-black text-slate-900 mb-1">Pre-Launch Beta</h3>
+                        <h2 className="text-lg font-black text-slate-900 mb-1">Pre-Launch Beta</h2>
                         <p className="text-slate-600 font-medium text-sm leading-relaxed">Test our newest software components in your environment before they go mainstream.</p>
                       </div>
                     </div>
@@ -70,7 +70,7 @@ const EarlyAccessPage: React.FC = () => {
                         <CheckCircle2 className="w-6 h-6" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-black text-slate-900 mb-1">VIP Onboarding</h3>
+                        <h2 className="text-lg font-black text-slate-900 mb-1">VIP Onboarding</h2>
                         <p className="text-slate-600 font-medium text-sm leading-relaxed">Dedicated implementation support to ensure our upcoming tools fit perfectly into your workflow.</p>
                       </div>
                     </div>

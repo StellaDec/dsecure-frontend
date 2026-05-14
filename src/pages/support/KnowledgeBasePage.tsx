@@ -60,17 +60,17 @@ const KnowledgeBasePage: React.FC = memo(() => {
       url: "/support/secure-erase-hddssd",
       icon: "💾",
     },
-    {
-      id: 3,
-      title: "How to Wipe SAS Drives Permanently?",
-      description:
-        "Enterprise-grade SAS drive erasure procedures for data centers and high-security environments.",
-      category: "enterprise",
-      difficulty: "Advanced",
-      readTime: "12 min read",
-      url: "/guides/wipe-sas-drive",
-      icon: "🏢",
-    },
+    // {
+    //   id: 3,
+    //   title: "How to Wipe SAS Drives Permanently?",
+    //   description:
+    //     "Enterprise-grade SAS drive erasure procedures for data centers and high-security environments.",
+    //   category: "enterprise",
+    //   difficulty: "Advanced",
+    //   readTime: "12 min read",
+    //   url: "/guides/wipe-sas-drive",
+    //   icon: "🏢",
+    // },
     {
       id: 4,
       title: "How can I wipe 12 board Mac Machines?",
@@ -82,17 +82,17 @@ const KnowledgeBasePage: React.FC = memo(() => {
       url: "/support/mac-eraser-guide",
       icon: "🍎",
     },
-    {
-      id: 5,
-      title: "How can I Wipe a MacOS with M1 Chip?",
-      description:
-        "Modern Mac M1 and Apple Silicon device erasure using latest security features and firmware controls.",
-      category: "device-guides",
-      difficulty: "Intermediate",
-      readTime: "7 min read",
-      url: "/guides/wipe-mac-m1",
-      icon: "⚡",
-    },
+    // {
+    //   id: 5,
+    //   title: "How can I Wipe a MacOS with M1 Chip?",
+    //   description:
+    //     "Modern Mac M1 and Apple Silicon device erasure using latest security features and firmware controls.",
+    //   category: "device-guides",
+    //   difficulty: "Intermediate",
+    //   readTime: "7 min read",
+    //   url: "/support/mac-m1-eraser-guide",
+    //   icon: "⚡",
+    // },
     {
       id: 6,
       title: "How to use D-Secure Cloud Console?",
@@ -147,17 +147,17 @@ const KnowledgeBasePage: React.FC = memo(() => {
       url: "/support/retain-os-guide",
       icon: "🖥️",
     },
-    {
-      id: 11,
-      title: "D-Secure Diagnostic Manual",
-      description:
-        "Comprehensive guide for performing system diagnostics and hardware health checks before data erasure.",
-      category: "troubleshooting",
-      difficulty: "Advanced",
-      readTime: "20 min read",
-      url: "/support/manual/diagnostic-manual",
-      icon: "🩺",
-    },
+    // {
+    //   id: 11,
+    //   title: "D-Secure Diagnostic Manual",
+    //   description:
+    //     "Comprehensive guide for performing system diagnostics and hardware health checks before data erasure.",
+    //   category: "troubleshooting",
+    //   difficulty: "Advanced",
+    //   readTime: "20 min read",
+    //   url: "/support/manual/diagnostic-manual",
+    //   icon: "🩺",
+    // },
     // {
     //   id: 10,
     //   title: "Compliance Standards and Regulations",
@@ -289,9 +289,9 @@ const KnowledgeBasePage: React.FC = memo(() => {
               <div className="space-y-6">
                 {/* Category Filter */}
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">
+                  <h2 className="text-sm font-semibold text-slate-900 mb-3">
                     CATEGORIES
-                  </h3>
+                  </h2>
                   <div className="flex flex-wrap gap-2">
                     {categories.map((category) => (
                       <button
@@ -311,9 +311,9 @@ const KnowledgeBasePage: React.FC = memo(() => {
 
                 {/* Difficulty Filter */}
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">
+                  <h2 className="text-sm font-semibold text-slate-900 mb-3">
                     DIFFICULTY LEVEL
-                  </h3>
+                  </h2>
                   <div className="flex flex-wrap gap-2">
                     {difficulties.map((difficulty) => (
                       <button
@@ -355,9 +355,9 @@ const KnowledgeBasePage: React.FC = memo(() => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                <h2 className="text-xl font-semibold text-slate-900 mb-2">
                   No Articles Found
-                </h3>
+                </h2>
                 <p className="text-slate-600">
                   Try adjusting your search terms or filters.
                 </p>
@@ -383,9 +383,9 @@ const KnowledgeBasePage: React.FC = memo(() => {
                               {article.readTime}
                             </span>
                           </div>
-                          <h3 className="text-lg font-semibold text-slate-900 group-hover:text-emerald-800 transition-colors mb-2">
+                          <h2 className="text-lg font-semibold text-slate-900 group-hover:text-emerald-800 transition-colors mb-2">
                             {article.title}
-                          </h3>
+                          </h2>
                         </div>
                       </div>
                       <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
@@ -444,9 +444,9 @@ const KnowledgeBasePage: React.FC = memo(() => {
                     <div className={`w-16 h-16 ${item.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
                       <span className="text-3xl">{item.icon}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 group-hover:text-emerald-800 transition-colors">
+                    <h2 className="text-lg font-semibold text-slate-900 group-hover:text-emerald-800 transition-colors">
                       {item.title}
-                    </h3>
+                    </h2>
                   </Link>
                 </Reveal>
               ))}

@@ -32,9 +32,9 @@ const ESGDataErasureBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             {/* Intro */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -72,9 +72,9 @@ const ESGDataErasureBlog: React.FC = () => {
               </h2>
               <div className="grid md:grid-cols-3 gap-4 mt-4">
                 <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-emerald-900 mb-2">
+                  <h3 className="font-bold text-emerald-900 mb-2">
                     🌱 Environmental
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-emerald-800 space-y-1">
                     <li>• Reduce e-waste through reuse</li>
                     <li>• Lower carbon footprint</li>
@@ -83,7 +83,7 @@ const ESGDataErasureBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-blue-900 mb-2">🤝 Social</h4>
+                  <h3 className="font-bold text-blue-900 mb-2">🤝 Social</h3>
                   <ul className="text-sm text-blue-800 space-y-1">
                     <li>• Enable device donations</li>
                     <li>• Protect customer privacy</li>
@@ -92,9 +92,9 @@ const ESGDataErasureBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-purple-900 mb-2">
+                  <h3 className="font-bold text-purple-900 mb-2">
                     ⚖️ Governance
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-purple-800 space-y-1">
                     <li>• Regulatory compliance</li>
                     <li>• Data protection policies</li>
@@ -170,7 +170,7 @@ const ESGDataErasureBlog: React.FC = () => {
 
         {/* D-Secure Solutions Section */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               D-Secure ESG Capabilities
             </h2>
@@ -184,9 +184,9 @@ const ESGDataErasureBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-teal-50 to-emerald-50 p-6 rounded-xl border border-teal-100">
                 <div className="flex items-center gap-2 mb-3">
                   <LeafIcon className="w-5 h-5 text-teal-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Environmental Dashboard
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Track devices erased, carbon savings, and e-waste diversion
@@ -196,9 +196,9 @@ const ESGDataErasureBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-teal-50 to-emerald-50 p-6 rounded-xl border border-teal-100">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-teal-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Governance Documentation
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Tamper-proof certificates and audit trails demonstrate
@@ -208,9 +208,9 @@ const ESGDataErasureBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-teal-50 to-emerald-50 p-6 rounded-xl border border-teal-100">
                 <div className="flex items-center gap-2 mb-3">
                   <GlobeIcon className="w-5 h-5 text-teal-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Social Impact Tracking
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Track devices donated to schools and nonprofits. Generate
@@ -220,9 +220,9 @@ const ESGDataErasureBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-teal-50 to-emerald-50 p-6 rounded-xl border border-teal-100">
                 <div className="flex items-center gap-2 mb-3">
                   <StarIcon className="w-5 h-5 text-teal-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Asset Recovery Metrics
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Track financial value recovered from remarketable devices,
@@ -232,9 +232,9 @@ const ESGDataErasureBlog: React.FC = () => {
             </div>
 
             <div className="bg-slate-900 rounded-xl p-6 text-white">
-              <h4 className="font-bold mb-4 text-teal-400">
+              <h3 className="font-bold mb-4 text-teal-400">
                 ESG Benefits with D-Secure
-              </h4>
+              </h3>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-start gap-2">
                   <CheckIcon

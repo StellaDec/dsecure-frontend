@@ -31,9 +31,9 @@ const DataMinimizationBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Introduction */}
                 <div className="space-y-4">
@@ -54,27 +54,27 @@ const DataMinimizationBlog: React.FC = () => {
                     </p>
                     <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg space-y-4">
                         <div>
-                            <h4 className="font-bold text-indigo-900">CPRA (California)</h4>
+                            <h3 className="font-bold text-indigo-900">CPRA (California)</h3>
                             <p className="text-indigo-800">Section 3(B)(3) Responsibilities of Businesses requires businesses to only collect information that is relevant and limited to the purpose it was collected for.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-indigo-900">Canadian PIPEDA</h4>
+                            <h3 className="font-bold text-indigo-900">Canadian PIPEDA</h3>
                             <p className="text-indigo-800">Under The Limiting Collection Principle (Clause 4.4), organizations must collect only the information that is necessary for the defined purpose.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-indigo-900">UK GDPR (ICO)</h4>
+                            <h3 className="font-bold text-indigo-900">UK GDPR (ICO)</h3>
                             <p className="text-indigo-800">The United Kingdom's Information Commissioner's Office lists Data Minimization as Data Protection Principle (c), requiring organizations to process only adequate, relevant, and limited information.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-indigo-900">India's DPDPA 2023</h4>
+                            <h3 className="font-bold text-indigo-900">India's DPDPA 2023</h3>
                             <p className="text-indigo-800">Under Chapter II: Obligations of Data Fiduciary, aligns with the principle of data minimization in Section 6(1), which requires consent to be limited only to such personal data as is necessary for the specified purpose. DPDPA further reinforces it under Section 7(a), restricting processing strictly to the purpose for which the data was voluntarily provided.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-indigo-900">French Data Protection Act (FDPA)</h4>
+                            <h3 className="font-bold text-indigo-900">French Data Protection Act (FDPA)</h3>
                             <p className="text-indigo-800">Commonly known as "La Loi Informatique et Libertés" under Article 4 of Chapter 1, it clearly states that data controllers should only collect and process relevant and necessary information.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-indigo-900">ISO 27701</h4>
+                            <h3 className="font-bold text-indigo-900">ISO 27701</h3>
                             <p className="text-indigo-800">Clause 7.4.4 – PII minimization objectives require organizations to collect limited and relevant information for the purpose it was collected.</p>
                         </div>
                     </div>
@@ -93,7 +93,7 @@ const DataMinimizationBlog: React.FC = () => {
                         Organizations must only collect a limited amount of data that is necessary. The collected data should also be reviewed on a regular basis, and excessive data should be permanently removed.
                     </p>
                     <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
-                        <h4 className="font-bold text-amber-900 mb-2">Example:</h4>
+                        <h3 className="font-bold text-amber-900 mb-2">Example:</h3>
                         <p className="text-amber-800">
                             An online food delivery business requires details like Name, Address, Phone Number (For Communication), E-Mail (Optional for Billing), and delivery instructions to provide necessary services to their customers. This data is adequate, relevant, and limited to the purpose of its collection, which is to deliver food. However, if the business also collects data related to employment, family, marital status, etc., it would be considered a break of the Data Minimization Principle since the above information is not required for delivering food.
                         </p>
@@ -108,24 +108,24 @@ const DataMinimizationBlog: React.FC = () => {
                     </p>
                     <div className="space-y-4 mt-4">
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">To Stay Compliant with Laws</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">To Stay Compliant with Laws</h3>
                             <p className="text-slate-600">Important laws like EU-GDPR, CPRA, FDPA, and HIPAA have Data Minimization requirements that organizations must follow. The penalties for violations are severe and can have large-scale effects, including monetary fines, lawsuits, loss of trust and credibility, and damage to the brand image.</p>
                             <p className="text-slate-600 mt-2 text-sm italic">A recent example: The Irish Data Protection Commission gave Meta Platforms a fine of €251 million for failing to ensure only personal data necessary for specific purposes was processed.</p>
                         </div>
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">To Enhance Trust & Transparency</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">To Enhance Trust & Transparency</h3>
                             <p className="text-slate-600">By collecting, storing, and processing only relevant information, organizations gain the trust of their customers. It has been observed that customers tend to trust organizations that value data privacy and have transparent processes. Cisco 2024 Consumer Privacy Survey revealed that 75% of consumers won't buy from companies they don't trust with their data.</p>
                         </div>
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">Mitigate Data Breach Risks</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">Mitigate Data Breach Risks</h3>
                             <p className="text-slate-600">Collecting, storing, and processing only necessary data acts as a risk reduction method. It helps minimize the data stored on organizational systems, thereby reducing the attack surface and possibility of data breaches.</p>
                         </div>
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">Reduces Storage Costs</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">Reduces Storage Costs</h3>
                             <p className="text-slate-600">Reducing the number of data points collected and stored on the organization's IT setup or cloud reduces the overall data storage cost. It helps bring down the capital expenses related to buying, setup, and licensing, as well as operating expenses of recurring fees, maintenance, energy use, data security, and recovery, etc.</p>
                         </div>
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">Simplified Data Management</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">Simplified Data Management</h3>
                             <p className="text-slate-600">Having less data enables effective and simplified data management by providing focused insights. According to many CISOs, the practice of collecting data now and analyzing it later is becoming less relevant, as the build-up of unnecessary information often hides important insights.</p>
                         </div>
                     </div>

@@ -1720,13 +1720,12 @@ const HomePage = memo(function HomePage() {
                   <div key={product.id} className="w-full md:w-1/2 flex-shrink-0 px-3 py-4">
                     <Reveal delayMs={idx * 50} className="h-full">
                       <div className="h-full">
-                        <Link 
-                          to={product.link}
-                          className={`group relative h-full bg-white rounded-2xl p-6 md:p-8 border border-slate-200/60 hover:border-${product.color}-300 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 overflow-hidden block`}
+                        <div 
+                          className={`group relative h-full bg-white rounded-2xl p-6 md:p-8 border border-slate-200/60 hover:border-${product.color}-300 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 overflow-hidden block cursor-pointer`}
                         >
                           <div className={`absolute inset-0 bg-gradient-to-br from-${product.color}-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                           <CardContent product={product} t={t} isLink={true} />
-                        </Link>
+                        </div>
                       </div>
                     </Reveal>
                   </div>
@@ -1881,9 +1880,9 @@ const HomePage = memo(function HomePage() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg">
+                    <h3 className="font-bold text-slate-900 text-lg">
                       Marcus Schmidt
-                    </h4>
+                    </h3>
                     <p className="text-blue-600 text-sm font-medium">
                       Enterprise Client
                     </p>
@@ -1905,9 +1904,9 @@ const HomePage = memo(function HomePage() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 text-lg">
+                    <h3 className="font-semibold text-slate-900 text-lg">
                       Elena Rodriguez
-                    </h4>
+                    </h3>
                     <p className="text-blue-600 text-sm font-medium">{t('home.client')}</p>
                   </div>
                 </div>
@@ -1927,9 +1926,9 @@ const HomePage = memo(function HomePage() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 text-lg">
+                    <h3 className="font-semibold text-slate-900 text-lg">
                       James Thompson
-                    </h4>
+                    </h3>
                     <p className="text-blue-600 text-sm font-medium">{t('home.client')}</p>
                   </div>
                 </div>
@@ -1961,14 +1960,17 @@ function CardContent({ product, t, isLink = false }: { product: any, t: any, isL
           )}
         </div>
         <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-800 transition-colors">
-          {String(product.title)}
+          <Link to={product.link} className="hover:underline">
+            <span className="absolute inset-0 z-10" aria-hidden="true"></span>
+            {String(product.title)}
+          </Link>
         </h3>
-        <p className="text-sm text-slate-600 line-clamp-2 h-10 mb-6">
+        <p className="text-sm text-slate-600 line-clamp-2 h-10 mb-6 relative z-20 pointer-events-none">
           {product.desc}
         </p>
       </div>
 
-      <div className="space-y-3 mb-6 flex-grow">
+      <div className="space-y-3 mb-6 flex-grow relative z-20 pointer-events-none">
         {product.features.map((feature: string, fIdx: number) => (
           <div key={fIdx} className="flex items-start gap-3">
             <div className={`w-5 h-5 rounded-full bg-${product.color}-50 flex items-center justify-center flex-shrink-0 mt-0.5 rotate-0 group-hover:rotate-12 transition-transform`}>
@@ -1983,7 +1985,7 @@ function CardContent({ product, t, isLink = false }: { product: any, t: any, isL
         ))}
       </div>
 
-      <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
+      <div className="pt-6 border-t border-slate-100 flex items-center justify-between relative z-20 pointer-events-none">
         <div className="flex-grow">
           <div className="text-lg font-bold text-slate-900">
             {product.price}

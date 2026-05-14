@@ -40,9 +40,9 @@ const CommonCriteriaBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is Common Criteria Certification?
               </h2>
@@ -54,9 +54,9 @@ const CommonCriteriaBlog: React.FC = () => {
                 Common Criteria Recognition Arrangement (CCRA).
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   About CCRA
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   The{" "}
                   <strong>
@@ -73,15 +73,15 @@ const CommonCriteriaBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Certification Authorities Worldwide
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     India - IC3S
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     The Indian CC Certification Scheme (IC3S) operates within
                     the Standardization Testing and Quality Certification
@@ -90,9 +90,9 @@ const CommonCriteriaBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Netherlands - TrustCB
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     TrustCB B.V., accredited by the Dutch Accreditation Council,
                     certifies IT security products, processes, and services
@@ -141,19 +141,19 @@ const CommonCriteriaBlog: React.FC = () => {
                   </h3>
                   <div className="grid md:grid-cols-3 gap-4 mt-4">
                     <div className="bg-white/10 rounded-lg p-4 text-center">
-                      <h5 className="font-bold mb-2">Developer Testing</h5>
+                      <h4 className="font-bold mb-2">Developer Testing</h4>
                       <p className="text-sm text-white/80">
                         Comprehensive test coverage analysis
                       </p>
                     </div>
                     <div className="bg-white/10 rounded-lg p-4 text-center">
-                      <h5 className="font-bold mb-2">Independent Testing</h5>
+                      <h4 className="font-bold mb-2">Independent Testing</h4>
                       <p className="text-sm text-white/80">
                         Evaluation team verification
                       </p>
                     </div>
                     <div className="bg-white/10 rounded-lg p-4 text-center">
-                      <h5 className="font-bold mb-2">Penetration Testing</h5>
+                      <h4 className="font-bold mb-2">Penetration Testing</h4>
                       <p className="text-sm text-white/80">
                         Security vulnerability assessment
                       </p>
@@ -165,16 +165,16 @@ const CommonCriteriaBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Evaluation Results & Findings
               </h2>
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Developer Testing Results
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Evaluators analyzed the developer's test coverage and found
                     them complete and satisfactory. The correspondence between
@@ -184,9 +184,9 @@ const CommonCriteriaBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Independent Testing Results
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     The evaluation team simulated the developer's tests and
                     successfully reproduced them at CCTL. They analyzed code
@@ -197,9 +197,9 @@ const CommonCriteriaBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Vulnerability & Penetration Testing
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     No vulnerabilities were found in the public domain. The
                     application has no external interfaces with IP addresses or
@@ -236,15 +236,15 @@ const CommonCriteriaBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What EAL2 Certification Means for You
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     For Enterprises
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Confidence that your data erasure solution has been
                     independently verified by international authorities. Meets
@@ -253,9 +253,9 @@ const CommonCriteriaBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     For <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Providers
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Offer your clients proven, certified data destruction
                     services. Differentiate your business with internationally
@@ -263,18 +263,18 @@ const CommonCriteriaBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     For Compliance Officers
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Demonstrate due diligence with certified tools. Simplify
                     audit processes with independent third-party validation.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     For EaaS Providers
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     If you're offering Erasure as a Service (EaaS), use
                     certified drive-wiping software that meets the highest

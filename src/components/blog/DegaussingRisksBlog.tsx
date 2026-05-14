@@ -41,9 +41,9 @@ const DegaussingRisksBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is Degaussing?
               </h2>
@@ -67,9 +67,9 @@ const DegaussingRisksBlog: React.FC = () => {
               </p>
 
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-8">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   ️ Critical Understanding
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   Given its manually intensive nature, degaussing is prone to
                   oversights.{" "}
@@ -84,7 +84,7 @@ const DegaussingRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 6 Critical Human Errors in Degaussing
               </h2>
@@ -264,17 +264,17 @@ const DegaussingRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Additional Limitations of Degaussing
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-slate-100 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Device Destruction
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Degaussing destroys the drive, making it unusable. This
                     prevents asset reuse, resale, or donation — a significant
@@ -282,10 +282,10 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Environmental Impact
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Degaussed drives become e-waste that must be disposed of,
                     contributing to environmental pollution and contradicting
@@ -293,10 +293,10 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Cost Implications
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     The cost of replacing degaussed drives adds up quickly.
                     Organizations lose the residual value of functional hardware
@@ -304,10 +304,10 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Compliance Challenges
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Without proper verification and certificates of destruction,
                     organizations may struggle to prove compliance during
@@ -333,60 +333,60 @@ const DegaussingRisksBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Automated, Consistent Processes
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Eliminates human error with standardized, repeatable erasure
                     processes that work consistently across all devices.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Post-Erasure Verification
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Built-in verification confirms complete data destruction,
                     ensuring no residual data remains on the drive.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Certificate of Destruction
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Tamper-proof certificates are automatically generated for
                     audit compliance and regulatory requirements.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Broad Device Coverage
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Works on HDDs, SSDs, NVMe, mobile devices, and servers —
                     media types that degaussing cannot handle.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Device Reusability
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Unlike degaussing, software erasure keeps devices functional
                     for reuse, resale, or donation.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Environmental Responsibility
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Extends device lifecycle, reduces e-waste, and supports
                     circular economy initiatives.
@@ -405,7 +405,7 @@ const DegaussingRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 When Degaussing May Still Be Appropriate
               </h2>
@@ -436,10 +436,10 @@ const DegaussingRisksBlog: React.FC = () => {
               </ul>
 
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-8 mt-6">
-                <h4 className="font-bold text-amber-700 text-xl mb-3">
+                <h3 className="font-bold text-amber-700 text-xl mb-3">
                   {" "}
                   Important Note
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   Once a hard drive is degaussed, always check with your local
                   regulations regarding the disposal of e-waste. Ensure devices

@@ -40,9 +40,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding BIOS Secure Erase
               </h2>
@@ -62,9 +62,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
               </p>
 
               <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   ️ Important Note
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   On many devices (like ThinkBook), the Secure Erase option is{" "}
                   <strong>
@@ -94,9 +94,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       1
                     </span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">
+                      <h3 className="font-bold text-lg mb-2">
                         Access UEFI BIOS
-                      </h4>
+                      </h3>
                       <p className="text-white/90 leading-relaxed">
                         Power ON your laptop and press the appropriate key to
                         access the UEFI Boot menu. Common keys include{" "}
@@ -113,9 +113,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       2
                     </span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">
+                      <h3 className="font-bold text-lg mb-2">
                         Navigate to Security Menu
-                      </h4>
+                      </h3>
                       <p className="text-white/90 leading-relaxed">
                         Go to the <strong>'Security'</strong> section in the
                         BIOS menu and look for{" "}
@@ -132,9 +132,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       3
                     </span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">
+                      <h3 className="font-bold text-lg mb-2">
                         Confirm Data Erasure
-                      </h4>
+                      </h3>
                       <p className="text-white/90 leading-relaxed">
                         Press Enter on 'Security Erase HDD Data', and a{" "}
                         <strong>Setup Warning</strong> window will appear
@@ -152,9 +152,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       4
                     </span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">
+                      <h3 className="font-bold text-lg mb-2">
                         Enter Disk Password
-                      </h4>
+                      </h3>
                       <p className="text-white/90 leading-relaxed">
                         A new window will prompt you to enter your{" "}
                         <strong>Disk Password</strong>. Enter the password and
@@ -171,9 +171,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       5
                     </span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">
+                      <h3 className="font-bold text-lg mb-2">
                         Wait for Completion
-                      </h4>
+                      </h3>
                       <p className="text-white/90 leading-relaxed">
                         You can monitor the progress on your screen. Once
                         complete, you will see a message:{" "}
@@ -187,7 +187,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Limitations of BIOS Secure Erase
               </h2>
@@ -199,10 +199,10 @@ const SSDWipeBIOSBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     Single Drive Only
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Cannot wipe multiple SSDs simultaneously. Each drive must be
                     erased individually, making it impractical for large-scale
@@ -210,10 +210,10 @@ const SSDWipeBIOSBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     No Erasure Reports
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Does not generate any verification report or certificate to
                     prove the erasure was performed. This fails compliance
@@ -221,20 +221,20 @@ const SSDWipeBIOSBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     Password Required
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     On many systems, Secure Erase only works if the SSD has a
                     password set. Unprotected drives cannot be erased this way.
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     No Verification
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Cannot verify that all data has been completely erased.
                     There's no way to confirm success beyond the completion
@@ -242,10 +242,10 @@ const SSDWipeBIOSBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     Manufacturer Dependent
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Feature availability and functionality varies by
                     manufacturer. Not all BIOS implementations support this
@@ -253,10 +253,10 @@ const SSDWipeBIOSBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     No Audit Trail
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Cannot create audit trails for regulatory compliance. No
                     documentation of who performed the erasure or when.
@@ -267,7 +267,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Professional Alternative: D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link>
               </h2>
@@ -390,9 +390,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
 
               <div className="space-y-4">
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Can you wipe an SSD through BIOS? Is it advisable?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Yes, you can wipe an SSD through BIOS if the feature is
                     available. However, it's only advisable for personal use
@@ -401,9 +401,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     What are the limitations of using Secure Erase in BIOS?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Key limitations include: single-drive operation, no
                     verification or reports, password requirements on some
@@ -412,9 +412,9 @@ const SSDWipeBIOSBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     How can I wipe multiple SSDs simultaneously?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Professional data erasure software like D-Secure allows you
                     to wipe multiple SSDs simultaneously, saving significant

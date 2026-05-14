@@ -13,7 +13,7 @@ const HowToEraseMacBlog: React.FC = () => {
             title:
               "How to Securely Erase Mac Devices (M1, M2, M3 & Intel) | Enterprise Mac Data Erasure",
             excerpt:
-              "Step-by-step guide for IT teams to securely erase MacBook, iMac, Mac Mini & Mac Pro — including Apple Silicon. Learn why factory reset fails compliance and how to use certified erasure tools.",
+              "Guide for IT teams to securely erase Macs, including Apple Silicon. Learn why factory resets fail compliance.",
             slug: "how-to-erase-mac",
             author: "D-Secure Editorial Team",
             publishDate: "February 13, 2025",
@@ -44,9 +44,9 @@ const HowToEraseMacBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -71,9 +71,9 @@ const HowToEraseMacBlog: React.FC = () => {
 
               {/* Key Insight */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Enterprise Compliance Requirements
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   Apple's native erasure options may work for individual users,
                   but they don't satisfy organizational requirements for secure
@@ -91,9 +91,9 @@ const HowToEraseMacBlog: React.FC = () => {
 
                 <div className="bg-slate-50 rounded-xl p-8 space-y-6">
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    <h2 className="text-xl font-bold text-slate-900 mb-3">
                       Method 1: Erase All Content and Settings
-                    </h3>
+                    </h2>
                     <p className="text-slate-700 leading-loose text-lg mb-4">
                       This feature works on Apple Silicon Mac computers running
                       macOS Monterey and above. It quickly erases all settings,
@@ -101,9 +101,9 @@ const HowToEraseMacBlog: React.FC = () => {
                       without affecting the operating system.
                     </p>
                     <div className="bg-white rounded-lg p-6 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-3">
+                      <h3 className="font-semibold text-slate-900 mb-3">
                         Steps to Follow:
-                      </h4>
+                      </h3>
                       <ul className="space-y-2 text-slate-700 text-lg">
                         <li className="flex items-start">
                           <span className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
@@ -140,9 +140,9 @@ const HowToEraseMacBlog: React.FC = () => {
                   </div>
 
                   <div className="pt-6 border-t border-slate-200">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    <h2 className="text-xl font-bold text-slate-900 mb-3">
                       Method 2: Disk Utility Erasure
-                    </h3>
+                    </h2>
                     <p className="text-slate-700 leading-loose text-lg mb-4">
                       Apple provides another option through macOS Recovery
                       without booting the Mac via Disk Utility. This method
@@ -150,9 +150,9 @@ const HowToEraseMacBlog: React.FC = () => {
                       system. However, it does not generate proof of erasure.
                     </p>
                     <div className="bg-white rounded-lg p-6 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-3">
+                      <h3 className="font-semibold text-slate-900 mb-3">
                         Steps to Follow:
-                      </h4>
+                      </h3>
                       <ul className="space-y-2 text-slate-700 text-lg">
                         <li className="flex items-start">
                           <span className="w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
@@ -194,7 +194,7 @@ const HowToEraseMacBlog: React.FC = () => {
 
           {/* Limitations Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Limitations of Native Apple Erasure Methods
               </h2>
@@ -221,9 +221,9 @@ const HowToEraseMacBlog: React.FC = () => {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h2 className="text-xl font-bold text-slate-900">
                       No Erasure Certificate
-                    </h3>
+                    </h2>
                   </div>
                   <p className="text-slate-700 text-lg leading-loose">
                     Apple Mac erasure methods don't generate any proof of
@@ -249,9 +249,9 @@ const HowToEraseMacBlog: React.FC = () => {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h2 className="text-xl font-bold text-slate-900">
                       No Standard Compliance
-                    </h3>
+                    </h2>
                   </div>
                   <p className="text-slate-700 text-lg leading-loose">
                     Many organizations require data destruction following NIST
@@ -278,9 +278,9 @@ const HowToEraseMacBlog: React.FC = () => {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h2 className="text-xl font-bold text-slate-900">
                       Residual Data Risk
-                    </h3>
+                    </h2>
                   </div>
                   <p className="text-slate-700 text-lg leading-loose">
                     Without standardized overwriting algorithms, native erasure
@@ -306,9 +306,9 @@ const HowToEraseMacBlog: React.FC = () => {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h2 className="text-xl font-bold text-slate-900">
                       Not Scalable
-                    </h3>
+                    </h2>
                   </div>
                   <p className="text-slate-700 text-lg leading-loose">
                     Organizations needing to wipe multiple Mac machines find
@@ -345,9 +345,9 @@ const HowToEraseMacBlog: React.FC = () => {
               </p>
 
               <div className="bg-white/10 rounded-xl p-6 mb-8">
-                <h4 className="font-bold text-lg mb-4">
+                <h3 className="font-bold text-lg mb-4">
                   Quick Deployment Steps:
-                </h4>
+                </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="w-6 h-6 bg-white text-emerald-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
@@ -415,16 +415,16 @@ const HowToEraseMacBlog: React.FC = () => {
 
           {/* Key Features */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-8">
                 Key Features of D-Secure Mac Eraser
               </h2>
 
               <div className="space-y-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     20+ Global Erasure Standards
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Supports comprehensive erasure methods including NIST
                     800-88, DoD 5220.22-M, HMG IS5, and more to meet any
@@ -433,9 +433,9 @@ const HowToEraseMacBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-teal-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Digitally Signed Erasure Reports
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Generates tamper-proof erasure reports for every device,
                     including timestamps, hardware information, erasure status,
@@ -444,9 +444,9 @@ const HowToEraseMacBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-cyan-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Simple Terminal Deployment
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Deploy the software with a simple terminal command — no
                     complex setup or configuration required.
@@ -454,9 +454,9 @@ const HowToEraseMacBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-purple-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Universal Mac Support
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Compatible with both Intel and Apple Silicon Mac computers,
                     ensuring complete coverage across your device fleet.
@@ -464,9 +464,9 @@ const HowToEraseMacBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-pink-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Permanent, Irreversible Removal
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Performs complete data removal including OS, user data, and
                     applications. macOS reinstallation is required if the device

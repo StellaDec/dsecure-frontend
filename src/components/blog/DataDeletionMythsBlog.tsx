@@ -11,7 +11,7 @@ const DataDeletionMythsBlog: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       <SEOHead 
         seo={getBlogSEO({
-          title: "Debunking Data Deletion Myths: Formatting vs. Wiping | D-Secure",
+          title: "Data Deletion Myths: Formatting vs. Wiping",
           excerpt: "Formatting is not erasure. We expose common misconceptions about data deletion that leave organizations vulnerable to data breaches and regulatory fines.",
           slug: "data-deletion-myths",
           author: "D-Secure Editorial Team",
@@ -29,7 +29,7 @@ const DataDeletionMythsBlog: React.FC = () => {
                     Myth Busting
                 </span>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">Data Deletion Myths Debunked</span>
+                    <span className="bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">Data Deletion Myths Debunked: Formatting vs. Secure Erasure</span>
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                     Common misconceptions about data deletion that leave your organization vulnerable to data breaches and compliance failures.
@@ -39,9 +39,9 @@ const DataDeletionMythsBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Introduction */}
                 <div className="space-y-4">
@@ -197,22 +197,22 @@ const DataDeletionMythsBlog: React.FC = () => {
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">What Actually Works: Proven Methods</h2>
                     <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200">
-                        <h4 className="font-bold text-green-900 mb-4">✅ Effective Data Destruction Methods</h4>
+                        <h3 className="font-bold text-green-900 mb-4">✅ Effective Data Destruction Methods</h3>
                         <div className="space-y-3">
                             <div className="bg-white p-4 rounded-lg border border-green-200">
-                                <h5 className="font-semibold text-green-900 mb-1">1. Certified Software Overwrite</h5>
+                                <h4 className="font-semibold text-green-900 mb-1">1. Certified Software Overwrite</h4>
                                 <p className="text-sm text-slate-700">DoD 5220.22-M (3/7-pass) or <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> compliant tools</p>
                             </div>
                             <div className="bg-white p-4 rounded-lg border border-green-200">
-                                <h5 className="font-semibold text-green-900 mb-1">2. Cryptographic Erasure</h5>
+                                <h4 className="font-semibold text-green-900 mb-1">2. Cryptographic Erasure</h4>
                                 <p className="text-sm text-slate-700">Destroy encryption key on SEDs (Self-Encrypting Drives)</p>
                             </div>
                             <div className="bg-white p-4 rounded-lg border border-green-200">
-                                <h5 className="font-semibold text-green-900 mb-1">3. Physical Destruction</h5>
+                                <h4 className="font-semibold text-green-900 mb-1">3. Physical Destruction</h4>
                                 <p className="text-sm text-slate-700">Industrial shredding, degaussing, or incineration</p>
                             </div>
                             <div className="bg-white p-4 rounded-lg border border-green-200">
-                                <h5 className="font-semibold text-green-900 mb-1">4. Professional <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Services</h5>
+                                <h4 className="font-semibold text-green-900 mb-1">4. Professional <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Services</h4>
                                 <p className="text-sm text-slate-700">Certified vendors with chain-of-custody and audit trails</p>
                             </div>
                         </div>
@@ -224,7 +224,7 @@ const DataDeletionMythsBlog: React.FC = () => {
 
         {/* D-Secure Solution */}
         <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">D-Secure: No Myths, Just Verified Erasure</h2>
                 <p className="text-slate-700 leading-relaxed mb-6">
                     D-Secure uses industry-standard methods with independent verification—no guesswork, no hope, just proof.
@@ -232,17 +232,17 @@ const DataDeletionMythsBlog: React.FC = () => {
                 <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-gradient-to-br from-red-50 to-rose-50 p-4 rounded-xl border border-red-100">
                         <ShieldIcon className="w-6 h-6 text-red-600 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">Certified Methods</h4>
+                        <h3 className="font-bold text-slate-900 text-sm mb-1">Certified Methods</h3>
                         <p className="text-xs text-slate-600">DoD, NIST, and cryptographic erasure</p>
                     </div>
                     <div className="bg-gradient-to-br from-red-50 to-rose-50 p-4 rounded-xl border border-red-100">
                         <CheckIcon className="w-6 h-6 text-red-600 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">Verification Built-In</h4>
+                        <h3 className="font-bold text-slate-900 text-sm mb-1">Verification Built-In</h3>
                         <p className="text-xs text-slate-600">Read-back verification proves success</p>
                     </div>
                     <div className="bg-gradient-to-br from-red-50 to-rose-50 p-4 rounded-xl border border-red-100">
                         <StarIcon className="w-6 h-6 text-red-600 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">Audit-Ready Reports</h4>
+                        <h3 className="font-bold text-slate-900 text-sm mb-1">Audit-Ready Reports</h3>
                         <p className="text-xs text-slate-600">Compliance certificates for every device</p>
                     </div>
                 </div>

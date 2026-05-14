@@ -162,7 +162,108 @@ export default function UseCasesPage() {
             </div>
           </div>
         </section>
+        {/* Strategic Deep Dive: Sustainability & ROI */}
+        <section className="py-24 bg-white border-t border-slate-100">
+          <div className="container-responsive">
+            <Reveal>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Strategic Impact: Beyond the Erase Button</h2>
+                <p className="text-slate-600 text-xl max-w-3xl mx-auto">
+                  Data sanitization is no longer just a security checkbox; it is a strategic pillar for corporate sustainability and financial optimization.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <Reveal>
+                <div className="space-y-12">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-6">Environmental Sustainability & Circular Economy</h3>
+                    <div className="prose prose-slate prose-lg text-slate-600">
+                      <p>
+                        The traditional "Shred-First" approach to data security is one of the leading contributors to global electronic waste. When a functional 2TB Enterprise SSD is physically crushed, it represents a loss of critical rare-earth minerals and the carbon footprint associated with its original manufacturing.
+                      </p>
+                      <p>
+                        D-Secure enables the **Circular Economy** by allowing organizations to safely repurpose or resell their hardware without any residual data risk. By choosing software-based sanitization over physical destruction, D-Secure clients have collectively diverted thousands of tons of functional hardware from landfills, significantly lowering their scope 3 carbon emissions.
+                      </p>
+                    </div>
+                    <div className="mt-8 p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
+                      <h4 className="text-emerald-800 font-bold mb-2">The Sustainability Dividend</h4>
+                      <p className="text-sm text-emerald-700">Every 1,000 drives sanitized instead of shredded saves approximately 15 metric tons of CO2 equivalent emissions.</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-6">Total Cost of Ownership (TCO) vs. Shredding</h3>
+                    <div className="prose prose-slate prose-lg text-slate-600">
+                      <p>
+                        Physical destruction is often perceived as "cheap," but a hidden cost analysis reveals a different story. The labor for drive removal, secure transport to shredding facilities, and the 100% loss of asset residual value makes shredding an expensive liability.
+                      </p>
+                      <p>
+                        D-Secure's ROI model focuses on **Asset Value Recovery**. A sanitized laptop or server retains 30-50% of its value on the secondary market. For an enterprise with 5,000 assets, this represents millions of dollars in recovered capital—funding the entire security budget for the following year.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal>
+                <div className="bg-slate-900 rounded-[3rem] p-12 text-white sticky top-24">
+                  <h3 className="text-3xl font-bold mb-8 text-brand">Sector Governance Frameworks</h3>
+                  <div className="space-y-8">
+                    <div className="border-b border-white/10 pb-8">
+                      <h4 className="text-xl font-bold mb-4 flex items-center gap-3">
+                        <span className="w-8 h-8 rounded-lg bg-brand/20 flex items-center justify-center text-brand text-sm">FI</span>
+                        Financial Governance
+                      </h4>
+                      <p className="text-slate-400 leading-relaxed">
+                        In the banking sector, data retention periods are strictly mandated. D-Secure integrates with ITAM (IT Asset Management) systems to trigger automated erasure exactly when a record's legal hold expires, ensuring compliance with the 'Principle of Least Privilege'.
+                      </p>
+                    </div>
+                    <div className="border-b border-white/10 pb-8">
+                      <h4 className="text-xl font-bold mb-4 flex items-center gap-3">
+                        <span className="w-8 h-8 rounded-lg bg-brand/20 flex items-center justify-center text-brand text-sm">HC</span>
+                        Healthcare Data Integrity
+                      </h4>
+                      <p className="text-slate-400 leading-relaxed">
+                        Hospitals utilize a wide array of proprietary storage devices in MRI and CT scanners. D-Secure's hardware-agnostic kernel ensures these specialized drives are sanitized without damaging the underlying medical firmware, preserving the device's resale value for the medical equipment market.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-4 flex items-center gap-3">
+                        <span className="w-8 h-8 rounded-lg bg-brand/20 flex items-center justify-center text-brand text-sm">IT</span>
+                        ITAD High-Volume Logistics
+                      </h4>
+                      <p className="text-slate-400 leading-relaxed">
+                        For large-scale recyclers, speed is profit. D-Secure's parallel processing engine eliminates bottlenecks, allowing a single technician to manage hundreds of simultaneous erasures from a central dashboard, maximizing throughput while maintaining 100% audit accuracy.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+            <div className="mt-32 max-w-4xl mx-auto text-center">
+              <Reveal>
+                <div className="inline-block p-1 px-3 rounded-full bg-brand/10 text-brand text-xs font-bold uppercase tracking-wider mb-6">
+                  Future-Ready
+                </div>
+                <h3 className="text-3xl font-bold text-slate-900 mb-8">The Evolution of Data Sanitization Use Cases</h3>
+                <p className="text-slate-600 text-lg leading-relaxed mb-12">
+                  As we move toward a world of ephemeral cloud instances and decentralized edge computing, the "Use Case" for D-Secure continues to expand. We are currently piloting solutions for **Remote Work Recovery**—enabling IT teams to securely wipe a lost or stolen laptop anywhere in the world with a single click, immediately generating a compliance certificate for the insurance carrier.
+                </p>
+                <a
+                  href="/contact"
+                  className="inline-block bg-brand text-white px-12 py-5 rounded-2xl font-bold text-lg hover:bg-brand-dark transition-all transform hover:-translate-y-1 shadow-xl shadow-brand/20"
+                >
+                  Discuss Your Unique Use Case
+                </a>
+              </Reveal>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );
 }
+

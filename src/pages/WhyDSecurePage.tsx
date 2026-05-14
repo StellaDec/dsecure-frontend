@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import SEOHead from "../components/SEOHead";
 import { getSEOForPage } from "../utils/seo";
+import Reveal from "@/components/Reveal";
 
 export default function WhyDSecurePage() {
   useEffect(() => {
@@ -138,10 +139,136 @@ export default function WhyDSecurePage() {
             </div>
           </div>
 
+          <div className="mt-20">
+            <Reveal>
+              <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+                <div className="p-8 md:p-12">
+                  <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+                    The Strategic Imperative: Why Global Enterprises Standardize on D-Secure
+                  </h2>
+
+                  <div className="prose prose-slate max-w-none">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-4">
+                          1. Beyond Bit-Level Wiping: The Architectural Difference
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed mb-4">
+                          Traditional data wiping utilities often operate at the OS level, which is insufficient for modern storage architectures like NVMe, SSD, and hybrid arrays. These legacy tools fail to address hidden sectors, remapped blocks, and over-provisioned space where sensitive data fragments often reside.
+                        </p>
+                        <p className="text-slate-600 leading-relaxed">
+                          D-Secure’s engine interacts directly with the storage controller via low-level firmware commands. Our <strong>"Deep Purge"</strong> technology triggers internal hardware-level sanitization protocols (such as Sanitize Device or Crypto Erase) that ensure every nanometer of the storage medium is neutralized, not just the logical address space visible to the operating system.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-4">
+                          2. Economic Rationalization: ROI of Erasure vs. Destruction
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed mb-4">
+                          Physical shredding is an archaic "scorched earth" policy that destroys millions of dollars in residual hardware value every year. For a mid-sized enterprise decommissioning 1,000 laptops, physical destruction results in zero recovery value and high disposal fees.
+                        </p>
+                        <p className="text-slate-600 leading-relaxed">
+                          By standardizing on D-Secure, organizations can securely repurpose or resell assets, capturing up to <strong>40% higher residual value</strong>. Our software-defined sanitization pays for itself through asset recovery alone, while simultaneously eliminating the logistical costs of secure shredding transportation and the environmental liability of electronic waste.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="bg-slate-50 rounded-xl p-8 mb-12 border border-slate-100">
+                      <h3 className="text-xl font-bold text-slate-900 mb-6 text-center">
+                        D-Secure Global Compliance & Regulatory Alignment Matrix
+                      </h3>
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full text-sm text-left text-slate-600">
+                          <thead className="text-slate-900 font-bold border-b border-slate-200">
+                            <tr>
+                              <th className="pb-4 pr-4">Framework / Standard</th>
+                              <th className="pb-4 px-4">D-Secure Capability</th>
+                              <th className="pb-4 pl-4">Enterprise Outcome</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-slate-200">
+                            <tr>
+                              <td className="py-4 pr-4 font-semibold">NIST 800-88 Rev. 1</td>
+                              <td className="py-4 px-4">Full implementation of "Purge" and "Clear" parameters across all media types.</td>
+                              <td className="py-4 pl-4 text-emerald-700">Highest level of U.S. Federal compliance.</td>
+                            </tr>
+                            <tr>
+                              <td className="py-4 pr-4 font-semibold">GDPR (Article 17)</td>
+                              <td className="py-4 px-4">Automated "Right to Erasure" fulfillment with verifiable audit trails.</td>
+                              <td className="py-4 pl-4 text-emerald-700">Mitigation of multi-million Euro non-compliance fines.</td>
+                            </tr>
+                            <tr>
+                              <td className="py-4 pr-4 font-semibold">PCI DSS 4.0</td>
+                              <td className="py-4 px-4">Secure destruction of cardholder data on decommissioned storage systems.</td>
+                              <td className="py-4 pl-4 text-emerald-700">Seamless passage of QSA audits for financial entities.</td>
+                            </tr>
+                            <tr>
+                              <td className="py-4 pr-4 font-semibold">ISO/IEC 27001</td>
+                              <td className="py-4 px-4">Evidence-based asset disposal controls (A.8.3.2) and information labeling.</td>
+                              <td className="py-4 pl-4 text-emerald-700">Unified global security posture and certification.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-4">
+                          3. Environmental, Social, and Governance (ESG) Impact
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed mb-4">
+                          The "Shred-First" mentality is a major contributor to the global e-waste crisis, which now exceeds 50 million metric tons annually. D-Secure enables the <strong>Circular Economy</strong> by certifying hardware for safe second-life usage.
+                        </p>
+                        <p className="text-slate-600 leading-relaxed">
+                          For every 1,000 hard drives sanitized with D-Secure instead of shredded, an enterprise prevents approximately 2.5 metric tons of CO2 emissions associated with new manufacturing. We provide "Green Certificates" that your CSR teams can use to quantify scope 3 emissions reductions.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-4">
+                          4. Scalability: From Endpoints to Hyperscale Data Centers
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed mb-4">
+                          Unlike manual wiping tools that require one-by-one technician intervention, D-Secure is built for mass automation. Our PXE network boot and API-driven workflows allow a single operator to sanitize thousands of server nodes simultaneously.
+                        </p>
+                        <p className="text-slate-600 leading-relaxed">
+                          Whether it's a remote employee's laptop in London or a 10,000-node rack in a Singapore data center, D-Secure provides a unified management console to execute, track, and verify sanitization across the entire global footprint of your IT estate.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-12 p-8 bg-emerald-900 rounded-xl text-white">
+                      <h3 className="text-2xl font-bold mb-4">The D-Secure Philosophy: Immutable Trust</h3>
+                      <p className="text-emerald-100 leading-relaxed mb-6">
+                        In an era where "deleted" rarely means "gone," D-Secure exists to restore certainty. We believe that data sanitization is not a technical byproduct, but a fundamental pillar of modern cybersecurity. Our engineers work at the intersection of hardware physics and cryptographic theory to ensure that when you choose D-Secure, you aren't just buying software—you are acquiring an insurance policy for your most valuable digital assets.
+                      </p>
+                      <div className="flex flex-wrap gap-4">
+                        <div className="bg-emerald-800/50 px-4 py-2 rounded-lg border border-emerald-700 text-sm font-mono">
+                          24+ Erasure Algorithms
+                        </div>
+                        <div className="bg-emerald-800/50 px-4 py-2 rounded-lg border border-emerald-700 text-sm font-mono">
+                          NIST 800-88 Certified
+                        </div>
+                        <div className="bg-emerald-800/50 px-4 py-2 rounded-lg border border-emerald-700 text-sm font-mono">
+                          Tamper-Proof Logs
+                        </div>
+                        <div className="bg-emerald-800/50 px-4 py-2 rounded-lg border border-emerald-700 text-sm font-mono">
+                          API-First Integration
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
           <div className="mt-16 text-center max-w-4xl mx-auto bg-slate-100 rounded-xl p-6 text-slate-500 text-sm">
             <p>
               Metadata Category Alignment: Enterprise Compliance Strategy / Data
-              Hygiene / Lifecycle Governance Risk Management.
+              Hygiene / Lifecycle Governance Risk Management / ESG Sustainability
+              Reporting / Cybersecurity Audit Readiness / NIST 800-88 Purge
+              Protocols.
             </p>
           </div>
         </div>

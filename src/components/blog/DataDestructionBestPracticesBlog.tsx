@@ -37,9 +37,9 @@ const DataDestructionBestPracticesBlog: React.FC = () => {
             </section>
 
             {/* Main Content - Full Width */}
-            <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+            <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
 
                         {/* Introduction */}
                         <div className="space-y-6">
@@ -56,7 +56,7 @@ const DataDestructionBestPracticesBlog: React.FC = () => {
 
                 {/* Practice 1 */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <div className="flex items-center gap-4 mb-6">
                             <span className="flex-shrink-0 w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl font-bold">1</span>
                             <h2 className="text-3xl font-bold text-slate-900">
@@ -101,7 +101,7 @@ const DataDestructionBestPracticesBlog: React.FC = () => {
 
                 {/* Practice 3 */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <div className="flex items-center gap-4 mb-6">
                             <span className="flex-shrink-0 w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl font-bold">3</span>
                             <h2 className="text-3xl font-bold text-slate-900">
@@ -117,7 +117,7 @@ const DataDestructionBestPracticesBlog: React.FC = () => {
 
                 {/* Practice 4 */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <div className="flex items-center gap-4 mb-6">
                             <span className="flex-shrink-0 w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl font-bold">4</span>
                             <h2 className="text-3xl font-bold text-slate-900">
@@ -133,7 +133,7 @@ const DataDestructionBestPracticesBlog: React.FC = () => {
 
                 {/* Practice 5 */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <div className="flex items-center gap-4 mb-6">
                             <span className="flex-shrink-0 w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl font-bold">5</span>
                             <h2 className="text-3xl font-bold text-slate-900">
@@ -149,7 +149,7 @@ const DataDestructionBestPracticesBlog: React.FC = () => {
 
                 {/* Practice 6 */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <div className="flex items-center gap-4 mb-6">
                             <span className="flex-shrink-0 w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl font-bold">6</span>
                             <h2 className="text-3xl font-bold text-slate-900">

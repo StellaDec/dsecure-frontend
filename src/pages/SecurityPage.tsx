@@ -17,7 +17,7 @@ export default function SecurityPage() {
           {/* Header Section */}
           <div className="text-center mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16 xxl:mb-18">
             <h1 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl xxl:text-7xl font-bold text-slate-900 light:text-white mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 xxl:mb-14">
-              Security Practices
+              D-Secure Security Practices: Enterprise-Grade Data Protection
             </h1>
             <p className="text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-2xl xxl:text-2xl text-slate-600 light:text-slate-300 max-w-3xl mx-auto">
               Enterprise-grade security measures and regulations that protect
@@ -368,7 +368,74 @@ export default function SecurityPage() {
             </div>
           </section>
 
+          {/* In-Depth Security Architecture Deep Dive */}
+          <section className="mb-20 py-20 bg-slate-900 -mx-4 xs:-mx-5 sm:-mx-6 md:-mx-8 lg:-mx-10 xl:-mx-12 xxl:-mx-16 px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 xxl:px-16 rounded-[4rem]">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl font-bold text-white mb-12 text-center">In-Depth Security Architecture & Data Protection Philosophy</h2>
+              
+              <div className="space-y-16">
+                <div>
+                  <h3 className="text-2xl font-bold text-brand mb-6">Advanced Cryptographic Standards</h3>
+                  <p className="text-slate-400 text-lg leading-relaxed mb-6">
+                    D-Secure leverages industry-leading cryptographic primitives to ensure that your data is not only erased but protected throughout its lifecycle. For data in transit, we enforce **TLS 1.3** with Perfect Forward Secrecy (PFS), preventing any retroactive decryption of traffic even in the event of a long-term key compromise. 
+                  </p>
+                  <p className="text-slate-400 text-lg leading-relaxed">
+                    Our reporting engine utilizes **ECDSA (Elliptic Curve Digital Signature Algorithm)** with P-384 curves to sign every erasure certificate. This ensures that the PDF reports you receive are mathematically tamper-proof. Any modification to a single character in a D-Secure report will invalidate its digital signature, which can be verified using our public portal.
+                  </p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 p-10 rounded-3xl">
+                  <h3 className="text-2xl font-bold text-white mb-6">Bypassing the OS: Hardware-Level Verification</h3>
+                  <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                    A common failure in consumer-grade erasure tools is their reliance on the Operating System's file system drivers. Modern OSs use complex caching mechanisms (like Write-Back caching) that can report a write operation as "complete" before the data actually hits the physical NAND or magnetic platter.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-8 mt-10">
+                    <div className="p-6 bg-slate-800/50 rounded-2xl">
+                      <h4 className="text-brand font-bold mb-3">Direct Drive Access</h4>
+                      <p className="text-sm text-slate-400">D-Secure communicates directly with the storage controller via specialized low-level APIs (NVMe, SATA/SAS passthrough), bypassing the file system layer entirely.</p>
+                    </div>
+                    <div className="p-6 bg-slate-800/50 rounded-2xl">
+                      <h4 className="text-brand font-bold mb-3">Post-Erase Sampling</h4>
+                      <p className="text-sm text-slate-400">After every erasure pass, we perform a deterministic bit-level verification of random sectors to ensure the physical state of the drive matches the expected sanitization pattern.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-6">Security-by-Design: Our Manifesto</h3>
+                  <div className="prose prose-invert prose-lg max-w-none text-slate-400">
+                    <p>
+                      We believe that security is not a feature; it is a fundamental property of a system. This belief manifests in our "Security-by-Design" approach:
+                    </p>
+                    <ul className="space-y-4 list-none pl-0">
+                      <li className="flex gap-4">
+                        <span className="text-brand font-bold">01.</span>
+                        <span><strong>Zero Knowledge Principles:</strong> D-Secure never sees your actual raw data. Our software runs locally on your infrastructure (or in a stateless RAM-disk environment), ensuring that sensitive data never leaves your premises.</span>
+                      </li>
+                      <li className="flex gap-4">
+                        <span className="text-brand font-bold">02.</span>
+                        <span><strong>Minimal Surface Area:</strong> Our erasure environment (D-Secure ISO) is a hardened Linux kernel with 90% of standard services disabled. This eliminates potential attack vectors during the sensitive erasure process.</span>
+                      </li>
+                      <li className="flex gap-4">
+                        <span className="text-brand font-bold">03.</span>
+                        <span><strong>Independent Validation:</strong> We don't just ask you to trust us. Our algorithms are regularly audited by third-party forensics labs to ensure they meet the rigorous standards of NIST 800-88 and IEEE 2883.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-20 p-8 bg-brand/10 border border-brand/20 rounded-2xl text-center">
+                <p className="text-slate-300 italic text-lg">
+                  "In the world of data sanitization, 'Good Enough' is an invitation for disaster. We build for the 0.001% edge case, because that is where the breaches happen."
+                </p>
+                <p className="mt-4 text-brand font-bold">— D-Secure Security Architecture Team</p>
+              </div>
+            </div>
+          </section>
+
           {/* Contact Security Team */}
+
           <section className="text-center">
             <h2 className="text-2xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl xxl:text-5xl font-semibold text-slate-900 light:text-white mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 xxl:mb-10">
               Security Questions?

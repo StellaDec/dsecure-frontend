@@ -42,9 +42,9 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-12">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             {/* Section 1 */}
             <div className="space-y-5">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -207,7 +207,7 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
 
         {/* D-Secure Section */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               Why Organizations Choose D-Secure for Mac Data Erasure
             </h2>
@@ -216,7 +216,7 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-indigo-600" filled />
-                  <h4 className="font-bold">Certified & Verifiable Erasure</h4>
+                  <h3 className="font-bold">Certified & Verifiable Erasure</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Permanently removes data and provides audit-ready
@@ -227,7 +227,7 @@ const EraseMacDataSafelyUsingDSecureBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ClipboardIcon className="w-5 h-5 text-indigo-600" filled />
-                  <h4 className="font-bold">Compliance-Ready Reporting</h4>
+                  <h3 className="font-bold">Compliance-Ready Reporting</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Supports regulatory, internal, and third-party audit needs.

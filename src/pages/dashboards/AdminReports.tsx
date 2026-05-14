@@ -2822,7 +2822,7 @@ export default function AdminReports() {
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="text-sm font-medium text-blue-800">Demo Mode Active</h3>
+              <h2 className="text-sm font-medium text-blue-800">Demo Mode Active</h2>
               <p className="mt-1 text-sm text-blue-700">
                 You're viewing AI-generated demo data for demonstration purposes. 
                 Connect to your backend API to see real audit reports from your database.
@@ -2835,9 +2835,9 @@ export default function AdminReports() {
         {/* Advanced Filters */}
         <div className="card p-4 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-slate-900">
               Filters & Search
-            </h3>
+            </h2>
             <button
               onClick={clearAllFilters}
               className="text-sm text-red-600 hover:text-red-800 font-medium"
@@ -3151,7 +3151,7 @@ export default function AdminReports() {
               className="btn-secondary"
               onClick={() => {
                 const body =
-                  `<h1>Audit Reports</h1>` +
+                  `<h2>Audit Reports</h2>` +
                   `<table border="1" style="border-collapse: collapse; width: 100%;"><thead><tr><th>Report ID</th><th>Date</th><th>Devices</th><th>Status</th><th>Department</th></tr></thead><tbody>` +
                   filtered
                     .map(
@@ -3239,9 +3239,9 @@ export default function AdminReports() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-slate-900 mb-2">
+              <h2 className="text-lg font-medium text-slate-900 mb-2">
                 No Reports Found
-              </h3>
+              </h2>
               <p className="text-slate-600 mb-6">
                 There are no audit reports available at the moment.
               </p>
@@ -3263,9 +3263,9 @@ export default function AdminReports() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-slate-900 mb-2">
+              <h2 className="text-lg font-medium text-slate-900 mb-2">
                 No Results Found
-              </h3>
+              </h2>
               <p className="text-slate-600 mb-6">
                 No reports match your current filters.
               </p>
@@ -3918,9 +3918,9 @@ export default function AdminReports() {
 
               {/* Selected Reports Preview */}
               {/* <div className="bg-slate-50 rounded-lg p-4">
-                <h4 className="text-sm font-medium text-slate-700 mb-2">
+                <h3 className="text-sm font-medium text-slate-700 mb-2">
                   Selected Report IDs:
-                </h4>
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {Array.from(selectedReportIds).map((id) => (
                     <span
@@ -4599,7 +4599,7 @@ export default function AdminReports() {
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
                     <div>
-                      <h3 className="text-sm font-medium text-yellow-800">Execute Immediately</h3>
+                      <h2 className="text-sm font-medium text-yellow-800">Execute Immediately</h2>
                       <p className="text-sm text-yellow-700 mt-1">
                         Reports will be processed and emailed immediately when you click "Execute Now".
                       </p>
@@ -4609,7 +4609,7 @@ export default function AdminReports() {
               )} */}
             {/* {selectedReportIds.size > 0 && (
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h3 className="text-sm font-medium text-blue-800 mb-2">Selected Reports</h3>
+                  <h2 className="text-sm font-medium text-blue-800 mb-2">Selected Reports</h2>
                   <p className="text-sm text-blue-700">
                      {selectedReportIds.size} reports selected: {Array.from(selectedReportIds).join(', ')}
                   </p>
@@ -4687,9 +4687,9 @@ export default function AdminReports() {
 
             {/* Schedule Info */}
             {/* <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                <h3 className="text-sm font-medium text-slate-800 mb-2">
+                <h2 className="text-sm font-medium text-slate-800 mb-2">
                   {schedulerData.scheduleType === 'immediate' ? 'Execution Summary' : 'Schedule Summary'}
-                </h3>
+                </h2>
                 <div className="text-sm text-slate-600 space-y-1">
                   <p><strong>Report:</strong> {schedulerData.reportName || 'Untitled Report'}</p>
                   <p><strong>Type:</strong> {
@@ -4791,7 +4791,7 @@ export default function AdminReports() {
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-2">
-                            <h3 className="font-semibold text-slate-900">{schedule.scheduleName}</h3>
+                            <h2 className="font-semibold text-slate-900">{schedule.scheduleName}</h2>
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                               schedule.isActive 
                                 ? 'bg-green-100 text-green-800' 

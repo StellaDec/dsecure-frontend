@@ -404,12 +404,12 @@ const EducationPage: React.FC = () => {
                   className="text-center p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="text-5xl mb-4">{asset.icon}</div>
-                  <h4
+                  <h3
                     className="text-lg font-bold mb-2"
                     style={{ color: "#1f2937" }}
                   >
                     {asset.title}
-                  </h4>
+                  </h3>
                   <p className="text-sm" style={{ color: "#6b7280" }}>
                     {asset.desc}
                   </p>
@@ -473,27 +473,27 @@ const EducationPage: React.FC = () => {
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Compliance Verification
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       Generate auditable proofs for State and Federal privacy
                       auditors.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Asset Lifetime Value
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       Erase data while keeping the hardware intact for resale or
                       donations.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Campus-Wide Centralization
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       Manage all student data sanitization from a single web
                       dashboard.

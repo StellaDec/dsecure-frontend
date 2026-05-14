@@ -8,10 +8,8 @@ const KnowledgeBasePage = lazy(() => import("../pages/support/KnowledgeBasePage"
 const GetStartedPage = lazy(() => import("../pages/support/GetStartedPage"));
 const HelpManualPage = lazy(() => import("../pages/support/HelpManualPage"));
 const ProductVideosPage = lazy(() => import("../pages/support/ProductVideosPage"));
-
-// Manual Core
-const HelpManualIndexPage = lazy(() => import("../pages/manual/HelpManualIndexPage"));
 const CompleteDSecureManual = lazy(() => import("../pages/manual/CompleteDSecureManual"));
+const CompleteDSecureNetworkFile = lazy(() => import("../pages/manual/CompleteDSecureNetworkFile"));
 const CompleteDSecureDriveManual = lazy(() => import("../pages/manual/CompleteDSecureDriveManual"));
 const CompleteFreezeStateManual = lazy(() => import("../pages/manual/CompleteFreezeStateManual"));
 const CompleteDSecureDaignosticManual = lazy(() => import("../pages/manual/CompleteDSecureDaignosticManual"));
@@ -302,48 +300,61 @@ export const SupportRoutes = () => (
     <Route path="support/product-videos" element={<ProductVideosPage />} />
 
     {/* Automated Manual Hub */}
-    <Route path="/support/manual/installation" element={<InstallationPage />} />
+    <Route path="support/manual/installation" element={<InstallationPage />} />
     <Route
-      path="/support/manual/installation-guide"
+      path="support/manual/installation-guide"
       element={<InstallationGuideDetailed />}
     />
-    <Route path="/support/manual/system-setup" element={<SystemSetupPage />} />
+    <Route path="support/manual/system-setup" element={<SystemSetupPage />} />
+    <Route path="support/manual/working-with-dsecure" element={<WorkingWithDSecurePage />} />
+    <Route path="support/help-manual/faqs" element={<DSecureFAQPage />} />
     <Route
-      path="/support/manual/working-with-D-Secure"
-      element={<WorkingWithDSecurePage />}
-    />
-    <Route
-      path="/support/help-manual/working-guide"
-      element={<WorkingWithDSecurePage />}
-    />
-    <Route path="/support/help-manual/faqs" element={<DSecureFAQPage />} />
-    <Route
-      path="/support/help-manual/report-management"
+      path="support/help-manual/report-management"
       element={<ReportManagementPage />}
     />
     <Route
-      path="/support/help-manual/schedule-settings"
+      path="support/help-manual/schedule-settings"
       element={<ScheduleSettingsPage />}
     />
+
+    {/* Redirects for manual pages */}
+    <Route 
+      path="support/manual/working-with-D-Secure" 
+      element={<Navigate to="/support/manual/working-with-dsecure" replace />} 
+    />
+    <Route 
+      path="support/help-manual/working-guide" 
+      element={<Navigate to="/support/manual/working-with-dsecure" replace />} 
+    />
+    <Route 
+      path="support/help-manual/system-setup" 
+      element={<Navigate to="/support/manual/system-setup" replace />} 
+    />
+    {/* Complete Manuals - Consolidated Routing */}
     <Route
-      path="/support/help-manual/complete-manual"
+      path="support/help-manual/complete-manual"
       element={<CompleteDSecureManual />}
     />
     <Route
-      path="/support/help-manual/complete-drive-manual"
+      path="support/help-manual/complete-network-manual"
+      element={<CompleteDSecureNetworkFile />}
+    />
+    <Route
+      path="support/help-manual/complete-drive-manual"
       element={<CompleteDSecureDriveManual />}
     />
     <Route
-      path="/support/help-manual/complete-freeze-state-manual"
+      path="support/help-manual/complete-freeze-state-manual"
       element={<CompleteFreezeStateManual />}
     />
     <Route
-      path="/support/help-manual/complete-diagnostic-manual"
+      path="support/help-manual/complete-diagnostic-manual"
       element={<CompleteDSecureDaignosticManual />}
     />
 
+    {/* Network Manual with Sub-routes */}
     <Route
-      path="/support/help-manual/complete-network-manual"
+      path="support/help-manual/network-file"
       element={<NetworkFileManualLayout />}
     >
       <Route
@@ -356,12 +367,6 @@ export const SupportRoutes = () => (
           </div>
         }
       />
-    </Route>
-
-    <Route
-      path="/support/help-manual/network-file"
-      element={<NetworkFileManualLayout />}
-    >
       <Route path="quick-overview" element={<NetworkFileQuickOverview />} />
       <Route path="installation" element={<NetworkFileInstallation />} />
       <Route path="user-interface" element={<NetworkFileUserInterface />} />
@@ -387,9 +392,19 @@ export const SupportRoutes = () => (
       <Route path="about" element={<NetworkFileAbout />} />
     </Route>
 
-    <Route path="/support/help-manual" element={<HelpManualIndexPage />} />
+    {/* Redirects for SEO and Legacy links */}
+    <Route 
+      path="support/help-manual/complete-network-manual" 
+      element={<Navigate to="/support/help-manual/network-file" replace />} 
+    />
+    <Route 
+      path="support/manual/network-file" 
+      element={<Navigate to="/support/help-manual/network-file" replace />} 
+    />
+
+
     
     {/* Dynamic Manual Pages - Automatically handles all 210+ manual pages */}
-    <Route path="/support/manual/:slug" element={<ManualPageRenderer />} />
+    <Route path="support/manual/:slug" element={<ManualPageRenderer />} />
   </Route>
 );

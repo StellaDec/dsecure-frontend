@@ -305,7 +305,7 @@ const DownloadPage: React.FC = memo(() => {
                       : "bg-white text-gray-700 border-gray-200 hover:border-teal-300 hover:shadow-lg"
                   }`}
                 >
-                  <h3 className="font-semibold text-sm mb-1">{product.name}</h3>
+                  <h2 className="font-semibold text-sm mb-1">{product.name}</h2>
                   <p
                     className={`text-xs ${selectedProduct === product.id ? "opacity-90" : "text-gray-500"}`}
                   >
@@ -352,11 +352,11 @@ const DownloadPage: React.FC = memo(() => {
                   <div className="text-blue-600 mb-3 group-hover:scale-110 transition-transform">
                     {selectedProduct.includes("drive-eraser") ? <CpuIcon /> : <WindowsIcon />}
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-1">
+                  <h2 className="font-bold text-gray-900 mb-1">
                     {selectedProduct.includes("drive-eraser")
                       ? "x64 Architecture"
                       : "Windows"}
-                  </h3>
+                  </h2>
                   <p className="text-xs text-gray-500 mb-3">
                     {selectedProduct.includes("drive-eraser")
                       ? "AMD/Intel (x64x86)"
@@ -400,11 +400,11 @@ const DownloadPage: React.FC = memo(() => {
                   <div className="text-gray-700 mb-3 group-hover:scale-110 transition-transform">
                     {selectedProduct.includes("drive-eraser") ? <CpuIcon /> : <MacIcon />}
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-1">
+                  <h2 className="font-bold text-gray-900 mb-1">
                     {selectedProduct.includes("drive-eraser")
                       ? "x86 Architecture"
                       : "macOS"}
-                  </h3>
+                  </h2>
                   <p className="text-xs text-gray-500 mb-3">
                     {selectedProduct.includes("drive-eraser")
                       ? "AMD/Intel (x64x86)"
@@ -455,11 +455,11 @@ const DownloadPage: React.FC = memo(() => {
                   <div className="text-orange-600 mb-3 group-hover:scale-110 transition-transform">
                     {selectedProduct.includes("drive-eraser") ? <CpuIcon /> : <LinuxIcon />}
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-1">
+                  <h2 className="font-bold text-gray-900 mb-1">
                     {selectedProduct.includes("drive-eraser")
                       ? "ARM Architecture"
                       : "Linux"}
-                  </h3>
+                  </h2>
                   <p className="text-xs text-gray-500 mb-3">
                     {selectedProduct.includes("drive-eraser")
                       ? "AMD/Intel (x64x86)"
@@ -504,7 +504,7 @@ const DownloadPage: React.FC = memo(() => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900">File Integrity Verification</h3>
+                    <h2 className="text-lg font-bold text-gray-900">File Integrity Verification</h2>
                     <p className="text-xs text-gray-500">Ensure your download is authentic and has not been tampered with.</p>
                   </div>
                 </div>

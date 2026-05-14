@@ -296,7 +296,7 @@ const ProductVideosPage: React.FC = memo(() => {
               <div className="space-y-6">
                 {/* Category Filter */}
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">CATEGORIES</h3>
+                  <h2 className="text-sm font-semibold text-slate-900 mb-3">CATEGORIES</h2>
                   <div className="flex flex-wrap gap-2">
                     {categories.map((category) => (
                       <button
@@ -315,7 +315,7 @@ const ProductVideosPage: React.FC = memo(() => {
 
                 {/* Difficulty Filter */}
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">DIFFICULTY LEVEL</h3>
+                  <h2 className="text-sm font-semibold text-slate-900 mb-3">DIFFICULTY LEVEL</h2>
                   <div className="flex flex-wrap gap-2">
                     {difficulties.map((difficulty) => (
                       <button
@@ -346,7 +346,7 @@ const ProductVideosPage: React.FC = memo(() => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">No Videos Found</h3>
+                <h2 className="text-xl font-semibold text-slate-900 mb-2">No Videos Found</h2>
                 <p className="text-slate-600">Try adjusting your search terms or filters.</p>
               </div>
             ) : (
@@ -385,9 +385,9 @@ const ProductVideosPage: React.FC = memo(() => {
                           <span className="text-sm text-slate-500">{formatViews(video.views)} views</span>
                         </div>
 
-                        <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                        <h2 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
                           {video.title}
-                        </h3>
+                        </h2>
 
                         <p className="text-slate-600 text-sm leading-relaxed mb-4">
                           {video.description}
@@ -464,9 +464,9 @@ const ProductVideosPage: React.FC = memo(() => {
                       </div>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                      <h2 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
                         {playlist.title}
-                      </h3>
+                      </h2>
                       <p className="text-slate-600 text-sm leading-relaxed">
                         {playlist.description}
                       </p>
@@ -513,9 +513,9 @@ const ProductVideosPage: React.FC = memo(() => {
           <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
               <div className="flex items-center justify-between p-4 border-b border-slate-200">
-                <h3 className="text-lg font-semibold text-slate-900">
+                <h2 className="text-lg font-semibold text-slate-900">
                   {videos.find(v => v.id === selectedVideo)?.title}
-                </h3>
+                </h2>
                 <button
                   onClick={() => setSelectedVideo(null)}
                   className="text-slate-400 hover:text-slate-600 transition-colors"

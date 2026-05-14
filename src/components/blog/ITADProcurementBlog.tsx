@@ -42,9 +42,9 @@ const ITADProcurementBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -70,9 +70,9 @@ const ITADProcurementBlog: React.FC = () => {
 
               {/* Key Insight */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Compliance Requirements
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> partners must adhere to industry-recognized standards
                   like ISO 27001 and NIST SP 800-88 for data sanitization, R2V3
@@ -86,16 +86,16 @@ const ITADProcurementBlog: React.FC = () => {
 
           {/* Key Selection Factors */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Factors for Selecting the Right <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Partner
               </h2>
 
               <div className="space-y-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     1. Secure IT Asset Handling & Tracking
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> service providers must ensure prevention from
                     unauthorized access, loss, or theft of IT assets. The right
@@ -114,9 +114,9 @@ const ITADProcurementBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     2. Certified Media Sanitization
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Procurement teams should select ITADs that provide onsite,
                     offsite, and remote data destruction services. Organizations
@@ -135,9 +135,9 @@ const ITADProcurementBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     3. Responsible Recycling Practices
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     According to the Deloitte 2024 CxO Sustainability Report,
                     69% of organizations require suppliers to meet
@@ -156,9 +156,9 @@ const ITADProcurementBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     4. Value Asset Recovery
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Salvageable IT assets can be resold after repair and
                     refurbishment. ITADs providing remarketing and resale value
@@ -174,16 +174,16 @@ const ITADProcurementBlog: React.FC = () => {
 
           {/* Additional Considerations */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Additional Selection Criteria
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Regulatory Compliance
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     ITADs must comply with EU-GDPR, HIPAA, CCPA, and data
                     privacy acts. Non-compliance can result in penalties,
@@ -191,9 +191,9 @@ const ITADProcurementBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Service Flexibility
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Global organizations need ITADs with reach across multiple
                     locations. Ideal partners offer global coverage with
@@ -201,9 +201,9 @@ const ITADProcurementBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-cyan-600 to-emerald-600 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Charitable Programs
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     ITADs offering redeployment and charitable donation services
                     help businesses promote reuse for causes like bridging the
@@ -211,9 +211,9 @@ const ITADProcurementBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Data Security Layering
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Due to miniaturization, data recovery from destroyed
                     components is possible. Data erasure before destruction
@@ -226,7 +226,7 @@ const ITADProcurementBlog: React.FC = () => {
 
           {/* Security Warning */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Before Destruction Matters
               </h2>
@@ -253,7 +253,7 @@ const ITADProcurementBlog: React.FC = () => {
             </div>
           </Reveal>{/* Conclusion */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>

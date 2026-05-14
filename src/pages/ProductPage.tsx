@@ -584,9 +584,9 @@ const ProductPage: React.FC = () => {
                   </div>
                   <div className="flex-none">
                     <DatabaseIcon className="w-12 xs:w-14 sm:w-16 h-12 xs:h-14 sm:h-16 text-emerald-800 mb-4 xs:mb-6 transition-transform group-hover:scale-110" />
-                    <h3 className="text-xl xs:text-2xl sm:text-3xl font-bold mb-2 text-slate-900">
+                    <h2 className="text-xl xs:text-2xl sm:text-3xl font-bold mb-2 text-slate-900">
                       {t("products.driveEraserTitle")}
-                    </h3>
+                    </h2>
                     <p className="text-slate-600 mb-3 xs:mb-4 leading-relaxed text-base xs:text-lg font-semibold">
                       {t("products.driveEraserSubtitle")}
                     </p>
@@ -597,9 +597,9 @@ const ProductPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xs:gap-6 mb-6 xs:mb-8 flex-1">
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-3 xs:mb-4 text-sm xs:text-base">
+                      <h3 className="font-semibold text-slate-900 mb-3 xs:mb-4 text-sm xs:text-base">
                         {t("products.keyFeatures")}
-                      </h4>
+                      </h3>
                       <ul className="text-slate-700 space-y-3 text-sm">
                         <li className="flex items-center gap-3">
                           <CheckIcon className="w-4 h-4 text-emerald-800" />
@@ -621,9 +621,9 @@ const ProductPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-4">
+                      <h3 className="font-semibold text-slate-900 mb-4">
                         {t("products.technicalSpecs")}
-                      </h4>
+                      </h3>
                       <div className="space-y-3 text-sm">
                         <div className="flex justify-between border-b border-slate-200 pb-2">
                           <span className="text-slate-600">
@@ -662,9 +662,9 @@ const ProductPage: React.FC = () => {
                   </div>
 
                   <div className="mb-8">
-                    <h4 className="font-semibold text-slate-900 mb-3">
+                    <h3 className="font-semibold text-slate-900 mb-3">
                       {t("products.keyBenefits")}
-                    </h4>
+                    </h3>
                     <ul className="text-slate-700 space-y-2 text-sm">
                       <li className="flex items-center gap-2">
                         <CheckIcon className="w-4 h-4 text-emerald-800" />
@@ -727,9 +727,9 @@ const ProductPage: React.FC = () => {
                   </div>
                   <div className="flex-none">
                     <ServerIcon className="w-16 h-16 text-emerald-800 mb-6 transition-transform group-hover:scale-110" />
-                    <h3 className="text-3xl font-bold mb-2 text-slate-900">
+                    <h2 className="text-3xl font-bold mb-2 text-slate-900">
                       {t("products.fileEraserTitle")}
-                    </h3>
+                    </h2>
                     <p className="text-slate-600 mb-4 leading-relaxed text-lg font-semibold">
                       {t("products.fileEraserSubtitle")}
                     </p>
@@ -740,9 +740,9 @@ const ProductPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 flex-1">
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-4">
+                      <h3 className="font-semibold text-slate-900 mb-4">
                         {t("products.keyFeatures")}
-                      </h4>
+                      </h3>
                       <ul className="text-slate-700 space-y-3 text-sm">
                         <li className="flex items-center gap-3">
                           <CheckIcon className="w-4 h-4 text-emerald-800" />
@@ -764,9 +764,9 @@ const ProductPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-4">
+                      <h3 className="font-semibold text-slate-900 mb-4">
                         {t("products.platformSupport")}
-                      </h4>
+                      </h3>
                       <div className="space-y-3 text-sm">
                         <div className="flex justify-between border-b border-slate-200 pb-2">
                           <span className="text-slate-600">
@@ -805,9 +805,9 @@ const ProductPage: React.FC = () => {
                   </div>
 
                   <div className="mb-8">
-                    <h4 className="font-semibold text-slate-900 mb-3">
+                    <h3 className="font-semibold text-slate-900 mb-3">
                       {t("products.useCases")}
-                    </h4>
+                    </h3>
                     <ul className="text-slate-700 space-y-2 text-sm">
                       <li className="flex items-center gap-2">
                         <CheckIcon className="w-4 h-4 text-emerald-800" />

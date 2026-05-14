@@ -11,9 +11,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
         <SEOHead
           seo={getBlogSEO({
             title:
-              "Remote Work Data Erasure: 7 Best Practices for Secure BYOD & Hybrid Workforce | D-Secure",
+              "Remote Work Data Erasure: 7 BYOD Best Practices",
             excerpt:
-              "Protect corporate data across remote and hybrid teams with certified remote data erasure. Enterprise best practices for BYOD device wipe, employee off-boarding data security, and distributed workforce compliance.",
+              "Protect corporate data with certified remote data erasure. Enterprise best practices for BYOD and off-boarding.",
             slug: "remote-work-data-erasure",
             author: "D-Secure Editorial Team",
             publishDate: "October 28, 2026",
@@ -42,9 +42,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Rise of Remote Work & Data Security Challenges
               </h2>
@@ -70,9 +70,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
               </p>
 
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   ️ Security Risk Alert
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   <strong className="text-emerald-800">
                     73% of executives believe remote workers pose a greater
@@ -87,7 +87,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Remote Data Erasure Matters
               </h2>
@@ -101,10 +101,10 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Data Protection
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Remote data erasure safeguards and protects confidential
                     corporate data from getting compromised, even when devices
@@ -112,10 +112,10 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Compliance
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Meet regulatory requirements like GDPR, HIPAA, and industry
                     standards by ensuring proper data disposal across all remote
@@ -123,19 +123,19 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Efficiency
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Perform data erasure without requiring physical access to
                     devices, saving time and logistics costs.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     ️ Risk Mitigation
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Eliminate chain of custody risks when devices are being
                     transported or returned from remote locations.
@@ -144,10 +144,10 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
               </div>
 
               <div className="bg-slate-100 rounded-xl p-6 mt-6">
-                <h4 className="font-bold text-slate-900 text-lg mb-3">
+                <h3 className="font-bold text-slate-900 text-lg mb-3">
                   {" "}
                   What is a Data Destruction Policy?
-                </h4>
+                </h3>
                 <p className="text-slate-700 leading-relaxed text-lg">
                   A <strong>Data Destruction Policy</strong> is a comprehensive
                   document that defines how an organization disposes of data and
@@ -171,9 +171,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     1. Comprehensive Data Destruction Policy
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Ensure your company's data destruction policy is robust and
                     covers the procedure for wiping drives & endpoint devices
@@ -188,9 +188,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     2. Pre-install <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link> Tool
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     IT admins should install the remote wiping tool on all
                     company-owned laptops, leased IT devices, and BYOD machines{" "}
@@ -207,9 +207,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     3. Perform Data Erasure Before Transportation
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     When remote employees leave the organization or devices are
                     due for upgrade, ensure data on the old device is erased{" "}
@@ -221,9 +221,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     4. Use Certified Remote Wiping Software
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Always use a certified <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> tool instead of free
                     alternatives. Product certifications from global bodies like
@@ -233,9 +233,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     5. Centralized Data Erasure for Mass Operations
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     In cases of mass layoffs or organizational restructuring, IT
                     admins should perform simultaneous data erasure of remote
@@ -246,9 +246,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     6. Use Secure Network Connections
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Always use secure lines of communication (Wi-Fi) while
                     performing remote data erasure. Using a VPN (Virtual Private
@@ -258,9 +258,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     7. Employee Training
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Train employees tasked with <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> on organizational
                     data management policies, software functionality, and
@@ -272,7 +272,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 When to Perform Remote Data Erasure
               </h2>
@@ -284,9 +284,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Employee Departure
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     When employees resign, are terminated, or complete their
                     contract
@@ -294,45 +294,45 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Device Upgrade
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     Before redistributing old devices to new users
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Device Replacement
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     When devices malfunction and need to be returned for repair
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Lease Return
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     Before returning leased IT assets to vendors
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Project Completion
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     At the end of projects with contractual data obligations
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     BYOD Disposal
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     When employees sell or upgrade personal devices used for
                     work
@@ -343,7 +343,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure: Your Complete Remote Data Erasure Solution
               </h2>
@@ -356,9 +356,9 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Pre-installation Support
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Software can be preinstalled on IT devices and remotely
                     executed via SCCM (MS System Center Configuration Manager)
@@ -366,27 +366,27 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Global Certifications
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Tested and approved by NIST, Common Criteria, ADISA, NYCE,
                     STQC, and other international certification bodies.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Standard Compliance
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Supports global data erasure methods like NIST Clear & Purge
                     and US DoD 3 Pass that guarantee 100% <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link>.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Audit-Ready Reports
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Generates tamper-proof erasure reports & certificates that
                     serve as verifiable audit trails.

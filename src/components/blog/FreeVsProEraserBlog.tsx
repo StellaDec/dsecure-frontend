@@ -14,7 +14,7 @@ const FreeVsProEraserBlog: React.FC = () => {
             title:
               "Free vs Professional Data Eraser Software — Which Is Right for You?",
             excerpt:
-              "Free data erasure tools seem cheaper, but are they safe or compliant? Compare features, risks, and real costs to understand why enterprises choose certified erasure software.",
+              "Are free data erasure tools safe? Compare features, risks, and costs to see why enterprises choose certified software.",
             slug: "free-vs-pro-eraser",
             author: "D-Secure Editorial Team",
             publishDate: "November 15, 2025",
@@ -43,7 +43,7 @@ const FreeVsProEraserBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
             <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl border border-red-200 p-10 space-y-8">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
@@ -56,9 +56,9 @@ const FreeVsProEraserBlog: React.FC = () => {
                 hamper any organization's growth.
               </p>
               <div className="bg-white border-l-4 border-red-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-red-700 text-xl mb-3">
+                <h3 className="font-bold text-red-700 text-xl mb-3">
                   The Critical Question
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Free data erasure software may not cost anything, but they
                   certainly leave traces of sensitive information behind. Are
@@ -72,7 +72,7 @@ const FreeVsProEraserBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Free vs Professional: Key Distinctions
               </h2>
@@ -210,7 +210,7 @@ const FreeVsProEraserBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Staggering Cost of Downtime
               </h2>

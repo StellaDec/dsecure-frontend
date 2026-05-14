@@ -37,9 +37,9 @@ const DeletionVsErasureBlog: React.FC = () => {
             </section>
 
             {/* Main Content - Full Width */}
-            <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+            <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
 
                         {/* Introduction */}
                         <div className="space-y-6">
@@ -56,7 +56,7 @@ const DeletionVsErasureBlog: React.FC = () => {
 
                 {/* Data Deletion Explained */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">
                             What is Data Deletion?
                         </h2>
@@ -104,19 +104,19 @@ const DeletionVsErasureBlog: React.FC = () => {
 
                         <div className="space-y-6">
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">Complete Sanitization</h4>
+                                <h3 className="font-bold text-lg mb-3">Complete Sanitization</h3>
                                 <p className="text-white/90 text-lg leading-loose">
                                     Data erasure — also called data destruction — aims to eradicate or sanitize data to render it completely unusable. After overwriting with binary patterns, the data becomes illegible and unrecoverable through any method. Using tools like <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> ensures this process follows global standards.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">Overwriting Methods</h4>
+                                <h3 className="font-bold text-lg mb-3">Overwriting Methods</h3>
                                 <p className="text-white/90 text-lg leading-loose">
                                     Different overwriting methods use varying patterns and passes (number of times a pattern is written) and verification approaches. For example, the DoD 5220.22-M method uses three passes of 0s, 1s, and random characters with 100% verification. Professional tools like <Link to="/products/file-eraser" className="text-emerald-600 hover:underline font-medium">File Eraser</Link> implement these methods precisely.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">Verified Results</h4>
+                                <h3 className="font-bold text-lg mb-3">Verified Results</h3>
                                 <p className="text-white/90 text-lg leading-loose">
                                     Professional data erasure tools generate tamper-proof certificates and reports verifying that all addressable memory locations have been overwritten according to chosen standards.
                                 </p>
@@ -127,7 +127,7 @@ const DeletionVsErasureBlog: React.FC = () => {
 
                 {/* Comparison Table */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">
                             Deletion vs Erasure: Key Differences
                         </h2>
@@ -180,7 +180,7 @@ const DeletionVsErasureBlog: React.FC = () => {
 
                 {/* Public Awareness Issue */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">
                             The Public Awareness Gap
                         </h2>
@@ -200,7 +200,7 @@ const DeletionVsErasureBlog: React.FC = () => {
 
                 {/* Dangers */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">
                             Dangers of Relying on Data Deletion
                         </h2>

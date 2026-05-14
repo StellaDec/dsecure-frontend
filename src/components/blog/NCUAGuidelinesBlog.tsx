@@ -41,9 +41,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding NCUA and Credit Union Data Security
               </h2>
@@ -65,9 +65,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
               </p>
 
               <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   ️ NCUA Observation
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   The NCUA has noted that third-party service providers working
                   with credit unions <strong>sometimes fail to adhere</strong>{" "}
@@ -80,7 +80,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Third-Party Vendors & Their Role
               </h2>
@@ -93,54 +93,54 @@ const NCUAGuidelinesBlog: React.FC = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Background Check
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     Thorough verification of vendor history and reputation
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4">️</div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Infrastructure
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     Assessment of technology and communication systems
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Capabilities
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     Evaluation of service delivery capabilities
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Data Security Controls
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     Review of security measures and protocols
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Compliance Status
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     Verification of regulatory compliance records
                   </p>
                 </div>
                 <div className="bg-slate-100 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4"></div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Vision Alignment
-                  </h4>
+                  </h3>
                   <p className="text-slate-600">
                     Ensuring alignment with credit union's values
                   </p>
@@ -150,7 +150,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Third-Party Service Provider Obligations for Data Disposal
               </h2>
@@ -162,10 +162,10 @@ const NCUAGuidelinesBlog: React.FC = () => {
               </p>
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-6">
-                <h4 className="font-bold text-slate-900 text-lg mb-3">
+                <h3 className="font-bold text-slate-900 text-lg mb-3">
                   {" "}
                   Regulatory Reference
-                </h4>
+                </h3>
                 <p className="text-slate-700 leading-relaxed">
                   Credit unions should develop, implement, and ask third-party
                   vendors to properly dispose of member & consumer information
@@ -176,9 +176,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-6 py-4">
-                  <h4 className="font-bold text-slate-900 text-xl mb-3">
+                  <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Data Disposal Standard
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Although the security guidelines do not mention any specific
                     method of data disposal,{" "}
@@ -191,9 +191,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-6 py-4">
-                  <h4 className="font-bold text-slate-900 text-xl mb-3">
+                  <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Risk Assessment & Auditing
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Third-party vendors must analyze and assess their risk and
                     audit periodically when data is processed and managed by
@@ -203,9 +203,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-6 py-4">
-                  <h4 className="font-bold text-slate-900 text-xl mb-3">
+                  <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Response Program Requirement
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     According to{" "}
                     <strong>
@@ -219,9 +219,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-6 py-4">
-                  <h4 className="font-bold text-slate-900 text-xl mb-3">
+                  <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Notification Requirements
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Prompt notification must be sent about any misuse or
                     compromise to all parties involved, including:
@@ -251,9 +251,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     1. Define Clear Disposal Procedures
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     The appropriate disposal techniques should be expressly
                     stated in contracts with third-party vendors. Whether
@@ -264,9 +264,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     2. Secure Methods for Paper Disposal
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     To dispose of paper-based information securely, utilize
                     certified disposal services that ensure the information is
@@ -276,9 +276,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     3. Electronic Information Disposal
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed mb-3">
                     Managing electronic data presents additional challenges due
                     to its potential for recovery even after deletion. Approved
@@ -301,9 +301,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     4. Comprehensive Disposal Logs
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Third-party vendors must maintain comprehensive records of
                     the disposal procedure. Logs should include:
@@ -317,9 +317,9 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     5. Contractual Obligations for Leased Equipment
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     When leasing equipment like printers, fax machines, or
                     telephones, ensure rental agreements explicitly specify the
@@ -333,7 +333,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Regulatory References
               </h2>
@@ -388,10 +388,10 @@ const NCUAGuidelinesBlog: React.FC = () => {
               </div>
 
               <div className="bg-slate-100 rounded-xl p-6 mt-6">
-                <h4 className="font-bold text-slate-900 text-lg mb-3">
+                <h3 className="font-bold text-slate-900 text-lg mb-3">
                   {" "}
                   FFIEC IT Handbook Reference
-                </h4>
+                </h3>
                 <p className="text-slate-700 leading-relaxed text-lg">
                   According to the FFIEC handbook, third-party service providers
                   should dispose of obsolete, residual, or redundant information
@@ -406,7 +406,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure: Best Solution for NCUA Compliance
               </h2>
@@ -419,10 +419,10 @@ const NCUAGuidelinesBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     Complete Data Overwriting
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Our software overwrites data with random characters (0 or 1)
                     including hidden protected areas and DCO, making recovery
@@ -430,20 +430,20 @@ const NCUAGuidelinesBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     Global Standards Compliance
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Compliant with DoD, NIST, and other international data
                     erasure standards that make recovery impossible.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     Detailed Destruction Records
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Generates secure, tamper-proof erasure reports and
                     certificates, providing an audit trail for compliance
@@ -451,10 +451,10 @@ const NCUAGuidelinesBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     Multiple Privacy Laws
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Helps vendors adhere to CCPA, GDPR, SOX, ISO 27001, PCI DSS,
                     and CMMC 2.0 requirements.

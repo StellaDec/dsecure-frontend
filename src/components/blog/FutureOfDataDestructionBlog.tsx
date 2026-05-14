@@ -29,9 +29,9 @@ const FutureOfDataDestructionBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Current State */}
                 <div className="space-y-4">
@@ -108,7 +108,7 @@ const FutureOfDataDestructionBlog: React.FC = () => {
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
                         <div className="bg-amber-50 border border-amber-200 p-5 rounded-lg">
-                            <h4 className="font-bold text-amber-900 mb-3">📜 Anticipated Regulations</h4>
+                            <h3 className="font-bold text-amber-900 mb-3">📜 Anticipated Regulations</h3>
                             <ul className="text-sm text-amber-800 space-y-2">
                                 <li>• <strong>Right to Deletion:</strong> GDPR-style global expansion</li>
                                 <li>• <strong>ESG Mandates:</strong> Required circular economy reporting</li>
@@ -117,7 +117,7 @@ const FutureOfDataDestructionBlog: React.FC = () => {
                             </ul>
                         </div>
                         <div className="bg-orange-50 border border-orange-200 p-5 rounded-lg">
-                            <h4 className="font-bold text-orange-900 mb-3">⚖️ Stricter Enforcement</h4>
+                            <h3 className="font-bold text-orange-900 mb-3">⚖️ Stricter Enforcement</h3>
                             <ul className="text-sm text-orange-800 space-y-2">
                                 <li>• Higher fines for disposal failures (GDPR 4% revenue)</li>
                                 <li>• Personal liability for executives (duty of care)</li>
@@ -174,7 +174,7 @@ const FutureOfDataDestructionBlog: React.FC = () => {
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">Predictions for 2030</h2>
                     <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-6 rounded-xl border border-violet-200">
-                        <h4 className="font-bold text-violet-900 mb-4">What We'll See by 2030</h4>
+                        <h3 className="font-bold text-violet-900 mb-4">What We'll See by 2030</h3>
                         <div className="space-y-2">
                             <div className="flex items-start gap-2">
                                 <CheckIcon className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" filled={true} />
@@ -205,7 +205,7 @@ const FutureOfDataDestructionBlog: React.FC = () => {
 
         {/* D-Secure Future-Ready */}
         <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">D-Secure: Built for the Future</h2>
                 <p className="text-slate-700 leading-relaxed mb-6">
                     D-Secure is designed with extensibility to adapt to emerging technologies and regulatory changes.
@@ -213,17 +213,17 @@ const FutureOfDataDestructionBlog: React.FC = () => {
                 <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-4 rounded-xl border border-violet-100">
                         <LightningIcon className="w-6 h-6 text-violet-600 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">API-First Architecture</h4>
+                        <h3 className="font-bold text-slate-900 text-sm mb-1">API-First Architecture</h3>
                         <p className="text-xs text-slate-600">Integrate with future ITAM/ITSM platforms</p>
                     </div>
                     <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-4 rounded-xl border border-violet-100">
                         <ShieldIcon className="w-6 h-6 text-violet-600 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">Crypto-Agile Design</h4>
+                        <h3 className="font-bold text-slate-900 text-sm mb-1">Crypto-Agile Design</h3>
                         <p className="text-xs text-slate-600">Ready for post-quantum algorithms</p>
                     </div>
                     <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-4 rounded-xl border border-violet-100">
                         <GlobeIcon className="w-6 h-6 text-violet-600 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">Blockchain-Ready</h4>
+                        <h3 className="font-bold text-slate-900 text-sm mb-1">Blockchain-Ready</h3>
                         <p className="text-xs text-slate-600">Immutable audit trail capabilities</p>
                     </div>
                 </div>

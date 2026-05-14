@@ -1108,9 +1108,9 @@ export default function AdminLicenses() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Pie Chart */}
         <div className="card !p-6">
-          <h3 className="text-lg font-semibold text-slate-900 mb-6">
+          <h2 className="text-lg font-semibold text-slate-900 mb-6">
             License Distribution
-          </h3>
+          </h2>
           {loading ? (
             <SkeletonChart height="h-[300px]" />
           ) : licenseDetails.length > 0 ? (
@@ -1213,9 +1213,9 @@ export default function AdminLicenses() {
         {/* License Breakdown Table */}
         <div className="card !p-0 overflow-hidden flex flex-col h-full">
           <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex-none">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-slate-900">
               License Breakdown
-            </h3>
+            </h2>
           </div>
           <div className="overflow-x-auto">
             {loading ? (
@@ -1296,9 +1296,9 @@ export default function AdminLicenses() {
       <div className="card !p-0 overflow-hidden">
         <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4 w-full sm:w-auto">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-slate-900">
               All Licenses
-            </h3>
+            </h2>
             <span className="text-sm text-slate-500">
               {filteredLicenses.length} found
             </span>
@@ -1548,12 +1548,12 @@ export default function AdminLicenses() {
                     </svg>
                   </div>
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-                    <h3
+                    <h2
                       className="text-lg leading-6 font-medium text-gray-900"
                       id="modal-title"
                     >
                       Revoke License{revokeData.count > 1 ? "s" : ""}
-                    </h3>
+                    </h2>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
                         {revokeData.countIsOne

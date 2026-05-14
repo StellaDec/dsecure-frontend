@@ -62,7 +62,7 @@ const WindowsCommandLinePage: React.FC = memo(() => {
                     Command Line Tools
                   </h2>
                   <div className="bg-slate-100 rounded-lg p-4">
-                    <h4 className="font-semibold mb-2">Essential Commands</h4>
+                    <h3 className="font-semibold mb-2">Essential Commands</h3>
                     <pre className="text-sm bg-slate-800 text-green-400 p-3 rounded overflow-x-auto">
                       {`# Cipher - Overwrite deleted data
 cipher /w:C:\\

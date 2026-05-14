@@ -89,7 +89,7 @@ const HelpManualIndexPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Link
-              to=""
+              to="/support/manual/installation"
               className="bg-white dark:bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-shadow group"
             >
               <div className="flex items-center space-x-3 mb-3">
@@ -107,7 +107,7 @@ const HelpManualIndexPage: React.FC = () => {
             </Link>
 
             <Link
-              to="/support/help-manual/system-setup"
+              to="/support/manual/system-setup"
               className="bg-white dark:bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-shadow group"
             >
               <div className="flex items-center space-x-3 mb-3">
@@ -133,13 +133,102 @@ const HelpManualIndexPage: React.FC = () => {
                   <Mouse className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                 </div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">
-                  Working with DSecure
+                  Working with D-Secure
                 </h3>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                 Complete user interface guide, activation process, and file
                 erasure operations with visual examples.
               </p>
+            </Link>
+          </div>
+        </div>
+
+        {/* Data Erasure Methods Section */}
+        <div className="mb-16">
+          <div className="flex items-center space-x-3 mb-8">
+            <div className="bg-red-100 dark:bg-red-900/30 p-2 rounded-lg">
+              <Shield className="w-6 h-6 text-red-600 dark:text-red-400" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                Erasure Methods
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300">
+                Understanding sanitization standards
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link
+              to="/support/manual/overwrite-patterns"
+              className="bg-white dark:bg-gray-800 rounded-lg p-5 hover:shadow-md transition-shadow group"
+            >
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Overwrite Patterns</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-400">DoD, NIST, and custom algorithms.</p>
+            </Link>
+            <Link
+              to="/support/manual/cryptographic-erasure"
+              className="bg-white dark:bg-gray-800 rounded-lg p-5 hover:shadow-md transition-shadow group"
+            >
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Crypto Erasure</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Secure key destruction for SSDs.</p>
+            </Link>
+            <Link
+              to="/support/manual/physical-destruction"
+              className="bg-white dark:bg-gray-800 rounded-lg p-5 hover:shadow-md transition-shadow group"
+            >
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Physical Methods</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Degaussing and shredding guides.</p>
+            </Link>
+            <Link
+              to="/support/manual/verification-methods"
+              className="bg-white dark:bg-gray-800 rounded-lg p-5 hover:shadow-md transition-shadow group"
+            >
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Verification</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Ensuring 100% data destruction.</p>
+            </Link>
+          </div>
+        </div>
+
+        {/* Platform Guides Section */}
+        <div className="mb-16">
+          <div className="flex items-center space-x-3 mb-8">
+            <div className="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-lg">
+              <Settings className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                Platform Guides
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300">
+                Operating system specific instructions
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link
+              to="/support/manual/windows-systems"
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 border-l-4 border-blue-500 hover:shadow-lg transition-all"
+            >
+              <h3 className="font-bold text-gray-900 dark:text-white mb-1">Windows</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Step-by-step for PC & Laptops</p>
+            </Link>
+            <Link
+              to="/support/manual/macos-systems"
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 border-l-4 border-gray-400 hover:shadow-lg transition-all"
+            >
+              <h3 className="font-bold text-gray-900 dark:text-white mb-1">macOS</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Intel & Apple Silicon (M1/M2/M3)</p>
+            </Link>
+            <Link
+              to="/support/manual/linux-systems"
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 border-l-4 border-orange-500 hover:shadow-lg transition-all"
+            >
+              <h3 className="font-bold text-gray-900 dark:text-white mb-1">Linux</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Enterprise Server & Workstation</p>
             </Link>
           </div>
         </div>
@@ -222,7 +311,7 @@ const HelpManualIndexPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link
               to="/support/help-manual/faqs"
               className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-8 hover:shadow-lg transition-shadow group"
@@ -233,40 +322,33 @@ const HelpManualIndexPage: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                    Frequently Asked Questions
+                    General FAQs
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    Get answers to common questions about D-Secure features,
-                    usage, troubleshooting, and best practices.
+                    Get answers to common questions about features and usage.
                   </p>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        General Questions
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Erasure Process
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        File Types & System
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Reports & Cloud
-                      </span>
-                    </div>
-                  </div>
                 </div>
-                <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
+                <ChevronRight className="w-5 h-5 text-gray-400" />
+              </div>
+            </Link>
+
+            <Link
+              to="/support/manual/common-issues"
+              className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-lg p-8 hover:shadow-lg transition-shadow group"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="bg-red-100 dark:bg-red-900/30 p-3 rounded-lg group-hover:bg-red-200 dark:group-hover:bg-red-800/50 transition-colors">
+                  <Settings className="w-6 h-6 text-red-600 dark:text-red-400" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                    Troubleshooting
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">
+                    Solutions for common errors and performance issues.
+                  </p>
+                </div>
+                <ChevronRight className="w-5 h-5 text-gray-400" />
               </div>
             </Link>
           </div>
@@ -283,53 +365,48 @@ const HelpManualIndexPage: React.FC = () => {
                 Complete Reference
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
-                All-in-one comprehensive manual
+                All-in-one comprehensive manuals
               </p>
             </div>
           </div>
 
-          <Link
-            to="/support/help-manual/complete-manual"
-            className="block bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg p-8 hover:shadow-lg transition-shadow group"
-          >
-            <div className="flex items-start space-x-4">
-              <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-lg group-hover:bg-green-200 dark:group-hover:bg-green-800/50 transition-colors">
-                <Book className="w-6 h-6 text-green-800 dark:text-green-400" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  Complete DSecure Manual
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Comprehensive single-page manual covering all
-                  D-Securescreenshots content transformed for D-Secure,
-                  including FAQs, cloud integration, settings, reports,
-                  scheduling, and advanced configurations.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-gray-600 dark:text-gray-400">
-                      All Screenshots Converted
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-600 dark:text-gray-400">
-                      Searchable Content
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span className="text-gray-600 dark:text-gray-400">
-                      Expandable Sections
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
-            </div>
-          </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link
+              to="/support/help-manual/complete-manual"
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700"
+            >
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">D-Secure File Eraser Manual</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Comprehensive guide for file and folder sanitization.</p>
+            </Link>
+            <Link
+              to="/support/help-manual/complete-drive-manual"
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700"
+            >
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">D-Secure Drive Eraser Manual</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Full disk erasure and bulk drive processing guide.</p>
+            </Link>
+            <Link
+              to="/support/help-manual/network-file"
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700"
+            >
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">Network File Eraser Manual</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Technical guide for network-based file erasure and deployment.</p>
+            </Link>
+            <Link
+              to="/support/help-manual/complete-freeze-state-manual"
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700"
+            >
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">Freeze State Manual</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Reboot-to-Restore technology configuration.</p>
+            </Link>
+            <Link
+              to="/support/help-manual/complete-diagnostic-manual"
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700"
+            >
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">Diagnostic Manual</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Hardware health check and performance testing.</p>
+            </Link>
+          </div>
         </div>
 
         {/* Quick Access */}
@@ -348,7 +425,7 @@ const HelpManualIndexPage: React.FC = () => {
               </div>
             </Link>
             <Link
-              to=""
+              to="/support/manual/installation"
               className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg hover:shadow-md transition-shadow"
             >
               <Download className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
@@ -357,7 +434,7 @@ const HelpManualIndexPage: React.FC = () => {
               </div>
             </Link>
             <Link
-              to="/support/help-manual/system-setup"
+              to="/support/manual/system-setup"
               className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg hover:shadow-md transition-shadow"
             >
               <Settings className="w-8 h-8 text-orange-600 dark:text-orange-400 mx-auto mb-2" />
@@ -366,21 +443,12 @@ const HelpManualIndexPage: React.FC = () => {
               </div>
             </Link>
             <Link
-              to="/support/help-manual/working-guide"
+              to="/support/manual/working-with-dsecure"
               className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg hover:shadow-md transition-shadow"
             >
               <Mouse className="w-8 h-8 text-purple-600 dark:text-purple-400 mx-auto mb-2" />
               <div className="font-medium text-gray-900 dark:text-white text-sm">
                 User Guide
-              </div>
-            </Link>
-            <Link
-              to="/support/help-manual/complete-manual"
-              className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg hover:shadow-md transition-shadow"
-            >
-              <Book className="w-8 h-8 text-green-800 dark:text-green-400 mx-auto mb-2" />
-              <div className="font-medium text-gray-900 dark:text-white text-sm">
-                Complete Manual
               </div>
             </Link>
           </div>

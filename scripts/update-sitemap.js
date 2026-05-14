@@ -28,37 +28,19 @@ const EXCLUDED_ROUTES = [
   "/download",
   "/private-cloud-setup",
   "/profile",
-  "/support/manual",
   "/support/help-manual",
-  "/support/get-started",
-  "/support/product-videos",
-  "/support/overwrite-guide",
-  "/support/wipe-guide",
-  "/support/sas-wipe-guide",
-  "/support/mac-wipe-guide",
-  "/support/mac-eraser-guide",
-  "/support/file-eraser-guide",
-  "/support/secure-erase-hddssd",
   "/support/cloud-console-guide",
+  "/support/file-eraser-guide",
+  "/support/mac-eraser-guide",
+  "/support/mac-wipe-guide",
+  "/support/overwrite-guide",
+  "/support/sas-wipe-guide",
+  "/support/secure-erase-hddssd",
   "/support/ssd-cryptographic-erasure-guide",
+  "/support/wipe-guide",
   "/support/retain-os-guide",
-  "/supporting",
-  "/manual",
-  "/data-guardian-award",
-  "/api-documentation",
-  "/clone-guide",
-  "/cloud-console-guide",
-  "/crypto-erase-ssd",
-  "/data-eraser-software",
-  "/faq",
-  "/file-eraser-guide",
-  "/get-started",
-  "/guides/wipe-mac-m1",
-  "/guides/wipe-sas-drive",
-  "/mac-erase-guide",
-  "/retain-os-guide",
+  "/support",
   "/support/m1-mac-wipe-guide",
-  "/support/manual/nist-800-88",
   "/wipe-mac-m1",
   "*",
 ];
@@ -291,7 +273,7 @@ function extractRoutesFromFiles() {
   ];
 
   queryRoutes.forEach((r) => allRoutes.add(r));
-
+  
   // BLOG SCAN: Reading src/data/blogPosts.ts to get dynamic blog slugs
   const blogPostsPath = path.join(__dirname, "..", "src", "data", "blogPosts.ts");
   if (fs.existsSync(blogPostsPath)) {
@@ -307,6 +289,8 @@ function extractRoutesFromFiles() {
     }
     console.log(`📝 Added ${blogCount} dynamic blog posts to sitemap.`);
   }
+
+
 
   // Filter out excluded routes and prefixes, and ensure uniqueness
   const seen = new Set();

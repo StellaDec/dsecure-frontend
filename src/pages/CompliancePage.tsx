@@ -500,8 +500,132 @@ function CompliancePageContent() {
           </Reveal>
         </div>
       </section>
+      {/* Deep Dive Compliance Education Section */}
+      <section className="py-20 bg-white border-t border-slate-100">
+        <div className="container-app">
+          <Reveal>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl font-bold text-slate-900 mb-10 text-center">Navigating the Global Compliance Hierarchy</h2>
+              <div className="prose prose-slate prose-lg max-w-none text-slate-600 space-y-8">
+                <p>
+                  Data sanitization compliance is not a monolithic requirement; it is a complex hierarchy of standards that vary by industry, geography, and the sensitivity of the data being handled. For most modern enterprises, the baseline is set by **NIST Special Publication 800-88 Revision 1**, which defines three distinct levels of sanitization: Clear, Purge, and Destroy.
+                </p>
+                <div className="bg-slate-50 p-8 rounded-2xl border-l-4 border-purple-500 my-10">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">NIST 800-88: Clear vs. Purge</h3>
+                  <ul className="space-y-4">
+                    <li><strong>Clear:</strong> Applies logical techniques to sanitize data in all user-addressable storage locations for protection against simple, non-invasive data recovery techniques. This is typically achieved through standard read/write commands.</li>
+                    <li><strong>Purge:</strong> Applies physical or logical techniques that render target data recovery infeasible using state-of-the-art laboratory techniques. For modern SSDs, this often involves **Cryptographic Erase (CE)** or specialized firmware-level commands that address hidden areas like over-provisioned blocks.</li>
+                  </ul>
+                  <p className="mt-4 text-sm italic">D-Secure defaults to 'Purge' level sanitization for all supported hardware to ensure the highest margin of safety.</p>
+                </div>
+                <p>
+                  Beyond NIST, organizations must grapple with regional mandates. The **EU's GDPR** (General Data Protection Regulation) and **India's Digital Personal Data Protection (DPDP) Act 2023** both emphasize the 'Right to Erasure'. These laws don't just require data to be deleted; they require the process to be *verifiable*. A simple 'Delete' key or a 'Format' command does not meet the legal threshold for verifiable deletion. D-Secure provides the cryptographic proof needed to demonstrate compliance during a regulatory audit.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="mt-24">
+            <Reveal>
+              <div className="bg-slate-900 rounded-[3rem] p-12 md:p-16 text-white">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                  <div>
+                    <h2 className="text-3xl font-bold mb-8">The IT Manager's Audit Preparation Guide</h2>
+                    <p className="text-slate-400 mb-8 leading-relaxed">
+                      Facing a third-party compliance audit (such as ISO 27001 or SOC 2) can be daunting. Data disposition is often one of the most scrutinized areas. Here is our recommended checklist for ensuring your data erasure process is audit-ready:
+                    </p>
+                    <div className="space-y-6">
+                      <div className="flex gap-4">
+                        <div className="w-6 h-6 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center text-[10px] font-bold">1</div>
+                        <div>
+                          <p className="font-bold">Define Your Standards</p>
+                          <p className="text-sm text-slate-400">Explicitly state in your security policy which NIST level you are targeting for each asset type.</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-4">
+                        <div className="w-6 h-6 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center text-[10px] font-bold">2</div>
+                        <div>
+                          <p className="font-bold">Automate Certificate Collection</p>
+                          <p className="text-sm text-slate-400">Avoid manual PDF management. Use the D-Secure Cloud Console to maintain a searchable, read-only repository of all certificates.</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-4">
+                        <div className="w-6 h-6 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center text-[10px] font-bold">3</div>
+                        <div>
+                          <p className="font-bold">Verify the Verification</p>
+                          <p className="text-sm text-slate-400">Auditors love to see proof of internal testing. Document your random read-back sampling results to show you are proactively checking the software's performance.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 shadow-2xl">
+                      <h3 className="text-xl font-bold mb-6 text-emerald-400">Standard Comparison Matrix</h3>
+                      <table className="w-full text-sm text-left">
+                        <thead>
+                          <tr className="border-b border-white/10">
+                            <th className="py-4 font-bold">Standard</th>
+                            <th className="py-4 font-bold">Industry</th>
+                            <th className="py-4 font-bold">Focus</th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-slate-400">
+                          <tr className="border-b border-white/5">
+                            <td className="py-4">ISO 27001</td>
+                            <td className="py-4">General</td>
+                            <td className="py-4 text-emerald-400 font-bold">Risk Management</td>
+                          </tr>
+                          <tr className="border-b border-white/5">
+                            <td className="py-4">HIPAA</td>
+                            <td className="py-4">Healthcare</td>
+                            <td className="py-4 text-emerald-400 font-bold">Patient Privacy</td>
+                          </tr>
+                          <tr className="border-b border-white/5">
+                            <td className="py-4">PCI-DSS</td>
+                            <td className="py-4">Finance</td>
+                            <td className="py-4 text-emerald-400 font-bold">Cardholder Data</td>
+                          </tr>
+                          <tr>
+                            <td className="py-4">SOC 2</td>
+                            <td className="py-4">SaaS/IT</td>
+                            <td className="py-4 text-emerald-400 font-bold">Trust Services</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="mt-24 max-w-4xl mx-auto text-center">
+            <Reveal>
+              <h3 className="text-3xl font-bold text-slate-900 mb-6">Future-Proofing Your Compliance Strategy</h3>
+              <p className="text-slate-600 text-lg leading-relaxed mb-10">
+                As technology evolves from traditional spinning disks to advanced NVMe SSDs, and further into cloud-native storage and IoT devices, compliance standards are also shifting. The D-Secure engineering team participates in global security working groups to ensure that our software is always one step ahead of the curve. We are currently developing specialized protocols for **Edge Computing** sanitization and **Quantum-Resistant** report signatures, ensuring that the certificates you generate today will stand up to the scrutiny of tomorrow.
+              </p>
+              <div className="flex flex-wrap justify-center gap-8">
+                <div className="flex items-center gap-2">
+                   <div className="w-2 h-2 rounded-full bg-blue-500" />
+                   <span className="text-sm font-bold text-slate-900">NIST 800-88 Compliant</span>
+                </div>
+                <div className="flex items-center gap-2">
+                   <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                   <span className="text-sm font-bold text-slate-900">GDPR Ready</span>
+                </div>
+                <div className="flex items-center gap-2">
+                   <div className="w-2 h-2 rounded-full bg-purple-500" />
+                   <span className="text-sm font-bold text-slate-900">India DPDP Ready</span>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
+
 
 

@@ -42,9 +42,9 @@ const HiddenDiskAreasBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -69,9 +69,9 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
               {/* Warning Box */}
               <div className="bg-amber-50 border-l-4 border-amber-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Why Complete Sanitization Matters
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   Whether it's a periodic hardware refresh, end-of-life asset
                   disposal, or CSR laptop donations — no data-bearing IT asset
@@ -86,7 +86,7 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* What are Hidden Areas */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding Hidden Disk Areas
               </h2>
@@ -101,9 +101,9 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
               <div className="space-y-8 mt-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     HPA (Host Protected Area)
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Present on HDDs and SSDs, introduced by ATA-4 standard. This
                     reserved area stores diagnostic utility functions and
@@ -112,9 +112,9 @@ const HiddenDiskAreasBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     DCO (Device Configuration Overlay)
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Provides PC vendors the option to customize available
                     storage on a disk. By configuring the same number of sectors
@@ -124,9 +124,9 @@ const HiddenDiskAreasBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     DFA (Disk Firmware Area)
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Also known as the Service Area, DFA remaps sectors
                     identified as "bad" or "failed" to new addresses. This zone
@@ -153,7 +153,7 @@ const HiddenDiskAreasBlog: React.FC = () => {
               </p>
 
               <div className="bg-white/10 rounded-xl p-6 mb-6">
-                <h4 className="font-bold text-lg mb-3">Research Finding</h4>
+                <h3 className="font-bold text-lg mb-3">Research Finding</h3>
                 <p className="text-white/90 italic">
                   "It is possible to create an HPA that is approximately the
                   same size as the HDD. This means the HPA, DCO, or combined can
@@ -176,7 +176,7 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* Compliance Requirements */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Compliance Standards Requirements
               </h2>
@@ -191,9 +191,9 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     NIST Clear
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Removes data from user-addressable areas only. NIST
                     explicitly notifies about remnant data possibly remaining on
@@ -204,9 +204,9 @@ const HiddenDiskAreasBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     NIST Purge
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Recommended for erasing data from entire storage media,
                     including HPA, DCO, and remapped sectors.
@@ -222,32 +222,32 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* Methods for HDD */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 NIST Purge Methods for HDDs
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-2">
+                  <h3 className="font-bold text-lg mb-2">
                     ATA Sanitize Device
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-white/90 text-sm">
                     <li>• Overwrite EXT command</li>
                     <li>• Cryptographic Erase (CRYPTO SCRAMBLE EXT)</li>
                   </ul>
                 </div>
                 <div className="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-2">SECURE ERASE UNIT</h4>
+                  <h3 className="font-bold text-lg mb-2">SECURE ERASE UNIT</h3>
                   <p className="text-white/90 text-sm">
                     Standard secure erase command for complete drive
                     sanitization
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-cyan-600 to-emerald-600 rounded-xl p-6 text-white md:col-span-2">
-                  <h4 className="font-bold text-lg mb-2">
+                  <h3 className="font-bold text-lg mb-2">
                     TCG Cryptographic Erase
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Through Trusted Computing Group Opal SSC or Enterprise SSC
                   </p>
@@ -258,32 +258,32 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* Methods for SSD */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 NIST Purge Methods for SSDs
               </h2>
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-slate-50 rounded-xl p-6 text-center">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Block Erase
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-sm">
                     Sanitize command for flash storage
                   </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6 text-center">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Cryptographic Erase
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-sm">
                     CRYPTO SCRAMBLE EXT command
                   </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6 text-center">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     TCG SSC
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-sm">
                     Enterprise-grade cryptographic erase
                   </p>
@@ -321,7 +321,7 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* Solution */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The D-Secure Solution
               </h2>

@@ -312,14 +312,16 @@ const FreezeStateSmartPage = memo(() => {
                             { icon: <CheckCircle />, title: "Admin Approval", desc: "Allows users to send requests for temporary or permanent system changes." },
                             { icon: <Shield />, title: "Timeline History", desc: "Comprehensive monitoring of all system updates, clears, and freezes since deployment." },
                             { icon: <Zap />, title: "Alert Messages", desc: "Remotely configure custom warning messages displayed during system resets." },
-                          ].map((item) => (
-                            <div key={item.title} className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:bg-white hover:shadow-xl group">
-                               <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-slate-400 mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-sm">
-                                  {React.cloneElement(item.icon as React.ReactElement, { className: "w-6 h-6" })}
-                               </div>
-                               <h5 className="font-black uppercase tracking-widest text-xs mb-3 text-slate-900">{item.title}</h5>
-                               <p className="text-xs text-slate-500 font-medium leading-relaxed">{item.desc}</p>
-                            </div>
+                          ].map((item, idx) => (
+                            <Reveal key={item.title} delayMs={100 + idx * 50} animation="slide-up">
+                              <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:bg-white hover:shadow-xl group">
+                                 <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-slate-400 mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-sm">
+                                    {React.cloneElement(item.icon as any, { className: "w-6 h-6" })}
+                                 </div>
+                                 <h2 className="font-black uppercase tracking-widest text-xs mb-3 text-slate-900">{item.title}</h2>
+                                 <p className="text-xs text-slate-500 font-medium leading-relaxed">{item.desc}</p>
+                              </div>
+                            </Reveal>
                           ))}
                        </div>
                     </Reveal>
@@ -380,7 +382,7 @@ const FreezeStateSmartPage = memo(() => {
                     ].map((item) => (
                        <div key={item.title} className="p-10 rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-500 text-left">
                           <div className="w-14 h-14 rounded-2xl bg-emerald-500 flex items-center justify-center text-white mb-8 shadow-lg">
-                             {React.cloneElement(item.icon, { className: "w-7 h-7" })}
+                             {React.cloneElement(item.icon as any, { className: "w-7 h-7" })}
                           </div>
                           <h4 className="text-xl font-bold uppercase tracking-widest mb-4">{item.title}</h4>
                           <p className="text-slate-400 leading-relaxed font-medium text-sm">{item.desc}</p>

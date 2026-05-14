@@ -389,12 +389,12 @@ const HealthcareSolutionsPage: React.FC = () => {
                   className="text-center p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="text-5xl mb-4">{asset.icon}</div>
-                  <h4
+                  <h3
                     className="text-lg font-bold mb-2"
                     style={{ color: "#1f2937" }}
                   >
                     {asset.title}
-                  </h4>
+                  </h3>
                   <p className="text-sm" style={{ color: "#6b7280" }}>
                     {asset.desc}
                   </p>
@@ -458,27 +458,27 @@ const HealthcareSolutionsPage: React.FC = () => {
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Audit-Ready Reporting
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       Generate tamper-proof audit trails for every erasure task
                       instantly.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Global Standards
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       Support for NIST, DoD, and other major international
                       standards.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Scalable Architecture
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       Erase one file or 65,000 servers. DSecure scales with your
                       organization.

@@ -89,7 +89,7 @@ export default function DatasheetsResourcesPage() {
                         <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-3">
                           {datasheet.category}
                         </span>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">{datasheet.title}</h3>
+                        <h2 className="text-xl font-bold text-slate-900 mb-2">{datasheet.title}</h2>
                         <p className="text-slate-600 mb-4">{datasheet.description}</p>
                       </div>
                     </div>

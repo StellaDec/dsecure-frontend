@@ -41,9 +41,9 @@ const MorganStanleyFineBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Case Background: What Went Wrong?
               </h2>
@@ -55,9 +55,9 @@ const MorganStanleyFineBlog: React.FC = () => {
                 repercussions that lasted nearly a decade.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   The Initial Agreement
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   The bank signed a contract with a moving company for data
                   center decommissioning. The agreement specified that an IT
@@ -138,7 +138,7 @@ const MorganStanleyFineBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Whistleblower Alert
               </h2>
@@ -165,7 +165,7 @@ const MorganStanleyFineBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Scale of the Data Exposure
               </h2>
@@ -174,33 +174,33 @@ const MorganStanleyFineBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     4,900
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Devices handled by moving company
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     8,000
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Backup tapes removed from data centers
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     140,000+
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Pieces of consumer PII on recovered drives
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     15M
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Customers notified of potential exposure
                   </p>
@@ -218,7 +218,7 @@ const MorganStanleyFineBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Regulatory Violations and Penalties
               </h2>
@@ -228,9 +228,9 @@ const MorganStanleyFineBlog: React.FC = () => {
               </p>
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Safeguards Rule (Rule 30(a) of Regulation S-P)
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Requires covered entities to adopt written policies and
                     procedures addressing administrative, technical, and
@@ -240,9 +240,9 @@ const MorganStanleyFineBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Disposal Rule (Rule 30(b) of Regulation S-P)
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Requires entities that maintain consumer report information
                     to take reasonable measures to protect against unauthorized
@@ -256,7 +256,7 @@ const MorganStanleyFineBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Total Financial Impact
               </h2>
@@ -266,25 +266,25 @@ const MorganStanleyFineBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     $60M
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     OCC penalty for data protection lapses
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     $60M
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Data breach lawsuit settlement
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     $35M
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     SEC fine for continuing violations
                   </p>
@@ -299,7 +299,7 @@ const MorganStanleyFineBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Regulatory Message and Industry Implications
               </h2>

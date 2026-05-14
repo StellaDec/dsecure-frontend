@@ -264,9 +264,9 @@ export default function AdminReports() {
           {/* Filters */}
           <div className="p-4 sm:p-6 border-b border-slate-200">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-medium text-slate-700">
+              <h2 className="text-sm font-medium text-slate-700">
                 Filter Reports
-              </h3>
+              </h2>
               <button
                 onClick={() => setShowFilters(!showFilters)}
                 className={`text-sm px-3 py-1 rounded-lg transition-colors ${showFilters ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
@@ -541,9 +541,9 @@ export default function AdminReports() {
                   d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                 />
               </svg>
-              <h3 className="text-lg font-medium text-slate-900 mb-2">
+              <h2 className="text-lg font-medium text-slate-900 mb-2">
                 No reports found
-              </h3>
+              </h2>
               <p className="text-slate-600 mb-4">
                 {searchTerm
                   ? "Try adjusting your search terms."

@@ -35,9 +35,9 @@ const CloudMigrationBlog: React.FC = () => {
                 </Reveal>
             </section>
 
-            <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+            <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">The Cloud Migration Challenge</h2>
                         <p className="text-slate-700 leading-loose text-lg mb-6">
                             When organizations migrate to the cloud, they often overlook the security of legacy on-premise storage devices. These devices may contain years of sensitive data that must be properly sanitized before disposal or redeployment.
@@ -53,25 +53,25 @@ const CloudMigrationBlog: React.FC = () => {
                         <h2 className="text-3xl font-bold mb-6">Cloud Migration Security Steps</h2>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">1. Inventory Analysis</h4>
+                                <h3 className="font-bold text-lg mb-3">1. Inventory Analysis</h3>
                                 <p className="text-white/90 leading-relaxed">
                                     Identify all on-premise devices containing sensitive data before migration.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">2. Data Classification</h4>
+                                <h3 className="font-bold text-lg mb-3">2. Data Classification</h3>
                                 <p className="text-white/90 leading-relaxed">
                                     Categorize data by sensitivity to determine appropriate erasure methods.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">3. Certified Erasure</h4>
+                                <h3 className="font-bold text-lg mb-3">3. Certified Erasure</h3>
                                 <p className="text-white/90 leading-relaxed">
                                     Apply D-<Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure erasure</Link> with NIST/IEEE compliant methods.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">4. Documentation</h4>
+                                <h3 className="font-bold text-lg mb-3">4. Documentation</h3>
                                 <p className="text-white/90 leading-relaxed">
                                     Generate certificates for audit trails and compliance verification.
                                 </p>

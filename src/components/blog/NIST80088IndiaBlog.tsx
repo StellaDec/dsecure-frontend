@@ -90,36 +90,36 @@ const NIST80088IndiaBlog: React.FC = () => {
                   </h3>
                   <ul className="grid md:grid-cols-2 gap-6 mt-6">
                     <li className="bg-white/10 p-4 rounded-xl border border-white/10 hover:bg-white/20 transition-colors">
-                      <h4 className="font-bold text-emerald-300">
+                      <h3 className="font-bold text-emerald-300">
                         RBI Master Directions
-                      </h4>
+                      </h3>
                       <p className="text-sm mt-1 text-emerald-50">
                         Requires secure media disposal for BFSI sector to
                         prevent financial data leaks.
                       </p>
                     </li>
                     <li className="bg-white/10 p-4 rounded-xl border border-white/10 hover:bg-white/20 transition-colors">
-                      <h4 className="font-bold text-emerald-300">
+                      <h3 className="font-bold text-emerald-300">
                         CERT-In Advisories
-                      </h4>
+                      </h3>
                       <p className="text-sm mt-1 text-emerald-50">
                         Guidelines on secure data sanitization to prevent
                         unauthorized access to sensitive IP.
                       </p>
                     </li>
                     <li className="bg-white/10 p-4 rounded-xl border border-white/10 hover:bg-white/20 transition-colors">
-                      <h4 className="font-bold text-emerald-300">
+                      <h3 className="font-bold text-emerald-300">
                         MeitY Guidelines
-                      </h4>
+                      </h3>
                       <p className="text-sm mt-1 text-emerald-50">
                         Specific data disposal protocols for Government Data
                         Fiduciaries and contractors.
                       </p>
                     </li>
                     <li className="bg-white/10 p-4 rounded-xl border border-white/10 hover:bg-white/20 transition-colors">
-                      <h4 className="font-bold text-emerald-300">
+                      <h3 className="font-bold text-emerald-300">
                         ISO/IEC 27001
-                      </h4>
+                      </h3>
                       <p className="text-sm mt-1 text-emerald-50">
                         Global security standard widely adopted by Indian IT
                         services for information destruction.
@@ -142,9 +142,9 @@ const NIST80088IndiaBlog: React.FC = () => {
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 font-bold text-xl">
                       1
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-3">
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">
                       NIST Clear
-                    </h4>
+                    </h3>
                     <p className="text-slate-600 text-sm leading-relaxed">
                       Software-based overwriting using standard commands. Ideal
                       for non-sensitive data or secondary systems where the
@@ -155,9 +155,9 @@ const NIST80088IndiaBlog: React.FC = () => {
                     <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-6 font-bold text-xl">
                       2
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-3">
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">
                       NIST Purge
-                    </h4>
+                    </h3>
                     <p className="text-slate-600 text-sm leading-relaxed">
                       Uses specialized firmware commands (like Secure Erase) to
                       reach hidden areas. Mandatory for sensitive data and
@@ -175,9 +175,9 @@ const NIST80088IndiaBlog: React.FC = () => {
                       1
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">
+                      <h3 className="font-bold text-slate-900">
                         Media Inventory
-                      </h4>
+                      </h3>
                       <p className="text-slate-600 text-sm mt-1">
                         Audit all storage devices including HDDs, SSDs, Mobile
                         devices, and Tape drives across your Indian data
@@ -190,9 +190,9 @@ const NIST80088IndiaBlog: React.FC = () => {
                       2
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">
+                      <h3 className="font-bold text-slate-900">
                         Standard Selection
-                      </h4>
+                      </h3>
                       <p className="text-slate-600 text-sm mt-1">
                         Adopt <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Rev 1 as your internal baseline for
                         all media sanitization policies.
@@ -204,9 +204,9 @@ const NIST80088IndiaBlog: React.FC = () => {
                       3
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">
+                      <h3 className="font-bold text-slate-900">
                         Software Automation
-                      </h4>
+                      </h3>
                       <p className="text-slate-600 text-sm mt-1">
                         Use professional tools like{" "}
                         <Link
@@ -224,9 +224,9 @@ const NIST80088IndiaBlog: React.FC = () => {
                       4
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">
+                      <h3 className="font-bold text-slate-900">
                         Regulatory Audit Trail
-                      </h4>
+                      </h3>
                       <p className="text-slate-600 text-sm mt-1">
                         Maintain centralized, tamper-proof reports for at least
                         7 years to comply with Indian data retention and audit
@@ -274,9 +274,9 @@ const NIST80088IndiaBlog: React.FC = () => {
                 </div>
 
                 <div className="mt-10">
-                  <h4 className="font-bold text-slate-900 mb-4">
+                  <h3 className="font-bold text-slate-900 mb-4">
                     India Compliance Suite
-                  </h4>
+                  </h3>
                   <div className="space-y-3">
                     <Link
                       to="/products/drive-eraser"

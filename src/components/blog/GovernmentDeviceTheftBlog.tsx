@@ -42,9 +42,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -68,9 +68,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
 
               {/* What Was Stolen */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Stolen Assets Included
-                </h3>
+                </h2>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="text-slate-700">• Laptops & Desktops</div>
                   <div className="text-slate-700">• iPads & Tablets</div>
@@ -93,7 +93,7 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
 
           {/* What Went Wrong */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What Went Wrong: Breakdown of the Breach
               </h2>
@@ -105,9 +105,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
 
               <div className="space-y-8 mt-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Improper Chain of Custody
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Devices sent from client premises were not properly matched
                     at the facility. Record reconciliation was not performed for
@@ -117,9 +117,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Lack of On-Site <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Government agencies often follow NSA guidelines for
                     destroying confidential information and request device
@@ -130,9 +130,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Government Data Compromised
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Sensitive government data was compromised. While the full
                     quantum is unclear, the risk of critical information falling
@@ -141,9 +141,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     False Certificates of Destruction
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     The employees provided fraudulent certificates claiming
                     devices were properly disposed of. This demonstrates clear
@@ -169,29 +169,29 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="bg-white/10 rounded-xl p-6 text-center">
-                  <h4 className="font-bold text-lg mb-2">Lawsuits</h4>
+                  <h3 className="font-bold text-lg mb-2">Lawsuits</h3>
                   <p className="text-white/90 text-sm">
                     Legal action from affected organizations
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6 text-center">
-                  <h4 className="font-bold text-lg mb-2">
+                  <h3 className="font-bold text-lg mb-2">
                     Regulatory Penalties
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Fines from compliance authorities
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6 text-center">
-                  <h4 className="font-bold text-lg mb-2">
+                  <h3 className="font-bold text-lg mb-2">
                     Reputational Damage
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Loss of client trust and market standing
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6 text-center">
-                  <h4 className="font-bold text-lg mb-2">Financial Losses</h4>
+                  <h3 className="font-bold text-lg mb-2">Financial Losses</h3>
                   <p className="text-white/90 text-sm">
                     Direct and indirect monetary impact
                   </p>
@@ -202,7 +202,7 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
 
           {/* How to Prevent */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How D-Secure Helps Prevent Data Breaches
               </h2>
@@ -215,9 +215,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Complete Data Erasure
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Permanently erase data from laptops, desktops, Mac devices,
                     Chromebooks, servers, and mobile devices before resale or
@@ -225,27 +225,27 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Automatic Report Generation
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Generate automated erasure reports and logs to maintain
                     records of every erasure without manual interference.
                   </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Cloud Console Traceability
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Access all reports on the cloud console to ensure complete
                     traceability and compliance at all times.
                   </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Remote Wiping Capability
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Wipe Windows endpoint devices remotely from a centralized
                     <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> facility before transportation for destruction.
@@ -257,7 +257,7 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
 
           {/* Best Practices */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Best Practices for ITADs
               </h2>
@@ -268,9 +268,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
                     1
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Implement Verifiable Chain of Custody
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       Maintain detailed documentation and verification at every
                       stage — from pickup to destruction. Reconcile records at
@@ -284,9 +284,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
                     2
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Erase Data Before Transportation
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       Wipe devices onsite at client locations or remotely before
                       physical transportation to eliminate risks during transit.
@@ -299,9 +299,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
                     3
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Use Certified Data Erasure Software
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       Deploy NIST-tested and certified software solutions that
                       provide tamper-proof documentation and automated
@@ -315,9 +315,9 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
                     4
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Employee Verification and Monitoring
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       Conduct thorough background checks and implement
                       monitoring systems for personnel handling sensitive
@@ -329,7 +329,7 @@ const GovernmentDeviceTheftBlog: React.FC = () => {
             </div>
           </Reveal>{/* Conclusion */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>

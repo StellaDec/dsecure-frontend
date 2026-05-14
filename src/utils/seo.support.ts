@@ -50,7 +50,7 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Installation Guide", item: "/support/manual/installation" },
     ],
   },
-  "support/help-manual/complete-manual": {
+  "support/manual/complete-manual": {
     title: "D-Secure File Eraser Complete Manual",
     description:
       "Comprehensive user guide and documentation for D-Secure File Eraser. Learn how to securely wipe files, free space, and manage erasure reports.",
@@ -60,15 +60,15 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
       "how to erase files",
       "file shredding guide",
     ]),
-    canonicalUrl: getCanonicalUrl("/support/help-manual/complete-manual"),
+    canonicalUrl: getCanonicalUrl("/support/manual/complete-manual"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Support", item: "/support" },
-      { name: "Help Manual", item: "/support/help-manual" },
-      { name: "File Eraser Manual", item: "/support/help-manual/complete-manual" },
+      { name: "Help Manual", item: "/support/manual" },
+      { name: "File Eraser Manual", item: "/support/manual/complete-manual" },
     ],
   },
-  "support/help-manual/complete-drive-manual": {
+  "support/manual/complete-drive-manual": {
     title: "D-Secure Drive Eraser Complete Manual",
     description:
       "User manual for D-Secure Drive Eraser. Step-by-step instructions for booting, hardware detection, volume wiping, and compliance reporting.",
@@ -78,12 +78,12 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
       "volume sanitization manual",
       "d-secure drive documentation",
     ]),
-    canonicalUrl: getCanonicalUrl("/support/help-manual/complete-drive-manual"),
+    canonicalUrl: getCanonicalUrl("/support/manual/complete-drive-manual"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Support", item: "/support" },
-      { name: "Help Manual", item: "/support/help-manual" },
-      { name: "Drive Eraser Manual", item: "/support/help-manual/complete-drive-manual" },
+      { name: "Help Manual", item: "/support/manual" },
+      { name: "Drive Eraser Manual", item: "/support/manual/complete-drive-manual" },
     ],
   },
   "support/get-started": {
@@ -108,15 +108,15 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Product Videos", item: "/support/product-videos" },
     ],
   },
-  "support/help-manual": {
+  "support/manual": {
     title: "D-Secure Help Center & User Documentation",
     description: "Browse our comprehensive help manual for all D-Secure products. Detailed guides for installation, usage, and troubleshooting.",
     keywords: generateKeywords(["help manual", "user guide", "product documentation"]),
-    canonicalUrl: getCanonicalUrl("/support/help-manual"),
+    canonicalUrl: getCanonicalUrl("/support/manual"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Support", item: "/support" },
-      { name: "Help Manual", item: "/support/help-manual" },
+      { name: "Help Manual", item: "/support/manual" },
     ],
   },
   "support/manual/cryptographic-erasure": {
@@ -165,6 +165,66 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Support", item: "/support" },
       { name: "Manual", item: "/support/manual" },
       { name: "Quick Start", item: "/support/manual/quickstart" },
+    ],
+  },
+  "support/manual/complete-freeze-state-manual": {
+    title: "Freeze State Complete Manual | D-Secure Reboot-to-Restore",
+    description: "Full guide to configuring and managing D-Secure Freeze State. Learn how to protect system configurations and restore them on reboot.",
+    keywords: generateKeywords(["freeze state manual", "reboot to restore guide", "system protection documentation"]),
+    canonicalUrl: getCanonicalUrl("/support/manual/complete-freeze-state-manual"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Support", item: "/support" },
+      { name: "Help Manual", item: "/support/manual" },
+      { name: "Freeze State Manual", item: "/support/manual/complete-freeze-state-manual" },
+    ],
+  },
+  "support/manual/complete-diagnostic-manual": {
+    title: "D-Secure Diagnostic Complete Manual | Hardware Testing Guide",
+    description: "Detailed documentation for D-Secure Diagnostic. instructions for hardware health checks, benchmarking, and component testing.",
+    keywords: generateKeywords(["diagnostic manual", "hardware test guide", "system benchmark documentation"]),
+    canonicalUrl: getCanonicalUrl("/support/manual/complete-diagnostic-manual"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Support", item: "/support" },
+      { name: "Help Manual", item: "/support/manual" },
+      { name: "Diagnostic Manual", item: "/support/manual/complete-diagnostic-manual" },
+    ],
+  },
+  "support/manual/network-file": {
+    title: "D-Secure Network File Eraser Complete Manual",
+    description: "Comprehensive technical documentation for D-Secure Network File Eraser. Enterprise deployment, domain integration, and bulk erasure guides.",
+    keywords: generateKeywords(["network file eraser", "enterprise erasure manual", "domain data wiping"]),
+    canonicalUrl: getCanonicalUrl("/support/manual/network-file"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Support", item: "/support" },
+      { name: "Help Manual", item: "/support/manual" },
+      { name: "Network File Manual", item: "/support/manual/network-file" },
+    ],
+  },
+  "support/manual/system-setup": {
+    title: "System Setup & Configuration | D-Secure Manual",
+    description: "Technical guide for setting up and configuring D-Secure systems for optimal performance and compliance.",
+    keywords: generateKeywords(["system setup", "configuration guide", "D-Secure technical manual"]),
+    canonicalUrl: getCanonicalUrl("/support/manual/system-setup"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Support", item: "/support" },
+      { name: "Manual", item: "/support/manual" },
+      { name: "System Setup", item: "/support/manual/system-setup" },
+    ],
+  },
+  "support/manual/working-with-dsecure": {
+    title: "Working with D-Secure | User Operations & Workflow Guide",
+    description: "Learn how to use D-Secure effectively for day-to-day data erasure operations and workflow management.",
+    keywords: generateKeywords(["user operations", "workflow guide", "D-Secure usage"]),
+    canonicalUrl: getCanonicalUrl("/support/manual/working-with-dsecure"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Support", item: "/support" },
+      { name: "Manual", item: "/support/manual" },
+      { name: "Working Guide", item: "/support/manual/working-with-dsecure" },
     ],
   },
 };

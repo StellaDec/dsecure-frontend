@@ -10,7 +10,7 @@ export default function NIST80088Page() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "NIST 800-88 Data Erasure Standard Compliance Guide",
-    "description": "Learn how D-Secure helps organizations achieve NIST SP 800-88 Rev. 1 compliant data erasure for HDDs, SSDs, and storage arrays with tamper-proof audit reports with certificate.",
+    "description": "Learn how D-Secure helps achieve NIST SP 800-88 Rev. 1 compliant data erasure for HDDs, SSDs, and storage arrays with tamper-proof audit reports.",
     "publisher": {
       "@type": "Organization",
       "name": "D-Secure",
@@ -24,7 +24,7 @@ export default function NIST80088Page() {
   const requirements = [
     {
       title: "Clear",
-      description: "Logical techniques (such as overwriting) to sanitize data in all user-addressable storage locations for protection against simple non-invasive data recovery techniques.",
+      description: "Logical techniques like overwriting to sanitize data in all user-addressable storage for protection against non-invasive data recovery.",
       solution: "D-Secure overwrites all addressable locations up to 35 times using DoD, NIST, or custom algorithms, generating a verified log of completion."
     },
     {
@@ -87,7 +87,7 @@ export default function NIST80088Page() {
                   <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
                     <CheckIcon className="w-6 h-6" filled={true} />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 block">NIST {req.title} Level</h3>
+                  <h2 className="text-xl font-bold text-slate-900 mb-3 block">NIST {req.title} Level</h2>
                   <p className="text-slate-600 text-sm mb-6 flex-grow">{req.description}</p>
                   <div className="pt-6 border-t border-slate-100">
                     <span className="text-xs font-bold tracking-wider text-emerald-600 uppercase mb-2 block">The D-Secure Solution</span>
@@ -113,7 +113,7 @@ export default function NIST80088Page() {
                       <ClipboardIcon className="w-5 h-5" filled={true} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Regulatory Requirement</h4>
+                      <h3 className="font-bold text-slate-900">Regulatory Requirement</h3>
                       <p className="text-slate-600">NIST guidelines are the foundation for compliance with HIPAA, GDPR, PCI-DSS, and FISMA. Falling short can result in severe legal penalties.</p>
                     </div>
                   </div>
@@ -122,7 +122,7 @@ export default function NIST80088Page() {
                       <LockIcon className="w-5 h-5" filled={true} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Modern Storage Security</h4>
+                      <h3 className="font-bold text-slate-900">Modern Storage Security</h3>
                       <p className="text-slate-600">Standard formatting leaves data recoverable on modern SSDs. NIST 800-88 dictates Cryptographic Erasure and block-level overwriting to guarantee unrecoverability.</p>
                     </div>
                   </div>
@@ -131,7 +131,7 @@ export default function NIST80088Page() {
                       <ShieldIcon className="w-5 h-5" filled={true} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Audit-Proof Documentation</h4>
+                      <h3 className="font-bold text-slate-900">Audit-Proof Documentation</h3>
                       <p className="text-slate-600">NIST requires verification. D-Secure generates digitally signed, tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary) for every single sanitized device.</p>
                     </div>
                   </div>
@@ -143,7 +143,7 @@ export default function NIST80088Page() {
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                   <ShieldIcon className="w-48 h-48" filled={true} />
                 </div>
-                <h3 className="text-2xl font-bold mb-6 relative z-10">Tamper-proof audit reports with certificate</h3>
+                <h2 className="text-2xl font-bold mb-6 relative z-10">Tamper-proof audit reports with certificate</h2>
                 <ul className="space-y-4 mb-8 relative z-10 text-slate-300">
                   <li className="flex items-center gap-3">
                     <CheckIcon className="w-5 h-5 text-emerald-400" filled={true} />

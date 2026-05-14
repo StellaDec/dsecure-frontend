@@ -39,9 +39,9 @@ const DataHoardingBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is Data Hoarding?
               </h2>
@@ -64,7 +64,7 @@ const DataHoardingBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Dangers of Data Hoarding
               </h2>
@@ -147,30 +147,30 @@ const DataHoardingBlog: React.FC = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Data Retention Policies
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Implement clear policies defining how long data should be
                     retained
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Automated Erasure</h4>
+                  <h3 className="font-bold text-lg mb-3">Automated Erasure</h3>
                   <p className="text-white/90 text-sm">
                     Use automated data erasure tools to delete data after
                     retention period
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Regular Audits</h4>
+                  <h3 className="font-bold text-lg mb-3">Regular Audits</h3>
                   <p className="text-white/90 text-sm">
                     Conduct regular data audits to identify and remove redundant
                     data
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Data Minimization</h4>
+                  <h3 className="font-bold text-lg mb-3">Data Minimization</h3>
                   <p className="text-white/90 text-sm">
                     Collect only the data necessary for specific business
                     purposes

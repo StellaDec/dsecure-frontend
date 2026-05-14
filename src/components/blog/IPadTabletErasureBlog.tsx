@@ -42,9 +42,9 @@ const IPadTabletErasureBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -69,9 +69,9 @@ const IPadTabletErasureBlog: React.FC = () => {
 
               {/* Warning Box */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Why Secure Tablet Erasure Matters
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   Losing a company's intellectual and creative property can
                   adversely affect not only innovation opportunities and
@@ -87,7 +87,7 @@ const IPadTabletErasureBlog: React.FC = () => {
 
           {/* D-Secure Solution */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure Mobile Eraser & Diagnostics
               </h2>
@@ -102,32 +102,32 @@ const IPadTabletErasureBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Multi-Device Wiping
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Erase up to 40 iPads and Android tablets simultaneously in a
                     single session for high-volume processing.
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-3">Cloud Reporting</h4>
+                  <h3 className="font-bold text-lg mb-3">Cloud Reporting</h3>
                   <p className="text-white/90 leading-relaxed">
                     Generate data erasure reports automatically saved to the
                     cloud for future audit and compliance needs.
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-cyan-600 to-emerald-600 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-3">Device Labels</h4>
+                  <h3 className="font-bold text-lg mb-3">Device Labels</h3>
                   <p className="text-white/90 leading-relaxed">
                     Generate labels with model number, serial number, and
                     erasure status to identify devices ready for resale.
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl p-6 text-white">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Diagnostics Included
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Check battery health, RAM, cameras, GPS, Wi-Fi, and run
                     assisted & automated diagnostic tests.
@@ -139,7 +139,7 @@ const IPadTabletErasureBlog: React.FC = () => {
 
           {/* How to Use */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How to Wipe Data from iPads and Tablets
               </h2>
@@ -156,9 +156,9 @@ const IPadTabletErasureBlog: React.FC = () => {
                     1
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Download the Software
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       Download D-Secure Mobile via the link received in email
                       post-purchase.
@@ -171,9 +171,9 @@ const IPadTabletErasureBlog: React.FC = () => {
                     2
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Install on Your Platform
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       For Windows, install the executable file. For bare-bone
                       machines, burn the ISO file to a bootable USB and set up a
@@ -187,9 +187,9 @@ const IPadTabletErasureBlog: React.FC = () => {
                     3
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Connect to Cloud Server
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       Establish connection with D-Secure Cloud server via Wi-Fi
                       or Ethernet to retrieve erasure licenses and save reports.
@@ -202,9 +202,9 @@ const IPadTabletErasureBlog: React.FC = () => {
                     4
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Connect Devices
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       Connect iPads and/or Android tablets to the host machine.
                       Select 'Trust' on iPads and enable USB debugging on
@@ -218,9 +218,9 @@ const IPadTabletErasureBlog: React.FC = () => {
                     5
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Select Erasure Method
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       Choose the data erasure method (DoD, NIST Clear, etc.)
                       based on company policy or client requirements.
@@ -233,9 +233,9 @@ const IPadTabletErasureBlog: React.FC = () => {
                     6
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">
                       Start Erasure Process
-                    </h4>
+                    </h3>
                     <p className="text-slate-700 text-lg leading-relaxed">
                       Click 'Start' to begin. The data erasure report will be
                       automatically saved to the cloud upon completion.
@@ -248,16 +248,16 @@ const IPadTabletErasureBlog: React.FC = () => {
 
           {/* Supported Devices */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Supported Devices
               </h2>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="font-bold text-slate-900 text-xl mb-4">
+                  <h2 className="font-bold text-slate-900 text-xl mb-4">
                     Apple iPads
-                  </h3>
+                  </h2>
                   <ul className="space-y-2 text-slate-700 text-lg">
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
@@ -278,9 +278,9 @@ const IPadTabletErasureBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 text-xl mb-4">
+                  <h2 className="font-bold text-slate-900 text-xl mb-4">
                     Android Tablets
-                  </h3>
+                  </h2>
                   <ul className="space-y-2 text-slate-700 text-lg">
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
@@ -317,19 +317,19 @@ const IPadTabletErasureBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-2">DoD 5220.22-M</h4>
+                  <h3 className="font-bold text-lg mb-2">DoD 5220.22-M</h3>
                   <p className="text-white/90 text-sm">
                     U.S. Department of Defense standard
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-2">NIST Clear</h4>
+                  <h3 className="font-bold text-lg mb-2">NIST Clear</h3>
                   <p className="text-white/90 text-sm">
                     <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> compliant methods
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-2">NIST Purge</h4>
+                  <h3 className="font-bold text-lg mb-2">NIST Purge</h3>
                   <p className="text-white/90 text-sm">
                     Enhanced security erasure
                   </p>
@@ -338,7 +338,7 @@ const IPadTabletErasureBlog: React.FC = () => {
             </div>
           </Reveal>{/* Conclusion */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Summary
               </h2>

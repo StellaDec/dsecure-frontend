@@ -42,9 +42,9 @@ const DeletedFilesTruthBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -70,9 +70,9 @@ const DeletedFilesTruthBlog: React.FC = () => {
               </div>
 
               <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <h2 className="font-bold text-slate-900 text-xl mb-3">
                   The Fundamental Risk
-                </h3>
+                </h2>
                 <p className="text-slate-700 text-lg leading-loose">
                   <strong>
                     If you are not sanitizing storage media before disposal,
@@ -104,7 +104,7 @@ const DeletedFilesTruthBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-xl mb-3">Deleting Files</h4>
+                  <h3 className="font-bold text-xl mb-3">Deleting Files</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Simple deletion only removes pointers to file locations in
                     the file system. The actual data remains intact on the
@@ -115,7 +115,7 @@ const DeletedFilesTruthBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-xl mb-3">FDISK Utility</h4>
+                  <h3 className="font-bold text-xl mb-3">FDISK Utility</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     The FDISK utility modifies partition tables but doesn't
                     address the underlying data. While it may appear to clear a
@@ -125,7 +125,7 @@ const DeletedFilesTruthBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-xl mb-3">Formatting</h4>
+                  <h3 className="font-bold text-xl mb-3">Formatting</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Format operations create new file system structures but
                     don't overwrite existing data blocks. Quick format completes
@@ -141,7 +141,7 @@ const DeletedFilesTruthBlog: React.FC = () => {
 
           {/* The Data Journey */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding the Data Lifecycle
               </h2>
@@ -157,9 +157,9 @@ const DeletedFilesTruthBlog: React.FC = () => {
                     1
                   </span>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-xl mb-2">
+                    <h2 className="font-bold text-slate-900 text-xl mb-2">
                       Creation
-                    </h3>
+                    </h2>
                     <p className="text-slate-700 text-lg leading-loose">
                       Data is generated on workstations, laptops, servers, or
                       mobile devices. Even temporary files and drafts may
@@ -172,9 +172,9 @@ const DeletedFilesTruthBlog: React.FC = () => {
                     2
                   </span>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-xl mb-2">
+                    <h2 className="font-bold text-slate-900 text-xl mb-2">
                       Processing
-                    </h3>
+                    </h2>
                     <p className="text-slate-700 text-lg leading-loose">
                       Data moves between systems for processing. Each system
                       that handles the data creates potential residual copies —
@@ -187,9 +187,9 @@ const DeletedFilesTruthBlog: React.FC = () => {
                     3
                   </span>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-xl mb-2">
+                    <h2 className="font-bold text-slate-900 text-xl mb-2">
                       Storage
-                    </h3>
+                    </h2>
                     <p className="text-slate-700 text-lg leading-loose">
                       Final storage locations including file servers, databases,
                       backup systems, and archives. Multiple copies may exist
@@ -202,9 +202,9 @@ const DeletedFilesTruthBlog: React.FC = () => {
                     4
                   </span>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-xl mb-2">
+                    <h2 className="font-bold text-slate-900 text-xl mb-2">
                       Disposal (The Critical Point)
-                    </h3>
+                    </h2>
                     <p className="text-slate-700 text-lg leading-loose">
                       When storage media is retired, recycled, donated, or
                       reassigned — every location that ever held the data must
@@ -218,7 +218,7 @@ const DeletedFilesTruthBlog: React.FC = () => {
 
           {/* The Requirement */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Need for Professional <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>
               </h2>
@@ -233,9 +233,9 @@ const DeletedFilesTruthBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
                 <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     What Professional Erasure Does
-                  </h3>
+                  </h2>
                   <ul className="space-y-3 text-slate-700 text-lg">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
@@ -256,9 +256,9 @@ const DeletedFilesTruthBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     What Simple Deletion Misses
-                  </h3>
+                  </h2>
                   <ul className="space-y-3 text-slate-700 text-lg">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
@@ -297,9 +297,9 @@ const DeletedFilesTruthBlog: React.FC = () => {
               </p>
 
               <div className="bg-white rounded-xl p-8 shadow-md mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Key Features
-                </h3>
+                </h2>
                 <ul className="space-y-4 text-slate-700 text-lg">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
@@ -333,7 +333,7 @@ const DeletedFilesTruthBlog: React.FC = () => {
 
           {/* Evidence Table */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Deletion Methods Compared
               </h2>

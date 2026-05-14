@@ -49,9 +49,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Why IT Assets Need Secure Disposal
             </h2>
@@ -68,9 +68,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
             
 
             <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-              <h4 className="font-bold text-slate-900 text-xl mb-3">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
                 The Core Principle
-              </h4>
+              </h3>
               <p className="text-lg text-slate-700 leading-loose">
                 To maintain the{" "}
                 <strong>confidentiality, integrity, and availability</strong> of
@@ -156,7 +156,7 @@ const SecureITAssetDisposalBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               What to Consider Before IT Asset Disposal
             </h2>
@@ -168,9 +168,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
 
             <div className="space-y-6">
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Data Security Assessment
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Secure the data first. Consider disposition based on storage
                   technology, data sensitivity, and compatible destruction
@@ -181,9 +181,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Asset Inventory Management
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Record an inventory of all IT assets designated for disposal.
                   Categorize them based on condition and data sensitivity. Match
@@ -194,9 +194,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Disposal Methodology Decision
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Determine whether onsite sanitization or <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> partnership is
                   more feasible. Consider resources, skilled personnel,
@@ -207,9 +207,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Chain of Custody Maintenance
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Maintain secure chain of custody from identification to final
                   disposition. Track each device using unique asset tags.
@@ -219,9 +219,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Professional <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Software
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Document use of professional software supporting all drive and
                   device types. Avoid relying on deletion and formatting
@@ -234,7 +234,7 @@ const SecureITAssetDisposalBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               How to Perform Secure IT Asset Disposal
             </h2>
@@ -246,9 +246,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Data Retention Policy
-                </h4>
+                </h3>
                 <ul className="text-slate-700 space-y-2">
                   <li>• Define retention periods for data types</li>
                   <li>• Classify data as sensitive, internal, or public</li>
@@ -257,9 +257,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
                 </ul>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Data Destruction Policy
-                </h4>
+                </h3>
                 <ul className="text-slate-700 space-y-2">
                   <li>• Detail each sanitization step</li>
                   <li>• Specify methods and responsible personnel</li>
@@ -272,15 +272,15 @@ const SecureITAssetDisposalBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Onsite vs. Third-Party Disposal
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Onsite Destruction
-                </h4>
+                </h3>
                 <ul className="text-slate-700 space-y-2">
                   <li>• Use certified data destruction tools</li>
                   <li>
@@ -291,9 +291,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
                 </ul>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Third-Party <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Services
-                </h4>
+                </h3>
                 <ul className="text-slate-700 space-y-2">
                   <li>• When organizations lack resources or tools</li>
                   <li>• For multi-location facilities</li>
@@ -303,9 +303,9 @@ const SecureITAssetDisposalBlog: React.FC = () => {
               </div>
             </div>
             <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mt-6">
-              <h4 className="font-bold text-slate-900 text-xl mb-3">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
                 Selecting an <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Partner
-              </h4>
+              </h3>
               <p className="text-lg text-slate-700 leading-loose">
                 Consider certifications (e-Stewards, WEEE, R2V3), environmental
                 sustainability practices, expertise in bulk asset disposal, and

@@ -185,7 +185,7 @@ function CloudErasureContent() {
               <div>
                 <Reveal delayMs={40}>
                   <div className="bg-white rounded-2xl shadow-xl border border-slate-200/60 p-6">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-4">Service Highlights</h3>
+                    <h2 className="text-lg font-semibold text-slate-900 mb-4">Service Highlights</h2>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
                         <CheckIcon className="w-5 h-5 text-green-800" filled={true} />
@@ -236,7 +236,7 @@ function CloudErasureContent() {
                     <div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center text-brand">
                       {category.icon}
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900">{category.category}</h3>
+                    <h2 className="text-lg font-semibold text-slate-900">{category.category}</h2>
                   </div>
                   <ul className="space-y-2">
                     {category.platforms.map((platform, platformIndex) => (
@@ -283,7 +283,7 @@ function CloudErasureContent() {
                           <CloudIcon className="w-6 h-6" filled={true} />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-slate-900">{capability.name}</h3>
+                          <h2 className="text-lg font-semibold text-slate-900">{capability.name}</h2>
                           <p className="text-slate-600">{capability.description}</p>
                         </div>
                       </div>
@@ -305,11 +305,11 @@ function CloudErasureContent() {
                       <div className="mt-6 pt-6 border-t border-slate-200">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div>
-                            <h4 className="font-semibold text-slate-900 mb-2">Technology</h4>
+                            <h3 className="font-semibold text-slate-900 mb-2">Technology</h3>
                             <p className="text-slate-600">{capability.technology}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-slate-900 mb-2">Coverage</h4>
+                            <h3 className="font-semibold text-slate-900 mb-2">Coverage</h3>
                             <p className="text-slate-600">{capability.coverage}</p>
                           </div>
                         </div>
@@ -346,9 +346,9 @@ function CloudErasureContent() {
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-xl text-brand mb-4">
                     {feature.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                  <h2 className="text-lg font-semibold text-slate-900 mb-3">
                     {feature.title}
-                  </h3>
+                  </h2>
                   <p className="text-slate-600">
                     {feature.description}
                   </p>
@@ -423,9 +423,9 @@ function CloudErasureContent() {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-brand to-brand/80 rounded-full text-white text-xl font-bold mb-4">
                     {process.step}
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                  <h2 className="text-lg font-semibold text-slate-900 mb-2">
                     {process.title}
-                  </h3>
+                  </h2>
                   <p className="text-slate-600">
                     {process.description}
                   </p>

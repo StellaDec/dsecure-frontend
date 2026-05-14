@@ -307,9 +307,9 @@ export default function AdminPerformance() {
           {!isDemo && (
             <div className="card p-4 space-y-4 bg-white rounded-xl shadow-sm border border-slate-200">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-slate-900">
+                <h2 className="text-lg font-semibold text-slate-900">
                   Filters & Search
-                </h3>
+                </h2>
                 <button
                   onClick={clearAllFilters}
                   className="text-sm text-red-600 hover:text-red-800 font-medium"
@@ -423,9 +423,9 @@ export default function AdminPerformance() {
                 d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
               />
             </svg>
-            <h3 className="text-lg font-medium text-slate-900 mb-2">
+            <h2 className="text-lg font-medium text-slate-900 mb-2">
               No Performance Metrics Available
-            </h3>
+            </h2>
             <p className="text-slate-600">
               There are no performance metrics to display for this account.
             </p>
@@ -456,7 +456,7 @@ export default function AdminPerformance() {
         {/* Header & Filters */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900">Performance</h1>
+            <h2 className="text-2xl font-bold text-slate-900">Performance</h2>
             <p className="text-sm text-slate-600 mt-1">
               Monitor system performance and erasure metrics
             </p>
@@ -467,9 +467,9 @@ export default function AdminPerformance() {
         {!isDemo && (
           <div className="card p-4 space-y-4 bg-white rounded-xl shadow-sm border border-slate-200">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h2 className="text-lg font-semibold text-slate-900">
                 Filters & Search
-              </h3>
+              </h2>
               <button
                 onClick={clearAllFilters}
                 className="text-sm text-red-600 hover:text-red-800 font-medium"
@@ -765,9 +765,9 @@ export default function AdminPerformance() {
 
         {/* Throughput Chart (Monthly breakdown) */}
         {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-          <h3 className="text-lg font-semibold text-slate-900 mb-6">
+          <h2 className="text-lg font-semibold text-slate-900 mb-6">
             Erasure Trends ({selectedYear})
-          </h3>
+          </h2>
           <div className="h-64 flex items-end justify-between gap-2 px-4">
             {performanceData.monthlyErasures.length > 0 ? (
               performanceData.monthlyErasures.map((item, index) => {

@@ -43,9 +43,9 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -73,7 +73,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
 
           {/* Factors to Consider */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Factors When Choosing Destruction Method
               </h2>
@@ -172,9 +172,9 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Maximum Data Security
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Recent incidents of device theft and forging of erasure
                     certificates by service provider employees highlight
@@ -186,9 +186,9 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Immediate Verification
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Data destruction can be witnessed in real time, and
                     certificates can be verified instantly by company personnel.
@@ -197,9 +197,9 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Optimal for Distributed Operations
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Onsite data destruction enables secure and compliant data
                     disposal when IT assets are located at remote or distributed
@@ -209,9 +209,9 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Minimal Business Disruption
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     IT asset managers maintain complete control over scheduling
                     the <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> process. Since operations happen at company
@@ -226,7 +226,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
 
           {/* Offsite Destruction */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Offsite Data Destruction
               </h2>
@@ -291,7 +291,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
 
           {/* Hybrid Approach */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Hybrid Approach: Best of Both Worlds
               </h2>

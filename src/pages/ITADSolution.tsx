@@ -35,7 +35,7 @@
 //               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 p-12 shadow-xl">
 //                 <div className="text-center">
 //                   <div className="text-7xl mb-6">🔒</div>
-//                   <h3 className="text-gray-900 text-2xl font-bold mb-2">Secure Asset Disposal</h3>
+//                   <h2 className="text-gray-900 text-2xl font-bold mb-2">Secure Asset Disposal</h2>
 //                 </div>
 //               </div>
 //             </div>
@@ -60,7 +60,7 @@
 //               <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition">
 //                 <span className="text-3xl">🔐</span>
 //               </div>
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">regulated Data Erasure</h3>
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">regulated Data Erasure</h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 Military-grade data sanitization using NIST 800-88 and international 
 //                 standards for permanent data destruction.
@@ -71,7 +71,7 @@
 //               <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition">
 //                 <span className="text-3xl">📜</span>
 //               </div>
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">Compliance Certificates</h3>
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">Compliance Certificates</h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 Generate tamper-proof erasure certificates with detailed audit 
 //                 trails for compliance and regulatory requirements.
@@ -82,7 +82,7 @@
 //               <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition">
 //                 <span className="text-3xl">📈</span>
 //               </div>
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">Asset Lifecycle Management</h3>
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">Asset Lifecycle Management</h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 Track and manage IT assets from deployment through secure 
 //                 disposal with comprehensive reporting and analytics.
@@ -93,7 +93,7 @@
 //               <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition">
 //                 <span className="text-3xl">♻️</span>
 //               </div>
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">Sustainable E-Waste</h3>
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">Sustainable E-Waste</h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 Environmentally responsible disposal with maximum asset 
 //                 recovery value and reduced carbon footprint.
@@ -118,22 +118,22 @@
 //           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 //             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100">
 //               <div className="text-6xl mb-4">💻</div>
-//               <h4 className="text-xl font-bold text-gray-900 mb-2">Computers</h4>
+//               <h3 className="text-xl font-bold text-gray-900 mb-2">Computers</h3>
 //               <p className="text-gray-600">Desktops, Laptops, Workstations, All-in-One PCs</p>
 //             </div>
 //             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100">
 //               <div className="text-6xl mb-4">🖥️</div>
-//               <h4 className="text-xl font-bold text-gray-900 mb-2">Servers</h4>
+//               <h3 className="text-xl font-bold text-gray-900 mb-2">Servers</h3>
 //               <p className="text-gray-600">Physical Servers, Virtual Machines, Cloud Storage</p>
 //             </div>
 //             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100">
 //               <div className="text-6xl mb-4">💾</div>
-//               <h4 className="text-xl font-bold text-gray-900 mb-2">Storage Media</h4>
+//               <h3 className="text-xl font-bold text-gray-900 mb-2">Storage Media</h3>
 //               <p className="text-gray-600">HDDs, SSDs, NVMe, USB Drives, Memory Cards</p>
 //             </div>
 //             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100">
 //               <div className="text-6xl mb-4">📱</div>
-//               <h4 className="text-xl font-bold text-gray-900 mb-2">Mobile Devices</h4>
+//               <h3 className="text-xl font-bold text-gray-900 mb-2">Mobile Devices</h3>
 //               <p className="text-gray-600">Smartphones, Tablets, IoT Devices</p>
 //             </div>
 //           </div>
@@ -154,7 +154,7 @@
 
 //           <div className="grid md:grid-cols-2 gap-8">
 //             <div className="bg-white p-8 rounded-2xl shadow-md border-l-4 border-[#2563eb] hover:shadow-xl transition">
-//               <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprise Data Centers</h3>
+//               <h2 className="text-2xl font-bold text-gray-900 mb-4">Enterprise Data Centers</h2>
 //               <p className="text-gray-600 mb-4 leading-relaxed">
 //                 Secure decommissioning of server farms and storage arrays during 
 //                 hardware refresh cycles, data center consolidation, or cloud migrations.
@@ -176,7 +176,7 @@
 //             </div>
 
 //             <div className="bg-white p-8 rounded-2xl shadow-md border-l-4 border-[#2563eb] hover:shadow-xl transition">
-//               <h3 className="text-2xl font-bold text-gray-900 mb-4">Financial Services</h3>
+//               <h2 className="text-2xl font-bold text-gray-900 mb-4">Financial Services</h2>
 //               <p className="text-gray-600 mb-4 leading-relaxed">
 //                 Meet stringent regulatory requirements for customer data protection 
 //                 and secure disposal of financial records and transaction data.
@@ -198,7 +198,7 @@
 //             </div>
 
 //             <div className="bg-white p-8 rounded-2xl shadow-md border-l-4 border-[#2563eb] hover:shadow-xl transition">
-//               <h3 className="text-2xl font-bold text-gray-900 mb-4">Healthcare Organizations</h3>
+//               <h2 className="text-2xl font-bold text-gray-900 mb-4">Healthcare Organizations</h2>
 //               <p className="text-gray-600 mb-4 leading-relaxed">
 //                 Protect patient data privacy with HIPAA-compliant data sanitization 
 //                 for medical devices, workstations, and electronic health records.
@@ -220,7 +220,7 @@
 //             </div>
 
 //             <div className="bg-white p-8 rounded-2xl shadow-md border-l-4 border-[#2563eb] hover:shadow-xl transition">
-//               <h3 className="text-2xl font-bold text-gray-900 mb-4">Government & Defense</h3>
+//               <h2 className="text-2xl font-bold text-gray-900 mb-4">Government & Defense</h2>
 //               <p className="text-gray-600 mb-4 leading-relaxed">
 //                 Military-grade data destruction for classified information with 
 //                 compliance to DoD 5220.22-M and NSA standards.
@@ -253,9 +253,9 @@
 
 //           <div className="space-y-6">
 //             <div className="bg-white p-6 rounded-xl border-l-4 border-[#2563eb] hover:shadow-md transition">
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">
 //                 What is IT Asset Disposition (ITAD)?
-//               </h3>
+//               </h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 ITAD is the systematic process of securely disposing, recycling, or repurposing 
 //                 end-of-life IT equipment while ensuring complete data destruction, environmental 
@@ -265,9 +265,9 @@
 //             </div>
 
 //             <div className="bg-white p-6 rounded-xl border-l-4 border-[#2563eb] hover:shadow-md transition">
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">
 //                 How secure is your data erasure process?
-//               </h3>
+//               </h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 Our data erasure solution uses military-grade sanitization algorithms that 
 //                 overwrite data multiple times, making recovery impossible even with forensic 
@@ -277,9 +277,9 @@
 //             </div>
 
 //             <div className="bg-white p-6 rounded-xl border-l-4 border-[#2563eb] hover:shadow-md transition">
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">
 //                 Which compliance standards do you support?
-//               </h3>
+//               </h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 D-Secure supports GDPR, HIPAA, SOX, PCI DSS, CCPA, ISO 27001, NIST 800-88, 
 //                 Common Criteria, FedRAMP, and industry-specific regulations across 
@@ -288,9 +288,9 @@
 //             </div>
 
 //             <div className="bg-white p-6 rounded-xl border-l-4 border-[#2563eb] hover:shadow-md transition">
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">
 //                 Do you provide certificates of data destruction?
-//               </h3>
+//               </h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 Yes, we generate digitally signed, tamper-proof certificates for every 
 //                 erased device containing asset details, erasure method, timestamp, and 
@@ -300,9 +300,9 @@
 //             </div>
 
 //             <div className="bg-white p-6 rounded-xl border-l-4 border-[#2563eb] hover:shadow-md transition">
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">
 //                 Can you handle large-scale enterprise deployments?
-//               </h3>
+//               </h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 Absolutely. Our enterprise solutions support simultaneous erasure of 
 //                 thousands of devices with centralized management, automated reporting, 
@@ -357,12 +357,12 @@
 //               </div>
 
 //               <div>
-//                 <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+//                 <h2 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
 //                   Secure IT Asset
 //                   <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
 //                     Disposition
 //                   </span>
-//                 </h1>
+//                 </h2>
 //                 <p className="text-xl text-gray-600 leading-relaxed">
 //                   Comprehensive ITAD solution that helps organizations securely retire, 
 //                   sanitize, and dispose of IT assets while maintaining compliance with 
@@ -408,9 +408,9 @@
 
 //                     {/* Title */}
 //                     <div className="text-center space-y-3">
-//                       <h3 className="text-2xl font-bold text-gray-900">
+//                       <h2 className="text-2xl font-bold text-gray-900">
 //                         Secure Asset Disposal
-//                       </h3>
+//                       </h2>
 //                       <p className="text-gray-600">
 //                         NIST 800-88 regulated Data Erasure
 //                       </p>
@@ -463,7 +463,7 @@
 //             ].map((feature, idx) => (
 //               <div key={idx} className="group p-6 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all border border-transparent hover:border-blue-100">
 //                 <div className="text-5xl mb-4">{feature.icon}</div>
-//                 <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+//                 <h2 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h2>
 //                 <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
 //               </div>
 //             ))}
@@ -495,7 +495,7 @@
 //             ].map((device, idx) => (
 //               <div key={idx} className="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all">
 //                 <div className="text-6xl mb-4">{device.icon}</div>
-//                 <h4 className="text-xl font-bold text-gray-900 mb-2">{device.title}</h4>
+//                 <h3 className="text-xl font-bold text-gray-900 mb-2">{device.title}</h3>
 //                 <p className="text-gray-600 text-sm">{device.desc}</p>
 //               </div>
 //             ))}
@@ -542,7 +542,7 @@
 //               }
 //             ].map((solution, idx) => (
 //               <div key={idx} className="p-8 bg-gray-50 rounded-2xl hover:shadow-lg transition-all border border-gray-100">
-//                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{solution.title}</h3>
+//                 <h2 className="text-2xl font-bold text-gray-900 mb-3">{solution.title}</h2>
 //                 <p className="text-gray-600 mb-6">{solution.desc}</p>
 //                 <ul className="space-y-2">
 //                   {solution.features.map((feature, fidx) => (
@@ -648,12 +648,12 @@
 //               </div>
 
 //               <div>
-//                 <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6" style={{ color: '#1f2937' }}>
+//                 <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-6" style={{ color: '#1f2937' }}>
 //                   Secure IT Asset
 //                   <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
 //                     Disposition
 //                   </span>
-//                 </h1>
+//                 </h2>
 //                 <p className="text-xl leading-relaxed" style={{ color: '#4b5563' }}>
 //                   Comprehensive ITAD solution that helps organizations securely retire, 
 //                   sanitize, and dispose of IT assets while maintaining compliance with 
@@ -699,9 +699,9 @@
 
 //                     {/* Title */}
 //                     <div className="text-center space-y-3">
-//                       <h3 className="text-2xl font-bold" style={{ color: '#1f2937' }}>
+//                       <h2 className="text-2xl font-bold" style={{ color: '#1f2937' }}>
 //                         Secure Asset Disposal
-//                       </h3>
+//                       </h2>
 //                       <p style={{ color: '#6b7280' }}>
 //                         NIST 800-88 regulated Data Erasure
 //                       </p>
@@ -754,7 +754,7 @@
 //             ].map((feature, idx) => (
 //               <div key={idx} className="group p-6 rounded-2xl hover:shadow-lg transition-all border border-transparent hover:border-blue-100" style={{ backgroundColor: '#f9fafb' }}>
 //                 <div className="text-5xl mb-4">{feature.icon}</div>
-//                 <h3 className="text-lg font-bold mb-2" style={{ color: '#1f2937' }}>{feature.title}</h3>
+//                 <h2 className="text-lg font-bold mb-2" style={{ color: '#1f2937' }}>{feature.title}</h2>
 //                 <p className="text-sm leading-relaxed" style={{ color: '#6b7280' }}>{feature.desc}</p>
 //               </div>
 //             ))}
@@ -786,7 +786,7 @@
 //             ].map((device, idx) => (
 //               <div key={idx} className="text-center p-8 rounded-2xl shadow-sm hover:shadow-md transition-all" style={{ backgroundColor: '#ffffff' }}>
 //                 <div className="text-6xl mb-4">{device.icon}</div>
-//                 <h4 className="text-xl font-bold mb-2" style={{ color: '#1f2937' }}>{device.title}</h4>
+//                 <h3 className="text-xl font-bold mb-2" style={{ color: '#1f2937' }}>{device.title}</h3>
 //                 <p className="text-sm" style={{ color: '#6b7280' }}>{device.desc}</p>
 //               </div>
 //             ))}
@@ -833,7 +833,7 @@
 //               }
 //             ].map((solution, idx) => (
 //               <div key={idx} className="p-8 rounded-2xl hover:shadow-lg transition-all border" style={{ backgroundColor: '#f9fafb', borderColor: '#e5e7eb' }}>
-//                 <h3 className="text-2xl font-bold mb-3" style={{ color: '#1f2937' }}>{solution.title}</h3>
+//                 <h2 className="text-2xl font-bold mb-3" style={{ color: '#1f2937' }}>{solution.title}</h2>
 //                 <p className="mb-6" style={{ color: '#6b7280' }}>{solution.desc}</p>
 //                 <ul className="space-y-2">
 //                   {solution.features.map((feature, fidx) => (
@@ -1048,12 +1048,12 @@ const ITADSolution: React.FC = () => {
                     <span>Secure IT Asset Disposition</span>
                   </div>
 
-                  <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
+                  <h2 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
                     ITAD Data Wiping & Security{" "}
                     <span className="block bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent pb-1">
                       Solutions
                     </span>
-                  </h1>
+                  </h2>
                 </div>
 
                 <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
@@ -1357,12 +1357,12 @@ const ITADSolution: React.FC = () => {
                   style={{ backgroundColor: "#f9fafb" }}
                 >
                   <div className="text-5xl mb-4">{feature.icon}</div>
-                  <h3
+                  <h2
                     className="text-lg font-bold mb-2"
                     style={{ color: "#1f2937" }}
                   >
                     {feature.title}
-                  </h3>
+                  </h2>
                   <p
                     className="text-sm leading-relaxed"
                     style={{ color: "#6b7280" }}
@@ -1432,12 +1432,12 @@ const ITADSolution: React.FC = () => {
                   style={{ backgroundColor: "#ffffff" }}
                 >
                   <div className="text-6xl mb-4">{device.icon}</div>
-                  <h4
+                  <h3
                     className="text-xl font-bold mb-2"
                     style={{ color: "#1f2937" }}
                   >
                     {device.title}
-                  </h4>
+                  </h3>
                   <p className="text-sm" style={{ color: "#6b7280" }}>
                     {device.desc}
                   </p>
@@ -1519,12 +1519,12 @@ const ITADSolution: React.FC = () => {
                   className="p-8 rounded-2xl hover:shadow-lg transition-all border"
                   style={{ backgroundColor: "#f9fafb", borderColor: "#e5e7eb" }}
                 >
-                  <h3
+                  <h2
                     className="text-2xl font-bold mb-3"
                     style={{ color: "#1f2937" }}
                   >
                     {solution.title}
-                  </h3>
+                  </h2>
                   <p className="mb-6" style={{ color: "#6b7280" }}>
                     {solution.desc}
                   </p>

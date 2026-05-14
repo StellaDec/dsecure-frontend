@@ -41,9 +41,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding IT Asset Lifecycle Management
               </h2>
@@ -64,10 +64,10 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </p>
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   {" "}
                   Market Insight
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   Gartner has estimated that global IT spending will cross{" "}
                   <strong className="text-emerald-800">
@@ -83,7 +83,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why IT Asset Lifecycle Management Matters
               </h2>
@@ -97,9 +97,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </p>
 
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mb-8">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   ️ Alarming Statistic
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   According to a 2025 Deloitte IT Asset Management survey:{" "}
                   <strong className="text-emerald-800">
@@ -114,10 +114,10 @@ const ITAssetLifecycleBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Cost Reduction
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     The procurement cycle begins with assessing available IT
                     assets, their effective usage, and requirements. Without
@@ -128,10 +128,10 @@ const ITAssetLifecycleBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Increased Efficiency
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Management of IT assets intelligently drives efficiency with
                     full visibility from deployment to disposal. When inventory
@@ -142,10 +142,10 @@ const ITAssetLifecycleBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Enhanced Security
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Effective ITAM strengthens security posture by allowing
                     real-time monitoring of devices. IT ALM ensures timely
@@ -155,10 +155,10 @@ const ITAssetLifecycleBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Sustainability
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     IT ALM provides visibility into resource utilization,
                     maximizing usage, reducing energy consumption, and lowering
@@ -191,9 +191,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
                       1
                     </span>
                     <div>
-                      <h4 className="font-bold text-xl mb-3">
+                      <h3 className="font-bold text-xl mb-3">
                         Planning & Procurement
-                      </h4>
+                      </h3>
                       <p className="text-white/90 leading-relaxed mb-3">
                         This first stage is triggered when the need for a new IT
                         asset arises. IT teams make decisions regarding:
@@ -223,9 +223,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
                       2
                     </span>
                     <div>
-                      <h4 className="font-bold text-xl mb-3">
+                      <h3 className="font-bold text-xl mb-3">
                         Deployment & Usage
-                      </h4>
+                      </h3>
                       <p className="text-white/90 leading-relaxed mb-3">
                         At this stage, the asset operational lifecycle begins.
                         The asset comes under organizational control and moves
@@ -255,9 +255,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
                       3
                     </span>
                     <div>
-                      <h4 className="font-bold text-xl mb-3">
+                      <h3 className="font-bold text-xl mb-3">
                         Asset Maintenance & Upgrades
-                      </h4>
+                      </h3>
                       <p className="text-white/90 leading-relaxed mb-3">
                         Once IT assets enter active use, IT teams perform
                         ongoing monitoring including:
@@ -286,9 +286,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
                       4
                     </span>
                     <div>
-                      <h4 className="font-bold text-xl mb-3">
+                      <h3 className="font-bold text-xl mb-3">
                         ️ Retirement & Disposal (Most Critical Stage)
-                      </h4>
+                      </h3>
                       <p className="text-white/90 leading-relaxed mb-3">
                         This is the{" "}
                         <strong>final and most critical stage</strong> of IT
@@ -324,7 +324,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Critical Importance of Secure End-of-Life Disposal
               </h2>
@@ -340,10 +340,10 @@ const ITAssetLifecycleBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     Common Mistakes
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-700">
                     <li>• Devices left in storage without tracking</li>
                     <li>• No secure handling during transportation</li>
@@ -353,10 +353,10 @@ const ITAssetLifecycleBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     {" "}
                     Best Practices
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-700">
                     <li>• Certified <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> before disposal</li>
                     <li>• Audit-ready erasure reports</li>
@@ -370,7 +370,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure: Integrating <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link> into IT ALM
               </h2>
@@ -381,27 +381,27 @@ const ITAssetLifecycleBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Certified <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link>
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     NIST, DoD, and globally certified erasure methods that
                     guarantee complete data destruction.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Audit-Ready Reports
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Tamper-proof certificates and reports that meet regulatory
                     requirements for compliance documentation.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Automated Workflows
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Seamless integration with existing ITAM processes for
                     efficient device disposal.

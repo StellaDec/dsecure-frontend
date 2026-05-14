@@ -93,7 +93,7 @@ export default function ROICalculatorPage() {
                   {/* Lead Capture Form */}
                   <div className="pt-8 border-t border-slate-100 mt-8">
                     <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100">
-                      <h3 className="font-bold text-slate-900 mb-2">Get a detailed ROI report</h3>
+                      <h2 className="font-bold text-slate-900 mb-2">Get a detailed ROI report</h2>
                       <p className="text-sm text-slate-600 mb-4">Enter your work email and we'll send you a comprehensive breakdown of your savings strategy.</p>
                       
                       {status === "success" ? (

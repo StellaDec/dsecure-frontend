@@ -33,9 +33,9 @@ const CarbonFootprintErasureBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             {/* Intro */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -79,21 +79,21 @@ const CarbonFootprintErasureBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-4 mt-4">
                 <div className="bg-red-50 border border-red-200 p-4 rounded-lg text-center">
-                  <h4 className="font-bold text-red-900 mb-2">New Laptop</h4>
+                  <h3 className="font-bold text-red-900 mb-2">New Laptop</h3>
                   <p className="text-3xl font-bold text-red-600">350-400</p>
                   <p className="text-sm text-red-700">kg CO₂ equivalent</p>
                 </div>
                 <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg text-center">
-                  <h4 className="font-bold text-amber-900 mb-2">
+                  <h3 className="font-bold text-amber-900 mb-2">
                     Refurbished Laptop
-                  </h4>
+                  </h3>
                   <p className="text-3xl font-bold text-amber-600">40-60</p>
                   <p className="text-sm text-amber-700">kg CO₂ equivalent</p>
                 </div>
                 <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-lg text-center">
-                  <h4 className="font-bold text-emerald-900 mb-2">
+                  <h3 className="font-bold text-emerald-900 mb-2">
                     Carbon Saved
-                  </h4>
+                  </h3>
                   <p className="text-3xl font-bold text-emerald-800">85%</p>
                   <p className="text-sm text-emerald-700">
                     reduction per device
@@ -176,7 +176,7 @@ const CarbonFootprintErasureBlog: React.FC = () => {
 
         {/* D-Secure Solutions Section */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               D-Secure: Enabling Sustainable IT Lifecycle
             </h2>
@@ -194,9 +194,9 @@ const CarbonFootprintErasureBlog: React.FC = () => {
                     className="w-5 h-5 text-emerald-800"
                     filled={true}
                   />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Sustainability Reporting
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Track devices erased vs. destroyed. Generate reports showing
@@ -209,9 +209,9 @@ const CarbonFootprintErasureBlog: React.FC = () => {
                     className="w-5 h-5 text-emerald-800"
                     filled={true}
                   />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Compliance-Verified Erasure
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> compliant erasure ensures data is irrecoverable,
@@ -224,7 +224,7 @@ const CarbonFootprintErasureBlog: React.FC = () => {
                     className="w-5 h-5 text-emerald-800"
                     filled={true}
                   />
-                  <h4 className="font-bold text-slate-900"><Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Integration</h4>
+                  <h3 className="font-bold text-slate-900"><Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Integration</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Seamless workflows with R2 and e-Stewards certified <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
@@ -237,9 +237,9 @@ const CarbonFootprintErasureBlog: React.FC = () => {
                     className="w-5 h-5 text-emerald-800"
                     filled={true}
                   />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Carbon Impact Calculator
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Built-in tools to calculate and report estimated carbon
@@ -249,9 +249,9 @@ const CarbonFootprintErasureBlog: React.FC = () => {
             </div>
 
             <div className="bg-slate-900 rounded-xl p-6 text-white">
-              <h4 className="font-bold mb-4 text-emerald-400">
+              <h3 className="font-bold mb-4 text-emerald-400">
                 Your Sustainability Impact with D-Secure
-              </h4>
+              </h3>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-start gap-2">
                   <CheckIcon

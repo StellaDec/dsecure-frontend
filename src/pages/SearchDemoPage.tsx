@@ -160,7 +160,7 @@ export default function SearchDemoPage() {
                 <Reveal key={product.id} delayMs={i * 50}>
                   <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 hover:shadow-xl transition-all hover:border-emerald-200">
                     <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-lg font-bold text-slate-900">{product.name}</h3>
+                      <h2 className="text-lg font-bold text-slate-900">{product.name}</h2>
                       <span className="text-emerald-800 font-bold text-lg">${product.price}</span>
                     </div>
                     <p className="text-slate-600 text-sm mb-4">{product.description}</p>
@@ -188,7 +188,7 @@ export default function SearchDemoPage() {
               <svg className="w-16 h-16 text-slate-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">No results found</h3>
+              <h2 className="text-xl font-bold text-slate-900 mb-2">No results found</h2>
               <p className="text-slate-600">Try adjusting your search or filters</p>
             </div>
           )}
@@ -217,7 +217,7 @@ export default function SearchDemoPage() {
               <Reveal key={i} delayMs={i * 100}>
                 <div className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow">
                   <div className="text-4xl mb-3">{feature.icon}</div>
-                  <h3 className="font-bold text-slate-900 mb-2">{feature.title}</h3>
+                  <h2 className="font-bold text-slate-900 mb-2">{feature.title}</h2>
                   <p className="text-sm text-slate-600">{feature.desc}</p>
                 </div>
               </Reveal>

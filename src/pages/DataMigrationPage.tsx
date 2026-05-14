@@ -258,9 +258,9 @@ const DataMigrationPage = memo(() => {
                           <ArrowLeftRight className="w-12 h-12 lg:w-16 lg:h-16 text-white drop-shadow-lg" />
                         </div>
 
-                        <h3 className="text-white text-xl lg:text-3xl font-bold tracking-tight text-center mb-1 lg:mb-2">
+                        <h2 className="text-white text-xl lg:text-3xl font-bold tracking-tight text-center mb-1 lg:mb-2">
                           Data Migration
-                        </h3>
+                        </h2>
 
                         <p className="text-white/70 text-[10px] lg:text-xs text-center tracking-wide uppercase">
                           Zero-Loss Transition
@@ -327,9 +327,9 @@ const DataMigrationPage = memo(() => {
                     <div className="relative p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-500 h-full group text-center">
                        <span className="absolute top-4 right-6 text-4xl font-black text-slate-200/50 group-hover:text-emerald-500/10 transition-colors uppercase">{item.step}</span>
                        <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
-                          {React.cloneElement(item.icon as React.ReactElement, { className: "w-6 h-6" })}
+                          {React.cloneElement(item.icon as any, { className: "w-6 h-6" })}
                        </div>
-                       <h4 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">{item.title}</h4>
+                       <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">{item.title}</h3>
                        <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
                     </div>
                  </Reveal>
@@ -361,10 +361,10 @@ const DataMigrationPage = memo(() => {
                     ].map(item => (
                       <div key={item.title} className="flex gap-6 items-start group">
                         <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-emerald-400 border border-white/10 shrink-0 group-hover:bg-emerald-500/10 transition-colors">
-                          {React.cloneElement(item.icon as React.ReactElement, { className: "w-6 h-6" })}
+                          {React.cloneElement(item.icon as any, { className: "w-6 h-6" })}
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                          <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                           <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                         </div>
                       </div>
@@ -447,9 +447,9 @@ const DataMigrationPage = memo(() => {
                       ].map(item => (
                         <div key={item.title} className="p-6 rounded-2xl bg-slate-50 border border-slate-100 group hover:border-emerald-200 transition-colors">
                           <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-emerald-600 mb-4 shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                             {React.cloneElement(item.icon as React.ReactElement, { className: "w-5 h-5" })}
+                             {React.cloneElement(item.icon as any, { className: "w-5 h-5" })}
                           </div>
-                          <h4 className="font-bold text-slate-900 mb-1 text-sm">{item.title}</h4>
+                          <h3 className="font-bold text-slate-900 mb-1 text-sm">{item.title}</h3>
                           <p className="text-slate-500 text-[11px] leading-relaxed">{item.desc}</p>
                         </div>
                       ))}
@@ -467,7 +467,7 @@ const DataMigrationPage = memo(() => {
                          <ShieldCheck className="w-8 h-8 text-white" />
                       </div>
                       <div>
-                         <h3 className="text-2xl font-bold">Compliance Ready</h3>
+                         <h2 className="text-2xl font-bold">Compliance Ready</h2>
                          <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest">Global Standards Met</p>
                       </div>
                    </div>
@@ -547,9 +547,9 @@ const DataMigrationPage = memo(() => {
                  <Reveal key={useCase.title} delayMs={idx * 100}>
                     <div className="group bg-white rounded-[2.5rem] p-10 border border-slate-200 hover:border-emerald-300 hover:shadow-2xl transition-all duration-500 h-full flex flex-col items-center text-center">
                        <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-inner">
-                          {React.cloneElement(useCase.icon as React.ReactElement, { className: "w-8 h-8" })}
+                          {React.cloneElement(useCase.icon as any, { className: "w-8 h-8" })}
                        </div>
-                       <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">{useCase.title}</h3>
+                       <h2 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">{useCase.title}</h2>
                        <p className="text-slate-500 text-sm leading-relaxed mb-8">{useCase.desc}</p>
                        
                        <div className="mt-auto w-full pt-8 border-t border-slate-100">
@@ -609,9 +609,9 @@ const DataMigrationPage = memo(() => {
                     <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-300 h-full">
                        <div className="flex items-center gap-4 mb-6">
                           <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
-                             {React.cloneElement(spec.icon as React.ReactElement, { className: "w-5 h-5" })}
+                             {React.cloneElement(spec.icon as any, { className: "w-5 h-5" })}
                           </div>
-                          <h4 className="text-lg font-bold text-slate-900 tracking-tight">{spec.category}</h4>
+                          <h3 className="text-lg font-bold text-slate-900 tracking-tight">{spec.category}</h3>
                        </div>
                        <ul className="grid grid-cols-1 gap-3">
                           {spec.items.map(item => (
@@ -652,9 +652,9 @@ const DataMigrationPage = memo(() => {
                     <Reveal key={feat.title} delayMs={idx * 50}>
                        <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-colors group">
                           <div className="text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
-                             {React.cloneElement(feat.icon as React.ReactElement, { className: "w-6 h-6" })}
+                             {React.cloneElement(feat.icon as any, { className: "w-6 h-6" })}
                           </div>
-                          <h4 className="font-bold text-sm mb-1">{feat.title}</h4>
+                          <h3 className="font-bold text-sm mb-1">{feat.title}</h3>
                           <p className="text-[10px] text-slate-400 group-hover:text-slate-300 transition-colors">{feat.desc}</p>
                        </div>
                     </Reveal>

@@ -37,7 +37,7 @@ const WindowsCompliancePage: React.FC = memo(() => {
         seo={getSEOForPage("support-manual-windows-compliance", { 
           title: "Windows Server & PC Enterprise Erasure Guide | D-Secure Manual", 
           canonicalUrl: "/support/manual/windows-compliance",
-          description: "An incredibly detailed technical manual for comprehensively erasing Windows PCs, Hyper-V, bypassing BitLocker, neutralizing OEM partitions, and executing massive PXE network wipes."
+          description: "Detailed manual for erasing Windows PCs and Hyper-V, bypassing BitLocker, neutralizing OEM partitions, and executing massive PXE network wipes."
         })} 
       /> */}
 
@@ -176,9 +176,9 @@ const WindowsCompliancePage: React.FC = memo(() => {
                   to our overwriting logic.
                 </p>
                 <div className="bg-slate-50 border-l-4 border-slate-400 p-6 rounded-r-xl my-6">
-                  <h4 className="font-bold text-slate-900 text-lg m-0 mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg m-0 mb-2">
                     Compliance Imperative
-                  </h4>
+                  </h3>
                   <p className="m-0 text-slate-600 text-base">
                     NIST 800-88 mandates that any tools utilized for "Purge"
                     sanitization must be capable of identifying and accessing

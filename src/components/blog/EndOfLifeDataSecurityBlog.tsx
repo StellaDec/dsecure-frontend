@@ -43,9 +43,9 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -82,7 +82,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
 
           {/* Data Leakage Scenarios */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Common Data Leakage Scenarios at End-of-Life
               </h2>
@@ -181,7 +181,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Financial Fraud</h4>
+                  <h3 className="font-bold text-lg mb-3">Financial Fraud</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Security breaches can lead to immense financial losses
                     through fraudulent transactions. Breach of customers'
@@ -190,7 +190,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Legal Penalties</h4>
+                  <h3 className="font-bold text-lg mb-3">Legal Penalties</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Data breaches trigger legal action including customer
                     lawsuits, resulting in massive penalties. GDPR violations
@@ -199,7 +199,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Brand Damage</h4>
+                  <h3 className="font-bold text-lg mb-3">Brand Damage</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Information security breaches dent company image,
                     culminating in bad publicity, reputation loss, and customer
@@ -208,7 +208,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">IP Theft</h4>
+                  <h3 className="font-bold text-lg mb-3">IP Theft</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Security breach and theft of corporate data like
                     intellectual property and business intelligence can flatten
@@ -217,7 +217,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Bankruptcy Risk</h4>
+                  <h3 className="font-bold text-lg mb-3">Bankruptcy Risk</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Overlooking end-of-life data security can result in breach
                     penalties reaching several million dollars. For many
@@ -225,7 +225,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Customer Loss</h4>
+                  <h3 className="font-bold text-lg mb-3">Customer Loss</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Data breaches fundamentally damage customer trust. Affected
                     customers are unlikely to continue relationships and will
@@ -238,7 +238,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
 
           {/* The Solution */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Secure Disposal: The Most Effective Method
               </h2>
@@ -288,7 +288,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
 
           {/* Best Practices */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Best Practices for End-of-Life Data Security
               </h2>

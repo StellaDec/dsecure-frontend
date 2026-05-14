@@ -37,9 +37,9 @@ const SecureHDDDisposalBlog: React.FC = () => {
             </section>
 
             {/* Main Content */}
-            <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+            <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
 
                         {/* Introduction */}
                         <div className="space-y-6">
@@ -56,7 +56,7 @@ const SecureHDDDisposalBlog: React.FC = () => {
 
                         {/* Key Warning */}
                         <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                            <h3 className="font-bold text-slate-900 text-xl mb-4">Critical Security Consideration</h3>
+                            <h2 className="font-bold text-slate-900 text-xl mb-4">Critical Security Consideration</h2>
                             <p className="text-slate-700 leading-loose text-lg">
                                 The aftermath of a data breach negatively impacts business reputation, operations, and relationships with stakeholders and customers. Multiple <strong className="text-emerald-800">global data protection regulations mandate proper data disposal</strong> and impose significant penalties for negligence. Only secure HDD disposal guarantees that business-critical data is permanently erased.
                             </p>
@@ -67,7 +67,7 @@ const SecureHDDDisposalBlog: React.FC = () => {
 
                 {/* Disposal Methods Overview */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">
                             Understanding HDD Disposal Methods
                         </h2>
@@ -77,19 +77,19 @@ const SecureHDDDisposalBlog: React.FC = () => {
 
                         <div className="grid md:grid-cols-2 gap-6 mt-8">
                             <div className="bg-slate-50 rounded-xl p-6">
-                                <h4 className="font-bold text-slate-900 text-lg mb-3">Data Sensitivity Level</h4>
+                                <h3 className="font-bold text-slate-900 text-lg mb-3">Data Sensitivity Level</h3>
                                 <p className="text-slate-600">Highly confidential data may require multiple disposal methods for maximum security.</p>
                             </div>
                             <div className="bg-slate-50 rounded-xl p-6">
-                                <h4 className="font-bold text-slate-900 text-lg mb-3">Storage Technology Type</h4>
+                                <h3 className="font-bold text-slate-900 text-lg mb-3">Storage Technology Type</h3>
                                 <p className="text-slate-600">Different storage media (HDD, SSD, hybrid) require specific sanitization approaches.</p>
                             </div>
                             <div className="bg-slate-50 rounded-xl p-6">
-                                <h4 className="font-bold text-slate-900 text-lg mb-3">Sustainability Goals</h4>
+                                <h3 className="font-bold text-slate-900 text-lg mb-3">Sustainability Goals</h3>
                                 <p className="text-slate-600">ESG objectives and circularity initiatives influence method selection.</p>
                             </div>
                             <div className="bg-slate-50 rounded-xl p-6">
-                                <h4 className="font-bold text-slate-900 text-lg mb-3">Budget Constraints</h4>
+                                <h3 className="font-bold text-slate-900 text-lg mb-3">Budget Constraints</h3>
                                 <p className="text-slate-600">Cost considerations for large-scale disposal operations.</p>
                             </div>
                         </div>
@@ -98,7 +98,7 @@ const SecureHDDDisposalBlog: React.FC = () => {
 
                 {/* Checklist Section */}
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">
                             Essential HDD Disposal Checklist
                         </h2>
@@ -108,49 +108,49 @@ const SecureHDDDisposalBlog: React.FC = () => {
 
                         <div className="space-y-8">
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">1. Data Classification Assessment</h3>
+                                <h2 className="font-bold text-slate-900 text-xl mb-3">1. Data Classification Assessment</h2>
                                 <p className="text-slate-700 text-lg leading-loose">
                                     Is your organization storing data on hard drives based on proper data classification? Classify data by sensitivity level (confidential, internal, public) and select appropriate storage media accordingly. Business-critical data, financial information, PHI, PII, and credit card data can be securely wiped using certified erasure software like <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> that deploys methods like NIST-Clear to overwrite information beyond recovery.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">2. Complete Storage Inventory</h3>
+                                <h2 className="font-bold text-slate-900 text-xl mb-3">2. Complete Storage Inventory</h2>
                                 <p className="text-slate-700 text-lg leading-loose">
                                     Does your organization maintain a repository of HDDs, including mechanical drives and hybrid drives? Maintain an updated inventory of all storage devices — HDDs, SSDs, USBs — and select the appropriate data destruction method based on storage technology. For virtualized environments, VM Eraser is essential for clearing virtual disks.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">3. Environmental Impact Consideration</h3>
+                                <h2 className="font-bold text-slate-900 text-xl mb-3">3. Environmental Impact Consideration</h2>
                                 <p className="text-slate-700 text-lg leading-loose">
                                     Does your disposal technique harm the environment? Physical sanitization methods like degaussing, incineration, disintegrating, and shredding are environmentally harmful and render storage media unusable. Using software-based erasure allows for secure reuse and supports ESG goals.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">4. Certified Tool Verification</h3>
+                                <h2 className="font-bold text-slate-900 text-xl mb-3">4. Certified Tool Verification</h2>
                                 <p className="text-slate-700 text-lg leading-loose">
                                     Is HDD disposal performed using a tested and certified data-wiping tool? Using certified tools provides assurance of erasure efficacy. D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> is NIST-tested and certified for wiping HDDs, SSDs, servers, laptops, and PCs.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">5. Hidden Disk Zone Coverage</h3>
+                                <h2 className="font-bold text-slate-900 text-xl mb-3">5. Hidden Disk Zone Coverage</h2>
                                 <p className="text-slate-700 text-lg leading-loose">
                                     Can your tool erase data from hidden disk zones? User-inaccessible areas like Host Protected Area (HPA) and Disk Configuration Overlay (DCO) can contain residual data. D-Secure solutions effectively remove data from these hidden zones.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">6. Device Reuse Objectives</h3>
+                                <h2 className="font-bold text-slate-900 text-xl mb-3">6. Device Reuse Objectives</h2>
                                 <p className="text-slate-700 text-lg leading-loose">
                                     Is resale, reuse, or donation of hard drives an organizational objective? If you aim to repurpose HDDs, choose disposal methods that don't physically destroy the drives. Data erasure enables drives to be safely reused, resold, or donated while ensuring complete data removal.
                                 </p>
                             </div>
 
                             <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                                <h3 className="font-bold text-slate-900 text-xl mb-3">7. Audit Documentation</h3>
+                                <h2 className="font-bold text-slate-900 text-xl mb-3">7. Audit Documentation</h2>
                                 <p className="text-slate-700 text-lg leading-loose">
                                     Can you document proof of HDD data destruction for audits? Organizations governed by data protection regulations require verifiable evidence. D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> generates automatic, detailed erasure reports with tamper-proof certificates that serve as compliance audit documentation.
                                 </p>
@@ -169,25 +169,25 @@ const SecureHDDDisposalBlog: React.FC = () => {
 
                         <div className="grid md:grid-cols-2 gap-6 mb-8">
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">Complete Zone Erasure</h4>
+                                <h3 className="font-bold text-lg mb-3">Complete Zone Erasure</h3>
                                 <p className="text-white/90">
                                     Erases all hidden disk zones including HPA, DCO, AMA, and firmware areas for complete data removal.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">Tamper-Proof Certificates</h4>
+                                <h3 className="font-bold text-lg mb-3">Tamper-Proof Certificates</h3>
                                 <p className="text-white/90">
                                     Generate detailed erasure reports and digitally-signed certificates for regulatory compliance audits.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">Multiple Device Support</h4>
+                                <h3 className="font-bold text-lg mb-3">Multiple Device Support</h3>
                                 <p className="text-white/90">
                                     Supports HDDs, SSDs, servers, laptops, desktops, and embedded storage with unified erasure workflows.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3">Erasure Verification</h4>
+                                <h3 className="font-bold text-lg mb-3">Erasure Verification</h3>
                                 <p className="text-white/90">
                                     Built-in verification capabilities confirm complete data removal with no residual traces.
                                 </p>

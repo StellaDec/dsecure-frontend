@@ -41,9 +41,9 @@ const DarkDataRisksBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is Dark Data?
               </h2>
@@ -55,9 +55,9 @@ const DarkDataRisksBlog: React.FC = () => {
                 potentially become dark data at some point in its lifecycle.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   The Core Problem
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   The initial impetus behind collecting this data was to gather
                   value or conduct broad-based information gathering when
@@ -70,7 +70,7 @@ const DarkDataRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Common Examples of Dark Data
               </h2>
@@ -251,7 +251,7 @@ const DarkDataRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How Data Destruction Mitigates Dark Data Risks
               </h2>
@@ -263,9 +263,9 @@ const DarkDataRisksBlog: React.FC = () => {
               </p>
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Permanent Wiping
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Overwriting software uses pseudorandom binary patterns to
                     overwrite data in all sectors of storage devices. This
@@ -274,9 +274,9 @@ const DarkDataRisksBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Verification Process
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     After overwriting, a verification sweep ensures all targeted
                     sectors have been wiped and no remnants remain. This
@@ -285,9 +285,9 @@ const DarkDataRisksBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     International Standards Compliance
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     NIST-approved software supporting <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> and 23+ other
                     international standards (DoD 3 & 7 Pass) ensures compliance
@@ -296,9 +296,9 @@ const DarkDataRisksBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Proof of Destruction
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Erasure reports stored in accessible cloud repositories help
                     companies demonstrate compliance during audits and
@@ -310,7 +310,7 @@ const DarkDataRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure's Approach to Dark Data Destruction
               </h2>
@@ -320,49 +320,49 @@ const DarkDataRisksBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     SSDs & HDDs
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Complete erasure of solid-state and hard disk drives
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     PCs & Laptops
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Desktop and laptop data sanitization
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Servers
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Enterprise server data destruction
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     USB Devices
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Portable storage media sanitization
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Mobile Devices
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Smartphone and tablet data erasure
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Virtual Machines
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Cloud and VM environment sanitization
                   </p>

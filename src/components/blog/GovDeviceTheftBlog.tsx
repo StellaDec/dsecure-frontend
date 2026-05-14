@@ -32,9 +32,9 @@ const GovDeviceTheftBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Introduction */}
                 <div className="space-y-4">
@@ -54,7 +54,7 @@ const GovDeviceTheftBlog: React.FC = () => {
                         One would think that top government agencies are hard to hack into, but cases like the 2020 United States federal government data breach prove it's not. With cases like these, data protection for government organizations becomes immediate as even the government facilities can be breached. Also, when government data leaves the facility for disposal, it becomes highly risky.
                     </p>
                     <div className="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-lg">
-                        <h4 className="font-bold text-rose-900 mb-2">Case Study: Maine HealthReach Data Breach (2021)</h4>
+                        <h3 className="font-bold text-rose-900 mb-2">Case Study: Maine HealthReach Data Breach (2021)</h3>
                         <p className="text-rose-800">
                             The data breach at Maine-based HealthReach Community Health Centers came to light due to data theft of over 100,000 patient records that were stolen and could lead to a HIPAA penalty of over $1.5 million for careless neglect of privacy, security, and breach notification rules. This episode was caused by improper disposal of IT assets that was preventable by a well-planned and secure IT asset disposal policy.
                         </p>
@@ -74,7 +74,7 @@ const GovDeviceTheftBlog: React.FC = () => {
                         The classified data destruction gets harder when it comes to digital media. Currently, many government agencies operate on a physical destruction policy. However, this is not only ineffective but also an expensive method. Physical destruction involves the cost of destroying the drives with the added expense of replacing the old drives with new ones.
                     </p>
                     <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
-                        <h4 className="font-bold text-amber-900 mb-2">Why Physical Destruction Alone is Not Enough</h4>
+                        <h3 className="font-bold text-amber-900 mb-2">Why Physical Destruction Alone is Not Enough</h3>
                         <p className="text-amber-800">
                             Unless the shredded drives are reduced to dust, which it doesn't in most cases, physical destruction remains ineffective and not secure. Larger fragments leave information behind. And if someone wanted to, they could still steal data from a physically destroyed device. Thus physical destruction without permanent sanitization of data will not be considered a secure IT Asset disposal for a government organization. That is why software-based data erasure is needed to secure government assets' destruction.
                         </p>
@@ -101,7 +101,7 @@ const GovDeviceTheftBlog: React.FC = () => {
                         The answer to both questions will decide how the organization will do data erasure. The NIST standard has 3 methods that may be used for classified data destruction:
                     </p>
                     <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mt-4">
-                        <h4 className="font-bold text-indigo-900 mb-2"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Sanitization Methods</h4>
+                        <h3 className="font-bold text-indigo-900 mb-2"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Sanitization Methods</h3>
                         <ul className="space-y-2 text-indigo-800">
                             <li><strong>Clear:</strong> Software-based data destruction method effectively used for reusing the devices.</li>
                             <li><strong>Purge:</strong> Software-based data destruction method effectively used for reusing the devices with higher security.</li>
@@ -121,23 +121,23 @@ const GovDeviceTheftBlog: React.FC = () => {
                     </p>
                     <div className="space-y-4 mt-4">
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">Privileged Systems</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">Privileged Systems</h3>
                             <p className="text-slate-600">If the drive is from a privileged system, it should be erased with approved software before physical destruction.</p>
                         </div>
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">HDD Servers with Mechanical Failures</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">HDD Servers with Mechanical Failures</h3>
                             <p className="text-slate-600">In case of mechanical failures in HDD servers, they may be degaussed. But the storage media should be fully destroyed after degaussing to prevent any leakage, as degaussing does not verify that data destruction was complete.</p>
                         </div>
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">Mobile Devices</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">Mobile Devices</h3>
                             <p className="text-slate-600">Mobile devices should be sanitized in line with NIST SP 800–88 crypto erase guidelines.</p>
                         </div>
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">Onsite Erasure</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">Onsite Erasure</h3>
                             <p className="text-slate-600">Data erasure, degaussing, or shredding should preferably be done onsite. If a third-party vendor is hired, a secure chain of custody should be maintained with verification of the facility and the IT disposal process.</p>
                         </div>
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">Under Supervision</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">Under Supervision</h3>
                             <p className="text-slate-600">Two or more staff members should watch over and verify that data destruction is happening according to procedure.</p>
                         </div>
                     </div>
@@ -153,7 +153,7 @@ const GovDeviceTheftBlog: React.FC = () => {
                         D-Secure is a professional data wiping tool that guarantees data erasure beyond recovery using international erasure standards, including <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>. The certified tool works effectively on networked and off-grid storage media, with the ability to erase/diagnose multiple devices at the same time. Following the principle of Erase, Verify and Certify, the NIST-approved D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">drive eraser</Link> software gives you complete control of permanent erasure with verification of every wipe performed.
                     </p>
                     <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                        <h4 className="font-bold text-emerald-900 mb-2">D-Secure Key Features for Government</h4>
+                        <h3 className="font-bold text-emerald-900 mb-2">D-Secure Key Features for Government</h3>
                         <ul className="space-y-2 text-emerald-800">
                             <li><strong>Erase, Verify and Certify:</strong> Complete control of permanent erasure with verification of every wipe performed.</li>
                             <li><strong>NIST-Approved:</strong> Meets <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> guidelines for government compliance.</li>

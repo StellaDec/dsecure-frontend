@@ -1615,17 +1615,17 @@ export default SupportPage;
 //                 Account management and settings
 //               </li>
 //               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
+//                 <span className="text-blue-600 mt-1">•</spansupport
 //                 Billing inquiries and invoice questions
 //               </li>
 //               <li className="flex items-start gap-3">
 //                 <span className="text-blue-600 mt-1">•</span>
 //                 License management and renewals
 //               </li>
-//               <li className="flex items-start gap-3">
+//               <li classN{/* ame="flex items-start gap-3">
 //                 <span className="text-blue-600 mt-1">•</span>
 //                 Subscription changes and upgrades
-//               </li>
+//               </li> */}
 //               <li className="flex items-start gap-3">
 //                 <span className="text-blue-600 mt-1">•</span>
 //                 Payment processing support

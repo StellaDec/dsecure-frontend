@@ -132,9 +132,9 @@ const MacosCompliancePage: React.FC = memo(() => {
 
                 <div className="grid grid-cols-1 gap-6 my-8">
                   <div className="bg-slate-50 border-l-4 border-slate-400 p-6 rounded-r-xl">
-                    <h4 className="font-bold text-slate-900 text-xl m-0 mb-2">
+                    <h3 className="font-bold text-slate-900 text-xl m-0 mb-2">
                       Epoch A: Legacy Intel (Pre-2018)
-                    </h4>
+                    </h3>
                     <p className="m-0 text-slate-600 text-base">
                       These machines rely on traditional x86 architecture
                       without dedicated Apple Security chips. Data on these
@@ -146,9 +146,9 @@ const MacosCompliancePage: React.FC = memo(() => {
                     </p>
                   </div>
                   <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-xl">
-                    <h4 className="font-bold text-slate-900 text-xl m-0 mb-2">
+                    <h3 className="font-bold text-slate-900 text-xl m-0 mb-2">
                       Epoch B: Intel with T2 Security Chip (2018 - 2020)
-                    </h4>
+                    </h3>
                     <p className="m-0 text-slate-600 text-base">
                       The introduction of the Apple T2 Security Chip
                       revolutionized Mac security. The T2 chip acts as a
@@ -161,9 +161,9 @@ const MacosCompliancePage: React.FC = memo(() => {
                     </p>
                   </div>
                   <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl">
-                    <h4 className="font-bold text-slate-900 text-xl m-0 mb-2">
+                    <h3 className="font-bold text-slate-900 text-xl m-0 mb-2">
                       Epoch C: Apple Silicon M1 / M2 / M3 (2020 - Present)
-                    </h4>
+                    </h3>
                     <p className="m-0 text-slate-600 text-base">
                       Apple transitioned entirely to their proprietary ARM-based
                       M-Series Systems on a Chip (SoC). In this architecture,
@@ -211,9 +211,9 @@ const MacosCompliancePage: React.FC = memo(() => {
                   800-88 standard for <strong>Purge</strong> sanitization.
                 </p>
 
-                <h4 className="text-xl font-bold text-slate-800 mt-6">
+                <h3 className="text-xl font-bold text-slate-800 mt-6">
                   D-Secure Cryptocpys Verification
-                </h4>
+                </h3>
                 <p>
                   A significant challenge for IT auditors is proving that a
                   cryptographic wipe was successful. How do you prove a key no

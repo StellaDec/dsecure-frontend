@@ -58,9 +58,9 @@ const HealthcareServices: React.FC = () => {
                 </span>
                 <span className="text-md font-medium text-green-700">Secure regulated</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-2">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-2">
                 Healthcare Data Privacy & <span className="text-green-700">PHI Erasure</span>
-              </h1>
+              </h2>
               <p className="text-lg text-gray-600 mb-8">
                 Data security and compliance for healthcare organizations. Protect patient data with regulated, compliant data erasure solutions that meet HIPAA, HITECH, and global privacy standards.
               </p>

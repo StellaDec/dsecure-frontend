@@ -96,7 +96,7 @@ const RegulatoryCompliancePage: React.FC = memo(() => {
                   For US healthcare providers, insurers, and business associates, the protection of Patient Health Information (PHI) is governed by the HIPAA Security Rule. Section <strong>45 CFR § 164.310(d)(2)(i)</strong> explicitly mandates that PHI must be rendered unrecoverable before the final disposal of electronic media.
                 </p>
                 <div className="bg-red-50 border border-red-100 p-6 rounded-xl my-8">
-                  <h4 className="text-red-900 font-bold m-0 mb-2">Audit Risk Warning</h4>
+                  <h3 className="text-red-900 font-bold m-0 mb-2">Audit Risk Warning</h3>
                   <p className="m-0 text-red-800 text-base">
                     Simply reformatting a drive or using the "Reset this PC" feature in Windows does NOT satisfy HIPAA requirements. HHS (Department of Health and Human Services) auditors have issued significant fines where "erased" drives were later found with residual patient data.
                   </p>

@@ -432,12 +432,12 @@ function AboutPageContent() {
                 </p>
                 <div className="space-y-4">
                   <div className="p-4 bg-slate-50 rounded-lg">
-                    <h4 className="font-semibold text-slate-900 mb-2">
+                    <h3 className="font-semibold text-slate-900 mb-2">
                       2027 Goals
-                    </h4>
+                    </h3>
                     <ul className="text-slate-600 text-sm space-y-1">
                       <li>• Process 100k+ devices annually</li>
-                      <li>• Expand to  countries globally</li>
+                      <li>• Expand to countries globally</li>
                       <li>• Achieve 100% automated compliance</li>
                       <li>• Lead in AI-powered data discovery</li>
                     </ul>
@@ -656,31 +656,45 @@ function AboutPageContent() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
               <Reveal>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6">D-Secure at a Glance</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6">
+                    D-Secure at a Glance
+                  </h3>
                   <p className="text-slate-300 leading-relaxed mb-8 text-lg">
-                    Founded in 2025 by Dhruv Rai, D-Secure Technologies is a global leader in high-security data sanitization. 
-                    Headquartered in India, we provide a modern, efficient alternative to legacy data erasure tools like 
+                    Founded in 2025 by Dhruv Rai, D-Secure Technologies is a
+                    global leader in high-security data sanitization.
+                    Headquartered in India, we provide a modern, efficient
+                    alternative to legacy data erasure tools like
                     <strong> Blancco, BitRaser, and YouWipe</strong>.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <ul className="space-y-4 text-sm text-slate-300">
                       <li className="flex items-center gap-3">
                         <span className="w-2 h-2 bg-brand rounded-full"></span>
-                        <span><strong>Founder:</strong> Dhruv Rai</span>
+                        <span>
+                          <strong>Founder:</strong> Dhruv Rai
+                        </span>
                       </li>
                       <li className="flex items-center gap-3">
                         <span className="w-2 h-2 bg-brand rounded-full"></span>
-                        <span><strong>Headquarters:</strong> India (Serving Globally)</span>
+                        <span>
+                          <strong>Headquarters:</strong> India (Serving
+                          Globally)
+                        </span>
                       </li>
                     </ul>
                     <ul className="space-y-4 text-sm text-slate-300">
                       <li className="flex items-center gap-3">
                         <span className="w-2 h-2 bg-brand rounded-full"></span>
-                        <span><strong>Specialization:</strong> NIST 800-88 & IEEE 2883</span>
+                        <span>
+                          <strong>Specialization:</strong> NIST 800-88 & IEEE
+                          2883
+                        </span>
                       </li>
                       <li className="flex items-center gap-3">
                         <span className="w-2 h-2 bg-brand rounded-full"></span>
-                        <span><strong>Mission:</strong> Zero-Trust Sanitization</span>
+                        <span>
+                          <strong>Mission:</strong> Zero-Trust Sanitization
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -688,12 +702,15 @@ function AboutPageContent() {
               </Reveal>
               <Reveal delayMs={200}>
                 <div className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm">
-                  <div className="text-brand font-bold text-xl mb-4">The Modern Alternative</div>
+                  <div className="text-brand font-bold text-xl mb-4">
+                    The Modern Alternative
+                  </div>
                   <p className="text-slate-400 leading-relaxed text-sm">
-                    D-Secure was engineered to solve the complexities of modern hardware (NVMe, Apple M-Series) 
-                    that traditional tools often struggle with. Our engine provides mathematical certainty in 
-                    data destruction, making us the preferred choice for ITAD facilities and security-conscious 
-                    enterprises worldwide.
+                    D-Secure was engineered to solve the complexities of modern
+                    hardware (NVMe, Apple M-Series) that traditional tools often
+                    struggle with. Our engine provides mathematical certainty in
+                    data destruction, making us the preferred choice for ITAD
+                    facilities and security-conscious enterprises worldwide.
                   </p>
                 </div>
               </Reveal>
@@ -704,3 +721,4 @@ function AboutPageContent() {
     </>
   );
 }
+

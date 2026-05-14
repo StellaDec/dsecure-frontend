@@ -1,0 +1,989 @@
+[
+  {
+    "file": "src\\components\\blog\\EnquiryForm.tsx",
+    "issues": [
+      "Missing <h1> tag"
+    ]
+  },
+  {
+    "file": "src\\components\\blog\\MDMDetectionBlog.tsx",
+    "issues": [
+      "Skipped heading level (jumped from h2 to h4)"
+    ]
+  },
+  {
+    "file": "src\\components\\blog\\RelatedArticles.tsx",
+    "issues": [
+      "Missing <h1> tag",
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\components\\blog\\StandardDeepDive.tsx",
+    "issues": [
+      "Missing <h1> tag"
+    ]
+  },
+  {
+    "file": "src\\components\\blog\\__tests__\\NIST80088IndiaBlog.test.tsx",
+    "issues": [
+      "Missing <h1> tag",
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\ApiTestPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminSessions.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\dashboards\\AdminShell.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\FreezeStateAdvancedPage.tsx",
+    "issues": [
+      "Skipped heading level (jumped from h2 to h4)"
+    ]
+  },
+  {
+    "file": "src\\pages\\FreezeStateSmartPage.tsx",
+    "issues": [
+      "Skipped heading level (jumped from h2 to h4)"
+    ]
+  },
+  {
+    "file": "src\\pages\\ProgrammaticSolutionPage.tsx",
+    "issues": [
+      "Missing <h1> tag"
+    ]
+  },
+  {
+    "file": "src\\pages\\research\\ZeroTrustSanitization.tsx",
+    "issues": [
+      "Skipped heading level (jumped from h2 to h4)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\AccessVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ActivationKeyPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ApiIntegrationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\AuditPreparationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\AuditVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\AutoUpdatesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\BankingFinancePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\BankingModePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\BestPracticesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CertificateDestructionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CloudConsolePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ComparisonTablePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CrushingMethodPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CryptoBenefitsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CryptoImportancePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CryptoProcessPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CryptoVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CustomAlgorithmsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\CustomDashboardsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DegaussingMethodPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DestructionQualityPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DestructionStandardsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DestructionUseCasesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\Dod3passPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\Dod7passPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DodStandardsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\DSecureIntegrationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\EnterpriseBenefitsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\EnterpriseIntegrationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\EnvironmentalConsiderationsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\EnvironmentalImpactPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ErasurePreferencesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ErasureProcessPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ErasureReportsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FaqsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FinancialVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FirewallConfigPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FirstRunPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FragmentVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\FutureTrendsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\GdprVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\GeneralSettingsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\GovernmentDefensePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\GovernmentVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\HardwareSanitizationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\HddDestructionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\HealthcareDestructionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\HealthcareVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ImplementationConsiderationsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ImplementationPracticesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\IncinerationMethodPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\IndustryApplicationsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\IndustryUseCasesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\InstallationPathPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\InternetRequirementsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ItadDatacentersPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\KeyboardShortcutsPage.tsx",
+    "issues": [
+      "Missing <h1> tag"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\KeyDestructionVerifyPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\LicenseAgreementPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\LicenseTroubleshootingPage.tsx",
+    "issues": [
+      "Missing <h1> tag"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\LimitationsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosAppleSiliconPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosArchitecturePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosBestPracticesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosBuiltinToolsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosCryptoErasurePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosEncryptionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosEnterprisePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosExternalMediaPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosFaqPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosFilesystemsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosFilevaultPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosIntelProceduresPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosIntroductionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosMethodsComparisonPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosPreparationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosResourcesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosRisksPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosSoftwareErasurePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosSsdConsiderationsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosStoragePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosSystemDrivePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosThirdPartyPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosToolSelectionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosTroubleshootingPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MacosVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ManualPageRenderer.tsx",
+    "issues": [
+      "Missing <h1> tag",
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\MobileDestructionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OnsiteOffsitePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OperationHistoryPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OpticalTapeDestructionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OverwriteIntroductionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\OverwriteRisksPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ParentalControlsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PatternSelectionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PerformanceAnalysisPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PerformanceTradeoffsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PerformanceTroubleshootingPage.tsx",
+    "issues": [
+      "Missing <h1> tag"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PerformanceTuningPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PhysicalDestructionOverviewPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PhysicalInspectionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\PostInstallOptimizationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\QuickstartPage.tsx",
+    "issues": [
+      "Missing <h1> tag",
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\RealTimeMonitoringPage.tsx",
+    "issues": [
+      "Missing <h1> tag"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\RealtimeProtectionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SamplingMethodologyPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SanitizationConceptsPage.tsx",
+    "issues": [
+      "Missing <h1> tag"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ScanExclusionsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ScanResultsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ScanSchedulingPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SecurityAssurancePage.tsx",
+    "issues": [
+      "Missing <h1> tag"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SecurityProtocolsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ServiceWorkflowPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\ShreddingMethodPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SoftwareSupportedMediaPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SoftwareVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SsdChallengesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SsdDestructionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\StandardsComparisonPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\StatisticalConfidencePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SupportedDevicesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SupportedEncryptionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\SystemScanningPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\UseCasesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\UserInterfacePage.tsx",
+    "issues": [
+      "Missing <h1> tag",
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\UserManagementPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\UserProfilePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationChallengesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationImportancePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationLogsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationRisksPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationStandardsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationTechniquesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VerificationToolsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VirusDefinitionsPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VisualConfirmationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\VpnSetupPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WhyPhysicalDestructionPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsBestPracticesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsBitlockerPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsDsecureEraserPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsFaqPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsResourcesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsSedDrivesPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsSsdErasurePage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsThirdPartyPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\support\\manual\\WindowsVerificationPage.tsx",
+    "issues": [
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\__tests__\\CloneGuidePage.test.tsx",
+    "issues": [
+      "Missing <h1> tag",
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\__tests__\\FileEraserNetwork.test.tsx",
+    "issues": [
+      "Missing <h1> tag",
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\__tests__\\PartnersPage.test.tsx",
+    "issues": [
+      "Missing <h1> tag",
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  },
+  {
+    "file": "src\\pages\\__tests__\\PricingAndPlan.test.tsx",
+    "issues": [
+      "Missing <h1> tag",
+      "Missing <p> tags (Content might be using divs instead of paragraphs)"
+    ]
+  }
+]

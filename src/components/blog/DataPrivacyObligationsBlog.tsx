@@ -42,9 +42,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -68,9 +68,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
               </div>
 
               <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <h2 className="font-bold text-slate-900 text-xl mb-3">
                   Internal Reassignment Risks
-                </h3>
+                </h2>
                 <p className="text-slate-700 text-lg leading-loose">
                   Organizations should also exercise care when IT assets are
                   reassigned internally due to transfers, resignations, or
@@ -92,9 +92,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-xl mb-3">
+                  <h3 className="font-bold text-xl mb-3">
                     United States Regulations
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose mb-4">
                     It is a standard compliance requirement for organizations to
                     completely erase data beyond recovery scope from all IT
@@ -120,9 +120,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-xl mb-3">
+                  <h3 className="font-bold text-xl mb-3">
                     European Union Regulations
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose mb-4">
                     EU-GDPR mandates strict data protection with significant
                     penalties for non-compliance — up to €20 million or 4% of
@@ -148,9 +148,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-xl mb-3">
+                  <h3 className="font-bold text-xl mb-3">
                     India Data Protection
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Under Section 43A of the Indian Information Technology Act,
                     2000, any body corporate possessing, dealing with, or
@@ -161,9 +161,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-xl mb-3">
+                  <h3 className="font-bold text-xl mb-3">
                     International Standards
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose mb-4">
                     Global security standards require documented proof of data
                     sanitization:
@@ -189,7 +189,7 @@ const DataPrivacyObligationsBlog: React.FC = () => {
 
           {/* Consequences */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Implications of Non-Compliance
               </h2>
@@ -202,9 +202,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Financial Impact
-                  </h3>
+                  </h2>
                   <ul className="space-y-3 text-slate-700 text-lg">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
@@ -225,9 +225,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Reputational Damage
-                  </h3>
+                  </h2>
                   <ul className="space-y-3 text-slate-700 text-lg">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
@@ -253,16 +253,16 @@ const DataPrivacyObligationsBlog: React.FC = () => {
 
           {/* Disposal Scenarios */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 When Data Protection Obligations Apply
               </h2>
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Charitable Donations
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     When donating IT equipment to charities, schools, or
                     non-profits, all organizational data must be completely
@@ -273,9 +273,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Recycling and Disposal
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Working with IT asset recyclers doesn't absolve your
                     obligation. Before equipment leaves your custody, data must
@@ -285,9 +285,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Lease Returns
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Returning leased IT assets requires the same level of data
                     sanitization. Whether the equipment returns to leasing
@@ -297,9 +297,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Internal Reassignment
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Even when equipment stays within the organization, different
                     departments may have varying confidentiality requirements.
@@ -326,9 +326,9 @@ const DataPrivacyObligationsBlog: React.FC = () => {
               </p>
 
               <div className="bg-white rounded-xl p-8 shadow-md mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   D-Secure Compliance Features
-                </h3>
+                </h2>
                 <ul className="space-y-4 text-slate-700 text-lg">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>

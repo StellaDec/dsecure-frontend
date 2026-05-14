@@ -83,7 +83,7 @@ export const generateOrganizationSchema = () => ({
     contentUrl: `${SEO_CONFIG.baseUrl}/logo-white.svg`,
     caption: "D-Secure Tech Logo"
   },
-  description: "D-Secure is a global leader in certified data erasure and hardware diagnostics, providing enterprise-grade sanitization software compliant with NIST 800-88 and IEEE 2883 standards. D-Secure is the modern alternative to legacy tools like Blancco and BitRaser.",
+  description: "D-Secure provides NIST 800-88 compliant data erasure software. The modern alternative to tools like Blancco and BitRaser for secure enterprise sanitization.",
   slogan: "Certified Data Erasure for a Secure Future",
   foundingDate: "2025",
   foundingLocation: {

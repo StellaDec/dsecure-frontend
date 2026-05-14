@@ -40,9 +40,9 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is Data Remanence?
               </h2>
@@ -54,9 +54,9 @@ const DataRemanenceBlog: React.FC = () => {
                 of improperly.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   The Core Problem
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Data remanence may result from data being left intact by file
                   deletion or by reformatting storage media. It inevitably
@@ -69,7 +69,7 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Causes of Data Remanence
               </h2>
@@ -79,9 +79,9 @@ const DataRemanenceBlog: React.FC = () => {
               </p>
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Trash/Recycle Bin Mechanism
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Operating systems relocate deleted files to a recycle bin,
                     making it simple for users to recover them. The actual data
@@ -89,9 +89,9 @@ const DataRemanenceBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Auto-Save and Backup Features
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Many software applications create backup copies of files
                     being edited, creating multiple copies of sensitive data
@@ -99,9 +99,9 @@ const DataRemanenceBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Directory Entry Removal Only
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     When deleting files, operating systems remove only the
                     file's entry from the directory — the actual data remains
@@ -110,9 +110,9 @@ const DataRemanenceBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Reformatting Limitations
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Reformatting, repartitioning, or reimaging a system does not
                     write to every area of the disk. The disk appears empty to
@@ -182,7 +182,7 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 NIST Media Sanitization Methods
               </h2>
@@ -194,27 +194,27 @@ const DataRemanenceBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     NIST Clear
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Utilizes logical data destruction techniques to remove data
                     from storage devices
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     NIST Purge
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Utilizes both physical and logical techniques of data
                     sanitization
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     NIST Destroy
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Physically destroys storage media using brute force — used
                     as a last resort
@@ -225,7 +225,7 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Countermeasures to Prevent Data Remanence
               </h2>
@@ -235,36 +235,36 @@ const DataRemanenceBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Overwriting
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Writing new data patterns over existing data multiple times
                     to ensure original data cannot be recovered.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Degaussing
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Using magnetic fields to erase data from magnetic storage
                     media like HDDs.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Cryptographic Erase
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Destroying encryption keys to render encrypted data
                     permanently inaccessible.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Physical Shredding
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Physically destroying storage media as a last resort when
                     other methods are not applicable.

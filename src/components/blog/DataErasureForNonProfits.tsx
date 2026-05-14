@@ -200,7 +200,7 @@ const DataErasureForNonProfits: React.FC = () => {
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-green-800" filled />
-                  <h4 className="font-bold">Regulatory Alignment</h4>
+                  <h3 className="font-bold">Regulatory Alignment</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Supports secure data disposal aligned with global privacy and
@@ -211,7 +211,7 @@ const DataErasureForNonProfits: React.FC = () => {
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ClipboardIcon className="w-5 h-5 text-green-800" filled />
-                  <h4 className="font-bold">Audit-Ready Documentation</h4>
+                  <h3 className="font-bold">Audit-Ready Documentation</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Generates tamper-proof erasure reports and certificates for
@@ -222,7 +222,7 @@ const DataErasureForNonProfits: React.FC = () => {
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-green-800" filled />
-                  <h4 className="font-bold">Risk Reduction</h4>
+                  <h3 className="font-bold">Risk Reduction</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Permanently removes unused data, reducing attack surfaces and
@@ -233,7 +233,7 @@ const DataErasureForNonProfits: React.FC = () => {
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ClipboardIcon className="w-5 h-5 text-green-800" filled />
-                  <h4 className="font-bold">Operational Efficiency</h4>
+                  <h3 className="font-bold">Operational Efficiency</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Helps non-profits reduce storage overhead and focus resources

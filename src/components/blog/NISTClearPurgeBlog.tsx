@@ -21,7 +21,7 @@ const NISTClearPurgeBlog: React.FC = () => {
           title:
             "NIST 800-88 Clear vs Purge: Which Sanitization Method Does Your Organization Need?",
           excerpt:
-            "Understand the critical difference between NIST 800-88 Clear and Purge methods — when to use each, applicable drive types, and how D-Secure implements both for enterprise compliance.",
+            "Understand differences between NIST 800-88 Clear and Purge methods, when to use each, and how to stay compliant.",
           slug: "nist-clear-purge",
           author: "D-Secure Editorial Team",
           publishDate: "September 8, 2025",
@@ -51,9 +51,9 @@ const NISTClearPurgeBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding NIST SP 800-88
             </h2>
@@ -74,10 +74,10 @@ const NISTClearPurgeBlog: React.FC = () => {
             </p>
 
             <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-              <h4 className="font-bold text-slate-900 text-xl mb-3">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
                 {" "}
                 Why NIST 800-88 Matters
-              </h4>
+              </h3>
               <p className="text-slate-700 text-lg leading-loose">
                 <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> is the data sanitization standard now referenced by
                 the <strong>US Department of Defense</strong> in the NISPOM
@@ -126,26 +126,26 @@ const NISTClearPurgeBlog: React.FC = () => {
 
                   <div className="grid md:grid-cols-3 gap-6 mt-8">
                     <div className="bg-emerald-50 rounded-xl p-6 border-2 border-emerald-200">
-                      <h4 className="font-bold text-emerald-700 text-xl mb-3 text-center">
+                      <h3 className="font-bold text-emerald-700 text-xl mb-3 text-center">
                         CLEAR
-                      </h4>
+                      </h3>
                       <p className="text-slate-700 text-sm leading-relaxed text-center">
                         Logical techniques to sanitize data in all user-addressable
                         storage locations.
                       </p>
                     </div>
                     <div className="bg-amber-50 rounded-xl p-6 border-2 border-amber-200">
-                      <h4 className="font-bold text-amber-700 text-xl mb-3 text-center">
+                      <h3 className="font-bold text-amber-700 text-xl mb-3 text-center">
                         PURGE
-                      </h4>
+                      </h3>
                       <p className="text-slate-700 text-sm leading-relaxed text-center">
                         Techniques that render data recovery infeasible using lab techniques.
                       </p>
                     </div>
                     <div className="bg-slate-50 rounded-xl p-6 border-2 border-slate-200">
-                      <h4 className="font-bold text-slate-700 text-xl mb-3 text-center">
+                      <h3 className="font-bold text-slate-700 text-xl mb-3 text-center">
                         DESTROY
-                      </h4>
+                      </h3>
                       <p className="text-slate-700 text-sm leading-relaxed text-center">
                         Physical destruction making recovery impossible.
                       </p>
@@ -164,7 +164,7 @@ const NISTClearPurgeBlog: React.FC = () => {
                 </p>
 
                 <div className="bg-blue-50 rounded-xl p-8 mb-12 border border-blue-100">
-                  <h4 className="font-bold text-blue-900 text-lg mb-4">When to Use NIST Clear</h4>
+                  <h3 className="font-bold text-blue-900 text-lg mb-4">When to Use NIST Clear</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <span className="text-blue-500 mr-3">✓</span>
@@ -192,7 +192,7 @@ const NISTClearPurgeBlog: React.FC = () => {
                 </p>
 
                 <div className="bg-emerald-50 rounded-xl p-8 mb-12 border border-emerald-100">
-                  <h4 className="font-bold text-emerald-900 text-lg mb-4">When to Use NIST Purge</h4>
+                  <h3 className="font-bold text-emerald-900 text-lg mb-4">When to Use NIST Purge</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <span className="text-emerald-500 mr-3">✓</span>

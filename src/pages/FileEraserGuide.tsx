@@ -139,10 +139,10 @@ const FileEraserGuide: React.FC = () => {
 
                 {/* Related Resources Card */}
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-xl">
-                  <h4 className="font-bold mb-3 flex items-center text-emerald-400">
+                  <h3 className="font-bold mb-3 flex items-center text-emerald-400">
                     <BookOpen className="w-4 h-4 mr-2" />
                     Deep Dive
-                  </h4>
+                  </h3>
                   <ul className="space-y-3 text-sm">
                     <li>
                       <Link to="/support/mac-eraser-guide" className="text-slate-300 hover:text-white transition-colors flex items-center">
@@ -204,19 +204,19 @@ const FileEraserGuide: React.FC = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div className="bg-red-50 border border-red-100 p-6 rounded-2xl">
-                      <h4 className="text-red-900 font-bold mb-3 flex items-center">
+                      <h3 className="text-red-900 font-bold mb-3 flex items-center">
                         <Trash2 className="w-5 h-5 mr-2" />
                         Traditional Delete
-                      </h4>
+                      </h3>
                       <p className="text-red-800 text-sm">
                         OS only marks the space as "available". Data remains on disk and can be recovered easily with forensic tools.
                       </p>
                     </div>
                     <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl">
-                      <h4 className="text-emerald-900 font-bold mb-3 flex items-center">
+                      <h3 className="text-emerald-900 font-bold mb-3 flex items-center">
                         <Shield className="w-5 h-5 mr-2" />
                         Secure Erasure
-                      </h4>
+                      </h3>
                       <p className="text-emerald-800 text-sm">
                         Overwrites data patterns multiple times according to <Link to="/compliance/nist-800-88" className="font-semibold hover:underline">NIST 800-88</Link> standards, making recovery impossible.
                       </p>
@@ -298,7 +298,7 @@ const FileEraserGuide: React.FC = () => {
                 <h2 className="text-3xl font-bold text-slate-900 mb-8 px-4 border-l-4 border-emerald-500">Common Use Cases</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-slate-900">Personal Privacy</h4>
+                    <h3 className="text-xl font-bold text-slate-900">Personal Privacy</h3>
                     <ul className="space-y-2 text-slate-600 text-sm">
                       <li className="flex items-center"><ChevronRight className="w-4 h-4 mr-2 text-emerald-500" /> Tax documents and financial records</li>
                       <li className="flex items-center"><ChevronRight className="w-4 h-4 mr-2 text-emerald-500" /> Personal photos and videos</li>
@@ -306,7 +306,7 @@ const FileEraserGuide: React.FC = () => {
                     </ul>
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-slate-900">Corporate Compliance</h4>
+                    <h3 className="text-xl font-bold text-slate-900">Corporate Compliance</h3>
                     <ul className="space-y-2 text-slate-600 text-sm">
                       <li className="flex items-center"><ChevronRight className="w-4 h-4 mr-2 text-emerald-500" /> Customer PII (Personally Identifiable Information)</li>
                       <li className="flex items-center"><ChevronRight className="w-4 h-4 mr-2 text-emerald-500" /> Proprietary code and internal documents</li>
@@ -321,10 +321,10 @@ const FileEraserGuide: React.FC = () => {
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 text-white shadow-xl">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-4">
-                      <h4 className="text-emerald-400 font-bold flex items-center">
+                      <h3 className="text-emerald-400 font-bold flex items-center">
                         <CheckCircle className="w-5 h-5 mr-2" />
                         Operational Efficiency
-                      </h4>
+                      </h3>
                       <ul className="space-y-3 text-sm text-slate-300">
                         <li className="flex items-start">
                           <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0" />
@@ -337,10 +337,10 @@ const FileEraserGuide: React.FC = () => {
                       </ul>
                     </div>
                     <div className="space-y-4">
-                      <h4 className="text-emerald-400 font-bold flex items-center">
+                      <h3 className="text-emerald-400 font-bold flex items-center">
                         <Activity className="w-5 h-5 mr-2" />
                         Security Tips
-                      </h4>
+                      </h3>
                       <ul className="space-y-3 text-sm text-slate-300">
                         <li className="flex items-start">
                           <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0" />

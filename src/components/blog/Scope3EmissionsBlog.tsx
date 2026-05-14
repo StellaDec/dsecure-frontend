@@ -29,9 +29,9 @@ const Scope3EmissionsBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Understanding Scope 3 */}
                 <div className="space-y-4">
@@ -41,17 +41,17 @@ const Scope3EmissionsBlog: React.FC = () => {
                     </p>
                     <div className="grid md:grid-cols-3 gap-4">
                         <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                            <h4 className="font-bold text-blue-900 mb-2">Scope 1</h4>
+                            <h3 className="font-bold text-blue-900 mb-2">Scope 1</h3>
                             <p className="text-sm text-blue-800">Direct emissions from owned sources (facilities, vehicles)</p>
                             <p className="text-2xl font-bold text-blue-600 mt-2">~10%</p>
                         </div>
                         <div className="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
-                            <h4 className="font-bold text-indigo-900 mb-2">Scope 2</h4>
+                            <h3 className="font-bold text-indigo-900 mb-2">Scope 2</h3>
                             <p className="text-sm text-indigo-800">Indirect emissions from purchased electricity</p>
                             <p className="text-2xl font-bold text-indigo-600 mt-2">~20%</p>
                         </div>
                         <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
-                            <h4 className="font-bold text-green-900 mb-2">Scope 3</h4>
+                            <h3 className="font-bold text-green-900 mb-2">Scope 3</h3>
                             <p className="text-sm text-green-800">All other indirect emissions in value chain</p>
                             <p className="text-2xl font-bold text-green-800 mt-2">~70%</p>
                         </div>
@@ -81,10 +81,10 @@ const Scope3EmissionsBlog: React.FC = () => {
                         The circular economy model—where devices are reused, refurbished, and remarketed—dramatically reduces Scope 3 emissions. But reuse requires secure data erasure.
                     </p>
                     <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200">
-                        <h4 className="font-bold text-green-900 mb-4">Linear vs Circular IT Model</h4>
+                        <h3 className="font-bold text-green-900 mb-4">Linear vs Circular IT Model</h3>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h5 className="font-semibold text-red-900 mb-2">❌ Linear Model (High Emissions)</h5>
+                                <h4 className="font-semibold text-red-900 mb-2">❌ Linear Model (High Emissions)</h4>
                                 <ol className="text-sm text-slate-700 space-y-1">
                                     <li>1. Buy new device → 300kg CO₂e</li>
                                     <li>2. Use for 3 years</li>
@@ -94,7 +94,7 @@ const Scope3EmissionsBlog: React.FC = () => {
                                 </ol>
                             </div>
                             <div>
-                                <h5 className="font-semibold text-green-900 mb-2">✅ Circular Model (Low Emissions)</h5>
+                                <h4 className="font-semibold text-green-900 mb-2">✅ Circular Model (Low Emissions)</h4>
                                 <ol className="text-sm text-slate-700 space-y-1">
                                     <li>1. Buy new device → 300kg CO₂e</li>
                                     <li>2. Use for 3 years</li>
@@ -118,11 +118,11 @@ const Scope3EmissionsBlog: React.FC = () => {
                     </p>
                     <div className="space-y-3">
                         <div className="bg-white border-l-4 border-green-500 p-4 rounded-r-lg shadow-sm">
-                            <h4 className="font-semibold text-green-900 mb-1">Without <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link></h4>
+                            <h3 className="font-semibold text-green-900 mb-1">Without <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link></h3>
                             <p className="text-sm text-slate-700">Organizations default to physical destruction to guarantee data protection → New devices must be manufactured → High Scope 3 emissions.</p>
                         </div>
                         <div className="bg-white border-l-4 border-green-500 p-4 rounded-r-lg shadow-sm">
-                            <h4 className="font-semibold text-green-900 mb-1">With Certified Erasure</h4>
+                            <h3 className="font-semibold text-green-900 mb-1">With Certified Erasure</h3>
                             <p className="text-sm text-slate-700">Devices can be confidently resold or donated → Existing devices get second life → Avoid manufacturing emissions.</p>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ const Scope3EmissionsBlog: React.FC = () => {
                         Investors and regulators increasingly demand transparent Scope 3 emission reporting. Device reuse programs provide measurable, reportable emission reductions.
                     </p>
                     <div className="bg-blue-50 border border-blue-200 p-6 rounded-xl">
-                        <h4 className="font-bold text-blue-900 mb-3">Reportable Metrics</h4>
+                        <h3 className="font-bold text-blue-900 mb-3">Reportable Metrics</h3>
                         <ul className="space-y-2 text-sm text-slate-700">
                             <li className="flex items-start gap-2">
                                 <CheckIcon className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" filled={true} />
@@ -186,7 +186,7 @@ const Scope3EmissionsBlog: React.FC = () => {
 
         {/* D-Secure ESG Solution */}
         <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">D-Secure Circular Economy Enablement</h2>
                 <p className="text-slate-700 leading-relaxed mb-6">
                     D-Secure provides the security foundation for device reuse programs, complete with carbon impact reporting for ESG disclosures.
@@ -194,17 +194,17 @@ const Scope3EmissionsBlog: React.FC = () => {
                 <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100">
                         <HeartIcon className="w-6 h-6 text-green-800 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">Carbon Calculator</h4>
+                        <h3 className="font-bold text-slate-900 text-sm mb-1">Carbon Calculator</h3>
                         <p className="text-xs text-slate-600">Measure emissions avoided through reuse</p>
                     </div>
                     <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100">
                         <ShieldIcon className="w-6 h-6 text-green-800 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">Certified Erasure</h4>
+                        <h3 className="font-bold text-slate-900 text-sm mb-1">Certified Erasure</h3>
                         <p className="text-xs text-slate-600">Secure enough for resale/donation</p>
                     </div>
                     <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100">
                         <GlobeIcon className="w-6 h-6 text-green-800 mb-2" filled={true} />
-                        <h4 className="font-bold text-slate-900 text-sm mb-1">ESG Reporting</h4>
+                        <h3 className="font-bold text-slate-900 text-sm mb-1">ESG Reporting</h3>
                         <p className="text-xs text-slate-600">Automated Scope 3 metrics</p>
                     </div>
                 </div>

@@ -69,7 +69,7 @@ const CloneGuidePage: React.FC = memo(function CloneGuidePage() {
                     { title: "System Restart", desc: "A simple reboot can often resolve minor mounting and recognition issues." }
                   ].map((item, i) => (
                     <div key={i} className="p-5 bg-emerald-50/50 rounded-2xl border border-emerald-100">
-                      <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+                      <h3 className="font-bold text-slate-900 mb-2">{item.title}</h3>
                       <p className="text-sm text-slate-600">{item.desc}</p>
                     </div>
                   ))}
@@ -192,7 +192,7 @@ const CloneGuidePage: React.FC = memo(function CloneGuidePage() {
               <div className="mt-12 flex gap-4 p-6 bg-amber-50 rounded-2xl border border-amber-100">
                 <AlertTriangle className="w-6 h-6 text-amber-500 flex-shrink-0" />
                 <div>
-                  <h4 className="font-bold text-amber-900 mb-1">Important Safety Tip</h4>
+                  <h3 className="font-bold text-amber-900 mb-1">Important Safety Tip</h3>
                   <p className="text-sm text-amber-700 leading-relaxed">
                     Hamesha yaad rakhein ki corrupted drive se data recover karte waqt us drive par naya data na likhein. 
                     Writing new data can overwrite your lost files, making them unrecoverable.

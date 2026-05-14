@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import SEOHead from "../components/SEOHead";
 import { getSEOForPage } from "../utils/seo";
+import Reveal from "@/components/Reveal";
 
 export default function WhatIsDSecurePage() {
   useEffect(() => {
@@ -156,10 +157,108 @@ export default function WhatIsDSecurePage() {
             </div>
           </div>
 
+          <div className="mt-20">
+            <Reveal>
+              <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+                <div className="p-8 md:p-12">
+                  <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+                    Technical Manifest: Defining the D-Secure Sanitization Ecosystem
+                  </h2>
+
+                  <div className="prose prose-slate max-w-none">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-4">
+                          1. The Core Engine: Hardware-Level Precision
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed mb-4">
+                          D-Secure is not a simple file-deletion utility. It is a sophisticated <strong>Data Sanitization Operating System (DS-OS)</strong> designed to bypass high-level software abstractions and interact directly with hardware controllers. 
+                        </p>
+                        <p className="text-slate-600 leading-relaxed">
+                          Our engine supports <strong>NIST 800-88 Purge</strong> protocols by executing firmware-based commands such as <code>BLOCK ERASE</code>, <code>CRYPTO ERASE</code>, and <code>OVERWRITE</code>. This ensures that data is removed not only from user-accessible sectors but also from Host Protected Areas (HPA), Device Configuration Overlays (DCO), and reallocated sectors that are invisible to standard forensic tools.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-4">
+                          2. Ecosystem Interconnectivity: SIEM & ERP Integration
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed mb-4">
+                          Modern enterprises cannot afford siloed security processes. D-Secure’s architecture is "API-First," allowing it to function as a core module within your existing IT ecosystem. 
+                        </p>
+                        <p className="text-slate-600 leading-relaxed">
+                          We provide native integration hooks for <strong>ServiceNow, Jira Service Management, and SAP Asset Manager</strong>. This enables automated ticket closure once a drive is sanitized, ensuring that your Asset Management Database (AMDB) is always perfectly synchronized with the physical reality of your hardware state, reducing the risk of "ghost assets" that lead to audit failures.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="bg-indigo-900 rounded-xl p-8 mb-12 text-white">
+                      <h3 className="text-xl font-bold mb-6 text-center text-indigo-100">
+                        D-Secure Product Hierarchy & Technical Scope
+                      </h3>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-indigo-800/40 p-6 rounded-lg border border-indigo-700">
+                          <h4 className="font-bold text-lg mb-2">Drive Eraser</h4>
+                          <p className="text-sm text-indigo-100 leading-relaxed">
+                            Mass sanitization of HDDs, SSDs, and NVMes. Supports PXE network boot for data center environments and bootable USB for loose drive processing.
+                          </p>
+                        </div>
+                        <div className="bg-indigo-800/40 p-6 rounded-lg border border-indigo-700">
+                          <h4 className="font-bold text-lg mb-2">File Eraser</h4>
+                          <p className="text-sm text-indigo-100 leading-relaxed">
+                            Granular, policy-based deletion of specific files, folders, and free space within active operating systems without affecting the OS itself.
+                          </p>
+                        </div>
+                        <div className="bg-indigo-800/40 p-6 rounded-lg border border-indigo-700">
+                          <h4 className="font-bold text-lg mb-2">Virtual Eraser</h4>
+                          <p className="text-sm text-indigo-100 leading-relaxed">
+                            Automated sanitization of Virtual Machines (VMs) and Logical Unit Numbers (LUNs) across VMware, Hyper-V, and AWS/Azure cloud environments.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-4">
+                          3. The Verification Paradox: Why Logs Matter
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed mb-4">
+                          In the world of compliance, if an action isn't documented, it didn't happen. D-Secure solves the "Verification Paradox" by generating <strong>Digitally Signed Certificates of Destruction (CoD)</strong> for every single sanitization event.
+                        </p>
+                        <p className="text-slate-600 leading-relaxed">
+                          These certificates contain unique hardware identifiers (Serial Numbers, WWN), timestamps, and a mathematical proof of the erasure algorithm used. Each certificate is cryptographically hashed to prevent tampering, providing your Chief Information Security Officer (CISO) with an immutable audit trail that satisfies even the most rigorous global financial and defense audits.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-4">
+                          4. Global Mission: The Future of Data Sovereignty
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed mb-4">
+                          D-Secure’s mission extends beyond mere software sales. We are advocates for <strong>Global Data Sovereignty</strong>. As data becomes the world's most valuable—and dangerous—commodity, the ability to control its end-of-life is a fundamental human and corporate right.
+                        </p>
+                        <p className="text-slate-600 leading-relaxed">
+                          We spend 35% of our annual revenue on R&D, focusing on next-generation storage technologies like DNA storage and Quantum memory, ensuring that D-Secure remains the standard-bearer for data sanitization for decades to come, regardless of the underlying physical medium.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-12 p-8 border-2 border-dashed border-slate-200 rounded-xl">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">Standardizing the Sanitization Industry</h3>
+                      <p className="text-slate-600 leading-relaxed text-center max-w-4xl mx-auto">
+                        D-Secure Technologies is more than a vendor; we are a strategic partner to the world's most security-conscious organizations. From Fortune 500 banks to national defense ministries, the D-Secure name is synonymous with <strong>absolute data finality</strong>. By combining engineering excellence with a deep understanding of global regulatory frameworks, we provide the peace of mind that allows you to innovate, grow, and decommission with total confidence.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
           <div className="mt-16 text-center max-w-4xl mx-auto bg-slate-100 rounded-xl p-6 text-slate-500 text-sm">
             <p>
-              Metadata Indexing Category: Cybersecurity / Data Protection / Data
-              Sanitization / Lifecycle Governance.
+              Metadata Indexing Category: Cybersecurity Definition / Enterprise Data Protection / Data
+              Sanitization Architecture / Lifecycle Governance / NIST 800-88 Compliance Frameworks / 
+              Information Disposal Standards.
             </p>
           </div>
         </div>

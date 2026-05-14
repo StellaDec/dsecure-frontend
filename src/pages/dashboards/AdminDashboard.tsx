@@ -2313,9 +2313,9 @@ export default function AdminDashboard() {
                       d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                     />
                   </svg>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">
+                  <h2 className="text-lg font-medium text-slate-900 mb-2">
                     No Statistics Available
-                  </h3>
+                  </h2>
                   <p className="text-sm text-slate-600">
                     Dashboard statistics are not available from the server.
                   </p>
@@ -2534,9 +2534,9 @@ export default function AdminDashboard() {
                             />
                           </svg>
                         </div>
-                        <h3 className="text-lg font-medium text-slate-900 mb-2">
+                        <h2 className="text-lg font-medium text-slate-900 mb-2">
                           No Data Available
-                        </h3>
+                        </h2>
                         <p className="text-sm text-slate-600">
                           No reports data available from the server.
                         </p>
@@ -2731,9 +2731,9 @@ export default function AdminDashboard() {
                             />
                           </svg>
                         </div>
-                        <h3 className="text-lg font-medium text-slate-900 mb-2">
+                        <h2 className="text-lg font-medium text-slate-900 mb-2">
                           No Sessions Found
-                        </h3>
+                        </h2>
                         <p className="text-sm text-slate-600">
                           No recent sessions available at this time.
                         </p>
@@ -2891,7 +2891,7 @@ export default function AdminDashboard() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
                       </svg>
                     </div>
-                    <h4 className="text-lg font-semibold text-slate-900">License Management</h4>
+                    <h3 className="text-lg font-semibold text-slate-900">License Management</h3>
                   </div>
                   <div className="grid grid-cols-1 gap-4">
                     <RoleBased permission="canBulkAssignLicenses">
@@ -3238,9 +3238,9 @@ export default function AdminDashboard() {
                                 />
                               </svg>
                             </div>
-                            <h3 className="text-lg font-medium text-slate-900 mb-2">
+                            <h2 className="text-lg font-medium text-slate-900 mb-2">
                               No Users Found
-                            </h3>
+                            </h2>
                             <p className="text-sm text-slate-600">
                               {isCurrentUserSubuser
                                 ? "You don't have any subusers associated with your account."
@@ -3517,9 +3517,9 @@ export default function AdminDashboard() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">
+                  <h2 className="text-lg font-medium text-slate-900 mb-2">
                     Feature Disabled
-                  </h3>
+                  </h2>
                   <p className="text-sm text-slate-600">
                     User management is currently disabled for your account.
                   </p>
@@ -3572,9 +3572,9 @@ export default function AdminDashboard() {
                               />
                             </svg>
                           </div>
-                          <h3 className="text-lg font-medium text-slate-900 mb-2">
+                          <h2 className="text-lg font-medium text-slate-900 mb-2">
                             No Groups Found
-                          </h3>
+                          </h2>
                           <p className="text-sm text-slate-600">
                             No groups are available in your organization.
                           </p>
@@ -3599,9 +3599,9 @@ export default function AdminDashboard() {
                                     {(group.name || "G").charAt(0)}
                                   </button>
                                   <div className="flex-1">
-                                    <h3 className="text-lg font-semibold text-slate-900">
+                                    <h2 className="text-lg font-semibold text-slate-900">
                                       {group.name}
-                                    </h3>
+                                    </h2>
                                     <p className="text-sm text-slate-600">
                                       {group.description}
                                     </p>
@@ -3739,9 +3739,9 @@ export default function AdminDashboard() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">
+                  <h2 className="text-lg font-medium text-slate-900 mb-2">
                     Feature Disabled
-                  </h3>
+                  </h2>
                   <p className="text-sm text-slate-600">
                     Group management is currently disabled for your account.
                   </p>
@@ -3786,9 +3786,9 @@ export default function AdminDashboard() {
                                 />
                               </svg>
                             </div>
-                            <h3 className="text-lg font-medium text-slate-900 mb-2">
+                            <h2 className="text-lg font-medium text-slate-900 mb-2">
                               No Data Available
-                            </h3>
+                            </h2>
                             <p className="text-slate-600 mb-6">
                               No user activity data available from the server.
                             </p>
@@ -3966,9 +3966,9 @@ export default function AdminDashboard() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">
+                  <h2 className="text-lg font-medium text-slate-900 mb-2">
                     Feature Disabled
-                  </h3>
+                  </h2>
                   <p className="text-sm text-slate-600">
                     UserActivity is currently disabled for your account.
                   </p>
@@ -4009,9 +4009,9 @@ export default function AdminDashboard() {
                           />
                         </svg>
                       </div>
-                      <h3 className="text-lg font-medium text-slate-900 mb-2">
+                      <h2 className="text-lg font-medium text-slate-900 mb-2">
                         No Data Available
-                      </h3>
+                      </h2>
                       <p className="text-slate-600 mb-6">
                         No reports data available from the server.
                       </p>
@@ -4328,9 +4328,9 @@ export default function AdminDashboard() {
                         d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                       />
                     </svg>
-                    <h3 className="text-lg font-medium text-slate-900 mb-2">
+                    <h2 className="text-lg font-medium text-slate-900 mb-2">
                       No Performance Metrics Available
-                    </h3>
+                    </h2>
                     <p className="text-slate-600">
                       There are no performance metrics to display for this
                       account.
@@ -4569,9 +4569,9 @@ export default function AdminDashboard() {
                     {/* Detailed Charts Section */}
                     <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
                       {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                        <h3 className="text-lg font-semibold text-slate-900 mb-6">
+                        <h2 className="text-lg font-semibold text-slate-900 mb-6">
                           Monthly Erasure Trends
-                        </h3>
+                        </h2>
                         <div className="h-64">
                           <svg viewBox="0 0 800 200" className="w-full h-full">
                             {displayErasureMetrics.monthlyMetrics.map(
@@ -4628,9 +4628,9 @@ export default function AdminDashboard() {
 
                       {/* Erasure By Method (Placeholder) */}
                       {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-6">
+                    <h2 className="text-lg font-semibold text-slate-900 mb-6">
                       Erasure Methods
-                    </h3>
+                    </h2>
                      <div className="flex items-center justify-center h-64 text-slate-500">
                         Method breakdown not available
                      </div>
@@ -4669,9 +4669,9 @@ export default function AdminDashboard() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-slate-900">
+                        <h2 className="text-lg font-semibold text-slate-900">
                           Bulk License Assignment
-                        </h3>
+                        </h2>
                         <p className="text-sm text-slate-600">
                           Assign licenses to multiple users at once
                         </p>
@@ -4816,9 +4816,9 @@ export default function AdminDashboard() {
                           </svg>
                         </div>
                         <div>
-                          <h3 className="text-xl font-semibold text-slate-900">
+                          <h2 className="text-xl font-semibold text-slate-900">
                             License Audit Report
-                          </h3>
+                          </h2>
                           <p className="text-sm text-slate-600">
                             Comprehensive overview of license usage and
                             analytics
@@ -4865,9 +4865,9 @@ export default function AdminDashboard() {
                             />
                           </svg>
                         </div>
-                        <h3 className="text-lg font-medium text-slate-900 mb-2">
+                        <h2 className="text-lg font-medium text-slate-900 mb-2">
                           No License Data Available
-                        </h3>
+                        </h2>
                         <p className="text-slate-600">
                           License audit data is not available from the server.
                         </p>
@@ -5014,9 +5014,9 @@ export default function AdminDashboard() {
 
                               {/* Utilization Chart - Dynamic Data */}
                               <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border border-slate-200 mb-8">
-                                <h4 className="text-lg font-semibold text-slate-900 mb-4">
+                                <h3 className="text-lg font-semibold text-slate-900 mb-4">
                                   License Utilization Overview
-                                </h4>
+                                </h3>
                                 <div className="space-y-4">
                                   <div className="flex items-center justify-between">
                                     <span className="text-sm font-medium text-slate-700">
@@ -5076,9 +5076,9 @@ export default function AdminDashboard() {
                         {/* License Breakdown Table - Dynamic Data */}
                         <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
                           <div className="p-4 bg-slate-50 border-b border-slate-200">
-                            <h4 className="text-lg font-semibold text-slate-900">
+                            <h3 className="text-lg font-semibold text-slate-900">
                               License Breakdown by Product
-                            </h4>
+                            </h3>
                           </div>
                           <div className="overflow-x-auto">
                             <table className="w-full">
@@ -5827,9 +5827,9 @@ export default function AdminDashboard() {
                   {/* Header */}
                   <div className="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-slate-900">
+                      <h2 className="text-xl font-semibold text-slate-900">
                         Settings
-                      </h3>
+                      </h2>
                       <p className="text-sm text-slate-600 mt-1">
                         Manage your billing and security settings
                       </p>
@@ -5924,9 +5924,9 @@ export default function AdminDashboard() {
                     {settingsTab === "billing" ? (
                       <div className="space-y-6">
                         <div className="flex justify-between items-center mb-4">
-                          <h4 className="text-lg font-semibold text-slate-900">
+                          <h3 className="text-lg font-semibold text-slate-900">
                             Billing Usage
-                          </h4>
+                          </h3>
                           {/* <button
                             type="button"
                             onClick={() => {
@@ -6073,9 +6073,9 @@ export default function AdminDashboard() {
                                     </svg>
                                   </div>
                                   <div className="text-left">
-                                    <h5 className="text-lg font-semibold text-slate-900">
+                                    <h4 className="text-lg font-semibold text-slate-900">
                                       Active License Plan
-                                    </h5>
+                                    </h4>
                                     <p className="text-sm text-slate-600">
                                       Your current subscription details
                                     </p>
@@ -6191,7 +6191,7 @@ export default function AdminDashboard() {
                               </svg>
                             </div>
                             <div className="text-left">
-                              <h5 className="text-base font-semibold text-slate-900">License Usage</h5>
+                              <h4 className="text-base font-semibold text-slate-900">License Usage</h4>
                               <p className="text-sm text-slate-600">Track your license consumption</p>
                             </div>
                           </div>
@@ -6279,9 +6279,9 @@ export default function AdminDashboard() {
                                     </svg>
                                   </div>
                                   <div className="text-left">
-                                    <h5 className="text-base font-semibold text-slate-900">
+                                    <h4 className="text-base font-semibold text-slate-900">
                                       Plan Information
-                                    </h5>
+                                    </h4>
                                     <p className="text-sm text-slate-600">
                                       Detailed plan and billing info
                                     </p>
@@ -6824,9 +6824,9 @@ export default function AdminDashboard() {
                       </div>
                     ) : (
                       <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-slate-900 mb-4">
+                        <h3 className="text-lg font-semibold text-slate-900 mb-4">
                           Change Password
-                        </h4>
+                        </h3>
 
                         <form
                           onSubmit={async (e) => {
@@ -7015,7 +7015,7 @@ export default function AdminDashboard() {
               <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4">
                 <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
                   {/* <div className="px-6 py-5 border-b border-slate-200"> */}
-                  {/* <h3 className="text-xl font-semibold text-slate-900">Add New User</h3> */}
+                  {/* <h2 className="text-xl font-semibold text-slate-900">Add New User</h2> */}
                   {/* <p className="text-sm text-slate-600 mt-1">Create a new user account</p> */}
                   {/* </div> */}
                   <div className="px-6 py-5 space-y-4">
@@ -7230,9 +7230,9 @@ export default function AdminDashboard() {
               <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
                 <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
                   <div className="px-6 py-5 border-b border-slate-200">
-                    <h3 className="text-xl font-semibold text-slate-900">
+                    <h2 className="text-xl font-semibold text-slate-900">
                       Add New Group
-                    </h3>
+                    </h2>
                     <p className="text-sm text-slate-600 mt-1">
                       Create a new user group
                     </p>
@@ -7334,9 +7334,9 @@ export default function AdminDashboard() {
               <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
                 <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
                   <div className="px-6 py-5 border-b border-slate-200">
-                    <h3 className="text-xl font-semibold text-slate-900">
+                    <h2 className="text-xl font-semibold text-slate-900">
                       Assign Licenses
-                    </h3>
+                    </h2>
                     <p className="text-sm text-slate-600 mt-1">
                       Assign licenses to group:{" "}
                       <span className="font-medium">
@@ -7443,9 +7443,9 @@ export default function AdminDashboard() {
               <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
                 <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                   <div className="px-6 py-5 border-b border-slate-200">
-                    <h3 className="text-xl font-semibold text-slate-900">
+                    <h2 className="text-xl font-semibold text-slate-900">
                       System Settings
-                    </h3>
+                    </h2>
                     <p className="text-sm text-slate-600 mt-1">
                       Configure system-wide settings and preferences
                     </p>
@@ -7482,9 +7482,9 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                     <div className="border-t border-slate-200 pt-4">
-                      <h4 className="font-medium text-slate-900 mb-3">
+                      <h3 className="font-medium text-slate-900 mb-3">
                         Security Settings
-                      </h4>
+                      </h3>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
                           <div>
@@ -7519,9 +7519,9 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                     <div className="border-t border-slate-200 pt-4">
-                      <h4 className="font-medium text-slate-900 mb-3">
+                      <h3 className="font-medium text-slate-900 mb-3">
                         License Settings
-                      </h4>
+                      </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -7603,9 +7603,9 @@ export default function AdminDashboard() {
                             </svg>
                           </div>
                           <div>
-                            <h3 className="text-lg font-bold text-slate-900">
+                            <h2 className="text-lg font-bold text-slate-900">
                               File Eraser
-                            </h3>
+                            </h2>
                             <p className="text-xs text-slate-600">
                               Version 2.0.1
                             </p>
@@ -7661,9 +7661,9 @@ export default function AdminDashboard() {
                             </svg>
                           </div>
                           <div>
-                            <h3 className="text-lg font-bold text-slate-900">
+                            <h2 className="text-lg font-bold text-slate-900">
                               Drive Eraser
-                            </h3>
+                            </h2>
                             <p className="text-xs text-slate-600">
                               Version 2.0.1
                             </p>
@@ -7708,7 +7708,7 @@ export default function AdminDashboard() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-slate-900">Network Eraser</h3>
+                        <h2 className="text-lg font-bold text-slate-900">Network Eraser</h2>
                         <p className="text-xs text-slate-600">Version 2.0.1</p>
                       </div>
                     </div>
@@ -7729,7 +7729,7 @@ export default function AdminDashboard() {
 
                     {/* System Requirements - HIDDEN */}
                     {/* <div className="mt-8 bg-slate-50 rounded-lg p-6 border border-slate-200">
-                  <h4 className="text-sm font-semibold text-slate-900 mb-3">System Requirements</h4>
+                  <h3 className="text-sm font-semibold text-slate-900 mb-3">System Requirements</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-slate-700">
                     <div>
                       <p className="font-medium text-slate-900 mb-1">Windows</p>
@@ -7791,9 +7791,9 @@ export default function AdminDashboard() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-white">
+                        <h2 className="text-xl font-semibold text-white">
                           Private Cloud Setup
-                        </h3>
+                        </h2>
                         <p className="text-sm text-purple-100 mt-1">
                           Configure your private cloud database connection
                         </p>
@@ -7992,9 +7992,9 @@ export default function AdminDashboard() {
                           />
                         </svg>
                         <div>
-                          <h4 className="text-sm font-medium text-amber-900 mb-1">
+                          <h3 className="text-sm font-medium text-amber-900 mb-1">
                             Important Note
-                          </h4>
+                          </h3>
                           <ul className="text-xs text-amber-800 space-y-1">
                             <li>
                               • Ensure your connection string is correct before

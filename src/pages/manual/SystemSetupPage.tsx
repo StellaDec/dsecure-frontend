@@ -134,7 +134,7 @@ const SystemSetupPage: React.FC = () => {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                             </svg>
                           </div>
-                          <h4 className="font-bold text-slate-900">Full Disk Access</h4>
+                          <h3 className="font-bold text-slate-900">Full Disk Access</h3>
                           <p className="text-slate-500 text-sm">To access your data, you need to assign full disk access</p>
                         </div>
                         <button className="w-full bg-blue-500 text-white py-3 rounded-lg font-medium">
@@ -163,7 +163,7 @@ const SystemSetupPage: React.FC = () => {
                     <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl p-6 border-2 border-slate-300">
                       <div className="bg-white rounded-lg p-4 shadow-sm">
                         <div className="flex items-center justify-between mb-3">
-                          <h4 className="font-bold text-slate-900 text-sm">Full Disk Access</h4>
+                          <h3 className="font-bold text-slate-900 text-sm">Full Disk Access</h3>
                           <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -228,7 +228,7 @@ const SystemSetupPage: React.FC = () => {
                               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
                             </svg>
                           </div>
-                          <h4 className="font-bold text-slate-900 text-sm">Security & Privacy</h4>
+                          <h3 className="font-bold text-slate-900 text-sm">Security & Privacy</h3>
                         </div>
                         <div className="space-y-1 text-xs">
                           <div className="flex justify-between">
@@ -262,7 +262,7 @@ const SystemSetupPage: React.FC = () => {
                     <div className="bg-slate-50 rounded-xl p-6">
                       <div className="bg-white rounded-lg shadow-md p-4 border border-slate-200">
                         <div className="flex items-center justify-between mb-3">
-                          <h4 className="font-bold text-slate-900 text-sm">Full Disk Access</h4>
+                          <h3 className="font-bold text-slate-900 text-sm">Full Disk Access</h3>
                           <div className="flex items-center gap-1">
                             <span className="text-xs text-slate-500">🔒</span>
                             <span className="text-xs text-slate-500">Click lock to make changes</span>
@@ -321,7 +321,7 @@ const SystemSetupPage: React.FC = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.996-.833-2.764 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
                         </svg>
                       </div>
-                      <h4 className="font-bold text-slate-900 mb-2">Access Notification</h4>
+                      <h3 className="font-bold text-slate-900 mb-2">Access Notification</h3>
                       <p className="text-slate-600 text-sm mb-4">
                         D-Secure will not have full disk access until it is quit
                       </p>

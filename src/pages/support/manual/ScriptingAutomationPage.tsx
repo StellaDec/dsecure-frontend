@@ -164,9 +164,9 @@ const ScriptingAutomationPage: React.FC = memo(() => {
                      sessions.
                    </p>
                    <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                     <h4 className="font-bold text-blue-900 mb-3">
+                     <h3 className="font-bold text-blue-900 mb-3">
                        Ideal Use Cases
-                     </h4>
+                     </h3>
                      <p className="text-sm text-blue-800 leading-relaxed mb-4">
                        Ideal for high-security enterprise environments, public
                        kiosks, and shared workstations, this automated cleanup
@@ -319,9 +319,9 @@ const ScriptingAutomationPage: React.FC = memo(() => {
                      </h3>
                      <div className="grid md:grid-cols-2 gap-6">
                        <div className="space-y-3">
-                         <h4 className="font-medium text-emerald-800">
+                         <h3 className="font-medium text-emerald-800">
                            Standard Exit Codes
-                         </h4>
+                         </h3>
                          <ul className="space-y-1 text-sm text-slate-700">
                            <li>
                              •{" "}
@@ -354,9 +354,9 @@ const ScriptingAutomationPage: React.FC = memo(() => {
                          </ul>
                        </div>
                        <div className="space-y-3">
-                         <h4 className="font-medium text-teal-600">
+                         <h3 className="font-medium text-teal-600">
                            Log Levels
-                         </h4>
+                         </h3>
                          <ul className="space-y-1 text-sm text-slate-700">
                            <li>
                              •{" "}

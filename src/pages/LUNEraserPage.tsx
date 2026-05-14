@@ -169,7 +169,7 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                 
                 <Reveal delayMs={100}>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] mb-4 tracking-tight">
-                    Securely Sanitize <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">Logical Unit Numbers</span>
+                    Enterprise <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">LUN & Storage Volume</span> Erasure: High-Performance Sanitization
                   </h1>
                 </Reveal>
                 
@@ -234,9 +234,9 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                              <HardDrive className="w-16 h-16 text-white drop-shadow-xl" />
                           </div>
 
-                          <h3 className="text-white text-3xl font-bold tracking-tight text-center mb-2">
+                          <h2 className="text-white text-3xl font-bold tracking-tight text-center mb-2">
                              LUN Eraser
-                          </h3>
+                          </h2>
                           <p className="text-white/70 text-xs text-center tracking-wide uppercase">
                             Regulatory and tested across major storage vendors.
                           </p>
@@ -289,18 +289,39 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {capabilities.map((item, i) => (
-                <Reveal key={item.name} delayMs={i * 100}>
+                <Reveal key={item.name} delayMs={item.name === "Broad Platform Support" ? 0 : item.name === "Cloud Virtual Stores" ? 100 : item.name === "Automated Processes" ? 200 : 300}>
                   <div className="group bg-slate-50 hover:bg-white rounded-2xl p-8 border border-slate-200 hover:border-emerald-300 hover:shadow-2xl hover:shadow-emerald-200/20 transition-all duration-500 text-center">
                     <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
                        {item.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">{item.name}</h3>
+                    <h2 className="text-xl font-bold text-slate-900 mb-4">{item.name}</h2>
                     <p className="text-slate-600 leading-relaxed text-sm">
                       {item.desc}
                     </p>
                   </div>
                 </Reveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SEO Content Enrichment - LUN Sanitization Complexity */}
+        {/* Is section ko enterprise storage volumes ki technicality samjhane ke liye add kiya gaya hai */}
+        <section className="py-16 bg-slate-50 border-y border-slate-200">
+          <div className="container-app">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8">Logical Unit Number (LUN) Sanitization Complexity</h2>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>
+                  In modern enterprise data centers, storage is no longer just a collection of physical drives but a complex layer of virtualized resources. A Logical Unit Number (LUN) represents a specific portion of a storage area network (SAN) or a storage array that is presented to a server as a single disk. Securely erasing a LUN while the underlying physical hardware and the host operating system remain active is a sophisticated process. Unlike physical disk wiping, LUN erasure must navigate through layers of storage virtualization, RAID controllers, and volume managers to ensure that every logical sector is completely overwritten and sanitized.
+                </p>
+                <p>
+                  D-Secure LUN Eraser is specifically designed to handle these multi-layered environments without disrupting your critical business operations. By performing the erasure at the logical volume level, our software can target specific data sets or entire virtual drives while leaving adjacent volumes and the primary operating system untouched. This capability is essential for multi-tenant environments and cloud service providers who need to securely decommission a single customer's data without affecting others. Our technology supports a wide range of enterprise storage protocols, including iSCSI, Fiber Channel (FC), and SAS, providing a universal solution for modern storage architectures.
+                </p>
+                <p>
+                  Compliance and auditability are the cornerstones of our LUN erasure process. Every session concludes with the generation of a comprehensive, digitally signed audit report that captures the LUN ID, target port, and path information. This level of detail is required to satisfy stringent regulatory audits such as ISO 27001, SOC 2, and EU GDPR. By automating the verification phase of the erasure, D-Secure ensures that the sanitization process is not just executed, but also validated against recognized international standards. This allows IT administrators to confidently return or reassign storage volumes, knowing that the previous data is 100% unrecoverable and the process is fully documented.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -328,7 +349,7 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                         <Zap className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">ServiceNow Integration</h4>
+                        <h3 className="text-xl font-bold mb-2">ServiceNow Integration</h3>
                         <p className="text-slate-400 leading-relaxed">Integrate effortlessly with ITAM/ITSM platforms like ServiceNow for seamless decommissioning workflows.</p>
                       </div>
                     </div>
@@ -339,7 +360,7 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                         <Database className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">Minimum Downtime</h4>
+                        <h3 className="text-xl font-bold mb-2">Minimum Downtime</h3>
                         <p className="text-slate-400 leading-relaxed">LUNs are immediately available for reuse post-erasure, keeping your operations running at peak efficiency.</p>
                       </div>
                     </div>
@@ -350,7 +371,7 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                         <GlobeIcon className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">Global GRC Alignment</h4>
+                        <h3 className="text-xl font-bold mb-2">Global GRC Alignment</h3>
                         <p className="text-slate-400 leading-relaxed">Strengthen your Enterprise GRC strategy with tamper-proof audit reports with certificate that pass any audit.</p>
                       </div>
                     </div>
@@ -363,7 +384,7 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                    <div className="bg-gradient-to-br from-emerald-600 to-teal-800 p-1 rounded-3xl shadow-2xl">
                       <div className="bg-slate-900 rounded-[22px] p-8 lg:p-12 overflow-hidden relative">
                          <div className="absolute top-0 right-0 p-4 opacity-20"><Server className="w-24 h-24 animate-pulse" /></div>
-                         <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6">The Storage Advantage</h3>
+                         <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">The Storage Advantage</h2>
                          <ul className="space-y-4">
                             {[
                               "Erase LUNs while OS remains active",
@@ -415,7 +436,7 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                   <div className="lg:col-span-2">
                      <Reveal>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-4">Complete Audit Trail</h3>
+                        <h2 className="text-2xl font-bold text-slate-900 mb-4">Complete Audit Trail</h2>
                         <p className="text-slate-600 mb-8 leading-relaxed">
                            Achieve 100% data sanitization of logical unit numbers (LUNs) through data erasure. D-Secure provides a detailed, tamper-proof audit report with certificate (Page 1: Certificate, Page 2+: Summary) for every LUN erased, providing a full audit trail to meet compliance with stringent data privacy regulations.
                         </p>

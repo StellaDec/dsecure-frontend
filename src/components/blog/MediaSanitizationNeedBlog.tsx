@@ -42,9 +42,9 @@ const MediaSanitizationNeedBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -66,9 +66,9 @@ const MediaSanitizationNeedBlog: React.FC = () => {
               </div>
 
               <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <h2 className="font-bold text-slate-900 text-xl mb-3">
                   A Costly Lesson
-                </h3>
+                </h2>
                 <p className="text-slate-700 text-lg leading-loose">
                   Major financial institutions have faced severe consequences
                   when data center decommissioning went wrong. In one notable
@@ -92,9 +92,9 @@ const MediaSanitizationNeedBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     1. Legal Penalties and Financial Damage
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     In the event of data compromise, organizations face severe
                     financial penalties, lawsuits, and potential imprisonment
@@ -106,9 +106,9 @@ const MediaSanitizationNeedBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     2. Loss of Trust and Reputation
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     It takes years to build customer trust, and a single
                     incident of unsafe data disposal can cause irreparable
@@ -119,9 +119,9 @@ const MediaSanitizationNeedBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     3. Compromise of Business-Critical Information
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Data breaches can lead to compromise and misuse of strategic
                     information such as trade secrets, intellectual property,
@@ -135,16 +135,16 @@ const MediaSanitizationNeedBlog: React.FC = () => {
 
           {/* Common Reasons */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Common Causes of Unsafe IT Asset Disposition
               </h2>
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Using Inappropriate Methods
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     It's essential to use the right method for different storage
                     media types. For example, degaussing works for hard drives
@@ -158,9 +158,9 @@ const MediaSanitizationNeedBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Lack of Vendor Due Diligence
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Organizations need sufficient due diligence when choosing
                     vendors and maintaining oversight during and after data
@@ -172,9 +172,9 @@ const MediaSanitizationNeedBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Insufficient Documentation
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Companies put themselves at risk when they don't demand
                     verifiable documentation of media sanitization from vendors.
@@ -189,7 +189,7 @@ const MediaSanitizationNeedBlog: React.FC = () => {
 
           {/* Data Erasure Solution */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Professional Data Erasure: The Secure Solution
               </h2>
@@ -204,9 +204,9 @@ const MediaSanitizationNeedBlog: React.FC = () => {
               </p>
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Key Capabilities of Professional <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link> Tools
-                </h3>
+                </h2>
                 <div className="space-y-4 text-slate-700 text-lg">
                   <div className="flex items-start">
                     <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
@@ -237,9 +237,9 @@ const MediaSanitizationNeedBlog: React.FC = () => {
               </div>
 
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <h2 className="font-bold text-slate-900 text-xl mb-3">
                   Complementing Other Methods
-                </h3>
+                </h2>
                 <p className="text-slate-700 text-lg leading-loose">
                   Data erasure can effectively complement other methods like
                   shredding. For example, erasing inventoried devices before

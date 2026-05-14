@@ -40,7 +40,7 @@ const MorganStanleyDataBreachBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
             <div className="bg-gradient-to-br from-red-600 via-red-500 to-orange-500 rounded-xl shadow-lg p-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
@@ -68,7 +68,7 @@ const MorganStanleyDataBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What Happened?
               </h2>
@@ -83,9 +83,9 @@ const MorganStanleyDataBreachBlog: React.FC = () => {
                 .
               </p>
               <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-red-700 text-xl mb-3">
+                <h3 className="font-bold text-red-700 text-xl mb-3">
                   Compromised Data Included
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Customer names and account numbers, Social Security numbers,
                   passport details, contact information, and date of birth — all
@@ -96,16 +96,16 @@ const MorganStanleyDataBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Two Major Incidents
               </h2>
 
               <div className="space-y-6">
                 <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                  <h4 className="font-bold text-slate-900 text-xl mb-3">
+                  <h3 className="font-bold text-slate-900 text-xl mb-3">
                     2016 Data Center Incident
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed mb-4">
                     Two data centers were not properly decommissioned due to:
                   </p>
@@ -121,9 +121,9 @@ const MorganStanleyDataBreachBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                  <h4 className="font-bold text-slate-900 text-xl mb-3">
+                  <h3 className="font-bold text-slate-900 text-xl mb-3">
                     2019 Missing Server Incident
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed mb-4">
                     A decommissioned server at local branches went missing:
                   </p>
@@ -139,7 +139,7 @@ const MorganStanleyDataBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 OCC Findings
               </h2>
@@ -149,36 +149,36 @@ const MorganStanleyDataBreachBlog: React.FC = () => {
               </p>
               <div className="space-y-6">
                 <div className="border-l-4 border-red-500 pl-8 py-2">
-                  <h4 className="font-bold text-red-700 text-xl mb-2">
+                  <h3 className="font-bold text-red-700 text-xl mb-2">
                     Failed Risk Assessment
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Failed to effectively assess or address risks associated
                     with decommissioning hardware.
                   </p>
                 </div>
                 <div className="border-l-4 border-red-500 pl-8 py-2">
-                  <h4 className="font-bold text-red-700 text-xl mb-2">
+                  <h3 className="font-bold text-red-700 text-xl mb-2">
                     Vendor Selection Failure
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Failed to adequately assess subcontracting risks, including
                     due diligence in selecting a vendor.
                   </p>
                 </div>
                 <div className="border-l-4 border-red-500 pl-8 py-2">
-                  <h4 className="font-bold text-red-700 text-xl mb-2">
+                  <h3 className="font-bold text-red-700 text-xl mb-2">
                     No Vendor Monitoring
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Failed to monitor vendor performance throughout the
                     decommissioning process.
                   </p>
                 </div>
                 <div className="border-l-4 border-red-500 pl-8 py-2">
-                  <h4 className="font-bold text-red-700 text-xl mb-2">
+                  <h3 className="font-bold text-red-700 text-xl mb-2">
                     No Inventory Tracking
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Failed to maintain appropriate inventory of customer data
                     stored on decommissioned devices.
@@ -242,7 +242,7 @@ const MorganStanleyDataBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Settlement Details
               </h2>

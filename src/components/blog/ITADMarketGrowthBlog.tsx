@@ -41,9 +41,9 @@ const ITADMarketGrowthBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Promising Future of <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
               </h2>
@@ -54,9 +54,9 @@ const ITADMarketGrowthBlog: React.FC = () => {
                 driving this growth trajectory across the globe.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Market Leadership
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   North America leads the <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> market due to stringent data
                   privacy regulations and high technology adoption rates. Europe
@@ -145,7 +145,7 @@ const ITADMarketGrowthBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Organizations Need Secure IT Asset Disposal
               </h2>
@@ -158,9 +158,9 @@ const ITADMarketGrowthBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Global Privacy Law Requirements
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     GDPR, CCPA, HIPAA, and other regulations have specific
                     provisions addressing data privacy with recommendations for
@@ -170,9 +170,9 @@ const ITADMarketGrowthBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Upcoming Federal Legislation
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Many countries have enacted data privacy laws following
                     GDPR's framework. New federal legislation will provide
@@ -182,9 +182,9 @@ const ITADMarketGrowthBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Data Breach Prevention
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Organizations carry sensitive business, financial, and
                     proprietary information plus customer PII. Secure
@@ -197,7 +197,7 @@ const ITADMarketGrowthBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Real Cost of Improper IT Asset Disposal
               </h2>
@@ -206,9 +206,9 @@ const ITADMarketGrowthBlog: React.FC = () => {
                 when attempting to cut costs on IT asset disposition:
               </p>
               <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                <h4 className="font-bold text-red-700 text-xl mb-3">
+                <h3 className="font-bold text-red-700 text-xl mb-3">
                   Case Study: $60 Million Settlement
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed mb-4">
                   To save approximately $100,000, a financial giant outsourced
                   the decommissioning of two data centers to an unverified
@@ -237,7 +237,7 @@ const ITADMarketGrowthBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Environmental Benefits of Proper <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
               </h2>
@@ -247,36 +247,36 @@ const ITADMarketGrowthBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     E-Waste Reduction
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Devices can be recycled, sold, or donated after secure data
                     sanitization, significantly reducing e-waste.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Resource Conservation
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Reutilizing IT assets reduces the burden and environmental
                     impact of mining resources for new devices.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Revenue Generation
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Sanitized devices can be resold, increasing revenue while
                     cutting disposal costs and promoting sustainability.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Circular Economy
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Software-based erasure enables device reuse, supporting
                     circular economy principles and ESG goals.
@@ -287,7 +287,7 @@ const ITADMarketGrowthBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The D-Secure Data Erasure Solution
               </h2>
@@ -319,7 +319,7 @@ const ITADMarketGrowthBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Evaluating <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Vendors
               </h2>
@@ -330,36 +330,36 @@ const ITADMarketGrowthBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Data Security Practices
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Verify the vendor's security protocols and chain of custody
                     procedures for handling sensitive assets.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Certifications
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Look for e-Stewards, R2, NAID, and other industry
                     certifications that demonstrate compliance capability.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Sanitization Standards
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Ensure they use <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> approved methods with verified
                     erasure and certificate generation.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Environmental Concerns
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Evaluate their commitment to sustainable practices and
                     proper recycling of non-reusable components.

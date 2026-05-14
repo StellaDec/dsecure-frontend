@@ -32,9 +32,9 @@ const AutomatedErasureBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Why Automate */}
                 <div className="space-y-4">
@@ -44,7 +44,7 @@ const AutomatedErasureBlog: React.FC = () => {
                     </p>
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
                         <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
-                            <h4 className="font-bold text-red-900 mb-2">❌ Manual Process Problems</h4>
+                            <h3 className="font-bold text-red-900 mb-2">❌ Manual Process Problems</h3>
                             <ul className="text-sm text-red-800 space-y-1">
                                 <li>• Operator mistakes and inconsistency</li>
                                 <li>• Time-intensive setup per device</li>
@@ -54,7 +54,7 @@ const AutomatedErasureBlog: React.FC = () => {
                             </ul>
                         </div>
                         <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
-                            <h4 className="font-bold text-green-900 mb-2">✅ Automation Benefits</h4>
+                            <h3 className="font-bold text-green-900 mb-2">✅ Automation Benefits</h3>
                             <ul className="text-sm text-green-800 space-y-1">
                                 <li>• Consistent, repeatable results</li>
                                 <li>• Hands-off operation after setup</li>
@@ -147,35 +147,35 @@ const AutomatedErasureBlog: React.FC = () => {
                             <div className="flex items-start gap-4">
                                 <div className="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900">Device Check-In</h4>
+                                    <h3 className="font-bold text-slate-900">Device Check-In</h3>
                                     <p className="text-sm text-slate-600">Scan barcode/serial number → System automatically identifies device and assigns policy</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <div className="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900">Hardware Detection</h4>
+                                    <h3 className="font-bold text-slate-900">Hardware Detection</h3>
                                     <p className="text-sm text-slate-600">System detects all storage devices, checks for encryption, selects optimal method</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <div className="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900">Erasure Execution</h4>
+                                    <h3 className="font-bold text-slate-900">Erasure Execution</h3>
                                     <p className="text-sm text-slate-600">Automated erasure begins immediately or queues for scheduled time slot</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <div className="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900">Verification & Compliance Reporting</h4>
+                                    <h3 className="font-bold text-slate-900">Verification & Compliance Reporting</h3>
                                     <p className="text-sm text-slate-600">Auto-verify success → Generate Tamper-proof audit report with certificate → Update asset inventory → Send notifications</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <div className="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">✓</div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900">Complete</h4>
+                                    <h3 className="font-bold text-slate-900">Complete</h3>
                                     <p className="text-sm text-slate-600">Device ready for reuse or disposal with full audit trail</p>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@ const AutomatedErasureBlog: React.FC = () => {
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">Automation ROI</h2>
                     <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200">
-                        <h4 className="font-bold text-green-900 mb-4">Typical Cost Savings</h4>
+                        <h3 className="font-bold text-green-900 mb-4">Typical Cost Savings</h3>
                         <div className="grid md:grid-cols-3 gap-4">
                             <div className="bg-white p-4 rounded-lg border border-green-200">
                                 <p className="text-3xl font-bold text-green-800 mb-1">90%</p>
@@ -210,14 +210,14 @@ const AutomatedErasureBlog: React.FC = () => {
 
         {/* D-Secure Automation */}
         <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">D-Secure Automation Platform</h2>
                 <p className="text-slate-700 leading-relaxed mb-6">
                     D-Secure provides enterprise-grade automation with Cloud Console for centralized management and API integration for seamless workflow embedding.
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-100">
-                        <h4 className="font-bold text-slate-900 mb-3">Cloud Console</h4>
+                        <h3 className="font-bold text-slate-900 mb-3">Cloud Console</h3>
                         <p className="text-sm text-slate-600 mb-3">
                             Web-based central hub to manage all erasure operations across your organization from anywhere.
                         </p>
@@ -228,7 +228,7 @@ const AutomatedErasureBlog: React.FC = () => {
                         </ul>
                     </div>
                     <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-100">
-                        <h4 className="font-bold text-slate-900 mb-3">API Integration</h4>
+                        <h3 className="font-bold text-slate-900 mb-3">API Integration</h3>
                         <p className="text-sm text-slate-600 mb-3">
                             Integrate erasure directly into your existing IT asset management and ticketing systems.
                         </p>

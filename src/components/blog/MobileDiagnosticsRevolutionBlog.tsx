@@ -40,9 +40,9 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Mobile Diagnostics: Raising the Game
               </h2>
@@ -53,9 +53,9 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                 comprehensive tests to diagnose and determine device health.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Comprehensive Testing Approach
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Reliable diagnostics tools provide detailed reports covering
                   every aspect of iOS and Android devices, helping buyers assess
@@ -113,16 +113,16 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Advantages of Mobile Diagnostics
               </h2>
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Identify and Fix Major Flaws
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Diagnostics reveal key problem areas affecting smooth device
                     functioning. Resellers and refurbishers can fix these issues
@@ -131,9 +131,9 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Automated Testing Efficiency
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Automated tests speed up the diagnostics process, eliminate
                     manual errors, increase productivity, and reduce operational
@@ -142,9 +142,9 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Device Grading System
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Diagnostics reports help grade used devices in terms of
                     functionality, performance, and quality on scales of A+, A,
@@ -154,9 +154,9 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Accurate Repair Estimation
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Repair shops can arrive at precise repair cost estimations
                     and instantly inform customers about the actual device state
@@ -165,9 +165,9 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Environment-Friendly Solution
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Mobile diagnostics decreases carbon footprint by improving
                     the lifespan of used devices. Discarded devices add tons of
@@ -179,7 +179,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Limitations of Built-In Diagnostics
               </h2>
@@ -189,18 +189,18 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                  <h4 className="font-bold text-red-700 text-xl mb-3">
+                  <h3 className="font-bold text-red-700 text-xl mb-3">
                     Samsung Built-In Tests
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Limited tests available via *#0*# code. Doesn't check device
                     health completely and provides no verification report.
                   </p>
                 </div>
                 <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                  <h4 className="font-bold text-red-700 text-xl mb-3">
+                  <h3 className="font-bold text-red-700 text-xl mb-3">
                     iPhone Limitations
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     No built-in utility for comprehensive health testing. Only
                     battery health examination is available natively.
@@ -211,7 +211,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure Mobile Diagnostics Capabilities
               </h2>
@@ -241,7 +241,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Building Trust Between Buyers and Sellers
               </h2>
@@ -253,27 +253,27 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Mobile Retailers
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Increase productivity and maximize efficiency with verified
                     device quality
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Resellers
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Reduce costs and gain customer trust with transparent
                     diagnostics reports
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Refurbishers
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Scale operations with simultaneous device diagnostics and
                     custom tests

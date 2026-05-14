@@ -337,10 +337,10 @@ const DigitalPRHub: React.FC = () => {
             </div>
             <div className="flex items-center gap-4">
               <span className="text-sm font-bold text-slate-400">Follow for updates:</span>
-              <a href="https://dsecuretech.com/media" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-600 hover:bg-emerald-500 hover:text-white transition-all shadow-sm">
+              <a href="https://dsecuretech.com/media" aria-label="Visit our Media Center" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-600 hover:bg-emerald-500 hover:text-white transition-all shadow-sm">
                 <Globe className="w-5 h-5" />
               </a>
-              <a href="https://dsecuretech.com/social" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-600 hover:bg-emerald-500 hover:text-white transition-all shadow-sm">
+              <a href="https://dsecuretech.com/social" aria-label="Follow us on Social Media" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-600 hover:bg-emerald-500 hover:text-white transition-all shadow-sm">
                 <ExternalLink className="w-5 h-5" />
               </a>
             </div>

@@ -28,9 +28,9 @@ const HardwareDiagnosticsBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How Does <Link to="/products/hardware-diagnostics" className="text-emerald-600 hover:underline font-medium">Hardware Diagnostics</Link> Work?
               </h2>
@@ -44,9 +44,9 @@ const HardwareDiagnosticsBlog: React.FC = () => {
               </p>
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8">
-                <h4 className="font-bold text-emerald-700 text-xl mb-4">
+                <h3 className="font-bold text-emerald-700 text-xl mb-4">
                   Example: CPU Diagnosis
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose mb-3">
                   Parameters like cache, MMX (multimedia tasks), AVX (complex
                   calculations), SSE (process multiple data), SSE2, SSE3, and
@@ -60,7 +60,7 @@ const HardwareDiagnosticsBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Benefits of <Link to="/products/hardware-diagnostics" className="text-emerald-600 hover:underline font-medium">Hardware Diagnostics</Link> for ITADs
               </h2>
@@ -147,29 +147,29 @@ const HardwareDiagnosticsBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Comprehensive Testing
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Test PCs, laptops, desktops, and Mac devices thoroughly
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Compliance Reports</h4>
+                  <h3 className="font-bold text-lg mb-3">Compliance Reports</h3>
                   <p className="text-white/90 text-sm">
                     Generate detailed diagnostic reports for R2v3 and e-Stewards
                     certification
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Component Analysis</h4>
+                  <h3 className="font-bold text-lg mb-3">Component Analysis</h3>
                   <p className="text-white/90 text-sm">
                     Identify faulty components for targeted repair or
                     replacement
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Value Maximization</h4>
+                  <h3 className="font-bold text-lg mb-3">Value Maximization</h3>
                   <p className="text-white/90 text-sm">
                     Optimize residual value through accurate device assessment
                   </p>

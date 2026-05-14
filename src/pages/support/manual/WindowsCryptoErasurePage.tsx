@@ -62,9 +62,9 @@ const WindowsCryptoErasurePage: React.FC = memo(() => {
                     BitLocker Cryptographic Erasure
                   </h2>
                   <div className="bg-slate-100 rounded-lg p-4">
-                    <h4 className="font-semibold mb-2">
+                    <h3 className="font-semibold mb-2">
                       Key Destruction Commands
-                    </h4>
+                    </h3>
                     <pre className="text-sm bg-slate-800 text-green-400 p-3 rounded overflow-x-auto">
                       {`# Remove BitLocker protection
 manage-bde -off C:

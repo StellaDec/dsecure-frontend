@@ -32,9 +32,9 @@ const ITADSelectionGuideBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Introduction */}
                 <div className="space-y-4">
@@ -57,7 +57,7 @@ const ITADSelectionGuideBlog: React.FC = () => {
                         To handle IT assets securely, <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> service providers must ensure prevention from unauthorized access, loss, or theft of IT assets. The right ITAD will provide a strong and real-time asset tracking system that includes transportation equipped with cameras, supervision of skilled technicians who have passed background verification, and the use of ERP software to record the inflow and outflow of IT assets. ITADs must maintain a secure chain of custody documents to give trust and confidence to the organizations they are providing services to.
                     </p>
                     <div className="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-lg">
-                        <h4 className="font-bold text-rose-900 mb-2">Case Study: Morgan Stanley Data Breach</h4>
+                        <h3 className="font-bold text-rose-900 mb-2">Case Study: Morgan Stanley Data Breach</h3>
                         <p className="text-rose-800">
                             The Morgan Stanley data breach case is a classic example of how negligence in maintaining a secure chain of custody of IT assets by the hired <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>, Triple Crown, led to years of legal battles and millions in penalties for the company and the ITAD.
                         </p>
@@ -77,7 +77,7 @@ const ITADSelectionGuideBlog: React.FC = () => {
                         The leaders must ensure that chosen ITADs use compliance-verified data erasure software like D-Secure to destroy data permanently even from hidden disk zones (HPAs and DCOs). Likewise, when the IT assets contain classified information, the <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> should have the ability to destroy the device using shredding or degaussing techniques. Organizations can choose some of the large ITADs across the globe from here.
                     </p>
                     <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
-                        <h4 className="font-bold text-indigo-900 mb-2">Erasure Verification</h4>
+                        <h3 className="font-bold text-indigo-900 mb-2">Erasure Verification</h3>
                         <p className="text-indigo-800">
                             Further, ITADs must also follow the erasure verification process as recommended by SERI and NAID-AAA to randomly verify erased devices for any traces of data left behind. Plan-IT-ROI, a sizeable <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> company based out of New Jersey that is R2 and NAID-AAA certified recommends D-Secure Drive Verifier for performing erasure verification.
                         </p>
@@ -108,11 +108,11 @@ const ITADSelectionGuideBlog: React.FC = () => {
                     </p>
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">Fair Market Value</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">Fair Market Value</h3>
                             <p className="text-slate-600">Offers an estimated low market value of the refurbished IT assets.</p>
                         </div>
                         <div className="p-5 bg-slate-50 rounded-lg border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-2">Transparent Consignment</h4>
+                            <h3 className="font-bold text-slate-900 mb-2">Transparent Consignment</h3>
                             <p className="text-slate-600">More transparent, paying a contractually agreed reimbursement percentage from the gross sales of the repaired and refurbished IT assets.</p>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ const ITADSelectionGuideBlog: React.FC = () => {
                         The most important aspect for an <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> company is to comply with the regulatory standards. Laws like the EU-GDPR, HIPAA, CCPA, and the US data privacy act, etc., require secure data disposal practices. Moreover, data protection and environmental sustainability regulation authorities can take legal action for breach of data or irresponsible disposal of IT assets against the violating organization which includes penalties, criminal proceedings, and imprisonment.
                     </p>
                     <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
-                        <h4 className="font-bold text-amber-900 mb-2">Important Note on Physical Destruction</h4>
+                        <h3 className="font-bold text-amber-900 mb-2">Important Note on Physical Destruction</h3>
                         <p className="text-amber-800">
                             Beyond compliance, it is important to note that due to the rise of miniaturization, data recovery has become possible from even the smallest shredded or destroyed components. Hence, improper physical destruction of IT assets increases non-compliance risks for an <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>. Data erasure provides the additional layer of security to prevent compromise of information stored on the devices. Even if the device stores classified information and needs to be shredded completely, it is wise to erase the device and then perform device destruction to ensure no recovery is possible from the shredded component. To be on the safer side whether the concern is data sanitization or responsible recycling, SPVM leaders should go for a certified ITAD service provider.
                         </p>

@@ -41,9 +41,9 @@ const MSPErasureServiceBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Role of MSP in Erasure as a Service
               </h2>
@@ -116,7 +116,7 @@ const MSPErasureServiceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-start">
                 <span className="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0 font-bold text-xl">
                   1
@@ -158,7 +158,7 @@ const MSPErasureServiceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-start">
                 <span className="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0 font-bold text-xl">
                   2
@@ -178,9 +178,9 @@ const MSPErasureServiceBlog: React.FC = () => {
 
                   <div className="grid md:grid-cols-2 gap-4 mt-4">
                     <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                      <h5 className="font-bold text-emerald-700 mb-2">
+                      <h4 className="font-bold text-emerald-700 mb-2">
                         🤝 Custody Transitions
-                      </h5>
+                      </h4>
                       <p className="text-slate-700 text-sm">
                         Clear documentation every time drives or devices change
                         hands – in transit, staging, processing, storage, or
@@ -188,9 +188,9 @@ const MSPErasureServiceBlog: React.FC = () => {
                       </p>
                     </div>
                     <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                      <h5 className="font-bold text-emerald-700 mb-2">
+                      <h4 className="font-bold text-emerald-700 mb-2">
                         📜 Auditable Logs
-                      </h5>
+                      </h4>
                       <p className="text-slate-700 text-sm">
                         Each device's status and access control throughout
                         sanitization and disposal must be logged to prevent
@@ -198,18 +198,18 @@ const MSPErasureServiceBlog: React.FC = () => {
                       </p>
                     </div>
                     <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                      <h5 className="font-bold text-emerald-700 mb-2">
+                      <h4 className="font-bold text-emerald-700 mb-2">
                         📊 Detailed Reports
-                      </h5>
+                      </h4>
                       <p className="text-slate-700 text-sm">
                         Device information, erasure completion status, and
                         tamper-proof certificates must be provided.
                       </p>
                     </div>
                     <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                      <h5 className="font-bold text-emerald-700 mb-2">
+                      <h4 className="font-bold text-emerald-700 mb-2">
                         🔗 System Integration
-                      </h5>
+                      </h4>
                       <p className="text-slate-700 text-sm">
                         Integration with organization's existing asset
                         management systems for comprehensive record-keeping.
@@ -230,7 +230,7 @@ const MSPErasureServiceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-start">
                 <span className="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0 font-bold text-xl">
                   3
@@ -310,7 +310,7 @@ const MSPErasureServiceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-start">
                 <span className="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0 font-bold text-xl">
                   4
@@ -326,9 +326,9 @@ const MSPErasureServiceBlog: React.FC = () => {
                   </p>
 
                   <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                    <h5 className="font-bold text-amber-700 text-lg mb-3">
+                    <h4 className="font-bold text-amber-700 text-lg mb-3">
                       Example SLA Metrics:
-                    </h5>
+                    </h4>
                     <ul className="space-y-2 text-slate-700">
                       <li>
                         • <strong>Turnaround time:</strong> 3-4 business days
@@ -347,9 +347,9 @@ const MSPErasureServiceBlog: React.FC = () => {
                   </div>
 
                   <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mt-4">
-                    <h5 className="font-bold text-emerald-700 text-lg mb-3">
+                    <h4 className="font-bold text-emerald-700 text-lg mb-3">
                       Typical KPIs to Monitor:
-                    </h5>
+                    </h4>
                     <ul className="space-y-2 text-slate-700">
                       <li>
                         • <strong>Erasure job cycle time:</strong> Time from
@@ -383,7 +383,7 @@ const MSPErasureServiceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-start">
                 <span className="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0 font-bold text-xl">
                   5
@@ -400,9 +400,9 @@ const MSPErasureServiceBlog: React.FC = () => {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                      <h5 className="font-bold text-emerald-700 mb-2">
+                      <h4 className="font-bold text-emerald-700 mb-2">
                         Standards Compliance
-                      </h5>
+                      </h4>
                       <ul className="text-slate-700 text-sm space-y-1">
                         <li>✅ NIST SP 800-88 (Clear, Purge)</li>
                         <li>✅ IEEE 2883-2022</li>
@@ -411,9 +411,9 @@ const MSPErasureServiceBlog: React.FC = () => {
                       </ul>
                     </div>
                     <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                      <h5 className="font-bold text-emerald-700 mb-2">
+                      <h4 className="font-bold text-emerald-700 mb-2">
                         Regulatory Compliance
-                      </h5>
+                      </h4>
                       <ul className="text-slate-700 text-sm space-y-1">
                         <li>✅ GDPR (EU)</li>
                         <li>✅ HIPAA (Healthcare)</li>

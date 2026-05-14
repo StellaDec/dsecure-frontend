@@ -522,7 +522,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                           <CheckIcon className="w-6 h-6 text-emerald-400 group-hover:text-white" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-semibold mb-2">{item.title}</h4>
+                          <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                           <p className="text-slate-400 leading-relaxed">{item.desc}</p>
                         </div>
                       </div>
@@ -555,7 +555,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                    <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
                       {feature.icon}
                    </div>
-                   <h4 className="text-xl font-bold text-slate-800 mb-3">{feature.title}</h4>
+                   <h3 className="text-xl font-bold text-slate-800 mb-3">{feature.title}</h3>
                    <p className="text-slate-500 text-sm leading-relaxed flex-grow">{feature.desc}</p>
                 </div>
               ))}
@@ -629,7 +629,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                 { q: "Is the report compliant with GDPR?", a: "Yes, the software generates detailed, tamper-proof reports that help you comply with a wide range of global data protection laws including EU-GDPR, HIPAA, and PCI-DSS." }
               ].map((faq, k) => (
                 <div key={k} className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                  <h4 className="text-lg font-bold text-slate-800 mb-3">{faq.q}</h4>
+                  <h3 className="text-lg font-bold text-slate-800 mb-3">{faq.q}</h3>
                   <p className="text-slate-600 leading-relaxed">{faq.a}</p>
                 </div>
               ))}

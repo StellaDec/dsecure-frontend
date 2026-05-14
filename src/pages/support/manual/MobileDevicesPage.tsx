@@ -198,9 +198,9 @@ const MobileDevicesPage: React.FC = memo(() => {
                      <div className="flex items-center gap-3 sm:gap-4">
                        <div className="text-lg sm:text-2xl">{section.icon}</div>
                        <div>
-                         <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-1">
+                         <h2 className="text-base sm:text-lg font-semibold text-slate-900 mb-1">
                            {section.title}
-                         </h3>
+                         </h2>
                          <p className="text-slate-600 text-xs sm:text-sm">
                            {section.description}
                          </p>
@@ -237,9 +237,9 @@ const MobileDevicesPage: React.FC = memo(() => {
                                className="flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-lg"
                              >
                                <div className="flex-1">
-                                 <h4 className="font-medium text-slate-900 mb-1 text-sm sm:text-base">
+                                 <h3 className="font-medium text-slate-900 mb-1 text-sm sm:text-base">
                                    {subsection.title}
-                                 </h4>
+                                 </h3>
                                  <p className="text-xs sm:text-sm text-slate-600">
                                    {subsection.description}
                                  </p>

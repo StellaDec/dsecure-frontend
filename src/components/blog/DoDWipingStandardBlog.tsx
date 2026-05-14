@@ -42,9 +42,9 @@ const DoDWipingStandardBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -74,7 +74,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* What is DoD Standard */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is the DoD 5220.22-M Standard?
               </h2>
@@ -120,7 +120,7 @@ const DoDWipingStandardBlog: React.FC = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="text-3xl font-bold mb-3">Pass 1</div>
-                  <h4 className="font-bold text-lg mb-2">Write Zeros</h4>
+                  <h3 className="font-bold text-lg mb-2">Write Zeros</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Writes a zero to all addressable locations and verifies the
                     write was successful.
@@ -128,7 +128,7 @@ const DoDWipingStandardBlog: React.FC = () => {
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="text-3xl font-bold mb-3">Pass 2</div>
-                  <h4 className="font-bold text-lg mb-2">Write Ones</h4>
+                  <h3 className="font-bold text-lg mb-2">Write Ones</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Writes a one to all addressable locations and verifies the
                     write was successful.
@@ -136,7 +136,7 @@ const DoDWipingStandardBlog: React.FC = () => {
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="text-3xl font-bold mb-3">Pass 3</div>
-                  <h4 className="font-bold text-lg mb-2">Random + Verify</h4>
+                  <h3 className="font-bold text-lg mb-2">Random + Verify</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Writes a random character to all locations and performs
                     final verification.
@@ -154,7 +154,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* Clearing and Sanitization Matrix */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Clearing and Sanitization Matrix (CSM)
               </h2>
@@ -224,7 +224,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* Advantages */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Advantages of the DoD 5220.22-M Algorithm
               </h2>
@@ -325,7 +325,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* How to Perform */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How to Perform DoD Wiping with D-Secure
               </h2>
@@ -369,7 +369,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* Compliance Usage */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 DoD Standard for Compliance
               </h2>

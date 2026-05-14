@@ -35,9 +35,9 @@ const ITADChallengesBlog: React.FC = () => {
                 </Reveal>
             </section>
 
-            <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+            <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+                    <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">The <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Industry Landscape</h2>
                         <p className="text-slate-700 leading-loose text-lg mb-6">
                             IT Asset Disposition (<Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>) providers face unique challenges in today's rapidly evolving technology landscape. From managing diverse device types to meeting stringent compliance requirements, ITAD companies must continuously adapt to stay competitive.
@@ -53,25 +53,25 @@ const ITADChallengesBlog: React.FC = () => {
                         <h2 className="text-3xl font-bold mb-6">Key <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Challenges</h2>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3"> Data Security</h4>
+                                <h3 className="font-bold text-lg mb-3"> Data Security</h3>
                                 <p className="text-white/90 leading-relaxed">
                                     Ensuring complete data destruction across all device types while meeting compliance standards.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3"> Scalability</h4>
+                                <h3 className="font-bold text-lg mb-3"> Scalability</h3>
                                 <p className="text-white/90 leading-relaxed">
                                     Processing high volumes of devices efficiently without compromising quality.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3"> Documentation</h4>
+                                <h3 className="font-bold text-lg mb-3"> Documentation</h3>
                                 <p className="text-white/90 leading-relaxed">
                                     Generating comprehensive audit trails for every device processed.
                                 </p>
                             </div>
                             <div className="bg-white/10 rounded-xl p-6">
-                                <h4 className="font-bold text-lg mb-3"> Device Diversity</h4>
+                                <h3 className="font-bold text-lg mb-3"> Device Diversity</h3>
                                 <p className="text-white/90 leading-relaxed">
                                     Managing erasure for HDDs, SSDs, mobile devices, and specialized equipment.
                                 </p>

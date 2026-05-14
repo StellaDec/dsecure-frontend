@@ -41,9 +41,9 @@ const DoDVsIEEEBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding Data Sanitization Standards
               </h2>
@@ -66,7 +66,7 @@ const DoDVsIEEEBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is DoD 5220.22-M?
               </h2>
@@ -79,9 +79,9 @@ const DoDVsIEEEBlog: React.FC = () => {
               </p>
 
               <div className="bg-slate-100 rounded-xl p-8">
-                <h4 className="font-bold text-slate-900 text-xl mb-4">
+                <h3 className="font-bold text-slate-900 text-xl mb-4">
                   Traditional DoD 5220.22-M 3-Pass Method:
-                </h4>
+                </h3>
                 <ol className="space-y-4 text-slate-700 text-lg">
                   <li className="flex items-start">
                     <span className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">
@@ -115,9 +115,9 @@ const DoDVsIEEEBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-2">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-2">
                     Strengths
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
@@ -134,9 +134,9 @@ const DoDVsIEEEBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                  <h4 className="font-bold text-amber-700 text-lg mb-2">
+                  <h3 className="font-bold text-amber-700 text-lg mb-2">
                     Limitations
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
@@ -157,7 +157,7 @@ const DoDVsIEEEBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is IEEE 2883-2022?
               </h2>
@@ -170,9 +170,9 @@ const DoDVsIEEEBlog: React.FC = () => {
               </p>
 
               <div className="bg-slate-100 rounded-xl p-8">
-                <h4 className="font-bold text-slate-900 text-xl mb-4">
+                <h3 className="font-bold text-slate-900 text-xl mb-4">
                   Key Features of IEEE 2883-2022:
-                </h4>
+                </h3>
                 <ul className="space-y-3 text-slate-700 text-lg">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
@@ -206,9 +206,9 @@ const DoDVsIEEEBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-2">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-2">
                     Strengths
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
@@ -229,9 +229,9 @@ const DoDVsIEEEBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                  <h4 className="font-bold text-amber-700 text-lg mb-2">
+                  <h3 className="font-bold text-amber-700 text-lg mb-2">
                     Considerations
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
@@ -252,7 +252,7 @@ const DoDVsIEEEBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 DoD Vs IEEE: Comprehensive Comparison
               </h2>
@@ -394,7 +394,7 @@ const DoDVsIEEEBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Differences Explained
               </h2>
@@ -510,20 +510,20 @@ const DoDVsIEEEBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     DoD 5220.22-M Support
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Full support for DoD 3-pass and 7-pass overwrite methods for
                     organizations requiring traditional DoD compliance.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     IEEE 2883-2022 Support
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Complete compliance with the latest IEEE standards,
                     supporting Clear, Purge, and Destruct levels for all media
@@ -531,37 +531,37 @@ const DoDVsIEEEBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     NIST SP 800-88 Compliant
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Certified compliance with NIST Clear, Purge, and Destroy
                     methods as recommended by the DoD.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Tamper-Proof Certificates
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Generate audit-ready certificates proving standard
                     compliance for regulatory requirements.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Global Standards Support
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Support for GDPR, HIPAA, PCI-DSS, SOX, and other
                     international regulatory requirements.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3"> All Media Types</h4>
+                  <h3 className="font-bold text-lg mb-3"> All Media Types</h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Supports HDDs, SSDs, NVMe, servers, mobile devices, and all
                     modern storage technologies.
@@ -572,16 +572,16 @@ const DoDVsIEEEBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Frequently Asked Questions
               </h2>
 
               <div className="space-y-6">
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Q: Is DoD 5220.22-M 3-pass still necessary?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     <strong>A:</strong> No. According to NIST SP 800-88 (which
                     DoD now references), a single overwrite pass is adequate for
@@ -593,9 +593,9 @@ const DoDVsIEEEBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Q: Which standard should I choose?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     <strong>A:</strong> The choice depends on your
                     organization's media types, storage devices, regulatory
@@ -608,9 +608,9 @@ const DoDVsIEEEBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Q: Does IEEE 2883-2022 work for SSDs?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     <strong>A:</strong> Yes. IEEE 2883-2022 was specifically
                     designed to address modern storage technologies including
@@ -621,9 +621,9 @@ const DoDVsIEEEBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Q: Are both standards internationally recognized?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     <strong>A:</strong> DoD 5220.22-M is primarily recognized in
                     the United States, though many international organizations

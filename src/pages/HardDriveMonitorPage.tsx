@@ -160,7 +160,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
         <div className="bg-white border-b border-emerald-100 shadow-sm">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-14">
-              <Link to="/" className="flex items-center">
+              <Link to="/" aria-label="Go to Home Page" className="flex items-center">
                 <ThemeAwareLogo className="h-7 sm:h-8 w-auto" />
               </Link>
               <nav className="flex items-center gap-1 overflow-x-auto py-2">
@@ -300,9 +300,9 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                         </div>
 
                         {/* Product Name */}
-                        <h3 className="text-white text-xl lg:text-3xl font-bold tracking-tight text-center mb-1 lg:mb-2">
+                        <h2 className="text-white text-xl lg:text-3xl font-bold tracking-tight text-center mb-1 lg:mb-2">
                           Smart Diagnostic
-                        </h3>
+                        </h2>
 
                         {/* Tagline */}
                         <p className="text-white/70 text-[10px] lg:text-xs text-center tracking-wide uppercase">
@@ -449,7 +449,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                           {item.icon}
                         </div>
                         <div>
-                          <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
+                          <h3 className="font-bold text-slate-900 mb-1">{item.title}</h3>
                           <p className="text-sm text-slate-500 leading-normal">{item.txt}</p>
                         </div>
                       </div>
@@ -478,7 +478,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                     <div className={`w-14 h-14 ${feature.bg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                       {feature.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                    <h2 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h2>
                     <p className="text-slate-500 leading-relaxed text-sm">{feature.desc}</p>
                   </div>
                 </Reveal>
@@ -493,7 +493,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
               <Reveal>
                 <div className="space-y-6">
-                  <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900">Clone Disk for Ultimate Safety</h3>
+                  <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900">Clone Disk for Ultimate Safety</h2>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Creates an exact replica of a drive for backup and recovery. 
                     Whether you're performing a hardware upgrade or preserving data from a failing drive, 
@@ -552,7 +552,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
               ].map((item) => (
                 <div key={item.step} className="space-y-4 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all group">
                   <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto font-bold text-lg group-hover:scale-110 transition-transform">{item.step}</div>
-                  <h4 className="text-xl font-bold pt-2">{item.title}</h4>
+                  <h3 className="text-xl font-bold pt-2">{item.title}</h3>
                   <p className="text-slate-400 leading-relaxed font-medium">{item.desc}</p>
                 </div>
               ))}
@@ -598,10 +598,10 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                 { q: "How does the 'Scan Disk' feature help identify Bad Sectors?", a: "The feature performs a surface test on the drive, marking bad sectors to prevent the OS from writing data to physically damaged blocks." }
               ].map((item) => (
                 <div key={item.q} className="bg-white p-8 rounded-2xl border border-emerald-100 shadow-sm transition-shadow hover:shadow-md group">
-                  <h4 className="font-bold text-slate-900 flex items-center gap-3 group-hover:text-emerald-800 transition-colors">
+                  <h3 className="font-bold text-slate-900 flex items-center gap-3 group-hover:text-emerald-800 transition-colors">
                     <CheckCircle className="w-5 h-5 text-emerald-500" />
                     {item.q}
-                  </h4>
+                  </h3>
                   <p className="mt-4 text-slate-600 pl-8 leading-relaxed font-medium text-sm">{item.a}</p>
                 </div>
               ))}

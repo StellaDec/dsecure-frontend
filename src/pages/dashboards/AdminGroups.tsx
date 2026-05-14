@@ -1499,9 +1499,9 @@ export default function AdminGroups() {
                       {group.name.charAt(0)}
                     </button>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-slate-900">
+                      <h2 className="text-lg font-semibold text-slate-900">
                         {group.name}
-                      </h3>
+                      </h2>
                       <p className="text-sm text-slate-600">
                         {group.description}
                       </p>
@@ -1796,9 +1796,9 @@ export default function AdminGroups() {
               className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6"
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
                 Add User to {selectedGroup.name}
-              </h3>
+              </h2>
 
               {/* Error Message */}
               {errorMessage && (
@@ -2016,9 +2016,9 @@ export default function AdminGroups() {
               className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
                 Add New Group
-              </h3>
+              </h2>
 
               {/* Error Message */}
               {errorMessage && (
@@ -2204,9 +2204,9 @@ export default function AdminGroups() {
               className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
                 Edit Group
-              </h3>
+              </h2>
 
               {/* Error Message */}
               {errorMessage && (
@@ -2390,9 +2390,9 @@ export default function AdminGroups() {
               className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6"
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
                 Delete Group
-              </h3>
+              </h2>
 
               {/* Error Message */}
               {errorMessage && (
@@ -2514,9 +2514,9 @@ export default function AdminGroups() {
               className="bg-white rounded-xl shadow-2xl max-w-2xl w-full p-6 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
                 Transfer Machines & Licenses
-              </h3>
+              </h2>
 
               {errorMessage && (
                 <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
@@ -2850,9 +2850,9 @@ export default function AdminGroups() {
               className="bg-white rounded-xl shadow-2xl max-w-2xl w-full p-6 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
                 Revoke Machines & Licenses
-              </h3>
+              </h2>
 
               {errorMessage && (
                 <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">

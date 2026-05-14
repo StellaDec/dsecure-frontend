@@ -404,12 +404,12 @@ const NonProfitSolutionsPage: React.FC = () => {
                   className="text-center p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="text-5xl mb-4">{asset.icon}</div>
-                  <h4
+                  <h3
                     className="text-lg font-bold mb-2"
                     style={{ color: "#1f2937" }}
                   >
                     {asset.title}
-                  </h4>
+                  </h3>
                   <p className="text-sm" style={{ color: "#6b7280" }}>
                     {asset.desc}
                   </p>
@@ -474,9 +474,9 @@ const NonProfitSolutionsPage: React.FC = () => {
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Sustainable Data Disposal
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       Securely sanitize devices for donation and reuse instead of
                       physical destruction — reducing e-waste and extending
@@ -484,9 +484,9 @@ const NonProfitSolutionsPage: React.FC = () => {
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Cost-Effective for NGOs
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       Licenses never expire. Use them whenever required for
                       projects without worrying about deadlines or recurring
@@ -494,18 +494,18 @@ const NonProfitSolutionsPage: React.FC = () => {
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Global Scalability
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       From a single office workstation to 65,000 distributed
                       servers — D-Secure scales with your organization's mission.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-900 mb-1">
                       Offline & Remote Support
-                    </h4>
+                    </h3>
                     <p className="text-sm text-emerald-800">
                       Perform erasure at facilities without internet using USB
                       boot. Reports are saved locally and can be synced later.

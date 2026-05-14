@@ -42,9 +42,9 @@ const MarriottSettlementBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -79,7 +79,7 @@ const MarriottSettlementBlog: React.FC = () => {
 
           {/* Chronology of Breaches */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Chronology of Breaches
               </h2>
@@ -173,63 +173,63 @@ const MarriottSettlementBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white/10 rounded-xl p-4">
-                  <h4 className="font-bold text-sm mb-2">
+                  <h3 className="font-bold text-sm mb-2">
                     Weak Password Policy
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-xs">
                     Employees allowed to use weak, default, or blank passwords
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-4">
-                  <h4 className="font-bold text-sm mb-2">Outdated Software</h4>
+                  <h3 className="font-bold text-sm mb-2">Outdated Software</h3>
                   <p className="text-white/90 text-xs">
                     Failed to regularly update patches; used unsupported systems
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-4">
-                  <h4 className="font-bold text-sm mb-2">
+                  <h3 className="font-bold text-sm mb-2">
                     No Network Monitoring
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-xs">
                     Could not distinguish between authorized and unauthorized
                     activity
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-4">
-                  <h4 className="font-bold text-sm mb-2">
+                  <h3 className="font-bold text-sm mb-2">
                     Inappropriate Access Controls
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-xs">
                     Ex-employee accounts not deactivated timely
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-4">
-                  <h4 className="font-bold text-sm mb-2">Weak Firewalls</h4>
+                  <h3 className="font-bold text-sm mb-2">Weak Firewalls</h3>
                   <p className="text-white/90 text-xs">
                     Failed to block unauthorized network intrusions
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-4">
-                  <h4 className="font-bold text-sm mb-2">
+                  <h3 className="font-bold text-sm mb-2">
                     No Network Segregation
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-xs">
                     Hackers could roam freely between hotel and corporate
                     networks
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-4">
-                  <h4 className="font-bold text-sm mb-2">
+                  <h3 className="font-bold text-sm mb-2">
                     No Multifactor Authentication
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-xs">
                     Sensitive data and payment systems lacked MFA
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-4">
-                  <h4 className="font-bold text-sm mb-2">
+                  <h3 className="font-bold text-sm mb-2">
                     Data Minimization Overlooked
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-xs">
                     Excessive data retention amplified breach magnitude
                   </p>
@@ -240,7 +240,7 @@ const MarriottSettlementBlog: React.FC = () => {
 
           {/* Key Settlement Provisions */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Settlement Provisions
               </h2>

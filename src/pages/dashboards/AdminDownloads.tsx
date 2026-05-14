@@ -396,9 +396,9 @@ export default function AdminDownloads() {
         {/* Product Downloads */}
         <div className="card !p-0 overflow-hidden">
           <div className="px-6 py-4 bg-slate-50 border-b border-slate-200">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-slate-900">
               Product Downloads
-            </h3>
+            </h2>
           </div>
           <div className="p-6 space-y-4">
             {loading ? (
@@ -449,9 +449,9 @@ export default function AdminDownloads() {
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h4 className="text-lg font-semibold text-slate-900">
+                      <h3 className="text-lg font-semibold text-slate-900">
                         {product.name}
-                      </h4>
+                      </h3>
                       <p className="text-sm text-slate-600 mt-1">
                         Version {product.version}
                       </p>

@@ -40,9 +40,9 @@ const StatutoryComplianceBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding Compliance
               </h2>
@@ -84,7 +84,7 @@ const StatutoryComplianceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Role of Data Erasure in Compliance
               </h2>
@@ -97,9 +97,9 @@ const StatutoryComplianceBlog: React.FC = () => {
               </p>
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8">
-                <h4 className="font-bold text-emerald-700 text-xl mb-4">
+                <h3 className="font-bold text-emerald-700 text-xl mb-4">
                   GDPR Right to Erasure (Right to Be Forgotten)
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   Article 17 of EU-GDPR grants a data subject the right to get
                   their personal data erased. If the data controller and
@@ -126,31 +126,31 @@ const StatutoryComplianceBlog: React.FC = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Financial Penalties
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Hefty fines ranging from thousands to millions depending on
                     the violation severity
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Legal Lawsuits</h4>
+                  <h3 className="font-bold text-lg mb-3">Legal Lawsuits</h3>
                   <p className="text-white/90 text-sm">
                     Class action suits and individual claims from affected
                     parties
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Reputation Damage</h4>
+                  <h3 className="font-bold text-lg mb-3">Reputation Damage</h3>
                   <p className="text-white/90 text-sm">
                     Loss of customer trust and brand credibility
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Business Suspension
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Potential suspension of business licenses in severe cases
                   </p>

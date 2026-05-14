@@ -159,11 +159,38 @@ const SSDPassCalculatorPage: React.FC = () => {
             Compliance Tool v2.1
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Data Erasure <span className="text-emerald-500">Pass Calculator</span>
+            Data Erasure <span className="text-emerald-500">Pass Calculator: Optimize Your Sanitization Workflow</span>
           </h1>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            Estimate erasure time and determine the correct sanitization protocol for your storage media based on NIST 800-88 guidelines.
+            Estimate erasure time and determine the correct sanitization protocol for your storage media based on NIST 800-88 and DoD 5220.22-M standards.
           </p>
+        </div>
+      </section>
+
+      {/* SEO Content Expansion - Technical Accuracy */}
+      <section className="bg-white py-12 border-b border-slate-200">
+        <div className="container-app">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Why Traditional Overwrite Passes are Obsolete for Modern SSDs</h2>
+            <div className="grid md:grid-cols-2 gap-8 text-slate-600 leading-relaxed">
+              <div className="space-y-4">
+                <p>
+                  For decades, the **DoD 5220.22-M** standard, which requires 3 or 7 overwrite passes, was considered the benchmark for data security. While effective for magnetic Hard Disk Drives (HDDs), this approach is fundamentally flawed for modern flash-based storage like SSDs and NVMe drives. 
+                </p>
+                <p>
+                  Flash media uses a complex controller-managed system called **Wear Leveling**, which distributes data writes across different physical cells to extend the drive's life. A standard software overwrite pass may not reach "hidden" data in remapped blocks or spare cells. Furthermore, repeated overwriting on an SSD significantly reduces its lifespan and performance without necessarily improving data security.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <p>
+                  The **NIST 800-88 Purge** standard addresses these challenges by utilizing the drive's internal firmware commands, such as `BLOCK ERASE` or `CRYPTO ERASE`. These commands ensure that data is removed from all physical locations on the chip simultaneously, including over-provisioned areas and bad blocks.
+                </p>
+                <p>
+                  Our calculator helps you determine the most efficient and secure path for your specific hardware. By choosing NIST-compliant methods over legacy DoD overwriting, you save thousands of operational hours while achieving a superior level of data sanitization that is verifiable and audit-ready.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -354,7 +381,7 @@ const SSDPassCalculatorPage: React.FC = () => {
         <div className="container-app">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Understanding Sanitization Standards</h2>
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid md:grid-cols-2 gap-10 mb-16">
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-emerald-700">NIST SP 800-88 Rev. 1</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -374,6 +401,23 @@ const SSDPassCalculatorPage: React.FC = () => {
                   <li className="flex items-center gap-2">• <span className="font-bold">Standard:</span> 3 Passes</li>
                   <li className="flex items-center gap-2">• <span className="font-bold">ECE:</span> 7 Passes</li>
                 </ul>
+              </div>
+            </div>
+
+            {/* Additional Enrichment Section */}
+            {/* Is section ko drive geometry aur technical bottlenecks samjhane ke liye add kiya gaya hai */}
+            <div className="prose prose-slate max-w-none border-t border-slate-200 pt-16">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">The Impact of Drive Geometry and Architecture on Erasure Time</h3>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>
+                  When calculating the time required for complete data sanitization, many IT professionals mistakenly only consider the raw capacity of the drive. However, the physical architecture and interface geometry of the storage device play a significantly larger role in determining the total operation time. For example, a legacy SAS HDD with a high rotational speed (15K RPM) will consistently outperform a 5.4K RPM SATA drive during a multi-pass overwrite operation due to its superior seek times and sustained write throughput. Our calculator factors in these hardware-specific variables to provide a more realistic estimation of your sanitization window.
+                </p>
+                <p>
+                  The interface bandwidth—whether it's SATA III (6Gbps), SAS-12, or the latest NVMe Gen 4/5—creates a critical bottleneck for data erasure software. While a software-based overwrite on a 1TB NVMe drive might take only a few minutes, the same operation on a 1TB external USB 2.0 drive could take several hours. Furthermore, the drive's internal cache and controller efficiency impact how quickly "Sanitize" and "Secure Erase" commands are executed. In enterprise environments where hundreds of drives are decommissioned simultaneously, understanding these throughput limitations is vital for effective project scheduling and resource allocation.
+                </p>
+                <p>
+                  Finally, the "Verification" phase of the erasure process adds a significant amount of time that is often overlooked in basic calculations. To ensure compliance with international standards, a percentage of the drive must be re-read and compared against the intended erasure pattern to confirm success. High-integrity sanitization tools like D-Secure perform this verification at the block level, ensuring that even data hidden in remapped sectors has been successfully cleared. While this adds to the total duration, it is the only way to provide a tamper-proof guarantee that your organization's sensitive data is 100% unrecoverable.
+                </p>
               </div>
             </div>
           </div>

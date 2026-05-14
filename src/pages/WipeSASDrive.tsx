@@ -33,7 +33,7 @@ const navigationTree: NavItem[] = [
         <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-xl">
           <div className="flex items-center gap-3 mb-2">
             <AlertTriangle className="w-5 h-5 text-amber-600" />
-            <h4 className="font-bold text-amber-900">Adapter Limitation</h4>
+            <h3 className="font-bold text-amber-900">Adapter Limitation</h3>
           </div>
           <p className="text-sm text-amber-800">
             Standard SATA-to-USB adapters <strong>cannot</strong> read SAS drives. You must use a dedicated SAS HBA 
@@ -50,10 +50,10 @@ const navigationTree: NavItem[] = [
     content: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="border border-slate-200 rounded-xl p-5 hover:border-emerald-200 transition-colors">
-          <h4 className="font-bold text-slate-900 mb-3 flex items-center">
+          <h3 className="font-bold text-slate-900 mb-3 flex items-center">
             <Layers className="w-5 h-5 mr-2 text-emerald-500" />
             SCSI Block Erase
-          </h4>
+          </h3>
           <p className="text-sm text-slate-600 mb-4">
             The hardware-level "Block Erase" command instructs the drive controller to reset all physical blocks 
             on the platters or NAND chips.
@@ -65,10 +65,10 @@ const navigationTree: NavItem[] = [
           </ul>
         </div>
         <div className="border border-slate-200 rounded-xl p-5 hover:border-teal-200 transition-colors">
-          <h4 className="font-bold text-slate-900 mb-3 flex items-center">
+          <h3 className="font-bold text-slate-900 mb-3 flex items-center">
             <Zap className="w-5 h-5 mr-2 text-teal-500" />
             Crypto Scramble
-          </h4>
+          </h3>
           <p className="text-sm text-slate-600 mb-4">
             For Self-Encrypting SAS Drives (SED), this command destroys the internal encryption key, 
             rendering all data unreadable in milliseconds.
@@ -91,21 +91,21 @@ const navigationTree: NavItem[] = [
         <div className="flex gap-4">
           <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold shrink-0">1</div>
           <div>
-            <h5 className="font-bold text-slate-900">Check Freeze State</h5>
+            <h4 className="font-bold text-slate-900">Check Freeze State</h4>
             <p className="text-sm text-slate-600">Enterprise SAS drives often ship with security features enabled. Ensure the drive is not in a 'Frozen' state before starting.</p>
           </div>
         </div>
         <div className="flex gap-4">
           <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold shrink-0">2</div>
           <div>
-            <h5 className="font-bold text-slate-900">Select NIST PURGE</h5>
+            <h4 className="font-bold text-slate-900">Select NIST PURGE</h4>
             <p className="text-sm text-slate-600">For SAS HDDs, use a 3-pass overwrite or the SCSI Sanitize command. For SAS SSDs, always prioritize Block Erase.</p>
           </div>
         </div>
         <div className="flex gap-4">
           <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold shrink-0">3</div>
           <div>
-            <h5 className="font-bold text-slate-900">Verification (Mandatory)</h5>
+            <h4 className="font-bold text-slate-900">Verification (Mandatory)</h4>
             <p className="text-sm text-slate-600">Scan at least 10% of the drive surface to verify that no data patterns remain. D-Secure handles this automatically.</p>
           </div>
         </div>
@@ -118,7 +118,7 @@ const navigationTree: NavItem[] = [
     icon: <Book className="w-5 h-5" />,
     content: (
       <div className="bg-slate-900 rounded-2xl p-6 text-white">
-        <h4 className="font-bold mb-4 text-emerald-400">Audit Trail Essentials</h4>
+        <h3 className="font-bold mb-4 text-emerald-400">Audit Trail Essentials</h3>
         <ul className="space-y-3 text-sm text-slate-300">
           <li className="flex items-center gap-2">
             <CheckCircle className="w-4 h-4 text-emerald-500" /> Record Drive Serial Number (SCSI Inquiry)
@@ -257,7 +257,7 @@ const WipeSASDrive: React.FC = () => {
                 
                 {/* Related Links */}
                 <div className="mt-16 pt-12 border-t border-slate-100">
-                  <h4 className="font-bold text-slate-900 mb-6">Related Enterprise Guides</h4>
+                  <h3 className="font-bold text-slate-900 mb-6">Related Enterprise Guides</h3>
                   <div className="grid md:grid-cols-2 gap-4">
                     <Link to="/support/manual/enterprise-servers" className="p-4 rounded-xl border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/30 transition-all flex items-center justify-between group">
                       <div className="flex items-center gap-3">

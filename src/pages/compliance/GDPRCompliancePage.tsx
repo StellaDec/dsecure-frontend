@@ -88,7 +88,7 @@ export default function GDPRCompliancePage() {
                   <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
                     <ClipboardIcon className="w-6 h-6" filled={true} />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 block">{req.title}</h3>
+                  <h2 className="text-xl font-bold text-slate-900 mb-3 block">{req.title}</h2>
                   <p className="text-slate-600 text-sm mb-6 flex-grow">{req.description}</p>
                   <div className="pt-6 border-t border-slate-100">
                     <span className="text-xs font-bold tracking-wider text-blue-600 uppercase mb-2 block">D-Secure Capability</span>
@@ -114,7 +114,7 @@ export default function GDPRCompliancePage() {
                       <LockIcon className="w-5 h-5" filled={true} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Preventing Data Leaks</h4>
+                      <h3 className="font-bold text-slate-900">Preventing Data Leaks</h3>
                       <p className="text-slate-600">Donating or recycling hardware without tamper-proof audit reports with certificate is a direct violation of GDPR principles. Formatting drives is not enough to stop data recovery.</p>
                     </div>
                   </div>
@@ -123,7 +123,7 @@ export default function GDPRCompliancePage() {
                       <ShieldIcon className="w-5 h-5" filled={true} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Right to be Forgotten</h4>
+                      <h3 className="font-bold text-slate-900">Right to be Forgotten</h3>
                       <p className="text-slate-600">When users request data deletion, you must prove the deletion occurred. Our File Eraser provides the exact audit trail needed.</p>
                     </div>
                   </div>
@@ -132,7 +132,7 @@ export default function GDPRCompliancePage() {
                       <CheckIcon className="w-5 h-5" filled={true} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Immutable Audit Trail</h4>
+                      <h3 className="font-bold text-slate-900">Immutable Audit Trail</h3>
                       <p className="text-slate-600">To comply with the 'Accountability' principle, D-Secure maintains a secure, centralized cloud log of all erasure activities across your network.</p>
                     </div>
                   </div>
@@ -144,7 +144,7 @@ export default function GDPRCompliancePage() {
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                   <ClipboardIcon className="w-48 h-48" filled={true} />
                 </div>
-                <h3 className="text-2xl font-bold mb-6 relative z-10">Tamper-proof audit reports with certificate for DPAs</h3>
+                <h2 className="text-2xl font-bold mb-6 relative z-10">Tamper-proof audit reports with certificate for DPAs</h2>
                 <p className="text-slate-300 mb-6 relative z-10">Data Protection Authorities (DPAs) expect documented proof. D-Secure provides:</p>
                 <ul className="space-y-4 mb-8 relative z-10 text-slate-300">
                   <li className="flex items-center gap-3">

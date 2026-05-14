@@ -41,9 +41,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Attack: What Happened?
               </h2>
@@ -67,9 +67,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
               </p>
 
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Key Facts About the Attack
-                </h4>
+                </h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
@@ -98,7 +98,7 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Vulnerability in Change Healthcare Systems
               </h2>
@@ -112,9 +112,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
               </p>
 
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-8">
-                <h4 className="font-bold text-slate-900 text-xl mb-4">
+                <h3 className="font-bold text-slate-900 text-xl mb-4">
                   CEO Testimony Before Senate Finance Committee
-                </h4>
+                </h3>
                 <blockquote className="text-slate-700 text-lg italic border-l-4 border-amber-500 pl-6">
                   "On February 12, criminals used compromised credentials to
                   remotely access a Change Healthcare Citrix portal, an
@@ -145,40 +145,40 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Impact of the Cybersecurity Lapse
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-2xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-2xl mb-2">
                     $1.6 Billion
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Direct financial losses from the attack
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-2xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-2xl mb-2">
                     15+ Billion
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Healthcare transactions processed annually at risk
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-2xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-2xl mb-2">
                     30+ Days
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Major healthcare services paralyzed
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-2xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-2xl mb-2">
                     Millions
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Americans' PII and PHI data compromised
                   </p>
@@ -255,7 +255,7 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Ransomware Twist: A Gang's Exit Scam
               </h2>
@@ -267,9 +267,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
               </p>
 
               <div className="bg-slate-100 rounded-xl p-8">
-                <h4 className="font-bold text-slate-900 text-xl mb-4">
+                <h3 className="font-bold text-slate-900 text-xl mb-4">
                   How the Blackcat Exit Scam Worked:
-                </h4>
+                </h3>
                 <ol className="space-y-4 text-slate-700 text-lg">
                   <li className="flex items-start">
                     <span className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">
@@ -320,9 +320,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
               </div>
 
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-8 mt-6">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   ️ Ongoing Risk
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   If the disgruntled affiliate still possesses the breached
                   information, they could demand additional ransom from Change
@@ -346,9 +346,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     1. Invest in Cybersecurity
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Investing in cybersecurity is critical for all businesses,
                     especially in healthcare where highly valuable and sensitive
@@ -358,9 +358,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     2. Implement Multi-Factor Authentication
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     MFA requires more than one method to verify identity \u2014 such
                     as password plus biometric details, or password plus
@@ -369,9 +369,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     3. Robust Password Policy
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Require employees to change passwords every 90-120 days.
                     Passwords should combine uppercase, lowercase, numbers, and
@@ -380,9 +380,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     4. Data Anonymization
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Anonymization is a privacy protection technique that alters
                     data so identifying a data subject is no longer possible,
@@ -392,9 +392,9 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     5. Data Minimization
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Collect and process only necessary data required to fulfill
                     the purpose of collection. This reduces breach impacts and
@@ -402,7 +402,7 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">6. <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link></h4>
+                  <h3 className="font-bold text-lg mb-3">6. <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link></h3>
                   <p className="text-white/90 text-sm leading-relaxed">
                     Remove sensitive information from systems when being
                     repurposed or retired. This ensures IT assets don't contain
@@ -416,7 +416,7 @@ const ChangeHealthcareAttackBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Additional Security Measures
               </h2>

@@ -128,10 +128,10 @@ const FAQ: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-start gap-2">
+                    <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-start gap-2">
                       <ChevronRight className="w-5 h-5 text-blue-600 mt-1 shrink-0" />
                       <span>{faq.question}</span>
-                    </h3>
+                    </h2>
                     <p className="text-gray-700 leading-relaxed">
                       {faq.answer}
                     </p>
@@ -153,7 +153,7 @@ const FAQ: React.FC = () => {
 
           <div className="grid md:grid-cols-3 gap-4">
             <div className="border border-blue-200 rounded-lg p-4 bg-blue-50/30">
-              <h3 className="font-semibold text-gray-900 mb-2">Email Support</h3>
+              <h2 className="font-semibold text-gray-900 mb-2">Email Support</h2>
               <p className="text-sm text-gray-700 mb-2">
                 Send detailed questions to our technical support team.
               </p>
@@ -163,7 +163,7 @@ const FAQ: React.FC = () => {
             </div>
 
             <div className="border border-green-200 rounded-lg p-4 bg-green-50/30">
-              <h3 className="font-semibold text-gray-900 mb-2">Knowledge Base</h3>
+              <h2 className="font-semibold text-gray-900 mb-2">Knowledge Base</h2>
               <p className="text-sm text-gray-700 mb-2">
                 Browse articles, tutorials, and troubleshooting guides.
               </p>
@@ -173,7 +173,7 @@ const FAQ: React.FC = () => {
             </div>
 
             <div className="border border-purple-200 rounded-lg p-4 bg-purple-50/30">
-              <h3 className="font-semibold text-gray-900 mb-2">Live Chat</h3>
+              <h2 className="font-semibold text-gray-900 mb-2">Live Chat</h2>
               <p className="text-sm text-gray-700 mb-2">
                 Chat with a technician for real-time assistance.
               </p>
@@ -186,7 +186,7 @@ const FAQ: React.FC = () => {
 
         {/* Quick Links */}
         <section className="mt-8 bg-gray-100 rounded-xl p-6">
-          <h3 className="font-semibold text-gray-900 mb-4">Quick Links to Related Topics</h3>
+          <h2 className="font-semibold text-gray-900 mb-4">Quick Links to Related Topics</h2>
           <div className="grid md:grid-cols-2 gap-3">
             <a href="#installation" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 text-sm">
               <ChevronRight className="w-4 h-4" />

@@ -672,7 +672,7 @@ const ForensicImagingPage = memo(() => {
                        <div className="w-10 h-10 rounded-xl bg-white text-emerald-600 flex items-center justify-center mb-6 shadow-sm border border-slate-50 group-hover:scale-110 transition-transform">
                          {s.icon}
                        </div>
-                       <h4 className="font-bold text-slate-900 mb-2">{s.title}</h4>
+                       <h3 className="font-bold text-slate-900 mb-2">{s.title}</h3>
                        <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
                     </div>
                   ))}
@@ -731,9 +731,9 @@ const ForensicImagingPage = memo(() => {
                 <Reveal key={f.title}>
                    <div className="text-center p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-500 group">
                     <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-500">
-                      {React.cloneElement(f.icon as React.ReactElement, { className: "w-8 h-8" })}
+                      {React.cloneElement(f.icon as any, { className: "w-8 h-8" })}
                     </div>
-                    <h4 className="text-xl font-bold mb-4">{f.title}</h4>
+                    <h3 className="text-xl font-bold mb-4">{f.title}</h3>
                     <p className="text-slate-400 text-sm leading-relaxed">{f.desc}</p>
                   </div>
                 </Reveal>

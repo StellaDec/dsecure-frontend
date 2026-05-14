@@ -40,9 +40,9 @@ const HexViewerBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is a Hex Viewer?
               </h2>
@@ -68,40 +68,40 @@ const HexViewerBlog: React.FC = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Visual Confirmation
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     See the actual bytes on the drive to confirm erasure
                     patterns have been written correctly.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Compliance Evidence
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Provides proof for audits that the specified erasure
                     standard was followed.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Spot Check Capability
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     Randomly sample sectors to verify consistent erasure across
                     the entire drive.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     D-Secure Integration
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     D-Secure includes a built-in hex viewer for immediate
                     post-erasure verification.

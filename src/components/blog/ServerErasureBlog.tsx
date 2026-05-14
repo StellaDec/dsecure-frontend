@@ -40,9 +40,9 @@ const ServerErasureBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Secure Server Erasure Matters
               </h2>
@@ -61,9 +61,9 @@ const ServerErasureBlog: React.FC = () => {
                 requirements.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Regulatory Compliance Requirements
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Global regulations like GDPR in the EU, along with
                   industry-specific laws such as HIPAA, GLBA, SOX, and SEC 17a,
@@ -75,7 +75,7 @@ const ServerErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Supported Server Types & Storage
               </h2>
@@ -85,49 +85,49 @@ const ServerErasureBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Dell PowerEdge
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     R740/R740xd, EMC PowerEdge C6400, FC640, XR2 series
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     HPE ProLiant
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     DL380 Gen 10, ML350 Gen 10, Apollo 4510/4200
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Lenovo ThinkSystem
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     SR650, ST650 V2, DE2000H series
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Cisco UCS
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     C240 M5 Rack Server and B-Series
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Supermicro
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     SuperServer SYS-2029U-TR4 and more
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Oracle & Others
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Sun x86 Servers, Fujitsu Primergy, Huawei FusionServer
                   </p>
@@ -249,15 +249,15 @@ const ServerErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 System Requirements
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-bold text-emerald-700 text-lg mb-4">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-4">
                     USB Boot Requirements
-                  </h4>
+                  </h3>
                   <ul className="space-y-3 text-slate-700 text-lg">
                     <li className="border-l-4 border-emerald-500 pl-8 py-2">
                       Processor: x64 Processor
@@ -274,9 +274,9 @@ const ServerErasureBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-bold text-emerald-700 text-lg mb-4">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-4">
                     PXE Boot Requirements
-                  </h4>
+                  </h3>
                   <ul className="space-y-3 text-slate-700 text-lg">
                     <li className="border-l-4 border-emerald-500 pl-8 py-2">
                       Machine: Standard Server with 16 GB RAM minimum

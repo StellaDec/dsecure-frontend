@@ -29,9 +29,9 @@ const MSPDataErasureBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Intro */}
                 <div className="space-y-4">
@@ -55,7 +55,7 @@ const MSPDataErasureBlog: React.FC = () => {
                     <h2 className="text-2xl font-bold text-slate-900">2. Benefits for MSPs</h2>
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
                         <div className="bg-violet-50 border border-violet-200 p-4 rounded-lg">
-                            <h4 className="font-bold text-violet-900 mb-2">💰 New Revenue Stream</h4>
+                            <h3 className="font-bold text-violet-900 mb-2">💰 New Revenue Stream</h3>
                             <ul className="text-sm text-violet-800 space-y-1">
                                 <li>• Charge per-device erasure fees</li>
                                 <li>• Offer managed disposal contracts</li>
@@ -64,7 +64,7 @@ const MSPDataErasureBlog: React.FC = () => {
                             </ul>
                         </div>
                         <div className="bg-violet-50 border border-violet-200 p-4 rounded-lg">
-                            <h4 className="font-bold text-violet-900 mb-2">🤝 Client Stickiness</h4>
+                            <h3 className="font-bold text-violet-900 mb-2">🤝 Client Stickiness</h3>
                             <ul className="text-sm text-violet-800 space-y-1">
                                 <li>• Deepen trusted advisor role</li>
                                 <li>• Lifecycle management partnership</li>
@@ -73,7 +73,7 @@ const MSPDataErasureBlog: React.FC = () => {
                             </ul>
                         </div>
                         <div className="bg-violet-50 border border-violet-200 p-4 rounded-lg">
-                            <h4 className="font-bold text-violet-900 mb-2">📋 Compliance Value</h4>
+                            <h3 className="font-bold text-violet-900 mb-2">📋 Compliance Value</h3>
                             <ul className="text-sm text-violet-800 space-y-1">
                                 <li>• Help clients meet regulations</li>
                                 <li>• Provide audit documentation</li>
@@ -82,7 +82,7 @@ const MSPDataErasureBlog: React.FC = () => {
                             </ul>
                         </div>
                         <div className="bg-violet-50 border border-violet-200 p-4 rounded-lg">
-                            <h4 className="font-bold text-violet-900 mb-2">🔒 Risk Mitigation</h4>
+                            <h3 className="font-bold text-violet-900 mb-2">🔒 Risk Mitigation</h3>
                             <ul className="text-sm text-violet-800 space-y-1">
                                 <li>• Protect clients from breaches</li>
                                 <li>• Professional liability coverage</li>
@@ -144,7 +144,7 @@ const MSPDataErasureBlog: React.FC = () => {
 
         {/* D-Secure Solutions Section */}
         <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">D-Secure MSP Partner Program</h2>
                 
                 <p className="text-slate-700 leading-relaxed mb-6">
@@ -155,7 +155,7 @@ const MSPDataErasureBlog: React.FC = () => {
                     <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-6 rounded-xl border border-violet-100">
                         <div className="flex items-center gap-2 mb-3">
                             <UsersIcon className="w-5 h-5 text-violet-600" filled={true} />
-                            <h4 className="font-bold text-slate-900">Multi-Tenant Console</h4>
+                            <h3 className="font-bold text-slate-900">Multi-Tenant Console</h3>
                         </div>
                         <p className="text-sm text-slate-600">
                             Manage all clients from a single dashboard. Separate branding, certificates, and reports for each client organization.
@@ -164,7 +164,7 @@ const MSPDataErasureBlog: React.FC = () => {
                     <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-6 rounded-xl border border-violet-100">
                         <div className="flex items-center gap-2 mb-3">
                             <ShieldIcon className="w-5 h-5 text-violet-600" filled={true} />
-                            <h4 className="font-bold text-slate-900">White-Label Certificates</h4>
+                            <h3 className="font-bold text-slate-900">White-Label Certificates</h3>
                         </div>
                         <p className="text-sm text-slate-600">
                             Deliver client-branded erasure certificates with your logo and contact information, reinforcing your professional services.
@@ -173,7 +173,7 @@ const MSPDataErasureBlog: React.FC = () => {
                     <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-6 rounded-xl border border-violet-100">
                         <div className="flex items-center gap-2 mb-3">
                             <GlobeIcon className="w-5 h-5 text-violet-600" filled={true} />
-                            <h4 className="font-bold text-slate-900">Remote Deployment</h4>
+                            <h3 className="font-bold text-slate-900">Remote Deployment</h3>
                         </div>
                         <p className="text-sm text-slate-600">
                             Deploy erasure agents remotely to client devices. Initiate and monitor erasure from your central console.
@@ -182,7 +182,7 @@ const MSPDataErasureBlog: React.FC = () => {
                     <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-6 rounded-xl border border-violet-100">
                         <div className="flex items-center gap-2 mb-3">
                             <StarIcon className="w-5 h-5 text-violet-600" filled={true} />
-                            <h4 className="font-bold text-slate-900">Volume Licensing</h4>
+                            <h3 className="font-bold text-slate-900">Volume Licensing</h3>
                         </div>
                         <p className="text-sm text-slate-600">
                             Flexible licensing models designed for MSPs. Pay per erasure or unlimited plans based on your client base.
@@ -191,7 +191,7 @@ const MSPDataErasureBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-slate-900 rounded-xl p-6 text-white">
-                    <h4 className="font-bold mb-4 text-violet-400">MSP Partner Benefits</h4>
+                    <h3 className="font-bold mb-4 text-violet-400">MSP Partner Benefits</h3>
                     <div className="grid md:grid-cols-3 gap-4 text-sm">
                         <div className="flex items-start gap-2">
                             <CheckIcon className="w-4 h-4 text-violet-400 mt-0.5 flex-shrink-0" filled={true} />

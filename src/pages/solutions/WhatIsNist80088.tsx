@@ -51,17 +51,17 @@ export default function WhatIsNist80088() {
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">The Three Tiers of Sanitization</h3>
                 <div className="grid gap-8 mb-12">
                   <div className="bg-slate-50 p-8 rounded-3xl border-l-4 border-blue-600">
-                    <h4 className="font-bold text-2xl text-slate-900 mb-4">1. Clear</h4>
+                    <h3 className="font-bold text-2xl text-slate-900 mb-4">1. Clear</h3>
                     <p className="text-slate-600 leading-relaxed mb-4">Uses software-level techniques to overwrite all user-addressable storage locations. Protects against simple, non-invasive data recovery techniques.</p>
                     <Link to="/products/drive-eraser" className="text-blue-600 font-bold text-sm block">Products that support Clear <ArrowRight className="w-4 h-4 inline ml-1" /></Link>
                   </div>
                   <div className="bg-slate-50 p-8 rounded-3xl border-l-4 border-emerald-600">
-                    <h4 className="font-bold text-2xl text-slate-900 mb-4">2. Purge</h4>
+                    <h3 className="font-bold text-2xl text-slate-900 mb-4">2. Purge</h3>
                     <p className="text-slate-600 leading-relaxed mb-4">Physical or logical techniques that make target data recovery infeasible even using state-of-the-art laboratory techniques. This often includes **Cryptographic Erase** methods.</p>
                     <Link to="/products/drive-eraser" className="text-emerald-600 font-bold text-sm block">Products that support Purge <ArrowRight className="w-4 h-4 inline ml-1" /></Link>
                   </div>
                   <div className="bg-slate-50 p-8 rounded-3xl border-l-4 border-red-600">
-                    <h4 className="font-bold text-2xl text-slate-900 mb-4">3. Destroy</h4>
+                    <h3 className="font-bold text-2xl text-slate-900 mb-4">3. Destroy</h3>
                     <p className="text-slate-600 leading-relaxed mb-4">Initializes the ultimate step of rendering target data recovery infeasible through physical destruction (e.g., disintegrating, pulverizing, or melting).</p>
                     <Link to="/contact" className="text-red-600 font-bold text-sm block">Inquire about Destruction Audits <ArrowRight className="w-4 h-4 inline ml-1" /></Link>
                   </div>
@@ -73,10 +73,10 @@ export default function WhatIsNist80088() {
                 </p>
 
                 <div className="bg-blue-600 rounded-[2.5rem] p-10 text-white mt-12 border shadow-2xl">
-                  <h4 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                  <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
                     <Zap className="w-6 h-6 text-blue-200" />
                     How D-Secure Implements NIST 800-88
-                  </h4>
+                  </h3>
                   <p className="text-blue-100 text-lg leading-relaxed mb-8">
                     D-Secure is built on the NIST framework. Our industrial erasure engine automatically selects the correct sanitization protocol based on the media type (HDD, SSD, NVMe) and generates a **Tamper-proof audit reports with certificate** (2K RSA signed) for legal verification.
                   </p>
@@ -96,11 +96,11 @@ export default function WhatIsNist80088() {
                 </h3>
                 <div className="space-y-6">
                   <div className="group cursor-pointer">
-                    <h4 className="font-bold text-blue-400 mb-1 group-hover:underline">Clear vs Purge Comparison</h4>
+                    <h3 className="font-bold text-blue-400 mb-1 group-hover:underline">Clear vs Purge Comparison</h3>
                     <p className="text-xs text-slate-400">Deep dive into the technical differences for IT managers.</p>
                   </div>
                   <div className="group cursor-pointer">
-                    <h4 className="font-bold text-blue-400 mb-1 group-hover:underline">NIST 800-88 Rev. 1 PDF</h4>
+                    <h3 className="font-bold text-blue-400 mb-1 group-hover:underline">NIST 800-88 Rev. 1 PDF</h3>
                     <p className="text-xs text-slate-400">Official publication from NIST.gov repository.</p>
                   </div>
                 </div>
@@ -133,11 +133,11 @@ export default function WhatIsNist80088() {
             
             <div className="space-y-8">
               <div className="bg-slate-50 p-8 rounded-3xl">
-                <h4 className="font-bold text-slate-900 mb-2">Is NIST 800-88 mandatory?</h4>
+                <h3 className="font-bold text-slate-900 mb-2">Is NIST 800-88 mandatory?</h3>
                 <p className="text-slate-600">While it is a federal standard for US government agencies, it has become the de-facto requirement for private enterprises globally who need to prove data security and compliance.</p>
               </div>
               <div className="bg-slate-50 p-8 rounded-3xl">
-                <h4 className="font-bold text-slate-900 mb-2">Difference between DoD & NIST?</h4>
+                <h3 className="font-bold text-slate-900 mb-2">Difference between DoD & NIST?</h3>
                 <p className="text-slate-600">The DoD 5220.22-M standard is legacy and was designed for old magnetic media. NIST 800-88 is modern and specifically addresses SSD, NVMe, and virtualized storage techniques.</p>
               </div>
             </div>

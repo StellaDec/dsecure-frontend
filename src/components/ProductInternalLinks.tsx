@@ -173,9 +173,8 @@ export const ProductInternalLinks: React.FC<ProductInternalLinksProps> = ({
           }}
         >
           {displayLinks.map((product) => (
-            <Link
+            <div
               key={product.href}
-              to={product.href}
               style={{
                 display: "flex",
                 alignItems: "flex-start",
@@ -184,18 +183,18 @@ export const ProductInternalLinks: React.FC<ProductInternalLinksProps> = ({
                 background: "#ffffff",
                 borderRadius: "10px",
                 border: "1px solid #e5e7eb",
-                textDecoration: "none",
+                position: "relative",
                 transition: "box-shadow 0.2s, border-color 0.2s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                (e.currentTarget as HTMLDivElement).style.boxShadow =
                   "0 4px 16px rgba(16,185,129,0.12)";
-                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                (e.currentTarget as HTMLDivElement).style.borderColor =
                   "#10b981";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none";
-                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
+                (e.currentTarget as HTMLDivElement).style.borderColor =
                   "#e5e7eb";
               }}
             >
@@ -204,29 +203,43 @@ export const ProductInternalLinks: React.FC<ProductInternalLinksProps> = ({
                 {product.icon}
               </span>
               <div>
-                <span
+                <Link
+                  to={product.href}
                   style={{
                     display: "block",
                     fontWeight: 600,
                     color: "#111827",
                     fontSize: "0.9rem",
                     marginBottom: "4px",
+                    textDecoration: "none",
                   }}
                 >
+                  {/* Stretched link hack for SEO - link text is only the label but area is whole card */}
+                  <span
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      zIndex: 1,
+                    }}
+                    aria-hidden="true"
+                  ></span>
                   {product.label}
-                </span>
+                </Link>
                 <span
                   style={{
                     display: "block",
                     color: "#6b7280",
                     fontSize: "0.8rem",
                     lineHeight: 1.4,
+                    position: "relative",
+                    zIndex: 2, // Ensure text is selectable if needed
+                    pointerEvents: "none", // Let clicks pass through to the stretched link
                   }}
                 >
                   {product.description}
                 </span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

@@ -1,60 +1,35 @@
-
 import fs from 'fs';
 import path from 'path';
 
-const PAGES_DIR = 'c:/Users/nishu/Downloads/dsecure-frontend/src/pages';
-const MIN_H1_LENGTH = 20;
-
-function getAllFiles(dirPath, arrayOfFiles) {
-  const files = fs.readdirSync(dirPath);
-
-  arrayOfFiles = arrayOfFiles || [];
-
-  files.forEach(function(file) {
-    if (fs.statSync(dirPath + "/" + file).isDirectory()) {
-      arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
-    } else {
-      if (file.endsWith('.tsx')) {
-        arrayOfFiles.push(path.join(dirPath, "/", file));
-      }
+function getFiles(dir, files = []) {
+  const fileList = fs.readdirSync(dir);
+  for (const file of fileList) {
+    const name = path.join(dir, file);
+    if (fs.statSync(name).isDirectory()) {
+      getFiles(name, files);
+    } else if (name.endsWith('.tsx') || name.endsWith('.jsx')) {
+      files.push(name);
     }
-  });
-
-  return arrayOfFiles;
+  }
+  return files;
 }
 
-const allFiles = getAllFiles(PAGES_DIR, []);
-const results = [];
+const files = getFiles('src/pages');
+files.push(...getFiles('src/components/blog'));
 
-allFiles.forEach(file => {
+for (const file of files) {
   const content = fs.readFileSync(file, 'utf8');
-  const h1Regex = /<h1[^>]*>([\s\S]*?)<\/h1>/gi;
-  const matches = [...content.matchAll(h1Regex)];
-
-  if (matches.length === 0) {
-    results.push({
-      file: path.relative(PAGES_DIR, file),
-      status: 'MISSING',
-      h1Count: 0
-    });
+  const h1Match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+  if (h1Match) {
+    let h1Text = h1Match[1].replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+    if (h1Text.length < 30 || h1Text.includes('{')) {
+      console.log(`FILE: ${file}`);
+      console.log(`H1: ${h1Text}`);
+      console.log('---');
+    }
   } else {
-    matches.forEach(match => {
-      const h1Text = match[1].replace(/<[^>]*>/g, '').trim();
-      // Ignore H1s that use variables like {title} as they might be dynamic
-      if (h1Text.includes('{') && h1Text.includes('}')) {
-        return;
-      }
-      
-      if (h1Text.length < MIN_H1_LENGTH) {
-        results.push({
-          file: path.relative(PAGES_DIR, file),
-          status: 'TOO_SHORT',
-          h1Text: h1Text,
-          length: h1Text.length
-        });
-      }
-    });
+    console.log(`FILE: ${file}`);
+    console.log(`H1: MISSING`);
+    console.log('---');
   }
-});
-
-console.log(JSON.stringify(results, null, 2));
+}

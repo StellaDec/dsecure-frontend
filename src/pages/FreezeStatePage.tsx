@@ -44,7 +44,7 @@ const FreezeStatePage = memo(() => {
   const adminDemoRef = useRef<HTMLDivElement>(null);
   const endpointDemoRef = useRef<HTMLDivElement>(null);
 
-  const toggleFullscreen = async (ref: React.RefObject<HTMLDivElement>) => {
+  const toggleFullscreen = async (ref: React.RefObject<HTMLDivElement | null>) => {
     try {
       if (document.fullscreenElement) {
         if (document.exitFullscreen) {
@@ -308,7 +308,7 @@ const FreezeStatePage = memo(() => {
                       <div className="flex items-center justify-between px-2">
                         <div>
                           <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest leading-none mb-1">Global Manager</p>
-                          <h4 className="text-lg font-black text-slate-900">Fleet Console</h4>
+                          <h2 className="text-lg font-black text-slate-900">Fleet Console</h2>
                         </div>
                         <div className="text-right">
                           <p className="text-[8px] font-bold text-slate-400 uppercase tracking-widest mb-1">Controlled</p>
@@ -677,7 +677,7 @@ const FreezeStatePage = memo(() => {
                         <Layers className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">Virtual Overlay Layer</h4>
+                        <h2 className="text-xl font-bold mb-2">Virtual Overlay Layer</h2>
                         <p className="text-slate-400 leading-relaxed">
                           All write operations are intercepted at the driver level and redirected to a temporary virtual overlay table, keeping original data sectors locked.
                         </p>
@@ -688,7 +688,7 @@ const FreezeStatePage = memo(() => {
                         <HardDrive className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">Persistent ThawSpaces</h4>
+                        <h2 className="text-xl font-bold mb-2">Persistent ThawSpaces</h2>
                         <p className="text-slate-400 leading-relaxed">
                           Create dedicated virtual partitions for user data, ensuring work is saved even when the system drive is frozen and reset.
                         </p>
@@ -699,7 +699,7 @@ const FreezeStatePage = memo(() => {
                         <RefreshCcw className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">Free State Automation</h4>
+                        <h2 className="text-xl font-bold mb-2">Free State Automation</h2>
                         <p className="text-slate-400 leading-relaxed">
                           A session-based logic where the system instantly resets to a clean state after use. All data and settings are automatically erased upon every restart, eliminating manual cleanup.
                         </p>
@@ -944,7 +944,7 @@ const FreezeStatePage = memo(() => {
                           <Layout className="w-10 h-10" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-slate-900 mb-1">Admin Console</h4>
+                          <h2 className="text-xl font-bold text-slate-900 mb-1">Admin Console</h2>
                           <p className="text-slate-500 text-sm font-medium">Enterprise Management</p>
                         </div>
                       </div>
@@ -970,7 +970,7 @@ const FreezeStatePage = memo(() => {
                           <Monitor className="w-10 h-10" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-slate-900 mb-1">Endpoint</h4>
+                          <h2 className="text-xl font-bold text-slate-900 mb-1">Endpoint</h2>
                           <p className="text-slate-500 text-sm font-medium">Local Device Protection</p>
                         </div>
                       </div>
@@ -1064,13 +1064,13 @@ const FreezeStatePage = memo(() => {
                 { title: "NIST 800-53", desc: "Helps achieve NIST compliance for shared workstation protection.", icon: <ShieldCheck /> },
                 { title: "HIPAA Ready", desc: "Ensure patient record portals always revert to secure states.", icon: <Lock /> },
                 { title: "PCI DSS", desc: "Locks down payment terminals and kiosks against unauthorized changes.", icon: <Settings /> },
-              ].map((item) => (
-                <Reveal key={item.title}>
+              ].map((item, idx) => (
+                <Reveal key={item.title} delayMs={100 + idx * 50} animation="slide-up">
                   <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-cyan-50/30 hover:border-cyan-200 transition-all duration-300 h-full group">
                     <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-cyan-600 mb-6 shadow-sm group-hover:scale-110 transition-transform">
-                      {React.cloneElement(item.icon as React.ReactElement, { className: "w-6 h-6" })}
+                      {React.cloneElement(item.icon as any, { className: "w-6 h-6" })}
                     </div>
-                    <h4 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h4>
+                    <h2 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h2>
                     <p className="text-sm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
                   </div>
                 </Reveal>
@@ -1131,14 +1131,14 @@ const FreezeStatePage = memo(() => {
                   icon: <Server />,
                   stat: "100% Reliability"
                 },
-              ].map((useCase) => (
-                <Reveal key={useCase.title}>
+              ].map((useCase, idx) => (
+                <Reveal key={useCase.title} delayMs={100 + idx * 50} animation="slide-up">
                   <div className="p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-500 h-full group">
                     <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-8 shadow-inner group-hover:scale-110 transition-transform">
-                      {React.cloneElement(useCase.icon as React.ReactElement, { className: "w-7 h-7" })}
+                      {React.cloneElement(useCase.icon as any, { className: "w-7 h-7" })}
                     </div>
                     <div className="flex items-center justify-between mb-4">
-                      <h4 className="text-2xl font-bold text-white">{useCase.title}</h4>
+                      <h2 className="text-2xl font-bold text-white">{useCase.title}</h2>
                       <span className="text-[10px] font-bold text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full uppercase tracking-widest">{useCase.stat}</span>
                     </div>
                     <p className="text-slate-400 leading-relaxed font-medium">{useCase.desc}</p>
@@ -1164,10 +1164,10 @@ const FreezeStatePage = memo(() => {
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <Reveal>
                 <div className="space-y-4">
-                  <h4 className="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                  <h2 className="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
                     <Monitor className="w-6 h-6 text-emerald-500" />
                     Operating System Support
-                  </h4>
+                  </h2>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[
                       { os: "Windows 10 & 11", ver: "32/64-bit supported" },
@@ -1189,10 +1189,10 @@ const FreezeStatePage = memo(() => {
 
               <Reveal delayMs={200}>
                 <div className="space-y-4">
-                  <h4 className="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                  <h2 className="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
                     <Database className="w-6 h-6 text-emerald-500" />
                     Hardware & File Systems
-                  </h4>
+                  </h2>
                   <div className="space-y-4">
                      {[
                        { label: "Storage Types", val: "SSD, NVMe, HDD, RAID Controllers, eMMC" },
@@ -1232,14 +1232,14 @@ const FreezeStatePage = memo(() => {
                  { title: "Anti-Ransomware", desc: "Immunity from ransomware damage—simply reboot to clear encrypted files.", icon: <Lock /> },
                  { title: "Multi-Boot Support", desc: "Compatible with multiple partitions and boot environments on a single disk.", icon: <Monitor /> },
                  { title: "Cloud Connector", desc: "Sync configurations and manage endpoints through a secure cloud interface.", icon: <Cloud /> },
-               ].map((item) => (
-                 <Reveal key={item.title} className="h-full">
+               ].map((item, idx) => (
+                 <Reveal key={item.title} delayMs={100 + idx * 50} animation="slide-up" className="h-full">
                     <div className="p-10 rounded-[2.5rem] border border-slate-100 bg-slate-50 hover:bg-emerald-50/40 hover:border-emerald-200 transition-all duration-500 h-full group relative overflow-hidden flex flex-col">
                        <div className="absolute -right-4 -top-4 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-colors"></div>
                        <div className="w-11 h-11 rounded-xl bg-white text-emerald-600 flex items-center justify-center mb-6 group-hover:rotate-12 group-hover:scale-110 shadow-sm transition-transform border border-slate-50">
-                          {React.cloneElement(item.icon as React.ReactElement, { className: "w-5 h-5" })}
+                          {React.cloneElement(item.icon as any, { className: "w-5 h-5" })}
                        </div>
-                       <h4 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h4>
+                       <h2 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h2>
                        <p className="text-sm text-slate-600 leading-relaxed font-medium flex-grow">{item.desc}</p>
                     </div>
                  </Reveal>

@@ -209,7 +209,7 @@ const BlogPage: React.FC = () => {
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 D-Secure
               </span>{" "}
-              Technical Blog
+              Technical Blog: Expert Insights on Data Erasure & Security
             </h1>
             <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
               D-Secure is a leading provider of data erasure and IT asset lifecycle management solutions. Our blog provides expert insights and practical guides on data erasure, cybersecurity, and IT asset lifecycle management from our security professionals.

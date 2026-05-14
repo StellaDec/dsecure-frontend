@@ -42,9 +42,9 @@ const PrivateCloudBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -68,9 +68,9 @@ const PrivateCloudBlog: React.FC = () => {
 
               {/* Private Cloud Solution */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   The Private Cloud Solution
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   Under these circumstances, D-Secure customers can opt to host
                   the Cloud Console on their private network and internally
@@ -84,7 +84,7 @@ const PrivateCloudBlog: React.FC = () => {
 
           {/* What is Private Cloud */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding D-Secure Private Cloud
               </h2>
@@ -98,9 +98,9 @@ const PrivateCloudBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Public Cloud
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-600 text-lg">
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
@@ -117,9 +117,9 @@ const PrivateCloudBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Private Cloud
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-600 text-lg">
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
@@ -152,7 +152,7 @@ const PrivateCloudBlog: React.FC = () => {
               </p>
 
               <div className="bg-white/10 rounded-xl p-6 mb-6">
-                <h4 className="font-bold text-lg mb-3">The Challenge</h4>
+                <h3 className="font-bold text-lg mb-3">The Challenge</h3>
                 <p className="text-white/90">
                   Organizational policy prohibits internet connectivity at these
                   data centers for security purposes. Without internet, the
@@ -164,7 +164,7 @@ const PrivateCloudBlog: React.FC = () => {
               </div>
 
               <div className="bg-white/10 rounded-xl p-6">
-                <h4 className="font-bold text-lg mb-3">The Solution</h4>
+                <h3 className="font-bold text-lg mb-3">The Solution</h3>
                 <p className="text-white/90">
                   With D-Secure Private Cloud, the organization can perform
                   network-based erasure operations across all data centers,
@@ -178,16 +178,16 @@ const PrivateCloudBlog: React.FC = () => {
 
           {/* Benefits Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Benefits of D-Secure Private Cloud
               </h2>
 
               <div className="space-y-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Centralized Management
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     D-Secure Private Cloud provides system admins access to
                     software licenses for D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link>. Admins can
@@ -199,9 +199,9 @@ const PrivateCloudBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Digital License Repository
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Admins can store erasure licenses in digital form on their
                     Private Cloud. Product licenses can be transferred from
@@ -212,9 +212,9 @@ const PrivateCloudBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Remote Erasure Capabilities
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     System admins can leverage OOB (Out Of Band) communication
                     channels to remotely access and erase servers. Dell servers
@@ -227,9 +227,9 @@ const PrivateCloudBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Scalability via PXE Boot
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> can be deployed over WAN or LAN via
                     PXE to perform simultaneous erasures of multiple devices.
@@ -245,7 +245,7 @@ const PrivateCloudBlog: React.FC = () => {
 
           {/* Comparison Table */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Private Cloud vs Public Cloud Comparison
               </h2>
@@ -314,7 +314,7 @@ const PrivateCloudBlog: React.FC = () => {
             </div>
           </Reveal>{/* Summary */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Summary
               </h2>

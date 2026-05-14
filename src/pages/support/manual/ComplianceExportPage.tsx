@@ -36,7 +36,7 @@ const ComplianceExportPage: React.FC = memo(() => {
         seo={getSEOForPage("support-manual-compliance-export", { 
           title: "Enterprise Compliance Reporting & Audit Exports | D-Secure Manual", 
           canonicalUrl: "/support/manual/compliance-export",
-          description: "An exhaustive technical guide to generating, exporting, and mathematically verifying tamper-proof regulatory audit trails using JSON-LD, PDF, and Cryptographic Signatures."
+          description: "Technical guide to generating and verifying tamper-proof audit trails using JSON-LD, PDF, and Cryptographic Signatures for regulatory compliance."
         })} 
       /> */}
 
@@ -127,7 +127,7 @@ const ComplianceExportPage: React.FC = memo(() => {
                 <div className="space-y-8 my-8 not-prose">
                   <div className="bg-white border rounded-xl overflow-hidden shadow-sm">
                     <div className="bg-slate-800 px-6 py-3 border-b">
-                      <h4 className="text-white font-bold m-0 flex items-center">
+                      <h3 className="text-white font-bold m-0 flex items-center">
                         <svg
                           className="w-5 h-5 mr-3 text-emerald-400"
                           fill="none"
@@ -142,7 +142,7 @@ const ComplianceExportPage: React.FC = memo(() => {
                           ></path>
                         </svg>
                         PDF Secure Certificates
-                      </h4>
+                      </h3>
                     </div>
                     <div className="p-6 bg-slate-50">
                       <p className="mt-0 text-slate-600">
@@ -169,7 +169,7 @@ const ComplianceExportPage: React.FC = memo(() => {
 
                   <div className="bg-white border rounded-xl overflow-hidden shadow-sm">
                     <div className="bg-slate-800 px-6 py-3 border-b">
-                      <h4 className="text-white font-bold m-0 flex items-center">
+                      <h3 className="text-white font-bold m-0 flex items-center">
                         <svg
                           className="w-5 h-5 mr-3 text-blue-400"
                           fill="none"
@@ -184,7 +184,7 @@ const ComplianceExportPage: React.FC = memo(() => {
                           ></path>
                         </svg>
                         JSON-LD (Linked Data)
-                      </h4>
+                      </h3>
                     </div>
                     <div className="p-6 bg-slate-50">
                       <p className="mt-0 text-slate-600">
@@ -210,7 +210,7 @@ const ComplianceExportPage: React.FC = memo(() => {
 
                   <div className="bg-white border rounded-xl overflow-hidden shadow-sm">
                     <div className="bg-slate-800 px-6 py-3 border-b">
-                      <h4 className="text-white font-bold m-0 flex items-center">
+                      <h3 className="text-white font-bold m-0 flex items-center">
                         <svg
                           className="w-5 h-5 mr-3 text-purple-400"
                           fill="none"
@@ -225,7 +225,7 @@ const ComplianceExportPage: React.FC = memo(() => {
                           ></path>
                         </svg>
                         CSV Bulk Ledgers
-                      </h4>
+                      </h3>
                     </div>
                     <div className="p-6 bg-slate-50">
                       <p className="mt-0 text-slate-600">

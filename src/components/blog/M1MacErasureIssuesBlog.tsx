@@ -40,9 +40,9 @@ const M1MacErasureIssuesBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding M1 Mac Erasure Challenges
               </h2>
@@ -61,10 +61,10 @@ const M1MacErasureIssuesBlog: React.FC = () => {
               </p>
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   {" "}
                   M1 Mac Key Differences
-                </h4>
+                </h3>
                 <ul className="text-slate-700 text-lg leading-loose space-y-2">
                   <li>
                     • <strong>Unified Memory Architecture:</strong> Memory is
@@ -94,10 +94,10 @@ const M1MacErasureIssuesBlog: React.FC = () => {
               </h2>
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Problem Description
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     The user cannot run the application and receives an error{" "}
                     <strong>'No such file or directory'</strong> when attempting
@@ -106,7 +106,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3"> Root Cause</h4>
+                  <h3 className="font-bold text-lg mb-3"> Root Cause</h3>
                   <p className="text-white/90 leading-relaxed">
                     This error occurs due to creating an{" "}
                     <strong>incompatible bootable USB</strong> with the M1 Mac.
@@ -118,7 +118,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/20 rounded-xl p-6 border border-white/30">
-                  <h4 className="font-bold text-lg mb-3"> Solution</h4>
+                  <h3 className="font-bold text-lg mb-3"> Solution</h3>
                   <p className="text-white leading-relaxed">
                     To wipe M1 Mac, select the <strong>'T2 & above'</strong>{" "}
                     option when creating the bootable USB. This ensures
@@ -137,10 +137,10 @@ const M1MacErasureIssuesBlog: React.FC = () => {
               </h2>
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Problem Description
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     The user cannot run the application despite creating the
                     correct bootable USB drive.
@@ -148,7 +148,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3"> Root Cause</h4>
+                  <h3 className="font-bold text-lg mb-3"> Root Cause</h3>
                   <p className="text-white/90 leading-relaxed">
                     The application is not able to identify your Mac machine
                     type (M1, T2, etc.) after you have entered the standard
@@ -161,7 +161,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/20 rounded-xl p-6 border border-white/30">
-                  <h4 className="font-bold text-lg mb-3"> Solution</h4>
+                  <h3 className="font-bold text-lg mb-3"> Solution</h3>
                   <p className="text-white leading-relaxed mb-3">
                     Use the full path command instead of the short command:
                   </p>
@@ -180,10 +180,10 @@ const M1MacErasureIssuesBlog: React.FC = () => {
               </h2>
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Problem Description
-                  </h4>
+                  </h3>
                   <p className="text-white/90 leading-relaxed">
                     The user cannot reinstall macOS after data erasure and gets
                     a message:{" "}
@@ -194,7 +194,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3"> Root Cause</h4>
+                  <h3 className="font-bold text-lg mb-3"> Root Cause</h3>
                   <p className="text-white/90 leading-relaxed">
                     The operation can fail because some area of the drive is
                     still in use by the Mac kernel. This is a known behavior
@@ -203,7 +203,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                 </div>
 
                 <div className="bg-white/20 rounded-xl p-6 border border-white/30">
-                  <h4 className="font-bold text-lg mb-3"> Solution</h4>
+                  <h3 className="font-bold text-lg mb-3"> Solution</h3>
                   <p className="text-white leading-relaxed">
                     In such a scenario, you need to restore the OS through{" "}
                     <strong>Apple Configurator</strong>. This tool allows you to
@@ -217,43 +217,43 @@ const M1MacErasureIssuesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Preventing M1 Mac Erasure Issues: Best Practices
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     1. Choose Correct USB Option
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Always select <strong>'T2 & above'</strong> when creating
                     bootable USB for M1 Macs. Never use the 'Other' option.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     2. Verify Mac Chip Type
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Before erasure, check if your Mac has an M1 chip: Go to
                     Apple Menu → About This Mac → look for "Chip: Apple M1".
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     3. Use Full Path Commands
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     For M1 Macs, always use the full path command in Terminal to
                     ensure proper machine type detection.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     4. Have Apple Configurator Ready
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-relaxed">
                     Keep Apple Configurator installed on another Mac in case
                     macOS reinstallation fails after erasure.
@@ -264,7 +264,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure Mac Erasure: Complete Solution
               </h2>
@@ -276,27 +276,27 @@ const M1MacErasureIssuesBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     M1/M2/M3 Support
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Full support for all Apple Silicon Macs including M1, M2,
                     and M3 series.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Auto Detection
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Automatically detects Mac chip type and applies appropriate
                     erasure methods.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Audit Certificates
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Generates tamper-proof certificates for compliance and audit
                     requirements.
@@ -314,9 +314,9 @@ const M1MacErasureIssuesBlog: React.FC = () => {
 
               <div className="space-y-4">
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     How do I find if my Mac has an M1 chip?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Click the Apple menu → "About This Mac". If you see "Chip"
                     followed by a name starting with "Apple M1", your Mac has an
@@ -325,9 +325,9 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Can I use the same bootable USB for Intel and M1 Macs?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     No. You need to create separate bootable USBs — select
                     'Other' for Intel/T1 Macs and 'T2 & above' for M1/M2/M3
@@ -335,9 +335,9 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Is data recovery possible after erasing an M1 Mac?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     No. When properly erased using certified data erasure
                     software like D-Secure, the data on M1 Macs is permanently

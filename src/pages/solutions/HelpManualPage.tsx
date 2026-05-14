@@ -373,7 +373,7 @@ const HelpManualPage: React.FC = memo(() => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">No Sections Found</h3>
+                <h2 className="text-xl font-semibold text-slate-900 mb-2">No Sections Found</h2>
                 <p className="text-slate-600">Try adjusting your search terms.</p>
               </div>
             ) : (
@@ -388,9 +388,9 @@ const HelpManualPage: React.FC = memo(() => {
                         <div className="flex items-center gap-4">
                           <div className="text-2xl">{section.icon}</div>
                           <div>
-                            <h3 className="text-xl font-semibold text-slate-900 mb-1">
+                            <h2 className="text-xl font-semibold text-slate-900 mb-1">
                               {section.title}
-                            </h3>
+                            </h2>
                             <p className="text-slate-600 text-sm">
                               {section.description}
                             </p>
@@ -422,9 +422,9 @@ const HelpManualPage: React.FC = memo(() => {
                                   className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group"
                                 >
                                   <div className="flex-1">
-                                    <h4 className="font-medium text-slate-900 group-hover:text-emerald-800 transition-colors mb-1">
+                                    <h3 className="font-medium text-slate-900 group-hover:text-emerald-800 transition-colors mb-1">
                                       {subsection.title}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm text-slate-600">
                                       {subsection.description}
                                     </p>
@@ -502,9 +502,9 @@ const HelpManualPage: React.FC = memo(() => {
                     <div className={`w-16 h-16 ${item.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
                       <span className="text-3xl">{item.icon}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                    <h2 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       {item.title}
-                    </h3>
+                    </h2>
                     <p className="text-slate-600 text-sm">
                       {item.description}
                     </p>

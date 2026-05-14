@@ -193,7 +193,7 @@ const DownloadAgentPage: React.FC = () => {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="text-slate-600">{agent.iconSvg}</div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-slate-900 mb-1">{agent.name}</h3>
+                      <h2 className="font-semibold text-slate-900 mb-1">{agent.name}</h2>
                       <div className="flex items-center gap-3 text-sm text-slate-600">
                         <span>v{agent.version}</span>
                         <span>•</span>
@@ -205,7 +205,7 @@ const DownloadAgentPage: React.FC = () => {
                   <p className="text-slate-600 text-sm mb-4 flex-1">{agent.description}</p>
 
                   <div className="mb-4">
-                    <h4 className="text-sm font-medium text-slate-900 mb-2">Compatibility:</h4>
+                    <h3 className="text-sm font-medium text-slate-900 mb-2">Compatibility:</h3>
                     <div className="flex flex-wrap gap-1">
                       {agent.compatibility.map((comp, idx) => (
                         <span key={idx} className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded">
@@ -274,7 +274,7 @@ const DownloadAgentPage: React.FC = () => {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-slate-900 mb-2">Need Help?</h3>
+                    <h2 className="font-semibold text-slate-900 mb-2">Need Help?</h2>
                     <p className="text-slate-700 mb-4">
                       Having trouble with installation or need technical support? Our team is here to help.
                     </p>

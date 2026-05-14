@@ -436,7 +436,7 @@ function ResourcesPageContent() {
       type: "blog",
       category: "blog",
       description:
-        "A comparative analysis of value retention. How secure erasure allows for asset remarketing and ESG compliance, compared to the total loss of value with physical destruction.",
+        "Analysis of value retention: how secure erasure enables asset remarketing and ESG compliance, avoiding the total loss seen with physical destruction.",
       downloadSize: "N/A",
       pages: "1 min read",
       featured: true,
@@ -809,8 +809,7 @@ function ResourcesPageContent() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Reveal delayMs={10}>
-                <Link
-                  to="/resources/documentation"
+                <div
                   className="group relative bg-white rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-slate-200/60 hover:border-blue-300/50 hover:-translate-y-2 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-100/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -839,7 +838,10 @@ function ResourcesPageContent() {
                       and quick-start resources for administrators.
                     </p>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center text-blue-600 text-sm font-semibold group-hover:text-blue-700 transition-colors">
+                      <Link 
+                        to="/resources/documentation"
+                        className="flex items-center text-blue-600 text-sm font-semibold group-hover:text-blue-700 transition-colors after:absolute after:inset-0"
+                      >
                         Explore Documentation
                         <svg
                           className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300"
@@ -854,17 +856,16 @@ function ResourcesPageContent() {
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           />
                         </svg>
-                      </div>
-                      <div className="text-xs text-slate-400 font-medium">
-                        15+ Guides
-                      </div>
+                      </Link>
+                    </div>
+                    <div className="text-xs text-slate-400 font-medium">
+                      15+ Guides
                     </div>
                   </div>
-                </Link>
+                </div>
               </Reveal>
               <Reveal delayMs={15}>
-                <Link
-                  to="/blog"
+                <div
                   className="group relative bg-white rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-slate-200/60 hover:border-rose-300/50 hover:-translate-y-2 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-50/50 via-transparent to-rose-100/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -893,7 +894,10 @@ function ResourcesPageContent() {
                       best practices in data sanitization and security.
                     </p>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center text-rose-600 text-sm font-semibold group-hover:text-rose-700 transition-colors">
+                      <Link 
+                        to="/blog"
+                        className="flex items-center text-rose-600 text-sm font-semibold group-hover:text-rose-700 transition-colors after:absolute after:inset-0"
+                      >
                         Read Latest Articles
                         <svg
                           className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300"
@@ -908,13 +912,13 @@ function ResourcesPageContent() {
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           />
                         </svg>
-                      </div>
-                      <div className="text-xs text-slate-400 font-medium">
-                        Weekly Updates
-                      </div>
+                      </Link>
+                    </div>
+                    <div className="text-xs text-slate-400 font-medium">
+                      Weekly Updates
                     </div>
                   </div>
-                </Link>
+                </div>
               </Reveal>
             </div>
             {/* <Reveal delayMs={50}>
@@ -972,15 +976,15 @@ function ResourcesPageContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {filteredFeaturedResources.map((resource, i) => (
                 <Reveal key={resource.id} delayMs={i * 100}>
-                  <div className="bg-white rounded-xl shadow-lg border border-slate-200/60 overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                    <div className="p-6 flex-1 flex flex-col">
+                  <div className="group relative bg-white rounded-xl shadow-lg border border-slate-200/60 overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col hover:-translate-y-1">
+                    <div className="p-6 flex-1 flex flex-col relative z-10">
                       <div className="flex items-center justify-between mb-4">
                         <div>{getIcon(resource.category)}</div>
                         <span className="bg-teal-100 text-teal-700 px-2 py-1 rounded-full text-xs font-medium">
                           Featured
                         </span>
                       </div>
-                      <h3 className="font-bold text-slate-900 mb-3">
+                      <h3 className="font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors duration-300">
                         {resource.title}
                       </h3>
                       <p className="text-slate-600 text-sm mb-4 flex-grow">
@@ -993,7 +997,7 @@ function ResourcesPageContent() {
                       <div className="mt-auto">
                         <Link
                           to={resource.referenceUrl}
-                          className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 text-sm inline-flex items-center justify-center"
+                          className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 text-sm inline-flex items-center justify-center after:absolute after:inset-0"
                         >
                           <svg
                             className="w-4 h-4 mr-1"
@@ -1059,8 +1063,8 @@ function ResourcesPageContent() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredResources.map((resource, i) => (
                 <Reveal key={resource.id} delayMs={i * 50}>
-                  <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                    <div className="flex items-start justify-between mb-4">
+                  <div className="group relative bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 hover:shadow-xl transition-all duration-300 h-full flex flex-col hover:-translate-y-1">
+                    <div className="flex items-start justify-between mb-4 relative z-10">
                       <div>{getIcon(resource.category)}</div>
                       <span
                         className={`px-2 py-1 rounded-full text-xs font-medium ${
@@ -1082,19 +1086,19 @@ function ResourcesPageContent() {
                         {resource.type}
                       </span>
                     </div>
-                    <h3 className="font-bold text-slate-900 mb-2 text-sm">
+                    <h3 className="font-bold text-slate-900 mb-2 text-sm group-hover:text-teal-600 transition-colors duration-300 relative z-10">
                       {resource.title}
                     </h3>
-                    <p className="text-slate-600 text-xs mb-4 leading-relaxed flex-grow">
+                    <p className="text-slate-600 text-xs mb-4 leading-relaxed flex-grow relative z-10">
                       {resource.description}
                     </p>
-                    <div className="flex items-center justify-between text-xs text-slate-500 mb-4">
+                    <div className="flex items-center justify-between text-xs text-slate-500 mb-4 relative z-10">
                       <span>{resource.pages}</span>
                     </div>
-                    <div className="mt-auto">
+                    <div className="mt-auto relative z-10">
                       <Link
                         to={resource.referenceUrl}
-                        className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-3 py-2 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 text-xs inline-flex items-center justify-center"
+                        className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-3 py-2 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 text-xs inline-flex items-center justify-center after:absolute after:inset-0"
                       >
                         <svg
                           className="w-3 h-3 mr-1"
@@ -1111,7 +1115,6 @@ function ResourcesPageContent() {
                         </svg>
                         Read Article
                       </Link>
-
                     </div>
                   </div>
                 </Reveal>

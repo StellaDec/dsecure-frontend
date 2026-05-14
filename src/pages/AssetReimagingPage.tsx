@@ -264,9 +264,9 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                         </div>
 
                         {/* Product Name */}
-                        <h3 className="text-white text-xl lg:text-3xl font-bold tracking-tight text-center mb-1 lg:mb-2">
+                        <h2 className="text-white text-xl lg:text-3xl font-bold tracking-tight text-center mb-1 lg:mb-2">
                           Asset <br /> Reimaging
-                        </h3>
+                        </h2>
 
                         {/* Tagline */}
                         <p className="text-white/70 text-[10px] lg:text-xs text-center tracking-wide uppercase mb-8 lg:mb-10">
@@ -347,7 +347,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                   <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 mb-6">
                     {item.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h3>
+                  <h2 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h2>
                   <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </Reveal>
@@ -388,7 +388,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
             <Reveal delayMs={200}>
               <div className="bg-slate-900 rounded-[2.5rem] p-8 lg:p-12 text-white relative overflow-hidden">
                 <div className="relative z-10 space-y-8">
-                  <h3 className="text-2xl font-bold">A Unified Management Hub</h3>
+                  <h2 className="text-2xl font-bold">A Unified Management Hub</h2>
                   <p className="text-slate-400 leading-relaxed">
                     View every lifecycle event in one place. Our management portal doesn't just log wipes—it tracks the entire journey from secure erasure to successful OS deployment.
                   </p>
@@ -457,7 +457,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                   </div>
                   <div>
                     <span className="text-emerald-500 font-mono font-bold tracking-widest">{item.step}</span>
-                    <h3 className="text-xl font-bold mt-2 mb-4">{item.title}</h3>
+                    <h2 className="text-xl font-bold mt-2 mb-4">{item.title}</h2>
                     <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -504,7 +504,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                 <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-emerald-600 shadow-sm">
                   {group.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900">{group.title}</h3>
+                <h2 className="text-2xl font-bold text-slate-900">{group.title}</h2>
                 <ul className="space-y-3">
                   {group.list.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-slate-700">

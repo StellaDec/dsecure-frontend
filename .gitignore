@@ -229,3 +229,6 @@ skills-lock.json
 
 # Git worktrees (isolated workspaces)
 .worktrees/
+
+public/sitemap-*.xml
+!public/sitemap.xml

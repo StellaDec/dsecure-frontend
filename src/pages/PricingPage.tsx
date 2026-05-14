@@ -242,7 +242,7 @@ function PricingPageContent() {
     <>
       <div className="bg-gradient-to-br from-emerald-50 via-white to-teal-50 w-full overflow-hidden">
         {/* <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">Subscription Plans</h1>
+        <h1 className="text-4xl font-bold text-slate-900 mb-4">D-Secure Subscription Plans: Flexible Data Erasure Solutions</h1>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
           Choose the perfect plan for your data erasure needs, from individual users to enterprise solutions.
         </p>
@@ -265,7 +265,7 @@ function PricingPageContent() {
             )}
             
             <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">{plan.title}</h3>
+              <h2 className="text-xl font-bold text-slate-900 mb-2">{plan.title}</h2>
               <p className="text-sm text-slate-500 mb-4">{plan.subtitle}</p>
               
               <div className="mb-6">
@@ -411,9 +411,9 @@ function PricingPageContent() {
                   </HoverIcon>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+                  <h2 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
                     Platform & OS Support
-                  </h3>
+                  </h2>
                   <p className="text-sm text-slate-600 mt-1 hidden md:block">
                     Windows, Linux, macOS compatibility
                   </p>
@@ -705,9 +705,9 @@ function PricingPageContent() {
                 <div className="lg:hidden space-y-4">
                   <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
                     <div className="bg-slate-50 px-4 py-3 border-b border-slate-200">
-                      <h4 className="font-semibold text-slate-900">
+                      <h3 className="font-semibold text-slate-900">
                         Windows Support
-                      </h4>
+                      </h3>
                     </div>
                     <div className="p-4">
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -783,9 +783,9 @@ function PricingPageContent() {
 
                   <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
                     <div className="bg-slate-50 px-4 py-3 border-b border-slate-200">
-                      <h4 className="font-semibold text-slate-900">
+                      <h3 className="font-semibold text-slate-900">
                         Linux Support
-                      </h4>
+                      </h3>
                     </div>
                     <div className="p-4">
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -861,9 +861,9 @@ function PricingPageContent() {
 
                   <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
                     <div className="bg-slate-50 px-4 py-3 border-b border-slate-200">
-                      <h4 className="font-semibold text-slate-900">
+                      <h3 className="font-semibold text-slate-900">
                         macOS Support
-                      </h4>
+                      </h3>
                     </div>
                     <div className="p-4">
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -939,9 +939,9 @@ function PricingPageContent() {
 
                   <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
                     <div className="bg-slate-50 px-4 py-3 border-b border-slate-200">
-                      <h4 className="font-semibold text-slate-900">
+                      <h3 className="font-semibold text-slate-900">
                         Multi-language UI & Reports (17+)
-                      </h4>
+                      </h3>
                     </div>
                     <div className="p-4">
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -1036,9 +1036,9 @@ function PricingPageContent() {
                     </HoverIcon>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
+                    <h2 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
                       Core Erasure Capabilities
-                    </h3>
+                    </h2>
                     <p className="text-sm text-slate-600 mt-1 hidden md:block">
                       File, folder, disk & algorithm support
                     </p>
@@ -1402,9 +1402,9 @@ function PricingPageContent() {
                     </HoverIcon>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-purple-700 transition-colors">
+                    <h2 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-purple-700 transition-colors">
                       Reporting & Compliance
-                    </h3>
+                    </h2>
                     <p className="text-sm text-slate-600 mt-1 hidden md:block">
                       Audit trails, regulatory documents & compliance reports
                     </p>
@@ -1671,9 +1671,9 @@ function PricingPageContent() {
                     </HoverIcon>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-orange-700 transition-colors">
+                    <h2 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-orange-700 transition-colors">
                       Services & Management
-                    </h3>
+                    </h2>
                     <p className="text-sm text-slate-600 mt-1 hidden md:block">
                       Support, deployment & cloud services
                     </p>
@@ -1971,9 +1971,9 @@ function PricingPageContent() {
                     </HoverIcon>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-indigo-700 transition-colors">
+                    <h2 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-indigo-700 transition-colors">
                       Add-On / Optional Customization
-                    </h3>
+                    </h2>
                     <p className="text-sm text-slate-600 mt-1 hidden md:block">
                       Custom features, integrations & premium options
                     </p>
@@ -2242,7 +2242,7 @@ function PricingPageContent() {
 
             {/* Legend */}
             {/* <div className="bg-slate-100 rounded-lg p-6 mb-8">
-          <h3 className="font-semibold text-slate-900 mb-4">Legend</h3>
+          <h2 className="font-semibold text-slate-900 mb-4">Legend</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-green-800">✅</span>

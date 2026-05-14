@@ -1206,7 +1206,7 @@ export default function AdminSubusers() {
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="text-sm font-medium text-blue-800">Demo Mode Active</h3>
+              <h2 className="text-sm font-medium text-blue-800">Demo Mode Active</h2>
               <p className="mt-1 text-sm text-blue-700">
                 You're viewing AI-generated demo data for demonstration purposes. 
                 Connect to your backend API to see real user data from your database.
@@ -1219,9 +1219,9 @@ export default function AdminSubusers() {
         {/* Advanced Filters */}
         <div className="card p-4 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-slate-900">
               Filters & Search
-            </h3>
+            </h2>
             <button
               onClick={clearAllFilters}
               className="text-sm text-red-600 hover:text-red-800 font-medium"
@@ -1444,7 +1444,7 @@ export default function AdminSubusers() {
           <button className="btn-secondary" onClick={() => exportToCsv('subusers.csv', filtered.map(u => ({ ...u })))}>Export All ({filtered.length})</button>
           <button className="btn-secondary" onClick={() => exportToCsv('subusers-page.csv', rows.map(u => ({ ...u })))}>Export Page ({rows.length})</button>
           <button className="btn-secondary" onClick={() => {
-            const body = `<h1>Subusers Management</h1>` +
+            const body = `<h2>Subusers Management</h2>` +
               `<table border="1" style="border-collapse: collapse; width: 100%;"><thead><tr><th>Email</th><th>Role</th><th>Status</th><th>Department</th><th>Last Login</th></tr></thead><tbody>` +
               filtered.map(u => `<tr><td>${u.subuser_email}</td><td>${u.roles}</td><td>${u.status}</td><td>${u.department}</td><td>${u.last_login}</td></tr>`).join('') +
               `</tbody></table>`
@@ -1517,9 +1517,9 @@ export default function AdminSubusers() {
                             />
                           </svg>
                         </div>
-                        <h3 className="text-lg font-medium text-slate-900 mb-2">
+                        <h2 className="text-lg font-medium text-slate-900 mb-2">
                           No Subusers Found
-                        </h3>
+                        </h2>
                         <p className="text-slate-600">
                           {isSubuser
                             ? "You don't have any subusers associated with your account."
@@ -1772,9 +1772,9 @@ export default function AdminSubusers() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h2 className="text-lg font-semibold text-slate-900">
                     Delete User
-                  </h3>
+                  </h2>
                   <p className="text-sm text-slate-500">
                     This action cannot be undone
                   </p>

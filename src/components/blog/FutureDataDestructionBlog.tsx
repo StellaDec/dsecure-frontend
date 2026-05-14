@@ -40,9 +40,9 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Data Destruction Landscape
               </h2>
@@ -77,7 +77,7 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="border-l-4 border-emerald-500 pl-8 py-4">
                 <h3 className="font-bold text-slate-900 text-2xl mb-4">
                   1. <Link to="/products/data-migration" className="text-emerald-600 hover:underline font-medium">Data Migration</Link> to the Cloud
@@ -127,7 +127,7 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="border-l-4 border-emerald-500 pl-8 py-4">
                 <h3 className="font-bold text-slate-900 text-2xl mb-4">
                   2. Growth of Data Privacy Laws
@@ -173,7 +173,7 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="border-l-4 border-emerald-500 pl-8 py-4">
                 <h3 className="font-bold text-slate-900 text-2xl mb-4">
                   3. AI-Driven Customer Experiences
@@ -216,7 +216,7 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="border-l-4 border-emerald-500 pl-8 py-4">
                 <h3 className="font-bold text-slate-900 text-2xl mb-4">
                   4. Environmental Sustainability & Circular Economy
@@ -259,7 +259,7 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="border-l-4 border-emerald-500 pl-8 py-4">
                 <h3 className="font-bold text-slate-900 text-2xl mb-4">
                   5. Rising Cost of Data Breaches
@@ -326,7 +326,7 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="border-l-4 border-emerald-500 pl-8 py-4 bg-gradient-to-r from-emerald-50 to-teal-50/50">
                 <h3 className="font-bold text-slate-900 text-2xl mb-4">
                   1. Emergence of IoT (Internet of Things)
@@ -365,7 +365,7 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="border-l-4 border-emerald-500 pl-8 py-4 bg-gradient-to-r from-emerald-50 to-teal-50/50">
                 <h3 className="font-bold text-slate-900 text-2xl mb-4">
                   2. Remote Workforce
@@ -401,7 +401,7 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="border-l-4 border-emerald-500 pl-8 py-4 bg-gradient-to-r from-emerald-50 to-teal-50/50">
                 <h3 className="font-bold text-slate-900 text-2xl mb-4">
                   3. Explosion of Smart Devices
@@ -443,7 +443,7 @@ const FutureDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="border-l-4 border-emerald-500 pl-8 py-4 bg-gradient-to-r from-emerald-50 to-teal-50/50">
                 <h3 className="font-bold text-slate-900 text-2xl mb-4">
                   4. Drones & UAVs (Unmanned Aerial Vehicles)

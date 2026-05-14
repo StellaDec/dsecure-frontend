@@ -163,7 +163,7 @@ export default function EnhancedUserDashboard() {
         <div className="mb-8">
           <Reveal>
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
-              <h3 className="text-lg font-semibold text-blue-900 mb-4">Authentication Status</h3>
+              <h2 className="text-lg font-semibold text-blue-900 mb-4">Authentication Status</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div>
                   <span className="text-blue-600 font-medium">Authentication:</span>
@@ -280,7 +280,7 @@ export default function EnhancedUserDashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <Reveal>
             <div className="card p-6">
-              <h3 className="text-lg font-semibold mb-4">Quick Actions</h3>
+              <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
               <div className="space-y-3">
                 <PermissionGuard permissions={['write:own']}>
                   <button className="w-full btn-primary text-left flex items-center gap-3">
@@ -320,7 +320,7 @@ export default function EnhancedUserDashboard() {
           {/* Recent Activity */}
           <Reveal delayMs={10}>
             <div className="card p-6">
-              <h3 className="text-lg font-semibold mb-4">Recent Erasures</h3>
+              <h2 className="text-lg font-semibold mb-4">Recent Erasures</h2>
               <div className="space-y-4">
                 {certificates.map((cert, index) => (
                   <div key={cert.id} className="flex items-center justify-between py-3 border-b border-slate-100 last:border-0">
@@ -355,16 +355,16 @@ export default function EnhancedUserDashboard() {
         {import.meta.env.DEV && (
           <Reveal delayMs={10}>
             <div className="bg-white rounded-lg p-6 shadow-sm border border-slate-200">
-              <h3 className="text-lg font-semibold mb-4 text-slate-700 flex items-center gap-2">
+              <h2 className="text-lg font-semibold mb-4 text-slate-700 flex items-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 JWT Debug Info
-              </h3>
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-medium text-slate-600 mb-2">Token Info</h4>
+                  <h3 className="font-medium text-slate-600 mb-2">Token Info</h3>
                   <pre className="bg-white p-3 rounded border text-xs overflow-auto">
                     {JSON.stringify({
                       isAuthenticated: authService.isAuthenticated(),
@@ -376,7 +376,7 @@ export default function EnhancedUserDashboard() {
                   </pre>
                 </div>
                 <div>
-                  <h4 className="font-medium text-slate-600 mb-2">User Permissions</h4>
+                  <h3 className="font-medium text-slate-600 mb-2">User Permissions</h3>
                   <div className="bg-white p-3 rounded border">
                     {authService.getPermissions().map((permission: string) => (
                       <div key={permission} className="text-xs text-slate-600 mb-1">

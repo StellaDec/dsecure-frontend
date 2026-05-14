@@ -43,9 +43,9 @@ const CybersecurityDataDestructionBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -81,7 +81,7 @@ const CybersecurityDataDestructionBlog: React.FC = () => {
 
           {/* Cybersecurity Threats Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Cybersecurity Threats from Data at Rest
               </h2>
@@ -183,9 +183,9 @@ const CybersecurityDataDestructionBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Logical Destruction (Overwriting)
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     This process replaces old data with new random data using a
                     series of patterns that are overwritten on existing data.
@@ -197,7 +197,7 @@ const CybersecurityDataDestructionBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Degaussing</h4>
+                  <h3 className="font-bold text-lg mb-3">Degaussing</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Degaussing destroys data from hard drives and other storage
                     media with magnetic platters. Performed using a degausser
@@ -209,9 +209,9 @@ const CybersecurityDataDestructionBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Physical Destruction
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Physical destruction involves mechanically disintegrating
                     devices or documents into pieces. These tasks are normally
@@ -228,7 +228,7 @@ const CybersecurityDataDestructionBlog: React.FC = () => {
 
           {/* D-Secure Solution */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 A Robust Approach to Data Destruction with D-Secure
               </h2>
@@ -288,7 +288,7 @@ const CybersecurityDataDestructionBlog: React.FC = () => {
 
           {/* Why This Matters */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Cybersecurity and Data Destruction Must Work Together
               </h2>

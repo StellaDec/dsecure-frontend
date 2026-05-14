@@ -44,9 +44,9 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -76,7 +76,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Compliance Violations */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Regulatory Non-Compliance Consequences
               </h2>
@@ -131,7 +131,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Legal Penalties</h4>
+                  <h3 className="font-bold text-lg mb-3">Legal Penalties</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Data breach events are detrimental to responsible
                     organizations, resulting in severe financial penalties,
@@ -144,9 +144,9 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Financial Repercussions
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     HIPAA non-compliance penalizes violating organizations with
                     massive penalties ranging up to $50,000 per violation for
@@ -157,7 +157,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Reputation Damage</h4>
+                  <h3 className="font-bold text-lg mb-3">Reputation Damage</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Beyond legal and financial implications, data breaches are
                     detrimental to organizational reputation and trust. Years of
@@ -174,7 +174,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* The Need for Proper Sanitization */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Critical Need for Permanent Media Sanitization
               </h2>
@@ -231,7 +231,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Prevention Strategies */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What Could Have Prevented This Breach
               </h2>
@@ -339,7 +339,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>

@@ -144,9 +144,12 @@ const EnterpriseSolutionsPage: React.FC = () => {
                   </div>
                   
                   <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
-                    Solutions for{" "}
+                    Enterprise Data{" "}
                     <span className="block bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent pb-1">
-                      Enterprise
+                      Erasure Solutions
+                    </span>
+                    <span className="text-2xl lg:text-3xl font-bold text-slate-500 block mt-4">
+                      Secure & Compliant Sanitization at Scale
                     </span>
                   </h1>
                 </div>
@@ -373,12 +376,12 @@ const EnterpriseSolutionsPage: React.FC = () => {
                   style={{ backgroundColor: "#ffffff" }}
                 >
                   <div className="text-6xl mb-4">{device.icon}</div>
-                  <h4
+                  <h3
                     className="text-xl font-bold mb-2"
                     style={{ color: "#1f2937" }}
                   >
                     {device.title}
-                  </h4>
+                  </h3>
                   <p className="text-sm" style={{ color: "#6b7280" }}>
                     {device.desc}
                   </p>

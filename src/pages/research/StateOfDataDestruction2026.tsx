@@ -45,7 +45,7 @@ const StateOfDataDestruction2026: React.FC = () => {
     <div className="min-h-screen bg-white">
       <SEOHead 
         title="State of Data Destruction 2026 | Global Industry Report"
-        description="Explore the 2026 Global Data Destruction report. Technical analysis of e-waste trends, sanitization standard adoption (NIST 800-88), and the impact of AI on asset decommissioning."
+        description="Explore the 2026 Global Data Destruction report: e-waste trends, NIST 800-88 adoption, and AI impacts."
         canonicalUrl="https://dsecuretech.com/research/state-of-data-destruction-2026"
       />
 
@@ -114,7 +114,7 @@ const StateOfDataDestruction2026: React.FC = () => {
                          <Cpu className="w-8 h-8 text-emerald-600" />
                       </div>
                       <div>
-                         <h4 className="text-xl font-black text-slate-900 mb-2 uppercase tracking-wide">The TPU/GPU Decommissioning Gap</h4>
+                         <h3 className="text-xl font-black text-slate-900 mb-2 uppercase tracking-wide">The TPU/GPU Decommissioning Gap</h3>
                          <p className="text-sm text-slate-500 font-medium leading-relaxed">
                             AI-focused hardware utilizes non-standard memory layouts where residual transient data can persist in HBM (High Bandwidth Memory) nodes. D-Secure's 2026 findings indicate a 300% increase in proprietary GPU sanitization requirements.
                          </p>
@@ -133,7 +133,7 @@ const StateOfDataDestruction2026: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 not-prose">
                    <div className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100">
                       <TrendingUp className="w-10 h-10 text-emerald-500 mb-6" />
-                      <h5 className="text-lg font-black text-slate-900 mb-4">Verification Adoption</h5>
+                      <h3 className="text-lg font-black text-slate-900 mb-4">Verification Adoption</h3>
                       <p className="text-xs text-slate-500 font-medium leading-relaxed mb-6">
                          92% of regulated industries now require 100% sector-by-sector cryptographic verification post-erasure.
                       </p>
@@ -143,7 +143,7 @@ const StateOfDataDestruction2026: React.FC = () => {
                    </div>
                    <div className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100">
                       <BarChart3 className="w-10 h-10 text-teal-500 mb-6" />
-                      <h5 className="text-lg font-black text-slate-900 mb-4">ITAD Error Rate</h5>
+                      <h3 className="text-lg font-black text-slate-900 mb-4">ITAD Error Rate</h3>
                       <p className="text-xs text-slate-500 font-medium leading-relaxed mb-6">
                          Batch-level manual entry has a 14% failure rate in high-velocity processing environments.
                       </p>
@@ -202,7 +202,7 @@ const StateOfDataDestruction2026: React.FC = () => {
 
                 <div className="mt-8 p-10 bg-emerald-900 rounded-[2.5rem] text-white">
                    <ShieldAlert className="w-10 h-10 text-emerald-400 mb-6" />
-                   <h4 className="text-xl font-black mb-4 uppercase">Compliance Advisory</h4>
+                   <h3 className="text-xl font-black mb-4 uppercase">Compliance Advisory</h3>
                    <p className="text-xs text-emerald-100/70 font-medium leading-relaxed">
                       D-Secure Labs warns that standard 'Drive Format' commands in macOS and Windows do NOT constitute verifiable sanitization under the 2026 NIST framework.
                    </p>

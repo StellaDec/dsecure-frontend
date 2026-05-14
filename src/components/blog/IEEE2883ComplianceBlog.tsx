@@ -100,9 +100,9 @@ const IEEE2883ComplianceBlog: React.FC = () => {
       </section>
 
       {/* Intro Summary */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding IEEE 2883-2022
             </h2>
@@ -126,7 +126,7 @@ const IEEE2883ComplianceBlog: React.FC = () => {
               , but goes further: it provides precise, media-specific technical guidance for HDDs, SSDs, NVMe drives, flash storage, optical media, and smartphones. The latest revision of NIST 800-88 (2025) now explicitly references IEEE 2883-2022 for technique-level guidance — making it the de facto global authority on storage sanitization.
             </p>
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h4 className="font-bold text-slate-900 text-xl mb-3">Why IEEE 2883-2022 Matters</h4>
+              <h3 className="font-bold text-slate-900 text-xl mb-3">Why IEEE 2883-2022 Matters</h3>
               <p className="text-slate-700 text-lg leading-loose">
                 Your organisation retired 200 laptops last quarter. The IT team ran a quick format, handed them to a recycler, and considered the job done. But were those drives actually sanitised to a defensible standard — one that would hold up under a{" "}
                 <Link to="/blog/nist-800-88-compliance-india" className="text-blue-600 hover:underline font-medium">
@@ -421,7 +421,7 @@ const IEEE2883ComplianceBlog: React.FC = () => {
                     },
                   ].map((faq) => (
                     <div key={faq.q} className="p-6 bg-slate-50 rounded-xl border border-slate-200">
-                      <h4 className="font-bold text-slate-900 mb-3">{faq.q}</h4>
+                      <h3 className="font-bold text-slate-900 mb-3">{faq.q}</h3>
                       <p className="text-slate-600 leading-relaxed text-sm">{faq.a}</p>
                     </div>
                   ))}
@@ -436,26 +436,26 @@ const IEEE2883ComplianceBlog: React.FC = () => {
                 <p className="text-slate-600 mb-8 leading-relaxed">
                   Data erasure is no longer a checkbox — it is a technical and legal obligation that demands a defensible method and documented proof. IEEE 2883-2022 defines that method. D-Secure Drive Eraser, File Eraser, and Smartphone Eraser implement it.
                 </p>
-                <h4 className="font-bold text-slate-900 mb-6">Related Reading:</h4>
+                <h3 className="font-bold text-slate-900 mb-6">Related Reading:</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Link
                     to="/blog/nist-800-88-media-sanitization-guide"
                     className="group p-6 bg-white border border-slate-200 rounded-xl hover:border-blue-500 transition-all shadow-sm"
                   >
-                    <h5 className="font-bold text-slate-900 group-hover:text-blue-600 mb-2 flex items-center justify-between">
+                    <h4 className="font-bold text-slate-900 group-hover:text-blue-600 mb-2 flex items-center justify-between">
                       NIST 800-88 Complete Guide
                       <ChevronRight className="w-4 h-4" />
-                    </h5>
+                    </h4>
                     <p className="text-xs text-slate-500">The predecessor standard — and how IEEE 2883 supersedes it.</p>
                   </Link>
                   <Link
                     to="/blog/dod-vs-ieee"
                     className="group p-6 bg-white border border-slate-200 rounded-xl hover:border-blue-500 transition-all shadow-sm"
                   >
-                    <h5 className="font-bold text-slate-900 group-hover:text-blue-600 mb-2 flex items-center justify-between">
+                    <h4 className="font-bold text-slate-900 group-hover:text-blue-600 mb-2 flex items-center justify-between">
                       DoD vs IEEE Comparison
                       <ChevronRight className="w-4 h-4" />
-                    </h5>
+                    </h4>
                     <p className="text-xs text-slate-500">Which standard applies to your organisation.</p>
                   </Link>
                 </div>

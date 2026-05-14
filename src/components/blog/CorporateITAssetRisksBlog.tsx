@@ -41,7 +41,7 @@ const CorporateITAssetRisksBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
             <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
@@ -164,7 +164,7 @@ const CorporateITAssetRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Strategies for Mitigating IT Asset Destruction Risks
               </h2>
@@ -176,9 +176,9 @@ const CorporateITAssetRisksBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Perform Secure Data Destruction
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     IT asset managers must ensure data sanitization before
                     destroying IT assets. Using a software-based approach that
@@ -188,9 +188,9 @@ const CorporateITAssetRisksBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Maintain Secure Chain of Custody
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     When outsourcing IT asset disposal to third-party vendors,
                     maintain secure chain of custody for all assets. All assets
@@ -200,9 +200,9 @@ const CorporateITAssetRisksBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Promote Reusability
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     IT assets deemed outdated can still generate value in the
                     second-hand market. They can be sold or donated to schools,
@@ -212,9 +212,9 @@ const CorporateITAssetRisksBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Follow E-Recycling Standards
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Standards like R2V3 and e-Stewards act as guiding forces for
                     secure IT asset disposal. Compliance helps safeguard against
@@ -224,9 +224,9 @@ const CorporateITAssetRisksBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Choose a Certified <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Partner
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     IT asset managers must choose certified IT Asset Disposition
                     partners for destruction. Efficient <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> partners help
@@ -239,7 +239,7 @@ const CorporateITAssetRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Real-World Consequences of Improper Disposal
               </h2>
@@ -249,25 +249,25 @@ const CorporateITAssetRisksBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     $60M
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     OCC penalty for data protection lapses
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     $60M
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Settlement for data breach lawsuit
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-3xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-3xl mb-2">
                     $35M
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     SEC fine for continuing violations
                   </p>

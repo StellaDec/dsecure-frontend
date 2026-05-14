@@ -11,7 +11,7 @@ const CryptographicEraseBlog: React.FC = () => {
         <SEOHead
           seo={getBlogSEO({
             title: "NIST SP 800-88 Cryptographic Erase Definition — Complete 2026 Guide",
-            excerpt: "Learn exactly what Cryptographic Erase means under NIST SP 800-88 — how it works, when to use it, and why it qualifies as a Purge method. Includes key destruction steps.",
+            excerpt: "Learn what Cryptographic Erase means under NIST SP 800-88, how it works, when to use it, and key destruction steps.",
             slug: "cryptographic-erase",
             author: "D-Secure Editorial Team",
             publishDate: "April 28, 2025",
@@ -28,7 +28,7 @@ const CryptographicEraseBlog: React.FC = () => {
                 NIST SP 800-88 Rev.2
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-                What is Cryptographic Erase as per NIST SP 800-88 Rev.2?
+                Cryptographic Erase Guide: NIST SP 800-88 Standards & Implementation
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 Understand how Cryptographic Erase sanitizes encryption keys to
@@ -38,9 +38,9 @@ const CryptographicEraseBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Cryptographic Erase Explained
               </h2>
@@ -66,7 +66,7 @@ const CryptographicEraseBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 NIST Guidelines for Cryptographic Erase
               </h2>
@@ -159,28 +159,28 @@ const CryptographicEraseBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">NIST Compliant</h4>
+                  <h3 className="font-bold text-lg mb-3">NIST Compliant</h3>
                   <p className="text-white/90 text-sm">
                     Implements cryptographic erasure according to NIST SP 800-88
                     Rev.2 guidelines
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Verification</h4>
+                  <h3 className="font-bold text-lg mb-3">Verification</h3>
                   <p className="text-white/90 text-sm">
                     Performs verification after CE to ensure keys have been
                     securely erased
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">SED Support</h4>
+                  <h3 className="font-bold text-lg mb-3">SED Support</h3>
                   <p className="text-white/90 text-sm">
                     Works with self-encrypting drives and other encrypted
                     storage media
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Audit Reports</h4>
+                  <h3 className="font-bold text-lg mb-3">Audit Reports</h3>
                   <p className="text-white/90 text-sm">
                     Generates tamper-proof certificates for compliance
                     documentation

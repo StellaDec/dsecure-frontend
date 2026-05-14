@@ -254,9 +254,9 @@ const DSecureFAQPage: React.FC = () => {
                 <div className="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Search className="w-8 h-8 text-gray-300" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h2 className="text-xl font-bold text-gray-900 mb-2">
                   No results found
-                </h3>
+                </h2>
                 <p className="text-gray-500">
                   Try adjusting your search terms or category filter.
                 </p>
@@ -268,9 +268,9 @@ const DSecureFAQPage: React.FC = () => {
           <div className="lg:col-span-4 space-y-6">
             {/* CTA Card */}
             <div className="bg-gradient-to-br from-blue-700 to-indigo-900 rounded-3xl p-8 text-white shadow-2xl sticky top-24">
-              <h3 className="text-2xl font-extrabold mb-4 leading-tight">
+              <h2 className="text-2xl font-extrabold mb-4 leading-tight">
                 Ready for Certified Erasure?
-              </h3>
+              </h2>
               <p className="text-blue-100 mb-8 leading-relaxed">
                 Contact our enterprise team for a demo or volume pricing
                 starting at $1/device.
@@ -297,7 +297,7 @@ const DSecureFAQPage: React.FC = () => {
                     <Shield className="w-5 h-5 text-blue-200" />
                   </div>
                   <div>
-                    <h4 className="font-bold">NIST Certified</h4>
+                    <h3 className="font-bold">NIST Certified</h3>
                     <p className="text-xs text-blue-200">
                       Audit-proof reporting
                     </p>
@@ -308,9 +308,9 @@ const DSecureFAQPage: React.FC = () => {
 
             {/* Support Card */}
             <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">
                 Authority Guides
-              </h3>
+              </h2>
               <div className="space-y-4">
                 <Link
                   to=""

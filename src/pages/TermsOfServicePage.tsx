@@ -36,7 +36,7 @@ export default function TermsOfServicePage() {
               </span>
             </div>
             <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-              Terms of Service
+              D-Secure Terms of Service: Legal Agreement & Usage Policies
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               Effective Date: October 4, 2025

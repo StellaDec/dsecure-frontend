@@ -37,7 +37,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Installation Guide",
           description:
             "Step-by-step installation instructions for all supported platforms",
-          url: "",
+          url: "/support/manual/installation",
           pageCount: 8,
         },
         {
@@ -45,7 +45,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "First Time Setup",
           description:
             "Initial configuration and license activation procedures",
-          url: "",
+          url: "/support/manual/first-time-setup",
           pageCount: 6,
         },
         {
@@ -53,14 +53,14 @@ const HelpManualPage: React.FC = memo(() => {
           title: "User Interface Overview",
           description:
             "Navigate the D-Secure interface and understand key features",
-          url: "",
+          url: "/support/manual/user-interface",
           pageCount: 12,
         },
         {
           id: 14,
           title: "Quick Start Tutorial",
           description: "Your first data erasure operation in 10 minutes",
-          url: "",
+          url: "/support/manual/quickstart",
           pageCount: 4,
         },
       ],
@@ -77,28 +77,28 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Overwrite Patterns",
           description:
             "Understanding DoD, NIST, and custom overwrite algorithms",
-          url: "",
+          url: "/support/manual/overwrite-patterns",
           pageCount: 15,
         },
         {
           id: 22,
           title: "Cryptographic Erasure",
           description: "Key destruction and encryption-based erasure methods",
-          url: "",
+          url: "/support/manual/cryptographic-erasure",
           pageCount: 10,
         },
         {
           id: 23,
           title: "Physical Destruction",
           description: "When and how to use physical destruction methods",
-          url: "",
+          url: "/support/manual/physical-destruction",
           pageCount: 8,
         },
         {
           id: 24,
           title: "Verification Methods",
           description: "Ensuring complete and successful data erasure",
-          url: "",
+          url: "/support/manual/verification-methods",
           pageCount: 12,
         },
       ],
@@ -114,14 +114,14 @@ const HelpManualPage: React.FC = memo(() => {
           id: 31,
           title: "Windows Systems",
           description: "Windows 10/11 erasure procedures and troubleshooting",
-          url: "",
+          url: "/support/manual/windows-systems",
           pageCount: 20,
         },
         {
           id: 32,
           title: "macOS Systems",
           description: "Intel and Apple Silicon Mac erasure procedures",
-          url: "",
+          url: "/support/manual/mac-ossystems",
           pageCount: 18,
         },
         {
@@ -129,21 +129,21 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Linux Systems",
           description:
             "Cross-distribution Linux support and command-line tools",
-          url: "",
+          url: "/support/manual/linux-systems",
           pageCount: 16,
         },
         {
           id: 34,
           title: "Mobile Devices",
           description: "iOS and Android device erasure and management",
-          url: "",
+          url: "/support/manual/mobile-devices",
           pageCount: 14,
         },
         {
           id: 35,
           title: "Enterprise Servers",
           description: "Server hardware and virtualization platform support",
-          url: "",
+          url: "/support/manual/enterprise-servers",
           pageCount: 25,
         },
       ],
@@ -160,14 +160,14 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Batch Operations",
           description:
             "Automating erasure across multiple devices simultaneously",
-          url: "",
+          url: "/support/manual/batch-operations",
           pageCount: 12,
         },
         {
           id: 42,
           title: "Remote Management",
           description: "Cloud console and remote deployment capabilities",
-          url: "",
+          url: "/support/manual/remote-management",
           pageCount: 18,
         },
         {
@@ -175,7 +175,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Scripting & Automation",
           description:
             "Automation through command-line tools and batch processing",
-          url: "",
+          url: "/support/manual/scripting-automation",
           pageCount: 22,
         },
         {
@@ -183,7 +183,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Custom Configurations",
           description:
             "Creating custom erasure profiles and organization policies",
-          url: "",
+          url: "/support/manual/custom-configurations",
           pageCount: 10,
         },
       ],
@@ -200,7 +200,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Compliance Standards",
           description:
             "NIST 800-88, DoD 5220.22-M, and international standards",
-          url: "",
+          url: "/support/manual/compliance-standards",
           pageCount: 16,
         },
         {
@@ -208,7 +208,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Regulatory Document Generation",
           description:
             "Creating tamper-proof regulatory documents of data destruction",
-          url: "",
+          url: "/support/manual/certificate-generation",
           pageCount: 8,
         },
         {
@@ -216,7 +216,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Audit Trails",
           description:
             "Maintaining detailed logs for compliance and forensic purposes",
-          url: "",
+          url: "/support/manual/audit-trails",
           pageCount: 12,
         },
         {
@@ -224,7 +224,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Chain of Custody",
           description:
             "Documenting device handling throughout the erasure process",
-          url: "",
+          url: "/support/manual/chain-custody",
           pageCount: 6,
         },
       ],
@@ -239,21 +239,21 @@ const HelpManualPage: React.FC = memo(() => {
           id: 61,
           title: "Common Issues",
           description: "Frequently encountered problems and quick solutions",
-          url: "",
+          url: "/support/manual/common-issues",
           pageCount: 20,
         },
         {
           id: 62,
           title: "Error Codes",
           description: "Complete reference of error codes and their meanings",
-          url: "",
+          url: "/support/manual/error-codes",
           pageCount: 15,
         },
         {
           id: 63,
           title: "Performance Optimization",
           description: "Optimizing erasure speed and system performance",
-          url: "",
+          url: "/support/manual/performance-optimization",
           pageCount: 12,
         },
         {
@@ -261,7 +261,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Recovery Procedures",
           description:
             "What to do when erasure operations fail or are interrupted",
-          url: "",
+          url: "/support/manual/recovery-procedures",
           pageCount: 10,
         },
       ],
@@ -277,14 +277,14 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Installation Screenshots Guide",
           description:
             "Visual step-by-step installation process with detailed screenshots",
-          url: "",
+          url: "/support/manual/installation-guide",
           pageCount: 12,
         },
         {
           id: 16,
           title: "System Setup & Configuration",
           description: "Complete system configuration with visual examples",
-          url: "",
+          url: "/support/manual/system-setup",
           pageCount: 10,
         },
         {
@@ -292,11 +292,11 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Working with D-Secure Interface",
           description:
             "Complete guide to using D-Secure with activation and file erasure operations",
-          url: "",
+          url: "/support/manual/working-with-dsecure",
           pageCount: 15,
         },
         {
-          id: 71,
+          id: 72,
           title: "D-Secure File Eraser Manual",
           description:
             "Comprehensive single-page manual with all D-Secure features and functionality",
@@ -312,6 +312,22 @@ const HelpManualPage: React.FC = memo(() => {
           pageCount: 1,
         },
         {
+          id: 7215,
+          title: "D-Secure Network File Eraser Manual",
+          description:
+            "Comprehensive guide for network-based file erasure and enterprise deployment",
+          url: "/support/help-manual/complete-network-manual",
+          pageCount: 1,
+        },
+        {
+          id: 7216,
+          title: "D-Secure Drive Eraser Manual",
+          description:
+            "Complete guide for drive erasure, disk wiping and hardware diagnostics",
+          url: "/support/help-manual/complete-drive-manual",
+          pageCount: 1,
+        },
+        {
           id: 722, // Naya diagnostic manual entry
           title: "D-Secure Diagnostic Eraser Manual",
           description:
@@ -320,25 +336,255 @@ const HelpManualPage: React.FC = memo(() => {
           pageCount: 1,
         },
         {
-          id: 72,
+          id: 723,
           title: "Working with Reports",
           description: "Report generation, management, and customization guide",
-          url: "",
+          url: "/support/manual/erasure-reports",
           pageCount: 8,
         },
         {
           id: 73,
           title: "D-Secure FAQ",
           description: "Frequently asked questions and detailed answers",
-          url: "",
+          url: "/support/help-manual/faqs",
           pageCount: 12,
         },
         {
           id: 74,
           title: "Schedule Settings",
           description: "Automated scheduling and task management configuration",
-          url: "",
+          url: "/support/help-manual/schedule-settings",
           pageCount: 6,
+        },
+      ],
+    },
+    {
+      id: 8,
+      title: "Industry Specific Manuals",
+      description: "Tailored documentation for specific regulatory industries",
+      icon: "🏢",
+      subsections: [
+        {
+          id: 81,
+          title: "Banking & Finance",
+          description: "Data destruction protocols for financial institutions",
+          url: "/support/manual/banking-finance",
+          pageCount: 14,
+        },
+        {
+          id: 82,
+          title: "Healthcare Destruction",
+          description: "HIPAA-compliant data sanitization procedures",
+          url: "/support/manual/healthcare-destruction",
+          pageCount: 12,
+        },
+        {
+          id: 83,
+          title: "Government & Defense",
+          description: "High-security erasure for military and government agencies",
+          url: "/support/manual/government-defense",
+          pageCount: 20,
+        },
+        {
+          id: 84,
+          title: "ITAD & Data Centers",
+          description: "Large-scale erasure for asset disposition and data centers",
+          url: "/support/manual/itad-datacenters",
+          pageCount: 18,
+        },
+      ],
+    },
+    {
+      id: 9,
+      title: "Specialized Sanitization",
+      description: "Deep-dives into physical and specialized destruction methods",
+      icon: "🔬",
+      subsections: [
+        {
+          id: 91,
+          title: "Incineration Method",
+          description: "High-temperature thermal destruction protocols",
+          url: "/support/manual/incineration-method",
+          pageCount: 6,
+        },
+        {
+          id: 92,
+          title: "Degaussing Method",
+          description: "Magnetic media sanitization through degaussing",
+          url: "/support/manual/degaussing-method",
+          pageCount: 10,
+        },
+        {
+          id: 93,
+          title: "Shredding Method",
+          description: "Physical shredding standards and verification",
+          url: "/support/manual/shredding-method",
+          pageCount: 8,
+        },
+        {
+          id: 94,
+          title: "Optical & Tape Destruction",
+          description: "Specialized procedures for non-magnetic storage media",
+          url: "/support/manual/optical-tape-destruction",
+          pageCount: 12,
+        },
+      ],
+    },
+    {
+      id: 10,
+      title: "System Internals",
+      description: "Technical deep-dives into OS architectures and file systems",
+      icon: "💻",
+      subsections: [
+        {
+          id: 101,
+          title: "macOS Architecture",
+          description: "Understanding APFS and T2/M-series security chips",
+          url: "/support/manual/macos-architecture",
+          pageCount: 22,
+        },
+        {
+          id: 102,
+          title: "Windows Filesystems",
+          description: "NTFS, ReFS, and BitLocker volume management",
+          url: "/support/manual/windows-filesystems",
+          pageCount: 24,
+        },
+        {
+          id: 103,
+          title: "Linux Disk Management",
+          description: "LVM, LUKS encryption, and EXT4/XFS sanitization",
+          url: "/support/manual/linux-systems",
+          pageCount: 18,
+        },
+        {
+          id: 104,
+          title: "Storage Controllers",
+          description: "RAID, NVMe, and SAS/SATA controller communication",
+          url: "/support/manual/windows-storage",
+          pageCount: 16,
+        },
+      ],
+    },
+    {
+      id: 11,
+      title: "Workflow & Performance",
+      description: "Optimizing your erasure operations for maximum efficiency",
+      icon: "📈",
+      subsections: [
+        {
+          id: 111,
+          title: "Performance Tuning",
+          description: "Optimizing hardware and software for faster erasure",
+          url: "/support/manual/performance-tuning",
+          pageCount: 10,
+        },
+        {
+          id: 112,
+          title: "Keyboard Shortcuts",
+          description: "Speed up operations with CLI and UI shortcuts",
+          url: "/support/manual/keyboard-shortcuts",
+          pageCount: 4,
+        },
+        {
+          id: 113,
+          title: "Enterprise Automation",
+          description: "Scaling erasure through PXE and network automation",
+          url: "/support/manual/automation-guide",
+          pageCount: 20,
+        },
+        {
+          id: 114,
+          title: "Troubleshooting Deep-Dive",
+          description: "Resolving complex hardware communication failures",
+          url: "/support/manual/windows-troubleshooting",
+          pageCount: 15,
+        },
+      ],
+    },
+    {
+      id: 12,
+      title: "Technical Reference Library",
+      description: "In-depth reference material for algorithms and operational strategies",
+      icon: "📖",
+      subsections: [
+        {
+          id: 121,
+          title: "NIST 800-88 Guidelines",
+          description: "Full reference for NIST data sanitization standards",
+          url: "/support/manual/nist-guidelines",
+          pageCount: 30,
+        },
+        {
+          id: 122,
+          title: "NIST Modern Storage",
+          description: "Applying NIST standards to NVMe and modern SSDs",
+          url: "/support/manual/nist-modern-storage",
+          pageCount: 14,
+        },
+        {
+          id: 123,
+          title: "Algorithm Pattern Selection",
+          description: "Technical guide to choosing the right erasure pattern",
+          url: "/support/manual/pattern-selection",
+          pageCount: 12,
+        },
+        {
+          id: 124,
+          title: "Onsite vs Offsite Strategies",
+          description: "Operational comparison of different erasure logistics",
+          url: "/support/manual/onsite-offsite",
+          pageCount: 8,
+        },
+        {
+          id: 125,
+          title: "Performance Analysis Library",
+          description: "Benchmarking and throughput analysis documentation",
+          url: "/support/manual/performance-analysis",
+          pageCount: 16,
+        },
+      ],
+    },
+    {
+      id: 13,
+      title: "Platform-Specific Risks & Security",
+      description: "Identifying vulnerabilities and security considerations by OS",
+      icon: "🛡️",
+      subsections: [
+        {
+          id: 131,
+          title: "Windows Security Risks",
+          description: "Identifying vulnerabilities in standard PC data handling",
+          url: "/support/manual/windows-risks",
+          pageCount: 18,
+        },
+        {
+          id: 132,
+          title: "SED Drives Security",
+          description: "Managing Hardware-Based Encryption and SED erasure",
+          url: "/support/manual/windows-sed-drives",
+          pageCount: 14,
+        },
+        {
+          id: 133,
+          title: "SSD Sanitization Risks",
+          description: "Technical challenges in solid-state drive data destruction",
+          url: "/support/manual/windows-ssd-erasure",
+          pageCount: 20,
+        },
+        {
+          id: 134,
+          title: "Windows System File Security",
+          description: "Removing hidden forensic data from Windows volumes",
+          url: "/support/manual/windows-system-files",
+          pageCount: 12,
+        },
+        {
+          id: 135,
+          title: "Verification & Audit Success",
+          description: "Post-erasure verification protocols and audit success criteria",
+          url: "/support/manual/windows-verification",
+          pageCount: 15,
         },
       ],
     },
@@ -487,9 +733,9 @@ const HelpManualPage: React.FC = memo(() => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                <h2 className="text-xl font-semibold text-slate-900 mb-2">
                   No Sections Found
-                </h3>
+                </h2>
                 <p className="text-slate-600">
                   Try adjusting your search terms.
                 </p>
@@ -506,9 +752,9 @@ const HelpManualPage: React.FC = memo(() => {
                         <div className="flex items-center gap-4">
                           <div className="text-2xl">{section.icon}</div>
                           <div>
-                            <h3 className="text-xl font-semibold text-slate-900 mb-1">
+                            <h2 className="text-xl font-semibold text-slate-900 mb-1">
                               {section.title}
-                            </h3>
+                            </h2>
                             <p className="text-slate-600 text-sm">
                               {section.description}
                             </p>
@@ -545,9 +791,9 @@ const HelpManualPage: React.FC = memo(() => {
                                   className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group"
                                 >
                                   <div className="flex-1">
-                                    <h4 className="font-medium text-slate-900 group-hover:text-emerald-800 transition-colors mb-1">
+                                    <h3 className="font-medium text-slate-900 group-hover:text-emerald-800 transition-colors mb-1">
                                       {subsection.title}
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm text-slate-600">
                                       {subsection.description}
                                     </p>
@@ -637,9 +883,9 @@ const HelpManualPage: React.FC = memo(() => {
                     >
                       <span className="text-3xl">{item.icon}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                    <h2 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       {item.title}
-                    </h3>
+                    </h2>
                     <p className="text-slate-600 text-sm">{item.description}</p>
                   </Link>
                 </Reveal>

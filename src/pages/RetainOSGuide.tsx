@@ -133,7 +133,7 @@ const navigationTree: NavItem[] = [
           <div key={idx} className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
             <span className="text-2xl font-black text-emerald-200">{item.step}</span>
             <div>
-              <h5 className="font-bold text-slate-900">{item.title}</h5>
+              <h4 className="font-bold text-slate-900">{item.title}</h4>
               <p className="text-sm text-slate-600" dangerouslySetInnerHTML={{ __html: item.text }} />
             </div>
           </div>

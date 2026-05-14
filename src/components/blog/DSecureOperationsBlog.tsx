@@ -42,9 +42,9 @@ const DSecureOperationsBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -69,9 +69,9 @@ const DSecureOperationsBlog: React.FC = () => {
 
               {/* Company Background */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   About D-Secure
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   D-Secure has empowered thousands of organizations to ensure
                   data privacy, maintain regulatory compliance, and support
@@ -85,7 +85,7 @@ const DSecureOperationsBlog: React.FC = () => {
 
           {/* Why D-Secure Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Organizations Choose D-Secure
               </h2>
@@ -99,9 +99,9 @@ const DSecureOperationsBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Comprehensive Device Support
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Erasure compatibility with SSDs, HDDs, Mac devices,
                     Chromebooks, servers, PCs, and laptops — D-Secure Drive
@@ -109,9 +109,9 @@ const DSecureOperationsBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Global Standards Compliance
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Utilizing recognized data-wiping methods including US DoD
                     5220.22, <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> Clear, and NIST SP 800-88 Purge for
@@ -119,9 +119,9 @@ const DSecureOperationsBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Remote Wiping Solutions
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Keep data secure when employee journeys end, work-from-home
                     projects close, or remotely located devices get upgraded
@@ -129,9 +129,9 @@ const DSecureOperationsBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Centralized Cloud Management
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     Erasure reports saved in a centralized cloud console with
                     anytime access. Digitally signed reports help achieve
@@ -144,16 +144,16 @@ const DSecureOperationsBlog: React.FC = () => {
 
           {/* Additional Solutions */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Complete Solution Portfolio
               </h2>
 
               <div className="space-y-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     <Link to="/products/hardware-diagnostics" className="text-emerald-600 hover:underline font-medium">Hardware Diagnostics</Link>
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     D-Secure <Link to="/products/hardware-diagnostics" className="text-emerald-600 hover:underline font-medium">Hardware Diagnostics</Link> aids in identifying faulty
                     components, saving time and resources, and promoting device
@@ -164,9 +164,9 @@ const DSecureOperationsBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Drive Verification
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     D-Secure Drive Verifier validates the effectiveness of data
                     erasure by checking erased drives for any remaining data
@@ -176,9 +176,9 @@ const DSecureOperationsBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     ESG Sustainability Reporting
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Our ESG report helps organizations quantify environmental
                     benefits of secure data erasure, highlighting CO₂ emission
@@ -193,7 +193,7 @@ const DSecureOperationsBlog: React.FC = () => {
 
           {/* Milestones */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Achievements and Milestones
               </h2>
@@ -214,9 +214,9 @@ const DSecureOperationsBlog: React.FC = () => {
               </div>
 
               <div className="mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Trusted by Industry Leaders
-                </h3>
+                </h2>
                 <p className="text-slate-700 text-lg leading-loose">
                   Our clientele spans virtually all industries including
                   healthcare, banking, finance, insurance, ITES, automobile, and
@@ -231,7 +231,7 @@ const DSecureOperationsBlog: React.FC = () => {
 
           {/* Future Vision */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Growing, Expanding, and Innovating
               </h2>
@@ -244,9 +244,9 @@ const DSecureOperationsBlog: React.FC = () => {
               </p>
 
               <div className="bg-slate-100 rounded-xl p-8 mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Upcoming Innovations
-                </h3>
+                </h2>
                 <ul className="space-y-3 text-slate-700 text-lg">
                   <li className="flex items-start">
                     <span className="text-emerald-500 mr-3 mt-1">→</span>

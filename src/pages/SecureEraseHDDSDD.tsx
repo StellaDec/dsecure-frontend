@@ -61,7 +61,7 @@ const navigationTree: NavItem[] = [
     content: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="bg-emerald-50 p-5 rounded-xl border border-emerald-100">
-          <h4 className="font-bold text-emerald-900 mb-2">1. Multi-Pass Overwriting</h4>
+          <h3 className="font-bold text-emerald-900 mb-2">1. Multi-Pass Overwriting</h3>
           <p className="text-emerald-700 text-sm mb-3">Writing random or specific patterns multiple times across entire drive surface.</p>
           <ul className="text-emerald-800 text-xs space-y-1 opacity-80">
             <li>• 3-pass: Random, complement, random</li>
@@ -70,7 +70,7 @@ const navigationTree: NavItem[] = [
           </ul>
         </div>
         <div className="bg-teal-50 p-5 rounded-xl border border-teal-100">
-          <h4 className="font-bold text-teal-900 mb-2">2. ATA Secure Erase</h4>
+          <h3 className="font-bold text-teal-900 mb-2">2. ATA Secure Erase</h3>
           <p className="text-teal-700 text-sm mb-3">Hardware-level command to erase all data including remapped sectors.</p>
           <ul className="text-teal-600 text-xs space-y-1 opacity-80">
             <li>• Uses drive's built-in erase function</li>
@@ -79,7 +79,7 @@ const navigationTree: NavItem[] = [
           </ul>
         </div>
         <div className="bg-cyan-50 p-5 rounded-xl border border-cyan-100">
-          <h4 className="font-bold text-cyan-900 mb-2">3. Degaussing</h4>
+          <h3 className="font-bold text-cyan-900 mb-2">3. Degaussing</h3>
           <p className="text-cyan-700 text-sm mb-3">Apply strong magnetic field to disrupt magnetic domains on platters.</p>
           <ul className="text-cyan-600 text-xs space-y-1 opacity-80">
             <li>• Renders drive permanently unusable</li>
@@ -87,7 +87,7 @@ const navigationTree: NavItem[] = [
           </ul>
         </div>
         <div className="bg-purple-50 p-5 rounded-xl border border-purple-100">
-          <h4 className="font-bold text-purple-900 mb-2">4. Physical Destruction</h4>
+          <h3 className="font-bold text-purple-900 mb-2">4. Physical Destruction</h3>
           <p className="text-purple-700 text-sm mb-3">Physical destruction of platters through shredding or incineration.</p>
           <ul className="text-purple-600 text-xs space-y-1 opacity-80">
             <li>• Ultimate security assurance</li>
@@ -104,7 +104,7 @@ const navigationTree: NavItem[] = [
     content: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="bg-emerald-50 p-5 rounded-xl border border-emerald-100">
-          <h4 className="font-bold text-emerald-900 mb-2">1. ATA Secure Erase</h4>
+          <h3 className="font-bold text-emerald-900 mb-2">1. ATA Secure Erase</h3>
           <p className="text-emerald-700 text-sm mb-3">Hardware-level secure erase for SATA SSDs, erases all cells.</p>
           <ul className="text-emerald-800 text-xs space-y-1 opacity-80">
             <li>• Most effective for SSDs</li>
@@ -112,7 +112,7 @@ const navigationTree: NavItem[] = [
           </ul>
         </div>
         <div className="bg-teal-50 p-5 rounded-xl border border-teal-100">
-          <h4 className="font-bold text-teal-900 mb-2">2. Crypto-Erase</h4>
+          <h3 className="font-bold text-teal-900 mb-2">2. Crypto-Erase</h3>
           <p className="text-teal-700 text-sm mb-3">Destroy encryption keys rendering all data unreadable.</p>
           <ul className="text-teal-600 text-xs space-y-1 opacity-80">
             <li>• Instantaneous erasure</li>
@@ -120,7 +120,7 @@ const navigationTree: NavItem[] = [
           </ul>
         </div>
         <div className="bg-cyan-50 p-5 rounded-xl border border-cyan-100">
-          <h4 className="font-bold text-cyan-900 mb-2">3. NVMe Format</h4>
+          <h3 className="font-bold text-cyan-900 mb-2">3. NVMe Format</h3>
           <p className="text-cyan-700 text-sm mb-3">NVMe-specific secure format command for modern M.2 SSDs.</p>
           <ul className="text-cyan-600 text-xs space-y-1 opacity-80">
             <li>• Protocol-specific command</li>
@@ -128,7 +128,7 @@ const navigationTree: NavItem[] = [
           </ul>
         </div>
         <div className="bg-purple-50 p-5 rounded-xl border border-purple-100">
-          <h4 className="font-bold text-purple-900 mb-2">4. Physical Destruction</h4>
+          <h3 className="font-bold text-purple-900 mb-2">4. Physical Destruction</h3>
           <p className="text-purple-700 text-sm mb-3">Shredding NAND flash memory chips into 2mm or smaller particles.</p>
           <ul className="text-purple-600 text-xs space-y-1 opacity-80">
             <li>• Required for TOP SECRET data</li>
@@ -155,7 +155,7 @@ const navigationTree: NavItem[] = [
           <div key={idx} className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
             <span className="text-2xl font-black text-emerald-200">{item.step}</span>
             <div>
-              <h5 className="font-bold text-slate-900">{item.title}</h5>
+              <h4 className="font-bold text-slate-900">{item.title}</h4>
               <p className="text-sm text-slate-600">{item.text}</p>
             </div>
           </div>
@@ -170,7 +170,7 @@ const navigationTree: NavItem[] = [
     content: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-4">
-          <h4 className="font-bold text-slate-900">Government & Military</h4>
+          <h3 className="font-bold text-slate-900">Government & Military</h3>
           <div className="space-y-2">
             <div className="p-3 bg-slate-50 rounded-lg text-sm border border-slate-100 flex items-center justify-between">
               <span>NIST 800-88 Rev. 1</span>
@@ -181,7 +181,7 @@ const navigationTree: NavItem[] = [
           </div>
         </div>
         <div className="space-y-4">
-          <h4 className="font-bold text-slate-900">Industry Regulations</h4>
+          <h3 className="font-bold text-slate-900">Industry Regulations</h3>
           <div className="space-y-2">
             <div className="p-3 bg-slate-50 rounded-lg text-sm border border-slate-100">GDPR (Right to Erasure)</div>
             <div className="p-3 bg-slate-50 rounded-lg text-sm border border-slate-100">HIPAA (Health Data)</div>
@@ -323,7 +323,7 @@ const SecureEraseHDDSDD: React.FC = () => {
               </nav>
 
               <div className="mt-8 pt-6 border-t border-slate-100">
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Related Resources</h4>
+                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Related Resources</h3>
                 <nav className="space-y-3">
                   <Link to="/support/overwrite-guide" className="block text-sm text-slate-600 hover:text-emerald-600 transition-colors">Overwrite Patterns Guide</Link>
                   <Link to="/support/ssd-cryptographic-erasure-guide" className="block text-sm text-slate-600 hover:text-emerald-600 transition-colors">Crypto Erasure Guide</Link>
@@ -379,21 +379,21 @@ const SecureEraseHDDSDD: React.FC = () => {
                 {/* Internal Links Footer */}
                 <div className="mt-16 pt-12 border-t border-slate-100 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <h4 className="font-bold text-slate-900 mb-2">Overwrite Guide</h4>
+                    <h3 className="font-bold text-slate-900 mb-2">Overwrite Guide</h3>
                     <p className="text-sm text-slate-500 mb-4">Deep dive into overwrite patterns and <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline">NIST compliance</Link>.</p>
                     <Link to="/support/overwrite-guide" className="text-emerald-600 font-bold hover:underline inline-flex items-center">
                       Read Guide <ChevronRight className="w-4 h-4 ml-1" />
                     </Link>
                   </div>
                   <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <h4 className="font-bold text-slate-900 mb-2">Retain OS Guide</h4>
+                    <h3 className="font-bold text-slate-900 mb-2">Retain OS Guide</h3>
                     <p className="text-sm text-slate-500 mb-4">Wipe user data while keeping the <Link to="/support/retain-os-guide" className="text-emerald-600 hover:underline">OS intact</Link>.</p>
                     <Link to="/support/retain-os-guide" className="text-emerald-600 font-bold hover:underline inline-flex items-center">
                       Read Guide <ChevronRight className="w-4 h-4 ml-1" />
                     </Link>
                   </div>
                   <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <h4 className="font-bold text-slate-900 mb-2">Product: Drive Eraser</h4>
+                    <h3 className="font-bold text-slate-900 mb-2">Product: Drive Eraser</h3>
                     <p className="text-sm text-slate-500 mb-4">Enterprise software implementing these <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline">erasure methods</Link>.</p>
                     <Link to="/products/drive-eraser" className="text-emerald-600 font-bold hover:underline inline-flex items-center">
                       Learn More <ChevronRight className="w-4 h-4 ml-1" />

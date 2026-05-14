@@ -165,7 +165,7 @@ const NetworkFileManualLayout: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("network-file-manual-layout")} />
+      <SEOHead seo={getSEOForPage("support/help-manual/network-file")} />
 
       <style>{`
         .sidebar-scroll::-webkit-scrollbar {
@@ -254,7 +254,7 @@ const NetworkFileManualLayout: React.FC = () => {
           {/* Main Content Area */}
           <main className="flex-1 min-w-0">
             {/* Welcome Banner - Only show on index route */}
-            {location.pathname === "/support/help-manual/complete-network-manual" && (
+            {location.pathname === "/support/help-manual/network-file" && (
               <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 mb-8 text-white">
                 <h1 className="text-3xl font-bold mb-2">
                   D-Secure File Eraser Network Manual

@@ -94,6 +94,7 @@ const LUNEraserPage = lazy(() => import("../pages/LUNEraserPage"));
 const DriveVerifierPage = lazy(() => import("../pages/DriveVerifierPage"));
 const EarlyAccessPage = lazy(() => import("../pages/EarlyAccessPage"));
 const FileEraserNetworkPage = lazy(() => import("../pages/FileEraserNetwork"));
+const ReportVerificationPage = lazy(() => import("../pages/ReportVerificationPage"));
 
 // SEO Competitive Strategy Pages
 const NIST80088Page = lazy(() => import("../pages/compliance/NIST80088Page"));
@@ -314,6 +315,7 @@ export const PublicRoutes = () => (
     <Route path="blog" element={<BlogPage />} />
     <Route path="blog/:slug" element={<BlogPostDetail />} />
     <Route path="resources/clone-guide" element={<CloneGuidePage />} />
+    <Route path="verify-report" element={<ReportVerificationPage />} />
     {/* Priority 1 SEO Redirects */}
     <Route path="itad" element={<Navigate to="/solutions/itad" replace />} />
     <Route path="erasure" element={<Navigate to="/all-products" replace />} />

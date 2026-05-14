@@ -42,9 +42,9 @@ const DigitalDivideBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -73,7 +73,7 @@ const DigitalDivideBlog: React.FC = () => {
 
           {/* What is Digital Divide */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding the Digital Divide
               </h2>
@@ -138,9 +138,9 @@ const DigitalDivideBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Equal Access to Information
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Refurbished computers, tablets, and smartphones can be
                     donated to underprivileged communities in remote areas,
@@ -149,7 +149,7 @@ const DigitalDivideBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Reducing E-Waste</h4>
+                  <h3 className="font-bold text-lg mb-3">Reducing E-Waste</h3>
                   <p className="text-white/90 text-sm">
                     According to the UN's Global E-waste Monitor Report 2024,
                     e-waste production is 5x faster than documented recycling
@@ -158,9 +158,9 @@ const DigitalDivideBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Promoting Circularity
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     By reducing e-waste, repairing assets, and recycling
                     components, ITADs contribute to a circular economy —
@@ -169,9 +169,9 @@ const DigitalDivideBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Secure Data Disposal
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     ITADs offer take-back programs where they securely perform
                     data erasure, making the journey of IT assets from
@@ -184,7 +184,7 @@ const DigitalDivideBlog: React.FC = () => {
 
           {/* CSR Initiatives */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 CSR Initiatives & Digital Inclusion
               </h2>

@@ -41,9 +41,9 @@ const PostCovidDataDisposalBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Changing Data Security Landscape
               </h2>
@@ -55,9 +55,9 @@ const PostCovidDataDisposalBlog: React.FC = () => {
                 ensure business continuity and protection against breaches.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Key Challenge
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Organizations now face greater accumulation and exposure of{" "}
                   <strong>ROT data</strong> (Redundant, Obsolete, and Trivial)
@@ -181,7 +181,7 @@ const PostCovidDataDisposalBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Expanding Attack Surface
               </h2>
@@ -194,9 +194,9 @@ const PostCovidDataDisposalBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Employee Best Practices
-                  </h4>
+                  </h3>
                   <ul className="text-slate-700 space-y-2">
                     <li>
                       • Use only authorized applications on business devices
@@ -209,9 +209,9 @@ const PostCovidDataDisposalBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Organizational Measures
-                  </h4>
+                  </h3>
                   <ul className="text-slate-700 space-y-2">
                     <li>• Deploy network-based data disposal solutions</li>
                     <li>• Implement regular drive wiping schedules</li>
@@ -223,7 +223,7 @@ const PostCovidDataDisposalBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Disposed IT Assets Are a Major Risk
               </h2>
@@ -234,9 +234,9 @@ const PostCovidDataDisposalBlog: React.FC = () => {
                 of economic uncertainty and technological evolution.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   The Solution
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Specialized data erasure software can completely wipe drives
                   and prevent recovery by even the most sophisticated criminals.

@@ -1220,9 +1220,9 @@ export default function AdminMachines() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-slate-900">
+                      <h2 className="font-semibold text-slate-900">
                         {machine.hostname}
-                      </h3>
+                      </h2>
                       <p className="text-sm text-slate-500"></p>
                       <p className="text-sm text-slate-500">
                         {machine.userEmail || "No user email"}
@@ -1678,7 +1678,7 @@ export default function AdminMachines() {
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="text-sm font-medium text-blue-800">Demo Mode Active</h3>
+              <h2 className="text-sm font-medium text-blue-800">Demo Mode Active</h2>
               <p className="mt-1 text-sm text-blue-700">
                 You're viewing AI-generated demo data for demonstration purposes. 
                 Connect to your backend API to see real machine data from your database.
@@ -1691,9 +1691,9 @@ export default function AdminMachines() {
         {/* Advanced Filters */}
         <div className="card p-4 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-slate-900">
               Filters & Search
-            </h3>
+            </h2>
             <button
               onClick={clearAllFilters}
               className="text-sm text-red-600 hover:text-red-800 font-medium"
@@ -1903,9 +1903,9 @@ export default function AdminMachines() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-slate-900 mb-2">
+              <h2 className="text-lg font-medium text-slate-900 mb-2">
                 No Machines Found
-              </h3>
+              </h2>
               <p className="text-slate-600 mb-6">
                 There are no machines registered to your account at the moment.
               </p>
@@ -1927,9 +1927,9 @@ export default function AdminMachines() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-slate-900 mb-2">
+              <h2 className="text-lg font-medium text-slate-900 mb-2">
                 No Results Found
-              </h3>
+              </h2>
               <p className="text-slate-600 mb-6">
                 No machines match your current filters.
               </p>

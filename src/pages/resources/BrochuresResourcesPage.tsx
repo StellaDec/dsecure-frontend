@@ -82,7 +82,7 @@ export default function BrochuresResourcesPage() {
                         <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-3">
                           {brochure.category}
                         </span>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">{brochure.title}</h3>
+                        <h2 className="text-xl font-bold text-slate-900 mb-2">{brochure.title}</h2>
                         <p className="text-slate-600 mb-4">{brochure.description}</p>
                       </div>
                     </div>

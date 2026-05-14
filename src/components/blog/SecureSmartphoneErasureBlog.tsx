@@ -49,9 +49,9 @@ const SecureSmartphoneErasureBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Critical Vulnerabilities of Used Smartphones
             </h2>
@@ -68,9 +68,9 @@ const SecureSmartphoneErasureBlog: React.FC = () => {
             
 
             <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-              <h4 className="font-bold text-red-700 text-xl mb-3">
+              <h3 className="font-bold text-red-700 text-xl mb-3">
                 The Hidden Danger
-              </h4>
+              </h3>
               <p className="text-slate-700 text-lg leading-relaxed">
                 A smartphone handover without proper data sanitization from a
                 departing employee to a newly joined member is a genuine threat.
@@ -83,7 +83,7 @@ const SecureSmartphoneErasureBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Why Factory Reset is Not Enough
             </h2>
@@ -95,9 +95,9 @@ const SecureSmartphoneErasureBlog: React.FC = () => {
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                <h4 className="font-bold text-red-700 text-xl mb-3">
+                <h3 className="font-bold text-red-700 text-xl mb-3">
                   Factory Reset Problems
-                </h4>
+                </h3>
                 <ul className="text-slate-700 text-lg leading-relaxed space-y-2">
                   <li>• Data can be recovered using DIY recovery solutions</li>
                   <li>• Forensic tools can retrieve "deleted" information</li>
@@ -106,9 +106,9 @@ const SecureSmartphoneErasureBlog: React.FC = () => {
                 </ul>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link> Solution
-                </h4>
+                </h3>
                 <ul className="text-slate-700 text-lg leading-relaxed space-y-2">
                   <li>
                     • Software-based overwriting renders data irrecoverable
@@ -228,7 +228,7 @@ const SecureSmartphoneErasureBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Who Needs Secure Mobile Erasure?
             </h2>
@@ -239,27 +239,27 @@ const SecureSmartphoneErasureBlog: React.FC = () => {
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Enterprises
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Protecting corporate data when devices are retired,
                   reallocated, or sold
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Mobile Retailers
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Monetizing residual value with certified erasure as a unique
                   selling proposition
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Device Processors
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Ensuring compliance and building customer trust with verified
                   sanitization

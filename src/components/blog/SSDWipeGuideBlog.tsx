@@ -11,7 +11,7 @@ const SSDWipeGuideBlog: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       <SEOHead 
         seo={getBlogSEO({
-          title: "Complete SSD Wipe Guide: Secure Erasure & NVMe Sanitization | D-Secure",
+          title: "Complete SSD & NVMe Wipe Guide",
           excerpt: "Learn the proper techniques for securely wiping SSDs. Unlike HDDs, solid-state drives require specialized NIST 800-88 Purge or Cryptographic Erase methods.",
           slug: "ssd-wipe-guide",
           author: "D-Secure Editorial Team",
@@ -30,7 +30,7 @@ const SSDWipeGuideBlog: React.FC = () => {
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                Complete SSD Wipe Guide
+                Complete SSD & NVMe Wipe Guide for Secure Data Sanitization
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -43,9 +43,9 @@ const SSDWipeGuideBlog: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             {/* Intro */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -89,9 +89,9 @@ const SSDWipeGuideBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mt-4">
                 <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-blue-900 mb-2">
+                  <h3 className="font-bold text-blue-900 mb-2">
                     Wear Leveling
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-blue-800 space-y-1">
                     <li>• Distributes writes evenly across cells</li>
                     <li>• Creates hidden data remnants</li>
@@ -100,9 +100,9 @@ const SSDWipeGuideBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                  <h4 className="font-bold text-blue-900 mb-2">
+                  <h3 className="font-bold text-blue-900 mb-2">
                     Over-Provisioning
-                  </h4>
+                  </h3>
                   <ul className="text-sm text-blue-800 space-y-1">
                     <li>• Hidden storage area (7-28%)</li>
                     <li>• Inaccessible to standard tools</li>
@@ -281,7 +281,7 @@ const SSDWipeGuideBlog: React.FC = () => {
 
         {/* D-Secure Solutions Section */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               How D-Secure Handles SSD Erasure
             </h2>
@@ -299,9 +299,9 @@ const SSDWipeGuideBlog: React.FC = () => {
                     className="w-5 h-5 text-blue-600"
                     filled={true}
                   />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Native Secure Erase
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   D-Secure uses native ATA Secure Erase and NVMe Format commands
@@ -312,9 +312,9 @@ const SSDWipeGuideBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-blue-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Cryptographic Erase
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   For SEDs (Self-Encrypting Drives) and encrypted SSDs, D-Secure
@@ -325,9 +325,9 @@ const SSDWipeGuideBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100">
                 <div className="flex items-center gap-2 mb-3">
                   <GlobeIcon className="w-5 h-5 text-blue-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Multi-Protocol Support
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Full support for SATA, SAS, NVMe, M.2, and PCIe SSDs. D-Secure
@@ -338,9 +338,9 @@ const SSDWipeGuideBlog: React.FC = () => {
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100">
                 <div className="flex items-center gap-2 mb-3">
                   <StarIcon className="w-5 h-5 text-blue-600" filled={true} />
-                  <h4 className="font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     Verification & Certification
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Post-erasure verification with sampling-based forensic
@@ -351,9 +351,9 @@ const SSDWipeGuideBlog: React.FC = () => {
             </div>
 
             <div className="bg-slate-900 rounded-xl p-6 text-white">
-              <h4 className="font-bold mb-4 text-cyan-400">
+              <h3 className="font-bold mb-4 text-cyan-400">
                 Why D-Secure for SSD Erasure?
-              </h4>
+              </h3>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-start gap-2">
                   <CheckIcon

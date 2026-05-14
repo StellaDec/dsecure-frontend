@@ -42,9 +42,9 @@ const ESGReportBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -70,9 +70,9 @@ const ESGReportBlog: React.FC = () => {
 
               {/* Key Insight */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   The Environmental Cost of Physical Destruction
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   Traditional physical destruction methods like shredding,
                   incinerating, and disintegrating create massive amounts of
@@ -86,7 +86,7 @@ const ESGReportBlog: React.FC = () => {
 
           {/* Data Erasure & Carbon Emissions */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How Data Erasure Prevents Carbon Emissions
               </h2>
@@ -139,7 +139,7 @@ const ESGReportBlog: React.FC = () => {
 
           {/* D-Secure ESG Report */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure ESG Report and Sustainability
               </h2>
@@ -153,9 +153,9 @@ const ESGReportBlog: React.FC = () => {
               </p>
 
               <div className="bg-slate-100 rounded-xl p-8 mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Example Impact Calculation
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   An organization that wiped 351 laptops, 5 desktops, and 47
                   mobile devices over one year would reflect{" "}
@@ -179,16 +179,16 @@ const ESGReportBlog: React.FC = () => {
 
           {/* Benefits Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Benefits of ESG Reporting
               </h2>
 
               <div className="space-y-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Accurate ESG Representation
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     According to the PwC Global CSRD Survey 2024, 84% of
                     organizations are currently using or planning to use carbon
@@ -199,9 +199,9 @@ const ESGReportBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Addressing Double Materiality
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Sustainability directives like CSRD emphasize double
                     materiality — reporting not only on business performance but
@@ -213,9 +213,9 @@ const ESGReportBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Competitive Edge
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Per PwC's Global Workforce ESG Preferences Study 2024, over
                     60% of employees consider environmental policies key factors
@@ -228,9 +228,9 @@ const ESGReportBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Monetary Benefits
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     The UNFCCC issues Certified Emission Reductions (CERs)
                     measured in tonnes of CO₂e. Organizations achieving carbon
@@ -241,9 +241,9 @@ const ESGReportBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Building Brand Reputation & Stakeholder Trust
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Deloitte's 2024 surveys revealed that 20% of executives
                     expected brand reputation enhancement, 17% anticipated
@@ -271,18 +271,18 @@ const ESGReportBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Multi-Device Support
-                  </h4>
+                  </h3>
                   <p className="text-white/90">
                     Generate ESG reports for laptops, desktops, mobile devices,
                     Chromebooks, and Mac devices.
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Cloud Console Access
-                  </h4>
+                  </h3>
                   <p className="text-white/90">
                     View and download ESG reports anytime through your
                     centralized D-Secure Cloud Console.
@@ -299,7 +299,7 @@ const ESGReportBlog: React.FC = () => {
             </div>
           </Reveal>{/* Takeaway */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Takeaway
               </h2>

@@ -40,9 +40,9 @@ const MDMDetectionBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Purpose of Mobile Device Management (MDM)
               </h2>
@@ -61,25 +61,25 @@ const MDMDetectionBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-emerald-50 rounded-lg p-4 text-center border border-emerald-200">
-                  <h5 className="font-bold text-emerald-700 mb-2">
+                  <h3 className="font-bold text-emerald-700 mb-2">
                     Apple Devices
-                  </h5>
+                  </h3>
                   <p className="text-slate-700 text-sm">
                     Apple Push Notification Service (APNs)
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-lg p-4 text-center border border-emerald-200">
-                  <h5 className="font-bold text-emerald-700 mb-2">
+                  <h3 className="font-bold text-emerald-700 mb-2">
                     Android Devices
-                  </h5>
+                  </h3>
                   <p className="text-slate-700 text-sm">
                     Firebase Cloud Messaging (FCM)
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-lg p-4 text-center border border-emerald-200">
-                  <h5 className="font-bold text-emerald-700 mb-2">
+                  <h3 className="font-bold text-emerald-700 mb-2">
                     Windows Devices
-                  </h5>
+                  </h3>
                   <p className="text-slate-700 text-sm">
                     Windows Notification Service (WNS)
                   </p>
@@ -94,7 +94,7 @@ const MDMDetectionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Use of MDM in the IT Asset Lifecycle
               </h2>
@@ -187,7 +187,7 @@ const MDMDetectionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The MDM Governance Gap in Device Disposal
               </h2>
@@ -246,7 +246,7 @@ const MDMDetectionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Compliance Implications of Residual MDM
               </h2>
@@ -300,7 +300,7 @@ const MDMDetectionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Solution: MDM Detection Before Erasure
               </h2>

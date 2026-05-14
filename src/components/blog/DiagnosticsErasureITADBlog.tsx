@@ -42,9 +42,9 @@ const DiagnosticsErasureITADBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -69,9 +69,9 @@ const DiagnosticsErasureITADBlog: React.FC = () => {
 
               {/* Industry Insight */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Industry Research Insights
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-loose text-lg">
                   According to leading industry benchmarking reports,
                   approximately 37% of enterprises categorize their ITAM/<Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
@@ -117,9 +117,9 @@ const DiagnosticsErasureITADBlog: React.FC = () => {
                           />
                         </svg>
                       </div>
-                      <h4 className="font-bold text-slate-900">
+                      <h3 className="font-bold text-slate-900">
                         Certified Data Erasure
-                      </h4>
+                      </h3>
                     </div>
                     <p className="text-slate-600 text-sm">
                       Data sanitization performed according to global standards
@@ -144,9 +144,9 @@ const DiagnosticsErasureITADBlog: React.FC = () => {
                           />
                         </svg>
                       </div>
-                      <h4 className="font-bold text-slate-900">
+                      <h3 className="font-bold text-slate-900">
                         Comprehensive Diagnostics
-                      </h4>
+                      </h3>
                     </div>
                     <p className="text-slate-600 text-sm">
                       Thorough testing of battery life, CPU performance, disk
@@ -161,7 +161,7 @@ const DiagnosticsErasureITADBlog: React.FC = () => {
 
           {/* Benefits Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900">
                 Key Advantages of Unified Diagnostics & Erasure Solutions
               </h2>
@@ -172,9 +172,9 @@ const DiagnosticsErasureITADBlog: React.FC = () => {
 
               <div className="space-y-8 mt-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Faster SLA Fulfillment
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     ITADs processing hundreds of assets daily must meet strict
                     Service Level Agreement timelines. Using separate tools
@@ -186,9 +186,9 @@ const DiagnosticsErasureITADBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-teal-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Reduced Human Error
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Multiple disconnected tools increase the risk of skipped
                     diagnostics, missed asset tagging, or incomplete erasure.
@@ -200,9 +200,9 @@ const DiagnosticsErasureITADBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-cyan-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Centralized Documentation & Compliance
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Organizations must comply with data protection regulations
                     including GDPR, CCPA, HIPAA, and PCI-DSS — all requiring
@@ -214,9 +214,9 @@ const DiagnosticsErasureITADBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-purple-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                  <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Scalable Operations
-                  </h3>
+                  </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     Whether processing 100,000 or 500,000 IT assets, a unified
                     tool enables efficient batch processing and automation.

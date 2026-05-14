@@ -812,9 +812,9 @@ function SolutionsPageContent() {
                     {/* Bottom Info Bar */}
                     <div className="p-6 bg-white/90 backdrop-blur-sm">
                       <div className="text-center">
-                        <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                        <h2 className="text-lg font-semibold text-slate-900 mb-2">
                           Secure Data Ecosystem
-                        </h3>
+                        </h2>
                         <p className="text-slate-600 text-sm">
                           Complete erasure across all device types and platforms
                         </p>
@@ -895,9 +895,9 @@ function SolutionsPageContent() {
                       {solutions[activeIndustry].icon}
                     </span>
                   </div>
-                  <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
+                  <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
                     {solutions[activeIndustry].title}
-                  </h3>
+                  </h2>
                   <p className="text-base lg:text-lg text-emerald-800 font-medium mb-4">
                     {solutions[activeIndustry].subtitle}
                   </p>
@@ -906,9 +906,9 @@ function SolutionsPageContent() {
                   </p>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 lg:mb-8">
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-4">
+                      <h3 className="font-semibold text-slate-900 mb-4">
                         {t('solutions.keyBenefits')}
-                      </h4>
+                      </h3>
                       <div className="space-y-3">
                         {solutions[activeIndustry].benefits.map(
                           (benefit) => (
@@ -935,9 +935,9 @@ function SolutionsPageContent() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-4">
+                      <h3 className="font-semibold text-slate-900 mb-4">
                         {t('solutions.useCases')}
-                      </h4>
+                      </h3>
                       <div className="space-y-3">
                         {solutions[activeIndustry].useCases.map(
                           (useCase) => (
@@ -980,9 +980,9 @@ function SolutionsPageContent() {
                 </div>
                 {/* Sidebar */}
                 <div className="bg-slate-50 p-8">
-                  <h4 className="font-semibold text-slate-900 mb-6">
+                  <h3 className="font-semibold text-slate-900 mb-6">
                     Why Choose D-Secure?
-                  </h4>
+                  </h3>
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -1169,9 +1169,9 @@ function SolutionsPageContent() {
                     {study.logo}
                   </div>
                   <div className="flex-grow flex flex-col">
-                    <h3 className="font-bold text-slate-900 text-lg mb-2 text-center">
+                    <h2 className="font-bold text-slate-900 text-lg mb-2 text-center">
                       {study.company}
-                    </h3>
+                    </h2>
                     <div className="text-sm text-brand font-semibold mb-6 text-center uppercase tracking-wider">
                       {study.industry}
                     </div>

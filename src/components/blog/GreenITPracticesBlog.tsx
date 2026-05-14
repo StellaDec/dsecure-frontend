@@ -40,9 +40,9 @@ const GreenITPracticesBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <p className="text-slate-700 leading-loose text-xl">
                 Global e-waste generation is estimated to increase by{" "}
                 <strong className="text-emerald-800">
@@ -63,7 +63,7 @@ const GreenITPracticesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Benefits of Green IT Practices
               </h2>
@@ -140,34 +140,34 @@ const GreenITPracticesBlog: React.FC = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> for Reuse
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Use certified data erasure software to wipe devices
                     securely, enabling safe reuse and donation
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Energy-Efficient Infrastructure
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Implement energy-efficient servers and cooling systems in
                     data centers
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Circular Economy</h4>
+                  <h3 className="font-bold text-lg mb-3">Circular Economy</h3>
                   <p className="text-white/90 text-sm">
                     Adopt circular economy principles: reduce, reuse, recycle,
                     and recover
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Sustainable Procurement
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Choose vendors committed to environmental sustainability
                   </p>

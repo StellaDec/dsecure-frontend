@@ -291,9 +291,9 @@ const CommonIssuesPage: React.FC = memo(() => {
                           className={`w-3 h-3 rounded-full ${getSeverityColor(issue.severity)} flex-shrink-0`}
                         ></div>
                         <div className="flex-1">
-                          <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-1">
+                          <h2 className="text-base sm:text-lg font-semibold text-slate-900 mb-1">
                             {issue.title}
-                          </h3>
+                          </h2>
                           <p className="text-slate-600 text-xs sm:text-sm">
                             {issue.description}
                           </p>
@@ -329,7 +329,7 @@ const CommonIssuesPage: React.FC = memo(() => {
                     {activeIssue === issue.id && (
                       <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                         <div className="border-t border-slate-200 pt-4">
-                          <h4 className="font-semibold text-slate-900 mb-3 text-sm sm:text-base flex items-center">
+                          <h3 className="font-semibold text-slate-900 mb-3 text-sm sm:text-base flex items-center">
                             <svg
                               className="w-4 h-4 mr-2 text-emerald-800"
                               fill="none"
@@ -344,7 +344,7 @@ const CommonIssuesPage: React.FC = memo(() => {
                               />
                             </svg>
                             Step-by-Step Solution:
-                          </h4>
+                          </h3>
                           <div className="text-slate-700 text-sm sm:text-base leading-relaxed space-y-2">
                             {issue.solution
                               .split("Step ")

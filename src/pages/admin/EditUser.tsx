@@ -124,7 +124,7 @@ export default function EditUser() {
     return (
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-slate-900 mb-4">Error: System User Not Found</h1>
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Error: System User Not Found</h2>
           <p className="text-slate-600 mb-6">The user you're looking for doesn't exist.</p>
           <button 
             onClick={() => navigate('/admin/users')}

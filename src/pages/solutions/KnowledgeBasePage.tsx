@@ -41,123 +41,135 @@ const KnowledgeBasePage: React.FC = memo(() => {
     {
       id: 1,
       title: "How many overwrites should I do on a Hard Drive?",
-      description: "Learn about optimal overwrite patterns for different types of hard drives and security requirements.",
+      description:
+        "Learn about optimal overwrite patterns for different types of hard drives and security requirements.",
       category: "data-erasure",
       difficulty: "Beginner",
       readTime: "5 min read",
       url: "/support/overwrite-guide",
-      icon: "🔄"
+      icon: "🔄",
     },
     {
       id: 2,
       title: "How can I Wipe Hard Drives and SSDs?",
-      description: "Complete guide to securely wiping both traditional HDDs and modern SSDs with appropriate methods.",
+      description:
+        "Complete guide to securely wiping both traditional HDDs and modern SSDs with appropriate methods.",
       category: "device-guides",
       difficulty: "Intermediate",
       readTime: "8 min read",
       url: "/support/wipe-guide",
-      icon: "💾"
+      icon: "💾",
     },
     {
       id: 3,
       title: "How to Wipe SAS Drives Permanently?",
-      description: "Enterprise-grade SAS drive erasure procedures for data centers and high-security environments.",
+      description:
+        "Enterprise-grade SAS drive erasure procedures for data centers and high-security environments.",
       category: "enterprise",
       difficulty: "Advanced",
       readTime: "12 min read",
       url: "/support/sas-wipe-guide",
-      icon: "🏢"
+      icon: "🏢",
     },
     {
       id: 4,
       title: "How can I wipe 12 board Mac Machines?",
-      description: "Step-by-step guide for wiping older Mac systems with 12-board architecture safely and completely.",
+      description:
+        "Step-by-step guide for wiping older Mac systems with 12-board architecture safely and completely.",
       category: "device-guides",
       difficulty: "Intermediate",
       readTime: "10 min read",
       url: "/support/mac-wipe-guide",
-      icon: "🍎"
+      icon: "🍎",
     },
     {
       id: 5,
       title: "How can I Wipe a MacOS with M1 Chip?",
-      description: "Modern Mac M1 and Apple Silicon device erasure using latest security features and firmware controls.",
+      description:
+        "Modern Mac M1 and Apple Silicon device erasure using latest security features and firmware controls.",
       category: "device-guides",
       difficulty: "Intermediate",
       readTime: "7 min read",
       url: "/support/m1-mac-wipe-guide",
-      icon: "⚡"
+      icon: "⚡",
     },
     {
       id: 6,
       title: "How to use D-Secure Cloud Console?",
-      description: "Comprehensive guide to managing remote erasure tasks and monitoring through the cloud console.",
+      description:
+        "Comprehensive guide to managing remote erasure tasks and monitoring through the cloud console.",
       category: "enterprise",
       difficulty: "Intermediate",
       readTime: "15 min read",
       url: "/support/cloud-console-guide",
-      icon: "☁️"
+      icon: "☁️",
     },
     {
       id: 7,
       title: "How do I Perform Cryptographic Erasure on SSD?",
-      description: "Advanced cryptographic erasure techniques for self-encrypting drives and secure key destruction.",
+      description:
+        "Advanced cryptographic erasure techniques for self-encrypting drives and secure key destruction.",
       category: "data-erasure",
       difficulty: "Advanced",
       readTime: "10 min read",
       url: "/support/ssd-cryptographic-erasure-guide",
-      icon: "🔐"
+      icon: "🔐",
     },
     {
       id: 8,
       title: "Secure Erasure for HDD and SSD Devices",
-      description: "Understanding the differences and best practices for secure erasure across storage device types.",
+      description:
+        "Understanding the differences and best practices for secure erasure across storage device types.",
       category: "data-erasure",
       difficulty: "Beginner",
       readTime: "6 min read",
       url: "/support/secure-erase-hdd-ssd",
-      icon: "🛡️"
+      icon: "🛡️",
     },
     {
       id: 9,
       title: "D-Secure File Eraser Complete Guide",
-      description: "Master the file-level erasure features for selective data destruction and privacy protection.",
+      description:
+        "Master the file-level erasure features for selective data destruction and privacy protection.",
       category: "getting-started",
       difficulty: "Beginner",
       readTime: "8 min read",
-      url: "/support/file-eraser-guide",
-      icon: "📁"
+      url: "/support/help-manual/complete-manual",
+      icon: "📁",
     },
     {
       id: 10,
       title: "Compliance Standards and Regulations",
-      description: "Understanding NIST, DoD, and international standards for data erasure compliance requirements.",
+      description:
+        "Understanding NIST, DoD, and international standards for data erasure compliance requirements.",
       category: "compliance",
       difficulty: "Intermediate",
       readTime: "12 min read",
       url: "/support/compliance-standards",
-      icon: "📜"
+      icon: "📜",
     },
     {
       id: 11,
       title: "Troubleshooting Common Erasure Issues",
-      description: "Solutions for common problems during data erasure operations and how to resolve them.",
+      description:
+        "Solutions for common problems during data erasure operations and how to resolve them.",
       category: "troubleshooting",
       difficulty: "Intermediate",
       readTime: "9 min read",
       url: "/support/troubleshooting-guide",
-      icon: "🔧"
+      icon: "🔧",
     },
     {
       id: 12,
       title: "Enterprise Deployment Best Practices",
-      description: "Large-scale deployment strategies, licensing management, and policy configuration for organizations.",
+      description:
+        "Large-scale deployment strategies, licensing management, and policy configuration for organizations.",
       category: "enterprise",
       difficulty: "Advanced",
       readTime: "18 min read",
       url: "/support/enterprise-deployment",
-      icon: "🏗️"
-    }
+      icon: "🏗️",
+    },
   ];
 
   const filteredArticles = articles.filter(article => {
@@ -237,7 +249,7 @@ const KnowledgeBasePage: React.FC = memo(() => {
               <div className="space-y-6">
                 {/* Category Filter */}
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">CATEGORIES</h3>
+                  <h2 className="text-sm font-semibold text-slate-900 mb-3">CATEGORIES</h2>
                   <div className="flex flex-wrap gap-2">
                     {categories.map((category) => (
                       <button
@@ -256,7 +268,7 @@ const KnowledgeBasePage: React.FC = memo(() => {
 
                 {/* Difficulty Filter */}
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">DIFFICULTY LEVEL</h3>
+                  <h2 className="text-sm font-semibold text-slate-900 mb-3">DIFFICULTY LEVEL</h2>
                   <div className="flex flex-wrap gap-2">
                     {difficulties.map((difficulty) => (
                       <button
@@ -287,7 +299,7 @@ const KnowledgeBasePage: React.FC = memo(() => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">No Articles Found</h3>
+                <h2 className="text-xl font-semibold text-slate-900 mb-2">No Articles Found</h2>
                 <p className="text-slate-600">Try adjusting your search terms or filters.</p>
               </div>
             ) : (
@@ -307,9 +319,9 @@ const KnowledgeBasePage: React.FC = memo(() => {
                             </span>
                             <span className="text-sm text-slate-500">{article.readTime}</span>
                           </div>
-                          <h3 className="text-lg font-semibold text-slate-900 group-hover:text-emerald-800 transition-colors mb-2">
+                          <h2 className="text-lg font-semibold text-slate-900 group-hover:text-emerald-800 transition-colors mb-2">
                             {article.title}
-                          </h3>
+                          </h2>
                         </div>
                       </div>
                       <p className="text-slate-600 text-sm leading-relaxed mb-4">
@@ -358,9 +370,9 @@ const KnowledgeBasePage: React.FC = memo(() => {
                     <div className={`w-16 h-16 ${item.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
                       <span className="text-3xl">{item.icon}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 group-hover:text-emerald-800 transition-colors">
+                    <h2 className="text-lg font-semibold text-slate-900 group-hover:text-emerald-800 transition-colors">
                       {item.title}
-                    </h3>
+                    </h2>
                   </Link>
                 </Reveal>
               ))}

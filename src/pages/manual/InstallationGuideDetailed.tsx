@@ -301,7 +301,7 @@ const InstallationGuideDetailed: React.FC = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
-                        <h4 className="font-bold text-slate-900">License Agreement</h4>
+                        <h3 className="font-bold text-slate-900">License Agreement</h3>
                         <p className="text-slate-500 text-sm">DSecure End User License</p>
                       </div>
                       <div className="space-y-2">

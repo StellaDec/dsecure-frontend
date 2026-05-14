@@ -302,10 +302,10 @@ const SmartphoneEraserPage = memo(() => {
                   <UpcomingBadge className="mb-4" />
 
                   <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
-                    Smartphone{" "}
+                    Enterprise Smartphone &{" "}
                     <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                      Eraser
-                    </span>
+                      Mobile Device Erasure
+                    </span>: High-Volume Sanitization
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">

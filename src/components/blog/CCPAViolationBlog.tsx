@@ -43,9 +43,9 @@ const CCPAViolationBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding CCPA and Consumer Rights
             </h2>
@@ -57,36 +57,36 @@ const CCPAViolationBlog: React.FC = () => {
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Right to Know
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Customers have the right to know what data is collected, sold,
                   or disclosed and to whom that data is shared.
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Right to Opt-Out
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Consumers can deny the sale of their data and request
                   businesses stop selling their personal information.
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Right to Deletion
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Customers can request their data be permanently deleted from a
                   business's database.
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Right to Non-Discrimination
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Businesses cannot discriminate against customers for
                   exercising their privacy rights.
@@ -159,7 +159,7 @@ const CCPAViolationBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Regulatory Implications and Industry Impact
             </h2>
@@ -170,9 +170,9 @@ const CCPAViolationBlog: React.FC = () => {
               set the pace for future settlements.
             </p>
             <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-              <h4 className="font-bold text-slate-900 text-xl mb-3">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
                 The Attorney General's Warning
-              </h4>
+              </h3>
               <p className="text-lg text-slate-700 leading-loose italic">
                 "My office is watching, and we will hold you accountable."
               </p>
@@ -187,7 +187,7 @@ const CCPAViolationBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Essential Steps to Safeguard Against CCPA Violations
             </h2>
@@ -198,9 +198,9 @@ const CCPAViolationBlog: React.FC = () => {
 
             <div className="space-y-6">
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Respect Customer Rights
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Honoring customers' rights is the first step toward
                   compliance. The rights of opting out, not selling data, and
@@ -210,9 +210,9 @@ const CCPAViolationBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Practice Full Transparency
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Data collection and its intended purpose must be transparently
                   communicated. Data should only be used for stated purposes,
@@ -221,9 +221,9 @@ const CCPAViolationBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Review Data Monetization Processes
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Be cautious when selling or sharing customer data. Explicit
                   customer permissions are necessary before data can be sold or
@@ -232,9 +232,9 @@ const CCPAViolationBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Update Contracts and Policies
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Ensure contracts with data-sharing partners include CCPA
                   provisions. Update website privacy and cookie policies to
@@ -243,9 +243,9 @@ const CCPAViolationBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Implement Privacy Mechanisms
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Website must have visible "Do Not Sell My Personal
                   Information" links and must honor requests from Global Privacy
@@ -254,9 +254,9 @@ const CCPAViolationBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Establish Data Destruction Policy
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   A robust data destruction policy ensures that when deletion
                   requests are received, data is erased permanently. Erasure
@@ -269,7 +269,7 @@ const CCPAViolationBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               The Role of Data Destruction in CCPA Compliance
             </h2>
@@ -279,36 +279,36 @@ const CCPAViolationBlog: React.FC = () => {
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Permanent Erasure
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Use certified data erasure software that overwrites data
                   beyond recovery, not just simple deletion.
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Proof of Destruction
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Generate erasure certificates to demonstrate compliance and
                   satisfy audit requirements.
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Verified Process
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Implement verification steps to confirm data has been
                   completely removed from all systems.
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Documentation
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Maintain detailed records of deletion requests and responses
                   for regulatory review.

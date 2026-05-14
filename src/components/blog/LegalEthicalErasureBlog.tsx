@@ -40,9 +40,9 @@ const LegalEthicalErasureBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Legal Aspects of Data Erasure
               </h2>
@@ -75,9 +75,9 @@ const LegalEthicalErasureBlog: React.FC = () => {
               </ul>
 
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mt-6">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Penalties for Non-Compliance
-                </h4>
+                </h3>
                 <ul className="space-y-2 text-slate-700">
                   <li>
                     • EU-GDPR: Up to €20 million or 4% of annual turnover,
@@ -101,7 +101,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Ethical Aspects of Data Erasure
               </h2>
@@ -170,34 +170,34 @@ const LegalEthicalErasureBlog: React.FC = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Reducing Data Breach Risk
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Lawful, transparent, and legitimate processing of personal
                     data reduces vulnerabilities
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Protection from Fines
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Avoid fines and lawsuits by implementing industry-best
                     cybersecurity policies
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">
+                  <h3 className="font-bold text-lg mb-3">
                     Increased Business Opportunities
-                  </h4>
+                  </h3>
                   <p className="text-white/90 text-sm">
                     Reputation for ethical practices brings more opportunities
                     to innovate and expand
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Customer Trust</h4>
+                  <h3 className="font-bold text-lg mb-3">Customer Trust</h3>
                   <p className="text-white/90 text-sm">
                     Earn trust of partners and stakeholders through commitment
                     to ethical data handling

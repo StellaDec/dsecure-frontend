@@ -40,9 +40,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Secure Data Disposal: An Indispensable Need
               </h2>
@@ -54,9 +54,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
                 most secure facilities can be breached.
               </p>
               <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                <h4 className="font-bold text-red-700 text-xl mb-3">
+                <h3 className="font-bold text-red-700 text-xl mb-3">
                   Case Study: Health Center Data Breach
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   A health center lost over{" "}
                   <strong>100,000 patient records</strong> due to improper hard
@@ -70,7 +70,7 @@ const GovernmentITDisposalBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Data Destruction in Government Organizations
               </h2>
@@ -81,9 +81,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Physical Documents
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Paper reports are physically destroyed. Classified or top
                     secret documents must meet NSA specifications using
@@ -93,9 +93,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Digital Media Challenges
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Classified data destruction for digital media is more
                     complex. Physical destruction alone is often ineffective —
@@ -106,9 +106,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Cost-Effective Approach
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Government organizations can save millions by recycling and
                     reusing storage drives instead of destroying hardware.
@@ -163,7 +163,7 @@ const GovernmentITDisposalBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Parameters for IT Asset Disposal
               </h2>
@@ -172,18 +172,18 @@ const GovernmentITDisposalBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Will the Media Be Reused?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     If yes, Clear or Purge methods are appropriate. The device
                     can be sanitized and repurposed safely.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Will It Leave Organizational Control?
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     If yes, erasure must happen before devices leave premises.
                     In-house sanitization is the safest approach.
@@ -194,7 +194,7 @@ const GovernmentITDisposalBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Guidelines: Erase Data First, Onsite, Under Supervision
               </h2>
@@ -206,9 +206,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Privileged System Drives
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Should be erased with approved software before any physical
                     destruction.
@@ -216,9 +216,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     HDD Server Mechanical Failures
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     May be degaussed, but storage media should be fully
                     destroyed after degaussing since it does not verify complete
@@ -227,9 +227,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Mobile Devices
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Should be sanitized in line with NIST SP 800-88 crypto erase
                     guidelines.
@@ -237,9 +237,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Onsite Processing
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Data erasure, degaussing, or shredding should preferably be
                     done onsite. If using third-party vendors, maintain secure
@@ -248,9 +248,9 @@ const GovernmentITDisposalBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Supervised Destruction
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Two or more staff members should oversee and verify that
                     destruction happens per established procedure.
@@ -261,7 +261,7 @@ const GovernmentITDisposalBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure: Protecting Sensitive Government Data
               </h2>
@@ -271,49 +271,49 @@ const GovernmentITDisposalBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-2">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-2">
                     <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     International erasure standards compliance
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-2">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-2">
                     Network Ready
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Works on both networked and off-grid media
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-2">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-2">
                     Multi-Device
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Erase multiple devices simultaneously
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-2">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-2">
                     Verified Erasure
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Every wipe is verified for completion
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-2">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-2">
                     100% Audit Trail
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Verifiable reports and certificates
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-2">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-2">
                     Lab-Proof
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Data unrecoverable even in laboratory
                   </p>

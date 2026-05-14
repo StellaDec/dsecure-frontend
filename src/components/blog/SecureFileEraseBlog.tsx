@@ -41,9 +41,9 @@ const SecureFileEraseBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What Is File Erasure and Why Does It Matter?
               </h2>
@@ -55,9 +55,9 @@ const SecureFileEraseBlog: React.FC = () => {
                 recovery impossible — even in laboratory settings.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   File Erasure vs. Drive Erasure
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   <strong>Drive Erasure</strong> erases the entire drive
                   including the operating system, leaving nothing behind.{" "}
@@ -70,7 +70,7 @@ const SecureFileEraseBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding the Real Threats of Residual Data
               </h2>
@@ -81,18 +81,18 @@ const SecureFileEraseBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Dark Data
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Data that organizations collect and store but never analyze
                     or use — often forgotten but still vulnerable to breaches.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     ROT Data
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Redundant, Obsolete, and Trivial data that accumulates over
                     time and increases attack surface without providing any
@@ -100,18 +100,18 @@ const SecureFileEraseBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Data at Rest
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Inactive data stored on devices that remains vulnerable if
                     devices are stolen, lost, or improperly disposed.
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Residual Data
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Data remnants left behind after standard deletion that can
                     be recovered using freely available DIY tools.
@@ -182,7 +182,7 @@ const SecureFileEraseBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Business Risks: Beyond Personal Data
               </h2>
@@ -192,9 +192,9 @@ const SecureFileEraseBlog: React.FC = () => {
               </p>
               <div className="space-y-6">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Intellectual Property Theft
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Trade secrets, proprietary algorithms, product designs, and
                     competitive strategies can be stolen and misused by
@@ -202,9 +202,9 @@ const SecureFileEraseBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Financial Data Exposure
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Confidential financial reports, budget plans, and
                     merger/acquisition details could be exposed, impacting stock
@@ -212,9 +212,9 @@ const SecureFileEraseBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Regulatory Non-Compliance
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     With strict laws like GDPR and CCPA, implications for
                     non-compliant businesses have grown severe. Penalties can
@@ -222,9 +222,9 @@ const SecureFileEraseBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Reputational Damage
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Data breaches expose firms to high risk of customer loss,
                     brand damage, and long-term business impact that outlasts
@@ -236,7 +236,7 @@ const SecureFileEraseBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Warning for Second-Hand Device Buyers
               </h2>
@@ -247,25 +247,25 @@ const SecureFileEraseBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Legal Liability
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Risk of litigation from content you didn't create
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Reputation Loss
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Embarrassment and damage to personal or company image
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Security Risks
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Malware or compromised software from previous owner
                   </p>
@@ -275,7 +275,7 @@ const SecureFileEraseBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Methods to Securely Erase Files
               </h2>
@@ -286,9 +286,9 @@ const SecureFileEraseBlog: React.FC = () => {
 
               <div className="space-y-8">
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     <Link to="/products/file-eraser" className="text-emerald-600 hover:underline font-medium">File Eraser</Link> Software (Recommended)
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed mb-4">
                     Professional <Link to="/products/file-eraser" className="text-emerald-600 hover:underline font-medium">file eraser</Link> software overwrites data using
                     international standards, generates certificates of erasure,
@@ -315,9 +315,9 @@ const SecureFileEraseBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
                     Physical Destruction (Last Resort)
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Physically destroying drives should only be employed when
                     the drive has bad sectors and is no longer accessible to
@@ -332,7 +332,7 @@ const SecureFileEraseBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Choosing the Best <Link to="/products/file-eraser" className="text-emerald-600 hover:underline font-medium">File Eraser</Link> Software
               </h2>
@@ -342,9 +342,9 @@ const SecureFileEraseBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Essential Features
-                  </h4>
+                  </h3>
                   <ul className="text-slate-700 space-y-2">
                     <li>• Multiple <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> standards support</li>
                     <li>• Comprehensive erasure reports</li>
@@ -353,9 +353,9 @@ const SecureFileEraseBlog: React.FC = () => {
                   </ul>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
                     Quality Indicators
-                  </h4>
+                  </h3>
                   <ul className="text-slate-700 space-y-2">
                     <li>• Third-party certifications</li>
                     <li>• Proof of destruction certificates</li>
@@ -365,9 +365,9 @@ const SecureFileEraseBlog: React.FC = () => {
                 </div>
               </div>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mt-6">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Why Free Tools Fall Short
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   Free file shredder tools typically support limited erasure
                   standards, don't generate certificates, may corrupt OS files,

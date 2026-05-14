@@ -370,7 +370,7 @@ export default function EditSubuser() {
               {/* Additional Info (Read-only) */}
               {/* {userData.licenseUsage !== undefined && (
                 <div className="bg-slate-50 rounded-md p-4">
-                  <h3 className="text-sm font-medium text-slate-700 mb-2">Additional Information</h3>
+                  <h2 className="text-sm font-medium text-slate-700 mb-2">Additional Information</h2>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <span className="text-slate-500">License Usage:</span>

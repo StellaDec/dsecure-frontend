@@ -50,9 +50,9 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
       </section>
 
       {/* Main Content - Full Width */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             {/* Introduction */}
             <div className="space-y-6">
               <p className="text-slate-700 leading-loose text-xl">
@@ -78,7 +78,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* Why Certified Software */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               The Rise of Certified Data Erasure Software
             </h2>
@@ -142,9 +142,9 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
             <div className="space-y-6">
               <div className="bg-white/10 rounded-xl p-6">
-                <h4 className="font-bold text-lg mb-3">
+                <h3 className="font-bold text-lg mb-3">
                   The Validation Challenge
-                </h4>
+                </h3>
                 <p className="text-white/90 text-lg leading-loose">
                   How does an organization or auditor ascertain that a given
                   data erasure software indeed wipes the hard drive or SSD as
@@ -155,9 +155,9 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                 </p>
               </div>
               <div className="bg-white/10 rounded-xl p-6">
-                <h4 className="font-bold text-lg mb-3">
+                <h3 className="font-bold text-lg mb-3">
                   The Solution: Forensic Testing
-                </h4>
+                </h3>
                 <p className="text-white/90 text-lg leading-loose">
                   Only specialized forensic testing designed by recognized
                   laboratories can genuinely verify a tool's backend
@@ -173,7 +173,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* NIST Testing Process */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding NIST Forensic Testing
             </h2>
@@ -234,7 +234,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* D-Secure Capabilities */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               D-Secure: Meeting the Gold Standard
             </h2>
@@ -248,27 +248,27 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
             <div className="grid md:grid-cols-3 gap-6 mt-6">
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-                <h4 className="font-bold text-slate-900 text-lg mb-3">
+                <h3 className="font-bold text-slate-900 text-lg mb-3">
                   Comprehensive Coverage
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   Overwrites all accessible sectors on HDDs and SSDs, including
                   hidden areas that conventional tools may miss.
                 </p>
               </div>
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-                <h4 className="font-bold text-slate-900 text-lg mb-3">
+                <h3 className="font-bold text-slate-900 text-lg mb-3">
                   International Standards
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   Supports 24+ international erasure standards including NIST
                   800-88, DoD 5220.22-M, and IEEE 2883-2022.
                 </p>
               </div>
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-                <h4 className="font-bold text-slate-900 text-lg mb-3">
+                <h3 className="font-bold text-slate-900 text-lg mb-3">
                   Verified Results
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   Generates tamper-proof certificates and detailed reports
                   meeting forensic standards for audit compliance.
@@ -280,7 +280,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* Why NIST Testing Matters */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Why NIST Testing Matters for Your Organization
             </h2>

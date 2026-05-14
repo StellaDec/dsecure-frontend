@@ -42,9 +42,9 @@ const Windows10EOSBlog: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-4">
                 <p className="text-slate-700 leading-relaxed text-lg">
@@ -68,9 +68,9 @@ const Windows10EOSBlog: React.FC = () => {
 
               {/* Exception Note */}
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-slate-900 mb-2">
+                <h2 className="font-bold text-slate-900 mb-2">
                   Long Term Servicing Channel (LTSC) Exception
-                </h3>
+                </h2>
                 <p className="text-slate-700 leading-relaxed">
                   Users of Windows 10 21H2 LTSC versions are exempt from this
                   deadline. Windows 10 LTSC 2021 receives mainstream support
@@ -98,9 +98,9 @@ const Windows10EOSBlog: React.FC = () => {
                 </p>
 
                 <div className="bg-slate-50 rounded-lg p-6 mt-4">
-                  <h4 className="font-bold text-slate-900 mb-4">
+                  <h3 className="font-bold text-slate-900 mb-4">
                     Minimum System Requirements for Windows 11:
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -178,7 +178,7 @@ const Windows10EOSBlog: React.FC = () => {
 
           {/* Preparation Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-2xl font-bold text-slate-900">
                 Preparing Your Organization for the Transition
               </h2>
@@ -192,9 +192,9 @@ const Windows10EOSBlog: React.FC = () => {
 
               <div className="space-y-6 mt-6">
                 <div className="border-l-4 border-emerald-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                  <h2 className="font-bold text-slate-900 text-lg mb-2">
                     1. Backup All Critical Business Data
-                  </h3>
+                  </h2>
                   <p className="text-slate-700">
                     Regardless of device fate — whether reused, donated, or
                     retired — IT administrators must secure all sensitive
@@ -205,9 +205,9 @@ const Windows10EOSBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-teal-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                  <h2 className="font-bold text-slate-900 text-lg mb-2">
                     2. Audit and Migrate Software Applications
-                  </h3>
+                  </h2>
                   <p className="text-slate-700">
                     Conduct a comprehensive software audit. While evaluating
                     application compatibility with alternative operating systems
@@ -217,9 +217,9 @@ const Windows10EOSBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-cyan-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                  <h2 className="font-bold text-slate-900 text-lg mb-2">
                     3. Securely Erase Data Before Decommissioning
-                  </h3>
+                  </h2>
                   <p className="text-slate-700">
                     Built-in deletion tools and factory resets don't completely
                     sanitize storage media. Residual data — including
@@ -244,9 +244,9 @@ const Windows10EOSBlog: React.FC = () => {
                 </div>
 
                 <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                  <h2 className="font-bold text-slate-900 text-lg mb-2">
                     4. Consider Alternative Operating Systems
-                  </h3>
+                  </h2>
                   <p className="text-slate-700">
                     Open-source alternatives like Linux don't require modern
                     hardware features such as TPM 2.0, making them viable

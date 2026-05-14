@@ -93,6 +93,55 @@ export default function TrustCenterPage() {
                </div>
             </div>
 
+            {/* Operational Integrity & Quality Assurance */}
+            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100 md:col-span-2">
+               <div className="flex items-center mb-6">
+                 <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                 </div>
+                 <h2 className="text-2xl font-bold text-slate-900">Operational Integrity & Quality Assurance</h2>
+               </div>
+               <div className="prose prose-slate max-w-none">
+                 <p className="text-slate-600 mb-8 leading-relaxed">
+                   D-Secure Technologies operates under a strict "Security-by-Design" philosophy. We recognize that as a provider of sanitization services, our own infrastructure must be beyond reproach. Our Trust Center serves as the primary repository for the technical and operational protocols that ensure the integrity of the D-Secure engine.
+                 </p>
+                 
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                   <div>
+                     <h3 className="text-lg font-bold text-slate-900 mb-3">Sovereign Cloud & Data Residency</h3>
+                     <p className="text-slate-600">
+                       For enterprise clients with strict data residency requirements (GDPR, CCPA), D-Secure offers "Sovereign Cloud" deployment options. This ensures that metadata, audit logs, and certificates never leave your legal jurisdiction. We currently maintain regional control planes across the US, EU, and APAC.
+                     </p>
+                   </div>
+                   <div>
+                     <h3 className="text-lg font-bold text-slate-900 mb-3">Air-Gapped Operational Model</h3>
+                     <p className="text-slate-600">
+                       Our sanitization appliances are engineered to operate in high-security, air-gapped environments. This means no active internet connection is required to execute verified erasures, preventing the possibility of data exfiltration during the sanitization lifecycle.
+                     </p>
+                   </div>
+                   <div>
+                     <h3 className="text-lg font-bold text-slate-900 mb-3">SDLC & Supply Chain Security</h3>
+                     <p className="text-slate-600">
+                       Our code is subjected to automated Static Application Security Testing (SAST) and dynamic analysis (DAST) on every build. We maintain a strict Software Bill of Materials (SBOM) to ensure that no compromised third-party libraries enter our sanitization engine.
+                     </p>
+                   </div>
+                   <div>
+                     <h3 className="text-lg font-bold text-slate-900 mb-3">Independent Verification & Audits</h3>
+                     <p className="text-slate-600">
+                       D-Secure regularly engages with independent third-party laboratories to verify the mathematical finality of our erasure algorithms. These forensic audits confirm that zero recoverable data remains on NAND flash or magnetic platters after a D-Secure "Purge" command.
+                     </p>
+                   </div>
+                 </div>
+
+                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                   <h4 className="font-bold text-slate-900 mb-3">Technical Transparency: The D-Secure Verifier</h4>
+                   <p className="text-slate-600 text-sm leading-relaxed">
+                     Every D-Secure license includes access to our independent verification tool. This allows your security team to manually inspect drive sectors using a low-level hex viewer, providing a "Trust but Verify" mechanism that goes beyond simple software reports. We believe in transparency at the binary level.
+                   </p>
+                 </div>
+               </div>
+            </div>
+
             {/* Systems Status */}
             <div className="bg-slate-900 p-8 md:p-10 rounded-2xl shadow-xl border border-slate-800 md:col-span-2 flex flex-col md:flex-row items-center justify-between text-white">
                <div>

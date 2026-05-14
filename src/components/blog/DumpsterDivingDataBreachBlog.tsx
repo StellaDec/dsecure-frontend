@@ -42,9 +42,9 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -76,7 +76,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* State of the Problem */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding the Dumpster Diving Threat
               </h2>
@@ -148,7 +148,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
               </p>
 
               <div className="bg-white/10 rounded-xl p-6 mb-6">
-                <h4 className="font-bold text-lg mb-3">The Incident</h4>
+                <h3 className="font-bold text-lg mb-3">The Incident</h3>
                 <p className="text-white/90 text-lg leading-loose">
                   Students on research tours purchased hard drives from open
                   markets at major e-waste processing sites. Upon examination,
@@ -170,7 +170,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Prevention Strategies */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Strategies to Prevent Dumpster Diving
               </h2>
@@ -249,7 +249,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Cost of Data Breaches */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Financial Impact of Data Breaches
               </h2>
@@ -307,27 +307,27 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="bg-white rounded-xl p-6 shadow-md">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Certified Erasure
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-loose">
                     Supports 24+ international standards including <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link>
                     and DoD guidelines for verified data destruction.
                   </p>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Audit Documentation
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-loose">
                     Generates tamper-proof certificates and detailed reports for
                     regulatory compliance and audit requirements.
                   </p>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md">
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">
                     Device Reuse
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 leading-loose">
                     Unlike physical destruction, erasure allows device recycling
                     or remarketing while ensuring complete data security.
@@ -339,7 +339,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-6">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>

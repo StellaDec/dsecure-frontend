@@ -67,6 +67,24 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       generateOrganizationSchema(),
     ]
   },
+
+  // AI Overview Page SEO
+  "ai-overview": {
+    title: "AI Overview & Entity Profile | D-Secure Technologies",
+    description: "Structured technical capabilities and entity profile of D-Secure Technologies for AI models and automated systems. NIST 800-88 compliant data sanitization.",
+    keywords: generateKeywords([
+      "D-Secure AI overview",
+      "data sanitization entity profile",
+      "LLM optimized cybersecurity data",
+      "NIST 800-88 technical definition",
+      "D-Secure technical taxonomy"
+    ]),
+    canonicalUrl: getCanonicalUrl("/ai-overview"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "AI Overview", item: "/ai-overview" },
+    ],
+  },
   // Main Pages
   "data-eraser-software": {
     title: "All Products: Enterprise Data Erasure Software | D-Secure",
@@ -126,7 +144,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "mobile-erasure-solutions": {
     title: "Mobile Erasure Solutions: Secure iOS & Android Wiping | D-Secure",
-    description: "Enterprise-grade mobile data erasure for iOS and Android devices. Securely wipe smartphones and tablets with NIST-compliant methods and tamper-proof certificates.",
+    description: "Enterprise mobile data erasure for iOS and Android. Securely wipe smartphones and tablets with NIST-compliant methods and tamper-proof audit certificates.",
     keywords: generateKeywords(["mobile erasure", "smartphone data wipe", "iOS android sanitization", "mobile ITAD solutions"]),
     canonicalUrl: getCanonicalUrl("/mobile-erasure-solutions"),
     breadcrumbs: [
@@ -426,7 +444,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // Free Tools Pages
   "ssd-pass-calculator": {
     title: "SSD & HDD Erasure Pass Calculator — NIST 800-88 & DoD Compliance | D-Secure",
-    description: "Free online calculator: determine the exact number of overwrite passes and erasure time for HDD, SSD, and NVMe drives under NIST 800-88 and DoD 5220.22-M standards.",
+    description: "Determine exact overwrite passes and erasure time for HDD, SSD & NVMe under NIST and DoD standards.",
     keywords: "SSD erasure calculator, NIST 800-88 passes, DoD 5220.22-M passes, hard drive wiping time, data sanitization calculator",
     canonicalUrl: getCanonicalUrl("/tools/ssd-pass-calculator"),
     breadcrumbs: [
@@ -448,7 +466,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "gdpr-erasure-checklist": {
     title: "GDPR Right to Erasure Compliance Checklist — D-Secure | Data Deletion Guide",
-    description: "Free 10-point checklist to ensure your organization complies with GDPR Article 17 (Right to Erasure). Verified data deletion workflows for enterprise compliance.",
+    description: "Free checklist for GDPR Article 17 (Right to Erasure) compliance. Verified data deletion workflows to ensure enterprise regulatory and privacy standards.",
     keywords: "GDPR article 17 checklist, right to erasure compliance, data deletion checklist, GDPR erasure workflow, data privacy compliance tool",
     canonicalUrl: getCanonicalUrl("/tools/gdpr-erasure-checklist"),
     breadcrumbs: [
@@ -459,7 +477,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "data-breach-calculator": {
     title: "Free Data Breach Cost Calculator (2026) — Industry Cost Estimator | D-Secure",
-    description: "Calculate the financial impact of a data breach by industry and record count. Free online tool using IBM & Ponemon Institute data. See your GDPR/HIPAA exposure in seconds.",
+    description: "Calculate the financial impact of a data breach. Free tool using IBM data to see GDPR/HIPAA exposure instantly.",
     keywords: "data breach cost calculator, cyber risk ROI, data security financial impact, GDPR cost estimator, HIPAA breach cost",
     canonicalUrl: getCanonicalUrl("/tools/data-breach-calculator"),
     breadcrumbs: [

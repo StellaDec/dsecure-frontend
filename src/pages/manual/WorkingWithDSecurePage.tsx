@@ -69,7 +69,7 @@ const WorkingWithDSecurePage: React.FC = () => {
                       <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                       <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                     </div>
-                    <h4 className="font-medium text-slate-700">DSecure File Eraser - Complete</h4>
+                    <h3 className="font-medium text-slate-700">DSecure File Eraser - Complete</h3>
                     <div className="w-16"></div>
                   </div>
                   
@@ -190,7 +190,7 @@ const WorkingWithDSecurePage: React.FC = () => {
                           <span className="text-lg">{tab.icon}</span>
                         </div>
                         <div>
-                          <h4 className="font-bold text-slate-900 mb-1">{tab.name}</h4>
+                          <h3 className="font-bold text-slate-900 mb-1">{tab.name}</h3>
                           <p className="text-slate-600 text-sm">{tab.description}</p>
                         </div>
                       </div>
@@ -302,7 +302,7 @@ const WorkingWithDSecurePage: React.FC = () => {
                   </div>
                   <div className="bg-slate-50 rounded-xl p-6">
                     <div className="bg-white rounded-lg shadow-md p-6">
-                      <h4 className="font-bold text-slate-900 mb-4 text-center">Select Option</h4>
+                      <h3 className="font-bold text-slate-900 mb-4 text-center">Select Option</h3>
                       <div className="space-y-2">
                         <div className="flex items-center gap-3 p-3 bg-emerald-500 text-white rounded-lg">
                           <span className="text-lg">📁</span>
@@ -330,15 +330,15 @@ const WorkingWithDSecurePage: React.FC = () => {
                     </p>
                     <div className="space-y-3">
                       <div className="bg-blue-50 border-l-4 border-blue-400 p-3 rounded">
-                        <h4 className="font-medium text-blue-900">By Drag and Drop</h4>
+                        <h3 className="font-medium text-blue-900">By Drag and Drop</h3>
                         <p className="text-blue-800 text-sm">Drag the folder from your system and drop them in the box.</p>
                       </div>
                       <div className="bg-green-50 border-l-4 border-green-400 p-3 rounded">
-                        <h4 className="font-medium text-green-900">Using Add Items</h4>
+                        <h3 className="font-medium text-green-900">Using Add Items</h3>
                         <p className="text-green-800 text-sm">Click Add Items button from the toolbar and select files/folders.</p>
                       </div>
                       <div className="bg-purple-50 border-l-4 border-purple-400 p-3 rounded">
-                        <h4 className="font-medium text-purple-900">By Search & Erase</h4>
+                        <h3 className="font-medium text-purple-900">By Search & Erase</h3>
                         <p className="text-purple-800 text-sm">Click Search & Erase option to search and add files.</p>
                       </div>
                     </div>
@@ -350,7 +350,7 @@ const WorkingWithDSecurePage: React.FC = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                       </div>
-                      <h4 className="font-bold text-slate-900 mb-2">Drop Zone</h4>
+                      <h3 className="font-bold text-slate-900 mb-2">Drop Zone</h3>
                       <p className="text-slate-600 text-sm">Drag & Drop Items to Erase</p>
                       <p className="text-slate-500 text-xs mt-2">Files and folders will appear here</p>
                     </div>
@@ -383,7 +383,7 @@ const WorkingWithDSecurePage: React.FC = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.996-.833-2.764 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
                           </svg>
                         </div>
-                        <h4 className="font-bold text-slate-900">Confirm Erasure</h4>
+                        <h3 className="font-bold text-slate-900">Confirm Erasure</h3>
                       </div>
                       <p className="text-slate-600 text-sm mb-4">This action will erase the selected data permanently. Deleted data cannot be recovered. Are you sure?</p>
                       <div className="flex gap-3">
@@ -459,7 +459,7 @@ const WorkingWithDSecurePage: React.FC = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m0 0a2 2 0 01-2 2m2-2h2.5M9 10V8a2 2 0 012-2h1m-3 4h3m5 0l-3-3m0 0l-3 3m3-3v12" />
                           </svg>
                         </div>
-                        <h4 className="font-bold text-slate-900">Activation</h4>
+                        <h3 className="font-bold text-slate-900">Activation</h3>
                         <p className="text-slate-500 text-sm mb-4">Enter activation key to activate the product</p>
                       </div>
                       <div className="space-y-3">
@@ -503,7 +503,7 @@ const WorkingWithDSecurePage: React.FC = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <h4 className="font-bold text-slate-900 mb-2">Activation</h4>
+                      <h3 className="font-bold text-slate-900 mb-2">Activation</h3>
                       <p className="text-emerald-800 text-sm font-medium mb-4">DSecure File Eraser Activated Successfully!</p>
                       <button className="bg-emerald-500 text-white px-6 py-2 rounded font-medium">OK</button>
                     </div>
@@ -533,20 +533,20 @@ const WorkingWithDSecurePage: React.FC = () => {
                 {[
                   {
                     title: "Check installer and re-enter activation key",
-                    description: "Make sure you have downloaded the correct installer. Use the download link given in the email or visit the desired product page to first download the software and then activate it using the code provided on your email."
+                    content: "Ensure you have the correct installer. Use the download link in your email or product page, then activate using your provided code."
                   },
                   {
-                    title: "Uninstall All versions of the software",
-                    description: "Uninstall any version of the software you may have installed earlier. Then re-install the desired version of the software and activate it."
+                    title: "Uninstall legacy versions",
+                    content: "Remove any previously installed versions of the software before re-installing and activating the latest version."
                   },
                   {
-                    title: "Re-enter the correct activation key without blank spaces",
-                    description: "If copy and pasting the activation code does not work, try to enter it manually. Sometimes, while copying, you may copy the blank spaces, which can cause software activation failure. Entering code manually overcomes this issue. Alternatively, you may copy the code from email to notepad and then remove empty space from the beginning and end of the code. Then copy and paste the code in the activation window of the software."
+                    title: "Manual Activation Entry",
+                    content: "If copy/paste fails, enter the code manually to avoid blank spaces. Or paste to Notepad, remove extra spaces, then copy into the software."
                   }
                 ].map((item, index) => (
                   <div key={index} className="bg-red-50 border-l-4 border-red-400 p-4 rounded">
-                    <h4 className="font-bold text-red-900 mb-2">{index + 1}. {item.title}</h4>
-                    <p className="text-red-800 text-sm">{item.description}</p>
+                    <h3 className="font-bold text-red-900 mb-2">{index + 1}. {item.title}</h3>
+                    <p className="text-red-800 text-sm">{item.content}</p>
                   </div>
                 ))}
               </div>

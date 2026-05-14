@@ -48,9 +48,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding HIPAA and PHI Protection
             </h2>
@@ -62,9 +62,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
               disclosures of patient data at all costs.
             </p>
             <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-              <h4 className="font-bold text-slate-900 text-xl mb-3">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
                 What is PHI?
-              </h4>
+              </h3>
               <p className="text-lg text-slate-700 leading-loose">
                 Protected Health Information includes any individually
                 identifiable health information — patient names, addresses,
@@ -135,7 +135,7 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               HIPAA Compliance Requirements for Data Disposal
             </h2>
@@ -147,9 +147,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
 
             <div className="space-y-6">
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Staff Training Programs
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Regular training on HIPAA requirements, data handling, and
                   secure disposal procedures for all healthcare staff.
@@ -157,9 +157,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Risk Assessments
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Frequent assessments to identify vulnerabilities in data
                   storage, handling, and disposal processes.
@@ -167,9 +167,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Documentation and Reports
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Maintaining detailed records of all data handling and
                   destruction activities for audit purposes.
@@ -177,9 +177,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Restricted Access
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Limiting access to confidential patient data only to
                   authorized personnel with legitimate need.
@@ -187,9 +187,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
               </div>
 
               <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h4 className="font-bold text-emerald-700 text-xl mb-2">
+                <h3 className="font-bold text-emerald-700 text-xl mb-2">
                   Due Diligence
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Verifying that all third-party vendors and business associates
                   also comply with HIPAA requirements.
@@ -200,7 +200,7 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               HIPAA Data Destruction Methods
             </h2>
@@ -211,9 +211,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Paper PHI Records
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed mb-4">
                   Physical destruction methods that render records unreadable:
                 </p>
@@ -225,9 +225,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
               </div>
 
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   Electronic PHI (ePHI)
-                </h4>
+                </h3>
                 <p className="text-slate-700 text-lg leading-relaxed mb-4">
                   Software-based erasure methods following NIST guidelines:
                 </p>
@@ -306,7 +306,7 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Real-World HIPAA Breach Consequences
             </h2>
@@ -317,9 +317,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                <h4 className="font-bold text-red-700 text-xl mb-3">
+                <h3 className="font-bold text-red-700 text-xl mb-3">
                   Improper Disposal
-                </h4>
+                </h3>
                 <ul className="text-slate-700 text-lg leading-relaxed space-y-2">
                   <li>• Discarded devices with PHI data</li>
                   <li>• Inadequate <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> before sale</li>
@@ -328,9 +328,9 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
                 </ul>
               </div>
               <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                <h4 className="font-bold text-red-700 text-xl mb-3">
+                <h3 className="font-bold text-red-700 text-xl mb-3">
                   Cybersecurity Lapses
-                </h4>
+                </h3>
                 <ul className="text-slate-700 text-lg leading-relaxed space-y-2">
                   <li>• Ransomware attacks on health systems</li>
                   <li>• Unencrypted data in transit</li>

@@ -42,9 +42,9 @@ const DataErasureMythsBlog: React.FC = () => {
         </section>
 
         {/* Main Content - Full Width */}
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -79,7 +79,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* Myth 1: Formatting */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-center gap-4 mb-6">
                 <span className="flex-shrink-0 px-4 py-2 bg-amber-500 text-white rounded-lg text-xl font-bold">
                   MYTH #1
@@ -190,7 +190,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* Myth 3: Degaussing SSDs */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-center gap-4 mb-6">
                 <span className="flex-shrink-0 px-4 py-2 bg-amber-500 text-white rounded-lg text-xl font-bold">
                   MYTH #3
@@ -245,7 +245,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* Myth 4: Shredding */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-center gap-4 mb-6">
                 <span className="flex-shrink-0 px-4 py-2 bg-amber-500 text-white rounded-lg text-xl font-bold">
                   MYTH #4
@@ -350,7 +350,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* Summary Table */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Myth vs. Reality: Quick Reference
               </h2>

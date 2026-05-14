@@ -40,9 +40,9 @@ const ChainOfCustodyBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is Chain of Custody?
               </h2>
@@ -54,9 +54,9 @@ const ChainOfCustodyBlog: React.FC = () => {
                 possession they are in at all times.
               </p>
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h4 className="font-bold text-slate-900 text-xl mb-3">
+                <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Key Principle
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-700 leading-loose">
                   This ensures the safety of business-critical IT infrastructure
                   because{" "}
@@ -72,7 +72,7 @@ const ChainOfCustodyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Chain of Custody Matters for <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
               </h2>
@@ -84,54 +84,54 @@ const ChainOfCustodyBlog: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Safety & Integrity
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Ensure safety and integrity of evidence through audit trails
                     and asset tags
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Prevent Tampering
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Avoid any chance of tampering or contamination of items
                     being transferred
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Legal Evidence
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Establish clear chain of custody that can be used as
                     evidence in court if necessary
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Inventory Tracking
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Identify inventory through asset tags and ensure seamless
                     reconciliation
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Regulatory Compliance
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Comply with data security and privacy regulations such as
                     GDPR and CCPA
                   </p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
                     Build Trust
-                  </h4>
+                  </h3>
                   <p className="text-slate-700">
                     Build transparent and reliable relationships with partnered
                     organizations
@@ -184,7 +184,7 @@ const ChainOfCustodyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Risks of Chain of Custody Gaps
               </h2>
@@ -215,7 +215,7 @@ const ChainOfCustodyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How to Ensure a Secure Chain of Custody
               </h2>

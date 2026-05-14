@@ -39,9 +39,9 @@ const DeploymentOptionsBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <p className="text-slate-700 leading-loose text-xl">
                 Businesses use a wide variety of devices for storing and
                 processing data, such as laptops, MacBooks, Chromebooks, and
@@ -63,7 +63,7 @@ const DeploymentOptionsBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Deployment Options
               </h2>
@@ -79,9 +79,9 @@ const DeploymentOptionsBlog: React.FC = () => {
                     servers.
                   </p>
 
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3 mt-6">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3 mt-6">
                     For PCs, Laptops, and Servers:
-                  </h4>
+                  </h3>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2"></span>
@@ -136,9 +136,9 @@ const DeploymentOptionsBlog: React.FC = () => {
                     </li>
                   </ul>
 
-                  <h4 className="font-bold text-emerald-700 text-lg mb-3 mt-6">
+                  <h3 className="font-bold text-emerald-700 text-lg mb-3 mt-6">
                     For MacBooks:
-                  </h4>
+                  </h3>
                   <p className="text-slate-700 text-lg leading-loose mb-3">
                     Mac devices have different security protocols, so we use the
                     Mac variant of D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> to wipe Mac with M3,
@@ -220,26 +220,26 @@ const DeploymentOptionsBlog: React.FC = () => {
               <h2 className="text-3xl font-bold mb-6">Key Benefits</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Flexibility</h4>
+                  <h3 className="font-bold text-lg mb-3">Flexibility</h3>
                   <p className="text-white/90 text-sm">
                     Choose the deployment method that best suits your
                     infrastructure and requirements
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Scalability</h4>
+                  <h3 className="font-bold text-lg mb-3">Scalability</h3>
                   <p className="text-white/90 text-sm">
                     From single devices to thousands of drives simultaneously
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Broad Support</h4>
+                  <h3 className="font-bold text-lg mb-3">Broad Support</h3>
                   <p className="text-white/90 text-sm">
                     Works with PCs, Macs, servers, and Chromebooks
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="font-bold text-lg mb-3">Remote Capability</h4>
+                  <h3 className="font-bold text-lg mb-3">Remote Capability</h3>
                   <p className="text-white/90 text-sm">
                     Erase devices without physical access
                   </p>

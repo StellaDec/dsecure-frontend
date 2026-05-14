@@ -19,9 +19,9 @@ const NISTVsIEEEBlog: React.FC = () => {
       <SEOHead
         seo={getBlogSEO({
           title:
-            "NIST 800-88 vs IEEE 2883 Data Sanitization Standards: Key Differences | D-Secure",
+            "NIST 800-88 vs IEEE 2883: Data Sanitization Standards",
           excerpt:
-            "Detailed comparison of NIST 800-88 and IEEE 2883 media sanitization standards — understand which applies to your organization, how they differ in scope, methods and verification requirements.",
+            "Compare NIST 800-88 and IEEE 2883 sanitization standards to understand their scope, methods, and requirements.",
           slug: "nist-vs-ieee",
           author: "D-Secure Editorial Team",
           publishDate: "August 1, 2025",
@@ -49,9 +49,9 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding the Two Major Standards
             </h2>
@@ -66,9 +66,9 @@ const NISTVsIEEEBlog: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-xl mb-3">
+                <h3 className="font-bold text-emerald-700 text-xl mb-3">
                   NIST SP 800-88
-                </h4>
+                </h3>
                 <p className="text-slate-700 leading-relaxed">
                   Published by the National Institute of Standards and
                   Technology (USA). First released in 2006, revised in 2014 (Rev
@@ -77,9 +77,9 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </p>
               </div>
               <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                <h4 className="font-bold text-amber-700 text-xl mb-3">
+                <h3 className="font-bold text-amber-700 text-xl mb-3">
                   IEEE 2883-2022
-                </h4>
+                </h3>
                 <p className="text-slate-700 leading-relaxed">
                   Published by the Institute of Electrical and Electronics
                   Engineers. Released in 2022 as a modern standard addressing
@@ -92,7 +92,7 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Detailed Comparison: NIST vs IEEE Standards
             </h2>
@@ -177,9 +177,9 @@ const NISTVsIEEEBlog: React.FC = () => {
             <h2 className="text-3xl font-bold mb-6">CLEAR Method Comparison</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 rounded-xl p-6">
-                <h4 className="font-bold text-lg mb-3">
+                <h3 className="font-bold text-lg mb-3">
                   NIST Clear Definition
-                </h4>
+                </h3>
                 <p className="text-white/90 leading-relaxed">
                   Logical techniques to sanitize user-addressable data to
                   protect against simple, non-invasive data recovery techniques.{" "}
@@ -187,9 +187,9 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </p>
               </div>
               <div className="bg-white/10 rounded-xl p-6">
-                <h4 className="font-bold text-lg mb-3">
+                <h3 className="font-bold text-lg mb-3">
                   IEEE Clear Definition
-                </h4>
+                </h3>
                 <p className="text-white/90 leading-relaxed">
                   Logical techniques to remove data from addressable locations
                   to protect data recovery using non-invasive methods.{" "}
@@ -212,9 +212,9 @@ const NISTVsIEEEBlog: React.FC = () => {
             <h2 className="text-3xl font-bold mb-6">PURGE Method Comparison</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 rounded-xl p-6">
-                <h4 className="font-bold text-lg mb-3">
+                <h3 className="font-bold text-lg mb-3">
                   NIST Purge Definition
-                </h4>
+                </h3>
                 <p className="text-white/90 leading-relaxed">
                   Physical & logical techniques to make data recovery infeasible
                   using state-of-the-art laboratory techniques. Purge includes
@@ -224,9 +224,9 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </p>
               </div>
               <div className="bg-white/10 rounded-xl p-6">
-                <h4 className="font-bold text-lg mb-3">
+                <h3 className="font-bold text-lg mb-3">
                   IEEE Purge Definition
-                </h4>
+                </h3>
                 <p className="text-white/90 leading-relaxed">
                   Logical & physical techniques to remove data, making it
                   irrecoverable using laboratory techniques. Techniques include
@@ -254,9 +254,9 @@ const NISTVsIEEEBlog: React.FC = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 rounded-xl p-6">
-                <h4 className="font-bold text-lg mb-3">
+                <h3 className="font-bold text-lg mb-3">
                   NIST Destroy Definition
-                </h4>
+                </h3>
                 <p className="text-white/90 leading-relaxed mb-3">
                   Physical methods to make data recovery from the device
                   infeasible using laboratory techniques, making the device
@@ -272,9 +272,9 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </ul>
               </div>
               <div className="bg-white/10 rounded-xl p-6">
-                <h4 className="font-bold text-lg mb-3">
+                <h3 className="font-bold text-lg mb-3">
                   IEEE Destruct Definition
-                </h4>
+                </h3>
                 <p className="text-white/90 leading-relaxed mb-3">
                   Physical techniques to destroy media to make recovery
                   impossible through laboratory techniques; leaves the device in
@@ -309,17 +309,17 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Key Advantages of IEEE 2883-2022
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                <h3 className="font-bold text-emerald-700 text-lg mb-3">
                   {" "}
                   Clear Conformity Instructions
-                </h4>
+                </h3>
                 <p className="text-slate-700 leading-relaxed">
                   IEEE 2883 offers clear instructions on achieving conformity if
                   a particular sanitization method fails. For example, if
@@ -328,10 +328,10 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                <h3 className="font-bold text-emerald-700 text-lg mb-3">
                   {" "}
                   Modern Storage Coverage
-                </h4>
+                </h3>
                 <p className="text-slate-700 leading-relaxed">
                   Designed with modern SSDs, NVMe, and emerging storage
                   technologies in mind. Addresses limitations of traditional
@@ -339,10 +339,10 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                <h3 className="font-bold text-emerald-700 text-lg mb-3">
                   {" "}
                   ISO 27040 Integration
-                </h4>
+                </h3>
                 <p className="text-slate-700 leading-relaxed">
                   IEEE 2883-2022 and ISO 27040-2024 are complementary standards
                   intended to be used together. IEEE describes sanitization
@@ -350,10 +350,10 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </p>
               </div>
               <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h4 className="font-bold text-emerald-700 text-lg mb-3">
+                <h3 className="font-bold text-emerald-700 text-lg mb-3">
                   {" "}
                   Future-Ready Approach
-                </h4>
+                </h3>
                 <p className="text-slate-700 leading-relaxed">
                   Addresses emerging technologies like IoT devices, AI hardware,
                   and non-traditional storage where traditional methods may not
@@ -365,7 +365,7 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-10 mt-10 space-y-8">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               D-Secure: Supporting Both Standards
             </h2>
@@ -378,27 +378,27 @@ const NISTVsIEEEBlog: React.FC = () => {
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="border-l-4 border-emerald-500 pl-6">
-                <h4 className="font-bold text-slate-900 text-lg mb-2">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">
                   24+ Erasure Standards
-                </h4>
+                </h3>
                 <p className="text-slate-700">
                   Support for NIST, IEEE, DoD, HMG, and other international
                   standards.
                 </p>
               </div>
               <div className="border-l-4 border-emerald-500 pl-6">
-                <h4 className="font-bold text-slate-900 text-lg mb-2">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">
                   All Media Types
-                </h4>
+                </h3>
                 <p className="text-slate-700">
                   HDDs, SSDs, NVMe, servers, mobile devices, and emerging
                   storage technologies.
                 </p>
               </div>
               <div className="border-l-4 border-emerald-500 pl-6">
-                <h4 className="font-bold text-slate-900 text-lg mb-2">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">
                   Compliance Reports
-                </h4>
+                </h3>
                 <p className="text-slate-700">
                   Audit-ready certificates specifying the standard and method
                   used for each device.
@@ -477,7 +477,7 @@ const NISTVsIEEEBlog: React.FC = () => {
       </section>
       <BlogFooterStandard 
         blogId="nist-vs-ieee" 
-        blogTitle="NIST 800-88 vs IEEE 2883 Data Sanitization Standards: Key Differences | D-Secure" category="Comparison" tag="Standards" 
+        blogTitle="NIST 800-88 vs IEEE 2883: Data Sanitization Standards" category="Comparison" tag="Standards" 
       />
     </div>
   );

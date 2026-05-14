@@ -924,8 +924,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                   const Icon = s.icon;
                   return (
                     <Reveal key={s.title} delayMs={i * 80} className="h-full">
-                      <Link
-                        to={s.link}
+                      <div
                         className={`group relative bg-gradient-to-br ${c.bg} rounded-2xl p-7 border ${c.border} transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 block h-full flex flex-col`}
                       >
                         <div className="flex items-start justify-between mb-5">
@@ -961,13 +960,14 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                           ))}
                         </div>
 
-                        <span
-                          className={`inline-flex items-center text-sm font-bold ${c.text} mt-auto pt-4 border-t border-slate-200/50 group-hover:gap-2 transition-all`}
+                        <Link
+                          to={s.link}
+                          className={`inline-flex items-center text-sm font-bold ${c.text} mt-auto pt-4 border-t border-slate-200/50 group-hover:gap-2 transition-all after:absolute after:inset-0`}
                         >
                           Learn More
                           <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </Link>
+                        </Link>
+                      </div>
                     </Reveal>
                   );
                 })}
@@ -991,8 +991,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                   const Icon = s.icon;
                   return (
                     <Reveal key={s.title} delayMs={i * 80} className="h-full">
-                      <Link
-                        to={s.link}
+                      <div
                         className={`group relative bg-gradient-to-br ${c.bg} rounded-2xl p-7 border ${c.border} transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 block h-full flex flex-col`}
                       >
                         <div className="flex items-start justify-between mb-5">
@@ -1028,13 +1027,14 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                           ))}
                         </div>
 
-                        <span
-                          className={`inline-flex items-center text-sm font-bold ${c.text} mt-auto pt-4 border-t border-slate-200/50 group-hover:gap-2 transition-all`}
+                        <Link
+                          to={s.link}
+                          className={`inline-flex items-center text-sm font-bold ${c.text} mt-auto pt-4 border-t border-slate-200/50 group-hover:gap-2 transition-all after:absolute after:inset-0`}
                         >
                           Learn More
                           <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </Link>
+                        </Link>
+                      </div>
                     </Reveal>
                   );
                 })}
