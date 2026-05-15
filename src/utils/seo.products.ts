@@ -202,7 +202,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
           os: "Windows, Windows Server",
           ratingValue: 4.8,
           reviewCount: 512,
-          price: "40.00",
+          price: "39.99",
           currency: "USD",
           features: [
             "Secure File Shredding",

@@ -830,7 +830,7 @@ const ProductPage: React.FC = () => {
 
                   <div className="mb-6">
                     <div className="text-3xl font-bold text-slate-900 mb-2">
-                      {t("products.startingAt")} $40
+                      {t("products.startingAt")} $39.99
                     </div>
                     <div className="text-slate-600">
                       {t("products.individualEnterpriseAvailable")}

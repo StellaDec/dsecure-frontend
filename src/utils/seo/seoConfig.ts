@@ -113,7 +113,7 @@ export const PRODUCT_CATALOG = [
   {
     slug: 'file-eraser',
     name: 'D-Secure File Eraser',
-    price: '40.00',
+    price: '39.99',
     currency: 'USD',
     path: '/products/file-eraser',
   },

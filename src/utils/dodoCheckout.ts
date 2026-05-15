@@ -1,14 +1,14 @@
 /**
  * Dodo Payments Overlay Checkout Utility
  * Overlay checkout SDK se payment form full-screen overlay mein dikhta hai
- * Product summary left mein, form right mein — Dodo ka built-in UI
+ * Product-based aur Payment Link dono support karta hai
  */
 
 import { DodoPayments } from 'dodopayments-checkout';
 import type { CheckoutEvent } from 'dodopayments-checkout';
 
-// SDK initialized hai ya nahi track karne ke liye flag
-let isInitialized = false;
+// SDK kis mode mein initialized hai track karne ke liye
+let currentLinkType: 'static' | 'session' | null = null;
 
 /**
  * Checkout ke liye callback types
@@ -24,23 +24,23 @@ interface CheckoutCallbacks {
 let storedCallbacks: CheckoutCallbacks = {};
 
 /**
- * Dodo Payments SDK ko overlay mode mein initialize karo
- * Ye ek baar call hota hai, phir reuse hota hai
+ * SDK ko specific linkType ke saath initialize karo
+ * Agar already same linkType se init ho chuka hai toh skip karega
  */
-export function initDodoCheckout(callbacks?: CheckoutCallbacks): void {
-  // Agar pehle se initialized hai toh skip karo
-  if (isInitialized) return;
-
+function ensureInitialized(linkType: 'static' | 'session', callbacks?: CheckoutCallbacks): void {
   // Callbacks store karo
   if (callbacks) {
     storedCallbacks = callbacks;
   }
 
-  // SDK ko overlay mode mein initialize karo — full-screen two-column layout
+  // Agar same linkType se already initialized hai toh skip karo
+  if (currentLinkType === linkType) return;
+
+  // SDK ko required mode mein initialize karo
   DodoPayments.Initialize({
     mode: 'live',
     displayType: 'overlay',
-    linkType: 'static',
+    linkType: linkType,
     onEvent: (event: CheckoutEvent) => {
       console.log('🔔 Dodo Checkout Event:', event.event_type, event.data);
 
@@ -63,12 +63,41 @@ export function initDodoCheckout(callbacks?: CheckoutCallbacks): void {
     },
   });
 
-  isInitialized = true;
+  currentLinkType = linkType;
 }
 
 /**
- * Overlay checkout open karo — SDK khud full-screen overlay dikhayega
- * Left mein product summary, right mein checkout form
+ * Dodo Payments SDK ko product mode (static) mein initialize karo
+ * Page mount hone pe call hota hai
+ */
+export function initDodoCheckout(callbacks?: CheckoutCallbacks): void {
+  ensureInitialized('static', callbacks);
+}
+
+// D-Secure website ke colors se matching theme config
+const dsecureTheme = {
+  light: {
+    bgPrimary: '#ffffff',
+    bgSecondary: '#f0fdfa',        // teal-50 — light teal background
+    borderPrimary: '#ccfbf1',      // teal-100
+    borderSecondary: '#99f6e4',    // teal-200
+    textPrimary: '#0f172a',        // slate-900
+    textSecondary: '#475569',      // slate-500
+    textPlaceholder: '#94a3b8',    // slate-400
+    textError: '#dc2626',
+    textSuccess: '#0d9488',        // teal-600
+    buttonPrimary: '#0d9488',      // teal-600 — main brand color
+    buttonPrimaryHover: '#0f766e', // teal-700
+    buttonTextPrimary: '#ffffff',
+    buttonSecondary: '#f0fdfa',    // teal-50
+    buttonSecondaryHover: '#ccfbf1', // teal-100
+    buttonTextSecondary: '#0d9488',  // teal-600
+    inputFocusBorder: '#14b8a6',   // teal-500
+  },
+};
+
+/**
+ * Product-based overlay checkout open karo (Drive Eraser etc.)
  * 
  * @param productId - Dodo Payments product ID (e.g., "pdt_0NVH5wJYMX70syW3ioj9R")
  * @param quantity - Kitne licenses chahiye
@@ -79,37 +108,31 @@ export function openOverlayCheckout(
   quantity: number,
   redirectUrl?: string
 ): void {
-  // Agar SDK initialized nahi hai toh pehle initialize karo
-  if (!isInitialized) {
-    initDodoCheckout();
-  }
+  // Static mode mein ensure karo
+  ensureInitialized('static');
 
-  // D-Secure website ke colors se matching theme config
-  const dsecureTheme = {
-    light: {
-      bgPrimary: '#ffffff',
-      bgSecondary: '#f0fdfa',        // teal-50 — light teal background
-      borderPrimary: '#ccfbf1',      // teal-100
-      borderSecondary: '#99f6e4',    // teal-200
-      textPrimary: '#0f172a',        // slate-900
-      textSecondary: '#475569',      // slate-500
-      textPlaceholder: '#94a3b8',    // slate-400
-      textError: '#dc2626',
-      textSuccess: '#0d9488',        // teal-600
-      buttonPrimary: '#0d9488',      // teal-600 — main brand color
-      buttonPrimaryHover: '#0f766e', // teal-700
-      buttonTextPrimary: '#ffffff',
-      buttonSecondary: '#f0fdfa',    // teal-50
-      buttonSecondaryHover: '#ccfbf1', // teal-100
-      buttonTextSecondary: '#0d9488',  // teal-600
-      inputFocusBorder: '#14b8a6',   // teal-500
-    },
-  };
-
-  // Overlay checkout open karo — SDK apna full-screen UI dikhayega
   DodoPayments.Checkout.open({
     products: [{ productId, quantity }],
     redirectUrl: redirectUrl,
+    options: {
+      themeConfig: dsecureTheme,
+      payButtonText: 'Pay Now',
+    },
+  });
+}
+
+/**
+ * Payment Link based overlay checkout open karo (File Eraser etc.)
+ * Dodo pe se banayi gayi session URLs ke liye
+ * 
+ * @param checkoutUrl - Dodo session checkout URL
+ */
+export function openPaymentLinkCheckout(checkoutUrl: string): void {
+  // Payment links ke liye session mode chahiye
+  ensureInitialized('session');
+
+  DodoPayments.Checkout.open({
+    checkoutUrl: checkoutUrl,
     options: {
       themeConfig: dsecureTheme,
       payButtonText: 'Pay Now',
@@ -131,5 +154,6 @@ export function closeOverlayCheckout(): void {
 export default {
   initDodoCheckout,
   openOverlayCheckout,
+  openPaymentLinkCheckout,
   closeOverlayCheckout,
 };

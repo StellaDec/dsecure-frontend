@@ -17,7 +17,7 @@ import {
   formDataTransformers,
 } from "@/hooks/useFormSubmission";
 // Dodo Payments Overlay Checkout SDK
-import { initDodoCheckout, openOverlayCheckout } from "@/utils/dodoCheckout";
+import { initDodoCheckout, openOverlayCheckout, openPaymentLinkCheckout } from "@/utils/dodoCheckout";
 
 const PricingAndPlanPage: React.FC = memo(() => {
   const { toast, showToast, hideToast } = useToast();
@@ -643,20 +643,21 @@ const PricingAndPlanPage: React.FC = memo(() => {
       imageCategory: "drive-eraser",
       version: "V1.0.0.0 Enterprise",
       basePrice: driveEraserVariant === "diagnostics" ? 30 : 25,
-      originalPrice: driveEraserVariant === "diagnostics" ? 60 : 50,
-      discountPercentage: "50% OFF",
+      originalPrice: driveEraserVariant === "diagnostics" ? 30 : 25,
+      discountPercentage: "Volume Discount",
       selectionLabel: "Number of Licenses:",
       selectionNote: "(Pay-per-use)",
       options: [
         "1",
+        "5",
         "10",
         "25",
         "50",
         "100",
         "250",
-        "300",
         "500",
         "1000",
+        "1500",
         "custom",
       ],
       showDeliveryOptions: true,
@@ -673,21 +674,18 @@ const PricingAndPlanPage: React.FC = memo(() => {
       image: getProductIcon("file-eraser", 64),
       imageCategory: "file-eraser",
       version: fileEraserVariant === "network" ? "Network Edition" : "Professional",
-      basePrice: fileEraserVariant === "network" ? 50 : 40,
-      originalPrice: fileEraserVariant === "network" ? 75 : 60,
-      discountPercentage: "33% OFF",
+      basePrice: fileEraserVariant === "network" ? 50 : 39.99,
+      originalPrice: fileEraserVariant === "network" ? 50 : 39.99,
+      discountPercentage: "Volume Discount",
       selectionLabel: "Number of Licenses:",
       selectionNote: "(Pay per year license)",
       options: [
         "1",
         "10",
-        "25",
         "50",
         "100",
         "250",
-        "300",
         "500",
-        "1000",
         "custom",
       ],
       showDeliveryOptions: false,
@@ -975,7 +973,23 @@ const PricingAndPlanPage: React.FC = memo(() => {
       category === "freeze-state" ||
       category === "forensic-imaging"
     ) {
-      return Math.round(product.basePrice * licenseCount * 100) / 100;
+      let price = product.basePrice * licenseCount;
+
+      if (category === "drive-eraser" && licenseCount > 0) {
+        let discount = 0;
+        if (licenseCount >= 1000) discount = 0.80; // 80%
+        else if (licenseCount >= 100) discount = 0.75; // 75%
+        else if (licenseCount >= 50) discount = 0.70; // 70%
+        else if (licenseCount >= 25) discount = 0.65; // 65%
+        else if (licenseCount >= 10) discount = 0.55; // 55%
+        else if (licenseCount >= 5) discount = 0.30; // 30%
+
+        price = price * (1 - discount);
+        // Explicitly handle Qty 5 to match 87.75 if basePrice is 25
+        if (licenseCount === 5 && product.basePrice === 25) price = 87.75;
+      }
+
+      return Math.round(price * 100) / 100;
     }
 
     // Subscription based products (Smart Diagnostic, File Eraser, Smartphone Diagnostic)
@@ -985,7 +999,20 @@ const PricingAndPlanPage: React.FC = memo(() => {
       category === "smartphone-diagnostic"
     ) {
       const yearCount = Number.parseInt(years);
-      return Math.round(product.basePrice * licenseCount * yearCount * 100) / 100;
+      let price = product.basePrice * licenseCount * yearCount;
+      
+      if (category === "file-eraser" && licenseCount > 0) {
+        let discount = 0;
+        if (licenseCount >= 500) discount = 0.60;
+        else if (licenseCount >= 250) discount = 0.50;
+        else if (licenseCount >= 100) discount = 0.40;
+        else if (licenseCount >= 50) discount = 0.35;
+        else if (licenseCount >= 10) discount = 0.30;
+        
+        price = price * (1 - discount);
+      }
+      
+      return Math.round(price * 100) / 100;
     }
 
     return 0;
@@ -1407,7 +1434,69 @@ const PricingAndPlanPage: React.FC = memo(() => {
       // const finalUrl = `${baseLink}${quantity}&client_ref=${clientRef}&redirect_url=${redirectUrl}&cancel_url=${failureUrl}`;
       // window.location.href = finalUrl;
 
-      // ── NEW: Overlay Checkout — SDK apna full-screen overlay dikhayega ──
+      // ── File Eraser ke liye Product-based Overlay Checkout ──
+      if (selectedCategory === "file-eraser") {
+        const FILE_ERASER_PRODUCT_IDS: Record<string, string> = {
+          "1": "pdt_0NVHHRwPSypqgPTs3kuSu",
+          "10": "pdt_0NetISdq5Sp7dTTOCHOZy",
+          "50": "pdt_0NetIgiYQV6azPZhsnjmh",
+          "100": "pdt_0NetJ0B4s0JWAQbvOLMZ5",
+          "250": "pdt_0NetJOrD6j8U6bTZsLu02",
+          "500": "pdt_0NetJczhdJrJOk1Te3MXP",
+        };
+
+        const pid = FILE_ERASER_PRODUCT_IDS[selectedLicenses];
+        if (pid) {
+          openOverlayCheckout(pid, 1, "https://dsecuretech.com/order-success");
+          return;
+        }
+      }
+
+      // ── Drive Eraser (Standard) ke liye Product-based Overlay Checkout ──
+      if (selectedCategory === "drive-eraser" && driveEraserVariant === "standard") {
+        const DRIVE_ERASER_PRODUCT_IDS: Record<string, string> = {
+          "1": "pdt_0NVH5wJYMX70syW3ioj9R",
+          "5": "pdt_0NetDOJYTbgyl4yyaaNUx",
+          "10": "pdt_0NetDfyIzMlWudwHR5JVM",
+          "25": "pdt_0NetE1xoA3umBlYIj7T76",
+          "50": "pdt_0NetENDvF2AgRqNVRgley",
+          "100": "pdt_0NetEmLNGelAtMId2Sy4o",
+          "250": "pdt_0NetEzHKYwB2bqCEl3je9",
+          "500": "pdt_0NetFATL9t0omCvK7aFhA",
+          "1000": "pdt_0NetFKU1KZrfNgmfRdMwp",
+          "1500": "pdt_0NetFgxmNQ9O6M2qZsNQJ",
+        };
+
+        const pid = DRIVE_ERASER_PRODUCT_IDS[selectedLicenses];
+        if (pid) {
+          openOverlayCheckout(pid, 1, "https://dsecuretech.com/order-success");
+          return;
+        }
+      }
+
+      // ── Drive Eraser Diagnostic ke liye Product-based Overlay Checkout ──
+      if (selectedCategory === "drive-eraser" && driveEraserVariant === "diagnostics") {
+        const DIAGNOSTIC_PRODUCT_IDS: Record<string, string> = {
+          "1": "pdt_0NaKDbbTvncIVcoWRoVvZ",
+          "5": "pdt_0NetGZStFWAl3wno7Dkq4",
+          "10": "pdt_0NetGrIUuOMt5HxBPC7U8",
+          "25": "pdt_0NetH4JhpGBsVp0OIepr9",
+          "50": "pdt_0NetHIVihaThDyBuOIVrq",
+          "100": "pdt_0NetHRmjMh0ZPlTc2pfjQ",
+          "250": "pdt_0NetHaqHEyrNpZ0Auoau3",
+          "500": "pdt_0NetHjkFJZQMVe64MUmtS",
+          "1000": "pdt_0NetHqURo7ZGzFoucTedY",
+          "1500": "pdt_0NetI6CGHI6jMpcZ6mjkT",
+        };
+
+        const pid = DIAGNOSTIC_PRODUCT_IDS[selectedLicenses];
+        if (pid) {
+          openOverlayCheckout(pid, 1, "https://dsecuretech.com/order-success");
+          return;
+        }
+      }
+
+      // ── Default: Overlay Checkout — SDK apna full-screen overlay dikhayega ──
       openOverlayCheckout(
         checkoutProductId,
         quantity,
@@ -1850,7 +1939,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               </span>
                             </div>
                             <span className="text-sm font-bold text-emerald-800">
-                              $40.00
+                              $39.99
                             </span>
                             {fileEraserVariant === "standard" && (
                               <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center">
@@ -2289,27 +2378,13 @@ const PricingAndPlanPage: React.FC = memo(() => {
               <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-6 xs:p-8 sm:p-8 shadow-xl border-2 border-blue-100 lg:sticky lg:top-8">
                 {/* Price Display */}
                 <div className="text-center mb-6 xs:mb-8 sm:mb-8 relative">
-                  {/* Early Bird Offer Label */}
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-rose-500 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-md animate-bounce whitespace-nowrap">
-                    Early Bird Offer - {getCurrentProduct().discountPercentage}
-                  </div>
+                  {/* Discount Label */}
+                  {/* Discount label hidden as per request */}
+
 
                   <div className="flex flex-col items-center justify-center mb-2">
-                    {selectedLicenses !== "custom" &&
-                      selectedPlan !== "custom" && (
-                        <div className="text-gray-400 text-lg line-through mb-1">
-                          $
-                          {(
-                            getCurrentProduct().originalPrice *
-                            (selectedLicenses === "custom"
-                              ? 0
-                              : Number.parseInt(selectedLicenses)) *
-                            (selectedCategory === "file-eraser"
-                              ? Number.parseInt(selectedYears)
-                              : 1)
-                          ).toFixed(2)}
-                        </div>
-                      )}
+                    {/* Strike-through price hidden as per request */}
+
                     <div className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl font-bold bg-gradient-to-r from-teal-500 to-teal-600 bg-clip-text text-transparent">
                       {getDisplayPrice()}
                     </div>

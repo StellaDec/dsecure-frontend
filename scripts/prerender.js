@@ -203,9 +203,13 @@ async function prerender() {
       
       const lastBridge = allBridges.length > 0 ? allBridges[allBridges.length - 1][0] : null;
 
+      if (url === '/blog/automate-data-erasure') {
+         console.log('LAST BRIDGE FOR automate-data-erasure:', lastBridge);
+      }
+
       // React 19 SSR Stream drops lazy-loaded chunks
       // So blog posts metadata must be extracted manually if bridge is missing or default
-      if (!lastBridge || String(lastBridge).includes("D-Secure - #1 Data Erasure Software")) {
+      if (!lastBridge || String(lastBridge).includes("D-Secure | #1 Data Erasure Software")) {
          if (url.startsWith('/blog/') && url !== '/blog/') {
              try {
                 const slug = url.replace('/blog/', '');
@@ -238,7 +242,13 @@ async function prerender() {
         
         seoTitle = extractAttr('data-seo-title');
         seoDescription = extractAttr('data-seo-description');
-        seoCanonical = extractAttr('data-seo-canonical');
+        
+        // STRICT CANONICAL OVERRIDE: Prevent SSR race conditions from injecting homepage canonicals on subpages
+        seoCanonical = `https://dsecuretech.com${url}`;
+        if (seoCanonical.endsWith('/') && seoCanonical !== 'https://dsecuretech.com/') {
+            seoCanonical = seoCanonical.slice(0, -1);
+        }
+        
         seoOgTitle = extractAttr('data-seo-og-title');
         seoOgDescription = extractAttr('data-seo-og-description');
         seoOgImage = extractAttr('data-seo-og-image');
@@ -271,13 +281,26 @@ async function prerender() {
         headTags.push(`<meta data-rh="true" name="twitter:creator" content="@D-Securetech" />`);
         
         helmetContent = headTags.join(String.fromCharCode(10) + '    ');
-      } else if (helmet) {
+      } else if (!helmetContent && helmet) {
         // Fallback to Helmet context if no bridge is found
         const helmetTitle = helmet.title.toString();
         const helmetMeta = helmet.meta.toString();
-        const helmetLink = helmet.link.toString();
+        let helmetLink = helmet.link.toString();
         const helmetScript = helmet.script.toString();
         const helmetNoscript = helmet.noscript.toString();
+        
+        // STRICT CANONICAL OVERRIDE: Prevent SSR race conditions from injecting homepage canonicals on subpages
+        let strictCanonical = `https://dsecuretech.com${url}`;
+        if (strictCanonical.endsWith('/') && strictCanonical !== 'https://dsecuretech.com/') {
+            strictCanonical = strictCanonical.slice(0, -1);
+        }
+        
+        // Replace existing canonical in helmetLink or append it
+        if (helmetLink.includes('rel="canonical"')) {
+            helmetLink = helmetLink.replace(/(<link[^>]*rel=["']canonical["'][^>]*href=["'])(.*?)(["'][^>]*>)/gi, `$1${strictCanonical}$3`);
+        } else {
+            helmetLink += `\n<link data-rh="true" rel="canonical" href="${strictCanonical}" />`;
+        }
         
         helmetContent = [helmetTitle, helmetMeta, helmetLink, helmetScript, helmetNoscript]
           .filter(t => t && t.toString().length > 0).join(String.fromCharCode(10));
