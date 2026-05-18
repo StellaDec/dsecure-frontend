@@ -180,7 +180,8 @@ export const generateSoftwareProductSchema = (
 ) => {
   const schema: any = {
     "@context": "https://schema.org",
-    "@type": ["SoftwareApplication", "Product"], // Dual type for maximum rich snippet compatibility
+    "@type": "Product", // GSC duplicate indexation issue fix karne ke liye single type
+    additionalType: "https://schema.org/SoftwareApplication", // Software behavior define karne ke liye
     name: productName,
     description: description,
     applicationCategory: options.category || "SecurityApplication",
@@ -199,7 +200,43 @@ export const generateSoftwareProductSchema = (
       priceCurrency: options.currency || "USD",
       availability: "https://schema.org/InStock",
       url: `${SEO_CONFIG.baseUrl}/pricing`,
-      priceValidUntil: "2026-12-31"
+      priceValidUntil: "2026-12-31",
+      // Google Search Console 'Missing field' warnings fix karne ke liye
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "US",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/FreeReturn"
+      },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: "USD"
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "US"
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 0,
+            unitCode: "DAY"
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 0,
+            unitCode: "DAY"
+          }
+        }
+      }
     },
     publisher: {
       "@type": "Organization",

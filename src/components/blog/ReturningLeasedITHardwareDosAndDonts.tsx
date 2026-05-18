@@ -8,7 +8,8 @@ import BlogFooterStandard from "./BlogFooterStandard";
 const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50">
-      <SEOHead seo={getSEOForPage("blog")} />
+      {/* Rules ke mutabik unique SEO key lookup kiya gaya hai */}
+      <SEOHead seo={getSEOForPage("blog/returning-leased-it-hardware-dos-and-donts")} />
 
       {/* Hero */}
       <section className="bg-white py-16 border-b">

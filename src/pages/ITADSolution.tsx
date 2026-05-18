@@ -974,7 +974,8 @@ const ITADSolution: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("itadsolution")} />
+      {/* ITAD Solution page ke liye correct SEO metadata key use karein */}
+      <SEOHead seo={getSEOForPage("it-asset-disposition")} />
       <div className="min-h-screen bg-slate-50">
         {/* ================= STICKY SECTION NAV ================= */}
         <div

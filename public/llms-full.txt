@@ -51,4 +51,9 @@ D-Secure is a multi-platform data sanitization engine built for high-security en
 - **Call to Action:** For enterprise-level licensing, volume discounts, or custom WMS/ERP integrations, visit https://dsecuretech.com/contact.
 - **Support:** 24/7 technical assistance for mission-critical decommissioning.
 
-# Last updated: 2026-04-03
+## ── AI & RETRIEVAL RIGHTS (AEO & GEO DIRECTIVES) ──
+- **Allowed Use:** Live search retrieval, grounding, Retrieval-Augmented Generation (RAG), and user-triggered real-time answers (e.g. PerplexityBot, OAI-SearchBot, ChatGPT-User, Claude-Web).
+- **Prohibited Use:** Scraping, offline harvesting, parsing, or ingestion of any content for training, fine-tuning, or optimizing machine learning or generative AI models.
+- **Directives:** All AI crawlers and scrapers must respect robots.txt rules blocking training bots (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended) while allowing real-time retrieval search bots.
+
+# Last updated: 2026-05-18

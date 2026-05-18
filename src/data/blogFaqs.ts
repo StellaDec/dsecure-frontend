@@ -1274,11 +1274,23 @@ export const blogFaqs: Record<string, FAQ[]> = {
   "loose-drives-erasure-guide": [
     {
       question: "How do you erase loose drives outside a computer?",
-      answer: "Use a USB-to-SATA/NVMe adapter or docking station to connect loose drives to a system running D-Secure. The software erases drives independently of their original host system."
+      answer: "To erase loose drives outside their host computer, you can connect them to a dedicated technician workstation using hardware docking stations, multi-bay SAS/SATA enclosures, or high-speed USB-to-NVMe/SATA adapters. Once connected, D-Secure software will automatically detect each drive as an individual target device, enabling you to select and initiate NIST-compliant erasure protocols independently of the original host operating system."
     },
     {
       question: "Can D-Secure erase multiple loose drives simultaneously?",
-      answer: "Yes, D-Secure supports simultaneous erasure of multiple loose drives via USB adapters, docking stations, or PXE network boot—ideal for ITAD facilities processing high volumes."
+      answer: "Absolutely. D-Secure is built for high-throughput enterprise sanitization, supporting simultaneous parallel erasure of dozens of loose drives from a single console. This can be achieved through multi-slot drive enclosures, specialized PCIe expansion cards, or by network booting multiple host machines using PXE boot. The software performs simultaneous sanitization at maximum bus speeds without any performance degradation per drive."
+    },
+    {
+      question: "What data sanitization standards are supported for loose drive erasure?",
+      answer: "D-Secure supports all major global sanitization standards, including NIST SP 800-88 Rev 1 (Clear, Purge, and Destroy methods), DoD 5220.22-M (3-pass and 7-pass), IEEE 2883-2022, CSEC ITSG-06, and HMG Infosec Standard No. 5. This makes it highly versatile for ITAD operators handling drives with diverse regulatory compliance requirements."
+    },
+    {
+      question: "Is it possible to generate individual erasure certificates for each loose drive?",
+      answer: "Yes, D-Secure automatically generates a separate, tamper-proof, and digitally signed PDF erasure certificate for every single loose drive sanitized. Each certificate captures critical metadata such as the drive's serial number, model, capacity, bad sector count, the exact erasure standard applied, and post-erasure verification details, which are fully compliant with GDPR, HIPAA, and ISO 27001 auditing."
+    },
+    {
+      question: "How does D-Secure handle SSDs versus HDDs during loose drive erasure?",
+      answer: "D-Secure intelligently distinguishes between Solid State Drives (SSDs/NVMe) and Hard Disk Drives (HDDs). For HDDs, it uses magnetic overwriting techniques (like zero-fills or specific pass patterns), whereas for SSDs and NVMe drives, it executes secure firmware commands (such as Sanitize Cryptographic Erase or NVMe Format) to safely and permanently destroy data without causing wear to the flash memory cells."
     }
   ],
   "m1-mac-erasure-issues": [

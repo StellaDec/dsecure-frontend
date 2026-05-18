@@ -3,35 +3,55 @@ Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
 
-# AI Crawlers — explicitly allow for Generative Engine Optimization (GEO)
+# ─── AI Bots & Scraping Controls (AEO & GEO Optimization) ───
+# Rules ke mutabik: Hum AI bots ko real-time live answers aur citations dene ke liye Allow karte hain,
+# lekin hamare data se model training aur bulk scraping karne ke liye strictly Disallow karte hain.
+
+# 1. AI Training Bots (STRICTLY DISALLOWED for model training & data harvesting)
 User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# 2. AI Search & Live Answer Bots (ALLOWED for real-time citations & GEO/AEO answers)
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Google-Extended
+User-agent: Claude-Web
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Bytespider
-Allow: /
-
 User-agent: YouBot
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
-
-User-agent: Omgilibot
 Allow: /
 
 # Block admin and auth pages from search engines
@@ -63,4 +83,4 @@ Disallow: /api/
 # Sitemap locations for search engines
 Sitemap: https://dsecuretech.com/sitemap.xml
 
-# Last updated: 2026-05-15
+# Last updated: 2026-05-18

@@ -10,7 +10,8 @@ const ITADSelectionGuideBlog: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
-      <SEOHead seo={getSEOForPage('blog')} />
+      {/* Rules ke mutabik unique SEO key lookup kiya gaya hai */}
+      <SEOHead seo={getSEOForPage('blog/itad-selection-guide')} />
 
       {/* Hero Section */}
       <section className="py-16 bg-white shadow-lg">

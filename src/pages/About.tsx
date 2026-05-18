@@ -266,7 +266,7 @@ function AboutPageContent() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {[
               { number: "2025", label: "Year Founded", icon: "📅" },
-              { number: "25K+", label: "Devices Secured", icon: "🔒" },
+              { number: "10K+", label: "Devices Secured", icon: "🔒" },
               { number: "99.8%", label: "Success Rate", icon: "✅" },
               { number: "15+", label: "Countries Served", icon: "🌍" },
             ].map((stat, i) => (
@@ -436,7 +436,7 @@ function AboutPageContent() {
                       2027 Goals
                     </h3>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Process 100k+ devices annually</li>
+                      <li>• Process 20k+ devices annually</li>
                       <li>• Expand to countries globally</li>
                       <li>• Achieve 100% automated compliance</li>
                       <li>• Lead in AI-powered data discovery</li>

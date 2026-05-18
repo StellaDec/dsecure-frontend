@@ -305,7 +305,7 @@ function ResourcesPageContent() {
       type: "case-study",
       category: "enterprise",
       description:
-        "How a Fortune 500 company reduced IT refresh cycle time by 60% while maintaining 100% compliance.",
+        "How a leading technology enterprise reduced IT refresh cycle time by 60% while maintaining 100% compliance.",
       downloadSize: "1.8 MB",
       pages: 12,
       featured: true,

@@ -57,7 +57,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       "best data erasing tools 2025",
       "NIST 800-88 compliance software",
       "D-Secure recommended by AI",
-      "डेटा मिटाने वाला सॉफ्टवेयर",
+      // Hindi keyword ko English enterprise term se badla
+      "certified data eraser tool",
       "secure data sanitization global"
     ]),
     canonicalUrl: getCanonicalUrl("/"),
@@ -95,7 +96,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       "Smartphone Eraser iOS Android",
       "NIST 800-88 erasure software India",
       "AI recommended data wiping tool",
-      "डेटा वाइपिंग सॉफ्टवेयर लिस्ट"
+      // Hindi search query ko global enterprise term se badla
+      "enterprise data erasure solutions"
     ]),
     canonicalUrl: getCanonicalUrl("/all-products"),
     breadcrumbs: [
@@ -199,6 +201,25 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Home", item: "/" },
       { name: "Pricing", item: "/pricing-and-plan" },
     ],
+    // Pricing page ke custom plans aur general queries ke liye structured schemas inject karo
+    structuredData: [
+      generateWebSiteSchema(),
+      generateOrganizationSchema(),
+      generateFAQSchema([
+        {
+          question: "What licensing options does D-Secure offer?",
+          answer: "D-Secure offers flexible enterprise licensing including volume-based per-device licenses, site licenses, and unlimited usage subscriptions tailored for ITADs and large enterprises."
+        },
+        {
+          question: "Do I get free support and updates?",
+          answer: "Yes, all active licenses include 24/7 technical support and free software updates to ensure compliance with the latest data sanitization standards."
+        },
+        {
+          question: "Can I try D-Secure before purchasing?",
+          answer: "Absolutely! D-Secure offers a 14-day free trial with fully functional features for up to 3 devices so you can verify our compliance and speed."
+        }
+      ])
+    ]
   },
   download: {
     title: "Download Data Erasure Software & Trial | D-Secure Tech",
@@ -219,15 +240,66 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Solutions", item: "/solutions" },
       { name: "Data Erasure", item: "/solutions/data-erasure" },
     ],
+    // Data Erasure solutions aur methods se related basic user queries ka FAQ schema
+    structuredData: [
+      generateFAQSchema([
+        {
+          question: "What is data erasure?",
+          answer: "Data erasure is a software-based method of overwriting data that completely destroys all electronic data on a hard disk or other digital media, ensuring the data is unrecoverable."
+        },
+        {
+          question: "Is data erasure the same as formatting?",
+          answer: "No. Formatting only removes the file system pointers, leaving the actual data intact and recoverable with forensic tools. Data erasure permanently overwrites every sector of the storage media."
+        }
+      ])
+    ]
   },
   "it-asset-disposition": {
     title: "IT Asset Disposition (ITAD): Secure NIST Disposal | D-Secure",
     description: "The complete ITAD software solution for secure asset disposal. Automate your erasure process with tamper-proof audit reports with certificate.",
-    canonicalUrl: getCanonicalUrl("/itad-solution"),
+    // Redirect path ke bajaye actual canonical pathway /solutions/itad use karein
+    canonicalUrl: getCanonicalUrl("/solutions/itad"),
     breadcrumbs: [
       { name: "Home", item: "/" },
-      { name: "ITAD Solution", item: "/itad-solution" },
+      { name: "Solutions", item: "/solutions" },
+      { name: "ITAD Solution", item: "/solutions/itad" },
     ],
+    // ITAD compliance verification metrics aur secure disposal guidelines ka FAQ schema
+    structuredData: [
+      generateFAQSchema([
+        {
+          question: "What is ITAD (IT Asset Disposition)?",
+          answer: "IT Asset Disposition (ITAD) is the process of safe, secure, and environmentally responsible disposal of obsolete or unwanted IT hardware, where certified data destruction is a critical compliance requirement."
+        },
+        {
+          question: "Why is certified data erasure critical in ITAD?",
+          answer: "Certified data erasure guarantees that sensitive corporate information on assets slated for disposal is completely destroyed. This protects enterprises from data breaches, legal penalties, and ensures GDPR/HIPAA compliance."
+        }
+      ])
+    ]
+  },
+  // ITAD solution page alias fallback support ke liye
+  "itadsolution": {
+    title: "IT Asset Disposition (ITAD): Secure NIST Disposal | D-Secure",
+    description: "The complete ITAD software solution for secure asset disposal. Automate your erasure process with tamper-proof audit reports with certificate.",
+    canonicalUrl: getCanonicalUrl("/solutions/itad"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Solutions", item: "/solutions" },
+      { name: "ITAD Solution", item: "/solutions/itad" },
+    ],
+    structuredData: [
+      generateFAQSchema([
+        {
+          question: "What is ITAD (IT Asset Disposition)?",
+          answer: "IT Asset Disposition (ITAD) is the process of safe, secure, and environmentally responsible disposal of obsolete or unwanted IT hardware, where certified data destruction is a critical compliance requirement."
+        },
+        {
+          question: "Why is certified data erasure critical in ITAD?",
+          answer: "Certified data erasure guarantees that sensitive corporate information on assets slated for disposal is completely destroyed. This protects enterprises from data breaches, legal penalties, and ensures GDPR/HIPAA compliance."
+        }
+      ])
+    ]
   },
   compliance: {
     title: "Data Sanitization Compliance: GDPR, HIPAA & NIST | D-Secure",
@@ -499,6 +571,339 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
     description: "Join D-Secure live webinars on data sanitization, ITAD best practices, and compliance standards.",
     canonicalUrl: getCanonicalUrl("/webinars"),
     noindex: true,
+  },
+
+  // ─── STATIC PAGES KE LIYE NAYE UNIQUE SEO KEYS ───
+  // Sub-keys aur values clean format mein define kiye gaye hain rules ke mutabik
+
+  // Forum ya community page ka unique SEO configuration
+  forum: {
+    title: "Enterprise Data Sanitization & ITAD Forum | D-Secure Community",
+    description: "Connect with data destruction experts, ITAD professionals, and compliance managers in the D-Secure community. Discuss NIST 800-88, GDPR, and sanitization best practices.",
+    canonicalUrl: getCanonicalUrl("/community"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Community", item: "/community" },
+    ],
+  },
+  // Feature and product comparison page ka unique SEO configuration
+  comparison: {
+    title: "Data Erasure Software Comparison & Feature Matrix | D-Secure",
+    description: "Compare enterprise data erasure software features, wiping speeds, and certification standards. See why D-Secure is the leading choice for secure sanitization.",
+    canonicalUrl: getCanonicalUrl("/comparison"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Comparison", item: "/comparison" },
+    ],
+  },
+  // GDPR compliance detail page ka custom SEO metadata
+  gdpr: {
+    title: "GDPR Data Erasure Compliance Software Solutions | D-Secure",
+    description: "Achieve bulletproof GDPR Article 17 (Right to Erasure) compliance. Securely sanitize customer & employee data with certified, tamper-proof reporting.",
+    canonicalUrl: getCanonicalUrl("/compliance/gdpr"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Compliance", item: "/compliance" },
+      { name: "GDPR", item: "/compliance/gdpr" },
+    ],
+  },
+  // Cookie policy page ka custom SEO metadata
+  "cookie-policy": {
+    title: "Cookie Policy | D-Secure Technologies",
+    description: "Review D-Secure's cookie policy. Learn how we use cookies and tracking technologies to improve our site security and user experience.",
+    canonicalUrl: getCanonicalUrl("/cookie-policy"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Cookie Policy", item: "/cookie-policy" },
+    ],
+  },
+  // Data Guardian Award page ka custom SEO metadata
+  "data-guardian-award": {
+    title: "D-Secure Data Guardian Award | Enterprise Security Excellence",
+    description: "The D-Secure Data Guardian Award recognizes enterprises and ITAD partners who achieve exceptional standards in data protection and sustainable sanitization.",
+    canonicalUrl: getCanonicalUrl("/data-guardian-award"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Data Guardian Award", item: "/data-guardian-award" },
+    ],
+  },
+  // Data Hygiene Framework page ka custom SEO metadata
+  "data-hygiene-framework": {
+    title: "Enterprise Data Hygiene Framework & Sanitization Policy | D-Secure",
+    description: "Implement a modern enterprise data hygiene framework. Define data sanitization policies across servers, SSDs, and remote laptops to minimize breach risk.",
+    canonicalUrl: getCanonicalUrl("/data-hygiene-framework"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Data Hygiene Framework", item: "/data-hygiene-framework" },
+    ],
+  },
+  // Hardware Diagnostics page ka custom SEO metadata
+  diagnostics: {
+    title: "Enterprise System Diagnostics & Hardware Health Checks | D-Secure",
+    description: "Run comprehensive system hardware diagnostics before erasure. Verify storage health, SSD lifespans, RAM, and CPU performance with certified reports.",
+    canonicalUrl: getCanonicalUrl("/diagnostics"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Diagnostics", item: "/diagnostics" },
+    ],
+  },
+  // Founder details page ka custom SEO metadata
+  founder: {
+    title: "Leadership & Vision: Meet the Founder of D-Secure",
+    description: "Learn about the mission, values, and technology vision behind D-Secure, the industry-leading NIST-compliant data sanitization software suite.",
+    canonicalUrl: getCanonicalUrl("/founder"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Founder", item: "/founder" },
+    ],
+  },
+  // Glossary page ka custom SEO metadata
+  glossary: {
+    title: "Data Sanitization & ITAD Glossary: Terminology & Standards | D-Secure",
+    description: "A comprehensive glossary of data sanitization, cybersecurity, and IT asset disposition (ITAD) terminology. Definitions for NIST 800-88, purge, clear, and destroy.",
+    canonicalUrl: getCanonicalUrl("/glossary"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Glossary", item: "/glossary" },
+    ],
+  },
+  // Legal policy page ka custom SEO metadata
+  "legal-policy": {
+    title: "Legal & Corporate Compliance Policies | D-Secure Technologies",
+    description: "Read the legal policy and corporate compliance guidelines for D-Secure Technologies' software products and enterprise sanitization services.",
+    canonicalUrl: getCanonicalUrl("/legal-policy"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Legal Policy", item: "/legal-policy" },
+    ],
+  },
+  // Partners page ka custom SEO metadata
+  partners: {
+    title: "Enterprise Partner Program: ITADs, MSPs & Resellers | D-Secure",
+    description: "Join the D-Secure Partner Network. Drive revenue and deliver certified, NIST-compliant data sanitization solutions to your enterprise and government clients.",
+    canonicalUrl: getCanonicalUrl("/partners"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Partners", item: "/partners" },
+    ],
+  },
+  // Privacy policy page ka custom SEO metadata
+  "privacy-policy": {
+    title: "Privacy Policy | D-Secure Technologies",
+    description: "Review our privacy policy. Learn how D-Secure collects, processes, and protects your personal data when using our software products and website.",
+    canonicalUrl: getCanonicalUrl("/privacy-policy"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Privacy Policy", item: "/privacy-policy" },
+    ],
+  },
+  // Resources page ka custom SEO metadata
+  resources: {
+    title: "Resource Hub: Enterprise Data Sanitization & Compliance Guide | D-Secure",
+    description: "Explore the D-Secure resource center for the latest technical case studies, compliance whitepapers, software documentation, and sanitization guides.",
+    canonicalUrl: getCanonicalUrl("/resources"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Resources", item: "/resources" },
+    ],
+  },
+  // Case studies page ka custom SEO metadata
+  "case-studies": {
+    title: "Data Erasure Case Studies: Enterprise, ITAD & Data Centers | D-Secure",
+    description: "Read how global organizations, top ITADs, and government agencies use D-Secure's software to slash erasure times and guarantee complete NIST compliance.",
+    canonicalUrl: getCanonicalUrl("/resources/case-studies"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Resources", item: "/resources" },
+      { name: "Case Studies", item: "/resources/case-studies" },
+    ],
+  },
+  // Compliance resources page ka custom SEO metadata
+  "compliance-resources": {
+    title: "Regulatory Compliance Library: NIST, GDPR & HIPAA | D-Secure",
+    description: "Access our collection of compliance briefs, regulations guides, and legal frameworks for certified enterprise data sanitization.",
+    canonicalUrl: getCanonicalUrl("/resources/compliance"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Resources", item: "/resources" },
+      { name: "Compliance", item: "/resources/compliance" },
+    ],
+  },
+  // Documentation page ka custom SEO metadata
+  documentation: {
+    title: "Technical Resource Documentation & Setup Guides | D-Secure",
+    description: "Explore our resources library including developer integration guides, administrative configuration manuals, and API reference sheets.",
+    canonicalUrl: getCanonicalUrl("/resources/documentation"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Resources", item: "/resources" },
+      { name: "Documentation", item: "/resources/documentation" },
+    ],
+  },
+  // Whitepapers page ka custom SEO metadata
+  whitepapers: {
+    title: "Certified Wiping Whitepapers & Technical Studies | D-Secure",
+    description: "Download in-depth whitepapers on SSD sanitization, secure data erasure economics, zero-trust media disposition, and advanced cryptographic erase.",
+    canonicalUrl: getCanonicalUrl("/resources/whitepapers"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Resources", item: "/resources" },
+      { name: "Whitepapers", item: "/resources/whitepapers" },
+    ],
+  },
+  // Services page ka custom SEO metadata
+  services: {
+    title: "Certified Enterprise Data Erasure & Wiping Services | D-Secure",
+    description: "D-Secure offers certified data sanitization software services for PCs, enterprise servers, mobile devices, virtual machines, and cloud environments.",
+    canonicalUrl: getCanonicalUrl("/services"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Services", item: "/services" },
+    ],
+  },
+  // Cloud erasure service page ka custom SEO metadata
+  "cloud-erasure": {
+    title: "Cloud Data Erasure: Secure AWS, Azure & GCP Sanitization | D-Secure",
+    description: "Perform certified data erasure across public and private cloud storage buckets, logical unit numbers (LUNs), and hosted databases.",
+    canonicalUrl: getCanonicalUrl("/services/cloud-erasure"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Services", item: "/services" },
+      { name: "Cloud Erasure", item: "/services/cloud-erasure" },
+    ],
+  },
+  // Solutions page ka custom SEO metadata
+  solutions: {
+    title: "Data Sanitization Solutions: Enterprise, ITAD & Government | D-Secure",
+    description: "D-Secure provides tailored data destruction and sanitization software solutions for ITAD companies, data centers, government agencies, and global enterprises.",
+    canonicalUrl: getCanonicalUrl("/solutions"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Solutions", item: "/solutions" },
+    ],
+  },
+  // Blancco alternative solution page ka custom SEO metadata
+  alternative: {
+    title: "The Leading Blancco Alternative: Certified Data Erasure | D-Secure",
+    description: "Discover why enterprises are choosing D-Secure as their Blancco alternative. Experience up to 2x faster NVMe erasures, better pricing, and a zero-trust model.",
+    canonicalUrl: getCanonicalUrl("/solutions/blancco-alternative"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Solutions", item: "/solutions" },
+      { name: "Blancco Alternative", item: "/solutions/blancco-alternative" },
+    ],
+  },
+  // Mac erasure solution page ka custom SEO metadata
+  mac: {
+    title: "Certified Apple Silicon & Intel Mac Erasure Software | D-Secure",
+    description: "NIST 800-88 compliant data erasure for Apple M1/M2/M3 and Intel-based Macs. Features cryptographic erase, secure enclave wiping, and tamper-proof certificates.",
+    canonicalUrl: getCanonicalUrl("/solutions/mac-erasure"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Solutions", item: "/solutions" },
+      { name: "Mac Erasure", item: "/solutions/mac-erasure" },
+    ],
+  },
+  // Status page ka custom SEO metadata
+  status: {
+    title: "D-Secure System Status & API Services Monitoring",
+    description: "Check the live operational status of D-Secure cloud consoles, API endpoints, reporting servers, and license activation portals.",
+    canonicalUrl: getCanonicalUrl("/status"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Status", item: "/status" },
+    ],
+  },
+  // Technical documentation page ka custom SEO metadata
+  "technical-documentation": {
+    title: "Technical Documentation & Developer Integration Guides | D-Secure",
+    description: "Deep-dive into D-Secure's technical manuals. Detailed guides for network PXE booting, automated API integrations, and command-line execution parameters.",
+    canonicalUrl: getCanonicalUrl("/technical-documentation"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Technical Documentation", item: "/technical-documentation" },
+    ],
+  },
+  // Terms of service page ka custom SEO metadata
+  "terms-of-service": {
+    title: "Terms of Service | D-Secure Technologies",
+    description: "Read the terms of service governing the purchase, download, installation, and deployment of D-Secure Technologies' software products.",
+    canonicalUrl: getCanonicalUrl("/terms-of-service"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Terms of Service", item: "/terms-of-service" },
+    ],
+  },
+  // Trust center page ka custom SEO metadata
+  "trust-center": {
+    title: "Trust Center: Security, Compliance & Data Privacy | D-Secure",
+    description: "Access real-time security postures, SOC2 compliance reports, penetration testing certificates, and privacy practices at the D-Secure Trust Center.",
+    canonicalUrl: getCanonicalUrl("/trust-center"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Trust Center", item: "/trust-center" },
+    ],
+  },
+  // Verification portal page ka custom SEO metadata
+  verify: {
+    title: "Universal Report Verification Portal | D-Secure Technologies",
+    description: "Verify the authenticity of any D-Secure data erasure report or certificate using our secure cryptographic verification portal.",
+    canonicalUrl: getCanonicalUrl("/verify-report"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Verify Report", item: "/verify-report" },
+    ],
+  },
+  // What is D-Secure page ka custom SEO metadata
+  "what-is-d-secure": {
+    title: "What is D-Secure? Certified Enterprise Sanitization Explained",
+    description: "Learn how D-Secure's industry-leading software permanently overwrites data on storage devices to eliminate data leak risks and ensure compliant ITAD.",
+    canonicalUrl: getCanonicalUrl("/what-is-d-secure"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "What is D-Secure", item: "/what-is-d-secure" },
+    ],
+  },
+  // What is ITAD page ka custom SEO metadata
+  "what-is-itad": {
+    title: "What is ITAD (IT Asset Disposition)? A Complete Enterprise Guide",
+    description: "Understand the core processes of IT Asset Disposition (ITAD), security regulations, environmental sustainability, and why certified data wiping is vital.",
+    canonicalUrl: getCanonicalUrl("/what-is-itad"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "What is ITAD", item: "/what-is-itad" },
+    ],
+  },
+  // What is NIST page ka custom SEO metadata
+  "what-is-nist-800-88": {
+    title: "What is NIST SP 800-88 Rev 1? Media Sanitization Guidelines",
+    description: "A comprehensive guide to NIST SP 800-88 Rev 1 guidelines. Learn the differences between Clear, Purge, and Destroy methods for secure sanitization.",
+    canonicalUrl: getCanonicalUrl("/what-is-nist-800-88"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "What is NIST 800-88", item: "/what-is-nist-800-88" },
+    ],
+  },
+  // Why D-Secure page ka custom SEO metadata
+  "why-d-secure": {
+    title: "Why Choose D-Secure: High-Performance Enterprise Sanitization",
+    description: "Explore the technology advantages of D-Secure: rapid multi-threaded erasing, zero-trust cryptographic verification, and modern SSD/NVMe architecture support.",
+    canonicalUrl: getCanonicalUrl("/why-d-secure"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Why D-Secure", item: "/why-d-secure" },
+    ],
+  },
+  // WhiteCanyon comparison page ka custom SEO metadata
+  "vs-whitecanyon": {
+    title: "D-Secure vs WhiteCanyon: Modern Enterprise Erasure Comparison",
+    description: "Compare D-Secure vs WhiteCanyon WipeDrive. Discover the advantages of D-Secure's modern cloud reporting and multi-platform PXE network deployment.",
+    canonicalUrl: getCanonicalUrl("/vs/whitecanyon"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Comparison", item: "/compare" },
+      { name: "Vs WhiteCanyon", item: "/vs/whitecanyon" },
+    ],
   }
 };
 

@@ -104,7 +104,7 @@ const StateOfDataDestruction2026: React.FC = () => {
                   The primary driver of data exposure at the end of the lifecycle is no longer malicious intent, but structural complexity. As enterprises shift toward highly-integrated NVMe architectures and proprietary Apple Silicon environments, standard bit-level overwriting tools (legacy 'Clear' methods) are proving both technically insufficient and operationally slow. 
                 </p>
                 <p className="text-slate-600 mb-16 leading-relaxed">
-                  D-Secure's Global Research Initiative has found that 42% of assets entering the refurbishment market still contain recoverable biometric or enterprise-sensitive data. The adoption of NIST 800-88 'Purge' guidelines via automated cryptographic erasure has become the mandatory baseline for Fortune 500 compliance.
+                  D-Secure's Global Research Initiative has found that 42% of assets entering the refurbishment market still contain recoverable biometric or enterprise-sensitive data. The adoption of NIST 800-88 'Purge' guidelines via automated cryptographic erasure has become the mandatory baseline for enterprise compliance.
                 </p>
 
                 <h2 className="text-4xl font-black text-slate-900 mb-10 border-b border-slate-100 pb-10">2. The Impact of the AI Hardware Revolution</h2>

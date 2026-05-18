@@ -1367,7 +1367,7 @@ export const blogPosts: BlogPost[] = [
     id: "loose-drives-erasure-guide",
     slug: "loose-drives-erasure-guide",
     title: "Loose Drives Erasure Guide",
-    excerpt: "Best practices for erasing loose drives outside of systems.",
+    excerpt: "Loose drive erasure guide for ITAD operators — wipe SATA, SAS and NVMe drives in bulk with NIST 800-88 compliance. Step-by-step workflow inside.",
     link: "/blog/loose-drives-erasure-guide",
     tag: "Technical",
     category: "Guide",

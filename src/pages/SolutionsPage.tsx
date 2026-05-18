@@ -824,7 +824,7 @@ function SolutionsPageContent() {
                   {/* Floating Stats Cards */}
                   <Reveal delayMs={70}>
                     <div className="absolute -top-4 -right-4 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white p-4 rounded-xl shadow-lg">
-                      <div className="text-2xl font-bold">100k+</div>
+                      <div className="text-2xl font-bold">10k+</div>
                       <div className="text-xs opacity-90">Devices Secured</div>
                     </div>
                   </Reveal>
@@ -1088,7 +1088,7 @@ function SolutionsPageContent() {
                   <div className="mt-8 pt-6 border-t border-slate-200">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-slate-900">
-                        100k+
+                        10k+
                       </div>
                       <div className="text-sm text-slate-600">
                         Devices Processed

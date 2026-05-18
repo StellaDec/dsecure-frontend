@@ -41,11 +41,10 @@ export default function NIST80088Page() {
 
   return (
     <>
+      {/* nistSchema ko directStructuredData se pass karo — SEOHead internally PAGE_SEO schemas ke saath merge karega */}
       <SEOHead 
-        seo={{
-          ...getSEOForPage('nist80088'),
-          structuredData: nistSchema
-        }} 
+        seo={getSEOForPage('nist80088')}
+        structuredData={nistSchema}
       />
 
       {/* Hero Section */}

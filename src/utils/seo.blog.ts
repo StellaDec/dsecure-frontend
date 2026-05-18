@@ -82,4 +82,92 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Erasure Verification Process", item: "/blog/erasure-verification-process" },
     ],
   },
+
+  // ─── CUSTOM BLOG PAGES KE UNIQUE KEYS ───
+  // Comments Hindi mein likhe gaye hain rules ke mutabik
+
+  // Data Minimization principle blog ka custom SEO metadata
+  "blog/data-minimization": {
+    title: "Data Minimization Principle: A Key Part of Data Privacy | D-Secure",
+    description: "Understand the data minimization principle in data protection laws. Learn how to implement secure data sanitization to comply with GDPR, CCPA, and DPDP Act.",
+    keywords: generateKeywords(["data minimization principle", "data privacy laws GDPR", "secure data sanitization compliance"]),
+    canonicalUrl: getCanonicalUrl("/blog/data-minimization"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Blog", item: "/blog" },
+      { name: "Data Minimization", item: "/blog/data-minimization" },
+    ],
+  },
+  // Erasure vs physical destruction blog ka custom SEO metadata
+  "blog/erasure-vs-destruction": {
+    title: "Data Erasure vs Physical Destruction: Complete Guide | D-Secure",
+    description: "Compare software-based data erasure vs physical drive shredding. Learn the security, cost, compliance, and environmental ESG impact of both methods.",
+    keywords: generateKeywords(["data erasure vs physical destruction", "hard drive shredding comparison", "secure software data wiping"]),
+    canonicalUrl: getCanonicalUrl("/blog/erasure-vs-destruction"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Blog", item: "/blog" },
+      { name: "Erasure vs Destruction", item: "/blog/erasure-vs-destruction" },
+    ],
+  },
+  // Hardware diagnostics importance blog ka custom SEO metadata
+  "blog/hardware-diagnostics": {
+    title: "Hardware Diagnostics in ITAD & Certified Wiping | D-Secure",
+    description: "Learn why comprehensive hardware diagnostics are crucial before data erasure. Verify storage, RAM, and CPU health to compile unified certificates.",
+    keywords: generateKeywords(["hardware diagnostics ITAD", "hard drive health check before wipe", "diagnostics data sanitization software"]),
+    canonicalUrl: getCanonicalUrl("/blog/hardware-diagnostics"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Blog", item: "/blog" },
+      { name: "Hardware Diagnostics", item: "/blog/hardware-diagnostics" },
+    ],
+  },
+  // ITAD vendor selection guide blog ka custom SEO metadata
+  "blog/itad-selection-guide": {
+    title: "Enterprise ITAD Vendor Selection Guide & Best Practices | D-Secure",
+    description: "How to select the right IT Asset Disposition (ITAD) vendor. Enterprise checklist covering security compliance, certified sanitization, and ESG recycling standards.",
+    keywords: generateKeywords(["ITAD vendor selection guide", "IT asset disposition best practices", "enterprise certified computer wiping"]),
+    canonicalUrl: getCanonicalUrl("/blog/itad-selection-guide"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Blog", item: "/blog" },
+      { name: "ITAD Selection Guide", item: "/blog/itad-selection-guide" },
+    ],
+  },
+  // MSP Security and Wiping blog ka custom SEO metadata
+  "blog/msp-data-erasure": {
+    title: "MSPs and the Cybersecurity Imperative: Secure Data Sanitization | D-Secure",
+    description: "Why MSPs must integrate certified data sanitization and NIST 800-88 wiping into their cybersecurity portfolios to protect client networks.",
+    keywords: generateKeywords(["MSP cybersecurity data destruction", "managed service providers drive wiping", "NIST 800-88 compliance for MSPs"]),
+    canonicalUrl: getCanonicalUrl("/blog/msp-data-erasure"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Blog", item: "/blog" },
+      { name: "MSP Cybersecurity Wiping", item: "/blog/msp-data-erasure" },
+    ],
+  },
+  // Returning leased IT hardware dos and donts blog ka custom SEO metadata
+  "blog/returning-leased-it-hardware-dos-and-donts": {
+    title: "Returning Leased IT Hardware: Do's & Don'ts for Enterprises | D-Secure",
+    description: "Avoid massive penalties and data breaches when returning leased IT assets. Step-by-step compliance guide for certified drive wiping and asset recovery.",
+    keywords: generateKeywords(["returning leased computer hardware", "leased computer wipe compliance", "avoid leased hardware data leakage penalties"]),
+    canonicalUrl: getCanonicalUrl("/blog/returning-leased-it-hardware-dos-and-donts"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Blog", item: "/blog" },
+      { name: "Returning Leased IT Assets", item: "/blog/returning-leased-it-hardware-dos-and-donts" },
+    ],
+  },
+  // Sustainable IT Reuse & circular economy blog ka custom SEO metadata
+  "blog/sustainable-it-reuse": {
+    title: "Sustainable IT Reuse: Safe circular economy through Wiping | D-Secure",
+    description: "Unlock sustainable IT reuse. Discover how NIST-compliant software data erasure enables safe hardware circularity and reduces enterprise Scope 3 emissions.",
+    keywords: generateKeywords(["sustainable IT reuse circular economy", "reduce scope 3 carbon emissions hard drive wipe", "green IT asset disposition software"]),
+    canonicalUrl: getCanonicalUrl("/blog/sustainable-it-reuse"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Blog", item: "/blog" },
+      { name: "Sustainable IT Reuse", item: "/blog/sustainable-it-reuse" },
+    ],
+  },
 };

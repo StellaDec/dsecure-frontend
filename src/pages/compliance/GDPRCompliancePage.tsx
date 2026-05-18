@@ -41,11 +41,10 @@ export default function GDPRCompliancePage() {
 
   return (
     <>
+      {/* gdprSchema ko directStructuredData se pass karo — SEOHead internally PAGE_SEO schemas ke saath merge karega */}
       <SEOHead 
-        seo={{
-          ...getSEOForPage('gdpr'),
-          structuredData: gdprSchema
-        }} 
+        seo={getSEOForPage('gdpr')}
+        structuredData={gdprSchema}
       />
 
       {/* Hero Section */}

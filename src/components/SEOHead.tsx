@@ -35,9 +35,87 @@ interface SEOHeadProps {
 }
 
 /**
+ * FAQPage schemas ko merge karta hai — sabhi sources se ek single script tag banata hai.
+ * Ye function ensure karta hai ki ek page par sirf ek hi FAQPage block ho.
+ * Duplicate mainEntity questions bhi deduplicate karta hai (name field se).
+ */
+function mergeAndDeduplicateSchemas(
+  schemas: Record<string, unknown>[]
+): Record<string, unknown>[] {
+  // Pehle FAQPage aur non-FAQPage schemas alag karo
+  const faqSchemas = schemas.filter(s => s['@type'] === 'FAQPage');
+  const otherSchemas = schemas.filter(s => s['@type'] !== 'FAQPage');
+
+  // Agar koi FAQPage nahi hai to seedha return karo
+  if (faqSchemas.length === 0) return otherSchemas;
+
+  // Sabhi FAQPage schemas ke mainEntity arrays ko ek mein merge karo
+  const seenQuestions = new Set<string>();
+  const mergedEntities: Record<string, unknown>[] = [];
+
+  for (const faqSchema of faqSchemas) {
+    const entities = faqSchema['mainEntity'];
+    if (!Array.isArray(entities)) continue;
+
+    for (const entity of entities) {
+      const q = entity as Record<string, unknown>;
+      const questionName = (q['name'] as string) || '';
+      // Same question dobara mat add karo
+      if (seenQuestions.has(questionName)) continue;
+      seenQuestions.add(questionName);
+      mergedEntities.push(q);
+    }
+  }
+
+  // Sirf ek merged FAQPage schema banao
+  const singleFAQSchema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: mergedEntities,
+  };
+
+  // Pehle non-FAQ schemas, phir ek hi FAQPage
+  return [...otherSchemas, singleFAQSchema];
+}
+
+/**
+ * Saare sources se schemas collect karke flat array banata hai.
+ * seo.structuredData + directStructuredData dono ko normalize karta hai.
+ */
+function collectAllSchemas(
+  effectiveSeoSchemas: Record<string, unknown> | Record<string, unknown>[] | undefined,
+  directSchemas: Record<string, unknown> | Record<string, unknown>[] | undefined
+): Record<string, unknown>[] {
+  const all: Record<string, unknown>[] = [];
+
+  // Source 1: seo prop ke andar structuredData
+  if (effectiveSeoSchemas) {
+    if (Array.isArray(effectiveSeoSchemas)) {
+      all.push(...effectiveSeoSchemas);
+    } else {
+      all.push(effectiveSeoSchemas);
+    }
+  }
+
+  // Source 2: direct structuredData prop (tools pages ya inline overrides ke liye)
+  if (directSchemas) {
+    if (Array.isArray(directSchemas)) {
+      all.push(...directSchemas);
+    } else {
+      all.push(directSchemas);
+    }
+  }
+
+  return all;
+}
+
+/**
  * SEOHead Component - Production-ready SEO meta tags for all pages
  * Hreflang (7 languages), Open Graph, Twitter Card, JSON-LD, Article dates
  * Uses react-helmet-async for efficient meta tag management
+ *
+ * FAQPage deduplication: Chahe kitne bhi sources se FAQPage aaye,
+ * sirf ek hi <script type="application/ld+json"> FAQPage emit hoga.
  */
 export const SEOHead: React.FC<SEOHeadProps> = ({
   seo,
@@ -104,7 +182,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     url = url.replace('://www.dsecuretech.com', '://dsecuretech.com');
 
     // Double slashes hatao (protocol ke baad waali chhod ke)
-    url = url.replace(/(https?:\/\/)|(\/{2,})/g, (match, protocol) => protocol || '/');
+    url = url.replace(/(https?:\/\/)|(\/\/{2,})/g, (match, protocol) => protocol || '/');
 
     // Query params aur hash hatao — canonical mein nahi chahiye
     const queryIndex = url.indexOf('?');
@@ -134,6 +212,19 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   const finalTwitterImage = ensureAbsoluteUrl(effectiveSeo.twitterImage || effectiveSeo.ogImage || 'https://dsecuretech.com/logo-white.svg');
 
   const hreflangUrls = generateHreflangUrls(finalCanonical);
+
+  // ─── FAQPage Deduplication ────────────────────────────────────────────────
+  // Saare sources se schemas collect karo (seo.structuredData + directStructuredData)
+  // Phir merge karke ensure karo ki sirf ek FAQPage script tag emit ho
+  const rawSchemas = collectAllSchemas(
+    effectiveSeo.structuredData as Record<string, unknown> | Record<string, unknown>[] | undefined,
+    directStructuredData as Record<string, unknown> | Record<string, unknown>[] | undefined
+  );
+  const finalSchemas = mergeAndDeduplicateSchemas(rawSchemas);
+  // ─────────────────────────────────────────────────────────────────────────
+
+  // SSR bridge ke liye — prerender.js ko schemas dena hai
+  const schemasForBridge = rawSchemas; // raw use karo taaki bridge mein FAQPage data mile
 
   return (
     <>
@@ -202,11 +293,14 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         <meta name="googlebot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
         <meta name="bingbot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
 
-        {/* AI Crawler Directives — Generative Engine Optimization (GEO) */}
-        <meta name="GPTBot" content="index, follow" />
-        <meta name="ClaudeBot" content="index, follow" />
+        {/* AI Crawler Directives — Generative Engine Optimization (GEO) & AEO */}
+        {/* Rules ke mutabik: Training bots ko restrict karenge aur live retrieval search bots ko index/follow allow karenge */}
+        <meta name="GPTBot" content="noindex, nofollow" />
+        <meta name="ClaudeBot" content="noindex, nofollow" />
+        <meta name="Google-Extended" content="noindex, nofollow" />
+        <meta name="OAI-SearchBot" content="index, follow" />
         <meta name="PerplexityBot" content="index, follow" />
-        <meta name="Google-Extended" content="index, follow" />
+        <meta name="YouBot" content="index, follow" />
 
         {/* Author & Publication */}
         <meta name="author" content={effectiveAuthor} />
@@ -231,37 +325,19 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         <meta name="rating" content="General" />
         <meta name="category" content="Data Security Software" />
 
-        {/* Structured Data — JSON-LD schemas (seo prop se) */}
-        {effectiveSeo.structuredData && (
-          Array.isArray(effectiveSeo.structuredData)
-            ? effectiveSeo.structuredData.map((schema, index) => (
-                <script key={`schema-${index}`} type="application/ld+json">
-                  {formatStructuredData(schema)}
-                </script>
-              ))
-            : (
-              <script type="application/ld+json">
-                {formatStructuredData(effectiveSeo.structuredData)}
-              </script>
-            )
-        )}
+        {/*
+         * ── Structured Data — Single unified pass ──────────────────────────
+         * Pehle seo.structuredData aur directStructuredData dono ko collect kiya,
+         * phir FAQPage schemas ko merge kiya taaki ek hi script tag emit ho.
+         * BreadcrumbList alag se inject hota hai (always safe, no duplicates).
+         */}
+        {finalSchemas.map((schema, index) => (
+          <script key={`schema-${index}`} type="application/ld+json">
+            {formatStructuredData(schema)}
+          </script>
+        ))}
 
-        {/* Direct Structured Data — tools pages ke inline schema ke liye */}
-        {directStructuredData && (
-          Array.isArray(directStructuredData)
-            ? directStructuredData.map((schema, index) => (
-                <script key={`direct-schema-${index}`} type="application/ld+json">
-                  {formatStructuredData(schema)}
-                </script>
-              ))
-            : (
-              <script type="application/ld+json">
-                {formatStructuredData(directStructuredData)}
-              </script>
-            )
-        )}
-
-        {/* BreadcrumbList Schema */}
+        {/* BreadcrumbList Schema — hamesha alag script tag mein (safe, no duplication risk) */}
         {effectiveSeo.breadcrumbs && effectiveSeo.breadcrumbs.length > 0 && (
           <script type="application/ld+json">
             {formatStructuredData(generateBreadcrumbSchema(effectiveSeo.breadcrumbs))}
@@ -273,10 +349,12 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </Helmet>
+
       {/* SSR SEO Data Bridge — React 19 streaming mein Helmet context populate nahi hota,
           isliye ye hidden div prerender.js ko page-specific SEO data deta hai.
           JSON-LD bhi data attribute mein serialize karo taaki prerender.js inhe <head> mein inject kare
-          aur body mein duplicate <script> tags na rahe */}
+          aur body mein duplicate <script> tags na rahe.
+          Note: Bridge mein finalSchemas use karo (deduplicated) */}
       <div
         data-seo-bridge=""
         data-seo-title={effectiveSeo.title}
@@ -288,11 +366,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         data-seo-og-type={effectiveSeo.ogType || 'website'}
         data-seo-twitter-image={finalTwitterImage}
         data-seo-keywords={effectiveSeo.keywords || ''}
-        data-seo-schemas={effectiveSeo.structuredData ? JSON.stringify(
-          Array.isArray(effectiveSeo.structuredData)
-            ? effectiveSeo.structuredData
-            : [effectiveSeo.structuredData]
-        ) : ''}
+        data-seo-schemas={finalSchemas.length > 0 ? JSON.stringify(finalSchemas) : ''}
         data-seo-breadcrumbs={effectiveSeo.breadcrumbs && effectiveSeo.breadcrumbs.length > 0
           ? JSON.stringify(generateBreadcrumbSchema(effectiveSeo.breadcrumbs))
           : ''}

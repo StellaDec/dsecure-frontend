@@ -1,0 +1,1237 @@
+{
+  "blog-automated-erasure": [
+    "src\\components\\blog\\AutomatedErasureBlog.tsx"
+  ],
+  "blog": [
+    "src\\components\\blog\\BlogPage.tsx",
+    "src\\components\\blog\\DataMinimizationBlog.tsx",
+    "src\\components\\blog\\ErasureVsDestructionBlog.tsx",
+    "src\\components\\blog\\HardwareDiagnosticsBlog.tsx",
+    "src\\components\\blog\\ITADSelectionGuideBlog.tsx",
+    "src\\components\\blog\\MSPSecurityBlog.tsx",
+    "src\\components\\blog\\ReturningLeasedITHardwareDosAndDonts.tsx",
+    "src\\components\\blog\\SustainableITReuseBlog.tsx",
+    "src\\components\\BlogPage.tsx"
+  ],
+  "blog-brand-reputation-esg": [
+    "src\\components\\blog\\BrandReputationESGBlog.tsx"
+  ],
+  "blog-caption-call-fcc-settlement": [
+    "src\\components\\blog\\CaptionCallFCCSettlementBlog.tsx"
+  ],
+  "blog-carbon-footprint-erasure": [
+    "src\\components\\blog\\CarbonFootprintErasureBlog.tsx"
+  ],
+  "blog-cryptographic-erase-nist-800-88": [
+    "src\\components\\blog\\CryptographicEraseNISTBlog.tsx"
+  ],
+  "blog-data-erasure-non-profit-organizations": [
+    "src\\components\\blog\\DataErasureForNonProfits.tsx"
+  ],
+  "blog-data-sanitization-compliance": [
+    "src\\components\\blog\\DataSanitizationComplianceBlog.tsx"
+  ],
+  "dell-data-wipe-vs-dsecure": [
+    "src\\components\\blog\\DellDataWipeVsDSecureBlog.tsx"
+  ],
+  "dod-5220-vs-ieee-2883-data-sanitization": [
+    "src\\components\\blog\\DoDVsIEEEDataSanitizationBlog.tsx"
+  ],
+  "blog-erase-data-pc-laptop-desktop": [
+    "src\\components\\blog\\EraseDataPcLaptopDesktopBlog.tsx"
+  ],
+  "blog-erase-mac-data-safely": [
+    "src\\components\\blog\\EraseMacDataSafelyUsingDSecureBlog.tsx"
+  ],
+  "erasure-as-a-service-dsecure": [
+    "src\\components\\blog\\ErasureAsAServiceDSecureBlog.tsx"
+  ],
+  "blog-erasure-best-practices": [
+    "src\\components\\blog\\ErasureBestPracticesBlog.tsx"
+  ],
+  "blog-erasure-verification-process": [
+    "src\\components\\blog\\ErasureVerificationBlog.tsx"
+  ],
+  "blog-esg-data-erasure": [
+    "src\\components\\blog\\ESGDataErasureBlog.tsx"
+  ],
+  "blog-future-data-destruction": [
+    "src\\components\\blog\\FutureOfDataDestructionBlog.tsx"
+  ],
+  "blog-gov-device-theft": [
+    "src\\components\\blog\\GovDeviceTheftBlog.tsx"
+  ],
+  "blog-hardware-diagnostics-itad-r2v3-esteaders": [
+    "src\\components\\blog\\HardwareDiagnosticsITADComplianceBlog.tsx"
+  ],
+  "blog-healthcare-ransomware-lessons": [
+    "src\\components\\blog\\HealthcareRansomwareLessonsBlog.tsx"
+  ],
+  "blog-itam-disposal-guide": [
+    "src\\components\\blog\\ITAMDisposalGuideBlog.tsx"
+  ],
+  "blog-legal-ethical-data-erasure": [
+    "src\\components\\blog\\LegalEthicalDataErasureBlog.tsx"
+  ],
+  "blog-mac-m1-erasure-known-issues": [
+    "src\\components\\blog\\MacM1ErasureKnownIssues.tsx"
+  ],
+  "blog-mobile-erasure-guide": [
+    "src\\components\\blog\\MobileErasureGuideBlog.tsx"
+  ],
+  "blog-msp-data-erasure": [
+    "src\\components\\blog\\MSPDataErasureBlog.tsx"
+  ],
+  "msp-erasure-as-a-service-eaas": [
+    "src\\components\\blog\\MSPErasureAsAServiceBlog.tsx"
+  ],
+  "ncua-third-party-vendors-data-disposal": [
+    "src\\components\\blog\\NCUAThirdPartyDataDisposalBlog.tsx"
+  ],
+  "remote-work-data-erasure-best-practices": [
+    "src\\components\\blog\\RemoteWorkDataErasureBestPracticesBlog.tsx"
+  ],
+  "blog-scope3-emissions": [
+    "src\\components\\blog\\Scope3EmissionsBlog.tsx"
+  ],
+  "blog-sec-compliance": [
+    "src\\components\\blog\\SECComplianceBlog.tsx"
+  ],
+  "blog-secure-phi-ephi-erasure": [
+    "src\\components\\blog\\SecurePHIePHIErasureBlog.tsx"
+  ],
+  "blog-shadow-data-risks": [
+    "src\\components\\blog\\ShadowDataRisksBlog.tsx"
+  ],
+  "blog-statutory-regulatory-compliance-data-erasure": [
+    "src\\components\\blog\\StatutoryRegulatoryComplianceDataErasureBlog.tsx"
+  ],
+  "blog-wipe-ssd-from-bios": [
+    "src\\components\\blog\\WipeSSDFromBIOSGuide.tsx"
+  ],
+  "blog-zero-trust-disposal": [
+    "src\\components\\blog\\ZeroTrustDisposalBlog.tsx"
+  ],
+  "technical-documentation": [
+    "src\\components\\TechnicalDocumentation.tsx"
+  ],
+  "about": [
+    "src\\pages\\About.tsx"
+  ],
+  "add-group": [
+    "src\\pages\\admin\\AddGroup.tsx"
+  ],
+  "add-user": [
+    "src\\pages\\admin\\AddUser.tsx"
+  ],
+  "admin-groups": [
+    "src\\pages\\admin\\AdminGroups.tsx",
+    "src\\pages\\admin\\GroupDetailPage.tsx",
+    "src\\pages\\dashboards\\AdminGroups.tsx"
+  ],
+  "admin-profile-edit": [
+    "src\\pages\\admin\\AdminProfileEdit.tsx"
+  ],
+  "admin-reports": [
+    "src\\pages\\admin\\AdminReports.tsx",
+    "src\\pages\\dashboards\\AdminReports.tsx"
+  ],
+  "admin-settings": [
+    "src\\pages\\admin\\AdminSettings.tsx"
+  ],
+  "admin-users": [
+    "src\\pages\\admin\\AdminUsers.tsx"
+  ],
+  "edit-group": [
+    "src\\pages\\admin\\EditGroup.tsx"
+  ],
+  "edit-user": [
+    "src\\pages\\admin\\EditUser.tsx"
+  ],
+  "generate-report": [
+    "src\\pages\\admin\\GenerateReport.tsx"
+  ],
+  "ai-overview": [
+    "src\\pages\\AIOverviewPage.tsx"
+  ],
+  "api-test": [
+    "src\\pages\\ApiTestPage.tsx"
+  ],
+  "asset-reimaging": [
+    "src\\pages\\AssetReimagingPage.tsx"
+  ],
+  "login": [
+    "src\\pages\\auth\\LoginPage.tsx"
+  ],
+  "register": [
+    "src\\pages\\auth\\RegisterPage.tsx"
+  ],
+  "autopilot-detection": [
+    "src\\pages\\AutopilotDetectionPage.tsx"
+  ],
+  "checkout": [
+    "src\\pages\\CheckoutPage.tsx"
+  ],
+  "cloud-console-guide": [
+    "src\\pages\\CloudConsoleGuide.tsx"
+  ],
+  "comparison": [
+    "src\\pages\\ComparisonPage.tsx"
+  ],
+  "gdpr": [
+    "src\\pages\\compliance\\GDPRCompliancePage.tsx"
+  ],
+  "nist80088": [
+    "src\\pages\\compliance\\NIST80088Page.tsx"
+  ],
+  "compliance": [
+    "src\\pages\\CompliancePage.tsx"
+  ],
+  "contact": [
+    "src\\pages\\ContactPage.tsx",
+    "src\\pages\\EarlyAccessPage.tsx"
+  ],
+  "cookie-policy": [
+    "src\\pages\\CookiePolicyPage.tsx"
+  ],
+  "crypto-erase-ssd": [
+    "src\\pages\\CryptoEraseSSD.tsx"
+  ],
+  "customer-stories": [
+    "src\\pages\\CustomerStoriesPage.tsx"
+  ],
+  "admin-dashboard": [
+    "src\\pages\\dashboards\\AdminDashboard.tsx"
+  ],
+  "admin-downloads": [
+    "src\\pages\\dashboards\\AdminDownloads.tsx"
+  ],
+  "admin-licenses": [
+    "src\\pages\\dashboards\\AdminLicenses.tsx"
+  ],
+  "admin-machines": [
+    "src\\pages\\dashboards\\AdminMachines.tsx"
+  ],
+  "admin-performance": [
+    "src\\pages\\dashboards\\AdminPerformance.tsx",
+    "src\\pages\\dashboards\\AdminPerformance.tsx"
+  ],
+  "admin-sessions": [
+    "src\\pages\\dashboards\\AdminSessions.tsx"
+  ],
+  "admin-shell": [
+    "src\\pages\\dashboards\\AdminShell.tsx"
+  ],
+  "admin-subusers": [
+    "src\\pages\\dashboards\\AdminSubusers.tsx",
+    "src\\pages\\dashboards\\AdminSubusers.tsx"
+  ],
+  "download-agent": [
+    "src\\pages\\dashboards\\DownloadAgentPage.tsx"
+  ],
+  "edit-subuser": [
+    "src\\pages\\dashboards\\EditSubuser.tsx"
+  ],
+  "enhanced-user-dashboard": [
+    "src\\pages\\dashboards\\EnhancedUserDashboard.tsx"
+  ],
+  "new-erasure": [
+    "src\\pages\\dashboards\\NewErasurePage.tsx"
+  ],
+  "private-cloud-setup": [
+    "src\\pages\\dashboards\\PrivateCloudSetup.tsx"
+  ],
+  "reports": [
+    "src\\pages\\dashboards\\ReportsPage.tsx",
+    "src\\pages\\dashboards\\ReportsPage.tsx"
+  ],
+  "user-dashboard": [
+    "src\\pages\\dashboards\\UserDashboard.tsx"
+  ],
+  "data-eraser-software": [
+    "src\\pages\\DataEraserSoftwarePage.tsx"
+  ],
+  "data-guardian-award": [
+    "src\\pages\\DataGuardianAwardPage.tsx"
+  ],
+  "data-hygiene-framework": [
+    "src\\pages\\DataHygieneFrameworkPage.tsx"
+  ],
+  "data-migration": [
+    "src\\pages\\DataMigrationPage.tsx"
+  ],
+  "diagnostics": [
+    "src\\pages\\DiagnosticsPage.tsx"
+  ],
+  "download": [
+    "src\\pages\\DownloadPage.tsx"
+  ],
+  "drive-eraser-diagnostic": [
+    "src\\pages\\DriveEraserDiagnosticPage.tsx"
+  ],
+  "drive-eraser": [
+    "src\\pages\\DriveEraserPage.tsx"
+  ],
+  "drive-verifier": [
+    "src\\pages\\DriveVerifierPage.tsx"
+  ],
+  "solutions/education": [
+    "src\\pages\\EducationPage.tsx"
+  ],
+  "solutions-enterprise": [
+    "src\\pages\\EnterprisePage.tsx"
+  ],
+  "events": [
+    "src\\pages\\EventsPage.tsx"
+  ],
+  "order-failure": [
+    "src\\pages\\FailurePage.tsx"
+  ],
+  "features": [
+    "src\\pages\\FeaturesPage.tsx"
+  ],
+  "file-eraser-guide": [
+    "src\\pages\\FileEraserGuide.tsx"
+  ],
+  "file-eraser-network": [
+    "src\\pages\\FileEraserNetwork.tsx"
+  ],
+  "file-eraser": [
+    "src\\pages\\FileEraserPage.tsx"
+  ],
+  "financial-services": [
+    "src\\pages\\FinancialServices.tsx"
+  ],
+  "forensic-imaging": [
+    "src\\pages\\ForensicImagingPage.tsx"
+  ],
+  "forum": [
+    "src\\pages\\ForumPage.tsx"
+  ],
+  "founder": [
+    "src\\pages\\FounderPage.tsx"
+  ],
+  "free-trial": [
+    "src\\pages\\FreeTrialPage.tsx"
+  ],
+  "freeze-state-advanced": [
+    "src\\pages\\FreezeStateAdvancedPage.tsx"
+  ],
+  "freeze-state": [
+    "src\\pages\\FreezeStatePage.tsx"
+  ],
+  "freeze-state-smart": [
+    "src\\pages\\FreezeStateSmartPage.tsx"
+  ],
+  "glossary": [
+    "src\\pages\\GlossaryPage.tsx"
+  ],
+  "solutions/government": [
+    "src\\pages\\GovernmentPage.tsx"
+  ],
+  "hard-drive-monitor": [
+    "src\\pages\\HardDriveMonitorPage.tsx"
+  ],
+  "hardware-diagnostics": [
+    "src\\pages\\HardwareDiagnosticsPage.tsx"
+  ],
+  "healthcare-services": [
+    "src\\pages\\HealthcareServices.tsx"
+  ],
+  "home": [
+    "src\\pages\\HomePage.tsx"
+  ],
+  "icon-showcase": [
+    "src\\pages\\IconShowcase.tsx"
+  ],
+  "implementation": [
+    "src\\pages\\ImplementationPage.tsx"
+  ],
+  "integrations": [
+    "src\\pages\\IntegrationsPage.tsx"
+  ],
+  "it-asset-disposition": [
+    "src\\pages\\ITADSolution.tsx"
+  ],
+  "leadership": [
+    "src\\pages\\LeadershipPage.tsx"
+  ],
+  "legal-policy": [
+    "src\\pages\\LegalPolicy.tsx"
+  ],
+  "live-demo": [
+    "src\\pages\\LiveDemoPage.tsx"
+  ],
+  "lun-eraser": [
+    "src\\pages\\LUNEraserPage.tsx"
+  ],
+  "mac-erase-guide": [
+    "src\\pages\\MacEraseGuide.tsx"
+  ],
+  "support/help-manual/complete-diagnostic-manual": [
+    "src\\pages\\manual\\CompleteDSecureDaignosticManual.tsx"
+  ],
+  "support/help-manual/complete-drive-manual": [
+    "src\\pages\\manual\\CompleteDSecureDriveManual.tsx"
+  ],
+  "support/help-manual/complete-manual": [
+    "src\\pages\\manual\\CompleteDSecureManual.tsx"
+  ],
+  "complete-dsecure-network-file": [
+    "src\\pages\\manual\\CompleteDSecureNetworkFile.tsx"
+  ],
+  "support/help-manual/complete-freeze-state-manual": [
+    "src\\pages\\manual\\CompleteFreezeStateManual.tsx"
+  ],
+  "faqs": [
+    "src\\pages\\manual\\DSecureFAQPage.tsx",
+    "src\\pages\\solutions\\FAQsPage.tsx",
+    "src\\pages\\support\\FAQsPage.tsx",
+    "src\\pages\\support\\manual\\FaqsPage.tsx"
+  ],
+  "help-manual": [
+    "src\\pages\\manual\\HelpManualIndexPage.tsx",
+    "src\\pages\\manual\\network-file\\About.tsx",
+    "src\\pages\\manual\\network-file\\ErasingFiles.tsx",
+    "src\\pages\\manual\\network-file\\UserInterface.tsx",
+    "src\\pages\\manual\\ReportManagementPage.tsx",
+    "src\\pages\\SecureEraseHDDSDD.tsx",
+    "src\\pages\\solutions\\HelpManualPage.tsx",
+    "src\\pages\\support\\HelpManualPage.tsx",
+    "src\\pages\\support\\manual\\CertificateDestructionPage.tsx",
+    "src\\pages\\support\\manual\\CustomConfigurationsPage.tsx",
+    "src\\pages\\support\\manual\\DSecureIntegrationPage.tsx",
+    "src\\pages\\support\\manual\\EnterpriseServersPage.tsx",
+    "src\\pages\\support\\manual\\InstallationSettingsPage.tsx",
+    "src\\pages\\support\\manual\\NavigationPage.tsx",
+    "src\\pages\\support\\manual\\ReadbackVerificationPage.tsx",
+    "src\\pages\\support\\manual\\RemoteManagementPage.tsx",
+    "src\\pages\\support\\manual\\StartErasurePage.tsx",
+    "src\\pages\\support\\manual\\VerificationOverviewPage.tsx",
+    "src\\pages\\support\\manual\\WindowsEnterprisePage.tsx"
+  ],
+  "installation-guide-detailed": [
+    "src\\pages\\manual\\InstallationGuideDetailed.tsx"
+  ],
+  "cloud-integration": [
+    "src\\pages\\manual\\network-file\\CloudIntegration.tsx"
+  ],
+  "connecting-domain": [
+    "src\\pages\\manual\\network-file\\ConnectingDomain.tsx"
+  ],
+  "erasing-traces": [
+    "src\\pages\\manual\\network-file\\ErasingTraces.tsx"
+  ],
+  "faq": [
+    "src\\pages\\manual\\network-file\\FAQ.tsx"
+  ],
+  "installation": [
+    "src\\pages\\manual\\network-file\\Installation.tsx",
+    "src\\pages\\support\\manual\\InstallationPage.tsx"
+  ],
+  "licensing": [
+    "src\\pages\\manual\\network-file\\Licensing.tsx"
+  ],
+  "quick-overview": [
+    "src\\pages\\manual\\network-file\\QuickOverview.tsx"
+  ],
+  "report-management": [
+    "src\\pages\\manual\\network-file\\ReportManagement.tsx"
+  ],
+  "scheduling-tasks": [
+    "src\\pages\\manual\\network-file\\SchedulingTasks.tsx"
+  ],
+  "settings": [
+    "src\\pages\\manual\\network-file\\Settings.tsx"
+  ],
+  "support": [
+    "src\\pages\\manual\\network-file\\Support.tsx",
+    "src\\pages\\SupportPage.tsx"
+  ],
+  "support/help-manual/network-file": [
+    "src\\pages\\manual\\NetworkFileManualLayout.tsx"
+  ],
+  "schedule-settings": [
+    "src\\pages\\manual\\ScheduleSettingsPage.tsx"
+  ],
+  "system-setup": [
+    "src\\pages\\manual\\SystemSetupPage.tsx"
+  ],
+  "working-with-dsecure": [
+    "src\\pages\\manual\\WorkingWithDSecurePage.tsx"
+  ],
+  "mobile-erasure-solutions": [
+    "src\\pages\\MobileErasureSolutions.tsx"
+  ],
+  "news": [
+    "src\\pages\\NewsPage.tsx"
+  ],
+  "not-found": [
+    "src\\pages\\NotFoundPage.tsx"
+  ],
+  "order-success": [
+    "src\\pages\\OrderSuccessPage.tsx"
+  ],
+  "overwrite-guide": [
+    "src\\pages\\OverwriteGuide.tsx"
+  ],
+  "partner-program": [
+    "src\\pages\\PartnerProgramPage.tsx"
+  ],
+  "partners": [
+    "src\\pages\\PartnersPage.tsx"
+  ],
+  "payment": [
+    "src\\pages\\PaymentPage.tsx"
+  ],
+  "payment-setup": [
+    "src\\pages\\PaymentSetupPage.tsx"
+  ],
+  "press": [
+    "src\\pages\\PressPage.tsx"
+  ],
+  "pricing-and-plan": [
+    "src\\pages\\PricingAndPlanPage.tsx"
+  ],
+  "pricing": [
+    "src\\pages\\PricingPage.tsx"
+  ],
+  "privacy-policy": [
+    "src\\pages\\PrivacyPolicy.tsx"
+  ],
+  "products": [
+    "src\\pages\\ProductPage.tsx"
+  ],
+  "professional-services": [
+    "src\\pages\\ProfessionalServicesPage.tsx"
+  ],
+  "release-notes": [
+    "src\\pages\\ReleaseNotesPage.tsx"
+  ],
+  "removable-media-eraser": [
+    "src\\pages\\RemovableMediaEraserPage.tsx"
+  ],
+  "verify": [
+    "src\\pages\\ReportVerificationPage.tsx"
+  ],
+  "request-demo": [
+    "src\\pages\\RequestDemoPage.tsx"
+  ],
+  "resellers": [
+    "src\\pages\\ResellersPage.tsx"
+  ],
+  "brochures": [
+    "src\\pages\\resources\\BrochuresResourcesPage.tsx"
+  ],
+  "case-studies": [
+    "src\\pages\\resources\\CaseStudiesResourcesPage.tsx"
+  ],
+  "compliance-resources": [
+    "src\\pages\\resources\\ComplianceResourcesPage.tsx"
+  ],
+  "datasheets": [
+    "src\\pages\\resources\\DatasheetsResourcesPage.tsx"
+  ],
+  "documentation": [
+    "src\\pages\\resources\\DocumentationResourcesPage.tsx"
+  ],
+  "ebooks": [
+    "src\\pages\\resources\\EbooksResourcesPage.tsx"
+  ],
+  "whitepapers": [
+    "src\\pages\\resources\\WhitepapersResourcesPage.tsx"
+  ],
+  "resources": [
+    "src\\pages\\ResourcesPage.tsx"
+  ],
+  "retain-os-guide": [
+    "src\\pages\\RetainOSGuide.tsx"
+  ],
+  "reviews": [
+    "src\\pages\\ReviewsPage.tsx"
+  ],
+  "roi-calculator": [
+    "src\\pages\\ROICalculatorPage.tsx"
+  ],
+  "search-demo": [
+    "src\\pages\\SearchDemoPage.tsx"
+  ],
+  "security": [
+    "src\\pages\\SecurityPage.tsx"
+  ],
+  "cloud-erasure": [
+    "src\\pages\\services\\CloudErasurePage.tsx"
+  ],
+  "services": [
+    "src\\pages\\ServicesPage.tsx"
+  ],
+  "smartphone-diagnostic": [
+    "src\\pages\\SmartphoneDiagnosticPage.tsx"
+  ],
+  "smartphone-eraser": [
+    "src\\pages\\SmartphoneEraserPage.tsx"
+  ],
+  "alternative": [
+    "src\\pages\\solutions\\BlanccoAlternativePage.tsx"
+  ],
+  "enterprise-solutions": [
+    "src\\pages\\solutions\\EnterpriseSolutionsPage.tsx"
+  ],
+  "solutions/data-erasure-banking-finance": [
+    "src\\pages\\solutions\\FinancialSolutionsPage.tsx"
+  ],
+  "get-started": [
+    "src\\pages\\solutions\\GetStartedPage.tsx",
+    "src\\pages\\support\\GetStartedPage.tsx"
+  ],
+  "solutions/healthcare": [
+    "src\\pages\\solutions\\HealthcareSolutionsPage.tsx"
+  ],
+  "knowledge-base": [
+    "src\\pages\\solutions\\KnowledgeBasePage.tsx",
+    "src\\pages\\support\\KnowledgeBasePage.tsx"
+  ],
+  "mac": [
+    "src\\pages\\solutions\\MacErasurePage.tsx"
+  ],
+  "solutions/non-profit": [
+    "src\\pages\\solutions\\NonProfitSolutionsPage.tsx"
+  ],
+  "support-product-videos": [
+    "src\\pages\\solutions\\ProductVideosPage.tsx"
+  ],
+  "solutions/service-providers": [
+    "src\\pages\\solutions\\ServiceProvidersSolutionsPage.tsx"
+  ],
+  "vs-bitraser": [
+    "src\\pages\\solutions\\VsBitRaser.tsx"
+  ],
+  "vs-blancco": [
+    "src\\pages\\solutions\\VsBlancco.tsx"
+  ],
+  "vs-whitecanyon": [
+    "src\\pages\\solutions\\VsWhiteCanyon.tsx"
+  ],
+  "what-is-itad": [
+    "src\\pages\\solutions\\WhatIsITAD.tsx"
+  ],
+  "what-is-nist-800-88": [
+    "src\\pages\\solutions\\WhatIsNist80088.tsx"
+  ],
+  "solutions": [
+    "src\\pages\\SolutionsPage.tsx"
+  ],
+  "standards": [
+    "src\\pages\\StandardsPage.tsx"
+  ],
+  "status": [
+    "src\\pages\\StatusPage.tsx"
+  ],
+  "support-manual-access-verification": [
+    "src\\pages\\support\\manual\\AccessVerificationPage.tsx"
+  ],
+  "support-manual-activation-key": [
+    "src\\pages\\support\\manual\\ActivationKeyPage.tsx"
+  ],
+  "support-manual-api-integration": [
+    "src\\pages\\support\\manual\\ApiIntegrationPage.tsx"
+  ],
+  "support-manual-audit-preparation": [
+    "src\\pages\\support\\manual\\AuditPreparationPage.tsx"
+  ],
+  "support-manual-audit-trails": [
+    "src\\pages\\support\\manual\\AuditTrailsPage.tsx"
+  ],
+  "support-manual-audit-verification": [
+    "src\\pages\\support\\manual\\AuditVerificationPage.tsx"
+  ],
+  "support-manual-auto-updates": [
+    "src\\pages\\support\\manual\\AutoUpdatesPage.tsx"
+  ],
+  "support-manual-banking-finance": [
+    "src\\pages\\support\\manual\\BankingFinancePage.tsx"
+  ],
+  "support-manual-banking-mode": [
+    "src\\pages\\support\\manual\\BankingModePage.tsx"
+  ],
+  "support-manual-batch-operations": [
+    "src\\pages\\support\\manual\\BatchOperationsPage.tsx"
+  ],
+  "support-manual-best-practices": [
+    "src\\pages\\support\\manual\\BestPracticesPage.tsx"
+  ],
+  "certifications": [
+    "src\\pages\\support\\manual\\CertificateGenerationPage.tsx"
+  ],
+  "support-manual-chain-custody": [
+    "src\\pages\\support\\manual\\ChainCustodyPage.tsx"
+  ],
+  "support-manual-cloud-console": [
+    "src\\pages\\support\\manual\\CloudConsolePage.tsx"
+  ],
+  "support-manual-common-issues": [
+    "src\\pages\\support\\manual\\CommonIssuesPage.tsx"
+  ],
+  "support-manual-comparison-table": [
+    "src\\pages\\support\\manual\\ComparisonTablePage.tsx"
+  ],
+  "support-manual-compliance-export": [
+    "src\\pages\\support\\manual\\ComplianceExportPage.tsx"
+  ],
+  "support-manual-compliance-standards": [
+    "src\\pages\\support\\manual\\ComplianceStandardsPage.tsx"
+  ],
+  "support-manual-crushing-method": [
+    "src\\pages\\support\\manual\\CrushingMethodPage.tsx"
+  ],
+  "support-manual-crypto-benefits": [
+    "src\\pages\\support\\manual\\CryptoBenefitsPage.tsx"
+  ],
+  "cryptographic-erasure": [
+    "src\\pages\\support\\manual\\CryptographicErasurePage.tsx"
+  ],
+  "support-manual-crypto-importance": [
+    "src\\pages\\support\\manual\\CryptoImportancePage.tsx"
+  ],
+  "support-manual-crypto-process": [
+    "src\\pages\\support\\manual\\CryptoProcessPage.tsx"
+  ],
+  "support-manual-crypto-verification": [
+    "src\\pages\\support\\manual\\CryptoVerificationPage.tsx"
+  ],
+  "support-manual-custom-algorithms": [
+    "src\\pages\\support\\manual\\CustomAlgorithmsPage.tsx"
+  ],
+  "support-manual-custom-dashboards": [
+    "src\\pages\\support\\manual\\CustomDashboardsPage.tsx"
+  ],
+  "support-manual-degaussing-method": [
+    "src\\pages\\support\\manual\\DegaussingMethodPage.tsx"
+  ],
+  "support-manual-destruction-quality": [
+    "src\\pages\\support\\manual\\DestructionQualityPage.tsx"
+  ],
+  "support-manual-destruction-standards": [
+    "src\\pages\\support\\manual\\DestructionStandardsPage.tsx"
+  ],
+  "support-manual-destruction-use-cases": [
+    "src\\pages\\support\\manual\\DestructionUseCasesPage.tsx"
+  ],
+  "support-manual-device-selection": [
+    "src\\pages\\support\\manual\\DeviceSelectionPage.tsx"
+  ],
+  "dod3pass": [
+    "src\\pages\\support\\manual\\Dod3passPage.tsx"
+  ],
+  "dod7pass": [
+    "src\\pages\\support\\manual\\Dod7passPage.tsx"
+  ],
+  "support-manual-dod-standards": [
+    "src\\pages\\support\\manual\\DodStandardsPage.tsx"
+  ],
+  "support-manual-download-installer": [
+    "src\\pages\\support\\manual\\DownloadInstallerPage.tsx"
+  ],
+  "support-manual-enterprise-benefits": [
+    "src\\pages\\support\\manual\\EnterpriseBenefitsPage.tsx"
+  ],
+  "support-manual-enterprise-integration": [
+    "src\\pages\\support\\manual\\EnterpriseIntegrationPage.tsx"
+  ],
+  "support-manual-environmental-considerations": [
+    "src\\pages\\support\\manual\\EnvironmentalConsiderationsPage.tsx"
+  ],
+  "support-manual-environmental-impact": [
+    "src\\pages\\support\\manual\\EnvironmentalImpactPage.tsx"
+  ],
+  "support-manual-erasure-preferences": [
+    "src\\pages\\support\\manual\\ErasurePreferencesPage.tsx"
+  ],
+  "support-manual-erasure-process": [
+    "src\\pages\\support\\manual\\ErasureProcessPage.tsx"
+  ],
+  "support-manual-erasure-reports": [
+    "src\\pages\\support\\manual\\ErasureReportsPage.tsx"
+  ],
+  "support-manual-error-codes": [
+    "src\\pages\\support\\manual\\ErrorCodesPage.tsx"
+  ],
+  "support-manual-financial-verification": [
+    "src\\pages\\support\\manual\\FinancialVerificationPage.tsx"
+  ],
+  "support-manual-firewall-config": [
+    "src\\pages\\support\\manual\\FirewallConfigPage.tsx"
+  ],
+  "support-manual-firewall-setup": [
+    "src\\pages\\support\\manual\\FirewallSetupPage.tsx"
+  ],
+  "support-manual-first-run": [
+    "src\\pages\\support\\manual\\FirstRunPage.tsx"
+  ],
+  "support-manual-first-scan": [
+    "src\\pages\\support\\manual\\FirstScanPage.tsx"
+  ],
+  "support-manual-first-time-setup": [
+    "src\\pages\\support\\manual\\FirstTimeSetupPage.tsx"
+  ],
+  "support-manual-fragment-verification": [
+    "src\\pages\\support\\manual\\FragmentVerificationPage.tsx"
+  ],
+  "support-manual-future-trends": [
+    "src\\pages\\support\\manual\\FutureTrendsPage.tsx"
+  ],
+  "support-manual-gdpr-verification": [
+    "src\\pages\\support\\manual\\GdprVerificationPage.tsx"
+  ],
+  "support-manual-general-settings": [
+    "src\\pages\\support\\manual\\GeneralSettingsPage.tsx"
+  ],
+  "support-manual-government-defense": [
+    "src\\pages\\support\\manual\\GovernmentDefensePage.tsx"
+  ],
+  "support-manual-government-verification": [
+    "src\\pages\\support\\manual\\GovernmentVerificationPage.tsx"
+  ],
+  "support-manual-hardware-sanitization": [
+    "src\\pages\\support\\manual\\HardwareSanitizationPage.tsx"
+  ],
+  "support-manual-hdd-destruction": [
+    "src\\pages\\support\\manual\\HddDestructionPage.tsx"
+  ],
+  "support-manual-healthcare-destruction": [
+    "src\\pages\\support\\manual\\HealthcareDestructionPage.tsx"
+  ],
+  "support-manual-healthcare-verification": [
+    "src\\pages\\support\\manual\\HealthcareVerificationPage.tsx"
+  ],
+  "support-manual-implementation-considerations": [
+    "src\\pages\\support\\manual\\ImplementationConsiderationsPage.tsx"
+  ],
+  "support-manual-implementation-practices": [
+    "src\\pages\\support\\manual\\ImplementationPracticesPage.tsx"
+  ],
+  "support-manual-incineration-method": [
+    "src\\pages\\support\\manual\\IncinerationMethodPage.tsx"
+  ],
+  "support-manual-industry-applications": [
+    "src\\pages\\support\\manual\\IndustryApplicationsPage.tsx"
+  ],
+  "support-manual-industry-use-cases": [
+    "src\\pages\\support\\manual\\IndustryUseCasesPage.tsx"
+  ],
+  "support-manual-installation-path": [
+    "src\\pages\\support\\manual\\InstallationPathPage.tsx"
+  ],
+  "support-manual-installation-progress": [
+    "src\\pages\\support\\manual\\InstallationProgressPage.tsx"
+  ],
+  "support-manual-internet-requirements": [
+    "src\\pages\\support\\manual\\InternetRequirementsPage.tsx"
+  ],
+  "support-manual-itad-datacenters": [
+    "src\\pages\\support\\manual\\ItadDatacentersPage.tsx"
+  ],
+  "support-manual-key-activation": [
+    "src\\pages\\support\\manual\\KeyActivationPage.tsx"
+  ],
+  "support-manual-key-destruction-verify": [
+    "src\\pages\\support\\manual\\KeyDestructionVerifyPage.tsx"
+  ],
+  "support-manual-license-activation": [
+    "src\\pages\\support\\manual\\LicenseActivationPage.tsx"
+  ],
+  "support-manual-license-agreement": [
+    "src\\pages\\support\\manual\\LicenseAgreementPage.tsx"
+  ],
+  "support-manual-limitations": [
+    "src\\pages\\support\\manual\\LimitationsPage.tsx"
+  ],
+  "linux-systems": [
+    "src\\pages\\support\\manual\\LinuxSystemsPage.tsx"
+  ],
+  "support-manual-macos-apple-silicon": [
+    "src\\pages\\support\\manual\\MacosAppleSiliconPage.tsx"
+  ],
+  "support-manual-macos-architecture": [
+    "src\\pages\\support\\manual\\MacosArchitecturePage.tsx"
+  ],
+  "support-manual-macos-best-practices": [
+    "src\\pages\\support\\manual\\MacosBestPracticesPage.tsx"
+  ],
+  "support-manual-macos-builtin-tools": [
+    "src\\pages\\support\\manual\\MacosBuiltinToolsPage.tsx"
+  ],
+  "support-manual-macos-compliance": [
+    "src\\pages\\support\\manual\\MacosCompliancePage.tsx"
+  ],
+  "support-manual-macos-crypto-erasure": [
+    "src\\pages\\support\\manual\\MacosCryptoErasurePage.tsx"
+  ],
+  "support-manual-macos-encryption": [
+    "src\\pages\\support\\manual\\MacosEncryptionPage.tsx"
+  ],
+  "support-manual-macos-enterprise": [
+    "src\\pages\\support\\manual\\MacosEnterprisePage.tsx"
+  ],
+  "support-manual-macos-external-media": [
+    "src\\pages\\support\\manual\\MacosExternalMediaPage.tsx"
+  ],
+  "support-manual-macos-faq": [
+    "src\\pages\\support\\manual\\MacosFaqPage.tsx"
+  ],
+  "support-manual-macos-filesystems": [
+    "src\\pages\\support\\manual\\MacosFilesystemsPage.tsx"
+  ],
+  "support-manual-macos-filevault": [
+    "src\\pages\\support\\manual\\MacosFilevaultPage.tsx"
+  ],
+  "support-manual-macos-intel-procedures": [
+    "src\\pages\\support\\manual\\MacosIntelProceduresPage.tsx"
+  ],
+  "support-manual-macos-introduction": [
+    "src\\pages\\support\\manual\\MacosIntroductionPage.tsx"
+  ],
+  "support-manual-macos-methods-comparison": [
+    "src\\pages\\support\\manual\\MacosMethodsComparisonPage.tsx"
+  ],
+  "support-manual-macos-preparation": [
+    "src\\pages\\support\\manual\\MacosPreparationPage.tsx"
+  ],
+  "support-manual-macos-resources": [
+    "src\\pages\\support\\manual\\MacosResourcesPage.tsx"
+  ],
+  "support-manual-macos-risks": [
+    "src\\pages\\support\\manual\\MacosRisksPage.tsx"
+  ],
+  "support-manual-macos-software-erasure": [
+    "src\\pages\\support\\manual\\MacosSoftwareErasurePage.tsx"
+  ],
+  "support-manual-macos-ssd-considerations": [
+    "src\\pages\\support\\manual\\MacosSsdConsiderationsPage.tsx"
+  ],
+  "support-manual-macos-storage": [
+    "src\\pages\\support\\manual\\MacosStoragePage.tsx"
+  ],
+  "support-manual-macos-system-drive": [
+    "src\\pages\\support\\manual\\MacosSystemDrivePage.tsx"
+  ],
+  "mac-ossystems": [
+    "src\\pages\\support\\manual\\MacOSSystemsPage.tsx"
+  ],
+  "support-manual-macos-third-party": [
+    "src\\pages\\support\\manual\\MacosThirdPartyPage.tsx"
+  ],
+  "support-manual-macos-tool-selection": [
+    "src\\pages\\support\\manual\\MacosToolSelectionPage.tsx"
+  ],
+  "support-manual-macos-troubleshooting": [
+    "src\\pages\\support\\manual\\MacosTroubleshootingPage.tsx"
+  ],
+  "support-manual-macos-verification": [
+    "src\\pages\\support\\manual\\MacosVerificationPage.tsx"
+  ],
+  "support-manual-main-dashboard": [
+    "src\\pages\\support\\manual\\MainDashboardPage.tsx"
+  ],
+  "support-manual-mobile-destruction": [
+    "src\\pages\\support\\manual\\MobileDestructionPage.tsx"
+  ],
+  "mobile-devices": [
+    "src\\pages\\support\\manual\\MobileDevicesPage.tsx"
+  ],
+  "support-manual-onsite-offsite": [
+    "src\\pages\\support\\manual\\OnsiteOffsitePage.tsx"
+  ],
+  "support-manual-operation-history": [
+    "src\\pages\\support\\manual\\OperationHistoryPage.tsx"
+  ],
+  "support-manual-optical-tape-destruction": [
+    "src\\pages\\support\\manual\\OpticalTapeDestructionPage.tsx"
+  ],
+  "support-manual-overwrite-introduction": [
+    "src\\pages\\support\\manual\\OverwriteIntroductionPage.tsx"
+  ],
+  "support-manual-overwrite-patterns": [
+    "src\\pages\\support\\manual\\OverwritePatternsPage.tsx"
+  ],
+  "support-manual-overwrite-risks": [
+    "src\\pages\\support\\manual\\OverwriteRisksPage.tsx"
+  ],
+  "support-manual-parental-controls": [
+    "src\\pages\\support\\manual\\ParentalControlsPage.tsx"
+  ],
+  "support-manual-pattern-selection": [
+    "src\\pages\\support\\manual\\PatternSelectionPage.tsx"
+  ],
+  "support-manual-performance-analysis": [
+    "src\\pages\\support\\manual\\PerformanceAnalysisPage.tsx"
+  ],
+  "support-manual-performance-optimization": [
+    "src\\pages\\support\\manual\\PerformanceOptimizationPage.tsx"
+  ],
+  "support-manual-performance-tradeoffs": [
+    "src\\pages\\support\\manual\\PerformanceTradeoffsPage.tsx"
+  ],
+  "support-manual-performance-tuning": [
+    "src\\pages\\support\\manual\\PerformanceTuningPage.tsx"
+  ],
+  "support-manual-physical-destruction-overview": [
+    "src\\pages\\support\\manual\\PhysicalDestructionOverviewPage.tsx"
+  ],
+  "support-manual-physical-destruction": [
+    "src\\pages\\support\\manual\\PhysicalDestructionPage.tsx"
+  ],
+  "support-manual-physical-inspection": [
+    "src\\pages\\support\\manual\\PhysicalInspectionPage.tsx"
+  ],
+  "support-manual-post-install-optimization": [
+    "src\\pages\\support\\manual\\PostInstallOptimizationPage.tsx"
+  ],
+  "support-manual-pre-installation": [
+    "src\\pages\\support\\manual\\PreInstallationPage.tsx"
+  ],
+  "support-manual-progress-monitoring": [
+    "src\\pages\\support\\manual\\ProgressMonitoringPage.tsx"
+  ],
+  "support-manual-realtime-protection": [
+    "src\\pages\\support\\manual\\RealtimeProtectionPage.tsx"
+  ],
+  "recovery-procedures": [
+    "src\\pages\\support\\manual\\RecoveryProceduresPage.tsx"
+  ],
+  "support-manual-regulatory-compliance": [
+    "src\\pages\\support\\manual\\RegulatoryCompliancePage.tsx"
+  ],
+  "support-manual-sampling-methodology": [
+    "src\\pages\\support\\manual\\SamplingMethodologyPage.tsx"
+  ],
+  "support-manual-scan-exclusions": [
+    "src\\pages\\support\\manual\\ScanExclusionsPage.tsx"
+  ],
+  "support-manual-scan-results": [
+    "src\\pages\\support\\manual\\ScanResultsPage.tsx"
+  ],
+  "support-manual-scan-scheduling": [
+    "src\\pages\\support\\manual\\ScanSchedulingPage.tsx"
+  ],
+  "support-manual-scripting-automation": [
+    "src\\pages\\support\\manual\\ScriptingAutomationPage.tsx"
+  ],
+  "support-manual-security-protocols": [
+    "src\\pages\\support\\manual\\SecurityProtocolsPage.tsx"
+  ],
+  "support-manual-service-workflow": [
+    "src\\pages\\support\\manual\\ServiceWorkflowPage.tsx"
+  ],
+  "support-manual-setup-wizard": [
+    "src\\pages\\support\\manual\\SetupWizardPage.tsx"
+  ],
+  "support-manual-shredding-method": [
+    "src\\pages\\support\\manual\\ShreddingMethodPage.tsx"
+  ],
+  "support-manual-software-supported-media": [
+    "src\\pages\\support\\manual\\SoftwareSupportedMediaPage.tsx"
+  ],
+  "support-manual-software-verification": [
+    "src\\pages\\support\\manual\\SoftwareVerificationPage.tsx"
+  ],
+  "support-manual-ssd-challenges": [
+    "src\\pages\\support\\manual\\SsdChallengesPage.tsx"
+  ],
+  "support-manual-ssd-destruction": [
+    "src\\pages\\support\\manual\\SsdDestructionPage.tsx"
+  ],
+  "support-manual-standards-comparison": [
+    "src\\pages\\support\\manual\\StandardsComparisonPage.tsx"
+  ],
+  "support-manual-statistical-confidence": [
+    "src\\pages\\support\\manual\\StatisticalConfidencePage.tsx"
+  ],
+  "support-manual-status-indicators": [
+    "src\\pages\\support\\manual\\StatusIndicatorsPage.tsx"
+  ],
+  "support-manual-supported-devices": [
+    "src\\pages\\support\\manual\\SupportedDevicesPage.tsx"
+  ],
+  "support-manual-supported-encryption": [
+    "src\\pages\\support\\manual\\SupportedEncryptionPage.tsx"
+  ],
+  "support-manual-system-requirements": [
+    "src\\pages\\support\\manual\\SystemRequirementsPage.tsx"
+  ],
+  "support-manual-system-scanning": [
+    "src\\pages\\support\\manual\\SystemScanningPage.tsx"
+  ],
+  "use-cases": [
+    "src\\pages\\support\\manual\\UseCasesPage.tsx",
+    "src\\pages\\UseCasesPage.tsx"
+  ],
+  "support-manual-user-management": [
+    "src\\pages\\support\\manual\\UserManagementPage.tsx"
+  ],
+  "support-manual-user-profile": [
+    "src\\pages\\support\\manual\\UserProfilePage.tsx"
+  ],
+  "support-manual-verification-challenges": [
+    "src\\pages\\support\\manual\\VerificationChallengesPage.tsx"
+  ],
+  "support-manual-verification-importance": [
+    "src\\pages\\support\\manual\\VerificationImportancePage.tsx"
+  ],
+  "support-manual-verification-logs": [
+    "src\\pages\\support\\manual\\VerificationLogsPage.tsx"
+  ],
+  "support-manual-verification-methods": [
+    "src\\pages\\support\\manual\\VerificationMethodsPage.tsx"
+  ],
+  "support-manual-verification-risks": [
+    "src\\pages\\support\\manual\\VerificationRisksPage.tsx"
+  ],
+  "support-manual-verification-standards": [
+    "src\\pages\\support\\manual\\VerificationStandardsPage.tsx"
+  ],
+  "support-manual-verification-techniques": [
+    "src\\pages\\support\\manual\\VerificationTechniquesPage.tsx"
+  ],
+  "support-manual-verification-tools": [
+    "src\\pages\\support\\manual\\VerificationToolsPage.tsx"
+  ],
+  "support-manual-virus-definitions": [
+    "src\\pages\\support\\manual\\VirusDefinitionsPage.tsx"
+  ],
+  "support-manual-visual-confirmation": [
+    "src\\pages\\support\\manual\\VisualConfirmationPage.tsx"
+  ],
+  "support-manual-vpn-setup": [
+    "src\\pages\\support\\manual\\VpnSetupPage.tsx"
+  ],
+  "support-manual-why-physical-destruction": [
+    "src\\pages\\support\\manual\\WhyPhysicalDestructionPage.tsx"
+  ],
+  "support-manual-windows-best-practices": [
+    "src\\pages\\support\\manual\\WindowsBestPracticesPage.tsx"
+  ],
+  "support-manual-windows-bitlocker": [
+    "src\\pages\\support\\manual\\WindowsBitlockerPage.tsx"
+  ],
+  "support-manual-windows-bootable-usb": [
+    "src\\pages\\support\\manual\\WindowsBootableUsbPage.tsx"
+  ],
+  "support-manual-windows-builtin-tools": [
+    "src\\pages\\support\\manual\\WindowsBuiltinToolsPage.tsx"
+  ],
+  "support-manual-windows-command-line": [
+    "src\\pages\\support\\manual\\WindowsCommandLinePage.tsx"
+  ],
+  "support-manual-windows-compliance": [
+    "src\\pages\\support\\manual\\WindowsCompliancePage.tsx"
+  ],
+  "support-manual-windows-crypto-erasure": [
+    "src\\pages\\support\\manual\\WindowsCryptoErasurePage.tsx"
+  ],
+  "windows-dsecure-eraser": [
+    "src\\pages\\support\\manual\\WindowsDsecureEraserPage.tsx"
+  ],
+  "support-manual-windows-faq": [
+    "src\\pages\\support\\manual\\WindowsFaqPage.tsx"
+  ],
+  "support-manual-windows-filesystems": [
+    "src\\pages\\support\\manual\\WindowsFilesystemsPage.tsx"
+  ],
+  "support-manual-windows-introduction": [
+    "src\\pages\\support\\manual\\WindowsIntroductionPage.tsx"
+  ],
+  "support-manual-windows-methods-comparison": [
+    "src\\pages\\support\\manual\\WindowsMethodsComparisonPage.tsx"
+  ],
+  "support-manual-windows-preparation": [
+    "src\\pages\\support\\manual\\WindowsPreparationPage.tsx"
+  ],
+  "support-manual-windows-residual-data": [
+    "src\\pages\\support\\manual\\WindowsResidualDataPage.tsx"
+  ],
+  "support-manual-windows-resources": [
+    "src\\pages\\support\\manual\\WindowsResourcesPage.tsx"
+  ],
+  "support-manual-windows-risks": [
+    "src\\pages\\support\\manual\\WindowsRisksPage.tsx"
+  ],
+  "support-manual-windows-sed-drives": [
+    "src\\pages\\support\\manual\\WindowsSedDrivesPage.tsx"
+  ],
+  "support-manual-windows-software-erasure": [
+    "src\\pages\\support\\manual\\WindowsSoftwareErasurePage.tsx"
+  ],
+  "support-manual-windows-ssd-erasure": [
+    "src\\pages\\support\\manual\\WindowsSsdErasurePage.tsx"
+  ],
+  "support-manual-windows-storage": [
+    "src\\pages\\support\\manual\\WindowsStoragePage.tsx"
+  ],
+  "support-manual-windows-system-files": [
+    "src\\pages\\support\\manual\\WindowsSystemFilesPage.tsx"
+  ],
+  "windows-systems": [
+    "src\\pages\\support\\manual\\WindowsSystemsPage.tsx"
+  ],
+  "support-manual-windows-third-party": [
+    "src\\pages\\support\\manual\\WindowsThirdPartyPage.tsx"
+  ],
+  "support-manual-windows-troubleshooting": [
+    "src\\pages\\support\\manual\\WindowsTroubleshootingPage.tsx"
+  ],
+  "windows-verification": [
+    "src\\pages\\support\\manual\\WindowsVerificationPage.tsx"
+  ],
+  "product-videos": [
+    "src\\pages\\support\\ProductVideosPage.tsx"
+  ],
+  "team": [
+    "src\\pages\\TeamPage.tsx"
+  ],
+  "terms-of-service": [
+    "src\\pages\\TermsOfServicePage.tsx"
+  ],
+  "testimonials": [
+    "src\\pages\\TestimonialsPage.tsx"
+  ],
+  "data-breach-calculator": [
+    "src\\pages\\tools\\DataBreachCalculatorPage.tsx"
+  ],
+  "gdpr-erasure-checklist": [
+    "src\\pages\\tools\\GDPRErasureChecklistPage.tsx"
+  ],
+  "nist-800-88-compliance-checker": [
+    "src\\pages\\tools\\NIST80088CheckerPage.tsx"
+  ],
+  "ssd-pass-calculator": [
+    "src\\pages\\tools\\SSDPassCalculatorPage.tsx"
+  ],
+  "training": [
+    "src\\pages\\TrainingPage.tsx"
+  ],
+  "trust-center": [
+    "src\\pages\\TrustCenterPage.tsx"
+  ],
+  "virtual-machine-eraser": [
+    "src\\pages\\VirtualMachineEraserPage.tsx"
+  ],
+  "webinars": [
+    "src\\pages\\WebinarsPage.tsx"
+  ],
+  "what-is-d-secure": [
+    "src\\pages\\WhatIsDSecurePage.tsx"
+  ],
+  "whitepaper": [
+    "src\\pages\\WhitepaperPage.tsx"
+  ],
+  "why-d-secure": [
+    "src\\pages\\WhyDSecurePage.tsx"
+  ],
+  "wipe-mac-m1": [
+    "src\\pages\\WipeMacM1.tsx"
+  ],
+  "wipe-sas-drive": [
+    "src\\pages\\WipeSASDrive.tsx"
+  ]
+}

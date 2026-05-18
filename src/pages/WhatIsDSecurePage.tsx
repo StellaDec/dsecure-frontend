@@ -245,7 +245,7 @@ export default function WhatIsDSecurePage() {
                     <div className="mt-12 p-8 border-2 border-dashed border-slate-200 rounded-xl">
                       <h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">Standardizing the Sanitization Industry</h3>
                       <p className="text-slate-600 leading-relaxed text-center max-w-4xl mx-auto">
-                        D-Secure Technologies is more than a vendor; we are a strategic partner to the world's most security-conscious organizations. From Fortune 500 banks to national defense ministries, the D-Secure name is synonymous with <strong>absolute data finality</strong>. By combining engineering excellence with a deep understanding of global regulatory frameworks, we provide the peace of mind that allows you to innovate, grow, and decommission with total confidence.
+                        D-Secure Technologies is more than a vendor; we are a strategic partner to the world's most security-conscious organizations. From compliance-driven enterprises to security teams, the D-Secure name is synonymous with <strong>absolute data finality</strong>. By combining engineering excellence with a deep understanding of global regulatory frameworks, we provide the peace of mind that allows you to innovate, grow, and decommission with total confidence.
                       </p>
                     </div>
                   </div>

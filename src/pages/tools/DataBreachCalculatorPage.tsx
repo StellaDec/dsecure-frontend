@@ -58,32 +58,32 @@ export default function DataBreachCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Schemas ko directStructuredData se pass karo — PAGE_SEO schemas override nahi honge, SEOHead merge karega */}
       <SEOHead
-        seo={getSEOForPage("data-breach-calculator", {
-          structuredData: [
-            {
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "Data Breach Cost Calculator",
-              "description": "Free interactive tool to estimate financial exposure from a data breach based on industry and record count.",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web Browser",
-              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-              "provider": { "@type": "Organization", "name": "D-Secure" },
-              "url": "https://dsecuretech.com/tools/data-breach-calculator",
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              "name": "How to Calculate Data Breach Cost",
-              "step": [
-                { "@type": "HowToStep", "position": 1, "name": "Select Industry", "text": "Choose your business industry from Healthcare, Financial, Tech, or Retail." },
-                { "@type": "HowToStep", "position": 2, "name": "Set Record Count", "text": "Use the slider to set the number of records potentially exposed." },
-                { "@type": "HowToStep", "position": 3, "name": "View Estimate", "text": "Instantly see your estimated breach cost based on IBM Cost of a Data Breach averages." }
-              ]
-            }
-          ]
-        })}
+        seo={getSEOForPage("data-breach-calculator")}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Data Breach Cost Calculator",
+            "description": "Free interactive tool to estimate financial exposure from a data breach based on industry and record count.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web Browser",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "provider": { "@type": "Organization", "name": "D-Secure" },
+            "url": "https://dsecuretech.com/tools/data-breach-calculator",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Calculate Data Breach Cost",
+            "step": [
+              { "@type": "HowToStep", "position": 1, "name": "Select Industry", "text": "Choose your business industry from Healthcare, Financial, Tech, or Retail." },
+              { "@type": "HowToStep", "position": 2, "name": "Set Record Count", "text": "Use the slider to set the number of records potentially exposed." },
+              { "@type": "HowToStep", "position": 3, "name": "View Estimate", "text": "Instantly see your estimated breach cost based on IBM Cost of a Data Breach averages." }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs — Google navigation signal */}

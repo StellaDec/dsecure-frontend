@@ -133,11 +133,11 @@ const FAQsPage: React.FC = memo(() => {
 
   return (
     <>
+      {/* SEOHead ko do alag props se data dena: seo prop (page meta) + structuredData prop (FAQPage schema)
+          SEOHead internally dono ko merge karke exactly ek FAQPage script tag emit karta hai */}
       <SEOHead 
-        seo={{
-          ...getSEOForPage('faqs'),
-          structuredData: faqSchema
-        }} 
+        seo={getSEOForPage('faqs')}
+        structuredData={faqSchema}
       />
 
       <div className="min-h-screen bg-slate-50">

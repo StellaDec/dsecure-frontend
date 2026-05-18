@@ -14,7 +14,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
             title:
               "How to Securely Erase Loose Drives from Data Centers & IT Assets",
             excerpt:
-              "Learn certified erasure steps for SATA, NVMe & SAS loose drives using NIST-compliant tools to prevent breaches.",
+              "Loose drive erasure guide for ITAD operators — wipe SATA, SAS and NVMe drives in bulk with NIST 800-88 compliance. Step-by-step workflow inside.",
             slug: "loose-drives-erasure-guide",
             author: "D-Secure Editorial Team",
             publishDate: "June 18, 2025",
@@ -33,7 +33,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                 <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
-                Complete Guide to <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link> of Loose Drives
+                <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Loose Drive Erasure</Link>: Complete Guide for ITAD Operators
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 Protect your organization from data breaches by properly

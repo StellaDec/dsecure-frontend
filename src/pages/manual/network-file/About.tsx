@@ -182,7 +182,7 @@ const About: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Trusted Globally</h3>
-                <p className="text-gray-700">Used by Fortune 500 companies, government agencies, and IT professionals</p>
+                <p className="text-gray-700">Used by leading enterprises, government agencies, and IT professionals</p>
               </div>
             </div>
 

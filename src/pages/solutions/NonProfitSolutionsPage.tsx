@@ -9,9 +9,8 @@ import SolutionHeroGraphic from "@/components/SolutionHeroGraphic";
 
 /**
  * NonProfitSolutionsPage Component
- * Non-Profit Organizations (NGOs/Charities) ke liye data erasure solutions.
- * HealthcareSolutionsPage ke theme par based hai.
- * Content bitraser non-profit page se inspired hai — bina unke naam ya claims use kiye.
+ * Non-Profit Organizations (NGOs/Charities) ke liye modern data security aur sanitization solutions prashast karta hai.
+ * Yeh page robust lifecycle standardizations aur secure reporting features par aadharit hai.
  */
 const NonProfitSolutionsPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState("overview");

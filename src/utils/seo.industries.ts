@@ -73,7 +73,8 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
       "R2v3 compliance data destruction",
       "e-Stewards data destruction India",
       "best ITAD tools for 2025 AI",
-      "आईटी एसेट डिस्पोजल सॉफ्टवेयर",
+      // Hindi ITAD keyword ko premium English security term se replace kiya
+      "IT asset disposal software",
     ]),
     canonicalUrl: getCanonicalUrl("/solutions/itad"),
     breadcrumbs: [
@@ -135,7 +136,8 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
       "network server wiping tools",
       "NIST 800-88 enterprise software",
       "corporate data destruction solutions",
-      "डेटा वाइपिंग फॉर एंटरप्राइज",
+      // Hindi corporate keyword ko English terminology se replace kiya
+      "enterprise data wiping solutions",
       "scalable data sanitization international",
     ]),
     canonicalUrl: getCanonicalUrl("/solutions/enterprise"),

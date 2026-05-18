@@ -232,27 +232,15 @@
         }
       })();
 
-      // Only load analytics in production (not on localhost)
+      // Google Tag Manager ke liye safe global stubs setup karein
       if (
         globalThis.location.hostname !== "localhost" &&
         globalThis.location.hostname !== "127.0.0.1"
       ) {
         globalThis.dataLayer = globalThis.dataLayer || [];
-        function gtag() {
+        globalThis.gtag = function () {
           globalThis.dataLayer.push(arguments);
-        }
-
-        // Defer Google Analytics
-        globalThis.addEventListener("load", function () {
-          var script = document.createElement("script");
-          script.async = true;
-          script.src =
-            "https://www.googletagmanager.com/gtag/js?id=G-6B20XY3K81";
-          document.head.appendChild(script);
-
-          gtag("js", new Date());
-          gtag("config", "G-6B20XY3K81");
-        });
+        };
       }
     </script>
   </head>

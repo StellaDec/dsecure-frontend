@@ -58,15 +58,9 @@ export const SITEMAP_CHANGEFREQ = {
 /**
  * Supported languages for hreflang tags
  * Order: default first (en), phir alphabetical
- */
+// Multi-language support/Hindi locale ko remove kiya strictly English policy ke liye
 export const SUPPORTED_LOCALES = [
   { lang: 'en', label: 'English', hreflang: 'en' },
-  { lang: 'de', label: 'Deutsch', hreflang: 'de' },
-  { lang: 'es', label: 'Español', hreflang: 'es' },
-  { lang: 'fr', label: 'Français', hreflang: 'fr' },
-  { lang: 'hi', label: 'हिन्दी', hreflang: 'hi' },
-  { lang: 'ja', label: '日本語', hreflang: 'ja' },
-  { lang: 'zh', label: '中文', hreflang: 'zh' },
 ] as const;
 
 /**

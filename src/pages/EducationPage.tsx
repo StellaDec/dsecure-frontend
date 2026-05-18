@@ -9,8 +9,8 @@ import SolutionHeroGraphic from "@/components/SolutionHeroGraphic";
 
 /**
  * EducationPage Component
- * Is page mein Educational Institutions (Schools, Universities) ke liye data erasure solutions dikhaye gaye hain.
- * Yeh HealthcareSolutionsPage ke Emerald Green theme aur BitRaser data par based hai.
+ * Is page mein Educational Institutions (Schools, Universities) ke liye data security aur device diagnostics solutions pradarshit kiye gaye hain.
+ * Yeh page modern green layout aur advanced lifecycle safety parameters par aadharit hai.
  */
 const EducationPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState("overview");

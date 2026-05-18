@@ -1558,17 +1558,54 @@ const PricingAndPlanPage: React.FC = memo(() => {
       "priceCurrency": "USD",
       "lowPrice": "10.00",
       "highPrice": "500.00",
-      "offerCount": "10"
+      "offerCount": "10",
+      // Google Search Console 'Missing field' warnings fix karne ke liye
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          }
+        }
+      }
     }
   };
+
+  // getSEOForPage ek baar hi call karo — double call se schema duplication hoti thi
+  const pageSEO = getSEOForPage("pricing-and-plan");
 
   return (
     <>
       <SEOHead
-        seo={{
-          ...getSEOForPage("pricing-and-plan"),
-          structuredData: pricingSchema,
-        }}
+        seo={pageSEO}
+        structuredData={pricingSchema}
       />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">

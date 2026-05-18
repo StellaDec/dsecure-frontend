@@ -335,23 +335,29 @@ async function prerender() {
         html = html.replace(/<head>/i, `<head>` + String.fromCharCode(10) + `    ${helmetContent}`);
       }
       
-      // JSON-LD structured data ko head mein inject karo
-      // Source 1: Body mein render hue <script type="application/ld+json"> tags (Helmet se)
-      // Source 2: data-seo-bridge ke data-seo-schemas aur data-seo-breadcrumbs attributes
-      const uniqueJsonLd = new Set();
-      const jsonLdTags = [];
+      // JSON-LD structured data ko head mein inject aur deduplicate karo
+      // Hindi Comments: Sabhi generated JSON-LD chunks ko aapas mein deep compare aur merge karenge
+      const allParsedSchemas = [];
 
-      // Body se JSON-LD script tags extract karo
+      // Body se render hue application/ld+json extract karke parse karo (Helmet tags)
       const jsonLdScripts = [...appHtml.matchAll(/<script\s+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)];
       for (const match of jsonLdScripts) {
         const content = match[1].trim();
-        if (content && !uniqueJsonLd.has(content)) {
-          uniqueJsonLd.add(content);
-          jsonLdTags.push(`<script type="application/ld+json">${content}</script>`);
+        if (content) {
+          try {
+            const parsed = JSON.parse(content);
+            if (Array.isArray(parsed)) {
+              allParsedSchemas.push(...parsed);
+            } else {
+              allParsedSchemas.push(parsed);
+            }
+          } catch (e) {
+            // Parse error hone par ignore karein
+          }
         }
       }
 
-      // data-seo-bridge se schemas aur breadcrumbs extract karo
+      // data-seo-bridge se structured schemas and breadcrumbs data fetch karke add karo
       if (lastBridge) {
         const extractBridgeAttr = (attr) => {
           const match = lastBridge.match(new RegExp(`${attr}=(?:(["'])(.*?)\\1|([^\\s>]+))`));
@@ -359,37 +365,98 @@ async function prerender() {
           return val.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
         };
 
-        // data-seo-schemas — array of schema objects
+        // data-seo-schemas raw array ko process karein
         const schemasRaw = extractBridgeAttr('data-seo-schemas');
         if (schemasRaw) {
           try {
             const schemas = JSON.parse(schemasRaw);
-            const schemaArray = Array.isArray(schemas) ? schemas : [schemas];
-            for (const schema of schemaArray) {
-              const content = JSON.stringify(schema);
-              if (!uniqueJsonLd.has(content)) {
-                uniqueJsonLd.add(content);
-                jsonLdTags.push(`<script type="application/ld+json">${content}</script>`);
-              }
+            if (Array.isArray(schemas)) {
+              allParsedSchemas.push(...schemas);
+            } else {
+              allParsedSchemas.push(schemas);
             }
-          } catch (e) {
-            // Schema parse error — skip silently
-          }
+          } catch (e) {}
         }
 
-        // data-seo-breadcrumbs — single BreadcrumbList schema
+        // data-seo-breadcrumbs schema process karein
         const breadcrumbsRaw = extractBridgeAttr('data-seo-breadcrumbs');
         if (breadcrumbsRaw) {
           try {
             const breadcrumbSchema = JSON.parse(breadcrumbsRaw);
-            const content = JSON.stringify(breadcrumbSchema);
-            if (!uniqueJsonLd.has(content)) {
-              uniqueJsonLd.add(content);
-              jsonLdTags.push(`<script type="application/ld+json">${content}</script>`);
+            if (Array.isArray(breadcrumbSchema)) {
+              allParsedSchemas.push(...breadcrumbSchema);
+            } else {
+              allParsedSchemas.push(breadcrumbSchema);
             }
-          } catch (e) {
-            // Breadcrumb parse error — skip silently
+          } catch (e) {}
+        }
+      }
+
+      // ───────────────────────────────────────────────────────────────────────
+      // DEDUPLICATION & FAQ MERGING LOGIC
+      // ───────────────────────────────────────────────────────────────────────
+      // FAQPage and non-FAQPage structures ko alag-alag manage karenge
+      const faqSchemas = allParsedSchemas.filter(s => s && s['@type'] === 'FAQPage');
+      const nonFaqSchemas = allParsedSchemas.filter(s => s && s['@type'] !== 'FAQPage');
+
+      let mergedFaqSchema = null;
+      if (faqSchemas.length > 0) {
+        const seenQuestions = new Set();
+        const mergedEntities = [];
+
+        for (const faqSchema of faqSchemas) {
+          const entities = faqSchema.mainEntity;
+          if (Array.isArray(entities)) {
+            for (const entity of entities) {
+              if (entity && entity['@type'] === 'Question') {
+                const questionName = entity.name ? entity.name.trim() : '';
+                if (questionName && !seenQuestions.has(questionName)) {
+                  seenQuestions.add(questionName);
+                  mergedEntities.push(entity);
+                }
+              }
+            }
           }
+        }
+
+        if (mergedEntities.length > 0) {
+          mergedFaqSchema = {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: mergedEntities
+          };
+        }
+      }
+
+      // Structural key-sorting helper for deterministic object fingerprinting
+      function deterministicStringify(obj) {
+        if (obj === null || typeof obj !== 'object') {
+          return JSON.stringify(obj);
+        }
+        if (Array.isArray(obj)) {
+          return '[' + obj.map(deterministicStringify).join(',') + ']';
+        }
+        const sortedKeys = Object.keys(obj).sort();
+        const parts = sortedKeys.map(k => `${JSON.stringify(k)}:${deterministicStringify(obj[k])}`);
+        return '{' + parts.join(',') + '}';
+      }
+
+      const uniqueSerialized = new Set();
+      const jsonLdTags = [];
+
+      // Sabse pehle unique main FAQPage schema insert karenge (agar exist karta hai)
+      if (mergedFaqSchema) {
+        uniqueSerialized.add(deterministicStringify(mergedFaqSchema));
+        jsonLdTags.push(`<script type="application/ld+json">${JSON.stringify(mergedFaqSchema)}</script>`);
+      }
+
+      // Baki saare schemas ko normalized deterministic hashing se deduplicate karke head me add karenge
+      for (const schema of nonFaqSchemas) {
+        if (!schema) continue;
+        const canonical = deterministicStringify(schema);
+        if (!uniqueSerialized.has(canonical)) {
+          uniqueSerialized.add(canonical);
+          jsonLdTags.push(`<script type="application/ld+json">${JSON.stringify(schema)}</script>`);
         }
       }
 

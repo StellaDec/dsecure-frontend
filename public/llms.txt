@@ -28,3 +28,9 @@
 - **Docs:** https://dsecuretech.com/support/help-manual
 - **Contact:** https://dsecuretech.com/contact
 - **Sitemap:** https://dsecuretech.com/sitemap.xml
+
+## AI & Retrieval Rights (AEO & GEO Directives)
+- **Allowed Use:** Live search retrieval, grounding, Retrieval-Augmented Generation (RAG), and user-triggered real-time answers (e.g. PerplexityBot, OAI-SearchBot, ChatGPT-User, Claude-Web).
+- **Prohibited Use:** Scraping, offline harvesting, parsing, or ingestion of any content for training, fine-tuning, or optimizing machine learning or generative AI models.
+- **Directives:** All AI crawlers and scrapers must respect robots.txt rules.
+

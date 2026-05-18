@@ -4,15 +4,9 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpBackend from "i18next-http-backend";
 import enTranslation from "../../public/locales/en/translation.json";
 
-// Language configurations
+// Sirf English ko active rakhne ke liye support limits adjust kiye
 export const languages = [
   { code: "en", name: "English", nativeName: "English", flag: "🇺🇸" },
-  { code: "hi", name: "Hindi", nativeName: "हिन्दी", flag: "🇮🇳" },
-  { code: "es", name: "Spanish", nativeName: "Español", flag: "🇪🇸" },
-  { code: "fr", name: "French", nativeName: "Français", flag: "🇫🇷" },
-  { code: "de", name: "German", nativeName: "Deutsch", flag: "🇩🇪" },
-  { code: "ja", name: "Japanese", nativeName: "日本語", flag: "🇯🇵" },
-  { code: "zh", name: "Chinese", nativeName: "中文", flag: "🇨🇳" },
 ];
 
 // Initialize i18next

@@ -30,7 +30,7 @@ function CaseStudiesResourcesContent() {
   const toast = useToast()
   const featuredCaseStudies = [
     {
-      title: 'Fortune 500 Manufacturing: 60% Faster IT Refresh',
+      title: 'Leading Global Manufacturing: 60% Faster IT Refresh',
       industry: 'Manufacturing',
       company: 'Global Manufacturing Corporation',
       challenge: 'Slow IT refresh cycles and compliance concerns',

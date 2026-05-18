@@ -310,7 +310,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             </Link>
           </div>
           <p className="mt-8 text-slate-400 text-sm">
-            Trusted by Fortune 500 companies and government agencies globally. 100% Audit-Ready.
+            Trusted by leading enterprises and government agencies globally. 100% Audit-Ready.
           </p>
         </div>
       </Reveal>

@@ -118,22 +118,22 @@ const SSDPassCalculatorPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      {/* Schemas ko directStructuredData se pass karo — PAGE_SEO schemas override nahi honge, SEOHead merge karega */}
       <SEOHead 
-        seo={getSEOForPage("ssd-pass-calculator", {
-          structuredData: [
-            {
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "SSD & HDD Erasure Pass Calculator",
-              "description": "Free tool to calculate the required overwrite passes and estimated erasure time for NIST 800-88 and DoD compliant data sanitization.",
-              "applicationCategory": "SecurityApplication",
-              "operatingSystem": "Web Browser",
-              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-              "provider": { "@type": "Organization", "name": "D-Secure" },
-              "url": "https://dsecuretech.com/tools/ssd-pass-calculator",
-            }
-          ]
-        })}
+        seo={getSEOForPage("ssd-pass-calculator")}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "SSD & HDD Erasure Pass Calculator",
+            "description": "Free tool to calculate the required overwrite passes and estimated erasure time for NIST 800-88 and DoD compliant data sanitization.",
+            "applicationCategory": "SecurityApplication",
+            "operatingSystem": "Web Browser",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "provider": { "@type": "Organization", "name": "D-Secure" },
+            "url": "https://dsecuretech.com/tools/ssd-pass-calculator",
+          }
+        ]}
       />
 
       {/* Breadcrumbs — Google navigation signal */}

@@ -99,32 +99,32 @@ export default function NIST80088CheckerPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Schemas ko directStructuredData se pass karo — PAGE_SEO schemas override nahi honge, SEOHead merge karega */}
       <SEOHead
-        seo={getSEOForPage("nist-800-88-compliance-checker", {
-          structuredData: [
-            {
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "NIST 800-88 Compliance Checker",
-              "description": "Interactive wizard to determine the correct NIST 800-88 data sanitization method for any storage media.",
-              "applicationCategory": "SecurityApplication",
-              "operatingSystem": "Web Browser",
-              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-              "provider": { "@type": "Organization", "name": "D-Secure" },
-              "url": "https://dsecuretech.com/tools/nist-800-88-compliance-checker",
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              "name": "How to Check NIST 800-88 Compliance",
-              "step": [
-                { "@type": "HowToStep", "position": 1, "name": "Select Media Type", "text": "Choose the type of storage media: HDD, SSD, NVMe, or mobile device." },
-                { "@type": "HowToStep", "position": 2, "name": "Select Data Sensitivity", "text": "Specify the classification level of data stored on the media." },
-                { "@type": "HowToStep", "position": 3, "name": "Get Recommendation", "text": "Receive an instant NIST-compliant recommendation: Clear, Purge, or Destroy." }
-              ]
-            }
-          ]
-        })}
+        seo={getSEOForPage("nist-800-88-compliance-checker")}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "NIST 800-88 Compliance Checker",
+            "description": "Interactive wizard to determine the correct NIST 800-88 data sanitization method for any storage media.",
+            "applicationCategory": "SecurityApplication",
+            "operatingSystem": "Web Browser",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "provider": { "@type": "Organization", "name": "D-Secure" },
+            "url": "https://dsecuretech.com/tools/nist-800-88-compliance-checker",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Check NIST 800-88 Compliance",
+            "step": [
+              { "@type": "HowToStep", "position": 1, "name": "Select Media Type", "text": "Choose the type of storage media: HDD, SSD, NVMe, or mobile device." },
+              { "@type": "HowToStep", "position": 2, "name": "Select Data Sensitivity", "text": "Specify the classification level of data stored on the media." },
+              { "@type": "HowToStep", "position": 3, "name": "Get Recommendation", "text": "Receive an instant NIST-compliant recommendation: Clear, Purge, or Destroy." }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs — Google navigation signal */}

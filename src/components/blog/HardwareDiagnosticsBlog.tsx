@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 const HardwareDiagnosticsBlog: React.FC = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
-        <SEOHead seo={getSEOForPage("blog")} />
+        {/* Rules ke mutabik unique SEO key lookup kiya gaya hai */}
+        <SEOHead seo={getSEOForPage("blog/hardware-diagnostics")} />
 
         <section className="py-16 bg-white shadow-lg">
           <Reveal>

@@ -86,32 +86,32 @@ const GDPRErasureChecklistPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      {/* Schemas ko directStructuredData se pass karo — PAGE_SEO schemas override nahi honge, SEOHead merge karega */}
       <SEOHead 
-        seo={getSEOForPage("gdpr-erasure-checklist", {
-          structuredData: [
-            {
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "GDPR Right to Erasure Compliance Checklist",
-              "description": "Interactive audit checklist for GDPR Article 17 'Right to Erasure' compliance readiness.",
-              "applicationCategory": "LegalApplication",
-              "operatingSystem": "Web Browser",
-              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-              "provider": { "@type": "Organization", "name": "D-Secure" },
-              "url": "https://dsecuretech.com/tools/gdpr-erasure-checklist",
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              "name": "How to Audit GDPR Right to Erasure Compliance",
-              "step": [
-                { "@type": "HowToStep", "position": 1, "name": "Review Policy", "text": "Check whether your organization has a documented data erasure policy for handling Right to Erasure requests." },
-                { "@type": "HowToStep", "position": 2, "name": "Verify Sanitization Method", "text": "Confirm you use certified software that provides tamper-proof erasure certificates." },
-                { "@type": "HowToStep", "position": 3, "name": "Check Third Parties", "text": "Ensure downstream processors are notified and can verify data deletion." }
-              ]
-            }
-          ]
-        })}
+        seo={getSEOForPage("gdpr-erasure-checklist")}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "GDPR Right to Erasure Compliance Checklist",
+            "description": "Interactive audit checklist for GDPR Article 17 'Right to Erasure' compliance readiness.",
+            "applicationCategory": "LegalApplication",
+            "operatingSystem": "Web Browser",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "provider": { "@type": "Organization", "name": "D-Secure" },
+            "url": "https://dsecuretech.com/tools/gdpr-erasure-checklist",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Audit GDPR Right to Erasure Compliance",
+            "step": [
+              { "@type": "HowToStep", "position": 1, "name": "Review Policy", "text": "Check whether your organization has a documented data erasure policy for handling Right to Erasure requests." },
+              { "@type": "HowToStep", "position": 2, "name": "Verify Sanitization Method", "text": "Confirm you use certified software that provides tamper-proof erasure certificates." },
+              { "@type": "HowToStep", "position": 3, "name": "Check Third Parties", "text": "Ensure downstream processors are notified and can verify data deletion." }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs — Google navigation signal */}

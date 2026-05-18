@@ -39,11 +39,10 @@ export default function MacErasurePage() {
 
   return (
     <>
+      {/* macSchema ko directStructuredData se pass karo — SEOHead internally PAGE_SEO schemas ke saath merge karega */}
       <SEOHead 
-        seo={{
-          ...getSEOForPage('mac'),
-          structuredData: macSchema
-        }} 
+        seo={getSEOForPage('mac')}
+        structuredData={macSchema}
       />
 
       {/* Hero Section */}

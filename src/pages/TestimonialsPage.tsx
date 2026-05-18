@@ -11,7 +11,7 @@ export default function TestimonialsPage() {
     {
       quote: "D-Secure Tech has transformed our IT asset disposition process. Compliance has never been easier.",
       author: "IT Director",
-      company: "Fortune 500 Company"
+      company: "Enterprise Technology Partner"
     },
     {
       quote: "The best data erasure solution we've used. Fast, reliable, and fully compliant.",

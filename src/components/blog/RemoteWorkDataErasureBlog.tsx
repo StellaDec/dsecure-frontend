@@ -397,7 +397,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mt-6">
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Organizations using D-Secure can be rest assured that remote
-                  data is wiped securely beyond recovery. Fortune 500 companies
+                  data is wiped securely beyond recovery. Leading enterprises
                   trust our solutions for their efficacy in <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> across
                   distributed workforces.
                 </p>

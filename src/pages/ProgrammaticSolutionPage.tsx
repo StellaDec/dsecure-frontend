@@ -28,6 +28,7 @@ export const ProgrammaticSolutionPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#020617] text-slate-200">
+      {/* WebPage schema ko directStructuredData se pass karo — SEOHead internally merge karega */}
       <SEOHead 
         title={vertical.seoTitle}
         description={vertical.seoDescription}
@@ -37,31 +38,31 @@ export const ProgrammaticSolutionPage: React.FC = () => {
           description: vertical.seoDescription,
           keywords: `${vertical.industry}, data erasure, ${vertical.title}, compliance, NIST 800-88, GDPR, data wiping solutions`,
           canonicalUrl: `https://dsecure.com/solutions/${vertical.slug}`,
-          structuredData: {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": vertical.seoTitle,
-            "description": vertical.seoDescription,
-            "publisher": {
-              "@type": "Organization",
-              "name": "D-Secure Technologies",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://dsecure.com/logo.png"
-              }
-            },
-            "mainEntity": {
-              "@type": "Article",
-              "headline": vertical.title,
-              "description": vertical.heroDescription,
-              "image": "https://dsecure.com/og-solutions.png",
-              "author": {
-                "@type": "Organization",
-                "name": "D-Secure Solutions Group"
-              },
-              "datePublished": "2024-02-24",
-              "industry": vertical.industry
+        }}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": vertical.seoTitle,
+          "description": vertical.seoDescription,
+          "publisher": {
+            "@type": "Organization",
+            "name": "D-Secure Technologies",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://dsecure.com/logo.png"
             }
+          },
+          "mainEntity": {
+            "@type": "Article",
+            "headline": vertical.title,
+            "description": vertical.heroDescription,
+            "image": "https://dsecure.com/og-solutions.png",
+            "author": {
+              "@type": "Organization",
+              "name": "D-Secure Solutions Group"
+            },
+            "datePublished": "2024-02-24",
+            "industry": vertical.industry
           }
         }}
       />

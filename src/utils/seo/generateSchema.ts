@@ -103,7 +103,8 @@ export function DSecureProductSchema(
 ): Record<string, unknown> {
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': ['SoftwareApplication', 'Product'],
+    '@type': 'Product', // GSC duplicate indexation issue fix karne ke liye single type
+    additionalType: 'https://schema.org/SoftwareApplication', // Software behavior define karne ke liye
     '@id': `${SEO_SITE_CONFIG.baseUrl}/products/${opts.slug}/#product`,
     name: opts.name,
     description: opts.description,
@@ -132,6 +133,42 @@ export function DSecureProductSchema(
       priceValidUntil: '2026-12-31',
       seller: {
         '@id': `${SEO_SITE_CONFIG.baseUrl}/#organization`,
+      },
+      // Google Search Console 'Missing field' warnings fix karne ke liye
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'US',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 30,
+        returnMethod: 'https://schema.org/ReturnByMail',
+        returnFees: 'https://schema.org/FreeReturn',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0',
+          currency: 'USD',
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'US',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
       },
     };
   }

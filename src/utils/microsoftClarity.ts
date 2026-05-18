@@ -1,5 +1,9 @@
-// Microsoft Clarity Analytics utility for D-Secure
-// Provides user behavior tracking, heatmaps, and session recordings
+// Microsoft Clarity Windows interface extension (avoiding any types)
+declare global {
+  interface Window {
+    clarity?: ((...args: unknown[]) => void) & { q?: unknown[][] };
+  }
+}
 
 interface ClarityConfig {
   projectId: string;
@@ -8,7 +12,7 @@ interface ClarityConfig {
 
 interface ClarityEvent {
   name: string;
-  properties?: Record<string, any>;
+  properties?: Record<string, unknown>;
 }
 
 class MicrosoftClarity {
@@ -21,11 +25,11 @@ class MicrosoftClarity {
     this.debug = config.debug || false;
   }
 
-  // Initialize Microsoft Clarity
+  // Microsoft Clarity ko dynamic defer mode mein initialize karein
   init(): void {
     if (typeof window === "undefined" || this.isInitialized) return;
 
-    // Suppress completely on localhost
+    // Localhost par analytics tracking block karein
     if (
       window.location.hostname === "localhost" ||
       window.location.hostname === "127.0.0.1"
@@ -34,31 +38,65 @@ class MicrosoftClarity {
       return;
     }
 
-    // Check if Clarity is already loaded or in production snippet
-    if ((window as any).clarity) {
-      this.isInitialized = true;
-      return;
-    }
-
-    // Skip initialization in development unless debug is on
+    // Development mein init check
     if (import.meta.env.DEV && !this.debug) {
       this.isInitialized = true;
       return;
     }
 
-    // Clarity initialization script
-    (function (c: any, l: any, a: any, r: any, i: any, t: any, y: any) {
-      c[a] =
-        c[a] ||
-        function () {
-          (c[a].q = c[a].q || []).push(arguments);
-        };
-      t = l.createElement(r);
-      t.async = 1;
-      t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0];
-      y.parentNode && y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", this.projectId, null, null);
+    // Compliance check: Opt-out cookie check karein
+    const isOptedOut = document.cookie.includes("dsecure_optout=true");
+    if (isOptedOut) {
+      this.isInitialized = true;
+      return;
+    }
+
+    // Dynamic script injection ke liye helper function
+    const injectClarityScript = () => {
+      if (window.clarity || document.querySelector(`script[src*="clarity.ms"]`)) {
+        return;
+      }
+
+      // Clarity queue setup aur function initialization
+      window.clarity = window.clarity || function (...args: unknown[]) {
+        window.clarity!.q = window.clarity!.q || [];
+        window.clarity!.q.push(args);
+      };
+
+      const scriptElement = document.createElement("script");
+      scriptElement.async = true;
+      scriptElement.src = `https://www.clarity.ms/tag/${this.projectId}`;
+      
+      const firstScript = document.getElementsByTagName("script")[0];
+      if (firstScript && firstScript.parentNode) {
+        firstScript.parentNode.insertBefore(scriptElement, firstScript);
+      } else {
+        document.head.appendChild(scriptElement);
+      }
+    };
+
+    // User interaction events list setup karein
+    const interactionEvents = ["scroll", "mousemove", "keydown", "touchstart", "click"];
+
+    const triggerClarity = () => {
+      injectClarityScript();
+      
+      // Cleanup event listeners
+      interactionEvents.forEach((event) => {
+        window.removeEventListener(event, triggerClarity);
+      });
+      clearTimeout(fallbackTimer);
+    };
+
+    // Listen to user interactions with passive true config
+    interactionEvents.forEach((event) => {
+      window.addEventListener(event, triggerClarity, { passive: true });
+    });
+
+    // 10-second fallback timer taaki slower network networks par impact na ho
+    const fallbackTimer = setTimeout(() => {
+      triggerClarity();
+    }, 10000);
 
     this.isInitialized = true;
   }
@@ -119,50 +157,50 @@ class MicrosoftClarity {
       | "pricing_view"
       | "demo_request"
       | "download",
-    details?: any,
+    details?: Record<string, unknown>,
   ): void {
     const eventMap = {
       page_view: {
         name: "page_view",
         properties: {
-          page: details?.page || window.location.pathname,
-          title: details?.title || document.title,
+          page: String(details?.page || window.location.pathname),
+          title: String(details?.title || document.title),
         },
       },
       form_interaction: {
         name: "form_interaction",
         properties: {
-          form_type: details?.formType || "unknown",
-          field: details?.field || "unknown",
-          action: details?.action || "focus",
+          form_type: String(details?.formType || "unknown"),
+          field: String(details?.field || "unknown"),
+          action: String(details?.action || "focus"),
         },
       },
       product_interest: {
         name: "product_interest",
         properties: {
-          product: details?.product || "unknown",
-          section: details?.section || "unknown",
+          product: String(details?.product || "unknown"),
+          section: String(details?.section || "unknown"),
         },
       },
       pricing_view: {
         name: "pricing_view",
         properties: {
-          plan: details?.plan || "unknown",
-          duration: details?.duration || "monthly",
+          plan: String(details?.plan || "unknown"),
+          duration: String(details?.duration || "monthly"),
         },
       },
       demo_request: {
         name: "demo_request",
         properties: {
-          source: details?.source || "unknown",
-          company_size: details?.companySize || "unknown",
+          source: String(details?.source || "unknown"),
+          company_size: String(details?.companySize || "unknown"),
         },
       },
       download: {
         name: "resource_download",
         properties: {
-          resource_type: details?.resourceType || "unknown",
-          resource_name: details?.resourceName || "unknown",
+          resource_type: String(details?.resourceType || "unknown"),
+          resource_name: String(details?.resourceName || "unknown"),
         },
       },
     };
@@ -200,10 +238,10 @@ class MicrosoftClarity {
         return;
       }
 
-      const clarity = (window as any).clarity;
+      const clarity = window.clarity;
       if (clarity) {
-        clarity("getSessionUrl", (url: string) => {
-          resolve(url);
+        clarity("getSessionUrl", (url: unknown) => {
+          resolve(typeof url === "string" ? url : null);
         });
       } else {
         resolve(null);
@@ -218,7 +256,7 @@ class MicrosoftClarity {
       | "time_on_page"
       | "click_pattern"
       | "form_abandonment",
-    data?: any,
+    data?: Record<string, unknown>,
   ): void {
     this.trackEvent({
       name: `user_behavior_${behaviorType}`,
