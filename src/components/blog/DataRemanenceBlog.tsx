@@ -10,13 +10,15 @@ const DataRemanenceBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "Understanding Data Remanence",
+            title:
+              "What is data remanence? Why deleted data is still recoverable",
             excerpt:
-              "Technical explanation of data remanence and why simple deletion isn't enough.",
+              "Deleting a file removes the pointer, not the data. Data remanence explains why 'deleted' drives are still readable — and what certified erasure actually does about it.",
             slug: "data-remanence",
             author: "D-Secure Editorial Team",
-            publishDate: "September 6, 2026",
-            keywords: "data remanence, magnetic remnants, data recovery",
+            publishDate: "May 15, 2026",
+            keywords:
+              "residual data after deletion — definition + why it matters,data remanence, magnetic remnants, data recovery",
             category: "Security",
             tag: "Technical",
           })}
@@ -188,9 +190,20 @@ const DataRemanenceBlog: React.FC = () => {
               </h2>
               <p className="text-lg text-slate-700 leading-loose mb-6">
                 The National Institute of Standards and Technology (NIST) in its
-                <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> Special Publication specifies three ways for media
-                sanitization that removes data from all areas of storage media
-                beyond the scope of recovery:
+                <Link
+                  to="/products/drive-eraser"
+                  className="text-emerald-600 hover:underline font-medium"
+                >
+                  <Link
+                    to="/compliance/nist-800-88"
+                    className="text-emerald-600 hover:underline font-medium"
+                  >
+                    NIST 800-88
+                  </Link>
+                </Link>{" "}
+                Special Publication specifies three ways for media sanitization
+                that removes data from all areas of storage media beyond the
+                scope of recovery:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
@@ -295,13 +308,14 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
         </section>
 
-
-      <BlogFooterStandard 
-        blogId="data-remanence" 
-        blogTitle="Understanding Data Remanence" category="Security" tag="Technical" 
-      />
-    </div>
-  );
+        <BlogFooterStandard
+          blogId="data-remanence"
+          blogTitle="Understanding Data Remanence"
+          category="Security"
+          tag="Technical"
+        />
+      </div>
+    );
 };
 
 export default DataRemanenceBlog;

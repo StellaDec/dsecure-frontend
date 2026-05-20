@@ -1275,7 +1275,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                     className="group relative w-full h-full flex-1 cursor-pointer overflow-hidden"
                   >
                     {/* Screenshot Background */}
-                    <img
+                    <img loading="lazy" decoding="async"
                       src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035728/ddzt2ghea7hotem4bvz9.png"
                       alt="D-Secure Drive Eraser Preview"
                       className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
@@ -1334,7 +1334,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={galleryImages[0].thumbnail}
                       alt={galleryImages[0].alt}
                       className="w-full h-full object-contain bg-slate-50 group-hover:scale-105 transition-transform duration-300"
@@ -1368,7 +1368,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={galleryImages[1].thumbnail}
                       alt={galleryImages[1].alt}
                       className="w-full h-full object-contain bg-slate-50 group-hover:scale-105 transition-transform duration-300"
@@ -1402,7 +1402,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={galleryImages[2].thumbnail}
                       alt={galleryImages[2].alt}
                       className="w-full h-full object-contain bg-slate-50 group-hover:scale-105 transition-transform duration-300"
@@ -1436,7 +1436,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={galleryImages[3].thumbnail}
                       alt={galleryImages[3].alt}
                       className="w-full h-full object-contain bg-slate-50 group-hover:scale-105 transition-transform duration-300"
@@ -1764,7 +1764,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
                   aria-label="View Tamper-proof Erasure Report fullscreen"
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png"
                     alt="Tamper-proof Erasure Report"
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
@@ -2622,7 +2622,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={galleryImages[selectedImageIndex].url}
               alt={galleryImages[selectedImageIndex].alt}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-200"

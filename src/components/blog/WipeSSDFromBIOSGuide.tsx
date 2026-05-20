@@ -12,9 +12,72 @@ import {
 import BlogFooterStandard from "./BlogFooterStandard";
 
 const WipeSSDFromBIOSGuide: React.FC = () => {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it safe to wipe an SSD from the BIOS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While BIOS Secure Erase can quickly remove data, it is not recommended for enterprise use because it doesn't generate verifiable erasure reports and may miss hidden areas like HPA or DCO."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BIOS Secure Erase guarantee NIST 800-88 compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Without a tamper-proof certificate of erasure, BIOS Secure Erase cannot satisfy audit requirements for NIST 800-88, HIPAA, or GDPR."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the alternative to BIOS SSD wiping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Professional data erasure software like D-Secure should be used. It leverages native firmware commands while producing the mandatory cryptographic certificates required for compliance."
+        }
+      }
+    ]
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Wipe an SSD from BIOS",
+    "description": "A step-by-step technical guide to using the Secure Erase feature found in most UEFI BIOS systems.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Access the BIOS/UEFI",
+        "text": "Restart your computer and repeatedly press the designated BIOS key (typically F2, F12, DEL, or ESC) during the boot logo screen."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Locate the Security or Tool Menu",
+        "text": "Navigate through the BIOS interface to find the Security, Advanced, or Tools tab depending on your motherboard manufacturer."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Select Secure Erase",
+        "text": "Find the option labeled 'Secure Erase', 'Data Wipe', or 'Disk Sanitizer' and select the target SSD you wish to wipe."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Confirm and Erase",
+        "text": "Acknowledge the warning prompts that all data will be permanently destroyed. The process usually takes a few seconds for modern SSDs."
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      <SEOHead seo={getSEOForPage("blog-wipe-ssd-from-bios")} />
+      <SEOHead 
+        seo={getSEOForPage("blog-wipe-ssd-from-bios")} 
+        structuredData={[faqSchema, howToSchema]}
+      />
 
       {/* Hero */}
       <section className="py-16 bg-white shadow-lg">

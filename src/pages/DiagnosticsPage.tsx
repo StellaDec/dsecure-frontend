@@ -45,7 +45,7 @@ const DiagnosticsPage: React.FC = () => {
 
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={test.url}
                       alt={test.name}
                       className="w-16 h-16 object-contain border rounded"

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage, getBlogSEO } from '@/utils/seo';
@@ -14,38 +14,98 @@ import {
 import { ChevronRight } from "lucide-react";
 
 const NISTClearPurgeBlog: React.FC = () => {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between NIST Clear and NIST Purge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NIST Clear uses logical techniques (like software overwriting) to sanitize data in user-addressable locations, protecting against simple recovery tools. NIST Purge uses advanced techniques (like Cryptographic Erase or firmware-based Secure Erase) that render data recovery infeasible even in state-of-the-art laboratory environments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should an enterprise use NIST Purge over NIST Clear?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NIST Purge is mandatory when media will leave organizational control (e.g., resale, return to lessor, or donation) and when the media contains highly sensitive data such as PII, PHI, or classified financial information."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does NIST 800-88 recommend Clear or Purge for SSDs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For modern SSDs and NVMe drives, NIST 800-88 explicitly recommends the Purge level (specifically Cryptographic Erase or ATA/NVMe Secure Erase) because wear-leveling algorithms make standard Clear overwriting unreliable on flash memory."
+        }
+      }
+    ]
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Choose Between NIST Clear and NIST Purge",
+    "description": "A guide to selecting the correct NIST 800-88 sanitization method based on your storage media and security requirements.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Assess the Storage Media Type",
+        "text": "Determine if your devices use legacy magnetic HDDs or modern SSDs/NVMe drives. Clear is often sufficient for HDDs, but Purge is highly recommended for flash-based media."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Evaluate the Data Sensitivity",
+        "text": "Identify if the stored data contains highly sensitive information such as PII, PHI, or classified financial records. Higher sensitivity requires the Purge method."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Determine the Final Disposition",
+        "text": "Decide whether the media will remain within the organization or leave it (e.g., resale, return, donation). Purge is mandatory for media leaving organizational control."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Execute the Sanitization Method",
+        "text": "Use professional data erasure software to apply logical overwriting (Clear) or advanced firmware/cryptographic techniques (Purge) based on your assessment."
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
       <SEOHead
         seo={getBlogSEO({
           title:
-            "NIST 800-88 Clear vs Purge: Which Sanitization Method Does Your Organization Need?",
+            "NIST 800-88 Clear vs Purge: 2026 Enterprise Sanitization Guide",
           excerpt:
-            "Understand differences between NIST 800-88 Clear and Purge methods, when to use each, and how to stay compliant.",
+            "Understand the critical differences between NIST 800-88 Clear and Purge methods for modern ITAD, when to use each, and how to maintain enterprise compliance.",
           slug: "nist-clear-purge",
           author: "D-Secure Editorial Team",
-          publishDate: "September 8, 2025",
+          publishDate: "May 19, 2026",
           keywords:
             "NIST 800-88 Clear vs Purge, NIST data sanitization methods, Clear overwriting, Purge cryptographic erasure, NIST media sanitization enterprise compliance",
           category: "Technical Guide",
           tag: "Standards",
         })}
+        structuredData={[faqSchema, howToSchema]}
       />
 
       <section className="py-16 bg-white shadow-lg">
         <Reveal>
           <div className="text-center px-6">
             <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
-              Data Sanitization Standards
+              Data Sanitization Standards - 2026 Update
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-              <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Clear vs Purge: Complete Guide to Data Sanitization
-              Methods
+              <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Clear vs Purge: Complete 2026 Guide to Data Sanitization
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Understand the differences between NIST Clear and Purge
+              Understand the critical differences between NIST Clear and Purge
               sanitization methods to choose the right approach for your
-              organization's data security needs.
+              organization's modern storage infrastructure.
             </p>
           </div>
         </Reveal>
@@ -55,41 +115,38 @@ const NISTClearPurgeBlog: React.FC = () => {
         <Reveal>
           <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Understanding NIST SP 800-88
+              Understanding NIST SP 800-88 in the Modern Era
             </h2>
             <p className="text-slate-700 leading-loose text-lg mb-6">
               <strong>NIST Special Publication 800-88</strong> (Guidelines for
-              Media Sanitization) is the gold standard for data sanitization
+              Media Sanitization) is the globally recognized gold standard for data sanitization
               published by the National Institute of Standards and Technology.
-              This comprehensive guideline provides organizations with methods
-              and techniques to ensure data is properly destroyed and cannot be
+              As enterprise storage environments have rapidly shifted to high-density NVMe and hybrid cloud setups in 2026, this comprehensive guideline remains the definitive framework ensuring data is properly destroyed and cannot be
               recovered.
             </p>
             <p className="text-slate-700 leading-loose text-lg mb-6">
               The guideline is widely adopted by government agencies, healthcare
-              organizations, financial institutions, and enterprises worldwide.
-              Understanding its three sanitization levels —{" "}
+              organizations, financial institutions, and global enterprises.
+              Understanding its three core sanitization levels —{" "}
               <strong>Clear, Purge, and Destroy</strong> — is essential for
-              implementing proper data destruction policies.
+              implementing compliant and secure IT Asset Disposition (ITAD) policies.
             </p>
 
             <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
               <h3 className="font-bold text-slate-900 text-xl mb-3">
-                {" "}
                 Why NIST 800-88 Matters
               </h3>
               <p className="text-slate-700 text-lg leading-loose">
-                <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> is the data sanitization standard now referenced by
+                <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> is the overarching data sanitization standard referenced by
                 the <strong>US Department of Defense</strong> in the NISPOM
-                official document for making <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> decisions. Compliance
-                with NIST helps organizations meet requirements for HIPAA, GDPR,
-                PCI-DSS, and other regulatory frameworks.
+                official document for making modern <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> decisions (largely replacing legacy <Link to="/blog/dod-vs-ieee" className="text-emerald-600 hover:underline font-medium">DoD 5220.22-M</Link> methods). Strict compliance
+                with NIST helps organizations satisfy requirements for HIPAA, GDPR,
+                PCI-DSS, and CPRA frameworks.
               </p>
             </div>
           </div>
         </Reveal>
       </section>
-
 
       {/* Main Content Grid */}
       <section className="max-w-7xl mx-auto px-4 py-16">
@@ -99,12 +156,10 @@ const NISTClearPurgeBlog: React.FC = () => {
             <Reveal>
               <div className="prose prose-lg prose-slate max-w-none">
                 <p className="text-xl text-slate-600 leading-relaxed mb-8">
-                  The <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST Special Publication 800-88</Link> (Guidelines for Media
-                  Sanitization) is the gold standard for data destruction. Within
-                  this framework, two terms frequently appear: <strong>Clear</strong>{" "}
-                  and <strong>Purge</strong>. Understanding the difference is
-                  critical for maintaining compliance and preventing data
-                  breaches.
+                  Within the NIST framework, two terms are frequently confused by IT administrators: <strong>Clear</strong>{" "}
+                  and <strong>Purge</strong>. Understanding the technical distinction is
+                  critical for maintaining compliance and preventing catastrophic data
+                  breaches during hardware decommissioning.
                 </p>
 
                 <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 mb-12">
@@ -112,16 +167,14 @@ const NISTClearPurgeBlog: React.FC = () => {
                     What is NIST 800-88?
                   </h2>
                   <p className="text-slate-700 leading-relaxed">
-                    NIST 800-88 is a document published by the National Institute
-                    of Standards and Technology (NIST) that provides guidance for
-                    making decisions regarding media sanitization. It categorizes
-                    sanitization into three levels: <strong>Clear</strong>,{" "}
+                    NIST 800-88 categorizes
+                    sanitization into three escalating levels: <strong>Clear</strong>,{" "}
                     <strong>Purge</strong>, and <strong>Destroy</strong>.
                   </p>
                   <p className="text-slate-700 leading-relaxed mt-4">
                     The framework is designed to help organizations choose a
-                    sanitization method based on the sensitivity of the data and
-                    the intended disposition of the storage media.
+                    sanitization method based on the confidentiality of the data and
+                    the intended disposition (internal reuse vs external resale) of the storage media.
                   </p>
 
                   <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -130,7 +183,7 @@ const NISTClearPurgeBlog: React.FC = () => {
                         CLEAR
                       </h3>
                       <p className="text-slate-700 text-sm leading-relaxed text-center">
-                        Logical techniques to sanitize data in all user-addressable
+                        Logical software techniques to sanitize data in all user-addressable
                         storage locations.
                       </p>
                     </div>
@@ -139,7 +192,7 @@ const NISTClearPurgeBlog: React.FC = () => {
                         PURGE
                       </h3>
                       <p className="text-slate-700 text-sm leading-relaxed text-center">
-                        Techniques that render data recovery infeasible using lab techniques.
+                        Advanced firmware/cryptographic techniques rendering recovery infeasible using lab techniques.
                       </p>
                     </div>
                     <div className="bg-slate-50 rounded-xl p-6 border-2 border-slate-200">
@@ -147,7 +200,7 @@ const NISTClearPurgeBlog: React.FC = () => {
                         DESTROY
                       </h3>
                       <p className="text-slate-700 text-sm leading-relaxed text-center">
-                        Physical destruction making recovery impossible.
+                        Physical shredding or incineration making recovery impossible.
                       </p>
                     </div>
                   </div>
@@ -157,10 +210,10 @@ const NISTClearPurgeBlog: React.FC = () => {
                   NIST Clear: Basic Sanitization
                 </h2>
                 <p className="text-slate-700 leading-relaxed mb-6">
-                  <strong>NIST Clear</strong> is the first level of sanitization
-                  that uses logical techniques to overwrite data in all
+                  <strong>NIST Clear</strong> is the baseline level of sanitization
+                  that uses logical techniques (like software overwriting) to replace data in all
                   user-addressable storage locations. It protects against simple,
-                  non-invasive data recovery techniques.
+                  non-invasive data recovery techniques (like Recuva or Disk Drill).
                 </p>
 
                 <div className="bg-blue-50 rounded-xl p-8 mb-12 border border-blue-100">
@@ -168,27 +221,26 @@ const NISTClearPurgeBlog: React.FC = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <span className="text-blue-500 mr-3">✓</span>
-                      <span className="text-slate-700">Media will be reused within the organization</span>
+                      <span className="text-slate-700">Legacy magnetic HDDs where single-pass overwrites reach all sectors</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-500 mr-3">✓</span>
+                      <span className="text-slate-700">Media will remain within the organization (e.g., passed to another employee)</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-blue-500 mr-3">✓</span>
                       <span className="text-slate-700">Data is of lower sensitivity</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-500 mr-3">✓</span>
-                      <span className="text-slate-700">Quick sanitization is needed for routine refreshes</span>
-                    </li>
                   </ul>
                 </div>
 
                 <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                  NIST Purge: Advanced Sanitization
+                  NIST Purge: Advanced Enterprise Sanitization
                 </h2>
                 <p className="text-slate-700 leading-relaxed mb-6">
-                  <strong>NIST Purge</strong> is a higher level of sanitization that
-                  employs physical or logical techniques making data recovery
-                  infeasible using state-of-the-art laboratory techniques. It
-                  provides greater assurance than Clear for more sensitive data.
+                  <strong>NIST Purge</strong> employs physical or advanced logical techniques (such as Cryptographic Erase or native ATA/NVMe Secure Erase commands) making data recovery
+                  infeasible even for state-of-the-art forensic laboratories. It
+                  provides the absolute highest assurance of data destruction without physically destroying the drive.
                 </p>
 
                 <div className="bg-emerald-50 rounded-xl p-8 mb-12 border border-emerald-100">
@@ -196,15 +248,15 @@ const NISTClearPurgeBlog: React.FC = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <span className="text-emerald-500 mr-3">✓</span>
-                      <span className="text-slate-700">Media will leave organizational control (resale, donation)</span>
+                      <span className="text-slate-700">Modern SSDs and NVMe drives (see our <Link to="/blog/ssd-wipe-guide" className="text-emerald-700 hover:underline">SSD Wipe Guide</Link> to learn why Clear fails on SSDs)</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-emerald-500 mr-3">✓</span>
-                      <span className="text-slate-700">Data is moderately to highly sensitive (PII, Financial)</span>
+                      <span className="text-slate-700">Media will leave organizational control (ITAD resale, lease return, donation)</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-emerald-500 mr-3">✓</span>
-                      <span className="text-slate-700">Compliance with HIPAA, GDPR, PCI-DSS is required</span>
+                      <span className="text-slate-700">Data is highly sensitive (PII, Financial, PHI)</span>
                     </li>
                   </ul>
                 </div>
@@ -223,19 +275,19 @@ const NISTClearPurgeBlog: React.FC = () => {
                     </thead>
                     <tbody className="divide-y divide-slate-200">
                       <tr>
-                        <td className="px-6 py-4 font-semibold">Security</td>
-                        <td className="px-6 py-4 text-slate-600">Basic</td>
-                        <td className="px-6 py-4 text-slate-600">High / Forensic-Grade</td>
+                        <td className="px-6 py-4 font-semibold">Security Level</td>
+                        <td className="px-6 py-4 text-slate-600">Basic / OS-Level</td>
+                        <td className="px-6 py-4 text-slate-600">High / Forensic-Grade Firmware-Level</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4 font-semibold">Media Type</td>
-                        <td className="px-6 py-4 text-slate-600">HDD (Mainly)</td>
-                        <td className="px-6 py-4 text-slate-600">HDD, SSD, NVMe</td>
+                        <td className="px-6 py-4 font-semibold">Supported Media</td>
+                        <td className="px-6 py-4 text-slate-600">Legacy HDD</td>
+                        <td className="px-6 py-4 text-slate-600">HDD, SSD, NVMe, SEDs</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4 font-semibold">Reuse</td>
-                        <td className="px-6 py-4 text-slate-600">Internal Only</td>
-                        <td className="px-6 py-4 text-slate-600">External / Resale</td>
+                        <td className="px-6 py-4 font-semibold">Disposition</td>
+                        <td className="px-6 py-4 text-slate-600">Internal Reuse Only</td>
+                        <td className="px-6 py-4 text-slate-600">External Resale / EOL</td>
                       </tr>
                     </tbody>
                   </table>
@@ -245,8 +297,7 @@ const NISTClearPurgeBlog: React.FC = () => {
                   <h3 className="text-2xl font-bold mb-6 text-emerald-400">The D-Secure Advantage</h3>
                   <p className="text-slate-300 mb-8 leading-relaxed">
                     D-Secure data erasure solutions fully support both NIST Clear and
-                    NIST Purge sanitization methods, enabling organizations to choose
-                    the appropriate level based on their security requirements.
+                    NIST Purge sanitization methods, dynamically selecting the appropriate firmware command based on the drive architecture detected.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="flex items-center space-x-3">

@@ -217,19 +217,19 @@ const navigationTree: NavItem[] = [
                 <div className="space-y-4">
                   <div>
                     <p className="text-slate-700 mb-2"><strong>Info Icon:</strong> Click the Info icon in the navbar to view application details and version information.</p>
-                    <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032271/dsecure-manual/01_Navbar_Icons/1_navbar_info.png" alt="Navbar Info Icon" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                    <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032271/dsecure-manual/01_Navbar_Icons/1_navbar_info.png" alt="Navbar Info Icon" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                   </div>
                   <div>
                     <p className="text-slate-700 mb-2"><strong>Support & Documentation:</strong> Access support resources and documentation from the navbar.</p>
-                    <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032360/dsecure-manual/01_Navbar_Icons/2_Support_and_Documantation.png" alt="Support and Documentation" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                    <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032360/dsecure-manual/01_Navbar_Icons/2_Support_and_Documantation.png" alt="Support and Documentation" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                   </div>
                   <div>
                     <p className="text-slate-700 mb-2"><strong>Software Update:</strong> Check for and install software updates from the navbar.</p>
-                    <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032448/dsecure-manual/01_Navbar_Icons/3_Software_update.png" alt="Software Update" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                    <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032448/dsecure-manual/01_Navbar_Icons/3_Software_update.png" alt="Software Update" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                   </div>
                   <div>
                     <p className="text-slate-700 mb-2"><strong>Help Manual:</strong> Open the help manual directly from the navbar for quick reference.</p>
-                    <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032536/dsecure-manual/01_Navbar_Icons/4_help_manual.png" alt="Help Manual" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                    <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032536/dsecure-manual/01_Navbar_Icons/4_help_manual.png" alt="Help Manual" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                   </div>
                 </div>
 
@@ -237,11 +237,11 @@ const navigationTree: NavItem[] = [
                 <div className="space-y-4">
                   <div>
                     <p className="text-slate-700 mb-2"><strong>Dashboard View:</strong> The main dashboard provides an overview of all erasure features and quick access to key functions.</p>
-                    <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032712/dsecure-manual/02_Dashboard/dashboard.png" alt="Dashboard" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                    <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032712/dsecure-manual/02_Dashboard/dashboard.png" alt="Dashboard" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                   </div>
                   <div>
                     <p className="text-slate-700 mb-2"><strong>Dashboard Details:</strong> The dashboard also displays recent activity, system status, and quick-start options for common erasure tasks.</p>
-                    <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032624/dsecure-manual/02_Dashboard/dashboard-2.png" alt="Dashboard Details" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                    <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032624/dsecure-manual/02_Dashboard/dashboard-2.png" alt="Dashboard Details" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                   </div>
                 </div>
               </>
@@ -311,7 +311,7 @@ const navigationTree: NavItem[] = [
             <p className="text-slate-700 leading-relaxed mb-4">
               D-Secure automatically checks for updates. You can also manually check via Settings → Check for Updates. Always keep your software updated for the latest features and security patches.
             </p>
-            <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032448/dsecure-manual/01_Navbar_Icons/3_Software_update.png" alt="Software Update" className="w-full mb-6" style={{ borderRadius: '3%' }} />
+            <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032448/dsecure-manual/01_Navbar_Icons/3_Software_update.png" alt="Software Update" className="w-full mb-6" style={{ borderRadius: '3%' }} />
           </>
         )
       },
@@ -376,13 +376,13 @@ const navigationTree: NavItem[] = [
             <h4 className="text-base font-semibold text-slate-800 mt-8 mb-4">Erase Files & Folders - Product Screenshots</h4>
             <div className="space-y-4">
               <div>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032888/dsecure-manual/03_Erase_Files_And_Folder/EFF-1.png" alt="Erase Files and Folders - Step 1" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032888/dsecure-manual/03_Erase_Files_And_Folder/EFF-1.png" alt="Erase Files and Folders - Step 1" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032800/dsecure-manual/03_Erase_Files_And_Folder/EEF-2.png" alt="Erase Files and Folders - Step 2" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032800/dsecure-manual/03_Erase_Files_And_Folder/EEF-2.png" alt="Erase Files and Folders - Step 2" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032978/dsecure-manual/03_Erase_Files_And_Folder/EFF-3.png" alt="Erase Files and Folders - Step 3" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772032978/dsecure-manual/03_Erase_Files_And_Folder/EFF-3.png" alt="Erase Files and Folders - Step 3" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
             </div>
 
@@ -444,19 +444,19 @@ const navigationTree: NavItem[] = [
             <div className="space-y-4">
               <div>
                 <p className="text-slate-700 mb-2"><strong>Volume Eraser - Select Volume:</strong> Select the target volume to erase from the list of available drives.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033065/dsecure-manual/04_Volume_Eraser/VE-1.png" alt="Volume Eraser - Select Volume" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033065/dsecure-manual/04_Volume_Eraser/VE-1.png" alt="Volume Eraser - Select Volume" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Volume Eraser - Confirm Erasure:</strong> Confirm the volume erasure operation before proceeding.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033153/dsecure-manual/04_Volume_Eraser/VE-2.png" alt="Volume Eraser - Confirm Erasure" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033153/dsecure-manual/04_Volume_Eraser/VE-2.png" alt="Volume Eraser - Confirm Erasure" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Volume Eraser - Progress:</strong> Monitor the volume erasure progress in real-time.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033241/dsecure-manual/04_Volume_Eraser/VE-3.png" alt="Volume Eraser - Progress" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033241/dsecure-manual/04_Volume_Eraser/VE-3.png" alt="Volume Eraser - Progress" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Volume Eraser - Complete:</strong> Volume erasure completed successfully with summary details.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033329/dsecure-manual/04_Volume_Eraser/VE-4.png" alt="Volume Eraser - Complete" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033329/dsecure-manual/04_Volume_Eraser/VE-4.png" alt="Volume Eraser - Complete" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
             </div>
 
@@ -464,19 +464,19 @@ const navigationTree: NavItem[] = [
             <div className="space-y-4">
               <div>
                 <p className="text-slate-700 mb-2"><strong>Deleted Data Eraser - Select Drive:</strong> Choose the drive to scan for deleted data remnants.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033417/dsecure-manual/05_Deleted_Data_Eraser/DDE-1.png" alt="Deleted Data Eraser - Select Drive" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033417/dsecure-manual/05_Deleted_Data_Eraser/DDE-1.png" alt="Deleted Data Eraser - Select Drive" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Deleted Data Eraser - Scanning:</strong> The software scans for deleted data traces on the selected drive.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033505/dsecure-manual/05_Deleted_Data_Eraser/DDE-2.png" alt="Deleted Data Eraser - Scanning" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033505/dsecure-manual/05_Deleted_Data_Eraser/DDE-2.png" alt="Deleted Data Eraser - Scanning" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Deleted Data Eraser - Erasing:</strong> Securely erasing all deleted data remnants from the drive.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033593/dsecure-manual/05_Deleted_Data_Eraser/DDE-3.png" alt="Deleted Data Eraser - Erasing" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033593/dsecure-manual/05_Deleted_Data_Eraser/DDE-3.png" alt="Deleted Data Eraser - Erasing" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Deleted Data Eraser - Complete:</strong> Deleted data erasure completed with Tamper-proof audit reports with certificate for verification.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033680/dsecure-manual/05_Deleted_Data_Eraser/DDE-4.png" alt="Deleted Data Eraser - Complete" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033680/dsecure-manual/05_Deleted_Data_Eraser/DDE-4.png" alt="Deleted Data Eraser - Complete" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
             </div>
           </>
@@ -578,18 +578,18 @@ const navigationTree: NavItem[] = [
             <div className="space-y-4">
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Main Interface:</strong> The cloud erase main screen showing available cloud storage options.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034384/dsecure-manual/08_Cloud_Erase/0.png" alt="Cloud Erase - Main Interface" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034384/dsecure-manual/08_Cloud_Erase/0.png" alt="Cloud Erase - Main Interface" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Connect Account:</strong> Connect your cloud storage account for erasure operations.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034471/dsecure-manual/08_Cloud_Erase/1.png" alt="Cloud Erase - Connect Account" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034471/dsecure-manual/08_Cloud_Erase/1.png" alt="Cloud Erase - Connect Account" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - File & Folder Erase Confirmation:</strong> Confirm the cloud file and folder erasure operation.</p>
                 <div className="p-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl">
                  <div className="font-bold text-emerald-800 mb-2">Step 2: Confirm Destruction</div>
                  <p className="text-gray-700">Before the erasure begins, you will see a confirmation screen. Click <strong>Erase</strong> to proceed.</p>
-                 <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035441/dsecure-manual/08_Cloud_Erase/7.png" alt="Cloud Erase - File & Folder Erase Confirmation" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                 <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035441/dsecure-manual/08_Cloud_Erase/7.png" alt="Cloud Erase - File & Folder Erase Confirmation" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                </div>
               </div>
               <div>
@@ -597,52 +597,52 @@ const navigationTree: NavItem[] = [
                 <div className="p-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl">
                  <div className="font-bold text-emerald-800 mb-2">Step 4: Completion</div>
                  <p className="text-gray-700">Once the erasure is successful, a confirmation message will be displayed.</p>
-                 <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035530/dsecure-manual/08_Cloud_Erase/8.png" alt="Cloud Erase - File & Folder Erase Progress" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                 <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035530/dsecure-manual/08_Cloud_Erase/8.png" alt="Cloud Erase - File & Folder Erase Progress" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                </div>
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Browse Files:</strong> Browse and select cloud files for erasure.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035263/dsecure-manual/08_Cloud_Erase/5.png" alt="Cloud Erase - Browse Files" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035263/dsecure-manual/08_Cloud_Erase/5.png" alt="Cloud Erase - Browse Files" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Select Items:</strong> Select specific cloud items to erase.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035353/dsecure-manual/08_Cloud_Erase/6.png" alt="Cloud Erase - Select Items" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035353/dsecure-manual/08_Cloud_Erase/6.png" alt="Cloud Erase - Select Items" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Confirm Selection:</strong> Review and confirm selected cloud items for erasure.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1772035441/dsecure-manual/08_Cloud_Erase/7.png" alt="Cloud Erase - Confirm Selection" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1772035441/dsecure-manual/08_Cloud_Erase/7.png" alt="Cloud Erase - Confirm Selection" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Erasure Progress:</strong> Cloud erasure operation in progress.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1772035530/dsecure-manual/08_Cloud_Erase/8.png" alt="Cloud Erase - Erasure Progress" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1772035530/dsecure-manual/08_Cloud_Erase/8.png" alt="Cloud Erase - Erasure Progress" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Processing:</strong> Cloud data being processed for secure deletion.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1772035619/dsecure-manual/08_Cloud_Erase/9.png" alt="Cloud Erase - Processing" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1772035619/dsecure-manual/08_Cloud_Erase/9.png" alt="Cloud Erase - Processing" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Summary:</strong> Cloud erasure operation summary and results.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1772034560/dsecure-manual/08_Cloud_Erase/10.png" alt="Cloud Erase - Summary" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1772034560/dsecure-manual/08_Cloud_Erase/10.png" alt="Cloud Erase - Summary" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Volume Overview:</strong> Cloud volume storage overview and usage details.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034649/dsecure-manual/08_Cloud_Erase/11.png" alt="Cloud Erase - Volume Overview" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034649/dsecure-manual/08_Cloud_Erase/11.png" alt="Cloud Erase - Volume Overview" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Volume Erasure:</strong> Cloud volume erasure confirmation and process.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034737/dsecure-manual/08_Cloud_Erase/12.png" alt="Cloud Erase - Volume Erasure" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034737/dsecure-manual/08_Cloud_Erase/12.png" alt="Cloud Erase - Volume Erasure" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Volume Progress:</strong> Cloud volume erasure progress tracking.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034825/dsecure-manual/08_Cloud_Erase/13.png" alt="Cloud Erase - Volume Progress" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034825/dsecure-manual/08_Cloud_Erase/13.png" alt="Cloud Erase - Volume Progress" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Completion:</strong> Cloud erasure operation completed successfully.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034912/dsecure-manual/08_Cloud_Erase/14.png" alt="Cloud Erase - Completion" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034912/dsecure-manual/08_Cloud_Erase/14.png" alt="Cloud Erase - Completion" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Cloud Erase - Final Compliance Report:</strong> Final Tamper-proof audit report with certificate with detailed compliance results.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035000/dsecure-manual/08_Cloud_Erase/15.png" alt="Cloud Erase - Final Report" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035000/dsecure-manual/08_Cloud_Erase/15.png" alt="Cloud Erase - Final Report" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
             </div>
           </>
@@ -706,23 +706,23 @@ const navigationTree: NavItem[] = [
             <div className="space-y-4">
               <div>
                 <p className="text-slate-700 mb-2"><strong>Scheduler - Main Interface:</strong> The scheduler main screen for creating and managing automated erasure tasks.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033769/dsecure-manual/06_Scheduler/S-1.png" alt="Scheduler - Main Interface" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033769/dsecure-manual/06_Scheduler/S-1.png" alt="Scheduler - Main Interface" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Scheduler - Task Configuration:</strong> Configure task frequency, timing, and data selection for scheduled erasure.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033856/dsecure-manual/06_Scheduler/S-2.png" alt="Scheduler - Task Configuration" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033856/dsecure-manual/06_Scheduler/S-2.png" alt="Scheduler - Task Configuration" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Scheduler - Browse Items:</strong> Browse and select files or folders to add to the scheduled erasure task.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033944/dsecure-manual/06_Scheduler/S-3.png" alt="Scheduler - Browse Items" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772033944/dsecure-manual/06_Scheduler/S-3.png" alt="Scheduler - Browse Items" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Scheduler - Task List:</strong> View and manage all scheduled erasure tasks with their details.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034032/dsecure-manual/06_Scheduler/S-4.png" alt="Scheduler - Task List" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034032/dsecure-manual/06_Scheduler/S-4.png" alt="Scheduler - Task List" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
               <div>
                 <p className="text-slate-700 mb-2"><strong>Scheduler - Execution:</strong> Monitor scheduled task execution progress and completion status.</p>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034120/dsecure-manual/06_Scheduler/S-5.png" alt="Scheduler - Execution" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034120/dsecure-manual/06_Scheduler/S-5.png" alt="Scheduler - Execution" className="w-full mb-4" style={{ borderRadius: '3%' }} />
               </div>
             </div>
 
@@ -804,11 +804,11 @@ const navigationTree: NavItem[] = [
                 <div className="space-y-4">
                   <div>
                     <p className="text-slate-700 mb-2"><strong>Reports - Overview:</strong> The reports section showing a list of all generated erasure reports with details.</p>
-                    <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034208/dsecure-manual/07_Reports/R-1.png" alt="Reports - Overview" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                    <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034208/dsecure-manual/07_Reports/R-1.png" alt="Reports - Overview" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                   </div>
                   <div>
                     <p className="text-slate-700 mb-2"><strong>Reports - Report Details:</strong> Detailed view of an erasure report with comprehensive information.</p>
-                    <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034296/dsecure-manual/07_Reports/R-2.png" alt="Reports - Report Details" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                    <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772034296/dsecure-manual/07_Reports/R-2.png" alt="Reports - Report Details" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                   </div>
                 </div>
               </>
@@ -984,19 +984,19 @@ const navigationTree: NavItem[] = [
                     <div className="space-y-4">
                       <div>
                         <p className="text-slate-700 mb-2"><strong>Settings - General:</strong> The main settings panel with all configuration options.</p>
-                        <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035708/dsecure-manual/09_Settings/1_Settings.png" alt="Settings - General" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035708/dsecure-manual/09_Settings/1_Settings.png" alt="Settings - General" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                       </div>
                       <div>
                         <p className="text-slate-700 mb-2"><strong>Settings - Ignore List:</strong> Configure the ignore list to exclude specific files or folders from erasure operations.</p>
-                        <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035796/dsecure-manual/09_Settings/2_Setting_ignore_list.png" alt="Settings - Ignore List" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035796/dsecure-manual/09_Settings/2_Setting_ignore_list.png" alt="Settings - Ignore List" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                       </div>
                       <div>
                         <p className="text-slate-700 mb-2"><strong>Settings - Appearance:</strong> Customize the application appearance including theme and display preferences.</p>
-                        <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035887/dsecure-manual/09_Settings/3_setting_appearance.png" alt="Settings - Appearance" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035887/dsecure-manual/09_Settings/3_setting_appearance.png" alt="Settings - Appearance" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                       </div>
                       <div>
                         <p className="text-slate-700 mb-2"><strong>Settings - Language:</strong> Change the application language to your preferred language option.</p>
-                        <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035987/dsecure-manual/09_Settings/4_settings_launguage.png" alt="Settings - Language" className="w-full mb-4" style={{ borderRadius: '3%' }} />
+                        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772035987/dsecure-manual/09_Settings/4_settings_launguage.png" alt="Settings - Language" className="w-full mb-4" style={{ borderRadius: '3%' }} />
                       </div>
                     </div>
                   </>

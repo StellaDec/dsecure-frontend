@@ -981,7 +981,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                     className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={img.thumbnail}
                         alt={img.alt}
                         className="w-full h-full object-contain bg-slate-50 group-hover:scale-105 transition-transform duration-300"
@@ -2051,7 +2051,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={galleryImages[selectedImageIndex].url}
               alt={galleryImages[selectedImageIndex].alt}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-200"

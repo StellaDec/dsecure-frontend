@@ -37,7 +37,7 @@ const EnterprisePage: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-tr from-emerald-400 via-teal-400 to-emerald-500 rounded-3xl blur-3xl opacity-40 animate-pulse"></div>
 
           <div className="relative">
-            <img
+            <img loading="lazy" decoding="async"
               src="/enterprise_img.png"
               alt="Security Shield"
               className="w-96 h-96 object-contain rounded-[18%] opacity-85 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-[0_0_100px_rgba(16,185,129,1)] transition-all duration-700 ease-in-out sepia-[.15] hue-rotate-[80deg] saturate-150"

@@ -320,7 +320,7 @@ const DownloadPage: React.FC = memo(() => {
           <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 mb-8 max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
               <div className="w-24 h-24 flex items-center justify-center bg-gradient-to-br from-teal-100 to-teal-200 rounded-2xl shrink-0">
-                <img
+                <img loading="lazy" decoding="async"
                   src={getProductIcon(selectedProduct, 64)}
                   alt={currentProduct.name}
                   className="w-16 h-16 object-contain"

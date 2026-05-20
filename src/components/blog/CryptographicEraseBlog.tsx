@@ -10,12 +10,12 @@ const CryptographicEraseBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "NIST SP 800-88 Cryptographic Erase Definition — Complete 2026 Guide",
-            excerpt: "Learn what Cryptographic Erase means under NIST SP 800-88, how it works, when to use it, and key destruction steps.",
+            title: "NIST SP 800-88 Cryptographic Erase Explained | D-Secure",
+            excerpt: "Learn how NIST SP 800-88 Cryptographic Erase instantly and permanently sanitizes self-encrypting drives (SEDs) without physically destroying your SSDs.",
             slug: "cryptographic-erase",
             author: "D-Secure Editorial Team",
             publishDate: "April 28, 2025",
-            keywords: "cryptographic erasure, encryption, key destruction, NIST SP 800-88, purge sanitization",
+            keywords: "nist sp 800-88 cryptographic erase, cryptographic erasure, encryption, key destruction, purge sanitization",
             category: "Technical Guide",
             tag: "Technical",
           })}

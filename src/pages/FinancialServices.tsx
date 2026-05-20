@@ -57,7 +57,7 @@ const FinancialServices: React.FC = () => {
             <div className="max-w-5xl mx-auto space-y-10">
               <Reveal>
                 <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1760089424/cctijcsqv0m78nfmmocv.jpg"
                     alt="Financial Security Overview"
                     className="rounded-xl mb-6"
@@ -108,7 +108,7 @@ const FinancialServices: React.FC = () => {
                         key={i}
                         className="rounded-xl border border-teal-100 bg-gradient-to-br from-teal-50 to-cyan-50 shadow-sm hover:shadow-md overflow-hidden"
                       >
-                        <img
+                        <img loading="lazy" decoding="async"
                           src={item.img}
                           alt={item.title}
                           className="h-40 w-full object-cover"
@@ -130,7 +130,7 @@ const FinancialServices: React.FC = () => {
               {/* Technology & Innovation */}
               <Reveal>
                 <div className="bg-white rounded-2xl shadow-lg p-8 border border-cyan-100 hover:shadow-xl transition-all duration-300">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
                     alt="Technology Innovation"
                     className="rounded-xl mb-6"
@@ -154,7 +154,7 @@ const FinancialServices: React.FC = () => {
                   <h2 className="text-3xl font-bold text-slate-900 mb-4">
                     Client Success Story
                   </h2>
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=80"
                     alt="Bank Success Story"
                     className="rounded-xl mb-6"

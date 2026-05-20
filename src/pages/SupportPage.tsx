@@ -1398,7 +1398,7 @@ const SupportPage: React.FC = () => {
             <Reveal>
               <div className="text-center text-white">
                 <div className="flex items-center justify-center mb-8">
-                  {/* <img
+                  {/* <img loading="lazy" decoding="async"
                     src="/path/to/support-person.png"
                     alt="Support Representative"
                     className="w-32 h-32 rounded-full mr-8"

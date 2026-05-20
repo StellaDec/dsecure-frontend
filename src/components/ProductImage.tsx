@@ -33,7 +33,7 @@ export const ProductImage = memo<ProductImageProps>(({
     <div className={`${currentSize.container} bg-gradient-to-br ${config.backgroundColor} rounded-lg p-4 flex flex-col items-center justify-center text-white shadow-lg ${className}`}>
       {/* Product Icon */}
       <div className="mb-3">
-        <img
+        <img loading="lazy" decoding="async"
           src={getProductIcon(category, iconSize)}
           alt={productName}
           className={`${currentSize.icon} object-contain filter drop-shadow-lg`}

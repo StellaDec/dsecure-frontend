@@ -48,9 +48,9 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
 
   // Home page SEO
   home: {
-    title: "D-Secure | #1 Data Erasure Software | NIST 800-88 Compliant",
+    title: "D-Secure | Enterprise Data Erasure Software | NIST 800-88 Compliant",
     description:
-      "D-Secure is #1 data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-proof audit certificates.",
+      "D-Secure is an enterprise data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-proof audit certificates.",
     keywords: generateKeywords([
       "data erasure software India", 
       "certified data wiping India", 
@@ -605,6 +605,30 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Home", item: "/" },
       { name: "Compliance", item: "/compliance" },
       { name: "GDPR", item: "/compliance/gdpr" },
+    ],
+  },
+  // HIPAA compliance detail page ka custom SEO metadata
+  hipaa: {
+    title: "HIPAA Compliant Data Destruction Software | D-Secure",
+    description: "Achieve HIPAA compliant data destruction for PHI/ePHI. Securely sanitize healthcare storage media with tamper-proof audit reports and 100% compliance.",
+    keywords: generateKeywords(["HIPAA compliant data destruction", "healthcare data sanitization", "PHI ePHI secure deletion", "medical records erasure software"]),
+    canonicalUrl: getCanonicalUrl("/compliance/hipaa"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Compliance", item: "/compliance" },
+      { name: "HIPAA", item: "/compliance/hipaa" },
+    ],
+  },
+  // DoD 5220.22-M compliance detail page ka custom SEO metadata
+  dod: {
+    title: "DoD 5220.22-M Compliant Data Wiping Software | D-Secure",
+    description: "Execute DoD 5220.22-M standard data wiping with D-Secure. Enterprise-grade secure sanitization with tamper-proof audit reports.",
+    keywords: generateKeywords(["DoD 5220.22-M data wiping", "Department of Defense data destruction", "3-pass wipe standard", "government data sanitization software"]),
+    canonicalUrl: getCanonicalUrl("/compliance/dod-5220-22-m"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Compliance", item: "/compliance" },
+      { name: "DoD 5220.22-M", item: "/compliance/dod-5220-22-m" },
     ],
   },
   // Cookie policy page ka custom SEO metadata

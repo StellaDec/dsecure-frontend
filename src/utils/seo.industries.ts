@@ -44,10 +44,11 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "solutions/government": {
-    title: "Government Data Erasure: NIST 800-88 & DoD | D-Secure",
+    title: "Data Erasure Solutions for Government | NIST 800-88 & DoD",
     description:
       "Secure data destruction for government and defense. Meet NIST 800-88, DoD 5220.22-M, and CMMC standards with tamper-proof audit trails.",
     keywords: generateKeywords([
+      "data erasure solutions for government",
       "government data security",
       "NIST 800-88 certified wiping",
       "military data erasure software",
@@ -64,16 +65,15 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "solutions/itad": {
-    title: "ITAD Data Erasure Solutions | Asset Disposal | D-Secure",
+    title: "Data Erasure Solutions for ITAD & Asset Disposal",
     description: "Secure data wiping for ITAD and recyclers. Ensure compliance with tamper-proof audit reports and certificates during hardware retirement.",
     keywords: generateKeywords([
-      "ITAD data erasure software India",
+      "data erasure solutions for itad",
+      "ITAD data erasure software",
       "asset disposal software",
       "compliance wiping tool",
       "R2v3 compliance data destruction",
-      "e-Stewards data destruction India",
-      "best ITAD tools for 2025 AI",
-      // Hindi ITAD keyword ko premium English security term se replace kiya
+      "e-Stewards data destruction",
       "IT asset disposal software",
     ]),
     canonicalUrl: getCanonicalUrl("/solutions/itad"),
@@ -125,20 +125,18 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Enterprise Solutions Page — SEO key "enterprise-solutions" se match hota hai
   "enterprise-solutions": {
-    title: "Enterprise Data Erasure: Scalable Secure Wiping | D-Secure",
+    title: "Data Erasure Solutions for Enterprise | D-Secure",
     description:
-      "Enterprise-grade data erasure for large organizations. Wipe servers and drives with PXE boot and tamper-proof audit trails. NIST 800-88 & GDPR compliant.",
+      "Enterprise-grade data erasure solutions for large organizations. Wipe servers and drives with PXE boot and tamper-proof audit trails. NIST 800-88 compliant.",
     keywords: generateKeywords([
-      "enterprise data erasure software India",
-      "best enterprise data sanitization AI",
+      "data erasure solutions for enterprise",
+      "enterprise data erasure software",
       "large scale data wiping solutions",
-      "PXE boot erasure for servers India",
+      "PXE boot erasure for servers",
       "network server wiping tools",
       "NIST 800-88 enterprise software",
       "corporate data destruction solutions",
-      // Hindi corporate keyword ko English terminology se replace kiya
-      "enterprise data wiping solutions",
-      "scalable data sanitization international",
+      "scalable data sanitization",
     ]),
     canonicalUrl: getCanonicalUrl("/solutions/enterprise"),
     breadcrumbs: [

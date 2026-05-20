@@ -11,15 +11,14 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
         {/* SEO: Page 4 — Loose Drives Erasure Guide ke liye optimized title aur description */}
         <SEOHead
           seo={getBlogSEO({
-            title:
-              "How to Securely Erase Loose Drives from Data Centers & IT Assets",
+            title: "Loose Drive Erasure Guide: Secure Data Center Sanitization",
             excerpt:
-              "Loose drive erasure guide for ITAD operators — wipe SATA, SAS and NVMe drives in bulk with NIST 800-88 compliance. Step-by-step workflow inside.",
+              "Learn the complete process for loose drive erasure. Loose HDDs and SSDs without a host system need a different erasure workflow for ITAD operators.",
             slug: "loose-drives-erasure-guide",
             author: "D-Secure Editorial Team",
             publishDate: "June 18, 2025",
             keywords:
-              "loose drives erasure, data center drives, ITAD, SATA NVMe erasure, secure drive sanitization",
+              "loose drive erasure, loose drives erasure, data center drives, ITAD, SATA NVMe erasure, secure drive sanitization, erasure of data center loose drives",
             category: "Guide",
             tag: "Technical",
           })}
@@ -30,10 +29,21 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
           <Reveal>
             <div className="text-center px-6">
               <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
-                <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>
+                <Link
+                  to="/products/drive-eraser"
+                  className="text-emerald-600 hover:underline font-medium"
+                >
+                  Data Erasure
+                </Link>
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
-                <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Loose Drive Erasure</Link>: Complete Guide for ITAD Operators
+                <Link
+                  to="/products/drive-eraser"
+                  className="text-emerald-600 hover:underline font-medium"
+                >
+                  Loose Drive Erasure
+                </Link>
+                : Complete Guide for ITAD Operators
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 Protect your organization from data breaches by properly
@@ -147,12 +157,18 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               </h2>
 
               <p className="leading-loose text-lg mb-6">
-                <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure erasure</Link> of loose drives within their host enclosures
-                reduces the burden of maintaining unwanted laptops, hard drives,
-                computer systems, and chassis. Many IT asset managers perform
-                simple deletion or formatting of storage devices instead of
-                using reliable data-wiping solutions. If loose drives from such
-                devices fall into wrong hands, consequences can be severe.
+                <Link
+                  to="/products/drive-eraser"
+                  className="text-emerald-600 hover:underline font-medium"
+                >
+                  Secure erasure
+                </Link>{" "}
+                of loose drives within their host enclosures reduces the burden
+                of maintaining unwanted laptops, hard drives, computer systems,
+                and chassis. Many IT asset managers perform simple deletion or
+                formatting of storage devices instead of using reliable
+                data-wiping solutions. If loose drives from such devices fall
+                into wrong hands, consequences can be severe.
               </p>
 
               <div className="space-y-6">
@@ -214,7 +230,14 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mt-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
-                  D-<Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link> Capabilities
+                  D-
+                  <Link
+                    to="/products/drive-eraser"
+                    className="text-emerald-600 hover:underline font-medium"
+                  >
+                    Secure Erasure
+                  </Link>{" "}
+                  Capabilities
                 </h3>
                 <ul className="space-y-4 text-slate-700 text-lg">
                   <li className="flex items-start">
@@ -382,12 +405,14 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
             </div>
           </Reveal>
         </section>
-      <BlogFooterStandard 
-        blogId="loose-drives-erasure-guide" 
-        blogTitle="How to Securely Erase Loose Drives from Data Centers & IT Assets" category="Guide" tag="Technical" 
-      />
-    </div>
-  );
+        <BlogFooterStandard
+          blogId="loose-drives-erasure-guide"
+          blogTitle="How to Securely Erase Loose Drives from Data Centers & IT Assets"
+          category="Guide"
+          tag="Technical"
+        />
+      </div>
+    );
 };
 
 export default LooseDrivesErasureGuideBlog;

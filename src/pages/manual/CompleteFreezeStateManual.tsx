@@ -138,7 +138,7 @@ const navigationTree: NavItem[] = [
               The <strong>Global Header</strong> (Top Bar) provides persistent access to system-wide utilities and state indicators across all admin pages.
             </p>
             <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl mb-8">
-               <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/admin-sidebar-header" alt="Admin Header Detail" className="w-full" />
+               <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/admin-sidebar-header" alt="Admin Header Detail" className="w-full" />
                <div className="p-6 bg-slate-900 text-white">
                   <h4 className="font-bold mb-4 uppercase tracking-widest text-xs opacity-60">Header Icons Explanation:</h4>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -235,7 +235,7 @@ const navigationTree: NavItem[] = [
                Workstations ko <strong>Labs</strong> aur <strong>Groups</strong> mein organize kiya jata hai taaki fleet-wide commands (Jaise bulk reboot) easily execute ho sakein.
             </p>
             <div className="bg-white border-2 border-slate-100 rounded-[2.5rem] p-4 shadow-xl mb-8">
-               <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/admin-systems-view" alt="Systems View" className="w-full rounded-[2rem]" />
+               <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/admin-systems-view" alt="Systems View" className="w-full rounded-[2rem]" />
             </div>
             <div className="grid sm:grid-cols-2 gap-6 mb-8">
                <div className="bg-emerald-50 p-6 rounded-2xl border border-emerald-100">
@@ -266,7 +266,7 @@ const navigationTree: NavItem[] = [
                Policy configuration determines how thoroughly the system is cleaned upon restart. This is where you configure security compliance.
             </p>
             <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden mb-8 shadow-lg">
-               <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/admin-policy-modes" alt="Policy Configuration" className="w-full" />
+               <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/admin-policy-modes" alt="Policy Configuration" className="w-full" />
             </div>
             <div className="prose prose-slate max-w-none">
                <table className="w-full text-left text-sm border-collapse">
@@ -312,7 +312,7 @@ const navigationTree: NavItem[] = [
                 <div className="absolute top-0 right-0 p-8 opacity-5">
                    <FileText size={120} />
                 </div>
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/admin-reports-logs" alt="Reports Logs" className="w-full rounded-2xl mb-6 grayscale hover:grayscale-0 transition-all duration-700 border border-white/10" />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/admin-reports-logs" alt="Reports Logs" className="w-full rounded-2xl mb-6 grayscale hover:grayscale-0 transition-all duration-700 border border-white/10" />
                 <div className="flex flex-wrap gap-4">
                    <div className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest text-emerald-400">PDF Signed Export</div>
                    <div className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest text-blue-400">JSON API Bridge</div>
@@ -339,7 +339,7 @@ const navigationTree: NavItem[] = [
                 The Endpoint Application is designed to be unobtrusive. The <strong>Header</strong> shows the current protection state.
              </p>
              <div className="bg-white border border-slate-200 rounded-3xl p-6 mb-8 shadow-xl">
-                <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/endpoint-header-status" alt="Endpoint Header Status" className="w-full mb-6" />
+                <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/endpoint-header-status" alt="Endpoint Header Status" className="w-full mb-6" />
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                    <div className="p-4 bg-blue-50 rounded-2xl border border-blue-100 text-center">
                       <LayoutDashboard className="w-5 h-5 text-blue-600 mx-auto mb-2" />
@@ -373,7 +373,7 @@ const navigationTree: NavItem[] = [
              </p>
              <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 mb-8 flex flex-col md:flex-row gap-8 items-center">
                 <div className="w-full md:w-1/2">
-                   <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/endpoint-health-metrics" alt="Endpoint Health Metrics" className="w-full rounded-2xl shadow-lg border border-white" />
+                   <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/endpoint-health-metrics" alt="Endpoint Health Metrics" className="w-full rounded-2xl shadow-lg border border-white" />
                 </div>
                 <div className="w-full md:w-1/2 space-y-4 text-slate-700 font-medium">
                    <div className="flex items-center gap-3">
@@ -424,7 +424,7 @@ const navigationTree: NavItem[] = [
                       </div>
                    </div>
                    <div className="flex-1">
-                      <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/endpoint-main" alt="Endpoint Request Flow" className="w-full rounded-2xl grayscale opacity-50" />
+                      <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/dsecure/manual/freeze-state/endpoint-main" alt="Endpoint Request Flow" className="w-full rounded-2xl grayscale opacity-50" />
                    </div>
                 </div>
              </div>

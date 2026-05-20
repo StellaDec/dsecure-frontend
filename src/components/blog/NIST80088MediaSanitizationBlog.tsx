@@ -735,7 +735,7 @@ const NIST80088MediaSanitizationBlog: React.FC = () => {
                         <span className="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded-full font-medium">NIST Purge</span>
                       </div>
                       <div className="p-4 flex justify-center bg-slate-100 overflow-hidden relative w-full">
-                        <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778239910/dwzvvyiiyhlntaw9cheh.png" alt="Drive Eraser Report" className="h-64 object-contain rounded border border-slate-200 shadow-sm group-hover:scale-105 transition-transform duration-500" />
+                        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778239910/dwzvvyiiyhlntaw9cheh.png" alt="Drive Eraser Report" className="h-64 object-contain rounded border border-slate-200 shadow-sm group-hover:scale-105 transition-transform duration-500" />
                         <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                           <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
                             <svg className="w-5 h-5 text-emerald-800" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -752,7 +752,7 @@ const NIST80088MediaSanitizationBlog: React.FC = () => {
                         <span className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full font-medium">Targeted</span>
                       </div>
                       <div className="p-4 flex justify-center bg-slate-100 overflow-hidden relative w-full">
-                        <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png" alt="File Eraser Report" className="h-64 object-contain rounded border border-slate-200 shadow-sm group-hover:scale-105 transition-transform duration-500" />
+                        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png" alt="File Eraser Report" className="h-64 object-contain rounded border border-slate-200 shadow-sm group-hover:scale-105 transition-transform duration-500" />
                         <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                           <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
                             <svg className="w-5 h-5 text-emerald-800" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -769,7 +769,7 @@ const NIST80088MediaSanitizationBlog: React.FC = () => {
                         <span className="text-xs px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full font-medium">Verified</span>
                       </div>
                       <div className="p-4 flex justify-center bg-slate-100 overflow-hidden relative w-full">
-                        <img src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778242571/fjqwejrbgdzvvetpj7dy.png" alt="Hardware Diagnostic Report" className="h-64 object-contain rounded border border-slate-200 shadow-sm group-hover:scale-105 transition-transform duration-500" />
+                        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778242571/fjqwejrbgdzvvetpj7dy.png" alt="Hardware Diagnostic Report" className="h-64 object-contain rounded border border-slate-200 shadow-sm group-hover:scale-105 transition-transform duration-500" />
                         <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                           <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
                             <svg className="w-5 h-5 text-emerald-800" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -1131,7 +1131,7 @@ const NIST80088MediaSanitizationBlog: React.FC = () => {
             className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={galleryImages[selectedImageIndex].url}
               alt={galleryImages[selectedImageIndex].alt}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-200"

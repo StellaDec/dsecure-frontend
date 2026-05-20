@@ -101,6 +101,12 @@ const NIST80088Page = lazy(() => import("../pages/compliance/NIST80088Page"));
 const GDPRCompliancePage = lazy(
   () => import("../pages/compliance/GDPRCompliancePage"),
 );
+const HIPAACompliancePage = lazy(
+  () => import("../pages/compliance/HIPAACompliancePage"),
+);
+const DoDCompliancePage = lazy(
+  () => import("../pages/compliance/DoDCompliancePage"),
+);
 const MacErasurePage = lazy(() => import("../pages/solutions/MacErasurePage"));
 const BlanccoAlternativePage = lazy(
   () => import("../pages/solutions/BlanccoAlternativePage"),
@@ -193,6 +199,8 @@ export const PublicRoutes = () => (
 
     <Route path="compliance/nist-800-88" element={<NIST80088Page />} />
     <Route path="compliance/gdpr" element={<GDPRCompliancePage />} />
+    <Route path="compliance/hipaa" element={<HIPAACompliancePage />} />
+    <Route path="compliance/dod-5220-22-m" element={<DoDCompliancePage />} />
     <Route path="solutions/mac-erasure" element={<MacErasurePage />} />
     <Route
       path="solutions/blancco-alternative"

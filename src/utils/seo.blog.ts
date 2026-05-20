@@ -13,7 +13,7 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "blog/ssd-wipe-guide": {
-    title: "How to Securely Wipe SSDs | Advanced Sanitization | D-Secure",
+    title: "How to Securely Wipe SSDs & NVMe Drives (2026 Guide)",
     description: "SSD data erasure is different from HDD. Discover the specific techniques required for permanent SSD data destruction.",
     keywords: generateKeywords(["SSD wipe guide", "solid state drive erasure", "SSD security"]),
     canonicalUrl: getCanonicalUrl("/blog/ssd-wipe-guide"),
@@ -48,8 +48,8 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Page 6: Data Sanitization Compliance
   "blog-data-sanitization-compliance": {
-    title: "Data Sanitization Compliance Guide | D-Secure",
-    description: "Navigate data sanitization compliance for GDPR, HIPAA, and NIST 800-88. Enterprise guide to building a defensible data disposition program.",
+    title: "2026 Data Sanitization Compliance: NIST, GDPR & HIPAA Checklist",
+    description: "Don't risk hefty fines. Master data sanitization compliance with our complete guide to NIST 800-88, GDPR, and HIPAA data destruction requirements.",
     keywords: generateKeywords(["data sanitization compliance", "GDPR data erasure requirements", "HIPAA data destruction compliance", "NIST 800-88 compliance", "PCI-DSS data erasure", "ISO 27001 media disposal"]),
     canonicalUrl: getCanonicalUrl("/blog/data-sanitization-compliance"),
     breadcrumbs: [

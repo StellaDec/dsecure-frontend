@@ -108,7 +108,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     >
       {image && (
         <div className="mb-6">
-          <img src={image} alt={title} className="w-full h-48 object-cover rounded-lg" />
+          <img loading="lazy" decoding="async" src={image} alt={title} className="w-full h-48 object-cover rounded-lg" />
         </div>
       )}
       <h3 className="text-xl font-bold text-slate-900 mb-4">{title}</h3>

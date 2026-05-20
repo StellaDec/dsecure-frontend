@@ -10,13 +10,14 @@ const DoDVsIEEEBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "DoD vs IEEE Standards Comparison",
+            title: "DoD 5220.22-M vs IEEE 2883 data erasure standards compared",
             excerpt:
-              "Comprehensive comparison of DoD and IEEE data sanitization standards.",
+              "DoD 5220.22-M was the default benchmark for years. IEEE 2883-2022 has largely replaced it. Here's what each requires and which your audit actually needs.",
             slug: "dod-vs-ieee",
             author: "D-Secure Editorial Team",
             publishDate: "January 7, 2025",
-            keywords: "DoD, IEEE, standards, comparison",
+            keywords:
+              "DoD, IEEE, standards, comparison,dod 5220.22-m,ieee 2883-2022 compliance,ieee 2883 compliance",
             category: "Comparison",
             tag: "Standards",
           })}
@@ -111,6 +112,32 @@ const DoDVsIEEEBlog: React.FC = () => {
                     </div>
                   </li>
                 </ol>
+              </div>
+
+              <div className="bg-slate-100 rounded-xl p-8 mt-6">
+                <h3 className="font-bold text-slate-900 text-xl mb-4">
+                  The DoD 5220.22-M ECE Variant (7-Pass Method)
+                </h3>
+                <p className="text-slate-700 text-lg mb-4">
+                  In 2001, the Department of Defense issued a memo expanding the original 3-pass standard to a more rigorous 7-pass process known as the "ECE" variant.
+                </p>
+                <ol className="space-y-4 text-slate-700 text-lg">
+                  <li className="flex items-start">
+                    <span className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">1</span>
+                    <div><strong>Passes 1-3:</strong> Execute the standard DoD 3-pass wipe.</div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">2</span>
+                    <div><strong>Pass 4:</strong> Overwrite with a specific random pattern.</div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">3</span>
+                    <div><strong>Passes 5-7:</strong> Execute another standard DoD 3-pass wipe.</div>
+                  </li>
+                </ol>
+                <p className="text-slate-700 mt-4 text-sm bg-amber-100 p-3 rounded text-amber-900 border border-amber-200">
+                  <strong>Note:</strong> The ECE variant is extremely time-consuming and causes unnecessary wear on modern drives. It is rarely used today outside of highly specific legacy military contracts.
+                </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
@@ -279,112 +306,57 @@ const DoDVsIEEEBlog: React.FC = () => {
                   <tbody>
                     <tr className="bg-white">
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        Origin
+                        Overwrite Passes
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        U.S. Department of Defense
+                        3 passes (Standard) or 7 passes (ECE variant)
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        Institute of Electrical and Electronics Engineers
+                        1 pass is adequate for modern drives
                       </td>
                     </tr>
                     <tr className="bg-slate-50">
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        Year Introduced
+                        Supported Media Types
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        1995 (Updated multiple times)
+                        HDDs only (Solid-state drives not formally supported)
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        2022
+                        All media: HDDs, SSDs, NVMe, Flash, Optical, and Mobile
                       </td>
                     </tr>
                     <tr className="bg-white">
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        Primary Focus
+                        Verification Process
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        Government & Military applications
+                        Verification happens only after the final pass
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        Commercial & Enterprise environments
+                        Mandatory verification procedures built into every sanitization level
                       </td>
                     </tr>
                     <tr className="bg-slate-50">
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        Overwrite Methodology
+                        Certificate Output
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        Traditional 3-pass or 7-pass method
+                        Standard certificate (often lacking cryptographic proof for SSDs)
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        1-pass adequate for modern drives
+                        Cryptographic Erase (CE) certificates with cryptographic validation
                       </td>
                     </tr>
                     <tr className="bg-white">
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        Media Type Support
+                        Who Requires / Accepts It?
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        Primarily magnetic media (HDDs)
+                        <strong>Requires DoD:</strong> Legacy military contracts, outdated internal corporate policies.
                       </td>
                       <td className="border border-slate-300 px-6 py-4">
-                        All media types (HDD, SSD, NVMe, Flash)
-                      </td>
-                    </tr>
-                    <tr className="bg-slate-50">
-                      <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        Verification
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Optional verification step
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Built-in verification requirements
-                      </td>
-                    </tr>
-                    <tr className="bg-white">
-                      <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        Sanitization Levels
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Single method approach
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Clear, Purge, Destruct levels
-                      </td>
-                    </tr>
-                    <tr className="bg-slate-50">
-                      <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        Industry Adoption
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Widely adopted, especially in US
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Growing adoption by ADISA, enterprises
-                      </td>
-                    </tr>
-                    <tr className="bg-white">
-                      <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        SSD Handling
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Not specifically addressed
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Comprehensive SSD sanitization guidance
-                      </td>
-                    </tr>
-                    <tr className="bg-slate-50">
-                      <td className="border border-slate-300 px-6 py-4 font-semibold">
-                        Future-Readiness
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Legacy standard, limited updates
-                      </td>
-                      <td className="border border-slate-300 px-6 py-4">
-                        Designed for emerging technologies
+                        <strong>Accepts IEEE:</strong> NIST 800-88 auditors, modern HIPAA/GDPR compliance frameworks, ADISA, enterprise IT.
                       </td>
                     </tr>
                   </tbody>
@@ -474,8 +446,7 @@ const DoDVsIEEEBlog: React.FC = () => {
                     <ul className="space-y-2 text-slate-700 text-lg">
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
-                        <strong>NIST Clear:</strong> For less sensitive data,
-                        logical overwriting
+                        <strong>NIST Clear:</strong> For less sensitive data, <Link to="/products/file-eraser" className="text-emerald-600 hover:text-emerald-700 underline font-medium">logical overwriting</Link>
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
@@ -495,12 +466,61 @@ const DoDVsIEEEBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify mt-10">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                Which standard does your auditor want?
+              </h2>
+              <p className="text-slate-700 leading-loose text-lg mb-6">
+                When the auditor knocks on your door, handing them the right Certificate of Destruction is critical. Here is what different industries expect:
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                  <h3 className="font-bold text-slate-900 text-lg flex items-center mb-3">
+                    <span className="w-3 h-3 rounded-full bg-blue-600 mr-3"></span> US Federal & Defense
+                  </h3>
+                  <p className="text-slate-700">
+                    Despite DoD 5220.22-M originating here, modern defense guidelines (like the NISPOM update) explicitly point to <strong>NIST SP 800-88</strong> and modern equivalent standards like <strong>IEEE 2883</strong>. However, some legacy sub-contracts still explicitly require DoD 3-pass on paper.
+                  </p>
+                </div>
+                
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                  <h3 className="font-bold text-slate-900 text-lg flex items-center mb-3">
+                    <span className="w-3 h-3 rounded-full bg-rose-500 mr-3"></span> Healthcare (HIPAA)
+                  </h3>
+                  <p className="text-slate-700">
+                    HIPAA does not mandate a specific technical standard, but auditors expect compliance with NIST 800-88 guidelines. Because hospitals rely heavily on modern SSDs and NVMe drives, <strong>IEEE 2883</strong> is the de facto requirement, as DoD wiping leaves hidden sectors intact on SSDs.
+                  </p>
+                </div>
+                
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                  <h3 className="font-bold text-slate-900 text-lg flex items-center mb-3">
+                    <span className="w-3 h-3 rounded-full bg-emerald-500 mr-3"></span> Financial Services (PCI DSS)
+                  </h3>
+                  <p className="text-slate-700">
+                    Financial auditors look for cryptographic proof. <strong>IEEE 2883</strong> defines cryptographic erase (CE) procedures, providing the exact tamper-proof audit trails that PCI DSS requirements demand.
+                  </p>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                  <h3 className="font-bold text-slate-900 text-lg flex items-center mb-3">
+                    <span className="w-3 h-3 rounded-full bg-purple-500 mr-3"></span> IT Asset Disposition (ITAD)
+                  </h3>
+                  <p className="text-slate-700">
+                    ITAD vendors are aggressively transitioning to <strong>IEEE 2883</strong>. Global certification bodies like ADISA have integrated IEEE standards into their testing matrices. If an ITAD vendor only offers DoD wipes for modern SSDs, they are failing to properly sanitize your hardware.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
             <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 D-Secure: Compliant with All Major Standards
               </h2>
               <p className="leading-loose text-lg mb-6">
-                D-Secure data erasure solutions support both DoD 5220.22-M and
+                D-Secure <Link to="/products/drive-eraser" className="text-emerald-200 hover:text-white underline underline-offset-4 font-medium transition-colors">data erasure solutions</Link> support both DoD 5220.22-M and
                 IEEE 2883-2022 standards, along with{" "}
                 <strong>
                   24+ other international data sanitization standards
@@ -563,7 +583,7 @@ const DoDVsIEEEBlog: React.FC = () => {
                 <div className="bg-white/10 rounded-xl p-6">
                   <h3 className="font-bold text-lg mb-3"> All Media Types</h3>
                   <p className="text-white/90 text-sm leading-relaxed">
-                    Supports HDDs, SSDs, NVMe, servers, mobile devices, and all
+                    Supports HDDs, SSDs, NVMe, servers, <Link to="/products/smartphone-eraser" className="text-emerald-200 hover:text-white underline font-medium transition-colors">mobile devices</Link>, and all
                     modern storage technologies.
                   </p>
                 </div>
@@ -696,12 +716,14 @@ const DoDVsIEEEBlog: React.FC = () => {
             </div>
           </Reveal>
         </section>
-      <BlogFooterStandard 
-        blogId="dod-vs-ieee" 
-        blogTitle="DoD vs IEEE Standards Comparison" category="Comparison" tag="Standards" 
-      />
-    </div>
-  );
+        <BlogFooterStandard
+          blogId="dod-vs-ieee"
+          blogTitle="DoD vs IEEE Standards Comparison"
+          category="Comparison"
+          tag="Standards"
+        />
+      </div>
+    );
 };
 
 export default DoDVsIEEEBlog;

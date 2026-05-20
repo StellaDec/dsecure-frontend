@@ -8,18 +8,18 @@ import { Link } from "react-router-dom";
 const DataErasureDisasterRecoveryBlog: React.FC = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
-        {/* SEO: Page 2 — Disaster Recovery blog ke liye optimized title aur description */}
+        {/* SEO: Compliance ke liye optimized title aur description set kiya */}
         <SEOHead
           seo={getBlogSEO({
             title:
-              "Data Erasure in Your Disaster Recovery Plan — Why It Matters",
+              "Data erasure in your disaster recovery plan: the compliance case",
             excerpt:
-              "Embed certified data erasure into your disaster recovery workflow for GDPR, HIPAA, and ISO compliance.",
+              "Most DR plans cover backups. Few cover what happens to data on decommissioned hardware mid-recovery. Here's what regulators expect and where erasure fits in.",
             slug: "data-erasure-disaster-recovery",
             author: "D-Secure Editorial Team",
             publishDate: "January 18, 2025",
             keywords:
-              "disaster recovery, data erasure, business continuity, GDPR, HIPAA, ISO compliance",
+              "disaster recovery, data erasure, business continuity, GDPR, HIPAA, ISO compliance,data erasure in disaster recovery plan",
             category: "Enterprise",
             tag: "DR/BC",
           })}
@@ -32,7 +32,14 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                 Business Continuity
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
-                Role of <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> in Disaster Recovery Planning
+                Role of{" "}
+                <Link
+                  to="/products/drive-eraser"
+                  className="text-emerald-600 hover:underline font-medium"
+                >
+                  Data Erasure
+                </Link>{" "}
+                in Disaster Recovery Planning
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 A comprehensive disaster recovery plan must address data erasure
@@ -211,10 +218,16 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                         Generate Tamper-Proof Audit Trails
                       </h3>
                       <p className="text-white/90 leading-relaxed">
-                        Ensure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> utility generates digital
-                        tamper-proof reports and certificates that serve as
-                        audit trails for meeting compliance with global data
-                        privacy regulations.
+                        Ensure{" "}
+                        <Link
+                          to="/products/drive-eraser"
+                          className="text-emerald-600 hover:underline font-medium"
+                        >
+                          data wiping
+                        </Link>{" "}
+                        utility generates digital tamper-proof reports and
+                        certificates that serve as audit trails for meeting
+                        compliance with global data privacy regulations.
                       </p>
                     </div>
                   </div>
@@ -301,8 +314,13 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
                     Data stored on devices not currently in use — requiring
-                    <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">secure erasure</Link> before disposal or recycling of damaged
-                    equipment.
+                    <Link
+                      to="/products/drive-eraser"
+                      className="text-emerald-600 hover:underline font-medium"
+                    >
+                      secure erasure
+                    </Link>{" "}
+                    before disposal or recycling of damaged equipment.
                   </p>
                 </div>
                 <div className="border-l-4 border-emerald-500 pl-8 py-2">
@@ -380,12 +398,14 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
             </div>
           </Reveal>
         </section>
-      <BlogFooterStandard 
-        blogId="data-erasure-disaster-recovery" 
-        blogTitle="Data Erasure in Your Disaster Recovery Plan — Why It Matters" category="Enterprise" tag="DR/BC" 
-      />
-    </div>
-  );
+        <BlogFooterStandard
+          blogId="data-erasure-disaster-recovery"
+          blogTitle="Data erasure in your disaster recovery plan: the compliance case"
+          category="Enterprise"
+          tag="DR/BC"
+        />
+      </div>
+    );
 };
 
 export default DataErasureDisasterRecoveryBlog;

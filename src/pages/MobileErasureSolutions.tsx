@@ -45,7 +45,7 @@ const MobileErasureSolutions: React.FC = () => {
                 regulated, Secure, and Auditable Data Erasure for Smartphones &
                 Tablets
               </p>
-              <img
+              <img loading="lazy" decoding="async"
                 src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80"
                 alt="Mobile Data Erasure"
                 className="rounded-2xl shadow-lg mx-auto max-h-[400px] object-cover"
@@ -71,7 +71,7 @@ const MobileErasureSolutions: React.FC = () => {
                   according to international standards such as NIST 800-88 Rev.
                   1 and ADISA Regulation.
                 </p>
-                <img
+                <img loading="lazy" decoding="async"
                   src="https://images.unsplash.com/photo-1523473827534-86c31d54351f?auto=format&fit=crop&w=1200&q=80"
                   alt="Data Security Compliance"
                   className="rounded-xl shadow-md mx-auto"
@@ -112,7 +112,7 @@ const MobileErasureSolutions: React.FC = () => {
                       key={i}
                       className="flex flex-col items-center bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl p-6 text-center"
                     >
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={feature.img}
                         alt={feature.title}
                         className="rounded-xl mb-4 h-40 w-full object-cover shadow-sm"

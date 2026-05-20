@@ -90,7 +90,7 @@ const ZeroTrustSanitization: React.FC = () => {
                  <div className="flex -space-x-3">
                     {[1,2,3,4].map(i => (
                       <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center overflow-hidden shadow-md">
-                         <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i * 55}`} alt="Contributor" className="w-full h-full object-cover" />
+                         <img loading="lazy" decoding="async" src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i * 55}`} alt="Contributor" className="w-full h-full object-cover" />
                       </div>
                     ))}
                  </div>

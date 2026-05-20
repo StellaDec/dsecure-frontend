@@ -10,13 +10,15 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "On-site vs Off-site Destruction",
+            title:
+              "On-site vs off-site data destruction: the compliance tradeoffs",
             excerpt:
-              "Comparing on-site and off-site data destruction options for enterprises.",
+              "On-site gives you chain-of-custody control. Off-site costs less. Here's how compliance requirements and asset volume should drive the choice.",
             slug: "onsite-vs-offsite-destruction",
             author: "D-Secure Editorial Team",
             publishDate: "February 4, 2025",
-            keywords: "on-site, off-site, destruction, comparison",
+            keywords:
+              "on-site, off-site, destruction, comparison,offsite it destruction,pros and cons of on-site device destruction",
             category: "Comparison",
             tag: "Enterprise",
           })}
@@ -118,11 +120,17 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                   </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     For large volumes of IT devices — several thousand units —
-                    offsite data destruction with a certified <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> vendor
-                    capable of performing both logical and physical sanitization
-                    often proves more economical. Onsite destruction is
-                    particularly beneficial when processing limited numbers of
-                    IT assets.
+                    offsite data destruction with a certified{" "}
+                    <Link
+                      to="/solutions/itad"
+                      className="text-emerald-600 hover:underline font-medium"
+                    >
+                      ITAD
+                    </Link>{" "}
+                    vendor capable of performing both logical and physical
+                    sanitization often proves more economical. Onsite
+                    destruction is particularly beneficial when processing
+                    limited numbers of IT assets.
                   </p>
                 </div>
 
@@ -214,10 +222,17 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                   </h3>
                   <p className="text-white/90 text-lg leading-loose">
                     IT asset managers maintain complete control over scheduling
-                    the <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> process. Since operations happen at company
-                    locations, erasure can be scheduled during off-hours,
-                    executed in phases, or processed department-wise to avoid
-                    business downtime.
+                    the{" "}
+                    <Link
+                      to="/products/drive-eraser"
+                      className="text-emerald-600 hover:underline font-medium"
+                    >
+                      data wiping
+                    </Link>{" "}
+                    process. Since operations happen at company locations,
+                    erasure can be scheduled during off-hours, executed in
+                    phases, or processed department-wise to avoid business
+                    downtime.
                   </p>
                 </div>
               </div>
@@ -233,17 +248,31 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
 
               <p className="text-slate-700 leading-loose text-lg">
                 Offsite data destruction involves engaging an IT Asset
-                Disposition (<Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>) service provider. Professional ITADs offer
-                comprehensive services including asset decommissioning, data
-                sanitization, secure transportation, remarketing, and
-                responsible recycling. Devices are transported to specialized
-                facilities equipped with surveillance to ensure storage media is
-                never lost, stolen, or misplaced.
+                Disposition (
+                <Link
+                  to="/solutions/itad"
+                  className="text-emerald-600 hover:underline font-medium"
+                >
+                  ITAD
+                </Link>
+                ) service provider. Professional ITADs offer comprehensive
+                services including asset decommissioning, data sanitization,
+                secure transportation, remarketing, and responsible recycling.
+                Devices are transported to specialized facilities equipped with
+                surveillance to ensure storage media is never lost, stolen, or
+                misplaced.
               </p>
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mt-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
-                  Selecting the Right <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Partner
+                  Selecting the Right{" "}
+                  <Link
+                    to="/solutions/itad"
+                    className="text-emerald-600 hover:underline font-medium"
+                  >
+                    ITAD
+                  </Link>{" "}
+                  Partner
                 </h3>
                 <ul className="space-y-4 text-slate-700 text-lg">
                   <li className="flex items-start">
@@ -280,11 +309,117 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
               <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
                 <p className="text-slate-700 leading-loose text-lg">
                   Offsite data destruction shifts significant responsibility for
-                  data erasure and compliance maintenance onto the <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> partner.
-                  By selecting the right certified vendor, organizations can
-                  ensure secure and compliant disposal while focusing on core
-                  business operations.
+                  data erasure and compliance maintenance onto the{" "}
+                  <Link
+                    to="/solutions/itad"
+                    className="text-emerald-600 hover:underline font-medium"
+                  >
+                    ITAD
+                  </Link>{" "}
+                  partner. By selecting the right certified vendor,
+                  organizations can ensure secure and compliant disposal while
+                  focusing on core business operations.
                 </p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Detailed Comparisons */}
+          <Reveal>
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify mt-10">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                Decision Matrix: On-site vs. Off-site
+              </h2>
+              <div className="overflow-x-auto rounded-xl border border-slate-200">
+                <table className="w-full text-left border-collapse min-w-[600px]">
+                  <thead>
+                    <tr className="bg-slate-50 text-slate-900">
+                      <th className="border-b border-slate-200 px-6 py-4 font-bold w-1/3">Data Classification</th>
+                      <th className="border-b border-slate-200 border-l px-6 py-4 font-bold w-1/3">On-site Erasure</th>
+                      <th className="border-b border-slate-200 border-l px-6 py-4 font-bold w-1/3">Off-site Destruction</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-slate-700">
+                    <tr>
+                      <td className="border-b border-slate-200 px-6 py-4 font-semibold text-slate-900">Public / General Data</td>
+                      <td className="border-b border-slate-200 border-l px-6 py-4">Optional. <br/><span className="text-sm text-slate-500">Only needed if devices are being repurposed internally.</span></td>
+                      <td className="border-b border-slate-200 border-l px-6 py-4 bg-emerald-50">Recommended. <br/><span className="text-sm text-slate-500">Most cost-effective for bulk disposal of low-risk assets.</span></td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-slate-200 px-6 py-4 font-semibold text-slate-900">Confidential (IP, Financials)</td>
+                      <td className="border-b border-slate-200 border-l px-6 py-4 bg-emerald-50">Recommended. <br/><span className="text-sm text-slate-500">Prevents intellectual property theft before devices leave the premises.</span></td>
+                      <td className="border-b border-slate-200 border-l px-6 py-4">Viable with strict vetting. <br/><span className="text-sm text-slate-500">Requires a highly certified <Link to="/solutions/itad" className="text-emerald-600 hover:text-emerald-700 underline">ITAD partner</Link> with GPS-tracked transport.</span></td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-semibold text-slate-900">Regulated (PII, PHI, HIPAA)</td>
+                      <td className="border-l border-slate-200 px-6 py-4 bg-emerald-50 text-emerald-900 font-medium">Highly Recommended. <br/><span className="text-sm text-emerald-700">Eliminates "chain of custody" transport risks entirely.</span></td>
+                      <td className="border-l border-slate-200 px-6 py-4 bg-red-50">High Risk. <br/><span className="text-sm text-red-700">A lost truck is an immediate breach notification event under HIPAA.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify mt-10">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Cost Comparison & Regulatory Impact</h2>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">Cost Considerations (Per-Drive)</h3>
+                  <p className="text-slate-700 leading-relaxed mb-4">
+                    The pricing structure differs significantly between the two models:
+                  </p>
+                  <ul className="space-y-4 text-slate-700">
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2"></span>
+                      <div>
+                        <strong>Off-site <Link to="/solutions/itad" className="text-emerald-600 hover:text-emerald-700 underline underline-offset-4">ITAD</Link>:</strong> Typically ranges from <strong>$3 to $10 per drive</strong>. However, there are hidden costs: secure transport fees, armed guard requirements, and audit overhead.
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2"></span>
+                      <div>
+                        <strong>On-site Software Erasure:</strong> Software licenses cost roughly <strong>$15 to $35 per drive</strong>, but the device retains its resale value. The overall ROI is often positive since wiped hardware can be remarketed.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">When Regulations Mandate On-site</h3>
+                  <p className="text-slate-700 leading-relaxed">
+                    Under <strong>HIPAA</strong> and <strong>GDPR</strong>, the moment a hard drive containing PHI or PII leaves your facility unencrypted and un-wiped, you assume maximum liability. <Link to="/compliance" className="text-emerald-600 hover:text-emerald-700 font-medium underline underline-offset-4">Learn more about our compliance standards.</Link>
+                  </p>
+                  <div className="bg-red-50 border-l-4 border-red-500 p-4 mt-4 text-red-900 text-sm">
+                    <strong>The Breach Scenario:</strong> If an ITAD transport vehicle is stolen en route to the destruction facility, it triggers mandatory public breach notifications, massive regulatory fines, and reputational damage. On-site erasure neutralizes this risk.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify mt-10">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Chain-of-Custody: The Certificate Differences</h2>
+              <p className="text-slate-700 leading-loose text-lg">
+                Both methods provide a Certificate of Destruction (CoD), but what they prove is fundamentally different.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">Off-site Physical Destruction Certificate</h3>
+                  <p className="text-slate-700">
+                    Proves that a specific serial number entered a facility and was shredded. However, it requires a "leap of faith" regarding the transport phase. Your audit trail must include shipping manifests, GPS logs, and video surveillance.
+                  </p>
+                </div>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">On-site Cryptographic / Software Certificate</h3>
+                  <p className="text-slate-700">
+                    Generates a tamper-proof digital signature directly from the hardware <em>before</em> it ever leaves the building. It proves mathematically that all sectors were overwritten, including hidden sectors (HPA/DCO), satisfying the highest NIST 800-88 Purge standards.
+                  </p>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -319,9 +454,16 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                     Step 2: Offsite Processing
                   </h3>
                   <p className="text-slate-700 text-lg leading-loose">
-                    Ship sanitized devices to a certified <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> for additional
-                    physical destruction through incineration, shredding, or
-                    disintegration, ensuring zero possibility of data recovery.
+                    Ship sanitized devices to a certified{" "}
+                    <Link
+                      to="/solutions/itad"
+                      className="text-emerald-600 hover:underline font-medium"
+                    >
+                      ITAD
+                    </Link>{" "}
+                    for additional physical destruction through incineration,
+                    shredding, or disintegration, ensuring zero possibility of
+                    data recovery.
                   </p>
                 </div>
               </div>
@@ -352,12 +494,14 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
             </div>
           </Reveal>
         </section>
-      <BlogFooterStandard 
-        blogId="onsite-vs-offsite-destruction" 
-        blogTitle="On-site vs Off-site Destruction" category="Comparison" tag="Enterprise" 
-      />
-    </div>
-  );
+        <BlogFooterStandard
+          blogId="onsite-vs-offsite-destruction"
+          blogTitle="On-site vs Off-site Destruction"
+          category="Comparison"
+          tag="Enterprise"
+        />
+      </div>
+    );
 };
 
 export default OnsiteVsOffsiteDestructionBlog;

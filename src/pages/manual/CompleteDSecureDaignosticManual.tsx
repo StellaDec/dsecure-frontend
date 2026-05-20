@@ -13,8 +13,7 @@ interface NavItem {
 
 const ImageManual = ({ src, alt }: { src: string; alt: string }) => (
     <div className="mt-6 mb-6 border border-gray-200 rounded-lg overflow-hidden shadow-sm bg-slate-50 flex justify-center">
-        <img
-            src={src}
+        <img loading="lazy" decoding="async" src={src}
             alt={alt}
             className="w-full max-w-4xl max-h-[450px] object-contain"
             style={{ borderRadius: "0.5rem" }}
@@ -600,7 +599,7 @@ const CompleteDSecureDaignosticManual: React.FC = () => {
         const images = clone.querySelectorAll('img');
         images.forEach(img => { img.style.maxWidth = '100%'; img.style.height = 'auto'; if (img.src.startsWith('/')) img.src = globalThis.location.origin + img.src; });
         const watermarkUrl = globalThis.location.origin + '/company-logo.png';
-        const htmlContent = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset="utf-8"><title>D-Secure Drive Diagnostic - User Manual</title><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]--><style>body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:12pt;line-height:1.6;color:#1a1a1a;padding:20px 40px}h1{font-size:24pt;font-weight:bold;color:#111827;margin-top:30px;margin-bottom:12px}h2{font-size:18pt;font-weight:bold;color:#1f2937;margin-top:24px;margin-bottom:10px}h3{font-size:14pt;font-weight:bold;color:#374151;margin-top:18px;margin-bottom:8px}h4,h5,h6{font-size:12pt;font-weight:bold;color:#4b5563;margin-top:14px;margin-bottom:6px}p{margin:6px 0}ul,ol{margin:8px 0;padding-left:24px}li{margin:4px 0}img{max-width:100%;height:auto;display:block;margin:10px auto}a{color:#2563eb}.watermark{position:fixed;top:10px;right:10px;width:60px;height:60px;opacity:0.08;z-index:-1}@page{size:A4;margin:20mm 15mm}</style></head><body><img src="${watermarkUrl}" class="watermark" alt="D-Secure Watermark" />${clone.innerHTML}</body></html>`;
+        const htmlContent = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset="utf-8"><title>D-Secure Drive Diagnostic - User Manual</title><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]--><style>body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:12pt;line-height:1.6;color:#1a1a1a;padding:20px 40px}h1{font-size:24pt;font-weight:bold;color:#111827;margin-top:30px;margin-bottom:12px}h2{font-size:18pt;font-weight:bold;color:#1f2937;margin-top:24px;margin-bottom:10px}h3{font-size:14pt;font-weight:bold;color:#374151;margin-top:18px;margin-bottom:8px}h4,h5,h6{font-size:12pt;font-weight:bold;color:#4b5563;margin-top:14px;margin-bottom:6px}p{margin:6px 0}ul,ol{margin:8px 0;padding-left:24px}li{margin:4px 0}img{max-width:100%;height:auto;display:block;margin:10px auto}a{color:#2563eb}.watermark{position:fixed;top:10px;right:10px;width:60px;height:60px;opacity:0.08;z-index:-1}@page{size:A4;margin:20mm 15mm}</style></head><body><img loading="lazy" decoding="async" src="${watermarkUrl}" class="watermark" alt="D-Secure Watermark" />${clone.innerHTML}</body></html>`;
         const blob = new Blob(['\ufeff', htmlContent], { type: 'application/msword' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a'); a.href = url; a.download = 'D-Secure_System_Diagnostic_User_Manual.doc'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
@@ -673,8 +672,8 @@ const CompleteDSecureDaignosticManual: React.FC = () => {
                     </aside>
 
                     <main ref={contentRef} className="flex-1 min-w-0 bg-white rounded-xl shadow-sm border border-gray-200 p-8 lg:p-12">
-                        <img src="/company-logo.png" alt="D-Secure Company Logo" className="print-header-logo hidden" />
-                        <img src="/company-logo.png" alt="D-Secure Watermark" className="print-center-watermark hidden" />
+                        <img loading="lazy" decoding="async" src="/company-logo.png" alt="D-Secure Company Logo" className="print-header-logo hidden" />
+                        <img loading="lazy" decoding="async" src="/company-logo.png" alt="D-Secure Watermark" className="print-center-watermark hidden" />
 
                         <table className="w-full border-collapse" style={{ tableLayout: 'fixed' }}>
                             <thead className="hidden print:table-header-group">
@@ -689,7 +688,7 @@ const CompleteDSecureDaignosticManual: React.FC = () => {
                                                     <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl mb-4">D-Secure Drive Diagnostic</h1>
                                                     <p className="text-xl text-gray-500">Complete User Guide & Documentation</p>
                                                 </div>
-                                                <img src="/product-logo.png" alt="D-Secure Drive Diagnostic" className="hidden print-product-logo shrink-0 w-40 h-auto rounded-2xl shadow-lg" />
+                                                <img loading="lazy" decoding="async" src="/product-logo.png" alt="D-Secure Drive Diagnostic" className="hidden print-product-logo shrink-0 w-40 h-auto rounded-2xl shadow-lg" />
                                             </div>
                                         </div>
 

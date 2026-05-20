@@ -352,7 +352,7 @@ const ProductVideosPage: React.FC = memo(() => {
                     <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 group">
                       {/* Video Thumbnail */}
                       <div className="relative">
-                        <img
+                        <img loading="lazy" decoding="async"
                           src={video.thumbnail}
                           alt={video.title}
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -448,7 +448,7 @@ const ProductVideosPage: React.FC = memo(() => {
                 <Reveal key={playlist.title} delayMs={index * 100}>
                   <div className="bg-slate-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 group">
                     <div className="relative">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={playlist.thumbnail}
                         alt={playlist.title}
                         className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"

@@ -173,6 +173,35 @@ export default function NIST80088Page() {
         </div>
       </section>
 
+      {/* Supplementary Resources */}
+      <section className="py-20 bg-white border-t border-slate-200">
+        <div className="container-app">
+          <Reveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-slate-900">Supplementary Resources</h2>
+              <p className="text-slate-600 mt-4 max-w-2xl mx-auto">Deep dive into specific erasure standards and operational best practices.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Link to="/blog/nist-clear-purge" className="group block bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:border-emerald-300 transition-all">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2 block">Technical Deep Dive</span>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors">NIST Clear vs. Purge: What's the Difference?</h3>
+                <p className="text-slate-600 text-sm">Understand when to use Clear (logical overwrite) versus Purge (firmware/cryptographic erase) for maximum compliance.</p>
+              </Link>
+              <Link to="/blog/dod-vs-ieee" className="group block bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:border-emerald-300 transition-all">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2 block">Industry Standards</span>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors">DoD 5220.22-M vs. IEEE 2883</h3>
+                <p className="text-slate-600 text-sm">Compare legacy defense standards against modern engineering sanitization frameworks for solid state media.</p>
+              </Link>
+              <Link to="/blog/ssd-wipe-guide" className="group block bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:border-emerald-300 transition-all">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2 block">Operational Guide</span>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors">The 2026 SSD Wipe Guide</h3>
+                <p className="text-slate-600 text-sm">Learn how to securely erase modern NVMe and PCIe Gen 5/6 solid-state storage without degrading drive lifespan.</p>
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-emerald-600 py-20 text-center">
         <div className="container-app">

@@ -10,13 +10,15 @@ const RemoteWipingSoftwareBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "Remote Wiping Software Guide",
+            title:
+              "Remote data erasure services: laptop and endpoint wipe guide",
             excerpt:
-              "Evaluating and implementing remote wiping solutions for distributed devices.",
+              "Remote erasure lets IT teams wipe lost or off-site devices before retrieval. Here's how it works, what NIST 800-88 requires, and when it's not a substitute for local erasure.",
             slug: "remote-wiping-software",
             author: "D-Secure Editorial Team",
             publishDate: "June 11, 2025",
-            keywords: "remote wipe, distributed devices, endpoint",
+            keywords:
+              "remote data erasure services,what is remote data erasure,asset retrieval",
             category: "Product",
             tag: "Remote Work",
           })}
@@ -164,8 +166,15 @@ const RemoteWipingSoftwareBlog: React.FC = () => {
                 3 Methods for Remote Wiping
               </h2>
               <p className="text-slate-700 leading-loose text-lg mb-8">
-                D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> supports three powerful methods to
-                remotely erase data from laptops, desktops, drives & servers:
+                D-Secure{" "}
+                <Link
+                  to="/products/drive-eraser"
+                  className="text-emerald-600 hover:underline font-medium"
+                >
+                  Drive Eraser
+                </Link>{" "}
+                supports three powerful methods to remotely erase data from
+                laptops, desktops, drives & servers:
               </p>
 
               <div className="space-y-6">
@@ -380,7 +389,9 @@ const RemoteWipingSoftwareBlog: React.FC = () => {
 
         <BlogFooterStandard
           blogId="remote-wiping-software"
-          blogTitle="Remote Wiping Software" category="Product" tag="Remote Work"
+          blogTitle="Remote Wiping Software"
+          category="Product"
+          tag="Remote Work"
         />
       </div>
     );

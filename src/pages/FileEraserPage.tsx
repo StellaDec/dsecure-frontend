@@ -1048,7 +1048,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     aria-label="Start interactive demo"
                   >
                       {/* Screenshot Background */}
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/rrewuevqba6xopawa2n8.png"
                         alt="D-Secure File Eraser Preview"
                         className="w-full h-full object-contain bg-slate-50 group-hover:scale-[1.02] transition-transform duration-500"
@@ -1195,7 +1195,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </svg>
                       </div>
                       {/* Uncomment when image ready: */}
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/rrewuevqba6xopawa2n8.png"
                         alt="Dashboard View"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -1248,7 +1248,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </svg>
                       </div>
                       {/* Uncomment when image ready: */}
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/ot4kpilynrfgw9vuzrbf.png"
                         alt="Erasure Report"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -1301,7 +1301,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </svg>
                       </div>
                       {/* Uncomment when image ready: */}
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/ctujrrfv3h1visi1jrvz.png"
                         alt="File Selection"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -1354,7 +1354,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </svg>
                       </div>
                       {/* Uncomment when image ready: */}
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/ykhnzzsbwdeuncs9uvem.png"
                         alt="Erasure Progress"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -1555,7 +1555,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                   className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
                   aria-label="View Tamper-proof Erasure Report fullscreen"
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png"
                     alt="Tamper-proof Erasure Report"
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
@@ -2201,7 +2201,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
             className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={galleryImages[selectedImageIndex].url}
               alt={galleryImages[selectedImageIndex].alt}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-200"

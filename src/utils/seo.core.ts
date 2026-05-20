@@ -190,9 +190,7 @@ export const generateSoftwareProductSchema = (
     sku: options.sku || productName.toLowerCase().replace(/\s+/g, '-'),
     brand: {
       "@type": "Brand",
-      "@id": `${SEO_CONFIG.baseUrl}/#organization`,
-      name: options.brand || "D-Secure",
-      logo: `${SEO_CONFIG.baseUrl}/logo-white.svg`
+      name: options.brand || "D-Secure"
     },
     offers: {
       "@type": "Offer",
@@ -386,19 +384,19 @@ export const generateItemListSchema = (items: { name: string; url: string; descr
 
 export const getDefaultSEO = (): SEOMetadata => ({
   title:
-    "D-Secure | #1 Data Erasure Software | NIST 800-88 Compliant",
+    "D-Secure | Enterprise Data Erasure Software | NIST 800-88 Compliant",
   description:
-    "D-Secure is #1 data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-proof audit certificates.",
+    "D-Secure is an enterprise data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-proof audit certificates.",
   keywords: generateKeywords(),
   canonicalUrl: SEO_CONFIG.baseUrl,
-  ogTitle: "D-Secure Tech - #1 Data Erasure Software",
+  ogTitle: "D-Secure Tech - Enterprise Data Erasure Software",
   ogDescription:
-    "D-Secure is #1 data erasure software — NIST 800-88, GDPR & HIPAA compliant. Securely wipe HDDs, SSDs and mobile devices with tamper-proof audit certificates.",
+    "D-Secure is an enterprise data erasure software — NIST 800-88, GDPR & HIPAA compliant. Securely wipe HDDs, SSDs and mobile devices with tamper-proof audit certificates.",
   ogImage: SEO_CONFIG.defaultImage,
   ogType: "website",
   fragment: "!",
   twitterCard: "summary_large_image",
-  twitterTitle: "D-Secure Tech - #1 Data Erasure Software",
+  twitterTitle: "D-Secure Tech - Enterprise Data Erasure Software",
   twitterDescription:
     "Best Data Erasure Software for enterprise compliance and security.",
   twitterImage: SEO_CONFIG.defaultImage,

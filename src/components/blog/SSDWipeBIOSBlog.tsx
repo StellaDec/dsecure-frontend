@@ -6,20 +6,87 @@ import { getBlogSEO } from '@/utils/seo';
 import Reveal from '@/components/Reveal';
 
 const SSDWipeBIOSBlog: React.FC = () => {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can you wipe an SSD through BIOS? Is it advisable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can wipe an SSD through BIOS if the feature is available. However, it's only advisable for personal use where compliance documentation isn't required. For business use, professional software is recommended."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the limitations of using Secure Erase in BIOS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Key limitations include: single-drive operation, no verification or reports, password requirements on some systems, manufacturer-dependent availability, and no compliance documentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I wipe multiple SSDs simultaneously?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Professional data erasure software like D-Secure allows you to wipe multiple SSDs simultaneously, saving significant time in enterprise environments while generating individual compliance reports for each drive."
+        }
+      }
+    ]
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Wipe SSD from BIOS",
+    "description": "Step-by-step instructions for using the Secure Erase feature in your UEFI BIOS to wipe an SSD.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Access UEFI BIOS",
+        "text": "Power ON your laptop and press the appropriate key to access the UEFI Boot menu (F1, F2, F10, F12, Delete, or Esc)."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Navigate to Security Menu",
+        "text": "Go to the 'Security' section in the BIOS menu and look for 'Security Erase HDD Data' or similar option."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Confirm Data Erasure",
+        "text": "Press Enter on the erase option, and click 'Yes' on the Setup Warning window."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enter Disk Password",
+        "text": "Enter your Disk Password if prompted and press Enter. The wiping process will begin."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Wait for Completion",
+        "text": "Monitor the progress until you see the 'Security erase complete successfully' message."
+      }
+    ]
+  };
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "SSD Wipe from BIOS Guide",
+            title: "How to wipe an SSD from BIOS: secure erase step by step",
             excerpt:
-              "How to perform secure SSD erasure through BIOS-based tools.",
+              "BIOS secure erase permanently removes SSD data without booting into Windows. Works on most Intel and AMD systems — here's the exact steps, plus what to do when the option doesn't appear.",
             slug: "ssd-wipe-bios",
             author: "D-Secure Editorial Team",
             publishDate: "June 16, 2025",
-            keywords: "SSD, BIOS, secure erase, UEFI",
+            keywords:
+              "SSD, BIOS, secure erase, UEFI,wipe ssd from bios,secure erase ssd bios",
             category: "Guide",
             tag: "Technical",
           })}
+          structuredData={[faqSchema, howToSchema]}
         />
 
         <section className="py-16 bg-white shadow-lg">
@@ -269,13 +336,25 @@ const SSDWipeBIOSBlog: React.FC = () => {
           <Reveal>
             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Professional Alternative: D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link>
+                Professional Alternative: D-Secure{" "}
+                <Link
+                  to="/products/drive-eraser"
+                  className="text-emerald-600 hover:underline font-medium"
+                >
+                  Drive Eraser
+                </Link>
               </h2>
               <p className="text-slate-700 leading-loose text-lg mb-6">
-                D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> is a professional drive wiping tool ideal
-                for wiping SSDs of all makes and models, including SAS SSD, SED
-                NVMe, and more. The software also wipes hard drives, PCs,
-                laptops & Mac devices.
+                D-Secure{" "}
+                <Link
+                  to="/products/drive-eraser"
+                  className="text-emerald-600 hover:underline font-medium"
+                >
+                  Drive Eraser
+                </Link>{" "}
+                is a professional drive wiping tool ideal for wiping SSDs of all
+                makes and models, including SAS SSD, SED NVMe, and more. The
+                software also wipes hard drives, PCs, laptops & Mac devices.
               </p>
 
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
@@ -293,7 +372,13 @@ const SSDWipeBIOSBlog: React.FC = () => {
                         BIOS Secure Erase
                       </th>
                       <th className="border border-slate-300 px-6 py-4 text-left font-bold">
-                        D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link>
+                        D-Secure{" "}
+                        <Link
+                          to="/products/drive-eraser"
+                          className="text-emerald-600 hover:underline font-medium"
+                        >
+                          Drive Eraser
+                        </Link>
                       </th>
                     </tr>
                   </thead>
@@ -456,10 +541,12 @@ const SSDWipeBIOSBlog: React.FC = () => {
           </Reveal>
         </section>
 
-      <BlogFooterStandard 
-        blogId="ssd-wipe-bios" 
-        blogTitle="SSD Wipe from BIOS Guide" category="Guide" tag="Technical" 
-      />
+        <BlogFooterStandard
+          blogId="ssd-wipe-bios"
+          blogTitle="SSD Wipe from BIOS Guide"
+          category="Guide"
+          tag="Technical"
+        />
       </div>
     );
 

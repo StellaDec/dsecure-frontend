@@ -1873,7 +1873,7 @@ const HomePage = memo(function HomePage() {
               <div className="card hover:shadow-lg transition-transform duration-200 ease-out hover:-translate-y-1 h-full flex flex-col">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                       alt="Marcus Schmidt"
                       className="w-full h-full rounded-full object-cover"
@@ -1897,7 +1897,7 @@ const HomePage = memo(function HomePage() {
               <div className="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 transform will-change-transform">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center flex-shrink-0">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1961&q=80"
                       alt="Elena Rodriguez"
                       className="w-full h-full rounded-full object-cover"
@@ -1919,7 +1919,7 @@ const HomePage = memo(function HomePage() {
               <div className="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 transform will-change-transform">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
                       alt="James Thompson"
                       className="w-full h-full rounded-full object-cover"

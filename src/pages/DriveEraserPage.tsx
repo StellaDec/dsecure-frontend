@@ -413,6 +413,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
     {
       title: "Secure Drive Erasure",
       desc: "NIST-tested software delivers erasure with  data destruction guarantee for all storage types.",
+      link: "/blog/ssd-wipe-guide",
       icon: <ShieldIcon className="w-6 h-6" />,
     },
     {
@@ -500,8 +501,8 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
   ];
 
   const complianceStandards = [
-    { name: "NIST 800-88", desc: "US National Institute of Standards" },
-    { name: "DoD 5220.22-M", desc: "US Department of Defense" },
+    { name: "NIST 800-88", desc: "US National Institute of Standards", link: "/blog/nist-clear-purge" },
+    { name: "DoD 5220.22-M", desc: "US Department of Defense", link: "/blog/dod-vs-ieee" },
     { name: "GDPR", desc: "EU General Data Protection" },
     { name: "HIPAA", desc: "Healthcare Information Privacy" },
     { name: "SOX", desc: "Sarbanes-Oxley Act" },
@@ -1564,21 +1565,33 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
             </Reveal>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-              {complianceStandards.map((std, i) => (
-                <Reveal key={std.name} delayMs={i * 50}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-5 text-center hover:bg-white/20 transition-colors border border-white/10 h-full flex flex-col items-center justify-start min-h-[130px] sm:min-h-[160px]">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 mb-2 sm:mb-3 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+              {complianceStandards.map((std, i) => {
+                const CardContent = (
+                  <div className={`bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-5 text-center hover:bg-white/20 transition-colors border border-white/10 h-full flex flex-col items-center justify-start min-h-[130px] sm:min-h-[160px] group ${std.link ? 'cursor-pointer' : ''}`}>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 mb-2 sm:mb-3 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <CheckIcon className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
                     </div>
-                    <h3 className="font-bold text-white mb-1 text-sm sm:text-base">
+                    <h3 className={`font-bold mb-1 text-sm sm:text-base transition-colors ${std.link ? 'text-emerald-300 group-hover:text-emerald-400' : 'text-white'}`}>
                       {std.name}
                     </h3>
                     <p className="text-[10px] sm:text-xs text-slate-400 line-clamp-2">
                       {std.desc}
                     </p>
                   </div>
-                </Reveal>
-              ))}
+                );
+
+                return (
+                  <Reveal key={std.name} delayMs={i * 50}>
+                    {std.link ? (
+                      <Link to={std.link} className="block h-full">
+                        {CardContent}
+                      </Link>
+                    ) : (
+                      CardContent
+                    )}
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -1847,19 +1860,38 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
             </Reveal>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-              {features.map((f, i) => (
-                <Reveal key={f.title} delayMs={i * 40}>
-                  <div className="group bg-gradient-to-br from-slate-50 to-white rounded-lg sm:rounded-xl p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[220px] flex flex-col">
+              {features.map((f, i) => {
+                const CardContent = (
+                  <div className={`group bg-gradient-to-br from-slate-50 to-white rounded-lg sm:rounded-xl p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[220px] flex flex-col h-full ${f.link ? 'cursor-pointer' : ''}`}>
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                       {f.icon}
                     </div>
-                    <h3 className="font-bold text-slate-900 mb-2">{f.title}</h3>
+                    <h3 className={`font-bold mb-2 ${f.link ? 'text-slate-900 group-hover:text-emerald-700 transition-colors' : 'text-slate-900'}`}>
+                      {f.title}
+                    </h3>
                     <p className="text-sm text-slate-600 leading-relaxed flex-1">
                       {f.desc}
                     </p>
+                    {f.link && (
+                      <div className="text-emerald-700 text-sm font-bold mt-3 flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn More <ArrowRightIcon className="w-4 h-4" />
+                      </div>
+                    )}
                   </div>
-                </Reveal>
-              ))}
+                );
+
+                return (
+                  <Reveal key={f.title} delayMs={i * 40}>
+                    {f.link ? (
+                      <Link to={f.link} className="block h-full">
+                        {CardContent}
+                      </Link>
+                    ) : (
+                      CardContent
+                    )}
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>

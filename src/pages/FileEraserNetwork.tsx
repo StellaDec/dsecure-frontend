@@ -1066,7 +1066,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
 
                   {/* Original Demo Placeholder - Keep for future but hidden/disabled */}
                   <div className="group relative w-full h-full min-h-[400px] flex-1 overflow-hidden pointer-events-none opacity-40 grayscale">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/rrewuevqba6xopawa2n8.png"
                       alt="D-Secure File Eraser Preview"
                       className="w-full h-full object-contain bg-slate-50"
@@ -1161,7 +1161,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                     className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 transition-all duration-300 cursor-not-allowed"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/rrewuevqba6xopawa2n8.png"
                         alt="Dashboard View"
                         className="w-full h-full object-cover opacity-30 grayscale"
@@ -1180,7 +1180,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                     className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 transition-all duration-300 cursor-not-allowed"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/ot4kpilynrfgw9vuzrbf.png"
                         alt="Erasure Report"
                         className="w-full h-full object-cover opacity-30 grayscale"
@@ -1199,7 +1199,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                     className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 transition-all duration-300 cursor-not-allowed"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/ctujrrfv3h1visi1jrvz.png"
                         alt="File Selection"
                         className="w-full h-full object-cover opacity-30 grayscale"
@@ -1218,7 +1218,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                     className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 transition-all duration-300 cursor-not-allowed"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/ykhnzzsbwdeuncs9uvem.png"
                         alt="Erasure Progress"
                         className="w-full h-full object-cover opacity-30 grayscale"
@@ -1897,7 +1897,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
             className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={galleryImages[selectedImageIndex].url}
               alt={galleryImages[selectedImageIndex].alt}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-200"

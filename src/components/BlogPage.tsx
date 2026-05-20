@@ -65,7 +65,7 @@ const BlogPage: React.FC = () => {
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-emerald-100 hover:shadow-2xl transition-all duration-300"
               >
                 <div className="overflow-hidden">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={blog.image}
                     alt={blog.title}
                     className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
