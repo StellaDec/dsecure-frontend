@@ -802,7 +802,7 @@
     <loc>https://dsecuretech.com/blog/secure-file-erase</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://dsecuretech.com/blog/secure-hdd-disposal</loc>
@@ -1102,19 +1102,19 @@
     <loc>https://dsecuretech.com/products/drive-eraser</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://dsecuretech.com/products/drive-eraser-diagnostic</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://dsecuretech.com/products/drive-verifier</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://dsecuretech.com/products/file-eraser</loc>
@@ -1138,7 +1138,7 @@
     <loc>https://dsecuretech.com/products/freeze-state</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://dsecuretech.com/products/freeze-state-advanced</loc>
@@ -1460,6 +1460,30 @@
   </url>
   <url>
     <loc>https://dsecuretech.com/vs/whitecanyon</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dsecuretech.com/support/help-manual/complete-manual</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dsecuretech.com/support/help-manual/complete-diagnostic-manual</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dsecuretech.com/support/help-manual/complete-drive-manual</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dsecuretech.com/support</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

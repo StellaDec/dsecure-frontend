@@ -2,6 +2,18 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "framework": "vite",
+  "redirects": [
+    {
+      "source": "/pricing",
+      "destination": "/pricing-and-plan",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/all-products",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
