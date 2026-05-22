@@ -12,9 +12,14 @@ Disallow: /payment
 Disallow: /checkout
 Disallow: /auth/
 Disallow: /404
-Disallow: /press-room
-Disallow: /press
-Disallow: /news
+Disallow: /order-success
+Disallow: /order-failure
+Disallow: /api-test
+Disallow: /search-demo
+Disallow: /unauthorized
+Disallow: /download
+Disallow: /private-cloud-setup
+Disallow: /profile
 # Block development files
 Disallow: /src/
 Disallow: /*.json
@@ -64,4 +69,4 @@ Disallow: /
 User-agent: Bytespider
 Disallow: /
 
-# Last updated: 2026-05-20
+# Last updated: 2026-05-22

@@ -32,14 +32,9 @@
     will-change: scroll-position;
   }
 
-  /* Image loading optimization */
+  /* Image loading optimization — smooth fade-in effect */
   img[loading="lazy"] {
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  img[loading="lazy"].loaded {
-    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
   }
 
   /* Preload hints for critical resources */
