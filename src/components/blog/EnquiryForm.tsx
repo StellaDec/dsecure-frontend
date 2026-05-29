@@ -12,6 +12,8 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
     name: '',
     email: '',
     phone: '',
+    country: '',
+    businessType: '',
     message: ''
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -33,6 +35,14 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email';
+    }
+
+    if (!formData.country) {
+      newErrors.country = 'Country is required';
+    }
+    
+    if (!formData.businessType) {
+      newErrors.businessType = 'Business Type is required';
     }
     
     if (!formData.message.trim()) {
@@ -85,6 +95,8 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
       formSubmitData.append("name", formData.name.trim());
       formSubmitData.append("email", formData.email.trim());
       formSubmitData.append("phone", formData.phone?.trim() || "");
+      formSubmitData.append("country", formData.country?.trim() || "");
+      formSubmitData.append("businessType", formData.businessType?.trim() || "");
       formSubmitData.append("message", formData.message.trim());
       formSubmitData.append("blogId", blogId);
       formSubmitData.append("blogTitle", blogTitle);
@@ -96,6 +108,8 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
         name: formData.name.trim(),
         email: formData.email.trim(),
         phone: formData.phone?.trim() || "",
+        country: formData.country?.trim() || "",
+        businessType: formData.businessType?.trim() || "",
         message: formData.message.trim(),
         blogId: blogId,
         blogTitle: blogTitle,
@@ -141,7 +155,7 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
 
       setIsSubmitting(false);
       setIsSubmitted(true);
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", country: "", businessType: "", message: "" });
     } catch (error: any) {
       console.error("Form submission error:", error);
       setIsSubmitting(false);
@@ -214,16 +228,60 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
           </div>
         </div>
         
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="phone">Phone (Optional)</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="+91 9876543210"
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="country">Country *</label>
+            <select
+              id="country"
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+              className={errors.country ? 'error' : ''}
+              style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0', background: 'white' }}
+            >
+              <option value="" disabled hidden>Select Country</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="India">India</option>
+              <option value="Other">Other</option>
+            </select>
+            {errors.country && <span className="error-text">{errors.country}</span>}
+          </div>
+        </div>
+        
         <div className="form-group">
-          <label htmlFor="phone">Phone (Optional)</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
+          <label htmlFor="businessType">Business Type *</label>
+          <select
+            id="businessType"
+            name="businessType"
+            value={formData.businessType}
             onChange={handleChange}
-            placeholder="+91 9876543210"
-          />
+            className={errors.businessType ? 'error' : ''}
+            style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0', background: 'white' }}
+          >
+            <option value="" disabled hidden>Select Business Type</option>
+            <option value="Enterprise">Enterprise</option>
+            <option value="SMB">SMB</option>
+            <option value="ITAD / Recycler">ITAD / Recycler</option>
+            <option value="Government / Public Sector">Government / Public Sector</option>
+            <option value="Individual / Home">Individual / Home</option>
+            <option value="Other">Other</option>
+          </select>
+          {errors.businessType && <span className="error-text">{errors.businessType}</span>}
         </div>
         
         <div className="form-group">

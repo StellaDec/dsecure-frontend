@@ -36,6 +36,9 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    country: "",
+    businessType: "",
     organization: "",
     message: "",
   });
@@ -1659,6 +1662,9 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         formSubmitData.append("name", formData.name.trim());
                         formSubmitData.append("email", formData.email.trim());
                         formSubmitData.append("customer_email", formData.email.trim()); // Customer ka email auto-reply ke liye
+                        formSubmitData.append("phone", formData.phone.trim());
+                        formSubmitData.append("country", formData.country.trim());
+                        formSubmitData.append("businessType", formData.businessType.trim());
                         formSubmitData.append(
                           "organization",
                           formData.organization.trim(),
@@ -1694,9 +1700,9 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                           name: formData.name.trim(),
                           email: formData.email.trim(),
                           company: formData.organization.trim(),
-                          phone: "",
-                          country: "",
-                          businessType: "",
+                          phone: formData.phone.trim(),
+                          country: formData.country.trim(),
+                          businessType: formData.businessType.trim(),
                           solutionType: "file-erasure",
                           complianceRequirements: "",
                           message: formData.message.trim(),
@@ -1709,6 +1715,9 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         setFormData({
                           name: "",
                           email: "",
+                          phone: "",
+                          country: "",
+                          businessType: "",
                           organization: "",
                           message: "",
                         });
@@ -1775,7 +1784,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                       }
                     }}
                   >
-                    <div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <input
                         type="text"
                         name="name"
@@ -1785,8 +1794,6 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         required
                       />
-                    </div>
-                    <div>
                       <input
                         type="email"
                         name="email"
@@ -1797,7 +1804,16 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         required
                       />
                     </div>
-                    <div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="Phone Number *"
+                        className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                        required
+                      />
                       <input
                         type="text"
                         name="organization"
@@ -1806,6 +1822,38 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         placeholder="Organization"
                         className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                       />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <select
+                        name="country"
+                        value={formData.country}
+                        onChange={handleInputChange}
+                        className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
+                        required
+                      >
+                        <option value="" disabled hidden className="bg-slate-800">Select Country *</option>
+                        <option value="United States" className="bg-slate-800">United States</option>
+                        <option value="United Kingdom" className="bg-slate-800">United Kingdom</option>
+                        <option value="Canada" className="bg-slate-800">Canada</option>
+                        <option value="Australia" className="bg-slate-800">Australia</option>
+                        <option value="India" className="bg-slate-800">India</option>
+                        <option value="Other" className="bg-slate-800">Other</option>
+                      </select>
+                      <select
+                        name="businessType"
+                        value={formData.businessType}
+                        onChange={handleInputChange}
+                        className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
+                        required
+                      >
+                        <option value="" disabled hidden className="bg-slate-800">Business Type *</option>
+                        <option value="Enterprise" className="bg-slate-800">Enterprise</option>
+                        <option value="SMB" className="bg-slate-800">SMB</option>
+                        <option value="ITAD / Recycler" className="bg-slate-800">ITAD / Recycler</option>
+                        <option value="Government / Public Sector" className="bg-slate-800">Government / Public Sector</option>
+                        <option value="Individual / Home" className="bg-slate-800">Individual / Home</option>
+                        <option value="Other" className="bg-slate-800">Other</option>
+                      </select>
                     </div>
                     <div>
                       <textarea

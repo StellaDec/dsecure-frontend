@@ -50,6 +50,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
     name: "",
     email: "",
     organization: "",
+    phone: "",
+    country: "",
+    businessType: "",
     message: "",
   });
 
@@ -2383,6 +2386,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           "organization",
                           formData.organization.trim(),
                         );
+                        formSubmitData.append("phone", formData.phone.trim());
+                        formSubmitData.append("country", formData.country.trim());
+                        formSubmitData.append("businessType", formData.businessType.trim());
                         formSubmitData.append(
                           "message",
                           formData.message.trim(),
@@ -2414,9 +2420,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           name: formData.name.trim(),
                           email: formData.email.trim(),
                           company: formData.organization.trim(),
-                          phone: "",
-                          country: "",
-                          businessType: "",
+                          phone: formData.phone.trim(),
+                          country: formData.country.trim(),
+                          businessType: formData.businessType.trim(),
                           solutionType: "drive-erasure",
                           complianceRequirements: "",
                           message: formData.message.trim(),
@@ -2430,6 +2436,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           name: "",
                           email: "",
                           organization: "",
+                          phone: "",
+                          country: "",
+                          businessType: "",
                           message: "",
                         });
                         setIsLoading(false);
@@ -2500,37 +2509,75 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       }
                     }}
                   >
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Full Name *"
-                        className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Email *"
-                        className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="text"
-                        name="organization"
-                        value={formData.organization}
-                        onChange={handleInputChange}
-                        placeholder="Organization"
-                        className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
-                      />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          placeholder="Full Name *"
+                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          placeholder="Email *"
+                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="Phone Number"
+                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          name="country"
+                          value={formData.country}
+                          onChange={handleInputChange}
+                          placeholder="Country"
+                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          name="organization"
+                          value={formData.organization}
+                          onChange={handleInputChange}
+                          placeholder="Organization"
+                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <select
+                          name="businessType"
+                          value={formData.businessType}
+                          onChange={handleInputChange}
+                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
+                        >
+                          <option value="" disabled className="text-slate-800">Business Type</option>
+                          <option value="Enterprise" className="text-slate-800">Enterprise</option>
+                          <option value="SMB" className="text-slate-800">SMB</option>
+                          <option value="ITAD/Recycler" className="text-slate-800">ITAD / Recycler</option>
+                          <option value="Government/Public Sector" className="text-slate-800">Government / Public Sector</option>
+                          <option value="Individual/Home" className="text-slate-800">Individual / Home</option>
+                          <option value="Other" className="text-slate-800">Other</option>
+                        </select>
+                      </div>
                     </div>
                     <div>
                       <textarea

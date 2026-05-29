@@ -950,19 +950,12 @@ function ContactPageContent() {
                               className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-colors bg-white"
                             >
                               <option value="">Business Type</option>
-                              <option value="enterprise">Enterprise</option>
-                              <option value="government">Government</option>
-                              <option value="healthcare">Healthcare</option>
-                              <option value="education">Education</option>
-                              <option value="financial">
-                                Financial Services
-                              </option>
-                              <option value="legal">Legal</option>
-                              <option value="technology">Technology</option>
-                              <option value="manufacturing">
-                                Manufacturing
-                              </option>
-                              <option value="other">Other</option>
+                              <option value="Enterprise">Enterprise</option>
+                              <option value="SMB">SMB</option>
+                              <option value="ITAD / Recycler">ITAD / Recycler</option>
+                              <option value="Government / Public Sector">Government / Public Sector</option>
+                              <option value="Individual / Home">Individual / Home</option>
+                              <option value="Other">Other</option>
                             </select>
                           </div>
                         </div>

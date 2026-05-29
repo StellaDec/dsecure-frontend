@@ -444,19 +444,19 @@ async function prerender() {
       const uniqueSerialized = new Set();
       const jsonLdTags = [];
 
-      // Sabse pehle unique main FAQPage schema insert karenge (agar exist karta hai)
+      // Sabse pehle unique main FAQPage schema insert karenge (agar exist karta hai) (data-rh="true" ke sath taaki hydration duplicate na kare)
       if (mergedFaqSchema) {
         uniqueSerialized.add(deterministicStringify(mergedFaqSchema));
-        jsonLdTags.push(`<script type="application/ld+json">${JSON.stringify(mergedFaqSchema)}</script>`);
+        jsonLdTags.push(`<script data-rh="true" type="application/ld+json">${JSON.stringify(mergedFaqSchema)}</script>`);
       }
 
-      // Baki saare schemas ko normalized deterministic hashing se deduplicate karke head me add karenge
+      // Baki saare schemas ko normalized deterministic hashing se deduplicate karke head me add karenge (data-rh="true" ke sath)
       for (const schema of nonFaqSchemas) {
         if (!schema) continue;
         const canonical = deterministicStringify(schema);
         if (!uniqueSerialized.has(canonical)) {
           uniqueSerialized.add(canonical);
-          jsonLdTags.push(`<script type="application/ld+json">${JSON.stringify(schema)}</script>`);
+          jsonLdTags.push(`<script data-rh="true" type="application/ld+json">${JSON.stringify(schema)}</script>`);
         }
       }
 

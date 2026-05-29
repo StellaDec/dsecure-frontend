@@ -16,6 +16,8 @@ export default function RequestDemoPage() {
     email: "",
     company: "",
     phone: "",
+    country: "",
+    businessType: "",
     message: "",
   });
 
@@ -51,6 +53,8 @@ export default function RequestDemoPage() {
       formSubmitData.append("email", formData.email.trim());
       formSubmitData.append("company", formData.company.trim());
       formSubmitData.append("phone", formData.phone.trim());
+      formSubmitData.append("country", formData.country.trim());
+      formSubmitData.append("businessType", formData.businessType.trim());
       formSubmitData.append("message", formData.message.trim());
       formSubmitData.append("_replyto", formData.email.trim());
       formSubmitData.append("timestamp", timestampLocal);
@@ -69,8 +73,8 @@ export default function RequestDemoPage() {
         email: formData.email.trim(),
         company: formData.company.trim(),
         phone: formData.phone.trim(),
-        country: "",
-        businessType: "",
+        country: formData.country.trim(),
+        businessType: formData.businessType.trim(),
         solutionType: "demo-request",
         complianceRequirements: "",
         message: formData.message.trim(),
@@ -80,7 +84,7 @@ export default function RequestDemoPage() {
       };
 
       // Reset form and show success immediately
-      setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", company: "", phone: "", country: "", businessType: "", message: "" });
       setIsLoading(false);
       showToast(
         "Thank you! Your demo request has been submitted successfully.",
@@ -163,59 +167,94 @@ export default function RequestDemoPage() {
                 className="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 border border-slate-200"
               >
                 <div className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.company}
-                      onChange={(e) =>
-                        setFormData({ ...formData, company: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
-                      Phone
-                    </label>
-                    <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
+                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        Company
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.company}
+                        onChange={(e) =>
+                          setFormData({ ...formData, company: e.target.value })
+                        }
+                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        Phone
+                      </label>
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        Country
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.country}
+                        onChange={(e) =>
+                          setFormData({ ...formData, country: e.target.value })
+                        }
+                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        Business Type
+                      </label>
+                      <select
+                        value={formData.businessType}
+                        onChange={(e) =>
+                          setFormData({ ...formData, businessType: e.target.value })
+                        }
+                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+                      >
+                        <option value="" disabled>Select Business Type</option>
+                        <option value="Enterprise">Enterprise</option>
+                        <option value="SMB">SMB</option>
+                        <option value="ITAD/Recycler">ITAD / Recycler</option>
+                        <option value="Government/Public Sector">Government / Public Sector</option>
+                        <option value="Individual/Home">Individual / Home</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">

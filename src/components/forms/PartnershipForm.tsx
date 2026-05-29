@@ -86,10 +86,11 @@ const ModalWrapper: React.FC<{
 export interface PartnershipFormData {
   fullName: string;
   businessEmail: string;
-  phoneNo: string;
+  phone: string;
   companyName: string;
   website: string;
   country: string;
+  businessType: string;
   partnerType: string;
   businessDescription: string;
 }
@@ -112,10 +113,11 @@ export interface PartnershipFormProps {
 export const defaultPartnershipFormData: PartnershipFormData = {
   fullName: "",
   businessEmail: "",
-  phoneNo: "",
+  phone: "",
   companyName: "",
   website: "",
   country: "",
+  businessType: "",
   partnerType: "ITAD Partner",
   businessDescription: "",
 };
@@ -127,9 +129,10 @@ export const partnershipValidationRules = {
     validationRules.required("Business Email"),
     validationRules.email(),
   ],
-  phoneNo: [validationRules.required("Phone Number"), validationRules.phone()],
+  phone: [validationRules.required("Phone Number"), validationRules.phone()],
   companyName: [validationRules.required("Company Name")],
   country: [validationRules.required("Country")],
+  businessType: [validationRules.required("Business Type")],
   partnerType: [validationRules.required("Partner Type")],
   businessDescription: [
     validationRules.required("Business Description"),
@@ -295,16 +298,16 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
               <div>
                 <FormInput
                   type="tel"
-                  name="phoneNo"
-                  placeholder="Phone No*"
-                  value={partnerForm.formData.phoneNo}
+                  name="phone"
+                  placeholder="Phone Number*"
+                  value={partnerForm.formData.phone}
                   onChange={partnerForm.handleInputChange}
                   required
                   className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200"
                 />
-                {partnerForm.errors.phoneNo && (
+                {partnerForm.errors.phone && (
                   <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1.5 ml-1">
-                    {partnerForm.errors.phoneNo}
+                    {partnerForm.errors.phone}
                   </p>
                 )}
               </div>
@@ -345,7 +348,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
               <div>
                 <FormSelect
                   name="country"
@@ -367,7 +370,31 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                   </p>
                 )}
               </div>
+            </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <FormSelect
+                  name="businessType"
+                  value={partnerForm.formData.businessType}
+                  onChange={partnerForm.handleInputChange}
+                  required
+                  className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200 appearance-none cursor-pointer"
+                >
+                  <option value="" disabled selected hidden>Select Business Type*</option>
+                  <option value="Enterprise">Enterprise</option>
+                  <option value="SMB">SMB</option>
+                  <option value="ITAD / Recycler">ITAD / Recycler</option>
+                  <option value="Government / Public Sector">Government / Public Sector</option>
+                  <option value="Individual / Home">Individual / Home</option>
+                  <option value="Other">Other</option>
+                </FormSelect>
+                {partnerForm.errors.businessType && (
+                  <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1.5 ml-1">
+                    {partnerForm.errors.businessType}
+                  </p>
+                )}
+              </div>
               <div>
                 <FormSelect
                   name="partnerType"

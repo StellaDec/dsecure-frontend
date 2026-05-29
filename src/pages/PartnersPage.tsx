@@ -250,6 +250,8 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
     email: "",
     company: "",
     phone: "",
+    country: "",
+    businessType: "",
     subject: "",
     message: "",
   });
@@ -1591,6 +1593,14 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                         contactPartnerForm.phone.trim(),
                       );
                       formSubmitData.append(
+                        "country",
+                        contactPartnerForm.country.trim(),
+                      );
+                      formSubmitData.append(
+                        "businessType",
+                        contactPartnerForm.businessType.trim(),
+                      );
+                      formSubmitData.append(
                         "subject",
                         contactPartnerForm.subject.trim(),
                       );
@@ -1645,8 +1655,8 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                         email: contactPartnerForm.email.trim(),
                         company: contactPartnerForm.company.trim(),
                         phone: contactPartnerForm.phone.trim(),
-                        country: partnerInfo?.location || "",
-                        businessType: partnerInfo?.type || "",
+                        country: contactPartnerForm.country.trim() || partnerInfo?.location || "",
+                        businessType: contactPartnerForm.businessType.trim() || partnerInfo?.type || "",
                         solutionType: "partner-contact",
                         complianceRequirements: "",
                         message: `[Partner: ${partnerInfo?.company || "N/A"}] ${contactPartnerForm.subject.trim()}: ${contactPartnerForm.message.trim()}`,
@@ -1661,6 +1671,8 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                         email: "",
                         company: "",
                         phone: "",
+                        country: "",
+                        businessType: "",
                         subject: "",
                         message: "",
                       });
@@ -1809,6 +1821,57 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                       />
                     </div>
                   </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
+                        <GlobeIcon className="w-3.5 h-3.5" />
+                        Country
+                      </label>
+                      <select
+                        value={contactPartnerForm.country}
+                        onChange={(e) =>
+                          setContactPartnerForm((prev) => ({
+                            ...prev,
+                            country: e.target.value,
+                          }))
+                        }
+                        className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200 appearance-none [&>option]:text-slate-900"
+                      >
+                        <option value="" disabled hidden>Select Country</option>
+                        <option value="United States">United States</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="India">India</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
+                        <Building className="w-3.5 h-3.5" />
+                        Business Type
+                      </label>
+                      <select
+                        value={contactPartnerForm.businessType}
+                        onChange={(e) =>
+                          setContactPartnerForm((prev) => ({
+                            ...prev,
+                            businessType: e.target.value,
+                          }))
+                        }
+                        className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200 appearance-none [&>option]:text-slate-900"
+                      >
+                        <option value="" disabled hidden>Business Type</option>
+                        <option value="Enterprise">Enterprise</option>
+                        <option value="SMB">SMB</option>
+                        <option value="ITAD / Recycler">ITAD / Recycler</option>
+                        <option value="Government / Public Sector">Government / Public Sector</option>
+                        <option value="Individual / Home">Individual / Home</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div>
                     <label
                       htmlFor="contact-subject"

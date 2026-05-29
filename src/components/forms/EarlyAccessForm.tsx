@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Check, Loader2, Rocket, Shield, Mail, Building, User } from "lucide-react";
+import { Check, Loader2, Rocket, Shield, Mail, Building, User, Phone, Globe, Briefcase } from "lucide-react";
 
 // Upcoming products based on DataEraserSoftwarePage.tsx
 const UPCOMING_PRODUCTS = [
@@ -35,6 +35,9 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
+    phone: "",
+    country: "",
+    businessType: "",
     company: "",
     message: "",
   });
@@ -98,6 +101,9 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
 
       formSubmitData.append("name", formData.fullName.trim());
       formSubmitData.append("email", formData.email.trim());
+      formSubmitData.append("phone", formData.phone.trim());
+      formSubmitData.append("country", formData.country.trim());
+      formSubmitData.append("businessType", formData.businessType.trim());
       formSubmitData.append("company", formData.company.trim());
       formSubmitData.append("interested_products", selectedProducts.join(", "));
       formSubmitData.append("message", formData.message.trim());
@@ -108,6 +114,9 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
       const submissionData = {
         name: formData.fullName.trim(),
         email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        country: formData.country.trim(),
+        businessType: formData.businessType.trim(),
         company: formData.company.trim(),
         message: `Products interested: ${selectedProducts.join(", ")}. \n\nAdditional Message: ${formData.message.trim()}`,
         source: "Early Access Page",
@@ -147,7 +156,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
       showToast("Thank you! Your early access request has been sent.", "success");
       
       // Reset form (Form reset karna)
-      setFormData({ fullName: "", email: "", company: "", message: "" });
+      setFormData({ fullName: "", email: "", phone: "", country: "", businessType: "", company: "", message: "" });
       setSelectedProducts([]);
 
     } catch (error: any) {
@@ -211,7 +220,24 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
             </div>
           </div>
 
-          <div className="md:col-span-2 space-y-1.5">
+          <div className="space-y-1.5">
+            <label htmlFor="phone" className="text-sm font-bold text-slate-700 ml-1">Phone Number *</label>
+            <div className="relative group">
+              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+              <input
+                id="phone"
+                required
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="+1 (555) 000-0000"
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1.5">
             <label htmlFor="company" className="text-sm font-bold text-slate-700 ml-1">Company Name *</label>
             <div className="relative group">
               <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
@@ -225,6 +251,52 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
                 placeholder="D-Secure Tech"
                 className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium"
               />
+            </div>
+          </div>
+
+          <div className="space-y-1.5">
+            <label htmlFor="country" className="text-sm font-bold text-slate-700 ml-1">Country *</label>
+            <div className="relative group">
+              <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+              <select
+                id="country"
+                required
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium appearance-none"
+              >
+                <option value="" disabled hidden>Select Country</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="India">India</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="space-y-1.5">
+            <label htmlFor="businessType" className="text-sm font-bold text-slate-700 ml-1">Business Type *</label>
+            <div className="relative group">
+              <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+              <select
+                id="businessType"
+                required
+                name="businessType"
+                value={formData.businessType}
+                onChange={handleChange}
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium appearance-none"
+              >
+                <option value="" disabled hidden>Select Business Type</option>
+                <option value="Enterprise">Enterprise</option>
+                <option value="SMB">SMB</option>
+                <option value="ITAD / Recycler">ITAD / Recycler</option>
+                <option value="Government / Public Sector">Government / Public Sector</option>
+                <option value="Individual / Home">Individual / Home</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
           </div>
         </div>

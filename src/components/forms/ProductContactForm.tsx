@@ -24,18 +24,21 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    country: "",
+    businessType: "",
     organization: "",
     message: "",
   });
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isLoading) return;
 
@@ -55,9 +58,12 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
       formSubmitData.append("_webhookExtraData", "true");
       formSubmitData.append("_captcha", "false");
       formSubmitData.append("_template", "table");
-      formSubmitData.append("_next", window.location.href);
+      formSubmitData.append("_next", globalThis.location.href);
       formSubmitData.append("name", formData.name.trim());
       formSubmitData.append("email", formData.email.trim());
+      formSubmitData.append("phone", formData.phone.trim());
+      formSubmitData.append("country", formData.country.trim());
+      formSubmitData.append("businessType", formData.businessType.trim());
       formSubmitData.append("organization", formData.organization.trim());
       formSubmitData.append("message", formData.message.trim());
       formSubmitData.append("timestamp", timestampLocal);
@@ -76,9 +82,9 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
         name: formData.name.trim(),
         email: formData.email.trim(),
         company: formData.organization.trim(),
-        phone: "",
-        country: "",
-        businessType: "",
+        phone: formData.phone.trim(),
+        country: formData.country.trim(),
+        businessType: formData.businessType.trim(),
         solutionType: solutionType,
         complianceRequirements: "",
         message: formData.message.trim(),
@@ -91,6 +97,9 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
       setFormData({
         name: "",
         email: "",
+        phone: "",
+        country: "",
+        businessType: "",
         organization: "",
         message: "",
       });
@@ -193,14 +202,60 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
                 required
               />
             </div>
-            <input
-              type="text"
-              name="organization"
-              value={formData.organization}
-              onChange={handleInputChange}
-              placeholder="Organization / Company"
-              className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all"
-            />
+            
+            <div className="grid sm:grid-cols-2 gap-5">
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                placeholder="Phone Number *"
+                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all"
+                required
+              />
+              <input
+                type="text"
+                name="organization"
+                value={formData.organization}
+                onChange={handleInputChange}
+                placeholder="Organization / Company"
+                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all"
+              />
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-5">
+              <select
+                name="country"
+                value={formData.country}
+                onChange={handleInputChange}
+                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all appearance-none [&>option]:text-slate-900"
+                required
+              >
+                <option value="" disabled hidden>Select Country *</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="India">India</option>
+                <option value="Other">Other</option>
+              </select>
+
+              <select
+                name="businessType"
+                value={formData.businessType}
+                onChange={handleInputChange}
+                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all appearance-none [&>option]:text-slate-900"
+                required
+              >
+                <option value="" disabled hidden>Business Type *</option>
+                <option value="Enterprise">Enterprise</option>
+                <option value="SMB">SMB</option>
+                <option value="ITAD / Recycler">ITAD / Recycler</option>
+                <option value="Government / Public Sector">Government / Public Sector</option>
+                <option value="Individual / Home">Individual / Home</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
             <textarea
               name="message"
               value={formData.message}

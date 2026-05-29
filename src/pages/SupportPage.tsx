@@ -95,6 +95,9 @@ const SupportTicketModal: React.FC<{
   ticketForm: {
     name: string;
     email: string;
+    phone: string;
+    country: string;
+    businessType: string;
     subject: string;
     priority: string;
     category: string;
@@ -165,6 +168,41 @@ const SupportTicketModal: React.FC<{
                 label="Email Address"
               />
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <FormInput
+                type="tel"
+                name="phone"
+                value={ticketForm.phone}
+                onChange={onInputChange}
+                placeholder="Enter your phone number"
+                label="Phone"
+              />
+              <FormInput
+                type="text"
+                name="country"
+                value={ticketForm.country}
+                onChange={onInputChange}
+                placeholder="Enter your country"
+                label="Country"
+              />
+            </div>
+
+            <FormSelect
+              name="businessType"
+              value={ticketForm.businessType}
+              onChange={onInputChange}
+              label="Business Type"
+              options={[
+                { value: "", label: "Select Business Type" },
+                { value: "Enterprise", label: "Enterprise" },
+                { value: "SMB", label: "SMB" },
+                { value: "ITAD/Recycler", label: "ITAD / Recycler" },
+                { value: "Government/Public Sector", label: "Government / Public Sector" },
+                { value: "Individual/Home", label: "Individual / Home" },
+                { value: "Other", label: "Other" }
+              ]}
+            />
 
             <FormInput
               type="text"
@@ -240,6 +278,9 @@ const SupportPage: React.FC = () => {
   const [ticketForm, setTicketForm] = useState({
     name: "",
     email: "",
+    phone: "",
+    country: "",
+    businessType: "",
     subject: "",
     priority: "medium",
     category: "general",
@@ -705,6 +746,9 @@ const SupportPage: React.FC = () => {
         formSubmitData.append("_next", window.location.href);
         formSubmitData.append("name", ticketForm.name.trim());
         formSubmitData.append("email", ticketForm.email.trim());
+        formSubmitData.append("phone", ticketForm.phone?.trim() || "");
+        formSubmitData.append("country", ticketForm.country?.trim() || "");
+        formSubmitData.append("businessType", ticketForm.businessType?.trim() || "");
         formSubmitData.append("subject", ticketForm.subject.trim());
         formSubmitData.append("priority", ticketForm.priority.trim());
         formSubmitData.append("category", ticketForm.category.trim());
@@ -728,9 +772,9 @@ const SupportPage: React.FC = () => {
           name: ticketForm.name.trim(),
           email: ticketForm.email.trim(),
           company: "",
-          phone: "",
-          country: "",
-          businessType: "",
+          phone: ticketForm.phone?.trim() || "",
+          country: ticketForm.country?.trim() || "",
+          businessType: ticketForm.businessType?.trim() || "",
           solutionType: ticketForm.category.trim(),
           complianceRequirements: "",
           message: `[${ticketForm.priority.toUpperCase()}] ${ticketForm.subject.trim()}: ${ticketForm.description.trim()}`,
@@ -744,6 +788,9 @@ const SupportPage: React.FC = () => {
         setTicketForm({
           name: "",
           email: "",
+          phone: "",
+          country: "",
+          businessType: "",
           subject: "",
           priority: "medium",
           category: "general",
