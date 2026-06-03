@@ -5,7 +5,7 @@ import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
-import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
+import ProductInternalLinks from "@/components/ProductInternalLinks";
 import {
   ShieldIcon,
   CheckIcon,
@@ -13,10 +13,7 @@ import {
   GlobeIcon,
   CloudIcon,
   GearIcon,
-  ClipboardIcon,
-  LightningIcon,
   ServerIcon,
-  HoverIcon,
 } from "@/components/FlatIcons";
 import {
   Cpu,
@@ -37,7 +34,7 @@ import {
   Heart,
   Activity,
 } from "lucide-react";
-import { title } from "process";
+
 import { useToast } from "@/components/Toast";
 import { blogPosts } from "@/data/blogPosts";
 
@@ -66,21 +63,18 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null,
   );
-  const [isDemoActive, setIsDemoActive] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const demoContainerRef = useRef<HTMLDivElement>(null);
 
   const toggleFullscreen = async () => {
     try {
-      if (!document.fullscreenElement) {
-        if (demoContainerRef.current?.requestFullscreen) {
-          await demoContainerRef.current.requestFullscreen();
-        }
-      } else {
+      if (document.fullscreenElement) {
         if (document.exitFullscreen) {
           await document.exitFullscreen();
         }
+      } else if (demoContainerRef.current?.requestFullscreen) {
+        await demoContainerRef.current.requestFullscreen();
       }
     } catch (err) {
       console.error("Error attempting to toggle fullscreen:", err);
@@ -191,7 +185,6 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
   ];
 
   // Number of additional images beyond the 4th card (for "More" badge)
-  const additionalImagesCount = galleryImages.length - 4;
 
   const handlePrevImage = () => {
     if (selectedImageIndex !== null) {
@@ -378,7 +371,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
     },
   ];
 
-  const platforms = [
+  const _platforms = [
     {
       name: "Apple Mac (Intel & Silicon)",
       versions: "Intel, T1, T2, M1, M2, M3, & M4 models",
@@ -531,7 +524,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
   ];
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -554,10 +547,10 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
     link.target = "_blank";
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    link.remove();
   };
-  // Insights/Resources
-  const insights = [
+  // Insights/Resources — yahan sirf GlobeIcon reference hai, baaki inline hain
+  const _insights = [
     {
       type: "Blog",
       title: "R2v3 Certification Complete Guide",
@@ -750,9 +743,9 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                       { icon: <Cpu className="w-5 h-5 sm:w-6 sm:h-6" />, pos: "top-[45%] right-[10%]", delay: "0.8s", color: "text-emerald-500" },
                       { icon: <Volume2 className="w-5 h-5 sm:w-6 sm:h-6" />, pos: "top-[30%] left-[25%]", delay: "1s", color: "text-teal-500" },
                       { icon: <Bluetooth className="w-5 h-5 sm:w-6 sm:h-6" />, pos: "top-[30%] right-[25%]", delay: "1.2s", color: "text-blue-400" },
-                    ].map((item, idx) => (
+                    ].map((item) => (
                       <div
-                        key={idx}
+                        key={item.delay}
                         className={`absolute ${item.pos} p-2 sm:p-3 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-slate-700/50 shadow-xl ${item.color} animate-float hidden xs:flex`}
                         style={{ animationDelay: item.delay }}
                       >
@@ -991,7 +984,6 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                       />
                       <div className="absolute inset-0 bg-slate-900/50 flex items-center justify-center">
                         <span className="text-white text-xs sm:text-sm font-bold bg-emerald-600/80 px-3 py-1.5 rounded-full backdrop-blur-sm">
-                          {i === 3 && additionalImagesCount > 0 ? `+${additionalImagesCount} More` : 'Coming Soon'}
                         </span>
                       </div>
                     </div>
@@ -1643,7 +1635,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                   a: "Yes, every report is digitally signed and generated in non-editable PDF, XML, and CSV formats. This ensures the integrity of the hardware health data for audits and resale grading.",
                 },
               ].map((faq, i) => (
-                <Reveal key={i} delayMs={i * 50}>
+                <Reveal key={faq.q} delayMs={i * 50}>
                   <details className="group bg-slate-50 rounded-lg sm:rounded-xl border border-slate-200 hover:border-emerald-300 transition-colors">
                     <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer list-none">
                       <span className="font-semibold text-slate-900 pr-3 sm:pr-4 text-sm sm:text-base">
@@ -1847,7 +1839,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                         formSubmitData.append("_webhookExtraData", "true");
                         formSubmitData.append("sendAutoReply", "true");
                         formSubmitData.append("customer_email", formData.email.trim());
-                        formSubmitData.append("_next", window.location.href);
+                        formSubmitData.append("_next", globalThis.location.href);
 
                         // === Prepare submission data for Backend API ===
                         const submissionData = {
@@ -1894,7 +1886,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                           );
 
                           // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
-                          const response = await fetch(
+                          await fetch(
                             "https://formsubmit.co/support@dsecuretech.com",
                             {
                               method: "POST",
@@ -2036,8 +2028,13 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
       {/* Lightbox Modal with Gallery Navigation */}
       {selectedImageIndex !== null && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image lightbox"
           className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => setSelectedImageIndex(null)}
+          onKeyDown={(e) => e.key === 'Escape' && setSelectedImageIndex(null)}
+          tabIndex={-1}
         >
           {/* Close Button */}
           <button
@@ -2095,8 +2092,10 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
 
           {/* Image Container */}
           <div
+            role="presentation"
             className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => e.stopPropagation()}
           >
             <img loading="lazy" decoding="async"
               src={galleryImages[selectedImageIndex].url}

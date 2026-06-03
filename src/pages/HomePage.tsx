@@ -1339,7 +1339,7 @@ const HomePage = memo(function HomePage() {
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
                   <Reveal delayMs={20}>
                     <div className="group">
-                      <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-800 mb-2 group-hover:scale-105 transition-transform duration-300">
+                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-800 mb-2 group-hover:scale-105 transition-transform duration-300">
                         {t("home.devicesCount")}
                       </div>
                       <div className="text-slate-600 text-sm sm:text-base font-medium">
@@ -1349,7 +1349,7 @@ const HomePage = memo(function HomePage() {
                   </Reveal>
                   <Reveal delayMs={30}>
                     <div className="group">
-                      <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-105 transition-transform duration-300">
+                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-105 transition-transform duration-300">
                         {t("home.complianceRate")}
                       </div>
                       <div className="text-slate-600 text-sm sm:text-base font-medium">
@@ -1359,7 +1359,7 @@ const HomePage = memo(function HomePage() {
                   </Reveal>
                   <Reveal delayMs={40}>
                     <div className="group">
-                      <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-purple-600 mb-2 group-hover:scale-105 transition-transform duration-300">
+                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-2xl sm:text-3xl lg:text-[28px] xl:text-[34px] font-bold text-purple-600 mb-2 group-hover:scale-105 transition-transform duration-300 whitespace-nowrap">
                         {t("home.encryptionStrength")}
                       </div>
                       <div className="text-slate-600 text-sm sm:text-base font-medium">
@@ -1369,7 +1369,7 @@ const HomePage = memo(function HomePage() {
                   </Reveal>
                   <Reveal delayMs={50}>
                     <div className="group">
-                      <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-2 group-hover:scale-105 transition-transform duration-300">
+                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-2 group-hover:scale-105 transition-transform duration-300">
                         {t("home.supportAvailability")}
                       </div>
                       <div className="text-slate-600 text-sm sm:text-base font-medium">
