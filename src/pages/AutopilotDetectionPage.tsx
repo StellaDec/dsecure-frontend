@@ -1,7 +1,7 @@
 import React, { memo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
-import UpcomingBadge from "../components/ui/UpcomingBadge";
+// import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
 import SEOHead from "@/components/SEOHead";
 import {
@@ -230,9 +230,9 @@ const AutopilotDetectionPage: React.FC = memo(function AutopilotDetectionPage() 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
               <Reveal>
                 <div className="space-y-8">
-                  <Reveal>
+                  {/* <Reveal>
                     <UpcomingBadge className="mb-4" />
-                  </Reveal>
+                  </Reveal> */}
 
                   <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
                     <ShieldIcon className="w-4 h-4" />
