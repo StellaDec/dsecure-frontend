@@ -295,9 +295,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
         {/* AI Crawler Directives — Generative Engine Optimization (GEO) & AEO */}
         {/* Rules ke mutabik: Training bots ko restrict karenge aur live retrieval search bots ko index/follow allow karenge */}
-        <meta name="GPTBot" content="noindex, nofollow" />
-        <meta name="ClaudeBot" content="noindex, nofollow" />
-        <meta name="Google-Extended" content="noindex, nofollow" />
+        <meta name="GPTBot" content="index, follow" />
+        <meta name="ClaudeBot" content="index, follow" />
+        <meta name="Google-Extended" content="index, follow" />
         <meta name="OAI-SearchBot" content="index, follow" />
         <meta name="PerplexityBot" content="index, follow" />
         <meta name="YouBot" content="index, follow" />

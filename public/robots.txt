@@ -40,13 +40,13 @@ Allow: /
 # Rules ke mutabik: Hum AI bots ko real-time live answers aur citations dene ke liye Allow karte hain (by default via User-agent: *),
 # lekin hamare data se model training aur bulk scraping karne wale bots ko strictly Disallow karte hain.
 User-agent: GPTBot
-Disallow: /
+allow: /
 
 User-agent: ClaudeBot
-Disallow: /
+allow: /
 
 User-agent: Google-Extended
-Disallow: /
+allow: /
 
 User-agent: Applebot-Extended
 Disallow: /
