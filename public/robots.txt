@@ -70,3 +70,6 @@ User-agent: Bytespider
 Disallow: /
 
 # Last updated: 2026-06-03
+
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+

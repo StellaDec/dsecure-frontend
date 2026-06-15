@@ -30,6 +30,15 @@
   ],
   "headers": [
     {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</.well-known/api-catalog>; rel=\"api-catalog\""
+        }
+      ]
+    },
+    {
       "source": "/service-worker.js",
       "headers": [
         {

@@ -1,0 +1,14 @@
+{
+  "serverInfo": {
+    "name": "d-secure-frontend-mcp",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "sse",
+    "endpoint": "https://d-secure.com/mcp/sse"
+  },
+  "capabilities": {
+    "tools": true,
+    "prompts": true
+  }
+}

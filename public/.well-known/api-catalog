@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://d-secure.com/api",
+      "service-desc": [
+        {
+          "href": "https://d-secure.com/openapi.json",
+          "type": "application/vnd.oai.openapi+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://d-secure.com/docs/api",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://d-secure.com/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

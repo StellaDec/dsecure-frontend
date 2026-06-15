@@ -1,0 +1,7 @@
+{
+  "resource": "https://api.d-secure.com",
+  "authorization_servers": [
+    "https://d-secure.com"
+  ],
+  "scopes_supported": ["read", "write"]
+}

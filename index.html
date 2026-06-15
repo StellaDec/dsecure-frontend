@@ -242,6 +242,14 @@
           globalThis.dataLayer.push(arguments);
         };
       }
+
+      // WebMCP Support for AI Agents
+      if ('modelContext' in navigator) {
+        navigator.modelContext.provideContext({
+          siteInfo: "D-Secure Enterprise Data Erasure Software",
+          capabilities: ["Read Documentation", "View Products", "Contact Sales"]
+        });
+      }
     </script>
   </head>
 
