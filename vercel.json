@@ -12,6 +12,66 @@
       "source": "/products",
       "destination": "/all-products",
       "permanent": true
+    },
+    {
+      "source": "/support/manual/:path*",
+      "destination": "/support",
+      "permanent": true
+    },
+    {
+      "source": "/(de|fr|es|zh|ja)(/.*)?",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/support/mac-eraser-guide",
+      "destination": "/solutions/mac-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/support/file-eraser-guide",
+      "destination": "/products/file-eraser",
+      "permanent": true
+    },
+    {
+      "source": "/support/help-manual/network-file/:path*",
+      "destination": "/products/file-eraser-network",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/support/faqs",
+      "permanent": true
+    },
+    {
+      "source": "/download",
+      "destination": "/resources",
+      "permanent": true
+    },
+    {
+      "source": "/enterprise",
+      "destination": "/solutions/enterprise",
+      "permanent": true
+    },
+    {
+      "source": "/licensing",
+      "destination": "/pricing-and-plan",
+      "permanent": true
+    },
+    {
+      "source": "/api-documentation",
+      "destination": "/technical-documentation",
+      "permanent": true
+    },
+    {
+      "source": "/products/mobile-erasure",
+      "destination": "/products/smartphone-eraser",
+      "permanent": true
+    },
+    {
+      "source": "/healthcare-services",
+      "destination": "/solutions/healthcare",
+      "permanent": true
     }
   ],
   "rewrites": [

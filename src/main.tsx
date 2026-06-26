@@ -57,6 +57,27 @@ if ("serviceWorker" in navigator && import.meta.env.PROD) {
   });
 }
 
+// Microsoft Clarity — deferred loading (production only)
+// Main thread block nahi hoga — idle callback se load hoga
+if (import.meta.env.PROD && import.meta.env.VITE_CLARITY_ID) {
+  const loadClarity = () => {
+    import('./utils/microsoftClarity').then((module) => {
+      // Default export ek class instance hai jisme .init() method hai
+      module.default.init();
+    }).catch(() => {
+      // Clarity load fail hua — silently ignore
+    });
+  };
+
+  if ('requestIdleCallback' in window) {
+    (window as typeof window & { requestIdleCallback: (cb: () => void) => void })
+      .requestIdleCallback(loadClarity);
+  } else {
+    // Fallback — 3s delay se load karo
+    setTimeout(loadClarity, 3000);
+  }
+}
+
 // Handle redirects from 404.html
 const redirectPath = sessionStorage.getItem("redirectPath");
 if (redirectPath) {

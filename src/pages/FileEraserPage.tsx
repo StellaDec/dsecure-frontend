@@ -647,8 +647,14 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     },
   ];
 
+  const handleModalInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -2097,7 +2103,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           type="email"
                           name="email"
                           value={formData.email}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           placeholder="Email *"
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                           required
@@ -2108,7 +2114,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           type="tel"
                           name="phone"
                           value={formData.phone}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           placeholder="Phone Number"
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
@@ -2118,7 +2124,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           type="text"
                           name="country"
                           value={formData.country}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           placeholder="Country"
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
@@ -2128,7 +2134,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                           type="text"
                           name="organization"
                           value={formData.organization}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           placeholder="Organization"
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
@@ -2137,7 +2143,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         <select
                           name="businessType"
                           value={formData.businessType}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
                         >
                           <option value="" disabled className="text-slate-800">Business Type</option>
@@ -2154,7 +2160,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                       <textarea
                         name="message"
                         value={formData.message}
-                        onChange={handleInputChange}
+                        onChange={handleModalInputChange}
                         rows={4}
                         placeholder="How can we help you?"
                         className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors resize-none"

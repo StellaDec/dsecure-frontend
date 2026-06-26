@@ -11,7 +11,7 @@ export interface SEOMetadata {
   title: string;
   description: string;
   keywords: string;
-  canonicalUrl: string;
+  canonicalUrl?: string;
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
@@ -30,7 +30,8 @@ export interface SEOMetadata {
 export const SEO_CONFIG = {
   siteName: "D-Secure Tech",
   baseUrl: "https://dsecuretech.com",
-  defaultImage: "https://dsecuretech.com/logo-white.svg",
+  // PNG fallback — social platforms SVG render nahi karte
+  defaultImage: "https://dsecuretech.com/og-default.png",
   author: "D-Secure Tech",
   language: "en",
   locale: "en_US",
@@ -49,8 +50,17 @@ export const getCanonicalUrl = (path: string): string => {
   return `${SEO_CONFIG.baseUrl}${cleanPath}`;
 };
 
+/**
+ * Per-page keyword generator — Option B: max 8 base + max 8 page-specific
+ * Keyword stuffing se bachne ke liye total keywords ko cap kiya gaya hai
+ */
 export const generateKeywords = (pageSpecificKeywords: string[] = []): string => {
-  return [...BASE_KEYWORDS, ...pageSpecificKeywords].join(", ");
+  // Base se sirf 8 most relevant keywords lo
+  const trimmedBase = BASE_KEYWORDS.slice(0, 8);
+  // Page-specific bhi max 8 tak cap karo
+  const trimmedPage = pageSpecificKeywords.slice(0, 8);
+  // Deduplicate karo
+  return [...new Set([...trimmedBase, ...trimmedPage])].join(", ");
 };
 
 export const formatStructuredData = (data: any): string => {
@@ -388,7 +398,6 @@ export const getDefaultSEO = (): SEOMetadata => ({
   description:
     "D-Secure is an enterprise data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-proof audit certificates.",
   keywords: generateKeywords(),
-  canonicalUrl: SEO_CONFIG.baseUrl,
   ogTitle: "D-Secure Tech - Enterprise Data Erasure Software",
   ogDescription:
     "D-Secure is an enterprise data erasure software — NIST 800-88, GDPR & HIPAA compliant. Securely wipe HDDs, SSDs and mobile devices with tamper-proof audit certificates.",

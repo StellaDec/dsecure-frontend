@@ -98,6 +98,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "drive-eraser-diagnostic": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Drive Eraser Diagnostic: Wiping & Hardware Testing",
     description:
       "Combine secure data erasure with comprehensive hardware diagnostics. Ensure drive health and data security in one seamless process.",
@@ -382,6 +383,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "smartphone-eraser": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Smartphone Eraser: Certified iOS/Android Wipe | D-Secure",
     description:
       "Permanently wipe data from iPhones & Android devices. D-Secure Smartphone Eraser is R2v3, GDPR & HIPAA compliant with tamper-proof audit certificates.",
@@ -455,6 +457,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "smartphone-diagnostic": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Smartphone Diagnostic: Pro Mobile Testing | D-Secure",
     description:
       "Over 60+ automated hardware tests for mobile devices. Verify screen, battery, camera, and sensor health for better resale value.",
@@ -487,6 +490,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "forensic-imaging": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Forensic Imaging & Data Recovery Tool | D-Secure",
     description:
       "Court-admissible forensic imaging for HDDs, SSDs & NVMe. Bit-perfect evidence capture for digital investigations & legal hold workflows.",
@@ -515,6 +519,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "freeze-state": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Freeze State: Deep Freeze Alternative | D-Secure",
     description:
       "Modern Deep Freeze alternative for Windows. Revert to a clean state on every reboot. Ideal for school labs, public kiosks & enterprise workstations.",
@@ -544,6 +549,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "freeze-state-smart": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Freeze State Smart: Intelligent Management | D-Secure",
     description:
       "Advanced system protection with automated updates and maintenance windows. Secure your devices without sacrificing performance.",
@@ -573,6 +579,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "freeze-state-advanced": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Freeze State Advanced: Enterprise Locking | D-Secure",
     description:
       "The ultimate solution for large-scale device security. Centralized management for frozen states across your entire network.",
@@ -605,6 +612,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "data-migration": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Data Migration: Secure File Transfer & Sync | D-Secure",
     description:
       "Transfer data seamlessly across devices and platforms. Bit-perfect migration ensures your data arrives exactly as it should.",
@@ -633,6 +641,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "asset-reimaging": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Asset Reimaging: Zero-Touch OS Deployment | D-Secure",
     description:
       "Deploy custom OS images to hundreds of devices simultaneously. Streamline your IT operations with automated reimaging.",
@@ -662,6 +671,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "virtual-machine-eraser": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "VM Eraser: Secure Cloud & Hypervisor Wipe | D-Secure",
     description:
       "Certified data erasure for VMware, Hyper-V, AWS & Azure. Permanently sanitize virtual disks — NIST compliant with tamper-proof audit reports.",
@@ -695,6 +705,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "removable-media-eraser": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Removable Media Eraser: USB & SD Wipe | D-Secure",
     description:
       "Compliance-grade erasure for USBs, SD cards & external disks. D-Secure provides tamper-proof audit reports and certificates for secure data sanitization.",
@@ -740,6 +751,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "lun-eraser": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "LUN Eraser: SAN & NAS Storage Sanitization | D-Secure",
     description:
       "Erase active LUNs in SAN & NAS storage without disrupting data. NIST 800-88 compliant — tamper-proof certificates for secure enterprise decommissioning.",
@@ -777,6 +789,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "drive-verifier": {
+    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Drive Verifier: Secure Data Erasure Verification | D-Secure",
     description:
       "Verify 100% data erasure with block-by-block scans. Mandatory for R2v3, NAID AAA & e-Stewards compliance. Ensure zero data traces after sanitization.",

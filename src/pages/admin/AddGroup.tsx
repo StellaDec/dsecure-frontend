@@ -63,7 +63,7 @@ export default function AddGroup() {
   // Input change handler
   // Licenses ke liye Number.parseInt use karte hain numeric consistency ke liye
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({

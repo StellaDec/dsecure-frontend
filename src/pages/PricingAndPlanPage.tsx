@@ -121,11 +121,13 @@ const PricingAndPlanPage: React.FC = memo(() => {
     }
 
     // Set active tab based on selected category
-    if (
+    if (productFromUrl === "autopilot-mdm") {
+      setActiveTab("tools");
+      setSelectedCategory("autopilot-mdm");
+    } else if (
       productFromUrl === "hardware-diagnostics" ||
       productFromUrl === "smart-diagnostic" ||
-      productFromUrl === "smartphone-diagnostic" ||
-      productFromUrl === "autopilot-mdm"
+      productFromUrl === "smartphone-diagnostic"
     ) {
       // Diagnostic is now hidden, defaulting to Drive Eraser (Eraser Tab)
       setSelectedCategory("drive-eraser");
@@ -344,11 +346,11 @@ const PricingAndPlanPage: React.FC = memo(() => {
     //   name: "Smartphone",
     //   subtitle: "iOS & Android Diagnostics",
     // },
-    // {
-    //   id: "autopilot-mdm",
-    //   name: "Autopilot+MDM",
-    //   subtitle: "Autopilot & MDM Enrollment Detection",
-    // },
+    {
+      id: "autopilot-mdm",
+      name: "Autopilot Detector",
+      subtitle: "Autopilot & MDM Enrollment Detection",
+    },
     // {
     //   id: "data-migration",
     //   name: "Data Migration",
@@ -383,14 +385,16 @@ const PricingAndPlanPage: React.FC = memo(() => {
           // cat.id === "forensic-imaging"
         );
       }
+      if (activeTab === "tools") {
+        return cat.id === "autopilot-mdm";
+      }
       // Diagnostic is now hidden
       return false;
       /* 
       return (
         cat.id === "hardware-diagnostics" ||
         cat.id === "smart-diagnostic"
-        // cat.id === "smartphone-diagnostic" ||
-        // cat.id === "autopilot-mdm"
+        // cat.id === "smartphone-diagnostic"
       );
       */
     });
@@ -816,13 +820,13 @@ const PricingAndPlanPage: React.FC = memo(() => {
       showDeliveryOptions: false,
     },
     "autopilot-mdm": {
-      title: "Autopilot & MDM Detection",
-      subtitle: "Instantly detect Autopilot & MDM status on devices.",
+      title: "Autopilot Detector",
+      subtitle: "Instantly detect Autopilot & MDM status on devices. (Available for Windows)",
       image: getProductIcon("drive-eraser", 64),
       imageCategory: "autopilot-mdm",
       version: "V1.0.0.0",
-      basePrice: 5,
-      originalPrice: 10,
+      basePrice: 1,
+      originalPrice: 2,
       discountPercentage: "50% OFF",
       selectionLabel: "Number of Licenses:",
       selectionNote: "(Pay-per-use)",
@@ -989,6 +993,19 @@ const PricingAndPlanPage: React.FC = memo(() => {
         if (licenseCount === 5 && product.basePrice === 25) price = 87.75;
       }
 
+      if (category === "autopilot-mdm" && licenseCount > 0) {
+        let discount = 0;
+        if (licenseCount >= 1000) discount = 0.70;
+        else if (licenseCount >= 500) discount = 0.60;
+        else if (licenseCount >= 250) discount = 0.50;
+        else if (licenseCount >= 100) discount = 0.40;
+        else if (licenseCount >= 50) discount = 0.35;
+        else if (licenseCount >= 25) discount = 0.32;
+        else if (licenseCount >= 10) discount = 0.30;
+        
+        price = price * (1 - discount);
+      }
+
       return Math.round(price * 100) / 100;
     }
 
@@ -1147,7 +1164,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
         "Hardware ID Retrieval",
         "Provisioning Status Audit",
         "Deployment Readiness Test",
-        "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+        "Instant Verification",
       ];
     } else if (category === "data-migration") {
       return [
@@ -1255,7 +1272,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
     }
 
     if (selectedCategory === "autopilot-mdm") {
-      return `Autopilot+MDM - ${selectedLicenses} licenses (one-time purchase)`;
+      return `Autopilot Detector - ${selectedLicenses} licenses (one-time purchase)`;
     }
 
     if (selectedCategory === "data-migration") {
@@ -1311,8 +1328,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
     }
 
     if (selectedCategory === "autopilot-mdm") {
-      // Autopilot+MDM का price note ($5)
-      return `Autopilot+MDM @ $${currentProduct.basePrice.toFixed(2)}/license (One-time purchase)`;
+      // Autopilot Detector price note ($1)
+      return `Autopilot Detector @ $${currentProduct.basePrice.toFixed(2)}/license (One-time purchase)`;
     }
 
     if (selectedCategory === "data-migration") {
@@ -1395,6 +1412,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
       "drive-eraser": "pdt_0NVH5wJYMX70syW3ioj9R",
       "file-eraser": "pdt_0NVHHRwPSypqgPTs3kuSu",
       "smart-diagnostic": "pdt_placeholder_smart_diagnostic",
+      "autopilot-mdm": "pdt_0Nh5BaqBzIdLGcr6KlQd8",
     };
 
     const productId = PRODUCT_IDS[selectedCategory as keyof typeof PRODUCT_IDS];
@@ -1641,27 +1659,28 @@ const PricingAndPlanPage: React.FC = memo(() => {
                   ></div>
                   Eraser
                 </button>
-                {/* 
                 <button
                   onClick={() => {
-                    setActiveTab("diagnostics");
-                    setSelectedCategory("hardware-diagnostics");
-                    navigate(`/pricing-and-plan?product=hardware-diagnostics`, {
+                    setActiveTab("tools");
+                    setSelectedCategory("autopilot-mdm");
+                    navigate(`/pricing-and-plan?product=autopilot-mdm`, {
                       replace: true,
                     });
                   }}
+                  role="tab"
+                  aria-selected={activeTab === "tools"}
+                  title={`${ARIA_LABELS.SWITCH_TAB} Tools`}
                   className={`flex-1 py-2.5 px-6 rounded-xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
-                    activeTab === "diagnostics"
+                    activeTab === "tools"
                       ? "bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg shadow-teal-200"
                       : "text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                   }`}
                 >
                   <div
-                    className={`w-1.5 h-1.5 rounded-full ${activeTab === "diagnostics" ? "bg-white animate-pulse" : "bg-gray-300"}`}
+                    className={`w-1.5 h-1.5 rounded-full ${activeTab === "tools" ? "bg-white animate-pulse" : "bg-gray-300"}`}
                   ></div>
-                  Diagnostic
-                </button> 
-                */}
+                  Tools
+                </button>
                 <button
                   onClick={() => {
                     setActiveTab("migration");
@@ -1723,6 +1742,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
                     // Explicitly set activeTab based on selected category type
                     if (category.id === "freeze-state") {
                       setActiveTab("migration");
+                    } else if (category.id === "autopilot-mdm") {
+                      setActiveTab("tools");
                     } else {
                       setActiveTab("eraser");
                     }

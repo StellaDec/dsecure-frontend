@@ -39,7 +39,6 @@ const EXCLUDED_ROUTES = [
   "/support/ssd-cryptographic-erasure-guide",
   "/support/wipe-guide",
   "/support/retain-os-guide",
-  "/support",
   "/support/m1-mac-wipe-guide",
   "/wipe-mac-m1",
   "*",

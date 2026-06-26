@@ -507,13 +507,13 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
     { name: "NIST 800-88", desc: "US National Institute of Standards", link: "/blog/nist-clear-purge" },
     { name: "DoD 5220.22-M", desc: "US Department of Defense", link: "/blog/dod-vs-ieee" },
     { name: "GDPR", desc: "EU General Data Protection" },
-    { name: "HIPAA", desc: "Healthcare Information Privacy" },
+        { name: "HIPAA", desc: "Healthcare Information Privacy" },
     { name: "SOX", desc: "Sarbanes-Oxley Act" },
     { name: "PCI-DSS", desc: "Payment Card Industry" },
   ];
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  const handleModalInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -2362,7 +2362,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                           type="text"
                           name="name"
                           value={formData.name}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           placeholder="Full Name *"
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                           required
@@ -2373,7 +2373,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                           type="email"
                           name="email"
                           value={formData.email}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           placeholder="Email *"
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                           required
@@ -2384,7 +2384,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                           type="tel"
                           name="phone"
                           value={formData.phone}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           placeholder="Phone Number"
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
@@ -2394,7 +2394,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                           type="text"
                           name="country"
                           value={formData.country}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           placeholder="Country"
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
@@ -2404,7 +2404,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                           type="text"
                           name="organization"
                           value={formData.organization}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           placeholder="Organization"
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
@@ -2413,7 +2413,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         <select
                           name="businessType"
                           value={formData.businessType}
-                          onChange={handleInputChange}
+                          onChange={handleModalInputChange}
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
                         >
                           <option value="" disabled className="text-slate-800">Business Type</option>
@@ -2430,7 +2430,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                       <textarea
                         name="message"
                         value={formData.message}
-                        onChange={handleInputChange}
+                        onChange={handleModalInputChange}
                         rows={4}
                         placeholder="How can we help you?"
                         className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors resize-none"

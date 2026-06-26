@@ -198,7 +198,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     return stripped;
   };
 
-  const finalCanonical = normalizeCanonical(effectiveSeo.canonicalUrl || '');
+  // Agar page-specific canonicalUrl defined nahi hai, to current path se self-canonicalize karo
+  const finalCanonical = normalizeCanonical(effectiveSeo.canonicalUrl || `https://dsecuretech.com${location.pathname}`);
 
   // Helper to ensure URLs are absolute for social media crawlers
   const ensureAbsoluteUrl = (url?: string): string => {
@@ -208,8 +209,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     return `https://dsecuretech.com${prefix}${url}`;
   };
 
-  const finalOgImage = ensureAbsoluteUrl(effectiveSeo.ogImage || 'https://dsecuretech.com/logo-white.svg');
-  const finalTwitterImage = ensureAbsoluteUrl(effectiveSeo.twitterImage || effectiveSeo.ogImage || 'https://dsecuretech.com/logo-white.svg');
+  // PNG fallback — social platforms SVG render nahi karte
+  const finalOgImage = ensureAbsoluteUrl(effectiveSeo.ogImage || 'https://dsecuretech.com/og-default.png');
+  const finalTwitterImage = ensureAbsoluteUrl(effectiveSeo.twitterImage || effectiveSeo.ogImage || 'https://dsecuretech.com/og-default.png');
 
   const hreflangUrls = generateHreflangUrls(finalCanonical);
 
@@ -295,12 +297,17 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
         {/* AI Crawler Directives — Generative Engine Optimization (GEO) & AEO */}
         {/* Rules ke mutabik: Training bots ko restrict karenge aur live retrieval search bots ko index/follow allow karenge */}
-        <meta name="GPTBot" content="index, follow" />
-        <meta name="ClaudeBot" content="index, follow" />
-        <meta name="Google-Extended" content="index, follow" />
-        <meta name="OAI-SearchBot" content="index, follow" />
-        <meta name="PerplexityBot" content="index, follow" />
-        <meta name="YouBot" content="index, follow" />
+        {/* 1. Training Bots - Always block to prevent unauthorized scraping for LLM training */}
+        <meta name="GPTBot" content="noindex, nofollow" />
+        <meta name="ClaudeBot" content="noindex, nofollow" />
+        <meta name="Google-Extended" content="noindex, nofollow" />
+        <meta name="anthropic-ai" content="noindex, nofollow" />
+        <meta name="cohere-ai" content="noindex, nofollow" />
+
+        {/* 2. Retrieval/Search Bots - Allow them to cite our site (AEO/GEO), unless page is explicitly noindex */}
+        <meta name="OAI-SearchBot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
+        <meta name="PerplexityBot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
+        <meta name="YouBot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
 
         {/* Author & Publication */}
         <meta name="author" content={effectiveAuthor} />

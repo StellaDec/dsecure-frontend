@@ -58,7 +58,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
     );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -66,7 +66,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
   // FormSubmit logic matching ContactPage.tsx
   const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/support@dsecuretech.com";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (selectedProducts.length === 0) {
       showToast("Please select at least one product", "error");
@@ -140,14 +140,17 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
       });
 
       // 3. Power Automate (Non-blocking)
-      fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": "REACT_CONTACT_2026",
-        },
-        body: JSON.stringify(submissionData),
-      }).catch(() => {});
+      const powerAutomateUrl = import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL;
+      if (powerAutomateUrl) {
+        fetch(powerAutomateUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "REACT_CONTACT_2026",
+          },
+          body: JSON.stringify(submissionData),
+        }).catch(() => {});
+      }
 
       if (!apiResponse.ok || !emailResponse.ok) {
         throw new Error("Submission failed. Please try again.");
@@ -159,8 +162,12 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
       setFormData({ fullName: "", email: "", phone: "", country: "", businessType: "", company: "", message: "" });
       setSelectedProducts([]);
 
-    } catch (error: any) {
-      showToast(error.message || "Something went wrong. Please try again.", "error");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        showToast(error.message, "error");
+      } else {
+        showToast("Something went wrong. Please try again.", "error");
+      }
     } finally {
       setIsLoading(false);
     }
