@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 import Reveal from '@/components/Reveal';
 import {
@@ -45,7 +45,7 @@ export default function ProfessionalServicesPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage('professional-services')} />
+      <SEOHeadNative seo={getSEOForPage('professional-services')} />
       <div className="min-h-screen bg-slate-50">
         {/* Hero Section */}
         <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-indigo-950 via-slate-900 to-emerald-950 text-white">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import { Link } from "react-router-dom";
 import Reveal from "@/components/Reveal";
@@ -334,7 +334,7 @@ const DataGuardianAwardPage: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("data-guardian-award")} />
+      <SEOHeadNative seo={getSEOForPage("data-guardian-award")} />
 
       {/* Toast Notification */}
       {toast && (

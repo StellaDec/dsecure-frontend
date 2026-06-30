@@ -12,7 +12,7 @@ import {
   ArrowRightIcon,
   HoverIcon
 } from '@/components/FlatIcons'
-import SEOHead from '../components/SEOHead'
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo'
 import { Link } from 'react-router-dom';
 import { standards, Standards } from '../data/complianceData';
@@ -20,7 +20,7 @@ import { standards, Standards } from '../data/complianceData';
 export default function CompliancePage() {
   return (
     <>
-      <SEOHead seo={getSEOForPage("compliance")} />
+      <SEOHeadNative seo={getSEOForPage("compliance")} />
 
       <CompliancePageContent />
     </>

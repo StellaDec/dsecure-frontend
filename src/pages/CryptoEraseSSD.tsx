@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
+import { sanitizeHtml } from "@/utils/sanitizeHtml";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
@@ -113,7 +114,7 @@ const CryptoEraseSSDGuide: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("crypto-erase-ssd")} />
+      <SEOHeadNative seo={getSEOForPage("crypto-erase-ssd")} />
 
       <div className="min-h-screen bg-slate-50 font-inter">
         {/* Breadcrumbs */}
@@ -384,7 +385,7 @@ const CryptoEraseSSDGuide: React.FC = () => {
                           <span className="text-2xl font-black text-emerald-200 group-hover:text-emerald-400 transition-colors">{item.step}</span>
                           <div>
                             <h3 className="font-bold text-slate-900 mb-1">{item.title}</h3>
-                            <p className="text-sm text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }} />
+                            <p className="text-sm text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.text) }} />
                           </div>
                         </div>
                       ))}

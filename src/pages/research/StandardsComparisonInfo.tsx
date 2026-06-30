@@ -7,7 +7,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import Reveal from "../../components/Reveal";
 
 const StandardsComparisonInfo: React.FC = () => {
@@ -16,7 +16,7 @@ const StandardsComparisonInfo: React.FC = () => {
   
   return (
     <div className="min-h-screen bg-slate-50">
-      <SEOHead 
+      <SEOHeadNative 
         title="NIST 800-88 vs. IEEE 2883-2022 | Media Sanitization Standard Comparison"
         description="A technical comparison of dominant global data destruction standards. Deep-dive into Clear, Purge, and Destroy guidelines for HDD, SSD, and NVMe media."
         canonicalUrl="https://dsecuretech.com/research/media-sanitization-comparison-2026"

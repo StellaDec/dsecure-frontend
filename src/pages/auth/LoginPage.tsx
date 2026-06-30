@@ -2,7 +2,7 @@ import { FormEvent, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/auth/AuthContext";
 import { useTranslation } from "react-i18next";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import { api, setAuthToken, getApiBaseUrl } from "@/utils/apiClient";
 import { authService } from "@/utils/authService";
@@ -766,7 +766,7 @@ export default function LoginPage() {
   };
   return (
     <>
-      <SEOHead seo={getSEOForPage("login")} />
+      <SEOHeadNative seo={getSEOForPage("login")} />
       {/* Toast Notification */}
       {toast && (
         <div

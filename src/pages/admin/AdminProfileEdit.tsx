@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useAuth } from "@/auth/AuthContext";
 import { useNotification } from "@/contexts/NotificationContext";
@@ -136,7 +136,7 @@ export default function AdminProfileEdit() {
   return (
     <>
       {/* SEO Head component */}
-      <SEOHead seo={getSEOForPage("admin-profile-edit")} />
+      <SEOHeadNative seo={getSEOForPage("admin-profile-edit")} />
 
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         {/* Header */}

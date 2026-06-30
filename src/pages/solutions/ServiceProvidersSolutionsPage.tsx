@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import { LicenseForm, PartnershipForm } from "@/components/forms";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import SolutionContactSection from "@/components/SolutionContactSection";
 import SolutionHeroGraphic from "@/components/SolutionHeroGraphic";
@@ -84,7 +84,7 @@ const ServiceProvidersSolutionsPage: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("solutions/service-providers")} />
+      <SEOHeadNative seo={getSEOForPage("solutions/service-providers")} />
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div

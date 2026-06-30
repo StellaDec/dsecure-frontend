@@ -1,7 +1,7 @@
 import Reveal from '@/components/Reveal'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import SEOHead from '@/components/SEOHead'
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo'
 import {
   CheckIcon,
@@ -17,7 +17,7 @@ import {
 export default function CloudErasurePage() {
   return (
     <>
-      <SEOHead seo={getSEOForPage('cloud-erasure')} />
+      <SEOHeadNative seo={getSEOForPage('cloud-erasure')} />
 
       <CloudErasureContent />
     </>

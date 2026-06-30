@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 import {
   BookOpen,
@@ -636,7 +636,7 @@ const CompleteFreezeStateManual: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <SEOHead seo={getSEOForPage("support/help-manual/complete-freeze-state-manual")} />
+      <SEOHeadNative seo={getSEOForPage("support/help-manual/complete-freeze-state-manual")} />
 
       {/* Logic Hindi Comments:
          - Navigation Tree se sidebar list generate hoti hai.

@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React from "react";
 import { Trash2, Globe, Smartphone, HardDrive, CheckCircle, AlertCircle, Search, Mail, MessageSquare, FileText } from "lucide-react";
@@ -6,7 +6,7 @@ import { Trash2, Globe, Smartphone, HardDrive, CheckCircle, AlertCircle, Search,
 const ErasingTraces: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEOHead seo={getSEOForPage("erasing-traces")} />
+      <SEOHeadNative seo={getSEOForPage("erasing-traces")} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}

@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import { downloadResource } from "../utils/downloadUtils";
 import { useState, useEffect } from "react";
@@ -11,7 +11,7 @@ export default function ResourcesPage() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("resources")} />
+      <SEOHeadNative seo={getSEOForPage("resources")} />
       <ResourcesPageContent />
     </>
   );

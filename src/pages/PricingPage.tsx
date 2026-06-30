@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "@/auth/AuthContext";
 import { useTranslation } from "react-i18next";
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 import {
   CheckIcon,
@@ -22,7 +22,7 @@ export default function PricingPage() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage('pricing')} />
+      <SEOHeadNative seo={getSEOForPage('pricing')} />
 
       <PricingPageContent />
     </>

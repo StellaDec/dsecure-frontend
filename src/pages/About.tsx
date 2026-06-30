@@ -9,14 +9,14 @@ import {
   HeartIcon,
   HoverIcon 
 } from '@/components/FlatIcons';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 
 export default function AboutPage() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage('about')} />
+      <SEOHeadNative seo={getSEOForPage('about')} />
       
       <AboutPageContent />
     </>

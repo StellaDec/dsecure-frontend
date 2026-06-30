@@ -1,10 +1,10 @@
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 
 export default function IconShowcase() {
   return (
     <>
-      <SEOHead seo={getSEOForPage("icon-showcase")} />
+      <SEOHeadNative seo={getSEOForPage("icon-showcase")} />
     </>
   );
 }

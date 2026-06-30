@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React, { useState } from 'react'
 import Reveal from '@/components/Reveal'
@@ -88,7 +88,7 @@ const NewErasurePage: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("new-erasure")} />
+      <SEOHeadNative seo={getSEOForPage("new-erasure")} />
 
       <div className="min-h-screen bg-slate-50">
         <div className="container-app py-8">

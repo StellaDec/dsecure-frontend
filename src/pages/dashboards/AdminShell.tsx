@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useEffect, Suspense } from "react";
@@ -141,7 +141,7 @@ export default function AdminShell() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("admin-shell")} />
+      <SEOHeadNative seo={getSEOForPage("admin-shell")} />
       <div className="container-app py-4 sm:py-8 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
         {/* Mobile Header */}
         <div className="mb-4 sm:mb-6 md:hidden">

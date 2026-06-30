@@ -24,7 +24,7 @@ import {
   ArrowLeftRight,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import { ProductContactForm } from "@/components/forms";
@@ -37,6 +37,15 @@ import {
   ClipboardIcon,
   ServerIcon,
 } from "@/components/FlatIcons";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
+
+const dataMigrationTakeaways = [
+  { title: "Zero-Loss Transition", desc: "Securely migrate workloads across Cloud, Database, and Hybrid infrastructure." },
+  { title: "Near-Zero Downtime", desc: "Real-time byte-level replication ensures minimal disruption." },
+  { title: "Fortified Integrity", desc: "AES-256 encryption and immutable hashing protect every byte." },
+  { title: "Compliance Ready", desc: "Meets SOC2, GDPR, HIPAA, and ISO 27001 standards." }
+];
 
 const sectionNavItems = [
   { id: "overview", label: "Overview" },
@@ -136,7 +145,7 @@ const DataMigrationPage = memo(() => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("data-migration")} />
+      <SEOHeadNative seo={getSEOForPage("data-migration")} />
       
       {/* ================= STICKY SECTION NAV ================= */}
       <div
@@ -214,6 +223,8 @@ const DataMigrationPage = memo(() => {
                       View Strategies
                     </button>
                   </div>
+
+                  
                 </div>
               </Reveal>
 
@@ -302,6 +313,14 @@ const DataMigrationPage = memo(() => {
 
         {/* ================= METHODOLOGY SECTION ================= */}
         {/* Five-step migration lifecycle ko explain kiya gaya hai */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={dataMigrationTakeaways} />
+          </div>
+        </section>
+
         <section id="methodology" className="py-24 lg:py-32 bg-white relative">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
@@ -664,54 +683,33 @@ const DataMigrationPage = memo(() => {
         </section>
 
         {/* ================= FAQ SECTION ================= */}
-        <section id="faq" className="py-24 lg:py-32 bg-slate-50">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-16 lg:mb-20">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 tracking-tight">Migration Q&A</h2>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: "What is D-Secure's approach to data integrity during migration?",
-                  a: "We use byte-level verification and CRC-64 checksum matching at both source and target. Every transferred block is validated before the migration is marked as successful, ensuring absolute parity.",
-                },
-                {
-                  q: "How does 'Near-Zero Downtime' work?",
-                  a: "Our technology uses real-time asynchronous replication. We sync the majority of the data while the system is live, and only perform a brief 'catch-up' sync and cutover once the data is nearly in sync, minimizing disruption to seconds.",
-                },
-                {
-                  q: "Can D-Secure migrate data between different cloud providers?",
-                  a: "Yes. Our platform-agnostic engine supports Cloud-to-Cloud (e.g., AWS to Azure), On-Prem-to-Cloud, and Cloud-to-On-Prem migrations with automatic format translation where necessary.",
-                },
-                {
-                  q: "What happens if a migration is interrupted by a network failure?",
-                  a: "Our engine includes 'Checkpoint Restart' capabilities. If a transfer is interrupted, it automatically resumes from the last successfully transferred block once connectivity is restored, without needing to restart from scratch.",
-                },
-                {
-                  q: "Does D-Secure handle specialized databases like Oracle or SAP?",
-                  a: "Absolutely. We provide specialized connectors for major RDBMS engines (Oracle, SQL Server, MySQL, Postgres) ensuring transactional consistency and schema integrity throughout the migration.",
-                },
-              ].map((faq) => (
-                <Reveal key={faq.q}>
-                  <details className="group bg-white rounded-3xl border border-slate-200 hover:border-emerald-300 transition-all duration-300 shadow-sm">
-                    <summary className="flex items-center justify-between p-7 cursor-pointer list-none">
-                      <span className="font-bold text-slate-900 pr-4 text-base lg:text-lg tracking-tight">{faq.q}</span>
-                      <span className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center group-open:rotate-180 transition-transform shadow-inner">
-                        <ChevronDown className="w-6 h-6" />
-                      </span>
-                    </summary>
-                    <div className="px-7 pb-8 text-slate-600 leading-relaxed text-sm lg:text-base border-t border-slate-50 pt-6 font-medium">
-                      {faq.a}
-                    </div>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection
+          id="faq"
+          title="Migration Q&A"
+          className="!py-24 lg:!py-32 !bg-slate-50"
+          faqs={[
+            {
+              q: "What is D-Secure's approach to data integrity during migration?",
+              a: "We use byte-level verification and CRC-64 checksum matching at both source and target. Every transferred block is validated before the migration is marked as successful, ensuring absolute parity.",
+            },
+            {
+              q: "How does 'Near-Zero Downtime' work?",
+              a: "Our technology uses real-time asynchronous replication. We sync the majority of the data while the system is live, and only perform a brief 'catch-up' sync and cutover once the data is nearly in sync, minimizing disruption to seconds.",
+            },
+            {
+              q: "Can D-Secure migrate data between different cloud providers?",
+              a: "Yes. Our platform-agnostic engine supports Cloud-to-Cloud (e.g., AWS to Azure), On-Prem-to-Cloud, and Cloud-to-On-Prem migrations with automatic format translation where necessary.",
+            },
+            {
+              q: "What happens if a migration is interrupted by a network failure?",
+              a: "Our engine includes 'Checkpoint Restart' capabilities. If a transfer is interrupted, it automatically resumes from the last successfully transferred block once connectivity is restored, without needing to restart from scratch.",
+            },
+            {
+              q: "Does D-Secure handle specialized databases like Oracle or SAP?",
+              a: "Absolutely. We provide specialized connectors for major RDBMS engines (Oracle, SQL Server, MySQL, Postgres) ensuring transactional consistency and schema integrity throughout the migration.",
+            },
+          ]}
+        />
 
         {/* ================= CONTACT / CTA ================= */}
         <section id="contact" className="py-24 lg:py-40 bg-white border-t overflow-hidden relative">

@@ -28,12 +28,58 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "@/components/Reveal";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
 import { ProductContactForm } from "@/components/forms";
 import { 
   ArrowRightIcon,
 } from "@/components/FlatIcons";
+import { generateFAQSchema } from "@/utils/seo.core";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
+import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
+
+const freezeStateFaqs: FAQItem[] = [
+  {
+    q: "Does it slow down computer performance?",
+    a: "No. FreezeState's redirection logic consumes negligible CPU cycles. In many cases, it makes the system feel faster as it prevents the accumulation of temporary files and unwanted background processes.",
+  },
+  {
+    q: "How do I install updates when the system is Frozen?",
+    a: "You can schedule 'Maintenance Windows' through the console. FreezeState will automatically switch to a 'Thawed' state, allow updates to install, or deploy patches, and then return to a 'Frozen' state automatically.",
+  },
+  {
+    q: "Can I protect specific partitions only?",
+    a: "Yes. You have full control over which physical drives and logical partitions are Frozen. Common practice is to Freeze the system (C:) drive and keep a separate D: drive as a Thawed persistence space for user files.",
+  },
+  {
+    q: "Is it compatible with newer SSDs (NVMe)?",
+    a: "Absolutely. FreezeState is fully optimized for modern NVMe and SSD storage, including TRIM support, ensuring both high-speed performance and longevity of your hardware infrastructure.",
+  },
+  {
+    q: "Does it work with Cloud Central Management?",
+    a: "Yes. You can manage multiple workstations from anywhere in the world using our secure cloud-based console, which allows for remote freezing, thawing, and scheduling.",
+  },
+];
+
+const freezeStateTakeaways: KeyTakeawayItem[] = [
+  {
+    title: "Instant Recovery",
+    description: "Restore workstations to their pristine baseline condition instantly upon every reboot.",
+  },
+  {
+    title: "Zero Maintenance",
+    description: "Eliminate configuration drift, malware infections, and the need for frequent IT helpdesk tickets.",
+  },
+  {
+    title: "Centralized Management",
+    description: "Manage thousands of endpoints, schedule maintenance, and enforce policies from a single cloud console.",
+  },
+  {
+    title: "Persistent ThawSpaces",
+    description: "Retain critical user data on designated virtual partitions while the core system remains frozen.",
+  }
+];
 
 const FreezeStatePage = memo(() => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -185,7 +231,10 @@ const FreezeStatePage = memo(() => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("freeze-state")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("freeze-state")} 
+        structuredData={generateFAQSchema(freezeStateFaqs)}
+      />
 
       {/* Breadcrumb Navigation — SEO ke liye */}
       <div className="container mx-auto px-4 pt-4 pb-1">
@@ -273,6 +322,8 @@ const FreezeStatePage = memo(() => {
                       How it Works
                     </button>
                   </div>
+
+                  
                 </div>
               </Reveal>
 
@@ -398,6 +449,14 @@ const FreezeStatePage = memo(() => {
         </section>
 
         {/* ================= SESSION-BASED SECURITY SECTION ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={freezeStateTakeaways} />
+          </div>
+        </section>
+
         <section id="session-security" className="py-20 bg-emerald-900 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#064e3b_0%,transparent_100%)]"></div>
           <div className="container mx-auto px-4 max-w-5xl relative z-10">
@@ -1251,56 +1310,7 @@ const FreezeStatePage = memo(() => {
 
         <ProductInternalLinks currentProduct="freeze-state" />
 
-        {/* ================= FAQ SECTION ================= */}
-        <section id="faq" className="py-24 lg:py-32 bg-slate-50">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-16 lg:mb-20">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 tracking-tight">FreezeState Q&A</h2>
-                <p className="text-lg text-slate-600 font-medium">Expert answers for IT administrators</p>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Does it slow down computer performance?",
-                  a: "No. FreezeState's redirection logic consumes negligible CPU cycles. In many cases, it makes the system feel faster as it prevents the accumulation of temporary files and unwanted background processes.",
-                },
-                {
-                  q: "How do I install updates when the system is Frozen?",
-                  a: "You can schedule 'Maintenance Windows' through the console. FreezeState will automatically switch to a 'Thawed' state, allow updates to install, or deploy patches, and then return to a 'Frozen' state automatically.",
-                },
-                {
-                  q: "Can I protect specific partitions only?",
-                  a: "Yes. You have full control over which physical drives and logical partitions are Frozen. Common practice is to Freeze the system (C:) drive and keep a separate D: drive as a Thawed persistence space for user files.",
-                },
-                {
-                  q: "Is it compatible with newer SSDs (NVMe)?",
-                  a: "Absolutely. FreezeState is fully optimized for modern NVMe and SSD storage, including TRIM support, ensuring both high-speed performance and longevity of your hardware infrastructure.",
-                },
-                {
-                  q: "Does it work with Cloud Central Management?",
-                  a: "Yes. You can manage multiple workstations from anywhere in the world using our secure cloud-based console, which allows for remote freezing, thawing, and scheduling.",
-                },
-              ].map((faq) => (
-                <Reveal key={faq.q}>
-                  <details className="group bg-white rounded-3xl border border-slate-200 hover:border-emerald-300 transition-all duration-300 shadow-sm">
-                    <summary className="flex items-center justify-between p-7 cursor-pointer list-none">
-                      <span className="font-bold text-slate-900 pr-4 text-base lg:text-lg">{faq.q}</span>
-                      <span className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center group-open:rotate-180 transition-transform shadow-inner">
-                        <ChevronDown className="w-6 h-6" />
-                      </span>
-                    </summary>
-                    <div className="px-7 pb-8 text-slate-600 leading-relaxed text-sm lg:text-base border-t border-slate-50 pt-6">
-                      {faq.a}
-                    </div>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection faqs={freezeStateFaqs} id="faq" />
         {/* ================= CONTACT / CTA ================= */}
         <section id="contact" className="py-24 lg:py-40 bg-white border-t overflow-hidden relative">
            {/* Subtle background patterns */}

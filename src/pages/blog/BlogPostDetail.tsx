@@ -2,8 +2,9 @@ import React, { useMemo } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import BlogFooterStandard from "@/components/blog/BlogFooterStandard";
 import { blogPosts } from "@/data/blogPosts";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getBlogSEO } from "@/utils/seo";
+import { sanitizeHtml } from "@/utils/sanitizeHtml";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import { 
@@ -83,7 +84,7 @@ const BlogPostDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead seo={seoData} />
+      <SEOHeadNative seo={seoData} />
 
       {/* Breadcrumb Navigation — Blog SEO ke liye */}
       <div className="container mx-auto px-4 max-w-4xl pt-4 pb-1">
@@ -179,7 +180,7 @@ const BlogPostDetail: React.FC = () => {
             <div className="text-slate-700 leading-relaxed space-y-8">
               {post.content ? (
                 /* In a real app, this would be dangerouslySetInnerHTML or a Markdown renderer */
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }} />
               ) : (
                 <>
                   <p>

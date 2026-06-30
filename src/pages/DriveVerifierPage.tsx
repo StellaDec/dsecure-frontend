@@ -2,7 +2,7 @@ import React, { memo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import {
   ShieldIcon,
   CheckIcon,
@@ -23,6 +23,10 @@ import {
   Clock
 } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
+import { generateFAQSchema } from "@/utils/seo.core";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
+import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import { ProductContactForm } from "@/components/forms";
 import UpcomingBadge from "@/components/ui/UpcomingBadge";
@@ -144,6 +148,27 @@ const ScanningHeroVisual = () => {
   );
 };
 
+const driveVerifierTakeaways: KeyTakeawayItem[] = [
+  { text: "Complete erasure verification tool to scan drives and examine bit patterns for data traces." },
+  { text: "Supports SATA, PATA, SCSI, SAS, NVMe, USB, and SD cards with simultaneous verification over PXE." },
+  { text: "Generates digitally signed reports (PDF, XML, CSV) compliant with R2v3, NAID AAA, and e-Stewards." },
+];
+
+const driveVerifierFaqs: FAQItem[] = [
+  {
+    question: "Why is drive verification necessary?",
+    answer: "Independent verification is required by standards like R2v3 and NAID AAA to ensure that data erasure was 100% successful and no data remanence exists on the wiped drives."
+  },
+  {
+    question: "How many drives can be verified simultaneously?",
+    answer: "Drive Verifier supports simultaneous verification of up to 255 machines over a PXE network boot, making it highly scalable for enterprise ITADs."
+  },
+  {
+    question: "What reporting formats does it support?",
+    answer: "It generates tamper-proof, digitally signed reports in PDF, XML, and CSV formats that integrate directly with your ERP or inventory management systems."
+  }
+];
+
 const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
   const [activeSection, setActiveSection] = useState("");
   const [isNavVisible, setIsNavVisible] = useState(false);
@@ -261,7 +286,10 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("drive-verifier")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("drive-verifier")} 
+        structuredData={generateFAQSchema(driveVerifierFaqs)}
+      />
 
       {/* Sticky Nav */}
       <div
@@ -335,6 +363,9 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
                       Coming Soon: DataSheet
                     </button>
                   </div>
+
+                  {/* Key Takeaways Section */}
+                  
                 </div>
               </Reveal>
 
@@ -346,6 +377,14 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
         </section>
 
         {/* Use Cases */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={driveVerifierTakeaways} title="Key Capabilities" />
+          </div>
+        </section>
+
         <section id="use-cases" className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -436,6 +475,9 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection faqs={driveVerifierFaqs} />
 
         {/* Contact Section */}
         <section id="contact" className="py-24 lg:py-40 bg-white border-t overflow-hidden relative">

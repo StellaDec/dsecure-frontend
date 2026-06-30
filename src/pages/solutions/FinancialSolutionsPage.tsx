@@ -6,7 +6,7 @@ import { Laptop, Database } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import { LicenseForm } from "@/components/forms";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import SolutionContactSection from "@/components/SolutionContactSection";
 import SolutionHeroGraphic from "@/components/SolutionHeroGraphic";
@@ -280,7 +280,7 @@ const FinancialSolutionsPage: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("solutions/data-erasure-banking-finance")} />
+      <SEOHeadNative seo={getSEOForPage("solutions/data-erasure-banking-finance")} />
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div

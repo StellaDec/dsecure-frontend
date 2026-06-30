@@ -1,4 +1,4 @@
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ const EnterprisePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("solutions-enterprise")} />
+      <SEOHeadNative seo={getSEOForPage("solutions-enterprise")} />
 
 
       {/* Hero Section */}

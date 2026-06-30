@@ -127,41 +127,6 @@ function createApiInstance(): AxiosInstance {
         return Promise.reject(new Error("Action restricted in Demo Mode"));
       }
 
-      // -------------------------------------------------------------------------
-      // FRONTEND PII-SAFE REFACTOR:
-      // Add user email to headers (Base64 encoded) instead of URL parameters
-      // -------------------------------------------------------------------------
-      const storedUserData = localStorage.getItem("user_data");
-      const authUser = localStorage.getItem("authUser");
-
-      let userEmail = "";
-      if (storedUserData) {
-        try {
-          const userData = JSON.parse(storedUserData);
-          userEmail =
-            userData.user_email ||
-            userData.email ||
-            userData.subuser_email ||
-            "";
-        } catch (e) {
-          // Ignore parse errors - Safe fallback logic
-          void e;
-        }
-      } else if (authUser) {
-        try {
-          const userData = JSON.parse(authUser);
-          userEmail = userData.user_email || userData.email || "";
-        } catch (e) {
-          // Ignore parse errors - Safe fallback logic
-          void e;
-        }
-      }
-
-      // Add encoded email to headers if available
-      if (userEmail) {
-        config.headers["X-User-Email"] = encodeEmail(userEmail);
-      }
-
       // Development logging
       debugLog("API", `?? ${config.method?.toUpperCase()} ${config.url}`);
 

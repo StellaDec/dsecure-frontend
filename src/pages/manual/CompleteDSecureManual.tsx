@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 import {
   BookOpen,
@@ -1357,7 +1357,7 @@ const CompleteDSecureManual: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEOHead seo={getSEOForPage("support/help-manual/complete-manual")} />
+      <SEOHeadNative seo={getSEOForPage("support/help-manual/complete-manual")} />
 
       <style>{`
         .sidebar-scroll::-webkit-scrollbar { width: 6px; }

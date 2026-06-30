@@ -12,7 +12,7 @@ import {
   MobileIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 
 // Mapping of country codes to their respective country names
@@ -47,7 +47,7 @@ export default function ContactPage() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("contact")} />
+      <SEOHeadNative seo={getSEOForPage("contact")} />
 
       <ContactPageContent />
     </>

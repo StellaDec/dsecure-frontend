@@ -1,10 +1,10 @@
-// API Service for Admin Dashboard
+﻿// API Service for Admin Dashboard
 // This file contains all API endpoints and data fetching logic for the admin dashboard
 // ? Updated to use apiClient with automatic decryption interceptor
 // ?? PII-Safe Refactor: Email is never sent in URL parameters, only in Base64-encoded headers
 
 import { Subuser, AdminReport } from "@/types/models"
-import { api } from "@/utils/apiClient"
+import { apiClient as api } from "@/utils/enhancedApiClient"
 import { encodeEmail } from "@/utils/encodeEmail"
 
 interface ApiResponse<T> {
@@ -245,16 +245,18 @@ async function apiCall<T>(
         },
       );
     } else {
-      response = await api.request({
-        url: endpoint,
-        method: method as any,
-        data: options?.body ? JSON.parse(options.body) : undefined,
-        headers: options?.headers,
-      });
+      throw new Error(`Unsupported method ${method}`);
     }
 
-    // Response is already decrypted by axios interceptor
-    return { success: true, data: response.data };
+    if (!response.success) {
+      return {
+        success: false,
+        data: null as unknown as T,
+        error: response.error || "API call failed",
+      };
+    }
+
+    return { success: true, data: response.data as T };
   } catch (error: any) {
     // Error handled silently - return error response
     // NO FALLBACK - Return error response so UI can show "Data not available"
@@ -279,11 +281,8 @@ export class AdminDashboardAPI {
     try {
       // ⚠️ This endpoint only uses JWT token for auth
       // X-User-Email header causes 500 error, so we explicitly remove it
-      const response = await api.get("/api/Performance/managed-stats", {
-        headers: {
-          "X-User-Email": "", // Override interceptor's auto-injected email header
-        },
-      });
+      const response = await api.get("/api/Performance/managed-stats");
+      if (!response.success) throw new Error(response.error || "API call failed");
 
       const data = response.data;
 
@@ -430,6 +429,7 @@ export class AdminDashboardAPI {
   static async getGroups(): Promise<ApiResponse<GroupData[]>> {
     try {
       const response = await api.get("/api/Group/with-users");
+      if (!response.success) throw new Error(response.error || "API call failed");
       const data = response.data;
 
       if (!data) {
@@ -490,6 +490,7 @@ export class AdminDashboardAPI {
 
       // Machines se license data derive karo
       const response = await api.get(`/api/EnhancedMachines/all-filtered-machines?userEmail=${encodeURIComponent(userEmail)}`);
+      if (!response.success) throw new Error(response.error || "API call failed");
       const data = response.data;
 
       const machines = Array.isArray(data) ? data : (data?.machines || data?.data || []);
@@ -540,6 +541,7 @@ export class AdminDashboardAPI {
       // PURANA CODE: `/api/EnhancedAuditReports/by-email/{email}` → 400 Bad Request
       // NAYA CODE: `/api/EnhancedAuditReports/all-filtered-reports` — proven working endpoint
       const response = await api.get(`/api/EnhancedAuditReports/all-filtered-reports?userEmail=${encodeURIComponent(userEmail)}`);
+      if (!response.success) throw new Error(response.error || "API call failed");
       const data = response.data;
 
       // Response { reports: [...] } ya direct array ho sakta hai
@@ -602,6 +604,7 @@ export class AdminDashboardAPI {
 
       // ? Use axios api instance with automatic decryption
       const response = await api.get(`/api/Users/${encodeEmail(userEmail)}`);
+      if (!response.success) throw new Error(response.error || "API call failed");
       const data = response.data;
 
 
@@ -690,6 +693,7 @@ export class AdminDashboardAPI {
         `/api/Users/${encodeEmail(userEmail)}`,
         backendData,
       );
+      if (!response.success) throw new Error(response.error || "API call failed");
       const data = response.data;
 
 

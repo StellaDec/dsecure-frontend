@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React, { useState } from 'react'
 import Reveal from '@/components/Reveal'
@@ -142,7 +142,7 @@ const ReportsPage: React.FC = () => {
   if (loading) {
     return (
       <>
-      <SEOHead seo={getSEOForPage("reports")} />
+      <SEOHeadNative seo={getSEOForPage("reports")} />
 
         <div className="min-h-screen bg-slate-50">
           <div className="container-app py-8">
@@ -189,7 +189,7 @@ const ReportsPage: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("reports")} />
+      <SEOHeadNative seo={getSEOForPage("reports")} />
       <div className="min-h-screen bg-slate-50">
         <div className="container-app py-8">
           {/* Header */}

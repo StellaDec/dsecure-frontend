@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { 
   ShieldCheck, 
@@ -16,7 +16,7 @@ export default function WhatIsNist80088() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <SEOHead seo={getSEOForPage("what-is-nist-800-88")} />
+      <SEOHeadNative seo={getSEOForPage("what-is-nist-800-88")} />
 
       {/* Authority Hero */}
       <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 bg-white overflow-hidden">

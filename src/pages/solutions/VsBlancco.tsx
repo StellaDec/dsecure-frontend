@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { 
   ShieldCheck, 
@@ -57,7 +57,7 @@ export default function VsBlancco() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead seo={getSEOForPage("vs-blancco")} />
+      <SEOHeadNative seo={getSEOForPage("vs-blancco")} />
 
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 md:pt-32 md:pb-32 bg-slate-900 overflow-hidden">

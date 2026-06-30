@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useAuth } from '@/auth/AuthContext'
 import { useCurrentUser, RoleGuard, PermissionGuard } from '@/components/ProtectedRoute'
@@ -92,7 +92,7 @@ export default function EnhancedUserDashboard() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("enhanced-user-dashboard")} />
+      <SEOHeadNative seo={getSEOForPage("enhanced-user-dashboard")} />
       <div className="container-app py-12">
         {/* Header with JWT-based user info */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">

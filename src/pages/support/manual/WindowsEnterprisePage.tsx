@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const WindowsEnterprisePage: React.FC = memo(() => {
   return (
     <>
-      {/* <SEOHead 
+      {/* <SEOHeadNative 
         seo={getSEOForPage("help-manual", { 
           title: "Windows Enterprise | D-Secure Manual", 
           canonicalUrl: "/support/manual/windows-enterprise" 

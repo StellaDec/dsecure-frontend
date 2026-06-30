@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
 import {
   CheckIcon,
   ArrowRightIcon,
@@ -13,6 +12,28 @@ import { FileTextIcon, Download, Zap, Database, HardDrive, Server, Cloud, Refres
 import { getSEOForPage } from "@/utils/seo";
 import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import type { KeyTakeawayItem } from "@/types/seo";
+
+const lunEraserTakeaways: KeyTakeawayItem[] = [
+  {
+    title: "Broad Platform Support",
+    description: "Erase LUNs on UNIX, Linux, and Windows including IDE, SCSI, FC, and iSCSI.",
+  },
+  {
+    title: "Active Environment Erasure",
+    description: "Erase specific LUNs while leaving the host OS and adjacent volumes fully active.",
+  },
+  {
+    title: "Tamper-Proof Audit Trail",
+    description: "Generates digitally signed reports containing LUN ID, Port, and Path information.",
+  },
+  {
+    title: "Cloud Virtual Stores",
+    description: "Securely erase virtual data stores hosted on AWS, Azure, and Google Cloud.",
+  }
+];
 
 const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
   const [activeSection, setActiveSection] = useState("");
@@ -110,7 +131,8 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead seo={getSEOForPage("lun-eraser")} />
+      <SEOHeadNative seo={getSEOForPage("lun-eraser")} />
+
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div
@@ -196,6 +218,12 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                     </a>
                   </div>
                 </Reveal>
+
+                <Reveal delayMs={400}>
+                  <div className="mt-4">
+                    
+                  </div>
+                </Reveal>
               </div>
 
               {/* 3D Visual Hero */}
@@ -275,6 +303,14 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
         </section>
 
         {/* ================= CAPABILITIES ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={lunEraserTakeaways} />
+          </div>
+        </section>
+
         <section id="capabilities" className="py-24 bg-white relative overflow-hidden">
           <div className="container mx-auto px-4 max-w-7xl relative z-10">
             <Reveal>

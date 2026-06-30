@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React, { useMemo, useRef, useState, useEffect } from "react";
 import {
@@ -985,7 +985,7 @@ const CompleteDSecureNetworkFile: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEOHead seo={getSEOForPage("complete-dsecure-network-file")} />
+      <SEOHeadNative seo={getSEOForPage("complete-dsecure-network-file")} />
 
       {/* Custom Scrollbar Styles */}
       <style>{`

@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useAuth } from "@/auth/AuthContext";
 import { useState, useEffect, useCallback } from "react";
@@ -185,7 +185,7 @@ export default function AddUser() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("add-user")} />
+      <SEOHeadNative seo={getSEOForPage("add-user")} />
 
 
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">

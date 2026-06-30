@@ -4,7 +4,7 @@ import { ProductInternalLinks } from "@/components/ProductInternalLinks";
 import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
   ShieldIcon,
@@ -19,7 +19,11 @@ import {
 import { blogPosts } from "@/data/blogPosts";
 import { FileTextIcon, Monitor, Download, X } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
+import { generateFAQSchema } from "@/utils/seo.core";
 import { useToast } from "@/components/Toast";
+import { FAQSection } from "@/components/FAQSection";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQItem, KeyTakeawayItem } from "@/types/seo";
 
 const getReadTime = (text: string) => {
   const wordsPerMinute = 200;
@@ -49,6 +53,46 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [isDemoActive, setIsDemoActive] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Single Source of Truth for Key Takeaways
+  const fileEraserTakeaways: KeyTakeawayItem[] = [
+    { text: "Securely erase specific files and folders without wiping the entire drive." },
+    { text: "Sanitize free space to permanently remove traces of previously deleted files." },
+    { text: "Meets NIST 800-88 and DoD 5220.22-M data sanitization standards." },
+    { text: "Automate file erasure tasks and generate compliance-ready certificates." },
+  ];
+
+  // Single Source of Truth for FAQs
+  const fileEraserFaqs: FAQItem[] = [
+    {
+      question: "How is D-Secure File Eraser different from simply deleting files?",
+      answer: "When you delete a file normally, only the reference to the data is removed—the actual data remains on your drive and can be recovered with forensic tools. D-Secure File Eraser overwrites the data multiple times using internationally recognized algorithms (like NIST 800-88, DoD 5220.22-M), making recovery impossible.",
+    },
+    {
+      question: "What erasure standards does File Eraser support?",
+      answer: "D-Secure File Eraser supports 27+ erasure standards including NIST 800-88 Clear/Purge, DoD 5220.22-M (3-pass and 7-pass), Gutmann (35-pass), HMG IS5, RCMP TSSIT OPS-II, Peter Gutmann's method, and many more. You can choose the appropriate standard based on your compliance requirements.",
+    },
+    {
+      question: "Can I erase data from cloud storage services?",
+      answer: "Yes! D-Secure File Eraser supports secure erasure from major cloud platforms including Google Drive, Microsoft OneDrive, Dropbox, and iCloud. It uses OAuth integration to securely connect and permanently remove files from your cloud storage.",
+    },
+    {
+      question: "Will I receive proof of erasure for compliance audits?",
+      answer: "Absolutely. After every erasure operation, D-Secure generates a detailed PDF certificate that includes file details, erasure method used, timestamp, verification status, and a tamper-proof hash. These certificates are suitable for regulatory audits and compliance documentation.",
+    },
+    {
+      question: "Is the software suitable for enterprise deployment?",
+      answer: "Yes, D-Secure File Eraser is designed for enterprise scalability. It supports Active Directory integration, Group Policy deployment, centralized management, scheduled erasure tasks, and can be deployed across thousands of endpoints with remote monitoring capabilities.",
+    },
+    {
+      question: "Does File Eraser support SSD and NVMe drives?",
+      answer: "Yes, the software is optimized for all storage types including HDDs, SSDs, NVMe drives, and USB storage devices. It uses appropriate erasure techniques for each storage type to ensure complete and verifiable data destruction.",
+    },
+    {
+      question: "What ongoing support is provided?",
+      answer: "We provide continuous support including regular software updates, technical assistance, compliance monitoring, and renewal coordination. Think of us as your ongoing partner in data hygiene.",
+    },
+  ];
 
   const demoContainerRef = useRef<HTMLDivElement>(null);
 
@@ -671,7 +715,10 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("file-eraser")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("file-eraser")} 
+        structuredData={generateFAQSchema(fileEraserFaqs)} 
+      />
 
       {/* Breadcrumb Navigation — SEO ke liye */}
       <div className="container mx-auto px-4 pt-4 pb-1">
@@ -806,6 +853,8 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     </button>
                   </div>
                 </div>
+
+                
               </Reveal>
 
               {/* Right: Hero Illustration - 3D Product Box */}
@@ -938,6 +987,14 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
         </section>
 
         {/* ================= WHAT YOU CAN ERASE ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={fileEraserTakeaways} title="Why Choose D-Secure File Eraser?" />
+          </div>
+        </section>
+
         <section id="erase-types" className="py-16 lg:py-24 bg-white">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
@@ -1804,84 +1861,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
         <ProductInternalLinks currentProduct="file-eraser" />
 
         {/* ================= FAQ SECTION ================= */}
-        <section
-          id="faq"
-          className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-emerald-50"
-        >
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Frequently Asked Questions
-                </h2>
-                <p className="text-lg text-slate-600">
-                  Everything you need to know about D-Secure File Eraser
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: "How is D-Secure File Eraser different from simply deleting files?",
-                  a: "When you delete a file normally, only the reference to the data is removed—the actual data remains on your drive and can be recovered with forensic tools. D-Secure File Eraser overwrites the data multiple times using internationally recognized algorithms (like NIST 800-88, DoD 5220.22-M), making recovery impossible.",
-                },
-                {
-                  q: "What erasure standards does File Eraser support?",
-                  a: "D-Secure File Eraser supports 27+ erasure standards including NIST 800-88 Clear/Purge, DoD 5220.22-M (3-pass and 7-pass), Gutmann (35-pass), HMG IS5, RCMP TSSIT OPS-II, Peter Gutmann's method, and many more. You can choose the appropriate standard based on your compliance requirements.",
-                },
-                {
-                  q: "Can I erase data from cloud storage services?",
-                  a: "Yes! D-Secure File Eraser supports secure erasure from major cloud platforms including Google Drive, Microsoft OneDrive, Dropbox, and iCloud. It uses OAuth integration to securely connect and permanently remove files from your cloud storage.",
-                },
-                {
-                  q: "Will I receive proof of erasure for compliance audits?",
-                  a: "Absolutely. After every erasure operation, D-Secure generates a detailed PDF certificate that includes file details, erasure method used, timestamp, verification status, and a tamper-proof hash. These certificates are suitable for regulatory audits and compliance documentation.",
-                },
-                {
-                  q: "Is the software suitable for enterprise deployment?",
-                  a: "Yes, D-Secure File Eraser is designed for enterprise scalability. It supports Active Directory integration, Group Policy deployment, centralized management, scheduled erasure tasks, and can be deployed across thousands of endpoints with remote monitoring capabilities.",
-                },
-                {
-                  q: "Does File Eraser support SSD and NVMe drives?",
-                  a: "Yes, the software is optimized for all storage types including HDDs, SSDs, NVMe drives, and USB storage devices. It uses appropriate erasure techniques for each storage type to ensure complete and verifiable data destruction.",
-                },
-                {
-                  q: "What ongoing support is provided?",
-                  a: "We provide continuous support including regular software updates, technical assistance, compliance monitoring, and renewal coordination. Think of us as your ongoing partner in data hygiene.",
-                },
-              ].map((faq, i) => (
-                <Reveal key={faq.q} delayMs={i * 50}>
-                  <details className="group bg-slate-50 rounded-xl border border-slate-200 hover:border-emerald-300 transition-colors">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                      <span className="font-semibold text-slate-900 pr-4">
-                        {faq.q}
-                      </span>
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center group-open:rotate-180 transition-transform">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                      {faq.a}
-                    </div>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection faqs={fileEraserFaqs} />
 
         {/* ================= ENQUIRY / CTA SECTION ================= */}
         <section id="contact" className="py-20 lg:py-28 bg-white border-t">
@@ -2179,6 +2159,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
             </div>
           </div>
         </section>
+
       </div>
 
       {/* Lightbox Modal with Gallery Navigation */}

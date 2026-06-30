@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React, { useState, memo } from "react";
 import Reveal from "@/components/Reveal";
@@ -318,7 +318,7 @@ const MacOSSystemsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      {/* <SEOHead
+      {/* <SEOHeadNative
         seo={getSEOForPage("mac-ossystems", {
           title: "Mac OSSystems | D-Secure Manual",
           canonicalUrl: "/support/manual/mac-ossystems",

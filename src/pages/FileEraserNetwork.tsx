@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 import UpcomingBadge from "@/components/ui/UpcomingBadge";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
+import { generateFAQSchema } from "@/utils/seo.core";
+import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
 import {
   ShieldIcon,
   CheckIcon,
@@ -640,31 +644,39 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
     },
   ];
 
+  // Key Takeaways for File Eraser Network Page
+  const fileEraserNetworkTakeaways = [
+    { title: "Domain Erase", desc: "Permanently erase files across domain-connected endpoint devices." },
+    { title: "Centralized Management", desc: "Centralized admin console for scheduling network erasure tasks." },
+    { title: "Audit Reports", desc: "Generates cryptographically signed, tamper-proof erasure reports." },
+    { title: "Global Compliance", desc: "Complies with NIST 800-88, DoD 5220.22-M, and GDPR." },
+  ];
+
   // Professional FAQ for Network Eraser
-  const faqs = [
+  const fileEraserNetworkFaqs = [
     {
-      question: "What is File Eraser Network?",
-      answer: "It is a specialized software that allows IT administrators to permanently erase files, folders, and system traces from all domain-connected computers across an organization from a centralized console.",
+      q: "What is File Eraser Network?",
+      a: "It is a specialized software that allows IT administrators to permanently erase files, folders, and system traces from all domain-connected computers across an organization from a centralized console.",
     },
     {
-      question: "Does it generate tamper-proof reports?",
-      answer: "Yes, it generates a cryptographically signed, tamper-proof erasure report for every machine, documenting the list of files erased and the standard used for audit trails.",
+      q: "Does it generate tamper-proof reports?",
+      a: "Yes, it generates a cryptographically signed, tamper-proof erasure report for every machine, documenting the list of files erased and the standard used for audit trails.",
     },
     {
-      question: "What is the license model?",
-      answer: "The software is available on an annual subscription model per computer. You can centrally manage and pool licenses from the cloud console.",
+      q: "What is the license model?",
+      a: "The software is available on an annual subscription model per computer. You can centrally manage and pool licenses from the cloud console.",
     },
     {
-      question: "Can it erase machines disconnected from the domain?",
-      answer: "Yes, if a task is already scheduled for a computer or Organizational Unit (OU), it will execute at the scheduled time even if the machine is temporarily disconnected.",
+      q: "Can it erase machines disconnected from the domain?",
+      a: "Yes, if a task is already scheduled for a computer or Organizational Unit (OU), it will execute at the scheduled time even if the machine is temporarily disconnected.",
     },
     {
-      question: "Can I search for specific files across the network?",
-      answer: "Absolutely. You can use keywords or import CSV files containing paths to search and identify sensitive data before performing an erasure task.",
+      q: "Can I search for specific files across the network?",
+      a: "Absolutely. You can use keywords or import CSV files containing paths to search and identify sensitive data before performing an erasure task.",
     },
     {
-      question: "Does it support offline activation?",
-      answer: "Yes, the software supports both online and offline activation methods to accommodate air-gapped or restricted network environments.",
+      q: "Does it support offline activation?",
+      a: "Yes, the software supports both online and offline activation methods to accommodate air-gapped or restricted network environments.",
     },
   ];
 
@@ -686,7 +698,10 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("file-eraser-network")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("file-eraser-network")} 
+        structuredData={generateFAQSchema(fileEraserNetworkFaqs)} 
+      />
       {/* ================= STICKY SECTION NAV ================= */}
       <div
         className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -799,6 +814,10 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         </span>
                       </div>
                     ))}
+                  </div>
+
+                  <div className="mt-4">
+                    
                   </div>
                 </div>
               </Reveal>
@@ -942,6 +961,14 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
         </section>
 
         {/* ================= WHAT YOU CAN ERASE ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={fileEraserNetworkTakeaways} />
+          </div>
+        </section>
+
         <section id="erase-types" className="py-16 lg:py-24 bg-white">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
@@ -1531,55 +1558,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
         </section>
 
         {/* ================= FAQ SECTION ================= */}
-        <section
-          id="faq"
-          className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-emerald-50"
-        >
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Frequently Asked Questions
-                </h2>
-                <p className="text-lg text-slate-600">
-                  Everything you need to know about D-Secure File Eraser
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {faqs.map((faq, i) => (
-                <Reveal key={i} delayMs={i * 50}>
-                  <details className="group bg-slate-50 rounded-xl border border-slate-200 hover:border-emerald-300 transition-colors">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                      <span className="font-semibold text-slate-900 pr-4">
-                        {faq.question}
-                      </span>
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center group-open:rotate-180 transition-transform">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection faqs={fileEraserNetworkFaqs} />
 
         {/* ================= ENQUIRY / CTA SECTION ================= */}
         <section id="contact" className="py-20 lg:py-28 bg-white border-t">

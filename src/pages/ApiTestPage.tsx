@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { checkApiAvailability } from '@/utils/api'
+import { checkApiAvailability } from '@/utils/enhancedApiClient'
 import { useUsers, useMachines, useReports } from '@/utils/dataService'
 
-import SEOHead from '../components/SEOHead'
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo'
 
 export default function ApiTestPage() {
@@ -31,7 +31,7 @@ export default function ApiTestPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage('api-test')} />
+      <SEOHeadNative seo={getSEOForPage('api-test')} />
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6">
 
         <div className="max-w-4xl mx-auto space-y-6">

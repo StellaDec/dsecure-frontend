@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
@@ -174,7 +174,7 @@ const WipeSASDrive: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <SEOHead seo={getSEOForPage('wipe-sas-drive')} />
+      <SEOHeadNative seo={getSEOForPage('wipe-sas-drive')} />
 
       {/* Breadcrumbs */}
       <div className="bg-white border-b border-slate-200 sticky top-0 z-30">

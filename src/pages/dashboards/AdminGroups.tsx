@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useState, useEffect, useRef, useCallback } from "react";
 // ✅ AbortController ref — stale API requests cancel karne ke liye
@@ -1216,7 +1216,7 @@ export default function AdminGroups() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("admin-groups")} />
+      <SEOHeadNative seo={getSEOForPage("admin-groups")} />
 
       <div className="space-y-6">
         {/* Header */}

@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React from "react";
 
@@ -8,7 +8,7 @@ const Support: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("support")} />
+      <SEOHeadNative seo={getSEOForPage("support")} />
 
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

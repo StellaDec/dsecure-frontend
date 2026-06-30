@@ -1,5 +1,5 @@
 import React, { useState, memo, useEffect } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -1621,7 +1621,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
   return (
     <>
-      <SEOHead
+      <SEOHeadNative
         seo={pageSEO}
         structuredData={pricingSchema}
       />

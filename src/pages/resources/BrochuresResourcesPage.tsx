@@ -1,6 +1,6 @@
 import Reveal from '@/components/Reveal'
 import { Link } from 'react-router-dom'
-import SEOHead from '@/components/SEOHead'
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo'
 import { downloadResource } from '../../utils/downloadUtils'
 import { useToast } from '@/components/Toast'
@@ -50,7 +50,7 @@ export default function BrochuresResourcesPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage('brochures')} />
+      <SEOHeadNative seo={getSEOForPage('brochures')} />
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         {/* Hero Section */}
         <section className="py-16 md:py-24">

@@ -1,5 +1,5 @@
 import React from 'react';
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 
 const DiagnosticsPage: React.FC = () => {
@@ -19,7 +19,7 @@ const DiagnosticsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-8">
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage('diagnostics')} />
+      <SEOHeadNative seo={getSEOForPage('diagnostics')} />
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-3xl font-bold mb-8">Hardware Diagnostics Tool: Comprehensive System Performance Audit</h1>
 

@@ -4,12 +4,8 @@ import { CloudinaryImage } from "@/components/CloudinaryImage";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
-import {
-  ShieldIcon,
-  CheckIcon,
-  ClipboardIcon,
-} from "@/components/FlatIcons";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
+import { ShieldIcon, CheckIcon, ClipboardIcon } from "@/components/FlatIcons";
 import {
   Activity,
   Thermometer,
@@ -24,6 +20,27 @@ import {
   Gauge,
 } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
+
+const hardDriveMonitorTakeaways = [
+  {
+    title: "Real-time Monitoring",
+    desc: "Prevent issues before they affect your critical data with total precision.",
+  },
+  {
+    title: "S.M.A.R.T. Analysis",
+    desc: "Monitor attributes like Reallocated Sector Count to anticipate failures.",
+  },
+  {
+    title: "Disk Cloning",
+    desc: "Create exact replicas of your drives for backup or easy high-speed migration.",
+  },
+  {
+    title: "Scan & Repair",
+    desc: "Identify and isolate bad sectors, ensuring your data remains in healthy blocks.",
+  },
+];
 
 /**
  * HardDriveMonitorPage component
@@ -88,7 +105,8 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
     const element = document.getElementById(sectionId);
     if (element) {
       const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top + globalThis.scrollY;
+      const elementPosition =
+        element.getBoundingClientRect().top + globalThis.scrollY;
       globalThis.scrollTo({
         top: elementPosition - offset,
         behavior: "smooth",
@@ -102,44 +120,45 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
       title: "Health Overview",
       desc: "Get a real-time comprehensive snapshot of your drive's general health status and critical parameters.",
       icon: <Activity className="w-6 h-6 text-emerald-500" />,
-      bg: "bg-emerald-50"
+      bg: "bg-emerald-50",
     },
     {
       title: "S.M.A.R.T. Status",
       desc: "Monitor detailed S.M.A.R.T. attributes such as Reallocated Sector Count to anticipate failures.",
       icon: <ShieldIcon className="w-6 h-6 text-teal-500" />,
-      bg: "bg-teal-50"
+      bg: "bg-teal-50",
     },
     {
       title: "Real-time Alerts",
       desc: "Set personalized notifications for temperature thresholds and critical disk health events.",
       icon: <Bell className="w-6 h-6 text-cyan-500" />,
-      bg: "bg-cyan-50"
+      bg: "bg-cyan-50",
     },
     {
       title: "Disk Cloning",
       desc: "Create replicas of your drives for backup or easy migration from older HDDs to high-speed SSDs.",
       icon: <Copy className="w-6 h-6 text-emerald-500" />,
-      bg: "bg-emerald-50"
+      bg: "bg-emerald-50",
     },
     {
       title: "Disk Scan & Repair",
       desc: "In-depth scanning to identify and isolate bad sectors, ensuring your data remains in healthy blocks.",
       icon: <Search className="w-6 h-6 text-teal-500" />,
-      bg: "bg-teal-50"
+      bg: "bg-teal-50",
     },
     {
       title: "SMART Reports",
       desc: "Save and export detailed status reports for future reference or for technical support diagnostics.",
       icon: <FileText className="w-6 h-6 text-cyan-500" />,
-      bg: "bg-cyan-50"
-    }
+      bg: "bg-cyan-50",
+    },
   ];
 
   // Datasheet डाउनलोड करने के लिए फंक्शन
   const downloadDatasheet = () => {
     const link = document.createElement("a");
-    link.href = "https://assets.dsecuretech.com/pdf/D-secure%20smart%20health%20diagnostic.pdf";
+    link.href =
+      "https://assets.dsecuretech.com/pdf/D-secure%20smart%20health%20diagnostic.pdf";
     link.download = "D-secure-smart-health-diagnostic.pdf";
     link.target = "_blank";
     document.body.appendChild(link);
@@ -149,18 +168,24 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("hard-drive-monitor")} />
+      <SEOHeadNative seo={getSEOForPage("hard-drive-monitor")} />
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div
         className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isNavVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+          isNavVisible
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0"
         }`}
       >
         <div className="bg-white border-b border-emerald-100 shadow-sm">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-14">
-              <Link to="/" aria-label="Go to Home Page" className="flex items-center">
+              <Link
+                to="/"
+                aria-label="Go to Home Page"
+                className="flex items-center"
+              >
                 <ThemeAwareLogo className="h-7 sm:h-8 w-auto" />
               </Link>
               <nav className="flex items-center gap-1 overflow-x-auto py-2">
@@ -169,7 +194,8 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all duration-200 ${
-                      activeSection === item.id || (activeSection === "" && item.id === "hero")
+                      activeSection === item.id ||
+                      (activeSection === "" && item.id === "hero")
                         ? "bg-emerald-500 text-white shadow-md"
                         : "text-slate-600 hover:bg-emerald-50 hover:text-emerald-800"
                     }`}
@@ -185,7 +211,10 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         {/* ================= HERO SECTION ================= */}
-        <section id="hero" className="pt-6 pb-12 lg:pt-10 lg:pb-16 relative overflow-hidden">
+        <section
+          id="hero"
+          className="pt-6 pb-12 lg:pt-10 lg:pb-16 relative overflow-hidden"
+        >
           {/* Background Decorative Elements */}
           <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-emerald-100/40 rounded-full blur-3xl opacity-50 -z-10"></div>
           <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[400px] h-[400px] bg-teal-100/40 rounded-full blur-3xl opacity-50 -z-10"></div>
@@ -202,7 +231,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                     <ShieldIcon className="w-4 h-4" />
                     Advanced Smart Diagnostic Utility
                   </div>
-                  
+
                   <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
                     Complete Smart Diagnostic <br />
                     <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
@@ -211,8 +240,10 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-                    D-Secure Smart Diagnostic provides close real-time watch on your drives to prevent issues before they affect your critical data. 
-                    Monitor health, SMART status, and temperature with total precision.
+                    D-Secure Smart Diagnostic provides close real-time watch on
+                    your drives to prevent issues before they affect your
+                    critical data. Monitor health, SMART status, and temperature
+                    with total precision.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -242,6 +273,8 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                       Download Datasheet
                     </button>
                   </div>
+
+                  
                 </div>
               </Reveal>
 
@@ -350,8 +383,12 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                         <Thermometer className="w-6 h-6" />
                       </div>
                       <div>
-                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Storage Temp</p>
-                        <p className="text-sm font-bold text-slate-900">Optimal (32°C)</p>
+                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                          Storage Temp
+                        </p>
+                        <p className="text-sm font-bold text-slate-900">
+                          Optimal (32°C)
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -361,14 +398,38 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                     <div className="flex items-center gap-3">
                       <div className="relative w-11 h-11 flex items-center justify-center">
                         <svg className="w-full h-full -rotate-90">
-                          <circle cx="22" cy="22" r="18" fill="transparent" stroke="#f1f5f9" strokeWidth="4" />
-                          <circle cx="22" cy="22" r="18" fill="transparent" stroke="#10b981" strokeWidth="4" strokeDasharray="113" strokeDashoffset="11" strokeLinecap="round" className="animate-pulse" />
+                          <circle
+                            cx="22"
+                            cy="22"
+                            r="18"
+                            fill="transparent"
+                            stroke="#f1f5f9"
+                            strokeWidth="4"
+                          />
+                          <circle
+                            cx="22"
+                            cy="22"
+                            r="18"
+                            fill="transparent"
+                            stroke="#10b981"
+                            strokeWidth="4"
+                            strokeDasharray="113"
+                            strokeDashoffset="11"
+                            strokeLinecap="round"
+                            className="animate-pulse"
+                          />
                         </svg>
-                        <span className="absolute text-[10px] font-bold text-emerald-800">92%</span>
+                        <span className="absolute text-[10px] font-bold text-emerald-800">
+                          92%
+                        </span>
                       </div>
                       <div>
-                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Disk Health</p>
-                        <p className="text-sm font-bold text-slate-900">Excellent</p>
+                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                          Disk Health
+                        </p>
+                        <p className="text-sm font-bold text-slate-900">
+                          Excellent
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -380,12 +441,21 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                         <BarChart3 className="w-6 h-6" />
                       </div>
                       <div>
-                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Performance</p>
+                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                          Performance
+                        </p>
                         <div className="flex items-center gap-1.5">
-                           <p className="text-sm font-bold text-slate-900">Ultra fast</p>
-                           <div className="flex gap-0.5">
-                              {[1,2,3,4,5].map(i => <div key={i} className={`w-1 h-3 rounded-full ${i <= 4 ? 'bg-cyan-500' : 'bg-slate-200'}`}></div>)}
-                           </div>
+                          <p className="text-sm font-bold text-slate-900">
+                            Ultra fast
+                          </p>
+                          <div className="flex gap-0.5">
+                            {[1, 2, 3, 4, 5].map((i) => (
+                              <div
+                                key={i}
+                                className={`w-1 h-3 rounded-full ${i <= 4 ? "bg-cyan-500" : "bg-slate-200"}`}
+                              ></div>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -394,8 +464,10 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                   {/* Card 4: S.M.A.R.T. Status Badge */}
                   <div className="absolute bottom-1/4 -left-16 bg-gradient-to-r from-emerald-500 to-teal-600 p-[1px] rounded-full shadow-lg animate-[float_7s_ease-in-out_infinite_1.5s] hidden lg:block z-30">
                     <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2">
-                       <div className="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></div>
-                       <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tighter">S.M.A.R.T. Status: Passed</span>
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></div>
+                      <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tighter">
+                        S.M.A.R.T. Status: Passed
+                      </span>
                     </div>
                   </div>
 
@@ -412,18 +484,24 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
           </div>
         </section>
 
-
-
         {/* ================= DETAILED DISK INFO SECTION ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={hardDriveMonitorTakeaways} />
+          </div>
+        </section>
+
         <section className="py-24 bg-white relative overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
               <Reveal>
                 <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-900 group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-transparent"></div>
-                  <CloudinaryImage 
-                    publicId="dsecure/products/drive-monitor-health" 
-                    alt="SMART Status Reporting Interface Details" 
+                  <CloudinaryImage
+                    publicId="dsecure/products/drive-monitor-health"
+                    alt="SMART Status Reporting Interface Details"
                     className="w-full h-auto scale-105 group-hover:scale-100 transition-transform duration-700 opacity-90"
                     fallback="/images/products/drive-monitor-health.png"
                   />
@@ -431,26 +509,50 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
               </Reveal>
               <Reveal delayMs={200}>
                 <div className="space-y-8">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">Smart Diagnostic Health Checkup</h2>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+                    Smart Diagnostic Health Checkup
+                  </h2>
                   <p className="text-slate-600 text-lg leading-relaxed">
-                    Disk crashes seldom happen suddenly. Usually, a drive shows signs of wear and tear for many weeks before dying. 
-                    D-Secure Smart Diagnostic identifies critical attributes to warn you well in advance.
+                    Disk crashes seldom happen suddenly. Usually, a drive shows
+                    signs of wear and tear for many weeks before dying. D-Secure
+                    Smart Diagnostic identifies critical attributes to warn you
+                    well in advance.
                   </p>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {[
-                      { icon: <Cpu className="w-5 h-5" />, title: "Detailed Diagnostics", txt: "Serial number, Model, Firmware, and Buffer size." },
-                      { icon: <BarChart3 className="w-5 h-5" />, title: "SMART Reporting", txt: "Export status reports for future reference." },
-                      { icon: <RefreshCw className="w-5 h-5" />, title: "Live Background Sync", txt: "Continuous background health monitoring." },
-                      { icon: <ClipboardIcon className="w-5 h-5" />, title: "Custom Thresholds", txt: "Personalized temp alerts for disk safety." }
+                      {
+                        icon: <Cpu className="w-5 h-5" />,
+                        title: "Detailed Diagnostics",
+                        txt: "Serial number, Model, Firmware, and Buffer size.",
+                      },
+                      {
+                        icon: <BarChart3 className="w-5 h-5" />,
+                        title: "SMART Reporting",
+                        txt: "Export status reports for future reference.",
+                      },
+                      {
+                        icon: <RefreshCw className="w-5 h-5" />,
+                        title: "Live Background Sync",
+                        txt: "Continuous background health monitoring.",
+                      },
+                      {
+                        icon: <ClipboardIcon className="w-5 h-5" />,
+                        title: "Custom Thresholds",
+                        txt: "Personalized temp alerts for disk safety.",
+                      },
                     ].map((item) => (
                       <div key={item.title} className="flex gap-4">
                         <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 text-emerald-800">
                           {item.icon}
                         </div>
                         <div>
-                          <h3 className="font-bold text-slate-900 mb-1">{item.title}</h3>
-                          <p className="text-sm text-slate-500 leading-normal">{item.txt}</p>
+                          <h3 className="font-bold text-slate-900 mb-1">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-slate-500 leading-normal">
+                            {item.txt}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -462,12 +564,18 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
         </section>
 
         {/* ================= FEATURES GRID ================= */}
-        <section id="features" className="py-24 bg-gradient-to-b from-white/50 to-emerald-50/20">
+        <section
+          id="features"
+          className="py-24 bg-gradient-to-b from-white/50 to-emerald-50/20"
+        >
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 font-display">Integrated Smart Diagnostic Protection</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 font-display">
+                Integrated Smart Diagnostic Protection
+              </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
-                A complete set of diagnostic tools designed to keep your drives in perfect condition, catching problems as they occur.
+                A complete set of diagnostic tools designed to keep your drives
+                in perfect condition, catching problems as they occur.
               </p>
             </div>
 
@@ -475,11 +583,17 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
               {mainFeatures.map((feature) => (
                 <Reveal key={feature.title} delayMs={100}>
                   <div className="bg-white p-8 rounded-2xl border border-emerald-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                    <div className={`w-14 h-14 ${feature.bg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    <div
+                      className={`w-14 h-14 ${feature.bg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
+                    >
                       {feature.icon}
                     </div>
-                    <h2 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h2>
-                    <p className="text-slate-500 leading-relaxed text-sm">{feature.desc}</p>
+                    <h2 className="text-xl font-bold text-slate-900 mb-3">
+                      {feature.title}
+                    </h2>
+                    <p className="text-slate-500 leading-relaxed text-sm">
+                      {feature.desc}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -493,20 +607,26 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
               <Reveal>
                 <div className="space-y-6">
-                  <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900">Clone Disk for Ultimate Safety</h2>
+                  <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900">
+                    Clone Disk for Ultimate Safety
+                  </h2>
                   <p className="text-slate-600 text-lg leading-relaxed">
-                    Creates an exact replica of a drive for backup and recovery. 
-                    Whether you're performing a hardware upgrade or preserving data from a failing drive, 
-                    our sector-by-sector cloning ensures no bit is left behind.
+                    Creates an exact replica of a drive for backup and recovery.
+                    Whether you're performing a hardware upgrade or preserving
+                    data from a failing drive, our sector-by-sector cloning
+                    ensures no bit is left behind.
                   </p>
                   <ul className="grid grid-cols-1 gap-4">
                     {[
                       "Creates exact bit-by-bit replica of the source drive",
                       "Ideal for upgrading to high-capacity SSDs/HDDs",
                       "Auto backup and sync with external USB/NAS storage",
-                      "Syncs local files seamlessly across storage platforms"
+                      "Syncs local files seamlessly across storage platforms",
                     ].map((item) => (
-                      <li key={item} className="flex items-center gap-3 text-slate-700 font-medium text-sm">
+                      <li
+                        key={item}
+                        className="flex items-center gap-3 text-slate-700 font-medium text-sm"
+                      >
                         <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
                           <CheckIcon className="w-4 h-4 text-emerald-800" />
                         </div>
@@ -521,18 +641,16 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                     Learn To Clone
                     <ArrowRightIcon className="w-4 h-4" />
                   </Link> */}
-
                 </div>
               </Reveal>
               <Reveal delayMs={200}>
                 <div className="relative p-4 bg-white rounded-3xl shadow-2xl group border border-emerald-50 overflow-hidden">
-                   <CloudinaryImage 
-                    publicId="dsecure/products/drive-monitor-cloning" 
-                    alt="Sector-by-Sector Cloning Operation" 
+                  <CloudinaryImage
+                    publicId="dsecure/products/drive-monitor-cloning"
+                    alt="Sector-by-Sector Cloning Operation"
                     className="w-full h-auto scale-105 group-hover:scale-100 transition-transform duration-700 opacity-90"
                     fallback="/images/products/drive-monitor-cloning-fixed.png"
                   />
-
                 </div>
               </Reveal>
             </div>
@@ -540,20 +658,44 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
         </section>
 
         {/* ================= PROCESS SECTION ================= */}
-        <section id="process" className="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <section
+          id="process"
+          className="py-24 bg-slate-900 text-white relative overflow-hidden"
+        >
           <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 blur-[100px]"></div>
           <div className="container mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-16">Monitor Your Storage in 3 Steps</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-16">
+              Monitor Your Storage in 3 Steps
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
               {[
-                { step: "01", title: "Select Utility", desc: "Choose between Health, SMART, Scan or Clone from the intuitive side pane." },
-                { step: "02", title: "View Results", desc: "Identify drive metrics and check temperature or SMART attributes immediately." },
-                { step: "03", title: "Save Report", desc: "Export and save health reports to track performance or share with support." }
+                {
+                  step: "01",
+                  title: "Select Utility",
+                  desc: "Choose between Health, SMART, Scan or Clone from the intuitive side pane.",
+                },
+                {
+                  step: "02",
+                  title: "View Results",
+                  desc: "Identify drive metrics and check temperature or SMART attributes immediately.",
+                },
+                {
+                  step: "03",
+                  title: "Save Report",
+                  desc: "Export and save health reports to track performance or share with support.",
+                },
               ].map((item) => (
-                <div key={item.step} className="space-y-4 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all group">
-                  <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto font-bold text-lg group-hover:scale-110 transition-transform">{item.step}</div>
+                <div
+                  key={item.step}
+                  className="space-y-4 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all group"
+                >
+                  <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto font-bold text-lg group-hover:scale-110 transition-transform">
+                    {item.step}
+                  </div>
                   <h3 className="text-xl font-bold pt-2">{item.title}</h3>
-                  <p className="text-slate-400 leading-relaxed font-medium">{item.desc}</p>
+                  <p className="text-slate-400 leading-relaxed font-medium">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -564,7 +706,9 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
         <section id="specs" className="py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-slate-900">Technical Specifications</h2>
+              <h2 className="text-3xl font-bold text-slate-900">
+                Technical Specifications
+              </h2>
             </div>
             <div className="max-w-4xl mx-auto border border-emerald-100 rounded-3xl overflow-hidden shadow-sm bg-white/70 backdrop-blur-sm">
               <table className="w-full text-left border-collapse">
@@ -574,11 +718,18 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                     ["OS Support", "Windows 11, 10, 8.1, 8 & Windows 7"],
                     ["Memory", "4 GB Minimum (8 GB recommended for cloning)"],
                     ["Hard Disk", "250 MB free space for smooth installation"],
-                    ["Interface Support", "SATA, SSD, Mechanical Drives, External USB Disk"]
+                    [
+                      "Interface Support",
+                      "SATA, SSD, Mechanical Drives, External USB Disk",
+                    ],
                   ].map(([label, val]) => (
                     <tr key={label} className="even:bg-emerald-50/10">
-                      <td className="px-8 py-5 font-bold text-slate-700 border-b border-emerald-50 whitespace-nowrap">{label}</td>
-                      <td className="px-8 py-5 text-slate-600 border-b border-emerald-50">{val}</td>
+                      <td className="px-8 py-5 font-bold text-slate-700 border-b border-emerald-50 whitespace-nowrap">
+                        {label}
+                      </td>
+                      <td className="px-8 py-5 text-slate-600 border-b border-emerald-50">
+                        {val}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -588,26 +739,25 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
         </section>
 
         {/* ================= FREQUENTLY ASKED QUESTIONS ================= */}
-        <section id="faq" className="py-24 bg-slate-50/50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-16">Expert Answers to Common Queries</h2>
-            <div className="max-w-3xl mx-auto space-y-6">
-              {[
-                { q: "What parameters are monitored by the SMART utility?", a: "It monitors critical attributes like Read Error Rate, Reallocated Sector Count, and Seek Error Rate to detect potential mechanical or firmware failures." },
-                { q: "Can I monitor disk health of my Windows 11 system?", a: "Yes, D-Secure Smart Diagnostic is fully optimized for Windows 11, 10, and older versions, operating smoothly as a native Windows utility." },
-                { q: "How does the 'Scan Disk' feature help identify Bad Sectors?", a: "The feature performs a surface test on the drive, marking bad sectors to prevent the OS from writing data to physically damaged blocks." }
-              ].map((item) => (
-                <div key={item.q} className="bg-white p-8 rounded-2xl border border-emerald-100 shadow-sm transition-shadow hover:shadow-md group">
-                  <h3 className="font-bold text-slate-900 flex items-center gap-3 group-hover:text-emerald-800 transition-colors">
-                    <CheckCircle className="w-5 h-5 text-emerald-500" />
-                    {item.q}
-                  </h3>
-                  <p className="mt-4 text-slate-600 pl-8 leading-relaxed font-medium text-sm">{item.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection
+          id="faq"
+          title="Expert Answers to Common Queries"
+          className="!py-24 !bg-slate-50/50"
+          faqs={[
+            {
+              q: "What parameters are monitored by the SMART utility?",
+              a: "It monitors critical attributes like Read Error Rate, Reallocated Sector Count, and Seek Error Rate to detect potential mechanical or firmware failures.",
+            },
+            {
+              q: "Can I monitor disk health of my Windows 11 system?",
+              a: "Yes, D-Secure Smart Diagnostic is fully optimized for Windows 11, 10, and older versions, operating smoothly as a native Windows utility.",
+            },
+            {
+              q: "How does the 'Scan Disk' feature help identify Bad Sectors?",
+              a: "The feature performs a surface test on the drive, marking bad sectors to prevent the OS from writing data to physically damaged blocks.",
+            },
+          ]}
+        />
 
         {/* ================= CONTACT CTA ================= */}
         <section id="contact" className="py-24">
@@ -615,18 +765,21 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
             <div className="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-[3rem] p-12 lg:p-24 text-center relative overflow-hidden max-w-7xl mx-auto shadow-2xl shadow-emerald-100">
               <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:30px_30px]"></div>
               <div className="relative z-10 space-y-10">
-                <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">Need Enterprise Data Care?</h2>
+                <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
+                  Need Enterprise Data Care?
+                </h2>
                 <p className="text-emerald-50 text-xl max-w-3xl mx-auto opacity-90">
-                  D-Secure is recognized as a professional data care provider globally. Join our growing community of satisfied users today.
+                  D-Secure is recognized as a professional data care provider
+                  globally. Join our growing community of satisfied users today.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
-                  <Link 
-                    to="/contact" 
+                  <Link
+                    to="/contact"
                     className="inline-flex items-center justify-center bg-white text-emerald-700 px-12 py-5 rounded-2xl font-bold transition-all duration-300 hover:scale-105 shadow-xl"
                   >
                     Get Business Quote
                   </Link>
-                  <button 
+                  <button
                     disabled
                     className="inline-flex items-center justify-center border-2 border-white/30 text-white/50 px-12 py-5 rounded-2xl font-bold cursor-not-allowed opacity-60"
                   >

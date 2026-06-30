@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React from "react";
 import { Download, Server, HardDrive, Cpu, Globe, AlertCircle, CheckCircle, Shield, Package, Wrench } from "lucide-react";
@@ -7,7 +7,7 @@ const Installation: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("installation")} />
+      <SEOHeadNative seo={getSEOForPage("installation")} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}

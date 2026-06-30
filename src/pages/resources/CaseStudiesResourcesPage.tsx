@@ -1,6 +1,6 @@
 import Reveal from '@/components/Reveal'
 import { Link } from 'react-router-dom'
-import SEOHead from '@/components/SEOHead'
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo'
 import { downloadResource } from '../../utils/downloadUtils'
 import { useToast } from '@/components/Toast'
@@ -19,7 +19,7 @@ import {
 export default function CaseStudiesResourcesPage() {
   return (
     <>
-      <SEOHead seo={getSEOForPage('case-studies')} />
+      <SEOHeadNative seo={getSEOForPage('case-studies')} />
 
       <CaseStudiesResourcesContent />
     </>

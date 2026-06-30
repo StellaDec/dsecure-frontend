@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import {
   ShieldIcon,
   CheckIcon,
@@ -21,6 +21,10 @@ import {
 } from "lucide-react";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
 import { getSEOForPage } from "@/utils/seo";
+import { generateFAQSchema } from "@/utils/seo.core";
+import { FAQSection } from "@/components/FAQSection";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQItem, KeyTakeawayItem } from "@/types/seo";
 
 const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
   const [activeSection, setActiveSection] = useState("");
@@ -91,28 +95,40 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
     }
   };
 
-  const faqs = [
+  // Single Source of Truth for FAQs
+  const assetReimagingFaqs: FAQItem[] = [
     {
-      q: "Does Asset Reimaging include Windows licenses?",
-      a: "No, D-Secure does not sell or distribute Microsoft Windows licenses. Customers can obtain licenses through authorized third-party providers like Blair Tech under the Third-Party Refurbisher Program."
+      question: "Does Asset Reimaging include Windows licenses?",
+      answer: "No, D-Secure does not sell or distribute Microsoft Windows licenses. Customers can obtain licenses through authorized third-party providers like Blair Tech under the Third-Party Refurbisher Program."
     },
     {
-      q: "Can I deploy custom Windows images?",
-      a: "Yes, the system supports deployment of your own standardized Windows 10/11 images, including custom drivers and policy configurations."
+      question: "Can I deploy custom Windows images?",
+      answer: "Yes, the system supports deployment of your own standardized Windows 10/11 images, including custom drivers and policy configurations."
     },
     {
-      q: "Is technician interaction required during reimaging?",
-      a: "The process is designed to be zero-touch. Once the erasure workflow triggers the PXE boot, the reimaging applies automatically without manual intervention."
+      question: "Is technician interaction required during reimaging?",
+      answer: "The process is designed to be zero-touch. Once the erasure workflow triggers the PXE boot, the reimaging applies automatically without manual intervention."
     },
     {
-      q: "How is the reimaging event reported?",
-      a: "All reimaging events are logged in the Management Portal, providing a unified audit trail that connects the erasure event with the successful reimaging of the device."
+      question: "How is the reimaging event reported?",
+      answer: "All reimaging events are logged in the Management Portal, providing a unified audit trail that connects the erasure event with the successful reimaging of the device."
     }
+  ];
+
+  // Single Source of Truth for Key Takeaways
+  const assetReimagingTakeaways: KeyTakeawayItem[] = [
+    { text: "Zero-touch automated OS deployment triggered immediately after successful erasure." },
+    { text: "Supports custom Windows 10/11 images, driver injection, and policy configurations." },
+    { text: "Eliminates manual technician steps, reducing processing cost and increasing throughput." },
+    { text: "Unified management hub tracks the entire lifecycle from wipe to ready-to-sell." },
   ];
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("asset-reimaging")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("asset-reimaging")} 
+        structuredData={generateFAQSchema(assetReimagingFaqs)}
+      />
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div
@@ -203,6 +219,10 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                     >
                       View Capabilities
                     </a>
+                  </div>
+
+                  <div className="mt-8 lg:mt-12">
+                    
                   </div>
                 </div>
               </Reveal>
@@ -313,7 +333,15 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
         </section>
 
       {/* Value Proposition */}
-      <section className="py-24 bg-slate-50">
+      
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={assetReimagingTakeaways} title="Why Choose Automated Asset Reimaging?" />
+          </div>
+        </section>
+
+        <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
@@ -520,34 +548,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-slate-600">Everything you need to know about automated reimaging.</p>
-          </div>
-          
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <Reveal key={faq.q}>
-                <details className="group bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all hover:border-emerald-300">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <span className="font-bold text-slate-900">{faq.q}</span>
-                    <span className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center group-open:rotate-180 transition-transform">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
-                    </span>
-                  </summary>
-                  <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                    {faq.a}
-                  </div>
-                </details>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection faqs={assetReimagingFaqs} />
 
       {/* Contact Form Section */}
       <section id="contact" className="py-24 lg:py-40 bg-white border-t overflow-hidden relative">

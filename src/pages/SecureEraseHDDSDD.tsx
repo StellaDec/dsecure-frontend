@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
@@ -271,7 +271,7 @@ const SecureEraseHDDSDD: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 font-inter">
-      <SEOHead seo={getSEOForPage('help-manual')} />
+      <SEOHeadNative seo={getSEOForPage('help-manual')} />
 
       <style>{`
         .sidebar-scroll::-webkit-scrollbar { width: 4px; }

@@ -9,7 +9,7 @@ import {
   Scale,
   AlertCircle
 } from "lucide-react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { useFormSubmission } from "../../hooks/useFormSubmission";
@@ -87,7 +87,7 @@ const GDPRErasureChecklistPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Schemas ko directStructuredData se pass karo — PAGE_SEO schemas override nahi honge, SEOHead merge karega */}
-      <SEOHead 
+      <SEOHeadNative 
         seo={getSEOForPage("gdpr-erasure-checklist")}
         structuredData={[
           {

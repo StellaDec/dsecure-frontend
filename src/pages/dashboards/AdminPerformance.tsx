@@ -1,5 +1,5 @@
 import Sparkline from "@/components/Sparkline";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import BarChart from "@/components/BarChart";
 import {
@@ -291,7 +291,7 @@ export default function AdminPerformance() {
   if (isDataEmpty) {
     return (
       <>
-        <SEOHead seo={getSEOForPage("admin-performance")} />
+        <SEOHeadNative seo={getSEOForPage("admin-performance")} />
         <div className="space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6">
           {/* Header & Filters (Still visible to allow changing filters) */}
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
@@ -450,7 +450,7 @@ export default function AdminPerformance() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("admin-performance")} />
+      <SEOHeadNative seo={getSEOForPage("admin-performance")} />
 
       <div className="space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6">
         {/* Header & Filters */}

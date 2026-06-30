@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Reveal from "@/components/Reveal";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
+import { sanitizeHtml } from "../utils/sanitizeHtml";
 import { Link } from "react-router-dom";
 import { 
   FileText, 
@@ -93,7 +94,7 @@ const FileEraserGuide: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("file-eraser-guide")} />
+      <SEOHeadNative seo={getSEOForPage("file-eraser-guide")} />
 
       <div className="min-h-screen bg-white">
         {/* Breadcrumbs */}
@@ -287,7 +288,7 @@ const FileEraserGuide: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                        <p className="text-slate-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.content }} />
+                        <p className="text-slate-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.content) }} />
                       </div>
                     </div>
                   ))}

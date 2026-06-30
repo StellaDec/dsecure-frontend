@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 
 export default function GlossaryPage() {
@@ -269,7 +269,7 @@ export default function GlossaryPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("glossary")} />
+      <SEOHeadNative seo={getSEOForPage("glossary")} />
 
       <div className="min-h-screen bg-slate-50 py-12 md:py-20">
         <div className="container-responsive">

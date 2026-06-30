@@ -29,7 +29,7 @@ export const ProgrammaticSolutionPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#020617] text-slate-200">
       {/* WebPage schema ko directStructuredData se pass karo — SEOHead internally merge karega */}
-      <SEOHead 
+      <SEOHeadNative 
         title={vertical.seoTitle}
         description={vertical.seoDescription}
         canonicalUrl={`/solutions/${vertical.slug}`}

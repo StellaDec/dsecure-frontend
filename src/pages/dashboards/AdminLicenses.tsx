@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
@@ -829,7 +829,7 @@ export default function AdminLicenses() {
   return (
     <div className="space-y-6">
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("admin-licenses")} />
+      <SEOHeadNative seo={getSEOForPage("admin-licenses")} />
 
 
       <div className="space-y-6">

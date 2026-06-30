@@ -1,6 +1,6 @@
 import Reveal from '@/components/Reveal'
 import { Link } from 'react-router-dom'
-import SEOHead from '@/components/SEOHead'
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo'
 import { downloadResource } from '../../utils/downloadUtils'
 import { useToast } from '@/components/Toast'
@@ -17,7 +17,7 @@ import {
 export default function ComplianceResourcesPage() {
   return (
     <>
-      <SEOHead seo={getSEOForPage('compliance-resources')} />
+      <SEOHeadNative seo={getSEOForPage('compliance-resources')} />
 
       <ComplianceResourcesContent />
     </>

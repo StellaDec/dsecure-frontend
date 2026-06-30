@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -234,7 +234,7 @@ export default function EditSubuser() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("edit-subuser")} />
+      <SEOHeadNative seo={getSEOForPage("edit-subuser")} />
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-4 sm:p-6">
         <div className="max-w-3xl mx-auto">

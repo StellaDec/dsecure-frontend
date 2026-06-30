@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect, useRef } from "react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { exportToCsv } from "@/utils/csv";
 import { useNotification } from "@/contexts/NotificationContext";
@@ -1571,7 +1571,7 @@ export default function AdminMachines() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("admin-machines")} />
+      <SEOHeadNative seo={getSEOForPage("admin-machines")} />
       {/* Machine Details Modal */}
       <MachineDetailsModal />
 

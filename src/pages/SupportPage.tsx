@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo, memo } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link, useNavigate } from "react-router-dom";
@@ -875,7 +875,7 @@ const SupportPage: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("support")} />
+      <SEOHeadNative seo={getSEOForPage("support")} />
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div

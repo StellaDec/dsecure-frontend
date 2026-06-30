@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React from "react";
 import Reveal from "@/components/Reveal";
@@ -8,7 +8,7 @@ const InstallationGuideDetailed: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("installation-guide-detailed")} />
+      <SEOHeadNative seo={getSEOForPage("installation-guide-detailed")} />
 
       {/* Header */}
       <section className="bg-gradient-to-r from-slate-900 via-emerald-800 to-emerald-900 py-20">

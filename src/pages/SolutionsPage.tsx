@@ -1,7 +1,7 @@
 import Reveal from "@/components/Reveal";
 import { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { useTranslation } from "react-i18next";
@@ -25,7 +25,7 @@ export default function SolutionsPage() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("solutions")} />
+      <SEOHeadNative seo={getSEOForPage("solutions")} />
 
       {/* Breadcrumb Navigation — SEO ke liye */}
       <div className="container mx-auto px-4 pt-4 pb-1">

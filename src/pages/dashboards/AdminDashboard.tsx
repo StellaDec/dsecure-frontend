@@ -1,5 +1,5 @@
 import { useAuth } from "@/auth/AuthContext";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useNotification } from "@/contexts/NotificationContext";
 // ✅ NAYA CODE: Added startTransition to allow navigation to interrupt data-sync updates
@@ -1811,7 +1811,7 @@ export default function AdminDashboard() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("admin-dashboard")} />
+      <SEOHeadNative seo={getSEOForPage("admin-dashboard")} />
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8">

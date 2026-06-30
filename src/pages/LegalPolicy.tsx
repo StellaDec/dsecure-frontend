@@ -1,5 +1,5 @@
 import React from "react";
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 import { useNavigate } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const LegalPolicy: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("legal-policy")} />
+      <SEOHeadNative seo={getSEOForPage("legal-policy")} />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         <div className="max-w-4xl mx-auto px-6 py-12">

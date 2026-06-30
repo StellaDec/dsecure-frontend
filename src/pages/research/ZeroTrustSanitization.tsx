@@ -18,7 +18,7 @@ import {
   BookOpen
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import Reveal from "../../components/Reveal";
 import { useFormSubmission } from "../../hooks/useFormSubmission";
 
@@ -61,7 +61,7 @@ const ZeroTrustSanitization: React.FC = () => {
           box-shadow: 10px 0 20px -5px rgba(5,150,105,0.05);
         }
       `}</style>
-      <SEOHead 
+      <SEOHeadNative 
         title="Zero-Trust Data Sanitization Framework | D-Secure Research"
         description="Integrating verifiable media sanitization into a modern Zero-Trust Architecture (ZTA). Technical whitepaper on hardware-bound telemetry and cryptographic trust."
         canonicalUrl="https://dsecuretech.com/research/zero-trust-sanitization-framework"

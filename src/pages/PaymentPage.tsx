@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/auth/AuthContext';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 
 interface PlanDetails {
@@ -119,7 +119,7 @@ export default function PaymentPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage('payment')} />
+      <SEOHeadNative seo={getSEOForPage('payment')} />
 
       <div className="container-app py-12">
         <div className="max-w-4xl mx-auto">

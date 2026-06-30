@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useState } from 'react';
 
@@ -147,7 +147,7 @@ export default function GroupDetailPage() {
     return (
         <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={{
+      <SEOHeadNative seo={{
           ...getSEOForPage("admin-groups"),
           title: `${resources?.groupName || 'Group'} Resources - Admin Dashboard | DSecureTech`
       }} />

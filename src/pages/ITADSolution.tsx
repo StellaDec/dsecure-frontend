@@ -900,7 +900,7 @@
 //               </details>
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
 import SolutionContactSection from "@/components/SolutionContactSection";
@@ -975,7 +975,7 @@ const ITADSolution: React.FC = () => {
   return (
     <>
       {/* ITAD Solution page ke liye correct SEO metadata key use karein */}
-      <SEOHead seo={getSEOForPage("it-asset-disposition")} />
+      <SEOHeadNative seo={getSEOForPage("it-asset-disposition")} />
       <div className="min-h-screen bg-slate-50">
         {/* ================= STICKY SECTION NAV ================= */}
         <div

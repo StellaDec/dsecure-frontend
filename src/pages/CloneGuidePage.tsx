@@ -1,7 +1,8 @@
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
+import { sanitizeHtml } from "@/utils/sanitizeHtml";
 import {
   ShieldIcon,
   CheckIcon,
@@ -23,7 +24,7 @@ import {
 const CloneGuidePage: React.FC = memo(function CloneGuidePage() {
   return (
     <>
-      <SEOHead
+      <SEOHeadNative
         seo={{
           title: "How to Recover & Clone Your Hard Drive | D-Secure Guide",
           description: "Step-by-step guide to recovering files from corrupt drives and cloning hard drives for ultimate data safety.",
@@ -97,7 +98,7 @@ const CloneGuidePage: React.FC = memo(function CloneGuidePage() {
                       ].map((step, i) => (
                         <li key={i} className="flex gap-4 text-slate-700">
                           <CheckIcon className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" />
-                          <span dangerouslySetInnerHTML={{ __html: step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                          <span dangerouslySetInnerHTML={{ __html: sanitizeHtml(step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')) }} />
                         </li>
                       ))}
                     </ol>

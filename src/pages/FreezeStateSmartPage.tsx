@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { getSEOForPage } from "@/utils/seo";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { 
   Activity, 
   Monitor, 
@@ -20,6 +20,8 @@ import {
 import { ArrowRightIcon } from "@/components/FlatIcons";
 import Reveal from "@/components/Reveal";
 import { ProductContactForm } from "@/components/forms";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
 
 const FreezeStateSmartPage = memo(() => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -86,9 +88,39 @@ const FreezeStateSmartPage = memo(() => {
     }
   };
 
+  const freezeStateSmartTakeaways = [
+    {
+      title: "Real-time Telemetry",
+      desc: "Full visibility into your workstation fleet with 10-20s refresh rates.",
+    },
+    {
+      title: "Centralized Admin Console",
+      desc: "Approve requests, monitor health, and push policies in one click.",
+    },
+    {
+      title: "User Request Workflow",
+      desc: "Integrated workflow for users to request persistence with admin approval.",
+    }
+  ];
+
+  const freezeStateSmartFaqs = [
+    {
+      q: "How does the 10-second telemetry affect PC performance?",
+      a: "Our agent is ultra-lean, consuming less than 0.1% CPU resources for its telemetry reporting, ensuring no impact on user experience.",
+    },
+    {
+      q: "Can I manage machines from outside the lab network?",
+      a: "Yes. Smart Diagnostic uses a secure cloud tunnel, allowing admins to approve persistent requests from any location via the mobile app or web portal.",
+    },
+    {
+      q: "What happens if a machine loses internet connection?",
+      a: "FreezeState local protection continues to work offline. Telemetry data is cached locally and uploaded to the console as soon as connectivity is restored.",
+    },
+  ];
+
   return (
     <>
-      <SEOHead seo={getSEOForPage("freeze-state-smart")} />
+      <SEOHeadNative seo={getSEOForPage("freeze-state-smart")} />
 
       <div className="min-h-screen bg-white text-slate-900">
         {/* ================= STICKY SECTION NAV ================= */}
@@ -180,6 +212,7 @@ const FreezeStateSmartPage = memo(() => {
                       View Features
                     </button>
                   </div>
+                  
                 </div>
               </Reveal>
 
@@ -301,6 +334,14 @@ const FreezeStateSmartPage = memo(() => {
         </section>
 
         {/* TELEMETRY SECTION */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={freezeStateSmartTakeaways} />
+          </div>
+        </section>
+
         <section id="telemetry" className="py-32 bg-white relative overflow-hidden">
            <div className="container mx-auto px-4 max-w-7xl">
               <div className="flex flex-col md:flex-row gap-20 items-center">
@@ -496,28 +537,7 @@ const FreezeStateSmartPage = memo(() => {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="py-32 bg-slate-50">
-           <div className="container mx-auto px-4 max-w-4xl">
-              <Reveal>
-                 <div className="text-center mb-20 space-y-4">
-                    <h2 className="text-4xl font-bold tracking-tight">Frequent Questions</h2>
-                    <p className="text-slate-500 font-medium">Everything you need to know about Smart Diagnostic.</p>
-                 </div>
-                 <div className="space-y-6">
-                    {[
-                       { q: "How does the 10-second telemetry affect PC performance?", a: "Our agent is ultra-lean, consuming less than 0.1% CPU resources for its telemetry reporting, ensuring no impact on user experience." },
-                       { q: "Can I manage machines from outside the lab network?", a: "Yes. Smart Diagnostic uses a secure cloud tunnel, allowing admins to approve persistent requests from any location via the mobile app or web portal." },
-                       { q: "What happens if a machine loses internet connection?", a: "FreezeState local protection continues to work offline. Telemetry data is cached locally and uploaded to the console as soon as connectivity is restored." }
-                    ].map((item) => (
-                       <div key={item.q} className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="font-black text-slate-900 uppercase tracking-widest text-sm mb-4">Q: {item.q}</h4>
-                          <p className="text-sm text-slate-500 font-medium leading-relaxed">A: {item.a}</p>
-                       </div>
-                    ))}
-                 </div>
-              </Reveal>
-           </div>
-        </section>
+        <FAQSection faqs={freezeStateSmartFaqs} id="faq" />
 
         {/* CONTACT */}
         <section id="contact" className="py-32 bg-white relative overflow-hidden">

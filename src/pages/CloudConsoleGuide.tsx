@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Reveal from "@/components/Reveal";
-import SEOHead from "../components/SEOHead";
+import { sanitizeHtml } from "../utils/sanitizeHtml";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import { Link } from "react-router-dom";
 import { 
@@ -97,7 +98,7 @@ const CloudConsoleGuide: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("cloud-console-guide")} />
+      <SEOHeadNative seo={getSEOForPage("cloud-console-guide")} />
 
       <div className="min-h-screen bg-white">
         {/* Breadcrumbs */}
@@ -396,7 +397,7 @@ const CloudConsoleGuide: React.FC = () => {
                         </h3>
                         <p
                           className="text-slate-700 leading-relaxed"
-                          dangerouslySetInnerHTML={{ __html: item.content }}
+                          dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.content) }}
                         />
                       </div>
                     </div>

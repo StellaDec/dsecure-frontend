@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 
 export default function SecurityPage() {
@@ -10,7 +10,7 @@ export default function SecurityPage() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage('security')} />
+      <SEOHeadNative seo={getSEOForPage('security')} />
 
       <div className="min-h-screen bg-white light:bg-slate-900 py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 xxl:py-18">
         <div className="max-w-6xl mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 xxl:px-16">

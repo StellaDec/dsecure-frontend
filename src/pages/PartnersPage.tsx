@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo } from "react";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import { Link } from "react-router-dom";
 import {
@@ -451,7 +451,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
   // openLicenseModal handled directly via setShowLicenseModal
   return (
     <>
-      <SEOHead
+      <SEOHeadNative
         seo={{
           title: "D-Secure Partner Network | Join Our Global Data Erasure Program",
           description: "Join the D-Secure Partner Program to offer globally recognized data erasure solutions. Empower your business with ITAD, MSP, OEM, and Reseller opportunities.",
@@ -459,7 +459,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
           canonicalUrl: "https://dsecuretech.com/partners",
         }}
       />
-      <SEOHead seo={getSEOForPage("partners")} />
+      <SEOHeadNative seo={getSEOForPage("partners")} />
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div

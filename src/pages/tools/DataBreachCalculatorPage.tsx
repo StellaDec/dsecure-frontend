@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { Calculator, ShieldAlert, TrendingUp, CheckCircle2 } from "lucide-react";
@@ -59,7 +59,7 @@ export default function DataBreachCalculatorPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Schemas ko directStructuredData se pass karo — PAGE_SEO schemas override nahi honge, SEOHead merge karega */}
-      <SEOHead
+      <SEOHeadNative
         seo={getSEOForPage("data-breach-calculator")}
         structuredData={[
           {

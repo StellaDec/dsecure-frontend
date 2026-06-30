@@ -2,7 +2,7 @@ import { FormEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '@/auth/AuthContext'
 import { SkeletonForm } from '@/components/Skeleton'
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 
 export default function RegisterPage() {
@@ -113,7 +113,7 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center p-4">
-      <SEOHead seo={getSEOForPage('register')} />
+      <SEOHeadNative seo={getSEOForPage('register')} />
       <div className="w-full max-w-lg px-6 sm:px-8 py-8 sm:py-12 rounded-2xl bg-white/60 backdrop-blur-xl shadow-2xl shadow-slate-900/10 overflow-hidden">
         {authLoading ? (
           <SkeletonForm fields={4} hasTitle={true} hasSubmitButton={true} className="p-0" />

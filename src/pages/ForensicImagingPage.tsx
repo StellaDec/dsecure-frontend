@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import { Link } from "react-router-dom";
 import { getSEOForPage } from "@/utils/seo";
-import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
+import ProductInternalLinks, {
+  PRODUCT_LINKS,
+} from "@/components/ProductInternalLinks";
 import {
   ShieldIcon,
   CheckIcon,
@@ -10,7 +12,7 @@ import {
   TagIcon,
 } from "@/components/FlatIcons";
 import Reveal from "@/components/Reveal";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
 import { ProductContactForm } from "@/components/forms";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
@@ -30,8 +32,30 @@ import {
   Boxes as BoxesIcon,
   RefreshCcw as RefreshCcwIcon,
   FileText as FileTextIcon,
-  ChevronDown
+  ChevronDown,
 } from "lucide-react";
+
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
+
+const forensicImagingTakeaways = [
+  {
+    title: "Forensic-Grade Acquisition",
+    desc: "Create immutable, bit-for-bit duplicates of any storage media.",
+  },
+  {
+    title: "Universal Interface Support",
+    desc: "Supports SATA, SAS, IDE, USB 3.0, PCIe, NVMe, and Memory Cards.",
+  },
+  {
+    title: "Industry Standard Formats",
+    desc: "Supports E01, Ex01, and Raw (dd) compressed image formats.",
+  },
+  {
+    title: "Physical Write-Blocking",
+    desc: "Ensures source devices remain unmodified during the entire process.",
+  },
+];
 
 const ForensicImagingPage = memo(() => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -42,7 +66,16 @@ const ForensicImagingPage = memo(() => {
     const scrollPosition = globalThis.scrollY;
     setIsNavVisible(scrollPosition > 400);
 
-    const sections = ["overview", "acquisition-types", "how-it-works", "verification", "features", "use-cases", "faq", "contact"];
+    const sections = [
+      "overview",
+      "acquisition-types",
+      "how-it-works",
+      "verification",
+      "features",
+      "use-cases",
+      "faq",
+      "contact",
+    ];
     for (const section of sections) {
       const element = document.getElementById(section);
       if (element) {
@@ -60,7 +93,7 @@ const ForensicImagingPage = memo(() => {
       globalThis.dispatchEvent(
         new CustomEvent("stickyNavVisible", {
           detail: { visible: scrollPosition > 400 },
-        })
+        }),
       );
     }
   }, []);
@@ -73,7 +106,7 @@ const ForensicImagingPage = memo(() => {
       const isDesktop = globalThis.innerWidth >= 768;
       if (isDesktop) {
         globalThis.dispatchEvent(
-          new CustomEvent("stickyNavVisible", { detail: { visible: false } })
+          new CustomEvent("stickyNavVisible", { detail: { visible: false } }),
         );
       }
     };
@@ -83,7 +116,8 @@ const ForensicImagingPage = memo(() => {
     const element = document.getElementById(id);
     if (element) {
       const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top + globalThis.scrollY;
+      const elementPosition =
+        element.getBoundingClientRect().top + globalThis.scrollY;
       globalThis.scrollTo({
         top: id === "overview" ? 0 : elementPosition - offset,
         behavior: "smooth",
@@ -92,10 +126,26 @@ const ForensicImagingPage = memo(() => {
   };
 
   const standards = [
-    { title: "Physical Write-Blocking", desc: "Ensures source devices remain unmodified during the entire imaging process.", icon: <LockIcon className="w-5 h-5" /> },
-    { title: "Universal Interface Support", desc: "SATA, SAS, IDE, USB 3.0, PCIe, NVMe, and Memory Card support.", icon: <HardDriveIcon className="w-5 h-5" /> },
-    { title: "E01 & Ex01 Formats", desc: "Industry-standard compressed forensic image formats with metadata support.", icon: <FileTextIcon className="w-5 h-5" /> },
-    { title: "Raw (dd) Imaging", desc: "Bit-for-bit physical copies for maximum compatibility with analysis tools.", icon: <LayersIcon className="w-5 h-5" /> },
+    {
+      title: "Physical Write-Blocking",
+      desc: "Ensures source devices remain unmodified during the entire imaging process.",
+      icon: <LockIcon className="w-5 h-5" />,
+    },
+    {
+      title: "Universal Interface Support",
+      desc: "SATA, SAS, IDE, USB 3.0, PCIe, NVMe, and Memory Card support.",
+      icon: <HardDriveIcon className="w-5 h-5" />,
+    },
+    {
+      title: "E01 & Ex01 Formats",
+      desc: "Industry-standard compressed forensic image formats with metadata support.",
+      icon: <FileTextIcon className="w-5 h-5" />,
+    },
+    {
+      title: "Raw (dd) Imaging",
+      desc: "Bit-for-bit physical copies for maximum compatibility with analysis tools.",
+      icon: <LayersIcon className="w-5 h-5" />,
+    },
   ];
 
   const sectionNavItems = [
@@ -172,20 +222,20 @@ const ForensicImagingPage = memo(() => {
   ];
 
   const verificationFeatures = [
-    { 
-      title: "Real-Time Hashing", 
-      desc: "Simultaneous calculation of multiple hash signatures (MD5, SHA-1, SHA-256) during the entire acquisition process.", 
-      icon: <ShieldCheckIcon className="w-10 h-10" /> 
+    {
+      title: "Real-Time Hashing",
+      desc: "Simultaneous calculation of multiple hash signatures (MD5, SHA-1, SHA-256) during the entire acquisition process.",
+      icon: <ShieldCheckIcon className="w-10 h-10" />,
     },
-    { 
-      title: "Write-Blocking Support", 
-      desc: "Seamless integration with hardware write-blockers and software-level protections to prevent any data modification.", 
-      icon: <LockIcon className="w-10 h-10" /> 
+    {
+      title: "Write-Blocking Support",
+      desc: "Seamless integration with hardware write-blockers and software-level protections to prevent any data modification.",
+      icon: <LockIcon className="w-10 h-10" />,
     },
-    { 
-      title: "Audit Log Generation", 
-      desc: "Comprehensive PDF/CSV logs documenting hardware IDs, timestamps, and technician details for chain of custody.", 
-      icon: <FileCheck className="w-10 h-10" /> 
+    {
+      title: "Audit Log Generation",
+      desc: "Comprehensive PDF/CSV logs documenting hardware IDs, timestamps, and technician details for chain of custody.",
+      icon: <FileCheck className="w-10 h-10" />,
     },
   ];
 
@@ -194,25 +244,25 @@ const ForensicImagingPage = memo(() => {
       title: "Multicast Architecture",
       desc: "Simultaneously image or deploy images across 100+ systems in a high-speed local network environment.",
       icon: <BoxesIcon className="w-6 h-6" />,
-      color: "from-blue-500 to-indigo-600"
+      color: "from-blue-500 to-indigo-600",
     },
     {
       title: "E01/Ex01 Support",
       desc: "Industry-standard compressed formats with internal metadata, hash storage, and evidence details.",
       icon: <FileTextIcon className="w-6 h-6" />,
-      color: "from-emerald-500 to-teal-600"
+      color: "from-emerald-500 to-teal-600",
     },
     {
       title: "Intelligent Resume",
       desc: "Automatically resume interrupted imaging sessions with block-level validation to prevent data corruption.",
       icon: <RefreshCcwIcon className="w-6 h-6" />,
-      color: "from-amber-500 to-orange-600"
+      color: "from-amber-500 to-orange-600",
     },
     {
       title: "Decentralized Imaging",
       desc: "Leverage Peer-to-Peer protocols for resilient mass imaging across high-latency enterprise networks.",
       icon: <Workflow className="w-6 h-6" />,
-      color: "from-purple-500 to-pink-600"
+      color: "from-purple-500 to-pink-600",
     },
     {
       title: "HPA/DCO Acquisition",
@@ -233,13 +283,13 @@ const ForensicImagingPage = memo(() => {
       title: "Secure Verification",
       desc: "Automated block-by-block verification after imaging to ensure 100% mathematical certainty of the replicate.",
       icon: <ShieldCheckIcon className="w-5 h-5" />,
-    }
+    },
   ];
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("forensic-imaging")} />
-      
+      <SEOHeadNative seo={getSEOForPage("forensic-imaging")} />
+
       {/* ================= STICKY SECTION NAV ================= */}
       <div
         className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -252,7 +302,10 @@ const ForensicImagingPage = memo(() => {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-14">
               <Link to="/" className="flex items-center">
-                <ThemeAwareLogo className="h-7 sm:h-8 w-auto" responsive={true} />
+                <ThemeAwareLogo
+                  className="h-7 sm:h-8 w-auto"
+                  responsive={true}
+                />
               </Link>
               <nav className="flex items-center gap-1">
                 {sectionNavItems.map((item) => (
@@ -276,7 +329,10 @@ const ForensicImagingPage = memo(() => {
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         {/* ================= HERO SECTION ================= */}
-        <section id="overview" className="pt-6 pb-12 lg:pt-10 lg:pb-16 overflow-hidden">
+        <section
+          id="overview"
+          className="pt-6 pb-12 lg:pt-10 lg:pb-16 overflow-hidden"
+        >
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
               <Reveal>
@@ -301,11 +357,20 @@ const ForensicImagingPage = memo(() => {
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-                    Create immutable, bit-for-bit duplicates of any storage media. Optimized for high-speed acquisition with built-in write-blocking and cryptographic verification.
+                    Create immutable, bit-for-bit duplicates of any storage
+                    media. Optimized for high-speed acquisition with built-in
+                    write-blocking and cryptographic verification.
                   </p>
 
                   <div className="flex flex-wrap items-center gap-3">
-                    {["E01/Ex01", "dd (Raw)", "DMG", "VHDX", "AFF", "SMART"].map((badge) => (
+                    {[
+                      "E01/Ex01",
+                      "dd (Raw)",
+                      "DMG",
+                      "VHDX",
+                      "AFF",
+                      "SMART",
+                    ].map((badge) => (
                       <div
                         key={badge}
                         className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm border border-emerald-100"
@@ -332,6 +397,8 @@ const ForensicImagingPage = memo(() => {
                       View Acquisition Specs
                     </button>
                   </div>
+
+                  
                 </div>
               </Reveal>
 
@@ -597,25 +664,60 @@ const ForensicImagingPage = memo(() => {
         </section>
 
         {/* ================= HOW IT WORKS ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={forensicImagingTakeaways} />
+          </div>
+        </section>
+
         <section id="how-it-works" className="py-20 lg:py-32 bg-white">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
               <div className="text-center mb-20">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 italic tracking-tight">Industrial Scale Acquisition</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 italic tracking-tight">
+                  Industrial Scale Acquisition
+                </h2>
                 <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  A high-speed, automated forensic workflow designed for investigators processing large volumes of evidence with absolute data integrity.
+                  A high-speed, automated forensic workflow designed for
+                  investigators processing large volumes of evidence with
+                  absolute data integrity.
                 </p>
               </div>
             </Reveal>
 
             <div className="grid md:grid-cols-4 gap-4 lg:gap-8">
               {[
-                { step: "01", title: "Connect", desc: "Plug in evidence media via physical write-blocker or secure network protocol.", icon: <HardDriveIcon className="w-6 h-6" /> },
-                { step: "02", title: "Setup", desc: "Configure hash algorithms (MD5/SHA) and select output format (E01/dd).", icon: <GearIcon className="w-6 h-6" /> },
-                { step: "03", title: "Acquire", desc: "Run bit-for-bit imaging at speeds up to 3.5 GB/s with real-time logging.", icon: <Zap className="w-6 h-6" /> },
-                { step: "04", title: "Verify", desc: "Automated block-level hash verification and court-ready report generation.", icon: <ShieldCheckIcon className="w-6 h-6" /> },
+                {
+                  step: "01",
+                  title: "Connect",
+                  desc: "Plug in evidence media via physical write-blocker or secure network protocol.",
+                  icon: <HardDriveIcon className="w-6 h-6" />,
+                },
+                {
+                  step: "02",
+                  title: "Setup",
+                  desc: "Configure hash algorithms (MD5/SHA) and select output format (E01/dd).",
+                  icon: <GearIcon className="w-6 h-6" />,
+                },
+                {
+                  step: "03",
+                  title: "Acquire",
+                  desc: "Run bit-for-bit imaging at speeds up to 3.5 GB/s with real-time logging.",
+                  icon: <Zap className="w-6 h-6" />,
+                },
+                {
+                  step: "04",
+                  title: "Verify",
+                  desc: "Automated block-level hash verification and court-ready report generation.",
+                  icon: <ShieldCheckIcon className="w-6 h-6" />,
+                },
               ].map((item) => (
-                <Reveal key={item.title} delayMs={Number.parseInt(item.step) * 100}>
+                <Reveal
+                  key={item.title}
+                  delayMs={Number.parseInt(item.step) * 100}
+                >
                   <div className="relative p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-emerald-200 hover:shadow-xl transition-all group">
                     <span className="absolute top-6 right-6 text-4xl font-black text-slate-200 group-hover:text-emerald-100 transition-colors">
                       {item.step}
@@ -623,8 +725,12 @@ const ForensicImagingPage = memo(() => {
                     <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all">
                       {item.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -637,9 +743,13 @@ const ForensicImagingPage = memo(() => {
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
               <div className="text-center mb-16 lg:mb-24">
-                <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 italic tracking-tight">Complete Evidence Support</h2>
+                <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 italic tracking-tight">
+                  Complete Evidence Support
+                </h2>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                  Go beyond standard disk cloning. Our solution handles Physical, Logical, and Volatile data to ensure comprehensive discovery.
+                  Go beyond standard disk cloning. Our solution handles
+                  Physical, Logical, and Volatile data to ensure comprehensive
+                  discovery.
                 </p>
               </div>
             </Reveal>
@@ -648,12 +758,20 @@ const ForensicImagingPage = memo(() => {
               {acquisitionTypes.map((type, i) => (
                 <Reveal key={type.title} delayMs={i * 100}>
                   <div className="group relative p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-emerald-200 hover:shadow-2xl transition-all h-full overflow-hidden text-left">
-                    <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${type.color} opacity-[0.03] -mr-16 -mt-16 rounded-full transition-all group-hover:scale-110`}></div>
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${type.color} text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                    <div
+                      className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${type.color} opacity-[0.03] -mr-16 -mt-16 rounded-full transition-all group-hover:scale-110`}
+                    ></div>
+                    <div
+                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${type.color} text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}
+                    >
                       {type.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">{type.title}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">{type.desc}</p>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">
+                      {type.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {type.desc}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -668,12 +786,19 @@ const ForensicImagingPage = memo(() => {
               <Reveal>
                 <div className="grid grid-cols-2 gap-4">
                   {standards.map((s) => (
-                    <div key={s.title} className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 hover:border-emerald-300 hover:bg-white hover:shadow-xl transition-all duration-300 group">
-                       <div className="w-10 h-10 rounded-xl bg-white text-emerald-600 flex items-center justify-center mb-6 shadow-sm border border-slate-50 group-hover:scale-110 transition-transform">
-                         {s.icon}
-                       </div>
-                       <h3 className="font-bold text-slate-900 mb-2">{s.title}</h3>
-                       <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+                    <div
+                      key={s.title}
+                      className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 hover:border-emerald-300 hover:bg-white hover:shadow-xl transition-all duration-300 group"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-white text-emerald-600 flex items-center justify-center mb-6 shadow-sm border border-slate-50 group-hover:scale-110 transition-transform">
+                        {s.icon}
+                      </div>
+                      <h3 className="font-bold text-slate-900 mb-2">
+                        {s.title}
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        {s.desc}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -682,11 +807,14 @@ const ForensicImagingPage = memo(() => {
               <Reveal delayMs={200}>
                 <div className="space-y-8">
                   <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
-                    Compliance-First <br/>
+                    Compliance-First <br />
                     <span className="text-emerald-600">Forensic Workflows</span>
                   </h2>
                   <p className="text-lg text-slate-600 leading-relaxed">
-                    Designed for digital forensic practitioners, ITADs, and security researchers. Our imaging tool bridges the gap between raw hardware access and legal admissibility with absolute data integrity.
+                    Designed for digital forensic practitioners, ITADs, and
+                    security researchers. Our imaging tool bridges the gap
+                    between raw hardware access and legal admissibility with
+                    absolute data integrity.
                   </p>
                   <ul className="grid sm:grid-cols-2 gap-4">
                     {[
@@ -697,7 +825,10 @@ const ForensicImagingPage = memo(() => {
                       "Encrypted Volume support",
                       "Remote Network Acquisition",
                     ].map((item) => (
-                      <li key={item} className="flex items-center gap-3 text-slate-700 bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/50">
+                      <li
+                        key={item}
+                        className="flex items-center gap-3 text-slate-700 bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/50"
+                      >
                         <CheckIcon className="w-5 h-5 text-emerald-500" />
                         <span className="font-semibold text-sm">{item}</span>
                       </li>
@@ -710,18 +841,25 @@ const ForensicImagingPage = memo(() => {
         </section>
 
         {/* ================= VERIFICATION SECTION ================= */}
-        <section id="verification" className="py-24 lg:py-32 bg-slate-900 text-white overflow-hidden relative">
+        <section
+          id="verification"
+          className="py-24 lg:py-32 bg-slate-900 text-white overflow-hidden relative"
+        >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,#064e3b20_0%,transparent_100%)]"></div>
 
           <div className="container mx-auto px-4 max-w-7xl relative z-10">
             <Reveal>
               <div className="text-center max-w-3xl mx-auto mb-20 lg:mb-28 text-center">
                 <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-bold border border-emerald-500/20 mb-8 mx-auto">
-                   Cryptographic Verification
+                  Cryptographic Verification
                 </div>
-                <h2 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight">Every Byte Matters.</h2>
+                <h2 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight">
+                  Every Byte Matters.
+                </h2>
                 <p className="text-lg text-slate-400 leading-relaxed">
-                  D-Secure ensures that your forensic image is a perfect, verifiable replica of the original evidence source, ready for legal production.
+                  D-Secure ensures that your forensic image is a perfect,
+                  verifiable replica of the original evidence source, ready for
+                  legal production.
                 </p>
               </div>
             </Reveal>
@@ -729,12 +867,16 @@ const ForensicImagingPage = memo(() => {
             <div className="grid md:grid-cols-3 gap-8">
               {verificationFeatures.map((f) => (
                 <Reveal key={f.title}>
-                   <div className="text-center p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-500 group">
+                  <div className="text-center p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-500 group">
                     <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-500">
-                      {React.cloneElement(f.icon as any, { className: "w-8 h-8" })}
+                      {React.cloneElement(f.icon as any, {
+                        className: "w-8 h-8",
+                      })}
                     </div>
                     <h3 className="text-xl font-bold mb-4">{f.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">{f.desc}</p>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      {f.desc}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -748,14 +890,18 @@ const ForensicImagingPage = memo(() => {
             <Reveal>
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 lg:mb-28 gap-8">
                 <div className="max-w-2xl text-left">
-                   <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Advanced Capabilities</h2>
-                   <p className="text-lg text-slate-600 leading-relaxed">
-                     From single-drive investigations to mass imaging in enterprise networks, our tool handles heavy throughput with absolute precision.
-                   </p>
+                  <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+                    Advanced Capabilities
+                  </h2>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    From single-drive investigations to mass imaging in
+                    enterprise networks, our tool handles heavy throughput with
+                    absolute precision.
+                  </p>
                 </div>
                 <div className="flex items-center gap-4 text-emerald-700 font-black bg-emerald-50 px-8 py-5 rounded-[2rem] border border-emerald-100 shadow-sm transition-transform hover:scale-105">
-                   <Zap className="w-6 h-6 text-emerald-500 animate-pulse" />
-                   UP TO 3.5 GB/s
+                  <Zap className="w-6 h-6 text-emerald-500 animate-pulse" />
+                  UP TO 3.5 GB/s
                 </div>
               </div>
             </Reveal>
@@ -768,8 +914,12 @@ const ForensicImagingPage = memo(() => {
                     <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6 group-hover:rotate-12 group-hover:scale-110 transition-all">
                       {feat.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-4">{feat.title}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">{feat.desc}</p>
+                    <h3 className="text-lg font-bold text-slate-900 mb-4">
+                      {feat.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {feat.desc}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -778,14 +928,20 @@ const ForensicImagingPage = memo(() => {
         </section>
 
         {/* ================= USE CASES ================= */}
-        <section id="use-cases" className="py-20 lg:py-32 bg-slate-900 relative overflow-hidden">
+        <section
+          id="use-cases"
+          className="py-20 lg:py-32 bg-slate-900 relative overflow-hidden"
+        >
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-emerald-500/10 blur-[120px] rounded-full"></div>
           <div className="container mx-auto px-4 max-w-7xl relative z-10">
             <Reveal>
               <div className="text-center mb-16 lg:mb-24">
-                <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 tracking-tight">Enterprise Investigation Enabler</h2>
+                <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+                  Enterprise Investigation Enabler
+                </h2>
                 <p className="text-lg text-slate-400 max-w-3xl mx-auto">
-                  From critical security incidents to law enforcement support, we provide the backbone for immutable digital discovery.
+                  From critical security incidents to law enforcement support,
+                  we provide the backbone for immutable digital discovery.
                 </p>
               </div>
             </Reveal>
@@ -798,8 +954,12 @@ const ForensicImagingPage = memo(() => {
                       {use.icon}
                     </div>
                     <div className="space-y-3">
-                       <h3 className="text-xl font-bold text-white">{use.title}</h3>
-                       <p className="text-slate-400 text-sm leading-relaxed">{use.desc}</p>
+                      <h3 className="text-xl font-bold text-white">
+                        {use.title}
+                      </h3>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        {use.desc}
+                      </p>
                     </div>
                   </div>
                 </Reveal>
@@ -808,64 +968,44 @@ const ForensicImagingPage = memo(() => {
           </div>
         </section>
 
-
         <ProductInternalLinks currentProduct="forensic-imaging" />
 
         {/* ================= FAQ SECTION ================= */}
-        <section id="faq" className="py-24 lg:py-32 bg-slate-50">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-16 lg:mb-20">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 italic tracking-tight">Forensic Q&A</h2>
-                <p className="text-lg text-slate-600">Advanced answers for digital forensic professionals</p>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Is it compatible with my existing hardware write-blockers?",
-                  a: "Absolutely. D-Secure Forensic Imaging is designed to work seamlessly with all industry-standard hardware write-blockers (Tableau, UltraBlock, FRED). It provides the software imaging layer required to create your audit-ready evidence files.",
-                },
-                {
-                  q: "Can I generate legally admissible reports?",
-                  a: "Yes. Every image acquisition includes a cryptographic audit trail. Our reports document timestamps, hardware IDs, hashing algorithms, and verification results, meeting DOJ and international forensic standards for admissibility.",
-                },
-                {
-                  q: "What is the maximum disk size supported?",
-                  a: "Our tool supports all modern LBA (Logical Block Addressing) standards, effectively removing capacity limits. We have successfully tested with 20TB+ enterprise SAS arrays and NVMe pools.",
-                },
-                {
-                  q: "How does it handle bad sectors?",
-                  a: "D-Secure uses an intelligent retry mechanism for unstable sectors. You can configure the number of retries and choose to 'skip and log' to ensure as much data as possible is recovered without damaging the evidence source.",
-                },
-              ].map((faq) => (
-                <Reveal key={faq.q}>
-                  <details className="group bg-white rounded-3xl border border-slate-200 hover:border-emerald-300 transition-all duration-300 shadow-sm">
-                    <summary className="flex items-center justify-between p-7 cursor-pointer list-none">
-                      <span className="font-bold text-slate-900 pr-4 text-base lg:text-lg">{faq.q}</span>
-                      <span className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center group-open:rotate-180 transition-transform shadow-inner">
-                        <ChevronDown className="w-6 h-6" />
-                      </span>
-                    </summary>
-                    <div className="px-7 pb-8 text-slate-600 leading-relaxed text-sm lg:text-base border-t border-slate-50 pt-6">
-                      {faq.a}
-                    </div>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection
+          id="faq"
+          title="Forensic Q&A"
+          className="!py-24 lg:!py-32 !bg-slate-50"
+          faqs={[
+            {
+              q: "Is it compatible with my existing hardware write-blockers?",
+              a: "Absolutely. D-Secure Forensic Imaging is designed to work seamlessly with all industry-standard hardware write-blockers (Tableau, UltraBlock, FRED). It provides the software imaging layer required to create your audit-ready evidence files.",
+            },
+            {
+              q: "Can I generate legally admissible reports?",
+              a: "Yes. Every image acquisition includes a cryptographic audit trail. Our reports document timestamps, hardware IDs, hashing algorithms, and verification results, meeting DOJ and international forensic standards for admissibility.",
+            },
+            {
+              q: "What is the maximum disk size supported?",
+              a: "Our tool supports all modern LBA (Logical Block Addressing) standards, effectively removing capacity limits. We have successfully tested with 20TB+ enterprise SAS arrays and NVMe pools.",
+            },
+            {
+              q: "How does it handle bad sectors?",
+              a: "D-Secure uses an intelligent retry mechanism for unstable sectors. You can configure the number of retries and choose to 'skip and log' to ensure as much data as possible is recovered without damaging the evidence source.",
+            },
+          ]}
+        />
 
         {/* ================= CONTACT / CTA ================= */}
-        <section id="contact" className="py-24 lg:py-40 bg-white border-t overflow-hidden relative">
-           {/* Subtle background patterns */}
-           <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-[140px] translate-x-1/4 translate-y-1/4 pointer-events-none"></div>
- 
+        <section
+          id="contact"
+          className="py-24 lg:py-40 bg-white border-t overflow-hidden relative"
+        >
+          {/* Subtle background patterns */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-[140px] translate-x-1/4 translate-y-1/4 pointer-events-none"></div>
+
           <div className="container mx-auto px-4 max-w-7xl relative z-10">
-            <ProductContactForm 
+            <ProductContactForm
               source="Forensic Imaging Page Contact"
               solutionType="forensic-imaging"
               title="Start Your Secure Acquisition"

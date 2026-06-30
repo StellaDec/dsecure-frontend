@@ -1,5 +1,5 @@
 import React from 'react';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 import { ArrowLeft, ChevronRight, Download, Play, Book, HelpCircle, FileText, Calendar, Settings, Mouse, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const HelpManualIndexPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <SEOHead seo={getSEOForPage("help-manual")} />
+      <SEOHeadNative seo={getSEOForPage("help-manual")} />
 
       {/* Header */}
       <div className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">

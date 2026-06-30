@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
 import {
   ShieldIcon,
   CheckIcon,
@@ -16,6 +15,49 @@ import { FileTextIcon, Monitor, Database, Zap } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
 import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
+import { generateFAQSchema } from "@/utils/seo.core";
+import { FAQSection } from "@/components/FAQSection";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
+
+const virtualMachineEraserFaqs: FAQItem[] = [
+  {
+    q: "Which virtualization platforms are supported?",
+    a: "D-Secure Virtual Machine Eraser supports leading platforms such as Microsoft Hyper-V and VMware ESXi, enabling secure erasure across local, network, and remote configurations.",
+  },
+  {
+    q: "Are the licenses permanent?",
+    a: "Yes, the VM erasure licenses are provided on a pay-per-use basis and do not expire until they are used.",
+  },
+  {
+    q: "Can I manage everything centrally?",
+    a: "Absolutely. The software can be installed on any Windows system to centrally manage and securely erase virtual machines across your infrastructure.",
+  },
+  {
+    q: "Is the report compliant with GDPR?",
+    a: "Yes, the software generates detailed, tamper-proof reports that help you comply with a wide range of global data protection laws including EU-GDPR, HIPAA, and PCI-DSS.",
+  },
+];
+
+const virtualMachineEraserTakeaways: KeyTakeawayItem[] = [
+  {
+    title: "Multi-Platform Support",
+    description: "Securely wipe VMs on VMware ESXi and Microsoft Hyper-V simultaneously.",
+  },
+  {
+    title: "Audit-Ready Reporting",
+    description: "Generate tamper-proof, digitally signed PDF/XML reports with VM details and MAC addresses.",
+  },
+  {
+    title: "18+ Global Standards",
+    description: "Compliance with NIST 800-88, US DoD 5220.22-M, and more for guaranteed data sanitization.",
+  },
+  {
+    title: "Centralized Management",
+    description: "Deploy on any Windows system to manage remote VM erasures through a single cloud console.",
+  }
+];
 
 const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPage() {
   const [activeSection, setActiveSection] = useState("");
@@ -130,7 +172,10 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("virtual-machine-eraser")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("virtual-machine-eraser")}
+        structuredData={generateFAQSchema(virtualMachineEraserFaqs)}
+      />
       
       {/* ================= STICKY SECTION NAV ================= */}
       <div
@@ -214,6 +259,8 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                       Request Early Access
                     </button>
                   </div>
+
+                  
                 </div>
               </Reveal>
 
@@ -479,6 +526,14 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
         </section>
 
         {/* ================= CAPABILITIES ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={virtualMachineEraserTakeaways} />
+          </div>
+        </section>
+
         <section id="capabilities" className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -617,25 +672,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
 
         <ProductInternalLinks currentProduct="virtual-machine-eraser" />
 
-        {/* ================= FAQ ================= */}
-        <section id="faq" className="py-20 bg-white">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-16">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Which virtualization platforms are supported?", a: "D-Secure Virtual Machine Eraser supports leading platforms such as Microsoft Hyper-V and VMware ESXi, enabling secure erasure across local, network, and remote configurations." },
-                { q: "Are the licenses permanent?", a: "Yes, the VM erasure licenses are provided on a pay-per-use basis and do not expire until they are used." },
-                { q: "Can I manage everything centrally?", a: "Absolutely. The software can be installed on any Windows system to centrally manage and securely erase virtual machines across your infrastructure." },
-                { q: "Is the report compliant with GDPR?", a: "Yes, the software generates detailed, tamper-proof reports that help you comply with a wide range of global data protection laws including EU-GDPR, HIPAA, and PCI-DSS." }
-              ].map((faq, k) => (
-                <div key={k} className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                  <h3 className="text-lg font-bold text-slate-800 mb-3">{faq.q}</h3>
-                  <p className="text-slate-600 leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection faqs={virtualMachineEraserFaqs} id="faq" />
 
         {/* ================= CONTACT SECTION ================= */}
         <section id="contact" className="py-20 bg-white border-t relative">

@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -238,7 +238,7 @@ export default function AdminDownloads() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("admin-downloads")} />
+      <SEOHeadNative seo={getSEOForPage("admin-downloads")} />
 
       <div className="space-y-6">
         {/* Header */}

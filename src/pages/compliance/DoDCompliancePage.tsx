@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '@/components/Reveal';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 // FlatIcons se zaroori icons ko import kiya gaya hai
 import { ShieldIcon, ClipboardIcon, LockIcon, CheckIcon, GlobeIcon, DatabaseIcon, GearIcon } from '@/components/FlatIcons';
@@ -76,7 +76,7 @@ export default function DoDCompliancePage() {
 
   return (
     <>
-      <SEOHead 
+      <SEOHeadNative 
         seo={getSEOForPage('dod')}
         structuredData={dodSchema}
       />

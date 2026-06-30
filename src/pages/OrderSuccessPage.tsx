@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { ProductImage } from '@/components/ProductImage';
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
-import { api } from '@/utils/apiClient';
+import { apiClient as api } from '@/utils/enhancedApiClient';
 
 // API Response interfaces matching backend schema
 interface BillingAddress {
@@ -88,7 +88,6 @@ export default function OrderSuccessPage() {
   const [orderData, setOrderData] = useState<OrderDetailsResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [copiedKey, setCopiedKey] = useState<string | null>(null);
   const seo = getSEOForPage('order-success');
 
   useEffect(() => {
@@ -111,19 +110,26 @@ export default function OrderSuccessPage() {
       try {
         console.log(`📦 Fetching order details (Attempt ${retryCount + 1}/${maxRetries})`);
         const response = await api.get<OrderDetailsResponse>(`/api/Payments/orders/${identifier}/details`);
-        setOrderData(response.data);
-        localStorage.setItem('lastOrderId', identifier);
-        setLoading(false);
+        
+        if (response.success && response.data) {
+          setOrderData(response.data);
+          localStorage.setItem('lastOrderId', identifier);
+          setLoading(false);
+        } else {
+          const error: any = new Error(response.error || 'Failed to load order details');
+          error.status = response.status;
+          throw error;
+        }
       } catch (err: any) {
         console.error(`Attempt ${retryCount + 1} failed:`, err);
         
         // Agar data nahi mila aur retries baaki hain
-        if (retryCount < maxRetries && err.response?.status === 404) {
+        if (retryCount < maxRetries && err.status === 404) {
           retryCount++;
           console.log(`⏳ Waiting ${retryDelay}ms before retry...`);
           setTimeout(fetchOrderDetails, retryDelay);
         } else {
-          setError(err.response?.data?.message || 'Failed to load order details. Please refresh the page.');
+          setError(err.message || 'Failed to load order details. Please refresh the page.');
           setLoading(false);
         }
       }
@@ -163,12 +169,6 @@ export default function OrderSuccessPage() {
     return 'bg-gray-100 text-gray-800';
   };
 
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedKey(text);
-    setTimeout(() => setCopiedKey(null), 2000);
-  };
-
   const getProductCategory = (productName: string): string => {
     if (productName.toLowerCase().includes('drive')) return 'drive-eraser';
     if (productName.toLowerCase().includes('file')) return 'file-eraser';
@@ -178,7 +178,7 @@ export default function OrderSuccessPage() {
   if (loading) {
     return (
       <>
-        <SEOHead seo={seo} />
+        <SEOHeadNative seo={seo} />
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center">
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-teal-600 mx-auto"></div>
@@ -192,7 +192,7 @@ export default function OrderSuccessPage() {
   if (error) {
     return (
       <>
-        <SEOHead seo={seo} />
+        <SEOHeadNative seo={seo} />
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center max-w-md mx-auto px-4">
             <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 mb-6">
@@ -216,11 +216,11 @@ export default function OrderSuccessPage() {
 
   if (!orderData) return null;
 
-  const { order_details, payment_info, product_details, customer_info, invoice_info, license_info } = orderData;
+  const { order_details, payment_info, product_details, customer_info, invoice_info } = orderData;
 
   return (
     <>
-      <SEOHead seo={seo} />
+      <SEOHeadNative seo={seo} />
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-gray-100 py-8 sm:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Success Header */}

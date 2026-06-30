@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
+import { generateFAQSchema } from "@/utils/seo.core";
+import { FAQSection } from "@/components/FAQSection";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import {
@@ -34,7 +37,44 @@ import {
 import { ShieldIcon as FlatShieldIcon, GlobeIcon as FlatGlobeIcon, ServerIcon as FlatServerIcon } from "@/components/FlatIcons";
 import { useToast } from "@/components/Toast";
 import { blogPosts } from "@/data/blogPosts";
-import { url } from "inspector";
+
+const driveEraserDiagnosticFaqs = [
+  {
+    q: "How many drives can I erase at a time on one machine?",
+    a: "D-Secure Drive Eraser supports simultaneous erasure of up to 32 drives per machine, depending on your hardware configuration. For bulk operations, you can use our cloud console to manage multiple machines.",
+  },
+  {
+    q: "Does the software support Partition Deletion Wipe?",
+    a: "Yes, D-Secure supports partition-level erasure in addition to full drive erasure. You can selectively wipe specific partitions while keeping others intact.",
+  },
+  {
+    q: "Do I need Technical Skills?",
+    a: "No, D-Secure is designed with a user-friendly interface. Simply boot from USB, select your drive and erasure standard, and the software handles everything automatically.",
+  },
+  {
+    q: "Can I sign my file, like XML, jar file with my e-Signature?",
+    a: "Yes, D-Secure supports custom digital signatures for reports. You can integrate your organization's PKI for enhanced security.",
+  },
+  {
+    q: "Does D-Secure integrate with ServiceNow?",
+    a: "Yes, D-Secure offers native integration with ServiceNow via REST APIs. You can automatically update CMDB records and create incident tickets upon erasure completion.",
+  },
+  {
+    q: "Can I track separate Inventory for different types of Drives (SSD/HDD, Mobile, etc)?",
+    a: "Absolutely. The cloud console provides detailed categorization and filtering by device type, making it easy to track and report on different asset categories.",
+  },
+  {
+    q: "What ongoing support is provided?",
+    a: "We provide continuous support including regular software updates, technical assistance, compliance monitoring, and renewal coordination. Think of us as your ongoing partner in data hygiene.",
+  },
+];
+
+const diagnosticTakeaways = [
+  { title: "Diagnostic Testing", desc: "Comprehensive diagnostic testing for all major hardware components." },
+  { title: "Simultaneous Erasure", desc: "Simultaneous erasure of up to 32 drives per machine." },
+  { title: "Seamless Integration", desc: "Integration with ServiceNow and custom PKI for seamless reporting." },
+  { title: "Automated Workflows", desc: "Automated workflows with zero technical skills required." }
+];
 
 const getReadTime = (text: string) => {
   const wordsPerMinute = 200;
@@ -674,7 +714,10 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
   ];
   return (
     <>
-      <SEOHead seo={getSEOForPage("drive-eraser-diagnostic")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("drive-eraser-diagnostic")} 
+        schemas={[generateFAQSchema(driveEraserDiagnosticFaqs)]}
+      />
 
       {/* Breadcrumb Navigation — SEO ke liye */}
       <div className="container mx-auto px-4 pt-4 pb-1">
@@ -811,6 +854,10 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       </svg>
                       Download Datasheet
                     </button>
+                  </div>
+
+                  <div className="mt-4">
+                    
                   </div>
                 </div>
               </Reveal>
@@ -1072,6 +1119,14 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         </section>
 
         {/* ================= INTEGRATED DIAGNOSTICS ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={diagnosticTakeaways} />
+          </div>
+        </section>
+
         <section
           id="diagnostics"
           className="py-20 bg-slate-50 border-y border-slate-200"
@@ -2162,81 +2217,11 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         />
 
         {/* ================= FAQ SECTION ================= */}
-        <section id="faq" className="py-16 lg:py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Frequently Asked Questions
-                </h2>
-                <p className="text-lg text-slate-600">
-                  Everything you need to know about D-Secure Drive Eraser
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: "How many drives can I erase at a time on one machine?",
-                  a: "D-Secure Drive Eraser supports simultaneous erasure of up to 32 drives per machine, depending on your hardware configuration. For bulk operations, you can use our cloud console to manage multiple machines.",
-                },
-                {
-                  q: "Does the software support Partition Deletion Wipe?",
-                  a: "Yes, D-Secure supports partition-level erasure in addition to full drive erasure. You can selectively wipe specific partitions while keeping others intact.",
-                },
-                {
-                  q: "Do I need Technical Skills?",
-                  a: "No, D-Secure is designed with a user-friendly interface. Simply boot from USB, select your drive and erasure standard, and the software handles everything automatically.",
-                },
-                {
-                  q: "Can I sign my file, like XML, jar file with my e-Signature?",
-                  a: "Yes, D-Secure supports custom digital signatures for reports. You can integrate your organization's PKI for enhanced security.",
-                },
-                {
-                  q: "Does D-Secure integrate with ServiceNow?",
-                  a: "Yes, D-Secure offers native integration with ServiceNow via REST APIs. You can automatically update CMDB records and create incident tickets upon erasure completion.",
-                },
-                {
-                  q: "Can I track separate Inventory for different types of Drives (SSD/HDD, Mobile, etc)?",
-                  a: "Absolutely. The cloud console provides detailed categorization and filtering by device type, making it easy to track and report on different asset categories.",
-                },
-                {
-                  q: "What ongoing support is provided?",
-                  a: "We provide continuous support including regular software updates, technical assistance, compliance monitoring, and renewal coordination. Think of us as your ongoing partner in data hygiene.",
-                },
-              ].map((faq, i) => (
-                <Reveal key={i} delayMs={i * 50}>
-                  <details className="group bg-slate-50 rounded-lg sm:rounded-xl border border-slate-200 hover:border-emerald-300 transition-colors">
-                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer list-none">
-                      <span className="font-semibold text-slate-900 pr-3 sm:pr-4 text-sm sm:text-base">
-                        {faq.q}
-                      </span>
-                      <span className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center group-open:rotate-180 transition-transform">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-slate-600 leading-relaxed text-sm sm:text-base">
-                      {faq.a}
-                    </div>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection 
+          faqs={driveEraserDiagnosticFaqs} 
+          title="Frequently Asked Questions"
+          subtitle="Everything you need to know about D-Secure Drive Eraser"
+        />
 
         {/* ================= LATEST INSIGHTS & UPDATES ================= */}
         <section id="blogs" className="py-16 lg:py-24 bg-white">

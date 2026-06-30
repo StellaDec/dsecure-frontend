@@ -23,7 +23,7 @@ export interface SEOMetadata {
   fragment?: string;
   structuredData?: Record<string, any> | Record<string, any>[];
   breadcrumbs?: { name: string; item: string }[];
-  faqs?: FAQ[];
+  faqs?: Array<FAQ | { q?: string; a?: string; question?: string; answer?: string }>;
   noindex?: boolean;
 }
 
@@ -336,15 +336,16 @@ export const generateArticleSchema = (options: {
 /**
  * FAQPage Schema generator - SERP dropdown snippets ke liye
  */
-export const generateFAQSchema = (faqs: FAQ[]) => ({
+export const generateFAQSchema = (faqs: Array<FAQ | { q?: string; a?: string; question?: string; answer?: string }>) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqs.map(faq => ({
     "@type": "Question",
-    name: faq.question,
+    // q/a alias aur question/answer dono support karta hai
+    name: ('question' in faq ? faq.question : undefined) || ('q' in faq ? faq.q : undefined),
     acceptedAnswer: {
       "@type": "Answer",
-      text: faq.answer
+      text: ('answer' in faq ? faq.answer : undefined) || ('a' in faq ? faq.a : undefined)
     }
   }))
 });

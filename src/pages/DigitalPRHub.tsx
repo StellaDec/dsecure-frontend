@@ -11,7 +11,7 @@ import {
   Camera,
   ArrowRight
 } from "lucide-react";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import Reveal from "../components/Reveal";
 import { useFormSubmission } from "../hooks/useFormSubmission";
 
@@ -85,7 +85,7 @@ const DigitalPRHub: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <SEOHead 
+      <SEOHeadNative 
         title="Journalist Resources & Newsroom | D-Secure PR Hub"
         description="Access D-Secure's official newsroom. Download media kits, read press releases, and request interviews with Founder Dhruv Rai."
         canonicalUrl="https://dsecuretech.com/press-room"

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { assets, getOptimizedImageUrl } from '@/utils/cloudinary';
 import { ProductImage } from '@/components/ProductImage';
 import { useNotification } from "@/contexts/NotificationContext";
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 
 interface PaymentData {
@@ -179,7 +179,7 @@ const CheckoutPage = memo(function CheckoutPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("checkout")} />
+      <SEOHeadNative seo={getSEOForPage("checkout")} />
       <div className="min-h-screen bg-gray-50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}

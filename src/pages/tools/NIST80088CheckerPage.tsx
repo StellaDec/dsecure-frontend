@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { Link } from "react-router-dom";
@@ -100,7 +100,7 @@ export default function NIST80088CheckerPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Schemas ko directStructuredData se pass karo — PAGE_SEO schemas override nahi honge, SEOHead merge karega */}
-      <SEOHead
+      <SEOHeadNative
         seo={getSEOForPage("nist-800-88-compliance-checker")}
         structuredData={[
           {

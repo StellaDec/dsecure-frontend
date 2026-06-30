@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
@@ -102,7 +102,7 @@ const MacEraseGuide: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("mac-erase-guide")} />
+      <SEOHeadNative seo={getSEOForPage("mac-erase-guide")} />
 
       <div className="min-h-screen bg-white">
         {/* Breadcrumbs */}

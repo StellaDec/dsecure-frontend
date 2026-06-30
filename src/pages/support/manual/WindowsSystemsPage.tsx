@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React, { useState, memo } from "react";
 import Reveal from "@/components/Reveal";
@@ -308,7 +308,7 @@ const WindowsSystemsPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      {/* <SEOHead 
+      {/* <SEOHeadNative 
         seo={getSEOForPage("windows-systems", { 
           title: "Windows Systems | D-Secure Manual", 
           canonicalUrl: "/support/manual/windows-systems" 

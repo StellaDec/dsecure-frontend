@@ -27,7 +27,7 @@ import {
 } from "@/components/FlatIcons";
 import { Search, Monitor, Terminal, Database, FileCheck, CheckCircle2 } from "lucide-react";
 import { useEffect, memo, useMemo, useCallback, useState } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import { usePerformanceMonitor } from "@/utils/performanceUtils";
 import { useTranslation } from "react-i18next";
@@ -388,7 +388,7 @@ const HomePage = memo(function HomePage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("home")} />
+      <SEOHeadNative seo={getSEOForPage("home")} />
       <section
         id="hero"
         className="bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50 py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 xxl:py-18"

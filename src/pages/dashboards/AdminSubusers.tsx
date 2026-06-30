@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { exportToCsv, openPrintView } from "@/utils/csv";
 import { useNotification } from "@/contexts/NotificationContext";
@@ -839,7 +839,7 @@ export default function AdminSubusers() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("admin-subusers")} />
+      <SEOHeadNative seo={getSEOForPage("admin-subusers")} />
       {/* Edit Subuser Modal */}
       {editModal.show && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -1164,7 +1164,7 @@ export default function AdminSubusers() {
           </div>
         </div>
       )}
-      <SEOHead seo={getSEOForPage("admin-subusers")} />
+      <SEOHeadNative seo={getSEOForPage("admin-subusers")} />
       <div className="space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold text-slate-900">Manage Subusers</h1>

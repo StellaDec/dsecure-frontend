@@ -17,12 +17,12 @@ import {
   BriefcaseIcon
 } from '@/components/FlatIcons'
 import { getSEOForPage } from '@/utils/seo';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 
 export default function ServicesPage() {
   return (
     <>
-      <SEOHead seo={getSEOForPage('services')} />
+      <SEOHeadNative seo={getSEOForPage('services')} />
       <ServicesPageContent />
     </>
   );

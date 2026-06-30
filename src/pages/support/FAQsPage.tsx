@@ -1,5 +1,5 @@
 import React, { useState, memo } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
@@ -135,7 +135,7 @@ const FAQsPage: React.FC = memo(() => {
     <>
       {/* SEOHead ko do alag props se data dena: seo prop (page meta) + structuredData prop (FAQPage schema)
           SEOHead internally dono ko merge karke exactly ek FAQPage script tag emit karta hai */}
-      <SEOHead 
+      <SEOHeadNative 
         seo={getSEOForPage('faqs')}
         structuredData={faqSchema}
       />

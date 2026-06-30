@@ -1,7 +1,7 @@
 import React, { Suspense, useMemo } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { MANUAL_COMPONENTS } from '../../../routes/manualRegistry';
-import SEOHead from '../../../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../../../utils/seo';
 import PageLoadingSkeleton from '../../../components/PageLoadingSkeleton';
 
@@ -24,7 +24,7 @@ const ManualPageRenderer: React.FC = () => {
 
   return (
     <>
-      <SEOHead seo={seoData} />
+      <SEOHeadNative seo={seoData} />
       <Suspense fallback={<PageLoadingSkeleton />}>
         <Component />
       </Suspense>

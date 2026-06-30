@@ -1,5 +1,5 @@
 import React, { useState, memo } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { getFallbackImage } from '@/utils/imagePlaceholders';
@@ -234,7 +234,7 @@ const LinuxSystemsPage: React.FC = memo(() => {
     return (
       <>
         {/* SEO Meta Tags */}
-        {/* <SEOHead 
+        {/* <SEOHeadNative 
         seo={getSEOForPage("linux-systems", { 
           title: "Linux Systems | D-Secure Manual", 
           canonicalUrl: "/support/manual/linux-systems" 

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import Reveal from "../components/Reveal";
 
@@ -58,7 +58,7 @@ export default function UseCasesPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("use-cases")} />
+      <SEOHeadNative seo={getSEOForPage("use-cases")} />
 
       <div className="min-h-screen bg-white">
         {/* Hero */}

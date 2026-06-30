@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal from "../../components/Reveal";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 
 const researchAssets = [
   {
@@ -66,7 +66,7 @@ const ResearchHubPage: React.FC = () => {
   
   return (
     <div className="min-h-screen bg-slate-50 overflow-hidden">
-      <SEOHead 
+      <SEOHeadNative 
         title="D-Secure Lab | High-Authority Data Security Research Hub"
         description="Access technical research, benchmark studies, and whitepapers on NIST 800-88, ZTA, and data destruction."
         canonicalUrl="https://dsecuretech.com/resources/research"

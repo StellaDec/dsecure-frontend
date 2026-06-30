@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
-import { apiClient, checkApiAvailability, User, Machine, Report } from './api'
+import { apiClient, checkApiAvailability } from './enhancedApiClient'
+import type { User, Machine, Report } from '@/types/models'
 
 // AI-Generated Demo Data for Demonstration Purposes
 // This data is created by the AI assistant and is not from your backend database

@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React, { useState, memo } from "react";
 
@@ -199,7 +199,7 @@ const ProductVideosPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("support-product-videos")} />
+      <SEOHeadNative seo={getSEOForPage("support-product-videos")} />
 
 
 

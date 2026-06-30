@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React, { memo } from "react";
 import Reveal from "@/components/Reveal";
@@ -8,7 +8,7 @@ const WindowsBootableUsbPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      {/* <SEOHead 
+      {/* <SEOHeadNative 
         seo={getSEOForPage("support-manual-windows-bootable-usb", { 
           title: "Windows Bootable Usb | D-Secure Manual", 
           canonicalUrl: "/support/manual/windows-bootable-usb" 

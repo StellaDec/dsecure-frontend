@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React, { useState, memo } from "react";
 
@@ -244,7 +244,7 @@ const PerformanceOptimizationPage: React.FC = memo(() => {
 
   return (
     <>
-      {/* <SEOHead
+      {/* <SEOHeadNative
         seo={getSEOForPage("support-manual-performance-optimization", {
           title: "Performance Optimization | D-Secure Manual",
           canonicalUrl: "/support/manual/performance-optimization",

@@ -16,7 +16,7 @@ import {
   Award
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import Reveal from "../../components/Reveal";
 import { useFormSubmission } from "../../hooks/useFormSubmission";
 
@@ -43,7 +43,7 @@ const StateOfDataDestruction2026: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead 
+      <SEOHeadNative 
         title="State of Data Destruction 2026 | Global Industry Report"
         description="Explore the 2026 Global Data Destruction report: e-waste trends, NIST 800-88 adoption, and AI impacts."
         canonicalUrl="https://dsecuretech.com/research/state-of-data-destruction-2026"

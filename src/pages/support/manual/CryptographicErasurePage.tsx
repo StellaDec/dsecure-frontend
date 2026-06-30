@@ -1,5 +1,5 @@
 import React, { useState, memo } from "react";
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
 import OptimizedImage from '@/components/OptimizedImage';
@@ -226,7 +226,7 @@ const CryptographicErasurePage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      {/* <SEOHead 
+      {/* <SEOHeadNative 
         seo={getSEOForPage("cryptographic-erasure", { 
           title: "Cryptographic Erasure | D-Secure Manual", 
           canonicalUrl: "/support/manual/cryptographic-erasure" 

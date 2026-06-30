@@ -4,7 +4,7 @@ import { useAuth } from '@/auth/AuthContext'
 import { SetupStatusAlert, useSetupStatus } from '@/components/PaymentLicenseGuard'
 import { authService } from '../utils/authService'
 import { useToast } from '@/components/Toast'
-import SEOHead from '@/components/SEOHead'
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo'
 
 interface PlanDetails {
@@ -448,7 +448,7 @@ export default function PaymentSetupPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
-      <SEOHead seo={getSEOForPage('payment-setup')} />
+      <SEOHeadNative seo={getSEOForPage('payment-setup')} />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Setup Status Alert */}
         <SetupStatusAlert />

@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useAuth } from '@/auth/AuthContext'
 import { useNotification } from '@/contexts/NotificationContext'
@@ -218,7 +218,7 @@ export default function UserDashboard() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("user-dashboard")} />
+      <SEOHeadNative seo={getSEOForPage("user-dashboard")} />
       <div className="container-app py-12">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex items-center gap-4">

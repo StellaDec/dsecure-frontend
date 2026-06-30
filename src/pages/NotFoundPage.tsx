@@ -1,5 +1,5 @@
 import React from "react";
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 import { Link } from "react-router-dom";
 import Reveal from "@/components/Reveal";
@@ -8,7 +8,7 @@ const NotFoundPage: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage('not-found')} noindex={true} />
+      <SEOHeadNative seo={getSEOForPage('not-found')} noindex={true} />
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50 flex items-center justify-center px-4">
         <div className="max-w-2xl mx-auto text-center">

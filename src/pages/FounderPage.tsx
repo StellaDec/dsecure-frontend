@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 
 export default function FounderPage() {
@@ -9,7 +9,7 @@ export default function FounderPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("founder")} />
+      <SEOHeadNative seo={getSEOForPage("founder")} />
 
       <div className="min-h-screen bg-slate-50 py-12 md:py-20 lg:py-28">
         <div className="container-responsive">

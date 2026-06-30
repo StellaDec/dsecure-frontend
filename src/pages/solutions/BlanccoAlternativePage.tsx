@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { 
   ShieldCheck, 
@@ -52,7 +52,7 @@ export default function BlanccoAlternativePage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("alternative")} />
+      <SEOHeadNative seo={getSEOForPage("alternative")} />
 
       <div className="min-h-screen bg-white">
         {/* Hero Section */}

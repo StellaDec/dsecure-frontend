@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
@@ -232,7 +232,7 @@ const OverwriteGuide: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <SEOHead seo={getSEOForPage('overwrite-guide')} />
+      <SEOHeadNative seo={getSEOForPage('overwrite-guide')} />
 
       <style>{`
         .sidebar-scroll::-webkit-scrollbar { width: 4px; }

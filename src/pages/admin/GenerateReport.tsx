@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useAuth } from "@/auth/AuthContext";
 
@@ -128,7 +128,7 @@ export default function GenerateReport() {
   return (
     <>
       {/* SEO Head component */}
-      <SEOHead seo={getSEOForPage("generate-report")} />
+      <SEOHeadNative seo={getSEOForPage("generate-report")} />
 
       <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
         {/* Header */}

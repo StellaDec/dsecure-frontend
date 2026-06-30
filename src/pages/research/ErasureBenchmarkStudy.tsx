@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal from "../../components/Reveal";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 
 const benchmarkComparison = [
   { tech: "Mechanical HDD", legacy: "45 min", dsecure: "14 min", icon: HardDrive },
@@ -31,7 +31,7 @@ const ErasureBenchmarkStudy: React.FC = () => {
   
   return (
     <div className="min-h-screen bg-slate-50">
-      <SEOHead 
+      <SEOHeadNative 
         title="2026 Erasure Speed Benchmark Study | D-Secure Lab Research"
         description="Speed analysis comparing legacy overwriting to cryptographic erasure. Benchmark data for HDD, SSD, and NVMe."
         canonicalUrl="https://dsecuretech.com/research/erasure-speed-benchmark-2026"

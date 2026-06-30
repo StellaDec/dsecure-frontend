@@ -1,7 +1,7 @@
 import React, { useState, memo, useEffect, useCallback, useMemo } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { getProductIcon } from "@/utils/productIcons";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import { showInfoToast } from "@/utils/toast";
 
@@ -258,7 +258,7 @@ const DownloadPage: React.FC = memo(() => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("download")} />
+      <SEOHeadNative seo={getSEOForPage("download")} />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
         <div className="container mx-auto px-4 xs:px-6 sm:px-6 md:px-8 py-8 max-w-7xl">

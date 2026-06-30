@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
+import { sanitizeHtml } from "@/utils/sanitizeHtml";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { 
@@ -134,7 +135,7 @@ const navigationTree: NavItem[] = [
             <span className="text-2xl font-black text-emerald-200">{item.step}</span>
             <div>
               <h4 className="font-bold text-slate-900">{item.title}</h4>
-              <p className="text-sm text-slate-600" dangerouslySetInnerHTML={{ __html: item.text }} />
+              <p className="text-sm text-slate-600" dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.text) }} />
             </div>
           </div>
         ))}
@@ -211,7 +212,7 @@ const RetainOSGuide: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 font-inter text-slate-900">
-      <SEOHead seo={getSEOForPage('retain-os-guide')} />
+      <SEOHeadNative seo={getSEOForPage('retain-os-guide')} />
 
       <style>{`
         .sidebar-scroll::-webkit-scrollbar { width: 4px; }

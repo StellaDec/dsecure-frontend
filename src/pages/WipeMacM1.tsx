@@ -1,12 +1,12 @@
 import React from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 
 const WipeMacM1Guide: React.FC = () => {
   return (
     <>
-      <SEOHead seo={getSEOForPage('wipe-mac-m1')} />
+      <SEOHeadNative seo={getSEOForPage('wipe-mac-m1')} />
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         {/* Hero Section */}

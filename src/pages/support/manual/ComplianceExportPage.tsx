@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React, { memo, useState } from "react";
 import Reveal from "@/components/Reveal";
@@ -32,7 +32,7 @@ const ComplianceExportPage: React.FC = memo(() => {
 
   return (
     <>
-      {/* <SEOHead 
+      {/* <SEOHeadNative 
         seo={getSEOForPage("support-manual-compliance-export", { 
           title: "Enterprise Compliance Reporting & Audit Exports | D-Secure Manual", 
           canonicalUrl: "/support/manual/compliance-export",

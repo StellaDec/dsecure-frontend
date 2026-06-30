@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React from "react";
 import Reveal from "@/components/Reveal";
@@ -8,7 +8,7 @@ const SystemSetupPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("system-setup")} />
+      <SEOHeadNative seo={getSEOForPage("system-setup")} />
 
       {/* Header */}
       <section className="bg-gradient-to-r from-slate-900 via-blue-800 to-blue-900 py-20">

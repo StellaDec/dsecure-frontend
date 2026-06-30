@@ -5,8 +5,9 @@ import {
   Plus, Minus, ExternalLink, DollarSign
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
+import { sanitizeHtml } from '@/utils/sanitizeHtml';
 
 interface FAQItem {
   question: string;
@@ -140,7 +141,7 @@ const DSecureFAQPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pb-20">
-      <SEOHead seo={getSEOForPage("faqs")} />
+      <SEOHeadNative seo={getSEOForPage("faqs")} />
 
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-30">
@@ -244,7 +245,7 @@ const DSecureFAQPage: React.FC = () => {
                     }`}
                   >
                     <div className="px-8 pb-8 text-gray-600 leading-relaxed border-t border-gray-50 pt-6">
-                      <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                      <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(faq.answer) }} />
                     </div>
                   </div>
                 </div>

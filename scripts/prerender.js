@@ -281,6 +281,41 @@ async function prerender() {
         headTags.push(`<meta data-rh="true" name="twitter:creator" content="@D-Securetech" />`);
         
         helmetContent = headTags.join(String.fromCharCode(10) + '    ');
+      } else if (!helmetContent && /<title>[\s\S]*?<\/title>/i.test(appHtml)) {
+        // ── NATIVE METADATA PATH (React 19 / SEOHeadNative) ────────────────────
+        // SEOHeadNative <Helmet>/bridge use nahi karta — React 19 native metadata
+        // ko body mein inline render karta hai (kyunki is SSR setup mein React
+        // document <head> control nahi karta). In <title>/<meta>/<link> tags ko
+        // body se nikaal kar <head> mein lift karte hain. JSON-LD alag se neeche
+        // handle hota hai (body-scan), isliye yahan scripts ko haath nahi lagana.
+        const headTags = [];
+
+        const titleMatch = appHtml.match(/<title>([\s\S]*?)<\/title>/i);
+        if (titleMatch) {
+          seoTitle = titleMatch[1];
+          headTags.push(`<title data-rh="true">${seoTitle}</title>`);
+        }
+
+        // Saare SEO <meta name|property> tags (viewport chhod ke — wo template head mein hai)
+        const metaMatches = [...appHtml.matchAll(/<meta\s+(?:name|property)="[^"]*"[^>]*?\/?>/gi)];
+        for (const m of metaMatches) {
+          if (/name="viewport"/i.test(m[0])) continue;
+          headTags.push(m[0].replace(/^<meta\s+/i, '<meta data-rh="true" '));
+        }
+
+        // canonical + hreflang alternate links
+        const linkMatches = [...appHtml.matchAll(/<link\s+rel="(?:canonical|alternate)"[^>]*?\/?>/gi)];
+        for (const m of linkMatches) {
+          headTags.push(m[0].replace(/^<link\s+/i, '<link data-rh="true" '));
+        }
+
+        helmetContent = headTags.join(String.fromCharCode(10) + '    ');
+
+        // Body se ye SEO tags hatao taaki head + body mein duplicate na ho
+        appHtml = appHtml
+          .replace(/<title>[\s\S]*?<\/title>/i, '')
+          .replace(/<meta\s+(?:name|property)="[^"]*"[^>]*?\/?>/gi, '')
+          .replace(/<link\s+rel="(?:canonical|alternate)"[^>]*?\/?>/gi, '');
       } else if (!helmetContent && helmet) {
         // Fallback to Helmet context if no bridge is found
         const helmetTitle = helmet.title.toString();

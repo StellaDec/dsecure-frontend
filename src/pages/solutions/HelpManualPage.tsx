@@ -1,5 +1,5 @@
 import React, { useState, memo } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
@@ -284,7 +284,7 @@ const HelpManualPage: React.FC = memo(() => {
         />
         <meta name="robots" content="index, follow" />
       </Helmet> */}
-      <SEOHead seo={getSEOForPage('help-manual')} />
+      <SEOHeadNative seo={getSEOForPage('help-manual')} />
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}

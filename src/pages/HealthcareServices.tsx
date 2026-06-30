@@ -1,5 +1,5 @@
 import React from "react";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import Reveal from "@/components/Reveal";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ const HealthcareServices: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("healthcare-services")} />
+      <SEOHeadNative seo={getSEOForPage("healthcare-services")} />
 
       <div className="min-h-screen bg-white">
 

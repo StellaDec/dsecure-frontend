@@ -2,10 +2,16 @@ import React, { memo, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
+import { generateFAQSchema } from "@/utils/seo.core";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
+import { FAQSection } from "@/components/FAQSection";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQItem, KeyTakeawayItem } from "@/types/seo";
+import ProductInternalLinks, {
+  PRODUCT_LINKS,
+} from "@/components/ProductInternalLinks";
 import {
   ShieldIcon,
   CheckIcon,
@@ -58,6 +64,42 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const demoContainerRef = useRef<HTMLDivElement>(null);
+
+  // Single Source of Truth for Key Takeaways
+  const driveEraserTakeaways: KeyTakeawayItem[] = [
+    { text: "NIST 800-88 & DoD 5220.22-M compliant data erasure software." },
+    { text: "Securely wipes HDDs, SSDs, and NVMe drives permanently." },
+    {
+      text: "Generates tamper-proof audit certificates for regulatory compliance.",
+    },
+    {
+      text: "Deployable via bootable USB, PXE network boot, or cloud console.",
+    },
+  ];
+
+  // Single Source of Truth for FAQs
+  const driveEraserFaqs: FAQItem[] = [
+    {
+      question: "Is D-Secure Drive Eraser NIST 800-88 compliant?",
+      answer:
+        "Yes, D-Secure Drive Eraser fully complies with NIST 800-88 Purge and Clear standards, ensuring data is permanently sanitized and cannot be recovered.",
+    },
+    {
+      question: "Which drives are supported by D-Secure?",
+      answer:
+        "We support a wide range of storage devices including traditional HDDs, solid-state drives (SSDs), NVMe drives, and enterprise server RAID arrays.",
+    },
+    {
+      question: "Does the software generate a certificate of erasure?",
+      answer:
+        "Yes, after every successful wipe, D-Secure generates a digitally signed, tamper-proof certificate of erasure suitable for audit and compliance reporting (GDPR, HIPAA, PCI-DSS).",
+    },
+    {
+      question: "Can I deploy D-Secure over a network?",
+      answer:
+        "Absolutely. D-Secure supports PXE network boot deployment, allowing IT teams to wipe multiple machines simultaneously across a network without individual USBs.",
+    },
+  ];
 
   const toggleFullscreen = async () => {
     try {
@@ -170,7 +212,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
         "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto,w_400/v1773303980/gemjfmgk3cw7wnvgh2z6.png",
       alt: "Help Page - Bottom",
     },
-   {
+    {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1778239910/dwzvvyiiyhlntaw9cheh.png",
       alt: "Tamper-proof Erasure Report",
     },
@@ -504,16 +546,26 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
   ];
 
   const complianceStandards = [
-    { name: "NIST 800-88", desc: "US National Institute of Standards", link: "/blog/nist-clear-purge" },
-    { name: "DoD 5220.22-M", desc: "US Department of Defense", link: "/blog/dod-vs-ieee" },
+    {
+      name: "NIST 800-88",
+      desc: "US National Institute of Standards",
+      link: "/blog/nist-clear-purge",
+    },
+    {
+      name: "DoD 5220.22-M",
+      desc: "US Department of Defense",
+      link: "/blog/dod-vs-ieee",
+    },
     { name: "GDPR", desc: "EU General Data Protection" },
-        { name: "HIPAA", desc: "Healthcare Information Privacy" },
+    { name: "HIPAA", desc: "Healthcare Information Privacy" },
     { name: "SOX", desc: "Sarbanes-Oxley Act" },
     { name: "PCI-DSS", desc: "Payment Card Industry" },
   ];
 
   const handleModalInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -540,15 +592,18 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
   };
   return (
     <>
-      <SEOHead seo={getSEOForPage("drive-eraser")} />
+      <SEOHeadNative
+        seo={getSEOForPage("drive-eraser")}
+        structuredData={generateFAQSchema(driveEraserFaqs)}
+      />
 
       {/* Breadcrumb Navigation — SEO ke liye */}
       <div className="container mx-auto px-4 pt-4 pb-1">
         <Breadcrumbs
           items={[
-            { name: 'Home', path: '/' },
-            { name: 'Products', path: '/products' },
-            { name: 'Drive Eraser', path: '/products/drive-eraser' },
+            { name: "Home", path: "/" },
+            { name: "Products", path: "/products" },
+            { name: "Drive Eraser", path: "/products/drive-eraser" },
           ]}
         />
       </div>
@@ -608,7 +663,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                       Enterprise-Grade Drive Erasure
                     </div>
                     {/* Reference to the new Diagnostic variant */}
-                    <Link 
+                    <Link
                       to="/products/drive-eraser-diagnostic"
                       className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 hover:bg-blue-100 px-4 py-2 rounded-full text-sm font-semibold border border-blue-100 transition-colors group"
                     >
@@ -626,9 +681,10 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-                    Securely wipe entire HDDs, SSDs, and NVMe drives with industry-leading
-                    data sanitization standards. NIST 800-88 and DoD 5220.22-M compliant
-                    erasure for enterprise data security and audit-readiness.
+                    Securely wipe entire HDDs, SSDs, and NVMe drives with
+                    industry-leading data sanitization standards. NIST 800-88
+                    and DoD 5220.22-M compliant erasure for enterprise data
+                    security and audit-readiness.
                   </p>
 
                   {/* Compliance Badges */}
@@ -681,6 +737,8 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                     </button>
                   </div>
                 </div>
+
+                
               </Reveal>
 
               {/* Right: Hero Illustration - 3D Product Box */}
@@ -931,6 +989,17 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
         </section>
 
         {/* ================= WHAT YOU CAN ERASE ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways
+                    items={driveEraserTakeaways}
+                    title="Why Choose D-Secure Drive Eraser?"
+                  />
+          </div>
+        </section>
+
         <section id="erase-types" className="py-16 lg:py-24 bg-white">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
@@ -1285,7 +1354,8 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                   Drive Eraser for Secure Disk Wiping?
                 </h2>
                 <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  Industry-leading data sanitization in 4 simple steps. Deploy via USB, PXE, or MSI.
+                  Industry-leading data sanitization in 4 simple steps. Deploy
+                  via USB, PXE, or MSI.
                 </p>
               </div>
             </Reveal>
@@ -1364,10 +1434,33 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         Multiple ways to deploy
                       </p>
                       <div className="text-[10px] text-emerald-600 font-medium mb-3">
-                        Download USB Tool: 
-                        <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe" target="_blank" rel="noreferrer" className="hover:underline ml-1">Win</a> | 
-                        <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin" target="_blank" rel="noreferrer" className="hover:underline ml-1">Lin</a> | 
-                        <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg" target="_blank" rel="noreferrer" className="hover:underline ml-1">Mac</a>
+                        Download USB Tool:
+                        <a
+                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="hover:underline ml-1"
+                        >
+                          Win
+                        </a>{" "}
+                        |
+                        <a
+                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="hover:underline ml-1"
+                        >
+                          Lin
+                        </a>{" "}
+                        |
+                        <a
+                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="hover:underline ml-1"
+                        >
+                          Mac
+                        </a>
                       </div>
                       {/* Tags */}
                       <div className="flex flex-wrap justify-center gap-1.5">
@@ -1490,63 +1583,63 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
           </div>
         </section>
 
-          {/* ================= TAMPER PROOF REPORT ================= */}
-                <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-b border-slate-100">
-                  <div className="container mx-auto px-4 max-w-7xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                      <Reveal>
-                        <div className="space-y-6">
-                          <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold">
-                            <ShieldIcon className="w-4 h-4" />
-                            Audit-Ready Documentation
-                          </div>
-                          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
-                            Tamper-proof Diagnostic Report
-                          </h2>
-                          <p className="text-lg text-slate-600 leading-relaxed">
-                            Generates digitally signed reports of erasure to help meet
-                            statutory & regulatory compliance. Option to save reports
-                            locally or on secure cloud console in PDF format
-                          </p>
-                        </div>
-                      </Reveal>
-                      <Reveal delayMs={200}>
-                        <button
-                          onClick={() =>
-                            setSelectedImageIndex(galleryImages.length - 1)
-                          }
-                          className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
-                          aria-label="View Tamper-proof Erasure Report fullscreen"
-                        >
-                          <img
-                            src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778239910/dwzvvyiiyhlntaw9cheh.png"
-                            alt="Tamper-proof Erasure Report"
-                            className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent pointer-events-none"></div>
-                          {/* Hover Overlay */}
-                          <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                            <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                              <svg
-                                className="w-6 h-6 text-emerald-800"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
-                                />
-                              </svg>
-                            </div>
-                          </div>
-                        </button>
-                      </Reveal>
+        {/* ================= TAMPER PROOF REPORT ================= */}
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <Reveal>
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold">
+                    <ShieldIcon className="w-4 h-4" />
+                    Audit-Ready Documentation
+                  </div>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+                    Tamper-proof Diagnostic Report
+                  </h2>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    Generates digitally signed reports of erasure to help meet
+                    statutory & regulatory compliance. Option to save reports
+                    locally or on secure cloud console in PDF format
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delayMs={200}>
+                <button
+                  onClick={() =>
+                    setSelectedImageIndex(galleryImages.length - 1)
+                  }
+                  className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
+                  aria-label="View Tamper-proof Erasure Report fullscreen"
+                >
+                  <img
+                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778239910/dwzvvyiiyhlntaw9cheh.png"
+                    alt="Tamper-proof Erasure Report"
+                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent pointer-events-none"></div>
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                      <svg
+                        className="w-6 h-6 text-emerald-800"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                        />
+                      </svg>
                     </div>
                   </div>
-                </section>
+                </button>
+              </Reveal>
+            </div>
+          </div>
+        </section>
 
         {/* ================= COMPLIANCE STANDARDS ================= */}
         <section
@@ -1570,11 +1663,15 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
               {complianceStandards.map((std, i) => {
                 const CardContent = (
-                  <div className={`bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-5 text-center hover:bg-white/20 transition-colors border border-white/10 h-full flex flex-col items-center justify-start min-h-[130px] sm:min-h-[160px] group ${std.link ? 'cursor-pointer' : ''}`}>
+                  <div
+                    className={`bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-5 text-center hover:bg-white/20 transition-colors border border-white/10 h-full flex flex-col items-center justify-start min-h-[130px] sm:min-h-[160px] group ${std.link ? "cursor-pointer" : ""}`}
+                  >
                     <div className="w-10 h-10 sm:w-12 sm:h-12 mb-2 sm:mb-3 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <CheckIcon className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
                     </div>
-                    <h3 className={`font-bold mb-1 text-sm sm:text-base transition-colors ${std.link ? 'text-emerald-300 group-hover:text-emerald-400' : 'text-white'}`}>
+                    <h3
+                      className={`font-bold mb-1 text-sm sm:text-base transition-colors ${std.link ? "text-emerald-300 group-hover:text-emerald-400" : "text-white"}`}
+                    >
                       {std.name}
                     </h3>
                     <p className="text-[10px] sm:text-xs text-slate-400 line-clamp-2">
@@ -1853,26 +1950,30 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
             <Reveal>
               <div className="text-center mb-14">
                 <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Powerful Features
+                  Implementation-Ready Security Architecture
                 </h2>
                 <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  Enterprise-grade capabilities designed for security
-                  professionals
+                  Technical capabilities that differentiate D-Secure from
+                  consumer-grade deletion utilities and basic disk cleanup tools
                 </p>
               </div>
             </Reveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
               {features.map((f, i) => {
                 const CardContent = (
-                  <div className={`group bg-gradient-to-br from-slate-50 to-white rounded-lg sm:rounded-xl p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[220px] flex flex-col h-full ${f.link ? 'cursor-pointer' : ''}`}>
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                  <div
+                    className={`group bg-gradient-to-br from-slate-50 to-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col ${f.link ? "cursor-pointer" : ""}`}
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors flex-shrink-0">
                       {f.icon}
                     </div>
-                    <h3 className={`font-bold mb-2 ${f.link ? 'text-slate-900 group-hover:text-emerald-700 transition-colors' : 'text-slate-900'}`}>
+                    <h3
+                      className={`font-bold text-slate-900 mb-2 ${f.link ? "group-hover:text-emerald-700 transition-colors" : ""}`}
+                    >
                       {f.title}
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed flex-1">
+                    <p className="text-sm text-slate-600 leading-relaxed flex-grow">
                       {f.desc}
                     </p>
                     {f.link && (
@@ -1943,97 +2044,33 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
         {/* <ProductInternalLinks currentProduct="drive-eraser" /> */}
 
         {/* ================= FAQ SECTION ================= */}
-        <section id="faq" className="py-16 lg:py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Frequently Asked Questions
-                </h2>
-                <p className="text-lg text-slate-600">
-                  Everything you need to know about D-Secure Drive Eraser
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: "How many drives can I erase at a time on one machine?",
-                  a: "D-Secure Drive Eraser supports simultaneous erasure of up to 32 drives per machine, depending on your hardware configuration. For bulk operations, you can use our cloud console to manage multiple machines.",
-                },
-                {
-                  q: "Does the software support Partition Deletion Wipe?",
-                  a: "Yes, D-Secure supports partition-level erasure in addition to full drive erasure. You can selectively wipe specific partitions while keeping others intact.",
-                },
-                {
-                  q: "Do I need Technical Skills?",
-                  a: "No, D-Secure is designed with a user-friendly interface. Simply boot from USB, select your drive and erasure standard, and the software handles everything automatically.",
-                },
-                {
-                  q: "Can I sign my file, like XML, jar file with my e-Signature?",
-                  a: "Yes, D-Secure supports custom digital signatures for reports. You can integrate your organization's PKI for enhanced security.",
-                },
-                {
-                  q: "Does D-Secure integrate with ServiceNow?",
-                  a: "Yes, D-Secure offers native integration with ServiceNow via REST APIs. You can automatically update CMDB records and create incident tickets upon erasure completion.",
-                },
-                {
-                  q: "Can I track separate Inventory for different types of Drives (SSD/HDD, Mobile, etc)?",
-                  a: "Absolutely. The cloud console provides detailed categorization and filtering by device type, making it easy to track and report on different asset categories.",
-                },
-                {
-                  q: "What ongoing support is provided?",
-                  a: "We provide continuous support including regular software updates, technical assistance, compliance monitoring, and renewal coordination. Think of us as your ongoing partner in data hygiene.",
-                },
-              ].map((faq, i) => (
-                <Reveal key={i} delayMs={i * 50}>
-                  <details className="group bg-slate-50 rounded-lg sm:rounded-xl border border-slate-200 hover:border-emerald-300 transition-colors">
-                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer list-none">
-                      <span className="font-semibold text-slate-900 pr-3 sm:pr-4 text-sm sm:text-base">
-                        {faq.q}
-                      </span>
-                      <span className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center group-open:rotate-180 transition-transform">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-slate-600 leading-relaxed text-sm sm:text-base">
-                      {faq.a}
-                    </div>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection
+          id="faq"
+          title="Frequently Asked Questions"
+          subtitle="Everything you need to know about D-Secure Drive Eraser"
+          className="!py-16 lg:!py-24"
+          faqs={driveEraserFaqs}
+        />
 
         {/* ================= RELATED FREE TOOLS (Internal Linking — Fix 4 SEO) ================= */}
         <section className="py-14 lg:py-20 bg-slate-50 border-y border-slate-200">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center mb-10">
-              <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100 rounded-full mb-3">Free Tools</span>
+              <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100 rounded-full mb-3">
+                Free Tools
+              </span>
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
                 Plan Your Erasure Before You Start
               </h2>
               <p className="text-slate-600 max-w-xl mx-auto">
-                Use our free compliance tools to determine the right sanitization method, estimate costs, and check regulatory requirements.
+                Use our free compliance tools to determine the right
+                sanitization method, estimate costs, and check regulatory
+                requirements.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {/* Related Free Tools Section */}
-              { [
+              {[
                 {
                   title: "NIST 800-88 Checker",
                   desc: "Find out if your media needs Clear, Purge, or Destroy per federal NIST guidelines.",
@@ -2067,24 +2104,44 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                   key={tool.href}
                   className="relative group flex flex-col bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 hover:shadow-lg p-6 transition-all duration-300"
                 >
-                  <span className={`inline-block self-start px-2.5 py-1 text-xs font-bold rounded-full mb-4 ${
-                    tool.color === "emerald" ? "bg-emerald-100 text-emerald-700" :
-                    tool.color === "rose"    ? "bg-rose-100 text-rose-700" :
-                    tool.color === "blue"    ? "bg-blue-100 text-blue-700" :
-                    "bg-purple-100 text-purple-700"
-                  }`}>
+                  <span
+                    className={`inline-block self-start px-2.5 py-1 text-xs font-bold rounded-full mb-4 ${
+                      tool.color === "emerald"
+                        ? "bg-emerald-100 text-emerald-700"
+                        : tool.color === "rose"
+                          ? "bg-rose-100 text-rose-700"
+                          : tool.color === "blue"
+                            ? "bg-blue-100 text-blue-700"
+                            : "bg-purple-100 text-purple-700"
+                    }`}
+                  >
                     {tool.badge}
                   </span>
                   <h3 className="font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors text-lg leading-tight">
-                    <Link to={tool.href} className="after:absolute after:inset-0">
+                    <Link
+                      to={tool.href}
+                      className="after:absolute after:inset-0"
+                    >
                       {tool.title}
                     </Link>
                   </h3>
-                  <p className="text-sm text-slate-500 leading-relaxed flex-1">{tool.desc}</p>
+                  <p className="text-sm text-slate-500 leading-relaxed flex-1">
+                    {tool.desc}
+                  </p>
                   <span className="mt-5 inline-flex items-center gap-1 text-emerald-700 font-bold text-sm group-hover:gap-2 transition-all">
                     Try Free Tool
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
                     </svg>
                   </span>
                 </div>
@@ -2127,7 +2184,10 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-800 transition-colors line-clamp-2">
-                      <Link to={blog.link} className="after:absolute after:inset-0">
+                      <Link
+                        to={blog.link}
+                        className="after:absolute after:inset-0"
+                      >
                         {blog.title}
                       </Link>
                     </h3>
@@ -2139,9 +2199,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                     </div>
                     <div className="flex items-center justify-between text-xs text-slate-400 mt-auto pt-4 border-t border-slate-100">
                       <span>{blog.publishDate}</span>
-                      <span>
-                        {blog.readTime || getReadTime(blog.excerpt)}
-                      </span>
+                      <span>{blog.readTime || getReadTime(blog.excerpt)}</span>
                     </div>
                   </div>
                 </Reveal>
@@ -2233,14 +2291,23 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         // Form fields
                         formSubmitData.append("name", formData.name.trim());
                         formSubmitData.append("email", formData.email.trim());
-                        formSubmitData.append("customer_email", formData.email.trim()); // Customer ka email auto-reply ke liye
+                        formSubmitData.append(
+                          "customer_email",
+                          formData.email.trim(),
+                        ); // Customer ka email auto-reply ke liye
                         formSubmitData.append(
                           "organization",
                           formData.organization.trim(),
                         );
                         formSubmitData.append("phone", formData.phone.trim());
-                        formSubmitData.append("country", formData.country.trim());
-                        formSubmitData.append("businessType", formData.businessType.trim());
+                        formSubmitData.append(
+                          "country",
+                          formData.country.trim(),
+                        );
+                        formSubmitData.append(
+                          "businessType",
+                          formData.businessType.trim(),
+                        );
                         formSubmitData.append(
                           "message",
                           formData.message.trim(),
@@ -2301,7 +2368,9 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
 
                         try {
                           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-                          const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+                          const API_BASE =
+                            import.meta.env.VITE_API_BASE_URL ||
+                            "https://api.dsecuretech.com";
                           const apiResponse = await fetch(
                             `${API_BASE}/api/ContactFormSubmissions`,
                             {
@@ -2322,14 +2391,17 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                           );
 
                           // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-                          fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                              "x-api-key": "REACT_CONTACT_2026",
+                          fetch(
+                            import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "",
+                            {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                                "x-api-key": "REACT_CONTACT_2026",
+                              },
+                              body: JSON.stringify(submissionData),
                             },
-                            body: JSON.stringify(submissionData),
-                          }).catch(() => {});
+                          ).catch(() => {});
 
                           if (!apiResponse.ok) {
                             const errorData = await apiResponse.json();
@@ -2416,13 +2488,36 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                           onChange={handleModalInputChange}
                           className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
                         >
-                          <option value="" disabled className="text-slate-800">Business Type</option>
-                          <option value="Enterprise" className="text-slate-800">Enterprise</option>
-                          <option value="SMB" className="text-slate-800">SMB</option>
-                          <option value="ITAD/Recycler" className="text-slate-800">ITAD / Recycler</option>
-                          <option value="Government/Public Sector" className="text-slate-800">Government / Public Sector</option>
-                          <option value="Individual/Home" className="text-slate-800">Individual / Home</option>
-                          <option value="Other" className="text-slate-800">Other</option>
+                          <option value="" disabled className="text-slate-800">
+                            Business Type
+                          </option>
+                          <option value="Enterprise" className="text-slate-800">
+                            Enterprise
+                          </option>
+                          <option value="SMB" className="text-slate-800">
+                            SMB
+                          </option>
+                          <option
+                            value="ITAD/Recycler"
+                            className="text-slate-800"
+                          >
+                            ITAD / Recycler
+                          </option>
+                          <option
+                            value="Government/Public Sector"
+                            className="text-slate-800"
+                          >
+                            Government / Public Sector
+                          </option>
+                          <option
+                            value="Individual/Home"
+                            className="text-slate-800"
+                          >
+                            Individual / Home
+                          </option>
+                          <option value="Other" className="text-slate-800">
+                            Other
+                          </option>
                         </select>
                       </div>
                     </div>
@@ -2449,6 +2544,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
             </div>
           </div>
         </section>
+
       </div>
 
       {/* Lightbox Modal with Gallery Navigation */}
@@ -2458,7 +2554,9 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
           onClick={() => setSelectedImageIndex(null)}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setSelectedImageIndex(null); }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") setSelectedImageIndex(null);
+          }}
         >
           {/* Close Button */}
           <button

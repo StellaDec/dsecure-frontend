@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 
 // TypeScript Types
@@ -105,7 +105,7 @@ export default function ReportVerificationPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage('verify')} />
+      <SEOHeadNative seo={getSEOForPage('verify')} />
       <div className="min-h-screen bg-slate-50 py-12 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           

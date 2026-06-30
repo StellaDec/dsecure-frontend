@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import Reveal from "@/components/Reveal";
 
@@ -10,7 +10,7 @@ export default function AIOverviewPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("ai-overview")} />
+      <SEOHeadNative seo={getSEOForPage("ai-overview")} />
 
       <div className="min-h-screen bg-slate-50 py-12 md:py-20 lg:py-28">
         <div className="container-responsive">

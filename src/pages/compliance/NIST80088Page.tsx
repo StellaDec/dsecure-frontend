@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '@/components/Reveal';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 import { ShieldIcon, ClipboardIcon, LockIcon, CheckIcon } from '@/components/FlatIcons';
 
@@ -42,7 +42,7 @@ export default function NIST80088Page() {
   return (
     <>
       {/* nistSchema ko directStructuredData se pass karo — SEOHead internally PAGE_SEO schemas ke saath merge karega */}
-      <SEOHead 
+      <SEOHeadNative 
         seo={getSEOForPage('nist80088')}
         structuredData={nistSchema}
       />

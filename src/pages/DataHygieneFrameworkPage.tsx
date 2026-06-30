@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import Reveal from "../components/Reveal";
 
@@ -38,7 +38,7 @@ export default function DataHygieneFrameworkPage() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("data-hygiene-framework")} />
+      <SEOHeadNative seo={getSEOForPage("data-hygiene-framework")} />
 
       <div className="min-h-screen bg-white">
         {/* Hero Section */}

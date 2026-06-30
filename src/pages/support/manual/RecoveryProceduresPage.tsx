@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React, { memo } from "react";
 import Reveal from "@/components/Reveal";
@@ -7,7 +7,7 @@ const RecoveryProceduresPage: React.FC = memo(() => {
  return (
    <>
      {/* SEO Meta Tags */}
-     {/* <SEOHead 
+     {/* <SEOHeadNative 
         seo={getSEOForPage("recovery-procedures", { 
           title: "Recovery Procedures | D-Secure Manual", 
           canonicalUrl: "/support/manual/recovery-procedures" 

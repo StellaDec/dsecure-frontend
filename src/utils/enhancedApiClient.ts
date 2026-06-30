@@ -23,10 +23,21 @@ const API_TIMEOUT = Number(import.meta.env.VITE_API_TIMEOUT) || 60000
 // Debug mode for development
 const DEBUG_MODE = import.meta.env.MODE === 'development' || import.meta.env.VITE_DEBUG === 'true'
 
+// Feature flag for plaintext API transition (Build-time)
+// Set to true only when backend is deployed in dual-mode
+const USE_PLAINTEXT_API = import.meta.env.VITE_ENABLE_PLAINTEXT_API === 'true'
+
 /**
  * Helper function to decrypt response data if encrypted
+ * Server-authoritative: respects X-Plaintext-Payload header if present
  */
-function decryptResponseIfNeeded<T>(data: unknown): T {
+function decryptResponseIfNeeded<T>(data: unknown, responseHeaders?: Headers): T {
+  // If the server explicitly stamps the response as plaintext, do not decrypt
+  if (responseHeaders && responseHeaders.get('x-plaintext-payload') === 'true') {
+    return data as T;
+  }
+
+  // Fallback heuristic for legacy responses
   if (isEncryptedResponse(data)) {
     if (DEBUG_MODE) {
       // console.log('?? Encrypted response detected, decrypting...')
@@ -327,6 +338,7 @@ class EnhancedApiClient {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
+          ...(USE_PLAINTEXT_API ? { 'X-Plaintext-Payload': 'true' } : {}),
           ...authHeaders,
           ...(options.headers || {}),
         },
@@ -377,8 +389,14 @@ class EnhancedApiClient {
         try {
           data = await response.json()
 
-          // ? Decrypt response if encrypted
-          data = decryptResponseIfNeeded<any>(data)
+          // ? Decrypt response if encrypted (respects server-authoritative header)
+          if (response.ok) {
+            data = decryptResponseIfNeeded<any>(data, response.headers)
+          } else {
+             // For error responses, if it's explicitly plaintext, don't decrypt.
+             // If not explicit, try to parse/decrypt if it looks like an encrypted response body.
+             data = decryptResponseIfNeeded<any>(data, response.headers)
+          }
 
         } catch (jsonError) {
           // If JSON parsing fails but response is ok, treat as success with null data
@@ -430,6 +448,7 @@ class EnhancedApiClient {
         return {
           success: false,
           error: errorMessage,
+          status: response.status,
         }
       }
 

@@ -1,12 +1,12 @@
 import React, { memo } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 
 const EnterpriseServersPage: React.FC = memo(() => {
     return (
       <>
-        {/* <SEOHead 
+        {/* <SEOHeadNative 
         seo={getSEOForPage("help-manual", { 
           title: "Enterprise Servers | D-Secure Manual", 
           canonicalUrl: "/support/manual/enterprise-servers" 

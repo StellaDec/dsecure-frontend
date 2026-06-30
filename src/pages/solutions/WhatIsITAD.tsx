@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { 
   ShieldCheck, 
@@ -23,7 +23,7 @@ export default function WhatIsITAD() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead seo={getSEOForPage("what-is-itad")} />
+      <SEOHeadNative seo={getSEOForPage("what-is-itad")} />
 
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 md:pt-32 md:pb-32 bg-slate-900 border-b border-slate-800 overflow-hidden">

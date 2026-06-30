@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 import Reveal from '@/components/Reveal';
 import {
@@ -20,7 +20,7 @@ import {
 export default function FeaturesPage() {
   return (
     <>
-      <SEOHead seo={getSEOForPage('features')} />
+      <SEOHeadNative seo={getSEOForPage('features')} />
       <FeaturesPageContent />
     </>
   );

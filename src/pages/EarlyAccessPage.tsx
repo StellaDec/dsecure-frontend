@@ -1,6 +1,6 @@
 import React from "react";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import { EarlyAccessForm } from "@/components/forms/EarlyAccessForm";
 import { Shield, Zap, CheckCircle2 } from "lucide-react";
@@ -8,7 +8,7 @@ import { Shield, Zap, CheckCircle2 } from "lucide-react";
 const EarlyAccessPage: React.FC = () => {
   return (
     <>
-      <SEOHead seo={getSEOForPage("contact")} />
+      <SEOHeadNative seo={getSEOForPage("contact")} />
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50/30">
         {/* Simple & Clean Hero matching ContactPage */}

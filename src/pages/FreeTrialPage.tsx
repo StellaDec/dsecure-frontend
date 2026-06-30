@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 import Reveal from '@/components/Reveal';
 import {
@@ -12,7 +12,7 @@ import {
 export default function FreeTrialPage() {
   return (
     <>
-      <SEOHead seo={getSEOForPage('free-trial')} />
+      <SEOHeadNative seo={getSEOForPage('free-trial')} />
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         <section className="py-16 md:py-24">
           <div className="container-responsive text-center max-w-4xl mx-auto">

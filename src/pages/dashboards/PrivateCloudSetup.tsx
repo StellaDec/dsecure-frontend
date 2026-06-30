@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/auth/AuthContext";
@@ -409,7 +409,7 @@ export default function PrivateCloudSetup() {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("private-cloud-setup")} />
+      <SEOHeadNative seo={getSEOForPage("private-cloud-setup")} />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 py-8 px-4">
         <div className="max-w-4xl mx-auto">

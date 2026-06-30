@@ -1,5 +1,5 @@
 
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useMemo, useState, useRef, useCallback, useEffect } from "react";
 // ✅ AbortController ref — stale API requests cancel karne ke liye
@@ -2731,7 +2731,7 @@ export default function AdminReports() {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("admin-reports")} />
+      <SEOHeadNative seo={getSEOForPage("admin-reports")} />
 
       <div className="space-y-4 xs:space-y-6 sm:space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-4 xs:p-6 sm:p-6">
         <div className="flex flex-col xs:flex-row sm:flex-row items-start xs:items-center sm:items-center justify-between gap-4">

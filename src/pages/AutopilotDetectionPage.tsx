@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 // import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import {
   ShieldIcon,
   CheckIcon,
@@ -18,6 +18,8 @@ import { Monitor, Download, X, Search, Zap, ScanSearch } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
 import { getReadTime } from "@/utils/readTime";
 import { ProductContactForm } from "@/components/forms";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
 
 const AutopilotDetectionPage: React.FC = memo(
   function AutopilotDetectionPage() {
@@ -90,6 +92,52 @@ const AutopilotDetectionPage: React.FC = memo(
         });
       }
     };
+
+    const autopilotTakeaways = [
+      {
+        title: "Automated Identification",
+        desc: "Detect Autopilot and Intune enrollments automatically during device processing.",
+      },
+      {
+        title: "Re-Enrollment Prevention",
+        desc: "Verify unenrollment from Microsoft Cloud directly, avoiding return loops.",
+      },
+      {
+        title: "Scale Processing",
+        desc: "Deploy via USB or PXE to process multiple assets simultaneously.",
+      }
+    ];
+
+    const autopilotFaqs = [
+      {
+        q: "What is Windows Autopilot Detection?",
+        a: "It's a specialized feature that identifies if a device is still linked to a Microsoft Cloud (Autopilot/Intune) tenant. It prevents the major security risk of assets re-locking to previous owners after resale.",
+      },
+      {
+        q: "How does the detection logic work?",
+        a: "The tool generates a unique Hardware ID (HWID) during boot and queries the Microsoft cloud directly to verify the enrollment status of the specific device.",
+      },
+      {
+        q: "Why is data erasure alone not enough?",
+        a: "Data erasure wipes the locally stored data, but Windows Autopilot is a cloud-side lock. Even a 'clean' drive will automatically re-apply enterprise policies as soon as it connects to the internet.",
+      },
+      {
+        q: "What is the benefit for ITAD vendors?",
+        a: "It helps ITADs avoid costly RMAs and returns. By identifying locked devices early, you can coordinate unenrollment with the client and ensure every asset is truly ready for the circular economy.",
+      },
+      {
+        q: "Can this be run at scale over a network?",
+        a: "Yes. Using PXE (Network) Boot, you can process high volumes of assets simultaneously, with results automatically synced to your cloud dashboard or ERP system.",
+      },
+      {
+        q: "Which compliance standards does it support?",
+        a: "It directly assists with R2v3 (Appendix B) compliance, which requires clear proof that enterprise controls, locks, and connectivity have been removed from repurposed IT assets.",
+      },
+      {
+        q: "Do I need separate licenses for detection?",
+        a: "Yes, Autopilot Detection is an add-on capability and usually requires separate cloud verification licenses from the standard erasure tokens.",
+      },
+    ];
 
     const risks = [
       {
@@ -205,7 +253,7 @@ const AutopilotDetectionPage: React.FC = memo(
 
     return (
       <>
-        <SEOHead seo={getSEOForPage("autopilot-detection")} />
+        <SEOHeadNative seo={getSEOForPage("autopilot-detection")} />
 
         {/* ================= STICKY SECTION NAV ================= */}
         <div
@@ -291,6 +339,8 @@ const AutopilotDetectionPage: React.FC = memo(
                         Contact Sales
                       </button>
                     </div>
+
+                    
                   </div>
                 </Reveal>
 
@@ -355,7 +405,15 @@ const AutopilotDetectionPage: React.FC = memo(
           </section>
 
           {/* ================= HOW IT WORKS ================= */}
-          <section id="how-it-works" className="py-20 bg-white">
+          
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={autopilotTakeaways} />
+          </div>
+        </section>
+
+        <section id="how-it-works" className="py-20 bg-white">
             <div className="container mx-auto px-4 max-w-7xl">
               <Reveal>
                 <div className="text-center mb-16">
@@ -686,85 +744,7 @@ const AutopilotDetectionPage: React.FC = memo(
           </section>
 
           {/* ================= FAQ SECTION ================= */}
-          <section
-            id="faq"
-            className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-emerald-50"
-          >
-            <div className="container mx-auto px-4 max-w-4xl">
-              <Reveal>
-                <div className="text-center mb-14">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                    Frequently Asked Questions
-                  </h2>
-                  <p className="text-lg text-slate-600">
-                    Everything you need to know about D-Secure Autopilot
-                    Detection
-                  </p>
-                </div>
-              </Reveal>
-
-              <div className="space-y-4">
-                {[
-                  {
-                    q: "What is Windows Autopilot Detection?",
-                    a: "It's a specialized feature that identifies if a device is still linked to a Microsoft Cloud (Autopilot/Intune) tenant. It prevents the major security risk of assets re-locking to previous owners after resale.",
-                  },
-                  {
-                    q: "How does the detection logic work?",
-                    a: "The tool generates a unique Hardware ID (HWID) during boot and queries the Microsoft cloud directly to verify the enrollment status of the specific device.",
-                  },
-                  {
-                    q: "Why is data erasure alone not enough?",
-                    a: "Data erasure wipes the locally stored data, but Windows Autopilot is a cloud-side lock. Even a 'clean' drive will automatically re-apply enterprise policies as soon as it connects to the internet.",
-                  },
-                  {
-                    q: "What is the benefit for ITAD vendors?",
-                    a: "It helps ITADs avoid costly RMAs and returns. By identifying locked devices early, you can coordinate unenrollment with the client and ensure every asset is truly ready for the circular economy.",
-                  },
-                  {
-                    q: "Can this be run at scale over a network?",
-                    a: "Yes. Using PXE (Network) Boot, you can process high volumes of assets simultaneously, with results automatically synced to your cloud dashboard or ERP system.",
-                  },
-                  {
-                    q: "Which compliance standards does it support?",
-                    a: "It directly assists with R2v3 (Appendix B) compliance, which requires clear proof that enterprise controls, locks, and connectivity have been removed from repurposed IT assets.",
-                  },
-                  {
-                    q: "Do I need separate licenses for detection?",
-                    a: "Yes, Autopilot Detection is an add-on capability and usually requires separate cloud verification licenses from the standard erasure tokens.",
-                  },
-                ].map((faq) => (
-                  <Reveal key={faq.q}>
-                    <details className="group bg-white rounded-xl border border-slate-200 hover:border-emerald-300 transition-colors">
-                      <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                        <span className="font-semibold text-slate-900 pr-4">
-                          {faq.q}
-                        </span>
-                        <span className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center group-open:rotate-180 transition-transform">
-                          <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M19 9l-7 7-7-7"
-                            />
-                          </svg>
-                        </span>
-                      </summary>
-                      <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                        {faq.a}
-                      </div>
-                    </details>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          </section>
+          <FAQSection faqs={autopilotFaqs} id="faq" />
 
           {/* ================= CONTACT / CTA ================= */}
           <section

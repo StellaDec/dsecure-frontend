@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import { Link } from "react-router-dom";
-import { PRODUCT_SEO } from "../utils/seo.products";
 import ProductInternalLinks from "../components/ProductInternalLinks";
 import {
   TagIcon,
@@ -15,7 +14,6 @@ import {
   CheckCircle,
   Zap,
   Settings,
-  ChevronDown,
   Cloud,
   RefreshCcw,
   Globe,
@@ -32,9 +30,55 @@ import {
 import { getSEOForPage } from "@/utils/seo";
 import { ProductContactForm } from "@/components/forms";
 import Reveal from "../components/Reveal";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "../components/SEOHeadNative";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
+import { generateFAQSchema } from "@/utils/seo.core";
+import { FAQSection } from "@/components/FAQSection";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
+
+const smartphoneEraserFaqs: FAQItem[] = [
+  {
+    q: "Can I erase locked iPhones or devices with broken screens?",
+    a: "Yes, you can erase locked iPhones — the lock will remain post-erasure. For devices with broken screens or in recovery modes, our Linux-based (Barebone) edition can perform erasure and diagnostics without requiring screen interaction.",
+  },
+  {
+    q: "What deployment options are available?",
+    a: "D-Secure Mobile Eraser is available as a Windows application and a Barebone hardware (Linux-based) edition. The Linux edition supports custom USB port naming, broken screen devices, and dedicated hardware deployment for high-throughput environments.",
+  },
+  {
+    q: "Does it detect FMIP, FRP, MDM & Carrier Lock status?",
+    a: "Yes, the software retrieves both IMEI 1 & IMEI 2 and checks Find My iPhone (FMIP), Factory Reset Protection (FRP), MDM supervision status, ESN status, and carrier lock status before erasure.",
+  },
+  {
+    q: "Is there a per-device license fee?",
+    a: "Our application does not consume another license if you perform the same process (erasure or diagnostics) within 30 days on the same device, making it extremely cost-effective for re-testing or troubleshooting.",
+  },
+  {
+    q: "Can I install the app on multiple machines?",
+    a: "Yes, you can install the application on multiple machines and perform erasure and diagnostics simultaneously. The cloud console manages license distribution and maintains a central repository of all reports.",
+  },
+];
+
+const smartphoneEraserTakeaways: KeyTakeawayItem[] = [
+  {
+    title: "High-Volume Processing",
+    description: "Process up to 40 iOS and Android devices simultaneously on a single workstation.",
+  },
+  {
+    title: "100% Data Security",
+    description: "Permanently wipe sensitive data beyond forensic recovery, compliant with global standards.",
+  },
+  {
+    title: "Automated Diagnostics",
+    description: "Detect hardware locks (FMIP, FRP, MDM) and retrieve core hardware identifiers (IMEI, ESN) automatically.",
+  },
+  {
+    title: "Verifiable Audit Trail",
+    description: "Generate tamper-proof erasure certificates for every device to ensure regulatory compliance.",
+  }
+];
 
 // Reusing Icons from the theme
 const CheckIcon = ({ className }: { className?: string }) => (
@@ -256,7 +300,11 @@ const SmartphoneEraserPage = memo(() => {
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("smartphone-eraser")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("smartphone-eraser")} 
+        structuredData={generateFAQSchema(smartphoneEraserFaqs)}
+      />
+
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div
@@ -340,6 +388,8 @@ const SmartphoneEraserPage = memo(() => {
                       Download Datasheet
                     </button>
                   </div>
+
+                  
                 </div>
               </Reveal>
 
@@ -465,6 +515,14 @@ const SmartphoneEraserPage = memo(() => {
         </section>
 
         {/* ================= HOW IT WORKS ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={smartphoneEraserTakeaways} />
+          </div>
+        </section>
+
         <section id="how-it-works" className="py-20 lg:py-32 bg-white">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
@@ -691,56 +749,7 @@ const SmartphoneEraserPage = memo(() => {
 
         <ProductInternalLinks currentProduct="smartphone-eraser" />
 
-        {/* ================= FAQ SECTION ================= */}
-        <section id="faq" className="py-20 lg:py-32 bg-emerald-50/50">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-16">
-                <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">Common Questions</h2>
-                <p className="text-lg text-slate-600">Expert answers for your security concerns.</p>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Can I erase locked iPhones or devices with broken screens?",
-                  a: "Yes, you can erase locked iPhones — the lock will remain post-erasure. For devices with broken screens or in recovery modes, our Linux-based (Barebone) edition can perform erasure and diagnostics without requiring screen interaction.",
-                },
-                {
-                  q: "What deployment options are available?",
-                  a: "D-Secure Mobile Eraser is available as a Windows application and a Barebone hardware (Linux-based) edition. The Linux edition supports custom USB port naming, broken screen devices, and dedicated hardware deployment for high-throughput environments.",
-                },
-                {
-                  q: "Does it detect FMIP, FRP, MDM & Carrier Lock status?",
-                  a: "Yes, the software retrieves both IMEI 1 & IMEI 2 and checks Find My iPhone (FMIP), Factory Reset Protection (FRP), MDM supervision status, ESN status, and carrier lock status before erasure.",
-                },
-                {
-                  q: "Is there a per-device license fee?",
-                  a: "Our application does not consume another license if you perform the same process (erasure or diagnostics) within 30 days on the same device, making it extremely cost-effective for re-testing or troubleshooting.",
-                },
-                {
-                  q: "Can I install the app on multiple machines?",
-                  a: "Yes, you can install the application on multiple machines and perform erasure and diagnostics simultaneously. The cloud console manages license distribution and maintains a central repository of all reports.",
-                },
-              ].map((faq, i) => (
-                <Reveal key={faq.q} delayMs={i * 50}>
-                  <details className="group bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 transition-colors">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                      <span className="font-bold text-slate-900 pr-4">{faq.q}</span>
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center group-open:rotate-180 transition-transform">
-                        <ChevronDown className="w-5 h-5" />
-                      </span>
-                    </summary>
-                    <div className="px-6 pb-6 text-slate-600 leading-relaxed text-sm">
-                      {faq.a}
-                    </div>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection faqs={smartphoneEraserFaqs} id="faq" />
 
         {/* ================= CONTACT / CTA ================= */}
         <section id="contact" className="py-24 lg:py-40 bg-white border-t overflow-hidden relative">

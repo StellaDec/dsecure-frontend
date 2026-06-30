@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { getSEOForPage } from "@/utils/seo";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
-import SEOHead from "../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { 
   Zap,
   ShieldCheck as ShieldCheckIcon,
@@ -36,6 +36,8 @@ import { ArrowRightIcon, ShieldIcon } from "@/components/FlatIcons";
 import Reveal from "@/components/Reveal";
 import { ProductContactForm } from "@/components/forms";
 import { generateFreezeStateReport } from "@/utils/reportGenerator";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
 
 const FreezeStateAdvancedPage = memo(() => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -102,9 +104,39 @@ const FreezeStateAdvancedPage = memo(() => {
     }
   };
 
+  const freezeStateAdvancedTakeaways = [
+    {
+      title: "Sector-Wise Erase",
+      desc: "Deep-level sector sanitization beyond simple redirection.",
+    },
+    {
+      title: "Global Compliance",
+      desc: "Meets NIST 800-88 and DoD 5220.22-M wiping standards.",
+    },
+    {
+      title: "Audit Reports",
+      desc: "Tamper-proof certificates generated automatically on reboot.",
+    }
+  ];
+
+  const freezeStateAdvancedFaqs = [
+    {
+      q: "What is the difference between 'Shallow' and 'Deep' erase in Advanced mode?",
+      a: "Shallow reset clears the redirection pointer (standard restore), while Deep erase performs a full low-level sector wipe on the modified storage area using NIST-compliant algorithms.",
+    },
+    {
+      q: "Is this compatible with NVMe SSDs?",
+      a: "Yes. Advanced Eraser includes native NVMe Sanitize and Secure Erase command support for modern flash-based architectures.",
+    },
+    {
+      q: "How long does a sector-level wipe take during reboot?",
+      a: "For typical session data (5-10 GB), a NIST Clear pass adds only 15-30 seconds to the boot cycle. Deep military-grade multiple passes vary by data volume.",
+    },
+  ];
+
   return (
     <>
-      <SEOHead seo={getSEOForPage("freeze-state-advanced")} />
+      <SEOHeadNative seo={getSEOForPage("freeze-state-advanced")} />
 
       <div className="min-h-screen bg-white text-slate-900">
         {/* ================= STICKY SECTION NAV ================= */}
@@ -202,6 +234,7 @@ const FreezeStateAdvancedPage = memo(() => {
                       View Help Manual
                     </Link> */}
                   </div>
+                  
                 </div>
               </Reveal>
 
@@ -347,6 +380,14 @@ const FreezeStateAdvancedPage = memo(() => {
         </section>
 
         {/* TECHNOLOGY SECTION */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={freezeStateAdvancedTakeaways} />
+          </div>
+        </section>
+
         <section id="erasure-tech" className="py-32 bg-white relative overflow-hidden">
            <div className="container mx-auto px-4 max-w-7xl">
               <div className="flex flex-col md:flex-row gap-20 items-center">
@@ -550,28 +591,7 @@ const FreezeStateAdvancedPage = memo(() => {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="py-32 bg-slate-50">
-           <div className="container mx-auto px-4 max-w-4xl text-center">
-              <Reveal>
-                 <div className="mb-20 space-y-4">
-                     <h2 className="text-4xl font-bold tracking-tight uppercase text-slate-900">Security Briefing</h2>
-                     <p className="text-slate-500 font-medium">Protocol details for infrastructure administrators.</p>
-                 </div>
-                 <div className="text-left space-y-6">
-                    {[
-                       { q: "What is the difference between 'Shallow' and 'Deep' erase in Advanced mode?", a: "Shallow reset clears the redirection pointer (standard restore), while Deep erase performs a full low-level sector wipe on the modified storage area using NIST-compliant algorithms." },
-                       { q: "Is this compatible with NVMe SSDs?", a: "Yes. Advanced Eraser includes native NVMe Sanitize and Secure Erase command support for modern flash-based architectures." },
-                       { q: "How long does a sector-level wipe take during reboot?", a: "For typical session data (5-10 GB), a NIST Clear pass adds only 15-30 seconds to the boot cycle. Deep military-grade multiple passes vary by data volume." }
-                    ].map((item) => (
-                       <div key={item.q} className="bg-white p-8 rounded-[3rem] border border-slate-200 hover:border-emerald-400 transition-all shadow-sm group">
-                          <h4 className="font-black text-slate-900 uppercase tracking-widest text-sm mb-4 group-hover:text-emerald-600">Q: {item.q}</h4>
-                           <p className="text-sm text-slate-500 font-medium leading-relaxed">A: {item.a}</p>
-                       </div>
-                    ))}
-                 </div>
-              </Reveal>
-           </div>
-        </section>
+        <FAQSection faqs={freezeStateAdvancedFaqs} id="faq" />
 
         {/* CONTACT */}
         <section id="contact" className="py-32 bg-white relative overflow-hidden">

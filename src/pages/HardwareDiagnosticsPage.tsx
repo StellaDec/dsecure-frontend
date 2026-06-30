@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
+import { generateFAQSchema } from "@/utils/seo.core";
 import ProductInternalLinks from "@/components/ProductInternalLinks";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import { FAQSection } from "@/components/FAQSection";
+import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
 import {
   ShieldIcon,
   CheckIcon,
@@ -44,6 +48,52 @@ const getReadTime = (text: string) => {
   const minutes = Math.ceil(wordCount / wordsPerMinute);
   return `${minutes} min read`;
 };
+
+const hardwareDiagnosticsFaqs: FAQItem[] = [
+  {
+    q: "What architectures and chips are supported on Mac?",
+    a: "D-Secure supports all Apple architectures including legacy Intel, T1, T2 security chips, and the entire Apple Silicon range (M1, M2, M3, and M4 series). Deployment is handled natively via a single Terminal command in Recovery Mode.",
+  },
+  {
+    q: "How does MDM Enrollment Detection work?",
+    a: "The software automatically checks the MDM (Mobile Device Management) status of Mac devices during diagnostics. It identifies if a device is locked or enrolled in a corporate management system, ensuring compliant processing.",
+  },
+  {
+    q: "What is the limit for simultaneous diagnostics?",
+    a: "Via PXE network boot, you can diagnose up to 255 machines simultaneously on a single network segment, making it highly efficient for high-volume ITAD and refurbishing operations.",
+  },
+  {
+    q: "Can I run diagnostics without an internet connection?",
+    a: "Yes, D-Secure Hardware Diagnostics offers a standalone offline mode. You can perform full hardware assessments using a bootable USB drive in environments with restricted or no internet access.",
+  },
+  {
+    q: "What types of hardware components are tested?",
+    a: "The tool performs 10+ automated tests (CPU, RAM, SMART, Battery, CMOS, Motherboard) and provides guided manual tests for Keyboard, Display, Audio, Webcam, and USB ports for 100% component verification.",
+  },
+  {
+    q: "Are the diagnostics reports tamper-proof?",
+    a: "Yes, every report is digitally signed and generated in non-editable PDF, XML, and CSV formats. This ensures the integrity of the hardware health data for audits and resale grading.",
+  },
+];
+
+const hardwareDiagnosticsTakeaways: KeyTakeawayItem[] = [
+  {
+    title: "Comprehensive Hardware Assessment",
+    description: "Diagnose PCs, Laptops, Desktops, and Apple Macs (Intel & Silicon M1-M4) assessing health across critical hardware layers.",
+  },
+  {
+    title: "Mass PXE Deployment",
+    description: "Boot and diagnose up to 255 machines simultaneously over the network for high-volume ITAD facilities.",
+  },
+  {
+    title: "Automated & Guided Tests",
+    description: "Execute 10+ automated tests including SMART, CPU, RAM, and Battery, combined with guided manual testing for screens and keyboards.",
+  },
+  {
+    title: "MDM Detection",
+    description: "Automatically identify locked or MDM-enrolled Mac devices to ensure accurate and compliant asset processing.",
+  }
+];
 
 const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
   const { showToast } = useToast();
@@ -610,7 +660,10 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
   ];
   return (
     <>
-      <SEOHead seo={getSEOForPage("hardware-diagnostics")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("hardware-diagnostics")} 
+        structuredData={generateFAQSchema(hardwareDiagnosticsFaqs)}
+      />
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div
@@ -859,6 +912,24 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                 </div>
               </Reveal>
             </div>
+          </div>
+        </section>
+
+        {/* ================= KEY TAKEAWAYS ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways 
+              title="Key Features & Takeaways" 
+              items={hardwareDiagnosticsTakeaways} 
+            />
+          </div>
+        </section>
+
+        <section className="py-4 lg:py-8 bg-white border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            
           </div>
         </section>
 
@@ -1595,77 +1666,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
         <ProductInternalLinks currentProduct="hardware-diagnostics" />
 
         {/* ================= FAQ SECTION ================= */}
-        <section id="faq" className="py-16 lg:py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Frequently Asked Questions
-                </h2>
-                <p className="text-lg text-slate-600">
-                  Everything you need to know about D-Secure Hardware Diagnostics
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: "What architectures and chips are supported on Mac?",
-                  a: "D-Secure supports all Apple architectures including legacy Intel, T1, T2 security chips, and the entire Apple Silicon range (M1, M2, M3, and M4 series). Deployment is handled natively via a single Terminal command in Recovery Mode.",
-                },
-                {
-                  q: "How does MDM Enrollment Detection work?",
-                  a: "The software automatically checks the MDM (Mobile Device Management) status of Mac devices during diagnostics. It identifies if a device is locked or enrolled in a corporate management system, ensuring compliant processing.",
-                },
-                {
-                  q: "What is the limit for simultaneous diagnostics?",
-                  a: "Via PXE network boot, you can diagnose up to 255 machines simultaneously on a single network segment, making it highly efficient for high-volume ITAD and refurbishing operations.",
-                },
-                {
-                  q: "Can I run diagnostics without an internet connection?",
-                  a: "Yes, D-Secure Hardware Diagnostics offers a standalone offline mode. You can perform full hardware assessments using a bootable USB drive in environments with restricted or no internet access.",
-                },
-                {
-                  q: "What types of hardware components are tested?",
-                  a: "The tool performs 10+ automated tests (CPU, RAM, SMART, Battery, CMOS, Motherboard) and provides guided manual tests for Keyboard, Display, Audio, Webcam, and USB ports for 100% component verification.",
-                },
-                {
-                  q: "Are the diagnostics reports tamper-proof?",
-                  a: "Yes, every report is digitally signed and generated in non-editable PDF, XML, and CSV formats. This ensures the integrity of the hardware health data for audits and resale grading.",
-                },
-              ].map((faq, i) => (
-                <Reveal key={faq.q} delayMs={i * 50}>
-                  <details className="group bg-slate-50 rounded-lg sm:rounded-xl border border-slate-200 hover:border-emerald-300 transition-colors">
-                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer list-none">
-                      <span className="font-semibold text-slate-900 pr-3 sm:pr-4 text-sm sm:text-base">
-                        {faq.q}
-                      </span>
-                      <span className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center group-open:rotate-180 transition-transform">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-slate-600 leading-relaxed text-sm sm:text-base">
-                      {faq.a}
-                    </div>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection faqs={hardwareDiagnosticsFaqs} id="faq" />
 
         {/* ================= LATEST INSIGHTS & UPDATES ================= */}
         <section id="blogs" className="py-16 lg:py-24 bg-white">

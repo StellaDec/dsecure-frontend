@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { ProductImage } from '@/components/ProductImage';
-import SEOHead from '../components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
-import { api } from '@/utils/apiClient';
+import { apiClient as api } from '@/utils/enhancedApiClient';
 
 // API Response interfaces matching backend schema
 interface BillingAddress {
@@ -128,12 +128,17 @@ export default function FailurePage() {
         console.log(`📦 Fetching order details for identifier: ${identifier}`);
         // Single endpoint accepts both order_id and payment_id
         const response = await api.get<OrderDetailsResponse>(`/api/Payments/orders/${identifier}/details`);
-        setOrderData(response.data);
-        // Store for future reference
-        localStorage.setItem('lastOrderId', identifier);
+        
+        if (response.success && response.data) {
+          setOrderData(response.data);
+          // Store for future reference
+          localStorage.setItem('lastOrderId', identifier);
+        } else {
+          throw new Error(response.error || 'Failed to load order details');
+        }
       } catch (err: any) {
         console.error('Failed to fetch order details:', err);
-        setError(err.response?.data?.message || 'Failed to load order details. Please try again.');
+        setError(err.message || 'Failed to load order details. Please try again.');
       } finally {
         setLoading(false);
       }
@@ -360,7 +365,7 @@ export default function FailurePage() {
   if (loading) {
     return (
       <>
-        <SEOHead seo={seo} />
+        <SEOHeadNative seo={seo} />
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center">
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-teal-600 mx-auto"></div>
@@ -374,7 +379,7 @@ export default function FailurePage() {
   if (error) {
     return (
       <>
-        <SEOHead seo={seo} />
+        <SEOHeadNative seo={seo} />
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center max-w-md mx-auto px-4">
             <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 mb-6">
@@ -407,7 +412,7 @@ export default function FailurePage() {
 
   return (
     <>
-      <SEOHead seo={seo} />
+      <SEOHeadNative seo={seo} />
 
       {/* Toast Notification */}
       {toast && (

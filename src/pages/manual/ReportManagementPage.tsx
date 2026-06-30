@@ -1,5 +1,5 @@
 import React from 'react';
-import SEOHead from '@/components/SEOHead';
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '@/utils/seo';
 import {
   ArrowLeft,
@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 const ReportManagementPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEOHead seo={getSEOForPage('help-manual')} />
+      <SEOHeadNative seo={getSEOForPage('help-manual')} />
 
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-gray-200">

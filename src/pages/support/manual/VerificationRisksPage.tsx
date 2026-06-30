@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React, { memo } from "react";
 import Reveal from "@/components/Reveal";
@@ -8,7 +8,7 @@ const VerificationRisksPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      {/* <SEOHead
+      {/* <SEOHeadNative
         seo={getSEOForPage("support-manual-verification-risks", {
           title: "Verification Risks | D-Secure Manual",
           canonicalUrl: "",

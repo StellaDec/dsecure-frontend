@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React, { useState, memo } from "react";
 import Reveal from "@/components/Reveal";
@@ -267,7 +267,7 @@ const FirstTimeSetupPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      {/* <SEOHead
+      {/* <SEOHeadNative
         seo={getSEOForPage("support-manual-first-time-setup", {
           title: "First Time Setup | D-Secure Manual",
           canonicalUrl: "/support/manual/first-time-setup",

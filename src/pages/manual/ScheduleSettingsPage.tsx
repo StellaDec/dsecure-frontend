@@ -1,4 +1,4 @@
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React from "react";
 import {
@@ -19,7 +19,7 @@ const ScheduleSettingsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("schedule-settings")} />
+      <SEOHeadNative seo={getSEOForPage("schedule-settings")} />
 
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-gray-200">

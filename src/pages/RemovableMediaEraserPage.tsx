@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
 import {
   CheckIcon,
   ArrowRightIcon,
@@ -13,6 +12,28 @@ import { FileTextIcon, Download, Zap, Database, HardDrive, Server, RefreshCcw, A
 import { getSEOForPage } from "@/utils/seo";
 import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import type { KeyTakeawayItem } from "@/types/seo";
+
+const removableMediaTakeaways: KeyTakeawayItem[] = [
+  {
+    title: "Comprehensive Support",
+    description: "Erase USB drives, SD cards, CompactFlash, and other flash memory devices.",
+  },
+  {
+    title: "Simultaneous Erasure",
+    description: "Permanently erase 24+ flash drives rapidly and simultaneously to reduce downtime.",
+  },
+  {
+    title: "Advanced Sanitization",
+    description: "Utilizes Block Erase and Cryptographic Purge to sanitize hidden and bad blocks.",
+  },
+  {
+    title: "Regulatory Compliance",
+    description: "Generates tamper-proof certificates compliant with NIST 800-88 and ISO 27001.",
+  }
+];
 
 const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPage() {
   const [activeSection, setActiveSection] = useState("");
@@ -110,7 +131,8 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead seo={getSEOForPage("removable-media-eraser")} />
+      <SEOHeadNative seo={getSEOForPage("removable-media-eraser")} />
+
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div
@@ -196,6 +218,12 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                     </a>
                   </div>
                 </Reveal>
+
+                <Reveal delayMs={400}>
+                  <div className="mt-4">
+                    
+                  </div>
+                </Reveal>
               </div>
 
               {/* 3D Visual Hero */}
@@ -277,6 +305,14 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
         </section>
 
         {/* ================= CAPABILITIES ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways items={removableMediaTakeaways} />
+          </div>
+        </section>
+
         <section id="capabilities" className="py-24 bg-white relative overflow-hidden">
           <div className="container mx-auto px-4 max-w-7xl relative z-10">
             <Reveal>

@@ -1,5 +1,5 @@
 // src/pages/manual/NetworkFileManualLayout.tsx
-import SEOHead from "../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React, { useState, useRef } from "react";
 import { Outlet, useLocation, useNavigate, Link } from "react-router-dom";
@@ -165,7 +165,7 @@ const NetworkFileManualLayout: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("support/help-manual/network-file")} />
+      <SEOHeadNative seo={getSEOForPage("support/help-manual/network-file")} />
 
       <style>{`
         .sidebar-scroll::-webkit-scrollbar {

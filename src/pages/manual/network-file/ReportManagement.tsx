@@ -1,4 +1,4 @@
-import SEOHead from "../../../components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React from "react";
 import { FileText, Download, Eye, Filter, Calendar, CheckCircle, AlertCircle, BarChart } from "lucide-react";
@@ -7,7 +7,7 @@ const ReportManagement: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* SEO Meta Tags */}
-      <SEOHead seo={getSEOForPage("report-management")} />
+      <SEOHeadNative seo={getSEOForPage("report-management")} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}

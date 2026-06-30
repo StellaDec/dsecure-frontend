@@ -1,5 +1,5 @@
 import React, { useState, memo } from "react";
-import SEOHead from "@/components/SEOHead";
+import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
@@ -270,7 +270,7 @@ const PhysicalDestructionPage: React.FC = memo(() => {
   return (
     <>
       {/* SEO Meta Tags */}
-      {/* <SEOHead
+      {/* <SEOHeadNative
         // seo={getSEOForPage("support-manual-physical-destruction", {
           title: "Physical Destruction | D-Secure Manual",
           canonicalUrl: "/support/manual/physical-destruction",

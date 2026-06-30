@@ -4,8 +4,12 @@ import { ARIA_LABELS } from "@/utils/aria-labels";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import SEOHead from "@/components/SEOHead";
+import SEOHeadNative from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
+import { generateFAQSchema } from "@/utils/seo.core";
+import { FAQSection } from "@/components/FAQSection";
+import { KeyTakeaways } from "@/components/KeyTakeaways";
+import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
 import {
   ShieldIcon,
   ArrowRightIcon,
@@ -362,31 +366,38 @@ const useCases = [
   },
 ];
 
-const faqs = [
+const dataEraserFaqs: FAQItem[] = [
   {
-    q: "What types of storage media can D-Secure erase?",
-    a: "D-Secure can erase HDDs, SSDs, NVMe drives, USB drives, memory cards, and more across PCs, Macs, servers, laptops, Chromebooks, and mobile devices (iOS & Android).",
+    question: "What types of storage media can D-Secure erase?",
+    answer: "D-Secure can erase HDDs, SSDs, NVMe drives, USB drives, memory cards, and more across PCs, Macs, servers, laptops, Chromebooks, and mobile devices (iOS & Android).",
   },
   {
-    q: "Do I need separate licenses for different types of drives (HDD, SSD, NVMe, etc.)?",
-    a: "No, a single D-Secure Drive Eraser license covers all types of drives connected to a machine. Whether it's HDD, SSD, NVMe, or any other storage media, one license handles them all.",
+    question: "Do I need separate licenses for different types of drives (HDD, SSD, NVMe, etc.)?",
+    answer: "No, a single D-Secure Drive Eraser license covers all types of drives connected to a machine. Whether it's HDD, SSD, NVMe, or any other storage media, one license handles them all.",
   },
   {
-    q: "Can I diagnose the essential components of the drive?",
-    a: "Yes, D-Secure includes integrated hardware diagnostics that assess the health of storage drives. This includes SMART data analysis, surface scan testing, and comprehensive health reporting before or after erasure.",
+    question: "Can I diagnose the essential components of the drive?",
+    answer: "Yes, D-Secure includes integrated hardware diagnostics that assess the health of storage drives. This includes SMART data analysis, surface scan testing, and comprehensive health reporting before or after erasure.",
   },
   {
-    q: "What erasure standards does D-Secure support?",
-    a: "D-Secure supports 26+ global erasure standards including NIST 800-88 (Clear & Purge), DoD 5220.22-M, IEEE 2883-2022, HMG Infosec Standard 5, RCMP TSSIT OPS-II, and many more.",
+    question: "What erasure standards does D-Secure support?",
+    answer: "D-Secure supports 26+ global erasure standards including NIST 800-88 (Clear & Purge), DoD 5220.22-M, IEEE 2883-2022, HMG Infosec Standard 5, RCMP TSSIT OPS-II, and many more.",
   },
   {
-    q: "Can D-Secure wipe multiple iOS and Android devices simultaneously?",
-    a: "Yes, D-Secure Mobile Eraser supports batch processing of multiple iOS and Android devices simultaneously, making it ideal for enterprise environments with large device fleets.",
+    question: "Can D-Secure wipe multiple iOS and Android devices simultaneously?",
+    answer: "Yes, D-Secure Mobile Eraser supports batch processing of multiple iOS and Android devices simultaneously, making it ideal for enterprise environments with large device fleets.",
   },
   {
-    q: "What are the features of D-Secure File Eraser software?",
-    a: "D-Secure File Eraser provides selective file and folder erasure, scheduled erasure, cloud storage erasure (Google Drive, OneDrive), browser trace cleaning, and tamper-proof erasure certificates with full audit trails.",
+    question: "What are the features of D-Secure File Eraser software?",
+    answer: "D-Secure File Eraser provides selective file and folder erasure, scheduled erasure, cloud storage erasure (Google Drive, OneDrive), browser trace cleaning, and tamper-proof erasure certificates with full audit trails.",
   },
+];
+
+const dataEraserTakeaways: KeyTakeawayItem[] = [
+  { text: "100% Guaranteed Erasure: Permanently erase data from HDDs, SSDs, Macs, Servers, and Mobile Devices beyond recovery." },
+  { text: "Global Standards Support: Compliant with 26+ global erasure standards, including NIST 800-88 and DoD 5220.22-M." },
+  { text: "Tamper-Proof Certification: Generate digitally signed erasure certificates that meet GDPR, HIPAA, and ISO 27001 requirements." },
+  { text: "Centralized Cloud Console: Manage licenses, deploy network wipes via PXE, and track comprehensive erasure reports centrally." }
 ];
 
 /* ─────────── helpers ─────────── */
@@ -501,7 +512,10 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
 
   return (
     <>
-      <SEOHead seo={getSEOForPage("data-eraser-software")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("data-eraser-software")} 
+        structuredData={generateFAQSchema(dataEraserFaqs)}
+      />
 
       {/* ================= STICKY SECTION NAV ================= */}
       <div
@@ -886,6 +900,24 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                 </div>
               </Reveal>
             </div>
+          </div>
+        </section>
+
+        {/* ================= KEY TAKEAWAYS ================= */}
+        
+        {/* ================= KEY TAKEAWAYS ================= */}
+        <section className="bg-white py-12 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <KeyTakeaways 
+              title="Key Features & Takeaways" 
+              items={dataEraserTakeaways} 
+            />
+          </div>
+        </section>
+
+        <section className="py-4 lg:py-8 bg-white border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            
           </div>
         </section>
 
@@ -1294,83 +1326,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
         </section>
 
         {/* ═══════════ FAQ ═══════════ */}
-        <section
-          id="faq"
-          className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-white"
-        >
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                  Most Popular{" "}
-                  <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                    FAQs
-                  </span>
-                </h2>
-                <p className="text-slate-600">
-                  Didn't find your answer? We are happy to help.{" "}
-                  <Link
-                    to="/contact"
-                    className="text-emerald-800 font-semibold hover:underline"
-                  >
-                    Ask us
-                  </Link>
-                  .
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="space-y-3">
-              {faqs.map((faq, i) => (
-                <Reveal key={`faq-${faq.q.substring(0, 20)}`} delayMs={i * 60}>
-                  <div className="bg-white rounded-xl border border-slate-200/60 shadow-sm overflow-hidden">
-                    <button
-                      id={`faq-trigger-${i}`}
-                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                      aria-expanded={openFaq === i}
-                      aria-controls={`faq-content-${i}`}
-                      className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
-                    >
-                      <span className="font-semibold text-slate-900 pr-4">
-                        {faq.q}
-                      </span>
-                      <svg
-                        className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 ${
-                          openFaq === i ? "rotate-180" : ""
-                        }`}
-                        aria-hidden="true"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      id={`faq-content-${i}`}
-                      role="region"
-                      aria-labelledby={`faq-trigger-${i}`}
-                      className={`overflow-hidden transition-all duration-300 ${
-                        openFaq === i
-                          ? "max-h-96 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
-                    >
-                      <div className="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
-                        {faq.a}
-                      </div>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection faqs={dataEraserFaqs} id="faq" />
 
         {/* ═══════════ FINAL CTA ═══════════ */}
         <section
