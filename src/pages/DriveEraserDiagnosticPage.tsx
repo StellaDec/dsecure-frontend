@@ -829,11 +829,19 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
+                  {/*
                     <Link
                       to="/pricing-and-plan?product=drive-eraser&variant=diagnostics"
                       className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Buy Now
+                    </Link>
+                    */}
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                    >
+                      Contact Sales
                     </Link>
                     <button
                       onClick={downloadCatalog}

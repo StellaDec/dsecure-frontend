@@ -1395,7 +1395,7 @@ export default function MainLayout() {
               >
                 {t("common.partners")}
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to="/data-guardian-award"
                 className={({ isActive }) =>
                   (isActive
@@ -1405,7 +1405,7 @@ export default function MainLayout() {
                 }
               >
                 Trust Certificate
-              </NavLink>
+              </NavLink> */}
               <NavLink
                 to="/support"
                 className={({ isActive }) =>
@@ -1952,7 +1952,7 @@ export default function MainLayout() {
                   </svg>
                   {t("common.partners")}
                 </NavLink>
-                <NavLink
+                {/* <NavLink
                   onClick={() => setOpen(false)}
                   to="/data-guardian-award"
                   className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-slate-900 hover:bg-slate-50/80 rounded-lg transition-colors"
@@ -1966,7 +1966,7 @@ export default function MainLayout() {
                     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
                   </svg>
                   Trust Certificate
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   onClick={() => setOpen(false)}
                   to="/support"
@@ -2174,7 +2174,7 @@ export default function MainLayout() {
                       </svg>
                     </a>
                     <a
-                      href="https://linkedin.com/company/dsecuretech"
+                      href="https://www.linkedin.com/company/d-secure-tech"
                       className="text-slate-400 hover:text-brand transition-colors group"
                       aria-label="Connect with D-Secure on LinkedIn"
                       target="_blank"

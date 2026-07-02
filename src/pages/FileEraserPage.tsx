@@ -24,6 +24,7 @@ import { useToast } from "@/components/Toast";
 import { FAQSection } from "@/components/FAQSection";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQItem, KeyTakeawayItem } from "@/types/seo";
+import { fileEraserFAQs as importedFileEraserFAQs } from "@/data/seoFaqs";
 
 const getReadTime = (text: string) => {
   const wordsPerMinute = 200;
@@ -62,37 +63,8 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     { text: "Automate file erasure tasks and generate compliance-ready certificates." },
   ];
 
-  // Single Source of Truth for FAQs
-  const fileEraserFaqs: FAQItem[] = [
-    {
-      question: "How is D-Secure File Eraser different from simply deleting files?",
-      answer: "When you delete a file normally, only the reference to the data is removed—the actual data remains on your drive and can be recovered with forensic tools. D-Secure File Eraser overwrites the data multiple times using internationally recognized algorithms (like NIST 800-88, DoD 5220.22-M), making recovery impossible.",
-    },
-    {
-      question: "What erasure standards does File Eraser support?",
-      answer: "D-Secure File Eraser supports 27+ erasure standards including NIST 800-88 Clear/Purge, DoD 5220.22-M (3-pass and 7-pass), Gutmann (35-pass), HMG IS5, RCMP TSSIT OPS-II, Peter Gutmann's method, and many more. You can choose the appropriate standard based on your compliance requirements.",
-    },
-    {
-      question: "Can I erase data from cloud storage services?",
-      answer: "Yes! D-Secure File Eraser supports secure erasure from major cloud platforms including Google Drive, Microsoft OneDrive, Dropbox, and iCloud. It uses OAuth integration to securely connect and permanently remove files from your cloud storage.",
-    },
-    {
-      question: "Will I receive proof of erasure for compliance audits?",
-      answer: "Absolutely. After every erasure operation, D-Secure generates a detailed PDF certificate that includes file details, erasure method used, timestamp, verification status, and a tamper-proof hash. These certificates are suitable for regulatory audits and compliance documentation.",
-    },
-    {
-      question: "Is the software suitable for enterprise deployment?",
-      answer: "Yes, D-Secure File Eraser is designed for enterprise scalability. It supports Active Directory integration, Group Policy deployment, centralized management, scheduled erasure tasks, and can be deployed across thousands of endpoints with remote monitoring capabilities.",
-    },
-    {
-      question: "Does File Eraser support SSD and NVMe drives?",
-      answer: "Yes, the software is optimized for all storage types including HDDs, SSDs, NVMe drives, and USB storage devices. It uses appropriate erasure techniques for each storage type to ensure complete and verifiable data destruction.",
-    },
-    {
-      question: "What ongoing support is provided?",
-      answer: "We provide continuous support including regular software updates, technical assistance, compliance monitoring, and renewal coordination. Think of us as your ongoing partner in data hygiene.",
-    },
-  ];
+  // Single Source of Truth for FAQs imported from data
+  const fileEraserFaqs = importedFileEraserFAQs;
 
   const demoContainerRef = useRef<HTMLDivElement>(null);
 
@@ -230,7 +202,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     //   alt: "File Eraser Screenshot 27",
     // },
     {
-      url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png",
+      url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782989062/behsxyeelnwlakfpseoq.png",
       alt: "Tamper-proof Erasure Report",
     },
   ];
@@ -826,11 +798,19 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
+                  {/*
                     <Link
                       to="/pricing-and-plan?product=file-eraser"
                       className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                     >
                       Buy Now
+                    </Link>
+                    */}
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                    >
+                      Contact Sales
                     </Link>
                     <button
                       onClick={downloadCatalog}
@@ -1622,7 +1602,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                   aria-label="View Tamper-proof Erasure Report fullscreen"
                 >
                   <img loading="lazy" decoding="async"
-                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png"
+                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1782989062/behsxyeelnwlakfpseoq.png"
                     alt="Tamper-proof Erasure Report"
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
                   />

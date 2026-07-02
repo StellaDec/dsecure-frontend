@@ -14,22 +14,56 @@ import {
   ClipboardIcon,
   ServerIcon,
 } from "@/components/FlatIcons";
-import { Monitor, Download, X, Search, Zap, ScanSearch } from "lucide-react";
+import { Monitor, Download, X, Search, Zap, ScanSearch, ChevronLeft, ChevronRight, Maximize } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
 import { getReadTime } from "@/utils/readTime";
 import { ProductContactForm } from "@/components/forms";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQSection } from "@/components/FAQSection";
 
+const galleryImages = [
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900829/gxf91pw0zskqpenqmcyh.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900829/xgs5jrdap2wsigl6qojv.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900829/wivbftt6fvj3e0immtxc.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/fkjqw32dvfo2qoyvbjt6.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/rfrisa46sw3vtwq6h0mf.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900829/wkpyjljk8preij7lwvk1.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/voqh2eka0js4w4yarvfw.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/piw7h3rpxcqxgakzvwsl.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/moxtoxzqtmwpdixles6g.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/bog9kdzcyxxowsbciqtp.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/jtgchvtpyh6l0tn4ghve.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/eerupedbpykv6i6gdmzg.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/b2tukty3rf019qfbcgom.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/fxudhnk0epcuvdymmexz.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/cpgikzcbf6fduwquvc7n.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782901753/lteeyrwnw9udzt9ikiub.png", alt: "Autopilot Detection in Action" },
+];
+
 const AutopilotDetectionPage: React.FC = memo(
   function AutopilotDetectionPage() {
     const navigate = useNavigate();
     const [activeSection, setActiveSection] = useState("");
     const [isNavVisible, setIsNavVisible] = useState(false);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [selectedGalleryIndex, setSelectedGalleryIndex] = useState<number | null>(null);
+    
+    const iframeContainerRef = React.useRef<HTMLDivElement>(null);
+    
+    const toggleFullScreen = () => {
+      if (!document.fullscreenElement) {
+        iframeContainerRef.current?.requestFullscreen?.().catch(err => {
+          console.error(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen?.();
+      }
+    };
 
     const sectionNavItems = [
       { id: "overview", label: "Overview" },
       { id: "how-it-works", label: "How It Works" },
+      { id: "demo", label: "Demo" },
       { id: "risks", label: "The Hidden Risk" },
       { id: "features", label: "Key Features" },
       { id: "compliance", label: "Compliance" },
@@ -313,7 +347,7 @@ const AutopilotDetectionPage: React.FC = memo(
                       <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                         Autopilot Detection Tool
                       </span>
-                      : Automated Windows Intune & Autopilot Verification
+                      : Touchless Recheck
                     </h1>
 
                     <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
@@ -474,6 +508,107 @@ const AutopilotDetectionPage: React.FC = memo(
             </div>
           </section>
 
+          {/* ================= SEE IN ACTION / DEMO SECTION ================= */}
+          <section
+            id="demo"
+            className="py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-emerald-50"
+          >
+            <div className="container mx-auto px-4 max-w-6xl">
+              <Reveal>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                    See D-Secure Autopilot Detection in Action
+                  </h2>
+                  <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Watch how the Autopilot Detection tool identifies enrolled
+                    devices in real-time — from boot to cloud verification
+                  </p>
+                </div>
+              </Reveal>
+
+              {/* Demo Video / Screenshot Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+                {/* Main Demo Card */}
+                <Reveal delayMs={100}>
+                  <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 hover:shadow-emerald-200/30 transition-shadow duration-500 flex flex-col group p-1">
+                    {/* Interactive Sandbox iframe */}
+                    <div ref={iframeContainerRef} className="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-xl bg-slate-900 group/iframe">
+                      <button 
+                        onClick={toggleFullScreen}
+                        className="absolute top-4 right-4 z-10 p-2 bg-slate-900/60 hover:bg-emerald-600 text-white rounded-lg opacity-0 group-hover/iframe:opacity-100 transition-all duration-300 backdrop-blur-sm flex items-center justify-center"
+                        title="Toggle Fullscreen"
+                      >
+                        <Maximize className="w-5 h-5" />
+                      </button>
+                      <iframe 
+                        src="https://mdm-dashboard-demo.vercel.app/"
+                        className="absolute inset-0 w-full h-full border-0"
+                        allowFullScreen
+                        title="D-Secure MDM Dashboard Sandbox"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full">
+                          INTERACTIVE DEMO
+                        </span>
+                        <span className="text-slate-400 text-xs flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                          Live Sandbox
+                        </span>
+                      </div>
+                      <h3 className="font-bold text-slate-900 mb-1">
+                        Autopilot Detection Dashboard
+                      </h3>
+                      <p className="text-sm text-slate-500">
+                        Explore the interactive MDM dashboard environment. View mock device data, review generated reports, and experience the UI in real-time.
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+
+                {/* Screenshot Gallery Cards */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                  {galleryImages.slice(0, 4).map((img, index) => {
+                    const isLastVisible = index === 3;
+                    const remainingCount = galleryImages.length - 4;
+                    
+                    return (
+                      <Reveal key={index} delayMs={150 + index * 50}>
+                        <button
+                          onClick={() => setSelectedGalleryIndex(index)}
+                          className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 w-full aspect-[4/3] flex items-center justify-center cursor-zoom-in"
+                        >
+                          <img
+                            src={img.url}
+                            alt={img.alt}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                          
+                          {/* Hover Overlay for first 3 images */}
+                          {!isLastVisible && (
+                            <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors flex items-center justify-center">
+                              <Search className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md" />
+                            </div>
+                          )}
+
+                          {/* '+X More' Overlay for the last visible image */}
+                          {isLastVisible && (
+                            <div className="absolute inset-0 bg-slate-900/60 flex items-center justify-center group-hover:bg-slate-900/70 transition-colors">
+                              <span className="text-white font-bold text-2xl drop-shadow-md">
+                                +{remainingCount} More
+                              </span>
+                            </div>
+                          )}
+                        </button>
+                      </Reveal>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* ================= THE HIDDEN RISK ================= */}
           <section
             id="risks"
@@ -543,6 +678,71 @@ const AutopilotDetectionPage: React.FC = memo(
                     </div>
                   </Reveal>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ================= REPORT SECTION ================= */}
+          <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-emerald-50/50 border-b border-slate-100">
+            <div className="container mx-auto px-4 max-w-7xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <Reveal>
+                  <div className="space-y-6">
+                    <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold">
+                      <ShieldIcon className="w-4 h-4" />
+                      Audit-Ready Documentation
+                    </div>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+                      Comprehensive Detection Report
+                    </h2>
+                    <p className="text-lg text-slate-600 leading-relaxed">
+                      After every Autopilot scan, a digitally signed PDF report is generated
+                      containing hardware IDs, device specifications, BIOS details,
+                      and final enrollment status — ready to present during compliance audits.
+                    </p>
+                  </div>
+                </Reveal>
+                <Reveal delayMs={200}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
+                    <button
+                      onClick={() => setSelectedImage("https://res.cloudinary.com/dhwi5wevf/image/upload/v1782904367/q70fjrmxun0kstjanwsp.png")}
+                      className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 group cursor-pointer w-full text-left p-0 bg-white block aspect-[3/4] hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
+                      aria-label="View Autopilot Detection Report Page 1 fullscreen"
+                    >
+                      <img
+                        loading="lazy"
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1782904367/q70fjrmxun0kstjanwsp.png"
+                        alt="Autopilot Detection Report Page 1"
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent pointer-events-none"></div>
+                      <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                          <Search className="w-6 h-6 text-emerald-800" />
+                        </div>
+                      </div>
+                    </button>
+
+                    <button
+                      onClick={() => setSelectedImage("https://res.cloudinary.com/dhwi5wevf/image/upload/v1782904366/vwil0boyhukg6zscxeug.png")}
+                      className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 group cursor-pointer w-full text-left p-0 bg-white block aspect-[3/4] hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl sm:mt-12"
+                      aria-label="View Autopilot Detection Report Page 2 fullscreen"
+                    >
+                      <img
+                        loading="lazy"
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1782904366/vwil0boyhukg6zscxeug.png"
+                        alt="Autopilot Detection Report Page 2"
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent pointer-events-none"></div>
+                      <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                          <Search className="w-6 h-6 text-emerald-800" />
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </Reveal>
               </div>
             </div>
           </section>
@@ -676,15 +876,15 @@ const AutopilotDetectionPage: React.FC = memo(
                           label: "Cloud Integration",
                           value: "Direct Azure/Intune API Connectivity",
                         },
-                        {
+                        /* {
                           label: "Response Time",
                           value: "< 2 Seconds for Cloud Status Retrieval",
-                        },
+                        }, */
                         {
                           label: "Deployment",
                           value: "x86/x64 Bootable ISO (USB 3.0 / PXE)",
                         },
-                        {
+                        /* {
                           label: "Report Format",
                           value:
                             "Tamper-proof PDF / CSV / JSON (Makor/Razor Ready)",
@@ -693,7 +893,7 @@ const AutopilotDetectionPage: React.FC = memo(
                           label: "Minimum Specs",
                           value:
                             "2GB RAM, Intel/AMD Processor, Internet Access",
-                        },
+                        }, */
                       ].map((spec, i) => (
                         <div
                           key={i}
@@ -756,7 +956,7 @@ const AutopilotDetectionPage: React.FC = memo(
             <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-[140px] translate-x-1/4 translate-y-1/4 pointer-events-none"></div>
             <div className="absolute bottom-0 right-10 w-96 h-96 bg-teal-300 rounded-full translate-y-1/2 translate-x-1/2 blur-3xl"></div>
             <div className="container mx-auto px-4 max-w-7xl relative z-10">
-              <div className="bg-gradient-to-br from-emerald-900 to-teal-900 rounded-[3rem] p-8 lg:p-16 text-center text-white mb-16 shadow-2xl relative overflow-hidden">
+              {/* <div className="bg-gradient-to-br from-emerald-900 to-teal-900 rounded-[3rem] p-8 lg:p-16 text-center text-white mb-16 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 blur-3xl rounded-full"></div>
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/20 blur-3xl rounded-full"></div>
 
@@ -776,7 +976,7 @@ const AutopilotDetectionPage: React.FC = memo(
                   Buy Now - $1
                   <ArrowRightIcon className="w-5 h-5" />
                 </button>
-              </div>
+              </div> */}
 
               <ProductContactForm
                 source="Autopilot Detection Page Contact"
@@ -786,6 +986,76 @@ const AutopilotDetectionPage: React.FC = memo(
               />
             </div>
           </section>
+
+          {/* Fullscreen Image Modal */}
+          {(selectedImage !== null || selectedGalleryIndex !== null) && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-sm cursor-zoom-out"
+              onClick={() => {
+                setSelectedImage(null);
+                setSelectedGalleryIndex(null);
+              }}
+            >
+              <div
+                className="relative max-w-6xl w-full max-h-[90vh] flex flex-col items-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  onClick={() => {
+                    setSelectedImage(null);
+                    setSelectedGalleryIndex(null);
+                  }}
+                  className="absolute -top-12 right-0 lg:-right-12 text-white/70 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+                >
+                  <X className="w-8 h-8" />
+                </button>
+                
+                {selectedGalleryIndex !== null && (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedGalleryIndex(
+                          selectedGalleryIndex === 0
+                            ? galleryImages.length - 1
+                            : selectedGalleryIndex - 1
+                        );
+                      }}
+                      className="absolute left-2 lg:-left-16 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors z-10"
+                    >
+                      <ChevronLeft className="w-10 h-10" />
+                    </button>
+                    
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedGalleryIndex(
+                          selectedGalleryIndex === galleryImages.length - 1
+                            ? 0
+                            : selectedGalleryIndex + 1
+                        );
+                      }}
+                      className="absolute right-2 lg:-right-16 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors z-10"
+                    >
+                      <ChevronRight className="w-10 h-10" />
+                    </button>
+                  </>
+                )}
+
+                <img
+                  src={selectedGalleryIndex !== null ? galleryImages[selectedGalleryIndex].url : selectedImage!}
+                  alt={selectedGalleryIndex !== null ? galleryImages[selectedGalleryIndex].alt : "Report Fullscreen"}
+                  className="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl cursor-default"
+                />
+
+                {selectedGalleryIndex !== null && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-white/10 rounded-full text-white text-sm z-10">
+                    {selectedGalleryIndex + 1} / {galleryImages.length}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </>
     );

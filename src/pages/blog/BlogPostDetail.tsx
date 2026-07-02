@@ -168,9 +168,10 @@ const BlogPostDetail: React.FC = () => {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 max-w-4xl py-16">
-        <Reveal>
-          <article className="prose prose-slate prose-lg max-w-none prose-headings:text-slate-900 prose-a:text-emerald-600 prose-strong:text-slate-900">
+      <main className="pb-16">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
+          <Reveal>
+            <article className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
             {/* Lead Excerpt */}
             <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium italic border-l-4 border-emerald-500 pl-6 mb-12">
               {post.excerpt}
@@ -216,22 +217,23 @@ const BlogPostDetail: React.FC = () => {
                 </>
               )}
             </div>
-          </article>
-        </Reveal>
+            </article>
+          </Reveal>
+        </section>
 
-
-
-        {/* Standardized Blog Footer */}
-        <BlogFooterStandard 
-          blogId={post.id}
-          blogTitle={post.title}
-          category={post.category}
-          tag={post.tag}
-          faqs={seoData.faqs}
-        />
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8">
+          {/* Standardized Blog Footer */}
+          <BlogFooterStandard 
+            blogId={post.id}
+            blogTitle={post.title}
+            category={post.category}
+            tag={post.tag}
+            faqs={seoData.faqs}
+          />
+        </section>
 
         {/* Footer Navigation */}
-        <footer className="mt-20 pt-10 border-t border-slate-100">
+        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 mt-20 pt-10 border-t border-slate-100">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center">
@@ -250,7 +252,7 @@ const BlogPostDetail: React.FC = () => {
               Consult an Expert
             </Link>
           </div>
-        </footer>
+        </section>
       </main>
     </div>
   );

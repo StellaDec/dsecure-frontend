@@ -20,7 +20,7 @@ export const SEO_SITE_CONFIG = {
   /** Twitter/X handle */
   twitterHandle: '@D_SecureTech',
   /** LinkedIn */
-  linkedIn: 'https://linkedin.com/company/dsecuretech',
+  linkedIn: 'https://www.linkedin.com/company/d-secure-tech',
   /** Founding year */
   foundingYear: '2025',
   /** Support email */
@@ -86,8 +86,8 @@ export const COMPLIANCE_STANDARDS = [
  * Social profile URLs — Organization schema mein use karo
  */
 export const SOCIAL_PROFILES = [
-  'https://twitter.com/D_SecureTech',
-  'https://linkedin.com/company/dsecuretech',
+  'https://twitter.com/dsecuretech',
+  'https://www.linkedin.com/company/d-secure-tech',
   'https://github.com/dsecuretech',
   'https://youtube.com/@dsecuretech',
   'https://facebook.com/dsecuretech',

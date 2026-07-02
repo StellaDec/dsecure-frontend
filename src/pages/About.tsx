@@ -82,7 +82,7 @@ function AboutPageContent() {
       // specialties: ["Startup Leadership", "Product Strategy", "Fundraising"],
     },
     {
-      name: "Soorya",
+      name: "Prashant",
       position: "Product Designer",
       // bio: "Former Lead Engineer at major tech companies, expert in AI and data security algorithms.",
       // image: "",

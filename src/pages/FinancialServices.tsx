@@ -2,12 +2,15 @@ import React from "react";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import Reveal from "@/components/Reveal";
+import { FAQSection } from "@/components/FAQSection";
+import { generateFAQSchema } from "@/utils/seo.core";
+import { financialFAQs } from "@/data/seoFaqs";
 
 const FinancialServices: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHeadNative seo={getSEOForPage("financial-services")} />
+      <SEOHeadNative seo={getSEOForPage("financial-services")} structuredData={generateFAQSchema(financialFAQs)} />
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         {/* Hero Section */}
@@ -182,6 +185,8 @@ const FinancialServices: React.FC = () => {
                   </ul>
                 </div>
               </Reveal>
+
+              <FAQSection faqs={financialFAQs} id="faq" />
 
               {/* CTA Section */}
               <Reveal>

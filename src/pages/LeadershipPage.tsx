@@ -15,7 +15,7 @@ export default function LeadershipPage() {
       link: "/founder",
     },
     {
-      name: "Soorya",
+      name: "Prashant",
       role: "Head of Product Design",
       bio: "Expertise in translating complex cryptographic processes into intuitive, auditable workflow governance consoles.",
       link: null,

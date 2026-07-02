@@ -133,7 +133,7 @@ export const generateOrganizationSchema = () => ({
   // Social profiles - Knowledge Panel aur brand verification ke liye
   sameAs: [
     "https://twitter.com/dsecuretech",
-    "https://linkedin.com/company/dsecuretech",
+    "https://www.linkedin.com/company/d-secure-tech",
     "https://github.com/dsecuretech",
     "https://youtube.com/dsecuretech",
     "https://www.facebook.com/dsecuretech",

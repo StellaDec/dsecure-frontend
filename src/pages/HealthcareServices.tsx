@@ -3,13 +3,16 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import Reveal from "@/components/Reveal";
 import { useNavigate } from "react-router-dom";
+import { FAQSection } from "@/components/FAQSection";
+import { generateFAQSchema } from "@/utils/seo.core";
+import { healthcareFAQs } from "@/data/seoFaqs";
 
 const HealthcareServices: React.FC = () => {
   const navigate = useNavigate();
   return (
     <>
       {/* SEO Meta Tags */}
-      <SEOHeadNative seo={getSEOForPage("healthcare-services")} />
+      <SEOHeadNative seo={getSEOForPage("healthcare-services")} structuredData={generateFAQSchema(healthcareFAQs)} />
 
       <div className="min-h-screen bg-white">
 
@@ -276,6 +279,8 @@ const HealthcareServices: React.FC = () => {
             </Reveal>
           </div>
         </section>
+
+        <FAQSection faqs={healthcareFAQs} id="faq" />
 
         {/* CTA Section */}
         <section className="py-16 md:py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700">

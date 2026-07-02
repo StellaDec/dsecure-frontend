@@ -37,29 +37,8 @@ import { generateFAQSchema } from "@/utils/seo.core";
 import { FAQSection } from "@/components/FAQSection";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
-
-const smartphoneEraserFaqs: FAQItem[] = [
-  {
-    q: "Can I erase locked iPhones or devices with broken screens?",
-    a: "Yes, you can erase locked iPhones — the lock will remain post-erasure. For devices with broken screens or in recovery modes, our Linux-based (Barebone) edition can perform erasure and diagnostics without requiring screen interaction.",
-  },
-  {
-    q: "What deployment options are available?",
-    a: "D-Secure Mobile Eraser is available as a Windows application and a Barebone hardware (Linux-based) edition. The Linux edition supports custom USB port naming, broken screen devices, and dedicated hardware deployment for high-throughput environments.",
-  },
-  {
-    q: "Does it detect FMIP, FRP, MDM & Carrier Lock status?",
-    a: "Yes, the software retrieves both IMEI 1 & IMEI 2 and checks Find My iPhone (FMIP), Factory Reset Protection (FRP), MDM supervision status, ESN status, and carrier lock status before erasure.",
-  },
-  {
-    q: "Is there a per-device license fee?",
-    a: "Our application does not consume another license if you perform the same process (erasure or diagnostics) within 30 days on the same device, making it extremely cost-effective for re-testing or troubleshooting.",
-  },
-  {
-    q: "Can I install the app on multiple machines?",
-    a: "Yes, you can install the application on multiple machines and perform erasure and diagnostics simultaneously. The cloud console manages license distribution and maintains a central repository of all reports.",
-  },
-];
+import { smartphoneEraserFAQs as importedSmartphoneEraserFAQs } from "@/data/seoFaqs";
+const smartphoneEraserFaqs = importedSmartphoneEraserFAQs;
 
 const smartphoneEraserTakeaways: KeyTakeawayItem[] = [
   {

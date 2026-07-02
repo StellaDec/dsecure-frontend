@@ -167,4 +167,29 @@
       opacity: 1;
     }
   }
+
+  /* Blog Content Explicit Styling */
+  .blog-formatted-content {
+    @apply text-left w-full;
+  }
+  
+  .blog-formatted-content p {
+    @apply text-left mb-6 leading-relaxed;
+  }
+
+  .blog-formatted-content h2 {
+    @apply text-left text-2xl font-bold mt-10 mb-5 text-slate-900;
+  }
+
+  .blog-formatted-content h3 {
+    @apply text-left text-xl font-semibold mt-8 mb-4 text-slate-900;
+  }
+
+  .blog-formatted-content ul {
+    @apply text-left list-disc pl-6 mb-6;
+  }
+
+  .blog-formatted-content li {
+    @apply mb-2;
+  }
 }

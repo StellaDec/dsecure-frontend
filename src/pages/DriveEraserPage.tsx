@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import { useToast } from "@/components/Toast";
 import { blogPosts } from "@/data/blogPosts";
+import { driveEraserFAQs as importedDriveEraserFAQs } from "@/data/seoFaqs";
 
 const getReadTime = (text: string) => {
   const wordsPerMinute = 200;
@@ -77,29 +78,8 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
     },
   ];
 
-  // Single Source of Truth for FAQs
-  const driveEraserFaqs: FAQItem[] = [
-    {
-      question: "Is D-Secure Drive Eraser NIST 800-88 compliant?",
-      answer:
-        "Yes, D-Secure Drive Eraser fully complies with NIST 800-88 Purge and Clear standards, ensuring data is permanently sanitized and cannot be recovered.",
-    },
-    {
-      question: "Which drives are supported by D-Secure?",
-      answer:
-        "We support a wide range of storage devices including traditional HDDs, solid-state drives (SSDs), NVMe drives, and enterprise server RAID arrays.",
-    },
-    {
-      question: "Does the software generate a certificate of erasure?",
-      answer:
-        "Yes, after every successful wipe, D-Secure generates a digitally signed, tamper-proof certificate of erasure suitable for audit and compliance reporting (GDPR, HIPAA, PCI-DSS).",
-    },
-    {
-      question: "Can I deploy D-Secure over a network?",
-      answer:
-        "Absolutely. D-Secure supports PXE network boot deployment, allowing IT teams to wipe multiple machines simultaneously across a network without individual USBs.",
-    },
-  ];
+  // Single Source of Truth for FAQs imported from data
+  const driveEraserFaqs = importedDriveEraserFAQs;
 
   const toggleFullscreen = async () => {
     try {
@@ -704,6 +684,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
+                  {/*
                     <Link
                       to="/pricing-and-plan?product=drive-eraser"
                       className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
@@ -714,6 +695,25 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         )}
                       </HoverIcon>
                       Buy Now
+                    </Link>
+                    */}
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+                    >
+                      <HoverIcon>
+                        {(filled) => (
+                          <svg
+                            className="w-5 h-5"
+                            fill={filled ? "currentColor" : "none"}
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        )}
+                      </HoverIcon>
+                      Contact Sales
                     </Link>
                     <button
                       onClick={downloadCatalog}

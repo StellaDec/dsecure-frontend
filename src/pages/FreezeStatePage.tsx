@@ -309,12 +309,20 @@ const FreezeStatePage = memo(() => {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  {/*
                     <button
                       disabled
                       className="inline-flex items-center justify-center gap-2 bg-slate-200 text-slate-500 font-bold px-8 py-4 rounded-xl shadow-none cursor-not-allowed transition-all"
                     >
                       Buy Now
                     </button>
+                    */}
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                    >
+                      Contact Sales
+                    </Link>
                     <button
                       onClick={() => scrollToSection("technology")}
                       className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 font-bold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-all duration-300"

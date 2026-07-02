@@ -31,7 +31,8 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import { usePerformanceMonitor } from "@/utils/performanceUtils";
 import { useTranslation } from "react-i18next";
-
+import { FAQSection } from "@/components/FAQSection";
+import { homeFAQs } from "@/data/seoFaqs";
 const HomePage = memo(function HomePage() {
   usePerformanceMonitor("HomePage");
   const { t } = useTranslation();
@@ -388,7 +389,18 @@ const HomePage = memo(function HomePage() {
 
   return (
     <>
-      <SEOHeadNative seo={getSEOForPage("home")} />
+      <SEOHeadNative 
+        seo={getSEOForPage("home")} 
+        structuredData={{ 
+          '@context': 'https://schema.org', 
+          '@type': 'FAQPage', 
+          mainEntity: homeFAQs.map(faq => ({ 
+            '@type': 'Question', 
+            name: faq.question, 
+            acceptedAnswer: { '@type': 'Answer', text: faq.answer } 
+          })) 
+        }} 
+      />
       <section
         id="hero"
         className="bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50 py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 xxl:py-18"
@@ -426,6 +438,7 @@ const HomePage = memo(function HomePage() {
                     </HoverIcon>
                     {t("home.exploreDataEraserSoftware", "Explore D-Secure")}
                   </Link>
+                  {/* 
                   <Link
                     to="/pricing-and-plan"
                     className="btn-primary w-full sm:w-auto text-center inline-flex items-center justify-center bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700"
@@ -448,6 +461,25 @@ const HomePage = memo(function HomePage() {
                       )}
                     </HoverIcon>
                     Buy Now
+                  </Link>
+                  */}
+                  <Link
+                    to="/contact"
+                    className="btn-primary w-full sm:w-auto text-center inline-flex items-center justify-center bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700"
+                  >
+                    <HoverIcon>
+                      {(filled) => (
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill={filled ? "currentColor" : "none"}
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      )}
+                    </HoverIcon>
+                    Contact Sales
                   </Link>
                 </div>
               </Reveal>
@@ -1940,6 +1972,7 @@ const HomePage = memo(function HomePage() {
           </div>
         </div>
       </section> */}
+      <FAQSection faqs={homeFAQs} />
     </>
   );
 });

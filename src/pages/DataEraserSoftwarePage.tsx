@@ -614,6 +614,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                       </HoverIcon>
                       Submit Enquiry
                     </Link>
+                    {/*
                     <Link
                       to="/pricing-and-plan"
                       className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition-all duration-300"
@@ -632,6 +633,13 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                         />
                       </svg>
                       Buy Now
+                    </Link>
+                    */}
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition-all duration-300"
+                    >
+                      Contact Sales
                     </Link>
                   </div>
                 </div>
@@ -1224,11 +1232,19 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                   Submit Enquiry
                   <ArrowRightIcon className="w-5 h-5 ml-2" />
                 </Link>
+                {/*
                 <Link
                   to="/pricing-and-plan"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-white/30 text-white font-bold text-lg hover:bg-white/10 transition-all"
                 >
                   Buy Now
+                </Link>
+                */}
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-white/30 text-white font-bold text-lg hover:bg-white/10 transition-all"
+                >
+                  Contact Sales
                 </Link>
               </div>
             </Reveal>
@@ -1359,6 +1375,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                   </HoverIcon>
                   Submit Enquiry
                 </Link>
+                {/*
                 <Link
                   to="/pricing-and-plan"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-white text-white font-bold text-lg hover:bg-white/10 transition-all"
@@ -1377,6 +1394,13 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                     />
                   </svg>
                   Buy Now
+                </Link>
+                */}
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-white text-white font-bold text-lg hover:bg-white/10 transition-all"
+                >
+                  Contact Sales
                 </Link>
               </div>
             </Reveal>

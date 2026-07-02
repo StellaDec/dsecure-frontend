@@ -52,6 +52,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
   const [fileEraserVariant, setFileEraserVariant] = useState("standard"); // "standard" or "network"
   const [freezeStateVariant, setFreezeStateVariant] = useState("standard"); // "standard", "smart", or "advanced"
   const [forensicImagingVariant, setForensicImagingVariant] = useState("basic"); // "basic", "advanced", or "hardware"
+  const [autopilotCreditType, setAutopilotCreditType] = useState<"standard" | "advanced" | "combo">("standard");
   const [isTestsExpanded, setIsTestsExpanded] = useState(false); // Hardware diagnostics tests accordion state
 
   // Reset loading state when component mounts (handles back navigation)
@@ -820,23 +821,35 @@ const PricingAndPlanPage: React.FC = memo(() => {
       showDeliveryOptions: false,
     },
     "autopilot-mdm": {
-      title: "Autopilot Detector",
+      title: 
+        autopilotCreditType === "combo" 
+          ? "Autopilot Detector (Combo Credit)" 
+          : autopilotCreditType === "advanced" 
+            ? "Autopilot Detector (Advanced Credit)" 
+            : "Autopilot Detector (Standard Credit)",
       subtitle: "Instantly detect Autopilot & MDM status on devices. (Available for Windows)",
       image: getProductIcon("drive-eraser", 64),
       imageCategory: "autopilot-mdm",
       version: "V1.0.0.0",
-      basePrice: 1,
-      originalPrice: 2,
+      basePrice: 
+        autopilotCreditType === "combo" 
+          ? 1.5 
+          : autopilotCreditType === "advanced" 
+            ? 2 
+            : 1,
+      originalPrice: 
+        autopilotCreditType === "combo" 
+          ? 3 
+          : autopilotCreditType === "advanced" 
+            ? 4 
+            : 2,
       discountPercentage: "50% OFF",
       selectionLabel: "Number of Licenses:",
       selectionNote: "(Pay-per-use)",
       options: [
-        "1",
         "10",
-        "25",
         "50",
         "100",
-        "250",
         "500",
         "1000",
         "custom",
@@ -2309,6 +2322,132 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">Upcoming</span>
                             </div>
                             {forensicImagingVariant === "hardware" && (
+                              <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center">
+                                <svg
+                                  className="w-2.5 h-2.5 text-white"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
+                              </div>
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Autopilot MDM Credit Variant Selection */}
+                    {selectedCategory === "autopilot-mdm" && (
+                      <div className="mb-6 p-4 bg-emerald-50/50 rounded-2xl border border-emerald-100">
+                        <label className="block text-xs xs:text-sm font-bold text-emerald-900 mb-3">
+                          Credit Type:
+                        </label>
+                        <div className="grid grid-cols-1 gap-2">
+                          <button
+                            onClick={() => setAutopilotCreditType("standard")}
+                            className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
+                              autopilotCreditType === "standard"
+                                ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
+                                : "bg-white/50 border-gray-200 hover:border-emerald-200"
+                            }`}
+                          >
+                            <div className="flex flex-col items-start gap-0.5">
+                              <span
+                                className={`text-sm font-bold ${autopilotCreditType === "standard" ? "text-emerald-700" : "text-gray-700"}`}
+                              >
+                                Standard Credit
+                              </span>
+                              <span className="text-[10px] text-gray-500">
+                                Basic MDM Detection
+                              </span>
+                            </div>
+                            <span className="text-sm font-bold text-emerald-800">
+                              Base Price
+                            </span>
+                            {autopilotCreditType === "standard" && (
+                              <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center">
+                                <svg
+                                  className="w-2.5 h-2.5 text-white"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
+                              </div>
+                            )}
+                          </button>
+
+                          <button
+                            onClick={() => setAutopilotCreditType("advanced")}
+                            className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
+                              autopilotCreditType === "advanced"
+                                ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
+                                : "bg-white/50 border-gray-200 hover:border-emerald-200"
+                            }`}
+                          >
+                            <div className="flex flex-col items-start gap-0.5">
+                              <span
+                                className={`text-sm font-bold ${autopilotCreditType === "advanced" ? "text-emerald-700" : "text-gray-700"}`}
+                              >
+                                Advanced Credit
+                              </span>
+                              <span className="text-[10px] text-gray-500">
+                                Detailed Device Insights + Bootable
+                              </span>
+                            </div>
+                            <span className="text-sm font-bold text-emerald-800">
+                              Premium
+                            </span>
+                            {autopilotCreditType === "advanced" && (
+                              <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center">
+                                <svg
+                                  className="w-2.5 h-2.5 text-white"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
+                              </div>
+                            )}
+                          </button>
+
+                          <button
+                            onClick={() => setAutopilotCreditType("combo")}
+                            className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
+                              autopilotCreditType === "combo"
+                                ? "bg-white border-emerald-500 shadow-md scale-[1.02]"
+                                : "bg-white/50 border-gray-200 hover:border-emerald-200"
+                            }`}
+                          >
+                            <div className="flex flex-col items-start gap-0.5">
+                              <span
+                                className={`text-sm font-bold ${autopilotCreditType === "combo" ? "text-emerald-700" : "text-gray-700"}`}
+                              >
+                                Combo Credit
+                              </span>
+                              <span className="text-[10px] text-gray-500">
+                                {selectedLicenses !== "custom" && !isNaN(Number(selectedLicenses))
+                                  ? `${Number(selectedLicenses) * 0.8} Standard & ${Number(selectedLicenses) * 0.2} Advanced`
+                                  : "80% Standard & 20% Advanced"}
+                              </span>
+                            </div>
+                            <span className="text-sm font-bold text-emerald-800">
+                              Best Value
+                            </span>
+                            {autopilotCreditType === "combo" && (
                               <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center">
                                 <svg
                                   className="w-2.5 h-2.5 text-white"
