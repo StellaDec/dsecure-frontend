@@ -111,9 +111,7 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
   },
   "file-eraser": {
     windows: {
-      url:
-        import.meta.env.VITE_FILE_ERASER_WINDOWS_DOWNLOAD_LINK ||
-        "https://downloads.dsecuretech.com/windows/D-Secure_Eraser_Setup_v1_0.exe",
+      url: "https://downloads.dsecuretech.com/windows/D-Secure_Eraser_Setup_v1_0.exe",
       filename: "D-Secure_Eraser_Setup_v1_0.exe",
       size: "600 MB",
       arch: "64-bit",
