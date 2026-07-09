@@ -10,9 +10,8 @@ const MorganStanleyDataBreachBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "Morgan Stanley Data Breach Analysis",
-            excerpt:
-              "Lessons from Morgan Stanley's data breach involving improper device disposal.",
+            title: "The $35M Morgan Stanley Data Breach: An ITAD Case Study",
+            excerpt: "Morgan Stanley was fined $35 million by the SEC for improper IT asset disposition. Analyze the failures in their data destruction process and learn how to prevent it.",
             slug: "morgan-stanley-data-breach",
             author: "D-Secure Editorial Team",
             publishDate: "March 19, 2025",

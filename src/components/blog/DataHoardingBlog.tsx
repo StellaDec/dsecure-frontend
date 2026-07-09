@@ -10,9 +10,8 @@ const DataHoardingBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "The Cost of Data Hoarding",
-            excerpt:
-              "Understanding the financial and security costs of keeping unnecessary data.",
+            title: "The Dangers of Corporate Data Hoarding & How to Stop It",
+            excerpt: "Keeping data 'just in case' is a massive liability. Learn how corporate data hoarding violates compliance laws and how implementing an erasure policy mitigates risk.",
             slug: "data-hoarding",
             author: "D-Secure Editorial Team",
             publishDate: "November 16, 2025",

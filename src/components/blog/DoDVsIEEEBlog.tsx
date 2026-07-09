@@ -10,9 +10,8 @@ const DoDVsIEEEBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "DoD 5220.22-M vs IEEE 2883 data erasure standards compared",
-            excerpt:
-              "DoD 5220.22-M was the default benchmark for years. IEEE 2883-2022 has largely replaced it. Here's what each requires and which your audit actually needs.",
+            title: "DoD 5220.22-M vs. IEEE 2883: The Evolution of Sanitization",
+            excerpt: "The DoD 3-pass wipe is obsolete. Learn why modern enterprises are shifting to the IEEE 2883 standard for sanitizing SSDs and NVMe storage.",
             slug: "dod-vs-ieee",
             author: "D-Secure Editorial Team",
             publishDate: "January 7, 2025",
