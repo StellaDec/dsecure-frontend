@@ -630,7 +630,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
       [
         "overwrite-guide",
         "ssd-wipe-guide",
-        "data-deletion-myths",
+        "data-erasure-myths",
         "best-data-erasure-methods",
       ].includes(post.id),
     )
@@ -798,20 +798,20 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                  {/*
                     <Link
                       to="/pricing-and-plan?product=file-eraser"
                       className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                     >
                       Buy Now
                     </Link>
-                    */}
+                    {/*
                     <Link
                       to="/contact"
                       className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                     >
                       Contact Sales
                     </Link>
+                    */}
                     <button
                       onClick={downloadCatalog}
                       className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition-all duration-300"

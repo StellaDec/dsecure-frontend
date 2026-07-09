@@ -10,9 +10,8 @@ const LegalEthicalErasureBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "Legal and Ethical Data Erasure",
-            excerpt:
-              "Understanding legal obligations and ethical considerations in data erasure.",
+            title: "The Legal and Ethical Imperative of Data Erasure",
+            excerpt: "Data erasure is not just an IT task; it is a fundamental ethical responsibility and legal requirement. Explore the intersection of privacy laws and corporate duty.",
             slug: "legal-ethical-erasure",
             author: "D-Secure Editorial Team",
             publishDate: "June 14, 2025",

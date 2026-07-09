@@ -10,9 +10,8 @@ const NCUAGuidelinesBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "NCUA Data Disposal Guidelines",
-            excerpt:
-              "Understanding NCUA requirements for credit union data disposal.",
+            title: "NCUA Guidelines on Third-Party Data Disposal",
+            excerpt: "Credit unions must adhere to strict NCUA guidelines regarding data disposal. Learn how to manage third-party risk and implement certified erasure protocols.",
             slug: "ncua-guidelines",
             author: "D-Secure Editorial Team",
             publishDate: "December 14, 2026",

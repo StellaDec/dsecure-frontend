@@ -10,9 +10,8 @@ const PHIErasureBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "PHI Erasure Requirements",
-            excerpt:
-              "Meeting Protected Health Information erasure requirements under HIPAA.",
+            title: "Secure ePHI Erasure: Meeting HIPAA Sanitization Requirements",
+            excerpt: "Improper disposal of electronic Protected Health Information (ePHI) leads to massive HIPAA fines. Learn how to securely erase medical data across servers, laptops, and IoT devices.",
             slug: "phi-erasure",
             author: "D-Secure Editorial Team",
             publishDate: "May 25, 2025",

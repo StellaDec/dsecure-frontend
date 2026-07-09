@@ -193,7 +193,7 @@ const GovDeviceTheftBlog: React.FC = () => {
         </Reveal>
       </section>
       <BlogFooterStandard 
-        blogId="gov-device-theft" 
+        blogId="government-device-theft" 
         blogTitle="D-Secure Blog" 
       />
     </div>

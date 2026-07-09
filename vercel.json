@@ -14,11 +14,6 @@
       "permanent": true
     },
     {
-      "source": "/support/manual/:path*",
-      "destination": "/support",
-      "permanent": true
-    },
-    {
       "source": "/(de|fr|es|zh|ja)(/.*)?",
       "destination": "/",
       "permanent": true

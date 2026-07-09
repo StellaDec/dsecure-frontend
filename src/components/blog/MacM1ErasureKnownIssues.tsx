@@ -272,7 +272,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
         </Reveal>
       </section>
       <BlogFooterStandard 
-        blogId="mac-m1-erasure-known-issues" 
+        blogId="m1-mac-erasure-issues" 
         blogTitle="D-Secure Blog" 
       />
     </div>

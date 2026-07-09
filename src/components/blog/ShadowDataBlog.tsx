@@ -10,9 +10,8 @@ const ShadowDataBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "Finding and Erasing Shadow Data",
-            excerpt:
-              "Strategies for discovering and securely erasing shadow data in enterprises.",
+            title: "The Hidden Threat of Shadow Data: Identification & Erasure",
+            excerpt: "Shadow data is unmanaged, invisible data that creates massive compliance risks. Learn how to identify and securely erase shadow data before it causes a breach.",
             slug: "shadow-data",
             author: "D-Secure Editorial Team",
             publishDate: "July 5, 2025",

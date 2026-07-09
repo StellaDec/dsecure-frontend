@@ -610,7 +610,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
       [
         "overwrite-guide",
         "ssd-wipe-guide",
-        "data-deletion-myths",
+        "data-erasure-myths",
         "best-data-erasure-methods",
       ].includes(post.id),
     )

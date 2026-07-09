@@ -253,23 +253,9 @@ function extractRoutesFromFiles() {
   });
 
   // Adding manual query param routes that are important for SEO
-  const queryRoutes = [
-    "/services?search=mobile+device+erasure",
-    "/services?search=network+server+erasure",
-    "/services?search=cloud+data+erasure",
-    "/compliance?standard=nist",
-    "/compliance?standard=gdpr",
-    "/compliance?standard=hipaa",
-    "/compliance?standard=iso27001",
-    "/solutions?industry=enterprise",
-    "/solutions?industry=healthcare",
-    "/solutions?industry=financial",
-    "/solutions?industry=government",
-    "/llms.txt",
-    "/llms-full.txt",
-  ];
+  const additionalRoutes = [];
 
-  queryRoutes.forEach((r) => allRoutes.add(r));
+  additionalRoutes.forEach((r) => allRoutes.add(r));
   
   // BLOG SCAN: Reading src/data/blogPosts.ts to get dynamic blog slugs
   const blogPostsPath = path.join(__dirname, "..", "src", "data", "blogPosts.ts");

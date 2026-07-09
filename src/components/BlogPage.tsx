@@ -20,13 +20,13 @@ const blogs = [
   {
     title: "Data Erasure vs Data Destruction – What’s the Difference?",
     image: "https://picsum.photos/id/1043/1000/400",
-    link: "/blog/erasure-vs-destruction",
+    link: "/blog/physical-destruction-vs-data-wiping",
     tag: "Compliance",
   },
   {
     title: "Top 5 Myths About Secure Data Deletion",
     image: "https://picsum.photos/id/1060/1000/400",
-    link: "/blog/data-deletion-myths",
+    link: "/blog/data-erasure-myths",
     tag: "Awareness",
   },
   {

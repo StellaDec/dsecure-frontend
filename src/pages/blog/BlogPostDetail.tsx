@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
+import NotFoundPage from "@/pages/NotFoundPage";
 import BlogFooterStandard from "@/components/blog/BlogFooterStandard";
 import { blogPosts } from "@/data/blogPosts";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
@@ -59,9 +60,9 @@ const BlogPostDetail: React.FC = () => {
     });
   }, [post]);
 
-  // If post not found, redirect to blog listing
+  // If post not found, return NotFoundPage to prevent soft 404s
   if (!post || !seoData) {
-    return <Navigate to="/blog" replace />;
+    return <NotFoundPage />;
   }
 
   const SpecificBlogComponent = BlogRegistry[post.slug];

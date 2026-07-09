@@ -555,7 +555,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
       [
         "overwrite-guide",
         "ssd-wipe-guide",
-        "data-deletion-myths",
+        "data-erasure-myths",
         "best-data-erasure-methods",
       ].includes(post.id),
     )

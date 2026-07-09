@@ -10,9 +10,8 @@ const CommonCriteriaBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "Common Criteria Certification Explained",
-            excerpt:
-              "Understanding Common Criteria certification and why it matters for data erasure software.",
+            title: "Common Criteria Certified Data Wiping: Why It Matters",
+            excerpt: "Understand the importance of Common Criteria (ISO/IEC 15408) certification for data erasure software and why government agencies mandate it.",
             slug: "common-criteria",
             author: "D-Secure Editorial Team",
             publishDate: "February 10, 2025",

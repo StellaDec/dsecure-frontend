@@ -440,7 +440,7 @@ function ResourcesPageContent() {
       downloadSize: "N/A",
       pages: "1 min read",
       featured: true,
-      referenceUrl: "/blog/erasure-vs-destruction",
+      referenceUrl: "/blog/physical-destruction-vs-data-wiping",
       author: "D-Secure Editorial Team",
       date: "November 5, 2024"
     },
@@ -454,7 +454,7 @@ function ResourcesPageContent() {
       downloadSize: "N/A",
       pages: "1 min read",
       featured: false,
-      referenceUrl: "/blog/data-deletion-myths",
+      referenceUrl: "/blog/data-erasure-myths",
       author: "Nitish",
       date: "November 12, 2024"
     },

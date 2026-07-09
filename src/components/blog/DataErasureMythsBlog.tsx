@@ -10,9 +10,8 @@ const DataErasureMythsBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "Data Erasure Myths Debunked",
-            excerpt:
-              "Common misconceptions about data erasure and the truth behind them.",
+            title: "Data Deletion vs. Data Erasure: Busting the 5 Biggest Myths",
+            excerpt: "Deleting a file does not erase it. Uncover the truth behind data deletion myths, formatting, factory resets, and why only certified data erasure guarantees permanent destruction.",
             slug: "data-erasure-myths",
             author: "D-Secure Editorial Team",
             publishDate: "February 27, 2025",

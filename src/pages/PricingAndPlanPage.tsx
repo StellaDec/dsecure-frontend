@@ -674,8 +674,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
           : "D-Secure File Eraser Professional",
       subtitle:
         fileEraserVariant === "network"
-          ? "Enterprise network-wide file sanitization and management across your domain. (Available for Windows)"
-          : "Complete File, Folder & Application Trace Elimination. (Available for Windows)",
+          ? "Enterprise network-wide file sanitization and management across your domain. (Available for Windows 10/11)"
+          : "Complete File, Folder & Application Trace Elimination. (Available for Windows 10/11)",
       image: getProductIcon("file-eraser", 64),
       imageCategory: "file-eraser",
       version: fileEraserVariant === "network" ? "Network Edition" : "Professional",
@@ -2593,45 +2593,97 @@ const PricingAndPlanPage: React.FC = memo(() => {
                 </div>
 
                 {/* Action Button */}
-                <button
-                  onClick={handleBuyNow}
-                  disabled={
-                    (!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
+                {selectedCategory === "drive-eraser" ? (
+                  <>
+                    {/*
+                    <button
+                      onClick={handleBuyNow}
+                      disabled={
+                        (!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
+                           (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
+                         selectedLicenses !== "custom" && 
+                         selectedPlan !== "custom") ||
+                        isBuyNowLoading
+                      }
+                      onMouseEnter={() => {
+                        // ✅ Prefetch on hover for even faster response
+                        if (
+                          selectedLicenses !== "custom" &&
+                          selectedPlan !== "custom" &&
+                          !isBuyNowLoading
+                        ) {
+                          // Prefetch checkout domain connection
+                          const img = new Image();
+                          img.src = "https://checkout.dodopayments.com/favicon.ico";
+                        }
+                      }}
+                      className={`w-full font-bold py-3 xs:py-4 px-4 xs:px-5 sm:px-6 rounded-xl mb-4 xs:mb-5 sm:mb-6 text-base xs:text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2 ${
+                        !((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
+                          (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
+                        selectedLicenses !== "custom" && 
+                        selectedPlan !== "custom"
+                          ? "bg-gradient-to-r from-slate-300 to-slate-400 text-white cursor-not-allowed opacity-70"
+                          : `bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white hover:shadow-xl transform hover:scale-105 active:scale-95 disabled:opacity-70 disabled:hover:scale-100 ${isBuyNowLoading ? "cursor-wait" : "cursor-pointer"}`
+                      }`}
+                    >
+                      {!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
+                         (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
+                       selectedLicenses !== "custom" && 
+                       selectedPlan !== "custom"
+                        ? "Coming Soon"
+                        : selectedLicenses === "custom" || selectedPlan === "custom"
+                          ? "Request Custom Quote"
+                          : "Buy Now"}
+                    </button>
+                    */}
+                    <button
+                      onClick={() => navigate("/contact")}
+                      className="w-full font-bold py-3 xs:py-4 px-4 xs:px-5 sm:px-6 rounded-xl mb-4 xs:mb-5 sm:mb-6 text-base xs:text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white hover:shadow-xl transform hover:scale-105 active:scale-95 cursor-pointer"
+                    >
+                      Contact Sales
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    onClick={handleBuyNow}
+                    disabled={
+                      (!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
+                         (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
+                       selectedLicenses !== "custom" && 
+                       selectedPlan !== "custom") ||
+                      isBuyNowLoading
+                    }
+                    onMouseEnter={() => {
+                      // ✅ Prefetch on hover for even faster response
+                      if (
+                        selectedLicenses !== "custom" &&
+                        selectedPlan !== "custom" &&
+                        !isBuyNowLoading
+                      ) {
+                        // Prefetch checkout domain connection
+                        const img = new Image();
+                        img.src = "https://checkout.dodopayments.com/favicon.ico";
+                      }
+                    }}
+                    className={`w-full font-bold py-3 xs:py-4 px-4 xs:px-5 sm:px-6 rounded-xl mb-4 xs:mb-5 sm:mb-6 text-base xs:text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2 ${
+                      !((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
+                        (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
+                      selectedLicenses !== "custom" && 
+                      selectedPlan !== "custom"
+                        ? "bg-gradient-to-r from-slate-300 to-slate-400 text-white cursor-not-allowed opacity-70"
+                        : `bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white hover:shadow-xl transform hover:scale-105 active:scale-95 disabled:opacity-70 disabled:hover:scale-100 ${isBuyNowLoading ? "cursor-wait" : "cursor-pointer"}`
+                    }`}
+                  >
+                    {!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
                        (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
                      selectedLicenses !== "custom" && 
-                     selectedPlan !== "custom") ||
-                    isBuyNowLoading
-                  }
-                  onMouseEnter={() => {
-                    // ✅ Prefetch on hover for even faster response
-                    if (
-                      selectedLicenses !== "custom" &&
-                      selectedPlan !== "custom" &&
-                      !isBuyNowLoading
-                    ) {
-                      // Prefetch checkout domain connection
-                      const img = new Image();
-                      img.src = "https://checkout.dodopayments.com/favicon.ico";
-                    }
-                  }}
-                  className={`w-full font-bold py-3 xs:py-4 px-4 xs:px-5 sm:px-6 rounded-xl mb-4 xs:mb-5 sm:mb-6 text-base xs:text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2 ${
-                    !((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
-                      (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
-                    selectedLicenses !== "custom" && 
-                    selectedPlan !== "custom"
-                      ? "bg-gradient-to-r from-slate-300 to-slate-400 text-white cursor-not-allowed opacity-70"
-                      : `bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white hover:shadow-xl transform hover:scale-105 active:scale-95 disabled:opacity-70 disabled:hover:scale-100 ${isBuyNowLoading ? "cursor-wait" : "cursor-pointer"}`
-                  }`}
-                >
-                  {!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
-                     (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
-                   selectedLicenses !== "custom" && 
-                   selectedPlan !== "custom"
-                    ? "Coming Soon"
-                    : selectedLicenses === "custom" || selectedPlan === "custom"
-                      ? "Request Custom Quote"
-                      : "Buy Now"}
-                </button>
+                     selectedPlan !== "custom"
+                      ? "Coming Soon"
+                      : selectedLicenses === "custom" || selectedPlan === "custom"
+                        ? "Request Custom Quote"
+                        : "Buy Now"}
+                  </button>
+                )}
 
                 {/* Trust Indicators */}
                 <div className="flex flex-col items-center">

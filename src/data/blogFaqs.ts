@@ -290,7 +290,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "10% verification is a fast sample check, while 100% verification reads back every single bit on the drive to guarantee total sanitization, usually required for high-security environments."
     }
   ],
-  "erasure-vs-destruction": [
+  "physical-destruction-vs-data-wiping": [
     {
       question: "Is data erasure as secure as physical destruction?",
       answer: "Yes, NIST-compliant 'Purge' level erasure is considered as secure as destruction for modern media while allowing the device to be reused, making it a more sustainable choice."
@@ -328,7 +328,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Implement a secure return-to-base policy for all hardware or use remote-erasure solutions that can sanitize an employee's device over the internet before they ship it back."
     }
   ],
-  "data-deletion-myths": [
+  "data-erasure-myths": [
     {
       question: "Is it true that formatting a PC makes data unrecoverable?",
       answer: "No, this is a myth. Formatting only clears the file system index. Tools available for free online can easily recover data from a formatted drive in minutes."
@@ -418,7 +418,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, data erasure is significantly more sustainable as it preserves the physical hardware for reuse, unlike shredding which turns assets into scrap material."
     }
   ],
-  "shadow-data-risks": [
+  "shadow-data": [
     {
       question: "What is 'Shadow Data' in an organization?",
       answer: "Shadow data refers to data stored outside formal IT infrastructure, such as on personal cloud accounts or unmanaged employee laptops, posing a major security risk."
@@ -567,7 +567,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
 
 
 
-  "brand-reputation-esg": [
+  "esg-data-erasure": [
     {
       question: "How does data security impact a company's ESG score?",
       answer: "Data privacy falls under the 'Social' and 'Governance' pillars of ESG. A data breach from poorly handled retired assets can lead to severe reputational damage and lower ESG ratings."
@@ -662,7 +662,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "It provides independent verification that the software's security functions, such as its erasure algorithms and reporting, perform as specified."
     }
   ],
-  "common-criteria-certified-data-wiping": [
+  "common-criteria": [
     {
       question: "Does D-Secure meet Common Criteria standards?",
       answer: "D-Secure utilizes compliance-verified algorithms and follows Common Criteria principles to ensure that data wiping is verifiable and meets high-security requirements."
@@ -713,7 +713,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
     }
   ],
 
-  "data-destruction-best-practices": [
+  "erasure-best-practices": [
     {
       question: "What are the best practices for enterprise data destruction?",
       answer: "Best practices include using NIST 800-88 compliant software, maintaining a secure chain of custody, verifying 100% of erasures, and generating tamper-proof reports for audits."
@@ -773,7 +773,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "It increases the attack surface and the potential impact of a data breach. The more 'dark data' an organization stockpiles, the higher the risk of sensitive information being exposed during a cyberattack."
     }
   ],
-  "data-hoarding-risks": [
+  "data-hoarding": [
     {
       question: "What are the legal risks of data hoarding?",
       answer: "Data hoarding can lead to violations of privacy laws like GDPR and DPDP Act, which mandate data minimization. It also increases the cost and complexity of legal discovery during litigation."
@@ -833,7 +833,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Degaussing renders the hard drive permanently unusable, which prevents hardware reuse and significantly increases e-waste compared to software-based sanitization."
     }
   ],
-  "deleted-files-truth": [
+  "data-erasure-myths": [
     {
       question: "Can I recover a file after I've deleted it?",
       answer: "Yes, in most cases, 'deleted' files can be recovered because the data blocks remain untouched on the disk. Professional forensic software can reconstruct these files easily until they are overwritten."
@@ -843,7 +843,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, file-level sanitization software can specifically target the 'free space' on a drive and overwrite it, ensuring that any previously deleted fragments are permanently gone."
     }
   ],
-  "deletion-vs-erasure": [
+  "data-erasure-myths": [
     {
       question: "What is the difference between deletion and erasure?",
       answer: "Deletion only hides the data from the operating system, while erasure (or sanitization) physically overwrites or destroys the data bits, making recovery impossible."
@@ -863,7 +863,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, D-Secure is hardware-agnostic and works on all Dell models including Latitude, Precision, OptiPlex, and PowerEdge servers, supporting HDDs, SSDs, and NVMe drives."
     }
   ],
-  "dell-data-wipe-vs-dsecure": [
+  "dell-data-wipe-alternative": [
     {
       question: "How does D-Secure compare to Dell Data Wipe?",
       answer: "D-Secure supports 26+ international erasure standards, generates tamper-proof certificates, works across all OEM hardware, and provides centralized cloud reporting—capabilities Dell Data Wipe lacks."
@@ -913,7 +913,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "IEEE 2883:2022 is recommended for SSDs as it includes specific protocols for flash-based media. DoD 5220.22-M was designed for magnetic media and is less effective on solid-state drives."
     }
   ],
-  "dod-vs-ieee-data-sanitization": [
+  "dod-vs-ieee": [
     {
       question: "Is DoD 5220.22-M still relevant for data sanitization?",
       answer: "While still widely referenced, DoD 5220.22-M is considered outdated for modern storage. NIST 800-88 and IEEE 2883 are now the preferred standards as they address SSDs, NVMe, and modern media types."
@@ -943,7 +943,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, compliance-verified erasure generates documented proof of sustainable IT practices—including devices saved from landfill, carbon offset metrics, and circular economy contributions for ESG disclosures."
     }
   ],
-  "esg-report": [
+  "esg-data-erasure": [
     {
       question: "How does data erasure contribute to ESG reporting?",
       answer: "Compliance-verified data erasure provides measurable metrics for ESG reports: number of devices reused, e-waste diverted from landfill, and carbon emissions avoided through hardware lifecycle extension."
@@ -1041,7 +1041,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Professional erasers like D-Secure provide 26+ standards, tamper-proof certificates, post-erasure verification, centralized reporting, and regulatory compliance support that free tools cannot match."
     }
   ],
-  "future-data-destruction": [
+  "future-of-data-destruction": [
     {
       question: "How is data destruction technology evolving?",
       answer: "Future trends include AI-driven sanitization selection, quantum-resistant erasure methods, automated ITAD workflows, and blockchain-based immutable audit trails for erasure certificates."
@@ -1061,7 +1061,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Adopt flexible, standards-based erasure platforms that support multiple media types and compliance frameworks. D-Secure's cloud architecture is designed to evolve with emerging requirements."
     }
   ],
-  "gov-device-theft": [
+  "government-device-theft": [
     {
       question: "What happens when government devices are stolen?",
       answer: "Stolen government devices can expose classified information, citizen PII, and national security data. Pre-emptive compliance-verified erasure and full-disk encryption are critical defense layers."
@@ -1251,7 +1251,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "IT asset reuse reduces procurement costs by 30-50%, extends hardware lifecycles by 3-5 years, minimizes e-waste, and generates documented sustainability metrics for ESG reporting."
     }
   ],
-  "legal-ethical-data-erasure": [
+  "legal-ethical-erasure": [
     {
       question: "What are the legal requirements for data erasure?",
       answer: "GDPR, HIPAA, SOX, PCI-DSS, and other regulations mandate verifiable data destruction. Organizations must maintain documented proof of erasure—tamper-proof certificates are essential for legal compliance."
@@ -1353,7 +1353,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Compliance-verified erasure before equipment disposition would have destroyed all client data with tamper-proof documentation—providing SEC-auditable proof that assets were properly sanitized before leaving Morgan Stanley's control."
     }
   ],
-  "morgan-stanley-fine": [
+  "morgan-stanley-data-breach": [
     {
       question: "Why was Morgan Stanley fined for data disposal failures?",
       answer: "Morgan Stanley was fined $60M+ for negligent data disposal practices—retiring servers and hard drives containing unencrypted client PII without proper sanitization or chain-of-custody documentation."
@@ -1373,7 +1373,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "MSPs can white-label D-Secure's platform, offering compliance-verified erasure as a managed service. The cloud console enables remote management, automated reporting, and multi-tenant client separation."
     }
   ],
-  "msp-erasure-as-a-service": [
+  "msp-data-erasure": [
     {
       question: "What is MSP Erasure as a Service?",
       answer: "MSP EaaS allows managed service providers to offer compliance-verified data erasure as a subscription-based managed service—using D-Secure's cloud platform with white-label branding and multi-tenant management."
@@ -1383,7 +1383,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Clients get compliance-verified data erasure without capital investment in erasure infrastructure. The MSP handles licensing, execution, and compliance reporting—delivering erasure as part of their managed IT portfolio."
     }
   ],
-  "msp-erasure-service": [
+  "msp-data-erasure": [
     {
       question: "How do MSPs deliver erasure services?",
       answer: "MSPs deploy D-Secure remotely to client sites, manage erasure operations from a centralized cloud console, and deliver tamper-proof certificates and compliance reports directly to clients."
@@ -1413,7 +1413,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Credit unions should implement compliance-verified erasure for all retiring IT equipment, maintain disposal logs with tamper-proof certificates, and include data destruction in their information security program."
     }
   ],
-  "ncua-third-party-data-disposal": [
+  "ncua-guidelines": [
     {
       question: "How should credit unions manage third-party data disposal?",
       answer: "Credit unions must ensure that third-party vendors (ITAD, cloud providers) follow NCUA-compliant media sanitization practices. This includes verifying their erasure methods and collecting tamper-proof certificates for every asset."
@@ -1475,7 +1475,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Yes, D-Secure's scalable licensing and automated PXE network erasure significantly reduce the total cost of ownership (TCO) compared to manual Ultratest operations."
     }
   ],
-  "secure-phi-ephi-erasure": [
+  "phi-erasure": [
     {
       question: "What is the difference between PHI and ePHI erasure?",
       answer: "PHI is general health information, while ePHI is specifically electronic health records. Both require compliance-verified sanitization under HIPAA. D-Secure ensures both are permanently destroyed on all digital media."
@@ -1536,7 +1536,7 @@ export const blogFaqs: Record<string, FAQ[]> = {
       answer: "Resellers should follow globally recognized standards like NIST 800-88 and IEEE 2883-2022. D-Secure supports these and 24+ other standards, providing the audit-ready certificates buyers demand."
     }
   ],
-  "caption-call-settlement": [
+  "caption-call-fcc-settlement": [
     {
       question: "What was the CaptionCall FCC settlement about?",
       answer: "The settlement involved violations of data retention rules, where customer call data was kept far longer than legally permitted. It highlighted the need for automated data erasure policies."

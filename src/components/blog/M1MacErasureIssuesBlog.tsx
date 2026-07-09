@@ -10,9 +10,8 @@ const M1MacErasureIssuesBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "M1 Mac Erasure Challenges",
-            excerpt:
-              "Understanding and overcoming data erasure challenges with Apple M1 Macs.",
+            title: "M1/M2 Mac Data Erasure: Overcoming Apple Silicon Reset Challenges",
+            excerpt: "Discover the known issues with wiping Apple Silicon (M1/M2/M3) Macs, why standard Erase All Content and Settings (EACAS) falls short for enterprise compliance, and how D-Secure bridges the gap.",
             slug: "m1-mac-erasure-issues",
             author: "D-Secure Editorial Team",
             publishDate: "January 26, 2025",

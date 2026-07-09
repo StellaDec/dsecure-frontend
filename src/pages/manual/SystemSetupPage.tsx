@@ -26,7 +26,7 @@ const SystemSetupPage: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to="/support/manual/installation-guide"
+                  to="/support/manual/installation"
                   className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-3 rounded-lg transition-colors inline-flex items-center gap-2"
                 >
                   ← Previous: Installation

@@ -10,9 +10,8 @@ const SecureFileEraseBlog: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
         <SEOHead
           seo={getBlogSEO({
-            title: "Secure File Erasure Guide",
-            excerpt:
-              "Best practices for secure individual file erasure on active systems.",
+            title: "The Truth About Deleted Files & Secure File Erasure",
+            excerpt: "Standard deletion leaves files intact on your hard drive. Discover why secure file erasure is essential for targeted data destruction and regulatory compliance.",
             slug: "secure-file-erase",
             author: "D-Secure Editorial Team",
             publishDate: "October 15, 2025",

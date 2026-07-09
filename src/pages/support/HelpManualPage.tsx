@@ -277,7 +277,7 @@ const HelpManualPage: React.FC = memo(() => {
           title: "Installation Screenshots Guide",
           description:
             "Visual step-by-step installation process with detailed screenshots",
-          url: "/support/manual/installation-guide",
+          url: "/support/manual/installation",
           pageCount: 12,
         },
         {

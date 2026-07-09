@@ -99,15 +99,15 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   // Erasure vs physical destruction blog ka custom SEO metadata
-  "blog/erasure-vs-destruction": {
+  "blog/physical-destruction-vs-data-wiping": {
     title: "Data Erasure vs Physical Destruction: Complete Guide | D-Secure",
     description: "Compare software-based data erasure vs physical drive shredding. Learn the security, cost, compliance, and environmental ESG impact of both methods.",
     keywords: generateKeywords(["data erasure vs physical destruction", "hard drive shredding comparison", "secure software data wiping"]),
-    canonicalUrl: getCanonicalUrl("/blog/erasure-vs-destruction"),
+    canonicalUrl: getCanonicalUrl("/blog/physical-destruction-vs-data-wiping"),
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Blog", item: "/blog" },
-      { name: "Erasure vs Destruction", item: "/blog/erasure-vs-destruction" },
+      { name: "Erasure vs Destruction", item: "/blog/physical-destruction-vs-data-wiping" },
     ],
   },
   // Hardware diagnostics importance blog ka custom SEO metadata

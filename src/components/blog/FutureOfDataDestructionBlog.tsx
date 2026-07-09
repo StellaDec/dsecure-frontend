@@ -257,7 +257,7 @@ const FutureOfDataDestructionBlog: React.FC = () => {
       <section className="w-full px-4 md:px-8 lg:px-16 py-8">
       </section>
       <BlogFooterStandard 
-        blogId="future-data-destruction" 
+        blogId="future-of-data-destruction" 
         blogTitle="D-Secure Blog" 
       />
     </div>
