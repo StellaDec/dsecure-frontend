@@ -59,9 +59,6 @@ const NetworkFileAbout = lazy(
 const InstallationPage = lazy(
   () => import("../pages/support/manual/InstallationPage"),
 );
-const InstallationGuideDetailed = lazy(
-  () => import("../pages/manual/InstallationGuideDetailed"),
-);
 const SystemSetupPage = lazy(() => import("../pages/manual/SystemSetupPage"));
 const WorkingWithDSecurePage = lazy(
   () => import("../pages/manual/WorkingWithDSecurePage"),
@@ -301,10 +298,6 @@ export const SupportRoutes = () => (
 
     {/* Automated Manual Hub */}
     <Route path="support/manual/installation" element={<InstallationPage />} />
-    <Route
-      path="support/manual/installation-guide"
-      element={<InstallationGuideDetailed />}
-    />
     <Route path="support/manual/system-setup" element={<SystemSetupPage />} />
     <Route path="support/manual/working-with-dsecure" element={<WorkingWithDSecurePage />} />
     <Route path="support/help-manual/faqs" element={<DSecureFAQPage />} />

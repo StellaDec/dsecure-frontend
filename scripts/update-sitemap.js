@@ -55,8 +55,6 @@ const PRIORITY_ROUTES = {
   "/about": { changefreq: "monthly", priority: "0.6" },
   "/all-products": { changefreq: "monthly", priority: "0.9" },
   "/data-guardian-award": { changefreq: "monthly", priority: "0.8" },
-  "/llms.txt": { changefreq: "daily", priority: "0.8" },
-  "/llms-full.txt": { changefreq: "daily", priority: "0.8" },
   // Free Tools — SEO magnets, high priority
   "/tools/data-breach-calculator": { changefreq: "monthly", priority: "0.8" },
   "/tools/nist-800-88-compliance-checker": { changefreq: "monthly", priority: "0.8" },

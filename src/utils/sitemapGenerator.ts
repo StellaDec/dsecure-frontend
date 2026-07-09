@@ -143,6 +143,11 @@ Disallow: /*.json
 Disallow: /*.ts
 Disallow: /*.tsx
 
+# Block parameter URLs to prevent crawl waste
+Disallow: /*?standard=
+Disallow: /*?industry=
+Disallow: /*?search=
+
 # Sitemap location
 Sitemap: ${baseUrl}/sitemap.xml
 
@@ -160,40 +165,9 @@ export function updateSitemapTimestamp(): SitemapUrl[] {
   }));
 }
 
-// SEO-focused URL structure for better crawling
-export const seoUrls = {
-  // Main pages
-  home: '/',
-  services: '/services',
-  solutions: '/solutions',
-  compliance: '/compliance',
-  pricing: '/pricing',
-  resources: '/resources',
-  about: '/about',
-  contact: '/contact',
-  
-  // Service-specific pages with search params for better SEO
-  mobileDataErasure: '/services?search=mobile+device+erasure',
-  networkDataErasure: '/services?search=network+server+erasure',
-  cloudDataErasure: '/services?search=cloud+data+erasure',
-  
-  // Compliance-specific pages
-  nistCompliance: '/compliance?standard=nist',
-  gdprCompliance: '/compliance?standard=gdpr',
-  hipaaCompliance: '/compliance?standard=hipaa',
-  iso27001Compliance: '/compliance?standard=iso27001',
-  
-  // Solution-specific pages
-  enterpriseSolution: '/solutions?industry=enterprise',
-  healthcareSolution: '/solutions?industry=healthcare',
-  financialSolution: '/solutions?industry=financial',
-  governmentSolution: '/solutions?industry=government',
-};
-
 export default {
   generateSitemapXML,
   generateRobotsTxt,
   updateSitemapTimestamp,
-  siteRoutes,
-  seoUrls
+  siteRoutes
 };

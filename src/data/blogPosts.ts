@@ -91,37 +91,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: "March 11, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "erasure-vs-destruction",
-    slug: "erasure-vs-destruction",
-    title: "Erasure vs Physical Destruction ROI",
-    excerpt: "A comparative analysis of value retention. How secure erasure allows for asset remarketing and ESG compliance, compared to the total loss of physical destruction.",
-    image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=1600&h=900&fit=crop",
-    link: "/blog/erasure-vs-destruction",
-    tag: "Strategic Compliance",
-    category: "Strategic Compliance",
-    keywords: "physical destruction vs data erasure, IT asset disposition, ESG compliance",
-    publishDate: "January 08, 2026",
-    author: "Nitesh Kushwaha"
-  },
-  {
-    id: "data-deletion-myths",
-    slug: "data-deletion-myths",
-    title: "Debunking 5 Critical Data Deletion Myths",
-    excerpt: "Formatting is not erasure. We expose common misconceptions that leave organizations vulnerable to data breaches and regulatory fines.",
-    content: `
-      <p>One of the most persistent and dangerous myths in the world of IT security is the idea that formatting a hard drive is equivalent to erasing its data. In reality, a standard format operation only recreates the file system's structure and clears the index of file locations. The actual data blocks remain perfectly intact on the physical platters or flash cells. Any individual with basic data recovery software can easily retrieve sensitive information from a formatted drive in minutes. True data sanitization requires the complete overwriting of all addressable storage areas or the destruction of the underlying media.</p>
-      <p>Another common misconception is that "degaussing" is a universal solution for all types of storage media. Degaussing works by applying a powerful magnetic field to a drive, effectively scrambling the data and the drive's internal servo tracks. While this is highly effective for magnetic media like traditional HDDs and backup tapes, it has absolutely no effect on Solid State Drives (SSDs). Since SSDs store data electronically in flash memory cells, they are completely immune to magnetic fields. Organizations that rely on degaussers to retire their flash-based devices are inadvertently leaving themselves wide open to massive data leaks.</p>
-      <p>Finally, many people believe that physically damaging a drive—such as drilling holes in it or smashing it with a hammer—is enough to ensure data security. While this might stop a casual user, specialized forensic labs can often reconstruct data from the remaining fragments of a disk's platters or by harvesting the NAND chips from an SSD's circuit board. For complete peace of mind, physical destruction must be combined with professional software-based erasure before disposal, or the media must be reduced to a fine powder using an industrial shredder. By debunking these myths, organizations can adopt more effective and compliant data lifecycle management strategies.</p>
-    `,
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&h=900&fit=crop",
-    link: "/blog/data-deletion-myths",
-    tag: "Security Awareness",
-    category: "Security Awareness",
-    keywords: "data deletion myths, formatting vs erasure, degaussing ssd",
-    publishDate: "March 28, 2026",
-    author: "Prashant Saini"
-  },
+  
+  
   {
     id: "data-sanitization-compliance",
     slug: "data-sanitization-compliance",
@@ -249,32 +220,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: "January 01, 2026",
     author: "Nitesh Kushwaha"
   },
-  {
-    id: "data-hoarding-risks",
-    slug: "data-hoarding-risks",
-    title: "The Security Risks of Data Hoarding",
-    excerpt: "Storing everything 'just in case' is a liability. Learn how redundant data increases your attack surface.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&h=900&fit=crop",
-    link: "/blog/data-hoarding-risks",
-    tag: "Risk Mgmt",
-    category: "Risk Management",
-    keywords: "ROT data, defensible deletion, data hoarding risks",
-    publishDate: "January 13, 2026",
-    author: "Prashant Saini"
-  },
-  {
-    id: "shadow-data-risks",
-    slug: "shadow-data-risks",
-    title: "Shadow Data: Uncover & Erase Hidden Risks",
-    excerpt: "It lurks in downloads folders and forgotten S3 buckets. How to find and erase the data you don't know you have.",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1600&h=900&fit=crop",
-    link: "/blog/shadow-data-risks",
-    tag: "Dark Data",
-    category: "Risk Management",
-    keywords: "shadow IT, dark data discovery, file erasure",
-    publishDate: "March 02, 2026",
-    author: "Nitesh Kushwaha"
-  },
+  
+  
   {
     id: "esg-data-erasure",
     slug: "esg-data-erasure",
@@ -392,19 +339,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "February 15, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "brand-reputation-esg",
-    slug: "brand-reputation-esg",
-    title: "ESG Scores & Brand Reputation",
-    excerpt: "The business case for sustainable disposal. How to market your green initiatives to investors and customers.",
-    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1600&h=900&fit=crop",
-    link: "/blog/brand-reputation-esg",
-    tag: "Brand",
-    category: "Business Strategy",
-    keywords: "ESG reporting, brand reputation management",
-    publishDate: "February 02, 2026",
-    author: "Nitesh Kushwaha"
-  },
+  
   {
     id: "msp-data-erasure",
     slug: "msp-data-erasure",
@@ -418,58 +353,10 @@ export const blogPosts: BlogPost[] = [
     publishDate: "February 24, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "cryptographic-erase-nist",
-    slug: "cryptographic-erase-nist",
-    title: "Cryptographic Erase: ",
-    excerpt: "Expert insights on cryptographic erase: nist 800-88. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/cryptographic-erase-nist",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "cryptographic, erase:, nist, 800-88, Technical Guide, Technical, ",
-    publishDate: "January 25, 2026",
-    author: "Nitesh Kushwaha"
-  },
-  {
-    id: "secure-phi-ephi-erasure",
-    slug: "secure-phi-ephi-erasure",
-    title: "Secure PHI & ePHI Erasure: Protecting Patient Privacy",
-    excerpt: "A detailed guide on how healthcare organizations can securely dispose of PHI and ePHI in compliance with global regulations.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/secure-phi-ephi-erasure",
-    tag: "Compliance",
-    category: "Healthcare",
-    keywords: "PHI, ePHI, healthcare data protection, HIPAA",
-    publishDate: "April 30, 2026",
-    author: "Prashant Saini"
-  },
-  {
-    id: "statutory-regulatory-compliance-data-erasure",
-    slug: "statutory-regulatory-compliance-data-erasure",
-    title: "Regulatory Compliance Data Erasure",
-    excerpt: "Navigate the complexities of regulatory compliance data erasure. Learn how to align your data destruction policies with global standards like  and .",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/statutory-regulatory-compliance-data-erasure",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "regulatory, compliance, data, erasure, Technical Guide, Technical, ",
-    publishDate: "January 14, 2026",
-    author: "Nitesh Kushwaha"
-  },
-  {
-    id: "legal-ethical-data-erasure",
-    slug: "legal-ethical-data-erasure",
-    title: "Legal & Ethical Data Erasure",
-    excerpt: "Deep dive into legal & ethical data erasure. Learn why professional technical guide is essential for modern enterprise security and risk mitigation.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/legal-ethical-data-erasure",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "legal, ethical, data, erasure, Technical Guide, Technical, ",
-    publishDate: "January 30, 2026",
-    author: "Prashant Saini"
-  },
+  
+  
+  
+  
   {
     id: "hardware-diagnostics-itad-compliance",
     slug: "hardware-diagnostics-itad-compliance",
@@ -495,18 +382,6 @@ export const blogPosts: BlogPost[] = [
     keywords: "future, data, destruction:, trends, Technical Guide, Technical, ",
     publishDate: "February 21, 2026",
     author: "Nitesh Kushwaha"
-  },{
-    id: "dod-vs-ieee-data-sanitization",
-    slug: "dod-vs-ieee-data-sanitization",
-    title: "DoD vs IEEE Data Sanitization",
-    excerpt: "Deep dive into dod vs ieee data sanitization. Learn why professional technical guide is essential for modern enterprise security and risk mitigation.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/dod-vs-ieee-data-sanitization",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "ieee, data, sanitization, Technical Guide, Technical, ",
-    publishDate: "January 24, 2026",
-    author: "Prashant Saini"
   },
   {
     id: "remote-work-data-erasure-best-practices",
@@ -521,58 +396,10 @@ export const blogPosts: BlogPost[] = [
     publishDate: "March 22, 2026",
     author: "Nitesh Kushwaha"
   },
-  {
-    id: "ncua-third-party-data-disposal",
-    slug: "ncua-third-party-data-disposal",
-    title: "NCUA Third-Party Data Disposal",
-    excerpt: "Expert insights on ncua third-party data disposal. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/ncua-third-party-data-disposal",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "ncua, third-party, data, disposal, Technical Guide, Technical, ",
-    publishDate: "February 10, 2026",
-    author: "Prashant Saini"
-  },
-  {
-    id: "msp-erasure-as-a-service",
-    slug: "msp-erasure-as-a-service",
-    title: "MSP Erasure as a Service",
-    excerpt: "Expert insights on msp erasure as a service. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/msp-erasure-as-a-service",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "erasure, service, Technical Guide, Technical, ",
-    publishDate: "January 25, 2026",
-    author: "Nitesh Kushwaha"
-  },
-  {
-    id: "dell-data-wipe-vs-dsecure",
-    slug: "dell-data-wipe-vs-dsecure",
-    title: "Dell Data Wipe vs Professional Data Erasure",
-    excerpt: "Deep dive into dell data wipe vs professional data erasure. Learn why professional technical guide is essential for modern enterprise security and risk mitigation.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/dell-data-wipe-vs-dsecure",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "dell, data, wipe, professional, Technical Guide, Technical, ",
-    publishDate: "January 28, 2026",
-    author: "Prashant Saini"
-  },
-  {
-    id: "common-criteria-certified-data-wiping",
-    slug: "common-criteria-certified-data-wiping",
-    title: "Common Criteria Verified Data Wiping",
-    excerpt: "Expert insights on common criteria verified data wiping. Discover the technical requirements for technical and how to maintain a verifiable audit trail.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/common-criteria-certified-data-wiping",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "common, criteria, verified, data, Technical Guide, Technical, ",
-    publishDate: "April 11, 2026",
-    author: "Nitesh Kushwaha"
-  },
+  
+  
+  
+  
   {
     id: "erasure-as-a-service-dsecure",
     slug: "erasure-as-a-service-dsecure",
@@ -612,32 +439,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: "March 27, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "mac-m1-erasure-known-issues",
-    slug: "mac-m1-erasure-known-issues",
-    title: "Mac M1 Erasure Known Issues",
-    excerpt: "A comprehensive guide to mac m1 erasure known issues. Understanding the impact of secure data management on your organization's compliance posture.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/mac-m1-erasure-known-issues",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "erasure, known, issues, Technical Guide, Technical, ",
-    publishDate: "February 17, 2026",
-    author: "Nitesh Kushwaha"
-  },
-  {
-    id: "wipe-ssd-from-bios-guide",
-    slug: "wipe-ssd-from-bios-guide",
-    title: "Wipe SSD from BIOS Guide",
-    excerpt: "Understanding wipe ssd from bios guide requires a deep dive into flash sanitization. Discover why traditional wiping fails on modern solid state drives.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop",
-    link: "/blog/wipe-ssd-from-bios-guide",
-    tag: "Technical",
-    category: "Technical Guide",
-    keywords: "wipe, from, bios, guide, Technical Guide, Technical, ",
-    publishDate: "February 19, 2026",
-    author: "Prashant Saini"
-  },
+  
+  
   {
     id: "data-erasure-for-non-profits",
     slug: "data-erasure-for-non-profits",
@@ -835,18 +638,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "February 04, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "data-destruction-best-practices",
-    slug: "data-destruction-best-practices",
-    title: "Data Destruction Best Practices",
-    excerpt: "Comprehensive guide to data destruction best practices for enterprises.",
-    link: "/blog/data-destruction-best-practices",
-    tag: "Best Practices",
-    category: "Enterprise",
-    keywords: "data destruction, best practices, compliance",
-    publishDate: "February 12, 2026",
-    author: "Nitesh Kushwaha"
-  },
+  
   {
     id: "data-disposal-guidelines",
     slug: "data-disposal-guidelines",
@@ -955,30 +747,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: "April 16, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "deleted-files-truth",
-    slug: "deleted-files-truth",
-    title: "The Truth About Deleted Files",
-    excerpt: "What really happens when you delete files and why they can be recovered.",
-    link: "/blog/deleted-files-truth",
-    tag: "Education",
-    category: "Security Awareness",
-    keywords: "file deletion, data recovery, forensics",
-    publishDate: "May 05, 2026",
-    author: "Nitesh Kushwaha"
-  },
-  {
-    id: "deletion-vs-erasure",
-    slug: "deletion-vs-erasure",
-    title: "Deletion vs Secure Erasure",
-    excerpt: "Understanding the critical difference between file deletion and secure data erasure.",
-    link: "/blog/deletion-vs-erasure",
-    tag: "Education",
-    category: "Comparison",
-    keywords: "deletion, erasure, data security",
-    publishDate: "January 22, 2026",
-    author: "Prashant Saini"
-  },
+  
+  
   {
     id: "dell-data-wipe-alternative",
     slug: "dell-data-wipe-alternative",
@@ -1063,18 +833,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "January 17, 2026",
     author: "Nitesh Kushwaha"
   },
-  {
-    id: "esg-report",
-    slug: "esg-report",
-    title: "ESG Reporting and Data Erasure",
-    excerpt: "How data erasure contributes to ESG goals and reporting requirements.",
-    link: "/blog/esg-report",
-    tag: "ESG",
-    category: "Sustainability",
-    keywords: "ESG, reporting, sustainability metrics",
-    publishDate: "April 01, 2026",
-    author: "Prashant Saini"
-  },
+  
   {
     id: "eu-csrd",
     slug: "eu-csrd",
@@ -1135,18 +894,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "April 25, 2026",
     author: "Nitesh Kushwaha"
   },
-  {
-    id: "future-data-destruction",
-    slug: "future-data-destruction",
-    title: "Future of Data Destruction",
-    excerpt: "Emerging trends and technologies shaping the future of data destruction.",
-    link: "/blog/future-data-destruction",
-    tag: "Trends",
-    category: "Industry",
-    keywords: "future trends, innovation, data destruction",
-    publishDate: "February 21, 2026",
-    author: "Prashant Saini"
-  },
+  
   {
     id: "-seven-years",
     slug: "-seven-years",
@@ -1159,18 +907,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "April 18, 2026",
     author: "Nitesh Kushwaha"
   },
-  {
-    id: "government-device-theft-case-study",
-    slug: "government-device-theft-case-study",
-    title: "Government Device Theft Case Study",
-    excerpt: "Analysis of government device theft incidents and data security implications.",
-    link: "/blog/government-device-theft-case-study",
-    tag: "Case Study",
-    category: "Government",
-    keywords: "government, device theft, data breach",
-    publishDate: "January 09, 2026",
-    author: "Prashant Saini"
-  },
+  
   {
     id: "government-it-disposal",
     slug: "government-it-disposal",
@@ -1399,18 +1136,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "January 10, 2026",
     author: "Nitesh Kushwaha"
   },
-  {
-    id: "msp-erasure-service",
-    slug: "msp-erasure-service",
-    title: "MSP Erasure Service Offerings",
-    excerpt: "How MSPs can build data erasure service offerings for their clients.",
-    link: "/blog/msp-erasure-service",
-    tag: "MSP",
-    category: "Business",
-    keywords: "MSP, service offering, data erasure",
-    publishDate: "February 26, 2026",
-    author: "Prashant Saini"
-  },
+  
   {
     id: "marriott-settlement",
     slug: "marriott-settlement",
@@ -1471,18 +1197,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "February 28, 2026",
     author: "Nitesh Kushwaha"
   },
-  {
-    id: "morgan-stanley-fine",
-    slug: "morgan-stanley-fine",
-    title: "Morgan Stanley Fine Analysis",
-    excerpt: "Understanding the Morgan Stanley fine and its implications for data disposal.",
-    link: "/blog/morgan-stanley-fine",
-    tag: "Case Study",
-    category: "Financial",
-    keywords: "Morgan Stanley, fine, regulatory penalty",
-    publishDate: "April 08, 2026",
-    author: "Prashant Saini"
-  },
+  
   {
     id: "ncua-guidelines",
     slug: "ncua-guidelines",
@@ -1795,23 +1510,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "April 04, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "caption-call-settlement",
-    slug: "caption-call-settlement",
-    title: "CaptionCall Settlement Analysis",
-    excerpt: "Lessons from the CaptionCall settlement for data privacy compliance.",
-    content: `
-      <p>The FCC's $34.6 million settlement with CaptionCall represents a watershed moment for data privacy enforcement in the telecommunications industry. This landmark case centered on the unlawful retention of customer call data for a period of three years, in direct violation of Section 225 of the Communications Act and TRS Rules. The investigation revealed that CaptionCall not only retained sensitive information far longer than necessary but also submitted inaccurate reimbursement claims to the TRS Fund administrator.</p>
-      <p>As part of the settlement, CaptionCall is required to pay a $5 million civil penalty and invest an additional $4 million into a comprehensive TRS Privacy and Data Protection Program. This program mandates the appointment of a Data Privacy Officer and the implementation of a strict data retention schedule. Crucially, the settlement requires the safe removal and disposal of user data through verified sanitization or destruction of data-bearing electronic media, highlighting the technical requirements of modern privacy compliance.</p>
-      <p>For businesses across all sectors, the CaptionCall case highlights the "price of data retention." Keeping data beyond its useful lifecycle is no longer just a storage concern; it is a significant legal and financial liability. Organizations must implement automated data erasure policies and utilize certified sanitization tools to ensure that when the retention period ends, the data is permanently and irrecoverably destroyed. This proactive approach is the only way to avoid similar enforcement actions and demonstrate true commitment to consumer privacy.</p>
-    `,
-    link: "/blog/caption-call-settlement",
-    tag: "Case Study",
-    category: "Compliance",
-    keywords: "CaptionCall, settlement, privacy compliance",
-    publishDate: "February 02, 2026",
-    author: "Nitesh Kushwaha"
-  },
+  
   {
     id: "caption-call-fcc-settlement",
     slug: "caption-call-fcc-settlement",
@@ -1862,38 +1561,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: "March 15, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "secure-phi-ephi-erasure",
-    slug: "secure-phi-ephi-erasure",
-    title: "Protecting Healthcare Data: The Importance of Secure PHI and ePHI Erasure",
-    excerpt: "Understand the critical requirements for sanitizing Protected Health Information (PHI) to maintain HIPAA compliance.",
-    content: `
-      <p>Healthcare providers handle some of the most sensitive personal data in existence. Protected Health Information (PHI) and electronic Protected Health Information (ePHI) are governed by strict HIPAA regulations that mandate secure disposal of data-bearing media. Failure to properly sanitize medical devices, laptops, and servers can lead to devastating data breaches and multi-million dollar fines.</p>
-      <p>To maintain compliance, healthcare organizations must move beyond simple deletion or physical destruction. Certified data erasure provides a secure, verifiable way to sanitize media while allowing for the safe resale or recycling of hardware. By generating a tamper-proof certificate of erasure for every device, providers can demonstrate a clear chain of custody and prove that sensitive patient data has been permanently removed, protecting both their patients and their reputation.</p>
-    `,
-    link: "/blog/secure-phi-ephi-erasure",
-    tag: "Healthcare",
-    category: "Compliance",
-    keywords: "PHI, ePHI, HIPAA, healthcare security, data erasure",
-    publishDate: "March 28, 2026",
-    author: "Nitesh Kushwaha"
-  },
-  {
-    id: "gov-device-theft",
-    slug: "gov-device-theft",
-    title: "The Hidden Risks of Government Device Theft",
-    excerpt: "Analysis of how stolen government laptops and storage devices lead to national security vulnerabilities.",
-    content: `
-      <p>The theft of government-issued IT devices represents a critical threat to national security. Unlike corporate assets, government laptops often contain classified information, strategic plans, and sensitive citizen data. When these devices are stolen, the primary concern is not just the loss of hardware, but the potential exposure of the data they carry.</p>
-      <p>This incident highlights the urgent need for a "Zero Trust" approach to mobile hardware. Encryption is a vital first line of defense, but it is not infallible. Organizations must implement remote wiping capabilities and strict inventory controls to ensure that data can be destroyed the moment a device is reported missing. Furthermore, a verifiable sanitization process must be in place for all assets reaching end-of-life to prevent data remanence from becoming a future vulnerability.</p>
-    `,
-    link: "/blog/gov-device-theft",
-    tag: "Security",
-    category: "Government",
-    keywords: "government, device theft, data security, national security",
-    publishDate: "April 05, 2026",
-    author: "Prashant Saini"
-  },
+  
+  
   {
     id: "physical-destruction-vs-data-wiping",
     slug: "physical-destruction-vs-data-wiping",
@@ -1926,22 +1595,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "April 15, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "government-device-theft-case-study",
-    slug: "government-device-theft-case-study",
-    title: "Government Device Theft Case Study",
-    excerpt: "A deep dive into a real-world incident involving government asset theft and the lessons learned.",
-    content: `
-      <p>A recent high-profile case involving the theft of hundreds of government laptops from a secure facility has sent shockwaves through the ITAD industry. The breach, which occurred over several months, exposed significant flaws in the chain of custody and the verification of device destruction. The perpetrator was able to bypass traditional security checks and sell the stolen assets on the open market.</p>
-      <p>This case study serves as a critical warning for organizations handling sensitive hardware. It underscores the importance of real-time inventory tracking and the need for immediate, onsite data sanitization. Relying solely on offsite destruction leaves a window of vulnerability during transit. By adopting a policy of "erase before you transport," organizations can eliminate the risk of data exposure even if the physical hardware is compromised.</p>
-    `,
-    link: "/blog/government-device-theft-case-study",
-    tag: "Case Study",
-    category: "Government",
-    keywords: "case study, government theft, data breach, ITAD security",
-    publishDate: "April 20, 2026",
-    author: "Nitesh Kushwaha"
-  },
+  
   {
     id: "carbon-footprint-erasure",
     slug: "carbon-footprint-erasure",
@@ -1974,22 +1628,7 @@ export const blogPosts: BlogPost[] = [
     publishDate: "March 25, 2026",
     author: "Prashant Saini"
   },
-  {
-    id: "brand-reputation-esg",
-    slug: "brand-reputation-esg",
-    title: "Brand Reputation and ESG: The Role of Data Disposal",
-    excerpt: "How sustainable data disposal practices strengthen brand reputation and align with ESG expectations.",
-    content: `
-      <p>In today's hyper-connected world, brand reputation is more fragile than ever. A single data breach from an improperly disposed laptop can erase decades of customer trust. Beyond risk mitigation, modern organizations are now expected to align their operations with ESG (Environmental, Social, and Governance) principles. Data disposal is a critical, yet often overlooked, component of this strategy.</p>
-      <p>By adopting software-based sanitization over physical destruction, companies can support a circular economy by enabling the safe reuse of hardware. This directly contributes to the "E" in ESG by reducing electronic waste and Scope 3 emissions. Furthermore, the "G" is satisfied through rigorous, automated audit trails that prove compliance with global privacy laws. Ultimately, choosing responsible data disposal is an investment in your brand's longevity and integrity.</p>
-    `,
-    link: "/blog/brand-reputation-esg",
-    tag: "Business",
-    category: "ESG",
-    keywords: "brand reputation, ESG, sustainability, data disposal",
-    publishDate: "July 15, 2025",
-    author: "Nitesh Kushwaha"
-  },
+  
   {
     id: "chain-of-custody",
     slug: "chain-of-custody",

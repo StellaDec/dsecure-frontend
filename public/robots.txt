@@ -28,6 +28,11 @@ Disallow: /*.tsx
 Disallow: /_redirects
 Disallow: /vercel.json
 Disallow: /debug.html
+
+# Block parameter URLs to prevent crawl waste
+Disallow: /*?standard=
+Disallow: /*?industry=
+Disallow: /*?search=
 # Block API routes (but allow documentation)
 Allow: /api-documentation
 Disallow: /api/
@@ -69,7 +74,7 @@ Disallow: /
 User-agent: Bytespider
 Disallow: /
 
-# Last updated: 2026-07-02
+# Last updated: 2026-07-09
 
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 

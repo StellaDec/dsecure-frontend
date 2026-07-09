@@ -72,6 +72,146 @@
       "source": "/healthcare-services",
       "destination": "/solutions/healthcare",
       "permanent": true
+    },
+    {
+      "source": "/blog/mac-m1-erasure-known-issues",
+      "destination": "/blog/m1-mac-erasure-issues",
+      "permanent": true
+    },
+    {
+      "source": "/blog/msp-erasure-as-a-service",
+      "destination": "/blog/msp-data-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/msp-erasure-service",
+      "destination": "/blog/msp-data-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/data-deletion-myths",
+      "destination": "/blog/data-erasure-myths",
+      "permanent": true
+    },
+    {
+      "source": "/blog/deleted-files-truth",
+      "destination": "/blog/data-erasure-myths",
+      "permanent": true
+    },
+    {
+      "source": "/blog/deletion-vs-erasure",
+      "destination": "/blog/data-erasure-myths",
+      "permanent": true
+    },
+    {
+      "source": "/blog/future-data-destruction",
+      "destination": "/blog/future-of-data-destruction",
+      "permanent": true
+    },
+    {
+      "source": "/blog/shadow-data-risks",
+      "destination": "/blog/shadow-data",
+      "permanent": true
+    },
+    {
+      "source": "/blog/data-hoarding-risks",
+      "destination": "/blog/data-hoarding",
+      "permanent": true
+    },
+    {
+      "source": "/blog/legal-ethical-data-erasure",
+      "destination": "/blog/legal-ethical-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cryptographic-erase-nist",
+      "destination": "/blog/cryptographic-erase",
+      "permanent": true
+    },
+    {
+      "source": "/blog/secure-phi-erasure",
+      "destination": "/blog/phi-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/secure-phi-ephi-erasure",
+      "destination": "/blog/phi-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/morgan-stanley-fine",
+      "destination": "/blog/morgan-stanley-data-breach",
+      "permanent": true
+    },
+    {
+      "source": "/blog/caption-call-settlement",
+      "destination": "/blog/caption-call-fcc-settlement",
+      "permanent": true
+    },
+    {
+      "source": "/blog/common-criteria-certified-data-wiping",
+      "destination": "/blog/common-criteria",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dell-data-wipe-vs-dsecure",
+      "destination": "/blog/dell-data-wipe-alternative",
+      "permanent": true
+    },
+    {
+      "source": "/blog/esg-report",
+      "destination": "/blog/esg-data-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/brand-reputation-esg",
+      "destination": "/blog/esg-data-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/statutory-regulatory-compliance-data-erasure",
+      "destination": "/blog/statutory-compliance",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ncua-third-party-data-disposal",
+      "destination": "/blog/ncua-guidelines",
+      "permanent": true
+    },
+    {
+      "source": "/blog/data-destruction-best-practices",
+      "destination": "/blog/erasure-best-practices",
+      "permanent": true
+    },
+    {
+      "source": "/blog/government-device-theft-case-study",
+      "destination": "/blog/government-device-theft",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gov-device-theft",
+      "destination": "/blog/government-device-theft",
+      "permanent": true
+    },
+    {
+      "source": "/blog/erasure-vs-destruction",
+      "destination": "/blog/physical-destruction-vs-data-wiping",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dod-vs-ieee-data-sanitization",
+      "destination": "/blog/dod-vs-ieee",
+      "permanent": true
+    },
+    {
+      "source": "/blog/wipe-ssd-from-bios-guide",
+      "destination": "/blog/ssd-wipe-bios",
+      "permanent": true
+    },
+    {
+      "source": "/support/manual/installation-guide",
+      "destination": "/support/manual/installation",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -95,6 +235,51 @@
         {
           "key": "Link",
           "value": "</.well-known/api-catalog>; rel=\"api-catalog\""
+        }
+      ]
+    },
+    {
+      "source": "/services",
+      "has": [
+        {
+          "type": "query",
+          "key": "search"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/compliance",
+      "has": [
+        {
+          "type": "query",
+          "key": "standard"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/solutions",
+      "has": [
+        {
+          "type": "query",
+          "key": "industry"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
         }
       ]
     },

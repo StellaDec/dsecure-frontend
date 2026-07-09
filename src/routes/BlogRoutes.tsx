@@ -6,8 +6,6 @@ import MainLayout from "../layouts/MainLayout";
 const BlogPage = lazy(() => import("../components/blog/BlogPage"));
 const OverwriteGuideBlog = lazy(() => import("../components/blog/OverwriteGuideBlog"));
 const SSDWipeGuideBlog = lazy(() => import("../components/blog/SSDWipeGuideBlog"));
-const ErasureVsDestructionBlog = lazy(() => import("../components/blog/ErasureVsDestructionBlog"));
-const DataDeletionMythsBlog = lazy(() => import("../components/blog/DataDeletionMythsBlog"));
 const DataSanitizationComplianceBlog = lazy(() => import("../components/blog/DataSanitizationComplianceBlog"));
 const BestErasureMethodBlog = lazy(() => import("../components/blog/BestErasureMethodBlog"));
 const ErasureBestPracticesBlog = lazy(() => import("../components/blog/ErasureBestPracticesBlog"));
@@ -17,8 +15,6 @@ const ZeroTrustDisposalBlog = lazy(() => import("../components/blog/ZeroTrustDis
 const MSPSecurityBlog = lazy(() => import("../components/blog/MSPSecurityBlog"));
 const SECComplianceBlog = lazy(() => import("../components/blog/SECComplianceBlog"));
 const ITAMDisposalGuideBlog = lazy(() => import("../components/blog/ITAMDisposalGuideBlog"));
-const DataHoardingRisksBlog = lazy(() => import("../components/blog/DataHoardingRisksBlog"));
-const ShadowDataRisksBlog = lazy(() => import("../components/blog/ShadowDataRisksBlog"));
 const ESGDataErasureBlog = lazy(() => import("../components/blog/ESGDataErasureBlog"));
 const SustainableITReuseBlog = lazy(() => import("../components/blog/SustainableITReuseBlog"));
 const CarbonFootprintErasureBlog = lazy(() => import("../components/blog/CarbonFootprintErasureBlog"));
@@ -28,26 +24,14 @@ const HardwareDiagnosticsBlog = lazy(() => import("../components/blog/HardwareDi
 const DataMinimizationBlog = lazy(() => import("../components/blog/DataMinimizationBlog"));
 const GovDeviceTheftBlog = lazy(() => import("../components/blog/GovDeviceTheftBlog"));
 const ITADSelectionGuideBlog = lazy(() => import("../components/blog/ITADSelectionGuideBlog"));
-const BrandReputationESGBlog = lazy(() => import("../components/blog/BrandReputationESGBlog"));
 const MSPDataErasureBlog = lazy(() => import("../components/blog/MSPDataErasureBlog"));
-const CryptographicEraseNISTBlog = lazy(() => import("../components/blog/CryptographicEraseNISTBlog"));
-const SecurePHIePHIErasureBlog = lazy(() => import("../components/blog/SecurePHIePHIErasureBlog"));
-const StatutoryRegulatoryComplianceDataErasureBlog = lazy(() => import("../components/blog/StatutoryRegulatoryComplianceDataErasureBlog"));
-const LegalEthicalDataErasureBlog = lazy(() => import("../components/blog/LegalEthicalDataErasureBlog"));
 const CaptionCallFCCSettlementBlog = lazy(() => import("../components/blog/CaptionCallFCCSettlementBlog"));
 const HardwareDiagnosticsITADComplianceBlog = lazy(() => import("../components/blog/HardwareDiagnosticsITADComplianceBlog"));
 const FutureOfDataDestructionBlog = lazy(() => import("../components/blog/FutureOfDataDestructionBlog"));
-const DoDVsIEEEDataSanitizationBlog = lazy(() => import("../components/blog/DoDVsIEEEDataSanitizationBlog"));
 const RemoteWorkDataErasureBestPracticesBlog = lazy(() => import("../components/blog/RemoteWorkDataErasureBestPracticesBlog"));
-const NCUAThirdPartyDataDisposalBlog = lazy(() => import("../components/blog/NCUAThirdPartyDataDisposalBlog"));
-const MSPErasureAsAServiceBlog = lazy(() => import("../components/blog/MSPErasureAsAServiceBlog"));
-const DellDataWipeVsDSecureBlog = lazy(() => import("../components/blog/DellDataWipeVsDSecureBlog"));
-const CommonCriteriaComplianceVerifiedDataWipingBlog = lazy(() => import("../components/blog/CommonCriteriaComplianceVerifiedDataWipingBlog"));
 const ErasureAsAServiceDSecureBlog = lazy(() => import("../components/blog/ErasureAsAServiceDSecureBlog"));
 const ReturningLeasedITHardwareDosAndDontsBlog = lazy(() => import("../components/blog/ReturningLeasedITHardwareDosAndDonts"));
 const HealthcareRansomwareLessonsBlog = lazy(() => import("../components/blog/HealthcareRansomwareLessonsBlog"));
-const MacM1ErasureKnownIssuesBlog = lazy(() => import("../components/blog/MacM1ErasureKnownIssues"));
-const WipeSSDFromBIOSGuideBlog = lazy(() => import("../components/blog/WipeSSDFromBIOSGuide"));
 const DataErasureForNonProfitsBlog = lazy(() => import("../components/blog/DataErasureForNonProfits"));
 const EraseMacDataSafelyUsingDSecureBlog = lazy(() => import("../components/blog/EraseMacDataSafelyUsingDSecureBlog"));
 const EraseDataPcLaptopDesktopBlog = lazy(() => import("../components/blog/EraseDataPcLaptopDesktopBlog"));
@@ -66,7 +50,6 @@ const CryptographicEraseBlog = lazy(() => import("../components/blog/Cryptograph
 const CybersecurityDataDestructionBlog = lazy(() => import("../components/blog/CybersecurityDataDestructionBlog"));
 const DSecureOperationsBlog = lazy(() => import("../components/blog/DSecureOperationsBlog"));
 const DarkDataRisksBlog = lazy(() => import("../components/blog/DarkDataRisksBlog"));
-const DataDestructionBestPracticesBlog = lazy(() => import("../components/blog/DataDestructionBestPracticesBlog"));
 const DataDisposalGuidelinesBlog = lazy(() => import("../components/blog/DataDisposalGuidelinesBlog"));
 const DataErasureDisasterRecoveryBlog = lazy(() => import("../components/blog/DataErasureDisasterRecoveryBlog"));
 const DataErasureMythsBlog = lazy(() => import("../components/blog/DataErasureMythsBlog"));
@@ -76,8 +59,6 @@ const DataRemanenceBlog = lazy(() => import("../components/blog/DataRemanenceBlo
 const DataRemediationErasureBlog = lazy(() => import("../components/blog/DataRemediationErasureBlog"));
 const DataRetentionPrivacyBlog = lazy(() => import("../components/blog/DataRetentionPrivacyBlog"));
 const DegaussingRisksBlog = lazy(() => import("../components/blog/DegaussingRisksBlog"));
-const DeletedFilesTruthBlog = lazy(() => import("../components/blog/DeletedFilesTruthBlog"));
-const DeletionVsErasureBlog = lazy(() => import("../components/blog/DeletionVsErasureBlog"));
 const DellDataWipeAlternativeBlog = lazy(() => import("../components/blog/DellDataWipeAlternativeBlog"));
 const DeploymentOptionsBlog = lazy(() => import("../components/blog/DeploymentOptionsBlog"));
 const DiagnosticsErasureITADBlog = lazy(() => import("../components/blog/DiagnosticsErasureITADBlog"));
@@ -85,15 +66,12 @@ const DigitalDivideBlog = lazy(() => import("../components/blog/DigitalDivideBlo
 const DoDVsIEEEBlog = lazy(() => import("../components/blog/DoDVsIEEEBlog"));
 const DoDWipingStandardBlog = lazy(() => import("../components/blog/DoDWipingStandardBlog"));
 const DumpsterDivingDataBreachBlog = lazy(() => import("../components/blog/DumpsterDivingDataBreachBlog"));
-const ESGReportBlog = lazy(() => import("../components/blog/ESGReportBlog"));
 const EUCSRDBlog = lazy(() => import("../components/blog/EUCSRDBlog"));
 const EducationDataDestructionBlog = lazy(() => import("../components/blog/EducationDataDestructionBlog"));
 const EndOfLifeDataSecurityBlog = lazy(() => import("../components/blog/EndOfLifeDataSecurityBlog"));
 const FinancialDataBreachCaseStudyBlog = lazy(() => import("../components/blog/FinancialDataBreachCaseStudyBlog"));
 const FreeVsProEraserBlog = lazy(() => import("../components/blog/FreeVsProEraserBlog"));
-const FutureDataDestructionBlog = lazy(() => import("../components/blog/FutureDataDestructionBlog"));
 const GDPRSevenYearsBlog = lazy(() => import("../components/blog/GDPRSevenYearsBlog"));
-const GovernmentDeviceTheftBlog = lazy(() => import("../components/blog/GovernmentDeviceTheftBlog"));
 const GovernmentITDisposalBlog = lazy(() => import("../components/blog/GovernmentITDisposalBlog"));
 const GreenITPracticesBlog = lazy(() => import("../components/blog/GreenITPracticesBlog"));
 const HIPAAComplianceErasureBlog = lazy(() => import("../components/blog/HIPAAComplianceErasureBlog"));
@@ -113,13 +91,11 @@ const LegalEthicalErasureBlog = lazy(() => import("../components/blog/LegalEthic
 const LooseDrivesErasureGuideBlog = lazy(() => import("../components/blog/LooseDrivesErasureGuideBlog"));
 const M1MacErasureIssuesBlog = lazy(() => import("../components/blog/M1MacErasureIssuesBlog"));
 const MDMDetectionBlog = lazy(() => import("../components/blog/MDMDetectionBlog"));
-const MSPErasureServiceBlog = lazy(() => import("../components/blog/MSPErasureServiceBlog"));
 const MarriottSettlementBlog = lazy(() => import("../components/blog/MarriottSettlementBlog"));
 const MediaSanitizationNeedBlog = lazy(() => import("../components/blog/MediaSanitizationNeedBlog"));
 const MobileDiagnosticsBenefitsBlog = lazy(() => import("../components/blog/MobileDiagnosticsBenefitsBlog"));
 const MobileDiagnosticsRevolutionBlog = lazy(() => import("../components/blog/MobileDiagnosticsRevolutionBlog"));
 const MorganStanleyDataBreachBlog = lazy(() => import("../components/blog/MorganStanleyDataBreachBlog"));
-const MorganStanleyFineBlog = lazy(() => import("../components/blog/MorganStanleyFineBlog"));
 const NCUAGuidelinesBlog = lazy(() => import("../components/blog/NCUAGuidelinesBlog"));
 const NISTClearPurgeBlog = lazy(() => import("../components/blog/NISTClearPurgeBlog"));
 const NISTTestedErasureSoftwareBlog = lazy(() => import("../components/blog/NISTTestedErasureSoftwareBlog"));
@@ -146,15 +122,12 @@ const VMErasureBlog = lazy(() => import("../components/blog/VMErasureBlog"));
 const Windows10EOSBlog = lazy(() => import("../components/blog/Windows10EOSBlog"));
 const WipeComputerDonatingBlog = lazy(() => import("../components/blog/WipeComputerDonatingBlog"));
 const WorldClassNPSBlog = lazy(() => import("../components/blog/WorldClassNPSBlog"));
-const CaptionCallSettlementBlog = lazy(() => import("../components/blog/CaptionCallSettlementBlog"));
 
 export const BlogRoutes = () => (
   <Route element={<MainLayout />}>
     <Route path="blog" element={<BlogPage />} />
     <Route path="blog/overwrite-guide" element={<OverwriteGuideBlog />} />
     <Route path="blog/ssd-wipe-guide" element={<SSDWipeGuideBlog />} />
-    <Route path="blog/erasure-vs-destruction" element={<ErasureVsDestructionBlog />} />
-    <Route path="blog/data-deletion-myths" element={<DataDeletionMythsBlog />} />
     <Route path="blog/data-sanitization-compliance" element={<DataSanitizationComplianceBlog />} />
     <Route path="blog/best-data-erasure-methods" element={<BestErasureMethodBlog />} />
     <Route path="blog/erasure-best-practices" element={<ErasureBestPracticesBlog />} />
@@ -164,8 +137,6 @@ export const BlogRoutes = () => (
     <Route path="blog/msp-data-erasure" element={<MSPSecurityBlog />} />
     <Route path="blog/sec-compliance" element={<SECComplianceBlog />} />
     <Route path="blog/itam-disposal-guide" element={<ITAMDisposalGuideBlog />} />
-    <Route path="blog/data-hoarding-risks" element={<DataHoardingRisksBlog />} />
-    <Route path="blog/shadow-data-risks" element={<ShadowDataRisksBlog />} />
     <Route path="blog/esg-data-erasure" element={<ESGDataErasureBlog />} />
     <Route path="blog/sustainable-it-reuse" element={<SustainableITReuseBlog />} />
     <Route path="blog/reduce-carbon-footprint" element={<CarbonFootprintErasureBlog />} />
@@ -175,26 +146,14 @@ export const BlogRoutes = () => (
     <Route path="blog/data-minimization" element={<DataMinimizationBlog />} />
     <Route path="blog/government-device-theft" element={<GovDeviceTheftBlog />} />
     <Route path="blog/itad-selection-guide" element={<ITADSelectionGuideBlog />} />
-    <Route path="blog/brand-reputation-esg" element={<BrandReputationESGBlog />} />
     <Route path="blog/msp-data-erasure" element={<MSPDataErasureBlog />} />
-    <Route path="blog/cryptographic-erase-nist" element={<CryptographicEraseNISTBlog />} />
-    <Route path="blog/secure-phi-erasure" element={<SecurePHIePHIErasureBlog />} />
-    <Route path="blog/statutory-regulatory-compliance-data-erasure" element={<StatutoryRegulatoryComplianceDataErasureBlog />} />
-    <Route path="blog/legal-ethical-data-erasure" element={<LegalEthicalDataErasureBlog />} />
     <Route path="blog/caption-call-fcc-settlement" element={<CaptionCallFCCSettlementBlog />} />
     <Route path="blog/hardware-diagnostics-itad-compliance" element={<HardwareDiagnosticsITADComplianceBlog />} />
     <Route path="blog/future-of-data-destruction" element={<FutureOfDataDestructionBlog />} />
-    <Route path="blog/dod-vs-ieee-data-sanitization" element={<DoDVsIEEEDataSanitizationBlog />} />
     <Route path="blog/remote-work-data-erasure-best-practices" element={<RemoteWorkDataErasureBestPracticesBlog />} />
-    <Route path="blog/ncua-third-party-data-disposal" element={<NCUAThirdPartyDataDisposalBlog />} />
-    <Route path="blog/msp-erasure-as-a-service" element={<MSPErasureAsAServiceBlog />} />
-    <Route path="blog/dell-data-wipe-vs-dsecure" element={<DellDataWipeVsDSecureBlog />} />
-    <Route path="blog/common-criteria-certified-data-wiping" element={<CommonCriteriaComplianceVerifiedDataWipingBlog />} />
     <Route path="blog/erasure-as-a-service-dsecure" element={<ErasureAsAServiceDSecureBlog />} />
     <Route path="blog/returning-leased-it-hardware-dos-and-donts" element={<ReturningLeasedITHardwareDosAndDontsBlog />} />
     <Route path="blog/healthcare-ransomware-lessons" element={<HealthcareRansomwareLessonsBlog />} />
-    <Route path="blog/mac-m1-erasure-known-issues" element={<MacM1ErasureKnownIssuesBlog />} />
-    <Route path="blog/wipe-ssd-from-bios-guide" element={<WipeSSDFromBIOSGuideBlog />} />
     <Route path="blog/data-erasure-for-non-profits" element={<DataErasureForNonProfitsBlog />} />
     <Route path="blog/erase-mac-data-safely-using-dsecure" element={<EraseMacDataSafelyUsingDSecureBlog />} />
     <Route path="blog/erase-data-pc-laptop-desktop" element={<EraseDataPcLaptopDesktopBlog />} />
@@ -212,7 +171,6 @@ export const BlogRoutes = () => (
     <Route path="blog/cybersecurity-data-destruction" element={<CybersecurityDataDestructionBlog />} />
     <Route path="blog/dsecure-operations" element={<DSecureOperationsBlog />} />
     <Route path="blog/dark-data-risks" element={<DarkDataRisksBlog />} />
-    <Route path="blog/data-destruction-best-practices" element={<DataDestructionBestPracticesBlog />} />
     <Route path="blog/data-disposal-guidelines" element={<DataDisposalGuidelinesBlog />} />
     <Route path="blog/data-erasure-disaster-recovery" element={<DataErasureDisasterRecoveryBlog />} />
     <Route path="blog/data-erasure-myths" element={<DataErasureMythsBlog />} />
@@ -222,8 +180,6 @@ export const BlogRoutes = () => (
     <Route path="blog/data-remediation-erasure" element={<DataRemediationErasureBlog />} />
     <Route path="blog/data-retention-privacy" element={<DataRetentionPrivacyBlog />} />
     <Route path="blog/degaussing-risks" element={<DegaussingRisksBlog />} />
-    <Route path="blog/deleted-files-truth" element={<DeletedFilesTruthBlog />} />
-    <Route path="blog/deletion-vs-erasure" element={<DeletionVsErasureBlog />} />
     <Route path="blog/dell-data-wipe-alternative" element={<DellDataWipeAlternativeBlog />} />
     <Route path="blog/deployment-options" element={<DeploymentOptionsBlog />} />
     <Route path="blog/diagnostics-erasure-itad" element={<DiagnosticsErasureITADBlog />} />
@@ -231,15 +187,12 @@ export const BlogRoutes = () => (
     <Route path="blog/dod-vs-ieee" element={<DoDVsIEEEBlog />} />
     <Route path="blog/dod-wiping-standard" element={<DoDWipingStandardBlog />} />
     <Route path="blog/dumpster-diving-data-breach" element={<DumpsterDivingDataBreachBlog />} />
-    <Route path="blog/esg-report" element={<ESGReportBlog />} />
     <Route path="blog/eu-csrd" element={<EUCSRDBlog />} />
     <Route path="blog/education-data-destruction" element={<EducationDataDestructionBlog />} />
     <Route path="blog/end-of-life-data-security" element={<EndOfLifeDataSecurityBlog />} />
     <Route path="blog/financial-data-breach-case-study" element={<FinancialDataBreachCaseStudyBlog />} />
     <Route path="blog/free-vs-pro-eraser" element={<FreeVsProEraserBlog />} />
-    <Route path="blog/future-data-destruction" element={<FutureDataDestructionBlog />} />
     <Route path="blog/gdpr-seven-years" element={<GDPRSevenYearsBlog />} />
-    <Route path="blog/government-device-theft-case-study" element={<GovernmentDeviceTheftBlog />} />
     <Route path="blog/government-it-disposal" element={<GovernmentITDisposalBlog />} />
     <Route path="blog/green-it-practices" element={<GreenITPracticesBlog />} />
     <Route path="blog/hipaa-compliance-erasure" element={<HIPAAComplianceErasureBlog />} />
@@ -259,13 +212,11 @@ export const BlogRoutes = () => (
     <Route path="blog/loose-drives-erasure-guide" element={<LooseDrivesErasureGuideBlog />} />
     <Route path="blog/m1-mac-erasure-issues" element={<M1MacErasureIssuesBlog />} />
     <Route path="blog/mdm-detection" element={<MDMDetectionBlog />} />
-    <Route path="blog/msp-erasure-service" element={<MSPErasureServiceBlog />} />
     <Route path="blog/marriott-settlement" element={<MarriottSettlementBlog />} />
     <Route path="blog/media-sanitization-need" element={<MediaSanitizationNeedBlog />} />
     <Route path="blog/mobile-diagnostics-benefits" element={<MobileDiagnosticsBenefitsBlog />} />
     <Route path="blog/mobile-diagnostics-revolution" element={<MobileDiagnosticsRevolutionBlog />} />
     <Route path="blog/morgan-stanley-data-breach" element={<MorganStanleyDataBreachBlog />} />
-    <Route path="blog/morgan-stanley-fine" element={<MorganStanleyFineBlog />} />
     <Route path="blog/ncua-guidelines" element={<NCUAGuidelinesBlog />} />
     <Route path="blog/nist-clear-purge" element={<NISTClearPurgeBlog />} />
     <Route path="blog/nist-tested-erasure-software" element={<NISTTestedErasureSoftwareBlog />} />
@@ -292,6 +243,5 @@ export const BlogRoutes = () => (
     <Route path="blog/windows-10-eos" element={<Windows10EOSBlog />} />
     <Route path="blog/wipe-computer-donating" element={<WipeComputerDonatingBlog />} />
     <Route path="blog/world-class-nps" element={<WorldClassNPSBlog />} />
-    <Route path="blog/caption-call-settlement" element={<CaptionCallSettlementBlog />} />
   </Route>
 );
