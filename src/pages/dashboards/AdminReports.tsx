@@ -401,6 +401,9 @@ export default function AdminReports() {
   const [selectedReport, setSelectedReport] =
     useState<ExtendedAdminReport | null>(null);
 
+  // Reset Confirmation State
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+
   // Bulk Settings Modal State
   const [showBulkSettingsModal, setShowBulkSettingsModal] = useState(false);
   const [bulkSettingsLoading, setBulkSettingsLoading] = useState(false);
@@ -500,6 +503,9 @@ export default function AdminReports() {
     technicianDept: "",
     validatorName: "",
     validatorDept: "",
+    productType: "Global",
+    technicianCompany: "",
+    validatorCompany: "",
     headerLeftLogo: null as File | null,
     headerRightLogo: null as File | null,
     watermarkImage: null as File | null,
@@ -514,6 +520,9 @@ export default function AdminReports() {
     technicianDept: string;
     validatorName: string;
     validatorDept: string;
+    productType: string;
+    technicianCompany: string;
+    validatorCompany: string;
     headerLeftLogo: File | null;
     headerRightLogo: File | null;
     watermarkImage: File | null;
@@ -557,6 +566,9 @@ export default function AdminReports() {
               technicianDept: parsed.technicianDept || "",
               validatorName: parsed.validatorName || "",
               validatorDept: parsed.validatorDept || "",
+              productType: parsed.productType || defaultPdfSettings.productType,
+              technicianCompany: parsed.technicianCompany || "",
+              validatorCompany: parsed.validatorCompany || "",
               headerLeftLogo: null,
               headerRightLogo: null,
               watermarkImage: null,
@@ -689,6 +701,18 @@ export default function AdminReports() {
                 savedSettings.validatorDept ||
                 savedSettings.ValidatorDept ||
                 "",
+              productType:
+                savedSettings.productType ||
+                savedSettings.ProductType ||
+                defaultPdfSettings.productType,
+              technicianCompany:
+                savedSettings.technicianCompany ||
+                savedSettings.TechnicianCompany ||
+                "",
+              validatorCompany:
+                savedSettings.validatorCompany ||
+                savedSettings.ValidatorCompany ||
+                "",
             };
 
             // Get existing cache to preserve images if API returns null
@@ -798,6 +822,9 @@ export default function AdminReports() {
       formData.append("technicianDept", pdfFormData.technicianDept);
       formData.append("validatorName", pdfFormData.validatorName);
       formData.append("validatorDept", pdfFormData.validatorDept);
+      formData.append("productType", pdfFormData.productType);
+      formData.append("technicianCompany", pdfFormData.technicianCompany);
+      formData.append("validatorCompany", pdfFormData.validatorCompany);
 
       // Include base64 images if available
       if (imageBase64.headerLeftLogo) {
@@ -851,6 +878,9 @@ export default function AdminReports() {
             technicianDept: pdfFormData.technicianDept,
             validatorName: pdfFormData.validatorName,
             validatorDept: pdfFormData.validatorDept,
+            productType: pdfFormData.productType,
+            technicianCompany: pdfFormData.technicianCompany,
+            validatorCompany: pdfFormData.validatorCompany,
             images: {
               headerLeftLogo: imageBase64.headerLeftLogo,
               headerRightLogo: imageBase64.headerRightLogo,
@@ -919,6 +949,9 @@ export default function AdminReports() {
                 technicianDept: pdfFormData.technicianDept,
                 validatorName: pdfFormData.validatorName,
                 validatorDept: pdfFormData.validatorDept,
+                productType: pdfFormData.productType,
+                technicianCompany: pdfFormData.technicianCompany,
+                validatorCompany: pdfFormData.validatorCompany,
                 images: {
                   headerLeftLogo: imageBase64.headerLeftLogo,
                   headerRightLogo: imageBase64.headerRightLogo,
@@ -1014,6 +1047,9 @@ export default function AdminReports() {
                 technicianDept: pdfFormData.technicianDept,
                 validatorName: pdfFormData.validatorName,
                 validatorDept: pdfFormData.validatorDept,
+                productType: pdfFormData.productType,
+                technicianCompany: pdfFormData.technicianCompany,
+                validatorCompany: pdfFormData.validatorCompany,
                 images: {},
                 cachedAt: Date.now(),
               };
@@ -1937,6 +1973,9 @@ export default function AdminReports() {
       submitData.append("technicianDept", pdfFormData.technicianDept);
       submitData.append("validatorName", pdfFormData.validatorName);
       submitData.append("validatorDept", pdfFormData.validatorDept);
+      submitData.append("productType", pdfFormData.productType);
+      submitData.append("technicianCompany", pdfFormData.technicianCompany);
+      submitData.append("validatorCompany", pdfFormData.validatorCompany);
 
       // Add file fields if they exist, or use base64 from localStorage
       if (pdfFormData.headerLeftLogo) {
@@ -2003,6 +2042,7 @@ export default function AdminReports() {
         // Simulated network delay
         await new Promise((resolve) => setTimeout(resolve, 500));
       } else {
+        // GET request — server saved settings se PDF generate karta hai
         response = await fetch(downloadUrl, {
           method: "GET",
           headers: {
@@ -2115,6 +2155,9 @@ export default function AdminReports() {
           submitData.append("technicianDept", pdfFormData.technicianDept);
           submitData.append("validatorName", pdfFormData.validatorName);
           submitData.append("validatorDept", pdfFormData.validatorDept);
+          submitData.append("productType", pdfFormData.productType);
+          submitData.append("technicianCompany", pdfFormData.technicianCompany);
+          submitData.append("validatorCompany", pdfFormData.validatorCompany);
 
           // Add file fields if they exist, or use base64 from localStorage
           if (pdfFormData.headerLeftLogo) {
@@ -2184,20 +2227,19 @@ export default function AdminReports() {
             // Artificial delay to simulate download
             await new Promise((resolve) => setTimeout(resolve, 500));
           } else {
+            // GET request — server saved settings se PDF generate karta hai
             response = await fetch(
               `${
                 import.meta.env.VITE_API_BASE_URL ||
                 "https://api.dsecuretech.com"
               }/api/EnhancedAuditReports/${encodeURIComponent(
                 reportId,
-              )}/export-pdf-with-files`,
+              )}/export-pdf-with-settings`,
               {
-                method: "POST",
+                method: "GET",
                 headers: {
                   Authorization: `Bearer ${authService.getAccessToken()}`,
-                  // Content-Type header is not needed for FormData, browser sets it automatically with boundary
                 },
-                body: submitData,
               },
             );
           }
@@ -2405,6 +2447,9 @@ export default function AdminReports() {
           submitData.append("technicianDept", pdfFormData.technicianDept);
           submitData.append("validatorName", pdfFormData.validatorName);
           submitData.append("validatorDept", pdfFormData.validatorDept);
+          submitData.append("productType", pdfFormData.productType);
+          submitData.append("technicianCompany", pdfFormData.technicianCompany);
+          submitData.append("validatorCompany", pdfFormData.validatorCompany);
 
           // Add file fields if they exist, or use base64 from localStorage
           if (pdfFormData.headerLeftLogo) {
@@ -2474,19 +2519,19 @@ export default function AdminReports() {
             // Artificial delay
             await new Promise((resolve) => setTimeout(resolve, 500));
           } else {
+            // GET request — server saved settings se PDF generate karta hai
             response = await fetch(
               `${
                 import.meta.env.VITE_API_BASE_URL ||
                 "https://api.dsecuretech.com"
               }/api/EnhancedAuditReports/${encodeURIComponent(
                 reportId,
-              )}/export-pdf-with-files`,
+              )}/export-pdf-with-settings`,
               {
-                method: "POST",
+                method: "GET",
                 headers: {
                   Authorization: `Bearer ${authService.getAccessToken()}`,
                 },
-                body: submitData,
               },
             );
           }
@@ -3598,9 +3643,9 @@ export default function AdminReports() {
 
       {/* Bulk Settings Modal */}
       {showBulkSettingsModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center z-50 p-4">
-          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between z-10">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[85vh] flex flex-col">
+            <div className="bg-white border-b px-6 py-4 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
                 <h2 className="text-xl font-bold text-slate-900">Settings</h2>
                 {pdfSettingsLoading && (
@@ -3645,8 +3690,12 @@ export default function AdminReports() {
               </div>
               <div className="flex gap-4">
                 <button
-                  type="button"
-                  disabled={pdfSettingsLoading}
+                  onClick={() => setShowResetConfirm(true)}
+                  className="px-4 py-2 bg-slate-100 text-slate-700 rounded-md hover:bg-slate-200 transition-colors mr-2"
+                >
+                  Reset
+                </button>
+                <button
                   onClick={async () => {
                     if (isDemo) {
                       showInfo(
@@ -3656,10 +3705,6 @@ export default function AdminReports() {
                       setShowBulkSettingsModal(false);
                       return;
                     }
-                    // if (!pdfFormData.reportTitle.trim() || !pdfFormData.headerText.trim()) {
-                    //   showError("Validation Error", "Please fill in Report Title and Header Text");
-                    //   return;
-                    // }
                     // Save settings to API
                     await savePdfSettingsToServer();
                     showSuccess("Settings saved successfully!");
@@ -3671,7 +3716,7 @@ export default function AdminReports() {
                 </button>
                 <button
                   onClick={() => setShowBulkSettingsModal(false)}
-                  className="text-slate-400 hover:text-slate-600 transition-colors"
+                  className="text-slate-400 hover:text-slate-600 transition-colors ml-2"
                 >
                   <svg
                     className="w-6 h-6"
@@ -3690,7 +3735,7 @@ export default function AdminReports() {
               </div>
             </div>
 
-            <div className="p-6 space-y-4">
+            <div className="p-6 space-y-4 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300">
               {/* Report Title */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -3801,6 +3846,43 @@ export default function AdminReports() {
                     }
                     className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="QA Department"
+                  />
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                    Technician Company
+                  </label>
+                  <input
+                    type="text"
+                    value={pdfFormData.technicianCompany}
+                    onChange={(e) =>
+                      setPdfFormData({
+                        ...pdfFormData,
+                        technicianCompany: e.target.value,
+                      })
+                    }
+                    className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="D-Secure"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                    Validator Company
+                  </label>
+                  <input
+                    type="text"
+                    value={pdfFormData.validatorCompany}
+                    onChange={(e) =>
+                      setPdfFormData({
+                        ...pdfFormData,
+                        validatorCompany: e.target.value,
+                      })
+                    }
+                    className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="D-Secure"
                   />
                 </div>
               </div>
@@ -3985,8 +4067,8 @@ export default function AdminReports() {
       {/* Generate PDF Modal */}
       {showGenerateModal && selectedReport && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between">
+          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[85vh] flex flex-col">
+            <div className="bg-white border-b px-6 py-4 flex items-center justify-between shrink-0">
               <h2 className="text-xl font-bold text-slate-900">
                 Generate Custom PDF - Report {selectedReport.id}
               </h2>
@@ -4000,7 +4082,7 @@ export default function AdminReports() {
               </button> */}
             </div>
 
-            <div className="p-6 space-y-4">
+            <div className="p-6 space-y-4 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300">
               {/* Report Title */}
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">
@@ -4111,6 +4193,43 @@ export default function AdminReports() {
                     }
                     className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Quality Assurance"
+                  />
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                    Technician Company
+                  </label>
+                  <input
+                    type="text"
+                    value={pdfFormData.technicianCompany}
+                    onChange={(e) =>
+                      setPdfFormData({
+                        ...pdfFormData,
+                        technicianCompany: e.target.value,
+                      })
+                    }
+                    className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="D-Secure"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                    Validator Company
+                  </label>
+                  <input
+                    type="text"
+                    value={pdfFormData.validatorCompany}
+                    onChange={(e) =>
+                      setPdfFormData({
+                        ...pdfFormData,
+                        validatorCompany: e.target.value,
+                      })
+                    }
+                    className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="D-Secure"
                   />
                 </div>
               </div>
@@ -5043,6 +5162,71 @@ export default function AdminReports() {
               ) : (
                 <div className="text-white text-lg">No PDF loaded</div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Reset Confirmation Modal */}
+      {showResetConfirm && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <div className="p-6">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-full bg-rose-100 flex items-center justify-center shrink-0">
+                  <svg className="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900">Reset Settings?</h3>
+                  <p className="text-sm text-slate-500 mt-1">This will clear all saved logos and signatures and reset to default values.</p>
+                </div>
+              </div>
+              <div className="flex justify-end gap-3 mt-6">
+                <button
+                  onClick={() => setShowResetConfirm(false)}
+                  className="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={async () => {
+                    // Update local state and clear cache
+                    setPdfFormData(defaultPdfSettings);
+                    setImageBase64({
+                      headerLeftLogo: "",
+                      headerRightLogo: "",
+                      watermarkImage: "",
+                      technicianSignature: "",
+                      validatorSignature: "",
+                    });
+                    localStorage.removeItem(PDF_SETTINGS_CACHE_KEY);
+                    localStorage.removeItem("pdfImageSettings");
+
+                    // Server se saved settings delete karo taaki defaults use hon
+                    try {
+                      const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+                      
+                      const response = await fetch(`${API_BASE}/api/EnhancedAuditReports/export-settings?productType=Global`, {
+                        method: "DELETE",
+                        headers: {
+                          Authorization: `Bearer ${authService.getAccessToken()}`,
+                        },
+                      });
+                      console.log("✅ Server settings deleted:", response.status);
+                    } catch (error) {
+                      console.error("Failed to delete server settings:", error);
+                    }
+
+                    showSuccess("Settings reset to defaults");
+                    setShowResetConfirm(false);
+                  }}
+                  className="px-4 py-2 text-sm font-medium text-white bg-rose-600 hover:bg-rose-700 rounded-lg transition-colors"
+                >
+                  Reset Settings
+                </button>
+              </div>
             </div>
           </div>
         </div>

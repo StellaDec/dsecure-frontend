@@ -1218,12 +1218,13 @@ export default function LoginPage() {
                   </div>
                   <input
                     id="email"
-                    className="input-field pl-10"
+                    className="input-field pl-10 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder={t("auth.enterYourEmail")}
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     autoComplete="email"
+                    disabled={loading}
                     required
                   />
                 </div>
@@ -1267,12 +1268,13 @@ export default function LoginPage() {
                   </div>
                   <input
                     id="password"
-                    className="input-field pl-10 pr-10"
+                    className="input-field pl-10 pr-10 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder={t("auth.enterYourPassword")}
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    disabled={loading}
                     autoComplete="current-password"
                   />
                   {/* Password Toggle Button */}

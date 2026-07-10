@@ -843,8 +843,8 @@ export default function AdminLicenses() {
           </div>
           {/* Export Buttons */}
           <div className="flex items-center gap-3">
-            {/* ✅ RBAC: Only SuperAdmin and GroupAdmin can bulk revoke */}
-            {!isSubUser && selectedLicenses.size > 0 && (
+            {/* ✅ RBAC: Only GroupAdmin and Admin can bulk revoke (SuperAdmin cannot revoke own/any licenses) */}
+            {!isSubUser && !isSuperAdmin && selectedLicenses.size > 0 && (
               <button
                 onClick={() => handleRevoke(Array.from(selectedLicenses))}
                 className="btn-danger flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-rose-600 text-white hover:bg-rose-700 transition-colors mr-2"
@@ -1455,8 +1455,8 @@ export default function AdminLicenses() {
                         : "N/A"}
                     </td>
                     <td className="px-4 py-3 whitespace-nowrap text-right text-sm font-medium">
-                      {/* ✅ RBAC: Only SuperAdmin and GroupAdmin can Revoke licenses */}
-                      {!isSubUser && (
+                      {/* ✅ RBAC: Only GroupAdmin and Admin can Revoke licenses (SuperAdmin cannot) */}
+                      {!isSubUser && !isSuperAdmin && (
                         <button
                           onClick={() => handleRevoke([license.license_id])}
                           className="text-rose-600 hover:text-rose-900 disabled:opacity-50 disabled:cursor-not-allowed"

@@ -5339,14 +5339,7 @@ export default function AdminDashboard() {
                               Role:
                             </span>
                             <span className="text-slate-900 font-semibold capitalize">
-                              {profileData?.userRole ||
-                                profileData?.user_role ||
-                                profileData?.role ||
-                                storedUserData?.userRole ||
-                                storedUserData?.user_role ||
-                                storedUserData?.role ||
-                                user?.role ||
-                                "user"}
+                              {currentUserRole}
                             </span>
                           </div>
 
@@ -6380,7 +6373,7 @@ export default function AdminDashboard() {
                                     return (
                                       <>
                                         <InfoRow label="Status" value={statusDisplay} isStatus={true} />
-                                        <InfoRow label="Expiry Date" value={displayExpiry} />
+                                        {/* <InfoRow label="Expiry Date" value={displayExpiry} /> */}
                                         <InfoRow label="Subusers" value={profileData?.is_subusers_enabled ? "Enabled" : "Disabled"} />
                                         <InfoRow label="Groups" value={profileData?.is_groups_enabled ? "Enabled" : "Disabled"} />
                                         <InfoRow label="Private Cloud" value={profileData?.is_private_cloud ? "Enabled" : "Disabled"} />
