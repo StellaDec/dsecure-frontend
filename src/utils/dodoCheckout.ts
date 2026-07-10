@@ -76,24 +76,22 @@ export function initDodoCheckout(callbacks?: CheckoutCallbacks): void {
 
 // D-Secure website ke colors se matching theme config
 const dsecureTheme = {
-  light: {
-    bgPrimary: '#ffffff',
-    bgSecondary: '#f0fdfa',        // teal-50 — light teal background
-    borderPrimary: '#ccfbf1',      // teal-100
-    borderSecondary: '#99f6e4',    // teal-200
-    textPrimary: '#0f172a',        // slate-900
-    textSecondary: '#475569',      // slate-500
-    textPlaceholder: '#94a3b8',    // slate-400
-    textError: '#dc2626',
-    textSuccess: '#0d9488',        // teal-600
-    buttonPrimary: '#0d9488',      // teal-600 — main brand color
-    buttonPrimaryHover: '#0f766e', // teal-700
-    buttonTextPrimary: '#ffffff',
-    buttonSecondary: '#f0fdfa',    // teal-50
-    buttonSecondaryHover: '#ccfbf1', // teal-100
-    buttonTextSecondary: '#0d9488',  // teal-600
-    inputFocusBorder: '#14b8a6',   // teal-500
-  },
+  bgPrimary: '#ffffff',
+  bgSecondary: '#f0fdfa',        // teal-50 — light teal background
+  borderPrimary: '#ccfbf1',      // teal-100
+  borderSecondary: '#99f6e4',    // teal-200
+  textPrimary: '#0f172a',        // slate-900
+  textSecondary: '#475569',      // slate-500
+  textPlaceholder: '#94a3b8',    // slate-400
+  textError: '#dc2626',
+  textSuccess: '#0d9488',        // teal-600
+  buttonPrimary: '#0d9488',      // teal-600 — main brand color
+  buttonPrimaryHover: '#0f766e', // teal-700
+  buttonTextPrimary: '#ffffff',
+  buttonSecondary: '#f0fdfa',    // teal-50
+  buttonSecondaryHover: '#ccfbf1', // teal-100
+  buttonTextSecondary: '#0d9488',  // teal-600
+  inputFocusBorder: '#14b8a6',   // teal-500
 };
 
 /**
