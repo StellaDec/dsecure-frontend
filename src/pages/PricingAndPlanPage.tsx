@@ -1527,6 +1527,17 @@ const PricingAndPlanPage: React.FC = memo(() => {
         }
       }
 
+      // ── Autopilot MDM Advanced & Combo ke liye Payment Link Checkout ──
+      if (selectedCategory === "autopilot-mdm") {
+        if (autopilotCreditType === "advanced") {
+          openPaymentLinkCheckout("https://checkout.dodopayments.com/session/cks_0Nj4TS4xCTnavVJs9SDUg");
+          return;
+        } else if (autopilotCreditType === "combo") {
+          openPaymentLinkCheckout("https://checkout.dodopayments.com/session/cks_0Nj4TmltwSMpAOZgqlpcp");
+          return;
+        }
+      }
+
       // ── Default: Overlay Checkout — SDK apna full-screen overlay dikhayega ──
       openOverlayCheckout(
         checkoutProductId,
