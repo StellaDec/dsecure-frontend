@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const LooseDrivesErasureGuideBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50/20">
         {/* SEO: Page 4 — Loose Drives Erasure Guide ke liye optimized title aur description */}
         <SEOHead
           seo={getBlogSEO({
@@ -28,10 +28,10 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
                 <Link
                   to="/products/drive-eraser"
-                  className="text-emerald-600 hover:underline font-medium"
+                  className="text-blue-600 hover:underline font-medium"
                 >
                   Data Erasure
                 </Link>
@@ -39,7 +39,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
                 <Link
                   to="/products/drive-eraser"
-                  className="text-emerald-600 hover:underline font-medium"
+                  className="text-blue-600 hover:underline font-medium"
                 >
                   Loose Drive Erasure
                 </Link>
@@ -57,12 +57,12 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   Loose drives refer to{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-blue-800">
                     any data storage drives removed from their original host
                     devices
                   </strong>{" "}
@@ -87,13 +87,13 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Types of Loose Drives */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Types of Loose Drives and Their Risks
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-blue-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Data Center Storage Drives
                   </h3>
@@ -110,7 +110,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-blue-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Printer Hard Drives
                   </h3>
@@ -129,7 +129,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-blue-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Recycler-Generated Drives
                   </h3>
@@ -151,7 +151,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Why Secure Erasure is Critical */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-blue-600 via-slate-600 to-sky-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Why Secure Loose Drive Erasure is Critical
               </h2>
@@ -159,7 +159,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               <p className="leading-loose text-lg mb-6">
                 <Link
                   to="/products/drive-eraser"
-                  className="text-emerald-600 hover:underline font-medium"
+                  className="text-blue-600 hover:underline font-medium"
                 >
                   Secure erasure
                 </Link>{" "}
@@ -216,7 +216,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* How to Erase Loose Drives */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               {/* Loose drive aur loose drive eraser keywords ke liye optimized headings */}
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How to Properly Erase a Loose Drive: Choosing a Loose Drive Eraser
@@ -227,12 +227,12 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                 and connected to a dedicated host or chassis. D-Secure Drive Eraser is a leading, enterprise-grade loose drive eraser software that provides the secure, certified approach needed for high-volume sanitization of all loose drive types.
               </p>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mt-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-8 mt-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
                   D-
                   <Link
                     to="/products/drive-eraser"
-                    className="text-emerald-600 hover:underline font-medium"
+                    className="text-blue-600 hover:underline font-medium"
                   >
                     Secure Erasure
                   </Link>{" "}
@@ -240,26 +240,26 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                 </h3>
                 <ul className="space-y-4 text-slate-700 text-lg">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
                     Tested and approved for erasing both SSD and HDD media
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
                     Supports 24+ international erasure standards including DoD 3
                     and 7 passes, NIST, and more
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
                     Generates customized tamper-proof certificates and audit
                     trails
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
                     Exports reports in multiple formats including PDF, CSV, and
                     XML
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
                     Supports both online and offline erasure scenarios
                   </li>
                 </ul>
@@ -272,7 +272,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                    <span className="inline-block w-8 h-8 bg-emerald-500 text-white rounded-full text-center leading-8 font-bold mb-3">
+                    <span className="inline-block w-8 h-8 bg-blue-500 text-white rounded-full text-center leading-8 font-bold mb-3">
                       1
                     </span>
                     <h3 className="font-bold text-slate-900 mb-2">
@@ -285,7 +285,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     </p>
                   </div>
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                    <span className="inline-block w-8 h-8 bg-emerald-500 text-white rounded-full text-center leading-8 font-bold mb-3">
+                    <span className="inline-block w-8 h-8 bg-blue-500 text-white rounded-full text-center leading-8 font-bold mb-3">
                       2
                     </span>
                     <h3 className="font-bold text-slate-900 mb-2">
@@ -297,7 +297,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     </p>
                   </div>
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                    <span className="inline-block w-8 h-8 bg-emerald-500 text-white rounded-full text-center leading-8 font-bold mb-3">
+                    <span className="inline-block w-8 h-8 bg-blue-500 text-white rounded-full text-center leading-8 font-bold mb-3">
                       3
                     </span>
                     <h3 className="font-bold text-slate-900 mb-2">
@@ -310,7 +310,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     </p>
                   </div>
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                    <span className="inline-block w-8 h-8 bg-emerald-500 text-white rounded-full text-center leading-8 font-bold mb-3">
+                    <span className="inline-block w-8 h-8 bg-blue-500 text-white rounded-full text-center leading-8 font-bold mb-3">
                       4
                     </span>
                     <h3 className="font-bold text-slate-900 mb-2">
@@ -329,13 +329,13 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Best Practices */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Best Practices for Loose Drive Management
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Inventory Tracking
                   </h3>
@@ -346,7 +346,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     processes.
                   </p>
                 </div>
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Secure Storage
                   </h3>
@@ -383,7 +383,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 1: Drive Identification Problem */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-8 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-8 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 Before You Erase: Why Misidentifying a Drive Type Leads to Incomplete Sanitization
               </h2>
@@ -397,7 +397,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
               {/* Decision-tree style breakdown */}
               <div className="space-y-6">
-                <div className="border-l-4 border-teal-500 pl-8 py-2">
+                <div className="border-l-4 border-slate-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-2">SAS vs. SATA Misidentification at Speed</h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Enterprise SAS drives and SATA drives have nearly identical connectors at a glance. SAS drives
@@ -406,7 +406,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     sanitization commands the drive understands best — and the tool will still report success.
                   </p>
                 </div>
-                <div className="border-l-4 border-teal-500 pl-8 py-2">
+                <div className="border-l-4 border-slate-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-2">The Unlabeled Drive Problem</h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Drives removed from servers often have worn manufacturer labels, adhesive residue covering
@@ -415,7 +415,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     batch-processing workflows skip entirely.
                   </p>
                 </div>
-                <div className="border-l-4 border-teal-500 pl-8 py-2">
+                <div className="border-l-4 border-slate-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-2">M.2 Form Factor Confusion</h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     M.2 slots can house either SATA or NVMe drives — they look externally identical. An M.2 SATA
@@ -424,7 +424,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     no sanitization.
                   </p>
                 </div>
-                <div className="border-l-4 border-teal-500 pl-8 py-2">
+                <div className="border-l-4 border-slate-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-2">Hybrid Drives (SSHDs)</h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Seagate's SSHD lineup and similar hybrid drives contain both a magnetic platter and an
@@ -433,7 +433,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     standard HDD leaves the cache intact and unreported.
                   </p>
                 </div>
-                <div className="border-l-4 border-teal-500 pl-8 py-2">
+                <div className="border-l-4 border-slate-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-2">Drives Reporting Wrong Capacity (DCO/HPA)</h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Firmware-level configuration (DCO/HPA) means a drive's reported capacity may not reflect
@@ -459,13 +459,13 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   ].map((row) => (
                     <div key={row.check} className="grid grid-cols-1 md:grid-cols-2 px-6 py-4 gap-2">
                       <span className="text-slate-800 font-medium text-sm">{row.check}</span>
-                      <span className="text-teal-700 text-sm">{row.action}</span>
+                      <span className="text-slate-700 text-sm">{row.action}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="text-slate-600 text-base leading-relaxed bg-teal-50 border border-teal-200 rounded-lg p-4">
+              <p className="text-slate-600 text-base leading-relaxed bg-slate-50 border border-slate-200 rounded-lg p-4">
                 <strong>Practitioner Takeaway:</strong> Erasure accuracy starts with drive identification accuracy.
                 Skipping identification is where silent sanitization failures begin — and they will never appear
                 in your audit report.
@@ -475,7 +475,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 2: Printer Hard Drives Deep Dive */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-8 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-8 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 Printer Hard Drives: Why the Lowest-Value Asset in Your ITAD Stack Carries the Highest Data Risk
               </h2>
@@ -561,7 +561,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 3: When Standard Guidance Fails */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-8 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-8 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 "It Depends": Five Loose Drive Scenarios Where Standard Erasure Guidance Fails
               </h2>
@@ -619,7 +619,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                         <td className="px-5 py-4 font-medium text-slate-900 align-top">{row.scenario}</td>
                         <td className="px-5 py-4 text-slate-600 align-top">{row.standard}</td>
                         <td className="px-5 py-4 text-red-700 align-top">{row.reality}</td>
-                        <td className="px-5 py-4 text-teal-700 font-medium align-top">{row.correct}</td>
+                        <td className="px-5 py-4 text-slate-700 font-medium align-top">{row.correct}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -636,7 +636,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 4: Myth vs. Reality */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-8 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-8 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 Loose Drive Erasure: Five Industry Myths That Create Real Security Gaps
               </h2>
@@ -685,14 +685,14 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                       <p className="text-slate-800 font-semibold text-base">"{item.myth}"</p>
                     </div>
                     <div className="bg-white px-6 py-5">
-                      <div className="text-xs font-bold uppercase tracking-wider text-teal-600 mb-2">Reality</div>
+                      <div className="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Reality</div>
                       <p className="text-slate-700 text-sm leading-relaxed">{item.reality}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <p className="text-slate-600 text-base leading-relaxed bg-teal-50 border border-teal-200 rounded-lg p-4">
+              <p className="text-slate-600 text-base leading-relaxed bg-slate-50 border border-slate-200 rounded-lg p-4">
                 <strong>Practitioner Takeaway:</strong> The most dangerous gaps in loose drive security aren't
                 technical — they're the assumptions that cause organizations to skip verification entirely.
               </p>
@@ -701,9 +701,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 5: Scaling at 1,000+ Drives Per Day */}
           <Reveal>
-            <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-teal-900 rounded-[2rem] shadow-2xl p-8 md:p-12 space-y-8 text-white">
+            <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-slate-900 rounded-[2rem] shadow-2xl p-8 md:p-12 space-y-8 text-white">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2 block">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">
                   Advanced — Enterprise & ITAD Operations
                 </span>
                 <h2 className="text-3xl font-bold mb-4">
@@ -747,7 +747,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-5 bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors">
-                    <span className="text-3xl font-black text-teal-400 shrink-0 leading-none mt-1">{item.step}</span>
+                    <span className="text-3xl font-black text-slate-400 shrink-0 leading-none mt-1">{item.step}</span>
                     <div>
                       <h3 className="font-bold text-white text-lg mb-2">{item.title}</h3>
                       <p className="text-white/75 text-base leading-relaxed">{item.body}</p>
@@ -757,8 +757,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               </div>
 
               {/* Scale readiness checklist */}
-              <div className="bg-white/5 border border-teal-400/30 rounded-xl p-6">
-                <h3 className="font-bold text-teal-300 text-lg mb-4">Scale Readiness Checklist</h3>
+              <div className="bg-white/5 border border-slate-400/30 rounded-xl p-6">
+                <h3 className="font-bold text-slate-300 text-lg mb-4">Scale Readiness Checklist</h3>
                 <div className="grid md:grid-cols-2 gap-3">
                   {[
                     "Pre-erasure triage pass defined and timed?",
@@ -771,7 +771,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     "Anomaly detection threshold set for failure rate spikes?",
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3 text-white/80 text-sm">
-                      <span className="w-5 h-5 border border-teal-400/50 rounded flex-shrink-0 mt-0.5"></span>
+                      <span className="w-5 h-5 border border-slate-400/50 rounded flex-shrink-0 mt-0.5"></span>
                       <span>{item}</span>
                     </div>
                   ))}
@@ -790,7 +790,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Summary
               </h2>

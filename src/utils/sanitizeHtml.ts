@@ -45,7 +45,6 @@ export const sanitizeHtml = (dirtyHtml: string): string => {
     FORBID_ATTR: ['style', 'on*', 'data-*'],
     ALLOW_DATA_ATTR: false,
     RETURN_DOM: false,
-    RETURN_DOM_FRAGMENT: false,
-    RETURN_DOM_IMPORT: false
+    RETURN_DOM_FRAGMENT: false
   }) as string;
 };

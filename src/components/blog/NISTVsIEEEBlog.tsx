@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const NISTVsIEEEBlog: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50/20">
       <SEOHead
         seo={getBlogSEO({
           title:
@@ -35,14 +35,14 @@ const NISTVsIEEEBlog: React.FC = () => {
       <section className="py-16 bg-white shadow-lg">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
               Sanitization Standards
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-              <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> vs IEEE 2883-2022: A Complete Comparison
+              <Link to="/products/drive-eraser" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> vs IEEE 2883-2022: A Complete Comparison
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Learn how <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> and IEEE 2883-2022 standards differ in their
+              Learn how <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> and IEEE 2883-2022 standards differ in their
               guidelines and requirements for media and storage sanitization.
             </p>
           </div>
@@ -51,7 +51,7 @@ const NISTVsIEEEBlog: React.FC = () => {
 
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding the Two Major Standards
             </h2>
@@ -65,8 +65,8 @@ const NISTVsIEEEBlog: React.FC = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                <h3 className="font-bold text-blue-700 text-xl mb-3">
                   NIST SP 800-88
                 </h3>
                 <p className="text-slate-700 leading-relaxed">
@@ -92,7 +92,7 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Detailed Comparison: NIST vs IEEE Standards
             </h2>
@@ -100,7 +100,7 @@ const NISTVsIEEEBlog: React.FC = () => {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse border border-slate-300">
                 <thead>
-                  <tr className="bg-emerald-600 text-white">
+                  <tr className="bg-blue-600 text-white">
                     <th className="border border-slate-300 px-6 py-4 text-left font-bold">
                       Aspect
                     </th>
@@ -173,7 +173,7 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-teal-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+          <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-slate-500 rounded-xl shadow-lg p-10 mt-10 text-white">
             <h2 className="text-3xl font-bold mb-6">CLEAR Method Comparison</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 rounded-xl p-6">
@@ -208,7 +208,7 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-gradient-to-br from-emerald-600 via-teal-500 to-teal-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+          <div className="bg-gradient-to-br from-blue-600 via-slate-500 to-slate-500 rounded-xl shadow-lg p-10 mt-10 text-white">
             <h2 className="text-3xl font-bold mb-6">PURGE Method Comparison</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 rounded-xl p-6">
@@ -248,7 +248,7 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-gradient-to-br from-emerald-600 via-teal-500 to-teal-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+          <div className="bg-gradient-to-br from-blue-600 via-slate-500 to-slate-500 rounded-xl shadow-lg p-10 mt-10 text-white">
             <h2 className="text-3xl font-bold mb-6">
               DESTROY/DESTRUCT Method Comparison
             </h2>
@@ -309,14 +309,14 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Key Advantages of IEEE 2883-2022
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-lg mb-3">
+              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                <h3 className="font-bold text-blue-700 text-lg mb-3">
                   {" "}
                   Clear Conformity Instructions
                 </h3>
@@ -327,8 +327,8 @@ const NISTVsIEEEBlog: React.FC = () => {
                   paper, 'Destruct' automatically becomes conforming.
                 </p>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-lg mb-3">
+              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                <h3 className="font-bold text-blue-700 text-lg mb-3">
                   {" "}
                   Modern Storage Coverage
                 </h3>
@@ -338,8 +338,8 @@ const NISTVsIEEEBlog: React.FC = () => {
                   methods for high-density storage.
                 </p>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-lg mb-3">
+              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                <h3 className="font-bold text-blue-700 text-lg mb-3">
                   {" "}
                   ISO 27040 Integration
                 </h3>
@@ -349,8 +349,8 @@ const NISTVsIEEEBlog: React.FC = () => {
                   methods; ISO explains when to perform sanitization.
                 </p>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-lg mb-3">
+              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                <h3 className="font-bold text-blue-700 text-lg mb-3">
                   {" "}
                   Future-Ready Approach
                 </h3>
@@ -365,19 +365,19 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               D-Secure: Supporting Both Standards
             </h2>
             <p className="text-slate-700 leading-loose text-lg mb-6">
-              D-Secure data erasure solutions support both <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> and IEEE
+              D-Secure data erasure solutions support both <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> and IEEE
               2883-2022 standards, giving organizations flexibility to choose
               the appropriate standard based on their regulatory requirements,
               industry, and data sensitivity levels.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="border-l-4 border-emerald-500 pl-6">
+              <div className="border-l-4 border-blue-500 pl-6">
                 <h3 className="font-bold text-slate-900 text-lg mb-2">
                   24+ Erasure Standards
                 </h3>
@@ -386,7 +386,7 @@ const NISTVsIEEEBlog: React.FC = () => {
                   standards.
                 </p>
               </div>
-              <div className="border-l-4 border-emerald-500 pl-6">
+              <div className="border-l-4 border-blue-500 pl-6">
                 <h3 className="font-bold text-slate-900 text-lg mb-2">
                   All Media Types
                 </h3>
@@ -395,7 +395,7 @@ const NISTVsIEEEBlog: React.FC = () => {
                   storage technologies.
                 </p>
               </div>
-              <div className="border-l-4 border-emerald-500 pl-6">
+              <div className="border-l-4 border-blue-500 pl-6">
                 <h3 className="font-bold text-slate-900 text-lg mb-2">
                   Compliance Reports
                 </h3>
@@ -409,12 +409,12 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-10 mt-10 space-y-6">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Conclusion: Which Standard Should You Choose?
             </h2>
             <p className="text-slate-700 leading-loose text-lg">
-              Both <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> and IEEE 2883 are comprehensive, well-designed
+              Both <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> and IEEE 2883 are comprehensive, well-designed
               standards. It's difficult to recommend one over the other based
               purely on merit. However, given the rapid evolution of storage
               technology, organizations must choose a standard that addresses
@@ -455,13 +455,13 @@ const NISTVsIEEEBlog: React.FC = () => {
             </h2>
             <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
               Choose your preferred standard or let our experts guide you.
-              D-Secure supports both <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> and IEEE 2883-2022 with
+              D-Secure supports both <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> and IEEE 2883-2022 with
               complete compliance documentation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
+                className="inline-block bg-gradient-to-r from-blue-500 to-slate-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-slate-600 transition-all text-lg"
               >
                 Request Free Demo
               </Link>

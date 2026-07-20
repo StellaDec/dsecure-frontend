@@ -737,7 +737,7 @@ const SupportPage: React.FC = () => {
         const formSubmitData = new FormData();
         formSubmitData.append(
           "_webhook",
-          "https://api.dsecuretech.com/api/formsubmit/webhook",
+          `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
         );
         formSubmitData.append("_webhookContentType", "application/json");
         formSubmitData.append("_webhookExtraData", "true");
@@ -764,7 +764,7 @@ const SupportPage: React.FC = () => {
         );
         formSubmitData.append(
           "_cc",
-          "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+          import.meta.env.VITE_FORM_CC_EMAILS,
         );
 
         // === Prepare submission data for Backend API ===
@@ -805,7 +805,7 @@ const SupportPage: React.FC = () => {
         try {
           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
           const API_BASE =
-            import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+            import.meta.env.VITE_API_BASE_URL;
           const apiResponse = await fetch(
             `${API_BASE}/api/ContactFormSubmissions`,
             {
@@ -816,7 +816,7 @@ const SupportPage: React.FC = () => {
           );
 
           // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
-          await fetch("https://formsubmit.co/support@dsecuretech.com", {
+          await fetch(import.meta.env.VITE_FORMSUBMIT_ENDPOINT, {
             method: "POST",
             body: formSubmitData,
             headers: { Accept: "application/json" },
@@ -827,7 +827,7 @@ const SupportPage: React.FC = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "x-api-key": "REACT_CONTACT_2026",
+              "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
             },
             body: JSON.stringify(submissionData),
           }).catch(() => {});
@@ -1536,7 +1536,7 @@ const SupportPage: React.FC = () => {
       {showLicenseModal && (
         <LicenseForm
           customConfig={{
-            endpoint: "https://formsubmit.co/support@dsecuretech.com",
+            endpoint: import.meta.env.VITE_FORMSUBMIT_ENDPOINT,
             requiredFields: {
               fullName: "Full Name",
               email: "Email",
@@ -1555,7 +1555,7 @@ const SupportPage: React.FC = () => {
       {showPartnershipModal && (
         <PartnershipForm
           customConfig={{
-            endpoint: "https://formsubmit.co/support@dsecuretech.com",
+            endpoint: import.meta.env.VITE_FORMSUBMIT_ENDPOINT,
             requiredFields: {
               fullName: "Full Name",
               businessEmail: "Business Email",

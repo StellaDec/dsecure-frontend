@@ -41,9 +41,9 @@ Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /
 
-# ─── AI Training Bots (STRICTLY DISALLOWED) ───
-# Rules ke mutabik: Hum AI bots ko real-time live answers aur citations dene ke liye Allow karte hain (by default via User-agent: *),
-# lekin hamare data se model training aur bulk scraping karne wale bots ko strictly Disallow karte hain.
+# ─── AI Bots (Allowed for Retrieval) ───
+# Note: AI bots (GPTBot, ClaudeBot, etc.) yahan allow kiye gaye hain taaki users prompt pe site ka data fetch kar sakein.
+# Upcoming products aur private pages par indexing explicitly SEOHead.tsx se roki jaati hai.
 User-agent: GPTBot
 allow: /
 
@@ -74,7 +74,7 @@ Disallow: /
 User-agent: Bytespider
 Disallow: /
 
-# Last updated: 2026-07-10
+# Last updated: 2026-07-20
 
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 

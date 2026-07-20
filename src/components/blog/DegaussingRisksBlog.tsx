@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const DegaussingRisksBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title:
@@ -27,7 +27,7 @@ const DegaussingRisksBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
                 Data Destruction Methods
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -45,7 +45,7 @@ const DegaussingRisksBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is Degaussing?
               </h2>
@@ -60,7 +60,7 @@ const DegaussingRisksBlog: React.FC = () => {
               <p className="text-slate-700 leading-loose text-lg mb-6">
                 While degaussing can be effective when performed correctly, it
                 is a{" "}
-                <strong className="text-emerald-800">
+                <strong className="text-rose-800">
                   manually intensive process
                 </strong>{" "}
                 that is highly prone to human errors. These errors can
@@ -75,7 +75,7 @@ const DegaussingRisksBlog: React.FC = () => {
                 <p className="text-slate-700 text-lg leading-loose">
                   Given its manually intensive nature, degaussing is prone to
                   oversights.{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-rose-800">
                     Just one misstep can jeopardize data security.
                   </strong>{" "}
                   Organizations must understand these risks before relying on
@@ -86,7 +86,7 @@ const DegaussingRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 6 Critical Human Errors in Degaussing
               </h2>
@@ -96,7 +96,7 @@ const DegaussingRisksBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8">
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border-l-4 border-emerald-500">
+                <div className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl p-8 border-l-4 border-rose-500">
                   <h3 className="font-bold text-slate-900 text-xl mb-4">
                     1. Improper Handling of Degausser
                   </h3>
@@ -108,21 +108,21 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                   <ul className="space-y-2 text-slate-700 text-lg">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Incomplete neutralization of the storage media
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Residual data remaining on portions of the drive
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Potential data recovery using forensic tools
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border-l-4 border-emerald-500">
+                <div className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl p-8 border-l-4 border-rose-500">
                   <h3 className="font-bold text-slate-900 text-xl mb-4">
                     2. Using an Improper Degausser
                   </h3>
@@ -133,7 +133,7 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                   <ul className="space-y-2 text-slate-700 text-lg">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       <strong>Magnetic Field Strength:</strong> The degausser's
                       magnetic field must be 2 to 3 times higher than the
                       coercivity of the media being erased. If not, it may not
@@ -141,7 +141,7 @@ const DegaussingRisksBlog: React.FC = () => {
                       leading to data remanence.
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       <strong>Field Orientation:</strong> For maximum
                       effectiveness, the magnetic field needs to be
                       perpendicular to the orientation of the magnetic domains
@@ -151,7 +151,7 @@ const DegaussingRisksBlog: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border-l-4 border-emerald-500">
+                <div className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl p-8 border-l-4 border-rose-500">
                   <h3 className="font-bold text-slate-900 text-xl mb-4">
                     3. Degaussing for Insufficient Duration
                   </h3>
@@ -162,22 +162,22 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                   <ul className="space-y-2 text-slate-700 text-lg">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Not degaussing for long enough to fully randomize magnetic
                       domains
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Rushing through multiple drives to save time
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Recoverable data remaining on the device
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border-l-4 border-emerald-500">
+                <div className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl p-8 border-l-4 border-rose-500">
                   <h3 className="font-bold text-slate-900 text-xl mb-4">
                     4. Overlooking Media Types
                   </h3>
@@ -187,18 +187,18 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                   <ul className="space-y-2 text-slate-700 text-lg">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       <strong>SSDs:</strong> Solid-state drives use flash
                       memory, not magnetic storage. Degaussing has zero effect
                       on SSDs.
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       <strong>Hybrid Drives:</strong> Drives combining HDD and
                       SSD technology may have SSD portions left intact.
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       <strong>Complete Devices:</strong> Laptops and
                       workstations may have additional inbuilt storage media
                       beyond the main HDD that aren't degaussed.
@@ -206,7 +206,7 @@ const DegaussingRisksBlog: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border-l-4 border-emerald-500">
+                <div className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl p-8 border-l-4 border-rose-500">
                   <h3 className="font-bold text-slate-900 text-xl mb-4">
                     5. Skipping Verification
                   </h3>
@@ -216,16 +216,16 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                   <ul className="space-y-2 text-slate-700 text-lg">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Failure to verify that all devices assigned for degaussing
                       were properly processed
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       No audit trail or certificate of destruction generated
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Gaps in the data destruction process that only become
                       apparent during audits
                     </li>
@@ -236,7 +236,7 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 border-l-4 border-emerald-500">
+                <div className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl p-8 border-l-4 border-rose-500">
                   <h3 className="font-bold text-slate-900 text-xl mb-4">
                     6. Inadequately Trained Professionals
                   </h3>
@@ -246,17 +246,17 @@ const DegaussingRisksBlog: React.FC = () => {
                   </p>
                   <ul className="space-y-2 text-slate-700 text-lg">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Inadequately trained operators are more likely to make any
                       of the above errors
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Lack of understanding about media types and their
                       requirements
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-full mr-3 mt-2.5"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-rose-50 to-pink-500 rounded-full mr-3 mt-2.5"></span>
                       Proper training is crucial but often neglected
                     </li>
                   </ul>
@@ -266,7 +266,7 @@ const DegaussingRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Additional Limitations of Degaussing
               </h2>
@@ -321,11 +321,11 @@ const DegaussingRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 <Link
                   to="/products/drive-eraser"
-                  className="text-emerald-600 hover:underline font-medium"
+                  className="text-rose-600 hover:underline font-medium"
                 >
                   Data Erasure
                 </Link>
@@ -413,7 +413,7 @@ const DegaussingRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 When Degaussing May Still Be Appropriate
               </h2>
@@ -425,18 +425,18 @@ const DegaussingRisksBlog: React.FC = () => {
 
               <ul className="space-y-4 text-slate-700 text-lg">
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
                   <strong>Non-functional Hard Drives:</strong> For drives that
                   are physically damaged and cannot boot, degaussing can ensure
                   data is permanently erased by demagnetizing the storage media
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
                   <strong>Magnetic Tapes:</strong> For backup tapes and other
                   magnetic media that cannot be erased via software
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
                   <strong>Drives with Bad Sectors:</strong> When software cannot
                   access all sectors due to hardware failure, degaussing and
                   shredding may be the only options
@@ -460,7 +460,7 @@ const DegaussingRisksBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-rose-50 border border-rose-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion: Choose Reliability Over Risk
               </h2>
@@ -503,7 +503,7 @@ const DegaussingRisksBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
+                  className="inline-block bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-rose-600 hover:to-pink-600 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>

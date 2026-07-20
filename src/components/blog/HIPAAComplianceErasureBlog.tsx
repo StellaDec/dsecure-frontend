@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const HIPAAComplianceErasureBlog: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50/20 via-emerald-50/10 to-slate-50">
       <SEOHead
         seo={getBlogSEO({
           title: "HIPAA Compliance and Data Erasure",
@@ -50,7 +50,7 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
 
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding HIPAA and PHI Protection
             </h2>
@@ -135,7 +135,7 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               HIPAA Compliance Requirements for Data Disposal
             </h2>
@@ -200,7 +200,7 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               HIPAA Data Destruction Methods
             </h2>
@@ -306,7 +306,7 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Real-World HIPAA Breach Consequences
             </h2>

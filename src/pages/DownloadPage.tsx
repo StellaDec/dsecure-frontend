@@ -57,7 +57,7 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
     windowsAmd: {
       url:
         import.meta.env.VITE_DRIVE_ERASER_ISO_DOWNLOAD_LINK ||
-        "https://downloads.dsecuretech.com/x64x86/Drive%20Eraser/D-Secure-Drive-Eraser(v1.0.0x64-arch-amd).iso",
+        `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/x64x86/Drive%20Eraser/D-Secure-Drive-Eraser(v1.0.0x64-arch-amd).iso`,
       filename: "D-Secure-Drive-Eraser-x64.iso",
       size: "450 MB",
       arch: "x64x86 (ISO Image)",
@@ -65,13 +65,13 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
     macos: {
       url:
         import.meta.env.VITE_DRIVE_ERASER_ISO_DOWNLOAD_LINK ||
-        "https://downloads.dsecuretech.com/x64x86/Drive%20Eraser/D-Secure-Drive-Eraser(v1.0.0x64-arch-amd).iso",
+        `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/x64x86/Drive%20Eraser/D-Secure-Drive-Eraser(v1.0.0x64-arch-amd).iso`,
       filename: "D-Secure-Drive-Eraser-x64.iso",
       size: "450 MB",
       arch: "x64x86 (ISO Image)",
     },
     linux: {
-      url: "https://downloads.dsecuretech.com/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
+      url: `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso`,
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
@@ -83,7 +83,7 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
     windowsAmd: {
       url:
         import.meta.env.VITE_DRIVE_ERASER_DIAGNOSTIC_ISO_DOWNLOAD_LINK ||
-        "https://downloads.dsecuretech.com/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
+        `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso`,
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
@@ -93,7 +93,7 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
     macos: {
       url:
         import.meta.env.VITE_DRIVE_ERASER_DIAGNOSTIC_ISO_DOWNLOAD_LINK ||
-        "https://downloads.dsecuretech.com/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
+        `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso`,
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
@@ -101,7 +101,7 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
         "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
     },
     linux: {
-      url: "https://downloads.dsecuretech.com/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
+      url: `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso`,
       filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
       size: "Less than 1 GB",
       arch: "x64 (ISO Image)",
@@ -111,7 +111,7 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
   },
   "file-eraser": {
     windows: {
-      url: "https://downloads.dsecuretech.com/windows/D-Secure_Eraser_Setup_v1_0.exe",
+      url: `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/windows/D-Secure_Eraser_Setup_v1_0.exe`,
       filename: "D-Secure_Eraser_Setup_v1_0.exe",
       size: "600 MB",
       arch: "64-bit",

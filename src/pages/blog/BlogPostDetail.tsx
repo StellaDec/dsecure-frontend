@@ -1,10 +1,11 @@
-import React, { useMemo } from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import React, { useMemo, Suspense } from "react";
+import { useParams, Link } from "react-router-dom";
 import NotFoundPage from "@/pages/NotFoundPage";
 import BlogFooterStandard from "@/components/blog/BlogFooterStandard";
 import { blogPosts } from "@/data/blogPosts";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getBlogSEO } from "@/utils/seo";
+import { FAQ } from "@/utils/seo.core";
 import { sanitizeHtml } from "@/utils/sanitizeHtml";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
@@ -12,9 +13,7 @@ import {
   ShieldIcon, 
   ArrowLeftIcon,
 } from "@/components/FlatIcons";
-import ExpertSolutionSection from "@/components/blog/ExpertSolutionSection";
-import FAQSection from "@/components/blog/FAQSection";
-import { Suspense } from "react";
+
 import { BlogRegistry } from "@/components/blog/BlogRegistry";
 import PageLoadingSkeleton from "@/components/PageLoadingSkeleton";
 
@@ -74,14 +73,6 @@ const BlogPostDetail: React.FC = () => {
       </Suspense>
     );
   }
-
-  // Find 3 related posts (same category or tag, excluding current)
-  const relatedPosts = useMemo(() => {
-    return blogPosts
-      .filter(p => p.id !== post.id && (p.category === post.category || p.tag === post.tag))
-      .slice(0, 3);
-  }, [post]);
-
 
   return (
     <div className="min-h-screen bg-white">
@@ -229,7 +220,7 @@ const BlogPostDetail: React.FC = () => {
             blogTitle={post.title}
             category={post.category}
             tag={post.tag}
-            faqs={seoData.faqs}
+            faqs={seoData.faqs as FAQ[]}
           />
         </section>
 

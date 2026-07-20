@@ -3,7 +3,7 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 
 const DiagnosticsPage: React.FC = () => {
-  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "dhwi5wevf";
+  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
 
   const testUrls = [
     {

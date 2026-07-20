@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const LegalEthicalErasureBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title: "The Legal and Ethical Imperative of Data Erasure",
@@ -24,11 +24,11 @@ const LegalEthicalErasureBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
                 Ethics & Compliance
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-                The Legal and Ethical Dimensions of <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>
+                The Legal and Ethical Dimensions of <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Data Erasure</Link>
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 Explore the legal and ethical aspects of data erasure to ensure
@@ -41,7 +41,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Legal Aspects of Data Erasure
               </h2>
@@ -53,27 +53,27 @@ const LegalEthicalErasureBlog: React.FC = () => {
               </p>
               <ul className="space-y-3 text-slate-700 text-lg">
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
                   <strong>'Right to Delete'</strong> in Section 1798.105 of CCPA
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
                   <strong>'Right to Erasure'</strong> in UK Data Protection Act
                   2018
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
                   <strong>'Right to Destruction'</strong> in Article 4(5) of
                   Saudi Arabia's PDPL
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
                   <strong>'Right to be Forgotten'</strong> in Article 17 of
                   EU-GDPR
                 </li>
               </ul>
 
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mt-6">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Penalties for Non-Compliance
                 </h3>
@@ -100,7 +100,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Ethical Aspects of Data Erasure
               </h2>
@@ -111,7 +111,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Data Privacy and Fairness
                   </h3>
@@ -123,7 +123,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Stakeholder and Customer Trust
                   </h3>
@@ -135,7 +135,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Meet Long-term Sustainability Goals
                   </h3>
@@ -148,7 +148,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Brand Reputation
                   </h3>
@@ -163,7 +163,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Benefits of Adhering to Legal & Ethical Aspects
               </h2>
@@ -207,7 +207,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>
@@ -235,7 +235,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
+                  className="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-amber-600 hover:to-orange-600 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>

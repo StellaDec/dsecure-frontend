@@ -18,9 +18,24 @@ const ManualPageRenderer: React.FC = () => {
     return <Navigate to="/support/help-manual" replace />;
   }
 
+  // Manual whitelist array for SEO (17 slugs)
+  const whitelist = [
+    'installation', 'quickstart', 'cryptographic-erasure', 'windows-crypto-erasure',
+    'windows-system-files', 'certificate-generation', 'windows-command-line',
+    'government-defense', 'remote-management', 'scripting-automation',
+    'physical-destruction', 'windows-filesystems', 'windows-builtin-tools',
+    'windows-preparation', 'pre-installation', 'system-requirements', 'verification-overview'
+  ];
+
   // Generate SEO for this page using the registry slug
   // Hum manual priority dete hain taaki components ke andar ke fallback SEO override ho sakein.
-  const seoData = useMemo(() => getSEOForPage(slug), [slug]);
+  const seoData = useMemo(() => {
+    const baseSeo = getSEOForPage(slug);
+    if (!whitelist.includes(slug)) {
+      baseSeo.noindex = true;
+    }
+    return baseSeo;
+  }, [slug]);
 
   return (
     <>

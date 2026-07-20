@@ -602,7 +602,7 @@ const WindowsSystemsPage: React.FC = memo(() => {
                         <div className="text-slate-600 text-xs sm:text-sm">
                           Use UNetbootin (
                           <a
-                            href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe"
+                            href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-windows-702.exe`}
                             className="text-emerald-600 hover:underline"
                             target="_blank"
                             rel="noreferrer"
@@ -611,7 +611,7 @@ const WindowsSystemsPage: React.FC = memo(() => {
                           </a>
                           ,{" "}
                           <a
-                            href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin"
+                            href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin`}
                             className="text-emerald-600 hover:underline"
                             target="_blank"
                             rel="noreferrer"
@@ -620,7 +620,7 @@ const WindowsSystemsPage: React.FC = memo(() => {
                           </a>
                           ,{" "}
                           <a
-                            href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg"
+                            href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg`}
                             className="text-emerald-600 hover:underline"
                             target="_blank"
                             rel="noreferrer"
@@ -851,4 +851,4 @@ const WindowsSystemsPage: React.FC = memo(() => {
   );
 });
 
-export default WindowsSystemsPage;
+export default WindowsSystemsPage;

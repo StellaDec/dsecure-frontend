@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const WorldClassNPSBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "Achieving World-Class NPS in ITAD",
@@ -26,7 +26,7 @@ const WorldClassNPSBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
                 Customer Success
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -44,12 +44,12 @@ const WorldClassNPSBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   The secret to building a successful business lies in{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-indigo-800">
                     consistently understanding and mapping the customer journey
                   </strong>{" "}
                   at every stage through an effective feedback mechanism.
@@ -71,7 +71,7 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* What is NPS */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding the Net Promoter Score
               </h2>
@@ -84,7 +84,7 @@ const WorldClassNPSBlog: React.FC = () => {
                 with questions designed to capture customer sentiment.
               </p>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
+              <div className="bg-indigo-50 border-l-4 border-indigo-500 p-8 rounded-r-lg mt-8">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
                   How NPS Works
                 </h3>
@@ -98,21 +98,21 @@ const WorldClassNPSBlog: React.FC = () => {
               </div>
 
               <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl p-6 text-white text-center">
+                <div className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl p-6 text-white text-center">
                   <h4 className="font-bold text-2xl mb-2">9-10</h4>
                   <p className="font-semibold text-lg mb-2">Promoters</p>
                   <p className="text-white/90 text-sm">
                     Enthusiastic customers who actively recommend the brand
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-amber-500 to-teal-500 rounded-xl p-6 text-white text-center">
+                <div className="bg-gradient-to-br from-amber-500 to-purple-500 rounded-xl p-6 text-white text-center">
                   <h4 className="font-bold text-2xl mb-2">7-8</h4>
                   <p className="font-semibold text-lg mb-2">Passives</p>
                   <p className="text-white/90 text-sm">
                     Satisfied but not enthusiastic; potential to decrease NPS
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl p-6 text-white text-center">
+                <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-6 text-white text-center">
                   <h4 className="font-bold text-2xl mb-2">0-6</h4>
                   <p className="font-semibold text-lg mb-2">Detractors</p>
                   <p className="text-white/90 text-sm">
@@ -125,7 +125,7 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* NPS Achievement */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 D-Secure Achieves NPS of 70.4%
               </h2>
@@ -146,7 +146,7 @@ const WorldClassNPSBlog: React.FC = () => {
                 recognize their needs to fine-tune our solutions for data
                 erasure and diagnostics. The company's approach is built on
                 understanding the diverse data-wiping requirements of our
-                clientele — whether serving large IT Asset Disposition (<Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>)
+                clientele — whether serving large IT Asset Disposition (<Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link>)
                 companies, MSPs offering Erasure as a Service (EaaS), or
                 organizations focusing on compliance and risk mitigation.
               </p>
@@ -155,13 +155,13 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* What Helped Achieve This */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How We Achieved Customer Success
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Open Communication
                   </h3>
@@ -172,13 +172,13 @@ const WorldClassNPSBlog: React.FC = () => {
                     chat, message, or audio call for product inquiries,
                     suggestions, or deployment issues. Our support team
                     pre-schedules video conference calls for product
-                    demonstrations or issue resolution. For <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> partners,
+                    demonstrations or issue resolution. For <Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> partners,
                     premium support ensures no gap in service with tailored
                     software solutions.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Continuous Innovation
                   </h3>
@@ -192,7 +192,7 @@ const WorldClassNPSBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Unmatched Technical Support
                   </h3>
@@ -210,7 +210,7 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* Customer Testimonials */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What Our Customers Are Saying
               </h2>
@@ -218,7 +218,7 @@ const WorldClassNPSBlog: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-slate-50 rounded-xl p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold">
                       HP
                     </div>
                     <div className="ml-4">
@@ -240,7 +240,7 @@ const WorldClassNPSBlog: React.FC = () => {
 
                 <div className="bg-slate-50 rounded-xl p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
                       AIA
                     </div>
                     <div className="ml-4">
@@ -263,7 +263,7 @@ const WorldClassNPSBlog: React.FC = () => {
 
                 <div className="bg-slate-50 rounded-xl p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold">
                       NA
                     </div>
                     <div className="ml-4">
@@ -276,7 +276,7 @@ const WorldClassNPSBlog: React.FC = () => {
                     </div>
                   </div>
                   <p className="text-slate-700 text-lg leading-relaxed italic">
-                    "Great experience with <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">secure erasure</Link> of hard drives and
+                    "Great experience with <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">secure erasure</Link> of hard drives and
                     SSDs. Technical and customer support team were very prompt
                     in resolving queries, and the detailed product demo was
                     superb. The certified software is simple to use and highly
@@ -286,16 +286,16 @@ const WorldClassNPSBlog: React.FC = () => {
 
                 <div className="bg-slate-50 rounded-xl p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
                       WW
                     </div>
                     <div className="ml-4">
                       <p className="font-bold text-slate-900">MSP Partner</p>
-                      <p className="text-sm text-slate-500"><Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Services</p>
+                      <p className="text-sm text-slate-500"><Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> Services</p>
                     </div>
                   </div>
                   <p className="text-slate-700 text-lg leading-relaxed italic">
-                    "As an MSP partner, we provide services to <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> companies,
+                    "As an MSP partner, we provide services to <Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> companies,
                     financial and government institutions. Valid certification
                     minimizes risks and ensures GDPR and ISO 27001 compliance.
                     Tech and sales support is always efficient — a real partner
@@ -308,7 +308,7 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* Way Ahead */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Way Forward
               </h2>

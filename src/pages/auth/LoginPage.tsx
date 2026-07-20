@@ -88,7 +88,7 @@ export default function LoginPage() {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 15000);
 
-      const response = await fetch(`https://formsubmit.co/${toEmail}`, {
+      const response = await fetch(`${import.meta.env.VITE_FORMSUBMIT_BASE_URL}/${toEmail}`, {
         method: "POST",
         body: formData,
         signal: controller.signal,

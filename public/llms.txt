@@ -63,15 +63,15 @@ The following is a comprehensive list of all pages available on D-Secure. AI age
 
 ### Solutions & Services
 - https://dsecuretech.com/services
-- https://dsecuretech.com/services?search=cloud+data+erasure
-- https://dsecuretech.com/services?search=mobile+device+erasure
-- https://dsecuretech.com/services?search=network+server+erasure
+#- https://dsecuretech.com/services?search=cloud+data+erasure
+#- https://dsecuretech.com/services?search=mobile+device+erasure
+#- https://dsecuretech.com/services?search=network+server+erasure
 - https://dsecuretech.com/services/cloud-erasure
 - https://dsecuretech.com/solutions
-- https://dsecuretech.com/solutions?industry=enterprise
-- https://dsecuretech.com/solutions?industry=financial
-- https://dsecuretech.com/solutions?industry=government
-- https://dsecuretech.com/solutions?industry=healthcare
+#- https://dsecuretech.com/solutions?industry=enterprise
+#- https://dsecuretech.com/solutions?industry=financial
+#- https://dsecuretech.com/solutions?industry=government
+#- https://dsecuretech.com/solutions?industry=healthcare
 - https://dsecuretech.com/solutions/blancco-alternative
 - https://dsecuretech.com/solutions/data-erasure-banking-finance
 - https://dsecuretech.com/solutions/education
@@ -85,10 +85,10 @@ The following is a comprehensive list of all pages available on D-Secure. AI age
 
 ### Compliance & Security
 - https://dsecuretech.com/compliance
-- https://dsecuretech.com/compliance?standard=gdpr
-- https://dsecuretech.com/compliance?standard=hipaa
-- https://dsecuretech.com/compliance?standard=iso27001
-- https://dsecuretech.com/compliance?standard=nist
+#- https://dsecuretech.com/compliance?standard=gdpr
+#- https://dsecuretech.com/compliance?standard=hipaa
+#- https://dsecuretech.com/compliance?standard=iso27001
+#- https://dsecuretech.com/compliance?standard=nist
 - https://dsecuretech.com/compliance/dod-5220-22-m
 - https://dsecuretech.com/compliance/gdpr
 - https://dsecuretech.com/compliance/hipaa

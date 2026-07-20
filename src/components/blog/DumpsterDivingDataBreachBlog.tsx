@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const DumpsterDivingDataBreachBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "Dumpster Diving Data Breaches",
@@ -26,7 +26,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
                 Data Breach
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -44,12 +44,12 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   In today's world of{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-indigo-800">
                     digital transformation and rapid technological advances
                   </strong>
                   , hackers are constantly searching for 'treasures in the
@@ -76,7 +76,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* State of the Problem */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding the Dumpster Diving Threat
               </h2>
@@ -102,29 +102,29 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mt-6">
+              <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-8 mt-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
                   Data Found on Improperly Disposed Drives
                 </h3>
                 <ul className="space-y-3 text-slate-700 text-lg">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
                     Trade secrets and proprietary business information
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
                     Financial transaction records and credit card details
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
                     Healthcare reports and patient records
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
                     Employee personal information and credentials
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
                     Government contracts and classified documents
                   </li>
                 </ul>
@@ -134,7 +134,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Real-World Case Study */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Real-World Case: Security Contracts in Dumping Grounds
               </h2>
@@ -170,7 +170,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Prevention Strategies */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Strategies to Prevent Dumpster Diving
               </h2>
@@ -183,7 +183,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8 mt-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Employee Education and Training
                   </h3>
@@ -198,7 +198,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Invest in Secure Technology
                   </h3>
@@ -214,7 +214,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Establish Comprehensive Compliance
                   </h3>
@@ -229,7 +229,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Practice Responsible Recycling
                   </h3>
@@ -249,7 +249,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Cost of Data Breaches */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Financial Impact of Data Breaches
               </h2>
@@ -292,7 +292,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* D-Secure Solution */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-8">
+            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-8">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure: Your Defense Against Dumpster Diving
               </h2>
@@ -311,7 +311,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                     Certified Erasure
                   </h3>
                   <p className="text-slate-700 leading-loose">
-                    Supports 24+ international standards including <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link>
+                    Supports 24+ international standards including <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link></Link>
                     and DoD guidelines for verified data destruction.
                   </p>
                 </div>
@@ -339,7 +339,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>

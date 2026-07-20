@@ -36,11 +36,11 @@ const MobileErasureGuideBlog: React.FC = () => {
       <section className="py-16 bg-white shadow-lg">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-teal-700 bg-teal-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
               Mobile Security
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">
                 Comprehensive Mobile Device Erasure Guide: Securing Smartphones
                 & Tablets
               </span>
@@ -56,7 +56,7 @@ const MobileErasureGuideBlog: React.FC = () => {
       {/* Main Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
             {/* Why Mobile Erasure is Different */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -134,11 +134,11 @@ const MobileErasureGuideBlog: React.FC = () => {
                       permanently unrecoverable—equivalent to{" "}
                       <Link
                         to="/products/drive-eraser"
-                        className="text-emerald-600 hover:underline font-medium"
+                        className="text-sky-600 hover:underline font-medium"
                       >
                         <Link
                           to="/compliance/nist-800-88"
-                          className="text-emerald-600 hover:underline font-medium"
+                          className="text-sky-600 hover:underline font-medium"
                         >
                           NIST 800-88
                         </Link>
@@ -150,7 +150,7 @@ const MobileErasureGuideBlog: React.FC = () => {
               </div>
 
               {/* Android */}
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 p-6 rounded-xl mt-4">
+              <div className="bg-gradient-to-br from-green-50 to-sky-50 border border-green-200 p-6 rounded-xl mt-4">
                 <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <span className="text-2xl">🤖</span> Android Devices
                 </h3>
@@ -254,8 +254,8 @@ const MobileErasureGuideBlog: React.FC = () => {
                 Mobile Erasure Best Practices
               </h2>
               <div className="space-y-3">
-                <div className="bg-white border-l-4 border-teal-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-teal-900 mb-1">
+                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
+                  <h3 className="font-semibold text-blue-900 mb-1">
                     1. Verify Encryption Before Erasure
                   </h3>
                   <p className="text-sm text-slate-700">
@@ -263,8 +263,8 @@ const MobileErasureGuideBlog: React.FC = () => {
                     factory reset may leave recoverable data.
                   </p>
                 </div>
-                <div className="bg-white border-l-4 border-teal-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-teal-900 mb-1">
+                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
+                  <h3 className="font-semibold text-blue-900 mb-1">
                     2. Remove All Accounts
                   </h3>
                   <p className="text-sm text-slate-700">
@@ -272,8 +272,8 @@ const MobileErasureGuideBlog: React.FC = () => {
                     accounts to prevent activation locks.
                   </p>
                 </div>
-                <div className="bg-white border-l-4 border-teal-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-teal-900 mb-1">
+                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
+                  <h3 className="font-semibold text-blue-900 mb-1">
                     3. Remove External Storage
                   </h3>
                   <p className="text-sm text-slate-700">
@@ -281,8 +281,8 @@ const MobileErasureGuideBlog: React.FC = () => {
                     before erasure.
                   </p>
                 </div>
-                <div className="bg-white border-l-4 border-teal-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-teal-900 mb-1">
+                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
+                  <h3 className="font-semibold text-blue-900 mb-1">
                     4. Document Serial Numbers
                   </h3>
                   <p className="text-sm text-slate-700">
@@ -290,8 +290,8 @@ const MobileErasureGuideBlog: React.FC = () => {
                     and compliance reporting.
                   </p>
                 </div>
-                <div className="bg-white border-l-4 border-teal-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-teal-900 mb-1">
+                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
+                  <h3 className="font-semibold text-blue-900 mb-1">
                     5. Verify Erasure Success
                   </h3>
                   <p className="text-sm text-slate-700">
@@ -345,7 +345,7 @@ const MobileErasureGuideBlog: React.FC = () => {
 
         {/* D-Secure Mobile Solution */}
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               D-Secure Mobile Device Erasure
             </h2>
@@ -355,9 +355,9 @@ const MobileErasureGuideBlog: React.FC = () => {
               trails.
             </p>
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 p-4 rounded-xl border border-teal-100">
+              <div className="bg-gradient-to-br from-blue-50 to-sky-50 p-4 rounded-xl border border-blue-100">
                 <CheckIcon
-                  className="w-6 h-6 text-teal-600 mb-2"
+                  className="w-6 h-6 text-blue-600 mb-2"
                   filled={true}
                 />
                 <h3 className="font-bold text-slate-900 text-sm mb-1">
@@ -367,9 +367,9 @@ const MobileErasureGuideBlog: React.FC = () => {
                   iOS, Android, Windows Mobile coverage
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 p-4 rounded-xl border border-teal-100">
+              <div className="bg-gradient-to-br from-blue-50 to-sky-50 p-4 rounded-xl border border-blue-100">
                 <CheckIcon
-                  className="w-6 h-6 text-teal-600 mb-2"
+                  className="w-6 h-6 text-blue-600 mb-2"
                   filled={true}
                 />
                 <h3 className="font-bold text-slate-900 text-sm mb-1">
@@ -379,9 +379,9 @@ const MobileErasureGuideBlog: React.FC = () => {
                   Automated documentation for audits
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 p-4 rounded-xl border border-teal-100">
+              <div className="bg-gradient-to-br from-blue-50 to-sky-50 p-4 rounded-xl border border-blue-100">
                 <CheckIcon
-                  className="w-6 h-6 text-teal-600 mb-2"
+                  className="w-6 h-6 text-blue-600 mb-2"
                   filled={true}
                 />
                 <h3 className="font-bold text-slate-900 text-sm mb-1">
@@ -397,7 +397,7 @@ const MobileErasureGuideBlog: React.FC = () => {
 
         {/* CTA */}
         <Reveal>
-          <div className="bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600 rounded-xl shadow-lg p-8 mt-8 text-white">
+          <div className="bg-gradient-to-br from-blue-600 via-sky-600 to-blue-600 rounded-xl shadow-lg p-8 mt-8 text-white">
             <h2 className="text-2xl font-bold mb-4">
               Secure Your Mobile Fleet
             </h2>
@@ -407,7 +407,7 @@ const MobileErasureGuideBlog: React.FC = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center bg-white text-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
             >
               <HoverIcon>
                 {(filled) => (

@@ -1631,7 +1631,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         // Backend ko notify karne ke liye webhook - backend auto-response email bhejega
                         formSubmitData.append(
                           "_webhook",
-                          "https://api.dsecuretech.com/api/formsubmit/webhook",
+                          `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
                         );
                         formSubmitData.append("_captcha", "false");
                         formSubmitData.append("_template", "table");
@@ -1671,7 +1671,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                         );
                         formSubmitData.append(
                           "_cc",
-                          "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+                          import.meta.env.VITE_FORM_CC_EMAILS,
                         );
 
                         // === Prepare submission data for Backend API ===
@@ -1708,7 +1708,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
 
                         try {
                           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-                          const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+                          const API_BASE = import.meta.env.VITE_API_BASE_URL;
                           const apiResponse = await fetch(
                             `${API_BASE}/api/ContactFormSubmissions`,
                             {
@@ -1720,7 +1720,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
 
                           // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
                           const response = await fetch(
-                            "https://formsubmit.co/support@dsecuretech.com",
+                            import.meta.env.VITE_FORMSUBMIT_ENDPOINT,
                             {
                               method: "POST",
                               body: formSubmitData,
@@ -1733,7 +1733,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
                             method: "POST",
                             headers: {
                               "Content-Type": "application/json",
-                              "x-api-key": "REACT_CONTACT_2026",
+                              "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
                             },
                             body: JSON.stringify(submissionData),
                           }).catch(() => {});

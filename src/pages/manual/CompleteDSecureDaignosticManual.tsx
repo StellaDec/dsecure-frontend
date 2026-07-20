@@ -80,13 +80,13 @@ const navigationTree: NavItem[] = [
                         <div className="bg-emerald-50 border-emerald-500 border rounded-lg p-6 mb-6">
                             <h4 className="text-emerald-800 font-bold mb-4">Download UNetbootin Tool:</h4>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-emerald-200 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-all shadow-sm">
+                                <a href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-windows-702.exe`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-emerald-200 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-all shadow-sm">
                                     🪟 Windows
                                 </a>
-                                <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-emerald-200 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-all shadow-sm">
+                                <a href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-emerald-200 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-all shadow-sm">
                                     🐧 Linux
                                 </a>
-                                <a href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-emerald-200 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-all shadow-sm">
+                                <a href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-emerald-200 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-all shadow-sm">
                                     🍎 macOS
                                 </a>
                             </div>
@@ -713,4 +713,4 @@ const CompleteDSecureDaignosticManual: React.FC = () => {
     );
 };
 
-export default CompleteDSecureDaignosticManual;
+export default CompleteDSecureDaignosticManual;

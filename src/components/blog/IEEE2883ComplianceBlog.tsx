@@ -102,7 +102,7 @@ const IEEE2883ComplianceBlog: React.FC = () => {
       {/* Intro Summary */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding IEEE 2883-2022
             </h2>
@@ -160,8 +160,8 @@ const IEEE2883ComplianceBlog: React.FC = () => {
                   {[
                     {
                       title: "Clear",
-                      color: "bg-emerald-50 border-emerald-200",
-                      badge: "bg-emerald-100 text-emerald-700",
+                      color: "bg-blue-50 border-blue-200",
+                      badge: "bg-blue-100 text-blue-700",
                       desc: "Logical erasure using overwriting and block erase on all addressable storage locations. Suitable for low-sensitivity data and internal asset redeployment.",
                     },
                     {
@@ -355,7 +355,7 @@ const IEEE2883ComplianceBlog: React.FC = () => {
                     <button onClick={() => setSelectedImageIndex(1)} className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group text-left cursor-pointer p-0">
                       <div className="p-3 border-b border-slate-100 flex items-center justify-between bg-slate-50 w-full">
                         <span className="font-semibold text-slate-800 text-sm">File Eraser Report</span>
-                        <span className="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded-full font-medium">Targeted</span>
+                        <span className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full font-medium">Targeted</span>
                       </div>
                       <div className="p-4 flex justify-center bg-slate-100 overflow-hidden relative w-full">
                         <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png" alt="File Eraser Report" className="h-64 object-contain rounded border border-slate-200 shadow-sm group-hover:scale-105 transition-transform duration-500" />

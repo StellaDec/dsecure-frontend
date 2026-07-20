@@ -654,7 +654,7 @@ export default function AdminReports() {
           return;
         }
 
-        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
         const response = await fetch(
           `${API_BASE}/api/EnhancedAuditReports/export-settings`,
           {
@@ -812,7 +812,7 @@ export default function AdminReports() {
   // Save PDF settings to API using FormData (server expects multipart/form-data)
   const savePdfSettingsToServer = useCallback(async (): Promise<boolean> => {
     try {
-      const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
       // Build FormData for server
       const formData = new FormData();
@@ -1095,7 +1095,7 @@ export default function AdminReports() {
   //     const userEmail = user?.email || 'unknown';
 
   //     const response = await fetch(
-  //       `${import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"}/api/ReportScheduler/list/${encodeURIComponent(userEmail)}`,
+  //       `${import.meta.env.VITE_API_BASE_URL}/api/ReportScheduler/list/${encodeURIComponent(userEmail)}`,
   //       {
   //         method: 'GET',
   //         headers: {
@@ -1129,7 +1129,7 @@ export default function AdminReports() {
 
   //   try {
   //     const response = await fetch(
-  //       `${import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"}/api/ReportScheduler/${scheduleId}`,
+  //       `${import.meta.env.VITE_API_BASE_URL}/api/ReportScheduler/${scheduleId}`,
   //       {
   //         method: 'DELETE',
   //         headers: {
@@ -1154,7 +1154,7 @@ export default function AdminReports() {
   // const handleToggleSchedule = async (scheduleId: string, currentStatus: boolean) => {
   //   try {
   //     const response = await fetch(
-  //       `${import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"}/api/ReportScheduler/${scheduleId}/toggle`,
+  //       `${import.meta.env.VITE_API_BASE_URL}/api/ReportScheduler/${scheduleId}/toggle`,
   //       {
   //         method: 'PATCH',
   //         headers: {
@@ -1259,7 +1259,7 @@ export default function AdminReports() {
 
   //     // Call Report Scheduler API
   //     const response = await fetch(
-  //       `${import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"}/api/ReportScheduler/create`,
+  //       `${import.meta.env.VITE_API_BASE_URL}/api/ReportScheduler/create`,
   //       {
   //         method: 'POST',
   //         headers: {
@@ -2018,7 +2018,7 @@ export default function AdminReports() {
       }
 
       const downloadUrl = `${
-        import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"
+        import.meta.env.VITE_API_BASE_URL
       }/api/EnhancedAuditReports/${encodeURIComponent(reportId)}/export-pdf-with-settings`;
 
       // console.log("🔵 Download request:", downloadUrl);
@@ -2230,8 +2230,7 @@ export default function AdminReports() {
             // GET request — server saved settings se PDF generate karta hai
             response = await fetch(
               `${
-                import.meta.env.VITE_API_BASE_URL ||
-                "https://api.dsecuretech.com"
+                import.meta.env.VITE_API_BASE_URL
               }/api/EnhancedAuditReports/${encodeURIComponent(
                 reportId,
               )}/export-pdf-with-settings`,
@@ -2522,8 +2521,7 @@ export default function AdminReports() {
             // GET request — server saved settings se PDF generate karta hai
             response = await fetch(
               `${
-                import.meta.env.VITE_API_BASE_URL ||
-                "https://api.dsecuretech.com"
+                import.meta.env.VITE_API_BASE_URL
               }/api/EnhancedAuditReports/${encodeURIComponent(
                 reportId,
               )}/export-pdf-with-settings`,
@@ -2719,7 +2717,7 @@ export default function AdminReports() {
   //     // Call the PDF export API with POST method
   //     const response = await fetch(
   //       `${import.meta.env.VITE_API_BASE_URL ||
-  //         "https://api.dsecuretech.com"}/api/EnhancedAuditReports/export-pdf-with-files`,
+  //         import.meta.env.VITE_API_BASE_URL}/api/EnhancedAuditReports/export-pdf-with-files`,
   //       {
   //         method: "POST",
   //         headers: {
@@ -5206,7 +5204,7 @@ export default function AdminReports() {
 
                     // Server se saved settings delete karo taaki defaults use hon
                     try {
-                      const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+                      const API_BASE = import.meta.env.VITE_API_BASE_URL;
                       
                       const response = await fetch(`${API_BASE}/api/EnhancedAuditReports/export-settings?productType=Global`, {
                         method: "DELETE",

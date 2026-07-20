@@ -64,7 +64,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
   };
 
   // FormSubmit logic matching ContactPage.tsx
-  const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/support@dsecuretech.com";
+  const FORMSUBMIT_ENDPOINT = import.meta.env.VITE_FORMSUBMIT_ENDPOINT;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -89,14 +89,14 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
 
       // Prepare data for email (FormSubmit)
       const formSubmitData = new FormData();
-      formSubmitData.append("_webhook", "https://api.dsecuretech.com/api/formsubmit/webhook");
+      formSubmitData.append("_webhook", `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`);
       formSubmitData.append("_captcha", "false");
       formSubmitData.append("_template", "table");
       formSubmitData.append("_replyto", formData.email.trim());
       formSubmitData.append("_subject", `Early Access Request: ${formData.fullName}`);
       formSubmitData.append(
         "_cc",
-        "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+        import.meta.env.VITE_FORM_CC_EMAILS,
       );
 
       formSubmitData.append("name", formData.fullName.trim());
@@ -125,7 +125,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
       };
 
       // 1. Backend Submission
-      const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
       const apiResponse = await fetch(`${API_BASE}/api/ContactFormSubmissions`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -146,7 +146,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": "REACT_CONTACT_2026",
+            "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
           },
           body: JSON.stringify(submissionData),
         }).catch(() => {});

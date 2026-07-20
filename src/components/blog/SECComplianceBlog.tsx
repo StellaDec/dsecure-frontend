@@ -15,11 +15,11 @@ const SECComplianceBlog: React.FC = () => {
       <section className="py-16 bg-white shadow-lg">
         <Reveal>
             <div className="text-center px-6">
-                <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+                <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
                     Financial Compliance
                 </span>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">SEC Compliance & Data Disposal</span>
+                    <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">SEC Compliance & Data Disposal</span>
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                     Meeting SEC Regulation S-P requirements for secure disposal of customer information in broker-dealer and investment advisory firms.
@@ -31,7 +31,7 @@ const SECComplianceBlog: React.FC = () => {
       {/* Main Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+             <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Introduction */}
                 <div className="space-y-4">
@@ -39,9 +39,9 @@ const SECComplianceBlog: React.FC = () => {
                     <p className="text-slate-700 leading-relaxed text-lg">
                         The Securities and Exchange Commission's Regulation S-P (Privacy of Consumer Financial Information) requires financial institutions to implement safeguards to protect customer information—including during disposal.
                     </p>
-                    <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                        <strong className="text-emerald-800 block mb-2">📋 Regulation S-P: Safeguards Rule</strong>
-                        <p className="text-sm text-emerald-700">
+                    <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
+                        <strong className="text-indigo-800 block mb-2">📋 Regulation S-P: Safeguards Rule</strong>
+                        <p className="text-sm text-indigo-700">
                             Section 248.30(b) requires firms to "properly dispose of consumer information" by implementing policies and procedures to protect against unauthorized access to or use of customer information in connection with its disposal.
                         </p>
                     </div>
@@ -82,24 +82,24 @@ const SECComplianceBlog: React.FC = () => {
                         The SEC's Disposal Rule works in conjunction with Regulation S-P to mandate specific data destruction practices:
                     </p>
                     <div className="space-y-3">
-                        <div className="bg-white border-l-4 border-emerald-500 p-4 rounded-r-lg shadow-sm">
-                            <h3 className="font-semibold text-emerald-900 mb-1">1. Written Policies & Procedures</h3>
+                        <div className="bg-white border-l-4 border-indigo-500 p-4 rounded-r-lg shadow-sm">
+                            <h3 className="font-semibold text-indigo-900 mb-1">1. Written Policies & Procedures</h3>
                             <p className="text-sm text-slate-700">Documented disposal procedures that address the proper disposal of consumer information.</p>
                         </div>
-                        <div className="bg-white border-l-4 border-emerald-500 p-4 rounded-r-lg shadow-sm">
-                            <h3 className="font-semibold text-emerald-900 mb-1">2. Appropriate Disposal Methods</h3>
+                        <div className="bg-white border-l-4 border-indigo-500 p-4 rounded-r-lg shadow-sm">
+                            <h3 className="font-semibold text-indigo-900 mb-1">2. Appropriate Disposal Methods</h3>
                             <p className="text-sm text-slate-700">Use methods that render information unreadable or undecipherable (shredding, burning, pulverizing for paper; wiping, degaussing, or destruction for electronic media).</p>
                         </div>
-                        <div className="bg-white border-l-4 border-emerald-500 p-4 rounded-r-lg shadow-sm">
-                            <h3 className="font-semibold text-emerald-900 mb-1">3. Third-Party Vendor Oversight</h3>
+                        <div className="bg-white border-l-4 border-indigo-500 p-4 rounded-r-lg shadow-sm">
+                            <h3 className="font-semibold text-indigo-900 mb-1">3. Third-Party Vendor Oversight</h3>
                             <p className="text-sm text-slate-700">Exercise due diligence in selecting service providers and require contractual commitments to proper disposal.</p>
                         </div>
-                        <div className="bg-white border-l-4 border-emerald-500 p-4 rounded-r-lg shadow-sm">
-                            <h3 className="font-semibold text-emerald-900 mb-1">4. Employee Training</h3>
+                        <div className="bg-white border-l-4 border-indigo-500 p-4 rounded-r-lg shadow-sm">
+                            <h3 className="font-semibold text-indigo-900 mb-1">4. Employee Training</h3>
                             <p className="text-sm text-slate-700">Train staff on disposal procedures and the importance of protecting customer information.</p>
                         </div>
-                        <div className="bg-white border-l-4 border-emerald-500 p-4 rounded-r-lg shadow-sm">
-                            <h3 className="font-semibold text-emerald-900 mb-1">5. Periodic Review</h3>
+                        <div className="bg-white border-l-4 border-indigo-500 p-4 rounded-r-lg shadow-sm">
+                            <h3 className="font-semibold text-indigo-900 mb-1">5. Periodic Review</h3>
                             <p className="text-sm text-slate-700">Regularly review and update disposal policies to address evolving threats and technologies.</p>
                         </div>
                     </div>
@@ -112,9 +112,9 @@ const SECComplianceBlog: React.FC = () => {
                         For electronic storage media containing customer information, the SEC expects firms to use industry-recognized data sanitization standards:
                     </p>
                     <div className="bg-slate-900 text-slate-100 p-6 rounded-xl font-mono text-sm leading-relaxed">
-                        <p className="text-emerald-400 font-bold mb-3">{'// Acceptable Disposal Methods'}</p>
+                        <p className="text-indigo-400 font-bold mb-3">{'// Acceptable Disposal Methods'}</p>
                         <p className="mb-2">✓ DoD 5220.22-M (3 or 7-pass overwrite)</p>
-                        <p className="mb-2">✓ <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> compliant sanitization</p>
+                        <p className="mb-2">✓ <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link> compliant sanitization</p>
                         <p className="mb-2">✓ Cryptographic erasure (SEDs)</p>
                         <p className="mb-3">✓ Physical destruction (shredding, degaussing)</p>
                         <p className="text-red-400">✗ Standard delete or format (INSUFFICIENT)</p>
@@ -125,7 +125,7 @@ const SECComplianceBlog: React.FC = () => {
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">Third-Party Vendor Due Diligence</h2>
                     <p className="text-slate-700 leading-relaxed">
-                        If using <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> vendors or disposal services, SEC requires firms to:
+                        If using <Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> vendors or disposal services, SEC requires firms to:
                     </p>
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200">
                         <h3 className="font-bold text-amber-900 mb-4">Vendor Evaluation Checklist</h3>
@@ -202,24 +202,24 @@ const SECComplianceBlog: React.FC = () => {
 
         {/* D-Secure SEC Solution */}
         <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">D-Secure SEC Compliance Package</h2>
                 <p className="text-slate-700 leading-relaxed mb-6">
                     D-Secure provides turnkey SEC Regulation S-P compliance with automated documentation, audit trails, and examination-ready reporting.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-4 rounded-xl border border-emerald-100">
-                        <ClipboardIcon className="w-6 h-6 text-emerald-800 mb-2" filled={true} />
+                    <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-100">
+                        <ClipboardIcon className="w-6 h-6 text-indigo-800 mb-2" filled={true} />
                         <h3 className="font-bold text-slate-900 text-sm mb-1">Automated Certificates</h3>
                         <p className="text-xs text-slate-600">Device-level destruction verification for SEC exams</p>
                     </div>
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-4 rounded-xl border border-emerald-100">
-                        <ShieldIcon className="w-6 h-6 text-emerald-800 mb-2" filled={true} />
+                    <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-100">
+                        <ShieldIcon className="w-6 h-6 text-indigo-800 mb-2" filled={true} />
                         <h3 className="font-bold text-slate-900 text-sm mb-1">Compliant Methods</h3>
-                        <p className="text-xs text-slate-600">DoD 5220.22-M and <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> as standard</p>
+                        <p className="text-xs text-slate-600">DoD 5220.22-M and <Link to="/compliance/nist-800-88" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link> as standard</p>
                     </div>
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-4 rounded-xl border border-emerald-100">
-                        <GlobeIcon className="w-6 h-6 text-emerald-800 mb-2" filled={true} />
+                    <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-100">
+                        <GlobeIcon className="w-6 h-6 text-indigo-800 mb-2" filled={true} />
                         <h3 className="font-bold text-slate-900 text-sm mb-1">Cloud Audit Trail</h3>
                         <p className="text-xs text-slate-600">Immutable records for regulatory review</p>
                     </div>
@@ -229,14 +229,14 @@ const SECComplianceBlog: React.FC = () => {
 
         {/* CTA */}
         <Reveal>
-             <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-8 mt-8 text-white">
+             <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-8 mt-8 text-white">
                 <h2 className="text-2xl font-bold mb-4">Ensure SEC Compliance</h2>
                 <p className="leading-relaxed mb-6">
                     Get expert guidance on meeting SEC Regulation S-P requirements and preparing for examinations.
                 </p>
                 <Link
                     to="/contact"
-                    className="inline-flex items-center bg-white text-emerald-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
+                    className="inline-flex items-center bg-white text-indigo-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
                 >
                     <HoverIcon>
                         {(filled) => <ShieldIcon className="w-5 h-5 mr-2" filled={filled} />}

@@ -47,7 +47,7 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
       {/* Main Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
             {/* Incident Overview */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -185,7 +185,7 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
                 </li>
 
                 <li>
-                  <strong>Adopt Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>:</strong> Unused and retired
+                  <strong>Adopt Secure <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Data Erasure</Link>:</strong> Unused and retired
                   systems must be wiped using certified data erasure methods to
                   prevent residual data exposure.
                 </li>
@@ -202,7 +202,7 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
 
         {/* D-Secure Section */}
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               How D-Secure Helps Prevent Such Incidents
             </h2>

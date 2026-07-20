@@ -26,6 +26,7 @@
   "dependencies": {
     "@cloudinary/react": "^1.14.3",
     "@cloudinary/url-gen": "^1.22.0",
+    "@sentry/react": "^10.66.0",
     "@tanstack/react-query": "^5.90.5",
     "@types/crypto-js": "^4.2.2",
     "@types/leaflet": "^1.9.21",
@@ -49,6 +50,7 @@
     "leaflet": "^1.9.4",
     "lucide-react": "^0.548.0",
     "pako": "^2.1.0",
+    "posthog-js": "^1.404.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-dropzone": "^15.0.0",

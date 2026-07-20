@@ -23,13 +23,13 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
                 <Reveal>
                     <div className="text-center px-6 max-w-5xl mx-auto">
                         <span className="inline-block px-4 py-1 text-sm font-medium text-brand bg-brand/10 rounded-full mb-4">
-                            Strategic <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
+                            Strategic <Link to="/solutions/itad" className="text-rose-600 hover:underline font-medium">ITAD</Link>
                         </span>
                         <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                            Physical Destruction vs <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link>: A Cost Analysis for IT Leaders
+                            Physical Destruction vs <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Wiping</Link>: A Cost Analysis for IT Leaders
                         </h1>
                         <p className="text-xl text-slate-600 leading-relaxed">
-                            Stop destroying your residual hardware value. Discover why modern enterprise data centers are transitioning from physical shredding to verifiable <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link>.
+                            Stop destroying your residual hardware value. Discover why modern enterprise data centers are transitioning from physical shredding to verifiable <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link>.
                         </p>
                     </div>
                 </Reveal>
@@ -45,7 +45,7 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
                             When decommissioning data center equipment, corporate laptops, or mobile devices, security cannot be compromised. However, treating every device as a candidate for the shredder ignores a massive opportunity for cost recovery and environmental sustainability. 
                         </p>
                         <p>
-                            In this comprehensive analysis, we will break down the financial, operational, and security implications of physical destruction versus software-based <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link>, helping you make the most cost-effective decision for your organization.
+                            In this comprehensive analysis, we will break down the financial, operational, and security implications of physical destruction versus software-based <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link>, helping you make the most cost-effective decision for your organization.
                         </p>
                     </div>
                 </Reveal>
@@ -80,16 +80,16 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
 
                 <Reveal>
                     <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl shadow-lg p-8 md:p-10 text-white">
-                        <h2 className="text-3xl font-bold mb-6">The Modern Alternative: Software <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link></h2>
+                        <h2 className="text-3xl font-bold mb-6">The Modern Alternative: Software <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Wiping</Link></h2>
                         <p className="text-slate-300 text-lg mb-6 leading-relaxed">
-                            <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data wiping</Link> (or data sanitization) uses software commands to permanently overwrite or cryptographically erase data from storage media. When executed properly using enterprise software, data wiping satisfies the highest global security standards, including <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> and DoD 5220.22-M.
+                            <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data wiping</Link> (or data sanitization) uses software commands to permanently overwrite or cryptographically erase data from storage media. When executed properly using enterprise software, data wiping satisfies the highest global security standards, including <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-rose-600 hover:underline font-medium">NIST 800-88</Link></Link> and DoD 5220.22-M.
                         </p>
 
-                        <h3 className="text-2xl font-semibold text-white mt-8 mb-4">How <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link> Protects Your Budget</h3>
+                        <h3 className="text-2xl font-semibold text-white mt-8 mb-4">How <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Wiping</Link> Protects Your Budget</h3>
                         <div className="grid md:grid-cols-2 gap-6 mb-6">
                             <div className="bg-white/10 border border-white/20 p-6 rounded-lg">
                                 <h4 className="font-bold text-xl mb-2 text-white">Hardware Remarketing</h4>
-                                <p className="text-slate-300">Sanitized drives can be safely sold on the secondary <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> market. For enterprise arrays, this can mean recovering tens of thousands of dollars per rack.</p>
+                                <p className="text-slate-300">Sanitized drives can be safely sold on the secondary <Link to="/solutions/itad" className="text-rose-600 hover:underline font-medium">ITAD</Link> market. For enterprise arrays, this can mean recovering tens of thousands of dollars per rack.</p>
                             </div>
                             <div className="bg-white/10 border border-white/20 p-6 rounded-lg">
                                 <h4 className="font-bold text-xl mb-2 text-white">Internal Redeployment</h4>
@@ -115,7 +115,7 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
                                     <tr className="bg-slate-100 text-slate-900">
                                         <th className="p-4 font-bold border-b border-slate-300">Metric</th>
                                         <th className="p-4 font-bold border-b border-slate-300 border-l border-slate-200">Physical Destruction</th>
-                                        <th className="p-4 font-bold border-b border-slate-300 border-l border-slate-200"><Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link> (D-Secure)</th>
+                                        <th className="p-4 font-bold border-b border-slate-300 border-l border-slate-200"><Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Wiping</Link> (D-Secure)</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-slate-700">
@@ -132,12 +132,12 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
                                     <tr>
                                         <td className="p-4 border-b border-slate-200 font-medium">Asset Resale Value</td>
                                         <td className="p-4 border-b border-slate-200 border-l border-slate-200">$0 (Drives destroyed)</td>
-                                        <td className="p-4 border-b border-slate-200 border-l border-slate-200 text-emerald-600 font-bold">+$25,000 to +$40,000</td>
+                                        <td className="p-4 border-b border-slate-200 border-l border-slate-200 text-rose-600 font-bold">+$25,000 to +$40,000</td>
                                     </tr>
                                     <tr className="bg-slate-50">
                                         <td className="p-4 font-bold text-slate-900">Net Financial Impact</td>
                                         <td className="p-4 font-bold text-red-600 border-l border-slate-200">- $10,000+ Loss</td>
-                                        <td className="p-4 font-bold text-emerald-600 border-l border-slate-200">+ $21,000+ Profit</td>
+                                        <td className="p-4 font-bold text-rose-600 border-l border-slate-200">+ $21,000+ Profit</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -152,7 +152,7 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
                     <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 md:p-10">
                         <h2 className="text-3xl font-bold text-slate-900 mb-6">When is Physical Destruction Actually Necessary?</h2>
                         <p className="text-slate-700 text-lg mb-4 leading-relaxed">
-                            Despite the overwhelming financial advantages of <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link>, physical destruction still has a place in specific scenarios:
+                            Despite the overwhelming financial advantages of <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link>, physical destruction still has a place in specific scenarios:
                         </p>
                         <ol className="list-decimal pl-6 space-y-4 text-slate-700 text-lg mb-6">
                             <li><strong>Failed Drives:</strong> If a drive is mechanically broken and cannot be mounted or recognized by wiping software, it cannot be safely erased via software. It must be shredded.</li>
@@ -169,10 +169,10 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
                     <div className="bg-brand/5 border-l-4 border-brand p-8 md:p-10 rounded-r-xl">
                         <h2 className="text-2xl font-bold text-slate-900 mb-4">Conclusion: Maximize Your IT Lifecycle ROI</h2>
                         <p className="text-slate-700 text-lg leading-relaxed mb-6">
-                            Continuing to blindly destroy functional IT hardware is an unsustainable practice that drains IT budgets and generates unnecessary electronic waste. By adopting software-based <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link>, IT leaders can satisfy rigorous compliance requirements while recovering significant capital through hardware remarketing.
+                            Continuing to blindly destroy functional IT hardware is an unsustainable practice that drains IT budgets and generates unnecessary electronic waste. By adopting software-based <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link>, IT leaders can satisfy rigorous compliance requirements while recovering significant capital through hardware remarketing.
                         </p>
                         <p className="text-slate-900 font-semibold text-lg">
-                            Ready to stop shredding your residual value? Contact the D-Secure team today to implement an automated, compliance-verified <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> protocol for your enterprise.
+                            Ready to stop shredding your residual value? Contact the D-Secure team today to implement an automated, compliance-verified <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link> protocol for your enterprise.
                         </p>
                     </div>
                 </Reveal>

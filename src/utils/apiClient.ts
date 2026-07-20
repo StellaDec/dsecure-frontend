@@ -76,7 +76,7 @@ function isBinaryUrl(url: string | undefined): boolean {
  * Create configured Axios instance
  */
 function createApiInstance(): AxiosInstance {
-  const baseURL = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const timeout = Number(import.meta.env.VITE_API_TIMEOUT) || 60000;
 
   if (import.meta.env.DEV) {
@@ -143,7 +143,8 @@ function createApiInstance(): AxiosInstance {
   // ---------------------------------------------------------------------------
   instance.interceptors.response.use(
     (response: AxiosResponse) => {
-      const contentType = response.headers["content-type"];
+      const contentTypeHeader = response.headers["content-type"];
+      const contentType = typeof contentTypeHeader === 'string' ? contentTypeHeader : undefined;
       const requestUrl = response.config.url;
 
       // -------------------------------------------------------------------------
@@ -353,7 +354,7 @@ export function clearAuthToken(): void {
  * Get current API base URL
  */
 export function getApiBaseUrl(): string {
-  return import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+  return import.meta.env.VITE_API_BASE_URL;
 }
 
 // Export types

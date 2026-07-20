@@ -17,7 +17,7 @@ import { encodeEmail } from './encodeEmail'
 import type { ApiResponse, User, Subuser, EnhancedSubuser, license } from '@/types/models'
 
 // API Configuration
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 const API_TIMEOUT = Number(import.meta.env.VITE_API_TIMEOUT) || 60000
 
 // Debug mode for development

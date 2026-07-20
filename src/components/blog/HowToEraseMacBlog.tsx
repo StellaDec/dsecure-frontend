@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const HowToEraseMacBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-sky-50/30 via-sky-50/20 to-white">
         <SEOHead
           seo={getBlogSEO({
             title:
@@ -28,7 +28,7 @@ const HowToEraseMacBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-sky-700 bg-sky-100 rounded-full mb-4">
                 Mac Data Erasure
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -46,7 +46,7 @@ const HowToEraseMacBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -54,7 +54,7 @@ const HowToEraseMacBlog: React.FC = () => {
                   devices — whether MacBook, Mac mini, iMac, or Mac Studio —
                   simply restoring factory settings isn't sufficient,
                   particularly for devices used in{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-sky-800">
                     business, education, or government
                   </strong>{" "}
                   environments. These systems often contain sensitive data that
@@ -70,7 +70,7 @@ const HowToEraseMacBlog: React.FC = () => {
               </div>
 
               {/* Key Insight */}
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
+              <div className="bg-sky-50 border-l-4 border-sky-500 p-8 rounded-r-lg mt-8">
                 <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Enterprise Compliance Requirements
                 </h2>
@@ -106,31 +106,31 @@ const HowToEraseMacBlog: React.FC = () => {
                       </h3>
                       <ul className="space-y-2 text-slate-700 text-lg">
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-sky-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             1
                           </span>
                           Navigate to Apple Menu → System Settings
                         </li>
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-sky-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             2
                           </span>
                           Go to General section
                         </li>
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-sky-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             3
                           </span>
                           Click Transfer or Reset
                         </li>
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-sky-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             4
                           </span>
                           Select Erase All Content and Settings
                         </li>
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-sky-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             5
                           </span>
                           Follow on-screen prompts to complete
@@ -155,31 +155,31 @@ const HowToEraseMacBlog: React.FC = () => {
                       </h3>
                       <ul className="space-y-2 text-slate-700 text-lg">
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             1
                           </span>
                           Long-press the Power Button
                         </li>
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             2
                           </span>
                           Select Options, then click Continue
                         </li>
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             3
                           </span>
                           Click on Disk Utility, then Continue
                         </li>
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             4
                           </span>
                           Select Internal Volumes, then click Erase
                         </li>
                         <li className="flex items-start">
-                          <span className="w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
+                          <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">
                             5
                           </span>
                           Name the volume, keep Format as APFS, then Erase
@@ -194,7 +194,7 @@ const HowToEraseMacBlog: React.FC = () => {
 
           {/* Limitations Section */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Limitations of Native Apple Erasure Methods
               </h2>
@@ -204,9 +204,9 @@ const HowToEraseMacBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-8 mt-8">
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6">
+                <div className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 rounded-xl p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-emerald-50 to-teal-500 rounded-lg flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-sky-50 to-blue-500 rounded-lg flex items-center justify-center mr-4">
                       <svg
                         className="w-6 h-6 text-white"
                         fill="none"
@@ -289,9 +289,9 @@ const HowToEraseMacBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+                <div className="bg-sky-50 border border-sky-200 rounded-xl p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-sky-500 rounded-lg flex items-center justify-center mr-4">
                       <svg
                         className="w-6 h-6 text-white"
                         fill="none"
@@ -320,7 +320,7 @@ const HowToEraseMacBlog: React.FC = () => {
 
               <div className="bg-slate-100 rounded-xl p-6 mt-6">
                 <p className="text-slate-700 text-lg leading-loose">
-                  <strong className="text-emerald-800">
+                  <strong className="text-sky-800">
                     For businesses, educational institutions, healthcare
                     organizations, and government entities
                   </strong>
@@ -333,13 +333,13 @@ const HowToEraseMacBlog: React.FC = () => {
 
           {/* Solution Section */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-sky-600 via-blue-600 to-sky-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
-                Professional Solution: D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> for Mac
+                Professional Solution: D-Secure <Link to="/products/drive-eraser" className="text-sky-600 hover:underline font-medium">Drive Eraser</Link> for Mac
               </h2>
               <p className="leading-loose text-lg mb-6">
                 If you're seeking secure Mac erasure,{" "}
-                <strong>D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> for Mac</strong> provides the
+                <strong>D-Secure <Link to="/products/drive-eraser" className="text-sky-600 hover:underline font-medium">Drive Eraser</Link> for Mac</strong> provides the
                 definitive solution. The software is easy to deploy using a
                 simple terminal command and works across all Mac devices.
               </p>
@@ -350,31 +350,31 @@ const HowToEraseMacBlog: React.FC = () => {
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="w-6 h-6 bg-white text-emerald-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
+                    <span className="w-6 h-6 bg-white text-sky-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
                       1
                     </span>
                     Long-press the Power Button
                   </li>
                   <li className="flex items-start">
-                    <span className="w-6 h-6 bg-white text-emerald-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
+                    <span className="w-6 h-6 bg-white text-sky-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
                       2
                     </span>
                     Select Options and click Continue
                   </li>
                   <li className="flex items-start">
-                    <span className="w-6 h-6 bg-white text-emerald-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
+                    <span className="w-6 h-6 bg-white text-sky-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
                       3
                     </span>
                     Go to Utilities and click on Terminal
                   </li>
                   <li className="flex items-start">
-                    <span className="w-6 h-6 bg-white text-emerald-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
+                    <span className="w-6 h-6 bg-white text-sky-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
                       4
                     </span>
-                    Enter the command to initialize D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link>
+                    Enter the command to initialize D-Secure <Link to="/products/drive-eraser" className="text-sky-600 hover:underline font-medium">Drive Eraser</Link>
                   </li>
                   <li className="flex items-start">
-                    <span className="w-6 h-6 bg-white text-emerald-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
+                    <span className="w-6 h-6 bg-white text-sky-800 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0 font-bold">
                       5
                     </span>
                     Erase Mac and receive digitally signed Certificate of
@@ -393,7 +393,7 @@ const HowToEraseMacBlog: React.FC = () => {
 
               <Link
                 to="/all-products"
-                className="inline-flex items-center bg-white text-emerald-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg"
+                className="inline-flex items-center bg-white text-sky-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg"
               >
                 Explore D-Secure for Mac
                 <svg
@@ -415,13 +415,13 @@ const HowToEraseMacBlog: React.FC = () => {
 
           {/* Key Features */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-8">
                 Key Features of D-Secure Mac Eraser
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-sky-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     20+ Global Erasure Standards
                   </h2>
@@ -432,7 +432,7 @@ const HowToEraseMacBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-teal-500 pl-8 py-2">
+                <div className="border-l-4 border-blue-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Digitally Signed Erasure Reports
                   </h2>
@@ -443,7 +443,7 @@ const HowToEraseMacBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-cyan-500 pl-8 py-2">
+                <div className="border-l-4 border-sky-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Simple Terminal Deployment
                   </h2>
@@ -486,7 +486,7 @@ const HowToEraseMacBlog: React.FC = () => {
               <p className="text-slate-700 text-lg leading-loose mb-6">
                 When data security matters, it's important to ask not just "how
                 to erase Mac" but{" "}
-                <strong className="text-emerald-800">
+                <strong className="text-sky-800">
                   "how to erase it correctly."
                 </strong>{" "}
                 Native tools work for one-off personal use, but they fall short

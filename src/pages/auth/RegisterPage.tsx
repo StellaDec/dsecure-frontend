@@ -52,7 +52,7 @@ export default function RegisterPage() {
       }
 
       // Direct API call to your endpoint
-      const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
       const response = await fetch(`${API_BASE}/api/Users`, {
         method: 'POST',
         headers: {

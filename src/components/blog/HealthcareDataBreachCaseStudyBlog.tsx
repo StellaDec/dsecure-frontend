@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "Healthcare Data Breach Case Study",
@@ -26,7 +26,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
                 Healthcare Data Breach
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -46,13 +46,13 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   A recent healthcare data breach at a community health center
                   has highlighted critical vulnerabilities in{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-indigo-800">
                     electronic hardware disposal practices
                   </strong>
                   . The incident exposed personal data of patients including
@@ -76,7 +76,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Compliance Violations */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Regulatory Non-Compliance Consequences
               </h2>
@@ -118,7 +118,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Impact Analysis */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Impact on Over 100,000 Patients
               </h2>
@@ -174,7 +174,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* The Need for Proper Sanitization */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Critical Need for Permanent Media Sanitization
               </h2>
@@ -188,7 +188,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8 mt-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Documented Proof of Sanitization
                   </h3>
@@ -201,7 +201,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Lifecycle Data Protection
                   </h3>
@@ -213,7 +213,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Vendor Selection Criteria
                   </h3>
@@ -231,15 +231,15 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Prevention Strategies */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What Could Have Prevented This Breach
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
-                    Onsite <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>
+                    Onsite <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Data Erasure</Link>
                   </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Performing data erasure onsite before devices change hands
@@ -248,7 +248,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                     control over the sanitization process.
                   </p>
                 </div>
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Certified Software Solutions
                   </h3>
@@ -276,7 +276,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Data erasure software should be used to wipe storage media
-                    before physical shredding or destruction at <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> facilities.
+                    before physical shredding or destruction at <Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> facilities.
                     This prevents any leakage during hardware movement and
                     mitigates logistical security lapses.
                   </p>
@@ -287,14 +287,14 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Key Takeaways */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-8">
+            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-8">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Takeaways for Healthcare Organizations
               </h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
                     1
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -304,7 +304,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
                     2
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -314,7 +314,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
                     3
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -324,7 +324,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
                     4
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -339,7 +339,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>

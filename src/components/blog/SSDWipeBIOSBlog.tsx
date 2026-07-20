@@ -72,7 +72,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
   };
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "How to wipe an SSD from BIOS: secure erase step by step",
@@ -92,7 +92,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
                 SSD Data Erasure
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -109,7 +109,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding BIOS Secure Erase
               </h2>
@@ -145,7 +145,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-teal-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-slate-500 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Step-by-Step: Wiping SSD from BIOS
               </h2>
@@ -157,7 +157,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-emerald-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-blue-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       1
                     </span>
                     <div>
@@ -176,7 +176,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
 
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-emerald-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-blue-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       2
                     </span>
                     <div>
@@ -195,7 +195,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
 
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-emerald-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-blue-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       3
                     </span>
                     <div>
@@ -215,7 +215,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
 
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-emerald-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-blue-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       4
                     </span>
                     <div>
@@ -234,7 +234,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
 
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-emerald-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-blue-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       5
                     </span>
                     <div>
@@ -254,7 +254,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Limitations of BIOS Secure Erase
               </h2>
@@ -265,8 +265,8 @@ const SSDWipeBIOSBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     Single Drive Only
                   </h3>
@@ -276,8 +276,8 @@ const SSDWipeBIOSBlog: React.FC = () => {
                     operations.
                   </p>
                 </div>
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     No Erasure Reports
                   </h3>
@@ -287,8 +287,8 @@ const SSDWipeBIOSBlog: React.FC = () => {
                     requirements.
                   </p>
                 </div>
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     Password Required
                   </h3>
@@ -297,8 +297,8 @@ const SSDWipeBIOSBlog: React.FC = () => {
                     password set. Unprotected drives cannot be erased this way.
                   </p>
                 </div>
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     No Verification
                   </h3>
@@ -308,8 +308,8 @@ const SSDWipeBIOSBlog: React.FC = () => {
                     message.
                   </p>
                 </div>
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     Manufacturer Dependent
                   </h3>
@@ -319,8 +319,8 @@ const SSDWipeBIOSBlog: React.FC = () => {
                     feature.
                   </p>
                 </div>
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     No Audit Trail
                   </h3>
@@ -334,12 +334,12 @@ const SSDWipeBIOSBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Professional Alternative: D-Secure{" "}
                 <Link
                   to="/products/drive-eraser"
-                  className="text-emerald-600 hover:underline font-medium"
+                  className="text-blue-600 hover:underline font-medium"
                 >
                   Drive Eraser
                 </Link>
@@ -348,7 +348,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
                 D-Secure{" "}
                 <Link
                   to="/products/drive-eraser"
-                  className="text-emerald-600 hover:underline font-medium"
+                  className="text-blue-600 hover:underline font-medium"
                 >
                   Drive Eraser
                 </Link>{" "}
@@ -364,7 +364,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-slate-300">
                   <thead>
-                    <tr className="bg-emerald-600 text-white">
+                    <tr className="bg-blue-600 text-white">
                       <th className="border border-slate-300 px-6 py-4 text-left font-bold">
                         Feature
                       </th>
@@ -375,7 +375,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
                         D-Secure{" "}
                         <Link
                           to="/products/drive-eraser"
-                          className="text-emerald-600 hover:underline font-medium"
+                          className="text-blue-600 hover:underline font-medium"
                         >
                           Drive Eraser
                         </Link>
@@ -387,11 +387,11 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
                         Multiple Drives
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         One at a time
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         Simultaneous erasure
                       </td>
@@ -400,11 +400,11 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
                         Erasure Reports
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         None
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         Tamper-proof certificates
                       </td>
@@ -413,11 +413,11 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
                         Verification
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         Not available
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         Built-in verification
                       </td>
@@ -426,11 +426,11 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
                         Standards Support
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         Manufacturer specific
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         NIST, DoD, IEEE & more
                       </td>
@@ -439,11 +439,11 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
                         Password Requirement
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         Often required
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         No password needed
                       </td>
@@ -452,11 +452,11 @@ const SSDWipeBIOSBlog: React.FC = () => {
                       <td className="border border-slate-300 px-6 py-4 font-semibold">
                         Compliance Ready
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         No compliance support
                       </td>
-                      <td className="border border-slate-300 px-6 py-4 text-emerald-800">
+                      <td className="border border-slate-300 px-6 py-4 text-blue-800">
                         {" "}
                         GDPR, HIPAA, PCI-DSS
                       </td>
@@ -468,7 +468,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Frequently Asked Questions
               </h2>
@@ -526,7 +526,7 @@ const SSDWipeBIOSBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
+                  className="inline-block bg-gradient-to-r from-blue-500 to-slate-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-slate-600 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>

@@ -47,11 +47,16 @@ module.exports = {
           "0%": { opacity: "0", transform: "scale(0.96)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 300ms ease-out both",
         "slide-down": "slide-down 200ms ease-out both",
         pop: "pop 180ms ease-out both",
+        marquee: "marquee 25s linear infinite",
       },
     },
   },

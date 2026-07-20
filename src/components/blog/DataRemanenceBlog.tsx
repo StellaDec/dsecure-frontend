@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const DataRemanenceBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title:
@@ -27,7 +27,7 @@ const DataRemanenceBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
                 Data Security Fundamentals
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -44,7 +44,7 @@ const DataRemanenceBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is Data Remanence?
               </h2>
@@ -55,7 +55,7 @@ const DataRemanenceBlog: React.FC = () => {
                 uncontrolled environment — such as being lost, sold, or disposed
                 of improperly.
               </p>
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   The Core Problem
                 </h3>
@@ -71,7 +71,7 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Causes of Data Remanence
               </h2>
@@ -80,8 +80,8 @@ const DataRemanenceBlog: React.FC = () => {
                 implementing effective countermeasures:
               </p>
               <div className="space-y-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
+                  <h3 className="font-bold text-amber-700 text-xl mb-2">
                     Trash/Recycle Bin Mechanism
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -90,8 +90,8 @@ const DataRemanenceBlog: React.FC = () => {
                     remains on the storage device.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
+                  <h3 className="font-bold text-amber-700 text-xl mb-2">
                     Auto-Save and Backup Features
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -100,8 +100,8 @@ const DataRemanenceBlog: React.FC = () => {
                     across storage media.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
+                  <h3 className="font-bold text-amber-700 text-xl mb-2">
                     Directory Entry Removal Only
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -111,8 +111,8 @@ const DataRemanenceBlog: React.FC = () => {
                     but leaves data recoverable.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
+                  <h3 className="font-bold text-amber-700 text-xl mb-2">
                     Reformatting Limitations
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -127,7 +127,7 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Risks Associated With Data Remanence
               </h2>
@@ -184,7 +184,7 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 NIST Media Sanitization Methods
               </h2>
@@ -192,11 +192,11 @@ const DataRemanenceBlog: React.FC = () => {
                 The National Institute of Standards and Technology (NIST) in its
                 <Link
                   to="/products/drive-eraser"
-                  className="text-emerald-600 hover:underline font-medium"
+                  className="text-amber-600 hover:underline font-medium"
                 >
                   <Link
                     to="/compliance/nist-800-88"
-                    className="text-emerald-600 hover:underline font-medium"
+                    className="text-amber-600 hover:underline font-medium"
                   >
                     NIST 800-88
                   </Link>
@@ -206,8 +206,8 @@ const DataRemanenceBlog: React.FC = () => {
                 scope of recovery:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200 text-center">
+                  <h3 className="font-bold text-amber-700 text-xl mb-3">
                     NIST Clear
                   </h3>
                   <p className="text-slate-700">
@@ -215,8 +215,8 @@ const DataRemanenceBlog: React.FC = () => {
                     from storage devices
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200 text-center">
+                  <h3 className="font-bold text-amber-700 text-xl mb-3">
                     NIST Purge
                   </h3>
                   <p className="text-slate-700">
@@ -224,8 +224,8 @@ const DataRemanenceBlog: React.FC = () => {
                     sanitization
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200 text-center">
+                  <h3 className="font-bold text-amber-700 text-xl mb-3">
                     NIST Destroy
                   </h3>
                   <p className="text-slate-700">
@@ -238,7 +238,7 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Countermeasures to Prevent Data Remanence
               </h2>
@@ -247,8 +247,8 @@ const DataRemanenceBlog: React.FC = () => {
                 organizations must employ secure data destruction methods:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
+                  <h3 className="font-bold text-amber-700 text-xl mb-2">
                     Overwriting
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -256,8 +256,8 @@ const DataRemanenceBlog: React.FC = () => {
                     to ensure original data cannot be recovered.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
+                  <h3 className="font-bold text-amber-700 text-xl mb-2">
                     Degaussing
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -265,8 +265,8 @@ const DataRemanenceBlog: React.FC = () => {
                     media like HDDs.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
+                  <h3 className="font-bold text-amber-700 text-xl mb-2">
                     Cryptographic Erase
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -274,8 +274,8 @@ const DataRemanenceBlog: React.FC = () => {
                     permanently inaccessible.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
+                  <h3 className="font-bold text-amber-700 text-xl mb-2">
                     Physical Shredding
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -288,7 +288,7 @@ const DataRemanenceBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Building a Data Destruction Policy
               </h2>

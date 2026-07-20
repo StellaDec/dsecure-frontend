@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ChromebookDataRisksBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Chromebook Data Security Risks",
@@ -26,7 +26,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
                 Device Security
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -44,11 +44,11 @@ const ChromebookDataRisksBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
-                  <strong className="text-emerald-800">Chromebooks</strong>{" "}
+                  <strong className="text-rose-800">Chromebooks</strong>{" "}
                   represent a family of devices including laptops, tablets,
                   convertibles, and detachable form factors running on Chrome OS
                   — a Linux-based operating system from Google. Available from
@@ -72,7 +72,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* Risk 1: Local Data Storage */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Risk #1: Local Data Storage — Not Everything Lives in the Cloud
               </h2>
@@ -101,7 +101,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
               </div>
 
               <div className="space-y-6 mt-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     High-Risk Scenarios
                   </h3>
@@ -114,7 +114,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Potential Consequences
                   </h3>
@@ -131,7 +131,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* Risk 2: Security Vulnerabilities */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Risk #2: Built-in Security Features Have Limitations
               </h2>
@@ -172,7 +172,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* What Doesn't Work */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What Doesn't Protect Your Chromebook Data
               </h2>
@@ -220,9 +220,9 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* The Solution */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>: The Reliable Solution
+                Secure <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Erasure</Link>: The Reliable Solution
               </h2>
 
               <p className="text-slate-700 leading-loose text-lg">
@@ -233,35 +233,35 @@ const ChromebookDataRisksBlog: React.FC = () => {
                 unrecoverable through any method or tool.
               </p>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mt-6">
+              <div className="bg-rose-50 border border-rose-200 rounded-xl p-8 mt-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
                   D-Secure Chromebook Erasure Benefits
                 </h3>
                 <ul className="space-y-4 text-slate-700 text-lg">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
                     <strong>Proprietary Overwriting:</strong> Uses advanced
                     techniques to overwrite all existing data on the
                     Chromebook's built-in storage
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
                     <strong>Complete Peace of Mind:</strong> Enables safe
                     sell-off, return, reallocation, or exchange of devices
                     without data concerns
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
                     <strong>Easy-to-Use DIY Tool:</strong> Requires minimal
                     technical expertise to deploy
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
                     <strong>Documented Proof:</strong> Generates tamper-proof
                     certificates after wiping for compliance requirements
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
                     <strong>Quick Deployment:</strong> Start erasing in under 15
                     minutes to protect data privacy across all threat scenarios
                   </li>
@@ -272,14 +272,14 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* Best Practices */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-8">
+            <div className="bg-rose-50 border border-rose-200 rounded-xl p-10 mt-10 space-y-8">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Best Practices for Chromebook Data Security
               </h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold">
                     1
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -289,7 +289,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold">
                     2
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -299,7 +299,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold">
                     3
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -309,7 +309,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold">
                     4
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">

@@ -8,7 +8,7 @@ const CCPAViolationBlog: React.FC = () => {
   const blogTitle = "CCPA Violation Case Study";
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
       <SEOHead
         seo={getBlogSEO({
           title: "CCPA Violation Case Study",
@@ -27,7 +27,7 @@ const CCPAViolationBlog: React.FC = () => {
       <section className="py-16 bg-white shadow-lg">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
               Compliance Case Study
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -45,7 +45,7 @@ const CCPAViolationBlog: React.FC = () => {
 
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding CCPA and Consumer Rights
             </h2>
@@ -56,8 +56,8 @@ const CCPAViolationBlog: React.FC = () => {
               that businesses must honor:
             </p>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   Right to Know
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -65,8 +65,8 @@ const CCPAViolationBlog: React.FC = () => {
                   or disclosed and to whom that data is shared.
                 </p>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   Right to Opt-Out
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -74,8 +74,8 @@ const CCPAViolationBlog: React.FC = () => {
                   businesses stop selling their personal information.
                 </p>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   Right to Deletion
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -83,8 +83,8 @@ const CCPAViolationBlog: React.FC = () => {
                   business's database.
                 </p>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   Right to Non-Discrimination
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -97,7 +97,7 @@ const CCPAViolationBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+          <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
             <h2 className="text-3xl font-bold mb-6">
               The Violations: What Went Wrong
             </h2>
@@ -159,7 +159,7 @@ const CCPAViolationBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Regulatory Implications and Industry Impact
             </h2>
@@ -169,7 +169,7 @@ const CCPAViolationBlog: React.FC = () => {
               closely monitoring compliance. This case opened the floodgates and
               set the pace for future settlements.
             </p>
-            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
               <h3 className="font-bold text-slate-900 text-xl mb-3">
                 The Attorney General's Warning
               </h3>
@@ -187,7 +187,7 @@ const CCPAViolationBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Essential Steps to Safeguard Against CCPA Violations
             </h2>
@@ -197,8 +197,8 @@ const CCPAViolationBlog: React.FC = () => {
             </p>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h3 className="font-bold text-emerald-700 text-xl mb-2">
+              <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                <h3 className="font-bold text-indigo-700 text-xl mb-2">
                   Respect Customer Rights
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -209,8 +209,8 @@ const CCPAViolationBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h3 className="font-bold text-emerald-700 text-xl mb-2">
+              <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                <h3 className="font-bold text-indigo-700 text-xl mb-2">
                   Practice Full Transparency
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -220,8 +220,8 @@ const CCPAViolationBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h3 className="font-bold text-emerald-700 text-xl mb-2">
+              <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                <h3 className="font-bold text-indigo-700 text-xl mb-2">
                   Review Data Monetization Processes
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -231,8 +231,8 @@ const CCPAViolationBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h3 className="font-bold text-emerald-700 text-xl mb-2">
+              <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                <h3 className="font-bold text-indigo-700 text-xl mb-2">
                   Update Contracts and Policies
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -242,8 +242,8 @@ const CCPAViolationBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h3 className="font-bold text-emerald-700 text-xl mb-2">
+              <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                <h3 className="font-bold text-indigo-700 text-xl mb-2">
                   Implement Privacy Mechanisms
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -253,8 +253,8 @@ const CCPAViolationBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                <h3 className="font-bold text-emerald-700 text-xl mb-2">
+              <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                <h3 className="font-bold text-indigo-700 text-xl mb-2">
                   Establish Data Destruction Policy
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -269,7 +269,7 @@ const CCPAViolationBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               The Role of Data Destruction in CCPA Compliance
             </h2>
@@ -278,8 +278,8 @@ const CCPAViolationBlog: React.FC = () => {
               be able to permanently erase their data. This requires:
             </p>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   Permanent Erasure
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -287,8 +287,8 @@ const CCPAViolationBlog: React.FC = () => {
                   beyond recovery, not just simple deletion.
                 </p>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   Proof of Destruction
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -296,8 +296,8 @@ const CCPAViolationBlog: React.FC = () => {
                   satisfy audit requirements.
                 </p>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   Verified Process
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -305,8 +305,8 @@ const CCPAViolationBlog: React.FC = () => {
                   completely removed from all systems.
                 </p>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   Documentation
                 </h3>
                 <p className="text-slate-700 text-lg leading-relaxed">
@@ -324,7 +324,7 @@ const CCPAViolationBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+          <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-6">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Key Takeaways: Time to Adopt a Data Privacy Policy
             </h2>
@@ -334,23 +334,23 @@ const CCPAViolationBlog: React.FC = () => {
               has come as a wake-up call for the entire industry.
             </p>
             <ul className="space-y-4 text-slate-700 text-lg leading-loose mt-4">
-              <li className="border-l-4 border-emerald-500 pl-8 py-2">
+              <li className="border-l-4 border-indigo-500 pl-8 py-2">
                 The indications for severe penalties are clear and may prove
                 detrimental to businesses that ignore customer data rights
               </li>
-              <li className="border-l-4 border-emerald-500 pl-8 py-2">
+              <li className="border-l-4 border-indigo-500 pl-8 py-2">
                 Adopting and implementing data privacy policies as part of data
                 lifecycle management is an urgent need
               </li>
-              <li className="border-l-4 border-emerald-500 pl-8 py-2">
+              <li className="border-l-4 border-indigo-500 pl-8 py-2">
                 Businesses must view customer privacy rights with the highest
                 regard they deserve
               </li>
-              <li className="border-l-4 border-emerald-500 pl-8 py-2">
+              <li className="border-l-4 border-indigo-500 pl-8 py-2">
                 Global Privacy Control signals must be honored just like
                 explicit opt-out requests
               </li>
-              <li className="border-l-4 border-emerald-500 pl-8 py-2">
+              <li className="border-l-4 border-indigo-500 pl-8 py-2">
                 Data destruction capabilities are essential for honoring
                 deletion requests
               </li>

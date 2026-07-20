@@ -1799,7 +1799,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                         // Webhook to notify backend - backend will send auto-response email
                         formSubmitData.append(
                           "_webhook",
-                          "https://api.dsecuretech.com/api/formsubmit/webhook",
+                          `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
                         );
                         formSubmitData.append("_captcha", "false");
                         formSubmitData.append("_template", "table");
@@ -1835,7 +1835,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                           "_subject",
                           "New Inquiry - Hardware Diagnostics Page - D-Secure Tech",
                         );
-                        formSubmitData.append("_cc", "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com");
+                        formSubmitData.append("_cc", import.meta.env.VITE_FORM_CC_EMAILS);
                         formSubmitData.append("_webhookContentType", "application/json");
                         formSubmitData.append("_webhookExtraData", "true");
                         formSubmitData.append("sendAutoReply", "true");
@@ -1876,7 +1876,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
 
                         try {
                           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-                          const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+                          const API_BASE = import.meta.env.VITE_API_BASE_URL;
                           const apiResponse = await fetch(
                             `${API_BASE}/api/ContactFormSubmissions`,
                             {
@@ -1888,7 +1888,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
 
                           // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
                           await fetch(
-                            "https://formsubmit.co/support@dsecuretech.com",
+                            import.meta.env.VITE_FORMSUBMIT_ENDPOINT,
                             {
                               method: "POST",
                               body: formSubmitData,
@@ -1901,7 +1901,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                             method: "POST",
                             headers: {
                               "Content-Type": "application/json",
-                              "x-api-key": "REACT_CONTACT_2026",
+                              "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
                             },
                             body: JSON.stringify(submissionData),
                           }).catch(() => {});

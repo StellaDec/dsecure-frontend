@@ -44,8 +44,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
           category: "SecurityApplication",
           subCategory: "Data Sanitization Software",
           os: "Windows, macOS, Linux, Bootable ISO",
-          ratingValue: 4.9,
-          reviewCount: 1250,
+          // ratingValue: 4.9,
+          // reviewCount: 1250,
           price: "20.00",
           currency: "USD",
           features: [
@@ -98,7 +98,6 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "drive-eraser-diagnostic": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Drive Eraser Diagnostic: Wiping & Hardware Testing",
     description:
       "Combine secure data erasure with comprehensive hardware diagnostics. Ensure drive health and data security in one seamless process.",
@@ -128,8 +127,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
         "Combined data erasure and hardware diagnostic tool for enterprises. Perform NIST-compliant wipes while simultaneously testing drive health.",
         {
           category: "SecurityApplication",
-          ratingValue: 4.8,
-          reviewCount: 320,
+          // ratingValue: 4.8,
+          // reviewCount: 320,
           price: "25.00",
           currency: "USD",
           os: "Windows, Linux, Bootable USB",
@@ -203,8 +202,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
           category: "SecurityApplication",
           subCategory: "Data Privacy & Security",
           os: "Windows, Windows Server",
-          ratingValue: 4.8,
-          reviewCount: 512,
+          // ratingValue: 4.8,
+          // reviewCount: 512,
           price: "39.99",
           currency: "USD",
           features: [
@@ -270,8 +269,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       "Centralized network file erasure for large enterprise environments.",
       {
         category: "SecurityApplication",
-        ratingValue: 4.8,
-        reviewCount: 156,
+        // ratingValue: 4.8,
+        // reviewCount: 156,
         price: "50.00",
         currency: "USD",
       },
@@ -301,8 +300,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
         "Comprehensive hardware testing and system health diagnostic suite for PCs and Servers.",
         {
           category: "UtilitiesApplication",
-          ratingValue: 4.6,
-          reviewCount: 220,
+          // ratingValue: 4.6,
+          // reviewCount: 220,
           price: "10.00",
           currency: "USD",
           os: "Windows, Linux, UEFI",
@@ -346,8 +345,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       "Real-time S.M.A.R.T monitoring and health tracking for storage drives.",
       {
         category: "UtilitiesApplication",
-        ratingValue: 4.7,
-        reviewCount: 185,
+        // ratingValue: 4.7,
+        // reviewCount: 185,
         price: "20.00",
         currency: "USD",
       },
@@ -375,15 +374,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       {
         category: "BusinessApplication",
         os: "Windows",
-        ratingValue: 4.8,
-        reviewCount: 94,
+        // ratingValue: 4.8,
+        // reviewCount: 94,
         price: "15.00",
         currency: "USD",
       },
     ),
   },
   "smartphone-eraser": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Smartphone Eraser: Certified iOS/Android Wipe | D-Secure",
     description:
       "Permanently wipe data from iPhones & Android devices. D-Secure Smartphone Eraser is R2v3, GDPR & HIPAA compliant with tamper-proof audit certificates.",
@@ -419,8 +417,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
           category: "SecurityApplication",
           subCategory: "Mobile Device Sanitization",
           os: "Android, iOS, Windows/macOS (Host)",
-          ratingValue: 4.9,
-          reviewCount: 840,
+          // ratingValue: 4.9,
+          // reviewCount: 840,
           price: "1.00",
           currency: "USD",
           features: [
@@ -457,7 +455,6 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "smartphone-diagnostic": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Smartphone Diagnostic: Pro Mobile Testing | D-Secure",
     description:
       "Over 60+ automated hardware tests for mobile devices. Verify screen, battery, camera, and sensor health for better resale value.",
@@ -482,15 +479,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       {
         category: "UtilitiesApplication",
         os: "Android, iOS",
-        ratingValue: 4.7,
-        reviewCount: 305,
+        // ratingValue: 4.7,
+        // reviewCount: 305,
         price: "5.00",
         currency: "USD",
       },
     ),
   },
   "forensic-imaging": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Forensic Imaging & Data Recovery Tool | D-Secure",
     description:
       "Court-admissible forensic imaging for HDDs, SSDs & NVMe. Bit-perfect evidence capture for digital investigations & legal hold workflows.",
@@ -511,15 +507,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       "Bit-for-bit data capture and imaging for digital forensic investigations.",
       {
         category: "SecurityApplication",
-        ratingValue: 4.8,
-        reviewCount: 112,
+        // ratingValue: 4.8,
+        // reviewCount: 112,
         price: "150.00",
         currency: "USD",
       },
     ),
   },
   "freeze-state": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Freeze State: Deep Freeze Alternative | D-Secure",
     description:
       "Modern Deep Freeze alternative for Windows. Revert to a clean state on every reboot. Ideal for school labs, public kiosks & enterprise workstations.",
@@ -541,15 +536,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       {
         category: "SecurityApplication",
         os: "Windows",
-        ratingValue: 4.7,
-        reviewCount: 284,
+        // ratingValue: 4.7,
+        // reviewCount: 284,
         price: "80.00",
         currency: "USD",
       },
     ),
   },
   "freeze-state-smart": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Freeze State Smart: Intelligent Management | D-Secure",
     description:
       "Advanced system protection with automated updates and maintenance windows. Secure your devices without sacrificing performance.",
@@ -571,15 +565,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       {
         category: "SecurityApplication",
         os: "Windows",
-        ratingValue: 4.8,
-        reviewCount: 142,
+        // ratingValue: 4.8,
+        // reviewCount: 142,
         price: "85.00",
         currency: "USD",
       },
     ),
   },
   "freeze-state-advanced": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Freeze State Advanced: Enterprise Locking | D-Secure",
     description:
       "The ultimate solution for large-scale device security. Centralized management for frozen states across your entire network.",
@@ -604,15 +597,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       {
         category: "SecurityApplication",
         os: "Windows",
-        ratingValue: 4.9,
-        reviewCount: 88,
+        // ratingValue: 4.9,
+        // reviewCount: 88,
         price: "90.00",
         currency: "USD",
       },
     ),
   },
   "data-migration": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Data Migration: Secure File Transfer & Sync | D-Secure",
     description:
       "Transfer data seamlessly across devices and platforms. Bit-perfect migration ensures your data arrives exactly as it should.",
@@ -633,15 +625,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       "Secure and bit-perfect data migration across heterogeneous systems.",
       {
         category: "UtilitiesApplication",
-        ratingValue: 4.5,
-        reviewCount: 124,
+        // ratingValue: 4.5,
+        // reviewCount: 124,
         price: "25.00",
         currency: "USD",
       },
     ),
   },
   "asset-reimaging": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Asset Reimaging: Zero-Touch OS Deployment | D-Secure",
     description:
       "Deploy custom OS images to hundreds of devices simultaneously. Streamline your IT operations with automated reimaging.",
@@ -663,15 +654,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       {
         category: "BusinessApplication",
         os: "Windows",
-        ratingValue: 4.7,
-        reviewCount: 65,
+        // ratingValue: 4.7,
+        // reviewCount: 65,
         price: "45.00",
         currency: "USD",
       },
     ),
   },
   "virtual-machine-eraser": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "VM Eraser: Secure Cloud & Hypervisor Wipe | D-Secure",
     description:
       "Certified data erasure for VMware, Hyper-V, AWS & Azure. Permanently sanitize virtual disks — NIST compliant with tamper-proof audit reports.",
@@ -697,15 +687,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       "Secure data destruction for virtual disks and cloud environments.",
       {
         category: "SecurityApplication",
-        ratingValue: 4.8,
-        reviewCount: 77,
+        // ratingValue: 4.8,
+        // reviewCount: 77,
         price: "60.00",
         currency: "USD",
       },
     ),
   },
   "removable-media-eraser": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Removable Media Eraser: USB & SD Wipe | D-Secure",
     description:
       "Compliance-grade erasure for USBs, SD cards & external disks. D-Secure provides tamper-proof audit reports and certificates for secure data sanitization.",
@@ -743,15 +732,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       "Secure data wiping for USB drives, SD cards, and portable media.",
       {
         category: "SecurityApplication",
-        ratingValue: 4.7,
-        reviewCount: 142,
+        // ratingValue: 4.7,
+        // reviewCount: 142,
         price: "15.00",
         currency: "USD",
       },
     ),
   },
   "lun-eraser": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "LUN Eraser: SAN & NAS Storage Sanitization | D-Secure",
     description:
       "Erase active LUNs in SAN & NAS storage without disrupting data. NIST 800-88 compliant — tamper-proof certificates for secure enterprise decommissioning.",
@@ -781,15 +769,14 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       "High-performance LUN erasure for enterprise storage systems.",
       {
         category: "SecurityApplication",
-        ratingValue: 4.9,
-        reviewCount: 56,
+        // ratingValue: 4.9,
+        // reviewCount: 56,
         price: "80.00",
         currency: "USD",
       },
     ),
   },
   "drive-verifier": {
-    noindex: true, // Upcoming product — real content ready hone tak noindex
     title: "Drive Verifier: Secure Data Erasure Verification | D-Secure",
     description:
       "Verify 100% data erasure with block-by-block scans. Mandatory for R2v3, NAID AAA & e-Stewards compliance. Ensure zero data traces after sanitization.",
@@ -819,8 +806,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
       "Compliance verification tool for data erasure validation.",
       {
         category: "SecurityApplication",
-        ratingValue: 4.8,
-        reviewCount: 128,
+        // ratingValue: 4.8,
+        // reviewCount: 128,
         price: "15.00",
         currency: "USD",
       },

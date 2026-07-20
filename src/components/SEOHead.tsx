@@ -3,9 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { SEOMetadata, formatStructuredData, generateBreadcrumbSchema } from '@/utils/seo';
 
-/** SEOHead component ke liye supported languages */
-const SUPPORTED_LANGUAGES = ['en', 'hi', 'es', 'fr', 'de', 'ja', 'zh'] as const;
-
 /** Google/Bing verification codes — environment variables se aate hain */
 const GOOGLE_SITE_VERIFICATION = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION || '';
 const BING_SITE_VERIFICATION = import.meta.env.VITE_BING_SITE_VERIFICATION || '';
@@ -153,13 +150,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     if (alternateLanguages && alternateLanguages.length > 0) {
       return alternateLanguages;
     }
-    // Auto-generate karo canonical URL se path extract karke
-    const baseUrl = 'https://dsecuretech.com';
-    const path = canonical.replace(baseUrl, '') || '/';
-    return SUPPORTED_LANGUAGES.map(lang => ({
-      lang,
-      url: lang === 'en' ? canonical : `${baseUrl}/${lang}${path}`,
-    }));
+    // Auto-generation temporarily disabled until translated routes exist
+    return [];
   };
 
   // Strict canonical URL normalization — duplicate page errors rokne ke liye
@@ -241,12 +233,16 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         {/* Canonical URL */}
         <link rel="canonical" href={finalCanonical} />
 
-        {/* Hreflang — 7 languages ke liye international SEO */}
-        {hreflangUrls.map(({ lang, url }) => (
-          <link key={lang} rel="alternate" hrefLang={lang} href={url} />
-        ))}
-        {/* x-default — language-neutral canonical */}
-        <link rel="alternate" hrefLang="x-default" href={finalCanonical} />
+        {/* Hreflang — only render if explicitly provided */}
+        {hreflangUrls.length > 0 && (
+          <>
+            {hreflangUrls.map(({ lang, url }) => (
+              <link key={lang} rel="alternate" hrefLang={lang} href={url} />
+            ))}
+            {/* x-default — language-neutral canonical */}
+            <link rel="alternate" hrefLang="x-default" href={finalCanonical} />
+          </>
+        )}
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content={effectiveSeo.ogType || 'website'} />
@@ -296,15 +292,13 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         <meta name="bingbot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
 
         {/* AI Crawler Directives — Generative Engine Optimization (GEO) & AEO */}
-        {/* Rules ke mutabik: Training bots ko restrict karenge aur live retrieval search bots ko index/follow allow karenge */}
-        {/* 1. Training Bots - Always block to prevent unauthorized scraping for LLM training */}
-        <meta name="GPTBot" content="noindex, nofollow" />
-        <meta name="ClaudeBot" content="noindex, nofollow" />
-        <meta name="Google-Extended" content="noindex, nofollow" />
-        <meta name="anthropic-ai" content="noindex, nofollow" />
-        <meta name="cohere-ai" content="noindex, nofollow" />
-
-        {/* 2. Retrieval/Search Bots - Allow them to cite our site (AEO/GEO), unless page is explicitly noindex */}
+        {/* AI bots ko allow kar rahe hain taaki user prompt pe data fetch kar sakein (ChatGPT, Claude, etc). */}
+        {/* Sirf upcoming products jahan isNoindex true hai, wahan block karenge. */}
+        <meta name="GPTBot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
+        <meta name="ClaudeBot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
+        <meta name="Google-Extended" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
+        <meta name="anthropic-ai" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
+        <meta name="cohere-ai" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
         <meta name="OAI-SearchBot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
         <meta name="PerplexityBot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />
         <meta name="YouBot" content={isNoindex ? 'noindex, nofollow' : 'index, follow'} />

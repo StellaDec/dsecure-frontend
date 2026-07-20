@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ErasureVerificationBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-teal-50/20 via-emerald-50/10 to-slate-50">
         <SEOHead seo={getSEOForPage("blog-erasure-verification-process")} />
 
         {/* Hero Section */}
@@ -32,7 +32,7 @@ const ErasureVerificationBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -71,7 +71,7 @@ const ErasureVerificationBlog: React.FC = () => {
 
           {/* NIST Verification Methods */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 NIST-Prescribed Verification Methods
               </h2>
@@ -120,7 +120,7 @@ const ErasureVerificationBlog: React.FC = () => {
 
           {/* D-Secure Verification Options */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure Verification Options
               </h2>
@@ -187,7 +187,7 @@ const ErasureVerificationBlog: React.FC = () => {
 
           {/* How Verification Works */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How the Verification Process Works
               </h2>
@@ -259,7 +259,7 @@ const ErasureVerificationBlog: React.FC = () => {
             </div>
           </Reveal>{/* Final Thoughts */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Takeaways
               </h2>

@@ -68,7 +68,7 @@ export default function ApiTestPage() {
             </div>
 
             <div className="mt-4 text-sm text-slate-600">
-              API Endpoint: {import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"}
+              API Endpoint: {import.meta.env.VITE_API_BASE_URL}
             </div>
           </div>
 

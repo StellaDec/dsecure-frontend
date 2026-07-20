@@ -50,7 +50,7 @@ const verifiedCompanies: VerifiedCompany[] = [
 ];
 
 // FormSubmit configuration
-const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/support@dsecuretech.com";
+const FORMSUBMIT_ENDPOINT = import.meta.env.VITE_FORMSUBMIT_ENDPOINT;
 
 const DataGuardianAwardPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -216,7 +216,7 @@ const DataGuardianAwardPage: React.FC = () => {
       // Hidden fields
       formSubmitData.append(
         "_webhook",
-        "https://api.dsecuretech.com/api/formsubmit/webhook",
+        `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
       );
       formSubmitData.append("_captcha", "false");
       formSubmitData.append("_template", "table");
@@ -253,7 +253,7 @@ const DataGuardianAwardPage: React.FC = () => {
       );
       formSubmitData.append(
         "_cc",
-        "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+        import.meta.env.VITE_FORM_CC_EMAILS,
       );
 
       // Reset form immediately for better UX
@@ -295,7 +295,7 @@ const DataGuardianAwardPage: React.FC = () => {
       };
 
       try {
-        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
         await fetch(`${API_BASE}/api/ContactFormSubmissions`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -313,7 +313,7 @@ const DataGuardianAwardPage: React.FC = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": "REACT_CONTACT_2026",
+            "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
           },
           body: JSON.stringify(submissionData),
         }).catch(() => {});

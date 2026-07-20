@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Windows10EOSBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Windows 10 End of Support and Data Security",
@@ -26,7 +26,7 @@ const Windows10EOSBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
                 Data Protection
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
@@ -44,12 +44,12 @@ const Windows10EOSBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-4">
                 <p className="text-slate-700 leading-relaxed text-lg">
                   The support for Microsoft Windows 10 comes to an end on{" "}
-                  <strong className="text-emerald-800">October 14, 2025</strong>{" "}
+                  <strong className="text-rose-800">October 14, 2025</strong>{" "}
                   — coinciding with International E-waste Day. This cessation
                   means the tech giant will stop providing security patches,
                   feature updates, design improvements, and technical assistance
@@ -59,7 +59,7 @@ const Windows10EOSBlog: React.FC = () => {
                   Organizations seeking continued support can enroll in
                   Microsoft's Extended Security Updates (ESU) program. However,
                   this comes at a cost:{" "}
-                  <strong className="text-emerald-800">$61 annually</strong> for
+                  <strong className="text-rose-800">$61 annually</strong> for
                   the first year, doubling to $122 in the second year, and
                   reaching $244 by the third year. This pricing model makes
                   long-term support financially challenging for many businesses.
@@ -67,7 +67,7 @@ const Windows10EOSBlog: React.FC = () => {
               </div>
 
               {/* Exception Note */}
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-lg">
                 <h2 className="font-bold text-slate-900 mb-2">
                   Long Term Servicing Channel (LTSC) Exception
                 </h2>
@@ -91,7 +91,7 @@ const Windows10EOSBlog: React.FC = () => {
                   For most users, Microsoft offers a decade of paid support;
                   however, upgrading to Windows 11 demands specific hardware
                   specifications. The most significant requirement is a{" "}
-                  <strong className="text-emerald-800">TPM 2.0 chip</strong> — a
+                  <strong className="text-rose-800">TPM 2.0 chip</strong> — a
                   hardware-based security component that handles cryptographic
                   operations and maintains system integrity. Devices lacking
                   this chip cannot upgrade, leaving numerous machines stranded.
@@ -103,28 +103,28 @@ const Windows10EOSBlog: React.FC = () => {
                   </h3>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       Windows 10 version 2004 or later
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       1 GHz or faster processor with minimum 2 cores (64-bit
                       compatible or SoC)
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       4 GB RAM minimum
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       64 GB storage or more
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       UEFI with Secure Boot capability
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       TPM 2.0 chip (mandatory)
                     </li>
                   </ul>
@@ -144,8 +144,8 @@ const Windows10EOSBlog: React.FC = () => {
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-4 mt-6">
-                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-lg p-4">
-                    <div className="text-emerald-800 font-bold mb-2">
+                  <div className="bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200 rounded-lg p-4">
+                    <div className="text-rose-800 font-bold mb-2">
                       Heightened Security Threats
                     </div>
                     <p className="text-slate-600 text-sm">
@@ -162,8 +162,8 @@ const Windows10EOSBlog: React.FC = () => {
                       utility and resale potential.
                     </p>
                   </div>
-                  <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                    <div className="text-emerald-800 font-bold mb-2">
+                  <div className="bg-rose-50 border border-rose-200 rounded-lg p-4">
+                    <div className="text-rose-800 font-bold mb-2">
                       Environmental Impact
                     </div>
                     <p className="text-slate-600 text-sm">
@@ -178,7 +178,7 @@ const Windows10EOSBlog: React.FC = () => {
 
           {/* Preparation Section */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-2xl font-bold text-slate-900">
                 Preparing Your Organization for the Transition
               </h2>
@@ -191,7 +191,7 @@ const Windows10EOSBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6 mt-6">
-                <div className="border-l-4 border-emerald-500 pl-6">
+                <div className="border-l-4 border-rose-500 pl-6">
                   <h2 className="font-bold text-slate-900 text-lg mb-2">
                     1. Backup All Critical Business Data
                   </h2>
@@ -204,7 +204,7 @@ const Windows10EOSBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-teal-500 pl-6">
+                <div className="border-l-4 border-pink-500 pl-6">
                   <h2 className="font-bold text-slate-900 text-lg mb-2">
                     2. Audit and Migrate Software Applications
                   </h2>
@@ -216,7 +216,7 @@ const Windows10EOSBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-cyan-500 pl-6">
+                <div className="border-l-4 border-fuchsia-500 pl-6">
                   <h2 className="font-bold text-slate-900 text-lg mb-2">
                     3. Securely Erase Data Before Decommissioning
                   </h2>
@@ -230,7 +230,7 @@ const Windows10EOSBlog: React.FC = () => {
                   </p>
                   <div className="bg-slate-50 rounded-lg p-4 mt-4">
                     <p className="text-slate-700 text-sm">
-                      <strong className="text-emerald-800">
+                      <strong className="text-rose-800">
                         Industry Insight:
                       </strong>{" "}
                       The average cost of a data breach is $4.88 million
@@ -261,7 +261,7 @@ const Windows10EOSBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-8 mt-8 text-white">
+            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-8 mt-8 text-white">
               <h2 className="text-2xl font-bold mb-4">Final Thoughts</h2>
               <p className="leading-relaxed mb-4">
                 The Windows 10 end-of-life represents more than a technical
@@ -281,9 +281,9 @@ const Windows10EOSBlog: React.FC = () => {
               </p>
               <Link
                 to="/all-products"
-                className="inline-flex items-center bg-white text-emerald-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+                className="inline-flex items-center bg-white text-rose-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
               >
-                Explore D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Solutions
+                Explore D-Secure <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Erasure</Link> Solutions
                 <svg
                   className="w-5 h-5 ml-2"
                   fill="none"

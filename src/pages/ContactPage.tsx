@@ -1,15 +1,9 @@
 import Reveal from "@/components/Reveal";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import {
   DollarIcon,
   GearIcon,
-  CheckIcon,
-  ClipboardIcon,
-  BuildingIcon,
-  ChatIcon,
-  MobileIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
@@ -93,8 +87,46 @@ interface Office {
   isActive: boolean;
 }
 
+// Office Data Structure Interface for type safety and easy expansion
+interface OfficeContact {
+  name: string;
+  title: string;
+  phone?: string;
+  email?: string;
+  directEmail?: string;
+}
+
+interface Office {
+  id: number;
+  company: {
+    name: string;
+    logo: string;
+    logoUrl?: string;
+    website: string;
+    established: string;
+  };
+  location: {
+    city: string;
+    country: string;
+    countryCode: string;
+    flag: string;
+    address: string;
+    coordinates: { lat: number; lng: number };
+    timezone: string;
+    workingHours: string;
+  };
+  contacts: {
+    primary: OfficeContact;
+    sales?: { phone: string; email: string };
+    support?: { phone: string; email: string };
+  };
+  services: string[];
+  languages: string[];
+  isHeadquarter: boolean;
+  isActive: boolean;
+}
+
 function ContactPageContent() {
-  const { t } = useTranslation();
   const [usageType, setUsageType] = useState<"business" | "personal">(
     "business",
   );
@@ -112,43 +144,6 @@ function ContactPageContent() {
     message: "",
   });
 
-  // Helper function to easily add new offices
-  // Usage: Simply call addNewOffice() with office data
-  const addNewOffice = (office: Office): Office => {
-    // Validation and setup logic can be added here
-    return {
-      ...office,
-      id: office.id || Date.now(), // Auto-generate ID if not provided
-      isActive: office.isActive !== false, // Default to active
-    };
-  };
-
-  // Helper to get offices by region
-  const getOfficesByRegion = (region: string): Office[] => {
-    const regionMap: Record<string, string[]> = {
-      americas: ["USA"],
-      europe: ["UK"],
-      asia: ["UAE", "Singapore"],
-      "middle-east": ["UAE"],
-    };
-    return offices.filter((office) =>
-      regionMap[region]?.includes(office.location.countryCode),
-    );
-  };
-
-  type FormDataType = {
-    name: string;
-    email: string;
-    company: string;
-    phone: string;
-    countryCode: string;
-    country: string;
-    businessType: string;
-    solutionType: string;
-    complianceRequirements: string;
-    message: string;
-  };
-
   const [toast, setToast] = useState<{
     message: string;
     type: "success" | "error";
@@ -164,9 +159,9 @@ function ContactPageContent() {
   };
 
   // FormSubmit configuration - Primary recipient
-  const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/support@dsecuretech.com";
+  const FORMSUBMIT_ENDPOINT = import.meta.env.VITE_FORMSUBMIT_ENDPOINT;
 
-  const sendEmail = async (e: React.FormEvent) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setIsLoading(true);
@@ -176,7 +171,7 @@ function ContactPageContent() {
     if (!formData.name?.trim()) errors.push("Name is required");
     if (!formData.email?.trim()) {
       errors.push("Email is required");
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) {
       errors.push("Please enter a valid email address");
     }
     if (!formData.message?.trim()) errors.push("Message is required");
@@ -204,7 +199,7 @@ function ContactPageContent() {
       // Webhook to notify backend - backend will send auto-response email
       formSubmitData.append(
         "_webhook",
-        "https://api.dsecuretech.com/api/formsubmit/webhook",
+        `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
       );
       formSubmitData.append("_webhookContentType", "application/json");
       formSubmitData.append("_webhookExtraData", "true");
@@ -248,7 +243,7 @@ function ContactPageContent() {
       );
       formSubmitData.append(
         "_cc",
-        "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+        import.meta.env.VITE_FORM_CC_EMAILS,
       );
 
       // Auto-response configuration for backend
@@ -293,7 +288,7 @@ function ContactPageContent() {
         "success",
       );
       try {
-        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
         const apiResponse = await fetch(
           `${API_BASE}/api/ContactFormSubmissions`,
           {
@@ -304,7 +299,7 @@ function ContactPageContent() {
             body: JSON.stringify(submissionData),
           },
         );
-        const response = await fetch(FORMSUBMIT_ENDPOINT, {
+        await fetch(FORMSUBMIT_ENDPOINT, {
           method: "POST",
           body: formSubmitData,
           headers: {
@@ -316,7 +311,7 @@ function ContactPageContent() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": "REACT_CONTACT_2026",
+            "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
           },
           body: JSON.stringify(submissionData),
         }).catch(() => {});
@@ -329,18 +324,14 @@ function ContactPageContent() {
             errorData.message ||
               "Failed to send message. Please try again later.",
           );
-
-          // Optionally show error if it's a validation error meant for the user
-          if (errorData.errors) {
-            console.warn("Validation errors:", errorData.errors);
-          }
         }
 
         // Reset form
-      } catch (error: any) {
+      } catch (error) {
         console.error("Form error:", error);
+        const err = error as Error;
         showToast(
-          error.message || "Failed to send message. Please try again later.",
+          err.message || "Failed to send message. Please try again later.",
           "error",
         );
       }
@@ -349,7 +340,7 @@ function ContactPageContent() {
       // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
       // === FORM SUBMIT CONFIGURATION ===
       // Webhook to your .NET 8 backend
-      formSubmitData.append("_webhook", "https://api.dsecuretech.com/api/formsubmit/webhook");
+      formSubmitData.append("_webhook", `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`);
 
       // Important: Tell FormSubmit to expect JSON from your webhook
       formSubmitData.append("_webhookContentType", "application/json");
@@ -370,7 +361,7 @@ function ContactPageContent() {
       formSubmitData.append("_replyto", formData.email.trim());
 
       // CC for admin notifications
-      formSubmitData.append("_cc", "dhruv.rai@dsecuretech.com,nishus877@gmail.com,spsingh8477@gmail.com");
+      formSubmitData.append("_cc", import.meta.env.VITE_FORM_CC_EMAILS);
 
       // === FORM FIELDS ===
       formSubmitData.append("name", formData.name.trim());
@@ -411,10 +402,10 @@ function ContactPageContent() {
       }
       */
     } catch (error) {
-      // console.error("FormSubmit error:", error);
+      console.error("FormSubmit error:", error);
     }
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // //console.log("Form submitted:", formData);
     sendEmail(e);
   };
@@ -424,7 +415,8 @@ function ContactPageContent() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >,
   ) => {
-    let { name, value } = e.target;
+    const { name } = e.target;
+    let { value } = e.target;
 
     // Sanitize phone number: allow only numbers and '+' (only at the start)
     if (name === "phone") {
@@ -476,7 +468,7 @@ function ContactPageContent() {
   // Example: logoUrl: "https://example.com/company-logo.png"
   // If logoUrl is provided, it will be displayed instead of the emoji in 'logo' field
   // The 'logo' field serves as fallback emoji when no logoUrl is provided
-  const offices = [
+  const offices: Office[] = [
     {
       id: 1,
       // Company Information
@@ -1535,11 +1527,11 @@ function ContactPageContent() {
                     <div className="flex items-start gap-4 mb-6">
                       <div className="flex-shrink-0">
                         <div className="relative w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center overflow-hidden">
-                          {(office.company as any).logoUrl ||
+                          {office.company.logoUrl ||
                           office.company.logo?.startsWith("http") ? (
                             <img
                               src={
-                                (office.company as any).logoUrl ||
+                                office.company.logoUrl ||
                                 office.company.logo
                               }
                               alt={`${office.company.name} logo`}
@@ -1567,7 +1559,7 @@ function ContactPageContent() {
                             className="logo-fallback absolute inset-0 w-full h-full bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl items-center justify-center text-white font-bold text-lg"
                             style={{
                               display:
-                                (office.company as any).logoUrl ||
+                                office.company.logoUrl ||
                                 office.company.logo?.startsWith("http")
                                   ? "none"
                                   : "flex",
@@ -1654,7 +1646,7 @@ function ContactPageContent() {
                       </div>
 
                       {/* Primary Phone - Only show if phone exists */}
-                      {(office.contacts.primary as any).phone && (
+                      {office.contacts.primary.phone && (
                         <div className="flex items-center gap-3">
                           <svg
                             className="w-4 h-4 text-slate-400"
@@ -1670,16 +1662,16 @@ function ContactPageContent() {
                             />
                           </svg>
                           <a
-                            href={`tel:${(office.contacts.primary as any).phone}`}
+                            href={`tel:${office.contacts.primary.phone}`}
                             className="hover:text-emerald-800 transition-colors"
                           >
-                            {(office.contacts.primary as any).phone}
+                            {office.contacts.primary.phone}
                           </a>
                         </div>
                       )}
 
                       {/* Primary Email - Only show if email exists */}
-                      {(office.contacts.primary as any).email && (
+                      {office.contacts.primary.email && (
                         <div className="flex items-center gap-3">
                           <svg
                             className="w-4 h-4 text-slate-400"
@@ -1695,10 +1687,10 @@ function ContactPageContent() {
                             />
                           </svg>
                           <a
-                            href={`mailto:${(office.contacts.primary as any).email}`}
+                            href={`mailto:${office.contacts.primary.email}`}
                             className="hover:text-emerald-800 transition-colors"
                           >
-                            {(office.contacts.primary as any).email}
+                            {office.contacts.primary.email}
                           </a>
                         </div>
                       )}
@@ -1743,20 +1735,20 @@ function ContactPageContent() {
                     </div>
 
                     {/* Action Buttons - Only show if contact info exists */}
-                    {((office.contacts.primary as any).email ||
-                      (office.contacts.primary as any).phone) && (
+                    {(office.contacts.primary.email ||
+                      office.contacts.primary.phone) && (
                       <div className="flex gap-2 pt-4 border-t border-slate-200">
-                        {(office.contacts.primary as any).email && (
+                        {office.contacts.primary.email && (
                           <a
-                            href={`mailto:${(office.contacts.primary as any).email}?subject=Meeting Request - ${office.location.city} Office`}
+                            href={`mailto:${office.contacts.primary.email}?subject=Meeting Request - ${office.location.city} Office`}
                             className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white text-center py-2 px-3 rounded-lg text-sm font-medium transition-colors"
                           >
                             Contact Office
                           </a>
                         )}
-                        {(office.contacts.primary as any).phone && (
+                        {office.contacts.primary.phone && (
                           <a
-                            href={`tel:${(office.contacts.primary as any).phone}`}
+                            href={`tel:${office.contacts.primary.phone}`}
                             className="flex-1 border border-slate-300 hover:border-emerald-500 text-slate-700 hover:text-emerald-800 text-center py-2 px-3 rounded-lg text-sm font-medium transition-colors"
                           >
                             Call Now
@@ -1766,27 +1758,27 @@ function ContactPageContent() {
                     )}
 
                     {/* Quick Contact Options - Only show if sales/support emails exist */}
-                    {((office.contacts as any).sales?.email ||
-                      (office.contacts as any).support?.email) && (
+                    {(office.contacts.sales?.email ||
+                      office.contacts.support?.email) && (
                       <div className="mt-3 pt-3 border-t border-slate-100">
                         <p className="text-xs text-slate-500 mb-2">
                           Quick Contact:
                         </p>
                         <div className="flex gap-4 text-xs">
-                          {(office.contacts as any).sales?.email && (
+                          {office.contacts.sales?.email && (
                             <a
-                              href={`mailto:${(office.contacts as any).sales.email}`}
+                              href={`mailto:${office.contacts.sales.email}`}
                               className="text-emerald-800 hover:underline"
                             >
-                              Sales: {(office.contacts as any).sales.email}
+                              Sales: {office.contacts.sales.email}
                             </a>
                           )}
-                          {(office.contacts as any).support?.email && (
+                          {office.contacts.support?.email && (
                             <a
-                              href={`mailto:${(office.contacts as any).support.email}`}
+                              href={`mailto:${office.contacts.support.email}`}
                               className="text-emerald-800 hover:underline"
                             >
-                              Support: {(office.contacts as any).support.email}
+                              Support: {office.contacts.support.email}
                             </a>
                           )}
                         </div>

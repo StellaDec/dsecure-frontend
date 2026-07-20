@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { apiClient, checkApiAvailability } from './enhancedApiClient'
-import type { User, Machine, Report } from '@/types/models'
+import type { User } from '@/types/models'
+import type { Machine, Report } from './enhancedApiClient'
 
 // AI-Generated Demo Data for Demonstration Purposes
 // This data is created by the AI assistant and is not from your backend database
@@ -8,9 +9,9 @@ import type { User, Machine, Report } from '@/types/models'
 
 export const DEFAULT_USERS: User[] = [
   { 
-    id: 'user-1', 
-    email: 'alice@admin.com', 
-    name: 'Alice Admin',
+    user_id: 'user-1', 
+    user_email: 'alice@admin.com', 
+    user_name: 'Alice Admin',
     role: 'admin', 
     status: 'active', 
     department: 'IT', 
@@ -19,9 +20,9 @@ export const DEFAULT_USERS: User[] = [
     updatedAt: '2025-09-30'
   },
   { 
-    id: 'user-2', 
-    email: 'bob@example.com', 
-    name: 'Bob User',
+    user_id: 'user-2', 
+    user_email: 'bob@example.com', 
+    user_name: 'Bob User',
     role: 'user', 
     status: 'active', 
     department: 'HR', 
@@ -30,9 +31,9 @@ export const DEFAULT_USERS: User[] = [
     updatedAt: '2025-09-29'
   },
   { 
-    id: 'user-3', 
-    email: 'charlie@company.com', 
-    name: 'Charlie Manager',
+    user_id: 'user-3', 
+    user_email: 'charlie@company.com', 
+    user_name: 'Charlie Manager',
     role: 'manager', 
     status: 'inactive', 
     department: 'Finance', 
@@ -41,9 +42,9 @@ export const DEFAULT_USERS: User[] = [
     updatedAt: '2025-09-25'
   },
   { 
-    id: 'user-4', 
-    email: 'diana@corp.com', 
-    name: 'Diana User',
+    user_id: 'user-4', 
+    user_email: 'diana@corp.com', 
+    user_name: 'Diana User',
     role: 'user', 
     status: 'active', 
     department: 'IT', 
@@ -52,9 +53,9 @@ export const DEFAULT_USERS: User[] = [
     updatedAt: '2025-09-30'
   },
   { 
-    id: 'user-5', 
-    email: 'eve@business.com', 
-    name: 'Eve Admin',
+    user_id: 'user-5', 
+    user_email: 'eve@business.com', 
+    user_name: 'Eve Admin',
     role: 'admin', 
     status: 'pending', 
     department: 'Operations', 
@@ -195,7 +196,7 @@ export const dataService = {
   async updateMachine(id: string, machineData: Partial<Machine>) {
     const apiAvailable = await checkApiAvailability()
     if (apiAvailable) {
-      return apiClient.updateMachine(id, machineData)
+      return (apiClient as any).updateMachine(id, machineData)
     }
     return { success: false, error: 'API not available' }
   },
@@ -203,7 +204,7 @@ export const dataService = {
   async generateReport(reportData: { department?: string; deviceRange?: string }) {
     const apiAvailable = await checkApiAvailability()
     if (apiAvailable) {
-      return apiClient.generateReport(reportData)
+      return (apiClient as any).generateReport(reportData)
     }
     return { success: false, error: 'API not available' }
   },

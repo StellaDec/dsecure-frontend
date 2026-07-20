@@ -27,8 +27,8 @@ const DataErasureForNonProfits: React.FC = () => {
             </span>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Solutions
+              <span className="bg-gradient-to-r from-green-600 to-indigo-600 bg-clip-text text-transparent">
+                <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Data Erasure</Link> Solutions
               </span>
               <br />
               for Non-Profit Organizations
@@ -197,7 +197,7 @@ const DataErasureForNonProfits: React.FC = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border">
+              <div className="bg-gradient-to-br from-green-50 to-indigo-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-green-800" filled />
                   <h3 className="font-bold">Regulatory Alignment</h3>
@@ -208,7 +208,7 @@ const DataErasureForNonProfits: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border">
+              <div className="bg-gradient-to-br from-green-50 to-indigo-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ClipboardIcon className="w-5 h-5 text-green-800" filled />
                   <h3 className="font-bold">Audit-Ready Documentation</h3>
@@ -219,7 +219,7 @@ const DataErasureForNonProfits: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border">
+              <div className="bg-gradient-to-br from-green-50 to-indigo-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-green-800" filled />
                   <h3 className="font-bold">Risk Reduction</h3>
@@ -230,7 +230,7 @@ const DataErasureForNonProfits: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border">
+              <div className="bg-gradient-to-br from-green-50 to-indigo-50 p-6 rounded-xl border">
                 <div className="flex items-center gap-2 mb-3">
                   <ClipboardIcon className="w-5 h-5 text-green-800" filled />
                   <h3 className="font-bold">Operational Efficiency</h3>
@@ -246,7 +246,7 @@ const DataErasureForNonProfits: React.FC = () => {
 
         {/* Conclusion */}
         <Reveal>
-          <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl shadow-lg p-8 mt-8 text-white">
+          <div className="bg-gradient-to-r from-green-600 to-indigo-600 rounded-xl shadow-lg p-8 mt-8 text-white">
             <h2 className="text-2xl font-bold mb-4">
               Secure Data, Stronger Trust, Greater Impact
             </h2>

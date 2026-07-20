@@ -60,9 +60,9 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
       {/* Section 1: The Global Landscape */}
       <Reveal>
         <div className="bg-white rounded-3xl p-10 border border-slate-200 shadow-sm relative overflow-hidden">
-          <div className="absolute -right-20 -top-20 w-64 h-64 bg-emerald-50 rounded-full blur-3xl opacity-50" />
+          <div className="absolute -right-20 -top-20 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50" />
           <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3 relative z-10">
-            <GlobeIcon className="w-8 h-8 text-emerald-600" />
+            <GlobeIcon className="w-8 h-8 text-blue-600" />
             Global Protection Standards: {blogTitle}
           </h2>
           <div className="prose prose-slate prose-lg max-w-none text-slate-600 leading-relaxed relative z-10">
@@ -70,9 +70,9 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
               {getIntroduction()} When discussing <strong>{blogTitle}</strong>, establishing a verifiable and compliant security baseline is absolutely paramount.
             </p>
             <p className="mb-4">
-              {getTechnicalContext()} Modern architectures like **SSDs, NVMe, and Mobile Flash** use wear-leveling that leaves traces in hidden blocks. Professional <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline">Data Erasure Software</Link> and <Link to="/products/smartphone-eraser" className="text-emerald-600 hover:underline">Mobile Tools</Link> are essential to bridge this gap. Without these specialized tools, your organization remains vulnerable to data remanence attacks.
+              {getTechnicalContext()} Modern architectures like **SSDs, NVMe, and Mobile Flash** use wear-leveling that leaves traces in hidden blocks. Professional <Link to="/products/drive-eraser" className="text-blue-600 hover:underline">Data Erasure Software</Link> and <Link to="/products/smartphone-eraser" className="text-blue-600 hover:underline">Mobile Tools</Link> are essential to bridge this gap. Without these specialized tools, your organization remains vulnerable to data remanence attacks.
             </p>
-            <p className="bg-slate-50 p-6 rounded-xl border-l-4 border-emerald-500 italic">
+            <p className="bg-slate-50 p-6 rounded-xl border-l-4 border-blue-500 italic">
                "The difference between 'deletion' and 'sanitization' is the difference between hiding a secret and destroying it forever. In the world of enterprise security, only the latter provides true peace of mind."
             </p>
           </div>
@@ -84,7 +84,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-slate-900 rounded-3xl p-10 text-white shadow-xl">
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-              <ShieldIcon className="w-6 h-6 text-emerald-400" />
+              <ShieldIcon className="w-6 h-6 text-blue-400" />
               The NIST 800-88 Sanitization Hierarchy
             </h3>
             <p className="text-slate-400 mb-8 text-sm leading-relaxed">
@@ -92,52 +92,52 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             </p>
             <ul className="space-y-6">
               <li className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold border border-emerald-500/30">1</div>
+                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold border border-blue-500/30">1</div>
                 <div>
-                  <h3 className="font-bold text-emerald-400 text-lg">Clear (Logical Sanitization)</h3>
+                  <h3 className="font-bold text-blue-400 text-lg">Clear (Logical Sanitization)</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">Protects against simple, non-invasive data recovery techniques (keyboard recovery). This involves a standard overwrite of all addressable locations on the storage media with non-sensitive data.</p>
                 </div>
               </li>
               <li className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold border border-emerald-500/30">2</div>
+                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold border border-blue-500/30">2</div>
                 <div>
-                  <h3 className="font-bold text-emerald-400 text-lg">Purge (Physical/Cryptographic)</h3>
+                  <h3 className="font-bold text-blue-400 text-lg">Purge (Physical/Cryptographic)</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">Renders data recovery infeasible even with specialized laboratory tools. This level includes **Cryptographic Erase (CE)** and firmware-level commands that address physical blocks hidden from the OS.</p>
                 </div>
               </li>
               <li className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold border border-emerald-500/30">3</div>
+                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold border border-blue-500/30">3</div>
                 <div>
-                  <h3 className="font-bold text-emerald-400 text-lg">Destroy (Physical Destruction)</h3>
+                  <h3 className="font-bold text-blue-400 text-lg">Destroy (Physical Destruction)</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">The final state for media that has reached its absolute end-of-life or is physically damaged. Methods include melting, shredding, incinerating, or pulverizing the media into tiny fragments.</p>
                 </div>
               </li>
             </ul>
           </div>
-          <div className="bg-emerald-50 rounded-3xl p-10 border border-emerald-100 shadow-sm">
-            <h3 className="text-2xl font-bold text-emerald-900 mb-6 flex items-center gap-2">
-              <CheckIcon className="w-6 h-6 text-emerald-600" />
+          <div className="bg-blue-50 rounded-3xl p-10 border border-blue-100 shadow-sm">
+            <h3 className="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-2">
+              <CheckIcon className="w-6 h-6 text-blue-600" />
               The D-Secure Audit Advantage
             </h3>
-            <div className="space-y-6 text-emerald-800/80 leading-relaxed">
+            <div className="space-y-6 text-blue-800/80 leading-relaxed">
               <p>
                 Standard wiping tools often leave you in the dark. D-Secure provides a **Tamper-Proof Audit Trail** that acts as your legal shield. Every sanitization process generates a 100% verifiable certificate of destruction.
               </p>
               <div className="space-y-4">
-                <div className="bg-white/60 p-4 rounded-xl border border-emerald-200/50">
-                   <h4 className="font-bold text-emerald-900 mb-1">Comprehensive Metadata</h4>
+                <div className="bg-white/60 p-4 rounded-xl border border-blue-200/50">
+                   <h4 className="font-bold text-blue-900 mb-1">Comprehensive Metadata</h4>
                    <p className="text-sm">Capture every detail: Drive Serial Number, Model, Capacity, Interface Type, and Physical Health metrics.</p>
                 </div>
-                <div className="bg-white/60 p-4 rounded-xl border border-emerald-200/50">
-                   <h4 className="font-bold text-emerald-900 mb-1">Method Verification</h4>
+                <div className="bg-white/60 p-4 rounded-xl border border-blue-200/50">
+                   <h4 className="font-bold text-blue-900 mb-1">Method Verification</h4>
                    <p className="text-sm">Documentation of the exact algorithm used (NIST 800-88, DoD 5220.22-M, HMG IS5) and the number of passes completed.</p>
                 </div>
-                <div className="bg-white/60 p-4 rounded-xl border border-emerald-200/50">
-                   <h4 className="font-bold text-emerald-900 mb-1">Post-Erasure Readback</h4>
+                <div className="bg-white/60 p-4 rounded-xl border border-blue-200/50">
+                   <h4 className="font-bold text-blue-900 mb-1">Post-Erasure Readback</h4>
                    <p className="text-sm">Automated sampling of the entire drive surface to verify that the pattern was written correctly and no original data remains.</p>
                 </div>
               </div>
-              <p className="pt-4 font-bold text-emerald-900 border-t border-emerald-200">
+              <p className="pt-4 font-bold text-blue-900 border-t border-blue-200">
                 This level of documentation is essential for passing rigorous ISO 27001, HIPAA, SOX, GDPR, and PCI-DSS 4.0 audits.
               </p>
             </div>
@@ -153,7 +153,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
           <div className="grid md:grid-cols-3 gap-10 relative z-10">
             <div className="space-y-5 group">
               <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <DatabaseIcon className="w-8 h-8 text-emerald-600" />
+                <DatabaseIcon className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">The Circular Economy</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -162,7 +162,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             </div>
             <div className="space-y-5 group">
               <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <ShieldIcon className="w-8 h-8 text-emerald-600" />
+                <ShieldIcon className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Zero-Trust Disposal</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -171,7 +171,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             </div>
             <div className="space-y-5 group">
               <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <GlobeIcon className="w-8 h-8 text-emerald-600" />
+                <GlobeIcon className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Legal Immunity</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -195,7 +195,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
                 <h3 className="text-2xl font-bold text-slate-900">Compliance Framework Comparison</h3>
                 <p className="text-slate-500 text-sm">How D-Secure maps to global data protection requirements.</p>
              </div>
-             <Link to="/compliance" className="text-emerald-600 font-bold hover:underline flex items-center gap-1 text-sm">
+             <Link to="/compliance" className="text-blue-600 font-bold hover:underline flex items-center gap-1 text-sm">
                 View Full Compliance Matrix <ArrowRightIcon className="w-4 h-4" />
              </Link>
           </div>
@@ -217,7 +217,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
                   </td>
                   <td className="py-5 px-4">European Union</td>
                   <td className="py-5 px-4 text-sm">Article 17: Right to Erasure (Be Forgotten)</td>
-                  <td className="py-5 px-4 text-emerald-600 font-bold text-sm">Automated Compliance</td>
+                  <td className="py-5 px-4 text-blue-600 font-bold text-sm">Automated Compliance</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
                   <td className="py-5 px-4">
@@ -226,7 +226,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
                   </td>
                   <td className="py-5 px-4">India</td>
                   <td className="py-5 px-4 text-sm">Mandatory deletion once purpose is served</td>
-                  <td className="py-5 px-4 text-emerald-600 font-bold text-sm">Localized Compliance</td>
+                  <td className="py-5 px-4 text-blue-600 font-bold text-sm">Localized Compliance</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
                   <td className="py-5 px-4">
@@ -235,7 +235,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
                   </td>
                   <td className="py-5 px-4">Global Standard</td>
                   <td className="py-5 px-4 text-sm">Purge and Clear Verification Standards</td>
-                  <td className="py-5 px-4 text-emerald-600 font-bold text-sm">Certified Native Support</td>
+                  <td className="py-5 px-4 text-blue-600 font-bold text-sm">Certified Native Support</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
                   <td className="py-5 px-4">
@@ -244,7 +244,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
                   </td>
                   <td className="py-5 px-4">Global Finance</td>
                   <td className="py-5 px-4 text-sm">Secure destruction of cardholder data</td>
-                  <td className="py-5 px-4 text-emerald-600 font-bold text-sm">Military-Grade Shredding</td>
+                  <td className="py-5 px-4 text-blue-600 font-bold text-sm">Military-Grade Shredding</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
                   <td className="py-5 px-4">
@@ -253,7 +253,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
                   </td>
                   <td className="py-5 px-4">United States</td>
                   <td className="py-5 px-4 text-sm">Safe disposal of PHI and ePHI records</td>
-                  <td className="py-5 px-4 text-emerald-600 font-bold text-sm">Audit-Ready Reporting</td>
+                  <td className="py-5 px-4 text-blue-600 font-bold text-sm">Audit-Ready Reporting</td>
                 </tr>
               </tbody>
             </table>
@@ -273,20 +273,20 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
               True security isn't achieved with a single tool—it requires an integrated ecosystem that covers every stage of the hardware lifecycle. From the initial diagnostic check to the final certificate of erasure, D-Secure provides the end-to-end visibility your enterprise demands.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-              <Link to="/products/drive-eraser" className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all group">
-                <h3 className="font-bold text-emerald-400 mb-3 text-lg group-hover:translate-x-1 transition-transform">Drive Eraser</h3>
+              <Link to="/products/drive-eraser" className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-blue-500/50 transition-all group">
+                <h3 className="font-bold text-blue-400 mb-3 text-lg group-hover:translate-x-1 transition-transform">Drive Eraser</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">High-volume HDD/SSD sanitization for enterprise data centers and ITAD environments. Support for 100+ simultaneous erasures.</p>
               </Link>
-              <Link to="/products/drive-eraser-diagnostic" className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all group">
-                <h3 className="font-bold text-emerald-400 mb-3 text-lg group-hover:translate-x-1 transition-transform">Drive Diagnostic</h3>
+              <Link to="/products/drive-eraser-diagnostic" className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-blue-500/50 transition-all group">
+                <h3 className="font-bold text-blue-400 mb-3 text-lg group-hover:translate-x-1 transition-transform">Drive Diagnostic</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">Perform 60+ hardware health checks before sanitization. Identify failed drives and maximize the resale value of healthy assets.</p>
               </Link>
-              <Link to="/products/file-eraser" className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all group">
-                <h3 className="font-bold text-emerald-400 mb-3 text-lg group-hover:translate-x-1 transition-transform">File Eraser</h3>
+              <Link to="/products/file-eraser" className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-blue-500/50 transition-all group">
+                <h3 className="font-bold text-blue-400 mb-3 text-lg group-hover:translate-x-1 transition-transform">File Eraser</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">Targeted secure shredding for individual files and folders on active Windows and Server environments. Ideal for daily compliance.</p>
               </Link>
-              <Link to="/products/virtual-machine-eraser" className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all group">
-                <h3 className="font-bold text-emerald-400 mb-3 text-lg group-hover:translate-x-1 transition-transform">VM Eraser</h3>
+              <Link to="/products/virtual-machine-eraser" className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-blue-500/50 transition-all group">
+                <h3 className="font-bold text-blue-400 mb-3 text-lg group-hover:translate-x-1 transition-transform">VM Eraser</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">Sanitize individual virtual disks and snapshots without affecting the host environment. Support for VMware, Hyper-V, and Azure.</p>
               </Link>
             </div>
@@ -302,7 +302,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             "By choosing verifiable, software-based erasure over primitive physical destruction, you are protecting your brand reputation and leading the charge toward a sustainable, carbon-neutral IT future."
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <Link to="/contact" className="px-10 py-4 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-600/30 hover:-translate-y-1">
+            <Link to="/contact" className="px-10 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/30 hover:-translate-y-1">
               Request a Security Audit
             </Link>
             <Link to="/products" className="px-10 py-4 border-2 border-slate-900 text-slate-900 rounded-full font-bold hover:bg-slate-900 hover:text-white transition-all hover:-translate-y-1">

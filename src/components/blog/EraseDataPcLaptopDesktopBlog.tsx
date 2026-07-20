@@ -30,7 +30,7 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
         <Reveal>
           <div className="text-center px-6">
             <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
-              Enterprise <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Guide
+              Enterprise <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Erasure</Link> Guide
             </span>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
@@ -51,7 +51,7 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
       {/* Main Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
             
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mb-8">
               <h3 className="font-bold text-blue-900 text-lg mb-2">Important Distinction: HDDs vs SSDs</h3>
@@ -179,18 +179,18 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
                 Not all motherboards include a built-in Secure Erase utility in the BIOS. If your system lacks this feature, the industry-standard alternative is to use a <strong>bootable USB wipe tool</strong>.
               </p>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-xl">
-                <h3 className="font-bold text-emerald-900 text-lg mb-2">Using DBAN (Darik's Boot and Nuke) for HDDs</h3>
-                <p className="text-emerald-800 mb-4">
+              <div className="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-xl">
+                <h3 className="font-bold text-rose-900 text-lg mb-2">Using DBAN (Darik's Boot and Nuke) for HDDs</h3>
+                <p className="text-rose-800 mb-4">
                   DBAN is a popular, free utility specifically designed for wiping traditional HDDs.
                 </p>
-                <ol className="list-decimal pl-6 space-y-2 text-emerald-800">
+                <ol className="list-decimal pl-6 space-y-2 text-rose-800">
                   <li>Download the DBAN ISO file.</li>
                   <li>Use a tool like Rufus to create a bootable USB drive from the ISO.</li>
                   <li>Reboot your PC and press the Boot Menu key (F12, F8, etc.) to boot from the USB.</li>
                   <li>Once DBAN loads, type <code>autonuke</code> to automatically wipe all connected HDDs, or press Enter to enter interactive mode and select specific drives.</li>
                 </ol>
-                <p className="mt-4 text-sm font-semibold text-emerald-900">
+                <p className="mt-4 text-sm font-semibold text-rose-900">
                   Note: DBAN is NOT recommended for SSDs. It cannot access over-provisioned sectors on solid-state media.
                 </p>
               </div>
@@ -212,7 +212,7 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
 
             <Link
               to="/products/drive-eraser"
-              className="inline-flex items-center bg-emerald-500 text-white px-8 py-3 rounded-lg font-bold hover:bg-emerald-600 transition shadow-lg"
+              className="inline-flex items-center bg-rose-500 text-white px-8 py-3 rounded-lg font-bold hover:bg-rose-600 transition shadow-lg"
             >
               <HoverIcon>
                 {(filled) => (

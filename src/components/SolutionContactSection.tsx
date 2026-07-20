@@ -59,7 +59,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
       const formSubmitData = new FormData();
       formSubmitData.append(
         "_webhook",
-        "https://api.dsecuretech.com/api/formsubmit/webhook",
+        `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
       );
       formSubmitData.append("_captcha", "false");
       formSubmitData.append("_template", "table");
@@ -80,7 +80,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
         ? `${subjectPrefix} - D-Secure Tech`
         : `New Inquiry - ${source} - D-Secure Tech`;
       formSubmitData.append("_subject", emailSubject);
-      formSubmitData.append("_cc", "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com");
+      formSubmitData.append("_cc", import.meta.env.VITE_FORM_CC_EMAILS);
       formSubmitData.append("_webhookContentType", "application/json");
       formSubmitData.append("_webhookExtraData", "true");
       formSubmitData.append("sendAutoReply", "true");
@@ -113,7 +113,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
 
       try {
         // === 1. Backend API (Database) ===
-        const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
         const apiResponse = await fetch(
           `${API_BASE}/api/ContactFormSubmissions`,
           {
@@ -124,7 +124,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
         );
 
         // === 2. FormSubmit (Email & Webhook) ===
-        await fetch("https://formsubmit.co/support@dsecuretech.com", {
+        await fetch(import.meta.env.VITE_FORMSUBMIT_ENDPOINT, {
           method: "POST",
           body: formSubmitData,
           headers: { Accept: "application/json" },
@@ -135,7 +135,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": "REACT_CONTACT_2026",
+            "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
           },
           body: JSON.stringify(submissionData),
         }).catch(() => {});

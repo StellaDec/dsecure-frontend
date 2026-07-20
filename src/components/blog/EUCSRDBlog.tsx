@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const EUCSRDBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title: "EU CSRD and Data Disposal",
@@ -26,7 +26,7 @@ const EUCSRDBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
                 Sustainability
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -44,12 +44,12 @@ const EUCSRDBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   The{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-amber-800">
                     Corporate Sustainability Reporting Directive (CSRD)
                   </strong>{" "}
                   came into effect on January 5, 2023, presenting the European
@@ -67,7 +67,7 @@ const EUCSRDBlog: React.FC = () => {
               </div>
 
               {/* NFRD Replacement */}
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
+              <div className="bg-amber-50 border-l-4 border-amber-500 p-8 rounded-r-lg mt-8">
                 <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Replacing NFRD
                 </h2>
@@ -85,13 +85,13 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* Key Provisions */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Provisions of CSRD
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Expanded Reach & Applicability
                   </h2>
@@ -103,7 +103,7 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Detailed Reporting Requirements
                   </h2>
@@ -116,7 +116,7 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     ESRS Compliance
                   </h2>
@@ -127,7 +127,7 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Digital Reporting
                   </h2>
@@ -137,7 +137,7 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-amber-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Double Materiality
                   </h2>
@@ -153,7 +153,7 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* ESRS Requirements */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 European Sustainability Reporting Standards
               </h2>
@@ -203,7 +203,7 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* Penalties Section */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Consequences of Non-Compliance
               </h2>
@@ -217,7 +217,7 @@ const EUCSRDBlog: React.FC = () => {
                 reports.
               </p>
 
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-8 mt-8">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-8 mt-8">
                 <h2 className="font-bold text-slate-900 text-xl mb-4">
                   France Penalty Example
                 </h2>
@@ -228,7 +228,7 @@ const EUCSRDBlog: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-white rounded-lg p-4">
-                    <h3 className="font-semibold text-emerald-700 text-lg mb-2">
+                    <h3 className="font-semibold text-amber-700 text-lg mb-2">
                       Failure to Appoint Auditor
                     </h3>
                     <ul className="space-y-1 text-slate-600 text-sm">
@@ -238,7 +238,7 @@ const EUCSRDBlog: React.FC = () => {
                     </ul>
                   </div>
                   <div className="bg-white rounded-lg p-4">
-                    <h3 className="font-semibold text-emerald-700 text-lg mb-2">
+                    <h3 className="font-semibold text-amber-700 text-lg mb-2">
                       Obstruction of Audits
                     </h3>
                     <ul className="space-y-1 text-slate-600 text-sm">
@@ -254,7 +254,7 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* How to Comply */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Achieving Sustainability & CSRD Compliance
               </h2>
@@ -293,8 +293,8 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6">
-                  <h2 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-6">
+                  <h2 className="font-bold text-amber-700 text-xl mb-3">
                     Promote Asset Reusability
                   </h2>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -337,7 +337,7 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Summary
               </h2>
@@ -346,7 +346,7 @@ const EUCSRDBlog: React.FC = () => {
                 raises the bar for businesses, requiring them to share a clearer
                 picture of their environmental and social impact through robust
                 ESG reporting. By adopting energy-saving technologies, reusing
-                assets through secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link>, and building sustainable
+                assets through secure <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">data wiping</Link>, and building sustainable
                 supply chains, companies can align with these standards.
               </p>
               <p className="text-slate-700 leading-loose text-lg">

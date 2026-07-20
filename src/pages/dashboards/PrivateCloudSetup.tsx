@@ -80,7 +80,7 @@ export default function PrivateCloudSetup() {
   });
 
   // API Base URL (without trailing slash)
-  const API_BASE = (import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com").replace(/\/$/, "");
+  const API_BASE = (import.meta.env.VITE_API_BASE_URL).replace(/\/$/, "");
 
   // Helper to format connection string
   // Converts mysql://username:password@host:port/database URI to ADO.NET format

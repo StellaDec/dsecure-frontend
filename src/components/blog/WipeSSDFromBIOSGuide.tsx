@@ -105,7 +105,7 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
       {/* Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
             {/* Intro */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -237,7 +237,7 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
             {/* Professional Erasure */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
-                4. Erasing SSDs Using Professional <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link> Software
+                4. Erasing SSDs Using Professional <Link to="/products/drive-eraser" className="text-blue-600 hover:underline font-medium">Data Wiping</Link> Software
               </h2>
 
               <p className="text-slate-700 leading-relaxed">
@@ -276,7 +276,7 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
                     <tr className="bg-slate-50">
                       <td className="border p-3">Erasure Standards</td>
                       <td className="border p-3">Limited</td>
-                      <td className="border p-3"><Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link>, DoD, and more</td>
+                      <td className="border p-3"><Link to="/products/drive-eraser" className="text-blue-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link></Link>, DoD, and more</td>
                     </tr>
                     <tr>
                       <td className="border p-3">Erasure Reports</td>

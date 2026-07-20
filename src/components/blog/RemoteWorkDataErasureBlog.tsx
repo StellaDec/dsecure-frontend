@@ -7,7 +7,7 @@ import { getBlogSEO } from '@/utils/seo';
 
 const RemoteWorkDataErasureBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title:
@@ -27,13 +27,13 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
                 Remote Work Security
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
                 <Link
                   to="/products/drive-eraser"
-                  className="text-emerald-600 hover:underline font-medium"
+                  className="text-amber-600 hover:underline font-medium"
                 >
                   Data Erasure
                 </Link>{" "}
@@ -50,18 +50,18 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Rise of Remote Work & Data Security Challenges
               </h2>
               <p className="text-slate-700 leading-loose text-lg mb-6">
                 Post-pandemic, remote work culture has increased phenomenally.
                 According to recent workforce statistics, by 2025, almost{" "}
-                <strong className="text-emerald-800">
+                <strong className="text-amber-800">
                   32.6 million Americans
                 </strong>{" "}
                 will be working remotely — that's{" "}
-                <strong className="text-emerald-800">
+                <strong className="text-amber-800">
                   22% of the entire US workforce
                 </strong>
                 . This projection suggests a continuous inclination towards
@@ -75,12 +75,12 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 remote IT asset management.
               </p>
 
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   ️ Security Risk Alert
                 </h3>
                 <p className="text-slate-700 text-lg leading-loose">
-                  <strong className="text-emerald-800">
+                  <strong className="text-amber-800">
                     73% of executives believe remote workers pose a greater
                     security risk.
                   </strong>{" "}
@@ -93,7 +93,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Remote Data Erasure Matters
               </h2>
@@ -106,7 +106,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
                   <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Data Protection
@@ -117,7 +117,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     are outside organizational premises.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
                   <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Compliance
@@ -128,7 +128,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     devices.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
                   <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Efficiency
@@ -138,7 +138,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     devices, saving time and logistics costs.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
                   <h3 className="font-bold text-slate-900 text-lg mb-3">
                     ️ Risk Mitigation
                   </h3>
@@ -166,7 +166,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 7 Best Practices for Remote Data Erasure
               </h2>
@@ -198,7 +198,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     2. Pre-install{" "}
                     <Link
                       to="/products/drive-eraser"
-                      className="text-emerald-600 hover:underline font-medium"
+                      className="text-amber-600 hover:underline font-medium"
                     >
                       Data Wiping
                     </Link>{" "}
@@ -241,7 +241,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     Always use a certified{" "}
                     <Link
                       to="/products/drive-eraser"
-                      className="text-emerald-600 hover:underline font-medium"
+                      className="text-amber-600 hover:underline font-medium"
                     >
                       data wiping
                     </Link>{" "}
@@ -284,7 +284,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     Train employees tasked with{" "}
                     <Link
                       to="/products/drive-eraser"
-                      className="text-emerald-600 hover:underline font-medium"
+                      className="text-amber-600 hover:underline font-medium"
                     >
                       data wiping
                     </Link>{" "}
@@ -298,7 +298,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 When to Perform Remote Data Erasure
               </h2>
@@ -369,7 +369,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 MDM Integration & Remote Wipe Triggers
               </h2>
@@ -410,7 +410,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Compliance Proof: Remote Erasure vs. Physical Erasure
               </h2>
@@ -419,19 +419,19 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">Remote Erasure Audit Evidence</h3>
                   <ul className="space-y-2 text-slate-700">
                     <li className="flex items-start gap-2">
-                      <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                      <span className="text-amber-600 font-bold mt-0.5">✓</span>
                       <span>Cryptographic erasure validation (key destruction).</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                      <span className="text-amber-600 font-bold mt-0.5">✓</span>
                       <span>MDM server logs showing wipe command execution and acknowledgment.</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                      <span className="text-amber-600 font-bold mt-0.5">✓</span>
                       <span>Digitally signed certificates sent back to the central console.</span>
                     </li>
                   </ul>
@@ -461,7 +461,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure: Your Complete Remote Data Erasure Solution
               </h2>
@@ -473,7 +473,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="border-l-4 border-emerald-500 pl-6">
+                <div className="border-l-4 border-amber-500 pl-6">
                   <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Pre-installation Support
                   </h3>
@@ -483,7 +483,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     or third-party remote desktop software.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-6">
+                <div className="border-l-4 border-amber-500 pl-6">
                   <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Global Certifications
                   </h3>
@@ -492,7 +492,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     STQC, and other international certification bodies.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-6">
+                <div className="border-l-4 border-amber-500 pl-6">
                   <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Standard Compliance
                   </h3>
@@ -501,14 +501,14 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     and US DoD 3 Pass that guarantee 100%{" "}
                     <Link
                       to="/products/drive-eraser"
-                      className="text-emerald-600 hover:underline font-medium"
+                      className="text-amber-600 hover:underline font-medium"
                     >
                       data wiping
                     </Link>
                     .
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-6">
+                <div className="border-l-4 border-amber-500 pl-6">
                   <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Audit-Ready Reports
                   </h3>
@@ -519,14 +519,14 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mt-6">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mt-6">
                 <p className="text-slate-700 text-lg leading-relaxed">
                   Organizations using D-Secure can be rest assured that remote
                   data is wiped securely beyond recovery. Leading enterprises
                   trust our solutions for their efficacy in{" "}
                   <Link
                     to="/products/drive-eraser"
-                    className="text-emerald-600 hover:underline font-medium"
+                    className="text-amber-600 hover:underline font-medium"
                   >
                     data wiping
                   </Link>{" "}
@@ -537,7 +537,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>

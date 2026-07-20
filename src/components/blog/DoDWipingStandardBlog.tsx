@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const DoDWipingStandardBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "DoD Data Wiping Standard Explained",
@@ -26,7 +26,7 @@ const DoDWipingStandardBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
                 Data Erasure Standards
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -44,12 +44,12 @@ const DoDWipingStandardBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   Media sanitization — commonly referred to as{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-blue-800">
                     data sanitization
                   </strong>{" "}
                   — is crucial for organizations to prevent leakage of
@@ -74,7 +74,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* What is DoD Standard */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is the DoD 5220.22-M Standard?
               </h2>
@@ -88,7 +88,7 @@ const DoDWipingStandardBlog: React.FC = () => {
                 classified information.
               </p>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mt-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-8 mt-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
                   Core Methodology
                 </h3>
@@ -104,9 +104,9 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* The Wiping Process */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-blue-600 via-slate-600 to-sky-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
-                The DoD 5220.22-M <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link> Process
+                The DoD 5220.22-M <Link to="/products/drive-eraser" className="text-blue-600 hover:underline font-medium">Data Wiping</Link> Process
               </h2>
 
               <p className="leading-loose text-lg mb-6">
@@ -154,7 +154,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* Clearing and Sanitization Matrix */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Clearing and Sanitization Matrix (CSM)
               </h2>
@@ -169,7 +169,7 @@ const DoDWipingStandardBlog: React.FC = () => {
               <div className="overflow-x-auto mt-6">
                 <table className="w-full border-collapse text-lg">
                   <thead>
-                    <tr className="bg-emerald-50">
+                    <tr className="bg-blue-50">
                       <th className="border border-slate-200 p-4 text-left font-bold text-slate-900">
                         Method
                       </th>
@@ -224,7 +224,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* Advantages */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Advantages of the DoD 5220.22-M Algorithm
               </h2>
@@ -238,7 +238,7 @@ const DoDWipingStandardBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Efficient Processing
                   </h3>
@@ -249,7 +249,7 @@ const DoDWipingStandardBlog: React.FC = () => {
                     inventories of drives simultaneously.
                   </p>
                 </div>
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Verification Assurance
                   </h3>
@@ -278,7 +278,7 @@ const DoDWipingStandardBlog: React.FC = () => {
                   <p className="text-slate-700 text-lg leading-loose">
                     DoD 5220.22-M is a legacy standard primarily designed for
                     magnetic drives. Multiple overwrite passes are no longer
-                    recommended by <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> or IEEE 2883:2022 for modern
+                    recommended by <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> or IEEE 2883:2022 for modern
                     media.
                   </p>
                 </div>
@@ -314,7 +314,7 @@ const DoDWipingStandardBlog: React.FC = () => {
                   </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     There is no official "DoD Certificate of Destruction."
-                    However, DoD-compliant <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> software can generate
+                    However, DoD-compliant <Link to="/products/drive-eraser" className="text-blue-600 hover:underline font-medium">data wiping</Link> software can generate
                     certificates of erasure serving as auditable proof of data
                     destruction.
                   </p>
@@ -325,7 +325,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* How to Perform */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 How to Perform DoD Wiping with D-Secure
               </h2>
@@ -333,33 +333,33 @@ const DoDWipingStandardBlog: React.FC = () => {
               <p className="text-slate-700 leading-loose text-lg">
                 "DoD wipe" means overwriting all addressable locations on a hard
                 drive as per steps specified in the DoD 5220.22-M algorithm.
-                D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> performs wiping of drives using the DoD
+                D-Secure <Link to="/products/drive-eraser" className="text-blue-600 hover:underline font-medium">Drive Eraser</Link> performs wiping of drives using the DoD
                 5220.22-M standard along with many other international
                 standards.
               </p>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mt-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-8 mt-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
                   D-Secure Capabilities
                 </h3>
                 <ul className="space-y-3 text-slate-700 text-lg">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
                     Select specific algorithm to overwrite storage locations per
                     DoD 5220.22 patterns and passes
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
                     Generates tamper-proof certificate and report of erasure for
                     regulatory compliance
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
                     Supports both 3-pass and 7-pass DoD methods
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
-                    Also includes <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>, IEEE 2883, and 20+ other
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
+                    Also includes <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link>, IEEE 2883, and 20+ other
                     international standards
                   </li>
                 </ul>
@@ -369,7 +369,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
           {/* Compliance Usage */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 DoD Standard for Compliance
               </h2>

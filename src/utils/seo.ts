@@ -114,8 +114,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
           category: "SecurityApplication",
           subCategory: "Data Sanitization Software Suite",
           os: "Windows, macOS, Linux, iOS, Android, Bootable ISO",
-          ratingValue: 4.8,
-          reviewCount: 2500,
+          // ratingValue: 4.8,
+          // reviewCount: 2500,
           price: "0.00",
           currency: "USD",
         }
@@ -161,8 +161,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
         category: "SecurityApplication",
         subCategory: "Mobile Data Sanitization",
         os: "iOS, Android",
-        ratingValue: 4.9,
-        reviewCount: 850,
+        // ratingValue: 4.9,
+        // reviewCount: 850,
         price: "15.00",
         currency: "USD",
         features: [
@@ -469,8 +469,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
         category: "SecurityApplication",
         subCategory: "Enterprise Drive Sanitization",
         os: "Bootable ISO, Linux Engine",
-        ratingValue: 4.9,
-        reviewCount: 420,
+        // ratingValue: 4.9,
+        // reviewCount: 420,
         price: "25.00",
         currency: "USD",
         features: [
@@ -481,7 +481,6 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
         ],
       }
     ),
-    noindex: true, // Stub page — iske paas abhi real content nahi hai
   },
   "wipe-mac-m1": {
     title: "How to Securely Wipe Apple M1/M2 Macs | D-Secure Guide",
@@ -499,8 +498,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
         category: "SecurityApplication",
         subCategory: "macOS Data Sanitization",
         os: "macOS",
-        ratingValue: 4.9,
-        reviewCount: 680,
+        // ratingValue: 4.9,
+        // reviewCount: 680,
         price: "20.00",
         currency: "USD",
         features: [
@@ -564,13 +563,11 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
     title: "D-Secure Data Erasure Training & Certification Programs",
     description: "Professional training and certification programs for data erasure. Learn NIST 800-88, GDPR, and DoD compliance best practices.",
     canonicalUrl: getCanonicalUrl("/training"),
-    noindex: true,
   },
   webinars: {
     title: "D-Secure Webinars: Data Erasure & Compliance Events",
     description: "Join D-Secure live webinars on data sanitization, ITAD best practices, and compliance standards.",
     canonicalUrl: getCanonicalUrl("/webinars"),
-    noindex: true,
   },
 
   // ─── STATIC PAGES KE LIYE NAYE UNIQUE SEO KEYS ───

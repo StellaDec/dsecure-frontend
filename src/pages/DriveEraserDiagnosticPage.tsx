@@ -1,7 +1,6 @@
-import React, { memo, useState, useEffect, useRef } from "react";
+import React, { memo, useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
-import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
@@ -9,7 +8,7 @@ import { generateFAQSchema } from "@/utils/seo.core";
 import { FAQSection } from "@/components/FAQSection";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
+import ProductInternalLinks from "@/components/ProductInternalLinks";
 import {
   Activity,
   Heart,
@@ -26,15 +25,10 @@ import {
   User,
   X,
   Shield,
-  ChevronRight,
-  ChevronLeft,
-  Settings,
-  ClipboardList,
   CheckIcon,
   Cloud,
-  Monitor,
 } from "lucide-react";
-import { ShieldIcon as FlatShieldIcon, GlobeIcon as FlatGlobeIcon, ServerIcon as FlatServerIcon } from "@/components/FlatIcons";
+import { ShieldIcon as FlatShieldIcon } from "@/components/FlatIcons";
 import { useToast } from "@/components/Toast";
 import { blogPosts } from "@/data/blogPosts";
 
@@ -112,10 +106,8 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         if (demoContainerRef.current?.requestFullscreen) {
           await demoContainerRef.current.requestFullscreen();
         }
-      } else {
-        if (document.exitFullscreen) {
-          await document.exitFullscreen();
-        }
+      } else if (document.exitFullscreen) {
+        await document.exitFullscreen();
       }
     } catch (err) {
       console.error("Error attempting to toggle fullscreen:", err);
@@ -146,7 +138,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
     link.target = "_blank";
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    link.remove();
   };
 
   // गैलरी इमेजेज - नए Cloudinary URLs के साथ optimized (f_auto, q_auto)
@@ -249,25 +241,19 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
   const additionalImagesCount = galleryImages.length - 4;
 
-  const handlePrevImage = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex(
-        selectedImageIndex === 0
-          ? galleryImages.length - 1
-          : selectedImageIndex - 1,
-      );
-    }
-  };
+  const handlePrevImage = useCallback(() => {
+    setSelectedImageIndex((prev) => {
+      if (prev === null) return null;
+      return prev === 0 ? galleryImages.length - 1 : prev - 1;
+    });
+  }, [galleryImages.length]);
 
-  const handleNextImage = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex(
-        selectedImageIndex === galleryImages.length - 1
-          ? 0
-          : selectedImageIndex + 1,
-      );
-    }
-  };
+  const handleNextImage = useCallback(() => {
+    setSelectedImageIndex((prev) => {
+      if (prev === null) return null;
+      return prev === galleryImages.length - 1 ? 0 : prev + 1;
+    });
+  }, [galleryImages.length]);
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -279,8 +265,20 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedImageIndex]);
+  }, [selectedImageIndex, handlePrevImage, handleNextImage]);
   // Handle scroll for sticky nav visibility and active section tracking
+  const sectionNavItems = useMemo<{ id: string; label: string }[]>(() => [
+    { id: "erase-types", label: "Erase Types" },
+    { id: "demo", label: "Demo" },
+    { id: "compliance", label: "Compliance" },
+    { id: "platforms", label: "Platforms" },
+    { id: "features", label: "Features" },
+    { id: "use-cases", label: "Use Cases" },
+    { id: "faq", label: "FAQ" },
+    { id: "blogs", label: "Blogs" },
+    { id: "contact", label: "Contact" },
+  ], []);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = globalThis.scrollY;
@@ -321,21 +319,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         );
       }
     };
-  }, []);
-
-
-  const sectionNavItems = [
-    { id: "erase-types", label: "Erase Types" },
-    { id: "demo", label: "Demo" },
-    { id: "compliance", label: "Compliance" },
-    { id: "platforms", label: "Platforms" },
-    { id: "features", label: "Features" },
-    { id: "use-cases", label: "Use Cases" },
-    { id: "faq", label: "FAQ" },
-    { id: "blogs", label: "Blogs" },
-    { id: "contact", label: "Contact" },
-  ];
-
+  }, [sectionNavItems]);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -495,54 +479,6 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
     },
   ];
 
-  const platforms = [
-    {
-      name: "Windows",
-      versions: "Arch64 (x64) and x86 (64-bit) and ARM64 (ARM)",
-      features: [
-        "Desktop & Laptop Support",
-        "Server Edition Available",
-        "Active Directory Integration",
-        "Group Policy Support",
-      ],
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
-        </svg>
-      ),
-    },
-    {
-      name: "macOS",
-      versions: "Arch64 (x64) and x86 (64-bit) and ARM64 (ARM), Intel (x64)",
-      features: [
-        "Intel & Apple Silicon",
-        "Full Disk Access",
-        "T2/M1/M2/M3 Chip Support",
-        "Native Performance",
-      ],
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-        </svg>
-      ),
-    },
-    {
-      name: "Linux",
-      versions: "Arch64 (x64) and x86 (64-bit) and ARM64 (ARM)",
-      features: [
-        "CLI & GUI Options",
-        "Kernel Level Erasure",
-        "Enterprise Distros",
-        "Headless Server Mode",
-      ],
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.711-.072-.2-.052-.334.033-.466.204-.263.466-.399.795-.528.396-.2.762-.269 1.139-.268h.13zm4.006 2.933c-.009.04-.009.037-.012.071-.075.443-.134.8-.166 1.2-.028.332-.043.663-.044.998l.003.467.004.073.009.135.003.2.016.267c.09.333.15.6.313.8.082.103.17.2.27.27.136.07.272.135.41.135.074 0 .15-.015.223-.04.31-.112.48-.332.618-.59.109-.202.17-.403.217-.598.04-.195.067-.39.08-.545.031-.4.049-.664.049-.664l-.003-.402-.01-.267-.014-.202c-.012-.133-.03-.266-.053-.397v-.003L13 9.4v-.003l-.048-.2h.003l.025.003c-.038-.007-.077-.01-.116-.02-.062-.01-.124-.029-.184-.04z" />
-        </svg>
-      ),
-    },
-  ];
-
   const features = [
     {
       title: "Secure Drive Erasure",
@@ -653,70 +589,11 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
       ].includes(post.id),
     )
     .slice(0, 4);
-  // Insights/Resources
-  const insights = [
-    {
-      type: "Blog",
-      title: "NIST 800-88 Explained: Complete Guide",
-      icon: () => (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-          />
-        </svg>
-      ),
-    },
-    {
-      type: "Technical Article",
-      title: "SSD vs HDD Erasure Methods",
-      icon: () => (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <rect x="4" y="4" width="16" height="16" rx="2" />
-          <path d="M9 9h.01M9 12h.01M9 15h.01M15 9h.01M15 12h.01M15 15h.01" />
-        </svg>
-      ),
-    },
-    {
-      type: "Knowledge Base",
-      title: "Deployment Best Practices",
-      icon: GlobeIcon,
-    },
-    {
-      type: "Product Video",
-      title: "Drive Eraser Demo",
-      icon: () => (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="12" r="10" />
-          <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
-        </svg>
-      ),
-    },
-  ];
   return (
     <>
       <SEOHeadNative 
         seo={getSEOForPage("drive-eraser-diagnostic")} 
-        schemas={[generateFAQSchema(driveEraserDiagnosticFaqs)]}
+        structuredData={[generateFAQSchema(driveEraserDiagnosticFaqs)]}
       />
 
       {/* Breadcrumb Navigation — SEO ke liye */}
@@ -946,9 +823,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                                 ></div>
                               </div>
                               <div className="flex gap-0.5 sm:gap-1">
-                                {[...Array(4)].map((_, i) => (
+                                {[1, 2, 3, 4].map((id) => (
                                   <div
-                                    key={i}
+                                    key={`srv1-ind-${id}`}
                                     className="w-0.5 sm:w-1 lg:w-1.5 h-3 sm:h-4 lg:h-5 bg-slate-500/60 rounded-sm"
                                   ></div>
                                 ))}
@@ -989,9 +866,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                                   32°C
                                 </span>
                                 <div className="flex gap-0.5">
-                                  {[...Array(3)].map((_, i) => (
+                                  {[1, 2, 3].map((id) => (
                                     <div
-                                      key={i}
+                                      key={`srv2-ind-${id}`}
                                       className="w-0.5 sm:w-1 h-3 sm:h-4 bg-emerald-500/40 rounded-full"
                                     ></div>
                                   ))}
@@ -1015,9 +892,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                                 ></div>
                               </div>
                               <div className="flex gap-0.5 sm:gap-1">
-                                {[...Array(4)].map((_, i) => (
+                                {[1, 2, 3, 4].map((id) => (
                                   <div
-                                    key={i}
+                                    key={`srv3-ind-${id}`}
                                     className="w-0.5 sm:w-1 lg:w-1.5 h-3 sm:h-4 lg:h-5 bg-slate-500/60 rounded-sm"
                                   ></div>
                                 ))}
@@ -1043,9 +920,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                                 ></div>
                               </div>
                               <div className="flex gap-0.5 sm:gap-1">
-                                {[...Array(4)].map((_, i) => (
+                                {[1, 2, 3, 4].map((id) => (
                                   <div
-                                    key={i}
+                                    key={`srv4-ind-${id}`}
                                     className="w-0.5 sm:w-1 lg:w-1.5 h-3 sm:h-4 lg:h-5 bg-slate-500/60 rounded-sm"
                                   ></div>
                                 ))}
@@ -1202,9 +1079,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         <p className="text-sm text-slate-500">{group.desc}</p>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-                        {group.tests.map((test, testIdx) => (
+                        {group.tests.map((test) => (
                           <div
-                            key={testIdx}
+                            key={test}
                             className="flex items-center gap-3 group"
                           >
                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:scale-125 transition-transform" />
@@ -1336,9 +1213,10 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
                 {!isDemoActive ? (
                   /* Demo Placeholder - Screenshot Thumbnail */
-                  <div
+                  <button
+                    type="button"
                     onClick={() => setIsDemoActive(true)}
-                    className="group relative w-full h-full flex-1 cursor-pointer overflow-hidden"
+                    className="block text-left group relative w-full h-full flex-1 cursor-pointer overflow-hidden"
                   >
                     {/* Screenshot Background */}
                     <img loading="lazy" decoding="async"
@@ -1367,7 +1245,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 ) : (
                   /* Iframe Container */
                   <iframe
@@ -1395,9 +1273,10 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
               {/* Screenshot 1 */}
               <Reveal delayMs={150}>
-                <div
+                <button
+                  type="button"
                   onClick={() => setSelectedImageIndex(0)}
-                  className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="block w-full text-left group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img loading="lazy" decoding="async"
@@ -1424,14 +1303,15 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       </svg>
                     </div>
                   </div>
-                </div>
+                </button>
               </Reveal>
 
               {/* Screenshot 2 */}
               <Reveal delayMs={200}>
-                <div
+                <button
+                  type="button"
                   onClick={() => setSelectedImageIndex(1)}
-                  className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="block w-full text-left group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img loading="lazy" decoding="async"
@@ -1458,14 +1338,15 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       </svg>
                     </div>
                   </div>
-                </div>
+                </button>
               </Reveal>
 
               {/* Screenshot 3 */}
               <Reveal delayMs={250}>
-                <div
+                <button
+                  type="button"
                   onClick={() => setSelectedImageIndex(2)}
-                  className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="block w-full text-left group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img loading="lazy" decoding="async"
@@ -1492,14 +1373,15 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       </svg>
                     </div>
                   </div>
-                </div>
+                </button>
               </Reveal>
 
               {/* Screenshot 4 - Shows "More" badge if additional images exist */}
               <Reveal delayMs={300}>
-                <div
+                <button
+                  type="button"
                   onClick={() => setSelectedImageIndex(3)}
-                  className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="block w-full text-left group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img loading="lazy" decoding="async"
@@ -1534,7 +1416,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       </svg>
                     </div>
                   </div>
-                </div>
+                </button>
               </Reveal>
             </div>
           </div>
@@ -1654,9 +1536,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         Multiple ways to deploy
                       </p>
                       <div className="text-[10px] text-emerald-600 font-medium mb-3">
-                        Download USB Tool:
+                        Download USB Tool:{" "}
                         <a
-                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe"
+                          href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-windows-702.exe`}
                           target="_blank"
                           rel="noreferrer"
                           className="hover:underline ml-1"
@@ -1665,7 +1547,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         </a>{" "}
                         |
                         <a
-                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin"
+                          href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin`}
                           target="_blank"
                           rel="noreferrer"
                           className="hover:underline ml-1"
@@ -1674,7 +1556,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         </a>{" "}
                         |
                         <a
-                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg"
+                          href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg`}
                           target="_blank"
                           rel="noreferrer"
                           className="hover:underline ml-1"
@@ -2228,7 +2110,6 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         <FAQSection 
           faqs={driveEraserDiagnosticFaqs} 
           title="Frequently Asked Questions"
-          subtitle="Everything you need to know about D-Secure Drive Eraser"
         />
 
         {/* ================= LATEST INSIGHTS & UPDATES ================= */}
@@ -2362,7 +2243,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         // Backend ko notify karne ke liye webhook - backend auto-response email bhejega
                         formSubmitData.append(
                           "_webhook",
-                          "https://api.dsecuretech.com/api/formsubmit/webhook",
+                          `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
                         );
                         formSubmitData.append("_captcha", "false");
                         formSubmitData.append("_template", "table");
@@ -2405,7 +2286,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         );
                         formSubmitData.append(
                           "_cc",
-                          "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+                          import.meta.env.VITE_FORM_CC_EMAILS,
                         );
 
                         // === Prepare submission data for Backend API ===
@@ -2443,8 +2324,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         try {
                           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
                           const API_BASE =
-                            import.meta.env.VITE_API_BASE_URL ||
-                            "https://api.dsecuretech.com";
+                            import.meta.env.VITE_API_BASE_URL;
                           const apiResponse = await fetch(
                             `${API_BASE}/api/ContactFormSubmissions`,
                             {
@@ -2455,8 +2335,8 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           );
 
                           // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
-                          const response = await fetch(
-                            "https://formsubmit.co/support@dsecuretech.com",
+                          await fetch(
+                            import.meta.env.VITE_FORMSUBMIT_ENDPOINT,
                             {
                               method: "POST",
                               body: formSubmitData,
@@ -2471,7 +2351,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                               method: "POST",
                               headers: {
                                 "Content-Type": "application/json",
-                                "x-api-key": "REACT_CONTACT_2026",
+                                "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
                               },
                               body: JSON.stringify(submissionData),
                             },
@@ -2484,10 +2364,11 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                               errorData,
                             );
                           }
-                        } catch (error: any) {
+                        } catch (error) {
                           console.error("Form error:", error);
+                          const err = error as Error;
                           showToast(
-                            error.message ||
+                            err.message ||
                               "Failed to send message. Please try again later.",
                             "error",
                           );
@@ -2600,6 +2481,8 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
       {/* Lightbox Modal with Gallery Navigation */}
       {selectedImageIndex !== null && (
         <div
+          role="presentation"
+          onKeyDown={() => {}}
           className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => setSelectedImageIndex(null)}
         >
@@ -2659,6 +2542,8 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
           {/* Image Container */}
           <div
+            role="presentation"
+            onKeyDown={() => {}}
             className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >

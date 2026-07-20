@@ -157,7 +157,7 @@ export default function FailurePage() {
   };
 
   // FormSubmit configuration - Primary recipient
-  const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/support@dsecuretech.com';
+  const FORMSUBMIT_ENDPOINT = import.meta.env.VITE_FORMSUBMIT_ENDPOINT;
 
   const handleSupportFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -197,7 +197,7 @@ export default function FailurePage() {
       // Webhook to notify backend - backend will send auto-response email
       formSubmitData.append(
         '_webhook',
-        'https://api.dsecuretech.com/api/formsubmit/webhook',
+        `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
       );
       // Disable captcha
       formSubmitData.append('_captcha', 'false');
@@ -232,7 +232,7 @@ export default function FailurePage() {
       );
       formSubmitData.append(
         "_cc",
-        "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+        import.meta.env.VITE_FORM_CC_EMAILS,
       );
 
       // === 1. SUBMIT TO BACKEND API (DATABASE) ===
@@ -269,7 +269,7 @@ export default function FailurePage() {
       );
       
       try {
-        const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://api.dsecuretech.com';
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
         const apiResponse = await fetch(
           `${API_BASE}/api/ContactFormSubmissions`,
           {
@@ -294,7 +294,7 @@ export default function FailurePage() {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'x-api-key': 'REACT_CONTACT_2026',
+            'x-api-key': import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
           },
           body: JSON.stringify(submissionData),
         }).catch(() => {});

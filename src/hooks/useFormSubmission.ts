@@ -23,7 +23,7 @@ export interface UseFormSubmissionResult {
 
 // FIXED: Single FormSubmit endpoint for all forms
 const DEFAULT_FORMSUBMIT_ENDPOINT =
-  "https://formsubmit.co/support@dsecuretech.com";
+  import.meta.env.VITE_FORMSUBMIT_ENDPOINT;
 
 /**
  * Custom hook for form submission with FormSubmit.co
@@ -99,7 +99,7 @@ export const useFormSubmission = (
     // Use Backend Webhook for Auto-Response instead of FormSubmit's built-in feature
     formSubmitData.append(
       "_webhook",
-      "https://api.dsecuretech.com/api/formsubmit/webhook",
+      `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
     );
     formSubmitData.append("_webhookContentType", "application/json");
     formSubmitData.append("_webhookExtraData", "true");
@@ -114,7 +114,7 @@ export const useFormSubmission = (
 
     formSubmitData.append(
       "_cc",
-      "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+      import.meta.env.VITE_FORM_CC_EMAILS,
     );
     formSubmitData.append("_bcc", ""); // No BCC emails
 
@@ -192,7 +192,7 @@ export const useFormSubmission = (
         };
 
         try {
-          const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+          const API_BASE = import.meta.env.VITE_API_BASE_URL;
           const POWER_AUTOMATE_URL = import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "";
 
           // Backend API
@@ -207,7 +207,7 @@ export const useFormSubmission = (
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "x-api-key": "REACT_CONTACT_2026",
+              "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
             },
             body: JSON.stringify(submissionData),
           }).catch(() => {});

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const PrivateCloudBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Private Cloud Data Erasure",
@@ -26,7 +26,7 @@ const PrivateCloudBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
                 Cloud Solutions
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -44,13 +44,13 @@ const PrivateCloudBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   D-Secure's suite of products for data erasure, diagnostics,
                   and verification provides users the flexibility to{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-rose-800">
                     store reports and certificates on its cloud server
                   </strong>
                   . Using the D-Secure Public Cloud Console, IT admins and
@@ -67,7 +67,7 @@ const PrivateCloudBlog: React.FC = () => {
               </div>
 
               {/* Private Cloud Solution */}
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
+              <div className="bg-rose-50 border-l-4 border-rose-500 p-8 rounded-r-lg mt-8">
                 <h2 className="font-bold text-slate-900 text-xl mb-4">
                   The Private Cloud Solution
                 </h2>
@@ -84,7 +84,7 @@ const PrivateCloudBlog: React.FC = () => {
 
           {/* What is Private Cloud */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding D-Secure Private Cloud
               </h2>
@@ -103,34 +103,34 @@ const PrivateCloudBlog: React.FC = () => {
                   </h3>
                   <ul className="space-y-2 text-slate-600 text-lg">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mr-3"></span>
                       Hosted on premium cloud infrastructure
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mr-3"></span>
                       Maintained by D-Secure team
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mr-3"></span>
                       Requires internet connectivity
                     </li>
                   </ul>
                 </div>
-                <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-rose-50 border-2 border-rose-200 rounded-xl p-6">
+                  <h3 className="font-bold text-rose-700 text-lg mb-3">
                     Private Cloud
                   </h3>
                   <ul className="space-y-2 text-slate-600 text-lg">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mr-3"></span>
                       Hosted on your infrastructure
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mr-3"></span>
                       Managed by your IT team
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                      <span className="w-2 h-2 bg-rose-500 rounded-full mr-3"></span>
                       No internet required
                     </li>
                   </ul>
@@ -141,7 +141,7 @@ const PrivateCloudBlog: React.FC = () => {
 
           {/* Use Case Example */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">Real-World Use Case</h2>
               <p className="leading-loose text-lg mb-6">
                 Consider an MSP organization providing cloud services to banks,
@@ -178,19 +178,19 @@ const PrivateCloudBlog: React.FC = () => {
 
           {/* Benefits Section */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Benefits of D-Secure Private Cloud
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Centralized Management
                   </h2>
                   <p className="text-slate-700 text-lg leading-loose">
                     D-Secure Private Cloud provides system admins access to
-                    software licenses for D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link>. Admins can
+                    software licenses for D-Secure <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Drive Eraser</Link>. Admins can
                     manage users from a centralized location over the network
                     without internet access. They can perform drive and device
                     erasure over the company network using the private cloud
@@ -198,7 +198,7 @@ const PrivateCloudBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Digital License Repository
                   </h2>
@@ -211,7 +211,7 @@ const PrivateCloudBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Remote Erasure Capabilities
                   </h2>
@@ -226,12 +226,12 @@ const PrivateCloudBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Scalability via PXE Boot
                   </h2>
                   <p className="text-slate-700 text-lg leading-loose">
-                    D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> can be deployed over WAN or LAN via
+                    D-Secure <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Drive Eraser</Link> can be deployed over WAN or LAN via
                     PXE to perform simultaneous erasures of multiple devices.
                     The software ISO file is mounted on a virtual drive and
                     deployed to erase up to 65,000 drives simultaneously —
@@ -245,7 +245,7 @@ const PrivateCloudBlog: React.FC = () => {
 
           {/* Comparison Table */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Private Cloud vs Public Cloud Comparison
               </h2>
@@ -253,14 +253,14 @@ const PrivateCloudBlog: React.FC = () => {
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
                   <thead>
-                    <tr className="border-b-2 border-emerald-500">
+                    <tr className="border-b-2 border-rose-500">
                       <th className="py-4 px-4 text-lg font-bold text-slate-900">
                         Feature
                       </th>
                       <th className="py-4 px-4 text-lg font-bold text-slate-900">
                         Public Cloud
                       </th>
-                      <th className="py-4 px-4 text-lg font-bold text-emerald-800">
+                      <th className="py-4 px-4 text-lg font-bold text-rose-800">
                         Private Cloud
                       </th>
                     </tr>
@@ -314,7 +314,7 @@ const PrivateCloudBlog: React.FC = () => {
             </div>
           </Reveal>{/* Summary */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Summary
               </h2>

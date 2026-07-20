@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ITAssetLifecycleBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Complete IT Asset Lifecycle Management",
@@ -25,7 +25,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
                 IT Asset Management
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -43,7 +43,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding IT Asset Lifecycle Management
               </h2>
@@ -63,18 +63,18 @@ const ITAssetLifecycleBlog: React.FC = () => {
                 <strong>IT Asset Lifecycle Management (IT ALM)</strong>.
               </p>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   {" "}
                   Market Insight
                 </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   Gartner has estimated that global IT spending will cross{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-amber-800">
                     $5 trillion USD in 2025
                   </strong>
                   , with data center systems seeing a growth of{" "}
-                  <strong className="text-emerald-800">23.2%</strong> —
+                  <strong className="text-amber-800">23.2%</strong> —
                   primarily driven by AI hardware requirements. This makes
                   proper IT asset management more critical than ever.
                 </p>
@@ -83,7 +83,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why IT Asset Lifecycle Management Matters
               </h2>
@@ -96,13 +96,13 @@ const ITAssetLifecycleBlog: React.FC = () => {
                 sustainability goals.
               </p>
 
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mb-8">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-lg mb-8">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   ️ Alarming Statistic
                 </h3>
                 <p className="text-slate-700 text-lg leading-loose">
                   According to a 2025 Deloitte IT Asset Management survey:{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-amber-800">
                     "Only 29% of organizations formally include ITAM in their
                     cybersecurity strategy."
                   </strong>{" "}
@@ -113,7 +113,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
                   <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Cost Reduction
@@ -127,7 +127,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     utilization, and cost reduction across the entire lifecycle.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
                   <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Increased Efficiency
@@ -141,7 +141,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     and optimized resource planning.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
                   <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Enhanced Security
@@ -154,7 +154,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     hardware is properly disposed of.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
                   <h3 className="font-bold text-slate-900 text-lg mb-3">
                     {" "}
                     Sustainability
@@ -172,7 +172,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 The 4 Stages of IT Asset Lifecycle
               </h2>
@@ -187,7 +187,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-emerald-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-amber-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       1
                     </span>
                     <div>
@@ -219,7 +219,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
 
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-emerald-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-amber-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       2
                     </span>
                     <div>
@@ -251,7 +251,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
 
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-emerald-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-amber-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       3
                     </span>
                     <div>
@@ -282,7 +282,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
 
                 <div className="bg-white/10 rounded-xl p-6 border-2 border-white/30">
                   <div className="flex items-start">
-                    <span className="bg-white text-emerald-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-amber-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       4
                     </span>
                     <div>
@@ -308,7 +308,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
                           • Data leakage during device returns from remote
                           workers
                         </li>
-                        <li>• Security gaps from improper <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> routing</li>
+                        <li>• Security gaps from improper <Link to="/solutions/itad" className="text-amber-600 hover:underline font-medium">ITAD</Link> routing</li>
                       </ul>
                       <p className="text-white/90 leading-relaxed mt-3">
                         <strong>Solution:</strong> Organizations must mandate
@@ -324,7 +324,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Critical Importance of Secure End-of-Life Disposal
               </h2>
@@ -339,8 +339,8 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-6">
+                  <h3 className="font-bold text-amber-700 text-lg mb-3">
                     {" "}
                     Common Mistakes
                   </h3>
@@ -352,13 +352,13 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     <li>• Relying on deletion instead of secure wiping</li>
                   </ul>
                 </div>
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+                  <h3 className="font-bold text-amber-700 text-lg mb-3">
                     {" "}
                     Best Practices
                   </h3>
                   <ul className="space-y-2 text-slate-700">
-                    <li>• Certified <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> before disposal</li>
+                    <li>• Certified <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">data wiping</Link> before disposal</li>
                     <li>• Audit-ready erasure reports</li>
                     <li>• Chain-of-custody tracking</li>
                     <li>• Verification of erasure completion</li>
@@ -370,9 +370,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                D-Secure: Integrating <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Secure Erasure</Link> into IT ALM
+                D-Secure: Integrating <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Secure Erasure</Link> into IT ALM
               </h2>
               <p className="text-slate-700 leading-loose text-lg mb-6">
                 D-Secure promotes the integration of secure data erasure as a
@@ -380,16 +380,16 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="border-l-4 border-emerald-500 pl-6">
+                <div className="border-l-4 border-amber-500 pl-6">
                   <h3 className="font-bold text-slate-900 text-lg mb-2">
-                    Certified <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link>
+                    Certified <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Data Wiping</Link>
                   </h3>
                   <p className="text-slate-700">
                     NIST, DoD, and globally certified erasure methods that
                     guarantee complete data destruction.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-6">
+                <div className="border-l-4 border-amber-500 pl-6">
                   <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Audit-Ready Reports
                   </h3>
@@ -398,7 +398,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     requirements for compliance documentation.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-6">
+                <div className="border-l-4 border-amber-500 pl-6">
                   <h3 className="font-bold text-slate-900 text-lg mb-2">
                     Automated Workflows
                   </h3>
@@ -409,7 +409,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-emerald-600 text-white rounded-xl p-6 mt-6">
+              <div className="bg-amber-600 text-white rounded-xl p-6 mt-6">
                 <p className="text-lg leading-relaxed">
                   Our automated workflows enable seamless data erasure of
                   devices before they are{" "}
@@ -422,7 +422,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>
@@ -463,7 +463,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
+                  className="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-amber-600 hover:to-orange-600 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>

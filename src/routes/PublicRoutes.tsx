@@ -34,6 +34,7 @@ const PricingAndPlanPage = lazy(() => import("../pages/PricingAndPlanPage"));
 const DriveEraserPage = lazy(() => import("../pages/DriveEraserPage"));
 const DriveEraserDiagnosticPage = lazy(() => import("../pages/DriveEraserDiagnosticPage"));
 const FileEraserPage = lazy(() => import("../pages/FileEraserPage"));
+const SystemCleanerPage = lazy(() => import("../pages/SystemCleanerPage"));
 const HardwareDiagnosticsPage = lazy(() => import("../pages/HardwareDiagnosticsPage"));
 const HardDriveMonitorPage = lazy(() => import("../pages/HardDriveMonitorPage"));
 const CheckoutPage = lazy(() => import("../pages/CheckoutPage"));
@@ -95,6 +96,7 @@ const DriveVerifierPage = lazy(() => import("../pages/DriveVerifierPage"));
 const EarlyAccessPage = lazy(() => import("../pages/EarlyAccessPage"));
 const FileEraserNetworkPage = lazy(() => import("../pages/FileEraserNetwork"));
 const ReportVerificationPage = lazy(() => import("../pages/ReportVerificationPage"));
+const ReportsAndCertificatesPage = lazy(() => import("../pages/ReportsAndCertificatesPage"));
 
 // SEO Competitive Strategy Pages
 const NIST80088Page = lazy(() => import("../pages/compliance/NIST80088Page"));
@@ -232,6 +234,7 @@ export const PublicRoutes = () => (
       element={<DriveEraserDiagnosticPage />}
     />
     <Route path="products/file-eraser" element={<FileEraserPage />} />
+    <Route path="products/system-cleaner" element={<SystemCleanerPage />} />
     <Route
       path="products/file-eraser-network"
       element={<FileEraserNetworkPage />}
@@ -324,6 +327,7 @@ export const PublicRoutes = () => (
     <Route path="blog/:slug" element={<BlogPostDetail />} />
     <Route path="resources/clone-guide" element={<CloneGuidePage />} />
     <Route path="verify-report" element={<ReportVerificationPage />} />
+    <Route path="reports-and-certificates" element={<ReportsAndCertificatesPage />} />
     {/* Priority 1 SEO Redirects */}
     <Route path="itad" element={<Navigate to="/solutions/itad" replace />} />
     <Route path="erasure" element={<Navigate to="/all-products" replace />} />

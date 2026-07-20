@@ -1,5 +1,5 @@
 // API Configuration
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 const API_TIMEOUT = Number(import.meta.env.VITE_API_TIMEOUT) || 60000
 
 // API Response types
@@ -202,7 +202,7 @@ export const apiClient = new ApiClient()
 // Check if API is available
 export async function checkApiAvailability(): Promise<boolean> {
   try {
-    const baseURL = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com"
+    const baseURL = import.meta.env.VITE_API_BASE_URL
     const response = await fetch(`${baseURL}/health`, {
       method: 'GET',
       timeout: 10000,

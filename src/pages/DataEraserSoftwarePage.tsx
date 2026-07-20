@@ -23,7 +23,7 @@ import {
   StarIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
-import { Activity, Cpu, HardDrive, Zap, RefreshCcw, Smartphone, Database, Server, Layers, CheckCircle2 } from "lucide-react";
+import { Activity, Cpu, HardDrive, Zap, RefreshCcw, Smartphone, Database, Server, Layers, CheckCircle2, Monitor } from "lucide-react";
 
 /* ───────────── data ───────────── */
 
@@ -125,6 +125,20 @@ const eraserSolutions = [
     color: "emerald",
     link: "/products/file-eraser-network",
     isUpcoming: true,
+  },
+  {
+    title: "System Cleaner",
+    desc: "A secure data erasure solution built to permanently remove every trace of data from your devices — safely, thoroughly, and beyond recovery.",
+    features: [
+      "Protected OS Processing",
+      "Secure Wipe Cache & Junk",
+      "App Trace Removal",
+      "Registry Cleaning",
+    ],
+    icon: Monitor,
+    color: "teal",
+    link: "/products/system-cleaner",
+    isUpcoming: false,
   },
 ];
 

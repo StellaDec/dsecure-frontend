@@ -155,7 +155,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
   // FIXED: Custom License Form Submission Configuration
   const customLicenseFormConfig = {
-    endpoint: "https://formsubmit.co/support@dsecuretech.com", // FIXED: Correct endpoint
+    endpoint: import.meta.env.VITE_FORMSUBMIT_ENDPOINT, // FIXED: Correct endpoint
     requiredFields: ["contactName", "email", "numberOfLicenses", "companyName"],
     successMessage:
       "Thank you! Your custom license request has been submitted successfully. Our sales team will contact you within 24 hours with a personalized quote.",
@@ -247,7 +247,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
   // FIXED: Special Pricing Form Configuration
   const specialPricingFormConfig = {
-    endpoint: "https://formsubmit.co/support@dsecuretech.com", // FIXED: Correct endpoint
+    endpoint: import.meta.env.VITE_FORMSUBMIT_ENDPOINT, // FIXED: Correct endpoint
     requiredFields: [
       "contactName",
       "email",
@@ -1422,16 +1422,18 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
     // Product ID mapping - Dodo Payment Product IDs
     const PRODUCT_IDS = {
-      "drive-eraser": "pdt_0NVH5wJYMX70syW3ioj9R",
-      "file-eraser": "pdt_0NVHHRwPSypqgPTs3kuSu",
-      "smart-diagnostic": "pdt_placeholder_smart_diagnostic",
-      "autopilot-mdm": "pdt_0Nh5BaqBzIdLGcr6KlQd8",
+      "drive-eraser": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER,
+      "file-eraser": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER,
+      "smart-diagnostic": import.meta.env.VITE_DODO_PRODUCT_SMART_DIAGNOSTIC,
+      "autopilot-mdm": import.meta.env.VITE_DODO_PRODUCT_AUTOPILOT,
     };
 
     const productId = PRODUCT_IDS[selectedCategory as keyof typeof PRODUCT_IDS];
 
     if (!productId) {
-      showToast("Invalid product selection. Please try again.", "error");
+      // Agar direct checkout ke liye product ID nahi hai (jaise Freeze State),
+      // toh automatically Custom Quote form open kar do
+      setShowCustomModal(true);
       setIsBuyNowLoading(false);
       return;
     }
@@ -1441,7 +1443,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
     const BASE_LINKS: Record<string, string> = {
       "drive-eraser": `${import.meta.env.VITE_DRIVE_ERASER}`, // Yahan apna Drive Eraser ka link dalein
       "file-eraser": `${import.meta.env.VITE_FILE_ERASER}`, // Yahan apna File Eraser ka link dalein
-      "smart-diagnostic": "https://checkout.dodopayments.com/buy/pdt_placeholder_smart_diagnostic?quantity=",
+      "smart-diagnostic": `${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/buy/${import.meta.env.VITE_DODO_PRODUCT_SMART_DIAGNOSTIC}?quantity=`,
     };
 
     try {
@@ -1457,7 +1459,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
         selectedCategory === "drive-eraser" &&
         driveEraserVariant === "diagnostics"
       ) {
-        checkoutProductId = "pdt_0NaKDbbTvncIVcoWRoVvZ";
+        checkoutProductId = import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_1;
       }
 
       // ── OLD REDIRECT CODE (commented out) ──
@@ -1468,12 +1470,12 @@ const PricingAndPlanPage: React.FC = memo(() => {
       // ── File Eraser ke liye Product-based Overlay Checkout ──
       if (selectedCategory === "file-eraser") {
         const FILE_ERASER_PRODUCT_IDS: Record<string, string> = {
-          "1": "pdt_0NVHHRwPSypqgPTs3kuSu",
-          "10": "pdt_0NetISdq5Sp7dTTOCHOZy",
-          "50": "pdt_0NetIgiYQV6azPZhsnjmh",
-          "100": "pdt_0NetJ0B4s0JWAQbvOLMZ5",
-          "250": "pdt_0NetJOrD6j8U6bTZsLu02",
-          "500": "pdt_0NetJczhdJrJOk1Te3MXP",
+          "1": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER,
+          "10": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_10,
+          "50": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_50,
+          "100": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_100,
+          "250": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_250,
+          "500": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_500,
         };
 
         const pid = FILE_ERASER_PRODUCT_IDS[selectedLicenses];
@@ -1486,16 +1488,16 @@ const PricingAndPlanPage: React.FC = memo(() => {
       // ── Drive Eraser (Standard) ke liye Product-based Overlay Checkout ──
       if (selectedCategory === "drive-eraser" && driveEraserVariant === "standard") {
         const DRIVE_ERASER_PRODUCT_IDS: Record<string, string> = {
-          "1": "pdt_0NVH5wJYMX70syW3ioj9R",
-          "5": "pdt_0NetDOJYTbgyl4yyaaNUx",
-          "10": "pdt_0NetDfyIzMlWudwHR5JVM",
-          "25": "pdt_0NetE1xoA3umBlYIj7T76",
-          "50": "pdt_0NetENDvF2AgRqNVRgley",
-          "100": "pdt_0NetEmLNGelAtMId2Sy4o",
-          "250": "pdt_0NetEzHKYwB2bqCEl3je9",
-          "500": "pdt_0NetFATL9t0omCvK7aFhA",
-          "1000": "pdt_0NetFKU1KZrfNgmfRdMwp",
-          "1500": "pdt_0NetFgxmNQ9O6M2qZsNQJ",
+          "1": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER,
+          "5": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_5,
+          "10": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_10,
+          "25": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_25,
+          "50": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_50,
+          "100": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_100,
+          "250": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_250,
+          "500": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_500,
+          "1000": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_1000,
+          "1500": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_1500,
         };
 
         const pid = DRIVE_ERASER_PRODUCT_IDS[selectedLicenses];
@@ -1508,16 +1510,16 @@ const PricingAndPlanPage: React.FC = memo(() => {
       // ── Drive Eraser Diagnostic ke liye Product-based Overlay Checkout ──
       if (selectedCategory === "drive-eraser" && driveEraserVariant === "diagnostics") {
         const DIAGNOSTIC_PRODUCT_IDS: Record<string, string> = {
-          "1": "pdt_0NaKDbbTvncIVcoWRoVvZ",
-          "5": "pdt_0NetGZStFWAl3wno7Dkq4",
-          "10": "pdt_0NetGrIUuOMt5HxBPC7U8",
-          "25": "pdt_0NetH4JhpGBsVp0OIepr9",
-          "50": "pdt_0NetHIVihaThDyBuOIVrq",
-          "100": "pdt_0NetHRmjMh0ZPlTc2pfjQ",
-          "250": "pdt_0NetHaqHEyrNpZ0Auoau3",
-          "500": "pdt_0NetHjkFJZQMVe64MUmtS",
-          "1000": "pdt_0NetHqURo7ZGzFoucTedY",
-          "1500": "pdt_0NetI6CGHI6jMpcZ6mjkT",
+          "1": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_1,
+          "5": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_5,
+          "10": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_10,
+          "25": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_25,
+          "50": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_50,
+          "100": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_100,
+          "250": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_250,
+          "500": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_500,
+          "1000": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_1000,
+          "1500": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_1500,
         };
 
         const pid = DIAGNOSTIC_PRODUCT_IDS[selectedLicenses];
@@ -1530,10 +1532,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
       // ── Autopilot MDM Advanced & Combo ke liye Payment Link Checkout ──
       if (selectedCategory === "autopilot-mdm") {
         if (autopilotCreditType === "advanced") {
-          openPaymentLinkCheckout("https://checkout.dodopayments.com/session/cks_0Nj4TS4xCTnavVJs9SDUg");
+          openPaymentLinkCheckout(`${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/session/cks_0Nj4TS4xCTnavVJs9SDUg`);
           return;
         } else if (autopilotCreditType === "combo") {
-          openPaymentLinkCheckout("https://checkout.dodopayments.com/session/cks_0Nj4TmltwSMpAOZgqlpcp");
+          openPaymentLinkCheckout(`${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/session/cks_0Nj4TmltwSMpAOZgqlpcp`);
           return;
         }
       }
@@ -2625,7 +2627,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                         ) {
                           // Prefetch checkout domain connection
                           const img = new Image();
-                          img.src = "https://checkout.dodopayments.com/favicon.ico";
+                          img.src = `${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/favicon.ico`;
                         }
                       }}
                       className={`w-full font-bold py-3 xs:py-4 px-4 xs:px-5 sm:px-6 rounded-xl mb-4 xs:mb-5 sm:mb-6 text-base xs:text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2 ${
@@ -2673,7 +2675,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                       ) {
                         // Prefetch checkout domain connection
                         const img = new Image();
-                        img.src = "https://checkout.dodopayments.com/favicon.ico";
+                        img.src = `${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/favicon.ico`;
                       }
                     }}
                     className={`w-full font-bold py-3 xs:py-4 px-4 xs:px-5 sm:px-6 rounded-xl mb-4 xs:mb-5 sm:mb-6 text-base xs:text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2 ${

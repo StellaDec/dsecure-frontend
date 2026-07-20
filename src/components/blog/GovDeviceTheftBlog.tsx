@@ -18,11 +18,11 @@ const GovDeviceTheftBlog: React.FC = () => {
             <div className="text-center px-6">
                 <div className="flex justify-center mb-6">
                 </div>
-                <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+                <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
                     Government Data Security
                 </span>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Secure IT Asset Disposal:</span> A Critical Need for Government Organizations
+                    <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Secure IT Asset Disposal:</span> A Critical Need for Government Organizations
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                     Responsible and secure IT Asset disposal for government needs experience, technical knowledge, and a complete system to protect sensitive national data.
@@ -34,7 +34,7 @@ const GovDeviceTheftBlog: React.FC = () => {
       {/* Main Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+             <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
                 
                 {/* Introduction */}
                 <div className="space-y-4">
@@ -88,7 +88,7 @@ const GovDeviceTheftBlog: React.FC = () => {
                 <div className="space-y-4">
                     <h2 className="text-2xl font-bold text-slate-900">Secure IT Asset Disposal For Government (NIST SP 800-88)</h2>
                     <p className="text-slate-700 leading-relaxed">
-                        National Institute of Standards and Technology (NIST) guidelines require organizations, including the government, to practice secure data erasure while getting rid of old digital media to reduce cybersecurity risks and prevent data leakage. The NIST SP 800-88 guidelines are widely followed by the US government and act as a standard to drive their media sanitization programs with defined techniques and control mechanisms for sanitization, disposal, reuse, or migration of media and information. In addition, government bodies like the US Department of Health and Human Services (HHS) also tell practitioners to use the <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> standard. Therefore, meeting the NIST SP 800-88 guidelines is the best way to ensure that sensitive government data can be wiped in compliance with global standards of data destruction and ensure data security.
+                        National Institute of Standards and Technology (NIST) guidelines require organizations, including the government, to practice secure data erasure while getting rid of old digital media to reduce cybersecurity risks and prevent data leakage. The NIST SP 800-88 guidelines are widely followed by the US government and act as a standard to drive their media sanitization programs with defined techniques and control mechanisms for sanitization, disposal, reuse, or migration of media and information. In addition, government bodies like the US Department of Health and Human Services (HHS) also tell practitioners to use the <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link> standard. Therefore, meeting the NIST SP 800-88 guidelines is the best way to ensure that sensitive government data can be wiped in compliance with global standards of data destruction and ensure data security.
                     </p>
                     <p className="text-slate-700 leading-relaxed">
                         Secure IT Asset disposal for government organizations depends on two things:
@@ -101,7 +101,7 @@ const GovDeviceTheftBlog: React.FC = () => {
                         The answer to both questions will decide how the organization will do data erasure. The NIST standard has 3 methods that may be used for classified data destruction:
                     </p>
                     <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mt-4">
-                        <h3 className="font-bold text-indigo-900 mb-2"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Sanitization Methods</h3>
+                        <h3 className="font-bold text-indigo-900 mb-2"><Link to="/compliance/nist-800-88" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link> Sanitization Methods</h3>
                         <ul className="space-y-2 text-indigo-800">
                             <li><strong>Clear:</strong> Software-based data destruction method effectively used for reusing the devices.</li>
                             <li><strong>Purge:</strong> Software-based data destruction method effectively used for reusing the devices with higher security.</li>
@@ -150,13 +150,13 @@ const GovDeviceTheftBlog: React.FC = () => {
                         To protect sensitive data and follow international data protection laws, every government organization needs to ensure that confidential information no longer needed is wiped permanently from all storage devices. Whether the government agency needs to reuse the device or destroy the drives and devices, the primary action to be done is secure data sanitization.
                     </p>
                     <p className="text-slate-700 leading-relaxed">
-                        D-Secure is a professional data wiping tool that guarantees data erasure beyond recovery using international erasure standards, including <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>. The certified tool works effectively on networked and off-grid storage media, with the ability to erase/diagnose multiple devices at the same time. Following the principle of Erase, Verify and Certify, the NIST-approved D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">drive eraser</Link> software gives you complete control of permanent erasure with verification of every wipe performed.
+                        D-Secure is a professional data wiping tool that guarantees data erasure beyond recovery using international erasure standards, including <Link to="/compliance/nist-800-88" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link>. The certified tool works effectively on networked and off-grid storage media, with the ability to erase/diagnose multiple devices at the same time. Following the principle of Erase, Verify and Certify, the NIST-approved D-Secure <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">drive eraser</Link> software gives you complete control of permanent erasure with verification of every wipe performed.
                     </p>
-                    <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                        <h3 className="font-bold text-emerald-900 mb-2">D-Secure Key Features for Government</h3>
-                        <ul className="space-y-2 text-emerald-800">
+                    <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
+                        <h3 className="font-bold text-indigo-900 mb-2">D-Secure Key Features for Government</h3>
+                        <ul className="space-y-2 text-indigo-800">
                             <li><strong>Erase, Verify and Certify:</strong> Complete control of permanent erasure with verification of every wipe performed.</li>
-                            <li><strong>NIST-Approved:</strong> Meets <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> guidelines for government compliance.</li>
+                            <li><strong>NIST-Approved:</strong> Meets <Link to="/compliance/nist-800-88" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link> guidelines for government compliance.</li>
                             <li><strong>100% Verifiable Reports:</strong> Generates verifiable reports and certificates that serve as handy audit trails for compliance purposes.</li>
                             <li><strong>Laboratory-Grade Security:</strong> Makes data retrieval impossible even in a laboratory setting.</li>
                             <li><strong>Multi-Device Capability:</strong> Can erase and diagnose multiple devices at the same time.</li>
@@ -172,14 +172,14 @@ const GovDeviceTheftBlog: React.FC = () => {
 
         {/* Conclusion */}
         <Reveal>
-             <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-8 mt-8 text-white">
+             <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-8 mt-8 text-white">
                 <h2 className="text-2xl font-bold mb-4">Secure Your Government IT Assets</h2>
                 <p className="leading-relaxed mb-6">
-                    Protect classified data with <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> compliant data erasure. Deploy D-Secure for secure, verifiable, and cost-effective IT asset disposal.
+                    Protect classified data with <Link to="/compliance/nist-800-88" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link> compliant data erasure. Deploy D-Secure for secure, verifiable, and cost-effective IT asset disposal.
                 </p>
                 <Link
                     to="/contact"
-                    className="inline-flex items-center bg-white text-emerald-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
+                    className="inline-flex items-center bg-white text-indigo-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
                 >
                     <HoverIcon>
                         {(filled) => <ShieldIcon className="w-5 h-5 mr-2" filled={filled} />}

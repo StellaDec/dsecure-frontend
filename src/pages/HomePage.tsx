@@ -25,7 +25,8 @@ import {
   ArrowLeftIcon,
   LockIcon,
 } from "@/components/FlatIcons";
-import { Search, Monitor, Terminal, Database, FileCheck, CheckCircle2 } from "lucide-react";
+import { Search, Monitor, Terminal, Database, FileCheck, CheckCircle2, X, ZoomIn, ZoomOut } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, memo, useMemo, useCallback, useState } from "react";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
@@ -38,6 +39,13 @@ const HomePage = memo(function HomePage() {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [visibleCount, setVisibleCount] = useState(2);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [zoomScale, setZoomScale] = useState(1);
+
+  const handleCloseModal = useCallback(() => {
+    setSelectedImage(null);
+    setZoomScale(1);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -99,6 +107,23 @@ const HomePage = memo(function HomePage() {
           t("home.fileEraserNetworkFeature2"),
           t("home.fileEraserNetworkFeature3"),
           t("home.fileEraserNetworkFeature4"),
+        ],
+      },
+      {
+        id: "system-cleaner",
+        title: "System Cleaner",
+        desc: "A secure data erasure solution built to permanently remove every trace of data from your devices — safely, thoroughly, and beyond recovery.",
+        price: "TBA",
+        note: "Standard model",
+        link: "/products/system-cleaner",
+        icon: MonitorIcon,
+        color: "teal",
+        isUpcoming: false,
+        features: [
+          "Protected OS Cleaning",
+          "Secure Wipe Cache & Junk",
+          "App Trace Removal",
+          "Registry Cleaning",
         ],
       },
       {
@@ -804,6 +829,161 @@ const HomePage = memo(function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Reports and Certificates High-Impact Section */}
+      <section className="py-16 md:py-24 bg-slate-50 border-y border-gray-200 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+        <div className="container-responsive relative z-10">
+          <Reveal>
+            <div className="text-center max-w-4xl mx-auto mb-16">
+              <div className="inline-flex items-center justify-center p-3 bg-emerald-100 rounded-2xl mb-6 border border-emerald-200">
+                <FileCheck className="w-8 h-8 text-emerald-600" />
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-slate-900">
+                Certified & Tamper-Proof Reports
+              </h2>
+              <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto text-slate-600">
+                Every erasure and diagnostic process is backed by digitally signed, compliance-ready certificates and comprehensive reports.
+              </p>
+              <Link
+                to="/reports-and-certificates"
+                className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-emerald-500 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 inline-flex items-center justify-center"
+              >
+                View All Certificates
+                <ArrowRightIcon className="w-5 h-5 ml-2" filled={false} />
+              </Link>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* File Eraser Certificate Card */}
+            <Reveal delayMs={100} className="h-full">
+              <div 
+                onClick={() => setSelectedImage('https://res.cloudinary.com/dhwi5wevf/image/upload/v1784544510/tamc6g4n1igi46qmqdwp.png')}
+                className="cursor-pointer block bg-white border border-gray-200 rounded-2xl p-6 shadow-sm h-full hover:shadow-md hover:border-emerald-300 transition-all duration-300 group"
+              >
+                <div className="aspect-[3/4] rounded-xl overflow-hidden mb-6 border border-gray-100 relative bg-slate-50">
+                  <div className="absolute inset-0 bg-emerald-900/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center backdrop-blur-[2px]">
+                    <div className="bg-emerald-500 p-3 rounded-full shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                      <Search className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1784544510/tamc6g4n1igi46qmqdwp.png" 
+                    alt="File Eraser Certificate" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="font-bold text-xl text-slate-900 mb-2 text-center group-hover:text-emerald-600 transition-colors">File Eraser Certificate</h3>
+                <p className="text-slate-500 text-sm text-center mb-4">Digitally signed proof of secure file and folder deletion.</p>
+                <div className="flex flex-wrap justify-center gap-2 pt-4 border-t border-gray-100">
+                  <span className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded border border-emerald-100">GDPR</span>
+                  <span className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded border border-emerald-100">HIPAA</span>
+                  <span className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded border border-emerald-100">ISO 27001</span>
+                  <span className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded border border-emerald-100">PCI DSS</span>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Autopilot/MDM Certificate Card */}
+            <Reveal delayMs={200} className="h-full">
+              <div 
+                onClick={() => setSelectedImage('https://res.cloudinary.com/dhwi5wevf/image/upload/v1784545652/f7bfazl9lgawdsitaqys.png')}
+                className="cursor-pointer block bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm h-full hover:shadow-md hover:border-emerald-400 transition-all duration-300 group md:-translate-y-4"
+              >
+                <div className="aspect-[3/4] rounded-xl overflow-hidden mb-6 border border-gray-100 relative bg-slate-50">
+                  <div className="absolute inset-0 bg-emerald-900/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center backdrop-blur-[2px]">
+                    <div className="bg-emerald-500 p-3 rounded-full shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                      <Search className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1784545652/f7bfazl9lgawdsitaqys.png" 
+                    alt="Autopilot Detection Certificate" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="font-bold text-xl text-slate-900 mb-2 text-center group-hover:text-emerald-600 transition-colors">Autopilot / MDM Certificate</h3>
+                <p className="text-slate-500 text-sm text-center">Certified verification of device enrollment status.</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Clipboard Style Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/90 p-4 sm:p-8 backdrop-blur-sm overflow-hidden"
+            onClick={handleCloseModal}
+          >
+            {/* Modal Controls */}
+            <div className="fixed top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-4 z-[110]" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center bg-white/10 rounded-full p-1 backdrop-blur-md">
+                <button
+                  onClick={() => setZoomScale(prev => Math.max(0.5, prev - 0.25))}
+                  className="p-2 text-white hover:text-emerald-400 hover:bg-white/20 rounded-full transition-colors"
+                  title="Zoom Out"
+                >
+                  <ZoomOut className="w-6 h-6" />
+                </button>
+                <span className="text-white font-medium px-2 min-w-[60px] text-center">
+                  {Math.round(zoomScale * 100)}%
+                </span>
+                <button
+                  onClick={() => setZoomScale(prev => Math.min(3, prev + 0.25))}
+                  className="p-2 text-white hover:text-emerald-400 hover:bg-white/20 rounded-full transition-colors"
+                  title="Zoom In"
+                >
+                  <ZoomIn className="w-6 h-6" />
+                </button>
+              </div>
+              <button
+                onClick={handleCloseModal}
+                className="text-white hover:text-red-400 transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20"
+                title="Close"
+              >
+                <X className="w-8 h-8" />
+              </button>
+            </div>
+
+            {/* Scrollable Container for Zoomed Content */}
+            <div className="w-full h-full overflow-auto flex items-center justify-center custom-scrollbar" onClick={handleCloseModal}>
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                animate={{ scale: zoomScale, opacity: 1, y: 0 }}
+                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                className="relative bg-slate-200/90 rounded-2xl border-[8px] border-slate-300 shadow-2xl overflow-hidden m-auto transform-origin-center transition-transform duration-200"
+                style={{
+                  width: 'min(90vw, 800px)',
+                  aspectRatio: '210/297', // A4 aspect ratio
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Clipboard Clip at the top */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 sm:w-48 h-8 sm:h-10 bg-slate-800 rounded-b-2xl z-20 flex justify-center items-end pb-2 shadow-xl border-b-4 border-slate-900">
+                  <div className="w-12 sm:w-20 h-1.5 sm:h-2 bg-slate-600 rounded-full"></div>
+                </div>
+                
+                {/* A4 Paper Content */}
+                <div className="m-3 sm:m-6 mt-12 sm:mt-16 bg-white shadow-sm relative p-2 h-[calc(100%-4rem)] sm:h-[calc(100%-5.5rem)] flex justify-center items-center">
+                  <img 
+                    src={selectedImage} 
+                    alt="Certificate Full View" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
 
       {/* Enterprise Trial Promotion Section — EMOJIS REPLACED */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-600 relative overflow-hidden">

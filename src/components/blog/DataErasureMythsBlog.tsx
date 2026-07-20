@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const DataErasureMythsBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "Data Deletion vs. Data Erasure: Busting the 5 Biggest Myths",
@@ -25,7 +25,7 @@ const DataErasureMythsBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
                 Data Security Facts
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -43,12 +43,12 @@ const DataErasureMythsBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   Data protection regulations like{" "}
-                  <strong className="text-emerald-800">GDPR, CCPA</strong>, and
+                  <strong className="text-indigo-800">GDPR, CCPA</strong>, and
                   similar laws worldwide have established strict norms for user
                   data protection. These regulations mandate secure and
                   compliant handling of user data — including customer data in
@@ -78,7 +78,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* Myth 1: Formatting */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-center gap-4 mb-6">
                 <span className="flex-shrink-0 px-4 py-2 bg-amber-500 text-white rounded-lg text-xl font-bold">
                   MYTH #1
@@ -88,8 +88,8 @@ const DataErasureMythsBlog: React.FC = () => {
                 </h2>
               </div>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   ✓ FACT
                 </h3>
                 <p className="text-slate-700 text-lg leading-loose">
@@ -134,7 +134,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* Myth 2: Deletion */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <div className="flex items-center gap-4 mb-6">
                 <span className="flex-shrink-0 px-4 py-2 bg-white text-amber-600 rounded-lg text-xl font-bold">
                   MYTH #2
@@ -189,7 +189,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* Myth 3: Degaussing SSDs */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-center gap-4 mb-6">
                 <span className="flex-shrink-0 px-4 py-2 bg-amber-500 text-white rounded-lg text-xl font-bold">
                   MYTH #3
@@ -199,8 +199,8 @@ const DataErasureMythsBlog: React.FC = () => {
                 </h2>
               </div>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   ✓ FACT
                 </h3>
                 <p className="text-slate-700 text-lg leading-loose">
@@ -244,7 +244,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* Myth 4: Shredding */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <div className="flex items-center gap-4 mb-6">
                 <span className="flex-shrink-0 px-4 py-2 bg-amber-500 text-white rounded-lg text-xl font-bold">
                   MYTH #4
@@ -254,8 +254,8 @@ const DataErasureMythsBlog: React.FC = () => {
                 </h2>
               </div>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-emerald-700 text-xl mb-3">
+              <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
+                <h3 className="font-bold text-indigo-700 text-xl mb-3">
                   ✓ FACT
                 </h3>
                 <p className="text-slate-700 text-lg leading-loose">
@@ -302,7 +302,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* The Real Solution */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-8">
+            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-8">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Reliable Solution: Certified Data Erasure
               </h2>
@@ -316,30 +316,30 @@ const DataErasureMythsBlog: React.FC = () => {
 
               <div className="bg-white rounded-xl p-8 shadow-md mt-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
-                  D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> Advantages
+                  D-Secure <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Drive Eraser</Link> Advantages
                 </h3>
                 <ul className="space-y-3 text-slate-700 text-lg">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
                     Overwrites all addressable memory locations with verified
                     binary patterns
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
                     Works on all media types: HDDs, SSDs, NVMe, flash storage
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
-                    Supports 24+ global standards including <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> and DoD
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    Supports 24+ global standards including <Link to="/compliance/nist-800-88" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link> and DoD
                     5220.22-M
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
                     Generates tamper-proof certificates for compliance
                     documentation
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
                     Data becomes completely unrecoverable through any method
                   </li>
                 </ul>
@@ -349,7 +349,7 @@ const DataErasureMythsBlog: React.FC = () => {
 
           {/* Summary Table */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Myth vs. Reality: Quick Reference
               </h2>
@@ -357,7 +357,7 @@ const DataErasureMythsBlog: React.FC = () => {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-lg">
                   <thead>
-                    <tr className="bg-emerald-50">
+                    <tr className="bg-indigo-50">
                       <th className="border border-slate-200 p-4 text-left font-bold text-slate-900">
                         Method
                       </th>
@@ -414,14 +414,14 @@ const DataErasureMythsBlog: React.FC = () => {
                         May leave recoverable fragments
                       </td>
                     </tr>
-                    <tr className="bg-emerald-50">
+                    <tr className="bg-indigo-50">
                       <td className="border border-slate-200 p-4 font-medium">
                         Data Erasure
                       </td>
                       <td className="border border-slate-200 p-4">
                         Certified destruction
                       </td>
-                      <td className="border border-slate-200 p-4 text-emerald-800 font-bold">
+                      <td className="border border-slate-200 p-4 text-indigo-800 font-bold">
                         ✓ Verified permanent destruction
                       </td>
                     </tr>

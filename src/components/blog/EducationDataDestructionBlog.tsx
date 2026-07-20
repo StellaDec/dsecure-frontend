@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const EducationDataDestructionBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Data Destruction in Education",
@@ -25,7 +25,7 @@ const EducationDataDestructionBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
                 Education Sector
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -42,7 +42,7 @@ const EducationDataDestructionBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Growing Challenge for Educational Institutions
               </h2>
@@ -53,7 +53,7 @@ const EducationDataDestructionBlog: React.FC = () => {
                 handle vast amounts of sensitive data, from academic records to
                 personal identifiers, creating significant privacy obligations.
               </p>
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-gradient-to-r from-rose-50 to-pink-50 border-l-4 border-rose-500 p-6 rounded-r-lg">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Privacy Technical Assistance Center (PTAC)
                 </h3>
@@ -69,7 +69,7 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Legal Obligations for Data Destruction
               </h2>
@@ -114,7 +114,7 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What Educational Institutions Must Know About Data Destruction
               </h2>
@@ -125,8 +125,8 @@ const EducationDataDestructionBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
+                  <h3 className="font-bold text-rose-700 text-xl mb-2">
                     Document and Track the Process
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -136,8 +136,8 @@ const EducationDataDestructionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
+                  <h3 className="font-bold text-rose-700 text-xl mb-2">
                     Identify Sensitive Data Types
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -147,8 +147,8 @@ const EducationDataDestructionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
+                  <h3 className="font-bold text-rose-700 text-xl mb-2">
                     Choose Appropriate Destruction Methods
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -158,8 +158,8 @@ const EducationDataDestructionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
+                  <h3 className="font-bold text-rose-700 text-xl mb-2">
                     Ensure Regulatory Compliance
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -169,8 +169,8 @@ const EducationDataDestructionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-rose-500 pl-8 py-2">
+                  <h3 className="font-bold text-rose-700 text-xl mb-2">
                     Train Staff and Employees
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -184,7 +184,7 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Best Methods for Data Destruction
               </h2>
@@ -209,9 +209,9 @@ const EducationDataDestructionBlog: React.FC = () => {
                     <li>• Destroys device value</li>
                   </ul>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
-                    <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> (Recommended)
+                <div className="bg-rose-50 rounded-xl p-6 border border-rose-200">
+                  <h3 className="font-bold text-rose-700 text-xl mb-3">
+                    <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Erasure</Link> (Recommended)
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed mb-4">
                     Software-based overwriting with 0s and 1s using global
@@ -229,7 +229,7 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Selecting the Right Destruction Technique
               </h2>
@@ -238,8 +238,8 @@ const EducationDataDestructionBlog: React.FC = () => {
                 unauthorized disclosure:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-rose-50 rounded-xl p-6 border border-rose-200">
+                  <h3 className="font-bold text-rose-700 text-xl mb-3">
                     Low-Risk Data
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -247,8 +247,8 @@ const EducationDataDestructionBlog: React.FC = () => {
                     erasure methods may be sufficient.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-rose-50 rounded-xl p-6 border border-rose-200">
+                  <h3 className="font-bold text-rose-700 text-xl mb-3">
                     High-Risk Data
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -262,7 +262,7 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-rose-50 border border-rose-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Takeaways for Educational Institutions
               </h2>
@@ -273,21 +273,21 @@ const EducationDataDestructionBlog: React.FC = () => {
                 falling into wrong hands.
               </p>
               <ul className="space-y-4 text-slate-700 text-lg leading-loose mt-4">
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Understand which regulations apply (FERPA, GDPR, CCPA, HIPAA)
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Create documented data destruction policies with clear
                   procedures
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Use NIST-compliant erasure tools tested and approved for
                   security
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Generate verifiable proof of erasure for compliance purposes
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Train staff on their data protection responsibilities
                 </li>
               </ul>

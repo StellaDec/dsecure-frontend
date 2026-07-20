@@ -77,7 +77,7 @@ const WindowsBootableUsbPage: React.FC = memo(() => {
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 mt-6 mb-12">
                   <a
-                    href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe"
+                    href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-windows-702.exe`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex flex-col items-center justify-center p-6 bg-emerald-50 border border-emerald-100 rounded-xl hover:shadow-md hover:border-emerald-300 transition-all no-underline"
@@ -91,7 +91,7 @@ const WindowsBootableUsbPage: React.FC = memo(() => {
                     </span>
                   </a>
                   <a
-                    href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin"
+                    href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex flex-col items-center justify-center p-6 bg-emerald-50 border border-emerald-100 rounded-xl hover:shadow-md hover:border-emerald-300 transition-all no-underline"
@@ -105,7 +105,7 @@ const WindowsBootableUsbPage: React.FC = memo(() => {
                     </span>
                   </a>
                   <a
-                    href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg"
+                    href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex flex-col items-center justify-center p-6 bg-emerald-50 border border-emerald-100 rounded-xl hover:shadow-md hover:border-emerald-300 transition-all no-underline"

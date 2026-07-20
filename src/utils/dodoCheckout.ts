@@ -113,7 +113,7 @@ export function openOverlayCheckout(
     products: [{ productId, quantity }],
     redirectUrl: redirectUrl,
     options: {
-      themeConfig: dsecureTheme,
+      themeConfig: dsecureTheme as any,
       payButtonText: 'Pay Now',
     },
   });
@@ -132,7 +132,7 @@ export function openPaymentLinkCheckout(checkoutUrl: string): void {
   DodoPayments.Checkout.open({
     checkoutUrl: checkoutUrl,
     options: {
-      themeConfig: dsecureTheme,
+      themeConfig: dsecureTheme as any,
       payButtonText: 'Pay Now',
     },
   });

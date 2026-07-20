@@ -44,7 +44,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
       {/* Main Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
             {/* Section 1 */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -75,7 +75,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
               </h2>
 
               <p className="text-slate-700 leading-relaxed">
-                D-Secure supports <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">secure erasure</Link> of Apple Mac devices running on
+                D-Secure supports <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">secure erasure</Link> of Apple Mac devices running on
                 M1, M2, and M3 chips, as well as older systems based on T2, T1,
                 and Intel processors.
               </p>
@@ -204,7 +204,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
         {/* D-Secure Section */}
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               Secure Apple Device Erasure with D-Secure
             </h2>
@@ -233,7 +233,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
                   <h3 className="font-bold">Compliance Documentation</h3>
                 </div>
                 <p className="text-sm text-slate-600">
-                  Generates <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">secure erasure</Link> reports for <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>, audit, and internal
+                  Generates <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">secure erasure</Link> reports for <Link to="/solutions/itad" className="text-amber-600 hover:underline font-medium">ITAD</Link>, audit, and internal
                   compliance needs.
                 </p>
               </div>
@@ -245,7 +245,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
         <Reveal>
           <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 mt-8 text-white">
             <h2 className="text-2xl font-bold mb-4">
-              Simplify Apple Device <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link>
+              Simplify Apple Device <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Data Erasure</Link>
             </h2>
             <p className="leading-relaxed mb-6">
               Use the right tools and procedures to avoid delays, errors, and

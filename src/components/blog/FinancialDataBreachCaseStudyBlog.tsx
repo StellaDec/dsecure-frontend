@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const FinancialDataBreachCaseStudyBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "Financial Data Breach Case Study",
@@ -26,7 +26,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
                 Financial Industry Case Study
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -44,13 +44,13 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   A major global financial institution found itself at the
                   center of{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-indigo-800">
                     public outcry and class-action lawsuits
                   </strong>{" "}
                   following official disclosure of two separate data breach
@@ -75,13 +75,13 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* The Incidents */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Two Data Breach Incidents
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Incident #1: Data Center Decommissioning (2016)
                   </h3>
@@ -97,7 +97,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Incident #2: Missing Servers (2019)
                   </h3>
@@ -129,7 +129,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Root Causes */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Root Causes of the Data Leakage
               </h2>
@@ -143,7 +143,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                     The vendor failed to completely remove data from retired
                     devices — a matter that came to the bank's attention years
                     later through a third party. This indicates a critical lapse
-                    in supervising contracted <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> jobs and verifying
+                    in supervising contracted <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">data wiping</Link> jobs and verifying
                     outcomes against data protection regulatory standards.
                   </p>
                 </div>
@@ -152,7 +152,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                     2. Absence of Documentation
                   </h3>
                   <p className="text-white/90 text-lg leading-loose">
-                    No systematic documentation existed for the <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link>
+                    No systematic documentation existed for the <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">data wiping</Link>
                     performed. The availability of wiping records for every
                     server could have helped the bank serve audit trails and
                     attain regulatory compliance. The vendor apparently didn't
@@ -177,9 +177,9 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* How D-Secure Could Have Helped */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                How Professional <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Could Have Prevented This
+                How Professional <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Data Erasure</Link> Could Have Prevented This
               </h2>
 
               <p className="text-slate-700 leading-loose text-lg">
@@ -188,7 +188,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     On-Premises Wiping
                   </h3>
@@ -201,7 +201,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                     approximately 20 minutes.
                   </p>
                 </div>
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Secure Pre-Release Processing
                   </h3>
@@ -244,14 +244,14 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Key Lessons */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Lessons for Financial Organizations
               </h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
                     1
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -261,7 +261,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
                     2
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -271,7 +271,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
                     3
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -281,7 +281,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
                     4
                   </span>
                   <p className="text-slate-700 text-lg leading-loose">
@@ -296,7 +296,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Imperative for Data Erasure Adoption
               </h2>

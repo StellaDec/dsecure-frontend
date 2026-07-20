@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect, useRef } from "react";
+import React, { memo, useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
@@ -8,10 +8,7 @@ import { generateFAQSchema } from "@/utils/seo.core";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQSection } from "@/components/FAQSection";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
-import { FAQItem, KeyTakeawayItem } from "@/types/seo";
-import ProductInternalLinks, {
-  PRODUCT_LINKS,
-} from "@/components/ProductInternalLinks";
+import { KeyTakeawayItem } from "@/types/seo";
 import {
   ShieldIcon,
   CheckIcon,
@@ -19,7 +16,6 @@ import {
   GlobeIcon,
   CloudIcon,
   GearIcon,
-  LightningIcon,
   ServerIcon,
   HoverIcon,
 } from "@/components/FlatIcons";
@@ -201,7 +197,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
   // Number of additional images beyond the 4th card (for "More" badge)
   const additionalImagesCount = galleryImages.length - 4;
 
-  const handlePrevImage = () => {
+  const handlePrevImage = useCallback(() => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex(
         selectedImageIndex === 0
@@ -209,9 +205,9 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
           : selectedImageIndex - 1,
       );
     }
-  };
+  }, [selectedImageIndex, galleryImages.length]);
 
-  const handleNextImage = () => {
+  const handleNextImage = useCallback(() => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex(
         selectedImageIndex === galleryImages.length - 1
@@ -219,7 +215,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
           : selectedImageIndex + 1,
       );
     }
-  };
+  }, [selectedImageIndex, galleryImages.length]);
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -231,9 +227,9 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
     };
     globalThis.addEventListener("keydown", handleKeyDown);
     return () => globalThis.removeEventListener("keydown", handleKeyDown);
-  }, [selectedImageIndex]);
+  }, [selectedImageIndex, handlePrevImage, handleNextImage]);
 
-  const sectionNavItems = [
+  const sectionNavItems = useMemo(() => [
     { id: "erase-types", label: "Erase Types" },
     { id: "demo", label: "Demo" },
     { id: "compliance", label: "Compliance" },
@@ -243,7 +239,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
     { id: "faq", label: "FAQ" },
     { id: "blogs", label: "Blogs" },
     { id: "contact", label: "Contact" },
-  ];
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -288,7 +284,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
         );
       }
     };
-  }, []);
+  }, [sectionNavItems]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -386,53 +382,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
     },
   ];
 
-  const platforms = [
-    {
-      name: "Windows",
-      versions: "Arch64 (x64) and x86 (64-bit) and ARM64 (ARM)",
-      features: [
-        "Desktop & Laptop Support",
-        "Server Edition Available",
-        "Active Directory Integration",
-        "Group Policy Support",
-      ],
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
-        </svg>
-      ),
-    },
-    {
-      name: "macOS",
-      versions: "Arch64 (x64) and x86 (64-bit) and ARM64 (ARM), Intel (x64)",
-      features: [
-        "Intel & Apple Silicon",
-        "Full Disk Access",
-        "T2/M1/M2/M3 Chip Support",
-        "Native Performance",
-      ],
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-        </svg>
-      ),
-    },
-    {
-      name: "Linux",
-      versions: "Arch64 (x64) and x86 (64-bit) and ARM64 (ARM)",
-      features: [
-        "CLI & GUI Options",
-        "Kernel Level Erasure",
-        "Enterprise Distros",
-        "Headless Server Mode",
-      ],
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.711-.072-.2-.052-.334.033-.466.204-.263.466-.399.795-.528.396-.2.762-.269 1.139-.268h.13zm4.006 2.933c-.009.04-.009.037-.012.071-.075.443-.134.8-.166 1.2-.028.332-.043.663-.044.998l.003.467.004.073.009.135.003.2.016.267c.09.333.15.6.313.8.082.103.17.2.27.27.136.07.272.135.41.135.074 0 .15-.015.223-.04.31-.112.48-.332.618-.59.109-.202.17-.403.217-.598.04-.195.067-.39.08-.545.031-.4.049-.664.049-.664l-.003-.402-.01-.267-.014-.202c-.012-.133-.03-.266-.053-.397v-.003L13 9.4v-.003l-.048-.2h.003l.025.003c-.038-.007-.077-.01-.116-.02-.062-.01-.124-.029-.184-.04z" />
-        </svg>
-      ),
-    },
-  ];
+
 
   const features = [
     {
@@ -612,6 +562,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
               <nav className="flex items-center gap-1 overflow-x-auto py-2">
                 {sectionNavItems.map((item) => (
                   <button
+                    type="button"
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all duration-200 ${
@@ -716,6 +667,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                       Contact Sales
                     </Link>
                     <button
+                      type="button"
                       onClick={downloadCatalog}
                       disabled={false}
                       className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition-all duration-300"
@@ -1070,6 +1022,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                 {/* Fullscreen Toggle Button (visible only when demo is active) */}
                 {isDemoActive && (
                   <button
+                    type="button"
                     onClick={toggleFullscreen}
                     className="absolute top-12 right-4 z-50 p-2.5 bg-slate-900/80 hover:bg-emerald-600 text-white rounded-xl shadow-lg backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center gap-2"
                     title={
@@ -1114,6 +1067,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                 {!isDemoActive ? (
                   /* Demo Placeholder - Screenshot Thumbnail */
                   <button
+                    type="button"
                     onClick={() => setIsDemoActive(true)}
                     className="group relative w-full h-full flex-1 cursor-pointer overflow-hidden border-none p-0 m-0 bg-transparent"
                     aria-label="Start interactive demo"
@@ -1174,6 +1128,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
               {/* Screenshot 1 */}
               <Reveal delayMs={150}>
                 <button
+                  type="button"
                   onClick={() => setSelectedImageIndex(0)}
                   className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
                 >
@@ -1208,6 +1163,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
               {/* Screenshot 2 */}
               <Reveal delayMs={200}>
                 <button
+                  type="button"
                   onClick={() => setSelectedImageIndex(1)}
                   className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
                 >
@@ -1242,6 +1198,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
               {/* Screenshot 3 */}
               <Reveal delayMs={250}>
                 <button
+                  type="button"
                   onClick={() => setSelectedImageIndex(2)}
                   className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
                 >
@@ -1276,6 +1233,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
               {/* Screenshot 4 - Shows "More" badge if additional images exist */}
               <Reveal delayMs={300}>
                 <button
+                  type="button"
                   onClick={() => setSelectedImageIndex(3)}
                   className="group relative w-full bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer text-left p-0 border-none"
                 >
@@ -1436,7 +1394,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                       <div className="text-[10px] text-emerald-600 font-medium mb-3">
                         Download USB Tool:
                         <a
-                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-windows-702.exe"
+                          href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-windows-702.exe`}
                           target="_blank"
                           rel="noreferrer"
                           className="hover:underline ml-1"
@@ -1445,7 +1403,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         </a>{" "}
                         |
                         <a
-                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin"
+                          href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin`}
                           target="_blank"
                           rel="noreferrer"
                           className="hover:underline ml-1"
@@ -1454,7 +1412,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         </a>{" "}
                         |
                         <a
-                          href="https://downloads.dsecuretech.com/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg"
+                          href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg`}
                           target="_blank"
                           rel="noreferrer"
                           className="hover:underline ml-1"
@@ -1605,6 +1563,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
               </Reveal>
               <Reveal delayMs={200}>
                 <button
+                  type="button"
                   onClick={() =>
                     setSelectedImageIndex(galleryImages.length - 1)
                   }
@@ -2047,7 +2006,6 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
         <FAQSection
           id="faq"
           title="Frequently Asked Questions"
-          subtitle="Everything you need to know about D-Secure Drive Eraser"
           className="!py-16 lg:!py-24"
           faqs={driveEraserFaqs}
         />
@@ -2282,7 +2240,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         // Backend ko notify karne ke liye webhook - backend auto-response email bhejega
                         formSubmitData.append(
                           "_webhook",
-                          "https://api.dsecuretech.com/api/formsubmit/webhook",
+                          `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
                         );
                         formSubmitData.append("_captcha", "false");
                         formSubmitData.append("_template", "table");
@@ -2331,7 +2289,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         );
                         formSubmitData.append(
                           "_cc",
-                          "d.kumar9012@gmail.com,nishus877@gmail.com,spsingh8477@gmail.com",
+                          import.meta.env.VITE_FORM_CC_EMAILS,
                         );
 
                         // === Prepare submission data for Backend API ===
@@ -2369,8 +2327,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         try {
                           // === 1. SUBMIT TO BACKEND API (DATABASE) ===
                           const API_BASE =
-                            import.meta.env.VITE_API_BASE_URL ||
-                            "https://api.dsecuretech.com";
+                            import.meta.env.VITE_API_BASE_URL;
                           const apiResponse = await fetch(
                             `${API_BASE}/api/ContactFormSubmissions`,
                             {
@@ -2381,8 +2338,8 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                           );
 
                           // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
-                          const response = await fetch(
-                            "https://formsubmit.co/support@dsecuretech.com",
+                          await fetch(
+                            import.meta.env.VITE_FORMSUBMIT_ENDPOINT,
                             {
                               method: "POST",
                               body: formSubmitData,
@@ -2397,7 +2354,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                               method: "POST",
                               headers: {
                                 "Content-Type": "application/json",
-                                "x-api-key": "REACT_CONTACT_2026",
+                                "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
                               },
                               body: JSON.stringify(submissionData),
                             },
@@ -2410,11 +2367,10 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                               errorData,
                             );
                           }
-                        } catch (error: any) {
+                        } catch (error: unknown) {
                           console.error("Form error:", error);
                           showToast(
-                            error.message ||
-                              "Failed to send message. Please try again later.",
+                            error instanceof Error ? error.message : "Failed to send message. Please try again later.",
                             "error",
                           );
                         }
@@ -2550,16 +2506,14 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
       {/* Lightbox Modal with Gallery Navigation */}
       {selectedImageIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200 cursor-pointer"
+          role="presentation"
+          onKeyDown={() => {}}
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => setSelectedImageIndex(null)}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") setSelectedImageIndex(null);
-          }}
         >
           {/* Close Button */}
           <button
+            type="button"
             onClick={() => setSelectedImageIndex(null)}
             className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors z-10"
           >
@@ -2568,6 +2522,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
 
           {/* Left Arrow */}
           <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
               handlePrevImage();
@@ -2591,6 +2546,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
 
           {/* Right Arrow */}
           <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
               handleNextImage();
@@ -2614,6 +2570,8 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
 
           {/* Image Container */}
           <div
+            role="presentation"
+            onKeyDown={() => {}}
             className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >

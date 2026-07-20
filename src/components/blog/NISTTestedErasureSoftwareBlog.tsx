@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const NISTTestedErasureSoftwareBlog: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
       <SEOHead
         seo={getBlogSEO({
           title: "NIST-Tested Erasure Software",
@@ -34,7 +34,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
       <section className="py-16 bg-white shadow-lg">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
               Data Erasure Standards
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -52,12 +52,12 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
       {/* Main Content - Full Width */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
             {/* Introduction */}
             <div className="space-y-6">
               <p className="text-slate-700 leading-loose text-xl">
                 In the era of formalized data privacy governed by regulations
-                like <strong className="text-emerald-800">GDPR and CCPA</strong>
+                like <strong className="text-amber-800">GDPR and CCPA</strong>
                 , organizations recognize the critical need to adopt specialized
                 tools for guaranteed media sanitization aligned with data
                 protection laws. For modern IT asset managers, this brings
@@ -78,14 +78,14 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* Why Certified Software */}
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               The Rise of Certified Data Erasure Software
             </h2>
 
             <p className="text-slate-700 leading-loose text-lg">
               The growth of the data destruction industry and media sanitization
-              standards like <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> testifies to the commercial need for
+              standards like <Link to="/compliance/nist-800-88" className="text-amber-600 hover:underline font-medium">NIST 800-88</Link> testifies to the commercial need for
               certified data erasure software that can guarantee data privacy
               and compliance. Organizations increasingly evaluate data erasure
               tools based on their ability to deliver "proven results" — whether
@@ -93,30 +93,30 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
               NIST SP 800-88 for failsafe erasure and audit requirements.
             </p>
 
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mt-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-8 mt-6">
               <h3 className="font-bold text-slate-900 text-xl mb-4">
                 Key Selection Criteria for Erasure Tools
               </h3>
               <ul className="space-y-3 text-slate-700 text-lg">
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
                   Conformance to international erasure standards (NIST SP
                   800-88, DoD, etc.)
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
                   Certified proof of erasure for compliance documentation
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
                   Validation by competent third-party authorities
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
                   Tamper-proof audit trail generation
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
                   Support for diverse storage media types
                 </li>
               </ul>
@@ -126,9 +126,9 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* The Trust Question */}
         <Reveal>
-          <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+          <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
             <h2 className="text-3xl font-bold mb-6">
-              How Do You Trust a <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Wiping</Link> Tool?
+              How Do You Trust a <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Data Wiping</Link> Tool?
             </h2>
 
             <p className="leading-loose text-lg mb-6">
@@ -173,15 +173,15 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* NIST Testing Process */}
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Understanding NIST Forensic Testing
             </h2>
 
             <p className="text-slate-700 leading-loose text-lg">
               The National Institute of Standards and Technology (NIST) examines
-              <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> capabilities of professional erasure software based on
-              the <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Purge Secure Erase Standard in specially designed
+              <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">data wiping</Link> capabilities of professional erasure software based on
+              the <Link to="/compliance/nist-800-88" className="text-amber-600 hover:underline font-medium">NIST 800-88</Link> Purge Secure Erase Standard in specially designed
               test environments. Testing is performed using the Computer
               Forensics Tool Testing (CFTT) Test Suite — a proprietary tool
               developed through NIST's CFTT Program for evaluating forensic
@@ -189,12 +189,12 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
             </p>
 
             <div className="space-y-8 mt-6">
-              <div className="border-l-4 border-emerald-500 pl-8 py-2">
+              <div className="border-l-4 border-amber-500 pl-8 py-2">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Test Purpose
                 </h3>
                 <p className="text-slate-700 text-lg leading-loose">
-                  The testing purpose is to ascertain <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> effectiveness
+                  The testing purpose is to ascertain <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">data wiping</Link> effectiveness
                   per NIST guidelines to meet prevalent computer forensics
                   investigation standards. This provides independent
                   verification that software performs as claimed under
@@ -202,7 +202,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-emerald-500 pl-8 py-2">
+              <div className="border-l-4 border-amber-500 pl-8 py-2">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Test Environment
                 </h3>
@@ -216,7 +216,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-emerald-500 pl-8 py-2">
+              <div className="border-l-4 border-amber-500 pl-8 py-2">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Validation Scope
                 </h3>
@@ -234,20 +234,20 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* D-Secure Capabilities */}
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               D-Secure: Meeting the Gold Standard
             </h2>
 
             <p className="text-slate-700 leading-loose text-lg">
-              D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> software has been rigorously tested using
-              <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> purge wiping standard guidelines. Our solution
+              D-Secure <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Drive Eraser</Link> software has been rigorously tested using
+              <Link to="/compliance/nist-800-88" className="text-amber-600 hover:underline font-medium">NIST 800-88</Link> purge wiping standard guidelines. Our solution
               performs secure overwriting across all storage sectors, including
               hidden areas, ensuring no possibility of data retrieval.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mt-6">
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                 <h3 className="font-bold text-slate-900 text-lg mb-3">
                   Comprehensive Coverage
                 </h3>
@@ -256,7 +256,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                   hidden areas that conventional tools may miss.
                 </p>
               </div>
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                 <h3 className="font-bold text-slate-900 text-lg mb-3">
                   International Standards
                 </h3>
@@ -265,7 +265,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                   800-88, DoD 5220.22-M, and IEEE 2883-2022.
                 </p>
               </div>
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                 <h3 className="font-bold text-slate-900 text-lg mb-3">
                   Verified Results
                 </h3>
@@ -280,7 +280,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* Why NIST Testing Matters */}
         <Reveal>
-          <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Why NIST Testing Matters for Your Organization
             </h2>
@@ -306,7 +306,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                   should questions arise.
                 </p>
               </div>
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Operational Reliability
                 </h3>
@@ -316,7 +316,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                   reliable results in production environments.
                 </p>
               </div>
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Global Recognition
                 </h3>
@@ -337,7 +337,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* Conclusion */}
         <Reveal>
-          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Conclusion
             </h2>

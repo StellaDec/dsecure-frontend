@@ -194,7 +194,7 @@ export interface ErasureMetricsResponse {
 // If API fails, UI will show "Data not available" message
 
 // API Configuration
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.dsecuretech.com";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 // ? Generic API call function using axios with automatic decryption
 // The `api` instance from apiClient.ts has an interceptor that automatically

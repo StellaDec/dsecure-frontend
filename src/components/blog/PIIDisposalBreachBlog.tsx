@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const PIIDisposalBreachBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "PII Disposal and Breach Prevention",
@@ -25,7 +25,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
                 Data Privacy
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -42,7 +42,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 What is Personally Identifiable Information (PII)?
               </h2>
@@ -52,7 +52,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
                 trace an individual. It comprises any factual or subjective
                 information directly or indirectly associated with a person.
               </p>
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Types of PII Identifiers
                 </h3>
@@ -67,7 +67,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Categories of PII Data
               </h2>
@@ -76,8 +76,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                 part of personally identifiable information:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     Personal Identifiers
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -85,8 +85,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                     driver's license, Social Security, and passport details.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     Demographic Information
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -94,8 +94,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                     relationship status.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     History Records
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -103,8 +103,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                     details.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     Financial Information
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -112,8 +112,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                     financial transactions.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     Biometric Data
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -121,8 +121,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                     recognition.
                   </p>
                 </div>
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     Digital Credentials
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -196,7 +196,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 9 Key Measures to Prevent PII Breach
               </h2>
@@ -208,8 +208,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     1. Limit Access
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -218,8 +218,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     2. IT Security Policy
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -229,8 +229,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     3. Data Governance Policy
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -240,8 +240,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     4. Privacy Policy
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -250,8 +250,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     5. Vendor Management Program
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -260,8 +260,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     6. Employee Training
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -270,8 +270,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     7. Data Minimization
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -280,8 +280,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     8. Data Disposal Policy
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -292,8 +292,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
                     9. Incident Response Plan
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -306,7 +306,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Global Regulations for PII Protection
               </h2>
@@ -317,8 +317,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                 data erasure once the purpose is fulfilled:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
                     NIST (United States)
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -326,8 +326,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                     safeguard the confidentiality of U.S. citizens.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
                     EU GDPR (Europe)
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -335,8 +335,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                     across the European Union.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
                     Privacy Act 1988 (Australia)
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -344,8 +344,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                     Australia in the late 80s.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
                     PIPEDA (Canada)
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -353,8 +353,8 @@ const PIIDisposalBreachBlog: React.FC = () => {
                     empowers Canadian customers with data access rights.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
                     APPI (Japan)
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -367,7 +367,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Takeaways
               </h2>
@@ -377,21 +377,21 @@ const PIIDisposalBreachBlog: React.FC = () => {
                 disposal is essential.
               </p>
               <ul className="space-y-4 text-slate-700 text-lg leading-loose mt-4">
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-indigo-500 pl-8 py-2">
                   PII includes direct identifiers (SSN) and quasi-identifiers
                   (race, DOB)
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-indigo-500 pl-8 py-2">
                   Improper IT asset disposal is a leading cause of PII breaches
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-indigo-500 pl-8 py-2">
                   Implement 9 key measures: access control, policies, training,
                   disposal
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-indigo-500 pl-8 py-2">
                   Use software-based erasure for permanent data destruction
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-indigo-500 pl-8 py-2">
                   Comply with global regulations: NIST, GDPR, Privacy Act,
                   PIPEDA, APPI
                 </li>

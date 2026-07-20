@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const GDPRSevenYearsBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "GDPR: Seven Years of Data Privacy",
@@ -26,7 +26,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
                 Data Privacy
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -44,7 +44,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -52,7 +52,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
                   Regulation (EU) 2016/679 is widely regarded as one of the most
                   comprehensive and influential data protection laws globally.
                   This landmark regulation came into effect on{" "}
-                  <strong className="text-emerald-800">May 25, 2018</strong>,
+                  <strong className="text-indigo-800">May 25, 2018</strong>,
                   now marking its seventh anniversary.
                 </p>
                 <p className="text-slate-700 leading-loose text-lg">
@@ -68,7 +68,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
 
           {/* Origin Section */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Origins of EU-GDPR
               </h2>
@@ -81,7 +81,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
                 while protecting fundamental individual rights.
               </p>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
+              <div className="bg-indigo-50 border-l-4 border-indigo-500 p-8 rounded-r-lg mt-8">
                 <h3 className="font-bold text-slate-900 text-xl mb-4">
                   The Landmark Case That Changed Everything
                 </h3>
@@ -110,7 +110,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
 
           {/* Fear to Framework */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 From Uncertainty to Established Framework
               </h2>
@@ -122,7 +122,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
                 requirements restrictive. Industry surveys demonstrated that 83%
                 of organizations felt unprepared for GDPR compliance, with 53%
                 identifying the{" "}
-                <strong className="text-emerald-800">Right to Erasure</strong>{" "}
+                <strong className="text-indigo-800">Right to Erasure</strong>{" "}
                 as a major challenge.
               </p>
 
@@ -146,7 +146,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
                   From July 2018 through May 2025, the highest number of monthly
                   penalties imposed has been 68, with the highest monthly sum
                   reaching approximately{" "}
-                  <strong className="text-emerald-800">€1.20 billion</strong>.
+                  <strong className="text-indigo-800">€1.20 billion</strong>.
                   In 2023, Meta Platforms Ireland Limited faced the highest
                   single penalty ever — €1.2 billion — for transferring personal
                   data to the US without adhering to specific data protection
@@ -166,7 +166,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
 
           {/* Standard Contractual Clauses */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Standard Contractual Clauses (SCCs)
               </h2>
@@ -179,7 +179,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8 mt-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-indigo-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     SCCs for Controller-Processor Relationships
                   </h3>
@@ -191,7 +191,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-teal-500 pl-8 py-2">
+                <div className="border-l-4 border-purple-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     SCCs as Data Transfer Tools
                   </h3>
@@ -205,7 +205,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-cyan-500 pl-8 py-2">
+                <div className="border-l-4 border-violet-500 pl-8 py-2">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Technical & Organizational Measures
                   </h3>
@@ -225,7 +225,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
 
           {/* Moving Forward */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Looking Ahead: GDPR's Future
               </h2>
@@ -254,16 +254,16 @@ const GDPRSevenYearsBlog: React.FC = () => {
               </p>
               <Link
                 to="/all-products"
-                className="inline-flex items-center bg-white text-emerald-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg"
+                className="inline-flex items-center bg-white text-indigo-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg"
               >
                 Explore D-Secure Compliance Solutions
               </Link>
             </div>
           </Reveal>
 
-          {/* <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Data Erasure</Link> Section */}
+          {/* <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Data Erasure</Link> Section */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Achieving GDPR Compliance with D-Secure
               </h2>

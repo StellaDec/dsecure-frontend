@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const VMErasureBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-sky-50/30 via-sky-50/20 to-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Virtual Machine Data Erasure",
@@ -26,7 +26,7 @@ const VMErasureBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-sky-700 bg-sky-100 rounded-full mb-4">
                 Virtual Machine Security
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -45,13 +45,13 @@ const VMErasureBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
                   Virtualization has achieved widespread adoption, particularly
                   in critical sectors like{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-sky-800">
                     healthcare and finance
                   </strong>
                   . It has fundamentally transformed how organizations manage IT
@@ -72,7 +72,7 @@ const VMErasureBlog: React.FC = () => {
               </div>
 
               {/* Benefits */}
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
+              <div className="bg-sky-50 border-l-4 border-sky-500 p-8 rounded-r-lg mt-8">
                 <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Virtual Machine Benefits
                 </h2>
@@ -91,7 +91,7 @@ const VMErasureBlog: React.FC = () => {
 
           {/* Overlooked Risk Section */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Overlooked Risk: Incomplete VM Erasure
               </h2>
@@ -100,13 +100,13 @@ const VMErasureBlog: React.FC = () => {
                 be handled securely during Data Lifecycle Management (DLM). Like
                 physical devices, VMs require the same level of diligence and
                 compliance within a DLM strategy.{" "}
-                <strong className="text-emerald-800">
+                <strong className="text-sky-800">
                   VM erasure is a critical yet often overlooked component
                 </strong>{" "}
                 of Enterprise Data Lifecycle Management.
               </p>
 
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-8 mt-8">
+              <div className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 rounded-xl p-8 mt-8">
                 <h2 className="font-bold text-slate-900 text-xl mb-4">
                   Common Misconception
                 </h2>
@@ -130,7 +130,7 @@ const VMErasureBlog: React.FC = () => {
 
           {/* Challenges Section */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Challenges in Secure VM Erasure
               </h2>
@@ -140,7 +140,7 @@ const VMErasureBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8 mt-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
+                <div className="border-l-4 border-sky-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Residual Virtual Disk Files
                   </h2>
@@ -153,7 +153,7 @@ const VMErasureBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-teal-500 pl-8 py-2">
+                <div className="border-l-4 border-blue-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Data Recovery from Snapshots & Backups
                   </h2>
@@ -165,7 +165,7 @@ const VMErasureBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-cyan-500 pl-8 py-2">
+                <div className="border-l-4 border-sky-500 pl-8 py-2">
                   <h2 className="font-bold text-slate-900 text-xl mb-3">
                     Multi-VM Environment Complexity
                   </h2>
@@ -196,13 +196,13 @@ const VMErasureBlog: React.FC = () => {
 
           {/* NIST & IEEE Guidelines */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 NIST & IEEE Guidelines for VM Sanitization
               </h2>
 
               <p className="text-slate-700 leading-loose text-lg">
-                Most organizations reference <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Guidelines for Media
+                Most organizations reference <Link to="/products/drive-eraser" className="text-sky-600 hover:underline font-medium">NIST 800-88</Link> Guidelines for Media
                 Sanitization; however, this gold standard primarily addresses
                 sanitization of physical storage devices like HDDs and SSDs —
                 remaining silent on virtual machine sanitization specifically.
@@ -245,7 +245,7 @@ const VMErasureBlog: React.FC = () => {
 
           {/* Best Practices */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-sky-600 via-blue-600 to-sky-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Best Practices for Secure VM Erasure
               </h2>
@@ -281,7 +281,7 @@ const VMErasureBlog: React.FC = () => {
                   <p className="leading-loose">
                     Similar to physical drives, deleting a VM or its disk file
                     doesn't remove data from storage; it simply marks space as
-                    free. Use reliable erasure methods like <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> or DoD
+                    free. Use reliable erasure methods like <Link to="/compliance/nist-800-88" className="text-sky-600 hover:underline font-medium">NIST 800-88</Link> or DoD
                     5220.22 to permanently erase VM data beyond recovery scope.
                   </p>
                 </div>
@@ -304,7 +304,7 @@ const VMErasureBlog: React.FC = () => {
                   </h2>
                   <p className="leading-loose mb-4">
                     IT admins should use tested and secure software for VM
-                    erasure. <strong>D-Secure <Link to="/products/virtual-machine-eraser" className="text-emerald-600 hover:underline font-medium">Virtual Machine Eraser</Link></strong>{" "}
+                    erasure. <strong>D-Secure <Link to="/products/virtual-machine-eraser" className="text-sky-600 hover:underline font-medium">Virtual Machine Eraser</Link></strong>{" "}
                     securely erases VMs beyond recovery scope, supporting
                     simultaneous multi-VM erasure, Microsoft Hyper-V, and VMware
                     ESXi environments.
@@ -314,7 +314,7 @@ const VMErasureBlog: React.FC = () => {
 
               <Link
                 to="/all-products"
-                className="inline-flex items-center bg-white text-emerald-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg mt-6"
+                className="inline-flex items-center bg-white text-sky-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg mt-6"
               >
                 Explore D-Secure VM Eraser
               </Link>
@@ -332,8 +332,8 @@ const VMErasureBlog: React.FC = () => {
                 lifecycle management must evolve accordingly. By incorporating
                 Virtual Machine Erasure into data policies and following best
                 practices using professional tools like{" "}
-                <strong className="text-emerald-800">
-                  D-Secure <Link to="/products/virtual-machine-eraser" className="text-emerald-600 hover:underline font-medium">Virtual Machine Eraser</Link>
+                <strong className="text-sky-800">
+                  D-Secure <Link to="/products/virtual-machine-eraser" className="text-sky-600 hover:underline font-medium">Virtual Machine Eraser</Link>
                 </strong>
                 , organizations can confidently manage data security and bridge
                 the security gap.

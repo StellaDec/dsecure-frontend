@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const MobileDiagnosticsRevolutionBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-gradient-to-br from-sky-50/30 via-sky-50/20 to-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Mobile Diagnostics Revolution",
@@ -25,7 +25,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-sky-700 bg-sky-100 rounded-full mb-4">
                 Industry Innovation
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -42,7 +42,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Mobile Diagnostics: Raising the Game
               </h2>
@@ -52,7 +52,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                 mobile devices. iOS and Android diagnostics software performs
                 comprehensive tests to diagnose and determine device health.
               </p>
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-gradient-to-r from-sky-50 to-blue-50 border-l-4 border-sky-500 p-6 rounded-r-lg">
                 <h3 className="font-bold text-slate-900 text-xl mb-3">
                   Comprehensive Testing Approach
                 </h3>
@@ -67,7 +67,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-sky-600 via-blue-600 to-sky-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Two Types of Diagnostic Tests
               </h2>
@@ -113,14 +113,14 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Advantages of Mobile Diagnostics
               </h2>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-sky-500 pl-8 py-2">
+                  <h3 className="font-bold text-sky-700 text-xl mb-2">
                     Identify and Fix Major Flaws
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -130,8 +130,8 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-sky-500 pl-8 py-2">
+                  <h3 className="font-bold text-sky-700 text-xl mb-2">
                     Automated Testing Efficiency
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -141,8 +141,8 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-sky-500 pl-8 py-2">
+                  <h3 className="font-bold text-sky-700 text-xl mb-2">
                     Device Grading System
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -153,8 +153,8 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-sky-500 pl-8 py-2">
+                  <h3 className="font-bold text-sky-700 text-xl mb-2">
                     Accurate Repair Estimation
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -164,8 +164,8 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-2">
+                <div className="border-l-4 border-sky-500 pl-8 py-2">
+                  <h3 className="font-bold text-sky-700 text-xl mb-2">
                     Environment-Friendly Solution
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -179,7 +179,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Limitations of Built-In Diagnostics
               </h2>
@@ -211,7 +211,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure Mobile Diagnostics Capabilities
               </h2>
@@ -220,20 +220,20 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                 for professional used device processing:
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200 text-center">
-                  <p className="text-emerald-700 font-bold text-2xl">50+</p>
+                <div className="bg-sky-50 rounded-xl p-4 border border-sky-200 text-center">
+                  <p className="text-sky-700 font-bold text-2xl">50+</p>
                   <p className="text-slate-700">Automated & Manual Tests</p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200 text-center">
-                  <p className="text-emerald-700 font-bold text-2xl">40</p>
+                <div className="bg-sky-50 rounded-xl p-4 border border-sky-200 text-center">
+                  <p className="text-sky-700 font-bold text-2xl">40</p>
                   <p className="text-slate-700">Simultaneous Devices</p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200 text-center">
-                  <p className="text-emerald-700 font-bold text-2xl">A+ to C</p>
+                <div className="bg-sky-50 rounded-xl p-4 border border-sky-200 text-center">
+                  <p className="text-sky-700 font-bold text-2xl">A+ to C</p>
                   <p className="text-slate-700">Grading Scale</p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200 text-center">
-                  <p className="text-emerald-700 font-bold text-2xl">Cloud</p>
+                <div className="bg-sky-50 rounded-xl p-4 border border-sky-200 text-center">
+                  <p className="text-sky-700 font-bold text-2xl">Cloud</p>
                   <p className="text-slate-700">Secure Report Storage</p>
                 </div>
               </div>
@@ -241,7 +241,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Building Trust Between Buyers and Sellers
               </h2>
@@ -252,8 +252,8 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                 indicates a massive opportunity.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-sky-50 rounded-xl p-6 border border-sky-200 text-center">
+                  <h3 className="font-bold text-sky-700 text-xl mb-3">
                     Mobile Retailers
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -261,8 +261,8 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                     device quality
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-sky-50 rounded-xl p-6 border border-sky-200 text-center">
+                  <h3 className="font-bold text-sky-700 text-xl mb-3">
                     Resellers
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -270,8 +270,8 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                     diagnostics reports
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200 text-center">
-                  <h3 className="font-bold text-emerald-700 text-xl mb-3">
+                <div className="bg-sky-50 rounded-xl p-6 border border-sky-200 text-center">
+                  <h3 className="font-bold text-sky-700 text-xl mb-3">
                     Refurbishers
                   </h3>
                   <p className="text-slate-700 text-lg leading-relaxed">
@@ -284,7 +284,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-sky-50 border border-sky-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Takeaways
               </h2>
@@ -294,19 +294,19 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
                 in the used device market.
               </p>
               <ul className="space-y-4 text-slate-700 text-lg leading-loose mt-4">
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-sky-500 pl-8 py-2">
                   Comprehensive testing of 50+ hardware and software functions
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-sky-500 pl-8 py-2">
                   Unified interface for both iOS and Android diagnostics
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-sky-500 pl-8 py-2">
                   Device grading (A+, A, B, C) removes purchase barriers
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-sky-500 pl-8 py-2">
                   Cloud-accessible reports serve as audit trails for compliance
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-sky-500 pl-8 py-2">
                   Simultaneous processing of up to 40 devices increases
                   efficiency
                 </li>
@@ -329,7 +329,7 @@ const MobileDiagnosticsRevolutionBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
+                  className="inline-block bg-gradient-to-r from-sky-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-sky-600 hover:to-blue-600 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>

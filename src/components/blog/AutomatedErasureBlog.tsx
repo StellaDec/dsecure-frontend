@@ -43,7 +43,7 @@ const AutomatedErasureBlog: React.FC = () => {
       {/* Main Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-             <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-12 text-justify">
+             <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-12 text-justify">
                 
                 {/* Introduction & The Problem */}
                 <div className="space-y-4">
@@ -176,7 +176,7 @@ const AutomatedErasureBlog: React.FC = () => {
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <Link 
                         to="/products/drive-eraser" 
-                        className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105"
+                        className="inline-flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-400 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105"
                     >
                         Explore Drive Eraser <ArrowRightIcon className="w-5 h-5" />
                     </Link>

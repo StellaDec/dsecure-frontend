@@ -18,12 +18,14 @@ import { BlogRoutes } from "./routes/BlogRoutes";
 import { SupportRoutes } from "./routes/SupportRoutes";
 import { DashboardRoutes } from "./routes/DashboardRoutes";
 import { AuthRoutes } from "./routes/AuthRoutes";
+import { useSilentActivityTracker } from "./hooks/useSilentActivityTracker";
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 // Analytics Wrapper
 function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
   useGoogleAnalytics();
   useMicrosoftClarity();
   useSEOMonitoring();
+  useSilentActivityTracker();
   useEffect(() => {}, []);
   return <>{children}</>;
 }

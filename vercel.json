@@ -75,12 +75,12 @@
     },
     {
       "source": "/blog/msp-erasure-as-a-service",
-      "destination": "/blog/msp-data-erasure",
+      "destination": "/blog/msp-multi-tenant-data-erasure-enterprise-scale",
       "permanent": true
     },
     {
       "source": "/blog/msp-erasure-service",
-      "destination": "/blog/msp-data-erasure",
+      "destination": "/blog/msp-multi-tenant-data-erasure-enterprise-scale",
       "permanent": true
     },
     {
@@ -100,12 +100,12 @@
     },
     {
       "source": "/blog/future-data-destruction",
-      "destination": "/blog/future-of-data-destruction",
+      "destination": "/blog/end-of-life-data-security",
       "permanent": true
     },
     {
       "source": "/blog/shadow-data-risks",
-      "destination": "/blog/shadow-data",
+      "destination": "/blog/data-hoarding",
       "permanent": true
     },
     {
@@ -125,22 +125,22 @@
     },
     {
       "source": "/blog/secure-phi-erasure",
-      "destination": "/blog/phi-erasure",
+      "destination": "/blog/hipaa-compliance-erasure",
       "permanent": true
     },
     {
       "source": "/blog/secure-phi-ephi-erasure",
-      "destination": "/blog/phi-erasure",
+      "destination": "/blog/hipaa-compliance-erasure",
       "permanent": true
     },
     {
       "source": "/blog/morgan-stanley-fine",
-      "destination": "/blog/morgan-stanley-data-breach",
+      "destination": "/blog/sec-compliance",
       "permanent": true
     },
     {
       "source": "/blog/caption-call-settlement",
-      "destination": "/blog/caption-call-fcc-settlement",
+      "destination": "/blog/pii-disposal-breach",
       "permanent": true
     },
     {
@@ -150,22 +150,22 @@
     },
     {
       "source": "/blog/dell-data-wipe-vs-dsecure",
-      "destination": "/blog/dell-data-wipe-alternative",
+      "destination": "/blog/dsecure-vs-manufacturer-tools-comparison",
       "permanent": true
     },
     {
       "source": "/blog/esg-report",
-      "destination": "/blog/esg-data-erasure",
+      "destination": "/blog/eu-csrd",
       "permanent": true
     },
     {
       "source": "/blog/brand-reputation-esg",
-      "destination": "/blog/esg-data-erasure",
+      "destination": "/blog/eu-csrd",
       "permanent": true
     },
     {
       "source": "/blog/statutory-regulatory-compliance-data-erasure",
-      "destination": "/blog/statutory-compliance",
+      "destination": "/blog/legal-ethical-erasure",
       "permanent": true
     },
     {
@@ -206,6 +206,276 @@
     {
       "source": "/support/manual/installation-guide",
       "destination": "/support/manual/installation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/msp-security-solutions",
+      "destination": "/blog/msp-multi-tenant-data-erasure-enterprise-scale",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cloud-migration",
+      "destination": "/blog/private-cloud",
+      "permanent": true
+    },
+    {
+      "source": "/blog/carbon-footprint-erasure",
+      "destination": "/blog/reduce-carbon-footprint",
+      "permanent": true
+    },
+    {
+      "source": "/blog/erasure-standards",
+      "destination": "/blog/dod-vs-ieee",
+      "permanent": true
+    },
+    {
+      "source": "/blog/reseller-profits",
+      "destination": "/blog/itad-market-growth",
+      "permanent": true
+    },
+    {
+      "source": "/blog/itad-challenges",
+      "destination": "/blog/itad-selection-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/right-to-repair",
+      "destination": "/blog/it-asset-reuse",
+      "permanent": true
+    },
+    {
+      "source": "/blog/-seven-years",
+      "destination": "/blog/gdpr-article-17-right-to-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/future-of-data-destruction-opportunities-challenges",
+      "destination": "/blog/end-of-life-data-security",
+      "permanent": true
+    },
+    {
+      "source": "/blog/phi-erasure",
+      "destination": "/blog/hipaa-compliance-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nist-800-88-media-sanitization-guide",
+      "destination": "/blog/nist-clear-purge",
+      "permanent": true
+    },
+    {
+      "source": "/blog/statutory-compliance",
+      "destination": "/blog/legal-ethical-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-data-erasure-methods",
+      "destination": "/blog/erasure-best-practices",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nist-800-88-compliance-india",
+      "destination": "/blog/india-dpdp-act-2023-data-sanitization-nist-alignment",
+      "permanent": true
+    },
+    {
+      "source": "/blog/deployment-options",
+      "destination": "/support/manual/installation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/green-it-practices",
+      "destination": "/blog/it-asset-reuse",
+      "permanent": true
+    },
+    {
+      "source": "/blog/esg-data-erasure",
+      "destination": "/blog/eu-csrd",
+      "permanent": true
+    },
+    {
+      "source": "/blog/msp-data-erasure",
+      "destination": "/blog/msp-multi-tenant-data-erasure-enterprise-scale",
+      "permanent": true
+    },
+    {
+      "source": "/blog/caption-call-fcc-settlement",
+      "destination": "/blog/pii-disposal-breach",
+      "permanent": true
+    },
+    {
+      "source": "/blog/scope-3-emissions-reuse",
+      "destination": "/blog/reduce-carbon-footprint",
+      "permanent": true
+    },
+    {
+      "source": "/blog/diagnostics-erasure-itad",
+      "destination": "/blog/hardware-diagnostics-itad-compliance",
+      "permanent": true
+    },
+    {
+      "source": "/blog/overwrite-guide",
+      "destination": "/blog/dod-wiping-standard",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mobile-diagnostics-benefits",
+      "destination": "/blog/mobile-diagnostics-revolution",
+      "permanent": true
+    },
+    {
+      "source": "/blog/digital-divide",
+      "destination": "/blog/it-asset-reuse",
+      "permanent": true
+    },
+    {
+      "source": "/blog/remote-work-data-erasure-best-practices",
+      "destination": "/blog/remote-work-data-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dell-data-wipe-alternative",
+      "destination": "/blog/dsecure-vs-manufacturer-tools-comparison",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ipad-tablet-erasure",
+      "destination": "/blog/mobile-erasure-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/certified-itad-reasons",
+      "destination": "/blog/itad-selection-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/morgan-stanley-data-breach",
+      "destination": "/blog/sec-compliance",
+      "permanent": true
+    },
+    {
+      "source": "/blog/post-covid-data-disposal",
+      "destination": "/blog/remote-work-data-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/itad-environmental",
+      "destination": "/blog/it-asset-reuse",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dsecure-vs-legacy-erasure-comparison",
+      "destination": "/blog/dsecure-vs-manufacturer-tools-comparison",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nist-800-88-revision-2-enterprise-data-sanitization",
+      "destination": "/blog/nist-clear-purge",
+      "permanent": true
+    },
+    {
+      "source": "/blog/it-asset-disposal-esg-sustainability-erasure",
+      "destination": "/blog/eu-csrd",
+      "permanent": true
+    },
+    {
+      "source": "/blog/hipaa-data-destruction-requirements-healthcare-it",
+      "destination": "/blog/hipaa-compliance-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/corporate-it-asset-risks",
+      "destination": "/blog/secure-it-asset-disposal",
+      "permanent": true
+    },
+    {
+      "source": "/blog/media-sanitization-need",
+      "destination": "/blog/nist-clear-purge",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ssd-wipe-guide",
+      "destination": "/blog/ssd-wipe-bios",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ieee-2883-2022-healthcare-data-sanitization-phi",
+      "destination": "/blog/hipaa-compliance-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/itad-procurement",
+      "destination": "/blog/itad-selection-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/csrd-esg-reporting-it-asset-data-destruction",
+      "destination": "/blog/eu-csrd",
+      "permanent": true
+    },
+    {
+      "source": "/blog/data-erasure-education-sector-student-data-protection",
+      "destination": "/blog/education-data-destruction",
+      "permanent": true
+    },
+    {
+      "source": "/blog/erase-mac-data-safely-using-dsecure",
+      "destination": "/blog/how-to-erase-mac",
+      "permanent": true
+    },
+    {
+      "source": "/blog/certificate-of-erasure-enterprise-audit-requirements",
+      "destination": "/blog/erasure-verification-process",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vm-erasure-vmware-hyper-v-compliance-best-practices",
+      "destination": "/blog/vm-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/shadow-data",
+      "destination": "/blog/data-hoarding",
+      "permanent": true
+    },
+    {
+      "source": "/blog/lun-eraser-enterprise-storage-array-sanitization",
+      "destination": "/blog/server-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marriott-settlement",
+      "destination": "/blog/legal-ethical-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/secure-hdd-disposal",
+      "destination": "/blog/physical-destruction-vs-data-wiping",
+      "permanent": true
+    },
+    {
+      "source": "/blog/itam-data-breach",
+      "destination": "/blog/itam-disposal-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/remote-wiping-software",
+      "destination": "/blog/remote-work-data-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cryptographic-erase-self-encrypting-ssd-guide",
+      "destination": "/blog/cryptographic-erase",
+      "permanent": true
+    },
+    {
+      "source": "/blog/future-of-data-destruction",
+      "destination": "/blog/end-of-life-data-security",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gdpr-seven-years",
+      "destination": "/blog/gdpr-article-17-right-to-erasure",
       "permanent": true
     }
   ],

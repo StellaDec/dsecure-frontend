@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const NCUAGuidelinesBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50/20">
         <SEOHead
           seo={getBlogSEO({
             title: "NCUA Guidelines on Third-Party Data Disposal",
@@ -24,7 +24,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
                 Regulatory Compliance
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
@@ -42,7 +42,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Understanding NCUA and Credit Union Data Security
               </h2>
@@ -79,7 +79,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Third-Party Vendors & Their Role
               </h2>
@@ -149,7 +149,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Third-Party Service Provider Obligations for Data Disposal
               </h2>
@@ -160,7 +160,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 third-party vendors.
               </p>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-6">
                 <h3 className="font-bold text-slate-900 text-lg mb-3">
                   {" "}
                   Regulatory Reference
@@ -174,14 +174,14 @@ const NCUAGuidelinesBlog: React.FC = () => {
               </div>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-emerald-500 pl-6 py-4">
+                <div className="border-l-4 border-blue-500 pl-6 py-4">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Data Disposal Standard
                   </h3>
                   <p className="text-slate-700 text-lg leading-loose">
                     Although the security guidelines do not mention any specific
                     method of data disposal,{" "}
-                    <strong className="text-emerald-800">
+                    <strong className="text-blue-800">
                       NCUA expects credit unions to make sure that third-party
                       service providers follow data disposal procedures that
                       render data unrecoverable by any means.
@@ -189,7 +189,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-6 py-4">
+                <div className="border-l-4 border-blue-500 pl-6 py-4">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Risk Assessment & Auditing
                   </h3>
@@ -201,7 +201,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-6 py-4">
+                <div className="border-l-4 border-blue-500 pl-6 py-4">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Response Program Requirement
                   </h3>
@@ -217,7 +217,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-6 py-4">
+                <div className="border-l-4 border-blue-500 pl-6 py-4">
                   <h3 className="font-bold text-slate-900 text-xl mb-3">
                     Notification Requirements
                   </h3>
@@ -237,7 +237,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-blue-600 via-slate-600 to-sky-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 5 Data Disposal Guidelines for Third-Party Vendors
               </h2>
@@ -332,7 +332,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Regulatory References
               </h2>
@@ -340,7 +340,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-slate-300">
                   <thead>
-                    <tr className="bg-emerald-600 text-white">
+                    <tr className="bg-blue-600 text-white">
                       <th className="border border-slate-300 px-6 py-4 text-left font-bold">
                         Regulation
                       </th>
@@ -405,7 +405,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 D-Secure: Best Solution for NCUA Compliance
               </h2>
@@ -417,8 +417,8 @@ const NCUAGuidelinesBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     Complete Data Overwriting
                   </h3>
@@ -428,8 +428,8 @@ const NCUAGuidelinesBlog: React.FC = () => {
                     impossible.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     Global Standards Compliance
                   </h3>
@@ -438,8 +438,8 @@ const NCUAGuidelinesBlog: React.FC = () => {
                     erasure standards that make recovery impossible.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     Detailed Destruction Records
                   </h3>
@@ -449,8 +449,8 @@ const NCUAGuidelinesBlog: React.FC = () => {
                     documentation.
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="font-bold text-blue-700 text-lg mb-3">
                     {" "}
                     Multiple Privacy Laws
                   </h3>
@@ -461,7 +461,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-emerald-600 text-white rounded-xl p-6 mt-6">
+              <div className="bg-blue-600 text-white rounded-xl p-6 mt-6">
                 <p className="text-lg leading-relaxed">
                   D-Secure ensures that sensitive consumer and member
                   information stored on devices is{" "}
@@ -474,7 +474,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Conclusion
               </h2>
@@ -514,7 +514,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
+                  className="inline-block bg-gradient-to-r from-blue-500 to-slate-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-slate-600 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>

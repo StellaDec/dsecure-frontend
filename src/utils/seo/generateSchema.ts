@@ -383,6 +383,7 @@ interface ReviewItem {
   datePublished?: string;
 }
 
+/* 
 export function DSecureReviewSchema(
   productName: string,
   productUrl: string,
@@ -422,6 +423,7 @@ export function DSecureReviewSchema(
     })),
   };
 }
+*/
 
 /** ─────────────────────────────────────────────────── */
 /** 10. LocalBusiness Schema — Office locations ke liye */

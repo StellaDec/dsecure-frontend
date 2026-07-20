@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const FreeVsProEraserBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
         {/* SEO: Page 3 — Free vs Pro Eraser blog ke liye optimized title aur description */}
         <SEOHead
           seo={getBlogSEO({
@@ -28,7 +28,7 @@ const FreeVsProEraserBlog: React.FC = () => {
         <section className="py-16 bg-white shadow-lg">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
                 Software Comparison
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
@@ -51,7 +51,7 @@ const FreeVsProEraserBlog: React.FC = () => {
               </h2>
               <p className="text-lg text-slate-700 leading-loose mb-6">
                 Safe handling of data storage devices by end-of-life is
-                paramount. Application of illicit <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> methods or using
+                paramount. Application of illicit <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link> methods or using
                 free data wiping software may open doors for data theft that can
                 hamper any organization's growth.
               </p>
@@ -72,21 +72,21 @@ const FreeVsProEraserBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Free vs Professional: Key Distinctions
               </h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-lg">
                   <thead>
-                    <tr className="bg-emerald-100">
+                    <tr className="bg-rose-100">
                       <th className="p-4 text-left font-bold text-slate-900">
                         Feature
                       </th>
                       <th className="p-4 text-left font-bold text-red-700">
                         Free Tools
                       </th>
-                      <th className="p-4 text-left font-bold text-emerald-700">
+                      <th className="p-4 text-left font-bold text-rose-700">
                         Professional (D-Secure)
                       </th>
                     </tr>
@@ -97,7 +97,7 @@ const FreeVsProEraserBlog: React.FC = () => {
                         Erasure Verification
                       </td>
                       <td className="p-4 text-red-600">✗ No verification</td>
-                      <td className="p-4 text-emerald-800">
+                      <td className="p-4 text-rose-800">
                         ✓ Complete verification
                       </td>
                     </tr>
@@ -106,22 +106,22 @@ const FreeVsProEraserBlog: React.FC = () => {
                         Compliance Certificates
                       </td>
                       <td className="p-4 text-red-600">✗ Not available</td>
-                      <td className="p-4 text-emerald-800">
+                      <td className="p-4 text-rose-800">
                         ✓ Tamper-proof certificates
                       </td>
                     </tr>
                     <tr>
                       <td className="p-4 font-semibold">Audit Trails</td>
                       <td className="p-4 text-red-600">✗ No documentation</td>
-                      <td className="p-4 text-emerald-800">
+                      <td className="p-4 text-rose-800">
                         ✓ Complete chain of custody
                       </td>
                     </tr>
                     <tr className="bg-slate-50">
                       <td className="p-4 font-semibold">Global Standards</td>
                       <td className="p-4 text-red-600">✗ Not certified</td>
-                      <td className="p-4 text-emerald-800">
-                        ✓ <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>, DoD compliant
+                      <td className="p-4 text-rose-800">
+                        ✓ <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">NIST 800-88</Link>, DoD compliant
                       </td>
                     </tr>
                     <tr>
@@ -129,28 +129,28 @@ const FreeVsProEraserBlog: React.FC = () => {
                       <td className="p-4 text-red-600">
                         ⚠ High (malware risk)
                       </td>
-                      <td className="p-4 text-emerald-800">
+                      <td className="p-4 text-rose-800">
                         ✓ Secure, verified source
                       </td>
                     </tr>
                     <tr className="bg-slate-50">
                       <td className="p-4 font-semibold">Technical Support</td>
                       <td className="p-4 text-red-600">✗ None</td>
-                      <td className="p-4 text-emerald-800">
+                      <td className="p-4 text-rose-800">
                         ✓ Dedicated support
                       </td>
                     </tr>
                     <tr>
                       <td className="p-4 font-semibold">Device Coverage</td>
                       <td className="p-4 text-red-600">⚠ Limited</td>
-                      <td className="p-4 text-emerald-800">
+                      <td className="p-4 text-rose-800">
                         ✓ All storage media types
                       </td>
                     </tr>
                     <tr className="bg-slate-50">
                       <td className="p-4 font-semibold">Cloud Repository</td>
                       <td className="p-4 text-red-600">✗ Not available</td>
-                      <td className="p-4 text-emerald-800">
+                      <td className="p-4 text-rose-800">
                         ✓ Cloud storage for records
                       </td>
                     </tr>
@@ -210,7 +210,7 @@ const FreeVsProEraserBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Staggering Cost of Downtime
               </h2>
@@ -249,7 +249,7 @@ const FreeVsProEraserBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Why Choose Professional D-Secure Solution
               </h2>
@@ -261,7 +261,7 @@ const FreeVsProEraserBlog: React.FC = () => {
                   </h3>
                   <p className="text-white/90 leading-relaxed">
                     D-Secure guarantees permanent erasure of each device using
-                    global data erasure standards including <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>, DoD
+                    global data erasure standards including <Link to="/compliance/nist-800-88" className="text-rose-600 hover:underline font-medium">NIST 800-88</Link>, DoD
                     5220.22-M, and more.
                   </p>
                 </div>
@@ -296,7 +296,7 @@ const FreeVsProEraserBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
+            <div className="bg-rose-50 border border-rose-200 rounded-xl p-10 mt-10 space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Takeaways
               </h2>
@@ -306,22 +306,22 @@ const FreeVsProEraserBlog: React.FC = () => {
                 organizations can prevent massive amounts of trouble.
               </p>
               <ul className="space-y-4 text-slate-700 text-lg leading-loose mt-4">
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Free tools leave sensitive data traces and provide no
                   verification
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Average downtime cost is $5,600/minute or $300,000/hour
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Free downloads are open invitation to malware and data
                   breaches
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Professional tools provide tamper-proof certificates and audit
                   trails
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-rose-500 pl-8 py-2">
                   Cloud repository enables access to historical records anytime
                 </li>
               </ul>
@@ -344,7 +344,7 @@ const FreeVsProEraserBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all text-lg"
+                  className="inline-block bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-rose-600 hover:to-pink-600 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>

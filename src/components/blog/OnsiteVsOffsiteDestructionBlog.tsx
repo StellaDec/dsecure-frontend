@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-teal-50/20 via-emerald-50/10 to-slate-50">
         <SEOHead
           seo={getBlogSEO({
             title:
@@ -47,7 +47,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               {/* Introduction */}
               <div className="space-y-6">
                 <p className="text-slate-700 leading-loose text-xl">
@@ -75,7 +75,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
 
           {/* Factors to Consider */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Key Factors When Choosing Destruction Method
               </h2>
@@ -241,7 +241,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
 
           {/* Offsite Destruction */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Offsite Data Destruction
               </h2>
@@ -326,7 +326,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
 
           {/* Detailed Comparisons */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify mt-10">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify mt-10">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Decision Matrix: On-site vs. Off-site
               </h2>
@@ -362,7 +362,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify mt-10">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify mt-10">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">Cost Comparison & Regulatory Impact</h2>
               
               <div className="grid md:grid-cols-2 gap-8">
@@ -401,7 +401,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify mt-10">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify mt-10">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">Chain-of-Custody: The Certificate Differences</h2>
               <p className="text-slate-700 leading-loose text-lg">
                 Both methods provide a Certificate of Destruction (CoD), but what they prove is fundamentally different.
@@ -426,7 +426,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
 
           {/* Hybrid Approach */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 The Hybrid Approach: Best of Both Worlds
               </h2>

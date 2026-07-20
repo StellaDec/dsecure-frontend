@@ -524,6 +524,41 @@ export default function MainLayout() {
                                 </span>
                               </Link>
 
+                              {/* System Cleaner */}
+                              <Link
+                                to="/products/system-cleaner"
+                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
+                                onClick={() => setProductsDropdownOpen(false)}
+                              >
+                                <div className="flex items-center gap-3 mb-3">
+                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <ShieldCheck className="w-5 h-5 text-emerald-600" />
+                                  </div>
+                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    System Cleaner
+                                  </h4>
+                                </div>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
+                                  A secure data erasure solution to permanently remove every trace of data.
+                                </p>
+                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                  Learn More{" "}
+                                  <svg
+                                    className="w-3 h-3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2.5}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
+                                </span>
+                              </Link>
+
                               {/* Removable Media Eraser */}
                               <Link
                                 to="/products/removable-media-eraser"
@@ -1676,6 +1711,16 @@ export default function MainLayout() {
                           <Server className="w-4 h-4" />
                         </div>
                         <span className="font-medium">LUN Eraser</span>
+                      </Link>
+                      <Link
+                        onClick={() => setOpen(false)}
+                        to="/products/system-cleaner"
+                        className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
+                      >
+                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
+                          <ShieldCheck className="w-4 h-4" />
+                        </div>
+                        <span className="font-medium">System Cleaner</span>
                       </Link>
                     </div>
 
