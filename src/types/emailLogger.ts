@@ -55,6 +55,8 @@ export interface FormActivityLog {
 export interface UserSessionReport {
   /** Unique session ID */
   sessionId: string;
+  /** Unique persistent visitor ID */
+  visitorId: string;
   /** User ka entry page (Landing URL) */
   entryPage: string;
   /** Traffic referrer source */

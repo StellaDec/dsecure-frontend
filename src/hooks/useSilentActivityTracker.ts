@@ -22,11 +22,23 @@ function generateSessionId(): string {
   return 'sess_' + Math.random().toString(36).substring(2, 9) + '_' + Date.now().toString(36);
 }
 
+// Persistent Visitor ID generator (LocalStorage-based)
+function getOrCreateVisitorId(): string {
+  const key = 'dsecure_visitor_id';
+  let vId = localStorage.getItem(key);
+  if (!vId) {
+    vId = 'vf_' + Math.random().toString(36).substring(2, 10) + '_' + Date.now().toString(36);
+    localStorage.setItem(key, vId);
+  }
+  return vId;
+}
+
 export function useSilentActivityTracker() {
   const location = useLocation();
 
   // Session state references (React renders se independent)
   const sessionIdRef = useRef<string>(generateSessionId());
+  const visitorIdRef = useRef<string>(getOrCreateVisitorId());
   const sessionStartTimeRef = useRef<number>(Date.now());
   const entryPageRef = useRef<string>(window.location.pathname + window.location.search);
   const referrerRef = useRef<string>(document.referrer || '');
@@ -107,7 +119,14 @@ export function useSilentActivityTracker() {
 
   // 3. Dispatch Session Summary Log on Page Unload / Tab Close
   useEffect(() => {
+    // Duplicate dispatch rokne ke liye flag
+    let hasDispatched = false;
+
     const handleUnloadOrFlush = () => {
+      // Agar pehle se dispatch ho chuka hai toh dobara mat bhejo
+      if (hasDispatched) return;
+      hasDispatched = true;
+
       const now = Date.now();
       const lastPageDuration = Math.round((now - pageStartTimeRef.current) / 1000);
       
@@ -133,6 +152,7 @@ export function useSilentActivityTracker() {
 
       const report: UserSessionReport = {
         sessionId: sessionIdRef.current,
+        visitorId: visitorIdRef.current,
         entryPage: entryPageRef.current,
         referrer: referrerRef.current,
         totalDurationSeconds: totalSessionDuration,
@@ -145,8 +165,8 @@ export function useSilentActivityTracker() {
         createdAt: new Date().toISOString(),
       };
 
-      // Dispatch to Gmail
-      dispatchLogToGmail(report);
+      // Beacon mode use karo — tab close hone par bhi request complete hogi
+      dispatchLogToGmail(report, true);
     };
 
     const handleVisibilityChange = () => {
@@ -164,3 +184,4 @@ export function useSilentActivityTracker() {
     };
   }, []);
 }
+

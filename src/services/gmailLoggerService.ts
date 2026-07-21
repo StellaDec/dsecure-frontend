@@ -13,7 +13,8 @@ import {
 } from '../types/emailLogger';
 
 /**
- * Gmail Credentials ko environment variables se extract karne vala function.
+ * Gmail/Email Credentials ko environment variables se extract karne vala function.
+ * FormSubmit endpoint aur receiver email dono set karta hai.
  */
 export function getGmailConfig(): GmailConfig {
   return {
@@ -169,51 +170,51 @@ export function formatSessionLogHtml(report: UserSessionReport): string {
 }
 
 /**
- * Session report log ko Gmail par dispatch karta hai via direct API / Beacon dispatch.
+ * Session report log ko Python FastAPI Backend par dispatch karta hai.
  * @param report Complete user session report object
+ * @param useBeacon true set karo agar beforeunload/visibilitychange se call ho raha hai
  */
-export async function dispatchLogToGmail(report: UserSessionReport): Promise<boolean> {
-  const config = getGmailConfig();
+export async function dispatchLogToGmail(
+  report: UserSessionReport,
+  useBeacon: boolean = false
+): Promise<boolean> {
+  const backendEndpoint = import.meta.env.VITE_ACTIVITY_LOG_ENDPOINT
+    || 'http://localhost:8000/api/logs';
 
-  // Agar user credentials set nahi hain, to fallback console alert
-  if (!config.userEmail || !config.appPassword) {
-    console.info('[ActivityLogger] Gmail credentials not provided in .env (VITE_GMAIL_USER). Log compiled locally:', report);
-    return false;
-  }
-
-  const htmlContent = formatSessionLogHtml(report);
+  // FastAPI JSON format expect karta hai, toh HTML formatting ya FormSubmit headers ki zaroorat nahi hai.
+  // Hum seedha UserSessionReport object bhejenge backend par.
 
   try {
-    // SMTPJS API dispatch call (allows direct use of Gmail + App Password)
-    const requestBody = JSON.stringify({
-      Action: 'Send',
-      Host: 'smtp.gmail.com',
-      Username: config.userEmail,
-      Password: config.appPassword,
-      To: config.receiverEmail,
-      From: config.userEmail,
-      Subject: `[User Log] Intent ${report.intentLevel} (${report.intentScore}/100) - Session ${report.sessionId}`,
-      Body: htmlContent,
-    });
+    // --- Beacon Mode (sendBeacon with text/plain JSON) ---
+    // Modern browsers mein `navigator.sendBeacon` best hai tab close ke waqt.
+    // Hum `text/plain` use kar rahe hain taaki CORS preflight (OPTIONS) trigger na ho, jisse request cancel ho sakti hai.
+    if (useBeacon && navigator.sendBeacon) {
+      const blob = new Blob([JSON.stringify(report)], { type: 'text/plain' });
+      const beaconSent = navigator.sendBeacon(backendEndpoint, blob);
+      if (beaconSent) return true;
+      // Agar beacon fail ho jaye, tabhi hum fallback fetch try karenge
+    }
 
-    const response = await fetch('https://smtpjs.com/v3/smtpjs.aspx?', {
+    // --- Normal Mode (fetch with keepalive) ---
+    const response = await fetch(backendEndpoint, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'text/plain', // preflight bypass ke liye
+        'Accept': 'application/json',
       },
-      body: requestBody,
+      body: JSON.stringify(report),
+      keepalive: useBeacon, // Backup keepalive
     });
 
-    // SMTPJS mostly returns 200 OK with string "OK" if success, else error string.
-    const responseText = await response.text();
-    if (response.ok && responseText.trim().toUpperCase() === 'OK') {
+    if (response.ok) {
       return true;
     }
-    
-    console.error('[ActivityLogger] SMTPJS error:', responseText);
+
+    const errorText = await response.text();
+    console.error('[ActivityLogger] Backend dispatch error:', response.status, errorText);
     return false;
   } catch (error) {
-    console.error('[ActivityLogger] Failed to dispatch log email:', error);
+    console.error('[ActivityLogger] Failed to dispatch log to backend:', error);
     return false;
   }
 }

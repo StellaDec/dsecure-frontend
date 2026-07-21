@@ -25,7 +25,7 @@ import {
   ArrowLeftIcon,
   LockIcon,
 } from "@/components/FlatIcons";
-import { Search, Monitor, Terminal, Database, FileCheck, CheckCircle2, X, ZoomIn, ZoomOut } from "lucide-react";
+import { Search, Monitor, Terminal, Database, FileCheck, CheckCircle2, X, ZoomIn, ZoomOut, ShieldCheck, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, memo, useMemo, useCallback, useState } from "react";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
@@ -40,10 +40,21 @@ const HomePage = memo(function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [visibleCount, setVisibleCount] = useState(2);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedReportUrl, setSelectedReportUrl] = useState<string>('');
+  const [showFullPdf, setShowFullPdf] = useState(false);
   const [zoomScale, setZoomScale] = useState(1);
 
+  const handleOpenModal = useCallback((reportUrl: string, thumbnailUrl: string) => {
+    setSelectedReportUrl(reportUrl);
+    setSelectedImage(thumbnailUrl);
+    setShowFullPdf(false);
+    setZoomScale(1);
+  }, []);
+
   const handleCloseModal = useCallback(() => {
+    setSelectedReportUrl('');
     setSelectedImage(null);
+    setShowFullPdf(false);
     setZoomScale(1);
   }, []);
 
@@ -859,7 +870,7 @@ const HomePage = memo(function HomePage() {
             {/* File Eraser Certificate Card */}
             <Reveal delayMs={100} className="h-full">
               <div 
-                onClick={() => setSelectedImage('https://res.cloudinary.com/dhwi5wevf/image/upload/v1784544510/tamc6g4n1igi46qmqdwp.png')}
+                onClick={() => handleOpenModal('https://assets.dsecuretech.com/Reports/file%20eraser/2160001.pdf', '/images/reports/fileeraser_thumb.png')}
                 className="cursor-pointer block bg-white border border-gray-200 rounded-2xl p-6 shadow-sm h-full hover:shadow-md hover:border-emerald-300 transition-all duration-300 group"
               >
                 <div className="aspect-[3/4] rounded-xl overflow-hidden mb-6 border border-gray-100 relative bg-slate-50">
@@ -888,7 +899,7 @@ const HomePage = memo(function HomePage() {
             {/* Autopilot/MDM Certificate Card */}
             <Reveal delayMs={200} className="h-full">
               <div 
-                onClick={() => setSelectedImage('https://res.cloudinary.com/dhwi5wevf/image/upload/v1784545652/f7bfazl9lgawdsitaqys.png')}
+                onClick={() => handleOpenModal('https://assets.dsecuretech.com/Reports/Autopilot/DSecureAutopilotReport_1.pdf', '/images/reports/autopilot_thumb.png')}
                 className="cursor-pointer block bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm h-full hover:shadow-md hover:border-emerald-400 transition-all duration-300 group md:-translate-y-4"
               >
                 <div className="aspect-[3/4] rounded-xl overflow-hidden mb-6 border border-gray-100 relative bg-slate-50">
@@ -911,75 +922,109 @@ const HomePage = memo(function HomePage() {
         </div>
       </section>
 
-      {/* Clipboard Style Modal */}
+      {/* Report Modal - Certificate Image or Full PDF */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedReportUrl && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/90 p-4 sm:p-8 backdrop-blur-sm overflow-hidden"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 sm:p-6 backdrop-blur-sm"
             onClick={handleCloseModal}
+            role="dialog"
+            aria-modal="true"
           >
-            {/* Modal Controls */}
-            <div className="fixed top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-4 z-[110]" onClick={(e) => e.stopPropagation()}>
-              <div className="flex items-center bg-white/10 rounded-full p-1 backdrop-blur-md">
-                <button
-                  onClick={() => setZoomScale(prev => Math.max(0.5, prev - 0.25))}
-                  className="p-2 text-white hover:text-emerald-400 hover:bg-white/20 rounded-full transition-colors"
-                  title="Zoom Out"
-                >
-                  <ZoomOut className="w-6 h-6" />
-                </button>
-                <span className="text-white font-medium px-2 min-w-[60px] text-center">
-                  {Math.round(zoomScale * 100)}%
-                </span>
-                <button
-                  onClick={() => setZoomScale(prev => Math.min(3, prev + 0.25))}
-                  className="p-2 text-white hover:text-emerald-400 hover:bg-white/20 rounded-full transition-colors"
-                  title="Zoom In"
-                >
-                  <ZoomIn className="w-6 h-6" />
-                </button>
-              </div>
-              <button
-                onClick={handleCloseModal}
-                className="text-white hover:text-red-400 transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20"
-                title="Close"
-              >
-                <X className="w-8 h-8" />
-              </button>
-            </div>
-
-            {/* Scrollable Container for Zoomed Content */}
-            <div className="w-full h-full overflow-auto flex items-center justify-center custom-scrollbar" onClick={handleCloseModal}>
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                animate={{ scale: zoomScale, opacity: 1, y: 0 }}
-                exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                className="relative bg-slate-200/90 rounded-2xl border-[8px] border-slate-300 shadow-2xl overflow-hidden m-auto transform-origin-center transition-transform duration-200"
-                style={{
-                  width: 'min(90vw, 800px)',
-                  aspectRatio: '210/297', // A4 aspect ratio
-                }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Clipboard Clip at the top */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 sm:w-48 h-8 sm:h-10 bg-slate-800 rounded-b-2xl z-20 flex justify-center items-end pb-2 shadow-xl border-b-4 border-slate-900">
-                  <div className="w-12 sm:w-20 h-1.5 sm:h-2 bg-slate-600 rounded-full"></div>
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-full max-w-5xl h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between p-4 border-b border-slate-100 bg-slate-50">
+                <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-emerald-600" />
+                  {showFullPdf ? "Full Erasure Report" : "Erasure Certificate Preview"}
+                </h3>
+                <div className="flex items-center gap-2">
+                  {/* Zoom controls - sirf certificate view mein dikhenge */}
+                  {!showFullPdf && (
+                    <div className="flex items-center gap-1 bg-slate-100 rounded-lg px-2 py-1">
+                      <button
+                        onClick={() => setZoomScale((z) => Math.max(0.5, z - 0.25))}
+                        className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded transition-colors"
+                        aria-label="Zoom out"
+                        type="button"
+                      >
+                        <ZoomOut className="w-4 h-4" />
+                      </button>
+                      <span className="text-xs font-semibold text-slate-600 min-w-[3rem] text-center">
+                        {Math.round(zoomScale * 100)}%
+                      </span>
+                      <button
+                        onClick={() => setZoomScale((z) => Math.min(3, z + 0.25))}
+                        className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded transition-colors"
+                        aria-label="Zoom in"
+                        type="button"
+                      >
+                        <ZoomIn className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
+                  <button
+                    onClick={handleCloseModal}
+                    className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-200 rounded-full transition-colors"
+                    aria-label="Close report modal"
+                    type="button"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
                 </div>
-                
-                {/* A4 Paper Content */}
-                <div className="m-3 sm:m-6 mt-12 sm:mt-16 bg-white shadow-sm relative p-2 h-[calc(100%-4rem)] sm:h-[calc(100%-5.5rem)] flex justify-center items-center">
-                  <img 
-                    src={selectedImage} 
-                    alt="Certificate Full View" 
-                    className="w-full h-full object-contain"
+              </div>
+
+              {/* Modal Body */}
+              {showFullPdf ? (
+                /* Full PDF view */
+                <div className="flex-1 w-full bg-slate-200">
+                  <iframe 
+                    src={selectedReportUrl}
+                    className="w-full h-full border-none"
+                    title="Full Report Document"
                   />
                 </div>
-              </motion.div>
-            </div>
+              ) : (
+                /* Certificate image preview - sirf first page, ultra crisp */
+                <>
+                  <div className="flex-1 w-full bg-slate-100 overflow-auto flex items-start justify-center p-6">
+                    <img
+                      src={selectedImage || ''}
+                      alt="Erasure Certificate Preview"
+                      className="max-w-full h-auto rounded-lg shadow-lg transition-transform duration-300 pointer-events-none"
+                      style={{ 
+                        transform: `scale(${zoomScale})`, 
+                        transformOrigin: 'top center',
+                        width: 'min(90vw, 800px)',
+                        aspectRatio: '210/297' // Standard A4 ratio
+                      }}
+                      draggable={false}
+                    />
+                  </div>
+                  {/* View Full Report button */}
+                  <div className="p-4 border-t border-slate-100 bg-slate-50 flex items-center justify-center">
+                    <button
+                      onClick={() => setShowFullPdf(true)}
+                      className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300"
+                      type="button"
+                    >
+                      <Download className="w-5 h-5" />
+                      View Full Report
+                    </button>
+                  </div>
+                </>
+              )}
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

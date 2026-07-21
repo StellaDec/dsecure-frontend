@@ -17,7 +17,7 @@ import {
   ServerIcon,
 } from "@/components/FlatIcons";
 import { blogPosts } from "@/data/blogPosts";
-import { FileTextIcon, Monitor, Download, X } from "lucide-react";
+import { FileTextIcon, Monitor, Download, X, Search, ZoomIn } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
 import { generateFAQSchema } from "@/utils/seo.core";
 import { useToast } from "@/components/Toast";
@@ -55,7 +55,33 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
   const [isDemoActive, setIsDemoActive] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  // Single Source of Truth for Key Takeaways
+  // Reports section states
+  const [activeReportTab, setActiveReportTab] = useState("method-volume");
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [selectedPdfUrl, setSelectedPdfUrl] = useState("");
+  const [selectedReportId, setSelectedReportId] = useState("");
+  const [showFullPdf, setShowFullPdf] = useState(false);
+  const [reportZoom, setReportZoom] = useState(1);
+
+  const reportTabs = [
+    { id: "method-volume", label: "Method Volume", pdf: "https://assets.dsecuretech.com/Reports/file%20eraser/1530002.pdf" },
+    { id: "file-folders", label: "File and Folders", pdf: "https://assets.dsecuretech.com/Reports/file%20eraser/2160001.pdf" },
+    { id: "delete-data", label: "Delete Data", pdf: "https://assets.dsecuretech.com/Reports/file%20eraser/1920007.pdf" },
+    { id: "schedule", label: "Schedule", pdf: "https://assets.dsecuretech.com/Reports/file%20eraser/DSEC-SCHD-20260710-1458-7BA32E.pdf" },
+    { id: "cloud-volume", label: "Cloud Volume", pdf: "https://assets.dsecuretech.com/Reports/file%20eraser/1800002.pdf" },
+    { id: "cloud-deleted-data", label: "Cloud Deleted Data", pdf: "https://assets.dsecuretech.com/Reports/file%20eraser/1800003.pdf" },
+    { id: "cloud-file-folders", label: "Cloud File and Folders", pdf: "https://assets.dsecuretech.com/Reports/file%20eraser/1650001.pdf" }
+  ];
+
+  // Modal mein certificate image dikhane ke liye handler
+  const handleReportClick = (pdfUrl: string, tabId: string) => {
+    setSelectedPdfUrl(pdfUrl);
+    setSelectedReportId(tabId);
+    setShowFullPdf(false);
+    setReportZoom(1);
+    setIsReportModalOpen(true);
+  };
+
   const fileEraserTakeaways: KeyTakeawayItem[] = [
     { text: "Securely erase specific files and folders without wiping the entire drive." },
     { text: "Sanitize free space to permanently remove traces of previously deleted files." },
@@ -966,6 +992,85 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
           </div>
         </section>
 
+        {/* ================= REPORTS SECTION ================= */}
+        <section id="reports" className="py-16 lg:py-24 bg-white border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <Reveal>
+              <div className="text-center mb-14">
+                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                  Erasure Reports
+                </h2>
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                  View detailed erasure reports required for compliance and auditing purposes.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="flex flex-col lg:flex-row gap-8">
+              {/* Report Tabs */}
+              <div className="w-full lg:w-1/3 flex flex-col gap-2">
+                {reportTabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveReportTab(tab.id)}
+                    className={`text-left px-6 py-4 rounded-xl transition-all duration-300 font-semibold ${
+                      activeReportTab === tab.id
+                        ? "bg-emerald-500 text-white shadow-lg lg:scale-105"
+                        : "bg-slate-50 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Preview Area */}
+              <div className="w-full lg:w-2/3">
+                {reportTabs.map((tab) => (
+                  activeReportTab === tab.id && (
+                    <Reveal key={tab.id}>
+                      <div className="relative bg-slate-100 rounded-2xl overflow-hidden shadow-xl border border-slate-200 aspect-[3/4] sm:aspect-[4/3] lg:aspect-[16/9]">
+                        {/* Static image thumbnail of the PDF */}
+                        <img 
+                          src={`/images/reports/${tab.id}.png`}
+                          alt={`${tab.label} Report Preview`}
+                          className="w-full h-full object-cover object-top opacity-90 transition-opacity hover:opacity-100"
+                          loading="lazy"
+                        />
+                        
+                        {/* Centered Zoom Icon */}
+                        <div className="absolute inset-0 z-10 flex items-center justify-center hover:bg-slate-900/10 transition-colors duration-300 pointer-events-none">
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleReportClick(tab.pdf, tab.id);
+                            }}
+                            className="pointer-events-auto flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-2xl hover:shadow-emerald-500/50 hover:scale-110 transition-all duration-300"
+                            aria-label="Zoom Certificate"
+                          >
+                            <ZoomIn className="w-8 h-8" />
+                          </button>
+                        </div>
+                      </div>
+                    </Reveal>
+                  )
+                ))}
+              </div>
+            </div>
+
+            {/* View All Reports Button */}
+            <div className="mt-12 text-center flex justify-center">
+              <Link
+                to="/reports-and-certificates"
+                className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300"
+              >
+                View All Reports
+                <ArrowRightIcon className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ================= WHAT YOU CAN ERASE ================= */}
         
         {/* ================= KEY TAKEAWAYS ================= */}
@@ -1578,6 +1683,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
         </section>
 
          {/* ================= TAMPER PROOF REPORT ================= */}
+        {false && (
         <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-white border-b border-slate-100">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -1630,6 +1736,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
             </div>
           </div>
         </section>
+        )}
 
         {/* ================= COMPLIANCE STANDARDS ================= */}
         <section
@@ -2265,6 +2372,97 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
             >
               <track kind="captions" />
             </video>
+          </div>
+        </div>
+      )}
+
+      {/* Report Modal - Certificate Image or Full PDF */}
+      {isReportModalOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 sm:p-6 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => { setIsReportModalOpen(false); setShowFullPdf(false); setReportZoom(1); }}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="relative w-full max-w-5xl h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 border-b border-slate-100 bg-slate-50">
+              <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+                <ShieldIcon className="w-5 h-5 text-emerald-600" />
+                {showFullPdf ? "Full Erasure Report" : "Erasure Certificate Preview"}
+              </h3>
+              <div className="flex items-center gap-2">
+                {/* Zoom controls - sirf certificate view mein dikhenge */}
+                {!showFullPdf && (
+                  <div className="flex items-center gap-1 bg-slate-100 rounded-lg px-2 py-1">
+                    <button
+                      onClick={() => setReportZoom((z) => Math.max(0.5, z - 0.25))}
+                      className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded transition-colors"
+                      aria-label="Zoom out"
+                      type="button"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" /></svg>
+                    </button>
+                    <span className="text-xs font-semibold text-slate-600 min-w-[3rem] text-center">{Math.round(reportZoom * 100)}%</span>
+                    <button
+                      onClick={() => setReportZoom((z) => Math.min(3, z + 0.25))}
+                      className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded transition-colors"
+                      aria-label="Zoom in"
+                      type="button"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
+                    </button>
+                  </div>
+                )}
+                <button
+                  onClick={() => { setIsReportModalOpen(false); setShowFullPdf(false); setReportZoom(1); }}
+                  className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-200 rounded-full transition-colors"
+                  aria-label="Close report modal"
+                  type="button"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+            
+            {/* Modal Body */}
+            {showFullPdf ? (
+              /* Full PDF view */
+              <div className="flex-1 w-full bg-slate-200">
+                <iframe 
+                  src={selectedPdfUrl}
+                  className="w-full h-full border-none"
+                  title="Full Report Document"
+                />
+              </div>
+            ) : (
+              /* Certificate image preview - sirf first page */
+              <>
+                <div className="flex-1 w-full bg-slate-100 overflow-auto flex items-start justify-center p-6">
+                  <img
+                    src={`/images/reports/${selectedReportId}.png`}
+                    alt="Erasure Certificate"
+                    className="max-w-full h-auto rounded-lg shadow-lg transition-transform duration-300"
+                    style={{ transform: `scale(${reportZoom})`, transformOrigin: 'top center' }}
+                    draggable={false}
+                  />
+                </div>
+                {/* View Full Report button */}
+                <div className="p-4 border-t border-slate-100 bg-slate-50 flex items-center justify-center">
+                  <button
+                    onClick={() => setShowFullPdf(true)}
+                    className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300"
+                    type="button"
+                  >
+                    <Download className="w-5 h-5" />
+                    View Full Report
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
