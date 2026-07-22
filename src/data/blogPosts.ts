@@ -17,6 +17,19 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "ai-data-center-decommissioning",
+    slug: "ai-data-center-decommissioning",
+    title: "AI Data Center Decommissioning: Secure GPU & NVMe Erasure",
+    excerpt: "Comprehensive guide to decommissioning AI data centers, securely erasing GPU servers and high-capacity NVMe storage to comply with NIST SP 800-88 Rev. 2 and IEEE 2883-2022 standards.",
+    link: "/blog/ai-data-center-decommissioning",
+    tag: "Decommissioning",
+    category: "Data Center ITAD",
+    keywords: "AI data center decommissioning, AI server decommissioning, GPU server data erasure, NVMe data sanitization, secure server decommissioning, AI infrastructure lifecycle management, NVMe cryptographic erase, in-rack data erasure, NIST SP 800-88 Rev. 2",
+    publishDate: "July 22, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "10 min read"
+  },
+  {
     id: "free-vs-pro-eraser",
     slug: "free-vs-pro-eraser",
     title: "Free vs Professional Data Erasure",

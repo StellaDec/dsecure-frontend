@@ -4,6 +4,24 @@ export interface FAQ {
 }
 
 export const blogFaqs: Record<string, FAQ[]> = {
+  "ai-data-center-decommissioning": [
+    {
+      question: "Why is decommissioning AI servers different from traditional servers?",
+      answer: "AI servers contain high-density GPU memory, specialized NVMe storage arrays, and network fabric configurations (like InfiniBand) that can retain sensitive model data. Traditional erasure often misses these specialized components, requiring advanced tools that support NVMe cryptographic erase and GPU memory flushing."
+    },
+    {
+      question: "What is NVMe Cryptographic Erase?",
+      answer: "Cryptographic Erase (CE) is a sanitization method that instantly renders all data on a Self-Encrypting Drive (SED) unrecoverable by destroying the Media Encryption Key (MEK). It is the fastest and most effective way to sanitize high-capacity NVMe drives in AI data centers."
+    },
+    {
+      question: "Does D-Secure support NIST SP 800-88 Rev. 2 for NVMe erasure?",
+      answer: "Yes, D-Secure executes manufacturer-specific firmware commands to perform a 'Purge' level erasure compliant with both NIST SP 800-88 Rev. 2 and IEEE 2883-2022 standards for flash-based storage media."
+    },
+    {
+      question: "Can I erase an entire rack of GPU servers simultaneously?",
+      answer: "Yes. Using PXE-based network boot, D-Secure Drive Eraser can simultaneously sanitize hundreds of NVMe drives across multiple servers in a rack without requiring the drives to be physically removed."
+    }
+  ],
   "data-sanitization-compliance": [
     {
       question: "What is the difference between data deletion and data sanitization?",

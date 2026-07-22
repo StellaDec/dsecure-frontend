@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout";
 
 // Blog Pages
 const BlogPage = lazy(() => import("../components/blog/BlogPage"));
+const AIDataCenterDecommissioningBlog = lazy(() => import("../components/blog/AIDataCenterDecommissioningBlog"));
 
 const DataSanitizationComplianceBlog = lazy(() => import("../components/blog/DataSanitizationComplianceBlog"));
 
@@ -110,6 +111,7 @@ const WorldClassNPSBlog = lazy(() => import("../components/blog/WorldClassNPSBlo
 export const BlogRoutes = () => (
   <Route element={<MainLayout />}>
     <Route path="blog" element={<BlogPage />} />
+    <Route path="blog/ai-data-center-decommissioning" element={<AIDataCenterDecommissioningBlog />} />
 
     <Route path="blog/data-sanitization-compliance" element={<DataSanitizationComplianceBlog />} />
 
