@@ -428,34 +428,6 @@ function ContactPageContent() {
       }
     }
 
-    // Auto-detect country code if the name is 'phone'
-    if (name === "phone" && (value.startsWith("+") || /^\d{2,4}/.test(value))) {
-      // Find matching country code from our map
-      // Check for longest matches first (e.g., +852 before +8)
-      const sortedCodes = Object.keys(COUNTRY_CODE_MAP).sort(
-        (a, b) => b.length - a.length,
-      );
-
-      for (const code of sortedCodes) {
-        // Match both "+91" and "91" (if user starts typing without +)
-        const pureCode = code.replace("+", "");
-        if (value.startsWith(code) || value.startsWith(pureCode)) {
-          const matchedCountry = COUNTRY_CODE_MAP[code];
-
-          // Auto update country and countryCode dropdowns
-          setFormData((prev) => ({
-            ...prev,
-            [name]: value.startsWith(code)
-              ? value.slice(code.length).trim()
-              : value.slice(pureCode.length).trim(),
-            countryCode: code,
-            country: matchedCountry,
-          }));
-          return;
-        }
-      }
-    }
-
     setFormData((prev) => ({
       ...prev,
       [name]: value,
