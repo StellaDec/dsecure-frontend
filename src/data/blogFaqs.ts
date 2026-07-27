@@ -1481,5 +1481,47 @@ export const blogFaqs: Record<string, FAQ[]> = {
       question: "How does D-Secure handle NVMe erasure compared to DBAN?",
       answer: "Unlike DBAN, D-Secure utilizes native NVMe firmware commands (such as NVMe Format and NVMe Sanitize) combined with Cryptographic Erase to securely destroy data at the hardware level, bypassing the limitations of simple sector overwriting."
     }
+  ],
+  "servicenow-data-erasure-itam-workflow": [
+    {
+      question: "What is ServiceNow data erasure integration?",
+      answer: "ServiceNow data erasure integration is a workflow that connects asset-retirement records with a data-erasure system so approvals, device information, job results and certificates can be managed through a coordinated process."
+    },
+    {
+      question: "Can ServiceNow automatically trigger a data-erasure job?",
+      answer: "It may be possible when the erasure platform provides the required APIs and the organization approves automated destructive actions. Availability should be confirmed with the erasure provider and tested in a controlled environment."
+    },
+    {
+      question: "Does D-Secure have a native ServiceNow application?",
+      answer: "The availability of a native ServiceNow application or bidirectional connector should be confirmed directly with D-Secure. Structured certificate output may support custom integration architectures."
+    },
+    {
+      question: "Can a Certificate of Erasure be attached to a ServiceNow record?",
+      answer: "ServiceNow supports attachments and record updates through platform APIs. A custom integration may use this capability to link an erasure certificate to the relevant asset record."
+    },
+    {
+      question: "Why use an XML Certificate of Erasure?",
+      answer: "XML contains structured fields that systems can process automatically. It may be used to update device serial numbers, erasure methods, job statuses and verification results without manually re-entering every value."
+    },
+    {
+      question: "What should happen when an erasure job fails?",
+      answer: "The asset should remain blocked from resale, reuse or recycling. An exception ticket should route the device for diagnostics, another approved attempt, security review or physical destruction."
+    },
+    {
+      question: "Can the same process work with Jira Service Management?",
+      answer: "Yes. The same request, approval, status and evidence model can be adapted to Jira or another ITSM platform when the required APIs and permissions are available."
+    },
+    {
+      question: "How should the API connection be secured?",
+      answer: "Recommended controls include approved authentication, least-privilege accounts, encrypted communication, credential rotation, input validation, rate limiting and complete API logging."
+    },
+    {
+      question: "Why should the certificate be linked to the asset record?",
+      answer: "Linking the certificate to the asset record helps demonstrate which device was processed, which method was used, when it was completed and whether verification succeeded."
+    },
+    {
+      question: "What is the main benefit of automation?",
+      answer: "The primary benefit is consistent control. Automation can help prevent an asset from reaching final disposition before approval, sanitization, verification and evidence requirements have been completed."
+    }
   ]
 };

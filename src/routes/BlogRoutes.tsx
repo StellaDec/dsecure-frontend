@@ -6,6 +6,7 @@ import MainLayout from "../layouts/MainLayout";
 const BlogPage = lazy(() => import("../components/blog/BlogPage"));
 const AIDataCenterDecommissioningBlog = lazy(() => import("../components/blog/AIDataCenterDecommissioningBlog"));
 const DBANAlternativeBlog = lazy(() => import("../components/blog/DBANAlternativeBlog"));
+const ServiceNowDataErasureBlog = lazy(() => import("../components/blog/ServiceNowDataErasureBlog"));
 
 const DataSanitizationComplianceBlog = lazy(() => import("../components/blog/DataSanitizationComplianceBlog"));
 
@@ -114,6 +115,7 @@ export const BlogRoutes = () => (
     <Route path="blog" element={<BlogPage />} />
     <Route path="blog/ai-data-center-decommissioning" element={<AIDataCenterDecommissioningBlog />} />
     <Route path="blog/dban-alternative-ssd-nvme-data-erasure" element={<DBANAlternativeBlog />} />
+    <Route path="blog/servicenow-data-erasure-itam-workflow" element={<ServiceNowDataErasureBlog />} />
 
     <Route path="blog/data-sanitization-compliance" element={<DataSanitizationComplianceBlog />} />
 

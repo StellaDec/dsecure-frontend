@@ -17,6 +17,19 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "servicenow-data-erasure-itam-workflow",
+    slug: "servicenow-data-erasure-itam-workflow",
+    title: "ServiceNow Data Erasure Integration: ITAM Workflow Guide",
+    excerpt: "Learn how to integrate data erasure with ServiceNow and other ITAM platforms. Automate your asset retirement workflow, generate XML certificates, and maintain a secure chain of custody.",
+    link: "/blog/servicenow-data-erasure-itam-workflow",
+    tag: "Integration",
+    category: "ITAM",
+    keywords: "ServiceNow data erasure, ITAM workflow, asset retirement integration, automated data destruction, IT asset management sanitization, ServiceNow hardware asset management, XML certificate of erasure, ServiceNow ITAM security",
+    publishDate: "August 15, 2026",
+    author: "Prashant Saini",
+    readTime: "12 min read"
+  },
+  {
     id: "ai-data-center-decommissioning",
     slug: "ai-data-center-decommissioning",
     title: "AI Data Center Decommissioning: Secure GPU & NVMe Erasure",
