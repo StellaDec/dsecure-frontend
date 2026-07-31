@@ -10,36 +10,21 @@ import { sanitizeHtml } from "@/utils/sanitizeHtml";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import { 
-  ShieldIcon, 
-  ArrowLeftIcon,
-} from "@/components/FlatIcons";
+  Shield as ShieldIcon, 
+  ArrowLeft as ArrowLeftIcon,
+  Calendar as CalendarIcon,
+  Share2 as ShareIcon,
+  Clock as ClockIcon
+} from "lucide-react";
+import { ThemeIconContainer, themeClasses, ThemeSection } from "@/components/ui/Theme";
 
 import { BlogRegistry } from "@/components/blog/BlogRegistry";
 import PageLoadingSkeleton from "@/components/PageLoadingSkeleton";
 
-// Local Icons for Blog Detail
-const CalendarIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z" />
-  </svg>
-);
-
-const ShareIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-  </svg>
-);
-
-const ClockIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-);
-
 const BlogPostDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
 
-  // Find the relevant blog post
+  // Relevant blog post ko dhoondna (Find the relevant blog post - Hindi comment as requested)
   const post = useMemo(() => {
     return blogPosts.find((p) => p.slug === slug);
   }, [slug]);
@@ -59,7 +44,7 @@ const BlogPostDetail: React.FC = () => {
     });
   }, [post]);
 
-  // If post not found, return NotFoundPage to prevent soft 404s
+  // Agar post nahi mila, to NotFoundPage render karein (If post not found, return NotFoundPage)
   if (!post || !seoData) {
     return <NotFoundPage />;
   }
@@ -90,14 +75,14 @@ const BlogPostDetail: React.FC = () => {
       </div>
 
       {/* Progress Bar (Subtle) */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-slate-100 z-50">
-        <div className="h-full bg-emerald-500 w-1/3 transition-all duration-300"></div>
+      <div className="fixed top-0 left-0 w-full h-1 bg-white z-50">
+        <div className="h-full bg-[#0e7c66] w-1/3 transition-all duration-300"></div>
       </div>
 
       {/* Hero Header */}
-      <header className="relative py-16 md:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white overflow-hidden">
+      <header className="relative py-16 md:py-24 bg-[#0a2e1e] text-white overflow-hidden border-b border-[#0e7c66]">
         {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <path d="M0,100 L100,0 L100,100 Z" fill="currentColor" />
           </svg>
@@ -107,7 +92,7 @@ const BlogPostDetail: React.FC = () => {
           <Reveal>
             <Link 
               to="/blog" 
-              className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium mb-8 transition-colors group"
+              className="inline-flex items-center gap-2 text-[#d4ede4] hover:text-white font-medium mb-8 transition-colors group"
             >
               <ArrowLeftIcon className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
               Back to Technical Blog
@@ -116,10 +101,10 @@ const BlogPostDetail: React.FC = () => {
 
           <Reveal delayMs={100}>
             <div className="flex items-center gap-3 mb-6">
-              <span className="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-bold uppercase tracking-wider">
+              <span className="px-3 py-1 bg-white/10 border border-white/20 rounded-none text-white text-xs font-bold uppercase tracking-wider">
                 {post.tag}
               </span>
-              <span className="flex items-center gap-1.5 text-slate-400 text-sm">
+              <span className="flex items-center gap-1.5 text-white/70 text-sm">
                 <ClockIcon className="w-4 h-4" />
                 {post.readTime || '5 min read'}
               </span>
@@ -133,25 +118,25 @@ const BlogPostDetail: React.FC = () => {
           </Reveal>
 
           <Reveal delayMs={300}>
-            <div className="flex flex-wrap items-center gap-6 text-slate-300 border-t border-white/10 pt-8 mt-8">
+            <div className="flex flex-wrap items-center gap-6 text-white/80 border-t border-white/10 pt-8 mt-8">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 rounded-full bg-[#0e7c66] flex items-center justify-center text-white font-bold border border-white/20">
                   {post.author.charAt(0)}
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-white">{post.author}</div>
-                  <div className="text-xs text-slate-400">Security Research</div>
+                  <div className="text-xs text-white/60">Security Research</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-2">
-                <CalendarIcon className="w-5 h-5 text-emerald-400" />
+                <CalendarIcon className="w-5 h-5 text-[#d4ede4]" />
                 <span className="text-sm">{post.publishDate}</span>
               </div>
 
               <div className="ml-auto flex items-center gap-4">
-                <button className="p-2 rounded-full hover:bg-white/10 transition-colors" title="Share Article">
-                  <ShareIcon className="w-5 h-5" />
+                <button className="p-2 rounded-none hover:bg-white/10 transition-colors border border-transparent hover:border-white/20" title="Share Article">
+                  <ShareIcon className="w-5 h-5 text-white" />
                 </button>
               </div>
             </div>
@@ -160,17 +145,18 @@ const BlogPostDetail: React.FC = () => {
       </header>
 
       {/* Main Content */}
-      <main className="pb-16">
-        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
-          <Reveal>
-            <article className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+      <main className="pb-16 bg-[#f4fbf8]">
+        <ThemeSection alternate className="!pt-12 !pb-6">
+          <div className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8">
+            <Reveal>
+              <article className={`${themeClasses.card.base} p-8 md:p-12 space-y-10 text-justify shadow-sm`}>
             {/* Lead Excerpt */}
-            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium italic border-l-4 border-emerald-500 pl-6 mb-12">
+            <p className="text-xl md:text-2xl text-[#5a6672] leading-relaxed font-medium italic border-l-4 border-[#0e7c66] pl-6 mb-12 bg-[#f4fbf8] p-4">
               {post.excerpt}
             </p>
 
             {/* Main Body (Placeholder for actual content if missing) */}
-            <div className="text-slate-700 leading-relaxed space-y-8">
+            <div className="text-[#5a6672] leading-relaxed space-y-8 prose prose-emerald max-w-none">
               {post.content ? (
                 /* In a real app, this would be dangerouslySetInnerHTML or a Markdown renderer */
                 <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }} />
@@ -180,27 +166,27 @@ const BlogPostDetail: React.FC = () => {
                     Ensuring data security in the modern enterprise landscape requires more than just standard deletion. As storage technologies evolve, particularly with the widespread adoption of SSDs and NVMe drives, traditional overwriting methods often fall short of meeting global compliance standards.
                   </p>
                   
-                  <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Strategic Importance</h2>
+                  <h2 className="text-2xl font-bold text-[#0a2e1e] mt-12 mb-6">Strategic Importance</h2>
                   <p>
                     Data sanitization is not just a technical requirement—it's a critical component of risk management. Organizations that fail to implement compliance-verified erasure protocols remain vulnerable to data breaches even after assets have left their physical control. This is especially true for sectors like <strong>Finance, Healthcare, and Government</strong> where regulatory scrutiny is highest.
                   </p>
 
-                  <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 my-12">
-                    <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-emerald-800">
-                      <ShieldIcon className="w-6 h-6" filled />
+                  <div className="bg-[#d4ede4] rounded-none p-8 border border-[#0e7c66]/30 my-12 shadow-sm">
+                    <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-[#0a2e1e]">
+                      <ShieldIcon className="w-6 h-6 text-[#0e7c66]" />
                       The D-Secure Advantage
                     </h3>
-                    <p className="text-slate-700 mb-0">
+                    <p className="text-[#0a2e1e] mb-0 font-medium">
                       Our proprietary erasure engines support 20+ international standards, providing audit-proof reports that guarantee 100% data destruction across all media types. By combining hardware acceleration with cryptographic sanitization, we deliver the industry's fastest and most secure decommissioning workflow.
                     </p>
                   </div>
 
-                  <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Compliance Standards Mapping</h2>
+                  <h2 className="text-2xl font-bold text-[#0a2e1e] mt-12 mb-6">Compliance Standards Mapping</h2>
                   <p>
                     Whether it's <strong>NIST 800-88, GDPR, or India's DPDP Act 2023</strong>, D-Secure maps technical erasure methods directly to regulatory obligations. Our platform generates digitally signed certificates that provide a complete chain of custody for every sanitized asset.
                   </p>
 
-                  <h3 className="text-xl font-bold mt-8 mb-4">Key Takeaways:</h3>
+                  <h3 className="text-xl font-bold mt-8 mb-4 text-[#0a2e1e]">Key Takeaways:</h3>
                   <ul className="list-disc pl-6 space-y-3">
                     <li>Factory resets are insufficient for modern SSD wear-leveling algorithms.</li>
                     <li>Cryptographic erasure offers a rapid and highly secure alternative to multi-pass overwriting.</li>
@@ -211,10 +197,12 @@ const BlogPostDetail: React.FC = () => {
             </div>
             </article>
           </Reveal>
-        </section>
+          </div>
+        </ThemeSection>
 
-        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8">
-          {/* Standardized Blog Footer */}
+        <ThemeSection alternate className="!py-6">
+          <div className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8">
+            {/* Standardized Blog Footer */}
           <BlogFooterStandard 
             blogId={post.id}
             blogTitle={post.title}
@@ -222,29 +210,30 @@ const BlogPostDetail: React.FC = () => {
             tag={post.tag}
             faqs={seoData.faqs as FAQ[]}
           />
-        </section>
+          </div>
+        </ThemeSection>
 
         {/* Footer Navigation */}
-        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 mt-20 pt-10 border-t border-slate-100">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center">
-                <ShieldIcon className="w-8 h-8 text-emerald-800" filled />
-              </div>
+        <ThemeSection alternate className="!py-10 border-t border-[#d0d5dc]">
+          <div className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="flex items-center gap-4">
+              <ThemeIconContainer icon={ShieldIcon} size="lg" />
               <div>
-                <h4 className="font-bold text-slate-900">Secure Your Data Lifecycle</h4>
-                <p className="text-sm text-slate-500">Learn how D-Secure protects your business.</p>
+                <h4 className="font-bold text-[#0a2e1e]">Secure Your Data Lifecycle</h4>
+                <p className="text-sm text-[#5a6672]">Learn how D-Secure protects your business.</p>
               </div>
             </div>
             
             <Link 
               to="/contact" 
-              className="bg-slate-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-colors"
+              className={themeClasses.button.base + " " + themeClasses.button.primary}
             >
               Consult an Expert
             </Link>
+            </div>
           </div>
-        </section>
+        </ThemeSection>
       </main>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState, memo, useMemo, useCallback, useEffect, useRef } from 'react';
 import { ARIA_LABELS } from '@/utils/aria-labels';
+import { X } from 'lucide-react';
 
 interface CustomLicenseModalProps {
   isOpen: boolean;
@@ -216,28 +217,26 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
       aria-labelledby="custom-license-title"
       aria-describedby="custom-license-desc"
     >
-      <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="p-6 border-b border-gray-200">
+      <div className="bg-white rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-[#d0d5dc]">
+        <div className="p-6 border-b border-[#0e7c66] bg-[#0e7c66]">
           <div className="flex justify-between items-center">
             <div>
               <h2 
                 id="custom-license-title"
                 ref={titleRef}
                 tabIndex={-1}
-                className="text-2xl font-bold text-slate-900 focus:outline-none"
+                className="text-2xl font-bold text-white focus:outline-none"
               >
                 Custom License Request
               </h2>
-              <p id="custom-license-desc" className="text-gray-600 mt-1">Get a personalized quote for {productName}</p>
+              <p id="custom-license-desc" className="text-gray-300 mt-1">Get a personalized quote for {productName}</p>
             </div>
             <button
               onClick={onClose}
               aria-label={ARIA_LABELS.CLOSE_MODAL}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-white hover:text-gray-300 transition-colors"
             >
-              <svg className="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <X className="w-6 h-6" />
             </button>
           </div>
         </div>
@@ -254,7 +253,7 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
                 id="companyName"
                 value={formData.companyName}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
+                className="w-full px-4 py-3 border border-[#d0d5dc] rounded-none focus:outline-none focus:border-[#0e7c66] transition-colors"
                 placeholder="Enter your company name"
                 hasError={!!errors.companyName}
                 required={true}
@@ -274,7 +273,7 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
                 id="contactName"
                 value={formData.contactName}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
+                className="w-full px-4 py-3 border border-[#d0d5dc] rounded-none focus:outline-none focus:border-[#0e7c66] transition-colors"
                 placeholder="Your full name"
                 hasError={!!errors.contactName}
                 required={true}
@@ -294,7 +293,7 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
                 id="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
+                className="w-full px-4 py-3 border border-[#d0d5dc] rounded-none focus:outline-none focus:border-[#0e7c66] transition-colors"
                 placeholder="your.email@company.com"
                 hasError={!!errors.email}
                 required={true}
@@ -314,7 +313,7 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
                 id="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
+                className="w-full px-4 py-3 border border-[#d0d5dc] rounded-none focus:outline-none focus:border-[#0e7c66] transition-colors"
                 placeholder="+1 (555) 000-0000"
                 hasError={!!errors.phone}
                 required={true}
@@ -333,7 +332,7 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
                 name="numberOfLicenses"
                 value={formData.numberOfLicenses}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
+                className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
                 placeholder="e.g., 500"
                 hasError={!!errors.numberOfLicenses}
               />
@@ -350,7 +349,7 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
                 name="duration"
                 value={formData.duration}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
+                className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
               >
                 {durationOptions.map(option => (
                   <option key={option.value} value={option.value}>
@@ -371,7 +370,7 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
               value={formData.requirements}
               onChange={handleInputChange}
               rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors resize-none"
+              className="w-full px-4 py-3 border border-[#d0d5dc] rounded-none focus:outline-none focus:border-[#0e7c66] transition-colors resize-none"
               placeholder="Tell us about your specific requirements..."
             />
           </div>
@@ -384,7 +383,7 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
               name="budget"
               value={formData.budget}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand transition-colors"
             >
               {budgetOptions.map(option => (
                 <option key={option.value} value={option.value}>
@@ -398,14 +397,14 @@ const CustomLicenseModal: React.FC<CustomLicenseModalProps> = memo(({
             {/* <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+              className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-none hover:bg-gray-50 transition-colors font-medium"
             >
               Cancel
             </button> */}
             <button
               type="submit"
               disabled={isLoading}
-              className={`flex-1 px-4 py-3 bg-gradient-to-r from-brand to-brand-600 text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all transform hover:scale-105 font-medium shadow-lg ${
+              className={`flex-1 px-4 py-3 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] transition-all font-bold ${
                 isLoading ? 'opacity-70 cursor-not-allowed' : ''
               }`}
             >

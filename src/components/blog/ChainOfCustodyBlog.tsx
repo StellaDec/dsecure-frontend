@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 
 const ChainOfCustodyBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-teal-50/20 via-emerald-50/10 to-slate-50">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Chain of Custody in Data Destruction",
@@ -22,16 +22,16 @@ const ChainOfCustodyBlog: React.FC = () => {
           })}
         />
 
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
-                <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> Best Practices
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
+                <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link> Best Practices
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
-                Understanding Chain of Custody and Its Importance for <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
+                Understanding Chain of Custody and Its Importance for <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Discover why maintaining a secure chain of custody is critical
                 for IT Asset Disposition, preventing data breaches, ensuring
                 compliance, and safeguarding asset disposal.
@@ -42,22 +42,22 @@ const ChainOfCustodyBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 What is Chain of Custody?
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 A chain of custody refers to the systematic process of
                 safeguarding evidence or items during transfer from one person
                 or location to another. Simply put, it means knowing and
                 cataloging the location of your company's assets and whose
                 possession they are in at all times.
               </p>
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-white border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Key Principle
                 </h3>
-                <p className="text-lg text-slate-700 leading-loose">
+                <p className="text-lg text-[#5a6672] leading-loose">
                   This ensures the safety of business-critical IT infrastructure
                   because{" "}
                   <strong>
@@ -72,67 +72,67 @@ const ChainOfCustodyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Why Chain of Custody Matters for <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
+                Why Chain of Custody Matters for <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link>
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 IT Asset Disposition companies must dispose of assets in a
                 controlled environment, ensuring that every stage — from arrival
-                to <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> and eventual disposal — is documented. This
+                to <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">data wiping</Link> and eventual disposal — is documented. This
                 creates a verifiable trail ensuring accountability and security.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Safety & Integrity
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Ensure safety and integrity of evidence through audit trails
                     and asset tags
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Prevent Tampering
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Avoid any chance of tampering or contamination of items
                     being transferred
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Legal Evidence
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Establish clear chain of custody that can be used as
                     evidence in court if necessary
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Inventory Tracking
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Identify inventory through asset tags and ensure seamless
                     reconciliation
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Regulatory Compliance
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Comply with data security and privacy regulations such as
                     GDPR and CCPA
                   </p>
                 </div>
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Build Trust
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Build transparent and reliable relationships with partnered
                     organizations
                   </p>
@@ -142,7 +142,7 @@ const ChainOfCustodyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Dangers of an Unsecure Chain of Custody
               </h2>
@@ -154,12 +154,12 @@ const ChainOfCustodyBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">
                     Case Study: Major Beverage Company Breach
                   </h3>
                   <p className="text-white/90 leading-relaxed">
-                    The person responsible for overseeing the entire <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link>
+                    The person responsible for overseeing the entire <Link to="/solutions/itad" className="text-white hover:underline font-medium">ITAD</Link>
                     process stole laptops containing sensitive PII, including
                     social security numbers and salaries of 74,000 employees.
                     Had missing laptops been discovered and documented in time,
@@ -167,7 +167,7 @@ const ChainOfCustodyBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">
                     Case Study: Financial Services Provider
                   </h3>
@@ -184,30 +184,30 @@ const ChainOfCustodyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Risks of Chain of Custody Gaps
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
-                An effective chain of custody for an <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> functions like an
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
+                An effective chain of custody for an <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link> functions like an
                 insurance service \u2014 both help reduce and prevent data security
                 risks. Without proper custody, organizations face significant
                 risks:
               </p>
-              <ul className="space-y-4 text-slate-700 text-lg leading-loose">
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+              <ul className="space-y-4 text-[#5a6672] text-lg leading-loose">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Difficulty verifying how proficiently IT assets have been
                   treated without supervision or track record
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Absence of visibility in asset movement makes devices more
                   vulnerable to malicious attacks
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Prevention of discrepancies like malware attacks or insider
                   threats from being detected in time
                 </li>
-                <li className="border-l-4 border-emerald-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   IT assets may not be admissible as evidence in a court of law
                 </li>
               </ul>
@@ -215,72 +215,72 @@ const ChainOfCustodyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 How to Ensure a Secure Chain of Custody
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Establishing an effective process to sustain and secure chain of
                 custody acts as a deterrent to data security threats:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
                       Catalog and asset-tag devices throughout the IT asset
                       lifecycle
                     </p>
                   </div>
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
                       Grant employees only privileges required for their tasks
                       (Principle of Least Privilege)
                     </p>
                   </div>
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
                       Control remote access and preserve network integrity
                     </p>
                   </div>
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
                       Safeguard information confidentiality, integrity, and
                       accessibility
                     </p>
                   </div>
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
                       Manage data per the organization's risk management
                       strategy
                     </p>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
                       Ensure proper sanitization or destruction before devices
                       leave company control
                     </p>
                   </div>
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
                       Use data destruction techniques as prescribed by
                       regulatory norms
                     </p>
                   </div>
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
                       Track devices as they move through the disposition process
                     </p>
                   </div>
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
-                      Work with reputable <Link to="/solutions/itad" className="text-emerald-600 hover:underline font-medium">ITAD</Link> vendors specializing in secure
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
+                      Work with reputable <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link> vendors specializing in secure
                       data destruction
                     </p>
                   </div>
-                  <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                    <p className="text-slate-700 text-lg">
+                  <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                    <p className="text-[#5a6672] text-lg">
                       Ensure all devices are disposed of in safe and
                       environmentally-friendly manner
                     </p>
@@ -291,17 +291,17 @@ const ChainOfCustodyBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#d4ede4] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Best Practices for Maintaining Chain of Custody
               </h2>
-              <p className="text-lg text-slate-700 leading-loose">
+              <p className="text-lg text-[#5a6672] leading-loose">
                 Businesses should routinely audit chain of custody procedures to
                 establish data integrity across all phases of the device
                 lifecycle. The effectiveness of policies, practices, systems,
                 and training should be regularly evaluated through audits.
               </p>
-              <p className="text-lg text-slate-700 leading-loose font-semibold mt-4">
+              <p className="text-lg text-[#5a6672] leading-loose font-semibold mt-4">
                 By following a secure chain of custody, organizations can rest
                 assured that their data and devices are in safe hands throughout
                 the entire disposition process.

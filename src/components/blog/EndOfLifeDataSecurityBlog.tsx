@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const EndOfLifeDataSecurityBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "End-of-Life Data Security",
@@ -23,16 +23,16 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
         />
 
         {/* Hero Section - Full Width */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 IT Asset Lifecycle
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Why Data Security is Overlooked at End-of-Life of IT Assets
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Organizations implement rigorous measures to protect active
                 data, yet data security at the disposal stage is largely
                 neglected. Understanding this critical gap is essential for
@@ -45,20 +45,20 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   The global data sphere is growing rapidly, with total data
                   created, captured, and replicated expected to reach{" "}
-                  <strong className="text-indigo-800">163 zettabytes</strong>{" "}
+                  <strong className="text-[#0a2e1e]">163 zettabytes</strong>{" "}
                   by 2025. Organizations store and process this humongous volume
                   of data, including customer personal data, business
                   intelligence, and sensitive information that requires constant
                   protection against threats and vulnerabilities across all
                   lifecycle stages.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Storage hardware bearing sensitive data throughout its
                   lifecycle is the single overarching element that plays a
                   decisive role in an organization's ability to attain failsafe
@@ -68,7 +68,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   tumble dramatically when storage devices transition to their
                   disposal stage.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Legacy IT assets typically fall beyond the purview of
                   cybersecurity protocols, yet they still store sensitive data
                   posing risks of leakage, breaches, and regulatory penalties.
@@ -82,26 +82,26 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
 
           {/* Data Leakage Scenarios */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Common Data Leakage Scenarios at End-of-Life
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Several real-world situations involving neglected data security
                 or insufficient measures for safe disposal of old IT assets lead
                 to sensitive information leakage:
               </p>
 
               <div className="space-y-8 mt-6">
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Scenario 1: Warehousing Devices with Retained Data
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Organizations often inventory legacy hard drives, computers,
                     and servers in warehousing facilities before sending them to
-                    <Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> facilities for shredding or recycling. Such bulk
+                    <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link> facilities for shredding or recycling. Such bulk
                     inventoried devices are at risk of theft or loss due to
                     physical security lapses, surveillance loopholes, or
                     misappropriation. Despite following formal disposal
@@ -110,11 +110,11 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Scenario 2: Disposing After Formatting or Deletion
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Storage media formatting and factory resetting prepare
                     devices for fresh use but are not secure methods for
                     permanent data removal. Any freely available data recovery
@@ -128,11 +128,11 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Scenario 3: Vendor Management Lapses
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Data security issues may arise from faulty practices when
                     trusting third-party vendors with used storage hardware
                     disposal. Despite explicit contracts demarcating vendor
@@ -146,11 +146,11 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Scenario 4: Donating or Selling Without Sanitization
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Organizations may donate bulk old IT assets to fulfill CSR
                     obligations or auction assets to salvage residual value.
                     When devices transition to third parties without proper
@@ -168,7 +168,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
 
           {/* Risk Implications */}
           <Reveal>
-            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Risk Implications of Improper End-of-Life Disposal
               </h2>
@@ -180,7 +180,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Financial Fraud</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Security breaches can lead to immense financial losses
@@ -189,7 +189,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                     organizations liable for damages.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Legal Penalties</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Data breaches trigger legal action including customer
@@ -198,7 +198,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                     violations up to $50,000 per incident.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Brand Damage</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Information security breaches dent company image,
@@ -207,7 +207,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                     positioning.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">IP Theft</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Security breach and theft of corporate data like
@@ -216,7 +216,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                     positioning.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Bankruptcy Risk</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Overlooking end-of-life data security can result in breach
@@ -224,7 +224,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                     organizations, such sizable fines could mean bankruptcy.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Customer Loss</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Data breaches fundamentally damage customer trust. Affected
@@ -238,13 +238,13 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
 
           {/* The Solution */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Secure Disposal: The Most Effective Method
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
-                Data erasure (or <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">data wiping</Link>) is the most effective method to
+              <p className="text-[#5a6672] leading-loose text-lg">
+                Data erasure (or <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">data wiping</Link>) is the most effective method to
                 destroy sensitive data stored on PCs, external hard drives, and
                 servers. The method uses 'overwriting' technique — replacing
                 existing information with binary patterns such that data is
@@ -252,31 +252,31 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                 laboratory services.
               </p>
 
-              <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-8 mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
-                  D-Secure <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Drive Eraser</Link> Capabilities
+              <div className="bg-[#f4fbf8] p-8 md:p-12 space-y-6 border-l-4 border-[#0e7c66] prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-4">
+                  D-Secure <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Drive Eraser</Link> Capabilities
                 </h3>
-                <ul className="space-y-4 text-slate-700 text-lg">
+                <ul className="space-y-4 text-[#5a6672] text-lg">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     <strong>Universal Compatibility:</strong> Wipes data stored
                     on all types of hard disk drives and solid-state drives used
                     in PCs, Macs, and servers
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     <strong>International Standards:</strong> Supports 24+
-                    global erasure standards including <Link to="/compliance/nist-800-88" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link>, DoD, and
+                    global erasure standards including <Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link>, DoD, and
                     IEEE guidelines
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     <strong>Tamper-Proof Certificates:</strong> Generates
                     detailed reports and certificates for audit compliance and
                     regulatory requirements
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     <strong>Complete Verification:</strong> Validates successful
                     erasure with no possibility of data recovery through any
                     method
@@ -288,49 +288,49 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
 
           {/* Best Practices */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Best Practices for End-of-Life Data Security
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Erase Before Warehousing
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Wipe all data from devices immediately upon decommissioning,
                     before they enter any storage or inventory system. This
                     eliminates risk during the waiting period before final
                     disposition.
                   </p>
                 </div>
-                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Use Certified Tools
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Never rely on simple formatting or deletion. Use
                     professional data erasure software that provides verified,
                     permanent data destruction with documented proof.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Maintain Audit Trails
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Require and retain certificates of destruction for every
                     device processed, whether sanitized internally or through
                     vendors. These documents are essential for compliance
                     verification.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Verify Vendor Practices
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     When using third-party ITADs, verify their data destruction
                     processes and certifications. Require documented proof of
                     sanitization for every device transferred to their custody.
@@ -342,11 +342,11 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Conclusion
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Data protection and security are crucial business needs
                 considering the prodigious growth of sensitive data requiring
                 rigorous management across all lifecycle stages. While
@@ -356,7 +356,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                 data security issues, jeopardizing organizational data privacy
                 goals with consequential financial and legal impacts.
               </p>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Data erasure provides the effective method for safe disposal of
                 end-of-life IT assets by overwriting sensitive information and
                 guaranteeing permanent destruction with no possibility of

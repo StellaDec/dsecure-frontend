@@ -1,4 +1,6 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import { ChevronLeft, ChevronRight, FileText } from 'lucide-react';
+
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useNotification } from "@/contexts/NotificationContext";
@@ -548,7 +550,7 @@ export default function AdminSessions() {
   const getStatusColor = (status: string) => {
     const s = String(status).toLowerCase();
     if (s.includes("active") || s.includes("success"))
-      return "bg-emerald-100 text-emerald-800 border-emerald-200";
+      return "bg-[#d4ede4] text-[#0a2e1e] border-[#d4ede4]";
     if (s.includes("fail") || s.includes("error"))
       return "bg-red-100 text-red-800 border-red-200";
     return "bg-slate-100 text-slate-700 border-slate-200";
@@ -618,12 +620,12 @@ export default function AdminSessions() {
             <span
               className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase whitespace-nowrap ${
                 item.type === "LOGIN"
-                  ? "bg-emerald-100 text-emerald-700"
+                  ? "bg-[#d4ede4] text-[#0a2e1e]"
                   : item.type === "LOGOUT"
                     ? "bg-slate-100 text-slate-700"
                     : item.type === "REPORT_DOWNLOAD"
-                      ? "bg-blue-100 text-blue-700"
-                      : "bg-amber-100 text-amber-700"
+                      ? "bg-[#d4ede4] text-[#0a2e1e]"
+                      : "bg-[#d4ede4] text-[#0a2e1e]"
               }`}
             >
               {item.type?.replace("_", " ")}
@@ -651,16 +653,16 @@ export default function AdminSessions() {
     <>
       {/* SEO Meta Tags */}
       <SEOHeadNative seo={getSEOForPage("admin-sessions")} />
-      <div className="space-y-4 xs:space-y-6 sm:space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-4 xs:p-6 sm:p-6">
+      <div className="space-y-4 xs:space-y-6 sm:space-y-6 min-h-screen bg-white p-4 xs:p-6 sm:p-6">
         {/* Header */}
         <div className="flex flex-col xs:flex-row sm:flex-row items-start xs:items-center sm:items-center justify-between gap-4">
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
+          <h1 className="text-2xl font-bold text-[#0a2e1e] tracking-tight">
             User Activity Sessions and Security Audit Trail
           </h1>
           <div className="flex gap-3">
             <button
               onClick={handleRefresh}
-              className="px-4 py-2 text-sm font-medium text-slate-600 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors shadow-sm flex items-center gap-2"
+              className="px-4 py-2 text-sm font-medium text-slate-600 bg-white border border-slate-300 rounded-none hover:bg-slate-50 transition-colors shadow-sm flex items-center gap-2"
             >
               <svg
                 className="w-4 h-4"
@@ -681,9 +683,9 @@ export default function AdminSessions() {
         </div>
 
         {/* Filters */}
-        <div className="card p-4 space-y-4">
+        <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-4 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-[#0a2e1e]">
               Filters & Search
             </h2>
             <button
@@ -708,7 +710,7 @@ export default function AdminSessions() {
                 type="date"
                 value={fromDate}
                 onChange={(e) => setFromDate(e.target.value)}
-                className="w-full border rounded-lg px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                className="w-full border rounded-none px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
               />
             </div>
 
@@ -721,14 +723,14 @@ export default function AdminSessions() {
                 type="date"
                 value={toDate}
                 onChange={(e) => setToDate(e.target.value)}
-                className="w-full border rounded-lg px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                className="w-full border rounded-none px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
               />
             </div>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="card">
+        <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6">
           {/* Table Header - chote screens par ye hidden rahega aur items stack honge */}
           <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
             <div className="hidden md:grid grid-cols-12 gap-4 p-4 bg-slate-50 border-b border-slate-200 text-[10px] lg:text-xs font-semibold text-slate-500 uppercase tracking-wider">
@@ -758,7 +760,7 @@ export default function AdminSessions() {
                       </div>
                       {/* Status */}
                       <div className="col-span-1">
-                        <div className="h-6 bg-emerald-100 rounded-full w-16" />
+                        <div className="h-6 bg-[#d4ede4] rounded-full w-16" />
                       </div>
                       {/* IP */}
                       <div className="col-span-1">
@@ -787,19 +789,7 @@ export default function AdminSessions() {
               ) : /* ********** END Shimmer UI ********** */
               sessions.length === 0 ? (
                 <div className="p-12 text-center text-slate-400 flex flex-col items-center">
-                  <svg
-                    className="w-12 h-12 mb-3 text-slate-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
+                  <FileText className="w-12 h-12 mb-3 text-slate-200" />
                   No sessions found for this period
                 </div>
               ) : (
@@ -819,7 +809,7 @@ export default function AdminSessions() {
                           </span>
                           {session.isActive && (
                             <span
-                              className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
+                              className="w-2 h-2 rounded-full bg-[#0e7c66] animate-pulse"
                               title="Active Session"
                             ></span>
                           )}
@@ -852,7 +842,7 @@ export default function AdminSessions() {
                           {session.logout_time ? (
                             formatDate(session.logout_time)
                           ) : (
-                            <span className="text-emerald-800 font-medium bg-emerald-50 px-1.5 py-0.5 rounded text-[10px]">
+                            <span className="text-[#0a2e1e] font-medium bg-[#d4ede4] px-1.5 py-0.5 rounded text-[10px]">
                               Active Now
                             </span>
                           )}
@@ -863,7 +853,7 @@ export default function AdminSessions() {
                           {session.logout_time ? (
                             formatDate(session.logout_time)
                           ) : session.isActive ? (
-                            <span className="text-emerald-800 font-medium bg-emerald-50 px-1.5 py-0.5 rounded text-[10px]">
+                            <span className="text-[#0a2e1e] font-medium bg-[#d4ede4] px-1.5 py-0.5 rounded text-[10px]">
                               Active Now
                             </span>
                           ) : session.estimatedExpiryTime &&
@@ -903,10 +893,10 @@ export default function AdminSessions() {
                       </div>
                       {session.estimatedExpiryTime && !session.logout_time && (
                         <div className="flex flex-col mt-1">
-                          <span className="text-[10px] text-amber-500 uppercase font-bold">
+                          <span className="text-[10px] text-[#0a2e1e] uppercase font-bold">
                             Expires
                           </span>
-                          <span className="font-medium text-amber-600 text-xs">
+                          <span className="font-medium text-[#0a2e1e] text-xs">
                             {formatDate(session.estimatedExpiryTime)}
                           </span>
                         </div>
@@ -914,7 +904,7 @@ export default function AdminSessions() {
                     </div>
 
                     {/* 4. Device & Network */}
-                    <div className="col-span-12 md:col-span-3 bg-slate-50 p-2 rounded-lg border border-slate-100">
+                    <div className="col-span-12 md:col-span-3 bg-slate-50 p-2 rounded-none border border-slate-100">
                       <div className="flex flex-col gap-2 text-xs">
                         <div>
                           <span className="text-slate-400 block uppercase text-[10px] font-bold">
@@ -944,7 +934,7 @@ export default function AdminSessions() {
                     <div className="col-span-12 md:col-span-3 text-sm">
                       <div className="flex flex-col gap-1">
                         <span className="font-semibold text-slate-700 flex items-center gap-2 text-xs uppercase tracking-wide">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#0e7c66]"></span>
                           Activity Log
                         </span>
                         <div className="bg-white border border-slate-100 rounded p-2 text-xs shadow-sm">
@@ -956,7 +946,7 @@ export default function AdminSessions() {
                           <div className="mt-1 text-[10px] text-slate-500">
                             <span className="font-semibold">Resource:</span>{" "}
                             {session.resource_type !== "-" && (
-                              <span className="text-blue-600">
+                              <span className="text-[#0a2e1e]">
                                 {session.resource_type}/
                               </span>
                             )}
@@ -990,7 +980,7 @@ export default function AdminSessions() {
                     setPageSize(newSize);
                     setPage(1);
                   }}
-                  className="px-2 py-1 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 cursor-pointer"
+                  className="px-2 py-1 border border-slate-300 rounded-none text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66] cursor-pointer"
                 >
                   {pageSizeOptions.map((size) => (
                     <option key={size} value={size}>
@@ -1027,42 +1017,18 @@ export default function AdminSessions() {
                 <button
                   disabled={page <= 1}
                   onClick={() => setPage(page - 1)}
-                  className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors flex items-center gap-1 font-medium text-slate-600"
+                  className="px-3 py-1.5 border border-slate-300 rounded-none text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors flex items-center gap-1 font-medium text-slate-600"
                 >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
+                  <ChevronLeft className="w-4 h-4" />
                   Previous
                 </button>
                 <button
                   disabled={page >= totalPages}
                   onClick={() => setPage(page + 1)}
-                  className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors flex items-center gap-1 font-medium text-slate-600"
+                  className="px-3 py-1.5 border border-slate-300 rounded-none text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors flex items-center gap-1 font-medium text-slate-600"
                 >
                   Next
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+                  <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

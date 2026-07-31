@@ -32,7 +32,7 @@ interface FeatureIconProps {
 export const FeatureIcon = memo(({ children, bgColor }: FeatureIconProps) => {
   return (
     <div 
-      className={`w-16 h-16 rounded-2xl ${bgColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-200 will-change-transform`}
+      className={`w-16 h-16 rounded-none ${bgColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-200 will-change-transform`}
       style={{ transform: 'translateZ(0)' }}
     >
       {children}

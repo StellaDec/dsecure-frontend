@@ -6,6 +6,26 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import SolutionContactSection from "@/components/SolutionContactSection";
 import SolutionHeroGraphic from "@/components/SolutionHeroGraphic";
+import { 
+  ThemeSection, 
+  ThemeSectionHeading, 
+  ThemeCard, 
+  ThemeIconContainer, 
+  ThemeButton,
+  themeClasses
+} from "@/components/ui/Theme";
+import {
+  GraduationCap,
+  ShieldCheck,
+  FileText,
+  CheckCircle,
+  Monitor,
+  Server,
+  Smartphone,
+  HardDrive,
+  Laptop,
+  ChevronRight
+} from "lucide-react";
 
 /**
  * EducationPage Component
@@ -126,17 +146,12 @@ const EducationPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-white">
         {/* ================= HERO SECTION ================= */}
         <section
           id="overview"
-          className="min-h-[600px] flex items-start pt-8 lg:pt-12 pb-8 lg:pb-12 relative overflow-hidden"
+          className="min-h-[600px] flex items-start pt-8 lg:pt-12 pb-8 lg:pb-12 relative overflow-hidden bg-white"
         >
-          {/* Background pattern */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-100/40 rounded-full blur-3xl opacity-20 -mr-64 -mt-64"></div>
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-teal-100/40 rounded-full blur-3xl opacity-20 -ml-64 -mb-64"></div>
-          </div>
 
           <div className="container mx-auto px-4 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
@@ -170,45 +185,21 @@ const EducationPage: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <button
+                  <ThemeButton
                     onClick={() => setShowLicenseModal(true)}
-                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-emerald-200/50 transition-all duration-300 transform hover:-translate-y-1"
+                    variant="primary"
+                    icon={<ChevronRight className="w-4 h-4" />}
                   >
                     Get Free Campus License
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                  </button>
+                  </ThemeButton>
                   <a
                     href="https://assets.dsecuretech.com/pdf/DSECURE_EDUCATION.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-50 px-8 py-4 rounded-xl font-bold bg-white transition-all duration-300 shadow-lg"
+                    className={`${themeClasses.button.base} ${themeClasses.button.outline}`}
                   >
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"
-                      />
-                    </svg>
                     Solution Overview
+                    <span className="ml-2"><FileText className="w-5 h-5" /></span>
                   </a>
                 </div>
 
@@ -251,23 +242,23 @@ const EducationPage: React.FC = () => {
                 devices={[
                   {
                     label: "CHROMEBOOK",
-                    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="13" rx="2" /><path d="M2 19h20" /></svg>,
+                    icon: <Laptop className="w-6 h-6 text-emerald-600" />,
                   },
                   {
                     label: "LAB PC",
-                    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>,
+                    icon: <Monitor className="w-6 h-6 text-teal-600" />,
                   },
                   {
                     label: "SERVER",
-                    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" /><rect x="2" y="14" width="20" height="8" rx="2" /><circle cx="7" cy="6" r="1" fill="#16a34a" stroke="none" /><circle cx="7" cy="18" r="1" fill="#16a34a" stroke="none" /><line x1="11" y1="6" x2="17" y2="6" /><line x1="11" y1="18" x2="17" y2="18" /></svg>,
+                    icon: <Server className="w-6 h-6 text-emerald-600" />,
                   },
                   {
                     label: "TABLET",
-                    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" /><line x1="10" y1="18" x2="14" y2="18" /></svg>,
+                    icon: <Smartphone className="w-6 h-6 text-teal-600" />,
                   },
                   {
                     label: "STORAGE",
-                    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="10" rx="2" /><circle cx="17" cy="12" r="1.5" fill="#16a34a" stroke="none" /><line x1="5" y1="10" x2="12" y2="10" /><line x1="5" y1="14" x2="9" y2="14" /></svg>,
+                    icon: <HardDrive className="w-6 h-6 text-emerald-600" />,
                   },
                 ]}/>
             </div>
@@ -276,29 +267,16 @@ const EducationPage: React.FC = () => {
 
 
         {/* Compliance Section */}
-        <section
-          id="compliance"
-          className="py-20"
-          style={{ backgroundColor: "#ffffff" }}
-        >
+        <ThemeSection id="compliance" alternate>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div
-                className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4"
-                style={{ backgroundColor: "#e8f5e9", color: "#059669" }}
-              >
+              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-emerald-100 text-emerald-800 mb-4 border border-emerald-200">
                 Education Privacy & Standards
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
+              </span>
+              <ThemeSectionHeading centered>
                 Strict Compliance for Institutions
-              </h2>
-              <p
-                className="text-lg max-w-2xl mx-auto"
-                style={{ color: "#6b7280" }}
-              >
+              </ThemeSectionHeading>
+              <p className="text-lg max-w-2xl mx-auto text-slate-600 mt-4">
                 Meet student data protection laws with our auditable
                 sanitization solutions for schools and universities.
               </p>
@@ -309,132 +287,103 @@ const EducationPage: React.FC = () => {
                 {
                   title: "FERPA Compliance",
                   desc: "Protect student educational records during equipment disposal to ensure Family Educational Rights and Privacy Act adherence.",
-                  icon: "🎓",
+                  icon: GraduationCap,
                 },
                 {
                   title: "COPPA Readiness",
                   desc: "Comply with Children's Online Privacy Protection Act by permanently deleting kids' personal data from school-issued devices.",
-                  icon: "🛡️",
+                  icon: ShieldCheck,
                 },
                 {
                   title: "NIST 800-88",
                   desc: "Follow the latest U.S. federal media sanitization guidelines to render data completely unrecoverable by forensic tools.",
-                  icon: "📜",
+                  icon: FileText,
                 },
                 {
                   title: "Tamper-proof Reports",
                   desc: "Automated compliance-verified certificates generated for every asset wiped, providing a clear audit trail for regulators.",
-                  icon: "✅",
+                  icon: CheckCircle,
                 },
-              ].map((comp, idx) => (
-                <div
-                  key={idx}
-                  className="p-8 rounded-2xl border bg-slate-50 hover:shadow-lg transition-all"
-                  style={{ borderColor: "#e5e7eb" }}
-                >
-                  <div className="text-4xl mb-4">{comp.icon}</div>
-                  <h3
-                    className="text-xl font-bold mb-3"
-                    style={{ color: "#1f2937" }}
-                  >
+              ].map((comp) => (
+                <ThemeCard key={comp.title} className="p-8">
+                  <div className="mb-6">
+                    <ThemeIconContainer icon={comp.icon} size="lg" />
+                  </div>
+                  <h3 className={`${themeClasses.typography.cardTitle}`}>
                     {comp.title}
                   </h3>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: "#6b7280" }}
-                  >
+                  <p className={`${themeClasses.typography.cardBody}`}>
                     {comp.desc}
                   </p>
-                </div>
+                </ThemeCard>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* Supported Assets Section */}
-        <section id="assets" className="py-20 bg-slate-50">
+        <ThemeSection id="assets" noBg className="bg-[#0a2e1e] [&_h2]:!text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div
-                className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4"
-                style={{ backgroundColor: "#e8f5e9", color: "#059669" }}
-              >
+              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-emerald-900/50 text-emerald-100 mb-4 border border-emerald-500/30">
                 Hardware Support
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
+              </span>
+              <ThemeSectionHeading centered>
                 Erase Campus IT Assets
-              </h2>
-              <p
-                className="text-lg max-w-2xl mx-auto"
-                style={{ color: "#6b7280" }}
-              >
-                Supporting a wide range of devices found in modern educational
-                environments.
+              </ThemeSectionHeading>
+              <p className="text-lg max-w-none mx-auto text-emerald-100 mt-4 whitespace-nowrap">
+                Supporting a wide range of devices found in modern educational environments.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
-                  icon: "🎓",
+                  icon: Laptop,
                   title: "Chromebooks",
                   desc: "Bulk wiping for student laptops and education-grade devices.",
                 },
                 {
-                  icon: "🔬",
+                  icon: Monitor,
                   title: "Lab PCs & Macs",
                   desc: "Sanitize high-performance workstations in research and computer labs.",
                 },
                 {
-                  icon: "🏫",
+                  icon: Server,
                   title: "School Servers",
                   desc: "Securely erase server-side student information and admin records.",
                 },
                 {
-                  icon: "📱",
+                  icon: Smartphone,
                   title: "Staff Tablets",
                   desc: "Sanitize iOS and Android devices used by faculty and staff.",
                 },
-              ].map((asset, idx) => (
-                <div
-                  key={idx}
-                  className="text-center p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all"
-                >
-                  <div className="text-5xl mb-4">{asset.icon}</div>
-                  <h3
-                    className="text-lg font-bold mb-2"
-                    style={{ color: "#1f2937" }}
-                  >
+              ].map((asset) => (
+                <ThemeCard key={asset.title} className="flex flex-col items-center text-center p-8">
+                  <div className="mb-6">
+                    <ThemeIconContainer icon={asset.icon} size="lg" />
+                  </div>
+                  <h3 className={`${themeClasses.typography.cardTitle}`}>
                     {asset.title}
                   </h3>
-                  <p className="text-sm" style={{ color: "#6b7280" }}>
+                  <p className={`${themeClasses.typography.cardBody}`}>
                     {asset.desc}
                   </p>
-                </div>
+                </ThemeCard>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* School Solutions Section */}
-        <section
-          id="solutions"
-          className="py-20"
-          style={{ backgroundColor: "#ffffff" }}
-        >
+        <ThemeSection id="solutions" noBg>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-6"
-                  style={{ color: "#1f2937" }}
-                >
+                <ThemeSectionHeading>
                   Institutional Grade Data Disposal
-                </h2>
-                <p className="text-lg mb-8" style={{ color: "#4b5563" }}>
+                </ThemeSectionHeading>
+                <p className="text-lg mb-8 text-slate-600 mt-4">
                   Educational institutions frequently upgrade technology. We
                   help IT departments manage large-scale data destruction
                   efficiently without physical disk destruction, promoting green
@@ -446,81 +395,59 @@ const EducationPage: React.FC = () => {
                     "USB sanitization for hybrid work laptops and off-site staff",
                     "Cloud-based management for central tracking across multiple campuses",
                     "Sustainability-focused disposal through high-grade reusable wiping",
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start space-x-3">
-                      <svg
-                        className="w-5 h-5 text-emerald-500 mt-1"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span style={{ color: "#4b5563" }}>{item}</span>
+                  ].map((item) => (
+                    <li key={item} className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" />
+                      <span className="text-slate-600">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-emerald-50 p-8 rounded-3xl border border-emerald-100 shadow-inner">
-                <h3
-                  className="text-2xl font-bold mb-6"
-                  style={{ color: "#065f46" }}
-                >
+              <ThemeCard className="p-8">
+                <h3 className="text-2xl font-bold mb-6 text-slate-900">
                   Why Education Leaders Trust D-Secure?
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-700 mb-1">
                       Compliance Verification
                     </h3>
-                    <p className="text-sm text-emerald-800">
+                    <p className="text-sm text-slate-600">
                       Generate auditable proofs for State and Federal privacy
                       auditors.
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-700 mb-1">
                       Asset Lifetime Value
                     </h3>
-                    <p className="text-sm text-emerald-800">
+                    <p className="text-sm text-slate-600">
                       Erase data while keeping the hardware intact for resale or
                       donations.
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-700 mb-1">
                       Campus-Wide Centralization
                     </h3>
-                    <p className="text-sm text-emerald-800">
+                    <p className="text-sm text-slate-600">
                       Manage all student data sanitization from a single web
                       dashboard.
                     </p>
                   </div>
                 </div>
-              </div>
+              </ThemeCard>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* FAQ Section */}
-        <section id="faq" className="py-20 bg-slate-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
-                Frequently Asked Questions
-              </h2>
-              <p style={{ color: "#6b7280" }}>
-                Common queries for institutional IT teams
-              </p>
-            </div>
-
-            <div className="space-y-4">
+        <ThemeSection id="faq" alternate>
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ThemeSectionHeading centered subtitle="Common queries for institutional IT teams">
+              Frequently Asked Questions
+            </ThemeSectionHeading>
+            <div className="space-y-6 mt-8">
               {[
                 {
                   q: "How does D-Secure ensure FERPA compliance?",
@@ -538,45 +465,24 @@ const EducationPage: React.FC = () => {
                   q: "What standards are used for institutional wiping?",
                   a: "We support NIST 800-88, US Department of Defense (DoD), and other international sanitization standards to ensure the highest level of information security.",
                 },
-              ].map((faq, idx) => (
-                <details
-                  key={idx}
-                  className="group rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-all border"
-                  style={{ borderColor: "#e5e7eb" }}
-                >
-                  <summary className="flex items-center justify-between cursor-pointer list-none">
-                    <span
-                      className="text-lg font-semibold"
-                      style={{ color: "#1f2937" }}
-                    >
-                      {faq.q}
+              ].map((faq) => (
+                <details key={faq.q} className="group bg-white border border-[#d0d5dc]/60 transition-all">
+                  <summary className="flex items-center justify-between cursor-pointer list-none p-6">
+                    <span className="text-lg font-bold pr-6 text-[#151e29] group-open:text-[#0a2e1e] transition-colors">{faq.q}</span>
+                    <span className="transition-transform group-open:rotate-180 text-emerald-600 flex-shrink-0">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </span>
-                    <svg
-                      className="w-5 h-5 group-open:rotate-180 transition-transform"
-                      style={{ color: "#059669" }}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
                   </summary>
-                  <p
-                    className="mt-4 leading-relaxed"
-                    style={{ color: "#6b7280" }}
-                  >
-                    {faq.a}
-                  </p>
+                  <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+                    <p>{faq.a}</p>
+                  </div>
                 </details>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= CONTACT SECTION ================= */}
         <SolutionContactSection

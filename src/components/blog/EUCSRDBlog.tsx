@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const EUCSRDBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "EU CSRD and Data Disposal",
@@ -23,16 +23,16 @@ const EUCSRDBlog: React.FC = () => {
         />
 
         {/* Hero Section */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Sustainability
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 EU Corporate Sustainability Reporting Directive Explained
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Understand EU-CSRD's scope, purpose, sustainability reporting
                 standards, violation penalties, and recommendations to achieve
                 compliance.
@@ -44,12 +44,12 @@ const EUCSRDBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   The{" "}
-                  <strong className="text-amber-800">
+                  <strong className="text-[#0a2e1e]">
                     Corporate Sustainability Reporting Directive (CSRD)
                   </strong>{" "}
                   came into effect on January 5, 2023, presenting the European
@@ -57,7 +57,7 @@ const EUCSRDBlog: React.FC = () => {
                   protocols for organizations to disclose non-financial
                   information including sustainability data.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   CSRD is applicable to EU-based large undertakings, listed
                   small and medium-sized enterprises, and non-EU companies with
                   turnover exceeding EUR 150 million in the EU market for two
@@ -67,11 +67,11 @@ const EUCSRDBlog: React.FC = () => {
               </div>
 
               {/* NFRD Replacement */}
-              <div className="bg-amber-50 border-l-4 border-amber-500 p-8 rounded-r-lg mt-8">
-                <h2 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-8 rounded-none mt-8">
+                <h2 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   Replacing NFRD
                 </h2>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   CSRD has replaced the Non-Financial Reporting Directive (NFRD)
                   introduced in 2014. All EU-listed organizations with at least
                   500 employees that previously complied with NFRD are now
@@ -85,17 +85,17 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* Key Provisions */}
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Key Provisions of CSRD
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-amber-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Expanded Reach & Applicability
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     CSRD applies to all large companies and EU-regulated market
                     listed companies, except listed micro-enterprises.
                     Additionally, it covers non-EU companies generating more
@@ -103,11 +103,11 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Detailed Reporting Requirements
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Companies must submit reports on environmental, social, and
                     governance (ESG) factors — including climate change
                     mitigation, resource use, circular economy practices,
@@ -116,32 +116,32 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     ESRS Compliance
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     CSRD requires the use of European Sustainability Reporting
                     Standards (ESRS) to ensure reported information is
                     consistent, comparable, and aligned with EU policies.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Digital Reporting
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Organizations must prepare sustainability reports in digital
                     format that is easily accessible for stakeholder analysis.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Double Materiality
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     CSRD mandates consideration of double materiality — checking
                     both the impact of sustainability issues on the business and
                     the business's impact on sustainability issues.
@@ -153,7 +153,7 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* ESRS Requirements */}
           <Reveal>
-            <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 European Sustainability Reporting Standards
               </h2>
@@ -165,7 +165,7 @@ const EUCSRDBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Environmental Factors
                   </h3>
@@ -177,7 +177,7 @@ const EUCSRDBlog: React.FC = () => {
                     <li>• Ecosystem preservation</li>
                   </ul>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Social Factors</h3>
                   <ul className="space-y-2 text-white/90 text-sm">
                     <li>• Pay equity & gender equality</li>
@@ -187,7 +187,7 @@ const EUCSRDBlog: React.FC = () => {
                     <li>• Diversity & inclusion</li>
                   </ul>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Governance Factors</h3>
                   <ul className="space-y-2 text-white/90 text-sm">
                     <li>• Anti-corruption measures</li>
@@ -203,12 +203,12 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* Penalties Section */}
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Consequences of Non-Compliance
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Member states are responsible for ensuring effective
                 investigation and sanctioning systems for failures in statutory
                 audits and sustainability reporting assurance. Non-compliant
@@ -217,31 +217,31 @@ const EUCSRDBlog: React.FC = () => {
                 reports.
               </p>
 
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-8 mt-8">
-                <h2 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                <h2 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   France Penalty Example
                 </h2>
-                <p className="text-slate-700 text-sm mb-4">
+                <p className="text-[#5a6672] text-sm mb-4">
                   France was the first European country to incorporate CSRD into
                   national law:
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-lg p-4">
-                    <h3 className="font-semibold text-amber-700 text-lg mb-2">
+                  <div className="bg-white rounded-none p-4">
+                    <h3 className="font-semibold text-[#0e7c66] text-lg mb-2">
                       Failure to Appoint Auditor
                     </h3>
-                    <ul className="space-y-1 text-slate-600 text-sm">
+                    <ul className="space-y-1 text-[#5a6672] text-sm">
                       <li>• Fine up to €30,000</li>
                       <li>• Directors: up to 2 years imprisonment</li>
                       <li>• Legal entities: up to €150,000</li>
                     </ul>
                   </div>
-                  <div className="bg-white rounded-lg p-4">
-                    <h3 className="font-semibold text-amber-700 text-lg mb-2">
+                  <div className="bg-white rounded-none p-4">
+                    <h3 className="font-semibold text-[#0e7c66] text-lg mb-2">
                       Obstruction of Audits
                     </h3>
-                    <ul className="space-y-1 text-slate-600 text-sm">
+                    <ul className="space-y-1 text-[#5a6672] text-sm">
                       <li>• Fine up to €75,000</li>
                       <li>• Directors: up to 5 years imprisonment</li>
                       <li>• Legal entities: up to €375,000</li>
@@ -254,12 +254,12 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* How to Comply */}
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Achieving Sustainability & CSRD Compliance
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg mb-8">
+              <p className="text-[#5a6672] leading-loose text-lg mb-8">
                 According to a Global CSRD survey by PwC, over 50% of businesses
                 reporting under CSRD in 2025 see improved environmental
                 performance and stakeholder engagement as benefits of
@@ -267,11 +267,11 @@ const EUCSRDBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8">
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Appoint Chief Sustainability Officer
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     A CSO embeds sustainability into organizational culture and
                     processes. By implementing sustainability-focused policies,
                     identifying gaps, and driving initiatives, the CSO ensures
@@ -280,11 +280,11 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Switch to Energy-Saving Technology
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Energy solutions like solar panels, wind turbines,
                     hydropower, and geothermal power utilize renewable sources
                     as low-cost, high-energy alternatives. This supports the
@@ -293,11 +293,11 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-6">
-                  <h2 className="font-bold text-amber-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border-2 border-[#d0d5dc] rounded-none p-6">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Promote Asset Reusability
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     IT assets that need replacement or have reached end-of-life
                     can be donated after confidential data is permanently
                     removed. Organizations must invest in proper data disposal
@@ -308,11 +308,11 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Support Circular Economy
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     The circular economy model involves reusing, refurbishing,
                     and recycling IT assets. By promoting IT asset reuse within
                     the company across departments, businesses actively
@@ -321,11 +321,11 @@ const EUCSRDBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Build Sustainable Supply Chains
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Organizations should select suppliers that follow ethical
                     sourcing practices, minimize waste generation, reduce energy
                     consumption, and maintain fair labor practices.
@@ -337,19 +337,19 @@ const EUCSRDBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Summary
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 The EU Corporate Sustainability Reporting Directive (CSRD)
                 raises the bar for businesses, requiring them to share a clearer
                 picture of their environmental and social impact through robust
                 ESG reporting. By adopting energy-saving technologies, reusing
-                assets through secure <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">data wiping</Link>, and building sustainable
+                assets through secure <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link>, and building sustainable
                 supply chains, companies can align with these standards.
               </p>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Beyond compliance, these efforts demonstrate commitment to
                 protecting the planet and building trust with stakeholders —
                 making sustainability a core part of doing business.

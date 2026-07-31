@@ -10,12 +10,12 @@ export default function ApiStatus({ loading, isUsingApi, error, onRefresh }: Api
     <div className="flex items-center space-x-4">
       {/* API Status Indicator */}
       <div className={`flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium ${
-        loading ? 'bg-yellow-100 text-yellow-800' :
-        isUsingApi ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
+        loading ? 'bg-[#d4ede4] text-[#0a2e1e]' :
+        isUsingApi ? 'bg-[#d4ede4] text-[#0a2e1e]' : 'bg-[#d4ede4] text-[#0a2e1e]'
       }`}>
         <div className={`w-2 h-2 rounded-full ${
-          loading ? 'bg-yellow-500' :
-          isUsingApi ? 'bg-green-500' : 'bg-blue-500'
+          loading ? 'bg-[#0e7c66]' :
+          isUsingApi ? 'bg-[#0e7c66]' : 'bg-[#0e7c66]'
         }`}></div>
         <span>
           {loading ? 'Loading...' : 

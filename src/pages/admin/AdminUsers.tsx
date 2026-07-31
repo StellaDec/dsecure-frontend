@@ -147,7 +147,7 @@ export default function AdminUsers() {
       {/* SEO Meta Tags */}
       <SEOHeadNative seo={getSEOForPage("admin-users")} />
 
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div className="flex-1 min-w-0">
@@ -216,7 +216,7 @@ export default function AdminUsers() {
                   placeholder="Search by name or email..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                 />
               </div>
               <div>
@@ -227,7 +227,7 @@ export default function AdminUsers() {
                   id="role-filter"
                   value={selectedRole}
                   onChange={(e) => setSelectedRole(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                 >
                   <option value="all">All Roles</option>
                   <option value="admin">Admin</option>
@@ -242,7 +242,7 @@ export default function AdminUsers() {
                   id="status-filter"
                   value={selectedStatus}
                   onChange={(e) => setSelectedStatus(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                 >
                   <option value="all">All Status</option>
                   <option value="active">Active</option>
@@ -314,10 +314,10 @@ export default function AdminUsers() {
                     </td>
                     <td className="px-4 py-4">
                       <span
-                        className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                        className={`inline-flex items-center px-2 py-1 rounded-none text-xs font-medium ${
                           user.role === "admin"
-                            ? "bg-purple-100 text-purple-800"
-                            : "bg-blue-100 text-blue-800"
+                            ? "bg-[#d4ede4] text-[#0a2e1e]"
+                            : "bg-[#d4ede4] text-[#0a2e1e]"
                         }`}
                       >
                         {user.role}
@@ -327,14 +327,14 @@ export default function AdminUsers() {
                       <span
                         className={`inline-flex items-center gap-1 ${
                           user.status === "active"
-                            ? "text-green-800"
+                            ? "text-[#0a2e1e]"
                             : "text-slate-500"
                         }`}
                       >
                         <span
-                          className={`w-2 h-2 rounded-full ${
+                          className={`w-2 h-2 rounded-none ${
                             user.status === "active"
-                              ? "bg-green-400"
+                              ? "bg-[#0e7c66]"
                               : "bg-slate-400"
                           }`}
                         ></span>
@@ -359,13 +359,13 @@ export default function AdminUsers() {
                           onClick={() =>
                             navigate(`/admin/users/edit/${user.id}`)
                           }
-                          className="text-blue-600 hover:text-blue-700 text-sm font-medium px-2 py-1 rounded hover:bg-blue-50 transition-colors"
+                          className="text-[#0a2e1e] hover:text-[#0a2e1e] text-sm font-medium px-2 py-1 rounded hover:bg-[#d4ede4] transition-colors"
                         >
                           Edit
                         </button>
                         <button
                           onClick={() => handleAssignLicense(user.id)}
-                          className="text-emerald-800 hover:text-emerald-700 text-sm font-medium px-2 py-1 rounded hover:bg-emerald-50 transition-colors"
+                          className="text-[#0a2e1e] hover:text-[#0a2e1e] text-sm font-medium px-2 py-1 rounded hover:bg-[#d4ede4] transition-colors"
                         >
                           Assign License
                         </button>
@@ -390,9 +390,9 @@ export default function AdminUsers() {
             <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-emerald-100 rounded-full">
+                  <div className="p-2 bg-[#d4ede4] rounded-none">
                     <svg
-                      className="w-6 h-6 text-emerald-800"
+                      className="w-6 h-6 text-[#0a2e1e]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -429,7 +429,7 @@ export default function AdminUsers() {
                       min="0"
                       value={licenseCount}
                       onChange={(e) => setLicenseCount(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                       placeholder="Enter license count"
                       disabled={isLoading}
                     />
@@ -460,7 +460,7 @@ export default function AdminUsers() {
                         </span>
                       </div>
                       {licenseCount && !isNaN(Number.parseInt(licenseCount, 10)) && (
-                        <div className="flex justify-between text-emerald-800 font-medium mt-1 pt-1 border-t">
+                        <div className="flex justify-between text-[#0a2e1e] font-medium mt-1 pt-1 border-t">
                           <span>New Licenses:</span>
                           <span>{Number.parseInt(licenseCount, 10)}</span>
                         </div>
@@ -489,7 +489,7 @@ export default function AdminUsers() {
                       isNaN(Number.parseInt(licenseCount, 10)) ||
                       Number.parseInt(licenseCount, 10) < 0
                     }
-                    className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    className="px-4 py-2 bg-[#0e7c66] text-white rounded-lg hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
                   >
                     {isLoading && (
                       <svg

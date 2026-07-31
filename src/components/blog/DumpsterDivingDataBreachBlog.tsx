@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const DumpsterDivingDataBreachBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Dumpster Diving Data Breaches",
@@ -23,16 +23,16 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
         />
 
         {/* Hero Section - Full Width */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Data Breach
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Dumpster Diving and Data Breaches: Prevention Strategies
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Understand the hidden threat of dumpster diving, its connection
                 to devastating data breaches, and proven strategies to protect
                 your organization's sensitive information.
@@ -44,12 +44,12 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   In today's world of{" "}
-                  <strong className="text-indigo-800">
+                  <strong className="text-[#0a2e1e]">
                     digital transformation and rapid technological advances
                   </strong>
                   , hackers are constantly searching for 'treasures in the
@@ -59,7 +59,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                   involves rifling through trash to find exploitable
                   information.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Cyber criminals use sensitive documents found in discarded
                   drives to trick employees and gain access to company data.
                   Something as simple as a phone directory or contact sheet
@@ -76,20 +76,20 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* State of the Problem */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Understanding the Dumpster Diving Threat
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 What seems like garbage to enterprises often transforms into
                 valuable assets for cybercriminals. Dumpster diving is not a
                 recent phenomenon, yet it remains a crucial concern given rising
                 data breach incidents in recent years.
               </p>
 
-              <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
-                <p className="text-slate-700 leading-loose text-lg">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none mt-6">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   <strong>Shocking Research Findings:</strong> Investigations
                   into inappropriate dumping of business data revealed that
                   approximately 37 percent of recovered drives contained trade
@@ -102,29 +102,29 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-8 mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] p-8 md:p-12 space-y-6 border-l-4 border-[#0e7c66] prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   Data Found on Improperly Disposed Drives
                 </h3>
-                <ul className="space-y-3 text-slate-700 text-lg">
+                <ul className="space-y-3 text-[#5a6672] text-lg">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Trade secrets and proprietary business information
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Financial transaction records and credit card details
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Healthcare reports and patient records
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Employee personal information and credentials
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Government contracts and classified documents
                   </li>
                 </ul>
@@ -134,7 +134,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Real-World Case Study */}
           <Reveal>
-            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Real-World Case: Security Contracts in Dumping Grounds
               </h2>
@@ -147,7 +147,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                 exploit contained information.
               </p>
 
-              <div className="bg-white/10 rounded-xl p-6 mb-6">
+              <div className="bg-white/10 rounded-none p-6 mb-6">
                 <h3 className="font-bold text-lg mb-3">The Incident</h3>
                 <p className="text-white/90 text-lg leading-loose">
                   Students on research tours purchased hard drives from open
@@ -170,12 +170,12 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Prevention Strategies */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Strategies to Prevent Dumpster Diving
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Organizations must observe and practice data destruction
                 procedures compliant with regulatory standards. Following
                 industry guidelines, organizations must implement secure
@@ -183,11 +183,11 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8 mt-6">
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Employee Education and Training
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Staff education is the foremost critical approach to
                     averting dumpster diving risks. Inappropriate disposal of
                     company or customer data directly leads to breaches. Conduct
@@ -198,11 +198,11 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Invest in Secure Technology
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Selecting secure data erasure software and investing in
                     failsafe technologies to safely wipe and recycle drives
                     ensures proper data protection. While degaussing or physical
@@ -214,11 +214,11 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Establish Comprehensive Compliance
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     To prevent dumpster divers from extracting valuable data
                     from trash, implement a robust data disposal policy.
                     Formulate policies aligned with applicable data protection
@@ -229,11 +229,11 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Practice Responsible Recycling
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Devices in dumpsters not only risk data exposure but also
                     burden environmental capacity. The best prevention strategy
                     is reducing the need for dumpsters entirely through greener
@@ -249,28 +249,28 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Cost of Data Breaches */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 The Financial Impact of Data Breaches
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Escalating Costs
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Data breach costs have risen dramatically, with average
                     total costs exceeding $4.24 million — the highest in
                     recorded history. These costs escalate further when breaches
                     involve customer data from improperly disposed devices.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Widespread Residual Data
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Studies reveal that over 71% of second-hand devices contain
                     Personally Identifiable Information. 222 of 311 devices
                     analyzed in one study were disposed of without proper data
@@ -279,7 +279,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                 </div>
               </div>
 
-              <p className="text-slate-700 leading-loose text-lg mt-6">
+              <p className="text-[#5a6672] leading-loose text-lg mt-6">
                 Given the present state of data security handling at IT asset
                 end-of-life, the exponential growth of unmanageable data, and
                 frequent security lapses, dumpster diving remains a persistent
@@ -292,12 +292,12 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* D-Secure Solution */}
           <Reveal>
-            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 D-Secure: Your Defense Against Dumpster Diving
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 D-Secure provides certified data erasure solutions that
                 permanently destroy sensitive data before device disposal,
                 eliminating dumpster diving risks entirely. Our software has
@@ -306,29 +306,29 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mt-6">
-                <div className="bg-white rounded-xl p-6 shadow-md">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-white rounded-none p-6 shadow-none">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Certified Erasure
                   </h3>
-                  <p className="text-slate-700 leading-loose">
-                    Supports 24+ international standards including <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-indigo-600 hover:underline font-medium">NIST 800-88</Link></Link>
+                  <p className="text-[#5a6672] leading-loose">
+                    Supports 24+ international standards including <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link></Link>
                     and DoD guidelines for verified data destruction.
                   </p>
                 </div>
-                <div className="bg-white rounded-xl p-6 shadow-md">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-white rounded-none p-6 shadow-none">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Audit Documentation
                   </h3>
-                  <p className="text-slate-700 leading-loose">
+                  <p className="text-[#5a6672] leading-loose">
                     Generates tamper-proof certificates and detailed reports for
                     regulatory compliance and audit requirements.
                   </p>
                 </div>
-                <div className="bg-white rounded-xl p-6 shadow-md">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-white rounded-none p-6 shadow-none">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Device Reuse
                   </h3>
-                  <p className="text-slate-700 leading-loose">
+                  <p className="text-[#5a6672] leading-loose">
                     Unlike physical destruction, erasure allows device recycling
                     or remarketing while ensuring complete data security.
                   </p>
@@ -339,11 +339,11 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Conclusion
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 The connection between dumpster diving, unsafe data disposal,
                 and data breaches is undeniable. What organizations consider
                 worthless garbage often contains treasures for cybercriminals.
@@ -351,7 +351,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                 destruction solutions, organizations can eliminate this attack
                 vector entirely.
               </p>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Protect your organization's time, resources, reputation, and
                 customer trust by implementing secure data destruction measures
                 today. The investment in proper data disposal is minimal

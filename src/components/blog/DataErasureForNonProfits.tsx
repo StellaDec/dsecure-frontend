@@ -13,28 +13,28 @@ import {
 
 const DataErasureForNonProfits: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <div className="min-h-screen bg-white">
       <SEOHead
         seo={getSEOForPage("blog-data-erasure-non-profit-organizations")}
       />
 
       {/* Hero Section */}
-      <section className="py-16 bg-white shadow-lg">
+      <section className="py-16 bg-white shadow-none">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-green-700 bg-green-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
               Non-Profit Data Security Guide
             </span>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-green-600 to-indigo-600 bg-clip-text text-transparent">
-                <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Data Erasure</Link> Solutions
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
+              <span className="text-[#0e7c66]">
+                <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Erasure</Link> Solutions
               </span>
               <br />
               for Non-Profit Organizations
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
               A comprehensive guide explaining why secure data erasure is a
               critical responsibility for non-profits, NGOs, and charitable
               organizations handling donor, beneficiary, and operational data.
@@ -44,16 +44,16 @@ const DataErasureForNonProfits: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-12">
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 space-y-12">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
             {/* Section 1 */}
             <div className="space-y-5">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 1. The Role of Data in Non-Profit and NGO Operations
               </h2>
 
-              <p className="text-slate-700 leading-relaxed text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Non-profit organizations and NGOs act as the backbone of many
                 communities by supporting social welfare, healthcare, education,
                 humanitarian aid, and environmental initiatives. Unlike
@@ -61,7 +61,7 @@ const DataErasureForNonProfits: React.FC = () => {
                 generation but creating long-term positive impact.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 To fulfill these missions, non-profits regularly interact with
                 donors, beneficiaries, volunteers, partner organizations,
                 funding agencies, and sometimes even government bodies. This
@@ -70,7 +70,7 @@ const DataErasureForNonProfits: React.FC = () => {
                 physical systems.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 The data handled by non-profits may include personally
                 identifiable information (PII), protected health information
                 (PHI), donor financial details, grant and funding records,
@@ -83,11 +83,11 @@ const DataErasureForNonProfits: React.FC = () => {
 
             {/* Section 2 */}
             <div className="space-y-5">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 2. Regulatory and Governance Expectations for Non-Profits
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Data handled by non-profit organizations is often subject to
                 multiple privacy and data protection regulations. Depending on
                 the nature of the data and geographic reach, this may include
@@ -95,7 +95,7 @@ const DataErasureForNonProfits: React.FC = () => {
                 like GDPR.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 In addition to privacy laws, governance frameworks encourage
                 charities and NGOs to establish strong policies around data
                 integrity, retention, and destruction. Organizations with higher
@@ -104,7 +104,7 @@ const DataErasureForNonProfits: React.FC = () => {
                 electronic records.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Failing to implement a clear data disposal strategy can lead to
                 regulatory non-compliance, audit challenges, excessive storage
                 costs, and unnecessary accumulation of digital debris that
@@ -114,18 +114,18 @@ const DataErasureForNonProfits: React.FC = () => {
 
             {/* Section 3 */}
             <div className="space-y-5">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 3. Why Data Breaches Are Especially Devastating for Non-Profits
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Trust is the foundation of every non-profit organization.
                 Donors, partners, and beneficiaries share their information
                 because they believe in the organization’s mission and ethical
                 standards.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Unlike commercial businesses where customers may return based on
                 convenience or pricing, non-profits rely heavily on long-term
                 trust and goodwill. A single data breach involving donor or
@@ -133,7 +133,7 @@ const DataErasureForNonProfits: React.FC = () => {
                 discourage future donations, and negatively impact funding.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Secure data erasure plays a critical role in breach prevention
                 by ensuring that obsolete, unused, or end-of-life devices do not
                 become sources of data leakage.
@@ -142,11 +142,11 @@ const DataErasureForNonProfits: React.FC = () => {
 
             {/* Section 4 */}
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 4. Building an Effective Data Disposal Policy for Non-Profits
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Non-profit organizations should implement a comprehensive data
                 disposal policy that clearly defines how and when data must be
                 securely erased. This policy should apply to laptops, desktops,
@@ -154,7 +154,7 @@ const DataErasureForNonProfits: React.FC = () => {
                 organization.
               </p>
 
-              <ul className="space-y-4 text-slate-700">
+              <ul className="space-y-4 text-[#5a6672] text-lg">
                 <li>
                   <strong>Lifecycle-Based Erasure:</strong> Ensure data is
                   securely erased when devices are retired, repurposed, donated,
@@ -184,12 +184,12 @@ const DataErasureForNonProfits: React.FC = () => {
 
         {/* D-Secure Section */}
         <Reveal>
-          <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-8 mt-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          <div className="bg-white rounded-none shadow-md border border-slate-200/50 p-8 mt-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               How D-Secure Enables Non-Profit Data Protection
             </h2>
 
-            <p className="text-slate-700 leading-relaxed mb-6">
+            <p className="text-[#5a6672] leading-relaxed mb-6">
               D-Secure provides professional data erasure solutions designed to
               help non-profit organizations permanently remove sensitive
               information from storage devices while supporting compliance,
@@ -197,10 +197,10 @@ const DataErasureForNonProfits: React.FC = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-green-50 to-indigo-50 p-6 rounded-xl border">
+              <div className="bg-white p-6 border border-[#d4ede4]">
                 <div className="flex items-center gap-2 mb-3">
-                  <ShieldIcon className="w-5 h-5 text-green-800" filled />
-                  <h3 className="font-bold">Regulatory Alignment</h3>
+                  <ShieldIcon className="w-5 h-5 text-[#0e7c66]" filled />
+                  <h3 className="font-bold text-[#0e7c66]">Regulatory Alignment</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Supports secure data disposal aligned with global privacy and
@@ -208,10 +208,10 @@ const DataErasureForNonProfits: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-indigo-50 p-6 rounded-xl border">
+              <div className="bg-white p-6 border border-[#d4ede4]">
                 <div className="flex items-center gap-2 mb-3">
-                  <ClipboardIcon className="w-5 h-5 text-green-800" filled />
-                  <h3 className="font-bold">Audit-Ready Documentation</h3>
+                  <ClipboardIcon className="w-5 h-5 text-[#0e7c66]" filled />
+                  <h3 className="font-bold text-[#0e7c66]">Audit-Ready Documentation</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Generates tamper-proof erasure reports and certificates for
@@ -219,10 +219,10 @@ const DataErasureForNonProfits: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-indigo-50 p-6 rounded-xl border">
+              <div className="bg-white p-6 border border-[#d4ede4]">
                 <div className="flex items-center gap-2 mb-3">
-                  <ShieldIcon className="w-5 h-5 text-green-800" filled />
-                  <h3 className="font-bold">Risk Reduction</h3>
+                  <ShieldIcon className="w-5 h-5 text-[#0e7c66]" filled />
+                  <h3 className="font-bold text-[#0e7c66]">Risk Reduction</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Permanently removes unused data, reducing attack surfaces and
@@ -230,10 +230,10 @@ const DataErasureForNonProfits: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-indigo-50 p-6 rounded-xl border">
+              <div className="bg-white p-6 border border-[#d4ede4]">
                 <div className="flex items-center gap-2 mb-3">
-                  <ClipboardIcon className="w-5 h-5 text-green-800" filled />
-                  <h3 className="font-bold">Operational Efficiency</h3>
+                  <ClipboardIcon className="w-5 h-5 text-[#0e7c66]" filled />
+                  <h3 className="font-bold text-[#0e7c66]">Operational Efficiency</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Helps non-profits reduce storage overhead and focus resources
@@ -246,7 +246,7 @@ const DataErasureForNonProfits: React.FC = () => {
 
         {/* Conclusion */}
         <Reveal>
-          <div className="bg-gradient-to-r from-green-600 to-indigo-600 rounded-xl shadow-lg p-8 mt-8 text-white">
+          <div className="bg-[#0e7c66] p-8 md:p-12 mt-12 text-white">
             <h2 className="text-2xl font-bold mb-4">
               Secure Data, Stronger Trust, Greater Impact
             </h2>
@@ -262,7 +262,7 @@ const DataErasureForNonProfits: React.FC = () => {
 
             <Link
               to="/all-products"
-              className="inline-flex items-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition shadow-lg"
+              className="inline-flex items-center bg-white text-[#0a2e1e] px-6 py-3 rounded-none font-semibold hover:bg-gray-50 transition shadow-lg"
             >
               <HoverIcon>
                 {(filled) => (

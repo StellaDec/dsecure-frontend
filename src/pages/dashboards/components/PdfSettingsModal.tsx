@@ -59,12 +59,12 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-none shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between z-10">
           <div className="flex items-center gap-3">
             <h2 className="text-xl font-bold text-slate-900">Settings</h2>
             {pdfSettingsLoading && (
-              <span className="text-sm text-blue-600 flex items-center gap-2">
+              <span className="text-sm text-[#0a2e1e] flex items-center gap-2">
                 <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
                   <circle
                     className="opacity-25"
@@ -102,7 +102,7 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                 showSuccess("Settings saved successfully!");
                 setShowBulkSettingsModal(false);
               }}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Save
             </button>
@@ -143,7 +143,7 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                     reportTitle: e.target.value,
                   })
                 }
-                className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Data Erasure Audit Report"
               />
             </div>
@@ -160,7 +160,7 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                     headerText: e.target.value,
                   })
                 }
-                className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="D-SecureTech"
               />
             </div>
@@ -181,7 +181,7 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                     technicianName: e.target.value,
                   })
                 }
-                className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="John Doe"
               />
             </div>
@@ -198,7 +198,7 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                     technicianDept: e.target.value,
                   })
                 }
-                className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="IT Department"
               />
             </div>
@@ -218,7 +218,7 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                     validatorName: e.target.value,
                   })
                 }
-                className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Jane Smith"
               />
             </div>
@@ -235,7 +235,7 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                     validatorDept: e.target.value,
                   })
                 }
-                className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="QA Department"
               />
             </div>
@@ -251,11 +251,11 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                 type="file"
                 accept="image/*"
                 onChange={(e) => handleImageUpload(e, "headerLeftLogo")}
-                className="w-full px-3 py-2 border border-slate-300 rounded-md text-sm"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none text-sm"
               />
               {(pdfFormData.headerLeftLogo ||
                 imageBase64.headerLeftLogo) && (
-                <p className="text-xs text-green-800 mt-1">
+                <p className="text-xs text-[#0a2e1e] mt-1">
                   ✓{" "}
                   {pdfFormData.headerLeftLogo
                     ? "Image uploaded"
@@ -271,11 +271,11 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                 type="file"
                 accept="image/*"
                 onChange={(e) => handleImageUpload(e, "headerRightLogo")}
-                className="w-full px-3 py-2 border border-slate-300 rounded-md text-sm"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none text-sm"
               />
               {(pdfFormData.headerRightLogo ||
                 imageBase64.headerRightLogo) && (
-                <p className="text-xs text-green-800 mt-1">
+                <p className="text-xs text-[#0a2e1e] mt-1">
                   ✓{" "}
                   {pdfFormData.headerRightLogo
                     ? "Image uploaded"
@@ -294,10 +294,10 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
               type="file"
               accept="image/*"
               onChange={(e) => handleImageUpload(e, "watermarkImage")}
-              className="w-full px-3 py-2 border border-slate-300 rounded-md text-sm"
+              className="w-full px-3 py-2 border border-slate-300 rounded-none text-sm"
             />
             {(pdfFormData.watermarkImage || imageBase64.watermarkImage) && (
-              <p className="text-xs text-green-800 mt-1">
+              <p className="text-xs text-[#0a2e1e] mt-1">
                 ✓{" "}
                 {pdfFormData.watermarkImage
                   ? "Watermark uploaded"
@@ -318,11 +318,11 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                 onChange={(e) =>
                   handleImageUpload(e, "technicianSignature")
                 }
-                className="w-full px-3 py-2 border border-slate-300 rounded-md text-sm"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none text-sm"
               />
               {(pdfFormData.technicianSignature ||
                 imageBase64.technicianSignature) && (
-                <p className="text-xs text-green-800 mt-1">
+                <p className="text-xs text-[#0a2e1e] mt-1">
                   ✓{" "}
                   {pdfFormData.technicianSignature
                     ? "Signature uploaded"
@@ -338,11 +338,11 @@ const PdfSettingsModal: React.FC<PdfSettingsModalProps> = ({
                 type="file"
                 accept="image/*"
                 onChange={(e) => handleImageUpload(e, "validatorSignature")}
-                className="w-full px-3 py-2 border border-slate-300 rounded-md text-sm"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none text-sm"
               />
               {(pdfFormData.validatorSignature ||
                 imageBase64.validatorSignature) && (
-                <p className="text-xs text-green-800 mt-1">
+                <p className="text-xs text-[#0a2e1e] mt-1">
                   ✓{" "}
                   {pdfFormData.validatorSignature
                     ? "Signature uploaded"

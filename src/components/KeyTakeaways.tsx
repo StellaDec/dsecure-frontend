@@ -19,9 +19,9 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
   if (!items || items.length === 0) return null;
 
   return (
-    <div className={`bg-emerald-50/50 border border-emerald-100 rounded-xl p-6 my-8 ${className}`}>
-      <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-        <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div className={`bg-[#0e7c66] border border-[#0e7c66]/30 rounded-none p-6 my-8 shadow-md ${className}`}>
+      <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+        <svg className="w-6 h-6 text-[#d4ede4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
         {title}
@@ -30,8 +30,8 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
         {items.map((item, index) => {
           if (typeof item === 'string') {
             return (
-              <li key={index} className="flex items-start gap-3 text-slate-700">
-                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></div>
+              <li key={index} className="flex items-start gap-3 text-white/90">
+                <div className="mt-1.5 w-1.5 h-1.5 rounded-none bg-[#0e7c66] shrink-0"></div>
                 <span className="leading-relaxed">{item}</span>
               </li>
             );
@@ -41,12 +41,12 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
           const title = item.title;
           
           return (
-            <li key={index} className="flex items-start gap-3 text-slate-700">
-              <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></div>
+            <li key={index} className="flex items-start gap-3 text-white/90">
+              <div className="mt-1.5 w-1.5 h-1.5 rounded-none bg-[#0e7c66] shrink-0"></div>
               <span className="leading-relaxed">
                 {title ? (
                   <>
-                    <strong className="text-slate-900">{title}:</strong> {text}
+                    <strong className="text-white font-bold">{title}:</strong> {text}
                   </>
                 ) : (
                   text

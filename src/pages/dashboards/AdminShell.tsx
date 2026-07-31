@@ -1,3 +1,4 @@
+import { BarChart2, Download, FileText, Monitor, UserPlus, Users } from 'lucide-react';
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
@@ -142,10 +143,10 @@ export default function AdminShell() {
     <>
       {/* SEO Meta Tags */}
       <SEOHeadNative seo={getSEOForPage("admin-shell")} />
-      <div className="container-app py-4 sm:py-8 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <div className="container-app py-4 sm:py-8 min-h-screen bg-white">
         {/* Mobile Header */}
         <div className="mb-4 sm:mb-6 md:hidden">
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <h1 className="text-xl font-bold text-[#0a2e1e] flex items-center gap-2">
             <svg
               className="w-6 h-6 text-brand"
               fill="none"
@@ -165,7 +166,7 @@ export default function AdminShell() {
 
         <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 sm:gap-6">
           <aside
-            className="card h-fit md:sticky md:top-24 !p-3 sm:!p-6 overflow-x-auto scrollbar-hide"
+            className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 h-fit md:sticky md:top-24 !p-3 sm:!p-6 overflow-x-auto scrollbar-hide"
             onWheel={(e) => {
               if (
                 window.innerWidth < 768 &&
@@ -180,10 +181,10 @@ export default function AdminShell() {
                 to="/admin"
                 end
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors font-medium ${
+                  `flex items-center gap-2 px-3 py-2.5 rounded-none transition-colors font-medium ${
                     isActive
                       ? "bg-brand text-white"
-                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                      : "text-slate-700 hover:text-[#0a2e1e] hover:bg-slate-50"
                   }`
                 }
               >
@@ -211,10 +212,10 @@ export default function AdminShell() {
               <NavLink
                 to="/admin/performance"
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors font-medium ${
+                  `flex items-center gap-2 px-3 py-2.5 rounded-none transition-colors font-medium ${
                     isActive
                       ? "bg-brand text-white"
-                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                      : "text-slate-700 hover:text-[#0a2e1e] hover:bg-slate-50"
                   }`
                 }
               >
@@ -236,76 +237,40 @@ export default function AdminShell() {
               <NavLink
                 to="/admin/reports"
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors font-medium ${
+                  `flex items-center gap-2 px-3 py-2.5 rounded-none transition-colors font-medium ${
                     isActive
                       ? "bg-brand text-white"
-                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                      : "text-slate-700 hover:text-[#0a2e1e] hover:bg-slate-50"
                   }`
                 }
               >
-                <svg
-                  className="w-4 h-4 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+                <BarChart2 className="w-4 h-4 flex-shrink-0" />
                 <span className="truncate">Audit Reports</span>
               </NavLink>
               <NavLink
                 to="/admin/machines"
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors font-medium ${
+                  `flex items-center gap-2 px-3 py-2.5 rounded-none transition-colors font-medium ${
                     isActive
                       ? "bg-brand text-white"
-                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                      : "text-slate-700 hover:text-[#0a2e1e] hover:bg-slate-50"
                   }`
                 }
               >
-                <svg
-                  className="w-4 h-4 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+                <Monitor className="w-4 h-4 flex-shrink-0" />
                 <span className="truncate">Machines</span>
               </NavLink>
               <NavLink
                 to="/admin/sessions"
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors font-medium ${
+                  `flex items-center gap-2 px-3 py-2.5 rounded-none transition-colors font-medium ${
                     isActive
                       ? "bg-brand text-white"
-                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                      : "text-slate-700 hover:text-[#0a2e1e] hover:bg-slate-50"
                   }`
                 }
               >
-                <svg
-                  className="w-4 h-4 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+                <FileText className="w-4 h-4 flex-shrink-0" />
                 <span className="truncate">Sessions</span>
               </NavLink>
               {}
@@ -313,26 +278,14 @@ export default function AdminShell() {
                 <NavLink
                   to="/admin/subusers"
                   className={({ isActive }) =>
-                    `flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors font-medium ${
+                    `flex items-center gap-2 px-3 py-2.5 rounded-none transition-colors font-medium ${
                       isActive
                         ? "bg-brand text-white"
-                        : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                        : "text-slate-700 hover:text-[#0a2e1e] hover:bg-slate-50"
                     }`
                   }
                 >
-                  <svg
-                    className="w-4 h-4 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
-                    />
-                  </svg>
+                  <UserPlus className="w-4 h-4 flex-shrink-0" />
                   <span className="truncate">Subusers</span>
                 </NavLink>
               )}
@@ -340,36 +293,24 @@ export default function AdminShell() {
                 <NavLink
                   to="/admin/groups"
                   className={({ isActive }) =>
-                    `flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors font-medium ${
+                    `flex items-center gap-2 px-3 py-2.5 rounded-none transition-colors font-medium ${
                       isActive
                         ? "bg-brand text-white"
-                        : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                        : "text-slate-700 hover:text-[#0a2e1e] hover:bg-slate-50"
                     }`
                   }
                 >
-                  <svg
-                    className="w-4 h-4 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
+                  <Users className="w-4 h-4 flex-shrink-0" />
                   <span className="truncate">Groups</span>
                 </NavLink>
               )}
               <NavLink
                 to="/admin/licenses"
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors font-medium ${
+                  `flex items-center gap-2 px-3 py-2.5 rounded-none transition-colors font-medium ${
                     isActive
                       ? "bg-brand text-white"
-                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                      : "text-slate-700 hover:text-[#0a2e1e] hover:bg-slate-50"
                   }`
                 }
               >
@@ -391,26 +332,14 @@ export default function AdminShell() {
               <NavLink
                 to="/admin/downloads"
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-3 py-2.5 rounded-lg transition-colors font-medium ${
+                  `flex items-center gap-2 px-3 py-2.5 rounded-none transition-colors font-medium ${
                     isActive
                       ? "bg-brand text-white"
-                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                      : "text-slate-700 hover:text-[#0a2e1e] hover:bg-slate-50"
                   }`
                 }
               >
-                <svg
-                  className="w-4 h-4 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                  />
-                </svg>
+                <Download className="w-4 h-4 flex-shrink-0" />
                 <span className="truncate">Downloads</span>
               </NavLink>
             </nav>
@@ -423,12 +352,12 @@ export default function AdminShell() {
                 <div className="p-6 space-y-6 animate-pulse">
                   <div className="h-10 bg-slate-200 rounded w-64" />
                   <div className="grid grid-cols-4 gap-6">
-                    <div className="h-32 bg-slate-100 rounded-xl" />
-                    <div className="h-32 bg-slate-100 rounded-xl" />
-                    <div className="h-32 bg-slate-100 rounded-xl" />
-                    <div className="h-32 bg-slate-100 rounded-xl" />
+                    <div className="h-32 bg-slate-100 rounded-none" />
+                    <div className="h-32 bg-slate-100 rounded-none" />
+                    <div className="h-32 bg-slate-100 rounded-none" />
+                    <div className="h-32 bg-slate-100 rounded-none" />
                   </div>
-                  <div className="h-64 bg-slate-50 rounded-xl" />
+                  <div className="h-64 bg-slate-50 rounded-none" />
                 </div>
               }
             >

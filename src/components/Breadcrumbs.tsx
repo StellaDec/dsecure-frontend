@@ -150,7 +150,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
                 ) : (
                   <Link
                     to={item.path}
-                    className="hover:text-emerald-600 transition-colors duration-200 truncate max-w-[150px] underline-offset-2 hover:underline"
+                    className="hover:text-[#0a2e1e] transition-colors duration-200 truncate max-w-[150px] underline-offset-2 hover:underline"
                     itemProp="item"
                   >
                     <span itemProp="name">{item.name}</span>

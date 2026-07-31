@@ -2,7 +2,7 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../../utils/seo";
 import React from "react";
 
-import { Settings as SettingsIcon, AlertCircle, CheckCircle, Shield, Zap, FileX, Sliders } from "lucide-react";
+import { Settings as SettingsIcon, AlertCircle, CheckCircle, Shield, Zap, File, Sliders } from "lucide-react";
 
 const Settings: React.FC = () => {
   return (
@@ -499,7 +499,7 @@ const Settings: React.FC = () => {
         <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
             <span className="w-1.5 h-8 bg-orange-600 rounded"></span>
-            <FileX className="w-6 h-6 text-orange-600" />
+            <File className="w-6 h-6 text-orange-600" />
             Ignore File List (Protection)
           </h2>
           

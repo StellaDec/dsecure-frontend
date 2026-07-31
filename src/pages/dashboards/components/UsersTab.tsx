@@ -66,7 +66,7 @@ const UsersTab: React.FC<UsersTabProps> = ({
           {usersDataLoading && (
             <div className="flex items-center justify-center py-12">
               <div className="text-center">
-                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#0e7c66] border-r-transparent"></div>
                 <p className="mt-4 text-sm text-slate-600">
                   Loading users data...
                 </p>
@@ -151,10 +151,10 @@ const UsersTab: React.FC<UsersTabProps> = ({
                               className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                 (subuser as any).role === "admin" ||
                                 (subuser as any).defaultRole === "admin"
-                                  ? "bg-purple-100 text-purple-800"
+                                  ? "bg-[#d4ede4] text-[#0a2e1e]"
                                   : (subuser as any).role === "manager" ||
                                       (subuser as any).defaultRole === "manager"
-                                    ? "bg-blue-100 text-blue-800"
+                                    ? "bg-[#d4ede4] text-[#0a2e1e]"
                                     : "bg-slate-100 text-slate-800"
                               }`}
                             >
@@ -175,12 +175,12 @@ const UsersTab: React.FC<UsersTabProps> = ({
                               <span
                                 className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                   subuser.status === "active"
-                                    ? "bg-green-100 text-green-800"
+                                    ? "bg-[#d4ede4] text-[#0a2e1e]"
                                     : subuser.status === "inactive"
                                       ? "bg-gray-100 text-gray-800"
                                       : subuser.status === "suspended"
                                         ? "bg-red-100 text-red-800"
-                                        : "bg-yellow-100 text-yellow-800"
+                                        : "bg-[#d4ede4] text-[#0a2e1e]"
                                 }`}
                               >
                                 {subuser.status}
@@ -226,7 +226,7 @@ const UsersTab: React.FC<UsersTabProps> = ({
                           {/* License Allocation */}
                           <td className="py-4 hidden xl:table-cell">
                             {(subuser as any).license_allocation ? (
-                              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800">
+                              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-[#d4ede4] text-[#0a2e1e]">
                                 {(subuser as any).license_allocation}
                               </span>
                             ) : (
@@ -252,7 +252,7 @@ const UsersTab: React.FC<UsersTabProps> = ({
                         setUsersPageSize(parseInt(e.target.value, 10));
                         setUsersPage(1);
                       }}
-                      className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                      className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-none text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
                     >
                       {pageSizeOptions.map((size) => (
                         <option key={size} value={size}>
@@ -285,7 +285,7 @@ const UsersTab: React.FC<UsersTabProps> = ({
                           setUsersPage((prev) => Math.max(prev - 1, 1))
                         }
                         disabled={usersPage === 1}
-                        className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <span className="sm:hidden">Prev</span>
                         <span className="hidden sm:inline">Previous</span>
@@ -305,7 +305,7 @@ const UsersTab: React.FC<UsersTabProps> = ({
                           usersPage >=
                           Math.ceil(displaySubusersData.length / usersPageSize)
                         }
-                        className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         Next
                       </button>

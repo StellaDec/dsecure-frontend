@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const WipeComputerDonatingBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Wiping Computers Before Donation",
@@ -22,16 +22,16 @@ const WipeComputerDonatingBlog: React.FC = () => {
           })}
         />
 
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Data Security
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Are You Securely Wiping Devices Before Donating?
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Learn why securely wiping a computer before donating is critical
                 to prevent data leakage — leaving information on laptops is an
                 invitation to trouble.
@@ -42,22 +42,22 @@ const WipeComputerDonatingBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Why Wiping Before Donating Matters
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Wiping devices before donating is paramount because recovering
                 data from storage devices is an easy task for digital forensic
                 experts. Digitization has transformed the way organizations
                 function — emails, business documents, photos, and bank
                 transactions take a lot of space on computers.
               </p>
-              <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-red-700 text-xl mb-3">
+              <div className="bg-white border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0e7c66] text-xl mb-3">
                   The Hidden Risk
                 </h3>
-                <p className="text-lg text-slate-700 leading-loose">
+                <p className="text-lg text-[#5a6672] leading-loose">
                   It's crucial not to leave anything behind that might give
                   intruders access to misuse sensitive information. Even if some
                   documents are no longer in use, always follow data erasure
@@ -69,7 +69,7 @@ const WipeComputerDonatingBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 5 Security Protocols Before Donating IT Assets
               </h2>
@@ -79,9 +79,9 @@ const WipeComputerDonatingBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       1
                     </span>
                     <div>
@@ -98,17 +98,17 @@ const WipeComputerDonatingBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       2
                     </span>
                     <div>
                       <h3 className="text-xl font-bold mb-3">
-                        Use Compliance-Verified <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Wiping</Link> Solution
+                        Use Compliance-Verified <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">Data Wiping</Link> Solution
                       </h3>
                       <p className="text-white/90 leading-relaxed">
-                        Always use a compliance-verified <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link> solution
+                        Always use a compliance-verified <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">data wiping</Link> solution
                         like D-Secure to get rid of personal data on storage
                         media and ensure information is erased beyond recovery.
                       </p>
@@ -116,9 +116,9 @@ const WipeComputerDonatingBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       3
                     </span>
                     <div>
@@ -127,7 +127,7 @@ const WipeComputerDonatingBlog: React.FC = () => {
                       </h3>
                       <p className="text-white/90 leading-relaxed">
                         If hiring a third-party IT asset recycler, ensure they
-                        offer secure <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link> using reliable and
+                        offer secure <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">data wiping</Link> using reliable and
                         compliance-verified solutions. Check their
                         certifications and compliance with laws and regulations.
                       </p>
@@ -135,9 +135,9 @@ const WipeComputerDonatingBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       4
                     </span>
                     <div>
@@ -154,9 +154,9 @@ const WipeComputerDonatingBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       5
                     </span>
                     <div>
@@ -177,33 +177,33 @@ const WipeComputerDonatingBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Why Delete and Format Are Not Enough
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Data deletion or formatting are not the right practices for
                 eliminating unwanted information. The 'Delete' or 'Format'
                 commands only hide information — data remains in storage media,
                 vulnerable to forensic recovery or illegal extraction.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                  <h3 className="font-bold text-red-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     What Delete/Format Does
                   </h3>
-                  <ul className="text-slate-700 text-lg leading-relaxed space-y-2">
+                  <ul className="text-[#5a6672] text-lg leading-relaxed space-y-2">
                     <li>• Only hides the information</li>
                     <li>• Data remains on storage media</li>
                     <li>• Easily recoverable with forensic tools</li>
                     <li>• No protection against data extraction</li>
                   </ul>
                 </div>
-                <div className="bg-rose-50 rounded-xl p-6 border border-rose-200">
-                  <h3 className="font-bold text-rose-700 text-xl mb-3">
-                    What <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Secure Erasure</Link> Does
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
+                    What <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Secure Erasure</Link> Does
                   </h3>
-                  <ul className="text-slate-700 text-lg leading-relaxed space-y-2">
+                  <ul className="text-[#5a6672] text-lg leading-relaxed space-y-2">
                     <li>• Logically overwrites all data</li>
                     <li>• Data destroyed beyond recovery</li>
                     <li>• Uses international erasure standards</li>
@@ -215,39 +215,39 @@ const WipeComputerDonatingBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 How D-Secure Wipes Your Computer
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 D-Secure logically overwrites data stored in storage media
                 without damaging devices. The software is designed for
                 comprehensive erasure:
               </p>
               <div className="space-y-6">
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Supports All Storage Types
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Erases all kinds of hard drives, SSDs, NVMe, M.2, or storage
                     media used in printers, laptops, desktops, and servers.
                   </p>
                 </div>
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     International Erasing Standards
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Permanently removes data using standards including NIST
                     800-88, DoD 3-Pass, and DoD 7-Pass methods.
                   </p>
                 </div>
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Tamper-Proof Documentation
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Offers tamper-proof certificates and erasure reports that
                     act as audit trails for regulatory compliance.
                   </p>
@@ -257,30 +257,30 @@ const WipeComputerDonatingBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-rose-50 border border-rose-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Key Takeaways
               </h2>
-              <p className="text-lg text-slate-700 leading-loose">
+              <p className="text-lg text-[#5a6672] leading-loose">
                 Donating old devices may be a noble cause, but you must remain
                 vigilant and follow security protocols before handing over
                 devices to prevent any episode of data breach.
               </p>
-              <ul className="space-y-4 text-slate-700 text-lg leading-loose mt-4">
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+              <ul className="space-y-4 text-[#5a6672] text-lg leading-loose mt-4">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Delete and Format only hide data — they don't destroy it
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
-                  Use compliance-verified <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link> software for permanent
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  Use compliance-verified <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link> software for permanent
                   erasure
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Establish organization-wide data destruction policies
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Train employees on data security and leakage risks
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Verify third-party recycler credentials and compliance
                 </li>
               </ul>

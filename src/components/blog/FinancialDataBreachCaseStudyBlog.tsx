@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const FinancialDataBreachCaseStudyBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Financial Data Breach Case Study",
@@ -23,16 +23,16 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
         />
 
         {/* Hero Section - Full Width */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Financial Industry Case Study
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Major Bank Fined $60 Million for Data Protection Failures
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Analyzing how lapses in data center decommissioning and vendor
                 management led to massive penalties, class-action lawsuits, and
                 lifetime identity theft risks for customers.
@@ -44,13 +44,13 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   A major global financial institution found itself at the
                   center of{" "}
-                  <strong className="text-indigo-800">
+                  <strong className="text-[#0a2e1e]">
                     public outcry and class-action lawsuits
                   </strong>{" "}
                   following official disclosure of two separate data breach
@@ -60,7 +60,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                   damages for unauthorized disclosure of customers' PII and
                   historical data to unknown third parties.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Subsequently, the banking institution was issued a{" "}
                   <strong>$60 million civil money penalty</strong> by federal
                   regulators. The regulator found that the bank failed to
@@ -75,17 +75,17 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* The Incidents */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 The Two Data Breach Incidents
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Incident #1: Data Center Decommissioning (2016)
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     The first incident involved decommissioning of two data
                     centers without appropriate due diligence in monitoring the
                     third-party vendor contracted for wiping customer data. The
@@ -97,11 +97,11 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Incident #2: Missing Servers (2019)
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     In the second incident, several decommissioned servers at a
                     local branch went missing from inventory. The missing
                     servers' hard disks contained a portion of customers'
@@ -112,11 +112,11 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none mt-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Data Exposed
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   The incidents potentially exposed current and former
                   customers' sensitive data — including account names and
                   numbers, social security numbers, passport numbers, contact
@@ -129,13 +129,13 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Root Causes */}
           <Reveal>
-            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Root Causes of the Data Leakage
               </h2>
 
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     1. Inadequate Vendor Supervision
                   </h3>
@@ -143,23 +143,23 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                     The vendor failed to completely remove data from retired
                     devices — a matter that came to the bank's attention years
                     later through a third party. This indicates a critical lapse
-                    in supervising contracted <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">data wiping</Link> jobs and verifying
+                    in supervising contracted <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">data wiping</Link> jobs and verifying
                     outcomes against data protection regulatory standards.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     2. Absence of Documentation
                   </h3>
                   <p className="text-white/90 text-lg leading-loose">
-                    No systematic documentation existed for the <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">data wiping</Link>
+                    No systematic documentation existed for the <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">data wiping</Link>
                     performed. The availability of wiping records for every
                     server could have helped the bank serve audit trails and
                     attain regulatory compliance. The vendor apparently didn't
                     provide records attesting to job completeness and efficacy.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     3. Technical Lapses in Data Destruction
                   </h3>
@@ -177,22 +177,22 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* How D-Secure Could Have Helped */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                How Professional <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Data Erasure</Link> Could Have Prevented This
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
+                How Professional <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Erasure</Link> Could Have Prevented This
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Adoption of professional data erasure software could have helped
                 the institution preempt this situation in several critical ways:
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     On-Premises Wiping
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Modern data erasure software like D-Secure provides DIY
                     utilities for in-house wiping of legacy storage media with
                     minimal technical assistance. IT asset management teams can
@@ -201,11 +201,11 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                     approximately 20 minutes.
                   </p>
                 </div>
-                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Secure Pre-Release Processing
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Drives wiped using professional erasure software can be
                     released to hardware resellers or recyclers for subsequent
                     processing without worrying about data leakage surprises.
@@ -214,11 +214,11 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                     diligence lapses.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Tamper-Proof Documentation
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Professional erasure software generates digital reports for
                     every wiped device. D-Secure creates tamper-proof
                     certificates uploaded to secure cloud storage, providing
@@ -226,11 +226,11 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                     attain failsafe regulatory compliance.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Complementing Encryption
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Data erasure complements encryption by nullifying potential
                     vulnerabilities from technical glitches. Formal inclusion of
                     erasure in data protection policy protects data even when
@@ -244,47 +244,47 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Key Lessons */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Key Lessons for Financial Organizations
               </h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     1
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Never rely solely on third-party vendors</strong>{" "}
                     for data destruction without verified processes and
                     documented proof of completion.
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     2
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Maintain tamper-proof certificates</strong> for
                     every device processed, creating an immutable audit trail
                     for regulatory compliance.
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     3
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Implement on-premises erasure</strong> before
                     equipment leaves organizational custody to eliminate
                     reliance on external parties.
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     4
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Use erasure to complement encryption</strong> — it
                     provides protection even when encryption fails due to
                     software flaws or configuration errors.
@@ -296,11 +296,11 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 The Imperative for Data Erasure Adoption
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Organizations must ramp up data protection policies and
                 practices in tandem with global regulations. The surfeit of data
                 breach incidents over the decade — with ever-growing scales of
@@ -308,7 +308,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                 storage hardware remains a crucial reason for data privacy
                 violations, alongside traditional hacking scenarios.
               </p>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 The only way to eradicate sensitive, unwanted data is to erase
                 it such that no tool or technique can retrieve it. Data erasure
                 technology enables this solution through professional software

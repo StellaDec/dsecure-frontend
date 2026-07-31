@@ -129,7 +129,7 @@ const ReportsTab: React.FC<ReportsTabProps> = ({
                             }
 
                             return (
-                              <span className="px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                              <span className="px-2 py-1 rounded-full text-xs font-medium bg-[#d4ede4] text-[#0a2e1e]">
                                 {reportType}
                               </span>
                             );
@@ -161,12 +161,12 @@ const ReportsTab: React.FC<ReportsTabProps> = ({
                               <span
                                 className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium ${
                                   statusValue === "completed"
-                                    ? "bg-green-100 text-green-800"
+                                    ? "bg-[#d4ede4] text-[#0a2e1e]"
                                     : statusValue === "running" ||
                                       statusValue === "pending"
-                                      ? "bg-blue-100 text-blue-800"
+                                      ? "bg-[#d4ede4] text-[#0a2e1e]"
                                       : statusValue === "warning"
-                                        ? "bg-yellow-100 text-yellow-800"
+                                        ? "bg-[#d4ede4] text-[#0a2e1e]"
                                         : "bg-red-100 text-red-800"
                                 }`}
                               >
@@ -211,7 +211,7 @@ const ReportsTab: React.FC<ReportsTabProps> = ({
                       setReportsPageSize(parseInt(e.target.value, 10));
                       setReportsPage(1);
                     }}
-                    className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                    className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-none text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
                   >
                     {pageSizeOptions.map((size) => (
                       <option key={size} value={size}>
@@ -224,7 +224,7 @@ const ReportsTab: React.FC<ReportsTabProps> = ({
                     <button
                         onClick={() => setReportsPage((prev) => Math.max(prev - 1, 1))}
                         disabled={reportsPage === 1}
-                        className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                         Previous
                     </button>
@@ -234,7 +234,7 @@ const ReportsTab: React.FC<ReportsTabProps> = ({
                     <button
                         onClick={() => setReportsPage((prev) => prev + 1)}
                         disabled={auditReports.length <= reportsPage * reportsPageSize}
-                        className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                         Next
                     </button>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const EducationDataDestructionBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Data Destruction in Education",
@@ -22,16 +22,16 @@ const EducationDataDestructionBlog: React.FC = () => {
           })}
         />
 
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Education Sector
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Data Disposal and Privacy Needs for Educational Institutions
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Understanding the critical data destruction requirements for
                 schools and universities to safeguard student privacy, protect
                 sensitive data, and prevent costly breaches.
@@ -42,22 +42,22 @@ const EducationDataDestructionBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 The Growing Challenge for Educational Institutions
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Educational institutions are increasingly facing data
                 destruction challenges as they seek to protect the personal
                 information of students and employees. Schools and universities
                 handle vast amounts of sensitive data, from academic records to
                 personal identifiers, creating significant privacy obligations.
               </p>
-              <div className="bg-gradient-to-r from-rose-50 to-pink-50 border-l-4 border-rose-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-white border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Privacy Technical Assistance Center (PTAC)
                 </h3>
-                <p className="text-lg text-slate-700 leading-loose">
+                <p className="text-lg text-[#5a6672] leading-loose">
                   The US Department of Education has developed PTAC to help
                   educational institutions deal with data destruction issues.
                   PTAC offers guidance on privacy-related topics, provides
@@ -69,7 +69,7 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Legal Obligations for Data Destruction
               </h2>
@@ -80,7 +80,7 @@ const EducationDataDestructionBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">
                     FERPA (Family Educational Rights and Privacy Act)
                   </h3>
@@ -92,7 +92,7 @@ const EducationDataDestructionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">GDPR and CCPA</h3>
                   <p className="text-white/90 leading-relaxed">
                     Institutions handling data of international students or
@@ -101,7 +101,7 @@ const EducationDataDestructionBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">HIPAA Regulations</h3>
                   <p className="text-white/90 leading-relaxed">
                     Educational institutions receiving federal financial
@@ -114,66 +114,66 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 What Educational Institutions Must Know About Data Destruction
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Understanding data destruction requirements can help
                 institutions avoid potential legal issues. Here are key points
                 to keep in mind:
               </p>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Document and Track the Process
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Create a Data Destruction Policy defining destruction
                     methods based on media type and generating audit trails
                     through verifiable reports.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Identify Sensitive Data Types
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Identify data requiring destruction, including personally
                     identifiable information (PII), social security numbers, and
                     financial records.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Choose Appropriate Destruction Methods
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Evaluate methods including data erasure, shredding, burning,
                     or degaussing. Each has benefits and drawbacks that must be
                     weighed carefully.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Ensure Regulatory Compliance
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Data must be destroyed in compliance with applicable laws
                     and regulations. Non-compliance can result in significant
                     penalties.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Train Staff and Employees
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Employees should be trained and sensitized on their
                     responsibility for adhering to data destruction requirements
                     and staying compliant.
@@ -184,41 +184,41 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Best Methods for Data Destruction
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 PTAC recommends following NIST Guidelines for Media
                 Sanitization, which are comprehensive and cover all storage
                 devices including modern SSDs:
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                  <h3 className="font-bold text-red-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Physical Destruction (Not Recommended)
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed mb-4">
+                  <p className="text-[#5a6672] text-lg leading-relaxed mb-4">
                     Burning or shredding the device. Only use when drives have
                     multiple bad sectors and cannot be sanitized using software.
                   </p>
-                  <ul className="text-slate-600 space-y-1">
+                  <ul className="text-[#5a6672] space-y-1">
                     <li>• Adds to e-waste</li>
                     <li>• Not environmentally friendly</li>
                     <li>• Destroys device value</li>
                   </ul>
                 </div>
-                <div className="bg-rose-50 rounded-xl p-6 border border-rose-200">
-                  <h3 className="font-bold text-rose-700 text-xl mb-3">
-                    <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Erasure</Link> (Recommended)
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
+                    <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Data Erasure</Link> (Recommended)
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed mb-4">
+                  <p className="text-[#5a6672] text-lg leading-relaxed mb-4">
                     Software-based overwriting with 0s and 1s using global
                     data-wiping algorithms permanently erases data beyond
                     recovery.
                   </p>
-                  <ul className="text-slate-600 space-y-1">
+                  <ul className="text-[#5a6672] space-y-1">
                     <li>• Environment-friendly</li>
                     <li>• Makes media reusable</li>
                     <li>• NIST Clear and Purge methods</li>
@@ -229,29 +229,29 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Selecting the Right Destruction Technique
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Selection should be based on data sensitivity and risk of
                 unauthorized disclosure:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-rose-50 rounded-xl p-6 border border-rose-200">
-                  <h3 className="font-bold text-rose-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Low-Risk Data
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Student roll calls, names, class schedules — standard
                     erasure methods may be sufficient.
                   </p>
                 </div>
-                <div className="bg-rose-50 rounded-xl p-6 border border-rose-200">
-                  <h3 className="font-bold text-rose-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     High-Risk Data
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     PII including Social Security Numbers, dates of birth,
                     addresses, bank details — requires highly secure methods
                     with proof of erasure.
@@ -262,32 +262,32 @@ const EducationDataDestructionBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-rose-50 border border-rose-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Key Takeaways for Educational Institutions
               </h2>
-              <p className="text-lg text-slate-700 leading-loose">
+              <p className="text-lg text-[#5a6672] leading-loose">
                 Data destruction requirements can seem daunting, but with proper
                 policies and procedures, the process becomes straightforward.
                 Following these guidelines protects institutional data from
                 falling into wrong hands.
               </p>
-              <ul className="space-y-4 text-slate-700 text-lg leading-loose mt-4">
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+              <ul className="space-y-4 text-[#5a6672] text-lg leading-loose mt-4">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Understand which regulations apply (FERPA, GDPR, CCPA, HIPAA)
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Create documented data destruction policies with clear
                   procedures
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Use NIST-compliant erasure tools tested and approved for
                   security
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Generate verifiable proof of erasure for compliance purposes
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Train staff on their data protection responsibilities
                 </li>
               </ul>

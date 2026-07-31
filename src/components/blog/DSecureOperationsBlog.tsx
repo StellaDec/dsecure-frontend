@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const DSecureOperationsBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "D-Secure Operations Guide",
@@ -23,16 +23,16 @@ const DSecureOperationsBlog: React.FC = () => {
         />
 
         {/* Hero Section */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Company Update
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 D-Secure: Growing Stronger and Expanding Operations
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 We're fully operational, continuously innovating, and committed
                 to delivering world-class data erasure and diagnostic solutions
                 to organizations worldwide.
@@ -44,12 +44,12 @@ const DSecureOperationsBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   D-Secure remains{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-[#0a2e1e]">
                     fully operational and thriving
                   </strong>
                   , providing secure, reliable, and certified data erasure and
@@ -57,7 +57,7 @@ const DSecureOperationsBlog: React.FC = () => {
                   operations and commitment remain steadfast as we continue to
                   grow and expand our services.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   We have always been committed to supporting businesses in
                   putting their best foot forward — whether by ensuring data
                   security for their customers or by helping them achieve
@@ -68,16 +68,16 @@ const DSecureOperationsBlog: React.FC = () => {
               </div>
 
               {/* Company Background */}
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h2 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-8 rounded-none mt-8">
+                <h2 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   About D-Secure
                 </h2>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   D-Secure has empowered thousands of organizations to ensure
                   data privacy, maintain regulatory compliance, and support
                   sustainability through secure device reuse. As a trusted data
                   care expert, we provide comprehensive software solutions for
-                  Data Erasure, <Link to="/products/hardware-diagnostics" className="text-emerald-600 hover:underline font-medium">Hardware Diagnostics</Link>, and Drive Verification.
+                  Data Erasure, <Link to="/products/hardware-diagnostics" className="text-[#0a2e1e] hover:underline font-medium">Hardware Diagnostics</Link>, and Drive Verification.
                 </p>
               </div>
             </div>
@@ -85,11 +85,11 @@ const DSecureOperationsBlog: React.FC = () => {
 
           {/* Why D-Secure Section */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Why Organizations Choose D-Secure
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Offering a diverse product line in Data Erasure, Device
                 Diagnostics, and Drive Verification, D-Secure is centered around
                 empowering enterprises, ITADs, MSPs, SMBs, and government
@@ -98,41 +98,41 @@ const DSecureOperationsBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Comprehensive Device Support
                   </h3>
-                  <p className="text-slate-600 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Erasure compatibility with SSDs, HDDs, Mac devices,
                     Chromebooks, servers, PCs, and laptops — D-Secure Drive
                     Eraser handles all your storage media.
                   </p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Global Standards Compliance
                   </h3>
-                  <p className="text-slate-600 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Utilizing recognized data-wiping methods including US DoD
-                    5220.22, <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link> Clear, and NIST SP 800-88 Purge for
+                    5220.22, <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link></Link> Clear, and NIST SP 800-88 Purge for
                     complete and permanent data erasure.
                   </p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Remote Wiping Solutions
                   </h3>
-                  <p className="text-slate-600 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Keep data secure when employee journeys end, work-from-home
                     projects close, or remotely located devices get upgraded
                     with our remote erasure capabilities.
                   </p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     Centralized Cloud Management
                   </h3>
-                  <p className="text-slate-600 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Erasure reports saved in a centralized cloud console with
                     anytime access. Digitally signed reports help achieve
                     compliance with CCPA, HIPAA, SOX, GLBA, and EU-GDPR.
@@ -144,18 +144,18 @@ const DSecureOperationsBlog: React.FC = () => {
 
           {/* Additional Solutions */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Complete Solution Portfolio
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
-                    <Link to="/products/hardware-diagnostics" className="text-emerald-600 hover:underline font-medium">Hardware Diagnostics</Link>
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
+                    <Link to="/products/hardware-diagnostics" className="text-[#0e7c66] hover:underline font-medium">Hardware Diagnostics</Link>
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
-                    D-Secure <Link to="/products/hardware-diagnostics" className="text-emerald-600 hover:underline font-medium">Hardware Diagnostics</Link> aids in identifying faulty
+                  <p className="text-[#5a6672] text-lg leading-loose">
+                    D-Secure <Link to="/products/hardware-diagnostics" className="text-[#0e7c66] hover:underline font-medium">Hardware Diagnostics</Link> aids in identifying faulty
                     components, saving time and resources, and promoting device
                     reuse. Our Mobile Diagnostics tool helps test mobile
                     components like GPS, battery, and Bluetooth with 50+
@@ -163,11 +163,11 @@ const DSecureOperationsBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Drive Verification
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     D-Secure Drive Verifier validates the effectiveness of data
                     erasure by checking erased drives for any remaining data
                     traces across PCs and laptops, ensuring complete
@@ -175,11 +175,11 @@ const DSecureOperationsBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     ESG Sustainability Reporting
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Our ESG report helps organizations quantify environmental
                     benefits of secure data erasure, highlighting CO₂ emission
                     reductions achieved through devices wiped and eventually
@@ -193,12 +193,12 @@ const DSecureOperationsBlog: React.FC = () => {
 
           {/* Milestones */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Achievements and Milestones
               </h2>
 
-              <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl p-8 text-white">
+              <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
                 <div className="text-center mb-6">
                   <span className="text-5xl font-bold">70.4%</span>
                   <p className="text-xl mt-2 text-white/90">
@@ -214,10 +214,10 @@ const DSecureOperationsBlog: React.FC = () => {
               </div>
 
               <div className="mt-8">
-                <h2 className="font-bold text-slate-900 text-xl mb-4">
+                <h2 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   Trusted by Industry Leaders
                 </h2>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   Our clientele spans virtually all industries including
                   healthcare, banking, finance, insurance, ITES, automobile, and
                   consulting. Organizations across the globe rely on D-Secure
@@ -231,38 +231,38 @@ const DSecureOperationsBlog: React.FC = () => {
 
           {/* Future Vision */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Growing, Expanding, and Innovating
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 D-Secure isn't just operational — we're thriving. From new
                 partnerships to enhanced solutions, we're scaling new heights in
                 secure data erasure, device diagnostics, and verification. The
                 journey continues, stronger and more impactful each day.
               </p>
 
-              <div className="bg-slate-100 rounded-xl p-8 mt-8">
-                <h2 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] p-8 md:p-12 space-y-6 border-l-4 border-[#0e7c66] prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                <h2 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   Upcoming Innovations
                 </h2>
-                <ul className="space-y-3 text-slate-700 text-lg">
+                <ul className="space-y-3 text-[#5a6672] text-lg">
                   <li className="flex items-start">
-                    <span className="text-emerald-500 mr-3 mt-1">→</span>
+                    <span className="text-[#0a2e1e] mr-3 mt-1">→</span>
                     Solutions for erasing virtual machines and LUNs
                   </li>
                   <li className="flex items-start">
-                    <span className="text-emerald-500 mr-3 mt-1">→</span>
+                    <span className="text-[#0a2e1e] mr-3 mt-1">→</span>
                     Automated workflows and autopilot MDM detection
                   </li>
                   <li className="flex items-start">
-                    <span className="text-emerald-500 mr-3 mt-1">→</span>
+                    <span className="text-[#0a2e1e] mr-3 mt-1">→</span>
                     Support for newer standards like IEEE 2833:2022 Purge and
                     Clear
                   </li>
                   <li className="flex items-start">
-                    <span className="text-emerald-500 mr-3 mt-1">→</span>
+                    <span className="text-[#0a2e1e] mr-3 mt-1">→</span>
                     Continuous platform enhancements and feature releases
                   </li>
                 </ul>

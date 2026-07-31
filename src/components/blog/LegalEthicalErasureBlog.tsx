@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const LegalEthicalErasureBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "The Legal and Ethical Imperative of Data Erasure",
@@ -21,16 +21,16 @@ const LegalEthicalErasureBlog: React.FC = () => {
           })}
         />
 
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Ethics & Compliance
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-                The Legal and Ethical Dimensions of <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Data Erasure</Link>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
+                The Legal and Ethical Dimensions of <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Erasure</Link>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Explore the legal and ethical aspects of data erasure to ensure
                 data confidentiality, compliance, customer trust, and
                 sustainability goals.
@@ -41,43 +41,43 @@ const LegalEthicalErasureBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Legal Aspects of Data Erasure
               </h2>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Most global data protection laws grant individuals (data
                 subjects) the right to get their data deleted or erased.
                 Although this right is referenced by diverse names, the core
                 connotation remains the same:
               </p>
-              <ul className="space-y-3 text-slate-700 text-lg">
+              <ul className="space-y-3 text-[#5a6672] text-lg">
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                   <strong>'Right to Delete'</strong> in Section 1798.105 of CCPA
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                   <strong>'Right to Erasure'</strong> in UK Data Protection Act
                   2018
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                   <strong>'Right to Destruction'</strong> in Article 4(5) of
                   Saudi Arabia's PDPL
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                   <strong>'Right to be Forgotten'</strong> in Article 17 of
                   EU-GDPR
                 </li>
               </ul>
 
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-white border-l-4 border-[#0e7c66] p-6 rounded-none mt-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Penalties for Non-Compliance
                 </h3>
-                <ul className="space-y-2 text-slate-700">
+                <ul className="space-y-2 text-[#5a6672]">
                   <li>
                     • EU-GDPR: Up to €20 million or 4% of annual turnover,
                     whichever is higher
@@ -100,22 +100,22 @@ const LegalEthicalErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Ethical Aspects of Data Erasure
               </h2>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Organizations have a responsibility to manage data ethically
                 throughout its entire lifecycle, from creation to destruction,
                 regardless of whether they are governed by data protection laws.
               </p>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-amber-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Data Privacy and Fairness
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Organizations must ensure that the confidentiality of data
                     is maintained to provide individuals complete privacy.
                     Methods like data anonymization can help support fair and
@@ -123,11 +123,11 @@ const LegalEthicalErasureBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Stakeholder and Customer Trust
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     It is important to earn trust with stakeholders, external
                     parties, and customers by ethically handling their sensitive
                     data. A lack of transparency regarding data erasure can
@@ -135,11 +135,11 @@ const LegalEthicalErasureBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Meet Long-term Sustainability Goals
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Organizations have an inherent accountability to create a
                     sustainable impact. Prioritizing ethical ways to destroy IT
                     assets decreases contribution to e-waste generation,
@@ -148,11 +148,11 @@ const LegalEthicalErasureBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Brand Reputation
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     When an organization keeps data beyond the retention period
                     without consent or after the purpose is no longer relevant,
                     it reflects negatively on brand image and reputation.
@@ -163,12 +163,12 @@ const LegalEthicalErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Benefits of Adhering to Legal & Ethical Aspects
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Reducing Data Breach Risk
                   </h3>
@@ -177,7 +177,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
                     data reduces vulnerabilities
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Protection from Fines
                   </h3>
@@ -186,7 +186,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
                     cybersecurity policies
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Increased Business Opportunities
                   </h3>
@@ -195,7 +195,7 @@ const LegalEthicalErasureBlog: React.FC = () => {
                     to innovate and expand
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Customer Trust</h3>
                   <p className="text-white/90 text-sm">
                     Earn trust of partners and stakeholders through commitment
@@ -207,11 +207,11 @@ const LegalEthicalErasureBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Conclusion
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Organizations must adhere to both legal and ethical aspects of
                 data erasure. Following ethical data erasure practices and
                 complying with legal requirements benefits businesses by
@@ -222,26 +222,26 @@ const LegalEthicalErasureBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
+        <section className="py-20 bg-[#0e7c66] text-center">
           <Reveal>
             <div className="max-w-5xl mx-auto px-4">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Embrace Legal & Ethical Data Erasure
               </h2>
-              <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
                 Implement trusted data erasure practices with D-Secure to meet
                 legal requirements and ethical standards.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-amber-600 hover:to-orange-600 transition-all text-lg"
+                  className="inline-block bg-white text-[#0e7c66] px-8 py-4 rounded-none font-semibold hover:bg-slate-100 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>
                 <Link
                   to="/all-products"
-                  className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
+                  className="inline-block border-2 border-white text-white px-8 py-4 rounded-none font-semibold hover:bg-white/10 transition-colors text-lg"
                 >
                   View Products
                 </Link>

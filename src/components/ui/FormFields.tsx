@@ -65,7 +65,7 @@ export const FormField: React.FC<FormFieldProps> = ({
         placeholder={placeholder}
         required={required}
         disabled={disabled}
-        className={`w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-brand focus:border-transparent transition-colors ${
+        className={`w-full border rounded-none px-4 py-3 focus:ring-2 focus:ring-brand focus:border-transparent transition-colors ${
           error 
             ? 'border-red-300 bg-red-50' 
             : 'border-gray-300 bg-white'
@@ -104,7 +104,7 @@ export const TextAreaField: React.FC<TextAreaFieldProps> = ({
         required={required}
         disabled={disabled}
         rows={rows}
-        className={`w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-brand focus:border-transparent resize-none transition-colors ${
+        className={`w-full border rounded-none px-4 py-3 focus:ring-2 focus:ring-brand focus:border-transparent resize-none transition-colors ${
           error 
             ? 'border-red-300 bg-red-50' 
             : 'border-gray-300 bg-white'
@@ -141,7 +141,7 @@ export const SelectField: React.FC<SelectFieldProps> = ({
         onChange={onChange}
         required={required}
         disabled={disabled}
-        className={`w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-brand focus:border-transparent bg-white transition-colors ${
+        className={`w-full border rounded-none px-4 py-3 focus:ring-2 focus:ring-brand focus:border-transparent bg-white transition-colors ${
           error 
             ? 'border-red-300 bg-red-50' 
             : 'border-gray-300'

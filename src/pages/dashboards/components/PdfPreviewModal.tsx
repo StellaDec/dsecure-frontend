@@ -29,7 +29,7 @@ const PdfPreviewModal: React.FC<PdfPreviewModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl w-full max-w-5xl h-[90vh] flex flex-col">
+      <div className="bg-white rounded-none shadow-xl w-full max-w-5xl h-[90vh] flex flex-col">
         {/* Header / Controls */}
         <div className="bg-slate-100 border-b px-4 py-3 flex items-center justify-between z-10 shrink-0">
           <div className="flex items-center gap-4">
@@ -41,7 +41,7 @@ const PdfPreviewModal: React.FC<PdfPreviewModalProps> = ({
             </h2>
 
             {previewBlobs.length > 1 && (
-              <div className="flex items-center gap-2 bg-white rounded-md border px-1 py-0.5">
+              <div className="flex items-center gap-2 bg-white rounded-none border px-1 py-0.5">
                 <button
                   disabled={currentPreviewIndex === 0}
                   onClick={() => setCurrentPreviewIndex((i) => i - 1)}
@@ -110,7 +110,7 @@ const PdfPreviewModal: React.FC<PdfPreviewModalProps> = ({
                 window.URL.revokeObjectURL(url);
                 document.body.removeChild(a);
               }}
-              className="flex items-center gap-2 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm font-medium transition-colors"
+              className="flex items-center gap-2 px-3 py-1.5 bg-[#0e7c66] text-white rounded hover:bg-[#0e7c66] text-sm font-medium transition-colors"
             >
               <svg
                 className="w-4 h-4"

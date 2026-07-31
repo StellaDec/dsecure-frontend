@@ -1,12 +1,32 @@
 // Internal linking component — related products ke beech SEO link equity distribute karta hai
 import React from "react";
 import { Link } from "react-router-dom";
+import { ThemeSection, ThemeSectionHeading, ThemeIconContainer } from "./ui/Theme";
+import {
+  HardDrive,
+  ShieldCheck,
+  Activity,
+  FileText,
+  File,
+  Globe,
+  Smartphone,
+  Search,
+  Building2,
+  Cloud,
+  Usb,
+  ScanSearch,
+  Snowflake,
+  ArrowLeftRight,
+  Monitor,
+  BarChart3,
+} from "lucide-react";
 
+// Lucide icon type use karna emoji ki jagah
 interface RelatedProduct {
   href: string;
   label: string;
   description: string;
-  icon: string;
+  icon: React.ElementType;
 }
 
 export interface ProductInternalLinksProps {
@@ -15,97 +35,97 @@ export interface ProductInternalLinksProps {
   currentProduct?: string;
 }
 
-// Har product ke liye predefined link map
+// Har product ke liye predefined link map with Lucide icons
 export const PRODUCT_LINKS: Record<string, RelatedProduct> = {
   "drive-eraser": {
     href: "/products/drive-eraser",
     label: "Drive Eraser",
     description: "NIST 800-88 compliant HDD & SSD secure erasure",
-    icon: "🗄️",
+    icon: HardDrive,
   },
   "drive-verifier": {
     href: "/products/drive-verifier",
     label: "Drive Verifier",
     description: "Post-erasure verification — confirm zero data traces",
-    icon: "✅",
+    icon: ShieldCheck,
   },
   "hardware-diagnostics": {
     href: "/products/hardware-diagnostics",
     label: "Hardware Diagnostics",
     description: "50+ automated PC & server health tests",
-    icon: "🔬",
+    icon: Activity,
   },
   "file-eraser": {
     href: "/products/file-eraser",
     label: "File Eraser",
     description: "Secure file & folder shredding beyond Recycle Bin",
-    icon: "📄",
+    icon: File,
   },
   "file-eraser-network": {
     href: "/products/file-eraser-network",
     label: "File Eraser Network",
     description: "Centralized enterprise network data sanitization",
-    icon: "🌐",
+    icon: Globe,
   },
   "smartphone-eraser": {
     href: "/products/smartphone-eraser",
     label: "Smartphone Eraser",
     description: "Certified iOS & Android mobile data wipe",
-    icon: "📱",
+    icon: Smartphone,
   },
   "smartphone-diagnostic": {
     href: "/products/smartphone-diagnostic",
     label: "Smartphone Diagnostic",
     description: "60+ automated hardware tests for mobile devices",
-    icon: "🔍",
+    icon: Search,
   },
   "lun-eraser": {
     href: "/products/lun-eraser",
     label: "LUN Eraser",
     description: "SAN & NAS active storage array sanitization",
-    icon: "🏢",
+    icon: Building2,
   },
   "virtual-machine-eraser": {
     href: "/products/virtual-machine-eraser",
     label: "VM Eraser",
     description: "VMware, Hyper-V & cloud VM data deletion",
-    icon: "☁️",
+    icon: Cloud,
   },
   "removable-media-eraser": {
     href: "/products/removable-media-eraser",
     label: "Removable Media Eraser",
     description: "Secure USB, SD card & flash drive wiping",
-    icon: "💾",
+    icon: Usb,
   },
   "forensic-imaging": {
     href: "/products/forensic-imaging",
     label: "Forensic Imaging",
     description: "Bit-for-bit drive clone & evidence capture",
-    icon: "🔎",
+    icon: ScanSearch,
   },
   "freeze-state": {
     href: "/products/freeze-state",
     label: "Freeze State",
     description: "Deep Freeze alternative for Windows workstations",
-    icon: "🧊",
+    icon: Snowflake,
   },
   "data-migration": {
     href: "/products/data-migration",
     label: "Data Migration",
     description: "Secure bit-perfect file transfer & system migration",
-    icon: "🔄",
+    icon: ArrowLeftRight,
   },
   "asset-reimaging": {
     href: "/products/asset-reimaging",
     label: "Asset Reimaging",
     description: "Zero-touch OS deployment to hundreds of devices",
-    icon: "🖥️",
+    icon: Monitor,
   },
   "hard-drive-monitor": {
     href: "/products/hard-drive-monitor",
     label: "Hard Drive Monitor",
     description: "S.M.A.R.T. health tracking & bad sector detection",
-    icon: "📊",
+    icon: BarChart3,
   },
 };
 
@@ -133,118 +153,50 @@ export const ProductInternalLinks: React.FC<ProductInternalLinksProps> = ({
 
   return (
     // Related products section — internal linking ke liye
-    <section
-      aria-label="Related D-Secure Products"
-      style={{
-        padding: "48px 24px",
-        background: "linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%)",
-        borderTop: "1px solid #e5e7eb",
-      }}
-    >
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-        <h2
-          style={{
-            fontSize: "1.5rem",
-            fontWeight: 700,
-            color: "#111827",
-            marginBottom: "8px",
-            textAlign: "center",
-          }}
+    <ThemeSection alternate aria-label="Related D-Secure Products">
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
+        <ThemeSectionHeading 
+          centered 
+          subtitle="Explore the full D-Secure data security suite"
         >
           {heading}
-        </h2>
-        <p
-          style={{
-            color: "#6b7280",
-            textAlign: "center",
-            marginBottom: "32px",
-            fontSize: "0.95rem",
-          }}
-        >
-          Explore the full D-Secure data security suite
-        </p>
+        </ThemeSectionHeading>
 
-        {/* Link grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-            gap: "16px",
-          }}
-        >
-          {displayLinks.map((product) => (
-            <div
-              key={product.href}
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: "12px",
-                padding: "16px",
-                background: "#ffffff",
-                borderRadius: "10px",
-                border: "1px solid #e5e7eb",
-                position: "relative",
-                transition: "box-shadow 0.2s, border-color 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 4px 16px rgba(16,185,129,0.12)";
-                (e.currentTarget as HTMLDivElement).style.borderColor =
-                  "#10b981";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-                (e.currentTarget as HTMLDivElement).style.borderColor =
-                  "#e5e7eb";
-              }}
-            >
-              {/* Icon */}
-              <span style={{ fontSize: "1.6rem", lineHeight: 1, flexShrink: 0 }}>
-                {product.icon}
-              </span>
-              <div>
-                <Link
-                  to={product.href}
-                  style={{
-                    display: "block",
-                    fontWeight: 600,
-                    color: "#111827",
-                    fontSize: "0.9rem",
-                    marginBottom: "4px",
-                    textDecoration: "none",
-                  }}
-                >
-                  {/* Stretched link hack for SEO - link text is only the label but area is whole card */}
-                  <span
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      zIndex: 1,
-                    }}
-                    aria-hidden="true"
-                  ></span>
-                  {product.label}
-                </Link>
-                <span
-                  style={{
-                    display: "block",
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    lineHeight: 1.4,
-                    position: "relative",
-                    zIndex: 2, // Ensure text is selectable if needed
-                    pointerEvents: "none", // Let clicks pass through to the stretched link
-                  }}
-                >
-                  {product.description}
-                </span>
+        {/* Centered link grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+          {displayLinks.map((product) => {
+            const IconComp = product.icon;
+            return (
+              <div
+                key={product.href}
+                className="relative flex items-center gap-4 p-5 bg-white border border-[#d0d5dc] rounded-none w-full transition-all hover:shadow-md hover:border-[#0e7c66] group"
+              >
+                {/* Lucide Icon */}
+                <ThemeIconContainer icon={IconComp} size="md" />
+                <div>
+                  <Link
+                    to={product.href}
+                    className="block font-semibold text-[#0a2e1e] text-sm mb-1 no-underline"
+                  >
+                    {/* Stretched link — poora card clickable */}
+                    <span
+                      className="absolute inset-0 z-[1]"
+                      aria-hidden="true"
+                    ></span>
+                    {product.label}
+                  </Link>
+                  <span className="block text-[#5a6672] text-xs leading-snug relative z-[2] pointer-events-none">
+                    {product.description}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
-    </section>
+    </ThemeSection>
   );
 };
 
 export default ProductInternalLinks;
+

@@ -89,7 +89,7 @@ export class PerformanceWrapper extends Component<PerformanceWrapperProps, Perfo
 
     if (enableErrorBoundary && hasError) {
       return (
-        <div className="error-boundary p-4 bg-red-50 border border-red-200 rounded-lg">
+        <div className="error-boundary p-4 bg-red-50 border border-red-200 rounded-none">
           <h2 className="text-lg font-semibold text-red-800 mb-2">
             Something went wrong in {componentName}
           </h2>

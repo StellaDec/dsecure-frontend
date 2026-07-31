@@ -2,6 +2,14 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  themeClasses,
+  ThemeButton,
+  ThemeCard,
+  ThemeIconContainer,
+  ThemeSection,
+  ThemeSectionHeading
+} from "@/components/ui/Theme";
 
 const EnterprisePage: React.FC = () => {
   const navigate = useNavigate();
@@ -10,9 +18,8 @@ const EnterprisePage: React.FC = () => {
       {/* SEO Meta Tags */}
       <SEOHeadNative seo={getSEOForPage("solutions-enterprise")} />
 
-
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-16 md:py-24">
+      <ThemeSection className="relative bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-16 md:py-24" noBg>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6">
@@ -22,41 +29,32 @@ const EnterprisePage: React.FC = () => {
               Safeguard sensitive data with D-Secure's enterprise-grade data erasure platform. Ensure compliance with global data security standards and protect your organization from data breaches with regulated, permanent data erasure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => navigate('/contact')}
-                className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <ThemeButton onClick={() => navigate('/contact')} variant="primary">
                 Start Free Trial
-              </button>
-
-
-
+              </ThemeButton>
             </div>
           </div>
         </div>
         <div> <div className="absolute right-20 top-1/2 -translate-y-1/2 hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-tr from-emerald-400 via-teal-400 to-emerald-500 rounded-3xl blur-3xl opacity-40 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-emerald-400 via-teal-400 to-emerald-500 rounded-full blur-3xl opacity-40 animate-pulse"></div>
 
           <div className="relative">
             <img loading="lazy" decoding="async"
               src="/enterprise_img.png"
               alt="Security Shield"
-              className="w-96 h-96 object-contain rounded-[18%] opacity-85 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-[0_0_100px_rgba(16,185,129,1)] transition-all duration-700 ease-in-out sepia-[.15] hue-rotate-[80deg] saturate-150"
+              className="w-96 h-96 object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-[0_0_100px_rgba(16,185,129,1)] transition-all duration-700 ease-in-out sepia-[.15] hue-rotate-[80deg] saturate-150"
             />
           </div>
-
-
         </div>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Key Features Section */}
-      <section className="py-16 md:py-20 bg-white">
+      <ThemeSection>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Industry-Leading Data Erasure Powered by D-Secure
-            </h2>
-          </div>
+          <ThemeSectionHeading centered>
+            Industry-Leading Data Erasure Powered by D-Secure
+          </ThemeSectionHeading>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
@@ -77,25 +75,28 @@ const EnterprisePage: React.FC = () => {
                 description: "Meets international data erasure standards and regulations"
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl border border-emerald-200 hover:shadow-xl transition-all duration-300">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
+              <ThemeCard key={index} className="bg-gradient-to-br from-emerald-50 to-teal-50">
+                <ThemeIconContainer 
+                  icon={() => (
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  )} 
+                  className="mb-4"
+                />
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
                 <p className="text-slate-600 text-sm">{feature.description}</p>
-              </div>
+              </ThemeCard>
             ))}
           </div>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Erasure Standards Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-emerald-50/30">
+      <ThemeSection alternate>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
+            <ThemeCard>
               <h3 className="text-2xl font-bold text-slate-900 mb-6">
                 Supported Data Erasure Standards Compliant With:
               </h3>
@@ -109,16 +110,16 @@ const EnterprisePage: React.FC = () => {
                   "PCI DSS Standards"
                 ].map((standard, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-emerald-800 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#0e7c66] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="text-slate-700">{standard}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </ThemeCard>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
+            <ThemeCard>
               <h3 className="text-2xl font-bold text-slate-900 mb-6">
                 Comprehensive Device Coverage:
               </h3>
@@ -132,20 +133,20 @@ const EnterprisePage: React.FC = () => {
                   "Network Attached Storage (NAS)"
                 ].map((device, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-emerald-800 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#0e7c66] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="text-slate-700">{device}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </ThemeCard>
           </div>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700">
+      <ThemeSection className="py-16 md:py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700" noBg>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Secure Your Data?
@@ -153,14 +154,14 @@ const EnterprisePage: React.FC = () => {
           <p className="text-xl text-emerald-50 mb-8 max-w-2xl mx-auto">
             Start your free 14-day trial today. No credit card required.
           </p>
-          <button
+          <ThemeButton
             onClick={() => navigate('/contact')}
-            className="bg-white text-emerald-700 hover:bg-emerald-50 font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+            className="bg-white text-emerald-700 hover:bg-emerald-50 border-2 border-white"
           >
             Start Free Trial
-          </button>
+          </ThemeButton>
         </div>
-      </section>
+      </ThemeSection>
 
     </div>
   );

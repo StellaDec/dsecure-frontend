@@ -9,9 +9,34 @@ import { LicenseForm, type LicenseFormData } from "@/components/forms";
 import { PartnershipForm, type PartnershipFormData } from "@/components/forms";
 import { useToast } from "@/hooks";
 import { Toast } from "@/components/ui";
-import { FileText, HardDrive, Activity } from "lucide-react";
+import {
+  File,
+  HardDrive,
+  Activity,
+  Search,
+  X,
+  HelpCircle,
+  BookOpen,
+  Mail,
+  Ticket,
+  Phone,
+  ArrowRight,
+  ChevronRight,
+  Newspaper,
+} from "lucide-react";
+import {
+  ThemeButton,
+  ThemeCard,
+  ThemeIconContainer,
+  ThemeSection,
+  ThemeSectionHeading,
+  themeClasses,
+  themeTokens,
+} from "@/components/ui/Theme";
 
-// Form components - removed memo to prevent focus loss during typing
+// ============================================================================
+// FORM INPUT COMPONENTS (D-Secure Theme tokens ke anusaar flat border & colors)
+// ============================================================================
 const FormInput: React.FC<{
   type: string;
   name: string;
@@ -22,7 +47,7 @@ const FormInput: React.FC<{
   label: string;
 }> = ({ type, name, value, onChange, required, placeholder, label }) => (
   <div>
-    <label className="block text-sm font-medium text-gray-700 mb-2">
+    <label className="block text-sm font-bold text-[#0a2e1e] mb-2">
       {label} {required && "*"}
     </label>
     <input
@@ -31,7 +56,7 @@ const FormInput: React.FC<{
       value={value}
       onChange={onChange}
       required={required}
-      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+      className="w-full border border-[#d0d5dc] rounded-none px-4 py-3 text-[#0a2e1e] placeholder-[#5a6672] focus:ring-2 focus:ring-[#0e7c66] focus:border-[#0e7c66] focus:outline-none transition-colors"
       placeholder={placeholder}
     />
   </div>
@@ -47,7 +72,7 @@ const FormTextarea: React.FC<{
   rows: number;
 }> = ({ name, value, onChange, required, placeholder, label, rows }) => (
   <div>
-    <label className="block text-sm font-medium text-gray-700 mb-2">
+    <label className="block text-sm font-bold text-[#0a2e1e] mb-2">
       {label} {required && "*"}
     </label>
     <textarea
@@ -56,7 +81,7 @@ const FormTextarea: React.FC<{
       onChange={onChange}
       required={required}
       rows={rows}
-      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors resize-none"
+      className="w-full border border-[#d0d5dc] rounded-none px-4 py-3 text-[#0a2e1e] placeholder-[#5a6672] focus:ring-2 focus:ring-[#0e7c66] focus:border-[#0e7c66] focus:outline-none transition-colors resize-none"
       placeholder={placeholder}
     />
   </div>
@@ -70,14 +95,14 @@ const FormSelect: React.FC<{
   options: { value: string; label: string }[];
 }> = ({ name, value, onChange, label, options }) => (
   <div>
-    <label className="block text-sm font-medium text-gray-700 mb-2">
+    <label className="block text-sm font-bold text-[#0a2e1e] mb-2">
       {label}
     </label>
     <select
       name={name}
       value={value}
       onChange={onChange}
-      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors bg-white"
+      className="w-full border border-[#d0d5dc] rounded-none px-4 py-3 text-[#0a2e1e] focus:ring-2 focus:ring-[#0e7c66] focus:border-[#0e7c66] focus:outline-none transition-colors bg-white cursor-pointer"
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
@@ -88,7 +113,9 @@ const FormSelect: React.FC<{
   </div>
 );
 
-// Support Ticket Modal Component - removed memo for consistency
+// ============================================================================
+// SUPPORT TICKET MODAL COMPONENT (D-Secure Flat Modal & Primary Colors)
+// ============================================================================
 const SupportTicketModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
@@ -125,23 +152,24 @@ const SupportTicketModal: React.FC<{
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-none border border-[#d0d5dc]/60 shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden">
         {/* Fixed Header */}
-        <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-white p-6 rounded-t-xl flex-shrink-0">
-          <div className="flex justify-between items-center">
+        <div className="bg-[#0e7c66] text-white p-6 rounded-none flex-shrink-0 flex justify-between items-start">
+          <div>
             <h2 className="text-2xl font-bold">Submit Support Ticket</h2>
-            <button
-              onClick={onClose}
-              className="text-white hover:text-slate-200 transition-colors text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20"
-              disabled={isSubmitting}
-            >
-              ×
-            </button>
+            <p className="mt-1 text-[#d4ede4] text-sm">
+              We'll get back to you as soon as possible!
+            </p>
           </div>
-          <p className="mt-2 text-emerald-100">
-            We'll get back to you as soon as possible!
-          </p>
+          <button
+            onClick={onClose}
+            className="text-white hover:text-[#d4ede4] transition-colors text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20"
+            disabled={isSubmitting}
+            aria-label="Close modal"
+          >
+            ×
+          </button>
         </div>
 
         {/* Scrollable Form Content */}
@@ -237,26 +265,19 @@ const SupportTicketModal: React.FC<{
               value={ticketForm.description}
               onChange={onInputChange}
               required
-              rows={1}
+              rows={3}
               placeholder="Please provide detailed information about your issue or question..."
               label="Description"
             />
 
             <div className="flex gap-4 pt-4 sticky bottom-0 bg-white">
-              <button
+              <ThemeButton
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-3 px-6 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full"
               >
                 {isSubmitting ? "Submitting..." : "Submit Ticket"}
-              </button>
-              {/* <button
-                type="button"
-                onClick={onClose}
-                className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-semibold"
-              >
-                Cancel
-              </button> */}
+              </ThemeButton>
             </div>
           </form>
         </div>
@@ -265,6 +286,9 @@ const SupportTicketModal: React.FC<{
   );
 };
 
+// ============================================================================
+// MAIN SUPPORT PAGE COMPONENT
+// ============================================================================
 const SupportPage: React.FC = () => {
   const { toast, showToast, hideToast } = useToast();
   const { t } = useTranslation();
@@ -298,6 +322,7 @@ const SupportPage: React.FC = () => {
     { id: "get-started", label: "Get Started" },
   ];
 
+  // Scroll listener sticky nav ke liye
   React.useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -350,7 +375,7 @@ const SupportPage: React.FC = () => {
     }
   };
 
-  // Memoize form options to prevent re-creation
+  // Form options memoize karein
   const priorityOptions = useMemo(
     () => [
       { value: "low", label: "Low" },
@@ -476,14 +501,6 @@ const SupportPage: React.FC = () => {
           "solid state",
         ],
       },
-      // {
-      //   id: "sas-wipe-guide",
-      //   title: "SAS Drive Wipe Guide",
-      //   description: "How to wipe SAS drives permanently",
-      //   url: "/support/sas-wipe-guide",
-      //   category: "Guides",
-      //   keywords: ["sas", "drive", "wipe", "permanent", "enterprise", "server"],
-      // },
       {
         id: "mac-wipe-guide",
         title: "Mac Machine Wipe Guide",
@@ -557,32 +574,28 @@ const SupportPage: React.FC = () => {
     [],
   );
 
-  // Trending searches data
+  // Trending searches dataset
   const trendingSearches = useMemo(
     () => ({
       "How many overwrites should I do on a Hard Drive?":
         "/support/overwrite-guide",
       "How can I Wipe Hard Drives and SSDs?": "/support/secure-erase-hddssd",
-      // "How to Wipe SAS Drives Permanently?": "/support/sas-wipe-guide",
       "How can I wipe 12 board Mac Machines?": "/support/mac-eraser-guide",
-      // "How to customize ISO file using D-Secure?": "/support/iso-customization-guide",
       "How do I wipe everything and retain my OS?": "/support/retain-os-guide",
       "How can I Wipe a MacOS with M1 Chip?": "/support/mac-eraser-guide",
       "How to use D-Secure Cloud Console?": "/support/cloud-console-guide",
       "How do I Perform Cryptographic Erasure on SSD?":
         "/support/ssd-cryptographic-erasure-guide",
-      // "How can I diagnose my smartphone using D-Secure?": "/support/smartphone-diagnosis-guide",
     }),
     [],
   );
 
-  // Search functionality
+  // Search logic execution
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
 
     const query = searchQuery.toLowerCase();
 
-    // First, search through regular searchable content
     const contentResults = searchableContent.filter(
       (item) =>
         item.title.toLowerCase().includes(query) ||
@@ -591,9 +604,8 @@ const SupportPage: React.FC = () => {
         item.keywords.some((keyword) => keyword.includes(query)),
     );
 
-    // Then, search through trending searches for keyword matches
     const trendingResults = Object.entries(trendingSearches)
-      .filter(([searchText, url]) => {
+      .filter(([searchText]) => {
         const searchTextLower = searchText.toLowerCase();
         return (
           searchTextLower.includes(query) ||
@@ -610,10 +622,8 @@ const SupportPage: React.FC = () => {
         keywords: searchText.toLowerCase().split(" "),
       }));
 
-    // Combine results, prioritizing trending searches
     const combinedResults = [...trendingResults, ...contentResults];
 
-    // Remove duplicates based on title and limit to 8 results
     const uniqueResults = combinedResults.filter(
       (item, index, arr) =>
         arr.findIndex(
@@ -642,7 +652,6 @@ const SupportPage: React.FC = () => {
       setShowSearchResults(shouldShow);
       setSelectedResultIndex(-1);
 
-      // Prevent page scroll when search results are shown
       if (shouldShow) {
         document.body.style.overflow = "hidden";
       } else {
@@ -659,7 +668,6 @@ const SupportPage: React.FC = () => {
     document.body.style.overflow = "";
   }, []);
 
-  // Handle keyboard navigation
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (!showSearchResults || searchResults.length === 0) return;
@@ -685,7 +693,7 @@ const SupportPage: React.FC = () => {
           ) {
             window.location.href = searchResults[selectedResultIndex].url;
           } else {
-            handleSearch(e as any);
+            handleSearch(e as unknown as React.FormEvent);
           }
           break;
         case "Escape":
@@ -703,7 +711,6 @@ const SupportPage: React.FC = () => {
     ],
   );
 
-  // Handle trending search click
   const handleTrendingSearchClick = useCallback(
     (url: string) => {
       navigate(url);
@@ -713,8 +720,7 @@ const SupportPage: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Removed handleLicenseSubmit and handlePartnershipSubmit since the form components handle submission natively
-
+  // Ticket submission handler
   const handleTicketSubmit = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
@@ -733,7 +739,6 @@ const SupportPage: React.FC = () => {
         });
         const timestampISO = now.toISOString();
 
-        // === Prepare FormData for FormSubmit ===
         const formSubmitData = new FormData();
         formSubmitData.append(
           "_webhook",
@@ -767,7 +772,6 @@ const SupportPage: React.FC = () => {
           import.meta.env.VITE_FORM_CC_EMAILS,
         );
 
-        // === Prepare submission data for Backend API ===
         const submissionData = {
           name: ticketForm.name.trim(),
           email: ticketForm.email.trim(),
@@ -783,7 +787,6 @@ const SupportPage: React.FC = () => {
           timestamp: timestampISO,
         };
 
-        // Reset form and show success immediately
         setActiveTicketForm(false);
         setTicketForm({
           name: "",
@@ -803,9 +806,7 @@ const SupportPage: React.FC = () => {
         );
 
         try {
-          // === 1. SUBMIT TO BACKEND API (DATABASE) ===
-          const API_BASE =
-            import.meta.env.VITE_API_BASE_URL;
+          const API_BASE = import.meta.env.VITE_API_BASE_URL;
           const apiResponse = await fetch(
             `${API_BASE}/api/ContactFormSubmissions`,
             {
@@ -815,14 +816,12 @@ const SupportPage: React.FC = () => {
             },
           );
 
-          // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
           await fetch(import.meta.env.VITE_FORMSUBMIT_ENDPOINT, {
             method: "POST",
             body: formSubmitData,
             headers: { Accept: "application/json" },
           });
 
-          // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
           fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
             method: "POST",
             headers: {
@@ -836,10 +835,10 @@ const SupportPage: React.FC = () => {
             const errorData = await apiResponse.json();
             console.error("Backend submission failed:", errorData);
           }
-        } catch (error: any) {
+        } catch (error: unknown) {
           console.error("Form error:", error);
         }
-      } catch (error) {
+      } catch (error: unknown) {
         console.error("FormSubmit error:", error);
         showToast(
           "Failed to submit support ticket. Please try again.",
@@ -859,7 +858,6 @@ const SupportPage: React.FC = () => {
     ) => {
       const { name, value } = e.target;
       setTicketForm((prev) => {
-        // Only update if the value actually changed
         if (prev[name as keyof typeof prev] === value) {
           return prev;
         }
@@ -885,7 +883,7 @@ const SupportPage: React.FC = () => {
             : "-translate-y-full opacity-0"
         }`}
       >
-        <div className="bg-white border-b border-emerald-100 shadow-sm">
+        <div className="bg-white border-b border-[#d0d5dc]/60 shadow-sm">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-14">
               <Link
@@ -898,15 +896,15 @@ const SupportPage: React.FC = () => {
                   responsive={true}
                 />
               </Link>
-              <nav className="flex items-center gap-1 overflow-x-auto py-2">
+              <nav className="flex items-center gap-2 overflow-x-auto py-2">
                 {sectionNavItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all duration-200 ${
+                    className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 border ${
                       activeSection === item.id
-                        ? "bg-emerald-500 text-white shadow-md"
-                        : "text-slate-600 hover:bg-emerald-50 hover:text-emerald-800"
+                        ? "bg-[#0e7c66] text-white border-[#0e7c66]"
+                        : "bg-white text-[#5a6672] border-[#d0d5dc]/60 hover:bg-[#d4ede4] hover:text-[#0e7c66]"
                     }`}
                   >
                     {item.label}
@@ -918,136 +916,92 @@ const SupportPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-slate-50">
-        {/* Header Section */}
-        <section
-          id="overview"
-          className="bg-gradient-to-br from-emerald-50 to-teal-50 py-16 md:py-24"
-        >
-          <div className="container-responsive">
+      <div className="min-h-screen">
+        {/* ================= HERO / OVERVIEW SECTION ================= */}
+        <ThemeSection id="overview" className="py-16 md:py-24 relative overflow-hidden">
+          <div className="container mx-auto px-4">
             <Reveal>
               <div className="text-center">
                 <div className="mb-8">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4">
-                    <span className="text-brand">D-Secure</span>
-                    <sup className="text-2xl text-brand"></sup> Customer Support
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-4">
+                    <span className="text-[#0e7c66]">D-Secure</span> Customer Support
                   </h1>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-700 mb-6">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#5a6672] mb-8">
                     How can we help you today?
                   </h2>
 
-                  {/* Search Bar */}
+                  {/* Search Bar Container */}
                   <div className="max-w-2xl mx-auto relative">
-                    <div className="relative">
-                      <form onSubmit={handleSearch}>
-                        <div className="relative">
-                          <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={handleSearchInputChange}
-                            onKeyDown={handleKeyDown}
-                            placeholder="Search documents and help resources..."
-                            className="w-full py-4 pl-12 pr-20 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-base shadow-sm hover:shadow-md placeholder:text-slate-400"
-                            autoComplete="off"
-                          />
-                          <svg
-                            className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            />
-                          </svg>
-                          {searchQuery && (
-                            <button
-                              type="button"
-                              onClick={clearSearch}
-                              className="absolute right-12 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors p-1"
-                            >
-                              <svg
-                                className="w-4 h-4"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M6 18L18 6M6 6l12 12"
-                                />
-                              </svg>
-                            </button>
-                          )}
+                    <form onSubmit={handleSearch}>
+                      <div className="relative flex items-center">
+                        <input
+                          type="text"
+                          value={searchQuery}
+                          onChange={handleSearchInputChange}
+                          onKeyDown={handleKeyDown}
+                          placeholder="Search documents and help resources..."
+                          className="w-full py-4 pl-12 pr-24 rounded-none border border-[#d0d5dc] bg-white text-[#0a2e1e] placeholder-[#5a6672] focus:ring-2 focus:ring-[#0e7c66] focus:border-[#0e7c66] transition-all text-base shadow-sm hover:shadow-md focus:outline-none"
+                          autoComplete="off"
+                        />
+                        <Search className="w-5 h-5 text-[#5a6672] absolute left-4 pointer-events-none" />
+                        {searchQuery && (
                           <button
-                            type="submit"
-                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-md transition-colors font-medium text-sm"
+                            type="button"
+                            onClick={clearSearch}
+                            className="absolute right-16 text-[#5a6672] hover:text-[#0a2e1e] transition-colors p-1"
+                            aria-label="Clear search query"
                           >
-                            Go
+                            <X className="w-4 h-4" />
                           </button>
-                        </div>
-                      </form>
-                    </div>
+                        )}
+                        <ThemeButton
+                          type="submit"
+                          className="absolute right-2 px-4 py-1.5 min-h-[36px] text-sm font-bold"
+                        >
+                          Go
+                        </ThemeButton>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
             </Reveal>
           </div>
-        </section>
+        </ThemeSection>
 
-        {/* Search Results Overlay */}
+        {/* ================= SEARCH RESULTS OVERLAY & MODAL ================= */}
         {showSearchResults && (
           <>
-            {/* Backdrop */}
             <div
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999]"
               onClick={clearSearch}
             />
 
-            {/* Search Results Modal */}
             <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl mx-4 z-[10000]">
               {searchResults.length > 0 ? (
-                <div className="bg-white rounded-xl shadow-2xl max-h-[70vh] overflow-hidden">
-                  <div className="p-4 border-b border-emerald-100 bg-gradient-to-r from-emerald-50 to-teal-50">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-semibold text-emerald-900">
-                        {searchResults.length} result
-                        {searchResults.length !== 1 ? "s" : ""} found for "
-                        {searchQuery}"
-                      </span>
-                      <button
-                        onClick={clearSearch}
-                        className="text-emerald-800 hover:text-emerald-700 transition-colors p-1 hover:bg-emerald-100 rounded-full"
-                      >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button>
-                    </div>
+                <div className="bg-white rounded-none border border-[#d0d5dc]/60 shadow-2xl max-h-[70vh] overflow-hidden">
+                  <div className="p-4 border-b border-[#d0d5dc]/60 bg-[#f4fbf8] flex items-center justify-between">
+                    <span className="text-sm font-bold text-[#0a2e1e]">
+                      {searchResults.length} result
+                      {searchResults.length !== 1 ? "s" : ""} found for "
+                      {searchQuery}"
+                    </span>
+                    <button
+                      onClick={clearSearch}
+                      className="text-[#5a6672] hover:text-[#0e7c66] transition-colors p-1 hover:bg-[#d4ede4] rounded-full"
+                      aria-label="Close search results"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
                   </div>
                   <div className="max-h-96 overflow-y-auto">
                     {searchResults.map((result, index) => (
                       <Link
                         key={`${result.title}-${index}`}
                         to={result.url}
-                        className={`block p-4 hover:bg-emerald-50 transition-all border-b border-slate-100 last:border-b-0 ${
+                        className={`block p-4 hover:bg-[#f4fbf8] transition-all border-b border-[#d0d5dc]/40 last:border-b-0 ${
                           index === selectedResultIndex
-                            ? "bg-emerald-50 border-l-4 border-l-emerald-500"
+                            ? "bg-[#f4fbf8] border-l-4 border-l-[#0e7c66]"
                             : ""
                         }`}
                         onClick={clearSearch}
@@ -1055,29 +1009,17 @@ const SupportPage: React.FC = () => {
                       >
                         <div className="flex items-start justify-between gap-3">
                           <div className="flex-1">
-                            <h3 className="font-semibold text-slate-900 mb-1 group-hover:text-emerald-800">
+                            <h3 className="font-bold text-[#0a2e1e] mb-1 group-hover:text-[#0e7c66]">
                               {result.title}
                             </h3>
-                            <p className="text-sm text-slate-600 mb-2">
+                            <p className="text-sm text-[#5a6672] mb-2">
                               {result.description}
                             </p>
-                            <span className="inline-block px-2 py-1 text-xs font-medium text-emerald-700 bg-emerald-100 rounded-full">
+                            <span className="inline-block px-2.5 py-0.5 text-xs font-bold text-[#0e7c66] bg-[#d4ede4] rounded-none">
                               {result.category}
                             </span>
                           </div>
-                          <svg
-                            className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
+                          <ChevronRight className="w-5 h-5 text-[#0e7c66] mt-1 flex-shrink-0" />
                         </div>
                       </Link>
                     ))}
@@ -1085,35 +1027,19 @@ const SupportPage: React.FC = () => {
                 </div>
               ) : (
                 searchQuery && (
-                  <div className="bg-white rounded-xl shadow-2xl p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg
-                        className="w-8 h-8 text-emerald-800"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                      </svg>
+                  <div className="bg-white rounded-none border border-[#d0d5dc]/60 shadow-2xl p-8 text-center">
+                    <div className="w-16 h-16 bg-[#d4ede4] rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Search className="w-8 h-8 text-[#0e7c66]" />
                     </div>
-                    <p className="text-slate-900 font-semibold mb-2">
+                    <p className="text-[#0a2e1e] font-bold mb-2">
                       No results found for "{searchQuery}"
                     </p>
-                    <p className="text-sm text-slate-600 mb-4">
-                      Try searching with different keywords or browse our
-                      support sections below.
+                    <p className="text-sm text-[#5a6672] mb-6">
+                      Try searching with different keywords or browse our support sections below.
                     </p>
-                    <button
-                      onClick={clearSearch}
-                      className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-6 py-2 rounded-lg font-medium text-sm transition-all shadow-md"
-                    >
+                    <ThemeButton onClick={clearSearch}>
                       Clear search
-                    </button>
+                    </ThemeButton>
                   </div>
                 )
               )}
@@ -1121,15 +1047,16 @@ const SupportPage: React.FC = () => {
           </>
         )}
 
-        {/* Trending Searches */}
-        <section
+        {/* ================= TRENDING SEARCHES SECTION ================= */}
+        <ThemeSection
+          index={1}
           id="trending"
-          className={`py-8 bg-white border-b border-slate-200 ${showSearchResults ? "hidden" : ""}`}
+          className={`py-8 border-b border-[#d0d5dc]/60 ${showSearchResults ? "hidden" : ""}`}
         >
-          <div className="container-responsive">
+          <div className="container mx-auto px-4">
             <Reveal>
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-4">
+                <h3 className="text-sm font-bold text-[#0e7c66] uppercase tracking-wider mb-4">
                   TRENDING SEARCHES
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -1137,388 +1064,322 @@ const SupportPage: React.FC = () => {
                     ([search, url], index) => (
                       <div key={index} className="flex gap-2">
                         <button
-                          className="flex-1 text-left text-brand hover:text-brand-600 hover:underline transition-colors p-2 rounded-md hover:bg-blue-50"
+                          className="flex-1 text-left text-[#0a2e1e] hover:text-[#0e7c66] font-medium transition-colors p-2 rounded-none hover:bg-[#d4ede4]/40 flex items-center justify-between group"
                           onClick={() => handleTrendingSearchClick(url)}
                         >
-                          {search}
+                          <span>{search}</span>
+                          <ArrowRight className="w-4 h-4 text-[#0e7c66] opacity-0 group-hover:opacity-100 transition-opacity" />
                         </button>
-                        <Link
-                          to={url}
-                          className="text-slate-500 hover:text-brand transition-colors p-2 rounded-md hover:bg-slate-50"
-                          title="Go directly to guide"
-                        ></Link>
                       </div>
                     ),
                   )}
                 </div>
-                <div className="mt-4 text-sm text-slate-600"></div>
               </div>
             </Reveal>
           </div>
-        </section>
+        </ThemeSection>
 
-        {/* Self Help & Support Section */}
-        <section id="self-help" className="py-16 md:py-24 bg-slate-50">
-          <div className="container-responsive">
+        {/* ================= SELF HELP & SUPPORT SECTION ================= */}
+        <ThemeSection id="self-help" className="py-16 md:py-24">
+          <div className="container mx-auto px-4">
             <Reveal>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                  Self Help & Support
-                </h2>
-                <p className="text-xl text-slate-700 max-w-3xl mx-auto">
-                  Access Support Information For Your D-Secure Products
-                </p>
-              </div>
+              <ThemeSectionHeading
+                subtitle="Access Support Information For Your D-Secure Products"
+                centered
+              >
+                Self Help & Support
+              </ThemeSectionHeading>
             </Reveal>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* FAQs */}
               <Reveal delayMs={100}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
-                    <svg
-                      className="w-8 h-8 text-blue-600"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
-                    </svg>
+                <ThemeCard className="text-center group h-full flex flex-col justify-between">
+                  <div>
+                    <ThemeIconContainer
+                      icon={HelpCircle}
+                      size="lg"
+                      className="mx-auto mb-6"
+                    />
+                    <h3 className={themeClasses.typography.cardTitle}>
+                      Frequently Asked Questions
+                    </h3>
+                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
+                      Frequently Asked Questions By Our Customers That Might Help You.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Frequently Asked Questions
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Frequently Asked Questions By Our Customers That Might Help
-                    You.
-                  </p>
                   <Link
                     to="/support/faqs"
-                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
+                    className="text-[#0e7c66] group-hover:text-[#0a2e1e] font-bold transition-colors inline-flex items-center justify-center gap-1"
                   >
-                    Learn More →
+                    Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </div>
+                </ThemeCard>
               </Reveal>
 
               {/* Knowledge Base */}
               <Reveal delayMs={200}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-emerald-200 transition-colors">
-                    <svg
-                      className="w-8 h-8 text-emerald-800"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
-                    </svg>
+                <ThemeCard className="text-center group h-full flex flex-col justify-between">
+                  <div>
+                    <ThemeIconContainer
+                      icon={BookOpen}
+                      size="lg"
+                      className="mx-auto mb-6"
+                    />
+                    <h3 className={themeClasses.typography.cardTitle}>
+                      Knowledge Base
+                    </h3>
+                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
+                      Step By Step Guide To Securely Wipe Data On Different Devices.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Knowledge Base
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Step By Step Guide To Securely Wipe Data On Different
-                    Devices.
-                  </p>
                   <Link
                     to="/support/knowledge-base"
-                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
+                    className="text-[#0e7c66] group-hover:text-[#0a2e1e] font-bold transition-colors inline-flex items-center justify-center gap-1"
                   >
-                    Learn More →
+                    Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </div>
+                </ThemeCard>
               </Reveal>
 
               {/* Technical Blog */}
-              <Reveal delayMs={600}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
-                  <div className="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition-colors">
-                    <svg
-                      className="w-8 h-8 text-teal-600"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
-                    </svg>
+              <Reveal delayMs={300}>
+                <ThemeCard className="text-center group h-full flex flex-col justify-between">
+                  <div>
+                    <ThemeIconContainer
+                      icon={Newspaper}
+                      size="lg"
+                      className="mx-auto mb-6"
+                    />
+                    <h3 className={themeClasses.typography.cardTitle}>
+                      Technical Blog
+                    </h3>
+                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
+                      Insights and practical guides on data erasure, cybersecurity, and IT asset lifecycle management.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Technical Blog
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Insights and practical guides on data erasure,
-                    cybersecurity, and IT asset lifecycle management.
-                  </p>
                   <Link
                     to="/blog"
-                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
+                    className="text-[#0e7c66] group-hover:text-[#0a2e1e] font-bold transition-colors inline-flex items-center justify-center gap-1"
                   >
-                    Learn More →
+                    Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </div>
+                </ThemeCard>
               </Reveal>
 
               {/* File Eraser Manual */}
               <Reveal delayMs={400}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
-                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                    <FileText className="w-8 h-8 text-purple-600" />
+                <ThemeCard className="text-center group h-full flex flex-col justify-between">
+                  <div>
+                    <ThemeIconContainer
+                      icon={File}
+                      size="lg"
+                      className="mx-auto mb-6"
+                    />
+                    <h3 className={themeClasses.typography.cardTitle}>
+                      D-Secure File Eraser Manual
+                    </h3>
+                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
+                      Step-by-step instructions to install, configure, and set up D-Secure File Eraser for seamless sanitization.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    D-Secure File Eraser Manual
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Step-by-step instructions to install, configure, and set up D-Secure File Eraser for seamless and secure file sanitization.
-                  </p>
                   <Link
                     to="/support/help-manual/complete-manual"
-                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
+                    className="text-[#0e7c66] group-hover:text-[#0a2e1e] font-bold transition-colors inline-flex items-center justify-center gap-1"
                   >
-                    View File Eraser Manual →
+                    View File Eraser Manual <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </div>
+                </ThemeCard>
               </Reveal>
 
               {/* Drive Eraser Manual */}
               <Reveal delayMs={500}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
-                  <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-                    <HardDrive className="w-8 h-8 text-orange-600" />
+                <ThemeCard className="text-center group h-full flex flex-col justify-between">
+                  <div>
+                    <ThemeIconContainer
+                      icon={HardDrive}
+                      size="lg"
+                      className="mx-auto mb-6"
+                    />
+                    <h3 className={themeClasses.typography.cardTitle}>
+                      Drive Eraser Manual
+                    </h3>
+                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
+                      Complete setup guide for Drive Eraser, covering bootable media creation and software configuration.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Drive Eraser Manual
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Complete setup guide for Drive Eraser, covering everything from bootable media creation to initial software configuration.
-                  </p>
                   <Link
                     to="/support/help-manual/complete-drive-manual"
-                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
+                    className="text-[#0e7c66] group-hover:text-[#0a2e1e] font-bold transition-colors inline-flex items-center justify-center gap-1"
                   >
-                    View Drive Eraser Manual →
+                    View Drive Eraser Manual <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </div>
+                </ThemeCard>
               </Reveal>
+
               {/* Drive Diagnostics Manual */}
-              <Reveal delayMs={300}>
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group h-full flex flex-col">
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
-                    <Activity className="w-8 h-8 text-green-800" />
+              <Reveal delayMs={600}>
+                <ThemeCard className="text-center group h-full flex flex-col justify-between">
+                  <div>
+                    <ThemeIconContainer
+                      icon={Activity}
+                      size="lg"
+                      className="mx-auto mb-6"
+                    />
+                    <h3 className={themeClasses.typography.cardTitle}>
+                      Drive Diagnostics Manual
+                    </h3>
+                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
+                      Detailed manual on how to set up diagnostic tools, run your first scan, and monitor drive health effectively.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Drive Diagnostics Manual
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Detailed manual on how to set up diagnostic tools, run your first scan, and monitor your drive's health effectively.
-                  </p>
                   <Link
                     to="/support/help-manual/complete-diagnostic-manual"
-                    className="text-brand hover:text-brand-600 font-semibold hover:underline transition-colors"
+                    className="text-[#0e7c66] group-hover:text-[#0a2e1e] font-bold transition-colors inline-flex items-center justify-center gap-1"
                   >
-                    View Drive Diagnostics Manual →
+                    View Diagnostics Manual <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </div>
+                </ThemeCard>
               </Reveal>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
-        {/* Assisted Support Section */}
-        <section id="assisted-support" className="py-16 md:py-24 bg-white">
-          <div className="container-responsive">
+        {/* ================= ASSISTED SUPPORT SECTION ================= */}
+        <ThemeSection index={1} id="assisted-support" className="py-16 md:py-24">
+          <div className="container mx-auto px-4">
             <Reveal>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                  Assisted Support
-                </h2>
-                <p className="text-xl text-slate-700 max-w-3xl mx-auto">
-                  Raise a Ticket or Call us for support queries
-                </p>
-              </div>
+              <ThemeSectionHeading
+                subtitle="Raise a Ticket or Call us for support queries"
+                centered
+              >
+                Assisted Support
+              </ThemeSectionHeading>
             </Reveal>
 
             <div className="grid md:grid-cols-3 gap-8">
               {/* Write to Us */}
               <Reveal delayMs={100}>
-                <div className="bg-slate-50 rounded-2xl p-8 text-center">
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Write to Us
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    Get quick resolution to your query by writing to us on
-                    email.
-                  </p>
-                  <button
+                <ThemeCard className="text-center group h-full flex flex-col justify-between">
+                  <div>
+                    <ThemeIconContainer
+                      icon={Mail}
+                      size="lg"
+                      className="mx-auto mb-6"
+                    />
+                    <h3 className={themeClasses.typography.cardTitle}>
+                      Write to Us
+                    </h3>
+                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
+                      Get quick resolution to your query by writing to us on email.
+                    </p>
+                  </div>
+                  <ThemeButton
+                    variant="outline"
                     onClick={() =>
                       (window.location.href = "mailto:support@dsecuretech.com")
                     }
-                    className="bg-white border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 flex items-center gap-2 mx-auto"
+                    className="w-full"
+                    icon={<Mail className="w-4 h-4 ml-1" />}
                   >
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
                     Send Email
-                  </button>
-                </div>
+                  </ThemeButton>
+                </ThemeCard>
               </Reveal>
 
               {/* Raise a Ticket */}
               <Reveal delayMs={200}>
-                <div className="bg-slate-50 rounded-2xl p-8 text-center">
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Raise a Ticket
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    If you have queries and need help? Please submit a ticket.
-                  </p>
-                  <button
+                <ThemeCard className="text-center group h-full flex flex-col justify-between">
+                  <div>
+                    <ThemeIconContainer
+                      icon={Ticket}
+                      size="lg"
+                      className="mx-auto mb-6"
+                    />
+                    <h3 className={themeClasses.typography.cardTitle}>
+                      Raise a Ticket
+                    </h3>
+                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
+                      If you have queries and need help? Please submit a ticket.
+                    </p>
+                  </div>
+                  <ThemeButton
+                    variant="primary"
                     onClick={() => setActiveTicketForm(true)}
-                    className="bg-white border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 flex items-center gap-2 mx-auto"
+                    className="w-full"
+                    icon={<Ticket className="w-4 h-4 ml-1" />}
                   >
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a1 1 0 001 1h1a1 1 0 001-1V7a2 2 0 00-2-2H5zM5 14a2 2 0 00-2 2v3a1 1 0 001 1h1a1 1 0 001-1v-3a2 2 0 00-2-2H5z"
-                      />
-                    </svg>
                     Submit Ticket
-                  </button>
-                </div>
+                  </ThemeButton>
+                </ThemeCard>
               </Reveal>
 
               {/* Call Us */}
               <Reveal delayMs={300}>
-                <div className="bg-slate-50 rounded-2xl p-8 text-center">
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    Call us
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    We will be happy to assist you. Technical Support in English
-                    only.
-                  </p>
-                  <button
-                    onClick={() => (window.location.href = "tel:+911141525085")}
-                    className="bg-white border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 flex items-center gap-2 mx-auto"
+                <ThemeCard className="text-center group h-full flex flex-col justify-between">
+                  <div>
+                    <ThemeIconContainer
+                      icon={Phone}
+                      size="lg"
+                      className="mx-auto mb-6"
+                    />
+                    <h3 className={themeClasses.typography.cardTitle}>
+                      Call Us
+                    </h3>
+                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
+                      We will be happy to assist you. Technical Support in English only.
+                    </p>
+                  </div>
+                  <ThemeButton
+                    variant="outline"
+                    onClick={() => (window.location.href = "tel:+918447750101")}
+                    className="w-full"
+                    icon={<Phone className="w-4 h-4 ml-1" />}
                   >
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
                     +91-844-775-0101
-                  </button>
-                </div>
+                  </ThemeButton>
+                </ThemeCard>
               </Reveal>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
-        {/* Let's Get Started Section */}
-        <section
+        {/* ================= LET'S GET STARTED BANNER ================= */}
+        <ThemeSection
+          noBg={true}
           id="get-started"
-          className="py-16 md:py-24 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600"
+          className="py-16 md:py-24 bg-[#0a2e1e] text-white relative overflow-hidden"
         >
-          <div className="container-responsive">
+          <div className="container mx-auto px-4 relative z-10">
             <Reveal>
-              <div className="text-center text-white">
-                <div className="flex items-center justify-center mb-8">
-                  {/* <img loading="lazy" decoding="async"
-                    src="/path/to/support-person.png"
-                    alt="Support Representative"
-                    className="w-32 h-32 rounded-full mr-8"
-                  /> */}
-                  <div className="text-left">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                      Let's get started
-                    </h2>
-                    <p className="text-xl text-white/90 mb-8">
-                      Interested in finding out more about our solutions?
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <button
-                        onClick={() => setShowLicenseModal(true)}
-                        className="bg-white/20 hover:bg-white/30 border-2 border-white text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300"
-                      >
-                        Request Free License →
-                      </button>
-                      <button
-                        onClick={() =>
-                          (window.location.href = "tel:+91-844-775-0101")
-                        }
-                        className="bg-white/20 hover:bg-white/30 border-2 border-white text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300"
-                      >
-                        Need help: +91-844-775-0101
-                      </button>
-                    </div>
-                  </div>
+              <div className="text-center max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                  Let's get started
+                </h2>
+                <p className="text-xl text-[#d4ede4] mb-8">
+                  Interested in finding out more about our solutions?
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <ThemeButton
+                    onClick={() => setShowLicenseModal(true)}
+                    variant="primary"
+                  >
+                    Request Free License →
+                  </ThemeButton>
+                  <ThemeButton
+                    onClick={() =>
+                      (window.location.href = "tel:+918447750101")
+                    }
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10"
+                  >
+                    Need help: +91-844-775-0101
+                  </ThemeButton>
                 </div>
               </div>
             </Reveal>
           </div>
-        </section>
-
-        {/* Company Stats */}
-        {/* <section className="py-16 md:py-24 bg-slate-900 text-white">
-          <div className="container-responsive">
-            <Reveal>
-              <div className="text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                  <span className="text-brand">D-Secure</span>
-                  <sup className="text-brand text-lg"></sup> Is An Innovation
-                  FROM D-Secure
-                </h2>
-                <p className="text-xl text-slate-300">
-                  D-Secure Brings to The World Future-Ready Data Solutions
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-8 text-center">
-              {[
-                { number: "3M+", label: "Customers" },
-                { number: "24/7", label: "Support Available" },
-                { number: "100+", label: "R&D Engineers" },
-                { number: "190+", label: "Countries" },
-                { number: "8000+", label: "Partners" },
-                { number: "100+", label: "Awards Received" },
-              ].map((stat, index) => (
-                <Reveal key={stat.label} delayMs={index * 100}>
-                  <div className="group">
-                    <div className="text-4xl md:text-5xl font-bold text-brand mb-2 group-hover:scale-110 transition-transform duration-300">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-slate-300 font-medium">
-                      {stat.label}
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section> */}
+        </ThemeSection>
       </div>
 
       {/* Support Ticket Modal */}
@@ -1577,153 +1438,3 @@ const SupportPage: React.FC = () => {
 };
 
 export default SupportPage;
-//               View Documentation →
-//             </a>
-//           </div>
-
-//           <div className="bg-white light:bg-slate-800 rounded-lg p-6 xs:p-8 sm:p-10 md:p-12 lg:p-14 xl:p-16 xxl:p-18 shadow-lg hover:shadow-xl transition-shadow text-center">
-//             <div className="w-12 xs:w-14 sm:w-16 md:w-18 lg:w-20 xl:w-22 xxl:w-24 h-12 xs:h-14 sm:h-16 md:h-18 lg:h-20 xl:h-22 xxl:h-24 bg-green-100 light:bg-green-900/30 rounded-lg flex items-center justify-center mx-auto mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 xxl:mb-10">
-//               <svg className="w-6 xs:w-7 sm:w-8 md:w-9 lg:w-10 xl:w-11 xxl:w-12 h-6 xs:h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 xxl:h-12 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-//               </svg>
-//             </div>
-//             <h3 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-6xl font-semibold text-slate-900 light:text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 xxl:mb-9">
-//               Live Chat
-//             </h3>
-//             <p className="text-slate-600 light:text-slate-300 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 xxl:mb-10">
-//               Get instant help from our support team through live chat assistance.
-//             </p>
-//             <button className="text-green-800 hover:text-green-700 font-medium text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl">
-//               Start Chat →
-//             </button>
-//           </div>
-
-//           <div className="bg-white light:bg-slate-800 rounded-lg p-6 xs:p-8 sm:p-10 md:p-12 lg:p-14 xl:p-16 xxl:p-18 shadow-lg hover:shadow-xl transition-shadow text-center">
-//             <div className="w-12 xs:w-14 sm:w-16 md:w-18 lg:w-20 xl:w-22 xxl:w-24 h-12 xs:h-14 sm:h-16 md:h-18 lg:h-20 xl:h-22 xxl:h-24 bg-purple-100 light:bg-purple-900/30 rounded-lg flex items-center justify-center mx-auto mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 xxl:mb-10">
-//               <svg className="w-6 xs:w-7 sm:w-8 md:w-9 lg:w-10 xl:w-11 xxl:w-12 h-6 xs:h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 xxl:h-12 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-//               </svg>
-//             </div>
-//             <h3 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-6xl font-semibold text-slate-900 light:text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 xxl:mb-9">
-//               Email Support
-//             </h3>
-//             <p className="text-slate-600 light:text-slate-300 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 xxl:mb-10">
-//               Submit detailed support requests and get expert assistance via email.
-//             </p>
-//             <a href="/contact" className="text-purple-600 hover:text-purple-700 font-medium text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl">
-//               Send Email →
-//             </a>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Support Categories */}
-//       <section className="mb-12 xs:mb-16 sm:mb-20 md:mb-24 lg:mb-28 xl:mb-32 xxl:mb-36">
-//         <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl xxl:text-8xl font-bold text-slate-900 light:text-white mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-18 xxl:mb-20 text-center">
-//           Support Categories
-//         </h2>
-
-//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 md:gap-14 lg:gap-16 xl:gap-18 xxl:gap-20">
-//           <div className="bg-slate-50 light:bg-slate-800 rounded-lg p-6 xs:p-8 sm:p-10 md:p-12 lg:p-14 xl:p-16 xxl:p-18">
-//             <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl xxl:text-7xl font-semibold text-slate-900 light:text-white mb-6 xs:mb-7 sm:mb-8 md:mb-9 lg:mb-10 xl:mb-11 xxl:mb-12">
-//               Technical Support
-//             </h3>
-//             <ul className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 xxl:space-y-9 text-slate-600 light:text-slate-300 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl">
-//               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
-//                 Software installation and configuration
-//               </li>
-//               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
-//                 Troubleshooting and error resolution
-//               </li>
-//               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
-//                 System compatibility issues
-//               </li>
-//               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
-//                 Performance optimization
-//               </li>
-//               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
-//                 Integration assistance
-//               </li>
-//             </ul>
-//           </div>
-
-//           <div className="bg-slate-50 light:bg-slate-800 rounded-lg p-6 xs:p-8 sm:p-10 md:p-12 lg:p-14 xl:p-16 xxl:p-18">
-//             <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl xxl:text-7xl font-semibold text-slate-900 light:text-white mb-6 xs:mb-7 sm:mb-8 md:mb-9 lg:mb-10 xl:mb-11 xxl:mb-12">
-//               Account & Billing
-//             </h3>
-//             <ul className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 xxl:space-y-9 text-slate-600 light:text-slate-300 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl">
-//               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
-//                 Account management and settings
-//               </li>
-//               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</spansupport
-//                 Billing inquiries and invoice questions
-//               </li>
-//               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
-//                 License management and renewals
-//               </li>
-//               <li classN{/* ame="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
-//                 Subscription changes and upgrades
-//               </li> */}
-//               <li className="flex items-start gap-3">
-//                 <span className="text-blue-600 mt-1">•</span>
-//                 Payment processing support
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Contact Information */}
-//       <section className="bg-blue-50 light:bg-blue-900/20 rounded-lg p-8 xs:p-10 sm:p-12 md:p-16 lg:p-20 xl:p-24 xxl:p-28 text-center">
-//         <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl xxl:text-8xl font-bold text-slate-900 light:text-white mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16 xxl:mb-18">
-//           Need Direct Assistance?
-//         </h2>
-//         <p className="text-slate-600 light:text-slate-300 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-18 xxl:mb-20 max-w-3xl mx-auto">
-//           Our dedicated support team is available during business hours to provide personalized assistance for all your data erasure needs.
-//         </p>
-
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xs:gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 xxl:gap-18 max-w-4xl mx-auto">
-//           <div className="text-center">
-//             <h3 className="font-semibold text-slate-900 light:text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 xxl:mb-8 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl">
-//               Email Support
-//             </h3>
-//             <p className="text-blue-600 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl">
-//               support@dsecuretech.com
-//             </p>
-//           </div>
-
-//           <div className="text-center">
-//             <h3 className="font-semibold text-slate-900 light:text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 xxl:mb-8 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl">
-//               Phone Support
-//             </h3>
-//             <p className="text-blue-600 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl">
-//               +91 11 4152 5085
-//             </p>
-//           </div>
-
-//           <div className="text-center sm:col-span-2 lg:col-span-1">
-//             <h3 className="font-semibold text-slate-900 light:text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 xxl:mb-8 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl">
-//               Business Hours
-//             </h3>
-//             <p className="text-slate-600 light:text-slate-300 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl">
-//               Mon-Fri: 9:00 AM - 6:00 PM IST
-//             </p>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   </div>
-// </>
-//   )
-// }
-
-// export default SupportPage;

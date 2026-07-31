@@ -17,7 +17,7 @@ import {
   ServerIcon,
 } from "@/components/FlatIcons";
 import { blogPosts } from "@/data/blogPosts";
-import { FileTextIcon, Monitor, Download, X, Search, ZoomIn } from "lucide-react";
+import { File, Monitor, Download, X, Search, ZoomIn } from "lucide-react";
 import { getSEOForPage } from "@/utils/seo";
 import { generateFAQSchema } from "@/utils/seo.core";
 import { useToast } from "@/components/Toast";
@@ -1618,7 +1618,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                       {/* Step 4: Erase */}
                       <div className="text-center flex-1 w-full md:w-auto flex flex-col items-center group">
                         <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100 group-hover:border-emerald-300 transition-colors w-28 h-28 flex items-center justify-center mb-4 relative">
-                          <FileTextIcon className="w-10 h-10 text-emerald-800" />
+                          <File className="w-10 h-10 text-emerald-800" />
                           <div className="absolute bottom-1 right-1 bg-white rounded-full p-0.5 shadow-sm">
                             <ShieldIcon className="w-4 h-4 text-emerald-500" />
                           </div>

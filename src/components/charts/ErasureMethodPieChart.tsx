@@ -11,14 +11,7 @@ import {
   Legend,
 } from "recharts";
 
-const COLORS = [
-  "#0088FE",
-  "#00C49F",
-  "#FFBB28",
-  "#FF8042",
-  "#8884d8",
-  "#82ca9d",
-];
+const COLORS = ['#0a2e1e', '#0e7c66', '#22a689', '#d4ede4', '#a7d5c5'];
 
 // ✅ Stable style objects defined OUTSIDE the component to prevent re-creation on every render
 const tooltipContentStyle = {
@@ -91,7 +84,7 @@ const ErasureMethodPieChart: React.FC<ErasureMethodPieChartProps> = React.memo(
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}
                 strokeWidth={2}
-                stroke="#fff"
+                stroke="#0e7c66"
               />
             ))}
           </Pie>
@@ -106,6 +99,9 @@ const ErasureMethodPieChart: React.FC<ErasureMethodPieChartProps> = React.memo(
             iconType="circle"
             iconSize={10}
             wrapperStyle={legendWrapperStyle}
+            formatter={(value) => (
+              <span className="text-slate-700 font-medium ml-1">{value}</span>
+            )}
           />
         </PieChart>
       </ResponsiveContainer>

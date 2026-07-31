@@ -94,14 +94,14 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}
-        <section className="bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50 py-8 sm:py-12 md:py-16 lg:py-24">
+        <section className="bg-gradient-to-br from-[#0e7c66] via-teal-50/30 to-[#0a2e1e] py-8 sm:py-12 md:py-16 lg:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <Reveal>
               <div className="text-center">
                 <div className="mb-6 md:mb-8">
                   <Link
                     to="/support"
-                    className="inline-flex items-center text-emerald-800 hover:text-emerald-700 font-medium mb-3 md:mb-4 transition-colors text-sm sm:text-base"
+                    className="inline-flex items-center text-[#0a2e1e] hover:text-[#0a2e1e] font-medium mb-3 md:mb-4 transition-colors text-sm sm:text-base"
                   >
                     <svg
                       className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
@@ -120,7 +120,7 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
                   </Link>
                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-4 leading-tight">
                     {title.split(' ').slice(0, -1).join(' ')}{" "}
-                    <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent block sm:inline">
+                    <span className="bg-gradient-to-r from-[#0e7c66] to-[#0a2e1e] bg-clip-text text-transparent block sm:inline">
                       {title.split(' ').slice(-1)[0]}
                     </span>
                   </h1>
@@ -136,7 +136,7 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder={`Search ${title.toLowerCase()}...`}
-                        className="w-full px-4 sm:px-6 py-3 sm:py-4 pl-10 sm:pl-12 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-sm sm:text-base"
+                        className="w-full px-4 sm:px-6 py-3 sm:py-4 pl-10 sm:pl-12 rounded-none border border-slate-300 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66] transition-colors text-sm sm:text-base"
                       />
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-slate-400 absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2"
@@ -201,7 +201,7 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
               <div className="space-y-4 sm:space-y-6">
                 {filteredSections.map((section, index) => (
                   <Reveal key={section.id} delayMs={index * 50}>
-                    <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="bg-white rounded-none shadow-sm border border-slate-200 overflow-hidden">
                       <button
                         onClick={() => toggleSection(section.id)}
                         className="w-full px-4 sm:px-6 py-4 sm:py-6 text-left hover:bg-slate-50 transition-colors flex items-center justify-between"
@@ -248,10 +248,10 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
                                 <Link
                                   key={subsection.id}
                                   to={subsection.url}
-                                  className="flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group"
+                                  className="flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-none hover:bg-slate-100 transition-colors group"
                                 >
                                   <div className="flex-1">
-                                    <h4 className="font-medium text-slate-900 group-hover:text-emerald-800 transition-colors mb-1 text-sm sm:text-base">
+                                    <h4 className="font-medium text-slate-900 group-hover:text-[#0a2e1e] transition-colors mb-1 text-sm sm:text-base">
                                       {subsection.title}
                                     </h4>
                                     <p className="text-xs sm:text-sm text-slate-600">
@@ -308,16 +308,16 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
                   <Reveal key={item.title} delayMs={index * 100}>
                     <Link
                       to={item.url}
-                      className="bg-slate-50 rounded-xl p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 group h-full flex flex-col"
+                      className="bg-slate-50 rounded-none p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 group h-full flex flex-col"
                     >
                       <div
-                        className={`w-12 h-12 sm:w-14 sm:h-14 ${item.color} rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}
+                        className={`w-12 h-12 sm:w-14 sm:h-14 ${item.color} rounded-none flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}
                       >
                         <span className="text-xl sm:text-2xl text-white">
                           {item.icon}
                         </span>
                       </div>
-                      <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                      <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-2 group-hover:text-[#0a2e1e] transition-colors">
                         {item.title}
                       </h3>
                       <p className="text-slate-600 text-xs sm:text-sm flex-grow">
@@ -333,7 +333,7 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
 
         {/* CTA Section */}
         {ctaTitle && ctaDescription && ctaButtons && (
-          <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600">
+          <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-r from-[#0e7c66] via-teal-500 to-[#0a2e1e]">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
               <Reveal>
                 <div className="text-center text-white">
@@ -350,9 +350,9 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
                         to={button.url}
                         className={`${
                           button.primary
-                            ? "bg-white text-emerald-700 hover:bg-emerald-50"
+                            ? "bg-white text-[#0a2e1e] hover:bg-[#d4ede4]"
                             : "bg-white/20 hover:bg-white/30 border-2 border-white text-white"
-                        } font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-base sm:text-lg`}
+                        } font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-none transition-colors text-base sm:text-lg`}
                       >
                         {button.text}
                       </Link>

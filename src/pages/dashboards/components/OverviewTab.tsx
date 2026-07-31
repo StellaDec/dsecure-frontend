@@ -41,7 +41,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({
           <h2 className="font-semibold text-slate-900">Recent Reports</h2>
           <Link
             to="/admin/reports"
-            className="text-emerald-800 hover:text-emerald-700 text-sm font-medium"
+            className="text-[#0a2e1e] hover:text-[#0a2e1e] text-sm font-medium"
           >
             View All
           </Link>
@@ -64,13 +64,13 @@ const OverviewTab: React.FC<OverviewTabProps> = ({
                         className={`w-2 h-2 rounded-full flex-shrink-0 mt-2 ${
                           report.status === "completed" ||
                           report.status === "Completed"
-                            ? "bg-green-400"
+                            ? "bg-[#0e7c66]"
                             : report.status === "running" ||
                                 report.status === "Running"
-                              ? "bg-blue-400"
+                              ? "bg-[#0e7c66]"
                               : report.status === "pending" ||
                                   report.status === "Pending"
-                                ? "bg-yellow-400"
+                                ? "bg-[#0e7c66]"
                                 : "bg-red-400"
                         }`}
                       ></div>
@@ -227,7 +227,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({
           <h2 className="font-semibold text-slate-900">Recent Sessions</h2>
           <Link
             to="/admin/sessions"
-            className="text-emerald-800 hover:text-emerald-700 text-sm font-medium"
+            className="text-[#0a2e1e] hover:text-[#0a2e1e] text-sm font-medium"
           >
             View All
           </Link>
@@ -252,7 +252,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({
                           className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
                             session.session_status === "active" ||
                             session.session_status === "Active"
-                              ? "bg-green-100 text-green-700"
+                              ? "bg-[#d4ede4] text-[#0a2e1e]"
                               : session.session_status === "inactive" ||
                                   session.session_status === "Inactive"
                                 ? "bg-red-100 text-red-700"

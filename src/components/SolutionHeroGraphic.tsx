@@ -164,7 +164,7 @@ const SolutionHeroGraphic: React.FC<SolutionHeroGraphicProps> = ({
               y1={startY}
               x2={endX}
               y2={endY}
-              stroke="#10b981"
+              stroke="#0e7c66"
               strokeWidth="1.5"
               strokeDasharray="6,5"
               strokeOpacity="0.5"
@@ -198,7 +198,7 @@ const SolutionHeroGraphic: React.FC<SolutionHeroGraphicProps> = ({
         >
           {centerIcon}
           <span
-            className="mt-1 text-[10px] font-black tracking-[0.2em] text-emerald-700 uppercase"
+            className="mt-1 text-[10px] font-black tracking-[0.2em] text-[#0a2e1e] uppercase"
             style={{ textShadow: "0 1px 2px rgba(0,0,0,0.05)" }}
           >
             {centerLabel}
@@ -227,12 +227,12 @@ const SolutionHeroGraphic: React.FC<SolutionHeroGraphicProps> = ({
             }}
           >
             <div
-              className="bg-white/90 backdrop-blur-sm rounded-2xl border border-emerald-100/60 
+              className="bg-white/90 backdrop-blur-sm rounded-none border border-[#d4ede4]/60 
                          shadow-lg hover:shadow-xl hover:shadow-emerald-200/30
                          w-[82px] flex flex-col items-center justify-center gap-[4px]
                          py-[10px] px-[6px] pb-[8px]
                          transition-all duration-300 
-                         hover:scale-110 hover:border-emerald-300 hover:-translate-y-1"
+                         hover:scale-110 hover:border-[#d4ede4] hover:-translate-y-1"
             >
               <div className="transition-transform duration-300 group-hover:scale-110">
                 {device.icon}
@@ -249,7 +249,7 @@ const SolutionHeroGraphic: React.FC<SolutionHeroGraphicProps> = ({
       {Array.from({ length: 6 }, (_, i) => (
         <div
           key={`particle-${i}`}
-          className="absolute rounded-full bg-emerald-400/20 pointer-events-none"
+          className="absolute rounded-full bg-[#0e7c66]/20 pointer-events-none"
           style={{
             width: `${3 + (i % 3) * 2}px`,
             height: `${3 + (i % 3) * 2}px`,

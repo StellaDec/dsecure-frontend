@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const UltratestComparisonBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Ultratest Comparison Analysis",
@@ -23,17 +23,17 @@ const UltratestComparisonBlog: React.FC = () => {
         />
 
         {/* Hero Section */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Product Comparison
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 D-Secure vs. Ultratest Genesis: The Superior Erasure Solution
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                Discover why D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> is a smarter, more
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
+                Discover why D-Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Drive Eraser</Link> is a smarter, more
                 cost-effective alternative to hardware-based erasure solutions
                 like Ultratest Genesis.
               </p>
@@ -44,13 +44,13 @@ const UltratestComparisonBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   Founded in 1996, Ultratech is a UK-based restore technology
                   company experienced in erasing, testing, and repairing
                   services. Their hardware-based data sanitization tool,{" "}
-                  <strong className="text-emerald-800">Genesis</strong>,
+                  <strong className="text-[#0a2e1e]">Genesis</strong>,
                   launched in 2020, is a combination of software embedded in
                   hardware chassis providing data erasure, device repair, and
                   testing for SAS SATA hard drives and solid state drives.
@@ -61,12 +61,12 @@ const UltratestComparisonBlog: React.FC = () => {
 
           {/* Features and Limitations */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Features and Limitations of Ultratest Genesis
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Ultratest Genesis is an integrated "3-in-1" system combining
                 hardware and software to erase, repair, and test devices.
                 However, several limitations make it less practical for many
@@ -74,11 +74,11 @@ const UltratestComparisonBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2 bg-gradient-to-r from-emerald-50 to-teal-50/50">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2 bg-white">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     High Costs
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Due to the integrated nature, organizations must purchase
                     the entire hardware system even if only a few drives need
                     erasing. Available in 8, 16, 32, 64, and 96-port models, the
@@ -88,22 +88,22 @@ const UltratestComparisonBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2 bg-gradient-to-r from-emerald-50 to-teal-50/50">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2 bg-white">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Limited Device Support
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Genesis can only erase loose drives. Non-removable embedded
                     drives like those in Mac devices cannot be erased using the
                     Ultratest Genesis solution.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2 bg-gradient-to-r from-emerald-50 to-teal-50/50">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2 bg-white">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Scalability Constraints
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     In the best-case scenario, Ultratest Genesis can only erase
                     a maximum of 96 drives in one go using their 96-port system
                     — a significant limitation for bulk data erasure service
@@ -116,20 +116,20 @@ const UltratestComparisonBlog: React.FC = () => {
 
           {/* D-Secure Alternative */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 D-Secure: The Smarter Alternative
               </h2>
 
               <p className="leading-loose text-lg mb-6">
-                D-Secure is a software-based <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">data wiping</Link> solution that provides
+                D-Secure is a software-based <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">data wiping</Link> solution that provides
                 assurance of secure data erasure with the flexibility of wiping
                 multiple drives and devices simultaneously without incurring
                 excessive costs.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     No Hardware Required
                   </h3>
@@ -139,7 +139,7 @@ const UltratestComparisonBlog: React.FC = () => {
                     onsite, offsite, and remote erasure.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Broad Device Support
                   </h3>
@@ -148,7 +148,7 @@ const UltratestComparisonBlog: React.FC = () => {
                     and devices with embedded drives.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Flexible Deployment
                   </h3>
@@ -157,7 +157,7 @@ const UltratestComparisonBlog: React.FC = () => {
                     Deploy using USB solution or via PXE boot.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Superior Certifications
                   </h3>
@@ -173,79 +173,79 @@ const UltratestComparisonBlog: React.FC = () => {
 
           {/* Comparison Table */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Key Differences
               </h2>
 
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr className="bg-emerald-100">
-                      <th className="border border-emerald-200 px-4 py-3 text-left font-bold text-slate-900">
+                    <tr className="bg-[#d4ede4]">
+                      <th className="border border-[#d0d5dc] px-4 py-3 text-left font-bold text-[#0a2e1e]">
                         Feature
                       </th>
-                      <th className="border border-emerald-200 px-4 py-3 text-left font-bold text-slate-900">
+                      <th className="border border-[#d0d5dc] px-4 py-3 text-left font-bold text-[#0a2e1e]">
                         Ultratest Genesis
                       </th>
-                      <th className="border border-emerald-200 px-4 py-3 text-left font-bold text-slate-900">
+                      <th className="border border-[#d0d5dc] px-4 py-3 text-left font-bold text-[#0a2e1e]">
                         D-Secure
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-slate-200 px-4 py-3 font-semibold">
+                      <td className="border border-[#d0d5dc] px-4 py-3 font-semibold">
                         Type
                       </td>
-                      <td className="border border-slate-200 px-4 py-3">
+                      <td className="border border-[#d0d5dc] px-4 py-3">
                         Hardware-based
                       </td>
-                      <td className="border border-slate-200 px-4 py-3 bg-emerald-50">
+                      <td className="border border-[#d0d5dc] px-4 py-3 bg-[#d4ede4]">
                         Software-based
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-200 px-4 py-3 font-semibold">
+                      <td className="border border-[#d0d5dc] px-4 py-3 font-semibold">
                         Cost
                       </td>
-                      <td className="border border-slate-200 px-4 py-3">
+                      <td className="border border-[#d0d5dc] px-4 py-3">
                         High (hardware + logistics)
                       </td>
-                      <td className="border border-slate-200 px-4 py-3 bg-emerald-50">
+                      <td className="border border-[#d0d5dc] px-4 py-3 bg-[#d4ede4]">
                         Cost-effective
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-200 px-4 py-3 font-semibold">
+                      <td className="border border-[#d0d5dc] px-4 py-3 font-semibold">
                         Device Support
                       </td>
-                      <td className="border border-slate-200 px-4 py-3">
+                      <td className="border border-[#d0d5dc] px-4 py-3">
                         Loose drives only
                       </td>
-                      <td className="border border-slate-200 px-4 py-3 bg-emerald-50">
+                      <td className="border border-[#d0d5dc] px-4 py-3 bg-[#d4ede4]">
                         PC, Mac, servers, embedded drives
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-200 px-4 py-3 font-semibold">
+                      <td className="border border-[#d0d5dc] px-4 py-3 font-semibold">
                         Max Capacity
                       </td>
-                      <td className="border border-slate-200 px-4 py-3">
+                      <td className="border border-[#d0d5dc] px-4 py-3">
                         96 drives
                       </td>
-                      <td className="border border-slate-200 px-4 py-3 bg-emerald-50">
+                      <td className="border border-[#d0d5dc] px-4 py-3 bg-[#d4ede4]">
                         Unlimited (network deployment)
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-200 px-4 py-3 font-semibold">
+                      <td className="border border-[#d0d5dc] px-4 py-3 font-semibold">
                         Certifications
                       </td>
-                      <td className="border border-slate-200 px-4 py-3">
+                      <td className="border border-[#d0d5dc] px-4 py-3">
                         ADISA PA only
                       </td>
-                      <td className="border border-slate-200 px-4 py-3 bg-emerald-50">
+                      <td className="border border-[#d0d5dc] px-4 py-3 bg-[#d4ede4]">
                         Multiple (CC, ADISA PCT, NIST, NYCE, STQC)
                       </td>
                     </tr>
@@ -257,11 +257,11 @@ const UltratestComparisonBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#d4ede4] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Conclusion
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 While Ultratest Genesis offers an integrated hardware solution,
                 D-Secure provides a more flexible, scalable, and cost-effective
                 alternative for organizations of all sizes. With superior

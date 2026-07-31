@@ -4,7 +4,7 @@ import { useForm, validationRules } from "@/hooks";
 import { useFormSubmission, formConfigs } from "@/hooks/useFormSubmission";
 import { showGlobalToast } from "@/utils/enhancedFormSystem";
 import { X } from "lucide-react";
-
+import { themeClasses } from "@/components/ui/Theme";
 
 // Form input components - removed memo to prevent focus loss during typing
 const FormInput: React.FC<{
@@ -75,7 +75,7 @@ const ModalWrapper: React.FC<{
 
   return (
     <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 z-50 overflow-hidden animate-in fade-in duration-300">
-      <div className="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-emerald-100/50">
+      <div className="bg-white rounded-none max-w-2xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-[#d4ede4]/50">
         {children}
       </div>
     </div>
@@ -232,16 +232,16 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
       <div className={`${className} flex flex-col h-full overflow-hidden`}>
         {/* Fixed Header */}
         {showHeader && (
-          <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white p-8 rounded-t-[2rem] relative flex-shrink-0">
+          <div className="bg-gradient-to-br from-[#0e7c66] via-teal-600 to-[#0a2e1e] text-white p-8 rounded-none relative flex-shrink-0">
             <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 25% 50%, white 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
             <div className="flex flex-col items-center relative z-10">
               <h2 className="text-3xl font-bold tracking-tight text-center">{title}</h2>
-              <p className="text-emerald-50/80 mt-2 text-sm font-medium">Join our global network of security experts</p>
+              <p className="text-[#d4ede4]/80 mt-2 text-sm font-medium">Join our global network of security experts</p>
             </div>
             {isModal && onClose && (
               <button
                 onClick={onClose}
-                className="absolute top-6 right-6 z-20 cursor-pointer text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/20 transition-all duration-300"
+                className="absolute top-6 right-6 z-20 cursor-pointer text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-none hover:bg-white/20 transition-all duration-300"
               >
                 <X className="w-6 h-6 pointer-events-none" />
               </button>
@@ -269,7 +269,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                 value={partnerForm.formData.fullName}
                 onChange={partnerForm.handleInputChange}
                 required
-                className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200"
+                className="w-full p-4 bg-white border-2 border-[#d4ede4] rounded-none focus:ring-4 focus:ring-emerald-500/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#d4ede4]"
               />
               {partnerForm.errors.fullName && (
                 <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1.5 ml-1">
@@ -287,7 +287,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                   value={partnerForm.formData.businessEmail}
                   onChange={partnerForm.handleInputChange}
                   required
-                  className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200"
+                  className="w-full p-4 bg-white border-2 border-[#d4ede4] rounded-none focus:ring-4 focus:ring-emerald-500/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#d4ede4]"
                 />
                 {partnerForm.errors.businessEmail && (
                   <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1.5 ml-1">
@@ -303,7 +303,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                   value={partnerForm.formData.phone}
                   onChange={partnerForm.handleInputChange}
                   required
-                  className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200"
+                  className="w-full p-4 bg-white border-2 border-[#d4ede4] rounded-none focus:ring-4 focus:ring-emerald-500/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#d4ede4]"
                 />
                 {partnerForm.errors.phone && (
                   <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1.5 ml-1">
@@ -322,7 +322,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                   value={partnerForm.formData.companyName}
                   onChange={partnerForm.handleInputChange}
                   required
-                  className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200"
+                  className="w-full p-4 bg-white border-2 border-[#d4ede4] rounded-none focus:ring-4 focus:ring-emerald-500/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#d4ede4]"
                 />
                 {partnerForm.errors.companyName && (
                   <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1.5 ml-1">
@@ -338,7 +338,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                   value={partnerForm.formData.website}
                   onChange={partnerForm.handleInputChange}
                   required
-                  className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200"
+                  className="w-full p-4 bg-white border-2 border-[#d4ede4] rounded-none focus:ring-4 focus:ring-emerald-500/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#d4ede4]"
                 />
                 {partnerForm.errors.website && (
                   <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1.5 ml-1">
@@ -355,7 +355,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                   value={partnerForm.formData.country}
                   onChange={partnerForm.handleInputChange}
                   required
-                  className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200 appearance-none cursor-pointer"
+                  className="w-full p-4 bg-white border-2 border-[#d4ede4] rounded-none focus:ring-4 focus:ring-emerald-500/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#d4ede4] appearance-none cursor-pointer"
                 >
                   <option value="" disabled selected hidden>Select Country*</option>
                   {countryOptions.map(country => (
@@ -379,7 +379,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                   value={partnerForm.formData.businessType}
                   onChange={partnerForm.handleInputChange}
                   required
-                  className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200 appearance-none cursor-pointer"
+                  className="w-full p-4 bg-white border-2 border-[#d4ede4] rounded-none focus:ring-4 focus:ring-emerald-500/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#d4ede4] appearance-none cursor-pointer"
                 >
                   <option value="" disabled selected hidden>Select Business Type*</option>
                   <option value="Enterprise">Enterprise</option>
@@ -401,7 +401,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                   value={partnerForm.formData.partnerType}
                   onChange={partnerForm.handleInputChange}
                   required
-                  className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200 appearance-none cursor-pointer"
+                  className="w-full p-4 bg-white border-2 border-[#d4ede4] rounded-none focus:ring-4 focus:ring-emerald-500/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#d4ede4] appearance-none cursor-pointer"
                 >
                   <option value="" disabled selected hidden>Select Partner Type*</option>
                   {partnerTypeOptions.map(type => (
@@ -425,7 +425,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
                 value={partnerForm.formData.businessDescription}
                 onChange={partnerForm.handleInputChange}
                 rows={3}
-                className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200 resize-none"
+                className="w-full p-4 bg-white border-2 border-[#d4ede4] rounded-none focus:ring-4 focus:ring-emerald-500/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#d4ede4] resize-none"
               />
               {partnerForm.errors.businessDescription && (
                 <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1.5 ml-1">
@@ -438,11 +438,11 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
 
             {/* Privacy Policy */}
             {showPrivacyPolicy && (
-              <div className="text-xs font-bold text-slate-500 bg-slate-50 p-4 rounded-xl border border-slate-100 uppercase tracking-widest">
+              <div className="text-xs font-bold text-[#5a6672] bg-[#f4fbf8] p-4 rounded-none border border-slate-100 uppercase tracking-widest">
                 I understand that the above information is protected by{" "}
                 <Link
                   to="/privacy-policy"
-                  className="text-emerald-600 hover:text-emerald-700 hover:underline decoration-emerald-300 underline-offset-4"
+                  className="text-[#0a2e1e] hover:text-[#0a2e1e] hover:underline decoration-emerald-300 underline-offset-4"
                 >
                   D-Secure's Privacy Policy.
                 </Link>
@@ -452,7 +452,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
             <button
               type="submit"
               disabled={isSubmitting || partnerForm.isSubmitting}
-              className="w-full bg-slate-900 text-white font-black py-4 px-6 rounded-xl transition-all duration-300 shadow-xl shadow-slate-900/10 hover:shadow-emerald-500/30 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group mt-2"
+              className={`w-full mt-2 ${themeClasses.button.base} ${themeClasses.button.primary} group disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               {(isSubmitting || partnerForm.isSubmitting) ? (
                 <>

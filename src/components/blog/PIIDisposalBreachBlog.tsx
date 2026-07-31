@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const PIIDisposalBreachBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "PII Disposal and Breach Prevention",
@@ -22,16 +22,16 @@ const PIIDisposalBreachBlog: React.FC = () => {
           })}
         />
 
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Data Privacy
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Improper Disposal of PII May Lead to Data Breach
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Understand Personally Identifiable Information (PII), major
                 breach incidents, and data disposal policies to ethically
                 prevent PII breaches.
@@ -42,21 +42,21 @@ const PIIDisposalBreachBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 What is Personally Identifiable Information (PII)?
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Personally Identifiable Information (PII) is information that,
                 when used alone or combined with other records, can define or
                 trace an individual. It comprises any factual or subjective
                 information directly or indirectly associated with a person.
               </p>
-              <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-white border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Types of PII Identifiers
                 </h3>
-                <p className="text-lg text-slate-700 leading-loose">
+                <p className="text-lg text-[#5a6672] leading-loose">
                   PII may contain <strong>direct identifiers</strong> such as
                   Social Security numbers, or <strong>quasi-identifiers</strong>{" "}
                   such as race or date of birth, or a combination of both to
@@ -67,65 +67,65 @@ const PIIDisposalBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Categories of PII Data
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 A wide array of sensitive and non-sensitive information forms
                 part of personally identifiable information:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Personal Identifiers
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Name, age, national identification numbers including
                     driver's license, Social Security, and passport details.
                   </p>
                 </div>
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Demographic Information
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Race, national or ethnic origin, religion, marital or
                     relationship status.
                   </p>
                 </div>
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     History Records
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Medical, education, or employment history and business
                     details.
                   </p>
                 </div>
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Financial Information
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Bank accounts, credit cards, investment portfolios, and
                     financial transactions.
                   </p>
                 </div>
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Biometric Data
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     DNA, digital identity including face and fingerprint
                     recognition.
                   </p>
                 </div>
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Digital Credentials
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Login credentials, evaluations, comments, or opinions of an
                     individual as employee.
                   </p>
@@ -135,7 +135,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-red-600 via-red-500 to-orange-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Daunting Incidents of PII Breach
               </h2>
@@ -147,7 +147,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">NHS Computer Sale</h3>
                   <p className="text-white/90 leading-relaxed">
                     NHS computers with patient data were sold on eBay, exposing
@@ -155,7 +155,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">
                     U.S. Veterans Affairs
                   </h3>
@@ -165,7 +165,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">
                     Morgan Stanley Data Breach
                   </h3>
@@ -176,7 +176,7 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">
                     HealthReach Community Centers
                   </h3>
@@ -196,11 +196,11 @@ const PIIDisposalBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 9 Key Measures to Prevent PII Breach
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Regardless of industry or size, organizations must protect
                 personal information of customers, employees, and stakeholders.
                 Develop comprehensive policies to securely manage PII at all
@@ -208,83 +208,83 @@ const PIIDisposalBreachBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     1. Limit Access
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Limit access to devices and areas that store, transmit, and
                     process sensitive data.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     2. IT Security Policy
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Establish policies for data encryption, multi-factor
                     authentication, strong passwords, regular software updates,
                     and data backup.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     3. Data Governance Policy
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Set protocols for safe data handling, archival, and
                     protection. Regularly audit staff responsible for collecting
                     and processing PII.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     4. Privacy Policy
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Define and limit the usage and management of data collected
                     from customers, investors, and stakeholders.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     5. Vendor Management Program
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Address risk, security, privacy, and compliance with data
                     protection laws and regulations for all third-party vendors.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     6. Employee Training
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Organize regular data security awareness trainings to ensure
                     all personnel are aware of data leakage pitfalls.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     7. Data Minimization
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Don't store customer data beyond its purpose of collection.
                     Permanently erase data once the project is over.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     8. Data Disposal Policy
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Formulate PII data retention and disposal policies for
                     permanent destruction from devices not in use. Use
                     software-based erasure for wiping data on HDDs, SSDs, PCs,
@@ -292,11 +292,11 @@ const PIIDisposalBreachBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     9. Incident Response Plan
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Craft a plan to detect, respond, and recover from data
                     security and data breach incidents.
                   </p>
@@ -306,58 +306,58 @@ const PIIDisposalBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Global Regulations for PII Protection
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Different countries have established stringent data protection
                 laws to guide organizations with legitimate approaches to PII
                 collection, storage, and disposal. These regulations emphasize
                 data erasure once the purpose is fulfilled:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     NIST (United States)
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     National Institute of Standards and Technology guidelines to
                     safeguard the confidentiality of U.S. citizens.
                   </p>
                 </div>
-                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     EU GDPR (Europe)
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     One of the toughest data protection regulations effective
                     across the European Union.
                   </p>
                 </div>
-                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Privacy Act 1988 (Australia)
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Predominant data privacy law initiated by the Government of
                     Australia in the late 80s.
                   </p>
                 </div>
-                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     PIPEDA (Canada)
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Personal Information Protection and Electronic Documents Act
                     empowers Canadian customers with data access rights.
                   </p>
                 </div>
-                <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
-                  <h3 className="font-bold text-indigo-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     APPI (Japan)
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Act on the Protection of Personal Information preserves
                     personal information of Japanese citizens.
                   </p>
@@ -367,31 +367,31 @@ const PIIDisposalBreachBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Key Takeaways
               </h2>
-              <p className="text-lg text-slate-700 leading-loose">
+              <p className="text-lg text-[#5a6672] leading-loose">
                 Organizations ignoring regulatory laws suffer massive penalties
                 from legal and compliance regulators. Proper PII handling and
                 disposal is essential.
               </p>
-              <ul className="space-y-4 text-slate-700 text-lg leading-loose mt-4">
-                <li className="border-l-4 border-indigo-500 pl-8 py-2">
+              <ul className="space-y-4 text-[#5a6672] text-lg leading-loose mt-4">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   PII includes direct identifiers (SSN) and quasi-identifiers
                   (race, DOB)
                 </li>
-                <li className="border-l-4 border-indigo-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Improper IT asset disposal is a leading cause of PII breaches
                 </li>
-                <li className="border-l-4 border-indigo-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Implement 9 key measures: access control, policies, training,
                   disposal
                 </li>
-                <li className="border-l-4 border-indigo-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Use software-based erasure for permanent data destruction
                 </li>
-                <li className="border-l-4 border-indigo-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Comply with global regulations: NIST, GDPR, Privacy Act,
                   PIPEDA, APPI
                 </li>

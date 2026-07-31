@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { AlertTriangle, ArrowLeft, Loader2 } from 'lucide-react';
+
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useNavigate } from "react-router-dom";
@@ -411,33 +413,21 @@ export default function PrivateCloudSetup() {
     <>
       <SEOHeadNative seo={getSEOForPage("private-cloud-setup")} />
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 py-8 px-4">
+      <div className="min-h-screen bg-white py-8 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="mb-8">
             <button
               onClick={() => navigate("/admin")}
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-4 transition-colors"
+              className="flex items-center gap-2 text-slate-600 hover:text-[#0a2e1e] mb-4 transition-colors"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                />
-              </svg>
+              <ArrowLeft className="w-5 h-5" />
               Back to Dashboard
             </button>
 
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+            <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
               <div className="flex items-center gap-4 mb-2">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-white rounded-none flex items-center justify-center">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -453,7 +443,7 @@ export default function PrivateCloudSetup() {
                   </svg>
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-slate-900">
+                  <h1 className="text-2xl font-bold text-[#0a2e1e]">
                     Private Cloud Setup
                   </h1>
                   <p className="text-slate-600">
@@ -468,10 +458,10 @@ export default function PrivateCloudSetup() {
           <form onSubmit={handleSubmit}>
             <div className="space-y-6">
               {/* Connection String */}
-              <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                <h2 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
+                <h2 className="text-lg font-semibold text-[#0a2e1e] mb-4 flex items-center gap-2">
                   <svg
-                    className="w-5 h-5 text-purple-600"
+                    className="w-5 h-5 text-[#0a2e1e]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -500,7 +490,7 @@ export default function PrivateCloudSetup() {
                           connectionString: e.target.value,
                         }))
                       }
-                      className="w-full min-w-[600px] px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 font-mono text-sm whitespace-nowrap"
+                      className="w-full min-w-[600px] px-4 py-3 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-[#0e7c66] font-mono text-sm whitespace-nowrap"
                       placeholder="Server=myserver.database.windows.net;Database=mydb;User Id=myuser;Password=mypass;"
                       required
                     />
@@ -513,10 +503,10 @@ export default function PrivateCloudSetup() {
               </div>
 
               {/* Action Buttons - 3 Separate Steps */}
-              <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                <h2 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
+                <h2 className="text-lg font-semibold text-[#0a2e1e] mb-4 flex items-center gap-2">
                   <svg
-                    className="w-5 h-5 text-purple-600"
+                    className="w-5 h-5 text-[#0a2e1e]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -533,9 +523,9 @@ export default function PrivateCloudSetup() {
 
                 <div className="space-y-4">
                   {/* Step 1: Create Tables */}
-                  <div className="flex items-center gap-4 p-4 border border-slate-200 rounded-lg">
+                  <div className="flex items-center gap-4 p-4 border border-slate-200 rounded-none">
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center ${setupStatus.tablesCreated ? "bg-green-100 text-green-800" : "bg-purple-100 text-purple-600"}`}
+                      className={`w-8 h-8 rounded-full flex items-center justify-center ${setupStatus.tablesCreated ? "bg-[#d4ede4] text-[#0a2e1e]" : "bg-[#d4ede4] text-[#0a2e1e]"}`}
                     >
                       {setupStatus.tablesCreated ? (
                         <svg
@@ -554,7 +544,7 @@ export default function PrivateCloudSetup() {
                       )}
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-medium text-slate-900">
+                      <h3 className="font-medium text-[#0a2e1e]">
                         Create Tables
                       </h3>
                       <p className="text-sm text-slate-500">
@@ -567,29 +557,11 @@ export default function PrivateCloudSetup() {
                       disabled={
                         loading || !privateCloudForm.connectionString
                       }
-                      className={`px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2 ${loading || !privateCloudForm.connectionString ? "opacity-50 cursor-not-allowed" : ""}`}
+                      className={`px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] transition-colors flex items-center gap-2 ${loading || !privateCloudForm.connectionString ? "opacity-50 cursor-not-allowed" : ""}`}
                     >
                       {loading && setupStep === "creating" ? (
                         <>
-                          <svg
-                            className="animate-spin w-4 h-4"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                               cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                              fill="none"
-                            />
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            />
-                          </svg>
+                          <Loader2 className="animate-spin w-4 h-4" />
                           Creating...
                         </>
                       ) : (
@@ -600,10 +572,10 @@ export default function PrivateCloudSetup() {
 
                   {/* Step 2: Validate Schema */}
                   <div
-                    className={`flex items-center gap-4 p-4 border border-slate-200 rounded-lg ${!setupStatus.tablesCreated ? "opacity-50 bg-slate-50" : ""}`}
+                    className={`flex items-center gap-4 p-4 border border-slate-200 rounded-none ${!setupStatus.tablesCreated ? "opacity-50 bg-slate-50" : ""}`}
                   >
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center ${setupStatus.schemaValidated ? "bg-green-100 text-green-800" : "bg-purple-100 text-purple-600"}`}
+                      className={`w-8 h-8 rounded-full flex items-center justify-center ${setupStatus.schemaValidated ? "bg-[#d4ede4] text-[#0a2e1e]" : "bg-[#d4ede4] text-[#0a2e1e]"}`}
                     >
                       {setupStatus.schemaValidated ? (
                         <svg
@@ -622,7 +594,7 @@ export default function PrivateCloudSetup() {
                       )}
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-medium text-slate-900">
+                      <h3 className="font-medium text-[#0a2e1e]">
                         Validate Schema
                       </h3>
                       <p className="text-sm text-slate-500">
@@ -633,7 +605,7 @@ export default function PrivateCloudSetup() {
                       type="button"
                       onClick={handleValidateSchema}
                       disabled={loading || !setupStatus.tablesCreated}
-                      className={`px-4 py-2 border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors ${loading || !setupStatus.tablesCreated ? "opacity-50 cursor-not-allowed" : ""}`}
+                      className={`px-4 py-2 border border-slate-300 rounded-none hover:bg-slate-50 transition-colors ${loading || !setupStatus.tablesCreated ? "opacity-50 cursor-not-allowed" : ""}`}
                     >
                       {loading && setupStep === "validating"
                         ? "Validating..."
@@ -643,10 +615,10 @@ export default function PrivateCloudSetup() {
 
                   {/* Step 3: Migrate Data */}
                   <div
-                    className={`flex items-center gap-4 p-4 border border-slate-200 rounded-lg ${!setupStatus.schemaValidated ? "opacity-50 bg-slate-50" : ""}`}
+                    className={`flex items-center gap-4 p-4 border border-slate-200 rounded-none ${!setupStatus.schemaValidated ? "opacity-50 bg-slate-50" : ""}`}
                   >
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center ${setupStatus.dataMigrated ? "bg-green-100 text-green-800" : "bg-purple-100 text-purple-600"}`}
+                      className={`w-8 h-8 rounded-full flex items-center justify-center ${setupStatus.dataMigrated ? "bg-[#d4ede4] text-[#0a2e1e]" : "bg-[#d4ede4] text-[#0a2e1e]"}`}
                     >
                       {setupStatus.dataMigrated ? (
                         <svg
@@ -665,7 +637,7 @@ export default function PrivateCloudSetup() {
                       )}
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-medium text-slate-900">
+                      <h3 className="font-medium text-[#0a2e1e]">
                         Migrate All Tables
                       </h3>
                       <p className="text-sm text-slate-500">
@@ -676,7 +648,7 @@ export default function PrivateCloudSetup() {
                       type="button"
                       onClick={handleMigrateData}
                       disabled={loading || !setupStatus.schemaValidated}
-                      className={`px-4 py-2 border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors ${loading || !setupStatus.schemaValidated ? "opacity-50 cursor-not-allowed" : ""}`}
+                      className={`px-4 py-2 border border-slate-300 rounded-none hover:bg-slate-50 transition-colors ${loading || !setupStatus.schemaValidated ? "opacity-50 cursor-not-allowed" : ""}`}
                     >
                       {loading && setupStep === "migrating"
                         ? "Migrating..."
@@ -688,31 +660,9 @@ export default function PrivateCloudSetup() {
                 {/* Status Message */}
                 {setupStatus.message && (
                   <div
-                    className={`mt-6 p-4 rounded-lg flex items-center gap-3 ${setupStatus.message.includes("Error") || setupStatus.message.includes("Failed") ? "bg-red-50 text-red-700 border border-red-200" : "bg-blue-50 text-blue-700 border border-blue-200"}`}
+                    className={`mt-6 p-4 rounded-none flex items-center gap-3 ${setupStatus.message.includes("Error") || setupStatus.message.includes("Failed") ? "bg-red-50 text-red-700 border border-red-200" : "bg-[#d4ede4] text-[#0a2e1e] border border-[#d4ede4]"}`}
                   >
-                    <svg
-                      className="w-5 h-5 shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      {setupStatus.message.includes("Error") ||
-                      setupStatus.message.includes("Failed") ? (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                        />
-                      ) : (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      )}
-                    </svg>
+                    <AlertTriangle className="w-5 h-5 shrink-0" />
                     <div>{setupStatus.message}</div>
                   </div>
                 )}

@@ -1,6 +1,8 @@
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React, { useState } from 'react'
+import { ChevronLeft } from 'lucide-react';
+
 import Reveal from '@/components/Reveal'
 import { useAuth } from '@/auth/AuthContext'
 import { Link } from 'react-router-dom'
@@ -97,14 +99,12 @@ const NewErasurePage: React.FC = () => {
             <div className="flex items-center gap-4 mb-4">
               <Link 
                 to="/admin" 
-                className="p-2 rounded-lg border border-slate-200 hover:bg-white transition-colors"
+                className="p-2 rounded-none border border-slate-200 hover:bg-white transition-colors"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
+                <ChevronLeft className="w-5 h-5" />
               </Link>
               <div>
-                <h1 className="text-3xl font-bold text-slate-900">New Erasure Process</h1>
+                <h1 className="text-3xl font-bold text-[#0a2e1e]">New Erasure Process</h1>
                 <p className="text-slate-600 mt-1">Configure and start a secure data erasure</p>
               </div>
             </div>
@@ -137,21 +137,21 @@ const NewErasurePage: React.FC = () => {
             {/* Step 1: Device Selection */}
             {step === 1 && (
               <Reveal>
-                <div className="card p-8">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-6">Select Device Type</h2>
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-8">
+                  <h2 className="text-2xl font-bold text-[#0a2e1e] mb-6">Select Device Type</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {deviceTypes.map((device) => (
                       <button
                         key={device.id}
                         onClick={() => setConfig({...config, deviceType: device.id})}
-                        className={`p-6 rounded-xl border-2 transition-all ${
+                        className={`p-6 rounded-none border-2 transition-all ${
                           config.deviceType === device.id
                             ? 'border-brand bg-brand/5'
                             : 'border-slate-200 hover:border-slate-300'
                         }`}
                       >
                         <div className="mb-3 text-slate-600">{device.iconSvg}</div>
-                        <div className="font-semibold text-slate-900">{device.name}</div>
+                        <div className="font-semibold text-[#0a2e1e]">{device.name}</div>
                       </button>
                     ))}
                   </div>
@@ -162,39 +162,39 @@ const NewErasurePage: React.FC = () => {
             {/* Step 2: Erasure Method */}
             {step === 2 && (
               <Reveal>
-                <div className="card p-8">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-6">Choose Erasure Method</h2>
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-8">
+                  <h2 className="text-2xl font-bold text-[#0a2e1e] mb-6">Choose Erasure Method</h2>
                   <div className="space-y-4">
                     {erasureMethods.map((method) => (
                       <button
                         key={method.id}
                         onClick={() => setConfig({...config, erasureMethod: method.id})}
-                        className={`w-full p-4 rounded-xl border-2 text-left transition-all ${
+                        className={`w-full p-4 rounded-none border-2 text-left transition-all ${
                           config.erasureMethod === method.id
                             ? 'border-brand bg-brand/5'
                             : 'border-slate-200 hover:border-slate-300'
                         }`}
                       >
-                        <div className="font-semibold text-slate-900">{method.name}</div>
+                        <div className="font-semibold text-[#0a2e1e]">{method.name}</div>
                         <div className="text-slate-600 text-sm mt-1">{method.description}</div>
                       </button>
                     ))}
                   </div>
 
                   <div className="mt-8">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-4">Verification Method</h3>
+                    <h3 className="text-lg font-semibold text-[#0a2e1e] mb-4">Verification Method</h3>
                     <div className="space-y-3">
                       {verificationMethods.map((verification) => (
                         <button
                           key={verification.id}
                           onClick={() => setConfig({...config, verificationMethod: verification.id})}
-                          className={`w-full p-3 rounded-lg border text-left transition-all ${
+                          className={`w-full p-3 rounded-none border text-left transition-all ${
                             config.verificationMethod === verification.id
                               ? 'border-brand bg-brand/5'
                               : 'border-slate-200 hover:border-slate-300'
                           }`}
                         >
-                          <div className="font-medium text-slate-900">{verification.name}</div>
+                          <div className="font-medium text-[#0a2e1e]">{verification.name}</div>
                           <div className="text-slate-600 text-sm">{verification.description}</div>
                         </button>
                       ))}
@@ -207,13 +207,13 @@ const NewErasurePage: React.FC = () => {
             {/* Step 3: Schedule & Review */}
             {step === 3 && (
               <Reveal>
-                <div className="card p-8">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-6">Schedule & Review</h2>
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-8">
+                  <h2 className="text-2xl font-bold text-[#0a2e1e] mb-6">Schedule & Review</h2>
                   
                   <div className="space-y-6">
                     {/* Schedule Options */}
                     <div>
-                      <h3 className="text-lg font-semibold text-slate-900 mb-3">Schedule</h3>
+                      <h3 className="text-lg font-semibold text-[#0a2e1e] mb-3">Schedule</h3>
                       <div className="space-y-2">
                         {[
                           { id: 'immediate', label: 'Start Immediately' },
@@ -248,8 +248,8 @@ const NewErasurePage: React.FC = () => {
                     </div>
 
                     {/* Configuration Summary */}
-                    <div className="bg-slate-50 rounded-xl p-6">
-                      <h3 className="text-lg font-semibold text-slate-900 mb-4">Configuration Summary</h3>
+                    <div className="bg-slate-50 rounded-none p-6">
+                      <h3 className="text-lg font-semibold text-[#0a2e1e] mb-4">Configuration Summary</h3>
                       <div className="space-y-2 text-sm">
                         <div><span className="font-medium">Device Type:</span> {deviceTypes.find(d => d.id === config.deviceType)?.name || 'Not selected'}</div>
                         <div><span className="font-medium">Erasure Method:</span> {erasureMethods.find(m => m.id === config.erasureMethod)?.name || 'Not selected'}</div>
@@ -268,7 +268,7 @@ const NewErasurePage: React.FC = () => {
               <button
                 onClick={handlePrevious}
                 disabled={step === 1}
-                className="px-6 py-3 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-3 border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Previous
               </button>
@@ -280,14 +280,14 @@ const NewErasurePage: React.FC = () => {
                     (step === 1 && !config.deviceType) ||
                     (step === 2 && (!config.erasureMethod || !config.verificationMethod))
                   }
-                  className="px-6 py-3 bg-brand text-white rounded-lg hover:bg-brand-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 py-3 bg-brand text-white rounded-none hover:bg-brand-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Next
                 </button>
               ) : (
                 <button
                   onClick={handleStartErasure}
-                  className="px-6 py-3 bg-brand text-white rounded-lg hover:bg-brand-600"
+                  className="px-6 py-3 bg-brand text-white rounded-none hover:bg-brand-600"
                 >
                   Start Erasure
                 </button>

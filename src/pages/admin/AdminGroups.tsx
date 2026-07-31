@@ -267,7 +267,7 @@ export default function AdminGroups() {
       {/* SEO Head component */}
       <SEOHeadNative seo={getSEOForPage("admin-groups")} />
 
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
           <div className="flex-1 min-w-0">
@@ -318,7 +318,7 @@ export default function AdminGroups() {
                   placeholder="Search by group name or description..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                 />
               </div>
               <div className="flex items-end">
@@ -334,7 +334,7 @@ export default function AdminGroups() {
         {isLoadingGroups && (
           <div className="flex justify-center items-center py-12">
             <div className="text-center">
-              <div className="animate-spin h-12 w-12 text-emerald-500 mx-auto mb-4 border-4 border-t-transparent rounded-full"></div>
+              <div className="animate-spin h-12 w-12 text-[#0a2e1e] mx-auto mb-4 border-4 border-t-transparent rounded-none"></div>
               <p className="text-slate-600">Loading groups...</p>
             </div>
           </div>
@@ -387,7 +387,7 @@ export default function AdminGroups() {
                       {(isSuperAdmin || (isGroupAdmin && group.id === currentUserGroupId)) && (
                         <button
                           onClick={() => navigate(`/admin/groups/edit/${group.id}`)}
-                          className="text-blue-600 hover:text-blue-700 p-1 rounded hover:bg-blue-50 transition-colors"
+                          className="text-[#0a2e1e] hover:text-[#0a2e1e] p-1 rounded hover:bg-[#d4ede4] transition-colors"
                           title="Edit Group"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -398,7 +398,7 @@ export default function AdminGroups() {
                       {(isSuperAdmin || (isGroupAdmin && group.id === currentUserGroupId)) && (
                         <button
                           onClick={() => handleAssignGroupLicense(group.id)}
-                          className="text-emerald-800 hover:text-emerald-700 p-1 rounded hover:bg-emerald-50 transition-colors"
+                          className="text-[#0a2e1e] hover:text-[#0a2e1e] p-1 rounded hover:bg-[#d4ede4] transition-colors"
                           title="Assign License"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -435,7 +435,7 @@ export default function AdminGroups() {
                     <div className="text-sm font-medium text-slate-700 mb-2">Permissions</div>
                     <div className="flex flex-wrap gap-1">
                       {(group.permissions || []).slice(0, 3).map((p) => (
-                        <span key={p} className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                        <span key={p} className="inline-flex items-center px-2 py-1 rounded-none text-xs font-medium bg-[#d4ede4] text-[#0a2e1e]">
                           {permissionLabels[p] || p}
                         </span>
                       ))}
@@ -457,7 +457,7 @@ export default function AdminGroups() {
             <div className="bg-white rounded-xl shadow-2xl max-w-md w-full overflow-hidden">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 bg-emerald-100 rounded-lg text-emerald-800">
+                  <div className="p-2 bg-[#d4ede4] rounded-lg text-[#0a2e1e]">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
                     </svg>
@@ -491,7 +491,7 @@ export default function AdminGroups() {
                       <span className="font-semibold text-slate-900">{selectedGroup.licenses.toLocaleString()}</span>
                     </div>
                     {licenseCount && !isNaN(Number(licenseCount)) && (
-                      <div className="flex justify-between text-emerald-700 pt-1 border-t border-slate-200 mt-1">
+                      <div className="flex justify-between text-[#0a2e1e] pt-1 border-t border-slate-200 mt-1">
                         <span className="font-medium">New Total:</span>
                         <span className="font-bold">{Number.parseInt(licenseCount, 10).toLocaleString()}</span>
                       </div>

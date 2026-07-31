@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { AlertTriangle, Loader2, Trash2, User, Users, X } from 'lucide-react';
+
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { exportToCsv, openPrintView } from "@/utils/csv";
@@ -843,54 +845,24 @@ export default function AdminSubusers() {
       {/* Edit Subuser Modal */}
       {editModal.show && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-lg w-full shadow-xl mt-10">
+          <div className="bg-white rounded-none max-w-lg w-full shadow-xl mt-10">
             {/* Modal Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b">
-              <h2 className="text-lg font-semibold text-slate-900">
+              <h2 className="text-lg font-semibold text-[#0a2e1e]">
                 Edit Subuser
               </h2>
               <button
                 onClick={() => setEditModal({ show: false, user: null })}
                 className="text-slate-400 hover:text-slate-600 transition-colors"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <X className="w-6 h-6" />
               </button>
             </div>
 
             {/* Modal Content */}
             {editFetching ? (
               <div className="p-8 flex flex-col items-center justify-center min-h-[320px]">
-                <svg
-                  className="animate-spin h-8 w-8 text-blue-500 mb-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  ></path>
-                </svg>
+                <Loader2 className="animate-spin h-8 w-8 text-[#0a2e1e] mb-4" />
                 <p className="text-slate-600">Loading user data...</p>
               </div>
             ) : (
@@ -906,7 +878,7 @@ export default function AdminSubusers() {
                         type="email"
                         value={editFormData.subuser_email}
                         disabled
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md bg-slate-50 text-slate-500 cursor-not-allowed text-sm"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none bg-slate-50 text-slate-500 cursor-not-allowed text-sm"
                       />
                     </div>
                     <div>
@@ -922,7 +894,7 @@ export default function AdminSubusers() {
                             subuser_name: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                         placeholder="John Doe"
                         autoComplete="name"
                       />
@@ -943,7 +915,7 @@ export default function AdminSubusers() {
                             role: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                       >
                         <option value="">Select Role</option>
                         {uniqueRoles.length > 0 ? (
@@ -976,7 +948,7 @@ export default function AdminSubusers() {
                             department: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                       >
                         <option value="">Select Department</option>
                         {uniqueDepartments.length > 0 ? (
@@ -1015,7 +987,7 @@ export default function AdminSubusers() {
                             phone: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                         placeholder="+1 234 567 8900"
                         autoComplete="tel"
                       />
@@ -1032,7 +1004,7 @@ export default function AdminSubusers() {
                             status: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                       >
                         <option value="">Select Status</option>
                         {uniqueStatuses.length > 0 ? (
@@ -1071,7 +1043,7 @@ export default function AdminSubusers() {
                             subuser_group: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                         placeholder="Group name"
                       />
                     </div>
@@ -1088,7 +1060,7 @@ export default function AdminSubusers() {
                             license_allocation: Number(e.target.value),
                           })
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                         placeholder="0"
                         min="0"
                       />
@@ -1109,7 +1081,7 @@ export default function AdminSubusers() {
                           password: e.target.value,
                         })
                       }
-                      className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                       placeholder="Leave blank to keep current password"
                       autoComplete="new-password"
                     />
@@ -1121,37 +1093,19 @@ export default function AdminSubusers() {
                   <button
                     type="button"
                     onClick={() => setEditModal({ show: false, user: null })}
-                    className="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 transition-colors"
+                    className="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 transition-colors"
                     disabled={editLoading}
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="px-4 py-2 text-sm font-medium text-white bg-[#0e7c66] rounded-none hover:bg-[#0e7c66] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                     disabled={editLoading}
                   >
                     {editLoading ? (
                       <>
-                        <svg
-                          className="animate-spin w-4 h-4"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          ></circle>
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                          ></path>
-                        </svg>
+                        <Loader2 className="animate-spin w-4 h-4" />
                         Updating...
                       </>
                     ) : (
@@ -1165,18 +1119,18 @@ export default function AdminSubusers() {
         </div>
       )}
       <SEOHeadNative seo={getSEOForPage("admin-subusers")} />
-      <div className="space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6">
+      <div className="space-y-6 min-h-screen bg-white p-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-slate-900">Manage Subusers</h1>
+          <h1 className="text-2xl font-bold text-[#0a2e1e]">Manage Subusers</h1>
           {/* <div className="flex items-center space-x-4">
           
           <div className={`flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium ${
-            loading ? 'bg-yellow-100 text-yellow-800' :
-            isUsingApi ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
+            loading ? 'bg-[#d4ede4] text-[#0a2e1e]' :
+            isUsingApi ? 'bg-[#d4ede4] text-[#0a2e1e]' : 'bg-[#d4ede4] text-[#0a2e1e]'
           }`}>
             <div className={`w-2 h-2 rounded-full ${
-              loading ? 'bg-yellow-500' :
-              isUsingApi ? 'bg-green-500' : 'bg-blue-500'
+              loading ? 'bg-[#0e7c66]' :
+              isUsingApi ? 'bg-[#0e7c66]' : 'bg-[#0e7c66]'
             }`}></div>
             <span>
               {loading ? 'Loading...' : 
@@ -1198,16 +1152,16 @@ export default function AdminSubusers() {
         </div>
 
         {/* {!loading && !isUsingApi && (
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <div className="bg-[#d4ede4] border border-[#d4ede4] rounded-none p-4 mb-6">
           <div className="flex items-start space-x-3">
             <div className="flex-shrink-0">
-              <svg className="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+              <svg className="h-5 w-5 text-[#d4ede4]" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
             </div>
             <div className="flex-1">
-              <h2 className="text-sm font-medium text-blue-800">Demo Mode Active</h2>
-              <p className="mt-1 text-sm text-blue-700">
+              <h2 className="text-sm font-medium text-[#0a2e1e]">Demo Mode Active</h2>
+              <p className="mt-1 text-sm text-[#0a2e1e]">
                 You're viewing AI-generated demo data for demonstration purposes. 
                 Connect to your backend API to see real user data from your database.
               </p>
@@ -1217,9 +1171,9 @@ export default function AdminSubusers() {
       )} */}
 
         {/* Advanced Filters */}
-        <div className="card p-4 space-y-4">
+        <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-4 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-[#0a2e1e]">
               Filters & Search
             </h2>
             <button
@@ -1308,7 +1262,7 @@ export default function AdminSubusers() {
                 )}
               </label>
               <select
-                className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                className="w-full border rounded-none px-3 py-2 text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
                 value={groupFilter}
                 onChange={(e) => {
                   setGroupFilter(e.target.value);
@@ -1330,7 +1284,7 @@ export default function AdminSubusers() {
                 Role
               </label>
               <select
-                className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                className="w-full border rounded-none px-3 py-2 text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
                 value={roleFilter}
                 onChange={(e) => {
                   setRoleFilter(e.target.value);
@@ -1351,7 +1305,7 @@ export default function AdminSubusers() {
                 Department
               </label>
               <select
-                className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                className="w-full border rounded-none px-3 py-2 text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
                 value={departmentFilter}
                 onChange={(e) => {
                   setDepartmentFilter(e.target.value);
@@ -1373,7 +1327,7 @@ export default function AdminSubusers() {
                   Status
                 </label>
                 <select
-                  className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                  className="w-full border rounded-none px-3 py-2 text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
                   value={statusFilter}
                   onChange={(e) => {
                     setStatusFilter(e.target.value);
@@ -1441,9 +1395,9 @@ export default function AdminSubusers() {
 
         {/* Export Actions - Commented out */}
         {/* <div className="flex justify-end gap-2">
-          <button className="btn-secondary" onClick={() => exportToCsv('subusers.csv', filtered.map(u => ({ ...u })))}>Export All ({filtered.length})</button>
-          <button className="btn-secondary" onClick={() => exportToCsv('subusers-page.csv', rows.map(u => ({ ...u })))}>Export Page ({rows.length})</button>
-          <button className="btn-secondary" onClick={() => {
+          <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed" onClick={() => exportToCsv('subusers.csv', filtered.map(u => ({ ...u })))}>Export All ({filtered.length})</button>
+          <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed" onClick={() => exportToCsv('subusers-page.csv', rows.map(u => ({ ...u })))}>Export Page ({rows.length})</button>
+          <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed" onClick={() => {
             const body = `<h2>Subusers Management</h2>` +
               `<table border="1" style="border-collapse: collapse; width: 100%;"><thead><tr><th>Email</th><th>Role</th><th>Status</th><th>Department</th><th>Last Login</th></tr></thead><tbody>` +
               filtered.map(u => `<tr><td>${u.subuser_email}</td><td>${u.roles}</td><td>${u.status}</td><td>${u.department}</td><td>${u.last_login}</td></tr>`).join('') +
@@ -1453,7 +1407,7 @@ export default function AdminSubusers() {
         </div> */}
 
         {/* Table - scroll applied to table body only */}
-        <div className="card-content card-table card overflow-x-auto">
+        <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6-content card-table card overflow-x-auto">
           {/* Scrollable table wrapper */}
           <div className="max-h-[500px] overflow-y-auto">
             <table className="w-full text-nowrap">
@@ -1480,10 +1434,10 @@ export default function AdminSubusers() {
                           <div className="h-4 bg-slate-100 rounded w-36" />
                         </td>
                         <td className="py-3 px-2">
-                          <div className="h-6 bg-blue-100 rounded-full w-16" />
+                          <div className="h-6 bg-[#d4ede4] rounded-full w-16" />
                         </td>
                         <td className="py-3 px-2">
-                          <div className="h-6 bg-green-100 rounded-full w-16" />
+                          <div className="h-6 bg-[#d4ede4] rounded-full w-16" />
                         </td>
                         <td className="py-3 px-2">
                           <div className="h-4 bg-slate-200 rounded w-28" />
@@ -1503,21 +1457,9 @@ export default function AdminSubusers() {
                     <td colSpan={6} className="py-12 text-center">
                       <div className="flex flex-col items-center">
                         <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
-                          <svg
-                            className="w-8 h-8 text-slate-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                            />
-                          </svg>
+                          <Users className="w-8 h-8 text-slate-400" />
                         </div>
-                        <h2 className="text-lg font-medium text-slate-900 mb-2">
+                        <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                           No Subusers Found
                         </h2>
                         <p className="text-slate-600">
@@ -1539,9 +1481,9 @@ export default function AdminSubusers() {
                         <span
                           className={`px-2 py-1 rounded-full text-xs font-medium ${
                             user.roles === "admin"
-                              ? "bg-purple-100 text-purple-800"
+                              ? "bg-[#d4ede4] text-[#0a2e1e]"
                               : user.roles === "manager"
-                                ? "bg-blue-100 text-blue-800"
+                                ? "bg-[#d4ede4] text-[#0a2e1e]"
                                 : "bg-slate-100 text-slate-800"
                           }`}
                         >
@@ -1552,22 +1494,22 @@ export default function AdminSubusers() {
                         <span
                           className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
                             user.status === "active"
-                              ? "bg-green-100 text-green-800"
+                              ? "bg-[#d4ede4] text-[#0a2e1e]"
                               : user.status === "inactive"
                                 ? "bg-red-100 text-red-800"
                                 : user.status === "pending"
-                                  ? "bg-yellow-100 text-yellow-800"
+                                  ? "bg-[#d4ede4] text-[#0a2e1e]"
                                   : "bg-gray-100 text-gray-800"
                           }`}
                         >
                           <span
                             className={`w-2 h-2 rounded-full ${
                               user.status === "active"
-                                ? "bg-green-400"
+                                ? "bg-[#0e7c66]"
                                 : user.status === "inactive"
                                   ? "bg-red-400"
                                   : user.status === "pending"
-                                    ? "bg-yellow-400"
+                                    ? "bg-[#0e7c66]"
                                     : "bg-gray-400"
                             }`}
                           ></span>
@@ -1606,7 +1548,7 @@ export default function AdminSubusers() {
                         <div className="flex items-center gap-1">
                           {/* <button 
                         onClick={() => handleViewUser(user)}
-                        className="text-blue-600 hover:text-blue-800 text-xs px-2 py-1 rounded border border-blue-200 hover:bg-blue-50"
+                        className="text-[#0a2e1e] hover:text-[#0a2e1e] text-xs px-2 py-1 rounded border border-[#d4ede4] hover:bg-[#d4ede4]"
                         title="View User"
                       >
                         View
@@ -1634,7 +1576,7 @@ export default function AdminSubusers() {
 
                           {/* <button 
                         onClick={() => handleManagePermissions(user)}
-                        className="text-purple-600 hover:text-purple-800 text-xs px-2 py-1 rounded border border-purple-200 hover:bg-purple-50"
+                        className="text-[#0a2e1e] hover:text-[#0a2e1e] text-xs px-2 py-1 rounded border border-[#d4ede4] hover:bg-[#d4ede4]"
                         title="Manage Permissions"
                       >
                         Permissions
@@ -1644,7 +1586,7 @@ export default function AdminSubusers() {
                         className={`text-xs px-2 py-1 rounded border ${
                           user.status === 'inactive' 
                             ? 'text-slate-400 border-slate-200 cursor-not-allowed' 
-                            : 'text-orange-600 hover:text-orange-800 border-orange-200 hover:bg-orange-50'
+                            : 'text-[#0a2e1e] hover:text-[#0a2e1e] border-[#d4ede4] hover:bg-[#d4ede4]'
                         }`}
                         disabled={user.status === 'inactive'}
                         title={user.status === 'inactive' ? 'User is inactive' : 'Reset Password'}
@@ -1656,7 +1598,7 @@ export default function AdminSubusers() {
                         className={`text-xs px-2 py-1 rounded border ${
                           user.status === 'active' 
                             ? 'text-red-600 hover:text-red-800 border-red-200 hover:bg-red-50' 
-                            : 'text-green-800 hover:text-green-800 border-green-200 hover:bg-green-50'
+                            : 'text-[#0a2e1e] hover:text-[#0a2e1e] border-[#d4ede4] hover:bg-[#d4ede4]'
                         }`}
                         title={user.status === 'active' ? 'Deactivate User' : 'Activate User'}
                       >
@@ -1710,7 +1652,7 @@ export default function AdminSubusers() {
                   setPageSize(newSize);
                   setPage(1);
                 }}
-                className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 cursor-pointer"
+                className="px-3 py-1.5 border border-slate-300 rounded-none text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66] cursor-pointer"
               >
                 {pageSizeOptions.map((size) => (
                   <option key={size} value={size}>
@@ -1734,14 +1676,14 @@ export default function AdminSubusers() {
                 <button
                   disabled={page <= 1}
                   onClick={() => setPage(page - 1)}
-                  className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
+                  className="px-3 py-1.5 border border-slate-300 rounded-none text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
                 >
                   Previous
                 </button>
                 <button
                   disabled={page >= totalPages}
                   onClick={() => setPage(page + 1)}
-                  className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
+                  className="px-3 py-1.5 border border-slate-300 rounded-none text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
                 >
                   Next
                 </button>
@@ -1753,26 +1695,14 @@ export default function AdminSubusers() {
         {/* Delete Confirmation Modal */}
         {deleteModal.show && deleteModal.user && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-lg shadow-xl max-w-md w-full animate-scale-in">
+            <div className="bg-white rounded-none shadow-xl max-w-md w-full animate-scale-in">
               {/* Modal Header */}
               <div className="flex items-center gap-3 p-6 border-b border-slate-200">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-red-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                    />
-                  </svg>
+                  <AlertTriangle className="w-6 h-6 text-red-600" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-lg font-semibold text-slate-900">
+                  <h2 className="text-lg font-semibold text-[#0a2e1e]">
                     Delete User
                   </h2>
                   <p className="text-sm text-slate-500">
@@ -1783,19 +1713,7 @@ export default function AdminSubusers() {
                   onClick={cancelDelete}
                   className="text-slate-400 hover:text-slate-600 transition-colors"
                 >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
@@ -1805,22 +1723,10 @@ export default function AdminSubusers() {
                   Are you sure you want to delete the following user?
                 </p>
 
-                <div className="bg-slate-50 rounded-lg p-4 space-y-2">
+                <div className="bg-slate-50 rounded-none p-4 space-y-2">
                   <div className="flex items-center gap-2">
-                    <svg
-                      className="w-5 h-5 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                    <span className="font-medium text-slate-900">
+                    <User className="w-5 h-5 text-slate-400" />
+                    <span className="font-medium text-[#0a2e1e]">
                       {deleteModal.user.subuser_email}
                     </span>
                   </div>
@@ -1846,9 +1752,9 @@ export default function AdminSubusers() {
                     <span
                       className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                         deleteModal.user.roles === "admin"
-                          ? "bg-purple-100 text-purple-800"
+                          ? "bg-[#d4ede4] text-[#0a2e1e]"
                           : deleteModal.user.roles === "manager"
-                            ? "bg-blue-100 text-blue-800"
+                            ? "bg-[#d4ede4] text-[#0a2e1e]"
                             : "bg-slate-100 text-slate-800"
                       }`}
                     >
@@ -1857,21 +1763,9 @@ export default function AdminSubusers() {
                   </div>
                 </div>
 
-                <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-none">
                   <div className="flex items-start gap-2">
-                    <svg
-                      className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                      />
-                    </svg>
+                    <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                     <div className="flex-1">
                       <p className="text-sm font-medium text-red-900">
                         Warning
@@ -1889,27 +1783,15 @@ export default function AdminSubusers() {
               <div className="flex items-center justify-end gap-3 p-6 border-t border-slate-200 bg-slate-50">
                 <button
                   onClick={cancelDelete}
-                  className="px-4 py-2 border border-slate-300 rounded-md text-slate-700 hover:bg-white transition-colors font-medium"
+                  className="px-4 py-2 border border-slate-300 rounded-none text-slate-700 hover:bg-white transition-colors font-medium"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={confirmDelete}
-                  className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors font-medium flex items-center gap-2"
+                  className="px-4 py-2 bg-red-600 text-white rounded-none hover:bg-red-700 transition-colors font-medium flex items-center gap-2"
                 >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                    />
-                  </svg>
+                  <Trash2 className="w-4 h-4" />
                   Delete User
                 </button>
               </div>

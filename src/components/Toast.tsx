@@ -48,8 +48,8 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         {toasts.map((toast) => (
           <div
             key={toast.id}
-            className={`pointer-events-auto px-4 py-3 rounded-lg shadow-lg text-sm flex items-start gap-3 transition transform duration-200 ease-out ${
-              toast.type === 'success' ? 'bg-emerald-600 text-white' : toast.type === 'error' ? 'bg-red-600 text-white' : 'bg-slate-800 text-white'
+            className={`pointer-events-auto px-4 py-3 rounded-none shadow-lg text-sm flex items-start gap-3 transition transform duration-200 ease-out ${
+              toast.type === 'success' ? 'bg-[#0e7c66] text-white' : toast.type === 'error' ? 'bg-red-600 text-white' : 'bg-slate-800 text-white'
             }`}
             role="status"
             aria-live="polite"

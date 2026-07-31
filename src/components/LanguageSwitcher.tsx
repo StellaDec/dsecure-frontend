@@ -44,7 +44,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       <div ref={dropdownRef} className={`relative ${className}`}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          className="flex items-center gap-2 px-3 py-2 rounded-none hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
           aria-label="Change language"
         >
           <Globe className="w-5 h-5 text-slate-600 dark:text-slate-400" />
@@ -54,13 +54,13 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         </button>
 
         {isOpen && (
-          <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 py-2 z-50">
+          <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-none shadow-xl border border-slate-200 dark:border-slate-700 py-2 z-50">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => handleLanguageChange(lang.code)}
                 className={`w-full flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors ${
-                  currentLang === lang.code ? 'bg-blue-50 dark:bg-blue-900/20' : ''
+                  currentLang === lang.code ? 'bg-[#d4ede4] dark:bg-[#0e7c66]/20' : ''
                 }`}
               >
                 <span className="text-2xl">{lang.flag}</span>
@@ -73,7 +73,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
                   </div>
                 </div>
                 {currentLang === lang.code && (
-                  <div className="w-2 h-2 rounded-full bg-blue-600"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#0e7c66]"></div>
                 )}
               </button>
             ))}
@@ -87,7 +87,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     <div ref={dropdownRef} className={`relative ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 transition-all shadow-sm hover:shadow-md"
+        className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-none hover:border-[#0e7c66] dark:hover:border-[#d4ede4] transition-all shadow-sm hover:shadow-md"
         aria-label="Change language"
       >
         <Globe className="w-5 h-5 text-slate-600 dark:text-slate-400" />
@@ -110,7 +110,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 py-2 z-50 max-h-96 overflow-y-auto">
+        <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-none shadow-xl border border-slate-200 dark:border-slate-700 py-2 z-50 max-h-96 overflow-y-auto">
           <div className="px-4 py-2 border-b border-slate-200 dark:border-slate-700">
             <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300">
               {t('common.language')}
@@ -121,7 +121,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
               className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors ${
-                currentLang === lang.code ? 'bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-600' : ''
+                currentLang === lang.code ? 'bg-[#d4ede4] dark:bg-[#0e7c66]/20 border-l-4 border-[#0e7c66]' : ''
               }`}
             >
               <span className="text-3xl">{lang.flag}</span>
@@ -135,8 +135,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
               </div>
               {currentLang === lang.code && (
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">Active</span>
-                  <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></div>
+                  <span className="text-xs text-[#0a2e1e] dark:text-[#d4ede4] font-medium">Active</span>
+                  <div className="w-2 h-2 rounded-full bg-[#0e7c66] animate-pulse"></div>
                 </div>
               )}
             </button>

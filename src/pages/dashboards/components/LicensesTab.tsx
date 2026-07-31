@@ -46,7 +46,7 @@ const LicensesTab: React.FC<LicensesTabProps> = ({
                 <tr>
                   <td colSpan={5} className="px-4 py-12 text-center text-slate-500">
                     <div className="flex items-center justify-center gap-2">
-                      <svg className="animate-spin w-5 h-5 text-emerald-500" fill="none" viewBox="0 0 24 24">
+                      <svg className="animate-spin w-5 h-5 text-[#0a2e1e]" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
@@ -64,7 +64,7 @@ const LicensesTab: React.FC<LicensesTabProps> = ({
                       </td>
                       <td className="px-4 py-3 whitespace-nowrap text-sm text-slate-600">{license.user_email || "N/A"}</td>
                       <td className="px-4 py-3 whitespace-nowrap">
-                        <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-[#d4ede4] text-[#0a2e1e]">
                           {license.license_type || "N/A"}
                         </span>
                       </td>
@@ -72,12 +72,12 @@ const LicensesTab: React.FC<LicensesTabProps> = ({
                         <span
                           className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                             license.status?.toLowerCase() === "active"
-                              ? "bg-emerald-100 text-emerald-800"
+                              ? "bg-[#d4ede4] text-[#0a2e1e]"
                               : license.status?.toLowerCase() === "expired"
                                 ? "bg-red-100 text-red-800"
                                 : license.status?.toLowerCase() === "revoked"
-                                  ? "bg-rose-100 text-rose-800"
-                                  : "bg-orange-100 text-orange-800"
+                                  ? "bg-[#d4ede4] text-[#0a2e1e]"
+                                  : "bg-[#d4ede4] text-[#0a2e1e]"
                           }`}
                         >
                           {license.status?.toUpperCase() === "IN_USE" ? "Inactive" : license.status || "Unknown"}
@@ -109,7 +109,7 @@ const LicensesTab: React.FC<LicensesTabProps> = ({
                   setLicensePageSize(parseInt(e.target.value, 10));
                   setLicenseDetailsPage(1);
                 }}
-                className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-none text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
               >
                 {pageSizeOptions.map((size: number) => (
                   <option key={size} value={size}>
@@ -130,7 +130,7 @@ const LicensesTab: React.FC<LicensesTabProps> = ({
                 <button
                   onClick={() => setLicenseDetailsPage((prev) => Math.max(prev - 1, 1))}
                   disabled={licenseDetailsPage === 1}
-                  className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span className="sm:hidden">Prev</span>
                   <span className="hidden sm:inline">Previous</span>
@@ -142,7 +142,7 @@ const LicensesTab: React.FC<LicensesTabProps> = ({
                     )
                   }
                   disabled={licenseDetailsPage >= Math.ceil(dashboardLicenseList.length / licensePageSize)}
-                  className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Next
                 </button>

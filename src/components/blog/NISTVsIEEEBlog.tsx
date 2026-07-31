@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const NISTVsIEEEBlog: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50/20">
+    <div className="min-h-screen bg-white">
       <SEOHead
         seo={getBlogSEO({
           title:
@@ -32,17 +32,17 @@ const NISTVsIEEEBlog: React.FC = () => {
         })}
       />
 
-      <section className="py-16 bg-white shadow-lg">
+      <section className="py-16 bg-white shadow-none">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
               Sanitization Standards
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-              <Link to="/products/drive-eraser" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> vs IEEE 2883-2022: A Complete Comparison
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
+              <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link> vs IEEE 2883-2022: A Complete Comparison
             </h1>
-            <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Learn how <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> and IEEE 2883-2022 standards differ in their
+            <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
+              Learn how <Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link> and IEEE 2883-2022 standards differ in their
               guidelines and requirements for media and storage sanitization.
             </p>
           </div>
@@ -51,11 +51,11 @@ const NISTVsIEEEBlog: React.FC = () => {
 
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               Understanding the Two Major Standards
             </h2>
-            <p className="text-slate-700 leading-loose text-lg mb-6">
+            <p className="text-[#5a6672] leading-loose text-lg mb-6">
               In the world of data sanitization, two standards stand out as the
               most widely recognized and adopted:{" "}
               <strong>NIST SP 800-88</strong> and{" "}
@@ -65,22 +65,22 @@ const NISTVsIEEEBlog: React.FC = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
-                <h3 className="font-bold text-blue-700 text-xl mb-3">
+              <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   NIST SP 800-88
                 </h3>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-[#5a6672] leading-relaxed">
                   Published by the National Institute of Standards and
                   Technology (USA). First released in 2006, revised in 2014 (Rev
                   1), with Rev 2 currently in draft. The de facto standard for
                   U.S. government agencies and widely adopted globally.
                 </p>
               </div>
-              <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                <h3 className="font-bold text-amber-700 text-xl mb-3">
+              <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   IEEE 2883-2022
                 </h3>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-[#5a6672] leading-relaxed">
                   Published by the Institute of Electrical and Electronics
                   Engineers. Released in 2022 as a modern standard addressing
                   new storage technologies. Designed to complement ISO
@@ -92,77 +92,77 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               Detailed Comparison: NIST vs IEEE Standards
             </h2>
 
             <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-slate-300">
+              <table className="w-full border-collapse border border-[#d0d5dc]">
                 <thead>
-                  <tr className="bg-blue-600 text-white">
-                    <th className="border border-slate-300 px-6 py-4 text-left font-bold">
+                  <tr className="bg-[#0e7c66] text-white">
+                    <th className="border border-[#d0d5dc] px-6 py-4 text-left font-bold">
                       Aspect
                     </th>
-                    <th className="border border-slate-300 px-6 py-4 text-left font-bold">
+                    <th className="border border-[#d0d5dc] px-6 py-4 text-left font-bold">
                       NIST SP 800-88
                     </th>
-                    <th className="border border-slate-300 px-6 py-4 text-left font-bold">
+                    <th className="border border-[#d0d5dc] px-6 py-4 text-left font-bold">
                       IEEE 2883-2022
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="bg-white">
-                    <td className="border border-slate-300 px-6 py-4 font-semibold">
+                    <td className="border border-[#d0d5dc] px-6 py-4 font-semibold">
                       Publishing Body
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">
+                    <td className="border border-[#d0d5dc] px-6 py-4">
                       National Institute of Standards & Technology (USA)
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">
+                    <td className="border border-[#d0d5dc] px-6 py-4">
                       Institute of Electrical & Electronics Engineers
                     </td>
                   </tr>
-                  <tr className="bg-slate-50">
-                    <td className="border border-slate-300 px-6 py-4 font-semibold">
+                  <tr className="bg-[#f4fbf8]">
+                    <td className="border border-[#d0d5dc] px-6 py-4 font-semibold">
                       First Published
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">
+                    <td className="border border-[#d0d5dc] px-6 py-4">
                       2006 (Rev 1 in 2014)
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">2022</td>
+                    <td className="border border-[#d0d5dc] px-6 py-4">2022</td>
                   </tr>
                   <tr className="bg-white">
-                    <td className="border border-slate-300 px-6 py-4 font-semibold">
+                    <td className="border border-[#d0d5dc] px-6 py-4 font-semibold">
                       Primary Focus
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">
+                    <td className="border border-[#d0d5dc] px-6 py-4">
                       Federal agencies & traditional media
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">
+                    <td className="border border-[#d0d5dc] px-6 py-4">
                       Modern storage technologies & emerging media
                     </td>
                   </tr>
-                  <tr className="bg-slate-50">
-                    <td className="border border-slate-300 px-6 py-4 font-semibold">
+                  <tr className="bg-[#f4fbf8]">
+                    <td className="border border-[#d0d5dc] px-6 py-4 font-semibold">
                       Geographic Adoption
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">
+                    <td className="border border-[#d0d5dc] px-6 py-4">
                       Primarily USA, widely adopted globally
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">
+                    <td className="border border-[#d0d5dc] px-6 py-4">
                       Global, designed for international use
                     </td>
                   </tr>
                   <tr className="bg-white">
-                    <td className="border border-slate-300 px-6 py-4 font-semibold">
+                    <td className="border border-[#d0d5dc] px-6 py-4 font-semibold">
                       Complementary Standard
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">
+                    <td className="border border-[#d0d5dc] px-6 py-4">
                       NIST 800 series guidelines
                     </td>
-                    <td className="border border-slate-300 px-6 py-4">
+                    <td className="border border-[#d0d5dc] px-6 py-4">
                       ISO 27040-2024
                     </td>
                   </tr>
@@ -173,10 +173,10 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-slate-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+          <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
             <h2 className="text-3xl font-bold mb-6">CLEAR Method Comparison</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white/10 rounded-xl p-6">
+              <div className="bg-white/10 rounded-none p-6">
                 <h3 className="font-bold text-lg mb-3">
                   NIST Clear Definition
                 </h3>
@@ -186,7 +186,7 @@ const NISTVsIEEEBlog: React.FC = () => {
                   <strong>Overwriting</strong> is a suggested Clear technique.
                 </p>
               </div>
-              <div className="bg-white/10 rounded-xl p-6">
+              <div className="bg-white/10 rounded-none p-6">
                 <h3 className="font-bold text-lg mb-3">
                   IEEE Clear Definition
                 </h3>
@@ -198,7 +198,7 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </p>
               </div>
             </div>
-            <div className="mt-6 bg-white/20 rounded-xl p-4 text-center">
+            <div className="mt-6 bg-white/20 rounded-none p-4 text-center">
               <p className="font-semibold">
                 Key Difference: IEEE includes Block Erase as a Clear method,
                 while NIST focuses on overwriting.
@@ -208,10 +208,10 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-gradient-to-br from-blue-600 via-slate-500 to-slate-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+          <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
             <h2 className="text-3xl font-bold mb-6">PURGE Method Comparison</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white/10 rounded-xl p-6">
+              <div className="bg-white/10 rounded-none p-6">
                 <h3 className="font-bold text-lg mb-3">
                   NIST Purge Definition
                 </h3>
@@ -223,7 +223,7 @@ const NISTVsIEEEBlog: React.FC = () => {
                   standardized device sanitize commands.
                 </p>
               </div>
-              <div className="bg-white/10 rounded-xl p-6">
+              <div className="bg-white/10 rounded-none p-6">
                 <h3 className="font-bold text-lg mb-3">
                   IEEE Purge Definition
                 </h3>
@@ -238,7 +238,7 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </p>
               </div>
             </div>
-            <div className="mt-6 bg-white/20 rounded-xl p-4 text-center">
+            <div className="mt-6 bg-white/20 rounded-none p-4 text-center">
               <p className="font-semibold">
                 Both standards align on Purge level, emphasizing protection
                 against laboratory-grade recovery.
@@ -248,12 +248,12 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-gradient-to-br from-blue-600 via-slate-500 to-slate-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+          <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
             <h2 className="text-3xl font-bold mb-6">
               DESTROY/DESTRUCT Method Comparison
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white/10 rounded-xl p-6">
+              <div className="bg-white/10 rounded-none p-6">
                 <h3 className="font-bold text-lg mb-3">
                   NIST Destroy Definition
                 </h3>
@@ -271,7 +271,7 @@ const NISTVsIEEEBlog: React.FC = () => {
                   <li>• Incinerate</li>
                 </ul>
               </div>
-              <div className="bg-white/10 rounded-xl p-6">
+              <div className="bg-white/10 rounded-none p-6">
                 <h3 className="font-bold text-lg mb-3">
                   IEEE Destruct Definition
                 </h3>
@@ -294,7 +294,7 @@ const NISTVsIEEEBlog: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <div className="mt-6 bg-white/20 rounded-xl p-4 text-center">
+            <div className="mt-6 bg-white/20 rounded-none p-4 text-center">
               <p className="font-semibold">
                 Key Difference: IEEE 2883 has deprecated Shred & Pulverize as
                 effective methods for high-density storage media.
@@ -309,52 +309,52 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               Key Advantages of IEEE 2883-2022
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
-                <h3 className="font-bold text-blue-700 text-lg mb-3">
+              <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                   {" "}
                   Clear Conformity Instructions
                 </h3>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-[#5a6672] leading-relaxed">
                   IEEE 2883 offers clear instructions on achieving conformity if
                   a particular sanitization method fails. For example, if
                   'Clear' is approved but doesn't apply to physical media like
                   paper, 'Destruct' automatically becomes conforming.
                 </p>
               </div>
-              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
-                <h3 className="font-bold text-blue-700 text-lg mb-3">
+              <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                   {" "}
                   Modern Storage Coverage
                 </h3>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-[#5a6672] leading-relaxed">
                   Designed with modern SSDs, NVMe, and emerging storage
                   technologies in mind. Addresses limitations of traditional
                   methods for high-density storage.
                 </p>
               </div>
-              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
-                <h3 className="font-bold text-blue-700 text-lg mb-3">
+              <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                   {" "}
                   ISO 27040 Integration
                 </h3>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-[#5a6672] leading-relaxed">
                   IEEE 2883-2022 and ISO 27040-2024 are complementary standards
                   intended to be used together. IEEE describes sanitization
                   methods; ISO explains when to perform sanitization.
                 </p>
               </div>
-              <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
-                <h3 className="font-bold text-blue-700 text-lg mb-3">
+              <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                   {" "}
                   Future-Ready Approach
                 </h3>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-[#5a6672] leading-relaxed">
                   Addresses emerging technologies like IoT devices, AI hardware,
                   and non-traditional storage where traditional methods may not
                   suffice.
@@ -365,41 +365,41 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               D-Secure: Supporting Both Standards
             </h2>
-            <p className="text-slate-700 leading-loose text-lg mb-6">
-              D-Secure data erasure solutions support both <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> and IEEE
+            <p className="text-[#5a6672] leading-loose text-lg mb-6">
+              D-Secure data erasure solutions support both <Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link> and IEEE
               2883-2022 standards, giving organizations flexibility to choose
               the appropriate standard based on their regulatory requirements,
               industry, and data sensitivity levels.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="border-l-4 border-blue-500 pl-6">
-                <h3 className="font-bold text-slate-900 text-lg mb-2">
+              <div className="border-l-4 border-[#0e7c66] pl-6">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                   24+ Erasure Standards
                 </h3>
-                <p className="text-slate-700">
+                <p className="text-[#5a6672]">
                   Support for NIST, IEEE, DoD, HMG, and other international
                   standards.
                 </p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-6">
-                <h3 className="font-bold text-slate-900 text-lg mb-2">
+              <div className="border-l-4 border-[#0e7c66] pl-6">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                   All Media Types
                 </h3>
-                <p className="text-slate-700">
+                <p className="text-[#5a6672]">
                   HDDs, SSDs, NVMe, servers, mobile devices, and emerging
                   storage technologies.
                 </p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-6">
-                <h3 className="font-bold text-slate-900 text-lg mb-2">
+              <div className="border-l-4 border-[#0e7c66] pl-6">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                   Compliance Reports
                 </h3>
-                <p className="text-slate-700">
+                <p className="text-[#5a6672]">
                   Audit-ready certificates specifying the standard and method
                   used for each device.
                 </p>
@@ -409,24 +409,24 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
 
         <Reveal>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-10 mt-10 space-y-6">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               Conclusion: Which Standard Should You Choose?
             </h2>
-            <p className="text-slate-700 leading-loose text-lg">
-              Both <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> and IEEE 2883 are comprehensive, well-designed
+            <p className="text-[#5a6672] leading-loose text-lg">
+              Both <Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link> and IEEE 2883 are comprehensive, well-designed
               standards. It's difficult to recommend one over the other based
               purely on merit. However, given the rapid evolution of storage
               technology, organizations must choose a standard that addresses
               their specific media sanitization requirements.
             </p>
-            <p className="text-slate-700 leading-loose text-lg">
+            <p className="text-[#5a6672] leading-loose text-lg">
               As we move further into the 21st century with the explosion of
               IoT, AI, Machine Learning, and non-traditional storage devices
               like smartwatches, traditional sanitization methods may not
               suffice. You must carefully choose the method based on:
             </p>
-            <ul className="text-slate-700 text-lg leading-loose space-y-2 ml-6">
+            <ul className="text-[#5a6672] text-lg leading-loose space-y-2 ml-6">
               <li>
                 • <strong>Data sensitivity levels</strong>
               </li>
@@ -447,27 +447,27 @@ const NISTVsIEEEBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
+      <section className="py-20 bg-[#0e7c66] text-center">
         <Reveal>
           <div className="max-w-5xl mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Meet NIST & IEEE Standards with D-Secure
             </h2>
-            <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
               Choose your preferred standard or let our experts guide you.
-              D-Secure supports both <Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link> and IEEE 2883-2022 with
+              D-Secure supports both <Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link> and IEEE 2883-2022 with
               complete compliance documentation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-block bg-gradient-to-r from-blue-500 to-slate-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-slate-600 transition-all text-lg"
+                className="inline-block bg-white text-[#0e7c66] px-8 py-4 rounded-none font-semibold hover:bg-slate-100 transition-all text-lg"
               >
                 Request Free Demo
               </Link>
               <Link
                 to="/all-products"
-                className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
+                className="inline-block border-2 border-white text-white px-8 py-4 rounded-none font-semibold hover:bg-white/10 transition-colors text-lg"
               >
                 View Products
               </Link>

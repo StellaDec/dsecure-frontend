@@ -130,7 +130,7 @@ export default function GenerateReport() {
       {/* SEO Head component */}
       <SEOHeadNative seo={getSEOForPage("generate-report")} />
 
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div className="flex-1 min-w-0">
@@ -269,7 +269,7 @@ export default function GenerateReport() {
               >
                 {isLoading ? (
                   <>
-                    <div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"></div>
+                    <div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-none"></div>
                     Processing...
                   </>
                 ) : (

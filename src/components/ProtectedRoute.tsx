@@ -89,7 +89,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#0e7c66]"></div>
           <p className="mt-2 text-gray-600">Verifying authentication...</p>
         </div>
       </div>
@@ -136,7 +136,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
           </p>
           <button
             onClick={() => window.history.back()}
-            className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-none text-white bg-[#0e7c66] hover:bg-[#0e7c66] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
             Go Back
           </button>
@@ -158,7 +158,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
         <div className="text-center p-8">
           <div className="mb-4">
             <svg
-              className="mx-auto h-12 w-12 text-yellow-400"
+              className="mx-auto h-12 w-12 text-[#d4ede4]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -180,7 +180,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
           </p>
           <button
             onClick={() => window.history.back()}
-            className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+            className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-none text-white bg-[#0e7c66] hover:bg-[#0e7c66] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
           >
             Go Back
           </button>

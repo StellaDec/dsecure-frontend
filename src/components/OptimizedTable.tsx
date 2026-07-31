@@ -104,12 +104,12 @@ export const OptimizedTable = memo(<T extends Record<string, any>>({
             placeholder="Search..."
             value={searchTerm}
             onChange={handleSearch}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
       )}
 
-      <div className="overflow-hidden border border-gray-200 rounded-lg">
+      <div className="overflow-hidden border border-gray-200 rounded-none">
         {/* Table Header */}
         <div className="bg-gray-50 border-b border-gray-200">
           <div className="flex">

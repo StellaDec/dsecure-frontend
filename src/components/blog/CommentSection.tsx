@@ -141,23 +141,27 @@ const CommentSection: React.FC<CommentSectionProps> = ({ blogId }) => {
             placeholder="Write your reply…"
             value={replyContent}
             onChange={(e) => setReplyContent(e.target.value)}
+            className="w-full p-3 bg-white border border-[#d0d5dc] rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66] resize-y mb-4"
+            rows={3}
           />
 
-          <div className="form-row">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             <input
               placeholder="Name *"
               value={replyAuthorName}
               onChange={(e) => setReplyAuthorName(e.target.value)}
+              className="w-full p-3 bg-white border border-[#d0d5dc] rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66]"
             />
             <input
               type="email"
               placeholder="Email (optional)"
               value={replyAuthorEmail}
               onChange={(e) => setReplyAuthorEmail(e.target.value)}
+              className="w-full p-3 bg-white border border-[#d0d5dc] rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66]"
             />
           </div>
 
-          <button className="primary">Post Reply</button>
+          <button className="bg-[#0e7c66] hover:bg-[#0b6251] text-white font-bold py-2 px-6 rounded-none transition-colors text-sm">Post Reply</button>
         </form>
       )}
 
@@ -177,30 +181,36 @@ const CommentSection: React.FC<CommentSectionProps> = ({ blogId }) => {
         Your email address will not be published. Providing an email is optional.
       </p>
 
-      <form className="comment-form" onSubmit={handlePostComment}>
+      <form className="mt-6" onSubmit={handlePostComment}>
         <textarea
           placeholder="Write your comment…"
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
           required
+          className="w-full p-4 bg-white border border-[#d0d5dc] rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66] resize-y min-h-[120px] mb-4"
         />
 
-        <div className="form-row">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <input
             placeholder="Name *"
             value={authorName}
             onChange={(e) => setAuthorName(e.target.value)}
             required
+            className="w-full p-3 bg-white border border-[#d0d5dc] rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66]"
           />
           <input
             type="email"
             placeholder="Email (optional)"
             value={authorEmail}
             onChange={(e) => setAuthorEmail(e.target.value)}
+            className="w-full p-3 bg-white border border-[#d0d5dc] rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66]"
           />
         </div>
 
-        <button className="primary" disabled={isSubmitting}>
+        <button 
+          className="bg-[#0e7c66] hover:bg-[#0b6251] text-white font-bold py-3 px-6 rounded-none transition-colors" 
+          disabled={isSubmitting}
+        >
           {isSubmitting ? "Posting…" : "Post Comment"}
         </button>
       </form>

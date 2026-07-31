@@ -7,7 +7,7 @@ import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import BlogFooterStandard from "./BlogFooterStandard";
-import FAQSection from "./FAQSection";
+
 import { blogFaqs } from "@/data/blogFaqs";
 
 const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
@@ -20,7 +20,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
       <section className="bg-white py-16 border-b">
         <Reveal>
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <span className="inline-block mb-4 px-4 py-1 text-sm font-medium bg-emerald-100 text-emerald-700 rounded-full">
+            <span className="inline-block mb-4 px-4 py-1 text-sm font-medium bg-[#d4ede4] text-[#0a2e1e] rounded-full">
               Data Security & Compliance
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
@@ -42,7 +42,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
       <section className="max-w-6xl mx-auto px-6 py-12 space-y-10">
         {/* Section 1: Understanding the Lifecycle */}
         <Reveal>
-          <div className="bg-white p-10 rounded-xl shadow-sm border">
+          <div className="bg-white p-10 rounded-none shadow-sm border">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">
               Understanding the Lifecycle of Leased IT Assets
             </h2>
@@ -71,7 +71,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
               protection. Once a device leaves your custody, you lose all
               control over how it is handled, whether it is refurbished and
               resold, recycled, or exported. This makes pre-return
-              <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"> data erasure</Link> the
+              <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium"> data erasure</Link> the
               most critical step in the entire lease lifecycle.
             </p>
           </div>
@@ -79,13 +79,13 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
 
         {/* Section 2: The Do's */}
         <Reveal>
-          <div className="bg-white p-10 rounded-xl shadow-sm border">
+          <div className="bg-white p-10 rounded-none shadow-sm border">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               The Do's of Returning Leased IT Hardware
             </h2>
 
             <div className="space-y-6 text-slate-700 leading-loose">
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-6 rounded-none">
                 <p>
                   <strong>✅ Plan the Return in Advance:</strong> Prepare a
                   structured return plan well before lease expiry. Reconcile
@@ -98,7 +98,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-6 rounded-none">
                 <p>
                   <strong>✅ Maintain Accurate Asset Labeling:</strong> Follow ISO
                   27001:2022 Annex A controls for labeling and inventory
@@ -110,7 +110,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-6 rounded-none">
                 <p>
                   <strong>✅ Perform Verified Data Backups:</strong> Backup policies
                   must be aligned with ISO 27001 Annex A 12.3 and NIST continuity
@@ -122,7 +122,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-6 rounded-none">
                 <p>
                   <strong>✅ Review Lease Conditions Carefully:</strong> Validate
                   return timelines, damage clauses, data sanitation requirements,
@@ -134,20 +134,20 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-6 rounded-none">
                 <p>
                   <strong>✅ Execute Certified Data Erasure:</strong> Before physical
-                  handover, apply <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST SP 800-88</Link> compliant Clear or Purge methods
+                  handover, apply <Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST SP 800-88</Link> compliant Clear or Purge methods
                   to all internal and external storage. Verification and
                   audit-ready erasure certificates are essential for legal
                   defensibility. Use enterprise-grade tools like
-                  <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"> D-Secure Drive Eraser</Link> that
+                  <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium"> D-Secure Drive Eraser</Link> that
                   generate tamper-proof certificates with device serial numbers,
                   timestamps, and verification results.
                 </p>
               </div>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg">
+              <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-6 rounded-none">
                 <p>
                   <strong>✅ Document Chain of Custody:</strong> Maintain a
                   complete audit trail from the moment the device is identified
@@ -164,25 +164,25 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
 
         {/* Section 3: The Don'ts */}
         <Reveal>
-          <div className="bg-white p-10 rounded-xl shadow-sm border">
+          <div className="bg-white p-10 rounded-none shadow-sm border">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               The Don'ts of Returning Leased IT Hardware
             </h2>
 
             <div className="space-y-6 text-slate-700 leading-loose">
-              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+              <div className="bg-[#f4fbf8] border-l-4 border-red-400 p-6 rounded-none">
                 <p>
                   <strong>❌ Do Not Skip Hardware Inspection:</strong> Examine
                   physical condition, screens, keyboards, ports, storage health,
                   and accessories. Undetected damage can result in chargebacks and
-                  disputes. Run <Link to="/products/hardware-diagnostics" className="text-emerald-600 hover:underline font-medium">hardware diagnostics</Link> to
+                  disputes. Run <Link to="/products/hardware-diagnostics" className="text-[#0a2e1e] hover:underline font-medium">hardware diagnostics</Link> to
                   document the functional state of each device before return —
                   this creates evidence of the device condition at time of
                   handover.
                 </p>
               </div>
 
-              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+              <div className="bg-[#f4fbf8] border-l-4 border-red-400 p-6 rounded-none">
                 <p>
                   <strong>❌ Avoid Uncertified Wiping Tools:</strong> Free or
                   consumer-grade utilities do not provide forensic-grade erasure
@@ -194,7 +194,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+              <div className="bg-[#f4fbf8] border-l-4 border-red-400 p-6 rounded-none">
                 <p>
                   <strong>❌ Do Not Use Inadequate Packaging:</strong> Poor packaging
                   increases transit damage risk. Follow lessor-approved shipping
@@ -205,7 +205,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+              <div className="bg-[#f4fbf8] border-l-4 border-red-400 p-6 rounded-none">
                 <p>
                   <strong>❌ Do Not Assign Untrained Personnel:</strong> Data
                   sanitization and return documentation must be handled by trained
@@ -215,7 +215,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+              <div className="bg-[#f4fbf8] border-l-4 border-red-400 p-6 rounded-none">
                 <p>
                   <strong>❌ Never Misplace Proof of Return:</strong> Retain signed
                   handover documents, tracking numbers, and certificates of
@@ -226,7 +226,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+              <div className="bg-[#f4fbf8] border-l-4 border-red-400 p-6 rounded-none">
                 <p>
                   <strong>❌ Do Not Overlook External Storage:</strong> Leased
                   equipment may include external hard drives, docking stations
@@ -241,7 +241,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
 
         {/* Section 4: Compliance Requirements Comparison Table */}
         <Reveal>
-          <div className="bg-white p-10 rounded-xl shadow-sm border">
+          <div className="bg-white p-10 rounded-none shadow-sm border">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               Regulatory Requirements for Leased IT Hardware Return
             </h2>
@@ -250,7 +250,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
               when disposing of or returning IT equipment. Understanding these
               requirements is essential for avoiding penalties.
             </p>
-            <div className="overflow-hidden rounded-xl border border-slate-200">
+            <div className="overflow-hidden rounded-none border border-slate-200">
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-slate-100">
@@ -260,28 +260,28 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200">
-                  <tr className="hover:bg-emerald-50/30 transition-colors">
-                    <td className="px-6 py-4 font-medium text-emerald-700">GDPR (EU)</td>
+                  <tr className="hover:bg-[#d4ede4]/30 transition-colors">
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">GDPR (EU)</td>
                     <td className="px-6 py-4 text-slate-600">Erasure beyond recovery before asset disposal</td>
                     <td className="px-6 py-4 text-slate-600">Up to €20M or 4% of global turnover</td>
                   </tr>
-                  <tr className="hover:bg-emerald-50/30 transition-colors">
-                    <td className="px-6 py-4 font-medium text-emerald-700">HIPAA (US)</td>
+                  <tr className="hover:bg-[#d4ede4]/30 transition-colors">
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">HIPAA (US)</td>
                     <td className="px-6 py-4 text-slate-600">PHI must be rendered unrecoverable (45 CFR §164.310)</td>
                     <td className="px-6 py-4 text-slate-600">$50K–$1.9M per violation category</td>
                   </tr>
-                  <tr className="hover:bg-emerald-50/30 transition-colors">
-                    <td className="px-6 py-4 font-medium text-emerald-700">SOX (US)</td>
+                  <tr className="hover:bg-[#d4ede4]/30 transition-colors">
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">SOX (US)</td>
                     <td className="px-6 py-4 text-slate-600">Financial records must be securely destroyed</td>
                     <td className="px-6 py-4 text-slate-600">Criminal penalties + $5M fines</td>
                   </tr>
-                  <tr className="hover:bg-emerald-50/30 transition-colors">
-                    <td className="px-6 py-4 font-medium text-emerald-700">DPDP Act (India)</td>
+                  <tr className="hover:bg-[#d4ede4]/30 transition-colors">
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">DPDP Act (India)</td>
                     <td className="px-6 py-4 text-slate-600">Personal data erasure upon purpose completion</td>
                     <td className="px-6 py-4 text-slate-600">Up to ₹250 Crore per violation</td>
                   </tr>
-                  <tr className="hover:bg-emerald-50/30 transition-colors">
-                    <td className="px-6 py-4 font-medium text-emerald-700">ISO 27001</td>
+                  <tr className="hover:bg-[#d4ede4]/30 transition-colors">
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">ISO 27001</td>
                     <td className="px-6 py-4 text-slate-600">Asset disposal controls (A.11.2.7)</td>
                     <td className="px-6 py-4 text-slate-600">Certification loss + audit failure</td>
                   </tr>
@@ -293,7 +293,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
 
         {/* Section 5: End-of-Lease Checklist */}
         <Reveal>
-          <div className="bg-white p-10 rounded-xl shadow-sm border">
+          <div className="bg-white p-10 rounded-none shadow-sm border">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               End-of-Lease IT Hardware Return Checklist
             </h2>
@@ -302,9 +302,9 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
               structured and compliant process when returning leased IT assets.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-900 text-lg mb-3">Pre-Return (90–30 Days)</h3>
-                <ul className="space-y-2 text-emerald-800">
+              <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d4ede4]">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">Pre-Return (90–30 Days)</h3>
+                <ul className="space-y-2 text-[#0a2e1e]">
                   <li>• Inventory all leased assets with serial numbers</li>
                   <li>• Identify lease expiry dates and return deadlines</li>
                   <li>• Schedule data backup and migration</li>
@@ -312,9 +312,9 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                   <li>• Review contractual data sanitization clauses</li>
                 </ul>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-900 text-lg mb-3">Erasure Phase (30–7 Days)</h3>
-                <ul className="space-y-2 text-emerald-800">
+              <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d4ede4]">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">Erasure Phase (30–7 Days)</h3>
+                <ul className="space-y-2 text-[#0a2e1e]">
                   <li>• Perform certified NIST 800-88 data erasure</li>
                   <li>• Verify erasure with 100% sector validation</li>
                   <li>• Generate tamper-proof erasure certificates</li>
@@ -322,9 +322,9 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                   <li>• Sanitize all external/attached storage media</li>
                 </ul>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-900 text-lg mb-3">Packaging & Shipping</h3>
-                <ul className="space-y-2 text-emerald-800">
+              <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d4ede4]">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">Packaging & Shipping</h3>
+                <ul className="space-y-2 text-[#0a2e1e]">
                   <li>• Use lessor-approved shipping containers</li>
                   <li>• Apply tamper-evident seals</li>
                   <li>• Include packing lists with asset details</li>
@@ -332,9 +332,9 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                   <li>• Photograph packed assets for evidence</li>
                 </ul>
               </div>
-              <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                <h3 className="font-bold text-emerald-900 text-lg mb-3">Post-Return Documentation</h3>
-                <ul className="space-y-2 text-emerald-800">
+              <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d4ede4]">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">Post-Return Documentation</h3>
+                <ul className="space-y-2 text-[#0a2e1e]">
                   <li>• Obtain signed delivery acknowledgment</li>
                   <li>• Archive erasure certificates (7+ years)</li>
                   <li>• File chain-of-custody records</li>
@@ -348,7 +348,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
 
         {/* Section 6: Real-World Risks */}
         <Reveal>
-          <div className="bg-white p-10 rounded-xl shadow-sm border">
+          <div className="bg-white p-10 rounded-none shadow-sm border">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               Real-World Risks of Improper Lease Returns
             </h2>
@@ -361,7 +361,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
               buyer in a different country.
             </p>
             <p className="text-slate-700 leading-loose mb-4">
-              In the <Link to="/blog/morgan-stanley-data-breach" className="text-emerald-600 hover:underline font-medium">Morgan Stanley case</Link>,
+              In the <Link to="/blog/morgan-stanley-data-breach" className="text-[#0a2e1e] hover:underline font-medium">Morgan Stanley case</Link>,
               the bank was fined $60 million for failing to properly
               decommission data center equipment before returning it. Customer
               PII was found on servers that had been resold without erasure.
@@ -369,9 +369,9 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
               fail at end-of-life data management when processes are not
               standardized and verified.
             </p>
-            <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
-              <h3 className="font-bold text-amber-900 mb-2">⚠️ Key Takeaway</h3>
-              <p className="text-amber-800 leading-relaxed">
+            <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
+              <h3 className="font-bold text-[#0a2e1e] mb-2">⚠️ Key Takeaway</h3>
+              <p className="text-[#0a2e1e] leading-relaxed">
                 Formatting, factory reset, or deleting files is NOT data
                 sanitization. These methods leave data fully recoverable with
                 standard forensic tools. Only certified, verification-grade
@@ -384,13 +384,13 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
 
         {/* Section 7: D-Secure CTA */}
         <Reveal>
-          <div className="bg-emerald-50 border border-emerald-200 p-10 rounded-xl">
+          <div className="bg-[#d4ede4] border border-[#d4ede4] p-10 rounded-none">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">
               Secure Data Erasure with D-Secure
             </h2>
             <p className="text-slate-700 leading-loose mb-4">
               For organizations returning leased IT assets, D-Secure provides
-              certified data sanitization aligned with <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>, ISO 27001,
+              certified data sanitization aligned with <Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link>, ISO 27001,
               GDPR, HIPAA, SOX, CCPA, and global privacy regulations. D-Secure
               ensures irreversible data removal, audit-ready certificates,
               chain-of-custody documentation, and centralized compliance
@@ -404,7 +404,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
             </p>
             <Link
               to="/all-products"
-              className="inline-block mt-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
+              className="inline-block mt-2 bg-[#0e7c66] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#0e7c66] transition"
             >
               Explore D-Secure Erasure Solutions
             </Link>
@@ -413,7 +413,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
 
         {/* FAQ Section */}
         <div className="mt-4">
-          <FAQSection faqs={blogFaqs["returning-leased-it-hardware-dos-and-donts"] || []} />
+          
         </div>
       </section>
 

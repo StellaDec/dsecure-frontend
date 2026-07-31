@@ -167,7 +167,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
               { label: "Response Time", value: "Within 24 Hours" },
             ].map((item) => (
               <div key={item.label} className="flex flex-col">
-                <span className="text-emerald-700 text-sm font-bold uppercase tracking-wider mb-1">
+                <span className="text-[#0a2e1e] text-sm font-bold uppercase tracking-wider mb-1">
                   {item.label}
                 </span>
                 <span className="text-slate-900 text-xl font-medium">{item.value}</span>
@@ -179,7 +179,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
 
       <Reveal delayMs={200}>
         <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 lg:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-3xl -mr-16 -mt-16 group-hover:bg-emerald-500/10 transition-all duration-500"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#0e7c66]/5 blur-3xl -mr-16 -mt-16 group-hover:bg-[#0e7c66]/10 transition-all duration-500"></div>
           
           <form className="space-y-5 relative z-10" onSubmit={handleSubmit}>
             <div className="grid sm:grid-cols-2 gap-5">
@@ -189,7 +189,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Full Name *"
-                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all"
+                className="w-full p-4 rounded-none bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] focus:bg-white/10 transition-all"
                 required
               />
               <input
@@ -198,7 +198,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Email Address *"
-                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all"
+                className="w-full p-4 rounded-none bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] focus:bg-white/10 transition-all"
                 required
               />
             </div>
@@ -210,7 +210,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder="Phone Number *"
-                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all"
+                className="w-full p-4 rounded-none bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] focus:bg-white/10 transition-all"
                 required
               />
               <input
@@ -219,7 +219,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
                 value={formData.organization}
                 onChange={handleInputChange}
                 placeholder="Organization / Company"
-                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all"
+                className="w-full p-4 rounded-none bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] focus:bg-white/10 transition-all"
               />
             </div>
 
@@ -228,7 +228,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
                 name="country"
                 value={formData.country}
                 onChange={handleInputChange}
-                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all appearance-none [&>option]:text-slate-900"
+                className="w-full p-4 rounded-none bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] focus:bg-white/10 transition-all appearance-none [&>option]:text-slate-900"
                 required
               >
                 <option value="" disabled hidden>Select Country *</option>
@@ -244,7 +244,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
                 name="businessType"
                 value={formData.businessType}
                 onChange={handleInputChange}
-                className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all appearance-none [&>option]:text-slate-900"
+                className="w-full p-4 rounded-none bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] focus:bg-white/10 transition-all appearance-none [&>option]:text-slate-900"
                 required
               >
                 <option value="" disabled hidden>Business Type *</option>
@@ -262,12 +262,12 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
               onChange={handleInputChange}
               rows={4}
               placeholder="How can we help you?"
-              className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all resize-none"
+              className="w-full p-4 rounded-none bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] focus:bg-white/10 transition-all resize-none"
             ></textarea>
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-white text-emerald-700 font-bold py-5 rounded-2xl hover:bg-emerald-50 transition-all shadow-xl hover:shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed group flex items-center justify-center gap-2"
+              className="w-full bg-white text-[#0a2e1e] font-bold py-5 rounded-none hover:bg-[#d4ede4] transition-all shadow-xl hover:shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed group flex items-center justify-center gap-2"
             >
               {isLoading ? "Submitting..." : "Send Message"}
               {!isLoading && <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>}

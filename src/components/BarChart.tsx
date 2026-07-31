@@ -20,7 +20,7 @@ export default function BarChart({ data, labels = [], width = 480, height = 160,
         return <rect key={i} x={x} y={y} width={barW} height={h} fill={color} rx={4} />
       })}
       {labels.length === data.length && labels.map((l, i) => (
-        <text key={i} x={i * (barW + gap) + gap + barW / 2} y={height + 16} fontSize={10} textAnchor="middle" fill="#64748b">{l}</text>
+        <text key={i} x={i * (barW + gap) + gap + barW / 2} y={height + 16} fontSize={10} textAnchor="middle" fill="#0e7c66">{l}</text>
       ))}
     </svg>
   )

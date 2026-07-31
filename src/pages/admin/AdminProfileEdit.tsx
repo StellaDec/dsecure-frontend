@@ -138,7 +138,7 @@ export default function AdminProfileEdit() {
       {/* SEO Head component */}
       <SEOHeadNative seo={getSEOForPage("admin-profile-edit")} />
 
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div className="flex-1 min-w-0">
@@ -167,7 +167,7 @@ export default function AdminProfileEdit() {
             {dataLoading ? (
               <div className="text-center py-8">
                 <div className="inline-flex items-center gap-3 text-slate-600 font-medium">
-                  <div className="animate-spin w-5 h-5 border-2 border-emerald-600 border-t-transparent rounded-full"></div>
+                  <div className="animate-spin w-5 h-5 border-2 border-[#0e7c66] border-t-transparent rounded-none"></div>
                   Loading profile data...
                 </div>
               </div>
@@ -175,12 +175,12 @@ export default function AdminProfileEdit() {
               <div className="space-y-8">
                 {/* Avatar Display */}
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-full mx-auto flex items-center justify-center shadow-lg mb-4">
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#0e7c66] to-[#0a2e1e] rounded-none mx-auto flex items-center justify-center shadow-lg mb-4">
                     <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <button className="text-emerald-700 hover:text-emerald-800 text-sm font-semibold transition-colors">
+                  <button className="text-[#0a2e1e] hover:text-[#0a2e1e] text-sm font-semibold transition-colors">
                     Change Profile Picture
                   </button>
                 </div>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const WorldClassNPSBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Achieving World-Class NPS in ITAD",
@@ -23,16 +23,16 @@ const WorldClassNPSBlog: React.FC = () => {
         />
 
         {/* Hero Section */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Customer Success
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 The Journey to Excellence: Achieving a World-Class NPS
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Discover how D-Secure achieved a high Net Promoter Score of
                 70.4% — rated by customers on a scale of 0-10 — through
                 continuous innovation and exceptional support.
@@ -44,12 +44,12 @@ const WorldClassNPSBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   The secret to building a successful business lies in{" "}
-                  <strong className="text-indigo-800">
+                  <strong className="text-[#0a2e1e]">
                     consistently understanding and mapping the customer journey
                   </strong>{" "}
                   at every stage through an effective feedback mechanism.
@@ -57,7 +57,7 @@ const WorldClassNPSBlog: React.FC = () => {
                   identify customer concerns, providing opportunities to
                   improve, innovate, and establish long-term relationships.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Such surveys not only help businesses address customer needs
                   but also reinforce trust in the brand's authenticity and
                   commitment to excellence. This process becomes more organized
@@ -71,12 +71,12 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* What is NPS */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Understanding the Net Promoter Score
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Bain and Company innovated a metric called the Net Promoter
                 Score (NPS). It helps businesses understand customer
                 satisfaction and loyalty levels toward their brand. The NPS is
@@ -84,11 +84,11 @@ const WorldClassNPSBlog: React.FC = () => {
                 with questions designed to capture customer sentiment.
               </p>
 
-              <div className="bg-indigo-50 border-l-4 border-indigo-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] p-8 md:p-12 space-y-6 border-l-4 border-[#0e7c66] prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   How NPS Works
                 </h3>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Customers rate their inclination to recommend the brand to
                   friends and colleagues on a scale from 0 (not at all likely)
                   to 10 (extremely likely). The formula is simple:{" "}
@@ -98,21 +98,21 @@ const WorldClassNPSBlog: React.FC = () => {
               </div>
 
               <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl p-6 text-white text-center">
+                <div className="bg-[#0e7c66] rounded-none p-6 text-white text-center">
                   <h4 className="font-bold text-2xl mb-2">9-10</h4>
                   <p className="font-semibold text-lg mb-2">Promoters</p>
                   <p className="text-white/90 text-sm">
                     Enthusiastic customers who actively recommend the brand
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-amber-500 to-purple-500 rounded-xl p-6 text-white text-center">
+                <div className="bg-[#0e7c66] rounded-none p-6 text-white text-center">
                   <h4 className="font-bold text-2xl mb-2">7-8</h4>
                   <p className="font-semibold text-lg mb-2">Passives</p>
                   <p className="text-white/90 text-sm">
                     Satisfied but not enthusiastic; potential to decrease NPS
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-6 text-white text-center">
+                <div className="bg-[#0e7c66] rounded-none p-6 text-white text-center">
                   <h4 className="font-bold text-2xl mb-2">0-6</h4>
                   <p className="font-semibold text-lg mb-2">Detractors</p>
                   <p className="text-white/90 text-sm">
@@ -125,17 +125,17 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* NPS Achievement */}
           <Reveal>
-            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 D-Secure Achieves NPS of 70.4%
               </h2>
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="bg-white/10 rounded-xl p-6 text-center">
+                <div className="bg-white/10 rounded-none p-6 text-center">
                   <p className="text-5xl font-bold mb-2">60%</p>
                   <p className="text-lg">NPS in 2023</p>
                 </div>
-                <div className="bg-white/20 rounded-xl p-6 text-center border-2 border-white/30">
+                <div className="bg-white/20 rounded-none p-6 text-center border-2 border-white/30">
                   <p className="text-5xl font-bold mb-2">70.4%</p>
                   <p className="text-lg">NPS in January 2025</p>
                 </div>
@@ -146,7 +146,7 @@ const WorldClassNPSBlog: React.FC = () => {
                 recognize their needs to fine-tune our solutions for data
                 erasure and diagnostics. The company's approach is built on
                 understanding the diverse data-wiping requirements of our
-                clientele — whether serving large IT Asset Disposition (<Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link>)
+                clientele — whether serving large IT Asset Disposition (<Link to="/solutions/itad" className="text-white hover:underline font-medium">ITAD</Link>)
                 companies, MSPs offering Erasure as a Service (EaaS), or
                 organizations focusing on compliance and risk mitigation.
               </p>
@@ -155,34 +155,34 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* What Helped Achieve This */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 How We Achieved Customer Success
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Open Communication
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Establishing multiple communication channels enables
                     meaningful interaction with customers as the first step
                     toward loyal brand relationships. Customers can reach us via
                     chat, message, or audio call for product inquiries,
                     suggestions, or deployment issues. Our support team
                     pre-schedules video conference calls for product
-                    demonstrations or issue resolution. For <Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> partners,
+                    demonstrations or issue resolution. For <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link> partners,
                     premium support ensures no gap in service with tailored
                     software solutions.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Continuous Innovation
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Our R&D team constantly seeks opportunities to improve
                     products, automate data-wiping workflows, and support newer
                     devices like Apple Silicon Chip-based Macs (M3, M2, M1).
@@ -192,11 +192,11 @@ const WorldClassNPSBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Unmatched Technical Support
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     D-Secure provides technical support without any extra
                     charges, unlike other industry players. Customer issues are
                     resolved with prompt responses regardless of complexity,
@@ -210,27 +210,27 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* Customer Testimonials */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 What Our Customers Are Saying
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-slate-50 rounded-xl p-6">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-[#0e7c66] rounded-full flex items-center justify-center text-white font-bold">
                       HP
                     </div>
                     <div className="ml-4">
-                      <p className="font-bold text-slate-900">
+                      <p className="font-bold text-[#0a2e1e]">
                         Enterprise Client
                       </p>
-                      <p className="text-sm text-slate-500">
+                      <p className="text-sm text-[#5a6672]">
                         Technology Sector
                       </p>
                     </div>
                   </div>
-                  <p className="text-slate-700 text-lg leading-relaxed italic">
+                  <p className="text-[#5a6672] text-lg leading-relaxed italic">
                     "The wiping capability with built-in system diagnostics has
                     been very helpful. The software helped us wipe multiple
                     drives flawlessly with verifiable reports and certificates —
@@ -238,21 +238,21 @@ const WorldClassNPSBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-slate-50 rounded-xl p-6">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-[#0e7c66] rounded-full flex items-center justify-center text-white font-bold">
                       AIA
                     </div>
                     <div className="ml-4">
-                      <p className="font-bold text-slate-900">
+                      <p className="font-bold text-[#0a2e1e]">
                         Insurance Leader
                       </p>
-                      <p className="text-sm text-slate-500">
+                      <p className="text-sm text-[#5a6672]">
                         Financial Services
                       </p>
                     </div>
                   </div>
-                  <p className="text-slate-700 text-lg leading-relaxed italic">
+                  <p className="text-[#5a6672] text-lg leading-relaxed italic">
                     "A remarkable solution showcasing impressive features,
                     competitive edge, product certifications, and complimentary
                     24/5 customer service. DOD compliance is a notable benefit.
@@ -261,22 +261,22 @@ const WorldClassNPSBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-slate-50 rounded-xl p-6">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-[#0e7c66] rounded-full flex items-center justify-center text-white font-bold">
                       NA
                     </div>
                     <div className="ml-4">
-                      <p className="font-bold text-slate-900">
+                      <p className="font-bold text-[#0a2e1e]">
                         Storage Solutions
                       </p>
-                      <p className="text-sm text-slate-500">
+                      <p className="text-sm text-[#5a6672]">
                         Data Infrastructure
                       </p>
                     </div>
                   </div>
-                  <p className="text-slate-700 text-lg leading-relaxed italic">
-                    "Great experience with <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">secure erasure</Link> of hard drives and
+                  <p className="text-[#5a6672] text-lg leading-relaxed italic">
+                    "Great experience with <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">secure erasure</Link> of hard drives and
                     SSDs. Technical and customer support team were very prompt
                     in resolving queries, and the detailed product demo was
                     superb. The certified software is simple to use and highly
@@ -284,18 +284,18 @@ const WorldClassNPSBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-slate-50 rounded-xl p-6">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-[#0e7c66] rounded-full flex items-center justify-center text-white font-bold">
                       WW
                     </div>
                     <div className="ml-4">
-                      <p className="font-bold text-slate-900">MSP Partner</p>
-                      <p className="text-sm text-slate-500"><Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> Services</p>
+                      <p className="font-bold text-[#0a2e1e]">MSP Partner</p>
+                      <p className="text-sm text-[#5a6672]"><Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link> Services</p>
                     </div>
                   </div>
-                  <p className="text-slate-700 text-lg leading-relaxed italic">
-                    "As an MSP partner, we provide services to <Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> companies,
+                  <p className="text-[#5a6672] text-lg leading-relaxed italic">
+                    "As an MSP partner, we provide services to <Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link> companies,
                     financial and government institutions. Valid certification
                     minimizes risks and ensures GDPR and ISO 27001 compliance.
                     Tech and sales support is always efficient — a real partner
@@ -308,11 +308,11 @@ const WorldClassNPSBlog: React.FC = () => {
 
           {/* Way Ahead */}
           <Reveal>
-            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 The Way Forward
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 By listening to customers, D-Secure stays focused on exceeding
                 expectations through continuous enhancements in data erasure and
                 diagnostics solutions and support. Our high NPS is the authentic

@@ -905,6 +905,8 @@ import { getSEOForPage } from "@/utils/seo";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
 import SolutionContactSection from "@/components/SolutionContactSection";
 import SolutionHeroGraphic from "@/components/SolutionHeroGraphic";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeIconContainer, ThemeButton, themeClasses } from "@/components/ui/Theme";
+import { Monitor, Server, HardDrive, Smartphone, Lock, FileText, TrendingUp, Recycle, CheckCircle } from "lucide-react";
 
 const ITADSolution: React.FC = () => {
   const navigate = useNavigate();
@@ -1019,9 +1021,10 @@ const ITADSolution: React.FC = () => {
         </div>
 
         {/* ================= HERO SECTION ================= */}
-        <section
+        <ThemeSection
           id="overview"
-          className="min-h-[600px] flex items-start pt-8 lg:pt-12 pb-8 lg:pb-12 relative overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50"
+          className="min-h-[600px] flex items-start pt-8 lg:pt-12 pb-8 lg:pb-12 relative overflow-hidden"
+          noBg
         >
           {/* Background pattern */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1064,44 +1067,19 @@ const ITADSolution: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <button
-                    onClick={() => navigate("/contact")}
-                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-emerald-200/50 transition-all duration-300 transform hover:-translate-y-1"
-                  >
+                  <ThemeButton onClick={() => navigate("/contact")}>
                     Start Free Trial
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </button>
+                  </ThemeButton>
                   <a
                     href="https://assets.dsecuretech.com/pdf/D-SECURE%20ITAD%20Partner%20Program.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 border-2 border-emerald-600 text-emerald-700 px-8 py-4 rounded-xl font-bold bg-white transition-all duration-300 shadow-lg"
+                    className={`${themeClasses.button.base} ${themeClasses.button.outline} w-full sm:w-auto gap-2`}
                   >
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"
-                      />
-                    </svg>
+                    <FileText className="w-5 h-5" />
                     Solution Overview
                   </a>
                 </div>
@@ -1298,108 +1276,70 @@ const ITADSolution: React.FC = () => {
               />
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* Features Section */}
-        <section
-          id="features"
-          className="py-20"
-          style={{ backgroundColor: "#ffffff" }}
-        >
+        <ThemeSection id="features" alternate>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div
-                className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4"
-                style={{ backgroundColor: "#e8f5e9", color: "#059669" }}
-              >
+              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-emerald-100 text-emerald-800 mb-4 border border-emerald-200">
                 Features
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
+              </span>
+              <ThemeSectionHeading centered>
                 Complete Data Erasure
-              </h2>
-              <p
-                className="text-lg max-w-2xl mx-auto"
-                style={{ color: "#6b7280" }}
-              >
+              </ThemeSectionHeading>
+              <p className="text-lg max-w-2xl mx-auto text-slate-600 mt-4">
                 Permanently erase data from all devices with military-grade
                 security
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
               {[
                 {
-                  icon: "🔐",
+                  icon: Lock,
                   title: "regulated Data Erasure",
                   desc: "Military-grade data sanitization using NIST 800-88 standards.",
                 },
                 {
-                  icon: "📜",
+                  icon: FileText,
                   title: "Compliance Regulatory Documents",
                   desc: "Tamper-proof regulatory documents with detailed audit trails.",
                 },
                 {
-                  icon: "📈",
+                  icon: TrendingUp,
                   title: "Asset Management",
                   desc: "Track assets from deployment through secure disposal.",
                 },
                 {
-                  icon: "♻️",
+                  icon: Recycle,
                   title: "Sustainable E-Waste",
                   desc: "Environmentally responsible disposal practices.",
                 },
               ].map((feature, idx) => (
-                <div
-                  key={idx}
-                  className="group p-6 rounded-2xl hover:shadow-lg transition-all border border-transparent hover:border-blue-100"
-                  style={{ backgroundColor: "#f9fafb" }}
-                >
-                  <div className="text-5xl mb-4">{feature.icon}</div>
-                  <h2
-                    className="text-lg font-bold mb-2"
-                    style={{ color: "#1f2937" }}
-                  >
-                    {feature.title}
-                  </h2>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: "#6b7280" }}
-                  >
-                    {feature.desc}
-                  </p>
-                </div>
+                <ThemeCard key={idx} className="flex flex-col items-start p-6">
+                  <div className="mb-6">
+                    <ThemeIconContainer icon={feature.icon} size="lg" />
+                  </div>
+                  <h2 className={`${themeClasses.typography.cardTitle}`}>{feature.title}</h2>
+                  <p className={`${themeClasses.typography.cardBody}`}>{feature.desc}</p>
+                </ThemeCard>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* Device Support Section */}
-        <section
-          id="devices"
-          className="py-20 bg-gradient-to-b"
-          style={{ background: "linear-gradient(to bottom, #f9fafb, #ffffff)" }}
-        >
+        <ThemeSection id="devices" noBg className="bg-[#0a2e1e] [&_h2]:!text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div
-                className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4"
-                style={{ backgroundColor: "#e8f5e9", color: "#059669" }}
-              >
+              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-emerald-900/50 text-emerald-300 mb-4 border border-emerald-800/50">
                 Device Support
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
+              </span>
+              <ThemeSectionHeading centered>
                 Every Device Type
-              </h2>
-              <p
-                className="text-lg max-w-2xl mx-auto"
-                style={{ color: "#6b7280" }}
-              >
+              </ThemeSectionHeading>
+              <p className="text-lg max-w-2xl mx-auto text-emerald-50/80 mt-4">
                 Comprehensive data erasure across all storage media
               </p>
             </div>
@@ -1407,71 +1347,49 @@ const ITADSolution: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
-                  icon: "💻",
+                  icon: Monitor,
                   title: "Computers",
                   desc: "Desktops, Laptops, Workstations",
                 },
                 {
-                  icon: "🖥️",
+                  icon: Server,
                   title: "Servers",
                   desc: "Physical & Virtual Servers",
                 },
                 {
-                  icon: "💾",
+                  icon: HardDrive,
                   title: "Storage Media",
                   desc: "HDDs, SSDs, USB Drives",
                 },
                 {
-                  icon: "📱",
+                  icon: Smartphone,
                   title: "Mobile Devices",
                   desc: "Smartphones, Tablets",
                 },
               ].map((device, idx) => (
-                <div
-                  key={idx}
-                  className="text-center p-8 rounded-2xl shadow-sm hover:shadow-md transition-all"
-                  style={{ backgroundColor: "#ffffff" }}
-                >
-                  <div className="text-6xl mb-4">{device.icon}</div>
-                  <h3
-                    className="text-xl font-bold mb-2"
-                    style={{ color: "#1f2937" }}
-                  >
-                    {device.title}
-                  </h3>
-                  <p className="text-sm" style={{ color: "#6b7280" }}>
-                    {device.desc}
-                  </p>
-                </div>
+                <ThemeCard key={idx} className="flex flex-col items-center text-center p-8">
+                  <div className="mb-6">
+                    <ThemeIconContainer icon={device.icon} size="lg" />
+                  </div>
+                  <h3 className={`${themeClasses.typography.cardTitle}`}>{device.title}</h3>
+                  <p className={`${themeClasses.typography.cardBody}`}>{device.desc}</p>
+                </ThemeCard>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* Industry Solutions Section */}
-        <section
-          id="industries"
-          className="py-20"
-          style={{ backgroundColor: "#ffffff" }}
-        >
+        <ThemeSection id="industries">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div
-                className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4"
-                style={{ backgroundColor: "#e8f5e9", color: "#059669" }}
-              >
+              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-emerald-100 text-emerald-800 mb-4 border border-emerald-200">
                 Industry Solutions
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
+              </span>
+              <ThemeSectionHeading centered>
                 Tailored for Your Industry
-              </h2>
-              <p
-                className="text-lg max-w-2xl mx-auto"
-                style={{ color: "#6b7280" }}
-              >
+              </ThemeSectionHeading>
+              <p className="text-lg max-w-2xl mx-auto text-slate-600 mt-4">
                 Specialized ITAD solutions for every sector
               </p>
             </div>
@@ -1515,75 +1433,38 @@ const ITADSolution: React.FC = () => {
                   ],
                 },
               ].map((solution, idx) => (
-                <div
-                  key={idx}
-                  className="p-8 rounded-2xl hover:shadow-lg transition-all border"
-                  style={{ backgroundColor: "#f9fafb", borderColor: "#e5e7eb" }}
-                >
-                  <h2
-                    className="text-2xl font-bold mb-3"
-                    style={{ color: "#1f2937" }}
-                  >
+                <ThemeCard key={idx} className="p-8">
+                  <h2 className={`${themeClasses.typography.cardTitle} mb-3`}>
                     {solution.title}
                   </h2>
-                  <p className="mb-6" style={{ color: "#6b7280" }}>
+                  <p className={`${themeClasses.typography.cardBody} mb-6`}>
                     {solution.desc}
                   </p>
                   <ul className="space-y-2">
                     {solution.features.map((feature, fidx) => (
-                      <li
-                        key={fidx}
-                        className="flex items-center text-sm"
-                        style={{ color: "#4b5563" }}
-                      >
-                        <svg
-                          className="w-5 h-5 mr-2 flex-shrink-0"
-                          style={{ color: "#059669" }}
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <li key={fidx} className="flex items-center text-sm text-slate-600">
+                        <CheckCircle className="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </ThemeCard>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* FAQ Section */}
-        <section
-          id="faq"
-          className="py-20 bg-gradient-to-b"
-          style={{ background: "linear-gradient(to bottom, #f9fafb, #ffffff)" }}
-        >
+        <ThemeSection id="faq" alternate>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <div
-                className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4"
-                style={{ backgroundColor: "#e8f5e9", color: "#059669" }}
-              >
-                FAQ
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
-                Common Questions
-              </h2>
-              <p className="text-lg" style={{ color: "#6b7280" }}>
-                Everything you need to know about ITAD
-              </p>
-            </div>
+            <ThemeSectionHeading centered>
+              Common Questions
+            </ThemeSectionHeading>
+            <p className="text-lg text-center text-slate-600 mt-4 mb-8">
+              Everything you need to know about ITAD
+            </p>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               {[
                 {
                   q: "What is IT Asset Disposition (ITAD)?",
@@ -1609,45 +1490,24 @@ const ITADSolution: React.FC = () => {
                   q: "What ongoing support is provided?",
                   a: "We provide continuous support including regular software updates, technical assistance, compliance monitoring, and renewal coordination. Think of us as your ongoing partner in data hygiene.",
                 },
-              ].map((faq, idx) => (
-                <details
-                  key={idx}
-                  className="group rounded-xl p-6 shadow-sm hover:shadow-md transition-all border"
-                  style={{ backgroundColor: "#ffffff", borderColor: "#e5e7eb" }}
-                >
-                  <summary className="flex items-center justify-between cursor-pointer list-none">
-                    <span
-                      className="text-lg font-semibold"
-                      style={{ color: "#1f2937" }}
-                    >
-                      {faq.q}
+              ].map((faq) => (
+                <details key={faq.q} className="group bg-white border border-[#d0d5dc]/60 transition-all">
+                  <summary className="flex items-center justify-between cursor-pointer list-none p-6">
+                    <span className="text-lg font-bold pr-6 text-[#151e29] group-open:text-[#0a2e1e] transition-colors">{faq.q}</span>
+                    <span className="transition-transform group-open:rotate-180 text-emerald-600 flex-shrink-0">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </span>
-                    <svg
-                      className="w-5 h-5 group-open:rotate-180 transition-transform"
-                      style={{ color: "#059669" }}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
                   </summary>
-                  <p
-                    className="mt-4 leading-relaxed"
-                    style={{ color: "#6b7280" }}
-                  >
+                  <div className="px-6 pb-6 text-base leading-relaxed text-[#5a6672] border-t border-[#d0d5dc]/30 pt-4 mt-2 hidden group-open:block">
                     {faq.a}
-                  </p>
+                  </div>
                 </details>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= CONTACT SECTION ================= */}
         <SolutionContactSection

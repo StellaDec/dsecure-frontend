@@ -1,5 +1,9 @@
 import React, { memo, useMemo } from 'react';
-import { getProductIcon, getProductImageConfig } from '@/utils/productIcons';
+import { getProductImageConfig } from '@/utils/productIcons';
+import { 
+  HardDrive, File, Cpu, Activity, Server, Smartphone, 
+  ShieldCheck, ArrowRightLeft, Snowflake, Search, Package 
+} from 'lucide-react';
 
 interface ProductImageProps {
   category: string;
@@ -28,27 +32,35 @@ export const ProductImage = memo<ProductImageProps>(({
   
   const currentSize = sizeConfig[size];
   const iconSize = useMemo(() => size === 'large' ? 128 : size === 'medium' ? 64 : 32, [size]);
+
+  const IconComponent = useMemo(() => {
+    switch (category) {
+      case 'drive-eraser': return HardDrive;
+      case 'file-eraser': return File;
+      case 'hardware-diagnostics': return Cpu;
+      case 'smart-diagnostic': return Activity;
+      case 'virtual-machine-eraser': return Server;
+      case 'smartphone-eraser': return Smartphone;
+      case 'smartphone-diagnostic': return Smartphone;
+      case 'autopilot-mdm': return ShieldCheck;
+      case 'data-migration': return ArrowRightLeft;
+      case 'freeze-state': return Snowflake;
+      case 'forensic-imaging': return Search;
+      default: return Package;
+    }
+  }, [category]);
   
   return (
-    <div className={`${currentSize.container} bg-gradient-to-br ${config.backgroundColor} rounded-lg p-4 flex flex-col items-center justify-center text-white shadow-lg ${className}`}>
+    <div className={`${currentSize.container} bg-[#0e7c66] rounded-none border border-[#0e7c66] p-4 flex flex-col items-center justify-center text-white ${className}`}>
       {/* Product Icon */}
-      <div className="mb-3">
-        <img loading="lazy" decoding="async"
-          src={getProductIcon(category, iconSize)}
-          alt={productName}
-          className={`${currentSize.icon} object-contain filter drop-shadow-lg`}
-          onError={(e) => {
-            // Fallback to Cloudinary image if icon fails to load
-            const target = e.target as HTMLImageElement;
-            target.src = 'https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1759928831/bwsswefvwhdvuy8yrplk.png';
-          }}
-        />
+      <div className={`mb-3 flex items-center justify-center rounded-full bg-white/20 ${size === 'large' ? 'p-6' : size === 'medium' ? 'p-4' : 'p-2'}`}>
+        <IconComponent className={`${currentSize.icon} text-white drop-shadow-md`} strokeWidth={1.5} />
       </div>
       
       {showDetails && (
         <div className="text-center space-y-1">
           {/* Product Brand */}
-          <div className={`${config.accentColor} font-bold ${currentSize.text}`}>
+          <div className={`text-white font-bold tracking-wider ${currentSize.text}`}>
             D-Secure
           </div>
           

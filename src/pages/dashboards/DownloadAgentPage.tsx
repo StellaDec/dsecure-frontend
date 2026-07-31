@@ -1,6 +1,8 @@
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React, { useState } from 'react'
+import { ChevronLeft, Monitor } from 'lucide-react';
+
 import Reveal from '@/components/Reveal'
 import { useAuth } from '@/auth/AuthContext'
 import { Link } from 'react-router-dom'
@@ -38,7 +40,7 @@ const DownloadAgentPage: React.FC = () => {
       size: '52.1 MB',
       platform: 'mac',
       description: 'Secure data erasure for macOS and Mac hardware including M1/M2 chip support.',
-      iconSvg: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
+      iconSvg: <Monitor className="w-8 h-8" />,
       compatibility: ['macOS 12.0+', 'Apple Silicon (M1/M2)', 'Intel-based Macs']
     },
     {
@@ -146,23 +148,21 @@ const DownloadAgentPage: React.FC = () => {
             <div className="flex items-center gap-4 mb-6">
               <Link
                 to="/admin"
-                className="p-2 rounded-lg border border-slate-200 hover:bg-white transition-colors"
+                className="p-2 rounded-none border border-slate-200 hover:bg-white transition-colors"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
+                <ChevronLeft className="w-5 h-5" />
               </Link>
               <div>
-                <h1 className="text-3xl font-bold text-slate-900">Download Agents</h1>
+                <h1 className="text-3xl font-bold text-[#0a2e1e]">Download Agents</h1>
                 <p className="text-slate-600 mt-1">Get the latest DSecure agents for your platform</p>
               </div>
             </div>
 
             {/* Custom Installer Note */}
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-8">
+            <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-4 rounded-none mb-8">
               <div className="flex items-start">
-                <span className="text-blue-500 text-xl font-bold mr-2">*</span>
-                <p className="text-sm text-blue-900 font-medium pt-0.5">
+                <span className="text-[#0a2e1e] text-xl font-bold mr-2">*</span>
+                <p className="text-sm text-[#0a2e1e] font-medium pt-0.5">
                   For custom installer setup, please contact the support team.
                 </p>
               </div>
@@ -174,9 +174,9 @@ const DownloadAgentPage: React.FC = () => {
                 <button
                   key={platform.id}
                   onClick={() => setSelectedPlatform(platform.id)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${selectedPlatform === platform.id
+                  className={`px-4 py-2 rounded-none text-sm font-medium transition-colors ${selectedPlatform === platform.id
                     ? 'bg-brand text-white'
-                    : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
+                    : 'bg-[#0e7c66] text-slate-600 hover:bg-slate-50 border border-slate-200'
                     }`}
                 >
                   {platform.name}
@@ -189,11 +189,11 @@ const DownloadAgentPage: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredAgents.map((agent, index) => (
               <Reveal key={agent.id} delayMs={index * 100}>
-                <div className="card p-6 h-full flex flex-col">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-6 h-full flex flex-col">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="text-slate-600">{agent.iconSvg}</div>
                     <div className="flex-1">
-                      <h2 className="font-semibold text-slate-900 mb-1">{agent.name}</h2>
+                      <h2 className="font-semibold text-[#0a2e1e] mb-1">{agent.name}</h2>
                       <div className="flex items-center gap-3 text-sm text-slate-600">
                         <span>v{agent.version}</span>
                         <span>•</span>
@@ -205,7 +205,7 @@ const DownloadAgentPage: React.FC = () => {
                   <p className="text-slate-600 text-sm mb-4 flex-1">{agent.description}</p>
 
                   <div className="mb-4">
-                    <h3 className="text-sm font-medium text-slate-900 mb-2">Compatibility:</h3>
+                    <h3 className="text-sm font-medium text-[#0a2e1e] mb-2">Compatibility:</h3>
                     <div className="flex flex-wrap gap-1">
                       {agent.compatibility.map((comp, idx) => (
                         <span key={idx} className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded">
@@ -227,7 +227,7 @@ const DownloadAgentPage: React.FC = () => {
                     </button>
                     <button
                       onClick={() => console.log(`Viewing documentation for ${agent.name}...`)}
-                      className="px-3 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+                      className="px-3 py-2 border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50 transition-colors"
                       title="View Documentation"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -244,8 +244,8 @@ const DownloadAgentPage: React.FC = () => {
           {selectedPlatform !== 'all' && (
             <Reveal delayMs={300}>
               <div className="mt-8">
-                <div className="card p-6">
-                  <h2 className="text-xl font-bold text-slate-900 mb-4">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-6">
+                  <h2 className="text-xl font-bold text-[#0a2e1e] mb-4">
                     Installation Instructions for {platforms.find(p => p.id === selectedPlatform)?.name}
                   </h2>
                   <ol className="space-y-2">
@@ -266,20 +266,20 @@ const DownloadAgentPage: React.FC = () => {
           {/* Support Information */}
           <Reveal delayMs={400}>
             <div className="mt-8">
-              <div className="card p-6 bg-gradient-to-r from-brand/5 to-brand/10 border-brand/20">
+              <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-6  from-brand/5 to-brand/10 border-brand/20">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-brand/20 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-brand/20 rounded-none flex items-center justify-center">
                     <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25v2.5m0 14v2.5m9.75-9.75h-2.5m-14 0h-2.5m9.928-9.928l-1.768 1.768m-.354 9.192l-1.768 1.768m9.192-.354l-1.768-1.768M2.636 9.172l1.768 1.768" />
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h2 className="font-semibold text-slate-900 mb-2">Need Help?</h2>
+                    <h2 className="font-semibold text-[#0a2e1e] mb-2">Need Help?</h2>
                     <p className="text-slate-700 mb-4">
                       Having trouble with installation or need technical support? Our team is here to help.
                     </p>
                     <div className="flex gap-3">
-                      <Link to="/support" className="btn-secondary">
+                      <Link to="/support" className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed">
                         Contact Support
                       </Link>
                       <button className="btn-outline">

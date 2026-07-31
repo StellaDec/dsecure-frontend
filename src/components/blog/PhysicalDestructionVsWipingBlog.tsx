@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const PhysicalDestructionVsWipingBlog: React.FC = () => {
     return (
-        <div className="min-h-screen bg-slate-50">
+        <div className="min-h-screen bg-[#f4fbf8]">
             <SEOHead seo={getBlogSEO({
                 title: "Physical Destruction vs. Data Wiping: Which is Better?",
                 excerpt: "Should you shred your old hard drives or wipe them? Discover the security, financial, and environmental differences between physical destruction and data erasure.",
@@ -19,17 +19,17 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
                 tag: "Data Erasure"
             })} />
 
-            <section className="py-16 bg-white shadow-sm border-b border-slate-200">
+            <section className="py-16 bg-white shadow-none border-b border-[#d0d5dc]">
                 <Reveal>
                     <div className="text-center px-6 max-w-5xl mx-auto">
                         <span className="inline-block px-4 py-1 text-sm font-medium text-brand bg-brand/10 rounded-full mb-4">
-                            Strategic <Link to="/solutions/itad" className="text-rose-600 hover:underline font-medium">ITAD</Link>
+                            Strategic <Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link>
                         </span>
-                        <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                            Physical Destruction vs <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Wiping</Link>: A Cost Analysis for IT Leaders
+                        <h1 className="text-3xl md:text-5xl font-bold text-[#0a2e1e] mb-6 leading-tight">
+                            Physical Destruction vs <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Data Wiping</Link>: A Cost Analysis for IT Leaders
                         </h1>
-                        <p className="text-xl text-slate-600 leading-relaxed">
-                            Stop destroying your residual hardware value. Discover why modern enterprise data centers are transitioning from physical shredding to verifiable <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link>.
+                        <p className="text-xl text-[#5a6672] leading-relaxed">
+                            Stop destroying your residual hardware value. Discover why modern enterprise data centers are transitioning from physical shredding to verifiable <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link>.
                         </p>
                     </div>
                 </Reveal>
@@ -37,41 +37,41 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
 
             <section className="w-full px-4 md:px-8 lg:px-16 py-12 max-w-6xl mx-auto space-y-12">
                 <Reveal>
-                    <div className="prose prose-lg max-w-none text-slate-700 space-y-6">
-                        <p className="text-xl font-medium text-slate-800 leading-relaxed">
+                    <div className="prose prose-lg max-w-none text-[#5a6672] space-y-6">
+                        <p className="text-xl font-medium text-[#0a2e1e] leading-relaxed">
                             Imagine allocating a massive chunk of your IT budget to procure high-end enterprise servers, only to literally grind them into dust three years later. For decades, physical destruction has been the default security protocol for IT hardware at the end of its lifecycle. But as hardware costs rise and sustainability mandates become stricter, IT leaders are asking a critical question: Is physical destruction truly necessary, or is it just an expensive habit? 
                         </p>
                         <p>
                             When decommissioning data center equipment, corporate laptops, or mobile devices, security cannot be compromised. However, treating every device as a candidate for the shredder ignores a massive opportunity for cost recovery and environmental sustainability. 
                         </p>
                         <p>
-                            In this comprehensive analysis, we will break down the financial, operational, and security implications of physical destruction versus software-based <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link>, helping you make the most cost-effective decision for your organization.
+                            In this comprehensive analysis, we will break down the financial, operational, and security implications of physical destruction versus software-based <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link>, helping you make the most cost-effective decision for your organization.
                         </p>
                     </div>
                 </Reveal>
 
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 md:p-10">
-                        <h2 className="text-3xl font-bold text-slate-900 mb-6">The Traditional Approach: Physical Destruction</h2>
-                        <p className="text-slate-700 text-lg mb-6 leading-relaxed">
+                    <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                        <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">The Traditional Approach: Physical Destruction</h2>
+                        <p className="text-[#5a6672] text-lg mb-6 leading-relaxed">
                             Physical destruction involves mechanically shredding, crushing, or degaussing hard drives and SSDs until they are completely inoperable. It is the most visceral way to guarantee that data cannot be recovered.
                         </p>
                         
-                        <h3 className="text-2xl font-semibold text-slate-800 mt-8 mb-4">The True Cost of Shredding</h3>
-                        <p className="text-slate-700 text-lg leading-relaxed mb-4">
+                        <h3 className="text-2xl font-semibold text-[#0a2e1e] mt-8 mb-4">The True Cost of Shredding</h3>
+                        <p className="text-[#5a6672] text-lg leading-relaxed mb-4">
                             While the direct cost of shredding a drive might seem low (often quoted between $5 to $15 per drive), the hidden costs are substantial:
                         </p>
                         <ul className="space-y-4 mb-6">
                             <li className="flex items-start">
-                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold mt-1 mr-3 text-sm">✖</span>
+                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4ede4] text-[#0a2e1e] flex items-center justify-center font-bold mt-1 mr-3 text-sm">✖</span>
                                 <div><strong>Zero Asset Recovery Value:</strong> A shredded 2TB NVMe drive is worth $0. An erased, functional drive can be resold or repurposed, recovering significant capital.</div>
                             </li>
                             <li className="flex items-start">
-                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold mt-1 mr-3 text-sm">✖</span>
+                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4ede4] text-[#0a2e1e] flex items-center justify-center font-bold mt-1 mr-3 text-sm">✖</span>
                                 <div><strong>Chain of Custody Risks:</strong> If drives are transported off-site to a shredding facility, they are highly vulnerable to theft or loss during transit.</div>
                             </li>
                             <li className="flex items-start">
-                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold mt-1 mr-3 text-sm">✖</span>
+                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4ede4] text-[#0a2e1e] flex items-center justify-center font-bold mt-1 mr-3 text-sm">✖</span>
                                 <div><strong>E-Waste Generation:</strong> Shredding functional electronics directly conflicts with modern corporate Environmental, Social, and Governance (ESG) commitments.</div>
                             </li>
                         </ul>
@@ -79,100 +79,100 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
                 </Reveal>
 
                 <Reveal>
-                    <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl shadow-lg p-8 md:p-10 text-white">
-                        <h2 className="text-3xl font-bold mb-6">The Modern Alternative: Software <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Wiping</Link></h2>
-                        <p className="text-slate-300 text-lg mb-6 leading-relaxed">
-                            <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data wiping</Link> (or data sanitization) uses software commands to permanently overwrite or cryptographically erase data from storage media. When executed properly using enterprise software, data wiping satisfies the highest global security standards, including <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-rose-600 hover:underline font-medium">NIST 800-88</Link></Link> and DoD 5220.22-M.
+                    <div className="bg-[#0e7c66] rounded-none shadow-none p-8 md:p-10 text-white">
+                        <h2 className="text-3xl font-bold mb-6">The Modern Alternative: Software <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Data Wiping</Link></h2>
+                        <p className="text-white/80 text-lg mb-6 leading-relaxed">
+                            <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Data wiping</Link> (or data sanitization) uses software commands to permanently overwrite or cryptographically erase data from storage media. When executed properly using enterprise software, data wiping satisfies the highest global security standards, including <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link></Link> and DoD 5220.22-M.
                         </p>
 
-                        <h3 className="text-2xl font-semibold text-white mt-8 mb-4">How <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Wiping</Link> Protects Your Budget</h3>
+                        <h3 className="text-2xl font-semibold text-white mt-8 mb-4">How <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Data Wiping</Link> Protects Your Budget</h3>
                         <div className="grid md:grid-cols-2 gap-6 mb-6">
-                            <div className="bg-white/10 border border-white/20 p-6 rounded-lg">
+                            <div className="bg-white/10 border border-white/20 p-6 rounded-none">
                                 <h4 className="font-bold text-xl mb-2 text-white">Hardware Remarketing</h4>
-                                <p className="text-slate-300">Sanitized drives can be safely sold on the secondary <Link to="/solutions/itad" className="text-rose-600 hover:underline font-medium">ITAD</Link> market. For enterprise arrays, this can mean recovering tens of thousands of dollars per rack.</p>
+                                <p className="text-white/80">Sanitized drives can be safely sold on the secondary <Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link> market. For enterprise arrays, this can mean recovering tens of thousands of dollars per rack.</p>
                             </div>
-                            <div className="bg-white/10 border border-white/20 p-6 rounded-lg">
+                            <div className="bg-white/10 border border-white/20 p-6 rounded-none">
                                 <h4 className="font-bold text-xl mb-2 text-white">Internal Redeployment</h4>
-                                <p className="text-slate-300">Instead of buying new hardware for a different department, securely wipe existing machines and reassign them with zero risk of cross-department data leakage.</p>
+                                <p className="text-white/80">Instead of buying new hardware for a different department, securely wipe existing machines and reassign them with zero risk of cross-department data leakage.</p>
                             </div>
                         </div>
-                        <p className="text-slate-300 text-lg leading-relaxed">
+                        <p className="text-white/80 text-lg leading-relaxed">
                             Furthermore, using solutions like D-Secure allows you to perform automated data erasure via PXE boot directly inside your data center, eliminating all chain of custody risks before the hardware ever unplugs from the rack.
                         </p>
                     </div>
                 </Reveal>
 
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 md:p-10">
-                        <h2 className="text-3xl font-bold text-slate-900 mb-6">Comparing the Costs: A Hypothetical Scenario</h2>
-                        <p className="text-slate-700 text-lg mb-6 leading-relaxed">
+                    <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                        <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">Comparing the Costs: A Hypothetical Scenario</h2>
+                        <p className="text-[#5a6672] text-lg mb-6 leading-relaxed">
                             Let’s analyze a scenario where a mid-sized enterprise is decommissioning 1,000 corporate laptops equipped with 512GB SSDs.
                         </p>
                         
                         <div className="overflow-x-auto mb-8">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                    <tr className="bg-slate-100 text-slate-900">
-                                        <th className="p-4 font-bold border-b border-slate-300">Metric</th>
-                                        <th className="p-4 font-bold border-b border-slate-300 border-l border-slate-200">Physical Destruction</th>
-                                        <th className="p-4 font-bold border-b border-slate-300 border-l border-slate-200"><Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Wiping</Link> (D-Secure)</th>
+                                    <tr className="bg-[#f4fbf8] text-[#0a2e1e]">
+                                        <th className="p-4 font-bold border-b border-[#d0d5dc]">Metric</th>
+                                        <th className="p-4 font-bold border-b border-[#d0d5dc] border-l border-[#d0d5dc]">Physical Destruction</th>
+                                        <th className="p-4 font-bold border-b border-[#d0d5dc] border-l border-[#d0d5dc]"><Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Data Wiping</Link> (D-Secure)</th>
                                     </tr>
                                 </thead>
-                                <tbody className="text-slate-700">
+                                <tbody className="text-[#5a6672]">
                                     <tr>
-                                        <td className="p-4 border-b border-slate-200 font-medium">Cost of Process</td>
-                                        <td className="p-4 border-b border-slate-200 border-l border-slate-200">~$10,000 (Shredding fees)</td>
-                                        <td className="p-4 border-b border-slate-200 border-l border-slate-200">~$4,000 (Software licenses)</td>
+                                        <td className="p-4 border-b border-[#d0d5dc] font-medium">Cost of Process</td>
+                                        <td className="p-4 border-b border-[#d0d5dc] border-l border-[#d0d5dc]">~$10,000 (Shredding fees)</td>
+                                        <td className="p-4 border-b border-[#d0d5dc] border-l border-[#d0d5dc]">~$4,000 (Software licenses)</td>
                                     </tr>
-                                    <tr className="bg-slate-50">
-                                        <td className="p-4 border-b border-slate-200 font-medium">Logistics / Transport</td>
-                                        <td className="p-4 border-b border-slate-200 border-l border-slate-200">High (Secure transport needed)</td>
-                                        <td className="p-4 border-b border-slate-200 border-l border-slate-200">Zero (Performed On-Site)</td>
+                                    <tr className="bg-[#f4fbf8]">
+                                        <td className="p-4 border-b border-[#d0d5dc] font-medium">Logistics / Transport</td>
+                                        <td className="p-4 border-b border-[#d0d5dc] border-l border-[#d0d5dc]">High (Secure transport needed)</td>
+                                        <td className="p-4 border-b border-[#d0d5dc] border-l border-[#d0d5dc]">Zero (Performed On-Site)</td>
                                     </tr>
                                     <tr>
-                                        <td className="p-4 border-b border-slate-200 font-medium">Asset Resale Value</td>
-                                        <td className="p-4 border-b border-slate-200 border-l border-slate-200">$0 (Drives destroyed)</td>
-                                        <td className="p-4 border-b border-slate-200 border-l border-slate-200 text-rose-600 font-bold">+$25,000 to +$40,000</td>
+                                        <td className="p-4 border-b border-[#d0d5dc] font-medium">Asset Resale Value</td>
+                                        <td className="p-4 border-b border-[#d0d5dc] border-l border-[#d0d5dc]">$0 (Drives destroyed)</td>
+                                        <td className="p-4 border-b border-[#d0d5dc] border-l border-[#d0d5dc] text-[#0a2e1e] font-bold">+$25,000 to +$40,000</td>
                                     </tr>
-                                    <tr className="bg-slate-50">
-                                        <td className="p-4 font-bold text-slate-900">Net Financial Impact</td>
-                                        <td className="p-4 font-bold text-red-600 border-l border-slate-200">- $10,000+ Loss</td>
-                                        <td className="p-4 font-bold text-rose-600 border-l border-slate-200">+ $21,000+ Profit</td>
+                                    <tr className="bg-[#f4fbf8]">
+                                        <td className="p-4 font-bold text-[#0a2e1e]">Net Financial Impact</td>
+                                        <td className="p-4 font-bold text-[#0a2e1e] border-l border-[#d0d5dc]">- $10,000+ Loss</td>
+                                        <td className="p-4 font-bold text-[#0a2e1e] border-l border-[#d0d5dc]">+ $21,000+ Profit</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <p className="text-slate-700 text-lg leading-relaxed">
+                        <p className="text-[#5a6672] text-lg leading-relaxed">
                             As the data shows, physical destruction creates a pure financial loss, whereas software wiping fundamentally transforms IT asset disposition from a cost center into a <strong>revenue-generating center</strong>.
                         </p>
                     </div>
                 </Reveal>
 
                 <Reveal>
-                    <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 md:p-10">
-                        <h2 className="text-3xl font-bold text-slate-900 mb-6">When is Physical Destruction Actually Necessary?</h2>
-                        <p className="text-slate-700 text-lg mb-4 leading-relaxed">
-                            Despite the overwhelming financial advantages of <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link>, physical destruction still has a place in specific scenarios:
+                    <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                        <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">When is Physical Destruction Actually Necessary?</h2>
+                        <p className="text-[#5a6672] text-lg mb-4 leading-relaxed">
+                            Despite the overwhelming financial advantages of <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link>, physical destruction still has a place in specific scenarios:
                         </p>
-                        <ol className="list-decimal pl-6 space-y-4 text-slate-700 text-lg mb-6">
+                        <ol className="list-decimal pl-6 space-y-4 text-[#5a6672] text-lg mb-6">
                             <li><strong>Failed Drives:</strong> If a drive is mechanically broken and cannot be mounted or recognized by wiping software, it cannot be safely erased via software. It must be shredded.</li>
                             <li><strong>Top-Secret Classification:</strong> Certain government and defense agencies have strict mandates that specify only physical destruction for highly classified "Top Secret" data.</li>
                             <li><strong>Obsolete Technology:</strong> Legacy media like floppy disks, ancient IDE drives, or damaged tape backups maintain zero market value and should simply be shredded and recycled for scrap materials.</li>
                         </ol>
-                        <p className="text-slate-700 text-lg leading-relaxed">
+                        <p className="text-[#5a6672] text-lg leading-relaxed">
                             The ideal strategy for most enterprises is a hybrid approach: Wipe everything that is functional and commercially viable, and physically destroy only the hardware that is broken or completely obsolete.
                         </p>
                     </div>
                 </Reveal>
 
                 <Reveal>
-                    <div className="bg-brand/5 border-l-4 border-brand p-8 md:p-10 rounded-r-xl">
-                        <h2 className="text-2xl font-bold text-slate-900 mb-4">Conclusion: Maximize Your IT Lifecycle ROI</h2>
-                        <p className="text-slate-700 text-lg leading-relaxed mb-6">
-                            Continuing to blindly destroy functional IT hardware is an unsustainable practice that drains IT budgets and generates unnecessary electronic waste. By adopting software-based <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link>, IT leaders can satisfy rigorous compliance requirements while recovering significant capital through hardware remarketing.
+                    <div className="bg-brand/5 border-l-4 border-brand p-8 md:p-10 rounded-none">
+                        <h2 className="text-2xl font-bold text-[#0a2e1e] mb-4">Conclusion: Maximize Your IT Lifecycle ROI</h2>
+                        <p className="text-[#5a6672] text-lg leading-relaxed mb-6">
+                            Continuing to blindly destroy functional IT hardware is an unsustainable practice that drains IT budgets and generates unnecessary electronic waste. By adopting software-based <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link>, IT leaders can satisfy rigorous compliance requirements while recovering significant capital through hardware remarketing.
                         </p>
-                        <p className="text-slate-900 font-semibold text-lg">
-                            Ready to stop shredding your residual value? Contact the D-Secure team today to implement an automated, compliance-verified <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">data wiping</Link> protocol for your enterprise.
+                        <p className="text-[#0a2e1e] font-semibold text-lg">
+                            Ready to stop shredding your residual value? Contact the D-Secure team today to implement an automated, compliance-verified <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link> protocol for your enterprise.
                         </p>
                     </div>
                 </Reveal>

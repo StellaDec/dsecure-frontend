@@ -21,9 +21,26 @@ import {
   ArrowRight,
   Share2,
   ExternalLink,
+  HardDrive,
+  File,
+  Eraser,
+  Usb,
+  ArrowRightLeft,
+  Disc,
+  Cpu,
+  Bot,
+  SearchCheck,
+  Network,
+  Building2,
+  Landmark,
+  DollarSign,
+  Building,
+  HeartPulse,
+  GraduationCap,
 } from "lucide-react";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import ThemeAwareLogoFooter from "../components/ThemeAwareLogoFooter";
+import { themeClasses } from "@/components/ui/Theme";
 import ScrollToTopComponent from "@/components/ScrollToTop";
 import { useTranslation } from "react-i18next";
 import { useIdleTimer } from "@/hooks/useIdleTimer";
@@ -169,7 +186,7 @@ export default function MainLayout() {
               {/* Products Dropdown */}
               <div data-products-dropdown>
                 <button
-                  className={`inline-flex items-center gap-2 py-2 text-slate-600 hover:text-slate-900 ${productsDropdownOpen ? "text-brand font-medium" : ""}`}
+                  className={`inline-flex items-center gap-2 py-2 text-slate-600 hover:text-slate-900 ${productsDropdownOpen ? "text-[#0e7c66] font-semibold" : ""}`}
                   onClick={() => {
                     setProductsDropdownOpen(!productsDropdownOpen);
                     setSolutionsDropdownOpen(false);
@@ -197,7 +214,7 @@ export default function MainLayout() {
                           className={`w-full text-left px-5 py-3 text-sm font-medium transition-colors flex items-center gap-2 ${
                             !productsDropdownTab ||
                             productsDropdownTab === "eraser"
-                              ? "text-emerald-700 bg-white border-r-2 border-emerald-500 font-semibold"
+                              ? "text-[#0e7c66] bg-white border-r-2 border-[#0e7c66] font-semibold"
                               : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
                           }`}
                           onClick={() => setProductsDropdownTab("eraser")}
@@ -223,7 +240,7 @@ export default function MainLayout() {
                         <button
                           className={`w-full text-left px-5 py-3 text-sm font-medium transition-colors flex items-center gap-2 ${
                             productsDropdownTab === "migration"
-                              ? "text-emerald-700 bg-white border-r-2 border-emerald-500 font-semibold"
+                              ? "text-[#0e7c66] bg-white border-r-2 border-[#0e7c66] font-semibold"
                               : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
                           }`}
                           onClick={() => setProductsDropdownTab("migration")}
@@ -248,7 +265,7 @@ export default function MainLayout() {
                         <button
                           className={`w-full text-left px-5 py-3 text-sm font-medium transition-colors flex items-center gap-2 ${
                             productsDropdownTab === "diagnostics"
-                              ? "text-emerald-700 bg-white border-r-2 border-emerald-500 font-semibold"
+                              ? "text-[#0e7c66] bg-white border-r-2 border-[#0e7c66] font-semibold"
                               : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
                           }`}
                           onClick={() => setProductsDropdownTab("diagnostics")}
@@ -273,7 +290,7 @@ export default function MainLayout() {
                         <button
                           className={`w-full text-left px-5 py-3 text-sm font-medium transition-colors flex items-center gap-2 ${
                             productsDropdownTab === "verification"
-                              ? "text-emerald-700 bg-white border-r-2 border-emerald-500 font-semibold"
+                              ? "text-[#0e7c66] bg-white border-r-2 border-[#0e7c66] font-semibold"
                               : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
                           }`}
                           onClick={() => setProductsDropdownTab("verification")}
@@ -300,7 +317,7 @@ export default function MainLayout() {
                         <div className="mt-6 px-5">
                           <Link
                             to="/all-products"
-                            className="text-xs font-semibold text-emerald-600 hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1"
+                            className="text-xs font-semibold text-[#0e7c66] hover:text-[#0a2e1e] uppercase tracking-wide flex items-center gap-1"
                             onClick={() => setProductsDropdownOpen(false)}
                           >
                             Explore All Products
@@ -343,29 +360,17 @@ export default function MainLayout() {
                             <>
                               {/* Drive Eraser — with 2 variants */}
                               <div
-                                className="border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all cursor-pointer group/card h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => {
                                   navigate("/products/drive-eraser");
                                   setProductsDropdownOpen(false);
                                 }}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover/card:bg-emerald-200 transition-colors">
-                                    <svg
-                                      className="w-5 h-5 text-emerald-600"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
-                                      />
-                                    </svg>
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <HardDrive className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover/card:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Drive Eraser
                                   </h4>
                                 </div>
@@ -376,7 +381,7 @@ export default function MainLayout() {
                                 <div className="flex flex-wrap gap-2">
                                   <Link
                                     to="/products/drive-eraser"
-                                    className="px-3 py-1.5 rounded-full border bg-emerald-50 hover:bg-emerald-100 border-emerald-200 text-emerald-700 text-[11px] font-bold transition-all"
+                                    className="px-3 py-1.5 rounded-full border bg-[#d4ede4] hover:bg-[#c0e4d7] border-[#0e7c66]/20 text-[#0e7c66] text-[11px] font-bold transition-all"
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       setProductsDropdownOpen(false);
@@ -386,43 +391,31 @@ export default function MainLayout() {
                                   </Link>
                                   <Link
                                     to="/products/drive-eraser-diagnostic"
-                                    className="px-3 py-1.5 rounded-full border bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-700 text-[11px] font-bold transition-all flex items-center gap-1.5"
+                                    className="px-3 py-1.5 rounded-full border bg-[#d4ede4] hover:bg-[#c0e4d7] border-[#0e7c66]/20 text-[#0e7c66] text-[11px] font-bold transition-all flex items-center gap-1.5"
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       setProductsDropdownOpen(false);
                                     }}
                                   >
                                     <span>Diagnostic & Health</span>
-                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#0e7c66] animate-pulse"></span>
                                   </Link>
                                 </div>
                               </div>
 
                               {/* File Eraser — with 2 variants */}
                               <div
-                                className="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group/card h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => {
                                   navigate("/products/file-eraser");
                                   setProductsDropdownOpen(false);
                                 }}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover/card:bg-blue-200 transition-colors">
-                                    <svg
-                                      className="w-5 h-5 text-blue-600"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                                      />
-                                    </svg>
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <File className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover/card:text-blue-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     File Eraser
                                   </h4>
                                 </div>
@@ -432,7 +425,7 @@ export default function MainLayout() {
                                 <div className="flex flex-wrap gap-2">
                                   <Link
                                     to="/products/file-eraser"
-                                    className="px-3 py-1.5 rounded-full border bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-700 text-[11px] font-bold transition-all"
+                                    className="px-3 py-1.5 rounded-full border bg-[#d4ede4] hover:bg-[#c0e4d7] border-[#0e7c66]/20 text-[#0e7c66] text-[11px] font-bold transition-all"
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       setProductsDropdownOpen(false);
@@ -442,7 +435,7 @@ export default function MainLayout() {
                                   </Link>
                                   <Link
                                     to="/products/file-eraser-network"
-                                    className="px-3 py-1.5 rounded-full border bg-emerald-50 hover:bg-emerald-100 border-emerald-200 text-emerald-700 text-[11px] font-bold transition-all flex items-center gap-1.5"
+                                    className="px-3 py-1.5 rounded-full border bg-[#d4ede4] hover:bg-[#c0e4d7] border-[#0e7c66]/20 text-[#0e7c66] text-[11px] font-bold transition-all flex items-center gap-1.5"
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       setProductsDropdownOpen(false);
@@ -457,21 +450,21 @@ export default function MainLayout() {
                               {/* Smartphone Eraser */}
                               <Link
                                 to="/products/smartphone-eraser"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Smartphone className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Smartphone className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Smartphone Eraser
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Bulk iOS & Android wiping with audit reports.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -492,21 +485,21 @@ export default function MainLayout() {
                               {/* Virtual Machine Eraser */}
                               <Link
                                 to="/products/virtual-machine-eraser"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Monitor className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Monitor className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Virtual Machine Eraser
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Securely wipe VMs on ESXi & Hyper-V hosts.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -527,21 +520,21 @@ export default function MainLayout() {
                               {/* System Cleaner */}
                               <Link
                                 to="/products/system-cleaner"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <ShieldCheck className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Eraser className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     System Cleaner
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   A secure data erasure solution to permanently remove every trace of data.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -562,21 +555,21 @@ export default function MainLayout() {
                               {/* Removable Media Eraser */}
                               <Link
                                 to="/products/removable-media-eraser"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Database className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Usb className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Removable Media Eraser
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Securely erase USB & flash storage devices.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -597,14 +590,14 @@ export default function MainLayout() {
                               {/* LUN Eraser */}
                               <Link
                                 to="/products/lun-eraser"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Server className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Server className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     LUN Eraser
                                   </h4>
                                 </div>
@@ -612,7 +605,7 @@ export default function MainLayout() {
                                   Sanitize Logical Unit Numbers in active
                                   storage.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -638,21 +631,21 @@ export default function MainLayout() {
                               {/* Data Migration */}
                               <Link
                                 to="/products/data-migration"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Zap className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <ArrowRightLeft className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Data Migration
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Secure transfer across Cloud & Infrastructure.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -673,14 +666,14 @@ export default function MainLayout() {
                               {/* Forensic Imaging */}
                               <Link
                                 to="/products/forensic-imaging"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-cyan-300 hover:shadow-md transition-all h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Database className="w-5 h-5 text-cyan-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <FileText className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-cyan-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Forensic Imaging
                                   </h4>
                                 </div>
@@ -688,7 +681,7 @@ export default function MainLayout() {
                                   Bit-for-bit acquisition & cryptographic
                                   hashing.
                                 </p>
-                                <span className="text-xs font-semibold text-cyan-600 group-hover:text-cyan-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -708,17 +701,17 @@ export default function MainLayout() {
 
                               {/* FreezeState — with 2 variants */}
                               <div
-                                className="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group/card h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => {
                                   navigate("/products/freeze-state");
                                   setProductsDropdownOpen(false);
                                 }}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover/card:bg-blue-200 transition-colors">
-                                    <RefreshCcw className="w-5 h-5 text-blue-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <RefreshCcw className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover/card:text-blue-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     FreezeState
                                   </h4>
                                 </div>
@@ -728,7 +721,7 @@ export default function MainLayout() {
                                 <div className="flex flex-wrap gap-2">
                                   <Link
                                     to="/products/freeze-state-smart"
-                                    className="px-3 py-1.5 rounded-full border bg-emerald-50 hover:bg-emerald-100 border-emerald-200 text-emerald-700 text-[11px] font-bold transition-all flex items-center gap-1.5"
+                                    className="px-3 py-1.5 rounded-full border bg-[#d4ede4] hover:bg-[#c0e4d7] border-[#0e7c66]/20 text-[#0e7c66] text-[11px] font-bold transition-all flex items-center gap-1.5"
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       setProductsDropdownOpen(false);
@@ -739,14 +732,14 @@ export default function MainLayout() {
                                   </Link>
                                   <Link
                                     to="/products/freeze-state-advanced"
-                                    className="px-3 py-1.5 rounded-full border bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-700 text-[11px] font-bold transition-all flex items-center gap-1.5"
+                                    className="px-3 py-1.5 rounded-full border bg-[#d4ede4] hover:bg-[#c0e4d7] border-[#0e7c66]/20 text-[#0e7c66] text-[11px] font-bold transition-all flex items-center gap-1.5"
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       setProductsDropdownOpen(false);
                                     }}
                                   >
                                     <span>Advanced Eraser</span>
-                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#0e7c66] animate-pulse"></span>
                                   </Link>
                                 </div>
                               </div>
@@ -754,21 +747,21 @@ export default function MainLayout() {
                               {/* Asset Reimaging */}
                               <Link
                                 to="/products/asset-reimaging"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all h-full flex flex-col"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <RefreshCcw className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Disc className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Asset Reimaging
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
                                   Automated OS deployment & imaging solution.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -794,33 +787,21 @@ export default function MainLayout() {
                               {/* Hardware Diagnostics */}
                               <Link
                                 to="/products/hardware-diagnostics"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <svg
-                                      className="w-5 h-5 text-emerald-600"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                                      />
-                                    </svg>
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Cpu className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Hardware Diagnostics
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
                                   Enterprise-grade diagnostic tools.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -841,21 +822,21 @@ export default function MainLayout() {
                               {/* Smartphone Diagnostics */}
                               <Link
                                 to="/products/smartphone-diagnostic"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-teal-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Activity className="w-5 h-5 text-teal-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Smartphone className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-teal-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Smartphone Diagnostics
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
                                   50+ automated tests for mobile health.
                                 </p>
-                                <span className="text-xs font-semibold text-teal-600 group-hover:text-teal-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -876,33 +857,21 @@ export default function MainLayout() {
                               {/* SMART Diagnostics */}
                               <Link
                                 to="/products/hard-drive-monitor"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-rose-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <svg
-                                      className="w-5 h-5 text-rose-500"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                                      />
-                                    </svg>
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <HardDrive className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-rose-600 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     SMART Diagnostics
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
                                   Health monitoring & disk cloning.
                                 </p>
-                                <span className="text-xs font-semibold text-rose-500 group-hover:text-rose-600 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -923,21 +892,21 @@ export default function MainLayout() {
                               {/* Autopilot Detection */}
                               <Link
                                 to="/products/autopilot-detection"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Shield className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Bot className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Autopilot Detection
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
                                   Windows Autopilot identification.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -963,15 +932,15 @@ export default function MainLayout() {
                               {/* Drive Verifier */}
                               <Link
                                 to="/products/drive-verifier"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <SearchCheck className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
                                   <div className="flex items-center gap-2">
-                                    <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                    <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                       Erasure Verification
                                     </h4>
                                     <span className="px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[9px] font-bold uppercase tracking-wider">
@@ -983,7 +952,7 @@ export default function MainLayout() {
                                   Forensic verification & post-erasure audit
                                   tools.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -1011,7 +980,7 @@ export default function MainLayout() {
               {/* Solutions Dropdown */}
               <div data-solutions-dropdown>
                 <button
-                  className={`inline-flex items-center gap-2 py-2 text-slate-600 hover:text-slate-900 ${solutionsDropdownOpen ? "text-brand font-medium" : ""}`}
+                  className={`inline-flex items-center gap-2 py-2 text-slate-600 hover:text-slate-900 ${solutionsDropdownOpen ? "text-[#0e7c66] font-semibold" : ""}`}
                   onClick={() => {
                     setSolutionsDropdownOpen(!solutionsDropdownOpen);
                     setProductsDropdownOpen(false);
@@ -1038,7 +1007,7 @@ export default function MainLayout() {
                         <button
                           className={`w-full text-left px-5 py-3 text-sm font-medium transition-colors flex items-center gap-2 ${
                             solutionsDropdownTab === "industry"
-                              ? "text-emerald-700 bg-white border-r-2 border-emerald-500 font-semibold"
+                              ? "text-[#0e7c66] bg-white border-r-2 border-[#0e7c66] font-semibold"
                               : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
                           }`}
                           onClick={() => setSolutionsDropdownTab("industry")}
@@ -1046,7 +1015,7 @@ export default function MainLayout() {
                           Industries
                           {solutionsDropdownTab === "industry" && (
                             <svg
-                              className="w-3.5 h-3.5 ml-auto text-emerald-500"
+                              className="w-3.5 h-3.5 ml-auto text-[#0e7c66]"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -1063,7 +1032,7 @@ export default function MainLayout() {
                         <button
                           className={`w-full text-left px-5 py-3 text-sm font-medium transition-colors flex items-center gap-2 ${
                             solutionsDropdownTab === "specialized"
-                              ? "text-emerald-700 bg-white border-r-2 border-emerald-500 font-semibold"
+                              ? "text-[#0e7c66] bg-white border-r-2 border-[#0e7c66] font-semibold"
                               : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
                           }`}
                           onClick={() => setSolutionsDropdownTab("specialized")}
@@ -1071,7 +1040,7 @@ export default function MainLayout() {
                           Specialized
                           {solutionsDropdownTab === "specialized" && (
                             <svg
-                              className="w-3.5 h-3.5 ml-auto text-emerald-500"
+                              className="w-3.5 h-3.5 ml-auto text-[#0e7c66]"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -1113,14 +1082,14 @@ export default function MainLayout() {
                               {/* Enterprise */}
                               <Link
                                 to="/solutions/enterprise"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setSolutionsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Shield className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Building2 className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Enterprise
                                   </h4>
                                 </div>
@@ -1128,7 +1097,7 @@ export default function MainLayout() {
                                   Data security and sanitization for global
                                   corporations.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -1149,14 +1118,14 @@ export default function MainLayout() {
                               {/* Banking & Finance */}
                               <Link
                                 to="/solutions/data-erasure-banking-finance"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setSolutionsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Database className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <DollarSign className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Banking & Finance
                                   </h4>
                                 </div>
@@ -1164,7 +1133,7 @@ export default function MainLayout() {
                                   Compliance-driven erasure for financial
                                   institutions.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -1185,14 +1154,14 @@ export default function MainLayout() {
                               {/* Government */}
                               <Link
                                 to="/solutions/government"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setSolutionsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Zap className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Building className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Government
                                   </h4>
                                 </div>
@@ -1200,7 +1169,7 @@ export default function MainLayout() {
                                   Secure sanitization for public sector &
                                   defense.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -1221,14 +1190,14 @@ export default function MainLayout() {
                               {/* Healthcare */}
                               <Link
                                 to="/solutions/healthcare"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setSolutionsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Activity className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <HeartPulse className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Healthcare
                                   </h4>
                                 </div>
@@ -1236,7 +1205,7 @@ export default function MainLayout() {
                                   Privacy-first data disposal for healthcare
                                   providers.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -1257,14 +1226,14 @@ export default function MainLayout() {
                               {/* Education */}
                               <Link
                                 to="/solutions/education"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setSolutionsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Monitor className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <GraduationCap className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Education
                                   </h4>
                                 </div>
@@ -1272,7 +1241,7 @@ export default function MainLayout() {
                                   Managing data privacy across academic
                                   institutions.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -1293,21 +1262,21 @@ export default function MainLayout() {
                               {/* Non-Profit Organizations */}
                               <Link
                                 to="/solutions/non-profit"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setSolutionsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Heart className="w-5 h-5 text-emerald-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Heart className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Non-Profit
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
                                   Secure data disposal for NGOs & charities.
                                 </p>
-                                <span className="text-xs font-semibold text-emerald-600 group-hover:text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -1332,21 +1301,21 @@ export default function MainLayout() {
                               {/* Service Providers */}
                               <Link
                                 to="/solutions/service-providers"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-teal-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setSolutionsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Activity className="w-5 h-5 text-teal-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <Server className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-teal-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     Service Providers
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
                                   Scaleable erasure services for MSPs and MSSPs.
                                 </p>
-                                <span className="text-xs font-semibold text-teal-600 group-hover:text-teal-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -1367,14 +1336,14 @@ export default function MainLayout() {
                               {/* ITAD */}
                               <Link
                                 to="/solutions/itad"
-                                className="group border border-slate-200 rounded-xl p-5 hover:border-cyan-300 hover:shadow-md transition-all"
+                                className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setSolutionsDropdownOpen(false)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <RefreshCcw className="w-5 h-5 text-cyan-600" />
+                                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 bg-[#d4ede4] rounded-full transition-colors duration-150 group-hover/card:bg-[#0e7c66]">
+                                    <RefreshCcw className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
-                                  <h4 className="font-bold text-slate-900 group-hover:text-cyan-700 transition-colors">
+                                  <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
                                     ITAD
                                   </h4>
                                 </div>
@@ -1382,7 +1351,7 @@ export default function MainLayout() {
                                   Maximize asset value with secure disposal
                                   workflows.
                                 </p>
-                                <span className="text-xs font-semibold text-cyan-600 group-hover:text-cyan-700 uppercase tracking-wide flex items-center gap-1">
+                                <span className="text-xs font-semibold text-[#0e7c66] group-hover/card:text-[#083d28] uppercase tracking-wide flex items-center gap-1">
                                   Learn More{" "}
                                   <svg
                                     className="w-3 h-3"
@@ -1411,7 +1380,7 @@ export default function MainLayout() {
                 to="/resources"
                 className={({ isActive }) =>
                   (isActive
-                    ? "text-brand font-medium"
+                    ? "text-[#0e7c66] font-semibold"
                     : "text-slate-600 hover:text-slate-900") +
                   " inline-flex items-center gap-2 py-2"
                 }
@@ -1423,7 +1392,7 @@ export default function MainLayout() {
                 to="/partners"
                 className={({ isActive }) =>
                   (isActive
-                    ? "text-brand font-medium"
+                    ? "text-[#0e7c66] font-semibold"
                     : "text-slate-600 hover:text-slate-900") +
                   " inline-flex items-center gap-2 py-2"
                 }
@@ -1434,7 +1403,7 @@ export default function MainLayout() {
                 to="/data-guardian-award"
                 className={({ isActive }) =>
                   (isActive
-                    ? "text-brand font-medium"
+                    ? "text-[#0e7c66] font-semibold"
                     : "text-slate-600 hover:text-slate-900") +
                   " inline-flex items-center gap-2 py-2"
                 }
@@ -1445,7 +1414,7 @@ export default function MainLayout() {
                 to="/support"
                 className={({ isActive }) =>
                   (isActive
-                    ? "text-brand font-medium"
+                    ? "text-[#0e7c66] font-semibold"
                     : "text-slate-600 hover:text-slate-900") +
                   " inline-flex items-center gap-2 py-2"
                 }
@@ -1467,7 +1436,7 @@ export default function MainLayout() {
                       to="/admin"
                       className={({ isActive }) =>
                         (isActive
-                          ? "text-brand font-medium"
+                          ? "text-[#0e7c66] font-semibold"
                           : "text-slate-600 hover:text-slate-900") +
                         " inline-flex items-center gap-2 py-2"
                       }
@@ -1513,7 +1482,7 @@ export default function MainLayout() {
                     rel="nofollow"
                     className={({ isActive }) =>
                       (isActive
-                        ? "text-brand font-medium"
+                        ? "text-[#0e7c66] font-semibold"
                         : "text-slate-600 hover:text-slate-900") +
                       " inline-flex items-center gap-2 py-2"
                     }
@@ -1622,19 +1591,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
-                            />
-                          </svg>
+                          <HardDrive className="w-4 h-4" />
                         </div>
                         <span className="font-medium">Drive Eraser</span>
                       </Link>
@@ -1653,7 +1610,7 @@ export default function MainLayout() {
                           className="flex items-center gap-2 py-1 text-xs text-slate-500 hover:text-emerald-800"
                         >
                           • with Diagnostic & Health
-                          <span className="text-[8px] font-bold text-blue-600">
+                          <span className="text-[8px] font-bold text-[#0e7c66]">
                             NEW
                           </span>
                         </Link>
@@ -1663,20 +1620,8 @@ export default function MainLayout() {
                         to="/products/file-eraser"
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                            />
-                          </svg>
+                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
+                          <File className="w-4 h-4" />
                         </div>
                         <span className="font-medium">File Eraser</span>
                       </Link>
@@ -1696,7 +1641,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <Database className="w-4 h-4" />
+                          <Usb className="w-4 h-4" />
                         </div>
                         <span className="font-medium">
                           Removable Media Eraser
@@ -1718,7 +1663,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <ShieldCheck className="w-4 h-4" />
+                          <Eraser className="w-4 h-4" />
                         </div>
                         <span className="font-medium">System Cleaner</span>
                       </Link>
@@ -1735,7 +1680,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <Zap className="w-4 h-4" />
+                          <ArrowRightLeft className="w-4 h-4" />
                         </div>
                         <span className="font-medium">Data Migration</span>
                       </Link>
@@ -1745,7 +1690,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <Database className="w-4 h-4" />
+                          <FileText className="w-4 h-4" />
                         </div>
                         <span className="font-medium">Forensic Imaging</span>
                       </Link>
@@ -1765,7 +1710,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <RefreshCcw className="w-4 h-4" />
+                          <Disc className="w-4 h-4" />
                         </div>
                         <span className="font-medium">Asset Reimaging</span>
                       </Link>
@@ -1782,19 +1727,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                            />
-                          </svg>
+                          <Cpu className="w-4 h-4" />
                         </div>
                         <span className="font-medium">
                           Hardware Diagnostics
@@ -1806,7 +1739,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <Activity className="w-4 h-4" />
+                          <Smartphone className="w-4 h-4" />
                         </div>
                         <span className="font-medium">
                           Smartphone Diagnostics
@@ -1818,19 +1751,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-rose-500 to-pink-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                            />
-                          </svg>
+                          <HardDrive className="w-4 h-4" />
                         </div>
                         <span className="font-medium">SMART Diagnostics</span>
                       </Link>
@@ -1840,19 +1761,7 @@ export default function MainLayout() {
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                            />
-                          </svg>
+                          <Bot className="w-4 h-4" />
                         </div>
                         <span className="font-medium">Autopilot Detection</span>
                       </Link>
@@ -1888,71 +1797,82 @@ export default function MainLayout() {
                         title: "Enterprise",
                         desc: "Corporate Security",
                         color: "from-brand to-emerald-600",
+                        icon: Building2,
                       },
                       {
                         to: "/solutions/data-erasure-banking-finance",
                         title: "Banking & Finance",
                         desc: "Compliance First",
                         color: "from-emerald-500 to-teal-600",
+                        icon: DollarSign,
                       },
                       {
                         to: "/solutions/government",
                         title: "Government",
                         desc: "Public Sector",
                         color: "from-blue-500 to-indigo-600",
+                        icon: Building,
                       },
                       {
                         to: "/solutions/healthcare",
                         title: "Healthcare",
                         desc: "HIPAA & GDPR",
                         color: "from-cyan-500 to-blue-600",
+                        icon: HeartPulse,
                       },
                       {
                         to: "/solutions/education",
                         title: "Education",
                         desc: "Academic Privacy",
                         color: "from-emerald-400 to-teal-500",
+                        icon: GraduationCap,
                       },
                       {
                         to: "/solutions/service-providers",
                         title: "Service Providers",
                         desc: "MSP & MSSP",
                         color: "from-teal-500 to-emerald-600",
+                        icon: Server,
                       },
                       {
                         to: "/solutions/itad",
                         title: "ITAD",
                         desc: "Asset Disposition",
                         color: "from-cyan-400 to-blue-500",
+                        icon: RefreshCcw,
                       },
                       {
                         to: "/solutions/non-profit",
                         title: "Non-Profit",
                         desc: "NGO & Charity",
                         color: "from-emerald-400 to-cyan-500",
+                        icon: Heart,
                       },
-                    ].map((item) => (
-                      <Link
-                        key={item.to}
-                        onClick={() => setOpen(false)}
-                        to={item.to}
-                        className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
-                      >
-                        <div
-                          className={`w-8 h-8 bg-gradient-to-br ${item.color} rounded-md flex items-center justify-center flex-shrink-0`}
+                    ].map((item) => {
+                      const IconComp = item.icon;
+                      return (
+                        <Link
+                          key={item.to}
+                          onClick={() => setOpen(false)}
+                          to={item.to}
+                          className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
                         >
-                          <Shield className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <span className="font-medium text-slate-800">
-                            {item.title}
-                          </span>
-                          <p className="text-[10px] text-slate-500 font-medium">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
+                          <div
+                            className={`w-8 h-8 bg-gradient-to-br ${item.color} rounded-md flex items-center justify-center flex-shrink-0`}
+                          >
+                            <IconComp className="w-4 h-4 text-white" />
+                          </div>
+                          <div>
+                            <span className="font-medium text-slate-800">
+                              {item.title}
+                            </span>
+                            <p className="text-[10px] text-slate-500 font-medium">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
                 <NavLink

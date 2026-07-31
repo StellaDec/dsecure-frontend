@@ -2,323 +2,376 @@ import React from "react";
 import SEOHead from "../components/SEOHead";
 import { getSEOForPage } from "../utils/seo";
 import Reveal from "@/components/Reveal";
+import {
+  ShieldCheck,
+  ShieldAlert,
+  FileCheck,
+  Globe,
+  Cpu,
+  FileSignature,
+  LayoutDashboard,
+  HardDrive,
+  Database,
+  Server,
+  Layers,
+  Zap,
+  WifiOff,
+  Workflow,
+} from "lucide-react";
+import {
+  ThemeCard,
+  ThemeIconContainer,
+  ThemeSection,
+  ThemeSectionHeading,
+  themeClasses,
+} from "@/components/ui/Theme";
 
+/**
+ * TechnicalDocumentation Component
+ * 
+ * D-Secure Design System (Theme.tsx) ke dwara nirdeshit sabhi rules ko follow karta hai:
+ * 1. Cards -> Flat borders (rounded-none, border-[#d0d5dc]/60).
+ * 2. Icon Containers -> Circular containers (rounded-full bg-[#d4ede4] with text-[#0e7c66]).
+ * 3. Color Palette -> Primary #0e7c66, Dark #0a2e1e, Muted #5a6672, Alternate BG #f4fbf8.
+ * 4. Icons -> Shuddh roop se Lucide React icons ka upayog.
+ */
 const TechnicalDocumentation: React.FC = () => {
   return (
     <>
       {/* SEO Meta Tags */}
       <SEOHead seo={getSEOForPage("technical-documentation")} />
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
-        {/* Hero Section */}
-        <section className="py-16 md:py-24">
+      <div className="min-h-screen bg-white text-[#0a2e1e]">
+        {/* 1. Hero Section - Design System White Background */}
+        <ThemeSection alternate={false} className="pt-12 pb-16 md:pt-16 md:pb-20">
           <div className="container-responsive">
             <Reveal>
               <div className="text-center max-w-4xl mx-auto">
-                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-md">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-10 h-10 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 3l7.89 3.26a2 2 0 011.11 1.79V12c0 5.52-3.58 10.74-9 12-5.42-1.26-9-6.48-9-12V8.05a2 2 0 011.11-1.79L12 3z"
-                    />
-
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 12l2 2 4-4"
-                    />
-                  </svg>
+                {/* Circular Icon Container */}
+                <div className="flex justify-center mb-6">
+                  <ThemeIconContainer icon={ShieldCheck} size="lg" />
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-                  <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                    D-Secure Technical Documentation
-                  </span>
+                {/* Section Title */}
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-6 leading-tight">
+                  D-Secure <span className="text-[#0e7c66]">Technical Documentation</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-slate-700 mb-8 leading-relaxed">
-                  Comprehensive Implementation & Optimization Guide for Secure
-                  Data Erasure Solutions
+                
+                {/* Subtitle Text */}
+                <p className="text-lg sm:text-xl text-[#5a6672] max-w-3xl mx-auto leading-relaxed">
+                  Comprehensive Implementation & Optimization Guide for Secure Data Erasure Solutions
                 </p>
               </div>
             </Reveal>
           </div>
-        </section>
+        </ThemeSection>
 
-        {/* Content Section */}
-        <section className="py-16 bg-white/50">
+        {/* 2. Regulated Data Erasure Section (Alternate Light Background #f4fbf8) */}
+        <ThemeSection alternate={true}>
           <div className="container-responsive">
-            <div className="max-w-5xl mx-auto space-y-10">
-              {/* The Need for regulated Data Erasure */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                    The Need for regulated Data Erasure
-                  </h2>
-                  <p className="text-slate-700 text-lg leading-relaxed mb-6">
-                    In today's digital world, simply deleting files is not
-                    enough. Data remnants pose significant security and
-                    compliance risks. regulated data erasure ensures complete,
-                    verifiable sanitization of sensitive information in
-                    compliance with global standards.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[
-                      {
-                        title: "Risk Mitigation",
-                        desc: "Prevent data breaches and unauthorized access to residual data on retired assets.",
-                      },
-                      {
-                        title: "Regulatory Compliance",
-                        desc: "Meet requirements from GDPR, HIPAA, and other global data protection acts.",
-                      },
-                      {
-                        title: "Environmental Responsibility",
-                        desc: "Enable secure IT asset disposition (ITAD) and support the circular economy.",
-                      },
-                    ].map((item, index) => (
-                      <div
-                        key={index}
-                        className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-100"
-                      >
-                        <h3 className="text-xl font-bold text-emerald-800 mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-slate-700">{item.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
+            <Reveal>
+              <ThemeSectionHeading
+                subtitle="In today's digital world, standard deletion leaves residual data. Regulated data erasure ensures verifiable sanitization meeting global compliance standards."
+              >
+                The Need for Regulated Data Erasure
+              </ThemeSectionHeading>
 
-              {/* Core Components */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-teal-100 hover:shadow-xl transition-all duration-300">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                    Core Components of D-Secure Solution
-                  </h2>
-                  <p className="text-slate-700 mb-6">
-                    D-Secure is built on a modular architecture ensuring
-                    flexibility and scalability across diverse hardware and
-                    environments.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[
-                      {
-                        title: "Erasure Engine",
-                        desc: "Proprietary algorithm for complete, verifiable data destruction across all storage types.",
-                      },
-                      {
-                        title: "Verification Module",
-                        desc: "Generates tamper-proof, auditable reports for every erasure operation.",
-                      },
-                      {
-                        title: "Central Management Console",
-                        desc: "Unified dashboard for deploying, monitoring, and managing erasure tasks remotely.",
-                      },
-                    ].map((item, i) => (
-                      <div
-                        key={i}
-                        className="p-6 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl border border-teal-100"
-                      >
-                        <h3 className="text-xl font-bold text-teal-800 mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-slate-700">{item.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Implementation Roadmap */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                    Implementation Roadmap: A Phased Approach
-                  </h2>
-                  <p className="text-slate-700 mb-6">
-                    The D-Secure implementation process follows a structured
-                    four-phase roadmap for efficient deployment and scalability.
-                  </p>
-                  <ol className="space-y-4">
-                    {[
-                      {
-                        phase: "Phase 1: Assessment",
-                        desc: "Identify target assets, storage types, and erasure standards (DoD, NIST, etc.).",
-                      },
-                      {
-                        phase: "Phase 2: Setup & Configuration",
-                        desc: "Install and configure the Central Management Console, define user roles and network settings.",
-                      },
-                      {
-                        phase: "Phase 3: Pilot Deployment",
-                        desc: "Execute erasure on a small batch of assets to validate the process and reports.",
-                      },
-                      {
-                        phase: "Phase 4: Full Rollout",
-                        desc: "Scale across the organization and integrate with existing ITAD workflows.",
-                      },
-                    ].map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start space-x-4 bg-gradient-to-r from-emerald-50/50 to-transparent rounded-xl p-4"
-                      >
-                        <div className="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold">
-                          {i + 1}
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-slate-900">
-                            {item.phase}
-                          </h3>
-                          <p className="text-slate-700">{item.desc}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              </Reveal>
-
-              {/* Supported Storage Media */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-cyan-100 hover:shadow-xl transition-all duration-300">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                    Technical Specifications: Supported Storage Media
-                  </h2>
-                  <ul className="space-y-3 text-slate-700">
-                    <li>• HDDs – Supports SATA, SAS, and SCSI interfaces.</li>
-                    <li>
-                      • SSDs – Proprietary commands for NAND flash erasure
-                      including TRIM and Secure Erase.
-                    </li>
-                    <li>
-                      • NVMe Drives – Full support for Non-Volatile Memory
-                      Express storage.
-                    </li>
-                    <li>
-                      • LUNs / Virtual Storage – Erasure for SAN/NAS logical
-                      unit numbers.
-                    </li>
-                  </ul>
-                </div>
-              </Reveal>
-
-              {/* Optimization */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-teal-100 hover:shadow-xl transition-all duration-300">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                    Optimizing Performance and Efficiency
-                  </h2>
-                  <p className="text-slate-700 mb-4">
-                    For best throughput and performance, ensure optimal system
-                    and network configuration:
-                  </p>
-                  <ul className="list-disc ml-6 text-slate-700 space-y-2">
-                    <li>
-                      Group similar media for batch erasure to maximize hardware
-                      utilization.
-                    </li>
-                    <li>
-                      Use dedicated high-speed network connections for large
-                      report transfers.
-                    </li>
-                    <li>Allocate sufficient RAM and CPU to erasure hosts.</li>
-                  </ul>
-                </div>
-              </Reveal>
-
-              {/* Audit and Compliance */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                    Audit & Compliance Reporting
-                  </h2>
-                  <p className="text-slate-700 leading-relaxed">
-                    D-Secure’s Verification Module generates tamper-proof
-                    reports with asset serial number, erasure method, start/end
-                    time, operator ID, and cryptographic signature — ensuring
-                    full regulatory audit compliance.
-                  </p>
-                </div>
-              </Reveal>
-
-              {/* Troubleshooting */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-teal-100 hover:shadow-xl transition-all duration-300">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                    Troubleshooting Common Deployment Issues
-                  </h2>
-                  <ul className="text-slate-700 space-y-3">
-                    <li>
-                      <strong>Connectivity Errors:</strong> Verify firewall
-                      settings and port communication with the console.
-                    </li>
-                    <li>
-                      <strong>Media Detection Failure:</strong> Check BIOS and
-                      ensure updated D-Secure boot media.
-                    </li>
-                    <li>
-                      <strong>Slow Erasure Times:</strong> Confirm system
-                      hardware meets performance guidelines.
-                    </li>
-                  </ul>
-                </div>
-              </Reveal>
-
-              {/* Integration */}
-              <Reveal>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                    Integration with Existing ITAD Workflows
-                  </h2>
-                  <p className="text-slate-700 mb-4">
-                    D-Secure integrates seamlessly with your IT Asset
-                    Disposition (ITAD) systems using APIs for reporting and
-                    management synchronization with third-party asset tracking
-                    tools.
-                  </p>
-                </div>
-              </Reveal>
-
-              {/* Next Steps */}
-              <Reveal>
-                <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 rounded-2xl p-8 text-white shadow-lg">
-                  <h2 className="text-3xl font-bold mb-4 text-center">
-                    Next Steps: Getting Started
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    {[
-                      {
-                        title: "Download Guides",
-                        desc: "Access Technical Docs and Quick Start Guides via the client portal.",
-                      },
-                      {
-                        title: "Schedule Training",
-                        desc: "Book training with regulated engineers for hands-on setup.",
-                      },
-                      {
-                        title: "Contact Support",
-                        desc: "Reach our 24/7 team for immediate technical assistance.",
-                      },
-                    ].map((item, i) => (
-                      <div key={i} className="bg-white/10 rounded-xl p-6">
-                        <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                        <p className="text-emerald-100">{item.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-            </div>
+              {/* Grid of Flat Theme Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                {[
+                  {
+                    icon: ShieldAlert,
+                    title: "Risk Mitigation",
+                    desc: "Prevent data breaches and unauthorized access to residual data on retired assets.",
+                  },
+                  {
+                    icon: FileCheck,
+                    title: "Regulatory Compliance",
+                    desc: "Meet strict requirements from GDPR, HIPAA, NIST 800-88, and global protection acts.",
+                  },
+                  {
+                    icon: Globe,
+                    title: "Environmental Responsibility",
+                    desc: "Enable secure IT asset disposition (ITAD) and support sustainable circular economy practices.",
+                  },
+                ].map((item, index) => (
+                  <ThemeCard key={index} interactive={true}>
+                    <div className="mb-4">
+                      <ThemeIconContainer icon={item.icon} size="md" />
+                    </div>
+                    <h3 className={themeClasses.typography.cardTitle}>{item.title}</h3>
+                    <p className={themeClasses.typography.cardBody}>{item.desc}</p>
+                  </ThemeCard>
+                ))}
+              </div>
+            </Reveal>
           </div>
-        </section>
+        </ThemeSection>
+
+        {/* 3. Core Components Section (White Background) */}
+        <ThemeSection alternate={false}>
+          <div className="container-responsive">
+            <Reveal>
+              <ThemeSectionHeading
+                subtitle="D-Secure is built on a modular architecture ensuring seamless flexibility and enterprise scalability across diverse hardware environments."
+              >
+                Core Components of D-Secure Solution
+              </ThemeSectionHeading>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                {[
+                  {
+                    icon: Cpu,
+                    title: "Erasure Engine",
+                    desc: "Proprietary algorithm for complete, verifiable data destruction across all storage media types.",
+                  },
+                  {
+                    icon: FileSignature,
+                    title: "Verification Module",
+                    desc: "Generates tamper-proof, cryptographically signed auditable reports for every erasure operation.",
+                  },
+                  {
+                    icon: LayoutDashboard,
+                    title: "Central Management Console",
+                    desc: "Unified dashboard for deploying, monitoring, and managing erasure tasks remotely.",
+                  },
+                ].map((item, index) => (
+                  <ThemeCard key={index} interactive={true}>
+                    <div className="mb-4">
+                      <ThemeIconContainer icon={item.icon} size="md" />
+                    </div>
+                    <h3 className={themeClasses.typography.cardTitle}>{item.title}</h3>
+                    <p className={themeClasses.typography.cardBody}>{item.desc}</p>
+                  </ThemeCard>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </ThemeSection>
+
+        {/* 4. Implementation Roadmap (Alternate Light Background #f4fbf8) */}
+        <ThemeSection alternate={true}>
+          <div className="container-responsive">
+            <Reveal>
+              <ThemeSectionHeading
+                subtitle="The D-Secure implementation process follows a structured four-phase roadmap for efficient deployment."
+              >
+                Implementation Roadmap: Phased Approach
+              </ThemeSectionHeading>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  {
+                    step: "01",
+                    phase: "Assessment",
+                    desc: "Identify target assets, storage types, and erasure standards (DoD, NIST 800-88, IEEE 2883).",
+                  },
+                  {
+                    step: "02",
+                    phase: "Setup & Configuration",
+                    desc: "Configure Central Management Console, define RBAC user roles, and setup network policies.",
+                  },
+                  {
+                    step: "03",
+                    phase: "Pilot Deployment",
+                    desc: "Execute erasure on a controlled batch of assets to validate processes and report generation.",
+                  },
+                  {
+                    step: "04",
+                    phase: "Full Rollout",
+                    desc: "Scale across enterprise infrastructure and integrate with active ITAD workflows.",
+                  },
+                ].map((item, index) => (
+                  <ThemeCard key={index} interactive={true}>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="w-10 h-10 rounded-full bg-[#d4ede4] text-[#0e7c66] font-bold flex items-center justify-center text-base">
+                        {item.step}
+                      </span>
+                    </div>
+                    <h3 className={themeClasses.typography.cardTitle}>{item.phase}</h3>
+                    <p className={themeClasses.typography.cardBody}>{item.desc}</p>
+                  </ThemeCard>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </ThemeSection>
+
+        {/* 5. Supported Storage Media (White Background) */}
+        <ThemeSection alternate={false}>
+          <div className="container-responsive">
+            <Reveal>
+              <ThemeSectionHeading
+                subtitle="Comprehensive support for standard and legacy enterprise storage media interfaces."
+              >
+                Supported Storage Media
+              </ThemeSectionHeading>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  {
+                    icon: HardDrive,
+                    title: "HDDs",
+                    desc: "Full support for SATA, SAS, IDE, and SCSI mechanical drives with multi-pass overwriting.",
+                  },
+                  {
+                    icon: Database,
+                    title: "SSDs",
+                    desc: "Native commands for NAND flash erasure including ATA Secure Erase, TRIM, and Sanitize.",
+                  },
+                  {
+                    icon: Server,
+                    title: "NVMe Drives",
+                    desc: "High-speed NVMe controller command execution for PCIe enterprise solid state storage.",
+                  },
+                  {
+                    icon: Layers,
+                    title: "LUNs & Virtual Storage",
+                    desc: "Targeted logical unit number erasure for active SAN/NAS and virtualized environments.",
+                  },
+                ].map((item, index) => (
+                  <ThemeCard key={index} interactive={true}>
+                    <div className="mb-4">
+                      <ThemeIconContainer icon={item.icon} size="md" />
+                    </div>
+                    <h3 className={themeClasses.typography.cardTitle}>{item.title}</h3>
+                    <p className={themeClasses.typography.cardBody}>{item.desc}</p>
+                  </ThemeCard>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </ThemeSection>
+
+        {/* 6. Optimization & Compliance (Alternate Light Background #f4fbf8) */}
+        <ThemeSection alternate={true}>
+          <div className="container-responsive">
+            <Reveal>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Performance Optimization Card */}
+                <ThemeCard interactive={false}>
+                  <div className="mb-4">
+                    <ThemeIconContainer icon={Zap} size="md" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#0a2e1e] mb-4">
+                    Optimizing Performance & Throughput
+                  </h3>
+                  <ul className="space-y-3 text-[#5a6672]">
+                    <li className="flex items-start gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#0e7c66] mt-2 flex-shrink-0" />
+                      <span>Group identical media types for batch erasure tasks to maximize hardware utilization.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#0e7c66] mt-2 flex-shrink-0" />
+                      <span>Deploy dedicated gigabit network links for uninterrupted audit log synchronization.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#0e7c66] mt-2 flex-shrink-0" />
+                      <span>Ensure erasure host systems maintain sufficient multi-core CPU and RAM allocations.</span>
+                    </li>
+                  </ul>
+                </ThemeCard>
+
+                {/* Audit & Compliance Reporting Card */}
+                <ThemeCard interactive={false}>
+                  <div className="mb-4">
+                    <ThemeIconContainer icon={FileCheck} size="md" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#0a2e1e] mb-4">
+                    Audit & Compliance Certification
+                  </h3>
+                  <p className="text-[#5a6672] leading-relaxed mb-4">
+                    D-Secure's Verification Module generates tamper-proof PDF & XML reports embedded with:
+                  </p>
+                  <ul className="space-y-2 text-[#5a6672]">
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#0e7c66]" />
+                      <span>Hardware Serial Numbers & Drive Metadata</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#0e7c66]" />
+                      <span>Erasure Standard Used (NIST 800-88 / DoD 5220.22-M)</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#0e7c66]" />
+                      <span>Operator ID, Timestamps & Cryptographic Hash</span>
+                    </li>
+                  </ul>
+                </ThemeCard>
+              </div>
+            </Reveal>
+          </div>
+        </ThemeSection>
+
+        {/* 7. Troubleshooting & ITAD Integration (White Background) */}
+        <ThemeSection alternate={false}>
+          <div className="container-responsive">
+            <Reveal>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Troubleshooting Card */}
+                <ThemeCard interactive={false}>
+                  <div className="mb-4">
+                    <ThemeIconContainer icon={WifiOff} size="md" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#0a2e1e] mb-4">
+                    Troubleshooting Common Issues
+                  </h3>
+                  <div className="space-y-4 text-[#5a6672]">
+                    <div>
+                      <h4 className="font-bold text-[#0a2e1e]">Connectivity Errors</h4>
+                      <p className="text-sm">Verify firewall rules and active port communications with the Central Console.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[#0a2e1e]">Media Detection Failures</h4>
+                      <p className="text-sm">Inspect UEFI/BIOS SATA modes (AHCI vs RAID) and update D-Secure boot ISO media.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[#0a2e1e]">Slow Erasure Speeds</h4>
+                      <p className="text-sm">Ensure controller bandwidth is unthrottled and check drive S.M.A.R.T. health status.</p>
+                    </div>
+                  </div>
+                </ThemeCard>
+
+                {/* Workflow Integration Card */}
+                <ThemeCard interactive={false}>
+                  <div className="mb-4">
+                    <ThemeIconContainer icon={Workflow} size="md" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#0a2e1e] mb-4">
+                    ITAD & ERP Workflow Integration
+                  </h3>
+                  <p className="text-[#5a6672] leading-relaxed mb-4">
+                    D-Secure offers RESTful APIs and webhook integrations for IT Asset Disposition (ITAD) platforms, enabling automatic serial number matching and automated certificate uploads to ServiceNow or custom asset systems.
+                  </p>
+                </ThemeCard>
+              </div>
+            </Reveal>
+          </div>
+        </ThemeSection>
+
+        {/* 8. Call To Action Section (Dark Primary Background #0a2e1e) */}
+        <ThemeSection alternate={false} className="bg-[#0e7c66] text-white py-16">
+          <div className="container-responsive">
+            <Reveal>
+              <div className="text-center max-w-4xl mx-auto">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                  Ready to Implement Enterprise Data Erasure?
+                </h2>
+                <p className="text-lg text-[#d4ede4] mb-8 max-w-2xl mx-auto">
+                  Access our technical documentation, download deployment guides, or connect with our specialized support engineers.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <a href="/support" className={themeClasses.button.primary}>
+                    Contact Support
+                  </a>
+                  <a href="/resources" className={`${themeClasses.button.outline} text-white border-white hover:bg-white/10`}>
+                    View Resources
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </ThemeSection>
       </div>
     </>
   );

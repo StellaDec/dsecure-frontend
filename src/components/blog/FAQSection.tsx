@@ -19,12 +19,12 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
 
   return (
     <section className="mt-12 mb-8 px-4 md:px-0">
-      <div className="bg-white rounded-xl shadow-md border border-slate-200/50 p-6 md:p-8">
+      <div className="bg-white rounded-none shadow-md border border-[#d0d5dc] p-6 md:p-8">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-            <HelpCircle className="w-6 h-6 text-blue-600" />
+          <div className="w-10 h-10 rounded-full bg-[#f4fbf8] border border-[#d0d5dc] flex items-center justify-center">
+            <HelpCircle className="w-6 h-6 text-[#0a2e1e]" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-bold text-[#0a2e1e]">Frequently Asked Questions</h2>
         </div>
 
         <div className="space-y-4">
@@ -33,8 +33,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
             return (
               <div 
                 key={index} 
-                className={`border rounded-lg transition-all duration-300 ${
-                  isOpen ? "border-blue-200 bg-blue-50/30" : "border-slate-200 hover:border-blue-100 hover:bg-slate-50/50"
+                className={`border rounded-none transition-all duration-300 ${
+                  isOpen ? "border-[#0e7c66] bg-[#f4fbf8]" : "border-[#d0d5dc] hover:border-[#0e7c66] hover:bg-[#f4fbf8]"
                 }`}
               >
                 <button
@@ -42,11 +42,11 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
                   className="w-full flex items-center justify-between p-4 text-left focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className={`font-semibold transition-colors ${isOpen ? "text-blue-700" : "text-slate-800"}`}>
+                  <span className={`font-semibold transition-colors ${isOpen ? "text-[#0a2e1e]" : "text-[#0a2e1e]"}`}>
                     {faq.question}
                   </span>
                   <ChevronDown 
-                    className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-blue-500" : ""}`} 
+                    className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#0a2e1e]" : "text-[#5a6672]"}`} 
                   />
                 </button>
                 
@@ -59,7 +59,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="p-4 pt-0 text-slate-600 leading-relaxed prose prose-sm max-w-none">
+                      <div className="p-4 pt-0 text-[#5a6672] leading-relaxed prose prose-sm max-w-none">
                         {faq.answer}
                       </div>
                     </motion.div>

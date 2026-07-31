@@ -15,7 +15,7 @@ import BlogFooterStandard from "./BlogFooterStandard";
 
 const MobileErasureGuideBlog: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+    <div className="min-h-screen bg-white">
       {/* SEO: Compliance ke liye mobile data erasure optimized title aur description set kiya */}
       <SEOHead
         seo={getBlogSEO({
@@ -33,19 +33,19 @@ const MobileErasureGuideBlog: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="py-16 bg-white shadow-lg">
+      <section className="py-16 bg-white shadow-none">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
               Mobile Security
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-6 leading-tight">
+              <span className="bg-white bg-clip-text text-transparent">
                 Comprehensive Mobile Device Erasure Guide: Securing Smartphones
                 & Tablets
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-[#5a6672] max-w-3xl mx-auto leading-relaxed">
               Securely erase smartphones, tablets, and mobile devices before
               resale, recycling, or employee transitions.
             </p>
@@ -56,22 +56,22 @@ const MobileErasureGuideBlog: React.FC = () => {
       {/* Main Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
             {/* Why Mobile Erasure is Different */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-[#0a2e1e]">
                 Why Mobile Devices Require Special Attention
               </h2>
-              <p className="text-slate-700 leading-relaxed text-lg">
+              <p className="text-[#5a6672] leading-relaxed text-lg">
                 Mobile devices present unique data erasure challenges due to
                 their diverse operating systems, built-in encryption, cloud
                 synchronization, and embedded storage that cannot be removed.
               </p>
-              <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
-                <strong className="text-amber-800 block mb-2">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <strong className="text-[#0a2e1e] block mb-2">
                   ⚠️ Common Misconception
                 </strong>
-                <p className="text-sm text-amber-700">
+                <p className="text-sm text-[#0a2e1e]">
                   Factory reset ≠ Secure data erasure. Many factory reset
                   processes don't fully sanitize data and can be recovered with
                   forensic tools.
@@ -81,25 +81,25 @@ const MobileErasureGuideBlog: React.FC = () => {
 
             {/* Platform-Specific Instructions */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-[#0a2e1e]">
                 Platform-Specific Erasure Methods
               </h2>
 
               {/* iOS/iPhone */}
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <div className="bg-white border border-[#d0d5dc] p-6 rounded-none">
+                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 flex items-center gap-2">
                   <span className="text-2xl">🍎</span> iOS Devices (iPhone/iPad)
                 </h3>
                 <div className="space-y-3">
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     <strong>Erasure Method:</strong> Cryptographic erasure via
                     "Erase All Content and Settings"
                   </p>
-                  <div className="bg-white p-4 rounded-lg border border-slate-200">
-                    <p className="font-semibold text-slate-900 mb-2">
+                  <div className="bg-white p-4 rounded-none border border-[#d0d5dc]">
+                    <p className="font-semibold text-[#0a2e1e] mb-2">
                       Step-by-Step Process:
                     </p>
-                    <ol className="text-sm text-slate-700 space-y-2 ml-4">
+                    <ol className="text-sm text-[#5a6672] space-y-2 ml-4">
                       <li>
                         <strong>1.</strong> Back up device (if needed) via
                         iCloud or iTunes
@@ -127,18 +127,18 @@ const MobileErasureGuideBlog: React.FC = () => {
                       </li>
                     </ol>
                   </div>
-                  <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mt-3">
-                    <p className="text-sm text-green-800">
+                  <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-4 rounded-none mt-3">
+                    <p className="text-sm text-[#0a2e1e]">
                       ✅ <strong>Security Note:</strong> iOS uses hardware-based
                       encryption. Erasing the encryption key makes all data
                       permanently unrecoverable—equivalent to{" "}
                       <Link
                         to="/products/drive-eraser"
-                        className="text-sky-600 hover:underline font-medium"
+                        className="text-[#0e7c66] hover:underline font-medium"
                       >
                         <Link
                           to="/compliance/nist-800-88"
-                          className="text-sky-600 hover:underline font-medium"
+                          className="text-[#0e7c66] hover:underline font-medium"
                         >
                           NIST 800-88
                         </Link>
@@ -150,20 +150,20 @@ const MobileErasureGuideBlog: React.FC = () => {
               </div>
 
               {/* Android */}
-              <div className="bg-gradient-to-br from-green-50 to-sky-50 border border-green-200 p-6 rounded-xl mt-4">
-                <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <div className="bg-white border border-[#d0d5dc] p-6 rounded-none mt-4">
+                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 flex items-center gap-2">
                   <span className="text-2xl">🤖</span> Android Devices
                 </h3>
                 <div className="space-y-3">
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     <strong>Erasure Method:</strong> Factory reset + encryption
                     verification
                   </p>
-                  <div className="bg-white p-4 rounded-lg border border-green-200">
-                    <p className="font-semibold text-slate-900 mb-2">
+                  <div className="bg-white p-4 rounded-none border border-[#d0d5dc]">
+                    <p className="font-semibold text-[#0a2e1e] mb-2">
                       Step-by-Step Process:
                     </p>
-                    <ol className="text-sm text-slate-700 space-y-2 ml-4">
+                    <ol className="text-sm text-[#5a6672] space-y-2 ml-4">
                       <li>
                         <strong>1.</strong> Verify device encryption is enabled:
                         Settings → Security → Encryption
@@ -189,8 +189,8 @@ const MobileErasureGuideBlog: React.FC = () => {
                       </li>
                     </ol>
                   </div>
-                  <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mt-3">
-                    <p className="text-sm text-amber-800">
+                  <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-4 rounded-none mt-3">
+                    <p className="text-sm text-[#0a2e1e]">
                       ⚠️ <strong>Critical:</strong> Older Android devices
                       (pre-2015) may not have encryption enabled by default. For
                       these devices, use dedicated mobile erasure software or
@@ -203,44 +203,44 @@ const MobileErasureGuideBlog: React.FC = () => {
 
             {/* Enterprise Mobile Device Management */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-[#0a2e1e]">
                 Enterprise Mobile Device Management (MDM)
               </h2>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-relaxed">
                 For organizations managing fleets of mobile devices, MDM
                 solutions enable centralized, remote erasure capabilities.
               </p>
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                  <h3 className="font-bold text-blue-900 mb-2">Remote Wipe</h3>
-                  <p className="text-sm text-blue-800">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] p-4 rounded-none">
+                  <h3 className="font-bold text-[#0a2e1e] mb-2">Remote Wipe</h3>
+                  <p className="text-sm text-[#0a2e1e]">
                     Trigger factory reset remotely via MDM portal. Useful for
                     lost/stolen devices or immediate employee departures.
                   </p>
                 </div>
-                <div className="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
-                  <h3 className="font-bold text-indigo-900 mb-2">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] p-4 rounded-none">
+                  <h3 className="font-bold text-[#0a2e1e] mb-2">
                     Selective Wipe
                   </h3>
-                  <p className="text-sm text-indigo-800">
+                  <p className="text-sm text-[#0a2e1e]">
                     Erase only corporate data and apps, leaving personal data
                     intact. Ideal for BYOD (Bring Your Own Device) scenarios.
                   </p>
                 </div>
-                <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
-                  <h3 className="font-bold text-purple-900 mb-2">
+                <div className="bg-[#d4ede4] border border-[#d0d5dc] p-4 rounded-none">
+                  <h3 className="font-bold text-[#0a2e1e] mb-2">
                     Compliance Reporting
                   </h3>
-                  <p className="text-sm text-purple-800">
+                  <p className="text-sm text-[#0a2e1e]">
                     Generate audit logs and certificates proving erasure
                     occurred. Required for regulatory compliance.
                   </p>
                 </div>
-                <div className="bg-pink-50 border border-pink-200 p-4 rounded-lg">
-                  <h3 className="font-bold text-pink-900 mb-2">
+                <div className="bg-[#d4ede4] border border-[#d0d5dc] p-4 rounded-none">
+                  <h3 className="font-bold text-[#0a2e1e] mb-2">
                     Activation Lock Management
                   </h3>
-                  <p className="text-sm text-pink-800">
+                  <p className="text-sm text-[#0a2e1e]">
                     Disable Find My iPhone/Android Device Manager locks before
                     disposal to enable device reuse.
                   </p>
@@ -250,51 +250,51 @@ const MobileErasureGuideBlog: React.FC = () => {
 
             {/* Best Practices */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-[#0a2e1e]">
                 Mobile Erasure Best Practices
               </h2>
               <div className="space-y-3">
-                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-blue-900 mb-1">
+                <div className="bg-white border-l-4 border-[#0e7c66] p-4 rounded-none shadow-none">
+                  <h3 className="font-semibold text-[#0a2e1e] mb-1">
                     1. Verify Encryption Before Erasure
                   </h3>
-                  <p className="text-sm text-slate-700">
+                  <p className="text-sm text-[#5a6672]">
                     Confirm device encryption is active. Without encryption,
                     factory reset may leave recoverable data.
                   </p>
                 </div>
-                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-blue-900 mb-1">
+                <div className="bg-white border-l-4 border-[#0e7c66] p-4 rounded-none shadow-none">
+                  <h3 className="font-semibold text-[#0a2e1e] mb-1">
                     2. Remove All Accounts
                   </h3>
-                  <p className="text-sm text-slate-700">
+                  <p className="text-sm text-[#5a6672]">
                     Sign out of Google, Apple ID, Microsoft, and all third-party
                     accounts to prevent activation locks.
                   </p>
                 </div>
-                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-blue-900 mb-1">
+                <div className="bg-white border-l-4 border-[#0e7c66] p-4 rounded-none shadow-none">
+                  <h3 className="font-semibold text-[#0a2e1e] mb-1">
                     3. Remove External Storage
                   </h3>
-                  <p className="text-sm text-slate-700">
+                  <p className="text-sm text-[#5a6672]">
                     Extract SD cards, SIM cards, and any removable storage
                     before erasure.
                   </p>
                 </div>
-                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-blue-900 mb-1">
+                <div className="bg-white border-l-4 border-[#0e7c66] p-4 rounded-none shadow-none">
+                  <h3 className="font-semibold text-[#0a2e1e] mb-1">
                     4. Document Serial Numbers
                   </h3>
-                  <p className="text-sm text-slate-700">
+                  <p className="text-sm text-[#5a6672]">
                     Record IMEI/serial numbers before erasure for audit trails
                     and compliance reporting.
                   </p>
                 </div>
-                <div className="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm">
-                  <h3 className="font-semibold text-blue-900 mb-1">
+                <div className="bg-white border-l-4 border-[#0e7c66] p-4 rounded-none shadow-none">
+                  <h3 className="font-semibold text-[#0a2e1e] mb-1">
                     5. Verify Erasure Success
                   </h3>
-                  <p className="text-sm text-slate-700">
+                  <p className="text-sm text-[#5a6672]">
                     Power on device post-erasure to confirm initial setup screen
                     appears and no data is accessible.
                   </p>
@@ -304,34 +304,34 @@ const MobileErasureGuideBlog: React.FC = () => {
 
             {/* Common Mistakes */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-[#0a2e1e]">
                 Common Mistakes to Avoid
               </h2>
-              <div className="bg-red-50 border border-red-200 p-6 rounded-xl">
-                <ul className="space-y-2 text-slate-700">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] p-6 rounded-none">
+                <ul className="space-y-2 text-[#5a6672]">
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 font-bold mt-0.5">❌</span>
+                    <span className="text-[#0a2e1e] font-bold mt-0.5">❌</span>
                     <span>
                       <strong>Forgetting to disable Find My iPhone:</strong>{" "}
                       Device becomes unusable for next owner
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 font-bold mt-0.5">❌</span>
+                    <span className="text-[#0a2e1e] font-bold mt-0.5">❌</span>
                     <span>
                       <strong>Not removing corporate MDM profiles:</strong>{" "}
                       Prevents factory reset or reactivation
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 font-bold mt-0.5">❌</span>
+                    <span className="text-[#0a2e1e] font-bold mt-0.5">❌</span>
                     <span>
                       <strong>Skipping encryption verification:</strong> Leaves
                       data vulnerable on older devices
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-600 font-bold mt-0.5">❌</span>
+                    <span className="text-[#0a2e1e] font-bold mt-0.5">❌</span>
                     <span>
                       <strong>Assuming factory reset = secure:</strong> May not
                       meet compliance requirements
@@ -345,49 +345,49 @@ const MobileErasureGuideBlog: React.FC = () => {
 
         {/* D-Secure Mobile Solution */}
         <Reveal>
-          <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-2xl font-bold text-[#0a2e1e] mb-6">
               D-Secure Mobile Device Erasure
             </h2>
-            <p className="text-slate-700 leading-relaxed mb-6">
+            <p className="text-[#5a6672] leading-relaxed mb-6">
               D-Secure integrates with leading MDM platforms and provides
               standalone mobile erasure capabilities with comprehensive audit
               trails.
             </p>
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-blue-50 to-sky-50 p-4 rounded-xl border border-blue-100">
+              <div className="bg-white p-4 rounded-none border border-[#d0d5dc]">
                 <CheckIcon
-                  className="w-6 h-6 text-blue-600 mb-2"
+                  className="w-6 h-6 text-[#0e7c66] mb-2"
                   filled={true}
                 />
-                <h3 className="font-bold text-slate-900 text-sm mb-1">
+                <h3 className="font-bold text-[#0a2e1e] text-sm mb-1">
                   Multi-Platform Support
                 </h3>
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-[#5a6672]">
                   iOS, Android, Windows Mobile coverage
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-blue-50 to-sky-50 p-4 rounded-xl border border-blue-100">
+              <div className="bg-white p-4 rounded-none border border-[#d0d5dc]">
                 <CheckIcon
-                  className="w-6 h-6 text-blue-600 mb-2"
+                  className="w-6 h-6 text-[#0e7c66] mb-2"
                   filled={true}
                 />
-                <h3 className="font-bold text-slate-900 text-sm mb-1">
+                <h3 className="font-bold text-[#0a2e1e] text-sm mb-1">
                   Compliance Certificates
                 </h3>
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-[#5a6672]">
                   Automated documentation for audits
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-blue-50 to-sky-50 p-4 rounded-xl border border-blue-100">
+              <div className="bg-white p-4 rounded-none border border-[#d0d5dc]">
                 <CheckIcon
-                  className="w-6 h-6 text-blue-600 mb-2"
+                  className="w-6 h-6 text-[#0e7c66] mb-2"
                   filled={true}
                 />
-                <h3 className="font-bold text-slate-900 text-sm mb-1">
+                <h3 className="font-bold text-[#0a2e1e] text-sm mb-1">
                   MDM Integration
                 </h3>
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-[#5a6672]">
                   Works with Intune, Jamf, MobileIron
                 </p>
               </div>
@@ -397,7 +397,7 @@ const MobileErasureGuideBlog: React.FC = () => {
 
         {/* CTA */}
         <Reveal>
-          <div className="bg-gradient-to-br from-blue-600 via-sky-600 to-blue-600 rounded-xl shadow-lg p-8 mt-8 text-white">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
             <h2 className="text-2xl font-bold mb-4">
               Secure Your Mobile Fleet
             </h2>
@@ -407,7 +407,7 @@ const MobileErasureGuideBlog: React.FC = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg"
+              className="inline-flex items-center bg-white text-[#0e7c66] px-6 py-3 rounded-none font-semibold hover:bg-gray-50 transition-colors shadow-none"
             >
               <HoverIcon>
                 {(filled) => (

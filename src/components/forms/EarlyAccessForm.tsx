@@ -183,20 +183,20 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
       )}
 
       {toast && (
-        <div className={`fixed top-4 right-4 z-[9999] px-6 py-3 rounded-2xl shadow-2xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300 ${
-          toast.type === "success" ? "bg-emerald-50 border-emerald-200 text-emerald-800" : "bg-red-50 border-red-200 text-red-800"
+        <div className={`fixed top-4 right-4 z-[9999] px-6 py-3 rounded-none shadow-2xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300 ${
+          toast.type === "success" ? "bg-[#d4ede4] border-[#d4ede4] text-[#0a2e1e]" : "bg-red-50 border-red-200 text-red-800"
         }`}>
           {toast.type === "success" ? <Check className="w-5 h-5" /> : <Shield className="w-5 h-5" />}
           <span className="font-bold">{toast.message}</span>
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-8 bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50">
+      <form onSubmit={handleSubmit} className="space-y-8 bg-white p-8 rounded-none border border-slate-100 shadow-xl shadow-slate-200/50">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-1.5">
             <label htmlFor="fullName" className="text-sm font-bold text-slate-700 ml-1">Full Name *</label>
             <div className="relative group">
-              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#0a2e1e] transition-colors" />
               <input
                 id="fullName"
                 required
@@ -205,7 +205,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="John Doe"
-                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium"
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-[#0e7c66] focus:bg-white rounded-none outline-none transition-all font-medium"
               />
             </div>
           </div>
@@ -213,7 +213,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
           <div className="space-y-1.5">
             <label htmlFor="email" className="text-sm font-bold text-slate-700 ml-1">Email Address *</label>
             <div className="relative group">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#0a2e1e] transition-colors" />
               <input
                 id="email"
                 required
@@ -222,7 +222,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="example@company.com"
-                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium"
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-[#0e7c66] focus:bg-white rounded-none outline-none transition-all font-medium"
               />
             </div>
           </div>
@@ -230,7 +230,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
           <div className="space-y-1.5">
             <label htmlFor="phone" className="text-sm font-bold text-slate-700 ml-1">Phone Number *</label>
             <div className="relative group">
-              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#0a2e1e] transition-colors" />
               <input
                 id="phone"
                 required
@@ -239,7 +239,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+1 (555) 000-0000"
-                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium"
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-[#0e7c66] focus:bg-white rounded-none outline-none transition-all font-medium"
               />
             </div>
           </div>
@@ -247,7 +247,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
           <div className="space-y-1.5">
             <label htmlFor="company" className="text-sm font-bold text-slate-700 ml-1">Company Name *</label>
             <div className="relative group">
-              <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+              <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#0a2e1e] transition-colors" />
               <input
                 id="company"
                 required
@@ -256,7 +256,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
                 value={formData.company}
                 onChange={handleChange}
                 placeholder="D-Secure Tech"
-                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium"
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-[#0e7c66] focus:bg-white rounded-none outline-none transition-all font-medium"
               />
             </div>
           </div>
@@ -264,14 +264,14 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
           <div className="space-y-1.5">
             <label htmlFor="country" className="text-sm font-bold text-slate-700 ml-1">Country *</label>
             <div className="relative group">
-              <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+              <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#0a2e1e] transition-colors" />
               <select
                 id="country"
                 required
                 name="country"
                 value={formData.country}
                 onChange={handleChange}
-                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium appearance-none"
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-[#0e7c66] focus:bg-white rounded-none outline-none transition-all font-medium appearance-none"
               >
                 <option value="" disabled hidden>Select Country</option>
                 <option value="United States">United States</option>
@@ -287,14 +287,14 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
           <div className="space-y-1.5">
             <label htmlFor="businessType" className="text-sm font-bold text-slate-700 ml-1">Business Type *</label>
             <div className="relative group">
-              <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+              <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#0a2e1e] transition-colors" />
               <select
                 id="businessType"
                 required
                 name="businessType"
                 value={formData.businessType}
                 onChange={handleChange}
-                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium appearance-none"
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-transparent focus:border-[#0e7c66] focus:bg-white rounded-none outline-none transition-all font-medium appearance-none"
               >
                 <option value="" disabled hidden>Select Business Type</option>
                 <option value="Enterprise">Enterprise</option>
@@ -311,7 +311,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="text-sm font-bold text-slate-700 ml-1">Select Products for Early Access *</div>
-            <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold text-[#0a2e1e] bg-[#d4ede4] px-3 py-1 rounded-full">
               {selectedProducts.length} selected
             </span>
           </div>
@@ -324,14 +324,14 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
                   type="button"
                   key={product.id}
                   onClick={() => handleProductToggle(product.id)}
-                  className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all text-left ${
+                  className={`flex items-center gap-3 p-4 rounded-none border-2 transition-all text-left ${
                     isActive
-                      ? "bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-200"
-                      : "bg-slate-50 border-slate-100 text-slate-600 hover:border-emerald-200 hover:bg-emerald-50/50"
+                      ? "bg-[#0e7c66] border-[#0e7c66] text-white shadow-lg shadow-emerald-200"
+                      : "bg-slate-50 border-slate-100 text-slate-600 hover:border-[#d4ede4] hover:bg-[#d4ede4]/50"
                   }`}
                 >
-                  <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-colors ${
-                    isActive ? "bg-white border-white text-emerald-600" : "bg-white border-slate-200"
+                  <div className={`w-5 h-5 rounded-none border flex items-center justify-center transition-colors ${
+                    isActive ? "bg-white border-white text-[#0a2e1e]" : "bg-white border-slate-200"
                   }`}>
                     {isActive && <Check className="w-3.5 h-3.5" strokeWidth={4} />}
                   </div>
@@ -339,7 +339,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
                     <p className={`text-xs font-bold truncate ${isActive ? "text-white" : "text-slate-800"}`}>
                       {product.name}
                     </p>
-                    <p className={`text-[10px] uppercase tracking-wider font-black ${isActive ? "text-emerald-100" : "text-slate-400"}`}>
+                    <p className={`text-[10px] uppercase tracking-wider font-black ${isActive ? "text-[#d4ede4]" : "text-slate-400"}`}>
                       {product.category}
                     </p>
                   </div>
@@ -358,14 +358,14 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
             onChange={handleChange}
             rows={4}
             placeholder="Tell us about your specific requirements or use case..."
-            className="w-full px-6 py-4 bg-slate-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white rounded-2xl outline-none transition-all font-medium resize-none text-slate-700"
+            className="w-full px-6 py-4 bg-slate-50 border-2 border-transparent focus:border-[#0e7c66] focus:bg-white rounded-none outline-none transition-all font-medium resize-none text-slate-700"
           />
         </div>
 
         <button
           disabled={isLoading}
           type="submit"
-          className="w-full py-5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-black text-lg rounded-2xl shadow-xl shadow-emerald-200 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
+          className="w-full py-5 bg-gradient-to-r from-[#0e7c66] to-[#0a2e1e] hover:from-[#0e7c66] hover:to-[#0a2e1e] text-white font-black text-lg rounded-none shadow-xl shadow-emerald-200 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
         >
           {isLoading ? (
             <Loader2 className="w-6 h-6 animate-spin" />

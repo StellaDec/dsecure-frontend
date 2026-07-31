@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Healthcare Data Breach Case Study",
@@ -23,17 +23,17 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
         />
 
         {/* Hero Section - Full Width */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Healthcare Data Breach
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Healthcare Data Breach Case Study: Lessons from Improper Drive
                 Disposal
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Analyzing a major healthcare data breach affecting over 100,000
                 patients caused by improper hard drive disposal, and
                 understanding how proper media sanitization could have prevented
@@ -46,13 +46,13 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   A recent healthcare data breach at a community health center
                   has highlighted critical vulnerabilities in{" "}
-                  <strong className="text-indigo-800">
+                  <strong className="text-[#0a2e1e]">
                     electronic hardware disposal practices
                   </strong>
                   . The incident exposed personal data of patients including
@@ -61,7 +61,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   drives by an employee at a third-party vendor's storage
                   facility.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   This data breach episode underscores an often-overlooked
                   aspect of data security: data theft resulting from improper
                   disposal of IT assets during their end-of-life, resale, or
@@ -76,23 +76,23 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Compliance Violations */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Regulatory Non-Compliance Consequences
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 This healthcare data breach represents a severe violation of
                 both state privacy laws and federal HIPAA regulations. The
                 breach exposed not only personal health data but also sensitive
                 financial information of patients.
               </p>
 
-              <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none mt-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Compromised Data Categories
                 </h3>
-                <ul className="space-y-2 text-slate-700 text-lg">
+                <ul className="space-y-2 text-[#5a6672] text-lg">
                   <li>
                     • Financial account numbers and credit/debit card details
                   </li>
@@ -105,7 +105,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                 </ul>
               </div>
 
-              <p className="text-slate-700 leading-loose text-lg mt-6">
+              <p className="text-[#5a6672] leading-loose text-lg mt-6">
                 The incident occurred when hard drives containing patient and
                 employee information were improperly disposed of at a
                 third-party data storage facility. The organization was notified
@@ -118,7 +118,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Impact Analysis */}
           <Reveal>
-            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Impact on Over 100,000 Patients
               </h2>
@@ -130,7 +130,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Legal Penalties</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Data breach events are detrimental to responsible
@@ -143,7 +143,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                     allowing access to personal data without express consent.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Financial Repercussions
                   </h3>
@@ -156,7 +156,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                     healthcare organizations of all sizes.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Reputation Damage</h3>
                   <p className="text-white/90 text-lg leading-loose">
                     Beyond legal and financial implications, data breaches are
@@ -174,12 +174,12 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* The Need for Proper Sanitization */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 The Critical Need for Permanent Media Sanitization
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Data breaches caused by careless IT asset disposal can cause
                 colossal organizational damage. However, such incidents are
                 entirely preventable through well-planned data destruction
@@ -188,11 +188,11 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8 mt-6">
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Documented Proof of Sanitization
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Organizations must ensure every sanitized hardware device is
                     wiped or physically destroyed with comprehensive records and
                     documented proof. This documentation serves as critical
@@ -201,11 +201,11 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Lifecycle Data Protection
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Proper care must be taken to ensure organizational data
                     remains secured throughout the entire device lifespan — from
                     acquisition through sanitization. This holistic approach
@@ -213,11 +213,11 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Vendor Selection Criteria
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Selection of authorized vendors that provide certificates of
                     data destruction for complete audit trails is paramount. The
                     fundamental lapse in this breach was careless handling of
@@ -231,52 +231,52 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Prevention Strategies */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 What Could Have Prevented This Breach
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
-                    Onsite <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Data Erasure</Link>
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
+                    Onsite <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Data Erasure</Link>
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Performing data erasure onsite before devices change hands
                     eliminates data leakage risks during transport and storage
                     at third-party facilities. This approach provides maximum
                     control over the sanitization process.
                   </p>
                 </div>
-                <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Certified Software Solutions
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Modern data sanitization tools like D-Secure offer
                     certified, secure solutions for onsite media sanitization.
                     Data is permanently destroyed with no recovery possible,
                     even by specialists in laboratory environments.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Immutable Certificates
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Professional erasure software provides tamper-proof
                     certificates and detailed reports for every sanitized
                     device. These documents serve as documented support for
                     auditing purposes and regulatory compliance.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Pre-Destruction Erasure
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Data erasure software should be used to wipe storage media
-                    before physical shredding or destruction at <Link to="/solutions/itad" className="text-indigo-600 hover:underline font-medium">ITAD</Link> facilities.
+                    before physical shredding or destruction at <Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link> facilities.
                     This prevents any leakage during hardware movement and
                     mitigates logistical security lapses.
                   </p>
@@ -287,47 +287,47 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Key Takeaways */}
           <Reveal>
-            <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-10 mt-10 space-y-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Key Takeaways for Healthcare Organizations
               </h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     1
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Never rely solely on third-party vendors</strong>{" "}
                     for data destruction without verified audit trails and
                     certificates of destruction for every device processed.
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     2
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Implement onsite data erasure</strong> before any
                     devices leave organizational premises to eliminate transit
                     and storage vulnerabilities.
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     3
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Use certified data erasure software</strong> that
                     provides tamper-proof documentation meeting HIPAA and other
                     regulatory compliance requirements.
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     4
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Maintain comprehensive documentation</strong>{" "}
                     throughout the entire device lifecycle to demonstrate due
                     diligence in protecting patient data.
@@ -339,11 +339,11 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Conclusion
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 This healthcare data breach serves as a stark reminder that data
                 security extends far beyond cybersecurity measures.
                 Organizations must be cautious and aware of any gaps in data
@@ -351,7 +351,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                 data access — including the often-overlooked area of IT asset
                 disposal.
               </p>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 The cost of implementing proper data destruction practices is
                 minimal compared to the devastating consequences of a breach:
                 regulatory penalties reaching millions of dollars, irreparable

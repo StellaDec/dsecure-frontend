@@ -1,6 +1,8 @@
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { AlertCircle, ArrowRightLeft, Ban, BarChart2, CheckCircle, ChevronDown, Edit, FileText, Loader2, Monitor, Plus, Trash2, UserPlus, Users, X } from 'lucide-react';
+
 // ✅ AbortController ref — stale API requests cancel karne ke liye
 let abortControllerRefGroups: AbortController | null = null;
 import {
@@ -1222,145 +1224,85 @@ export default function AdminGroups() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900">Groups</h1>
+            <h1 className="text-2xl font-bold text-[#0a2e1e]">Groups</h1>
             <p className="text-slate-600 mt-1">
               Manage user groups and permissions
             </p>
           </div>
           <button
             onClick={handleAddGroup}
-            className="btn-primary flex items-center gap-2"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-[#0e7c66] text-white hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 4v16m8-8H4"
-              />
-            </svg>
+            <Plus className="w-4 h-4" />
             Add Group
           </button>
         </div>
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4">
-          <div className="card !p-6">
+          <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-600">Total Groups</p>
-                <p className="text-3xl font-bold text-slate-900 mt-1">
+                <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                   {groups.length}
                 </p>
               </div>
-              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-emerald-800"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
+              <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                <Users className="w-6 h-6 text-[#0a2e1e]" />
               </div>
             </div>
           </div>
 
-          <div className="card !p-6">
+          <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-600">Total Users</p>
-                <p className="text-3xl font-bold text-slate-900 mt-1">
+                <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                   {totalUsers}
                 </p>
               </div>
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
-                  />
-                </svg>
+              <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                <UserPlus className="w-6 h-6 text-[#0a2e1e]" />
               </div>
             </div>
           </div>
 
-          <div className="card !p-6">
+          <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-600">Total Machines</p>
-                <p className="text-3xl font-bold text-slate-900 mt-1">
+                <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                   {totalMachines}
                 </p>
               </div>
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-purple-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+              <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                <Monitor className="w-6 h-6 text-[#0a2e1e]" />
               </div>
             </div>
           </div>
 
-          <div className="card !p-6">
+          <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-600">Total Reports</p>
-                <p className="text-3xl font-bold text-slate-900 mt-1">
+                <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                   {totalReports}
                 </p>
               </div>
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-indigo-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+              <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                <BarChart2 className="w-6 h-6 text-[#0a2e1e]" />
               </div>
             </div>
           </div>
 
-          {/* <div className="card !p-6">
+          {/* <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-600">
                   Total Available Licenses
                 </p>
-                <p className="text-3xl font-bold text-slate-900 mt-1">
+                <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                   {licenseSummary?.totalAllocated || 0}
                 </p>
                 {licenseSummary && (
@@ -1369,31 +1311,19 @@ export default function AdminGroups() {
                   </p>
                 )}
               </div>
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-amber-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+              <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                <FileText className="w-6 h-6 text-[#0a2e1e]" />
               </div>
             </div>
           </div> */}
 
-          {/* <div className="card !p-6">
+          {/* <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-600">
                   Unsed License Available
                 </p>
-                <p className="text-3xl font-bold text-slate-900 mt-1">
+                <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                   {licenseSummary?.totalAvailable || 0}
                 </p>
                 {licenseSummary && (
@@ -1402,20 +1332,8 @@ export default function AdminGroups() {
                   </p>
                 )}
               </div>
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-green-800"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+              <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                <CheckCircle className="w-6 h-6 text-[#0a2e1e]" />
               </div>
             </div>
           </div> */}
@@ -1423,27 +1341,15 @@ export default function AdminGroups() {
 
         {/* Error Message */}
         {isError && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
+          <div className="bg-red-50 border border-red-200 rounded-none p-4 text-red-700">
             <div className="flex items-center gap-2 mb-2">
-              <svg
-                className="w-5 h-5 text-red-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              <AlertCircle className="w-5 h-5 text-red-600" />
               <p className="font-medium">Failed to load groups</p>
             </div>
             <p className="text-sm opacity-90 mb-3">{isError}</p>
             <button
               onClick={() => fetchGroups()}
-              className="px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors shadow-sm"
+              className="px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-none hover:bg-red-700 transition-colors shadow-sm"
             >
               Try again
             </button>
@@ -1455,15 +1361,15 @@ export default function AdminGroups() {
           /* ********** NAYA CODE — Shimmer Skeleton UI for Groups ********** */
           <div className="animate-pulse space-y-4">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="card !p-0 overflow-hidden">
+              <div key={i} className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-0 overflow-hidden">
                 {/* Group Header Skeleton */}
                 <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center gap-4">
-                  <div className="w-10 h-10 bg-slate-200 rounded-lg" />
+                  <div className="w-10 h-10 bg-slate-200 rounded-none" />
                   <div className="flex-1">
                     <div className="h-5 bg-slate-200 rounded w-32 mb-2" />
                     <div className="h-3 bg-slate-100 rounded w-48" />
                   </div>
-                  <div className="h-8 bg-slate-200 rounded-lg w-20" />
+                  <div className="h-8 bg-slate-200 rounded-none w-20" />
                 </div>
                 {/* Group Members Skeleton */}
                 <div className="px-6 py-3 space-y-3">
@@ -1488,18 +1394,18 @@ export default function AdminGroups() {
         {!isLoading && groups.length > 0 && (
           <div className="space-y-4">
             {groups.map((group: Group) => (
-              <div key={group.id} className="card !p-0 overflow-hidden">
+              <div key={group.id} className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-0 overflow-hidden">
                 {/* Group Header */}
                 <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
                   <div className="flex items-center gap-4 flex-1">
                     <button
                       onClick={() => toggleGroup(group.id)}
-                      className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center text-white font-semibold hover:shadow-lg transition-shadow"
+                      className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center text-white font-semibold hover:shadow-lg transition-shadow"
                     >
                       {group.name.charAt(0)}
                     </button>
                     <div className="flex-1">
-                      <h2 className="text-lg font-semibold text-slate-900">
+                      <h2 className="text-lg font-semibold text-[#0a2e1e]">
                         {group.name}
                       </h2>
                       <p className="text-sm text-slate-600">
@@ -1507,7 +1413,7 @@ export default function AdminGroups() {
                       </p>
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 text-emerald-800">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#d4ede4] text-[#0a2e1e]">
                         {group.users.length} users
                       </span>
                       <span className="text-sm text-slate-500">
@@ -1518,33 +1424,21 @@ export default function AdminGroups() {
                   <div className="flex items-center gap-2 ml-4">
                     <button
                       onClick={() => handleEditGroup(group)}
-                      className="px-3 py-1.5 text-sm text-emerald-800 hover:bg-emerald-50 rounded-lg transition-colors"
+                      className="px-3 py-1.5 text-sm text-[#0a2e1e] hover:bg-[#d4ede4] rounded-none transition-colors"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDeleteGroup(group)}
-                      className="px-3 py-1.5 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                      className="px-3 py-1.5 text-sm text-red-600 hover:bg-red-50 rounded-none transition-colors"
                     >
                       Delete
                     </button>
                     <button
                       onClick={() => toggleGroup(group.id)}
-                      className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+                      className="p-2 hover:bg-slate-100 rounded-none transition-colors"
                     >
-                      <svg
-                        className={`w-5 h-5 text-slate-600 transition-transform ${expandedGroups.includes(group.id) ? "rotate-180" : ""}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
+                      <ChevronDown className="w-5 h-5" />
                     </button>
                   </div>
                 </div>
@@ -1556,59 +1450,23 @@ export default function AdminGroups() {
                     <div className="px-6 py-3 bg-slate-50 border-b border-slate-200 flex justify-end gap-2">
                       <button
                         onClick={() => handleOpenTransferModal(group)}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 text-sm font-medium"
+                        className="px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] transition-colors flex items-center gap-2 text-sm font-medium"
                       >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                          />
-                        </svg>
+                        <ArrowRightLeft className="w-4 h-4" />
                         Transfer
                       </button>
                       <button
                         onClick={() => handleOpenRevokeModal(group)}
-                        className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors flex items-center gap-2 text-sm font-medium"
+                        className="px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] transition-colors flex items-center gap-2 text-sm font-medium"
                       >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
-                          />
-                        </svg>
+                        <Ban className="w-4 h-4" />
                         Revoke
                       </button>
                       <button
                         onClick={() => handleOpenAddUserModal(group)}
-                        className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2 text-sm font-medium"
+                        className="px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] transition-colors flex items-center gap-2 text-sm font-medium"
                       >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 4v16m8-8H4"
-                          />
-                        </svg>
+                        <Plus className="w-4 h-4" />
                         Add User
                       </button>
                     </div>
@@ -1648,10 +1506,10 @@ export default function AdminGroups() {
                             >
                               <td className="px-6 py-4 whitespace-nowrap">
                                 <div className="flex items-center gap-3">
-                                  <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                  <div className="w-8 h-8 bg-[#0e7c66] rounded-full flex items-center justify-center text-white text-sm font-semibold">
                                     {user.name.charAt(0)}
                                   </div>
-                                  <span className="font-medium text-slate-900">
+                                  <span className="font-medium text-[#0a2e1e]">
                                     {user.name}
                                   </span>
                                 </div>
@@ -1663,10 +1521,10 @@ export default function AdminGroups() {
                                 <span
                                   className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                     user.role === "User"
-                                      ? "bg-blue-100 text-blue-800"
+                                      ? "bg-[#d4ede4] text-[#0a2e1e]"
                                       : user.role === "Group Admin"
-                                        ? "bg-amber-100 text-amber-800"
-                                        : "bg-purple-100 text-purple-800"
+                                        ? "bg-[#d4ede4] text-[#0a2e1e]"
+                                        : "bg-[#d4ede4] text-[#0a2e1e]"
                                   }`}
                                 >
                                   {user.role}
@@ -1679,7 +1537,7 @@ export default function AdminGroups() {
                                 <span
                                   className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                     user.license > 0
-                                      ? "bg-emerald-100 text-emerald-800"
+                                      ? "bg-[#d4ede4] text-[#0a2e1e]"
                                       : "bg-slate-100 text-slate-800"
                                   }`}
                                 >
@@ -1696,21 +1554,9 @@ export default function AdminGroups() {
                                       // Logic for editing member could go here
                                       // console.log('Edit member:', user.email);
                                     }}
-                                    className="px-3 py-1.5 text-sm text-blue-600 hover:bg-blue-50 rounded-lg transition-colors flex items-center gap-1"
+                                    className="px-3 py-1.5 text-sm text-[#0a2e1e] hover:bg-[#d4ede4] rounded-none transition-colors flex items-center gap-1"
                                   >
-                                    <svg
-                                      className="w-4 h-4"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                                      />
-                                    </svg>
+                                    <Edit className="w-4 h-4" />
                                     Edit
                                   </button> */}
                                   <button
@@ -1726,48 +1572,17 @@ export default function AdminGroups() {
                                       removingUser?.groupId === group.id &&
                                       removingUser?.userEmail === user.email
                                     }
-                                    className="px-3 py-1.5 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                                    className="px-3 py-1.5 text-sm text-red-600 hover:bg-red-50 rounded-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
                                   >
                                     {removingUser?.groupId === group.id &&
                                     removingUser?.userEmail === user.email ? (
                                       <>
-                                        <svg
-                                          className="animate-spin h-4 w-4"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          fill="none"
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <circle
-                                            className="opacity-25"
-                                            cx="12"
-                                            cy="12"
-                                            r="10"
-                                            stroke="currentColor"
-                                            strokeWidth="4"
-                                          ></circle>
-                                          <path
-                                            className="opacity-75"
-                                            fill="currentColor"
-                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                          ></path>
-                                        </svg>
+                                        <Loader2 className="animate-spin h-4 w-4" />
                                         Removing...
                                       </>
                                     ) : (
                                       <>
-                                        <svg
-                                          className="w-4 h-4"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                                          />
-                                        </svg>
+                                        <Trash2 className="w-4 h-4" />
                                         Remove
                                       </>
                                     )}
@@ -1793,30 +1608,18 @@ export default function AdminGroups() {
             onClick={() => setShowAddUserModal(false)}
           >
             <div
-              className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6"
+              className="bg-white rounded-none shadow-2xl max-w-md w-full p-6"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-[#0a2e1e] mb-4">
                 Add User to {selectedGroup.name}
               </h2>
 
               {/* Error Message */}
               {errorMessage && (
-                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-none">
                   <div className="flex items-start gap-3">
-                    <svg
-                      className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                    <AlertCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                     <div className="flex-1">
                       <p className="text-sm font-medium text-red-800 mb-1">
                         Unable to Add User
@@ -1827,19 +1630,7 @@ export default function AdminGroups() {
                       onClick={() => setErrorMessage("")}
                       className="text-red-400 hover:text-red-600"
                     >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
+                      <X className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -1851,39 +1642,20 @@ export default function AdminGroups() {
                     Select User <span className="text-red-500">*</span>
                   </label>
                   {isLoadingSubusers ? (
-                    <div className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-slate-50 flex items-center gap-2">
-                      <svg
-                        className="animate-spin h-4 w-4 text-emerald-500"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                    <div className="w-full px-3 py-2 border border-slate-300 rounded-none bg-slate-50 flex items-center gap-2">
+                      <Loader2 className="animate-spin h-4 w-4 text-[#0a2e1e]" />
                       <span className="text-sm text-slate-600">
                         Loading users...
                       </span>
                     </div>
                   ) : !currentUserEmail ? (
-                    <div className="w-full px-3 py-2 border border-red-300 rounded-lg bg-red-50">
+                    <div className="w-full px-3 py-2 border border-red-300 rounded-none bg-red-50">
                       <p className="text-sm text-red-700">
                         ⚠️ User not authenticated. Please log in again.
                       </p>
                     </div>
                   ) : subusersError ? (
-                    <div className="w-full px-3 py-2 border border-red-300 rounded-lg bg-red-50">
+                    <div className="w-full px-3 py-2 border border-red-300 rounded-none bg-red-50">
                       <p className="text-sm text-red-700">
                         ❌ Error loading subusers. Please try again.
                       </p>
@@ -1899,7 +1671,7 @@ export default function AdminGroups() {
                         <select
                           value={userEmail}
                           onChange={(e) => setUserEmail(e.target.value)}
-                          className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                           required
                         >
                           <option value="">Select a user...</option>
@@ -1916,14 +1688,14 @@ export default function AdminGroups() {
                         </select>
                       ) : (
                         <div className="space-y-2">
-                          <div className="w-full px-3 py-2 border border-amber-300 rounded-lg bg-amber-50">
-                            <p className="text-sm text-amber-800 font-medium">
+                          <div className="w-full px-3 py-2 border border-[#d4ede4] rounded-none bg-[#d4ede4]">
+                            <p className="text-sm text-[#0a2e1e] font-medium">
                               ⚠️ No subusers available
                             </p>
-                            <p className="text-xs text-amber-700 mt-1">
+                            <p className="text-xs text-[#0a2e1e] mt-1">
                               Current user: <strong>{currentUserEmail}</strong>
                             </p>
-                            <p className="text-xs text-amber-700">
+                            <p className="text-xs text-[#0a2e1e]">
                               Please create subusers first in the Subusers
                               section.
                             </p>
@@ -1944,10 +1716,10 @@ export default function AdminGroups() {
                       type="checkbox"
                       checked={makeGroupAdmin}
                       onChange={(e) => setMakeGroupAdmin(e.target.checked)}
-                      className="w-4 h-4 text-emerald-800 border-slate-300 rounded focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                      className="w-4 h-4 text-[#0a2e1e] border-slate-300 rounded focus:ring-2 focus:ring-emerald-500 cursor-pointer"
                     />
                     <div className="flex-1">
-                      <span className="text-sm font-medium text-slate-700 group-hover:text-emerald-800 transition-colors">
+                      <span className="text-sm font-medium text-slate-700 group-hover:text-[#0a2e1e] transition-colors">
                         Make this user a Group Admin
                       </span>
                       <p className="text-xs text-slate-500 mt-0.5">
@@ -1963,38 +1735,19 @@ export default function AdminGroups() {
                 {" "}
                 <button
                   onClick={() => setShowAddUserModal(false)}
-                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50"
+                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50"
                   disabled={isSubmitting}
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleAddUserToGroup}
-                  className="flex-1 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   disabled={isSubmitting || !userEmail}
                 >
                   {isSubmitting ? (
                     <>
-                      <svg
-                        className="animate-spin h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <Loader2 className="animate-spin h-4 w-4" />
                       Adding...
                     </>
                   ) : (
@@ -2013,30 +1766,18 @@ export default function AdminGroups() {
             onClick={() => setShowAddModal(false)}
           >
             <div
-              className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-none shadow-2xl max-w-md w-full p-6 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-[#0a2e1e] mb-4">
                 Add New Group
               </h2>
 
               {/* Error Message */}
               {errorMessage && (
-                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-none">
                   <div className="flex items-start gap-3">
-                    <svg
-                      className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                    <AlertCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                     <div className="flex-1">
                       <p className="text-sm font-medium text-red-800 mb-1">
                         Unable to Create Group
@@ -2047,19 +1788,7 @@ export default function AdminGroups() {
                       onClick={() => setErrorMessage("")}
                       className="text-red-400 hover:text-red-600"
                     >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
+                      <X className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -2076,7 +1805,7 @@ export default function AdminGroups() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     placeholder="Enter group name"
                     required
                   />
@@ -2090,7 +1819,7 @@ export default function AdminGroups() {
                     onChange={(e) =>
                       setFormData({ ...formData, description: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     placeholder="Enter description"
                     rows={3}
                     required
@@ -2104,7 +1833,7 @@ export default function AdminGroups() {
                                         type="number"
                                         value={formData.licenseAllocation}
                                         onChange={(e) => setFormData({ ...formData, licenseAllocation: parseInt(e.target.value) || 0 })}
-                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                         placeholder="Enter license allocation"
                                         min="0"
                                         required
@@ -2120,7 +1849,7 @@ export default function AdminGroups() {
                                     <select
                                         value={formData.permission}
                                         onChange={(e) => setFormData({ ...formData, permission: e.target.value })}
-                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                         required
                                     >
                                         <option value="">Select permission</option>
@@ -2137,7 +1866,7 @@ export default function AdminGroups() {
                                     <select
                                         value={formData.status}
                                         onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                         required
                                     >
                                         <option value="active">Active</option>
@@ -2149,40 +1878,21 @@ export default function AdminGroups() {
               <div className="flex gap-3 mt-6">
                 <button
                   onClick={() => setShowAddModal(false)}
-                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50"
+                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50"
                   disabled={isSubmitting}
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleSaveNewGroup}
-                  className="flex-1 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   disabled={
                     isSubmitting || !formData.name || !formData.description
                   }
                 >
                   {isSubmitting ? (
                     <>
-                      <svg
-                        className="animate-spin h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <Loader2 className="animate-spin h-4 w-4" />
                       Creating...
                     </>
                   ) : (
@@ -2201,30 +1911,18 @@ export default function AdminGroups() {
             onClick={() => setShowEditModal(false)}
           >
             <div
-              className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-none shadow-2xl max-w-md w-full p-6 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-[#0a2e1e] mb-4">
                 Edit Group
               </h2>
 
               {/* Error Message */}
               {errorMessage && (
-                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-none">
                   <div className="flex items-start gap-3">
-                    <svg
-                      className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                    <AlertCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                     <div className="flex-1">
                       <p className="text-sm font-medium text-red-800 mb-1">
                         Unable to Update Group
@@ -2235,19 +1933,7 @@ export default function AdminGroups() {
                       onClick={() => setErrorMessage("")}
                       className="text-red-400 hover:text-red-600"
                     >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
+                      <X className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -2264,7 +1950,7 @@ export default function AdminGroups() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     required
                   />
                 </div>
@@ -2277,7 +1963,7 @@ export default function AdminGroups() {
                     onChange={(e) =>
                       setFormData({ ...formData, description: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     rows={3}
                     required
                   />
@@ -2290,7 +1976,7 @@ export default function AdminGroups() {
                                         type="number"
                                         value={formData.licenseAllocation}
                                         onChange={(e) => setFormData({ ...formData, licenseAllocation: parseInt(e.target.value) || 0 })}
-                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                         placeholder="Enter license allocation"
                                         min="0"
                                         required
@@ -2306,7 +1992,7 @@ export default function AdminGroups() {
                                     <select
                                         value={formData.permission}
                                         onChange={(e) => setFormData({ ...formData, permission: e.target.value })}
-                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                         required
                                     >
                                         <option value="">Select permission</option>
@@ -2323,7 +2009,7 @@ export default function AdminGroups() {
                                     <select
                                         value={formData.status}
                                         onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                         required
                                     >
                                         <option value="active">Active</option>
@@ -2335,40 +2021,21 @@ export default function AdminGroups() {
               <div className="flex gap-3 mt-6">
                 <button
                   onClick={() => setShowEditModal(false)}
-                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50"
+                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50"
                   disabled={isSubmitting}
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleSaveEditGroup}
-                  className="flex-1 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   disabled={
                     isSubmitting || !formData.name || !formData.description
                   }
                 >
                   {isSubmitting ? (
                     <>
-                      <svg
-                        className="animate-spin h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <Loader2 className="animate-spin h-4 w-4" />
                       Saving...
                     </>
                   ) : (
@@ -2387,30 +2054,18 @@ export default function AdminGroups() {
             onClick={() => !isSubmitting && setShowDeleteModal(false)}
           >
             <div
-              className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6"
+              className="bg-white rounded-none shadow-2xl max-w-md w-full p-6"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-[#0a2e1e] mb-4">
                 Delete Group
               </h2>
 
               {/* Error Message */}
               {errorMessage && (
-                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-none">
                   <div className="flex items-start gap-3">
-                    <svg
-                      className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                    <AlertCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                     <div className="flex-1">
                       <p className="text-sm font-medium text-red-800 mb-1">
                         Unable to Delete Group
@@ -2419,11 +2074,11 @@ export default function AdminGroups() {
                       {errorMessage
                         .toLowerCase()
                         .includes("assigned members") && (
-                        <div className="mt-3 p-2 bg-amber-50 border border-amber-200 rounded">
-                          <p className="text-xs text-amber-800 font-medium mb-1">
+                        <div className="mt-3 p-2 bg-[#d4ede4] border border-[#d4ede4] rounded">
+                          <p className="text-xs text-[#0a2e1e] font-medium mb-1">
                             💡 How to fix:
                           </p>
-                          <ol className="text-xs text-amber-700 list-decimal list-inside space-y-1">
+                          <ol className="text-xs text-[#0a2e1e] list-decimal list-inside space-y-1">
                             <li>Expand this group in the list</li>
                             <li>Remove all users from the group</li>
                             <li>Then try deleting again</li>
@@ -2435,19 +2090,7 @@ export default function AdminGroups() {
                       onClick={() => setErrorMessage("")}
                       className="text-red-400 hover:text-red-600"
                     >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
+                      <X className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -2461,38 +2104,19 @@ export default function AdminGroups() {
               <div className="flex gap-3">
                 <button
                   onClick={() => setShowDeleteModal(false)}
-                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50"
+                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50"
                   disabled={isSubmitting}
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleConfirmDelete}
-                  className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2 bg-red-600 text-white rounded-none hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
                     <>
-                      <svg
-                        className="animate-spin h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <Loader2 className="animate-spin h-4 w-4" />
                       Deleting...
                     </>
                   ) : (
@@ -2511,15 +2135,15 @@ export default function AdminGroups() {
             onClick={() => setShowTransferModal(false)}
           >
             <div
-              className="bg-white rounded-xl shadow-2xl max-w-2xl w-full p-6 max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-none shadow-2xl max-w-2xl w-full p-6 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-[#0a2e1e] mb-4">
                 Transfer Machines & Licenses
               </h2>
 
               {errorMessage && (
-                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-none">
                   <p className="text-sm text-red-700">{errorMessage}</p>
                 </div>
               )}
@@ -2537,7 +2161,7 @@ export default function AdminGroups() {
                         ?.email || currentUserEmail
                     }
                     readOnly
-                    className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-600 cursor-not-allowed"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-none bg-slate-50 text-slate-600 cursor-not-allowed"
                   />
                 </div>
 
@@ -2549,7 +2173,7 @@ export default function AdminGroups() {
                   <select
                     value={selectedTransferUser}
                     onChange={(e) => setSelectedTransferUser(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="">Select a member...</option>
                     {selectedGroup.users.map((user) => (
@@ -2567,32 +2191,13 @@ export default function AdminGroups() {
                   </label>
                   {isLoadingMachines ? (
                     <div className="flex items-center justify-center py-8">
-                      <svg
-                        className="animate-spin h-8 w-8 text-blue-500"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <Loader2 className="animate-spin h-8 w-8 text-[#0a2e1e]" />
                     </div>
                   ) : availableMachines.length > 0 ? (
                     <div className="space-y-3">
                       {/* Dropdown to select machine */}
                       <select
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                         onChange={(e) => {
                           const machineId = e.target.value;
                           if (!machineId) return;
@@ -2633,8 +2238,8 @@ export default function AdminGroups() {
 
                       {/* Selected machines display */}
                       {selectedMachines.length > 0 && (
-                        <div className="border border-blue-200 rounded-lg bg-blue-50 p-3">
-                          <p className="text-xs font-medium text-blue-800 mb-2">
+                        <div className="border border-[#d4ede4] rounded-none bg-[#d4ede4] p-3">
+                          <p className="text-xs font-medium text-[#0a2e1e] mb-2">
                             Selected Machines ({selectedMachines.length})
                           </p>
                           <div className="flex flex-wrap gap-2">
@@ -2646,7 +2251,7 @@ export default function AdminGroups() {
                               return machine ? (
                                 <div
                                   key={machineId}
-                                  className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full text-sm border border-blue-300"
+                                  className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full text-sm border border-[#d4ede4]"
                                 >
                                   <span className="text-slate-700 font-medium">
                                     {machine.machine_name || "Unnamed"}
@@ -2662,21 +2267,9 @@ export default function AdminGroups() {
                                         ),
                                       )
                                     }
-                                    className="text-blue-600 hover:text-blue-800 hover:bg-blue-100 rounded-full p-0.5"
+                                    className="text-[#0a2e1e] hover:text-[#0a2e1e] hover:bg-[#d4ede4] rounded-full p-0.5"
                                   >
-                                    <svg
-                                      className="w-3.5 h-3.5"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M6 18L18 6M6 6l12 12"
-                                      />
-                                    </svg>
+                                    <X className="w-3.5 h-3.5" />
                                   </button>
                                 </div>
                               ) : null;
@@ -2701,7 +2294,7 @@ export default function AdminGroups() {
                     <div className="space-y-3">
                       {/* Dropdown to select license */}
                       <select
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                         onChange={(e) => {
                           const licenseId = e.target.value;
                           if (
@@ -2734,8 +2327,8 @@ export default function AdminGroups() {
 
                       {/* Selected licenses display */}
                       {selectedLicenses.length > 0 && (
-                        <div className="border border-blue-200 rounded-lg bg-blue-50 p-3">
-                          <p className="text-xs font-medium text-blue-800 mb-2">
+                        <div className="border border-[#d4ede4] rounded-none bg-[#d4ede4] p-3">
+                          <p className="text-xs font-medium text-[#0a2e1e] mb-2">
                             Selected Licenses ({selectedLicenses.length})
                           </p>
                           <div className="flex flex-wrap gap-2">
@@ -2746,7 +2339,7 @@ export default function AdminGroups() {
                               return license ? (
                                 <div
                                   key={licenseId}
-                                  className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full text-sm border border-blue-300"
+                                  className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full text-sm border border-[#d4ede4]"
                                 >
                                   <span className="text-slate-700 font-medium">
                                     License #{license.id}
@@ -2759,21 +2352,9 @@ export default function AdminGroups() {
                                         ),
                                       )
                                     }
-                                    className="text-blue-600 hover:text-blue-800 hover:bg-blue-100 rounded-full p-0.5"
+                                    className="text-[#0a2e1e] hover:text-[#0a2e1e] hover:bg-[#d4ede4] rounded-full p-0.5"
                                   >
-                                    <svg
-                                      className="w-3.5 h-3.5"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M6 18L18 6M6 6l12 12"
-                                      />
-                                    </svg>
+                                    <X className="w-3.5 h-3.5" />
                                   </button>
                                 </div>
                               ) : null;
@@ -2793,14 +2374,14 @@ export default function AdminGroups() {
               <div className="flex gap-3 mt-6">
                 <button
                   onClick={() => setShowTransferModal(false)}
-                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50"
+                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50"
                   disabled={isSubmitting}
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleTransferAssets}
-                  className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   disabled={
                     isSubmitting ||
                     !selectedTransferUser ||
@@ -2809,26 +2390,7 @@ export default function AdminGroups() {
                 >
                   {isSubmitting ? (
                     <>
-                      <svg
-                        className="animate-spin h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <Loader2 className="animate-spin h-4 w-4" />
                       Transferring...
                     </>
                   ) : (
@@ -2847,15 +2409,15 @@ export default function AdminGroups() {
             onClick={() => setShowRevokeModal(false)}
           >
             <div
-              className="bg-white rounded-xl shadow-2xl max-w-2xl w-full p-6 max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-none shadow-2xl max-w-2xl w-full p-6 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+              <h2 className="text-xl font-semibold text-[#0a2e1e] mb-4">
                 Revoke Machines & Licenses
               </h2>
 
               {errorMessage && (
-                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-none">
                   <p className="text-sm text-red-700">{errorMessage}</p>
                 </div>
               )}
@@ -2873,7 +2435,7 @@ export default function AdminGroups() {
                         ?.email || currentUserEmail
                     }
                     readOnly
-                    className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-600 cursor-not-allowed"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-none bg-slate-50 text-slate-600 cursor-not-allowed"
                   />
                 </div>
 
@@ -2885,7 +2447,7 @@ export default function AdminGroups() {
                   <select
                     value={selectedRevokeUser}
                     onChange={(e) => handleRevokeUserChange(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-orange-500"
                   >
                     <option value="">Select a member...</option>
                     {selectedGroup.users.map((user) => (
@@ -2905,32 +2467,13 @@ export default function AdminGroups() {
                       </label>
                       {isLoadingUserAssets ? (
                         <div className="flex items-center justify-center py-8">
-                          <svg
-                            className="animate-spin h-8 w-8 text-orange-500"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            ></circle>
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
-                          </svg>
+                          <Loader2 className="animate-spin h-8 w-8 text-[#0a2e1e]" />
                         </div>
                       ) : userMachines.length > 0 ? (
                         <div className="space-y-3">
                           {/* Dropdown to select machine */}
                           <select
-                            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                            className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-orange-500"
                             onChange={(e) => {
                               const machineId = e.target.value;
                               if (
@@ -2972,8 +2515,8 @@ export default function AdminGroups() {
 
                           {/* Selected machines display */}
                           {selectedRevokeMachines.length > 0 && (
-                            <div className="border border-orange-200 rounded-lg bg-orange-50 p-3">
-                              <p className="text-xs font-medium text-orange-800 mb-2">
+                            <div className="border border-[#d4ede4] rounded-none bg-[#d4ede4] p-3">
+                              <p className="text-xs font-medium text-[#0a2e1e] mb-2">
                                 Selected Machines (
                                 {selectedRevokeMachines.length})
                               </p>
@@ -2987,7 +2530,7 @@ export default function AdminGroups() {
                                   return machine ? (
                                     <div
                                       key={machineId}
-                                      className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full text-sm border border-orange-300"
+                                      className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full text-sm border border-[#d4ede4]"
                                     >
                                       <span className="text-slate-700 font-medium">
                                         {machine.machine_name || "Unnamed"}
@@ -3003,21 +2546,9 @@ export default function AdminGroups() {
                                             ),
                                           )
                                         }
-                                        className="text-orange-600 hover:text-orange-800 hover:bg-orange-100 rounded-full p-0.5"
+                                        className="text-[#0a2e1e] hover:text-[#0a2e1e] hover:bg-[#d4ede4] rounded-full p-0.5"
                                       >
-                                        <svg
-                                          className="w-3.5 h-3.5"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M6 18L18 6M6 6l12 12"
-                                          />
-                                        </svg>
+                                        <X className="w-3.5 h-3.5" />
                                       </button>
                                     </div>
                                   ) : null;
@@ -3041,7 +2572,7 @@ export default function AdminGroups() {
                         <div className="space-y-3">
                           {/* Dropdown to select license */}
                           <select
-                            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                            className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-orange-500"
                             onChange={(e) => {
                               const licenseId = e.target.value;
                               if (
@@ -3072,8 +2603,8 @@ export default function AdminGroups() {
 
                           {/* Selected licenses display */}
                           {selectedRevokeLicenses.length > 0 && (
-                            <div className="border border-orange-200 rounded-lg bg-orange-50 p-3">
-                              <p className="text-xs font-medium text-orange-800 mb-2">
+                            <div className="border border-[#d4ede4] rounded-none bg-[#d4ede4] p-3">
+                              <p className="text-xs font-medium text-[#0a2e1e] mb-2">
                                 Selected Licenses (
                                 {selectedRevokeLicenses.length})
                               </p>
@@ -3085,7 +2616,7 @@ export default function AdminGroups() {
                                   return license ? (
                                     <div
                                       key={licenseId}
-                                      className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full text-sm border border-orange-300"
+                                      className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full text-sm border border-[#d4ede4]"
                                     >
                                       <span className="text-slate-700 font-medium">
                                         License #{license.id}
@@ -3098,21 +2629,9 @@ export default function AdminGroups() {
                                             ),
                                           )
                                         }
-                                        className="text-orange-600 hover:text-orange-800 hover:bg-orange-100 rounded-full p-0.5"
+                                        className="text-[#0a2e1e] hover:text-[#0a2e1e] hover:bg-[#d4ede4] rounded-full p-0.5"
                                       >
-                                        <svg
-                                          className="w-3.5 h-3.5"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M6 18L18 6M6 6l12 12"
-                                          />
-                                        </svg>
+                                        <X className="w-3.5 h-3.5" />
                                       </button>
                                     </div>
                                   ) : null;
@@ -3134,14 +2653,14 @@ export default function AdminGroups() {
               <div className="flex gap-3 mt-6">
                 <button
                   onClick={() => setShowRevokeModal(false)}
-                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50"
+                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50"
                   disabled={isSubmitting}
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleRevokeAssets}
-                  className="flex-1 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   disabled={
                     isSubmitting ||
                     !selectedRevokeUser ||
@@ -3150,26 +2669,7 @@ export default function AdminGroups() {
                 >
                   {isSubmitting ? (
                     <>
-                      <svg
-                        className="animate-spin h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <Loader2 className="animate-spin h-4 w-4" />
                       Revoking...
                     </>
                   ) : (

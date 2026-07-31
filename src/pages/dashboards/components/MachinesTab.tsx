@@ -29,9 +29,9 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+        <div className="bg-white p-6 rounded-none border border-[#d4ede4]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center">
               <svg
                 className="w-5 h-5 text-white"
                 fill="none"
@@ -47,19 +47,19 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
               </svg>
             </div>
             <div>
-              <div className="text-sm font-medium text-blue-700">
+              <div className="text-sm font-medium text-[#0a2e1e]">
                 Total Licenses
               </div>
-              <div className="text-2xl font-bold text-blue-900">
+              <div className="text-2xl font-bold text-[#0a2e1e]">
                 {totalLicenses.toLocaleString()}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-xl border border-emerald-200">
+        <div className="bg-white p-6 rounded-none border border-[#d4ede4]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center">
               <svg
                 className="w-5 h-5 text-white"
                 fill="none"
@@ -75,19 +75,19 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
               </svg>
             </div>
             <div>
-              <div className="text-sm font-medium text-emerald-700">
+              <div className="text-sm font-medium text-[#0a2e1e]">
                 Active/Used Licenses
               </div>
-              <div className="text-2xl font-bold text-emerald-900">
+              <div className="text-2xl font-bold text-[#0a2e1e]">
                 {consumedLicenses.toLocaleString()}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200">
+        <div className="bg-white p-6 rounded-none border border-[#d4ede4]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center">
               <svg
                 className="w-5 h-5 text-white"
                 fill="none"
@@ -103,19 +103,19 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
               </svg>
             </div>
             <div>
-              <div className="text-sm font-medium text-orange-700">
+              <div className="text-sm font-medium text-[#0a2e1e]">
                 Available
               </div>
-              <div className="text-2xl font-bold text-orange-900">
+              <div className="text-2xl font-bold text-[#0a2e1e]">
                 {availableLicenses.toLocaleString()}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
+        <div className="bg-white p-6 rounded-none border border-[#d4ede4]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center">
               <svg
                 className="w-5 h-5 text-white"
                 fill="none"
@@ -131,10 +131,10 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
               </svg>
             </div>
             <div>
-              <div className="text-sm font-medium text-purple-700">
+              <div className="text-sm font-medium text-[#0a2e1e]">
                 Utilization
               </div>
-              <div className="text-2xl font-bold text-purple-900">
+              <div className="text-2xl font-bold text-[#0a2e1e]">
                 {utilizationPercent}%
               </div>
             </div>
@@ -142,7 +142,7 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
         </div>
       </div>
 
-      <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border border-slate-200 mb-8">
+      <div className="bg-white p-6 rounded-none border border-slate-200 mb-8">
         <h4 className="text-lg font-semibold text-slate-900 mb-4">
           License Utilization Overview
         </h4>
@@ -151,13 +151,13 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
             <span className="text-sm font-medium text-slate-700">
               Overall Utilization
             </span>
-            <span className="text-lg font-bold text-emerald-800">
+            <span className="text-lg font-bold text-[#0a2e1e]">
               {utilizationPercent}%
             </span>
           </div>
           <div className="w-full bg-slate-200 rounded-full h-3">
             <div
-              className="bg-gradient-to-r from-emerald-500 to-teal-500 h-3 rounded-full"
+              className="bg-white h-3 rounded-full"
               style={{
                 width: `${Math.min(Number(utilizationPercent), 100)}%`,
               }}
@@ -166,13 +166,13 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
           <div className="grid grid-cols-3 gap-4 text-sm">
             <div className="text-center">
               <div className="font-medium text-slate-900">Utilized</div>
-              <div className="text-emerald-800 font-semibold">
+              <div className="text-[#0a2e1e] font-semibold">
                 {consumedLicenses.toLocaleString()} ({utilizationPercent}%)
               </div>
             </div>
             <div className="text-center">
               <div className="font-medium text-slate-900">Available</div>
-              <div className="text-orange-600 font-semibold">
+              <div className="text-[#0a2e1e] font-semibold">
                 {availableLicenses.toLocaleString()} (
                 {totalLicenses > 0
                   ? (100 - Number(utilizationPercent)).toFixed(1)
@@ -182,7 +182,7 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
             </div>
             <div className="text-center">
               <div className="font-medium text-slate-900">Products</div>
-              <div className="text-blue-600 font-semibold">
+              <div className="text-[#0a2e1e] font-semibold">
                 {userLicenseDetails.length}
               </div>
             </div>
@@ -190,7 +190,7 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <div className="bg-white border border-slate-200 rounded-none overflow-hidden">
         <div className="p-4 bg-slate-50 border-b border-slate-200">
           <h4 className="text-lg font-semibold text-slate-900">
             License Breakdown by Product
@@ -224,8 +224,8 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
                   usagePercent > 80
                     ? "bg-red-500"
                     : usagePercent > 60
-                      ? "bg-orange-500"
-                      : "bg-blue-500";
+                      ? "bg-[#0e7c66]"
+                      : "bg-[#0e7c66]";
 
                 return (
                   <tr key={index} className="border-t border-slate-200">
@@ -268,7 +268,7 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
             );
             setShowLicenseAuditModal(false);
           }}
-          className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-lg hover:from-emerald-600 hover:to-teal-600 transition-colors"
+          className="flex items-center justify-center gap-2 px-6 py-3 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] transition-colors"
         >
            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -282,7 +282,7 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
               "License optimization suggestions have been generated and will be sent to your email"
             )
           }
-          className="flex items-center justify-center gap-2 px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+          className="flex items-center justify-center gap-2 px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50 transition-colors"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -291,7 +291,7 @@ const MachinesTab: React.FC<MachinesTabProps> = ({
         </button>
         <button
           onClick={() => setShowLicenseAuditModal(false)}
-          className="flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors"
+          className="flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-none hover:bg-slate-200 transition-colors"
         >
           Close
         </button>

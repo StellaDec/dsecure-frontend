@@ -9,6 +9,7 @@ import {
   PageDwellLog,
   UserClickLog,
   FormActivityLog,
+  FormSubmissionLog,
   GmailConfig,
 } from '../types/emailLogger';
 
@@ -33,7 +34,8 @@ export function getGmailConfig(): GmailConfig {
 export function calculatePurchaseIntent(
   dwellLogs: PageDwellLog[],
   clicks: UserClickLog[],
-  formLogs: FormActivityLog[]
+  formLogs: FormActivityLog[],
+  formSubmissions: FormSubmissionLog[] = []
 ): { score: number; level: 'HIGH' | 'MEDIUM' | 'LOW'; pitch: string } {
   let score = 10; // Base score visitor ke liye
 
@@ -62,8 +64,10 @@ export function calculatePurchaseIntent(
     }
   });
 
-  // 3. Check Form filling progress
-  if (formLogs.length > 0) {
+  // 3. Check Form filling progress & submissions
+  if (formSubmissions.length > 0) {
+    score += 40; // High intent agar form submit kiya
+  } else if (formLogs.length > 0) {
     score += 20;
   }
 
@@ -110,6 +114,36 @@ export function formatSessionLogHtml(report: UserSessionReport): string {
         <td style="padding: 8px; border: 1px solid #ddd;">${new Date(c.timestamp).toLocaleTimeString()}</td>
       </tr>
     `
+    )
+    .join('');
+
+  const formSubmissionRows = (report.formSubmissions || [])
+    .map(
+      (fs) => `
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fs.pagePath}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fs.formId}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">
+          <pre style="margin: 0; font-size: 12px; white-space: pre-wrap; font-family: monospace;">${JSON.stringify(fs.formData, null, 2)}</pre>
+        </td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${new Date(fs.timestamp).toLocaleTimeString()}</td>
+      </tr>
+      `
+    )
+    .join('');
+
+  const typingRows = (report.formTrace || [])
+    .filter(f => f.fieldStatus === 'filled' && f.fieldValue)
+    .slice(-20) // Top 20 typing events
+    .map(
+      (ft) => `
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">${ft.formId}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${ft.fieldName}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${ft.fieldValue}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${new Date(ft.timestamp).toLocaleTimeString()}</td>
+      </tr>
+      `
     )
     .join('');
 
@@ -163,6 +197,36 @@ export function formatSessionLogHtml(report: UserSessionReport): string {
         </thead>
         <tbody>
           ${clickRows || '<tr><td colspan="3" style="padding: 8px; border: 1px solid #ddd;">No click events recorded</td></tr>'}
+        </tbody>
+      </table>
+
+      <h3 style="color: #374151;">📝 Submitted Forms Data</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: #f9fafb;">
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Page</th>
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Form ID</th>
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Captured Data</th>
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${formSubmissionRows || '<tr><td colspan="4" style="padding: 8px; border: 1px solid #ddd;">No forms submitted</td></tr>'}
+        </tbody>
+      </table>
+
+      <h3 style="color: #374151;">✍️ Form Typing (Unsubmitted Data)</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: #f9fafb;">
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Form ID</th>
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Field Name</th>
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Typed Value</th>
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${typingRows || '<tr><td colspan="4" style="padding: 8px; border: 1px solid #ddd;">No unsubmitted typing data</td></tr>'}
         </tbody>
       </table>
     </div>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const M1MacErasureIssuesBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-sky-50/30 via-sky-50/20 to-white">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "M1/M2 Mac Data Erasure: Overcoming Apple Silicon Reset Challenges",
@@ -21,17 +21,17 @@ const M1MacErasureIssuesBlog: React.FC = () => {
           })}
         />
 
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-sky-700 bg-sky-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Mac Data Erasure
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Known Issues in Erasing Apple MacBook® with M1 Chip: Solutions
                 Guide
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Learn about the known issues you might face while wiping M1 Mac
                 devices and discover effective solutions to address them.
               </p>
@@ -41,30 +41,30 @@ const M1MacErasureIssuesBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Understanding M1 Mac Erasure Challenges
               </h2>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Apple's M1 chip, introduced in November 2020, represents a
                 significant shift from Intel processors to Apple Silicon. This
                 new architecture brings enhanced performance and security, but
                 it also introduces unique challenges when erasing data from
                 these devices.
               </p>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 The M1 chip's integrated security features and different boot
                 process require specific approaches for successful data erasure.
                 Organizations and IT professionals need to understand these
                 nuances to ensure complete data sanitization.
               </p>
 
-              <div className="bg-sky-50 border border-sky-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-[#d4ede4] border border-[#d0d5dc] rounded-none p-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   {" "}
                   M1 Mac Key Differences
                 </h3>
-                <ul className="text-slate-700 text-lg leading-loose space-y-2">
+                <ul className="text-[#5a6672] text-lg leading-loose space-y-2">
                   <li>
                     • <strong>Unified Memory Architecture:</strong> Memory is
                     integrated into the chip
@@ -87,12 +87,12 @@ const M1MacErasureIssuesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-sky-600 via-blue-500 to-blue-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Issue 1: "No Such File or Directory" Error
               </h2>
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Problem Description
@@ -104,7 +104,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3"> Root Cause</h3>
                   <p className="text-white/90 leading-relaxed">
                     This error occurs due to creating an{" "}
@@ -116,7 +116,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/20 rounded-xl p-6 border border-white/30">
+                <div className="bg-white/20 rounded-none p-6 border border-white/30">
                   <h3 className="font-bold text-lg mb-3"> Solution</h3>
                   <p className="text-white leading-relaxed">
                     To wipe M1 Mac, select the <strong>'T2 & above'</strong>{" "}
@@ -130,12 +130,12 @@ const M1MacErasureIssuesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-sky-600 via-blue-500 to-blue-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Issue 2: Application Won't Run Despite Correct USB
               </h2>
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Problem Description
@@ -146,7 +146,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3"> Root Cause</h3>
                   <p className="text-white/90 leading-relaxed">
                     The application is not able to identify your Mac machine
@@ -159,12 +159,12 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/20 rounded-xl p-6 border border-white/30">
+                <div className="bg-white/20 rounded-none p-6 border border-white/30">
                   <h3 className="font-bold text-lg mb-3"> Solution</h3>
                   <p className="text-white leading-relaxed mb-3">
                     Use the full path command instead of the short command:
                   </p>
-                  <code className="block bg-slate-800 text-sky-400 px-4 py-3 rounded-lg text-sm overflow-x-auto">
+                  <code className="block bg-[#0e7c66] text-white px-4 py-3 rounded-none text-sm overflow-x-auto">
                     /volumes/dsecure/m1/dsecuredriveeraser.app/contents/macos/dsecuredriveeraser
                   </code>
                 </div>
@@ -173,12 +173,12 @@ const M1MacErasureIssuesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-purple-600 via-purple-500 to-blue-500 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Issue 3: macOS Reinstallation Fails After Erasure
               </h2>
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     {" "}
                     Problem Description
@@ -192,7 +192,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3"> Root Cause</h3>
                   <p className="text-white/90 leading-relaxed">
                     The operation can fail because some area of the drive is
@@ -201,7 +201,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/20 rounded-xl p-6 border border-white/30">
+                <div className="bg-white/20 rounded-none p-6 border border-white/30">
                   <h3 className="font-bold text-lg mb-3"> Solution</h3>
                   <p className="text-white leading-relaxed">
                     In such a scenario, you need to restore the OS through{" "}
@@ -216,44 +216,44 @@ const M1MacErasureIssuesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Preventing M1 Mac Erasure Issues: Best Practices
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-sky-50 rounded-xl p-6 border border-sky-200">
-                  <h3 className="font-bold text-sky-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0e7c66] text-lg mb-3">
                     1. Choose Correct USB Option
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-[#5a6672] leading-relaxed">
                     Always select <strong>'T2 & above'</strong> when creating
                     bootable USB for M1 Macs. Never use the 'Other' option.
                   </p>
                 </div>
-                <div className="bg-sky-50 rounded-xl p-6 border border-sky-200">
-                  <h3 className="font-bold text-sky-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0e7c66] text-lg mb-3">
                     2. Verify Mac Chip Type
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-[#5a6672] leading-relaxed">
                     Before erasure, check if your Mac has an M1 chip: Go to
                     Apple Menu → About This Mac → look for "Chip: Apple M1".
                   </p>
                 </div>
-                <div className="bg-sky-50 rounded-xl p-6 border border-sky-200">
-                  <h3 className="font-bold text-sky-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0e7c66] text-lg mb-3">
                     3. Use Full Path Commands
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-[#5a6672] leading-relaxed">
                     For M1 Macs, always use the full path command in Terminal to
                     ensure proper machine type detection.
                   </p>
                 </div>
-                <div className="bg-sky-50 rounded-xl p-6 border border-sky-200">
-                  <h3 className="font-bold text-sky-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0e7c66] text-lg mb-3">
                     4. Have Apple Configurator Ready
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-[#5a6672] leading-relaxed">
                     Keep Apple Configurator installed on another Mac in case
                     macOS reinstallation fails after erasure.
                   </p>
@@ -263,40 +263,40 @@ const M1MacErasureIssuesBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 D-Secure Mac Erasure: Complete Solution
               </h2>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
-                D-Secure <Link to="/products/drive-eraser" className="text-sky-600 hover:underline font-medium">Drive Eraser</Link> provides comprehensive support for erasing
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
+                D-Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Drive Eraser</Link> provides comprehensive support for erasing
                 M1 Mac devices, with built-in intelligence to detect chip types
                 and apply the correct erasure methods automatically.
               </p>
 
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="border-l-4 border-sky-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                     M1/M2/M3 Support
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Full support for all Apple Silicon Macs including M1, M2,
                     and M3 series.
                   </p>
                 </div>
-                <div className="border-l-4 border-sky-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                     Auto Detection
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Automatically detects Mac chip type and applies appropriate
                     erasure methods.
                   </p>
                 </div>
-                <div className="border-l-4 border-sky-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                     Audit Certificates
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Generates tamper-proof certificates for compliance and audit
                     requirements.
                   </p>
@@ -305,56 +305,15 @@ const M1MacErasureIssuesBlog: React.FC = () => {
             </div>
           </Reveal>
 
-          <Reveal>
-            <div className="bg-sky-50 border border-sky-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Frequently Asked Questions
-              </h2>
-
-              <div className="space-y-4">
-                <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
-                    How do I find if my Mac has an M1 chip?
-                  </h3>
-                  <p className="text-slate-700">
-                    Click the Apple menu → "About This Mac". If you see "Chip"
-                    followed by a name starting with "Apple M1", your Mac has an
-                    M1 chip. Intel Macs will show "Processor" with an Intel chip
-                    name instead.
-                  </p>
-                </div>
-                <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
-                    Can I use the same bootable USB for Intel and M1 Macs?
-                  </h3>
-                  <p className="text-slate-700">
-                    No. You need to create separate bootable USBs — select
-                    'Other' for Intel/T1 Macs and 'T2 & above' for M1/M2/M3
-                    Macs.
-                  </p>
-                </div>
-                <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
-                    Is data recovery possible after erasing an M1 Mac?
-                  </h3>
-                  <p className="text-slate-700">
-                    No. When properly erased using certified data erasure
-                    software like D-Secure, the data on M1 Macs is permanently
-                    destroyed and cannot be recovered by any means.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
+        <section className="py-20 bg-[#0e7c66] text-center">
           <Reveal>
             <div className="max-w-5xl mx-auto px-4">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Securely Erase Your M1 Mac with D-Secure
               </h2>
-              <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
                 Avoid common M1 Mac erasure issues with our certified solution.
                 Get automatic chip detection, proper erasure methods, and
                 audit-ready certificates.
@@ -362,13 +321,13 @@ const M1MacErasureIssuesBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-sky-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-sky-600 hover:to-blue-600 transition-all text-lg"
+                  className="inline-block bg-white text-[#0e7c66] px-8 py-4 rounded-none font-semibold hover:bg-slate-100 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>
                 <Link
                   to="/all-products"
-                  className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
+                  className="inline-block border-2 border-white text-white px-8 py-4 rounded-none font-semibold hover:bg-white/10 transition-colors text-lg"
                 >
                   View Products
                 </Link>

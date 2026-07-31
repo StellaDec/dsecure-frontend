@@ -2,6 +2,8 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { AlertTriangle, Ban, BarChart2, CheckCircle, Loader2, Search, Trash2 } from 'lucide-react';
+
 import { apiClient } from "@/utils/enhancedApiClient";
 import { authService } from "@/utils/authService";
 import { useNotification } from "@/contexts/NotificationContext";
@@ -836,7 +838,7 @@ export default function AdminLicenses() {
         {/* Header */}
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900">Platform License Distribution and Management</h1>
+            <h1 className="text-2xl font-bold text-[#0a2e1e]">Platform License Distribution and Management</h1>
             <p className="text-slate-600 mt-1">
               License distribution and management
             </p>
@@ -847,91 +849,31 @@ export default function AdminLicenses() {
             {!isSubUser && !isSuperAdmin && selectedLicenses.size > 0 && (
               <button
                 onClick={() => handleRevoke(Array.from(selectedLicenses))}
-                className="btn-danger flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-rose-600 text-white hover:bg-rose-700 transition-colors mr-2"
+                className="btn-danger flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none bg-[#0e7c66] text-white hover:bg-[#0e7c66] transition-colors mr-2"
               >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  />
-                </svg>
+                <Trash2 className="w-4 h-4" />
                 Revoke Selected ({selectedLicenses.size})
               </button>
             )}
             <button
               onClick={handleExportExcel}
               disabled={loading || exporting !== null}
-              className="btn-secondary flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {exporting === "excel" ? (
-                <svg
-                  className="animate-spin w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  ></path>
-                </svg>
+                <Loader2 className="animate-spin w-4 h-4" />
               ) : (
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+                <BarChart2 className="w-4 h-4" />
               )}
               Export to Excel
             </button>
             <button
               onClick={handleExportPDF}
               disabled={loading || exporting !== null}
-              className="btn-primary flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-[#0e7c66] text-white hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none bg-[#0e7c66] text-white hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {exporting === "pdf" ? (
-                <svg
-                  className="animate-spin w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  ></path>
-                </svg>
+                <Loader2 className="animate-spin w-4 h-4" />
               ) : (
                 <svg
                   className="w-4 h-4"
@@ -954,7 +896,7 @@ export default function AdminLicenses() {
 
         {/* Error Message */}
         {error && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
+          <div className="bg-red-50 border border-red-200 rounded-none p-4 text-red-700">
             <p className="font-medium">Error loading data</p>
             <p className="text-sm mt-1">{error}</p>
             <button
@@ -971,17 +913,17 @@ export default function AdminLicenses() {
           <SkeletonStats items={4} />
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-            <div className="card !p-6">
+            <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-slate-600">Total Licenses</p>
-                  <p className="text-3xl font-bold text-slate-900 mt-1">
+                  <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                     {licenses.total.toLocaleString()}
                   </p>
                 </div>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
                   <svg
-                    className="w-6 h-6 text-blue-600"
+                    className="w-6 h-6 text-[#0a2e1e]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -997,43 +939,31 @@ export default function AdminLicenses() {
               </div>
             </div>
 
-            <div className="card !p-6">
+            <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-slate-600">Active</p>
-                  <p className="text-3xl font-bold text-emerald-800 mt-1">
+                  <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                     {licenses.active.toLocaleString()}
                   </p>
                 </div>
-                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-emerald-800"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
+                <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                  <CheckCircle className="w-6 h-6 text-[#0a2e1e]" />
                 </div>
               </div>
             </div>
 
-            <div className="card !p-6">
+            <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-slate-600">Inactive</p>
-                  <p className="text-3xl font-bold text-orange-600 mt-1">
+                  <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                     {licenses.inactive.toLocaleString()}
                   </p>
                 </div>
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
                   <svg
-                    className="w-6 h-6 text-orange-600"
+                    className="w-6 h-6 text-[#0a2e1e]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -1049,7 +979,7 @@ export default function AdminLicenses() {
               </div>
             </div>
 
-            <div className="card !p-6">
+            <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-slate-600">Expired</p>
@@ -1057,7 +987,7 @@ export default function AdminLicenses() {
                     {licenses.expired.toLocaleString()}
                   </p>
                 </div>
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-red-100 rounded-none flex items-center justify-center">
                   <svg
                     className="w-6 h-6 text-red-600"
                     fill="none"
@@ -1075,28 +1005,16 @@ export default function AdminLicenses() {
               </div>
             </div>
 
-            <div className="card !p-6">
+            <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-slate-600">Revoked</p>
-                  <p className="text-3xl font-bold text-rose-600 mt-1">
+                  <p className="text-3xl font-bold text-[#0a2e1e] mt-1">
                     {licenses.revoked.toLocaleString()}
                   </p>
                 </div>
-                <div className="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-rose-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
-                    />
-                  </svg>
+                <div className="w-12 h-12 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                  <Ban className="w-6 h-6 text-[#0a2e1e]" />
                 </div>
               </div>
             </div>
@@ -1107,8 +1025,8 @@ export default function AdminLicenses() {
       {/* Pie Chart and Distribution Table */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Pie Chart */}
-        <div className="card !p-6">
-          <h2 className="text-lg font-semibold text-slate-900 mb-6">
+        <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-6">
+          <h2 className="text-lg font-semibold text-[#0a2e1e] mb-6">
             License Distribution
           </h2>
           {loading ? (
@@ -1132,22 +1050,19 @@ export default function AdminLicenses() {
                       {licenseDetails.map((entry, index) => {
                         // Define color palette for pie chart
                         const colorPalette = [
-                          "#10b981", // emerald
-                          "#3b82f6", // blue
-                          "#a855f7", // purple
-                          "#f97316", // orange
-                          "#6366f1", // indigo
-                          "#64748b", // slate
-                          "#ec4899", // pink
-                          "#14b8a6", // teal
+                          "#0a2e1e", // dark green
+                          "#0e7c66", // primary green
+                          "#22a689", // teal/green
+                          "#d4ede4", // light green
+                          "#a7d5c5", // soft green
                         ];
                         const colorMap: Record<string, string> = {
-                          emerald: "#10b981",
-                          blue: "#3b82f6",
-                          purple: "#a855f7",
-                          orange: "#f97316",
+                          emerald: "#0e7c66",
+                          blue: "#0a2e1e",
+                          purple: "#22a689",
+                          orange: "#d4ede4",
                           slate: "#64748b",
-                          indigo: "#6366f1",
+                          indigo: "#a7d5c5",
                         };
                         // Use color from entry if valid, otherwise use palette by index
                         const fillColor =
@@ -1168,8 +1083,8 @@ export default function AdminLicenses() {
                         if (active && payload && payload.length) {
                           const data = payload[0].payload;
                           return (
-                            <div className="bg-white p-3 border border-slate-200 shadow-lg rounded-lg">
-                              <p className="font-semibold text-slate-900">
+                            <div className="bg-white p-3 border border-slate-200 shadow-lg rounded-none">
+                              <p className="font-semibold text-[#0a2e1e]">
                                 {data.type}
                               </p>
                               <p className="text-sm text-slate-600">
@@ -1211,13 +1126,13 @@ export default function AdminLicenses() {
         </div>
 
         {/* License Breakdown Table */}
-        <div className="card !p-0 overflow-hidden flex flex-col h-full">
+        <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-0 overflow-hidden flex flex-col h-full">
           <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex-none">
-            <h2 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-[#0a2e1e]">
               License Breakdown
             </h2>
           </div>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto overflow-y-auto flex-1 max-h-[300px]">
             {loading ? (
               <SkeletonTable rows={4} columns={3} />
             ) : (
@@ -1238,12 +1153,12 @@ export default function AdminLicenses() {
                 <tbody className="bg-white divide-y divide-slate-200">
                   {licenseDetails.map((license, index) => {
                     const colors: Record<string, string> = {
-                      emerald: "bg-emerald-100 text-emerald-800",
-                      blue: "bg-blue-100 text-blue-800",
-                      purple: "bg-purple-100 text-purple-800",
-                      orange: "bg-orange-100 text-orange-800",
+                      emerald: "bg-[#d4ede4] text-[#0a2e1e]",
+                      blue: "bg-[#d4ede4] text-[#0a2e1e]",
+                      purple: "bg-[#d4ede4] text-[#0a2e1e]",
+                      orange: "bg-[#d4ede4] text-[#0a2e1e]",
                       slate: "bg-slate-100 text-slate-800",
-                      indigo: "bg-indigo-100 text-indigo-800",
+                      indigo: "bg-[#d4ede4] text-[#0a2e1e]",
                     };
 
                     return (
@@ -1255,7 +1170,7 @@ export default function AdminLicenses() {
                             {license.type}
                           </span>
                         </td>
-                        <td className="w-1/4 px-4 sm:px-6 py-4 whitespace-nowrap text-right text-xs sm:text-sm font-medium text-slate-900">
+                        <td className="w-1/4 px-4 sm:px-6 py-4 whitespace-nowrap text-right text-xs sm:text-sm font-medium text-[#0a2e1e]">
                           {license.count.toLocaleString()}
                         </td>
                         <td className="w-1/4 px-4 sm:px-6 py-4 whitespace-nowrap text-right text-xs sm:text-sm text-slate-600">
@@ -1273,7 +1188,7 @@ export default function AdminLicenses() {
           {!loading && licenseDetails.length > 0 && (
             <div className="mt-auto border-t border-slate-200 bg-slate-50">
               <table className="w-full">
-                <tbody className="font-semibold text-slate-900 border-t-2 border-slate-200">
+                <tbody className="font-semibold text-[#0a2e1e] border-t-2 border-slate-200">
                   <tr className="bg-slate-50">
                     <td className="w-1/2 px-4 sm:px-6 py-4 whitespace-nowrap text-xs sm:text-sm">
                       Total
@@ -1293,10 +1208,10 @@ export default function AdminLicenses() {
       </div>
 
       {/* Full License List Table with Filters and Actions */}
-      <div className="card !p-0 overflow-hidden">
+      <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-0 overflow-hidden">
         <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4 w-full sm:w-auto">
-            <h2 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-[#0a2e1e]">
               All Licenses
             </h2>
             <span className="text-sm text-slate-500">
@@ -1311,26 +1226,14 @@ export default function AdminLicenses() {
                 placeholder="Search licenses..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 pr-4 py-2 text-sm border border-slate-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 w-full sm:w-64"
+                className="pl-9 pr-4 py-2 text-sm border border-slate-300 rounded-none focus:ring-emerald-500 focus:border-[#0e7c66] w-full sm:w-64"
               />
-              <svg
-                className="w-4 h-4 text-slate-400 absolute left-3 top-2.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
+              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
             </div>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500"
+              className="px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-emerald-500 focus:border-[#0e7c66]"
             >
               <option value="all">All Status</option>
               <option value="active">Active</option>
@@ -1341,7 +1244,7 @@ export default function AdminLicenses() {
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
-              className="px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500"
+              className="px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-emerald-500 focus:border-[#0e7c66]"
             >
               <option value="all">All Types</option>
               {uniqueLicenseTypes.map((type) => (
@@ -1378,7 +1281,7 @@ export default function AdminLicenses() {
                         selectedLicenses.size === filteredLicenses.length
                       }
                       onChange={toggleSelectAll}
-                      className="rounded border-slate-300 text-emerald-800 focus:ring-emerald-500"
+                      className="rounded border-slate-300 text-[#0a2e1e] focus:ring-emerald-500"
                     />
                   </th>
                 )}
@@ -1407,7 +1310,7 @@ export default function AdminLicenses() {
                 displayedLicenses.map((license, index) => (
                   <tr
                     key={license.license_id || index}
-                    className={`hover:bg-slate-50 ${selectedLicenses.has(license.license_id) ? "bg-emerald-50" : ""}`}
+                    className={`hover:bg-slate-50 ${selectedLicenses.has(license.license_id) ? "bg-[#d4ede4]" : ""}`}
                   >
                     {/* ✅ RBAC: Only show checkbox column for SuperAdmin and GroupAdmin */}
                     {!isSubUser && (
@@ -1416,18 +1319,18 @@ export default function AdminLicenses() {
                           type="checkbox"
                           checked={selectedLicenses.has(license.license_id)}
                           onChange={() => toggleSelectOne(license.license_id)}
-                          className="rounded border-slate-300 text-emerald-800 focus:ring-emerald-500"
+                          className="rounded border-slate-300 text-[#0a2e1e] focus:ring-emerald-500"
                         />
                       </td>
                     )}
-                    <td className="px-4 py-3 whitespace-nowrap text-sm font-mono text-slate-900 max-w-xs overflow-x-auto custom-scrollbar">
+                    <td className="px-4 py-3 whitespace-nowrap text-sm font-mono text-[#0a2e1e] max-w-xs overflow-x-auto custom-scrollbar">
                       {license.license_key}
                     </td>
                     <td className="px-4 py-3 whitespace-nowrap text-sm text-slate-600">
                       {license.user_email || "N/A"}
                     </td>
                     <td className="px-4 py-3 whitespace-nowrap">
-                      <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                      <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-[#d4ede4] text-[#0a2e1e]">
                         {license.license_type || "N/A"}
                       </span>
                     </td>
@@ -1435,12 +1338,12 @@ export default function AdminLicenses() {
                       <span
                         className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                           license.status?.toLowerCase() === "active"
-                            ? "bg-emerald-100 text-emerald-800"
+                            ? "bg-[#d4ede4] text-[#0a2e1e]"
                             : license.status?.toLowerCase() === "expired"
                               ? "bg-red-100 text-red-800"
                               : license.status?.toLowerCase() === "revoked"
-                                ? "bg-rose-100 text-rose-800"
-                                : "bg-orange-100 text-orange-800"
+                                ? "bg-[#d4ede4] text-[#0a2e1e]"
+                                : "bg-[#d4ede4] text-[#0a2e1e]"
                         }`}
                       >
                         {/* ✅ Show IN_USE as Inactive */}
@@ -1459,7 +1362,7 @@ export default function AdminLicenses() {
                       {!isSubUser && !isSuperAdmin && (
                         <button
                           onClick={() => handleRevoke([license.license_id])}
-                          className="text-rose-600 hover:text-rose-900 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="text-[#0a2e1e] hover:text-[#0a2e1e] disabled:opacity-50 disabled:cursor-not-allowed"
                           disabled={
                             license.status?.toLowerCase() === "revoked" ||
                             license.status?.toLowerCase() === "expired"
@@ -1529,23 +1432,11 @@ export default function AdminLicenses() {
             </span>
 
             {/* Modal Panel */}
-            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div className="inline-block align-bottom bg-white rounded-none text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div className="sm:flex sm:items-start">
                   <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                    <svg
-                      className="h-6 w-6 text-red-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                      />
-                    </svg>
+                    <AlertTriangle className="h-6 w-6 text-red-600" />
                   </div>
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
                     <h2
@@ -1572,7 +1463,7 @@ export default function AdminLicenses() {
                         <textarea
                           id="reason"
                           rows={3}
-                          className="shadow-sm focus:ring-red-500 focus:border-red-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2"
+                          className="shadow-sm focus:ring-red-500 focus:border-red-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-none p-2"
                           placeholder="Enter reason..."
                           value={revokeReason}
                           onChange={(e) => setRevokeReason(e.target.value)}
@@ -1585,14 +1476,14 @@ export default function AdminLicenses() {
               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
                   type="button"
-                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  className="w-full inline-flex justify-center rounded-none border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={confirmRevoke}
                 >
                   Revoke
                 </button>
                 <button
                   type="button"
-                  className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                  className="mt-3 w-full inline-flex justify-center rounded-none border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={() => setShowRevokeModal(false)}
                 >
                   Cancel

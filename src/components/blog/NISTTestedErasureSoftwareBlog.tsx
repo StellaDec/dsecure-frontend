@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const NISTTestedErasureSoftwareBlog: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
+    <div className="min-h-screen bg-white">
       <SEOHead
         seo={getBlogSEO({
           title: "NIST-Tested Erasure Software",
@@ -31,16 +31,16 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
       />
 
       {/* Hero Section - Full Width */}
-      <section className="py-16 bg-white shadow-lg">
+      <section className="py-16 bg-white shadow-none">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
               Data Erasure Standards
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
               The Importance of NIST-Tested Data Erasure Software
             </h1>
-            <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
               Understanding why NIST-tested and approved data erasure tools set
               the gold standard for achieving failsafe, compliant data
               destruction in the modern data privacy era.
@@ -52,12 +52,12 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
       {/* Main Content - Full Width */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
             {/* Introduction */}
             <div className="space-y-6">
-              <p className="text-slate-700 leading-loose text-xl">
+              <p className="text-[#5a6672] leading-loose text-xl">
                 In the era of formalized data privacy governed by regulations
-                like <strong className="text-amber-800">GDPR and CCPA</strong>
+                like <strong className="text-[#0a2e1e]">GDPR and CCPA</strong>
                 , organizations recognize the critical need to adopt specialized
                 tools for guaranteed media sanitization aligned with data
                 protection laws. For modern IT asset managers, this brings
@@ -65,7 +65,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                 destruction — eradicating data from storage media while leaving
                 no possibilities of retrieval, breach, or leakage.
               </p>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 In this context, exceptional NIST-tested professional data
                 erasure tools set the "Gold Standard" for attaining failsafe and
                 compliant data destruction. Understanding the growing relevance
@@ -78,14 +78,14 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* Why Certified Software */}
         <Reveal>
-          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               The Rise of Certified Data Erasure Software
             </h2>
 
-            <p className="text-slate-700 leading-loose text-lg">
+            <p className="text-[#5a6672] leading-loose text-lg">
               The growth of the data destruction industry and media sanitization
-              standards like <Link to="/compliance/nist-800-88" className="text-amber-600 hover:underline font-medium">NIST 800-88</Link> testifies to the commercial need for
+              standards like <Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link> testifies to the commercial need for
               certified data erasure software that can guarantee data privacy
               and compliance. Organizations increasingly evaluate data erasure
               tools based on their ability to deliver "proven results" — whether
@@ -93,30 +93,30 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
               NIST SP 800-88 for failsafe erasure and audit requirements.
             </p>
 
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-8 mt-6">
-              <h3 className="font-bold text-slate-900 text-xl mb-4">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-8 mt-6">
+              <h3 className="font-bold text-[#0a2e1e] text-xl mb-4">
                 Key Selection Criteria for Erasure Tools
               </h3>
-              <ul className="space-y-3 text-slate-700 text-lg">
+              <ul className="space-y-3 text-[#5a6672] text-lg">
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                   Conformance to international erasure standards (NIST SP
                   800-88, DoD, etc.)
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                   Certified proof of erasure for compliance documentation
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                   Validation by competent third-party authorities
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                   Tamper-proof audit trail generation
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2.5"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                   Support for diverse storage media types
                 </li>
               </ul>
@@ -126,9 +126,9 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* The Trust Question */}
         <Reveal>
-          <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+          <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
             <h2 className="text-3xl font-bold mb-6">
-              How Do You Trust a <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Data Wiping</Link> Tool?
+              How Do You Trust a <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">Data Wiping</Link> Tool?
             </h2>
 
             <p className="leading-loose text-lg mb-6">
@@ -141,7 +141,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
             </p>
 
             <div className="space-y-6">
-              <div className="bg-white/10 rounded-xl p-6">
+              <div className="bg-white/10 rounded-none p-6">
                 <h3 className="font-bold text-lg mb-3">
                   The Validation Challenge
                 </h3>
@@ -154,7 +154,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                   data erasure techniques?
                 </p>
               </div>
-              <div className="bg-white/10 rounded-xl p-6">
+              <div className="bg-white/10 rounded-none p-6">
                 <h3 className="font-bold text-lg mb-3">
                   The Solution: Forensic Testing
                 </h3>
@@ -173,15 +173,15 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* NIST Testing Process */}
         <Reveal>
-          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               Understanding NIST Forensic Testing
             </h2>
 
-            <p className="text-slate-700 leading-loose text-lg">
+            <p className="text-[#5a6672] leading-loose text-lg">
               The National Institute of Standards and Technology (NIST) examines
-              <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">data wiping</Link> capabilities of professional erasure software based on
-              the <Link to="/compliance/nist-800-88" className="text-amber-600 hover:underline font-medium">NIST 800-88</Link> Purge Secure Erase Standard in specially designed
+              <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">data wiping</Link> capabilities of professional erasure software based on
+              the <Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link> Purge Secure Erase Standard in specially designed
               test environments. Testing is performed using the Computer
               Forensics Tool Testing (CFTT) Test Suite — a proprietary tool
               developed through NIST's CFTT Program for evaluating forensic
@@ -189,12 +189,12 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
             </p>
 
             <div className="space-y-8 mt-6">
-              <div className="border-l-4 border-amber-500 pl-8 py-2">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Test Purpose
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
-                  The testing purpose is to ascertain <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">data wiping</Link> effectiveness
+                <p className="text-[#5a6672] text-lg leading-loose">
+                  The testing purpose is to ascertain <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">data wiping</Link> effectiveness
                   per NIST guidelines to meet prevalent computer forensics
                   investigation standards. This provides independent
                   verification that software performs as claimed under
@@ -202,11 +202,11 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-amber-500 pl-8 py-2">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Test Environment
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   Testing occurs in CFTT's Federated Testing Forensic Tool
                   Testing Environment. The environment comprises desktop PCs
                   connected with multiple SATA drives, including both hard disk
@@ -216,11 +216,11 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-l-4 border-amber-500 pl-8 py-2">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Validation Scope
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   CFTT Test Suite validates that certified software performs
                   secure overwriting on all sectors, including hidden areas,
                   without any scope for retrieval. Testing covers hundreds of
@@ -234,42 +234,42 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* D-Secure Capabilities */}
         <Reveal>
-          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               D-Secure: Meeting the Gold Standard
             </h2>
 
-            <p className="text-slate-700 leading-loose text-lg">
-              D-Secure <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Drive Eraser</Link> software has been rigorously tested using
-              <Link to="/compliance/nist-800-88" className="text-amber-600 hover:underline font-medium">NIST 800-88</Link> purge wiping standard guidelines. Our solution
+            <p className="text-[#5a6672] leading-loose text-lg">
+              D-Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Drive Eraser</Link> software has been rigorously tested using
+              <Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link> purge wiping standard guidelines. Our solution
               performs secure overwriting across all storage sectors, including
               hidden areas, ensuring no possibility of data retrieval.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mt-6">
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 text-lg mb-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                   Comprehensive Coverage
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   Overwrites all accessible sectors on HDDs and SSDs, including
                   hidden areas that conventional tools may miss.
                 </p>
               </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 text-lg mb-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                   International Standards
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   Supports 24+ international erasure standards including NIST
                   800-88, DoD 5220.22-M, and IEEE 2883-2022.
                 </p>
               </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 text-lg mb-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                   Verified Results
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   Generates tamper-proof certificates and detailed reports
                   meeting forensic standards for audit compliance.
                 </p>
@@ -280,47 +280,47 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* Why NIST Testing Matters */}
         <Reveal>
-          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               Why NIST Testing Matters for Your Organization
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Regulatory Confidence
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   NIST-tested tools provide auditors and regulators with
                   confidence that your data destruction practices meet the
                   highest standards, simplifying compliance verification.
                 </p>
               </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Legal Protection
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   Using independently validated tools provides legal protection
                   by demonstrating due diligence in data destruction practices
                   should questions arise.
                 </p>
               </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Operational Reliability
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   NIST testing validates that software performs consistently
                   across different drive types and configurations, ensuring
                   reliable results in production environments.
                 </p>
               </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Global Recognition
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   NIST is globally recognized as an authority on data security
                   standards. Tools validated by NIST are accepted worldwide for
                   meeting data protection requirements.
@@ -337,11 +337,11 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
 
         {/* Conclusion */}
         <Reveal>
-          <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               Conclusion
             </h2>
-            <p className="text-slate-700 leading-loose text-lg">
+            <p className="text-[#5a6672] leading-loose text-lg">
               Organizations today shoulder unprecedented responsibility for
               handling sensitive data in a secure and compliant manner. The
               enactment of strong data protection laws obligates organizations
@@ -349,7 +349,7 @@ const NISTTestedErasureSoftwareBlog: React.FC = () => {
               Certified data erasure tools help meet compliance by providing
               documented audit trails that stand up to regulatory scrutiny.
             </p>
-            <p className="text-slate-700 leading-loose text-lg">
+            <p className="text-[#5a6672] leading-loose text-lg">
               Having certified data erasure software with credible validation
               from a competent authority responsible for defining erasure
               standards globally helps organizations revalidate media wiping

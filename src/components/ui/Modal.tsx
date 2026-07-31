@@ -33,14 +33,14 @@ const Modal: React.FC<ModalProps> = ({
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div
-        className={`bg-white rounded-xl shadow-2xl ${sizeClasses[size]} w-full max-h-[90vh] overflow-y-auto ${className}`}
+        className={`bg-white rounded-none shadow-2xl ${sizeClasses[size]} w-full max-h-[90vh] overflow-y-auto ${className}`}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-brand to-brand-600 text-white p-6 rounded-t-xl">
+        <div className="bg-gradient-to-r from-brand to-brand-600 text-white p-6 rounded-none">
           <div className="flex justify-between items-start">
             <div className="flex-1">
               <h2 className="text-2xl font-bold">{title}</h2>
-              {subtitle && <p className="mt-2 text-blue-100">{subtitle}</p>}
+              {subtitle && <p className="mt-2 text-[#d4ede4]">{subtitle}</p>}
             </div>
             {showCloseButton && (
               <button

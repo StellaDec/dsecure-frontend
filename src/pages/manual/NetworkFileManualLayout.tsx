@@ -9,7 +9,7 @@ import {
   Settings as SettingsIcon,
   Network,
   CloudUpload,
-  FileX,
+  File,
   Sparkles,
   FileText,
   Calendar,
@@ -95,7 +95,7 @@ const sidebarSections: SidebarSection[] = [
   },
   {
     id: "erasing-files",
-    icon: FileX,
+    icon: File,
     title: "Erasing Files",
     subsections: [
       { id: "erasing-files", title: "Securely Erasing Files and Folders", path: "/support/help-manual/network-file/erasing-files" },

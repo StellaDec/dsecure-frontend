@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const GDPRSevenYearsBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/20">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "GDPR: Seven Years of Data Privacy",
@@ -23,16 +23,16 @@ const GDPRSevenYearsBlog: React.FC = () => {
         />
 
         {/* Hero Section */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Data Privacy
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Seven Years of GDPR: Origins & Future Direction
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Explore the evolution of Europe's landmark data protection
                 regulation, understand how businesses adapted, and discover what
                 changes lie ahead.
@@ -44,18 +44,18 @@ const GDPRSevenYearsBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   The EU General Data Protection Regulation (EU-GDPR) or
                   Regulation (EU) 2016/679 is widely regarded as one of the most
                   comprehensive and influential data protection laws globally.
                   This landmark regulation came into effect on{" "}
-                  <strong className="text-indigo-800">May 25, 2018</strong>,
+                  <strong className="text-[#0a2e1e]">May 25, 2018</strong>,
                   now marking its seventh anniversary.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Comprising 10 chapters and 99 articles, this law addresses
                   crucial aspects of data protection including material and
                   territorial scope, data protection principles, exceptions to
@@ -68,11 +68,11 @@ const GDPRSevenYearsBlog: React.FC = () => {
 
           {/* Origin Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 The Origins of EU-GDPR
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Before EU-GDPR existed, there was the European Data Protection
                 Directive (Directive 95/46), passed in 1995. It established
                 minimum standards for protecting and securing data, upon which
@@ -81,11 +81,11 @@ const GDPRSevenYearsBlog: React.FC = () => {
                 while protecting fundamental individual rights.
               </p>
 
-              <div className="bg-indigo-50 border-l-4 border-indigo-500 p-8 rounded-r-lg mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] p-8 md:p-12 space-y-6 border-l-4 border-[#0e7c66] prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   The Landmark Case That Changed Everything
                 </h3>
-                <p className="text-slate-700 leading-loose text-lg mb-4">
+                <p className="text-[#5a6672] leading-loose text-lg mb-4">
                   One particular case highlighted the need for more
                   comprehensive data protection legislation and set the stage
                   for EU-GDPR. In 1998, an auction notice regarding Mario
@@ -94,7 +94,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
                   years later, search results for González's name on Google
                   Spain still revealed this irrelevant personal information.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   The request to remove the personal data was granted against
                   Google by the Spanish Data Protection Agency. Both the Agency
                   and the Court of Justice of the European Union (CJEU) agreed
@@ -110,11 +110,11 @@ const GDPRSevenYearsBlog: React.FC = () => {
 
           {/* Fear to Framework */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 From Uncertainty to Established Framework
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 When EU-GDPR first came into effect, organizations of all sizes
                 — from SMEs to multinational corporations — were apprehensive.
                 Smaller businesses worried about additional financial and
@@ -122,12 +122,12 @@ const GDPRSevenYearsBlog: React.FC = () => {
                 requirements restrictive. Industry surveys demonstrated that 83%
                 of organizations felt unprepared for GDPR compliance, with 53%
                 identifying the{" "}
-                <strong className="text-indigo-800">Right to Erasure</strong>{" "}
+                <strong className="text-[#0a2e1e]">Right to Erasure</strong>{" "}
                 as a major challenge.
               </p>
 
               <div className="space-y-6 mt-8">
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Concerns proved valid as problems emerged almost immediately
                   after enforcement. Complaints were filed against major
                   technology companies for unfair data collection practices,
@@ -138,21 +138,21 @@ const GDPRSevenYearsBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-slate-100 rounded-xl p-8 mt-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] p-8 md:p-12 space-y-6 border-l-4 border-[#0e7c66] prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   Seven Years of Enforcement
                 </h3>
-                <p className="text-slate-700 leading-loose text-lg mb-4">
+                <p className="text-[#5a6672] leading-loose text-lg mb-4">
                   From July 2018 through May 2025, the highest number of monthly
                   penalties imposed has been 68, with the highest monthly sum
                   reaching approximately{" "}
-                  <strong className="text-indigo-800">€1.20 billion</strong>.
+                  <strong className="text-[#0a2e1e]">€1.20 billion</strong>.
                   In 2023, Meta Platforms Ireland Limited faced the highest
                   single penalty ever — €1.2 billion — for transferring personal
                   data to the US without adhering to specific data protection
                   measures for cross-border transfers.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Fast forward seven years, and the landscape has transformed.
                   Research reveals that 54% of CISOs and CSOs now express
                   confidence in their organization's regulation compliance.
@@ -166,11 +166,11 @@ const GDPRSevenYearsBlog: React.FC = () => {
 
           {/* Standard Contractual Clauses */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Standard Contractual Clauses (SCCs)
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 The European Commission has pre-approved voluntary Standard
                 Contractual Clauses that data controllers and processors can use
                 as model data protection obligations under GDPR when
@@ -179,11 +179,11 @@ const GDPRSevenYearsBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8 mt-8">
-                <div className="border-l-4 border-indigo-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     SCCs for Controller-Processor Relationships
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Public and private entities as well as EU institutions can
                     use these SCCs for data transfers between: Controller to
                     Controller, Controller to Processor, Processor to
@@ -191,11 +191,11 @@ const GDPRSevenYearsBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-purple-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     SCCs as Data Transfer Tools
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     These clauses contain specific data protection safeguards
                     for data transferred outside the European Economic Area.
                     Data exporters can use these clauses without prior
@@ -205,11 +205,11 @@ const GDPRSevenYearsBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-violet-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Technical & Organizational Measures
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Annex III lists examples of measures ensuring appropriate
                     data security levels, including provisions for data
                     minimization, data erasure, and limited data retention.
@@ -225,7 +225,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
 
           {/* Moving Forward */}
           <Reveal>
-            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Looking Ahead: GDPR's Future
               </h2>
@@ -254,20 +254,20 @@ const GDPRSevenYearsBlog: React.FC = () => {
               </p>
               <Link
                 to="/all-products"
-                className="inline-flex items-center bg-white text-indigo-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg"
+                className="inline-flex items-center bg-white text-white px-8 py-4 rounded-none font-semibold hover:bg-gray-50 transition-colors text-lg"
               >
                 Explore D-Secure Compliance Solutions
               </Link>
             </div>
           </Reveal>
 
-          {/* <Link to="/products/drive-eraser" className="text-indigo-600 hover:underline font-medium">Data Erasure</Link> Section */}
+          {/* <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Erasure</Link> Section */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-sm border-t-2 border-indigo-100 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Achieving GDPR Compliance with D-Secure
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 The Right to Erasure remains one of the most challenging GDPR
                 requirements for organizations. D-Secure provides certified data
                 erasure solutions that help businesses meet GDPR's stringent
@@ -275,44 +275,44 @@ const GDPRSevenYearsBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-8 mt-8">
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h3 className="text-xl font-bold text-[#0a2e1e] mb-3">
                     Certified Data Destruction
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Permanently erase personal data from storage devices using
                     internationally recognized erasure standards that satisfy
                     GDPR's Right to Erasure requirements.
                   </p>
                 </div>
 
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h3 className="text-xl font-bold text-[#0a2e1e] mb-3">
                     Audit-Ready Documentation
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Generate tamper-proof certificates and detailed erasure
                     reports that demonstrate compliance during regulatory audits
                     and data protection assessments.
                   </p>
                 </div>
 
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h3 className="text-xl font-bold text-[#0a2e1e] mb-3">
                     Cross-Border Compliance
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Ensure data protection measures are maintained when
                     transferring or disposing of data-bearing devices across
                     international boundaries.
                   </p>
                 </div>
 
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h3 className="text-xl font-bold text-[#0a2e1e] mb-3">
                     Data Retention Management
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Implement secure data deletion procedures aligned with
                     GDPR's data minimization and limited retention principles.
                   </p>

@@ -1,6 +1,8 @@
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import { useState, useEffect } from 'react'
+import { ArrowLeft, Loader2 } from 'lucide-react';
+
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useNotification } from '@/contexts/NotificationContext'
 import { useAuth } from '@/auth/AuthContext'
@@ -200,28 +202,10 @@ export default function EditSubuser() {
 
   if (!userData || fetchingData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-white flex items-center justify-center p-4">
         <div className="text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
-            <svg
-              className="animate-spin h-8 w-8 text-slate-400"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              ></circle>
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              ></path>
-            </svg>
+            <Loader2 className="animate-spin h-8 w-8 text-slate-400" />
           </div>
           <p className="text-slate-600">
             {fetchingData ? "Loading user data..." : "Redirecting..."}
@@ -236,31 +220,19 @@ export default function EditSubuser() {
       {/* SEO Meta Tags */}
       <SEOHeadNative seo={getSEOForPage("edit-subuser")} />
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-4 sm:p-6">
+      <div className="min-h-screen bg-white p-4 sm:p-6">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <div className="mb-6">
             <button
               onClick={handleCancel}
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-4"
+              className="flex items-center gap-2 text-slate-600 hover:text-[#0a2e1e] mb-4"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                />
-              </svg>
+              <ArrowLeft className="w-5 h-5" />
               Back to Subusers
             </button>
 
-            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#0a2e1e]">
               Edit Subuser Profile and Update Access Permissions
             </h1>
             <p className="text-slate-600 mt-2">
@@ -269,7 +241,7 @@ export default function EditSubuser() {
           </div>
 
           {/* Form Card */}
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white rounded-none shadow-md p-6">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Email (Read-only) */}
               <div>
@@ -280,7 +252,7 @@ export default function EditSubuser() {
                   type="email"
                   value={formData.subuser_email}
                   disabled
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md bg-slate-50 text-slate-500 cursor-not-allowed"
+                  className="w-full px-4 py-2 border border-slate-300 rounded-none bg-slate-50 text-slate-500 cursor-not-allowed"
                 />
                 <p className="text-xs text-slate-500 mt-1">
                   Email cannot be changed
@@ -298,7 +270,7 @@ export default function EditSubuser() {
                   onChange={(e) =>
                     setFormData({ ...formData, subuser_name: e.target.value })
                   }
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="John Doe"
                 />
               </div>
@@ -314,7 +286,7 @@ export default function EditSubuser() {
                   onChange={(e) =>
                     setFormData({ ...formData, role: e.target.value })
                   }
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="user, manager, admin, superadmin"
                 />
               </div>
@@ -330,7 +302,7 @@ export default function EditSubuser() {
                   onChange={(e) =>
                     setFormData({ ...formData, department: e.target.value })
                   }
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="IT Operations"
                 />
               </div>
@@ -346,7 +318,7 @@ export default function EditSubuser() {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="+1 234 567 8900"
                 />
               </div>
@@ -362,24 +334,24 @@ export default function EditSubuser() {
                   onChange={(e) =>
                     setFormData({ ...formData, status: e.target.value })
                   }
-                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="active, inactive, suspended, pending"
                 />
               </div>
 
               {/* Additional Info (Read-only) */}
               {/* {userData.licenseUsage !== undefined && (
-                <div className="bg-slate-50 rounded-md p-4">
+                <div className="bg-slate-50 rounded-none p-4">
                   <h2 className="text-sm font-medium text-slate-700 mb-2">Additional Information</h2>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <span className="text-slate-500">License Usage:</span>
-                      <span className="ml-2 font-medium text-slate-900">{userData.licenseUsage}</span>
+                      <span className="ml-2 font-medium text-[#0a2e1e]">{userData.licenseUsage}</span>
                     </div>
                     {userData.created_at && (
                       <div>
                         <span className="text-slate-500">Created:</span>
-                        <span className="ml-2 font-medium text-slate-900">
+                        <span className="ml-2 font-medium text-[#0a2e1e]">
                           {new Date(userData.created_at).toLocaleDateString()}
                         </span>
                       </div>
@@ -393,37 +365,19 @@ export default function EditSubuser() {
                 <button
                   type="button"
                   onClick={handleCancel}
-                  className="px-6 py-2 border border-slate-300 rounded-md text-slate-700 hover:bg-slate-50 transition-colors"
+                  className="px-6 py-2 border border-slate-300 rounded-none text-slate-700 hover:bg-slate-50 transition-colors"
                   disabled={loading}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={loading}
                 >
                   {loading ? (
                     <span className="flex items-center gap-2">
-                      <svg
-                        className="animate-spin h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <Loader2 className="animate-spin h-4 w-4" />
                       Updating...
                     </span>
                   ) : (

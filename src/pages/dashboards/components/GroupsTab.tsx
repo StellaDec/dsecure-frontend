@@ -32,7 +32,7 @@ const GroupsTab: React.FC<GroupsTabProps> = ({
           {groupsLoading && (
             <div className="flex items-center justify-center py-12">
               <div className="text-center">
-                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#0e7c66] border-r-transparent"></div>
                 <p className="mt-4 text-sm text-slate-600">
                   Loading groups data...
                 </p>
@@ -77,7 +77,7 @@ const GroupsTab: React.FC<GroupsTabProps> = ({
                     <div className="flex items-center gap-4 flex-1">
                       <button
                         onClick={() => toggleGroup(group.id)}
-                        className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center text-white font-semibold hover:shadow-lg transition-shadow"
+                        className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center text-white font-semibold hover:shadow-lg transition-shadow"
                       >
                         {group.name.charAt(0)}
                       </button>
@@ -90,7 +90,7 @@ const GroupsTab: React.FC<GroupsTabProps> = ({
                         </p>
                       </div>
                       <div className="flex items-center gap-4">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 text-emerald-800">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#d4ede4] text-[#0a2e1e]">
                           {group.users.length} users
                         </span>
                         <span className="text-sm text-slate-500">
@@ -101,7 +101,7 @@ const GroupsTab: React.FC<GroupsTabProps> = ({
                     <div className="flex items-center gap-2 ml-4">
                       <button
                         onClick={() => toggleGroup(group.id)}
-                        className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+                        className="p-2 hover:bg-slate-100 rounded-none transition-colors"
                       >
                         <svg
                           className={`w-5 h-5 text-slate-600 transition-transform ${expandedGroups.includes(group.id) ? "rotate-180" : ""}`}
@@ -151,7 +151,7 @@ const GroupsTab: React.FC<GroupsTabProps> = ({
                             >
                               <td className="px-6 py-4 whitespace-nowrap">
                                 <div className="flex items-center gap-3">
-                                  <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                  <div className="w-8 h-8 bg-[#0e7c66] rounded-full flex items-center justify-center text-white text-sm font-semibold">
                                     {user.name.charAt(0)}
                                   </div>
                                   <span className="font-medium text-slate-900">
@@ -166,10 +166,10 @@ const GroupsTab: React.FC<GroupsTabProps> = ({
                                 <span
                                   className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                     user.role === "User"
-                                      ? "bg-blue-100 text-blue-800"
+                                      ? "bg-[#d4ede4] text-[#0a2e1e]"
                                       : user.role === "Group Admin"
-                                        ? "bg-amber-100 text-amber-800"
-                                        : "bg-purple-100 text-purple-800"
+                                        ? "bg-[#d4ede4] text-[#0a2e1e]"
+                                        : "bg-[#d4ede4] text-[#0a2e1e]"
                                   }`}
                                 >
                                   {user.role}
@@ -179,7 +179,7 @@ const GroupsTab: React.FC<GroupsTabProps> = ({
                                 <span
                                   className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                     user.license > 0
-                                      ? "bg-emerald-100 text-emerald-800"
+                                      ? "bg-[#d4ede4] text-[#0a2e1e]"
                                       : "bg-slate-100 text-slate-800"
                                   }`}
                                 >

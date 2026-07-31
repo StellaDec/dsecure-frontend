@@ -390,8 +390,8 @@ export function getRoleDisplayInfo(role: string): {
   const roleMap = {
     superadmin: {
       label: "Super Admin",
-      color: "text-purple-700",
-      bgColor: "bg-purple-100",
+      color: "text-[#0a2e1e]",
+      bgColor: "bg-[#d4ede4]",
       description: "Full system access",
     },
     administrator: {
@@ -408,14 +408,14 @@ export function getRoleDisplayInfo(role: string): {
     },
     groupadmin: {
       label: "Group Admin",
-      color: "text-indigo-700",
-      bgColor: "bg-indigo-100",
+      color: "text-[#0a2e1e]",
+      bgColor: "bg-[#d4ede4]",
       description: "Manages specific group assets",
     },
     manager: {
       label: "Manager",
-      color: "text-blue-700",
-      bgColor: "bg-blue-100",
+      color: "text-[#0a2e1e]",
+      bgColor: "bg-[#d4ede4]",
       description: "Limited management access",
     },
     user: {

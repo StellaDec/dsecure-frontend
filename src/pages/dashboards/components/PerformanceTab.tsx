@@ -23,7 +23,7 @@ const PerformanceTab: React.FC<PerformanceTabProps> = ({
     return (
       <div className="flex items-center justify-center py-12">
         <div className="text-center">
-          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#0e7c66] border-r-transparent"></div>
           <p className="mt-4 text-sm text-slate-600">
             Loading performance data...
           </p>
@@ -34,7 +34,7 @@ const PerformanceTab: React.FC<PerformanceTabProps> = ({
 
   if (erasureMetricsError || !displayErasureMetrics) {
     return (
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-12 text-center">
+      <div className="bg-white rounded-none shadow-sm border border-slate-200 p-12 text-center">
         <svg
           className="w-16 h-16 text-slate-400 mx-auto mb-4"
           fill="none"
@@ -72,7 +72,7 @@ const PerformanceTab: React.FC<PerformanceTabProps> = ({
 
       <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
         {/* Erasure Method Distribution (Pie Chart) */}
-        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col min-h-[400px]">
+        <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6 flex flex-col min-h-[400px]">
           <div className="mb-6">
             <p className="text-base md:text-lg text-slate-500 mb-2 font-medium">
               Erasure Method Breakdown

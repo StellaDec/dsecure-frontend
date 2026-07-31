@@ -73,27 +73,27 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <div className="min-h-screen bg-white">
       <SEOHead 
         seo={getSEOForPage("blog-wipe-ssd-from-bios")} 
         structuredData={[faqSchema, howToSchema]}
       />
 
       {/* Hero */}
-      <section className="py-16 bg-white shadow-lg">
+      <section className="py-16 bg-white shadow-none">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
               Technical Guide
             </span>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-6 leading-tight">
+              <span className="text-[#0e7c66]">
                 How to Wipe SSD from BIOS
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-[#5a6672] max-w-3xl mx-auto leading-relaxed">
               Learn how Secure Erase works in BIOS, its limitations, and when
               organizations should use professional data erasure software for
               compliance and audit readiness.
@@ -105,21 +105,21 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
       {/* Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
             {/* Intro */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-[#0a2e1e]">
                 1. Why SSD Data Erasure Requires Special Attention
               </h2>
 
-              <p className="text-slate-700 leading-relaxed text-lg">
+              <p className="text-[#5a6672] leading-relaxed text-lg">
                 Solid State Drives (SSDs) are widely used in laptops, desktops,
                 servers, and Mac devices due to their speed, durability, and
                 reliability. As a result, SSDs often store large volumes of
                 sensitive and confidential data.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-relaxed">
                 Before reallocating, reselling, donating, or recycling devices,
                 organizations commonly rely on the Secure Erase feature
                 available in the system BIOS. While convenient, this approach
@@ -129,18 +129,18 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
 
             {/* Secure Erase BIOS */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-[#0a2e1e]">
                 2. Using the Secure Erase Feature in BIOS
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-relaxed">
                 Secure Erase is an inbuilt functionality available in UEFI BIOS
                 that allows users to erase internal storage devices. Depending
                 on the system manufacturer, the feature may appear under
                 different names and menu locations.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-relaxed">
                 Although Secure Erase can remove user data from SSDs, it does
                 not generate erasure reports and may not address hidden areas
                 such as HPA (Host Protected Area) and DCO (Device Configuration
@@ -150,14 +150,14 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
 
             {/* BIOS Vendor Table */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-[#0a2e1e]">
                 Secure Erase Options by Manufacturer (BIOS)
               </h3>
 
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
                   <thead>
-                    <tr className="bg-slate-100">
+                    <tr className="bg-[#f4fbf8]">
                       <th className="border border-slate-300 p-3 text-left font-semibold">
                         Manufacturer
                       </th>
@@ -179,7 +179,7 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
                         SSD password must be set to enable Secure Erase
                       </td>
                     </tr>
-                    <tr className="bg-slate-50">
+                    <tr className="bg-white">
                       <td className="border border-slate-300 p-3">HP</td>
                       <td className="border border-slate-300 p-3">
                         Secure Erase / Disk Sanitizer
@@ -197,7 +197,7 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
                         No audit proof generated
                       </td>
                     </tr>
-                    <tr className="bg-slate-50">
+                    <tr className="bg-white">
                       <td className="border border-slate-300 p-3">ASUS</td>
                       <td className="border border-slate-300 p-3">
                         Secure Erase Tool
@@ -222,11 +222,11 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
 
             {/* Limitations */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-[#0a2e1e]">
                 3. Limitations of BIOS-Based Secure Erase
               </h2>
 
-              <ul className="space-y-3 text-slate-700">
+              <ul className="space-y-3 text-[#5a6672]">
                 <li>• No erasure reports or certificates are generated</li>
                 <li>• Hidden SSD areas may not be wiped</li>
                 <li>• Cannot wipe multiple drives simultaneously</li>
@@ -236,11 +236,11 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
 
             {/* Professional Erasure */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
-                4. Erasing SSDs Using Professional <Link to="/products/drive-eraser" className="text-blue-600 hover:underline font-medium">Data Wiping</Link> Software
+              <h2 className="text-2xl font-bold text-[#0a2e1e]">
+                4. Erasing SSDs Using Professional <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Wiping</Link> Software
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-relaxed">
                 Professional data erasure software like D-Secure provides a
                 scalable and compliant alternative to BIOS-based Secure Erase.
                 It supports a wide range of SSD types, including NVMe, SAS, SED,
@@ -250,14 +250,14 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
 
             {/* Comparison Table */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-[#0a2e1e]">
                 Secure Erase (BIOS) vs D-Secure Data Erasure
               </h3>
 
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
                   <thead>
-                    <tr className="bg-slate-100">
+                    <tr className="bg-[#f4fbf8]">
                       <th className="border border-slate-300 p-3">Parameter</th>
                       <th className="border border-slate-300 p-3">
                         Secure Erase (BIOS)
@@ -273,17 +273,17 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
                       <td className="border p-3">Not Guaranteed</td>
                       <td className="border p-3">Fully Erased</td>
                     </tr>
-                    <tr className="bg-slate-50">
+                    <tr className="bg-white">
                       <td className="border p-3">Erasure Standards</td>
                       <td className="border p-3">Limited</td>
-                      <td className="border p-3"><Link to="/products/drive-eraser" className="text-blue-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-blue-600 hover:underline font-medium">NIST 800-88</Link></Link>, DoD, and more</td>
+                      <td className="border p-3"><Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link></Link>, DoD, and more</td>
                     </tr>
                     <tr>
                       <td className="border p-3">Erasure Reports</td>
                       <td className="border p-3">No</td>
                       <td className="border p-3">Tamper-proof certificates</td>
                     </tr>
-                    <tr className="bg-slate-50">
+                    <tr className="bg-white">
                       <td className="border p-3">Scalability</td>
                       <td className="border p-3">Single device</td>
                       <td className="border p-3">

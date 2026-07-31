@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
+import { AlertTriangle } from 'lucide-react';
 import {
   ShieldIcon,
   ClipboardIcon,
@@ -13,26 +14,26 @@ import {
 
 const MacM1ErasureKnownIssues: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <div className="min-h-screen bg-white">
       <SEOHead seo={getSEOForPage("blog-mac-m1-erasure-known-issues")} />
 
       {/* Hero Section */}
-      <section className="py-16 bg-white shadow-lg">
+      <section className="py-16 bg-white shadow-none">
         <Reveal>
           <div className="text-center px-6">
-            <span className="inline-block px-4 py-1 text-sm font-medium text-slate-700 bg-slate-100 rounded-full mb-4">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
               Technical Support Guide
             </span>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
+              <span className="text-[#0e7c66]">
                 Known Issues While Erasing
               </span>
               <br />
               Apple MacBooks with M-Series Chips
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
               A practical guide to common challenges faced during data erasure
               on Apple MacBooks with M1, M2, and M3 chips and how to resolve
               them effectively.
@@ -44,14 +45,14 @@ const MacM1ErasureKnownIssues: React.FC = () => {
       {/* Main Content */}
       <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
         <Reveal>
-          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
             {/* Section 1 */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 1. Why Erasing M-Series MacBooks Is Different
               </h2>
 
-              <p className="text-slate-700 leading-relaxed text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Apple MacBooks powered by M-series chips are built with advanced
                 security protections similar to those found in mobile devices.
                 These systems include features such as Secure Enclave, full-disk
@@ -59,7 +60,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
                 safeguards.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Another important difference is that storage in these MacBooks
                 is soldered directly onto the motherboard. This means the drive
                 cannot be physically removed and erased separately, making
@@ -70,24 +71,24 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
             {/* Section 2 */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 2. Preparing a Mac-Compatible Erasure Environment
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
-                D-Secure supports <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">secure erasure</Link> of Apple Mac devices running on
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
+                D-Secure supports <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">secure erasure</Link> of Apple Mac devices running on
                 M1, M2, and M3 chips, as well as older systems based on T2, T1,
                 and Intel processors.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 To erase a Mac device, users must create a bootable USB using
                 the D-Secure USB Creator utility available from the cloud
                 console. While creating the boot media, selecting the correct
                 Mac hardware type is critical.
               </p>
 
-              <ul className="space-y-2 text-slate-700">
+              <ul className="space-y-4 text-[#5a6672] text-lg mb-6">
                 <li>
                   <strong>T2 & Above:</strong> For M3, M2, M1, and T2-based Macs
                 </li>
@@ -99,28 +100,29 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
             {/* Issue 1 */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 3. Issue: “No Such File or Directory” Error
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Some users encounter an error message stating that the
                 application cannot be found when attempting to run the erasure
                 command from the Terminal.
               </p>
 
-              <div className="p-5 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg">
-                <strong className="block text-amber-800 mb-1">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3 flex items-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-[#0a2e1e]" />
                   Root Cause
-                </strong>
-                <p className="text-sm text-amber-700">
+                </h3>
+                <p className="text-[#5a6672]">
                   This typically happens when an incompatible bootable USB is
                   created by selecting the option meant for older Mac hardware
                   instead of M-series devices.
                 </p>
               </div>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 <strong>Resolution:</strong> Recreate the bootable USB by
                 selecting the <em>T2 & Above</em> option to ensure compatibility
                 with M-series MacBooks.
@@ -129,19 +131,22 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
             {/* Issue 2 */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 4. Issue: Application Does Not Launch After Boot
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 In some cases, even after using the correct USB, the application
                 may fail to identify the Mac hardware type when launched using
                 the standard command.
               </p>
 
-              <div className="p-5 bg-slate-50 border border-slate-200 rounded-lg">
-                <strong className="block mb-2">Recommended Fix</strong>
-                <p className="text-sm text-slate-700">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3 flex items-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-[#0a2e1e]" />
+                  Recommended Fix
+                </h3>
+                <p className="text-[#5a6672]">
                   Use the full executable path specific to M-series Macs when
                   running the command from the Terminal. This ensures proper
                   hardware detection and application launch.
@@ -151,29 +156,30 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
             {/* Issue 3 */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 5. Issue: macOS Reinstallation Failure After Erasure
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 After a successful erasure, macOS must be reinstalled before the
                 device can be reused. Occasionally, the reinstallation process
                 fails with an error indicating that the erase operation could
                 not be completed.
               </p>
 
-              <div className="p-5 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
-                <strong className="block text-red-800 mb-1">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3 flex items-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-[#0a2e1e]" />
                   Why This Happens
-                </strong>
-                <p className="text-sm text-red-700">
+                </h3>
+                <p className="text-[#5a6672]">
                   Some portions of the storage may still be in use by low-level
                   system processes, preventing the installer from completing the
                   operation.
                 </p>
               </div>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 <strong>Resolution:</strong> Restore the operating system using
                 Apple’s official device restoration utility. This method
                 performs a deeper system recovery and allows macOS to be
@@ -183,17 +189,17 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
             {/* Summary */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 6. Final Notes for IT Teams and Businesses
               </h2>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 These issues are common when erasing Apple MacBooks with modern
                 security architecture. Most problems can be resolved by using
                 the correct boot media, commands, and recovery procedures.
               </p>
 
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Following the recommended steps ensures that data is securely
                 erased and devices are safely prepared for reuse, resale, or
                 redeployment.
@@ -204,22 +210,22 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
         {/* D-Secure Section */}
         <Reveal>
-          <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
               Secure Apple Device Erasure with D-Secure
             </h2>
 
-            <p className="text-slate-700 leading-relaxed mb-6">
+            <p className="text-[#5a6672] leading-relaxed mb-6">
               D-Secure provides certified, Mac-compatible data erasure that
               aligns with modern Apple security requirements while delivering
               audit-ready documentation.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border">
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-none border">
                 <div className="flex items-center gap-2 mb-3">
                   <ShieldIcon className="w-5 h-5 text-slate-700" filled />
-                  <h3 className="font-bold">Apple-Compatible Erasure</h3>
+                  <h3 className="font-bold text-[#0e7c66]">Apple-Compatible Erasure</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Designed to work with M-series, T-series, and Intel-based Mac
@@ -227,13 +233,13 @@ const MacM1ErasureKnownIssues: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border">
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-none border">
                 <div className="flex items-center gap-2 mb-3">
                   <ClipboardIcon className="w-5 h-5 text-slate-700" filled />
-                  <h3 className="font-bold">Compliance Documentation</h3>
+                  <h3 className="font-bold text-[#0e7c66]">Compliance Documentation</h3>
                 </div>
                 <p className="text-sm text-slate-600">
-                  Generates <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">secure erasure</Link> reports for <Link to="/solutions/itad" className="text-amber-600 hover:underline font-medium">ITAD</Link>, audit, and internal
+                  Generates <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">secure erasure</Link> reports for <Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link>, audit, and internal
                   compliance needs.
                 </p>
               </div>
@@ -243,9 +249,9 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
         {/* CTA */}
         <Reveal>
-          <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 mt-8 text-white">
+          <div className="bg-[#0e7c66] p-8 md:p-12 mt-12 text-white">
             <h2 className="text-2xl font-bold mb-4">
-              Simplify Apple Device <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Data Erasure</Link>
+              Simplify Apple Device <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">Data Erasure</Link>
             </h2>
             <p className="leading-relaxed mb-6">
               Use the right tools and procedures to avoid delays, errors, and
@@ -254,7 +260,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
 
             <Link
               to="/all-products"
-              className="inline-flex items-center bg-white text-slate-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition shadow-lg"
+              className="inline-flex items-center bg-white text-slate-800 px-6 py-3 rounded-none font-semibold hover:bg-gray-50 transition shadow-lg"
             >
               <HoverIcon>
                 {(filled) => (

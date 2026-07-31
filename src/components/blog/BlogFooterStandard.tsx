@@ -11,6 +11,8 @@ import EnquiryForm from './EnquiryForm';
 import EngagementSection from './EngagementSection';
 import ProductInternalLinks, { PRODUCT_LINKS } from "../ProductInternalLinks";
 import StandardDeepDive from "./StandardDeepDive";
+import { ThemeSection } from '@/components/ui/Theme';
+import ThemeAwareLogoFooter from '@/components/ThemeAwareLogoFooter';
 
 interface BlogFooterStandardProps {
   blogId: string;
@@ -68,40 +70,46 @@ const BlogFooterStandard: React.FC<BlogFooterStandardProps> = ({
   return (
     <div className="w-full">
       {/* Standard Deep Dive Content Expansion */}
-      <section className="px-4 md:px-8 lg:px-16 pb-12">
-        <StandardDeepDive category={category} blogTitle={blogTitle} blogId={blogId} />
-      </section>
+      <ThemeSection>
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <StandardDeepDive category={category} blogTitle={blogTitle} blogId={blogId} />
+        </div>
+      </ThemeSection>
 
       {/* Related Products - SEO Internal Linking */}
       <ProductInternalLinks links={relatedProducts} heading={`Solutions for ${category || 'Your Enterprise'}`} />
 
       {/* Expert Solution Section - High intent CTA */}
-      <section className="px-4 md:px-8 lg:px-16 py-12">
-        <Reveal>
-          <ExpertSolutionSection 
-            productLink={productInfo.link} 
-            productLabel={productInfo.label} 
-          />
-        </Reveal>
-      </section>
+      <ThemeSection alternate>
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Reveal>
+            <ExpertSolutionSection 
+              productLink={productInfo.link} 
+              productLabel={productInfo.label} 
+            />
+          </Reveal>
+        </div>
+      </ThemeSection>
 
       {/* Related Articles - Internal Linking */}
-      <section className="px-4 md:px-8 lg:px-16 py-12 bg-white">
-        <Reveal>
-          <RelatedArticles 
-            currentPostId={blogId} 
-            category={category} 
-            tag={tag} 
-          />
-        </Reveal>
-      </section>
+      <ThemeSection>
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Reveal>
+            <RelatedArticles 
+              currentPostId={blogId} 
+              category={category} 
+              tag={tag} 
+            />
+          </Reveal>
+        </div>
+      </ThemeSection>
 
       {/* FAQ, Engagement & Comments */}
-      <section className="px-4 md:px-8 lg:px-16 py-12 bg-slate-50/50">
-        <div className="max-w-7xl mx-auto">
+      <ThemeSection alternate>
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           {/* Engagement (Likes/Dislikes) */}
           <Reveal>
-            <div className="mb-12 border-b border-slate-200 pb-8">
+            <div className="mb-12 border-b border-[#d0d5dc] pb-8">
               <EngagementSection blogId={blogId} />
             </div>
           </Reveal>
@@ -128,7 +136,22 @@ const BlogFooterStandard: React.FC<BlogFooterStandardProps> = ({
             </Reveal>
           </div>
         </div>
-      </section>
+      </ThemeSection>
+      
+      {/* Footer Branding Area */}
+      {/* 
+      <ThemeSection>
+        <div className="max-w-4xl mx-auto text-center px-4 py-12 bg-[#0e7c66] border border-[#0e7c66] rounded-none shadow-xl">
+          <Reveal>
+            <ThemeAwareLogoFooter className="mx-auto mb-6" size="lg" />
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Secure Your Data Lifecycle</h2>
+            <p className="text-[#d4ede4] text-lg mb-0 max-w-2xl mx-auto">
+              Trusted by global enterprises for zero-leakage data sanitization.
+            </p>
+          </Reveal>
+        </div>
+      </ThemeSection>
+      */}
     </div>
   );
 };

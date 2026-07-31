@@ -130,7 +130,7 @@ export default function EditGroup() {
 
   if (groupNotFound) {
     return (
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Error: Organization Group Not Found</h2>
           <p className="text-slate-600 mb-6">The group you're looking for doesn't exist.</p>
@@ -150,7 +150,7 @@ export default function EditGroup() {
       {/* SEO Meta Tags */}
       <SEOHeadNative seo={getSEOForPage("edit-group")} />
 
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div className="flex-1 min-w-0">
@@ -177,7 +177,7 @@ export default function EditGroup() {
         <div className="max-w-2xl mx-auto">
           {isLoading && !formData.name ? (
             <div className="card p-8 text-center">
-              <div className="animate-spin w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+              <div className="animate-spin w-8 h-8 border-4 border-[#0e7c66] border-t-transparent rounded-none mx-auto mb-4"></div>
               <p className="text-slate-600">Loading group details...</p>
             </div>
           ) : (
@@ -200,7 +200,7 @@ export default function EditGroup() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     placeholder="Enter group name"
                   />
                 </div>
@@ -216,7 +216,7 @@ export default function EditGroup() {
                     onChange={handleInputChange}
                     required
                     rows={3}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     placeholder="Describe the purpose of this group"
                   />
                 </div>
@@ -233,7 +233,7 @@ export default function EditGroup() {
                     onChange={handleInputChange}
                     min="1"
                     max="1000"
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                   />
                   <p className="text-sm text-slate-500 mt-1">Number of licenses allocated to this group</p>
                 </div>
@@ -251,7 +251,7 @@ export default function EditGroup() {
                           id={permission.id}
                           checked={formData.permissions.includes(permission.id)}
                           onChange={(e) => handlePermissionChange(permission.id, e.target.checked)}
-                          className="mt-1 rounded border-slate-300 text-emerald-800 focus:ring-emerald-500"
+                          className="mt-1 rounded border-slate-300 text-[#0a2e1e] focus:ring-emerald-500"
                         />
                         <div className="flex-1">
                           <label htmlFor={permission.id} className="text-sm font-medium text-slate-700 cursor-pointer">
@@ -266,13 +266,13 @@ export default function EditGroup() {
 
                 {/* Selected Permissions Summary */}
                 {formData.permissions.length > 0 && (
-                  <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                    <h3 className="text-sm font-medium text-emerald-800 mb-2">Selected Permissions:</h3>
+                  <div className="bg-[#d4ede4] border border-[#d4ede4] rounded-lg p-4">
+                    <h3 className="text-sm font-medium text-[#0a2e1e] mb-2">Selected Permissions:</h3>
                     <div className="flex flex-wrap gap-2">
                       {formData.permissions.map(permissionId => {
                         const permission = availablePermissions.find(p => p.id === permissionId)
                         return (
-                          <span key={permissionId} className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                          <span key={permissionId} className="inline-flex items-center px-2 py-1 rounded-none text-xs font-medium bg-[#d4ede4] text-[#0a2e1e]">
                             {permission?.name}
                           </span>
                         )

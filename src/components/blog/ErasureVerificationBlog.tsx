@@ -7,20 +7,20 @@ import { Link } from "react-router-dom";
 
 const ErasureVerificationBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-teal-50/20 via-emerald-50/10 to-slate-50">
+      <div className="min-h-screen bg-white">
         <SEOHead seo={getSEOForPage("blog-erasure-verification-process")} />
 
         {/* Hero Section */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Data Erasure
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 NIST-Compliant Erasure Verification Process Explained
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Understand how D-Secure performs NIST-compliant erasure
                 verification to ensure complete data sanitization and regulatory
                 compliance.
@@ -32,20 +32,20 @@ const ErasureVerificationBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
-                  D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> software helps organizations comply with
+                <p className="text-[#5a6672] leading-loose text-xl">
+                  D-Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Drive Eraser</Link> software helps organizations comply with
                   data privacy regulations such as{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-[#0a2e1e]">
                     EU-GDPR, CCPA, SOX, and HIPAA
                   </strong>{" "}
                   by permanently wiping data when it is no longer required or
                   when storage devices are upgraded, repurposed, or
                   decommissioned.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   After data erasure, the software performs verification to
                   ensure complete data sanitization, including from hidden areas
                   such as the Host Protected Area (HPA), Device Configuration
@@ -54,12 +54,12 @@ const ErasureVerificationBlog: React.FC = () => {
               </div>
 
               {/* NIST Guidelines */}
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h2 className="font-bold text-slate-900 text-xl mb-4">
-                  <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Requirements
+              <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-8 rounded-none mt-8">
+                <h2 className="font-bold text-[#0a2e1e] text-xl mb-4">
+                  <Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link> Requirements
                 </h2>
-                <p className="text-slate-700 leading-loose text-lg">
-                  According to <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link> Guidelines for Media Sanitization,
+                <p className="text-[#5a6672] leading-loose text-lg">
+                  According to <Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link> Guidelines for Media Sanitization,
                   verification must be performed on the device to ensure that
                   target data was effectively removed. Verifying sanitized
                   information is an essential component of the data disposal
@@ -71,17 +71,17 @@ const ErasureVerificationBlog: React.FC = () => {
 
           {/* NIST Verification Methods */}
           <Reveal>
-            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 NIST-Prescribed Verification Methods
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 NIST Section 4.7 prescribes two methods to verify media
                 sanitization:
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
-                <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl p-6 text-white">
+                <div className="bg-[#0e7c66] rounded-none p-6 text-white">
                   <h3 className="font-bold text-lg mb-3">Full Verification</h3>
                   <p className="text-white/90 leading-relaxed">
                     Requires reading all values in user-accessible areas and
@@ -89,7 +89,7 @@ const ErasureVerificationBlog: React.FC = () => {
                     complete assurance of thorough data sanitization.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-6 text-white">
+                <div className="bg-[#0e7c66] rounded-none p-6 text-white">
                   <h3 className="font-bold text-lg mb-3">
                     Representative Sampling
                   </h3>
@@ -101,11 +101,11 @@ const ErasureVerificationBlog: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-slate-100 rounded-xl p-8 mt-8">
-                <h2 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] p-8 md:p-12 space-y-6 border-l-4 border-[#0e7c66] prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                <h2 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   Secondary Verification Requirement
                 </h2>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   NIST Section 4.7.3 states that in addition to verifying each
                   media device individually, a randomly selected subset of
                   sanitized media must undergo secondary verification using a
@@ -120,13 +120,13 @@ const ErasureVerificationBlog: React.FC = () => {
 
           {/* D-Secure Verification Options */}
           <Reveal>
-            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 D-Secure Verification Options
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
-                D-Secure <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium">Drive Eraser</Link> is NIST-tested software under the Computer
+              <p className="text-[#5a6672] leading-loose text-lg">
+                D-Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Drive Eraser</Link> is NIST-tested software under the Computer
                 Forensics Tool Testing (CFTT) Federated Testing program, which
                 verifies its overwriting capabilities. The software provides
                 three verification options that must be selected prior to the
@@ -134,23 +134,23 @@ const ErasureVerificationBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8 mt-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Total Verification (100%)
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     This method verifies 100% of the drive and aligns with the
-                    Full Verification approach specified in <Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link>
+                    Full Verification approach specified in <Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link>
                     guidelines. This is the default verification method for NIST
                     Clear and Purge standards.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Random Verification (20%)
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     This method verifies 20% of the drive and meets the
                     requirements of Representative Sampling. While faster, this
                     verification is advisable primarily for drives containing
@@ -158,11 +158,11 @@ const ErasureVerificationBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Minimal Verification (1%)
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     When No Verification option is selected, only 1% of the
                     drive is verified. This option is not recommended for
                     sensitive data but may be suitable for specific use cases.
@@ -170,11 +170,11 @@ const ErasureVerificationBlog: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-emerald-50 border-l-4 border-emerald-500 p-8 rounded-r-lg mt-8">
-                <h2 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-8 rounded-none mt-8">
+                <h2 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   Recommendation
                 </h2>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   We highly recommend choosing Total Verification even when
                   using standards other than NIST for wiping drives. While
                   businesses may choose random verification to speed up the
@@ -187,12 +187,12 @@ const ErasureVerificationBlog: React.FC = () => {
 
           {/* How Verification Works */}
           <Reveal>
-            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 How the Verification Process Works
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 The verification process involves re-reading data after it has
                 been overwritten and comparing results with the overwriting
                 pattern used to confirm successful erasure. The software
@@ -201,14 +201,14 @@ const ErasureVerificationBlog: React.FC = () => {
 
               <div className="space-y-6 mt-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#0e7c66] rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                     1
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                       Data Overwriting
                     </h3>
-                    <p className="text-slate-700 text-lg leading-relaxed">
+                    <p className="text-[#5a6672] text-lg leading-relaxed">
                       Data erasure begins using the chosen algorithm and drive
                       type. For example, NIST Clear recommends overwriting SCSI
                       HDD using a single pass overwrite method with a fixed
@@ -218,14 +218,14 @@ const ErasureVerificationBlog: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#0e7c66] rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                     2
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                       Data Re-Reading
                     </h3>
-                    <p className="text-slate-700 text-lg leading-relaxed">
+                    <p className="text-[#5a6672] text-lg leading-relaxed">
                       Once the drive has been overwritten, the software scans
                       the drive again to compare the overwritten data with the
                       expected pattern.
@@ -234,14 +234,14 @@ const ErasureVerificationBlog: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#0e7c66] rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                     3
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-lg mb-2">
+                    <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                       Block & Sector Verification
                     </h3>
-                    <p className="text-slate-700 text-lg leading-relaxed">
+                    <p className="text-[#5a6672] text-lg leading-relaxed">
                       The software checks each block and sector on the drive to
                       ensure complete data is replaced by the overwriting
                       pattern. If discrepancies are found between expected and
@@ -251,7 +251,7 @@ const ErasureVerificationBlog: React.FC = () => {
                 </div>
               </div>
 
-              <p className="text-slate-700 leading-loose text-lg mt-8">
+              <p className="text-[#5a6672] leading-loose text-lg mt-8">
                 This systematic approach ensures no data remnants are left
                 behind, providing businesses with confidence in the data erasure
                 process and fulfilling algorithm verification requirements.
@@ -259,11 +259,11 @@ const ErasureVerificationBlog: React.FC = () => {
             </div>
           </Reveal>{/* Final Thoughts */}
           <Reveal>
-            <div className="bg-white rounded-xl border-2 border-teal-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Key Takeaways
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Erasure verification is a vital component of the data
                 sanitization process, ensuring sensitive information is
                 permanently removed and irrecoverable. D-Secure incorporates
@@ -271,7 +271,7 @@ const ErasureVerificationBlog: React.FC = () => {
                 to meet regulatory compliance, mitigate risks, establish trust
                 in data disposal processes, and achieve absolute data security.
               </p>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 As data privacy regulations continue to evolve, implementing a
                 thorough erasure verification strategy will be essential for
                 organizations looking to maintain compliance and protect their

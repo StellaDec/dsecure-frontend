@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const DataErasureDisasterRecoveryBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
+      <div className="min-h-screen bg-white">
         {/* SEO: Compliance ke liye optimized title aur description set kiya */}
         <SEOHead
           seo={getBlogSEO({
@@ -25,23 +25,23 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
           })}
         />
 
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Business Continuity
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Role of{" "}
                 <Link
                   to="/products/drive-eraser"
-                  className="text-rose-600 hover:underline font-medium"
+                  className="text-[#0e7c66] hover:underline font-medium"
                 >
                   Data Erasure
                 </Link>{" "}
                 in Disaster Recovery Planning
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 A comprehensive disaster recovery plan must address data erasure
                 practices to prevent breaches — understand why secure data
                 destruction is critical for business continuity.
@@ -52,11 +52,11 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 What is a Disaster Recovery Plan (DRP)?
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 A disaster recovery plan is a set of written guidelines that
                 help businesses respond quickly and effectively when disaster
                 strikes — reducing damage and quickly resuming operations. Such
@@ -64,11 +64,11 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                 with maximum allowed downtime, and the tools and resources
                 necessary to restore functionality in minimal time.
               </p>
-              <div className="bg-gradient-to-r from-rose-50 to-pink-50 border-l-4 border-rose-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-white border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   Why DRP Matters
                 </h3>
-                <p className="text-lg text-slate-700 leading-loose">
+                <p className="text-lg text-[#5a6672] leading-loose">
                   By planning in advance and aligning the right approach to
                   overcome IT disruptions to networks, servers, computers,
                   laptops, and mobile devices, organizations can withstand their
@@ -79,22 +79,22 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Why Data Erasure is Critical in DRP
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 The possibility of unauthorized access to company data is higher
                 when disaster hits. While organizations are preoccupied with
                 getting business up and running, they shouldn't forget to wipe
                 data on devices destroyed or damaged during the disaster — this
                 prevents undue exposure of data falling into wrong hands.
               </p>
-              <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                <h3 className="font-bold text-red-700 text-xl mb-3">
+              <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   The Hidden Risk
                 </h3>
-                <p className="text-slate-700 text-lg leading-relaxed">
+                <p className="text-[#5a6672] text-lg leading-relaxed">
                   Organizations must integrate data erasure in their disaster
                   recovery plan to prevent any data from getting compromised,
                   ultimately leading to data breaches. Failure to address this
@@ -107,15 +107,15 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 6 Key Considerations for Data Erasure in DRP
               </h2>
 
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       1
                     </span>
                     <div>
@@ -133,9 +133,9 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       2
                     </span>
                     <div>
@@ -152,9 +152,9 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       3
                     </span>
                     <div>
@@ -170,9 +170,9 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       4
                     </span>
                     <div>
@@ -189,9 +189,9 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       5
                     </span>
                     <div>
@@ -208,9 +208,9 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start gap-4">
-                    <span className="bg-white text-rose-800 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
                       6
                     </span>
                     <div>
@@ -221,7 +221,7 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                         Ensure{" "}
                         <Link
                           to="/products/drive-eraser"
-                          className="text-rose-600 hover:underline font-medium"
+                          className="text-white hover:underline font-medium"
                         >
                           data wiping
                         </Link>{" "}
@@ -237,21 +237,21 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Physical Destruction vs. Software Erasure
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Disaster-stricken organizations often prefer physical
                 destruction methods such as shredding. While effective, this
                 approach has significant drawbacks:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-                  <h3 className="font-bold text-red-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Physical Destruction Drawbacks
                   </h3>
-                  <ul className="text-slate-700 text-lg leading-relaxed space-y-2">
+                  <ul className="text-[#5a6672] text-lg leading-relaxed space-y-2">
                     <li>
                       • May leave chances of forensic data recovery from
                       inadequately shredded media
@@ -269,11 +269,11 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                     <li>• Renders devices completely unusable</li>
                   </ul>
                 </div>
-                <div className="bg-rose-50 rounded-xl p-6 border border-rose-200">
-                  <h3 className="font-bold text-rose-700 text-xl mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Software Erasure Benefits
                   </h3>
-                  <ul className="text-slate-700 text-lg leading-relaxed space-y-2">
+                  <ul className="text-[#5a6672] text-lg leading-relaxed space-y-2">
                     <li>
                       • Logical overwriting ensures complete data destruction
                     </li>
@@ -288,46 +288,46 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Data Protection Throughout Lifecycle
               </h2>
-              <p className="text-lg text-slate-700 leading-loose mb-6">
+              <p className="text-lg text-[#5a6672] leading-loose mb-6">
                 Disaster recovery planning must address data protection
                 throughout the entire data lifecycle by devising best practices
                 for data destruction through a well-defined policy:
               </p>
               <div className="space-y-6">
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Active Data
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Data currently being accessed and used by applications —
                     requiring secure backup and controlled access during
                     disasters.
                   </p>
                 </div>
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     Data at Rest
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Data stored on devices not currently in use — requiring
                     <Link
                       to="/products/drive-eraser"
-                      className="text-rose-600 hover:underline font-medium"
+                      className="text-[#0e7c66] hover:underline font-medium"
                     >
                       secure erasure
                     </Link>{" "}
                     before disposal or recycling of damaged equipment.
                   </p>
                 </div>
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-rose-700 text-xl mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
                     End-of-Life Data
                   </h3>
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Data on devices being retired or destroyed post-disaster —
                     requiring complete sanitization with proof of destruction.
                   </p>
@@ -337,32 +337,32 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-rose-50 border border-rose-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Key Takeaways
               </h2>
-              <p className="text-lg text-slate-700 leading-loose">
+              <p className="text-lg text-[#5a6672] leading-loose">
                 Stay a step ahead and plan well for disasters through a
                 well-laid Disaster Recovery Plan that defines data erasure
                 protocols and procedures to safeguard the organization from
                 potential risks of data leakage.
               </p>
-              <ul className="space-y-4 text-slate-700 text-lg leading-loose mt-4">
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+              <ul className="space-y-4 text-[#5a6672] text-lg leading-loose mt-4">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Integrate data erasure practices into your DRP to prevent data
                   breaches
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Formulate clear data destruction policies for all media types
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Use automated erasure tools with NIST and DoD compliance
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Software erasure is more eco-friendly than physical
                   destruction
                 </li>
-                <li className="border-l-4 border-rose-500 pl-8 py-2">
+                <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Generate tamper-proof certificates for regulatory compliance
                 </li>
               </ul>
@@ -370,13 +370,13 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
+        <section className="py-20 bg-[#0e7c66] text-center">
           <Reveal>
             <div className="max-w-5xl mx-auto px-4">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Secure Your Disaster Recovery with D-Secure
               </h2>
-              <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
                 D-Secure provides professional data erasure tools for disaster
                 recovery planning — ensuring no data is left on damaged or
                 retired devices with 100% verifiable audit trails.
@@ -384,13 +384,13 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-rose-600 hover:to-pink-600 transition-all text-lg"
+                  className="inline-block bg-white text-[#0e7c66] px-8 py-4 rounded-none font-semibold hover:bg-slate-100 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>
                 <Link
                   to="/all-products"
-                  className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
+                  className="inline-block border-2 border-white text-white px-8 py-4 rounded-none font-semibold hover:bg-white/10 transition-colors text-lg"
                 >
                   View Products
                 </Link>

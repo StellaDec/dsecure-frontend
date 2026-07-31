@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const LooseDrivesErasureGuideBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50/20">
+      <div className="min-h-screen bg-white">
         {/* SEO: Page 4 — Loose Drives Erasure Guide ke liye optimized title aur description */}
         <SEOHead
           seo={getBlogSEO({
@@ -25,27 +25,27 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
         />
 
         {/* Hero Section - Full Width */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 <Link
                   to="/products/drive-eraser"
-                  className="text-blue-600 hover:underline font-medium"
+                  className="text-[#0e7c66] hover:underline font-medium"
                 >
                   Data Erasure
                 </Link>
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 <Link
                   to="/products/drive-eraser"
-                  className="text-blue-600 hover:underline font-medium"
+                  className="text-[#0e7c66] hover:underline font-medium"
                 >
                   Loose Drive Erasure
                 </Link>
                 : Complete Guide for ITAD Operators
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Protect your organization from data breaches by properly
                 sanitizing loose drives from data centers, printers, and
                 decommissioned devices before disposal or resale.
@@ -57,12 +57,12 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   Loose drives refer to{" "}
-                  <strong className="text-blue-800">
+                  <strong className="text-[#0a2e1e]">
                     any data storage drives removed from their original host
                     devices
                   </strong>{" "}
@@ -72,7 +72,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   drives. During IT asset refresh cycles, data centers discard
                   bulk drives that are sometimes sold in the secondary market.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   If these drives are not properly wiped before discarding, they
                   become a significant source of data theft and leakage. A
                   certified secure wiping solution ensures safe data destruction
@@ -87,17 +87,17 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Types of Loose Drives */}
           <Reveal>
-            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Types of Loose Drives and Their Risks
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-4 border-blue-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Data Center Storage Drives
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Physical assets in data centers include servers, computer
                     hard drives, processors, and storage drives with massive
                     capacities reaching petabytes. Large data centers operate
@@ -110,11 +110,11 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-blue-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Printer Hard Drives
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Office printers store data in their internal hard drives—a
                     fact many organizations overlook. Important documents
                     related to business strategies, financial plans, and human
@@ -129,11 +129,11 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-blue-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Recycler-Generated Drives
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     A significant source of loose drives comes from recyclers
                     who earn revenue processing electronic equipment. They
                     extract drives from second-hand devices like personal
@@ -151,7 +151,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Why Secure Erasure is Critical */}
           <Reveal>
-            <div className="bg-gradient-to-br from-blue-600 via-slate-600 to-sky-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Why Secure Loose Drive Erasure is Critical
               </h2>
@@ -159,7 +159,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               <p className="leading-loose text-lg mb-6">
                 <Link
                   to="/products/drive-eraser"
-                  className="text-blue-600 hover:underline font-medium"
+                  className="text-white hover:underline font-medium"
                 >
                   Secure erasure
                 </Link>{" "}
@@ -172,7 +172,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Alarming Research Findings
                   </h3>
@@ -185,7 +185,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     in secondary markets without suitable data erasure.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Secondary Market Risks
                   </h3>
@@ -198,7 +198,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     on many drives.
                   </p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
                     Consequences of Inadequate Erasure
                   </h3>
@@ -216,107 +216,107 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* How to Erase Loose Drives */}
           <Reveal>
-            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Loose drive aur loose drive eraser keywords ke liye optimized headings */}
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 How to Properly Erase a Loose Drive: Choosing a Loose Drive Eraser
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 To perform data sanitization, a loose drive must be extracted from its host device
                 and connected to a dedicated host or chassis. D-Secure Drive Eraser is a leading, enterprise-grade loose drive eraser software that provides the secure, certified approach needed for high-volume sanitization of all loose drive types.
               </p>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-8 mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] p-8 md:p-12 space-y-6 border-l-4 border-[#0e7c66] prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   D-
                   <Link
                     to="/products/drive-eraser"
-                    className="text-blue-600 hover:underline font-medium"
+                    className="text-[#0a2e1e] hover:underline font-medium"
                   >
                     Secure Erasure
                   </Link>{" "}
                   Capabilities
                 </h3>
-                <ul className="space-y-4 text-slate-700 text-lg">
+                <ul className="space-y-4 text-[#5a6672] text-lg">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Tested and approved for erasing both SSD and HDD media
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Supports 24+ international erasure standards including DoD 3
                     and 7 passes, NIST, and more
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Generates customized tamper-proof certificates and audit
                     trails
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Exports reports in multiple formats including PDF, CSV, and
                     XML
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     Supports both online and offline erasure scenarios
                   </li>
                 </ul>
               </div>
 
               <div className="space-y-6 mt-8">
-                <h3 className="text-2xl font-bold text-slate-900">
+                <h3 className="text-2xl font-bold text-[#0a2e1e]">
                   Step-by-Step Erasure Process
                 </h3>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                    <span className="inline-block w-8 h-8 bg-blue-500 text-white rounded-full text-center leading-8 font-bold mb-3">
+                  <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                    <span className="inline-block w-8 h-8 bg-[#0e7c66] text-white rounded-full text-center leading-8 font-bold mb-3">
                       1
                     </span>
-                    <h3 className="font-bold text-slate-900 mb-2">
+                    <h3 className="font-bold text-[#0a2e1e] mb-2">
                       Extract the Drive
                     </h3>
-                    <p className="text-slate-700 text-lg leading-loose">
+                    <p className="text-[#5a6672] text-lg leading-loose">
                       Carefully remove the loose drive from its host device,
                       server, printer, or other equipment following proper
                       handling procedures.
                     </p>
                   </div>
-                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                    <span className="inline-block w-8 h-8 bg-blue-500 text-white rounded-full text-center leading-8 font-bold mb-3">
+                  <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                    <span className="inline-block w-8 h-8 bg-[#0e7c66] text-white rounded-full text-center leading-8 font-bold mb-3">
                       2
                     </span>
-                    <h3 className="font-bold text-slate-900 mb-2">
+                    <h3 className="font-bold text-[#0a2e1e] mb-2">
                       Connect to Erasure System
                     </h3>
-                    <p className="text-slate-700 text-lg leading-loose">
+                    <p className="text-[#5a6672] text-lg leading-loose">
                       Connect the drive to a workstation running D-Secure Drive
                       Eraser using appropriate SATA, SAS, or USB adapters.
                     </p>
                   </div>
-                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                    <span className="inline-block w-8 h-8 bg-blue-500 text-white rounded-full text-center leading-8 font-bold mb-3">
+                  <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                    <span className="inline-block w-8 h-8 bg-[#0e7c66] text-white rounded-full text-center leading-8 font-bold mb-3">
                       3
                     </span>
-                    <h3 className="font-bold text-slate-900 mb-2">
+                    <h3 className="font-bold text-[#0a2e1e] mb-2">
                       Select Erasure Standard
                     </h3>
-                    <p className="text-slate-700 text-lg leading-loose">
+                    <p className="text-[#5a6672] text-lg leading-loose">
                       Choose the appropriate erasure standard based on your
                       regulatory requirements and organizational security
                       policies.
                     </p>
                   </div>
-                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                    <span className="inline-block w-8 h-8 bg-blue-500 text-white rounded-full text-center leading-8 font-bold mb-3">
+                  <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                    <span className="inline-block w-8 h-8 bg-[#0e7c66] text-white rounded-full text-center leading-8 font-bold mb-3">
                       4
                     </span>
-                    <h3 className="font-bold text-slate-900 mb-2">
+                    <h3 className="font-bold text-[#0a2e1e] mb-2">
                       Generate Certificate
                     </h3>
-                    <p className="text-slate-700 text-lg leading-loose">
+                    <p className="text-[#5a6672] text-lg leading-loose">
                       Upon completion, generate tamper-proof erasure
                       certificates for compliance documentation and audit trail
                       requirements.
@@ -329,48 +329,48 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Best Practices */}
           <Reveal>
-            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Best Practices for Loose Drive Management
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Inventory Tracking
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Maintain detailed inventory of all loose drives, including
                     their source devices, storage capacity, and locations. This
                     ensures no drives are overlooked during sanitization
                     processes.
                   </p>
                 </div>
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Secure Storage
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Store loose drives awaiting erasure in secure,
                     access-controlled areas. Limit access to authorized
                     personnel only and maintain logs of all drive movements.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Verification Protocols
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Implement verification steps after erasure to confirm
                     complete data destruction. D-Secure provides built-in
                     verification that validates successful sanitization.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Documentation Retention
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Retain all erasure certificates and audit trails according
                     to your industry's regulatory requirements. These documents
                     serve as critical evidence during compliance audits.
@@ -383,11 +383,11 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 1: Drive Identification Problem */}
           <Reveal>
-            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-8 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-4">
                 Before You Erase: Why Misidentifying a Drive Type Leads to Incomplete Sanitization
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Every competing guide jumps straight to erasure steps. None of them address what happens
                 <em> before</em> the first pass — correctly identifying what kind of drive you're actually
                 dealing with. In high-volume ITAD operations processing 500+ drives per day, misclassification
@@ -398,8 +398,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               {/* Decision-tree style breakdown */}
               <div className="space-y-6">
                 <div className="border-l-4 border-slate-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-2">SAS vs. SATA Misidentification at Speed</h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-2">SAS vs. SATA Misidentification at Speed</h3>
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Enterprise SAS drives and SATA drives have nearly identical connectors at a glance. SAS drives
                     feature dual-port architecture and firmware-level sanitization commands that differ significantly
                     from SATA ATA Secure Erase. Applying a SATA overwrite workflow to a SAS drive skips
@@ -407,8 +407,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-slate-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-2">The Unlabeled Drive Problem</h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-2">The Unlabeled Drive Problem</h3>
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Drives removed from servers often have worn manufacturer labels, adhesive residue covering
                     model numbers, or asset tags obscuring capacity information. Without a readable model number,
                     selecting the correct erasure standard requires live firmware interrogation — a step most
@@ -416,8 +416,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-slate-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-2">M.2 Form Factor Confusion</h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-2">M.2 Form Factor Confusion</h3>
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     M.2 slots can house either SATA or NVMe drives — they look externally identical. An M.2 SATA
                     drive connected to an NVMe-only adapter simply won't be detected, but an operator may log
                     it as "wiped" because the slot was occupied during the erasure batch. No error, no alert,
@@ -425,8 +425,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-slate-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-2">Hybrid Drives (SSHDs)</h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-2">Hybrid Drives (SSHDs)</h3>
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Seagate's SSHD lineup and similar hybrid drives contain both a magnetic platter and an
                     integrated NAND cache. Overwrite-based methods address the platter — but the NAND cache
                     requires cryptographic erase or ATA Sanitize commands separately. Treating an SSHD as a
@@ -434,8 +434,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="border-l-4 border-slate-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-2">Drives Reporting Wrong Capacity (DCO/HPA)</h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-2">Drives Reporting Wrong Capacity (DCO/HPA)</h3>
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Firmware-level configuration (DCO/HPA) means a drive's reported capacity may not reflect
                     its actual storage. Before erasure, drives should be interrogated for hidden capacity — a
                     step that takes under 10 seconds but is absent from most ITAD checklists. Erasure of the
@@ -445,8 +445,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               </div>
 
               {/* Drive identification quick-reference table */}
-              <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden mt-4">
-                <div className="bg-slate-800 text-white text-sm font-bold px-6 py-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none overflow-hidden mt-4">
+                <div className="bg-[#0e7c66] text-white text-sm font-bold px-6 py-3">
                   Quick Identification Checklist — Before Erasure
                 </div>
                 <div className="divide-y divide-slate-200">
@@ -458,14 +458,14 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     { check: "DCO/HPA hidden area queried?", action: "Remove HPA before erasure pass begins" },
                   ].map((row) => (
                     <div key={row.check} className="grid grid-cols-1 md:grid-cols-2 px-6 py-4 gap-2">
-                      <span className="text-slate-800 font-medium text-sm">{row.check}</span>
-                      <span className="text-slate-700 text-sm">{row.action}</span>
+                      <span className="text-[#0a2e1e] font-medium text-sm">{row.check}</span>
+                      <span className="text-[#5a6672] text-sm">{row.action}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="text-slate-600 text-base leading-relaxed bg-slate-50 border border-slate-200 rounded-lg p-4">
+              <p className="text-[#5a6672] text-base leading-relaxed bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-4">
                 <strong>Practitioner Takeaway:</strong> Erasure accuracy starts with drive identification accuracy.
                 Skipping identification is where silent sanitization failures begin — and they will never appear
                 in your audit report.
@@ -475,11 +475,11 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 2: Printer Hard Drives Deep Dive */}
           <Reveal>
-            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-8 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-4">
                 Printer Hard Drives: Why the Lowest-Value Asset in Your ITAD Stack Carries the Highest Data Risk
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Per-device, enterprise printer drives consistently contain some of the most sensitive,
                 unencrypted, and easily recoverable data of any asset class in a typical corporate
                 decommission batch. Yet they are routinely overlooked, managed outside IT workflows,
@@ -487,9 +487,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="bg-red-50 border border-red-200 rounded-xl p-6">
-                  <h3 className="font-bold text-red-900 text-xl mb-3">What Enterprise MFPs Actually Store</h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">What Enterprise MFPs Actually Store</h3>
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Enterprise MFPs from Xerox, Ricoh, Konica Minolta, and Canon retain print jobs,
                     scan-to-email content, fax transmission logs, address book entries, and network credentials
                     in internal storage. Retention periods vary by model — some retain data indefinitely until
@@ -497,9 +497,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     accumulated document images sitting in unencrypted storage.
                   </p>
                 </div>
-                <div className="bg-red-50 border border-red-200 rounded-xl p-6">
-                  <h3 className="font-bold text-red-900 text-xl mb-3">The Lease Return Problem</h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">The Lease Return Problem</h3>
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Organizations that lease MFPs through contracts with Ricoh, Xerox, or similar vendors
                     frequently return devices at lease end without removing or sanitizing the hard drive.
                     The leasing company receives the device and may resell it — with the previous tenant's
@@ -507,9 +507,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     lease agreements, and courts have not uniformly assigned liability to lessors.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-amber-900 text-xl mb-3">Firmware-Level Drive Access Complications</h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">Firmware-Level Drive Access Complications</h3>
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Unlike server drives that can be extracted and connected via standard SATA/SAS adapters,
                     some MFP drives use proprietary encryption tied to the printer's mainboard. Without the
                     mainboard, the drive cannot be decrypted by the printer's own firmware — but may remain
@@ -517,9 +517,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     necessitates physical destruction as the only verified sanitization path.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-amber-900 text-xl mb-3">Regulatory Exposure</h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">Regulatory Exposure</h3>
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Under HIPAA, a healthcare organization's copier that processed patient intake forms
                     contains ePHI. Under GDPR, an EU-based company's printer contains personal data subject
                     to Article 5(1)(e) storage limitation. Neither regulation provides a "we didn't realize
@@ -529,8 +529,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               </div>
 
               {/* MFP brand reference table */}
-              <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
-                <div className="bg-slate-800 text-white text-sm font-bold px-6 py-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none overflow-hidden">
+                <div className="bg-[#0e7c66] text-white text-sm font-bold px-6 py-3">
                   Major MFP Brands — Internal Storage Reference
                 </div>
                 <div className="divide-y divide-slate-200 text-sm">
@@ -542,15 +542,15 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     { brand: "HP LaserJet Enterprise", storage: "Flash / eMMC", risk: "Medium — job data, network config" },
                   ].map((row) => (
                     <div key={row.brand} className="grid grid-cols-3 px-6 py-3 gap-4">
-                      <span className="font-medium text-slate-800">{row.brand}</span>
-                      <span className="text-slate-600">{row.storage}</span>
-                      <span className="text-red-700 font-medium">{row.risk}</span>
+                      <span className="font-medium text-[#0a2e1e]">{row.brand}</span>
+                      <span className="text-[#5a6672]">{row.storage}</span>
+                      <span className="text-[#0a2e1e] font-medium">{row.risk}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="text-slate-600 text-base leading-relaxed bg-red-50 border border-red-200 rounded-lg p-4">
+              <p className="text-[#5a6672] text-base leading-relaxed bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-4">
                 <strong>Practitioner Takeaway:</strong> Printer drives are the most consistently overlooked
                 asset in corporate ITAD, carry some of the densest concentrations of sensitive data, and are
                 the single easiest win for organizations wanting to close a real breach risk with minimal
@@ -561,11 +561,11 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 3: When Standard Guidance Fails */}
           <Reveal>
-            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-8 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-4">
                 "It Depends": Five Loose Drive Scenarios Where Standard Erasure Guidance Fails
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 ITAD vendor content is uniformly optimistic. No competitor publishes what practitioners
                 already know — there are specific drive states, operational contexts, and regulatory
                 environments where standard guidance produces a less secure outcome than the operator
@@ -573,9 +573,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               </p>
 
               <div className="overflow-x-auto">
-                <table className="w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+                <table className="w-full text-sm border border-[#d0d5dc] rounded-none overflow-hidden">
                   <thead>
-                    <tr className="bg-slate-800 text-white">
+                    <tr className="bg-[#0e7c66] text-white">
                       <th className="px-5 py-4 text-left font-semibold">Scenario</th>
                       <th className="px-5 py-4 text-left font-semibold">Standard Guidance Says</th>
                       <th className="px-5 py-4 text-left font-semibold">What Actually Happens</th>
@@ -615,18 +615,18 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                         correct: "Retain for the period your specific regulatory framework requires, then delete"
                       },
                     ].map((row) => (
-                      <tr key={row.scenario} className="even:bg-slate-50">
-                        <td className="px-5 py-4 font-medium text-slate-900 align-top">{row.scenario}</td>
-                        <td className="px-5 py-4 text-slate-600 align-top">{row.standard}</td>
-                        <td className="px-5 py-4 text-red-700 align-top">{row.reality}</td>
-                        <td className="px-5 py-4 text-slate-700 font-medium align-top">{row.correct}</td>
+                      <tr key={row.scenario} className="even:bg-[#f4fbf8]">
+                        <td className="px-5 py-4 font-medium text-[#0a2e1e] align-top">{row.scenario}</td>
+                        <td className="px-5 py-4 text-[#5a6672] align-top">{row.standard}</td>
+                        <td className="px-5 py-4 text-[#0a2e1e] align-top">{row.reality}</td>
+                        <td className="px-5 py-4 text-[#5a6672] font-medium align-top">{row.correct}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
 
-              <p className="text-slate-600 text-base leading-relaxed bg-amber-50 border border-amber-200 rounded-lg p-4">
+              <p className="text-[#5a6672] text-base leading-relaxed bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-4">
                 <strong>Practitioner Takeaway:</strong> Erasure tool success messages are not the same as
                 security outcomes. Each scenario above produces a passing audit trail on top of an actual
                 sanitization failure.
@@ -636,11 +636,11 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 4: Myth vs. Reality */}
           <Reveal>
-            <div className="bg-white rounded-lg border border-blue-200 shadow-sm p-8 md:p-12 space-y-8 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-4">
                 Loose Drive Erasure: Five Industry Myths That Create Real Security Gaps
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 The loose drive erasure market perpetuates inherited assumptions from the HDD era that no
                 longer apply to modern SSDs, enterprise NVMe, or mobile flash storage. Vendors perpetuate
                 these myths because correcting them would require rebuilding sales narratives. Practitioners
@@ -675,24 +675,24 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     severity: "Legal"
                   },
                 ].map((item) => (
-                  <div key={item.myth} className="grid md:grid-cols-2 gap-0 rounded-xl overflow-hidden border border-slate-200">
-                    <div className="bg-red-50 px-6 py-5 border-r border-slate-200">
+                  <div key={item.myth} className="grid md:grid-cols-2 gap-0 rounded-none overflow-hidden border border-[#d0d5dc]">
+                    <div className="bg-[#f4fbf8] px-6 py-5 border-r border-[#d0d5dc]">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-100 px-2 py-0.5 rounded">
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#0a2e1e] bg-[#d4ede4] px-2 py-0.5 rounded">
                           Myth — {item.severity} Risk
                         </span>
                       </div>
-                      <p className="text-slate-800 font-semibold text-base">"{item.myth}"</p>
+                      <p className="text-[#0a2e1e] font-semibold text-base">"{item.myth}"</p>
                     </div>
                     <div className="bg-white px-6 py-5">
-                      <div className="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Reality</div>
-                      <p className="text-slate-700 text-sm leading-relaxed">{item.reality}</p>
+                      <div className="text-xs font-bold uppercase tracking-wider text-[#5a6672] mb-2">Reality</div>
+                      <p className="text-[#5a6672] text-sm leading-relaxed">{item.reality}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <p className="text-slate-600 text-base leading-relaxed bg-slate-50 border border-slate-200 rounded-lg p-4">
+              <p className="text-[#5a6672] text-base leading-relaxed bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-4">
                 <strong>Practitioner Takeaway:</strong> The most dangerous gaps in loose drive security aren't
                 technical — they're the assumptions that cause organizations to skip verification entirely.
               </p>
@@ -701,9 +701,9 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Section 5: Scaling at 1,000+ Drives Per Day */}
           <Reveal>
-            <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-slate-900 rounded-[2rem] shadow-2xl p-8 md:p-12 space-y-8 text-white">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#5a6672] mb-2 block">
                   Advanced — Enterprise & ITAD Operations
                 </span>
                 <h2 className="text-3xl font-bold mb-4">
@@ -746,8 +746,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                     body: "Every large-scale operation has 5–15% of drives whose provenance is unknown: no asset tag, no source documentation, no chain of custody record. Standard guidance says 'wipe them anyway.' The correct enterprise answer: unprovenanced drives should be held in quarantine pending source investigation — because you cannot generate a defensible erasure certificate for an asset you cannot identify. Dark inventory is where legal liability concentrates."
                   },
                 ].map((item) => (
-                  <div key={item.step} className="flex gap-5 bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors">
-                    <span className="text-3xl font-black text-slate-400 shrink-0 leading-none mt-1">{item.step}</span>
+                  <div key={item.step} className="flex gap-5 bg-white/5 border border-white/10 rounded-none p-6 hover:bg-white/10 transition-colors">
+                    <span className="text-3xl font-black text-[#5a6672] shrink-0 leading-none mt-1">{item.step}</span>
                     <div>
                       <h3 className="font-bold text-white text-lg mb-2">{item.title}</h3>
                       <p className="text-white/75 text-base leading-relaxed">{item.body}</p>
@@ -757,8 +757,8 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               </div>
 
               {/* Scale readiness checklist */}
-              <div className="bg-white/5 border border-slate-400/30 rounded-xl p-6">
-                <h3 className="font-bold text-slate-300 text-lg mb-4">Scale Readiness Checklist</h3>
+              <div className="bg-white/5 border border-slate-400/30 rounded-none p-6">
+                <h3 className="font-bold text-white/80 text-lg mb-4">Scale Readiness Checklist</h3>
                 <div className="grid md:grid-cols-2 gap-3">
                   {[
                     "Pre-erasure triage pass defined and timed?",
@@ -778,7 +778,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                 </div>
               </div>
 
-              <p className="text-white/70 text-base leading-relaxed bg-white/5 border border-white/10 rounded-lg p-4">
+              <p className="text-white/70 text-base leading-relaxed bg-white/5 border border-white/10 rounded-none p-4">
                 <strong className="text-white">Practitioner Takeaway:</strong> Scaling loose drive erasure
                 isn't a matter of buying more erasure stations. It requires operational architecture —
                 triage logic, failure rate modeling, thermal engineering, automated documentation, and
@@ -790,11 +790,11 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
           {/* Conclusion */}
           <Reveal>
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Summary
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Whether dealing with loose drives extracted from laptops, IT
                 servers, CCTV systems, printers, or any other equipment,
                 choosing certified data erasure software is paramount for
@@ -803,7 +803,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                 and regulatory penalties—far outweigh the investment in proper
                 data destruction solutions.
               </p>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 D-Secure provides the comprehensive capabilities needed for
                 secure loose drive erasure, supporting both internet-connected
                 and offline environments while generating the tamper-proof

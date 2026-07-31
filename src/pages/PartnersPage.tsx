@@ -16,19 +16,7 @@ import {
   formConfigurations,
 } from "@/utils/enhancedFormSystem";
 import { useToast } from "@/hooks";
-import {
-  ShieldIcon,
-  CheckIcon,
-  ArrowRightIcon,
-  GlobeIcon,
-  CloudIcon,
-  GearIcon,
-  ClipboardIcon,
-  StarIcon,
-  ServerIcon,
-  LightningIcon,
-  HoverIcon,
-} from "@/components/FlatIcons";
+// Lucide React se standard icons import kar rahe hain (FlatIcons legacy imports ki jagah)
 import {
   Briefcase,
   MessageSquare,
@@ -36,8 +24,23 @@ import {
   Building,
   User,
   X,
+  Star,
+  Globe,
+  Shield,
+  Cloud,
+  Settings,
+  Server,
+  Zap,
+  Check,
+  ArrowRight,
+  Activity,
+  Phone,
+  Mail,
+  FileText,
+  ClipboardList,
 } from "lucide-react";
 import { Toast } from "@/components/ui";
+import { ThemeButton, ThemeCard, ThemeIconContainer, ThemeSection, ThemeSectionHeading, themeClasses, themeTokens } from "@/components/ui/Theme";
 
 // Partner types definition - moved to top to avoid temporal dead zone
 const partnerTypes = {
@@ -490,7 +493,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all duration-200 ${
                       activeSection === item.id
                         ? "bg-emerald-500 text-white shadow-md"
-                        : "text-slate-600 hover:bg-emerald-50 hover:text-emerald-800"
+                        : "text-[#5a6672] hover:bg-emerald-50 hover:text-emerald-800"
                     }`}
                   >
                     {item.label}
@@ -502,45 +505,44 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
         </div>
       </div>
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen">
         {/* ================= HERO SECTION ================= */}
-        <section className="py-8 lg:py-12 xl:py-16 relative overflow-hidden">
+        <ThemeSection className="py-8 lg:py-12 xl:py-16 relative overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
               {/* Left: Content */}
               <Reveal>
                 <div className="space-y-8">
-                  <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
-                    <GlobeIcon className="w-4 h-4" />
+                  <div className="inline-flex items-center gap-2 bg-[#d4ede4] text-[#0e7c66] px-4 py-2 rounded-full text-sm font-bold border border-[#0e7c66]/20">
+                    <Globe className="w-4 h-4" />
                     Global Partner Network
                   </div>
 
-                  <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
+                  <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0a2e1e] leading-tight">
                     Grow Your Business with{" "}
-                    <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                    <span className="text-[#0e7c66]">
                       D-Secure Partnership
                     </span>
                   </h1>
 
-                  <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
+                  <p className="text-lg lg:text-xl text-[#5a6672] leading-relaxed max-w-xl">
                     Join our ecosystem of ITADs, MSPs, and Distributors. Deliver
                     world-class data erasure solutions while advancing
                     sustainability and global privacy standards.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <button
+                    <ThemeButton
                       onClick={() => openPartnerModal()}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                     >
-                      <StarIcon className="w-5 h-5" />
+                      <Star className="w-5 h-5 mr-2" />
                       Join Program
-                    </button>
+                    </ThemeButton>
                     <button
                       disabled
-                      className="inline-flex items-center justify-center gap-2 bg-slate-400 text-white font-bold px-8 py-4 rounded-xl shadow-lg cursor-not-allowed opacity-80"
+                      className={`${themeClasses.button.base} bg-slate-400 text-white cursor-not-allowed opacity-80`}
                     >
-                      <ChevronDown className="w-5 h-5" />
+                      <ChevronDown className="w-5 h-5 mr-2" />
                       Upcoming
                     </button>
                   </div>
@@ -549,155 +551,97 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
 
               {/* Right: Hero Illustration - Static Network with Shield Hub */}
               <Reveal delayMs={100}>
-                <div className="relative flex items-center justify-center min-h-[450px] lg:min-h-[550px] overflow-visible">
-                  {/* Decorative Background Glows */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/20 via-transparent to-teal-200/20 blur-3xl rounded-full"></div>
-
-                  <div className="relative w-full aspect-square max-w-[500px] flex items-center justify-center">
-                    {/* Visual Orbit Paths (Static) */}
-                    <div className="absolute w-[65%] h-[65%] border border-emerald-100/40 rounded-full"></div>
-                    <div className="absolute w-[90%] h-[90%] border border-teal-100/20 rounded-full"></div>
-
-                    {/* Quadrant User Icons (Static) */}
-                    {/* Top User */}
-                    <div className="absolute top-[5%] left-1/2 -translate-x-1/2">
-                      <div className="bg-white p-3 rounded-2xl shadow-xl border border-emerald-50 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
-                        <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-800">
-                          <User className="w-6 h-6" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Bottom User */}
-                    <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2">
-                      <div className="bg-white p-3 rounded-2xl shadow-xl border border-emerald-50 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
-                        <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600">
-                          <User className="w-6 h-6" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Left User */}
-                    <div className="absolute top-1/2 left-[5%] -translate-y-1/2">
-                      <div className="bg-white p-3 rounded-2xl shadow-xl border border-emerald-50 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
-                        <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-600">
-                          <User className="w-6 h-6" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right User */}
-                    <div className="absolute top-1/2 right-[5%] -translate-y-1/2">
-                      <div className="bg-white p-3 rounded-2xl shadow-xl border border-emerald-50 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
-                        <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-800">
-                          <User className="w-6 h-6" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Central Shield Hub - Simplified as per user request */}
-                    <div className="relative z-10">
-                      {/* Suble Glow for Shield */}
-                      <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-3xl animate-pulse"></div>
-
-                      <div className="relative w-32 h-32 md:w-40 md:h-40 bg-white rounded-[2.5rem] shadow-2xl border-4 border-emerald-50 flex items-center justify-center p-4 transform hover:scale-105 transition-transform duration-500">
-                        {/* The green box part marked by the user in screenshot */}
-                        <div className="w-full h-full bg-emerald-600 rounded-[2rem] shadow-lg shadow-emerald-500/30 flex items-center justify-center">
-                          <ShieldIcon className="w-16 h-16 text-white" />
-                        </div>
-                      </div>
-
-                      {/* Connection Lines (Static Brushes) */}
-                      <div className="absolute top-1/2 left-[-60px] w-[60px] h-px bg-emerald-100/50"></div>
-                      <div className="absolute top-1/2 right-[-60px] w-[60px] h-px bg-emerald-100/50"></div>
-                      <div className="absolute top-[-60px] left-1/2 w-px h-[60px] bg-emerald-100/50"></div>
-                      <div className="absolute bottom-[-60px] left-1/2 w-px h-[60px] bg-emerald-100/50"></div>
-                    </div>
-                  </div>
+                <div className="relative flex items-center justify-center min-h-[500px] lg:min-h-[600px] overflow-visible">
+                  <img 
+                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1785225788/ik0kdoezrtxy313cdhg6.png" 
+                    alt="D-Secure Partner Network" 
+                    className="relative z-10 w-full max-w-[650px] lg:max-w-[720px] h-auto object-contain"
+                  />
                 </div>
               </Reveal>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= PARTNER PROGRAMS SECTION ================= */}
-        <section id="partner-types" className="py-24 relative overflow-hidden">
+        <ThemeSection alternate id="partner-types" className="py-24 relative overflow-hidden">
           <div className="container mx-auto px-4">
             <Reveal>
-              <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                  Specialized Partner Programs
-                </h2>
-                <div className="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full mb-8"></div>
-                <p className="text-slate-600 text-lg">
-                  We offer tailored collaboration models designed to fit your
-                  business structure and growth objectives.
-                </p>
-              </div>
+              <ThemeSectionHeading subtitle="We offer tailored collaboration models designed to fit your
+                  business structure and growth objectives." centered>
+  Specialized Partner Programs
+</ThemeSectionHeading>
             </Reveal>
 
             {/* Program Tabs */}
             <div className="max-w-6xl mx-auto">
-              <div className="flex flex-wrap justify-center gap-3 mb-12">
-                {(
-                  Object.keys(partnerTypes) as Array<keyof typeof partnerTypes>
-                ).map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => setActivePartnerType(type)}
-                    className={`px-6 py-3 rounded-xl font-bold transition-all duration-300 ${
-                      activePartnerType === type
-                        ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 scale-105"
-                        : "bg-white text-slate-600 hover:bg-emerald-50 border border-slate-200"
-                    }`}
-                  >
-                    {type}
-                  </button>
-                ))}
+              {/* Horizontal Line Tab Bar */}
+              <div className="border-b border-[#d0d5dc]/80 mb-10 overflow-x-auto">
+                <div className="flex space-x-6 sm:space-x-10 min-w-max px-2">
+                  {(
+                    Object.keys(partnerTypes) as Array<keyof typeof partnerTypes>
+                  ).map((type) => {
+                    const isActive = activePartnerType === type;
+                    return (
+                      <button
+                        key={type}
+                        onClick={() => setActivePartnerType(type)}
+                        className={`pb-3 font-bold text-base sm:text-lg transition-all duration-200 border-b-4 whitespace-nowrap ${
+                          isActive
+                            ? "border-[#0e7c66] text-[#0e7c66]"
+                            : "border-transparent text-[#2d3748] hover:text-[#0e7c66]"
+                        }`}
+                      >
+                        {type}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Active Program Details */}
               <Reveal key={activePartnerType}>
-                <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-emerald-100 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="space-y-6">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold border border-emerald-100 mb-2">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center py-4">
+                  <div className="lg:col-span-7 space-y-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#d4ede4] text-[#0e7c66] rounded-full text-sm font-bold border border-[#0e7c66]/20">
                       {activePartnerType === "ITAD Partner" && (
-                        <ServerIcon className="w-4 h-4" />
+                        <Server className="w-4 h-4" />
                       )}
                       {activePartnerType === "MSP Partner" && (
-                        <CloudIcon className="w-4 h-4" />
+                        <Cloud className="w-4 h-4" />
                       )}
                       {activePartnerType === "OEM Partner" && (
-                        <GearIcon className="w-4 h-4" />
+                        <Settings className="w-4 h-4" />
                       )}
                       {activePartnerType === "Distributor Partner" && (
-                        <GlobeIcon className="w-4 h-4" />
+                        <Globe className="w-4 h-4" />
                       )}
                       {activePartnerType === "Reseller Partner" && (
                         <Briefcase className="w-4 h-4" />
                       )}
                       Program Overview
                     </div>
-                    <h3 className="text-3xl font-bold text-slate-900">
+
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0a2e1e] tracking-tight">
                       {partnerTypes[activePartnerType].title}
                     </h3>
-                    <p className="text-slate-600 text-lg leading-relaxed">
+                    <p className="text-[#5a6672] text-base sm:text-lg leading-relaxed">
                       {partnerTypes[activePartnerType].description}
                     </p>
 
-                    <div className="space-y-4">
-                      <h4 className="font-bold text-slate-900 flex items-center gap-2">
-                        <CheckIcon className="w-5 h-5 text-emerald-500" />
+                    <div className="space-y-3 pt-2">
+                      <h4 className="font-bold text-[#0a2e1e] flex items-center gap-2">
+                        <Check className="w-5 h-5 text-[#0e7c66]" />
                         Key Program Highlights:
                       </h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {partnerTypes[activePartnerType].benefits.map(
-                          (benefit, idx) => (
+                          (benefit) => (
                             <div
                               key={`benefit-${benefit}`}
-                              className="flex items-center gap-2 text-slate-700"
+                              className="flex items-center gap-2 text-[#5a6672]"
                             >
-                              <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-[#0e7c66] rounded-full"></div>
                               <span className="text-sm font-medium">
                                 {benefit}
                               </span>
@@ -707,77 +651,71 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                       </div>
                     </div>
 
-                    <div className="pt-6">
-                      <button
+                    <div className="pt-4">
+                      <ThemeButton
                         onClick={() => openPartnerModal(activePartnerType)}
-                        className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-xl hover:bg-emerald-600 transition-all duration-300 font-bold group shadow-xl hover:shadow-emerald-500/20"
                       >
                         Apply for {activePartnerType}
-                        <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </button>
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </ThemeButton>
                     </div>
                   </div>
 
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-emerald-100 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform"></div>
-                    <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-1 shadow-inner aspect-[4/3] flex items-center justify-center overflow-hidden border border-emerald-200">
-                      <div className="text-center p-8">
-                        <div className="w-40 h-40 bg-white rounded-3xl flex items-center justify-center shadow-lg mb-6 mx-auto group-hover:scale-110 transition-transform duration-500">
-                          {activePartnerType === "ITAD Partner" && (
-                            <ServerIcon className="w-20 h-20 text-emerald-500" />
-                          )}
-                          {activePartnerType === "MSP Partner" && (
-                            <CloudIcon className="w-20 h-20 text-teal-500" />
-                          )}
-                          {activePartnerType === "OEM Partner" && (
-                            <GearIcon className="w-20 h-20 text-cyan-500" />
-                          )}
-                          {activePartnerType === "Distributor Partner" && (
-                            <GlobeIcon className="w-20 h-20 text-emerald-500" />
-                          )}
-                          {activePartnerType === "Reseller Partner" && (
-                            <Briefcase className="w-20 h-20 text-emerald-500" />
-                          )}
-                        </div>
-                        <h4 className="text-emerald-900 font-bold text-lg mb-2">
-                          {activePartnerType} Expertise
-                        </h4>
-                        <p className="text-emerald-700/60 text-sm">
-                          Compliance Partnership Model
-                        </p>
-                      </div>
-                    </div>
+                  <div className="lg:col-span-5 flex items-center justify-center">
+                    {activePartnerType === "ITAD Partner" ? (
+                      <img 
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1785225788/rfshyjq0tqtfzamubhxb.png" 
+                        alt="ITAD Partner Program" 
+                        className="w-full h-auto max-h-[420px] object-contain"
+                      />
+                    ) : activePartnerType === "MSP Partner" ? (
+                      <img 
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1785225788/wetapnpwv725b2w6ivky.png" 
+                        alt="MSP Partner Program" 
+                        className="w-full h-auto max-h-[420px] object-contain"
+                      />
+                    ) : activePartnerType === "Distributor Partner" ? (
+                      <img 
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1785225788/uuwydxswtl7cjxwh944p.png" 
+                        alt="Distributor Partner Program" 
+                        className="w-full h-auto max-h-[420px] object-contain"
+                      />
+                    ) : activePartnerType === "Reseller Partner" ? (
+                      <img 
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1785225787/k1hpsrytnfg3d0r8xhgx.png" 
+                        alt="Reseller Partner Program" 
+                        className="w-full h-auto max-h-[420px] object-contain"
+                      />
+                    ) : (
+                      <img 
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1785225788/rc8kueffim6sbapsy6yn.png" 
+                        alt="OEM Partner Program" 
+                        className="w-full h-auto max-h-[420px] object-contain"
+                      />
+                    )}
                   </div>
                 </div>
               </Reveal>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= BENEFITS GRID ================= */}
-        <section
-          id="benefits"
-          className="py-24 bg-slate-900 text-white relative overflow-hidden"
-        >
+        <ThemeSection id="benefits" className="py-24 relative overflow-hidden" >
           <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#0e7c66]/20 rounded-none blur-3xl animate-pulse"></div>
             <div
-              className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse"
+              className="absolute bottom-0 left-0 w-96 h-96 bg-[#0e7c66]/10 rounded-none blur-3xl animate-pulse"
               style={{ animationDelay: "1s" }}
             ></div>
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
             <Reveal>
-              <div className="text-center max-w-3xl mx-auto mb-20">
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                  Why Partner with D-Secure?
-                </h2>
-                <p className="text-slate-400 text-lg">
-                  Access enterprise-grade tools, expert support, and global
-                  market reach.
-                </p>
-              </div>
+              <ThemeSectionHeading subtitle="Access enterprise-grade tools, expert support, and global
+                  market reach." centered>
+  Why Partner with D-Secure?
+</ThemeSectionHeading>
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -785,34 +723,34 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                 {
                   title: "Regulatory Compliance",
                   desc: "Comprehensive software for HDD, SSD, and NVMe erasure. Complies with 20+ international standards including NIST 800-88 and DoD 5220.22-M.",
-                  icon: <ShieldIcon className="w-10 h-10 text-emerald-400" />,
+                  icon: Shield,
                 },
                 {
                   title: "Scalable Growth",
                   desc: "Flexible licensing and special pricing to maximize your ROI.",
-                  icon: <LightningIcon className="w-10 h-10 text-teal-400" />,
+                  icon: Zap,
                 },
                 {
                   title: "Global Reach",
                   desc: "Operate in 190+ countries with localized expertise.",
-                  icon: <GlobeIcon className="w-10 h-10 text-emerald-400" />,
+                  icon: Globe,
                 },
                 {
                   title: "Premium Support",
                   desc: "24x5 dedicated technical and marketing assistance.",
-                  icon: <MessageSquare className="w-10 h-10 text-teal-400" />,
+                  icon: MessageSquare,
                 },
               ].map((benefit, idx) => (
                 <Reveal
                   key={`partner-benefit-${benefit.title}`}
                   delayMs={idx * 100}
                 >
-                  <div className="group bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:bg-white/10 hover:border-emerald-500/50 transition-all duration-300 h-full flex flex-col">
-                    <div className="mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                      {benefit.icon}
+                  <div className={`${themeClasses.card.base} p-8 h-full flex flex-col hover:-translate-y-1 transition-transform duration-300`}>
+                    <div className="mb-6">
+                      <ThemeIconContainer icon={benefit.icon} />
                     </div>
-                    <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">
+                    <h3 className="text-xl font-bold mb-3 text-[#0a2e1e]">{benefit.title}</h3>
+                    <p className="text-[#5a6672] text-sm leading-relaxed">
                       {benefit.desc}
                     </p>
                   </div>
@@ -821,61 +759,61 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
             </div>
 
             {/* Technical Partnership Infrastructure Deep Dive */}
-            <div className="mt-24 pt-24 border-t border-slate-800">
+            <div className="mt-24 pt-24 border-t border-[#d0d5dc]/60">
               <Reveal>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                   <div className="space-y-8">
-                    <h2 className="text-3xl lg:text-4xl font-bold">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-[#0a2e1e]">
                       Technical Partnership Infrastructure
                     </h2>
-                    <p className="text-slate-400 text-lg leading-relaxed">
+                    <p className="text-[#5a6672] text-lg leading-relaxed">
                       D-Secure provides a robust, developer-centric infrastructure for our partners. Whether you are an ITAD automating high-volume wiping or an MSP integrating sanitization into a management portal, our stack is built for modularity and scale.
                     </p>
                     
                     <div className="space-y-6">
-                      <div className="bg-slate-800/30 p-6 rounded-2xl border border-slate-700">
-                        <h4 className="text-emerald-400 font-bold mb-2">API-First Integration</h4>
-                        <p className="text-sm text-slate-300 leading-relaxed">
+                      <div className="bg-[#d4ede4]/50 p-6 rounded-none border border-[#0e7c66]/20">
+                        <h4 className="text-[#0e7c66] font-bold mb-2">API-First Integration</h4>
+                        <p className="text-sm text-[#5a6672] leading-relaxed">
                           Our RESTful API endpoints allow partners to programmatically trigger erasures, retrieve audit logs in JSON format, and generate digitally signed PDF certificates. We support OAuth 2.0 authentication and provide comprehensive Swagger documentation for rapid development.
                         </p>
                       </div>
-                      <div className="bg-slate-800/30 p-6 rounded-2xl border border-slate-700">
-                        <h4 className="text-emerald-400 font-bold mb-2">White-Label Customization</h4>
-                        <p className="text-sm text-slate-300 leading-relaxed">
+                      <div className="bg-[#d4ede4]/50 p-6 rounded-none border border-[#0e7c66]/20">
+                        <h4 className="text-[#0e7c66] font-bold mb-2">White-Label Customization</h4>
+                        <p className="text-sm text-[#5a6672] leading-relaxed">
                           OEM and MSP partners can leverage our white-label engine to maintain brand consistency. This includes custom CSS injection for the user interface, branded PDF certificate templates, and SMTP configuration for automated report delivery under your own domain.
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-emerald-500/5 rounded-3xl border border-emerald-500/20 p-8 lg:p-12">
-                    <h3 className="text-2xl font-bold mb-8 text-emerald-400">Technical Prerequisites</h3>
+                  <div className={`${themeClasses.card.base} p-8 lg:p-12`}>
+                    <h3 className="text-2xl font-bold mb-8 text-[#0e7c66]">Technical Prerequisites</h3>
                     <ul className="space-y-6">
                       <li className="flex items-start gap-4">
-                        <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                          <CheckIcon className="w-4 h-4 text-emerald-500" />
+                        <div className="w-6 h-6 rounded-full bg-[#0e7c66] flex items-center justify-center flex-shrink-0 mt-1">
+                          <Check className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <strong className="block text-white mb-1">Hardware Compatibility</strong>
-                          <p className="text-sm text-slate-400">Support for x86_64 and ARM64 architectures. Minimum 2GB RAM required for standard operations; 4GB+ recommended for high-concurrency 64-drive parallel wiping.</p>
+                          <strong className="block text-[#0a2e1e] mb-1">Hardware Compatibility</strong>
+                          <p className="text-sm text-[#5a6672]">Support for x86_64 and ARM64 architectures. Minimum 2GB RAM required for standard operations; 4GB+ recommended for high-concurrency 64-drive parallel wiping.</p>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
-                        <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                          <CheckIcon className="w-4 h-4 text-emerald-500" />
+                        <div className="w-6 h-6 rounded-full bg-[#0e7c66] flex items-center justify-center flex-shrink-0 mt-1">
+                          <Check className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <strong className="block text-white mb-1">Network Architecture</strong>
-                          <p className="text-sm text-slate-400">Support for PXE (Preboot Execution Environment) for network-scale deployment. Local license server options available for air-gapped secure facility requirements.</p>
+                          <strong className="block text-[#0a2e1e] mb-1">Network Architecture</strong>
+                          <p className="text-sm text-[#5a6672]">Support for PXE (Preboot Execution Environment) for network-scale deployment. Local license server options available for air-gapped secure facility requirements.</p>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
-                        <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                          <CheckIcon className="w-4 h-4 text-emerald-500" />
+                        <div className="w-6 h-6 rounded-full bg-[#0e7c66] flex items-center justify-center flex-shrink-0 mt-1">
+                          <Check className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <strong className="block text-white mb-1">Audit Trail Finality</strong>
-                          <p className="text-sm text-slate-400">Integration with blockchain-based immutable ledgers for high-security environments. Every certificate contains a unique cryptographic hash verifiable against our global audit registry.</p>
+                          <strong className="block text-[#0a2e1e] mb-1">Audit Trail Finality</strong>
+                          <p className="text-sm text-[#5a6672]">Integration with blockchain-based immutable ledgers for high-security environments. Every certificate contains a unique cryptographic hash verifiable against our global audit registry.</p>
                         </div>
                       </li>
                     </ul>
@@ -884,24 +822,16 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
               </Reveal>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= JOIN PROCESS SECTION ================= */}
-        <section
-          id="process"
-          className="py-24 bg-gradient-to-b from-white to-emerald-50/30"
-        >
+        <ThemeSection alternate id="process" className="py-24">
           <div className="container mx-auto px-4">
             <Reveal>
-              <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                  Simple Onboarding Process
-                </h2>
-                <p className="text-slate-600 text-lg">
-                  Get started in four easy steps and join our network within
-                  days.
-                </p>
-              </div>
+              <ThemeSectionHeading subtitle="Get started in four easy steps and join our network within
+                  days." centered>
+  Simple Onboarding Process
+</ThemeSectionHeading>
             </Reveal>
 
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -929,46 +859,43 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
               ].map((item, idx) => (
                 <Reveal key={`step-${item.step}`} delayMs={idx * 100}>
                   <div className="relative group text-center md:text-left p-6">
-                    <div className="text-5xl font-black text-emerald-500/10 absolute top-0 left-0 md:-left-4 group-hover:text-emerald-500/20 transition-colors font-sans">
+                    <div className="text-5xl font-black text-[#0e7c66]/10 absolute top-0 left-0 md:-left-4 group-hover:text-[#0e7c66]/20 transition-colors font-sans">
                       {item.step}
                     </div>
                     <div className="relative z-10">
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">
+                      <h3 className="text-xl font-bold text-[#0a2e1e] mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">
+                      <p className="text-[#5a6672] text-sm leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
                     {idx < 3 && (
-                      <div className="hidden md:block absolute top-1/2 -right-2 w-4 h-0.5 bg-emerald-200"></div>
+                      <div className="hidden md:block absolute top-1/2 -right-2 w-4 h-0.5 bg-[#0e7c66]/30"></div>
                     )}
                   </div>
                 </Reveal>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
         {/* ================= FIND A PARTNER SECTION ================= */}
-        <section
-          id="contact"
-          className="py-24 bg-white relative overflow-hidden"
-        >
+        <ThemeSection id="contact" className="py-24 relative overflow-hidden" >
           <div className="container mx-auto px-4">
-            <div className="bg-gradient-to-br from-slate-900 to-emerald-950 rounded-[3rem] overflow-hidden shadow-2xl relative">
+            <div className="bg-[#0e7c66] rounded-none overflow-hidden shadow-2xl relative border border-[#d0d5dc]/60">
               {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-500/5 -skew-x-12 transform translate-x-1/2"></div>
+              <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 -skew-x-12 transform translate-x-1/2"></div>
 
               <div className="relative z-10 p-12 lg:p-20 flex flex-col items-center text-center">
                 <Reveal>
-                  <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-400 px-4 py-2 rounded-full text-sm font-bold border border-emerald-500/30 mb-8">
-                    <GlobeIcon className="w-4 h-4" />
+                  <div className="inline-flex items-center gap-2 bg-[#d4ede4] text-[#0e7c66] px-4 py-2 rounded-full text-sm font-bold border border-[#d0d5dc]/60 mb-8">
+                    <Globe className="w-4 h-4" />
                     Global Network
                   </div>
                   <h2 className="text-3xl lg:text-5xl font-bold text-white mb-8">
                     Looking for a Compliance Partner?
                   </h2>
-                  <p className="text-slate-300 text-lg max-w-3xl mb-12">
+                  <p className="text-[#d4ede4]/90 text-lg max-w-3xl mb-12">
                     Connect with our global network of experts across 190+
                     countries for localized implementation and support.
                   </p>
@@ -976,28 +903,28 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                   <div className="flex flex-wrap justify-center gap-6">
                     <button
                       onClick={() => setShowFindPartnerModal(true)}
-                      className="bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold px-10 py-4 rounded-xl transition-all duration-300 shadow-xl shadow-emerald-500/20 scale-105 hover:scale-110 flex items-center gap-3"
+                      className={`${themeClasses.button.base} bg-[#d4ede4] text-[#0e7c66] hover:bg-white`}
                     >
                       Find Local Partner
-                      <ArrowRightIcon className="w-5 h-5" />
+                      <ArrowRight className="w-5 h-5 ml-2" />
                     </button>
 
                     <button
                       onClick={handleContactRedirect}
-                      className="bg-white/10 hover:bg-white/20 text-white font-bold px-10 py-4 rounded-xl transition-all duration-300 backdrop-blur-md border border-white/10 flex items-center gap-3"
+                      className={`${themeClasses.button.base} ${themeClasses.button.outline} text-white border-white hover:bg-white hover:text-[#0e7c66]`}
                     >
-                      Contact D-Secure Direct
-                      <MessageSquare className="w-5 h-5" />
+                      Contact D-Secure
+                      <MessageSquare className="w-5 h-5 ml-2" />
                     </button>
                   </div>
                 </Reveal>
               </div>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= REDUNDANT SECTIONS (COMMENTED OUT) =================
-             <section className="py-12 sm:py-16 md:py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-emerald-900 to-teal-900 relative overflow-hidden">
+             <ThemeSection noBg className="py-12 sm:py-16 md:py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-emerald-900 to-teal-900 relative overflow-hidden">
                <div className="absolute inset-0 opacity-10">
                  <div
                    className="absolute top-0 left-0 w-full h-full"
@@ -1010,7 +937,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                  <Reveal>
                    <div className="text-center">
                      <div className="mb-8 sm:mb-12">
-                       <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm text-emerald-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
+                       <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm text-emerald-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-none text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
                          <svg
                            xmlns="http://www.w3.org/2000/svg"
                            className="w-4 h-4"
@@ -1086,7 +1013,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                          ].map((feature, index) => (
                            <div
                              key={index}
-                             className="bg-white/10 backdrop-blur-sm text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium border border-white/20 text-center flex items-center justify-center gap-1 sm:gap-2"
+                             className="bg-white/10 backdrop-blur-sm text-white px-3 sm:px-4 py-2 rounded-none text-xs sm:text-sm font-medium border border-white/20 text-center flex items-center justify-center gap-1 sm:gap-2"
                            >
                              <span className="flex items-center justify-center">
                                {feature.icon}
@@ -1100,9 +1027,9 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                        </div>
                        <button
                          onClick={() => setShowFindPartnerModal(true)}
-                         className="w-full sm:w-auto group bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-400 hover:via-emerald-500 hover:to-teal-500 text-white font-bold px-6 sm:px-8 md:px-12 py-4 sm:py-5 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-emerald-500/25 transform hover:scale-105 flex items-center justify-center gap-3 sm:gap-4 mx-auto text-base sm:text-lg"
+                         className="w-full sm:w-auto group bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-400 hover:via-emerald-500 hover:to-teal-500 text-white font-bold px-6 sm:px-8 md:px-12 py-4 sm:py-5 rounded-none sm:rounded-none transition-all duration-300 shadow-2xl hover:shadow-emerald-500/25 flex items-center justify-center gap-3 sm:gap-4 mx-auto text-base sm:text-lg"
                        >
-                         <div className="w-6 sm:w-8 h-6 sm:h-8 bg-white/20 rounded-md sm:rounded-lg flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
+                         <div className="w-6 sm:w-8 h-6 sm:h-8 bg-white/20 rounded-none sm:rounded-none flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
                            <svg
                              className="w-4 sm:w-5 h-4 sm:h-5"
                              fill="currentColor"
@@ -1124,12 +1051,12 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                    </div>
                  </Reveal>
                </div>
-             </section>
+             </ThemeSection>
 
-             <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 via-white to-emerald-50/30">
+             <ThemeSection className="py-20 md:py-28 >
                <div className="container-responsive">
                  <Reveal>
-                   <div className="bg-white rounded-2xl shadow-xl border border-slate-200/60 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+                   <div className="bg-white rounded-none shadow-xl border border-slate-200/60 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
                      <div className="bg-gradient-to-r from-green-500 via-green-500 to-green-600 p-8 text-center">
                        <h2 className="text-4xl font-bold text-white mb-4">
                          Let's Get Started
@@ -1142,13 +1069,13 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
                          <button
                            onClick={() => openLicenseModal()}
-                           className="group bg-white border-2 border-green-200 hover:border-green-400 text-green-800 hover:bg-green-50 font-semibold px-8 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                           className="group bg-white border-2 border-green-200 hover:border-green-400 text-green-800 hover:bg-green-50 font-semibold px-8 py-3 rounded-none transition-all duration-300 shadow-lg hover:shadow-xl"
                          >
                            <span>Request Free License</span>
                          </button>
                          <button
                            onClick={handleContactRedirect}
-                           className="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2 justify-center"
+                           className="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-8 py-3 rounded-none transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 justify-center"
                          >
                            <span className="flex items-center gap-1">
                              <svg
@@ -1173,7 +1100,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                    </div>
                  </Reveal>
                </div>
-             </section>
+             </ThemeSection>
              ================= */}
       </div>
       {/* Partner Application Modal */}
@@ -1198,24 +1125,24 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
       {/* Find Partner Modal */}
       {showFindPartnerModal && (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 z-50 overflow-hidden animate-in fade-in duration-300">
-          <div className="bg-white rounded-[2rem] max-w-6xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-emerald-100/50">
+          <div className="bg-white rounded-none max-w-6xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-[#d0d5dc]/60">
             {/* Premium Header */}
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white p-8 rounded-t-[2rem] relative flex-shrink-0">
+            <div className="bg-[#0e7c66] text-white p-8 rounded-none relative flex-shrink-0">
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5"></div>
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 border border-white/30 shadow-inner">
-                  <GlobeIcon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-none flex items-center justify-center mb-4 border border-white/30 shadow-inner">
+                  <Globe className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-3xl font-bold tracking-tight">
                   Search Our Partner Network
                 </h2>
-                <p className="text-emerald-50/80 mt-2 text-sm font-medium">
+                <p className="text-[#d4ede4]/80 mt-2 text-sm font-medium">
                   Connect with compliance security experts worldwide
                 </p>
               </div>
               <button
                 onClick={() => setShowFindPartnerModal(false)}
-                className="absolute top-6 right-6 z-20 cursor-pointer text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/20 transition-all duration-300"
+                className="absolute top-6 right-6 z-20 cursor-pointer text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-none hover:bg-white/20 transition-all duration-300"
               >
                 <X className="w-6 h-6 pointer-events-none" />
               </button>
@@ -1230,17 +1157,17 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
               </style>
               <div className="p-8 find-partner-scroll space-y-8">
                 {/* Refined Filter Section */}
-                <div className="bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/80 rounded-2xl p-8 border border-emerald-100 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8 relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-200/20 blur-3xl -mr-16 -mt-16 group-hover:bg-emerald-300/30 transition-colors duration-500"></div>
+                <div className={`${themeClasses.card.base} grid grid-cols-1 md:grid-cols-2 gap-8 relative overflow-hidden group`}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4ede4]/20 blur-3xl -mr-16 -mt-16 group-hover:bg-[#d4ede4]/40 transition-colors duration-500"></div>
                   <div className="relative">
-                    <label className="flex items-center gap-2 text-xs uppercase tracking-widest font-black text-emerald-800/60 mb-3">
-                      <GlobeIcon className="w-3.5 h-3.5" />
+                    <label className="flex items-center gap-2 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-3">
+                      <Globe className="w-3.5 h-3.5" />
                       Select Region
                     </label>
                     <select
                       value={selectedCountry}
                       onChange={(e) => setSelectedCountry(e.target.value)}
-                      className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200 appearance-none cursor-pointer"
+                      className="w-full p-4 bg-white border border-[#d0d5dc]/60 rounded-none focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50 appearance-none cursor-pointer"
                     >
                       {countries.map((country) => (
                         <option key={country} value={country}>
@@ -1250,14 +1177,14 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     </select>
                   </div>
                   <div className="relative">
-                    <label className="flex items-center gap-2 text-xs uppercase tracking-widest font-black text-emerald-800/60 mb-3">
-                      <ShieldIcon className="w-3.5 h-3.5" />
+                    <label className="flex items-center gap-2 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-3">
+                      <Shield className="w-3.5 h-3.5" />
                       Partner Type
                     </label>
                     <select
                       value={selectedPartnerType}
                       onChange={(e) => setSelectedPartnerType(e.target.value)}
-                      className="w-full p-4 bg-white border-2 border-emerald-100 rounded-xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-bold shadow-sm hover:border-emerald-200 appearance-none cursor-pointer"
+                      className="w-full p-4 bg-white border border-[#d0d5dc]/60 rounded-none focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50 appearance-none cursor-pointer"
                     >
                       {partnerTypesFilter.map((type) => (
                         <option key={type} value={type}>
@@ -1274,32 +1201,29 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     filteredPartners.map((partner, index) => (
                       <div
                         key={`partner-${partner.company}-${partner.location}`}
-                        className="group bg-white border border-slate-100 rounded-[1.5rem] p-8 hover:shadow-[0_15px_40px_-10px_rgba(16,185,129,0.15)] transition-all duration-500 hover:border-emerald-300/50 relative overflow-hidden"
-                      >
+                        className={`${themeClasses.card.base} p-8 hover:shadow-xl transition-all duration-500 relative overflow-hidden`}>
                         {/* Interactive Background Elements */}
-                        <div className="absolute top-0 left-0 w-2 h-0 group-hover:h-full bg-emerald-500 transition-all duration-500"></div>
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50/30 blur-3xl rounded-full translate-x-32 -translate-y-32 group-hover:bg-emerald-100/40 transition-colors"></div>
+                        <div className="absolute top-0 left-0 w-2 h-0 group-hover:h-full bg-[#0e7c66] transition-all duration-500"></div>
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#d4ede4]/30 blur-3xl rounded-none translate-x-32 -translate-y-32 group-hover:bg-[#d4ede4]/50 transition-colors"></div>
 
                         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-4 gap-10 items-center">
                           {/* Company Identity */}
-                          <div className="lg:col-span-1 border-r border-slate-50 pr-4">
+                          <div className="lg:col-span-1 border-r border-[#d0d5dc]/30 pr-4">
                             <div className="flex items-center gap-4 mb-5">
-                              <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-800 shadow-inner group-hover:scale-110 transition-transform duration-500 border border-emerald-100/50">
-                                <Building className="w-7 h-7" />
-                              </div>
+                              <ThemeIconContainer icon={Building} className="group-transition-transform duration-500" />
                               <div>
-                                <h3 className="font-black text-slate-900 text-2xl tracking-tight leading-tight group-hover:text-emerald-700 transition-colors">
+                                <h3 className="font-black text-[#0a2e1e] text-2xl tracking-tight leading-tight group-hover:text-[#0e7c66] transition-colors">
                                   {partner.company}
                                 </h3>
                                 <div className="flex gap-2 mt-2">
-                                  <span className="bg-emerald-500 text-white px-2.5 py-0.5 rounded-lg text-[10px] font-black uppercase tracking-widest">
+                                  <span className="bg-[#0e7c66] text-white px-2.5 py-0.5 rounded-none text-[10px] font-black uppercase tracking-widest">
                                     {partner.type}
                                   </span>
                                 </div>
                               </div>
                             </div>
-                            <div className="flex items-center gap-2 text-slate-500 text-sm font-bold bg-slate-50/80 px-3 py-1.5 rounded-xl w-fit border border-slate-100">
-                              <GlobeIcon className="w-4 h-4 text-emerald-500" />
+                            <div className="flex items-center gap-2 text-[#5a6672] text-sm font-bold bg-[#d4ede4]/30 px-3 py-1.5 rounded-none w-fit border border-[#d0d5dc]/30">
+                              <Globe className="w-4 h-4 text-[#0e7c66]" />
                               {partner.location}
                             </div>
                           </div>
@@ -1308,29 +1232,29 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:px-6">
                             <div className="space-y-4">
                               <div className="flex items-start gap-4">
-                                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400">
+                                <div className="w-10 h-10 rounded-none bg-[#f4fbf8] border border-slate-100 flex items-center justify-center text-[#0e7c66]">
                                   <User className="w-5 h-5" />
                                 </div>
                                 <div className="flex-1">
-                                  <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest mb-1">
+                                  <p className="text-[10px] text-[#0e7c66] uppercase font-black tracking-widest mb-1">
                                     Primary Contact
                                   </p>
-                                  <p className="font-bold text-slate-700 text-lg">
+                                  <p className="font-bold text-[#5a6672] text-lg">
                                     {partner.contact.name}
                                   </p>
                                 </div>
                               </div>
                               <div className="flex items-start gap-4">
-                                <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-100/50 flex items-center justify-center text-teal-500">
+                                <div className="w-10 h-10 rounded-full bg-[#d4ede4] border border-[#0e7c66]/20 flex items-center justify-center text-[#0e7c66]">
                                   <MessageSquare className="w-5 h-5" />
                                 </div>
                                 <div className="flex-1 max-w-full overflow-hidden">
-                                  <p className="text-[10px] text-teal-400 uppercase font-black tracking-widest mb-1">
+                                  <p className="text-[10px] text-[#0e7c66] uppercase font-black tracking-widest mb-1">
                                     Direct Inquiry
                                   </p>
                                   <a
                                     href={`mailto:${partner.contact.email}`}
-                                    className="font-bold text-emerald-800 hover:text-emerald-800 transition-all truncate block text-lg underline decoration-emerald-200 underline-offset-4 hover:decoration-emerald-500"
+                                    className="font-bold text-[#0e7c66] hover:text-[#065F4C] transition-all truncate block text-lg underline decoration-[#0e7c66]/30 underline-offset-4 hover:decoration-[#0e7c66]"
                                   >
                                     {partner.contact.email}
                                   </a>
@@ -1340,27 +1264,27 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
 
                             <div className="space-y-4">
                               <div className="flex items-start gap-4">
-                                <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100/50 flex items-center justify-center text-orange-500">
-                                  <StarIcon className="w-5 h-5" />
+                                <div className="w-10 h-10 rounded-full bg-[#d4ede4] border border-[#0e7c66]/20 flex items-center justify-center text-[#0e7c66]">
+                                  <Phone className="w-5 h-5" />
                                 </div>
                                 <div>
-                                  <p className="text-[10px] text-orange-400 uppercase font-black tracking-widest mb-1">
+                                  <p className="text-[10px] text-[#0e7c66] uppercase font-black tracking-widest mb-1">
                                     Mobile
                                   </p>
-                                  <p className="font-bold text-slate-700 text-lg">
+                                  <p className="font-bold text-[#5a6672] text-lg">
                                     {partner.contact.phone}
                                   </p>
                                 </div>
                               </div>
                               <div className="flex items-start gap-4">
-                                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100/50 flex items-center justify-center text-emerald-500">
-                                  <CheckIcon className="w-5 h-5" />
+                                <div className="w-10 h-10 rounded-full bg-[#d4ede4] border border-[#0e7c66]/20 flex items-center justify-center text-[#0e7c66]">
+                                  <Check className="w-5 h-5" />
                                 </div>
                                 <div>
-                                  <p className="text-[10px] text-emerald-400 uppercase font-black tracking-widest mb-1">
+                                  <p className="text-[10px] text-[#0e7c66] uppercase font-black tracking-widest mb-1">
                                     Status
                                   </p>
-                                  <p className="font-bold text-emerald-700 text-lg flex items-center gap-1.5">
+                                  <p className="font-bold text-[#0e7c66] text-lg flex items-center gap-1.5">
                                     Verified Compliance
                                   </p>
                                 </div>
@@ -1370,30 +1294,29 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
 
                           {/* Quick Actions */}
                           <div className="lg:col-span-1 flex flex-col gap-3">
-                            <button
+                            <ThemeButton
                               onClick={() => handleContactPartner(partner)}
-                              className="group/btn bg-slate-900 text-white font-black px-6 py-4 rounded-xl transition-all duration-300 hover:bg-emerald-600 hover:translate-x-1 flex items-center justify-center gap-3 shadow-xl shadow-slate-900/10 hover:shadow-emerald-500/30"
+                              className="w-full justify-center group/btn"
                             >
                               Connect
-                              <ArrowRightIcon className="w-4 h-4" />
-                            </button>
+                              <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                            </ThemeButton>
                             <button
                               onClick={() => handleViewDetails(partner)}
-                              className="border-2 border-slate-100 text-slate-600 font-black px-6 py-4 rounded-xl transition-all duration-300 hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50 flex items-center justify-center gap-3"
+                              className={`${themeClasses.button.outline} w-full justify-center group/btn2`}
                             >
                               Read Insights
-                              {/* <ExternalLink className="w-4 h-4" /> */}
                             </button>
                           </div>
                         </div>
                       </div>
                     ))
                   ) : (
-                    <div className="text-center py-24 bg-slate-50/40 rounded-[2.5rem] border-4 border-dashed border-slate-100">
-                      <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] border border-slate-100">
-                        <GlobeIcon className="w-12 h-12 text-slate-300 animate-pulse" />
+                    <div className="text-center py-24 bg-[#f4fbf8]/40 rounded-none border border-[#d0d5dc]/60">
+                      <div className="w-24 h-24 bg-[#d4ede4] rounded-full flex items-center justify-center mx-auto mb-8 border border-[#0e7c66]/20">
+                        <Globe className="w-12 h-12 text-[#0e7c66] animate-pulse" />
                       </div>
-                      <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight">
+                      <h3 className="text-3xl font-black text-[#0a2e1e] mb-4 tracking-tight">
                         No Partners Available
                       </h3>
                       <p className="text-slate-400 max-w-sm mx-auto font-medium leading-relaxed">
@@ -1406,20 +1329,20 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                 </div>
 
                 {/* Refined Pagination */}
-                <div className="flex justify-center items-center gap-3 mt-10 pt-8 border-t border-emerald-100/60">
-                  <button className="w-10 h-10 rounded-xl bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 flex items-center justify-center text-sm font-black transition-all hover:scale-110">
+                <div className="flex justify-center items-center gap-3 mt-10 pt-8 border-t border-[#d0d5dc]/60">
+                  <button className="w-10 h-10 rounded-none bg-[#0e7c66] text-white flex items-center justify-center text-sm font-bold transition-all hover:bg-[#065F4C]">
                     1
                   </button>
-                  <button className="w-10 h-10 rounded-xl border-2 border-slate-100 bg-white text-slate-400 flex items-center justify-center text-sm font-black hover:border-emerald-300 hover:text-emerald-800 transition-all hover:scale-110">
+                  <button className="w-10 h-10 rounded-none border border-[#d0d5dc]/60 bg-white text-slate-400 flex items-center justify-center text-sm font-bold hover:border-[#0e7c66] hover:text-[#0e7c66] transition-all">
                     2
                   </button>
-                  <button className="w-10 h-10 rounded-xl border-2 border-slate-100 bg-white text-slate-400 flex items-center justify-center text-sm font-black hover:border-emerald-300 hover:text-emerald-800 transition-all hover:scale-110">
+                  <button className="w-10 h-10 rounded-none border border-[#d0d5dc]/60 bg-white text-slate-400 flex items-center justify-center text-sm font-bold hover:border-[#0e7c66] hover:text-[#0e7c66] transition-all">
                     3
                   </button>
                   <span className="px-2 text-slate-300 font-black tracking-widest">
                     ...
                   </span>
-                  <button className="px-5 h-10 rounded-xl border-2 border-slate-100 bg-white text-slate-400 flex items-center justify-center text-xs font-black uppercase tracking-widest hover:border-emerald-300 hover:text-emerald-800 transition-all hover:scale-105">
+                  <button className="px-5 h-10 rounded-none border border-[#d0d5dc]/60 bg-white text-slate-400 flex items-center justify-center text-xs font-bold uppercase tracking-widest hover:border-[#0e7c66] hover:text-[#0e7c66] transition-all">
                     Next Page
                   </button>
                 </div>
@@ -1449,9 +1372,9 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
       {/* Contact Partner Modal - Premium Redesign */}
       {showContactModal && selectedPartnerForContact && (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 z-50 overflow-hidden">
-          <div className="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-emerald-100/50">
+          <div className="bg-white rounded-none max-w-2xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-[#d0d5dc]/60">
             {/* Premium Header */}
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white p-8 rounded-t-[2rem] relative flex-shrink-0">
+            <div className="bg-[#0e7c66] text-white p-8 rounded-none relative flex-shrink-0">
               <div
                 className="absolute inset-0 opacity-5"
                 style={{
@@ -1461,19 +1384,19 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                 }}
               ></div>
               <div className="flex flex-col items-center relative z-10">
-                <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 border border-white/30 shadow-inner">
+                <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-none flex items-center justify-center mb-4 border border-white/30 shadow-inner">
                   <MessageSquare className="w-7 h-7 text-white" />
                 </div>
                 <h2 className="text-2xl font-bold tracking-tight">
                   Contact Partner
                 </h2>
-                <p className="text-emerald-50/80 mt-1 text-sm font-medium">
+                <p className="text-[#d4ede4]/80 mt-1 text-sm font-medium">
                   Send a direct inquiry to this partner
                 </p>
               </div>
               <button
                 onClick={() => setShowContactModal(false)}
-                className="absolute top-6 right-6 z-20 cursor-pointer text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/20 transition-all duration-300"
+                className="absolute top-6 right-6 z-20 cursor-pointer text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-none hover:bg-white/20 transition-all duration-300"
               >
                 <X className="w-6 h-6 pointer-events-none" />
               </button>
@@ -1485,45 +1408,43 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
             >
               <div className="p-8 space-y-6">
                 {/* Partner Info Card - Premium */}
-                <div className="bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/80 rounded-2xl p-6 border border-emerald-100 shadow-sm relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-200/20 blur-3xl -mr-16 -mt-16"></div>
+                <div className={`${themeClasses.card.base} p-6 relative overflow-hidden group`}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4ede4]/20 blur-3xl -mr-16 -mt-16"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-5">
-                      <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
-                        <Building className="w-6 h-6" />
-                      </div>
+                      <ThemeIconContainer icon={Building} />
                       <div>
-                        <h3 className="text-xl font-black text-slate-900 tracking-tight">
+                        <h3 className="text-xl font-black text-[#0a2e1e] tracking-tight">
                           {selectedPartnerForContact.company}
                         </h3>
-                        <span className="bg-emerald-500 text-white px-2.5 py-0.5 rounded-lg text-[10px] font-black uppercase tracking-widest">
+                        <span className="bg-[#0e7c66] text-white px-2.5 py-0.5 rounded-none text-[10px] font-black uppercase tracking-widest">
                           {selectedPartnerForContact.type}
                         </span>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                        <p className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]/50 mb-1">
                           Contact
                         </p>
-                        <p className="font-bold text-slate-800 text-sm">
+                        <p className="font-bold text-[#0a2e1e] text-sm">
                           {selectedPartnerForContact.contact.name}
                         </p>
                       </div>
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                        <p className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]/50 mb-1">
                           Location
                         </p>
-                        <p className="font-bold text-slate-800 text-sm flex items-center gap-1">
-                          <GlobeIcon className="w-3.5 h-3.5 text-emerald-500" />
+                        <p className="font-bold text-[#0a2e1e] text-sm flex items-center gap-1">
+                          <Globe className="w-3.5 h-3.5 text-[#0e7c66]" />
                           {selectedPartnerForContact.location}
                         </p>
                       </div>
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                        <p className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]/50 mb-1">
                           Phone
                         </p>
-                        <p className="font-bold text-emerald-800 text-sm">
+                        <p className="font-bold text-[#0e7c66] text-sm">
                           {selectedPartnerForContact.contact.phone}
                         </p>
                       </div>
@@ -1741,7 +1662,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
+                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-2">
                         <User className="w-3.5 h-3.5" />
                         Your Name *
                       </label>
@@ -1755,13 +1676,13 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             name: e.target.value,
                           }))
                         }
-                        className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200"
+                        className="w-full border border-[#d0d5dc]/60 rounded-none px-4 py-3 focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50"
                         placeholder="Enter your full name"
                       />
                     </div>
                     <div>
-                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
-                        <MessageSquare className="w-3.5 h-3.5" />
+                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-2">
+                        <Mail className="w-3.5 h-3.5" />
                         Your Email *
                       </label>
                       <input
@@ -1774,14 +1695,14 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             email: e.target.value,
                           }))
                         }
-                        className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200"
+                        className="w-full border border-[#d0d5dc]/60 rounded-none px-4 py-3 focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50"
                         placeholder="Enter your email"
                       />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
+                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-2">
                         <Building className="w-3.5 h-3.5" />
                         Company
                       </label>
@@ -1794,14 +1715,14 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             company: e.target.value,
                           }))
                         }
-                        className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200"
+                        className="w-full border border-[#d0d5dc]/60 rounded-none px-4 py-3 focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50"
                         placeholder="Your company name"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="contact-phone"
-                        className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2"
+                        className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-2"
                       >
                         Phone
                       </label>
@@ -1815,15 +1736,15 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             phone: e.target.value,
                           }))
                         }
-                        className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200"
+                        className="w-full border border-[#d0d5dc]/60 rounded-none px-4 py-3 focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50"
                         placeholder="Your phone number"
                       />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
-                        <GlobeIcon className="w-3.5 h-3.5" />
+                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-2">
+                        <Globe className="w-3.5 h-3.5" />
                         Country
                       </label>
                       <select
@@ -1834,7 +1755,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             country: e.target.value,
                           }))
                         }
-                        className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200 appearance-none [&>option]:text-slate-900"
+                        className="w-full border border-[#d0d5dc]/60 rounded-none px-4 py-3 focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50 appearance-none [&>option]:text-[#0a2e1e]"
                       >
                         <option value="" disabled hidden>Select Country</option>
                         <option value="United States">United States</option>
@@ -1846,7 +1767,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2">
+                      <label className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-2">
                         <Building className="w-3.5 h-3.5" />
                         Business Type
                       </label>
@@ -1858,7 +1779,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             businessType: e.target.value,
                           }))
                         }
-                        className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200 appearance-none [&>option]:text-slate-900"
+                        className="w-full border border-[#d0d5dc]/60 rounded-none px-4 py-3 focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50 appearance-none [&>option]:text-[#0a2e1e]"
                       >
                         <option value="" disabled hidden>Business Type</option>
                         <option value="Enterprise">Enterprise</option>
@@ -1874,7 +1795,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                   <div>
                     <label
                       htmlFor="contact-subject"
-                      className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2"
+                      className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-2"
                     >
                       Subject *
                     </label>
@@ -1889,14 +1810,14 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                           subject: e.target.value,
                         }))
                       }
-                      className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200"
+                      className="w-full border border-[#d0d5dc]/60 rounded-none px-4 py-3 focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50"
                       placeholder="Brief subject of your inquiry"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="contact-message"
-                      className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-slate-500 mb-2"
+                      className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-black text-[#0e7c66]/60 mb-2"
                     >
                       Message *
                     </label>
@@ -1911,20 +1832,20 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                           message: e.target.value,
                         }))
                       }
-                      className="w-full border-2 border-emerald-100 rounded-xl px-4 py-3 focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-300 outline-none text-slate-700 font-medium shadow-sm hover:border-emerald-200 resize-none"
+                      className="w-full border border-[#d0d5dc]/60 rounded-none px-4 py-3 focus:ring-2 focus:ring-[#0e7c66]/10 focus:border-[#0e7c66] transition-all duration-300 outline-none text-[#5a6672] font-bold shadow-sm hover:border-[#0e7c66]/50 resize-none"
                       placeholder="Describe your requirements or questions..."
                     />
                   </div>
                   <div className="flex gap-4 pt-2">
-                    <button
+                    <ThemeButton
                       type="submit"
                       disabled={isContactSubmitting}
-                      className="flex-1 bg-slate-900 text-white py-4 px-6 rounded-xl hover:bg-emerald-600 transition-all duration-300 font-black shadow-xl shadow-slate-900/10 hover:shadow-emerald-500/30 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      className="flex-1 justify-center py-4 text-base"
                     >
                       {isContactSubmitting ? (
                         <>
                           <svg
-                            className="animate-spin h-4 w-4 text-white"
+                            className="animate-spin h-4 w-4 text-white mr-2"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -1948,14 +1869,14 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                       ) : (
                         <>
                           Send Message
-                          <ArrowRightIcon className="w-4 h-4" />
+                          <ArrowRight className="w-4 h-4 ml-2" />
                         </>
                       )}
-                    </button>
+                    </ThemeButton>
                     <button
                       type="button"
                       onClick={() => setShowContactModal(false)}
-                      className="px-6 py-4 border-2 border-slate-100 text-slate-600 rounded-xl hover:border-emerald-300 hover:text-emerald-700 hover:bg-emerald-50 transition-all duration-300 font-black"
+                      className={`${themeClasses.button.outline} px-6 py-4`}
                     >
                       Cancel
                     </button>
@@ -1963,32 +1884,32 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                 </form>
 
                 {/* Quick Contact Options - Premium */}
-                <div className="pt-6 border-t border-emerald-100/60">
-                  <p className="text-xs uppercase tracking-widest font-black text-emerald-800/50 mb-4">
+                <div className="pt-6 border-t border-[#d0d5dc]/60">
+                  <p className="text-xs uppercase tracking-widest font-black text-[#0e7c66]/50 mb-4">
                     Or contact directly
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a
                       href={`mailto:${selectedPartnerForContact.contact.email}`}
-                      className="bg-emerald-50 text-emerald-700 px-5 py-2.5 rounded-xl hover:bg-emerald-100 transition-all duration-300 text-sm font-bold flex items-center gap-2 border border-emerald-100 hover:border-emerald-200 hover:shadow-sm"
+                      className="bg-[#d4ede4]/30 text-[#0e7c66] px-5 py-2.5 rounded-none hover:bg-[#d4ede4] transition-all duration-300 text-sm font-bold flex items-center gap-2 border border-[#d0d5dc]/60 hover:border-[#0e7c66]"
                     >
                       <MessageSquare className="w-4 h-4" />
                       Send Email
                     </a>
                     <a
                       href={`tel:${selectedPartnerForContact.contact.phone}`}
-                      className="bg-teal-50 text-teal-700 px-5 py-2.5 rounded-xl hover:bg-teal-100 transition-all duration-300 text-sm font-bold flex items-center gap-2 border border-teal-100 hover:border-teal-200 hover:shadow-sm"
+                      className="bg-[#d4ede4]/30 text-[#0e7c66] px-5 py-2.5 rounded-none hover:bg-[#d4ede4] transition-all duration-300 text-sm font-bold flex items-center gap-2 border border-[#d0d5dc]/60 hover:border-[#0e7c66]"
                     >
-                      <StarIcon className="w-4 h-4" />
+                      <Phone className="w-4 h-4" />
                       Call Now
                     </a>
                     <a
                       href={selectedPartnerForContact.contact.website}
                       target="_blank"
                       rel="nofollow noopener noreferrer"
-                      className="bg-slate-50 text-slate-700 px-5 py-2.5 rounded-xl hover:bg-slate-100 transition-all duration-300 text-sm font-bold flex items-center gap-2 border border-slate-100 hover:border-slate-200 hover:shadow-sm"
+                      className="bg-[#f4fbf8] text-[#5a6672] px-5 py-2.5 rounded-none hover:bg-slate-100 transition-all duration-300 text-sm font-bold flex items-center gap-2 border border-slate-100 hover:border-[#0e7c66]"
                     >
-                      <GlobeIcon className="w-4 h-4" />
+                      <Globe className="w-4 h-4" />
                       Visit Website
                     </a>
                   </div>
@@ -2001,9 +1922,9 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
       {/* View Details Modal - Premium Redesign */}
       {showDetailsModal && selectedPartnerForDetails && (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 z-50 overflow-hidden">
-          <div className="bg-white rounded-[2rem] max-w-4xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-emerald-100/50">
+          <div className="bg-white rounded-none max-w-4xl w-full max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-[#d0d5dc]/60">
             {/* Premium Header */}
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white p-8 rounded-t-[2rem] relative flex-shrink-0">
+            <div className="bg-[#0e7c66] text-white p-8 rounded-none relative flex-shrink-0">
               <div
                 className="absolute inset-0 opacity-5"
                 style={{
@@ -2013,19 +1934,19 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                 }}
               ></div>
               <div className="flex flex-col items-center relative z-10">
-                <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 border border-white/30 shadow-inner">
-                  <ShieldIcon className="w-7 h-7 text-white" />
+                <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-none flex items-center justify-center mb-4 border border-white/30 shadow-inner">
+                  <Shield className="w-7 h-7 text-white" />
                 </div>
                 <h2 className="text-2xl font-bold tracking-tight">
                   Partner Details
                 </h2>
-                <p className="text-emerald-50/80 mt-1 text-sm font-medium">
+                <p className="text-[#d4ede4]/80 mt-1 text-sm font-medium">
                   Comprehensive partner information
                 </p>
               </div>
               <button
                 onClick={() => setShowDetailsModal(false)}
-                className="absolute top-6 right-6 z-20 cursor-pointer text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/20 transition-all duration-300"
+                className="absolute top-6 right-6 z-20 cursor-pointer text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-none hover:bg-white/20 transition-all duration-300"
               >
                 <X className="w-6 h-6 pointer-events-none" />
               </button>
@@ -2037,51 +1958,49 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
             >
               <div className="p-8 space-y-8">
                 {/* Company Header Card - Premium */}
-                <div className="bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/80 rounded-2xl p-6 border border-emerald-100 shadow-sm relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-200/20 blur-3xl -mr-16 -mt-16"></div>
+                <div className={`${themeClasses.card.base} p-6 relative overflow-hidden`}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4ede4]/20 blur-3xl -mr-16 -mt-16"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
-                        <Building className="w-7 h-7" />
-                      </div>
+                      <ThemeIconContainer icon={Building} />
                       <div>
-                        <h3 className="text-2xl font-black text-slate-900 tracking-tight">
+                        <h3 className="text-2xl font-black text-[#0a2e1e] tracking-tight">
                           {selectedPartnerForDetails.company}
                         </h3>
-                        <span className="bg-emerald-500 text-white px-2.5 py-0.5 rounded-lg text-[10px] font-black uppercase tracking-widest">
+                        <span className="bg-[#0e7c66] text-white px-2.5 py-0.5 rounded-none text-[10px] font-black uppercase tracking-widest">
                           {selectedPartnerForDetails.type}
                         </span>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <div className="bg-white rounded-xl p-3 border border-emerald-50 shadow-sm">
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                      <div className="bg-white rounded-none p-3 border border-[#d0d5dc]/60 shadow-sm">
+                        <p className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]/50 mb-1">
                           Location
                         </p>
-                        <p className="font-bold text-slate-800 text-sm flex items-center gap-1">
-                          <GlobeIcon className="w-3.5 h-3.5 text-emerald-500" />
+                        <p className="font-bold text-[#0a2e1e] text-sm flex items-center gap-1">
+                          <Globe className="w-3.5 h-3.5 text-[#0e7c66]" />
                           {selectedPartnerForDetails.location}
                         </p>
                       </div>
-                      <div className="bg-white rounded-xl p-3 border border-emerald-50 shadow-sm">
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                      <div className="bg-white rounded-none p-3 border border-[#d0d5dc]/60 shadow-sm">
+                        <p className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]/50 mb-1">
                           Established
                         </p>
-                        <p className="font-bold text-slate-800 text-sm">2015</p>
+                        <p className="font-bold text-[#0a2e1e] text-sm">2015</p>
                       </div>
-                      <div className="bg-white rounded-xl p-3 border border-emerald-50 shadow-sm">
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                      <div className="bg-white rounded-none p-3 border border-[#d0d5dc]/60 shadow-sm">
+                        <p className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]/50 mb-1">
                           Team Size
                         </p>
-                        <p className="font-bold text-slate-800 text-sm">
+                        <p className="font-bold text-[#0a2e1e] text-sm">
                           50-200
                         </p>
                       </div>
-                      <div className="bg-white rounded-xl p-3 border border-emerald-50 shadow-sm">
-                        <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-1">
+                      <div className="bg-white rounded-none p-3 border border-[#d0d5dc]/60 shadow-sm">
+                        <p className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]/50 mb-1">
                           Compliance
                         </p>
-                        <p className="font-bold text-emerald-800 text-sm">
+                        <p className="font-bold text-[#0e7c66] text-sm">
                           ISO 27001, NIST
                         </p>
                       </div>
@@ -2089,14 +2008,14 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                   </div>
                 </div>
 
-                {/* Company Overview */}
+                {/* Company Overview - Partner ka vivaran */}
                 <div>
-                  <h4 className="flex items-center gap-2 text-lg font-black text-slate-900 mb-4">
-                    <ClipboardIcon className="w-5 h-5 text-emerald-500" />
+                  <h4 className="flex items-center gap-2 text-lg font-black text-[#0a2e1e] mb-4">
+                    <ClipboardList className="w-5 h-5 text-[#0e7c66]" />
                     Company Overview
                   </h4>
-                  <div className="bg-white border-2 border-emerald-50 rounded-2xl p-6 shadow-sm">
-                    <p className="text-slate-600 leading-relaxed mb-4">
+                  <div className="bg-white border border-[#d0d5dc]/60 rounded-none p-6 shadow-sm">
+                    <p className="text-[#5a6672] leading-relaxed mb-4">
                       {selectedPartnerForDetails.company} is a leading{" "}
                       {selectedPartnerForDetails.type.toLowerCase()}{" "}
                       specializing in secure data erasure and IT asset
@@ -2105,7 +2024,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                       clients across various sectors including healthcare,
                       finance, and government organizations.
                     </p>
-                    <p className="text-slate-600 leading-relaxed">
+                    <p className="text-[#5a6672] leading-relaxed">
                       Our team of Compliant professionals ensures complete data
                       destruction compliance with international standards
                       including NIST 800-88, DOD 5220.22-M, and Common Criteria.
@@ -2118,8 +2037,8 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
 
                 {/* Services Offered */}
                 <div>
-                  <h4 className="flex items-center gap-2 text-lg font-black text-slate-900 mb-4">
-                    <GearIcon className="w-5 h-5 text-emerald-500" />
+                  <h4 className="flex items-center gap-2 text-lg font-black text-[#0a2e1e] mb-4">
+                    <Settings className="w-5 h-5 text-[#0e7c66]" />
                     Services Offered
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -2135,13 +2054,13 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     ].map((service, index) => (
                       <div
                         key={`service-${service}`}
-                        className="group bg-white border-2 border-emerald-50 rounded-xl p-4 hover:border-emerald-300 hover:shadow-sm transition-all duration-300"
+                        className="group bg-white border border-[#d0d5dc]/60 rounded-none p-4 hover:border-[#0e7c66] hover:shadow-sm transition-all duration-300"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-emerald-50 rounded-lg flex items-center justify-center group-hover:bg-emerald-500 transition-colors duration-300">
-                            <CheckIcon className="w-4 h-4 text-emerald-800 group-hover:text-white transition-colors duration-300" />
+                          <div className="w-8 h-8 bg-[#d4ede4]/30 rounded-none flex items-center justify-center group-hover:bg-[#0e7c66] transition-colors duration-300">
+                            <Check className="w-4 h-4 text-[#0e7c66] group-hover:text-white transition-colors duration-300" />
                           </div>
-                          <span className="font-bold text-slate-800 text-sm">
+                          <span className="font-bold text-[#0a2e1e] text-sm">
                             {service}
                           </span>
                         </div>
@@ -2152,32 +2071,32 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
 
                 {/* Contact Information */}
                 <div>
-                  <h4 className="flex items-center gap-2 text-lg font-black text-slate-900 mb-4">
-                    <MessageSquare className="w-5 h-5 text-emerald-500" />
+                  <h4 className="flex items-center gap-2 text-lg font-black text-[#0a2e1e] mb-4">
+                    <MessageSquare className="w-5 h-5 text-[#0e7c66]" />
                     Contact Information
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Primary Contact */}
-                    <div className="bg-white border-2 border-emerald-50 rounded-2xl p-6 shadow-sm">
-                      <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-4">
+                    <div className="bg-white border border-[#d0d5dc]/60 rounded-none p-6 shadow-sm">
+                      <p className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]/50 mb-4">
                         Primary Contact
                       </p>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400">
+                          <div className="w-8 h-8 rounded-none bg-[#f4fbf8] border border-[#d0d5dc]/30 flex items-center justify-center text-slate-400">
                             <User className="w-4 h-4" />
                           </div>
                           <div>
                             <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">
                               Name
                             </p>
-                            <p className="font-bold text-slate-800 text-sm">
+                            <p className="font-bold text-[#0a2e1e] text-sm">
                               {selectedPartnerForDetails.contact.name}
                             </p>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-500">
+                          <div className="w-8 h-8 rounded-full bg-[#d4ede4]/30 border border-[#d0d5dc]/30 flex items-center justify-center text-[#0e7c66]">
                             <MessageSquare className="w-4 h-4" />
                           </div>
                           <div>
@@ -2186,15 +2105,15 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             </p>
                             <a
                               href={`mailto:${selectedPartnerForDetails.contact.email}`}
-                              className="font-bold text-emerald-800 hover:text-emerald-800 text-sm underline decoration-emerald-200 underline-offset-2 hover:decoration-emerald-500 transition-all"
+                              className="font-bold text-[#0e7c66] hover:text-[#0e7c66] text-sm underline decoration-[#d4ede4] underline-offset-2 hover:decoration-[#0e7c66] transition-all"
                             >
                               {selectedPartnerForDetails.contact.email}
                             </a>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center text-teal-500">
-                            <StarIcon className="w-4 h-4" />
+                          <div className="w-8 h-8 rounded-full bg-[#d4ede4]/30 border border-[#d0d5dc]/30 flex items-center justify-center text-[#0e7c66]">
+                            <Phone className="w-4 h-4" />
                           </div>
                           <div>
                             <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">
@@ -2202,15 +2121,15 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                             </p>
                             <a
                               href={`tel:${selectedPartnerForDetails.contact.phone}`}
-                              className="font-bold text-emerald-800 hover:text-emerald-800 text-sm transition-all"
+                              className="font-bold text-[#0e7c66] hover:text-[#0e7c66] text-sm transition-all"
                             >
                               {selectedPartnerForDetails.contact.phone}
                             </a>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-cyan-50 flex items-center justify-center text-cyan-500">
-                            <GlobeIcon className="w-4 h-4" />
+                          <div className="w-8 h-8 rounded-none bg-[#f4fbf8] border border-[#d0d5dc]/30 flex items-center justify-center text-[#5a6672]">
+                            <Globe className="w-4 h-4" />
                           </div>
                           <div>
                             <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">
@@ -2220,7 +2139,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                               href={selectedPartnerForDetails.contact.website}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              className="font-bold text-emerald-800 hover:text-emerald-800 text-sm underline decoration-emerald-200 underline-offset-2 hover:decoration-emerald-500 transition-all"
+                              className="font-bold text-[#0e7c66] hover:text-[#0e7c66] text-sm underline decoration-[#d4ede4] underline-offset-2 hover:decoration-[#0e7c66] transition-all"
                             >
                               {selectedPartnerForDetails.contact.website}
                             </a>
@@ -2229,8 +2148,8 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                       </div>
                     </div>
                     {/* Business Hours */}
-                    <div className="bg-white border-2 border-emerald-50 rounded-2xl p-6 shadow-sm">
-                      <p className="text-[10px] uppercase tracking-widest font-black text-emerald-800/50 mb-4">
+                    <div className="bg-white border border-[#d0d5dc]/60 rounded-none p-6 shadow-sm">
+                      <p className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]/50 mb-4">
                         Business Hours
                       </p>
                       <div className="space-y-3">
@@ -2249,22 +2168,22 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                         ].map((schedule, idx) => (
                           <div
                             key={`schedule-${schedule.day}`}
-                            className="flex items-center justify-between py-2 border-b border-emerald-50 last:border-0"
+                            className="flex items-center justify-between py-2 border-b border-[#d0d5dc]/30 last:border-0"
                           >
-                            <span className="text-slate-600 font-medium text-sm">
+                            <span className="text-[#5a6672] font-medium text-sm">
                               {schedule.day}
                             </span>
                             <span
-                              className={`font-bold text-sm ${schedule.active ? "text-slate-800" : "text-slate-400"}`}
+                              className={`font-bold text-sm ${schedule.active ? "text-[#0a2e1e]" : "text-slate-400"}`}
                             >
                               {schedule.time}
                             </span>
                           </div>
                         ))}
-                        <div className="bg-emerald-50 rounded-xl p-3 mt-2 border border-emerald-100">
+                        <div className="bg-[#d4ede4]/30 rounded-none p-3 mt-2 border border-[#d0d5dc]/60">
                           <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                            <span className="text-[10px] uppercase tracking-widest font-black text-emerald-700">
+                            <div className="w-2 h-2 bg-[#0e7c66] rounded-none animate-pulse"></div>
+                            <span className="text-[10px] uppercase tracking-widest font-black text-[#0e7c66]">
                               Emergency: 24/7 Available
                             </span>
                           </div>
@@ -2275,20 +2194,20 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4 pt-6 border-t border-emerald-100/60">
-                  <button
+                <div className="flex gap-4 pt-6 border-t border-[#d0d5dc]/60">
+                  <ThemeButton
                     onClick={() => {
                       setShowDetailsModal(false);
                       handleContactPartner(selectedPartnerForDetails);
                     }}
-                    className="flex-1 bg-slate-900 text-white py-4 px-6 rounded-xl hover:bg-emerald-600 transition-all duration-300 font-black shadow-xl shadow-slate-900/10 hover:shadow-emerald-500/30 flex items-center justify-center gap-2"
+                    className="flex-1 justify-center py-4 text-base"
                   >
                     Contact This Partner
-                    <ArrowRightIcon className="w-4 h-4" />
-                  </button>
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </ThemeButton>
                   <button
                     onClick={() => setShowDetailsModal(false)}
-                    className="px-6 py-4 border-2 border-slate-100 text-slate-600 rounded-xl hover:border-emerald-300 hover:text-emerald-700 hover:bg-emerald-50 transition-all duration-300 font-black"
+                    className={`${themeClasses.button.outline} px-6 py-4`}
                   >
                     Close
                   </button>

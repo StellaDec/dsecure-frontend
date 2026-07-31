@@ -1473,5 +1473,31 @@ export const blogPosts: BlogPost[] = [
     keywords: "DBAN alternative for SSD and NVMe, DBAN alternative, DBAN alternative for SSD, best DBAN alternative 2026",
     publishDate: "July 24, 2026",
     author: "Nitesh Kushwaha"
+  },
+  {
+    id: "physical-destruction-vs-data-wiping",
+    slug: "physical-destruction-vs-data-wiping",
+    title: "Physical Destruction vs. Data Wiping: A Cost Analysis for IT Leaders",
+    excerpt: "Should you shred your old hard drives or wipe them? Discover the security, financial, and environmental differences between physical destruction and data erasure.",
+    link: "/blog/physical-destruction-vs-data-wiping",
+    tag: "Data Erasure",
+    category: "Business Strategy",
+    keywords: "physical destruction vs data wiping, ITAD cost analysis, secure data erasure, shredding vs wiping, enterprise hardware disposal",
+    publishDate: "April 07, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "how-to-erase-mac",
+    slug: "how-to-erase-mac",
+    title: "How to Securely Erase Mac Devices (M1, M2, M3 & Intel) | Enterprise Mac Data Erasure",
+    excerpt: "Guide for IT teams to securely erase Macs, including Apple Silicon. Learn why factory resets fail compliance.",
+    link: "/blog/how-to-erase-mac",
+    tag: "Mac",
+    category: "Technical Guide",
+    keywords: "how to erase Mac securely enterprise, Mac data destruction compliance, Apple Silicon M1 M2 secure wipe, MacBook NIST erasure guide, Mac data sanitization GDPR HIPAA",
+    publishDate: "February 13, 2025",
+    author: "D-Secure Editorial Team",
+    readTime: "9 min read"
   }
 ];

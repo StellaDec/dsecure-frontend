@@ -9,36 +9,36 @@ export const getProductImageConfig = (category: string) => {
   const baseConfig = {
     iconSize: 64,
     backgroundColor: 'from-gray-800 to-gray-900',
-    accentColor: 'text-emerald-500',
+    accentColor: 'text-[#0a2e1e]',
   };
 
   switch (category) {
     case 'drive-eraser':
       return {
         ...baseConfig,
-        backgroundColor: 'from-blue-800 to-blue-900',
-        accentColor: 'text-blue-400',
+        backgroundColor: 'from-[#0e7c66] to-[#0a2e1e]',
+        accentColor: 'text-[#d4ede4]',
         iconSize: 64,
       };
     case 'drive-eraser-diagnostic':
       return {
         ...baseConfig,
-        backgroundColor: 'from-emerald-800 to-emerald-900',
-        accentColor: 'text-emerald-400',
+        backgroundColor: 'from-[#0e7c66] to-[#0a2e1e]',
+        accentColor: 'text-[#d4ede4]',
         iconSize: 64,
       };
     case 'admin-console':
       return {
         ...baseConfig,
-        backgroundColor: 'from-purple-800 to-purple-900',
-        accentColor: 'text-purple-400',
+        backgroundColor: 'from-[#0e7c66] to-[#0a2e1e]',
+        accentColor: 'text-[#d4ede4]',
         iconSize: 64,
       };
     case 'mobile-eraser':
       return {
         ...baseConfig,
-        backgroundColor: 'from-green-800 to-green-900',
-        accentColor: 'text-green-400',
+        backgroundColor: 'from-[#0e7c66] to-[#0a2e1e]',
+        accentColor: 'text-[#d4ede4]',
         iconSize: 64,
       };
     case 'file-eraser':

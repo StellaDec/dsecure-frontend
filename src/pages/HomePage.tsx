@@ -3,29 +3,7 @@ import { Link } from "react-router-dom";
 import DSecureIconOnly from "@/assets/dsecure-icon-only.svg"; // Assuming vite-plugin-svgr or similar, but wait, typical vite import provides url by default.
 import OptimizedImage from "@/components/OptimizedImage";
 import UpcomingBadge from "@/components/ui/UpcomingBadge";
-import {
-  LightningIcon,
-  ArrowRightIcon,
-  ShieldIcon,
-  BuildingIcon,
-  StarIcon,
-  GearIcon,
-  HoverIcon,
-  ClipboardIcon,
-  GlobeIcon,
-  HeartIcon,
-  CloudIcon,
-  ServerIcon,
-  DatabaseIcon,
-  MobileIcon,
-  CheckIcon,
-  MonitorIcon,
-  ActivityIcon,
-  CpuIcon,
-  ArrowLeftIcon,
-  LockIcon,
-} from "@/components/FlatIcons";
-import { Search, Monitor, Terminal, Database, FileCheck, CheckCircle2, X, ZoomIn, ZoomOut, ShieldCheck, Download } from "lucide-react";
+import { Search, Monitor, Terminal, Database, FileCheck, CheckCircle2, X, ZoomIn, ZoomOut, ShieldCheck, Download, Mail, Check, Trash2, Cloud, Folder, HardDrive, Phone, Coins, DollarSign, ShoppingCart, Lock, Server, Zap, Globe, ArrowRight, ArrowLeft, Shield, Building2, Star, Settings, ClipboardCheck, Heart, Smartphone, Activity, Cpu, File, Usb, Network, Eraser, SearchCheck, ArrowRightLeft, Disc, Snowflake, Bot, Landmark, HeartPulse, RefreshCcw, CreditCard, Award, Headphones, Gauge, Building, Layers } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, memo, useMemo, useCallback, useState } from "react";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
@@ -33,6 +11,7 @@ import { getSEOForPage } from "@/utils/seo";
 import { usePerformanceMonitor } from "@/utils/performanceUtils";
 import { useTranslation } from "react-i18next";
 import { FAQSection } from "@/components/FAQSection";
+import { ThemeButton, ThemeCard, ThemeIconContainer, ThemeSectionHeading, ThemeSection, themeClasses, themeTokens } from "@/components/ui/Theme";
 import { homeFAQs } from "@/data/seoFaqs";
 const HomePage = memo(function HomePage() {
   usePerformanceMonitor("HomePage");
@@ -76,7 +55,7 @@ const HomePage = memo(function HomePage() {
         price: t("home.driveEraserPrice"),
         note: t("home.driveEraserPriceNote"),
         link: "/products/drive-eraser",
-        icon: DatabaseIcon,
+        icon: HardDrive,
         color: "emerald",
         isUpcoming: false,
         features: [
@@ -93,7 +72,7 @@ const HomePage = memo(function HomePage() {
         price: t("home.fileEraserPrice"),
         note: t("home.fileEraserPriceNote"),
         link: "/products/file-eraser",
-        icon: ServerIcon,
+        icon: File,
         color: "blue",
         isUpcoming: false,
         features: [
@@ -110,7 +89,7 @@ const HomePage = memo(function HomePage() {
         price: t("home.fileEraserNetworkPrice"),
         note: t("home.fileEraserNetworkPriceNote"),
         link: "/products/file-eraser-network",
-        icon: ServerIcon,
+        icon: Network,
         color: "teal",
         isUpcoming: true,
         features: [
@@ -127,7 +106,7 @@ const HomePage = memo(function HomePage() {
         price: "TBA",
         note: "Standard model",
         link: "/products/system-cleaner",
-        icon: MonitorIcon,
+        icon: Eraser,
         color: "teal",
         isUpcoming: false,
         features: [
@@ -144,7 +123,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $1",
         note: "pay per use",
         link: "/products/smartphone-eraser",
-        icon: MobileIcon,
+        icon: Smartphone,
         color: "emerald",
         isUpcoming: true,
         features: [
@@ -161,7 +140,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $10",
         note: "pay per use",
         link: "/products/smartphone-diagnostic",
-        icon: ActivityIcon,
+        icon: Smartphone,
         color: "teal",
         isUpcoming: true,
         features: [
@@ -178,7 +157,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $10",
         note: "pay per use",
         link: "/products/hardware-diagnostics",
-        icon: CpuIcon,
+        icon: Cpu,
         color: "emerald",
         isUpcoming: true,
         features: [
@@ -195,7 +174,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $30",
         note: "pay per use",
         link: "/products/drive-eraser-diagnostic",
-        icon: ActivityIcon,
+        icon: HardDrive,
         color: "blue",
         isUpcoming: true,
         features: [
@@ -212,7 +191,7 @@ const HomePage = memo(function HomePage() {
         price: "TBA",
         note: "Standard model",
         link: "/products/drive-verifier",
-        icon: CheckCircle2,
+        icon: SearchCheck,
         color: "emerald",
         isUpcoming: true,
         features: [
@@ -229,7 +208,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $20",
         note: "pay per use",
         link: "/products/virtual-machine-eraser",
-        icon: MonitorIcon,
+        icon: Monitor,
         color: "emerald",
         isUpcoming: true,
         features: [
@@ -246,7 +225,7 @@ const HomePage = memo(function HomePage() {
         price: "TBA",
         note: "Standard model",
         link: "/products/removable-media-eraser",
-        icon: DatabaseIcon,
+        icon: Usb,
         color: "emerald",
         isUpcoming: true,
         features: [
@@ -263,7 +242,7 @@ const HomePage = memo(function HomePage() {
         price: "TBA",
         note: "Standard model",
         link: "/products/lun-eraser",
-        icon: ServerIcon,
+        icon: Server,
         color: "emerald",
         isUpcoming: true,
         features: [
@@ -280,7 +259,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $1053",
         note: "pay per license",
         link: "/products/forensic-imaging",
-        icon: ShieldIcon,
+        icon: Disc,
         color: "blue",
         isUpcoming: true, // Already true, confirmed
         features: [
@@ -297,7 +276,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $80",
         note: "pay per license",
         link: "/products/freeze-state",
-        icon: LockIcon,
+        icon: Snowflake,
         color: "teal",
         isUpcoming: true,
         features: [
@@ -314,7 +293,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $5",
         note: "pay per use",
         link: "/products/data-migration",
-        icon: ActivityIcon,
+        icon: ArrowRightLeft,
         color: "emerald",
         isUpcoming: true,
         features: [
@@ -331,7 +310,7 @@ const HomePage = memo(function HomePage() {
         price: "TBA",
         note: "Standard model",
         link: "/products/asset-reimaging",
-        icon: MonitorIcon,
+        icon: Disc,
         color: "blue",
         isUpcoming: true,
         features: [
@@ -348,7 +327,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $85",
         note: "pay per license",
         link: "/products/freeze-state-smart",
-        icon: ActivityIcon,
+        icon: Snowflake,
         color: "emerald",
         isUpcoming: true,
         features: [
@@ -365,7 +344,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $90",
         note: "pay per license",
         link: "/products/freeze-state-advanced",
-        icon: LightningIcon,
+        icon: Snowflake,
         color: "teal",
         isUpcoming: true,
         features: [
@@ -382,7 +361,7 @@ const HomePage = memo(function HomePage() {
         price: "starting at $5",
         note: "pay per use",
         link: "/products/autopilot-detection",
-        icon: ActivityIcon,
+        icon: Bot,
         color: "teal",
         isUpcoming: true,
         features: [
@@ -395,15 +374,21 @@ const HomePage = memo(function HomePage() {
     ],
     [
       t,
-      DatabaseIcon,
-      ServerIcon,
-      MobileIcon,
-      ActivityIcon,
-      CpuIcon,
-      MonitorIcon,
-      ShieldIcon,
-      LockIcon,
-      CheckCircle2,
+      HardDrive,
+      File,
+      Network,
+      Eraser,
+      Smartphone,
+      Cpu,
+      Activity,
+      SearchCheck,
+      Monitor,
+      Usb,
+      Server,
+      Disc,
+      Snowflake,
+      ArrowRightLeft,
+      Bot,
     ],
   );
 
@@ -437,22 +422,20 @@ const HomePage = memo(function HomePage() {
           })) 
         }} 
       />
-      <section
-        id="hero"
-        className="bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50 py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 xxl:py-18"
-      >
-        <div className="container-responsive">
+      {/* Hero Section: Yahan par primary Call to Action (CTA) aur background animations hain */}
+      <ThemeSection id="hero" className="py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 xxl:py-18 relative overflow-hidden" >
+        <div className="container-responsive relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 md:gap-12 lg:gap-12 xl:gap-16 xxl:gap-20 items-center">
             <div className="space-y-6 xs:space-y-7 sm:space-y-8 md:space-y-8 lg:space-y-8 xl:space-y-10 xxl:space-y-12 lg:pr-6 xl:pr-8 xxl:pr-12">
               <Reveal>
                 <div className="space-y-6">
-                  <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl xxl:text-6xl font-bold tracking-tight text-slate-900 leading-tight xs:leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight xxl:leading-tight">
+                  <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl xxl:text-6xl font-bold tracking-tight text-[#0a2e1e] leading-tight xs:leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight xxl:leading-tight">
                     {t("hero.title")}{" "}
-                    <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                    <span className="text-[#0e7c66]">
                       {t("hero.titleHighlight")}
                     </span>
                   </h1>
-                  <p className="text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-xl xxl:text-2xl text-slate-600 leading-relaxed xs:leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed xxl:leading-relaxed">
+                  <p className="text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-xl xxl:text-2xl text-black leading-relaxed xs:leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed xxl:leading-relaxed">
                     {t("hero.subtitle")}
                   </p>
                 </div>
@@ -461,95 +444,67 @@ const HomePage = memo(function HomePage() {
                 <div className="flex flex-col xs:flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row xxl:flex-row items-start xs:items-start sm:items-center md:items-center lg:items-center xl:items-center xxl:items-center gap-3 xs:gap-4 sm:gap-4 md:gap-4 lg:gap-4 xl:gap-5 xxl:gap-6">
                   <Link
                     to="/all-products"
-                    className="btn-primary w-full sm:w-auto text-center inline-flex items-center justify-center"
+                    className={`${themeClasses.button.base} ${themeClasses.button.primary} w-full sm:w-auto`}
                     aria-label="Explore D-Secure Software"
                   >
-                    <HoverIcon>
-                      {(filled) => (
-                        <LightningIcon
+                    <ShieldCheck
                           className="w-5 h-5 mr-2"
-                          filled={filled}
+                          stroke="currentColor"
                         />
-                      )}
-                    </HoverIcon>
                     {t("home.exploreDataEraserSoftware", "Explore D-Secure")}
                   </Link>
                   {/* 
                   <Link
                     to="/pricing-and-plan"
-                    className="btn-primary w-full sm:w-auto text-center inline-flex items-center justify-center bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700"
+                    className="btn-primary w-full sm:w-auto text-center inline-flex items-center justify-center bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:ring-offset-2 focus-visible:outline-none min-h-[44px]"
                   >
-                    <HoverIcon>
-                      {(filled) => (
-                        <svg
+                    <ShoppingCart
                           className="w-5 h-5 mr-2"
-                          fill={filled ? "currentColor" : "none"}
                           stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 5M7 13v5a2 2 0 002 2h6.5M17 17a2 2 0 11-4 0 2 2 0 014 0zM9 17a2 2 0 11-4 0 2 2 0 014 0z"
-                          />
-                        </svg>
-                      )}
-                    </HoverIcon>
+                        />
                     Buy Now
                   </Link>
                   */}
                   <Link
                     to="/contact"
-                    className="btn-primary w-full sm:w-auto text-center inline-flex items-center justify-center bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700"
+                    className={`${themeClasses.button.base} ${themeClasses.button.outline} w-full sm:w-auto`}
                   >
-                    <HoverIcon>
-                      {(filled) => (
-                        <svg
+                    <Mail
                           className="w-5 h-5 mr-2"
-                          fill={filled ? "currentColor" : "none"}
                           stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      )}
-                    </HoverIcon>
+                        />
                     Contact Sales
                   </Link>
                 </div>
               </Reveal>
               <Reveal delayMs={30}>
-                <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-black">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#0e7c66] rounded-full"></div>
                     <span>ISO 27001</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#0e7c66] rounded-full"></div>
                     <span>NIST 800-88</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#0e7c66] rounded-full"></div>
                     <span>GDPR</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#0e7c66] rounded-full"></div>
                     <span>SOC 2</span>
                   </div>
                 </div>
               </Reveal>
             </div>
-            <div className="relative lg:order-last">
+            <div className="relative lg:order-last -mt-14 lg:-mt-20">
               <Reveal delayMs={0}>
-                <div className="relative flex items-center justify-center min-h-[380px] lg:min-h-[520px]">
+                <div className="relative flex items-center justify-center min-h-[340px] lg:min-h-[460px]">
                   {/* Hero Illustration Container - Professional Design */}
-                  <div className="relative w-[380px] h-[380px] lg:w-[480px] lg:h-[480px]">
+                  <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[480px] lg:h-[480px] scale-90 sm:scale-100">
                     {/* Outer Glow Ring */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-100/40 via-transparent to-teal-100/40 blur-xl"></div>
-
-                    {/* Outer Glow Ring */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-100/40 via-transparent to-teal-100/40 blur-xl"></div>
+                    <div className="absolute inset-0 rounded-full bg-[#0e7c66]/20 blur-xl"></div>
 
                     {/* Outer Dashed Circle */}
                     <svg
@@ -574,8 +529,8 @@ const HomePage = memo(function HomePage() {
                           x2="100%"
                           y2="100%"
                         >
-                          <stop offset="0%" stopColor="#10b981" />
-                          <stop offset="100%" stopColor="#14b8a6" />
+                          <stop offset="0%" stopColor="#34d399" />
+                          <stop offset="100%" stopColor="#34d399" />
                         </linearGradient>
                       </defs>
                     </svg>
@@ -603,8 +558,8 @@ const HomePage = memo(function HomePage() {
                           x2="100%"
                           y2="100%"
                         >
-                          <stop offset="0%" stopColor="#14b8a6" />
-                          <stop offset="100%" stopColor="#10b981" />
+                          <stop offset="0%" stopColor="#0e7c66" />
+                          <stop offset="100%" stopColor="#0e7c66" />
                         </linearGradient>
                       </defs>
                     </svg>
@@ -627,9 +582,9 @@ const HomePage = memo(function HomePage() {
                                 x2="100%"
                                 y2="100%"
                               >
-                                <stop offset="0%" stopColor="#10b981" />
-                                <stop offset="50%" stopColor="#059669" />
-                                <stop offset="100%" stopColor="#047857" />
+                                <stop offset="0%" stopColor="#0e7c66" />
+                                <stop offset="50%" stopColor="#0e7c66" />
+                                <stop offset="100%" stopColor="#1c2530" />
                               </linearGradient>
                               <filter
                                 id="shieldShadow"
@@ -642,7 +597,7 @@ const HomePage = memo(function HomePage() {
                                   dx="0"
                                   dy="4"
                                   stdDeviation="6"
-                                  floodColor="#10b981"
+                                  floodColor="#0e7c66"
                                   floodOpacity="0.3"
                                 />
                               </filter>
@@ -666,19 +621,10 @@ const HomePage = memo(function HomePage() {
                           <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
                             {/* Checkmark Circle */}
                             <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
-                              <svg
+                              <Check
                                 className="w-7 h-7 lg:w-10 lg:h-10 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="3"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M5 13l4 4L19 7"
-                                />
-                              </svg>
+                                strokeWidth={3}
+                              />
                             </div>
                             {/* Text */}
                             <span className="text-white text-[10px] lg:text-xs font-bold tracking-wider mt-2 uppercase">
@@ -695,23 +641,14 @@ const HomePage = memo(function HomePage() {
                     {/* Top - Data Erasure (Main Product) */}
                     <div className="absolute top-[-8px] left-1/2 -translate-x-1/2">
                       <div className="group relative">
-                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-white rounded-2xl shadow-lg border-2 border-emerald-200 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 hover:border-emerald-500">
+                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-white rounded-full border-2 border-[#d0d5dc]/60 flex items-center justify-center transition-all duration-150 hover:scale-110 hover:border-[#0e7c66]">
                           {/* Trash/Delete Icon - Clear Data Erasure Symbol */}
-                          <svg
-                            className="w-7 h-7 lg:w-8 lg:h-8 text-emerald-800"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                            />
-                          </svg>
+                          <Trash2
+                            className="w-7 h-7 lg:w-8 lg:h-8 text-[#0e7c66]"
+                            strokeWidth={2}
+                          />
                         </div>
-                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] lg:text-[10px] font-semibold text-emerald-700 whitespace-nowrap bg-white/80 px-2 py-0.5 rounded">
+                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] lg:text-[10px] font-bold text-[#0a2e1e] whitespace-nowrap bg-white px-2 py-0.5 rounded-none border border-[#d0d5dc]/50">
                           Data Erasure
                         </span>
                       </div>
@@ -720,20 +657,14 @@ const HomePage = memo(function HomePage() {
                     {/* Top Left - Desktop/Laptop */}
                     <div className="absolute top-[90px] left-[12px] lg:top-[110px] lg:left-[15px]">
                       <div className="group relative">
-                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-2xl shadow-lg border-2 border-emerald-200 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 hover:border-emerald-500">
+                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-full border-2 border-[#d0d5dc]/60 flex items-center justify-center transition-all duration-150 hover:scale-110 hover:border-[#0e7c66]">
                           {/* Desktop/Monitor Icon */}
-                          <svg
-                            className="w-6 h-6 lg:w-7 lg:h-7 text-emerald-800"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                          >
-                            <rect x="2" y="3" width="20" height="14" rx="2" />
-                            <path d="M8 21h8M12 17v4" />
-                          </svg>
+                          <Monitor
+                            className="w-6 h-6 lg:w-7 lg:h-7 text-[#0e7c66]"
+                            strokeWidth={2}
+                          />
                         </div>
-                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[8px] lg:text-[9px] font-medium text-slate-600 whitespace-nowrap bg-white/80 px-1.5 py-0.5 rounded">
+                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] lg:text-[10px] font-bold text-[#0a2e1e] whitespace-nowrap bg-white px-2 py-0.5 rounded-none border border-[#d0d5dc]/50">
                           Personal Computers
                         </span>
                       </div>
@@ -742,19 +673,14 @@ const HomePage = memo(function HomePage() {
                     {/* Top Right - Cloud */}
                     <div className="absolute top-[90px] right-[12px] lg:top-[110px] lg:right-[15px]">
                       <div className="group relative">
-                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-2xl shadow-lg border-2 border-emerald-200 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 hover:border-emerald-500">
+                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-full border-2 border-[#d0d5dc]/60 flex items-center justify-center transition-all duration-150 hover:scale-110 hover:border-[#0e7c66]">
                           {/* Cloud Icon */}
-                          <svg
-                            className="w-6 h-6 lg:w-7 lg:h-7 text-emerald-800"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                          </svg>
+                          <Cloud
+                            className="w-6 h-6 lg:w-7 lg:h-7 text-[#0e7c66]"
+                            strokeWidth={2}
+                          />
                         </div>
-                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[8px] lg:text-[9px] font-medium text-slate-600 whitespace-nowrap bg-white/80 px-1.5 py-0.5 rounded">
+                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] lg:text-[10px] font-bold text-[#0a2e1e] whitespace-nowrap bg-white px-2 py-0.5 rounded-none border border-[#d0d5dc]/50">
                           Cloud
                         </span>
                       </div>
@@ -763,19 +689,14 @@ const HomePage = memo(function HomePage() {
                     {/* Bottom Left - Files/Folders */}
                     <div className="absolute bottom-[80px] left-[12px] lg:bottom-[95px] lg:left-[15px]">
                       <div className="group relative">
-                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-2xl shadow-lg border-2 border-emerald-200 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 hover:border-emerald-500">
+                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-full border-2 border-[#d0d5dc]/60 flex items-center justify-center transition-all duration-150 hover:scale-110 hover:border-[#0e7c66]">
                           {/* Folder Icon */}
-                          <svg
-                            className="w-6 h-6 lg:w-7 lg:h-7 text-emerald-800"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                          </svg>
+                          <Folder
+                            className="w-6 h-6 lg:w-7 lg:h-7 text-[#0e7c66]"
+                            strokeWidth={2}
+                          />
                         </div>
-                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[8px] lg:text-[9px] font-medium text-slate-600 whitespace-nowrap bg-white/80 px-1.5 py-0.5 rounded">
+                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] lg:text-[10px] font-bold text-[#0a2e1e] whitespace-nowrap bg-white px-2 py-0.5 rounded-none border border-[#d0d5dc]/50">
                           Files/Folder
                         </span>
                       </div>
@@ -784,26 +705,14 @@ const HomePage = memo(function HomePage() {
                     {/* Bottom Right - HDD/SSD Drives */}
                     <div className="absolute bottom-[80px] right-[12px] lg:bottom-[95px] lg:right-[15px]">
                       <div className="group relative">
-                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-2xl shadow-lg border-2 border-emerald-200 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 hover:border-emerald-500">
+                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-full border-2 border-[#d0d5dc]/60 flex items-center justify-center transition-all duration-150 hover:scale-110 hover:border-[#0e7c66]">
                           {/* HDD/Drive Icon - Disk with center */}
-                          <svg
-                            className="w-6 h-6 lg:w-7 lg:h-7 text-emerald-800"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                          >
-                            <rect x="4" y="4" width="16" height="16" rx="2" />
-                            <circle cx="12" cy="12" r="4" />
-                            <circle
-                              cx="12"
-                              cy="12"
-                              r="1.5"
-                              fill="currentColor"
-                            />
-                          </svg>
+                          <HardDrive
+                            className="w-6 h-6 lg:w-7 lg:h-7 text-[#0e7c66]"
+                            strokeWidth={2}
+                          />
                         </div>
-                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[8px] lg:text-[9px] font-medium text-slate-600 whitespace-nowrap bg-white/80 px-1.5 py-0.5 rounded">
+                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] lg:text-[10px] font-bold text-[#0a2e1e] whitespace-nowrap bg-white px-2 py-0.5 rounded-none border border-[#d0d5dc]/50">
                           HDD/SSD
                         </span>
                       </div>
@@ -812,23 +721,14 @@ const HomePage = memo(function HomePage() {
                     {/* Bottom - Compliance/Certification */}
                     <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2">
                       <div className="group relative">
-                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-white rounded-2xl shadow-lg border-2 border-emerald-200 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 hover:border-emerald-500">
+                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-white rounded-full border-2 border-[#d0d5dc]/60 flex items-center justify-center transition-all duration-150 hover:scale-110 hover:border-[#0e7c66]">
                           {/* Shield with Checkmark - Compliance */}
-                          <svg
-                            className="w-7 h-7 lg:w-8 lg:h-8 text-emerald-800"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                            />
-                          </svg>
+                          <ShieldCheck
+                            className="w-7 h-7 lg:w-8 lg:h-8 text-[#0e7c66]"
+                            strokeWidth={2}
+                          />
                         </div>
-                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] lg:text-[10px] font-semibold text-emerald-700 whitespace-nowrap bg-white/80 px-2 py-0.5 rounded">
+                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] lg:text-[10px] font-bold text-[#0a2e1e] whitespace-nowrap bg-white px-2 py-0.5 rounded-none border border-[#d0d5dc]/50">
                           Compliance
                         </span>
                       </div>
@@ -839,88 +739,144 @@ const HomePage = memo(function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </ThemeSection>
+
+      {/* Key Features Overlapping Hero */}
+      {(() => {
+        const features = [
+          {
+            id: "verifiableErasure",
+            icon: (filled: boolean) => <ShieldCheck className="w-8 h-8 text-current" stroke="currentColor" />,
+            title: t("home.verifiableErasure"),
+            desc: t("home.verifiableErasureDesc"),
+          },
+          {
+            id: "auditReady",
+            icon: (filled: boolean) => <ClipboardCheck className="w-8 h-8 text-current" stroke="currentColor" />,
+            title: t("home.auditReadyReports"),
+            desc: t("home.auditReadyReportsDesc"),
+          },
+          {
+            id: "globalStds",
+            icon: (filled: boolean) => <Globe className="w-8 h-8 text-current" stroke="currentColor" />,
+            title: t("home.globalStandards"),
+            desc: t("home.globalStandardsDesc"),
+          }
+        ];
+        return (
+          <ThemeSection alternate className="relative w-full pt-1 pb-24">
+            <div className="relative z-20 -mt-12 container-responsive px-4">
+              <Reveal delayMs={700}>
+                <div className={`${themeClasses.card.base} ${themeClasses.card.padding}`}>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    {features.map((feat, idx) => (
+                      <div key={feat.id} className="text-center group">
+                        <div className={`${themeClasses.icon.wrapper} ${themeClasses.icon.wrapperSize.lg} mx-auto mb-4 text-[#0e7c66] group-hover:text-white`}>
+                          {feat.icon(false)}
+                        </div>
+                        <h3 className="text-lg font-bold text-[#1c2530] mb-2 group-hover:text-[#0e7c66] transition-colors">
+                          {feat.title}
+                        </h3>
+                        <p className="text-[#5a6672] text-sm">
+                          {feat.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+          </ThemeSection>
+        );
+      })()}
 
       {/* Reports and Certificates High-Impact Section */}
-      <section className="py-16 md:py-24 bg-slate-50 border-y border-gray-200 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+      <ThemeSection className="py-16 md:py-24 border-y border-[#d0d5dc]/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
         <div className="container-responsive relative z-10">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto mb-16">
-              <div className="inline-flex items-center justify-center p-3 bg-emerald-100 rounded-2xl mb-6 border border-emerald-200">
-                <FileCheck className="w-8 h-8 text-emerald-600" />
+              <div className="inline-flex items-center justify-center p-3 bg-[#e6f4ef] rounded-none mb-6 border border-[#0e7c66]/20">
+                <FileCheck className="w-8 h-8 text-[#0e7c66]" />
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-slate-900">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#1c2530]">
                 Certified & Tamper-Proof Reports
               </h2>
-              <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto text-slate-600">
+              <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-[#5a6672]">
                 Every erasure and diagnostic process is backed by digitally signed, compliance-ready certificates and comprehensive reports.
               </p>
               <Link
                 to="/reports-and-certificates"
-                className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-emerald-500 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 inline-flex items-center justify-center"
+                className="bg-[#0e7c66] text-white border border-[#0e7c66] px-8 py-4 rounded-none font-bold text-lg hover:bg-[#1c2530] hover:text-white hover:border-[#1c2530] transition-all duration-150 inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:outline-none min-h-[44px] group"
               >
                 View All Certificates
-                <ArrowRightIcon className="w-5 h-5 ml-2" filled={false} />
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:text-white text-white" />
               </Link>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* File Eraser Certificate Card */}
-            <Reveal delayMs={100} className="h-full">
-              <div 
-                onClick={() => handleOpenModal('https://assets.dsecuretech.com/Reports/file%20eraser/2160001.pdf', '/images/reports/fileeraser_thumb.png')}
-                className="cursor-pointer block bg-white border border-gray-200 rounded-2xl p-6 shadow-sm h-full hover:shadow-md hover:border-emerald-300 transition-all duration-300 group"
-              >
-                <div className="aspect-[3/4] rounded-xl overflow-hidden mb-6 border border-gray-100 relative bg-slate-50">
-                  <div className="absolute inset-0 bg-emerald-900/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center backdrop-blur-[2px]">
-                    <div className="bg-emerald-500 p-3 rounded-full shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-                      <Search className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                  <img 
-                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1784544510/tamc6g4n1igi46qmqdwp.png" 
-                    alt="File Eraser Certificate" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="font-bold text-xl text-slate-900 mb-2 text-center group-hover:text-emerald-600 transition-colors">File Eraser Certificate</h3>
-                <p className="text-slate-500 text-sm text-center mb-4">Digitally signed proof of secure file and folder deletion.</p>
-                <div className="flex flex-wrap justify-center gap-2 pt-4 border-t border-gray-100">
-                  <span className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded border border-emerald-100">GDPR</span>
-                  <span className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded border border-emerald-100">HIPAA</span>
-                  <span className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded border border-emerald-100">ISO 27001</span>
-                  <span className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded border border-emerald-100">PCI DSS</span>
-                </div>
-              </div>
-            </Reveal>
+          {(() => {
+            // Hindi comment: Certificates ka array taaki easily naye certificates add kiye ja sakein
+            const certificates = [
+              {
+                id: "file-eraser",
+                title: "File Eraser Certificate",
+                desc: "Digitally signed proof of secure file and folder deletion.",
+                pdfUrl: "https://assets.dsecuretech.com/Reports/file%20eraser/2160001.pdf",
+                thumbUrl: "/images/reports/fileeraser_thumb.png",
+                imgSrc: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1784544510/tamc6g4n1igi46qmqdwp.png",
+                tags: ["GDPR", "HIPAA", "ISO 27001", "PCI DSS"]
+              },
+              {
+                id: "autopilot",
+                title: "Autopilot / MDM Certificate",
+                desc: "Certified verification of device enrollment status.",
+                pdfUrl: "https://assets.dsecuretech.com/Reports/Autopilot/DSecureAutopilotReport_1.pdf",
+                thumbUrl: "/images/reports/autopilot_thumb.png",
+                imgSrc: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1784545652/f7bfazl9lgawdsitaqys.png",
+                tags: []
+              }
+            ];
 
-            {/* Autopilot/MDM Certificate Card */}
-            <Reveal delayMs={200} className="h-full">
-              <div 
-                onClick={() => handleOpenModal('https://assets.dsecuretech.com/Reports/Autopilot/DSecureAutopilotReport_1.pdf', '/images/reports/autopilot_thumb.png')}
-                className="cursor-pointer block bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm h-full hover:shadow-md hover:border-emerald-400 transition-all duration-300 group md:-translate-y-4"
-              >
-                <div className="aspect-[3/4] rounded-xl overflow-hidden mb-6 border border-gray-100 relative bg-slate-50">
-                  <div className="absolute inset-0 bg-emerald-900/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center backdrop-blur-[2px]">
-                    <div className="bg-emerald-500 p-3 rounded-full shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-                      <Search className="w-6 h-6 text-white" />
+            return (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {certificates.map((cert, idx) => (
+                  <Reveal delayMs={100 + (idx * 100)} key={cert.id} className="h-full">
+                    <div 
+                      onClick={() => handleOpenModal(cert.pdfUrl, cert.thumbUrl)}
+                      className="cursor-pointer block bg-[#0e7c66] border border-[#0e7c66]/50 rounded-none p-6 h-full hover:border-[#0e7c66]/30 hover:bg-[#083d28] transition-all duration-150 group"
+                    >
+                      <div className="aspect-[3/4] rounded-none overflow-hidden mb-6 border border-[#0a2e1e] relative bg-[#0a2e1e]">
+                        <div className="absolute inset-0 bg-[#0a2e1e]/60 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center backdrop-blur-[2px]">
+                          <div className="bg-[#0e7c66] p-3 rounded-full transform scale-90 group-hover:scale-100 transition-transform">
+                            <Search className="w-6 h-6 text-white" />
+                          </div>
+                        </div>
+                        <img 
+                          src={cert.imgSrc} 
+                          alt={cert.title} 
+                          className="w-full h-full object-cover transition-transform duration-150 group-hover:scale-105"
+                        />
+                      </div>
+                      <h3 className="font-bold text-xl text-white mb-2 text-center group-hover:text-white transition-colors">{cert.title}</h3>
+                      <p className="text-[#F4F6F8] text-sm text-center mb-4">{cert.desc}</p>
+                      {cert.tags.length > 0 && (
+                        <div className="flex flex-wrap justify-center gap-2 pt-4 border-t border-[#0a2e1e]">
+                          {cert.tags.map(tag => (
+                            <span key={tag} className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 bg-[#0a2e1e] text-white rounded-none border border-white/30">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                  </div>
-                  <img 
-                    src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1784545652/f7bfazl9lgawdsitaqys.png" 
-                    alt="Autopilot Detection Certificate" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="font-bold text-xl text-slate-900 mb-2 text-center group-hover:text-emerald-600 transition-colors">Autopilot / MDM Certificate</h3>
-                <p className="text-slate-500 text-sm text-center">Certified verification of device enrollment status.</p>
+                  </Reveal>
+                ))}
               </div>
-            </Reveal>
-          </div>
+            );
+          })()}
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Report Modal - Certificate Image or Full PDF */}
       <AnimatePresence>
@@ -939,33 +895,33 @@ const HomePage = memo(function HomePage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="relative w-full max-w-5xl h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+              className="relative w-full max-w-5xl h-[90vh] bg-white rounded-none flex flex-col overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="flex items-center justify-between p-4 border-b border-slate-100 bg-slate-50">
-                <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-600" />
+              <div className="flex items-center justify-between p-4 border-b border-[#e9edf1] bg-white">
+                <h3 className="text-lg font-bold text-[#1c2530] flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-[#0e7c66]" />
                   {showFullPdf ? "Full Erasure Report" : "Erasure Certificate Preview"}
                 </h3>
                 <div className="flex items-center gap-2">
                   {/* Zoom controls - sirf certificate view mein dikhenge */}
                   {!showFullPdf && (
-                    <div className="flex items-center gap-1 bg-slate-100 rounded-lg px-2 py-1">
+                    <div className="flex items-center gap-1 bg-[#d4ede4] rounded-none px-2 py-1">
                       <button
                         onClick={() => setZoomScale((z) => Math.max(0.5, z - 0.25))}
-                        className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded transition-colors"
+                        className="p-1.5 text-[#5a6672] hover:text-[#1c2530] hover:bg-[#d8dee5] rounded-none transition-colors focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:outline-none"
                         aria-label="Zoom out"
                         type="button"
                       >
                         <ZoomOut className="w-4 h-4" />
                       </button>
-                      <span className="text-xs font-semibold text-slate-600 min-w-[3rem] text-center">
+                      <span className="text-xs font-semibold text-[#5a6672] min-w-[3rem] text-center">
                         {Math.round(zoomScale * 100)}%
                       </span>
                       <button
                         onClick={() => setZoomScale((z) => Math.min(3, z + 0.25))}
-                        className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded transition-colors"
+                        className="p-1.5 text-[#5a6672] hover:text-[#1c2530] hover:bg-[#d8dee5] rounded-none transition-colors focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:outline-none"
                         aria-label="Zoom in"
                         type="button"
                       >
@@ -975,7 +931,7 @@ const HomePage = memo(function HomePage() {
                   )}
                   <button
                     onClick={handleCloseModal}
-                    className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-200 rounded-full transition-colors"
+                    className="p-2 text-[#5a6672] hover:text-[#1c2530] hover:bg-[#d8dee5] rounded-none-full transition-colors focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:ring-offset-2 focus-visible:outline-none min-h-[44px]"
                     aria-label="Close report modal"
                     type="button"
                   >
@@ -987,7 +943,7 @@ const HomePage = memo(function HomePage() {
               {/* Modal Body */}
               {showFullPdf ? (
                 /* Full PDF view */
-                <div className="flex-1 w-full bg-slate-200">
+                <div className="flex-1 w-full bg-[#d8dee5]">
                   <iframe 
                     src={selectedReportUrl}
                     className="w-full h-full border-none"
@@ -997,11 +953,11 @@ const HomePage = memo(function HomePage() {
               ) : (
                 /* Certificate image preview - sirf first page, ultra crisp */
                 <>
-                  <div className="flex-1 w-full bg-slate-100 overflow-auto flex items-start justify-center p-6">
+                  <div className="flex-1 w-full bg-[#d4ede4] overflow-auto flex items-start justify-center p-6">
                     <img
                       src={selectedImage || ''}
                       alt="Erasure Certificate Preview"
-                      className="max-w-full h-auto rounded-lg shadow-lg transition-transform duration-300 pointer-events-none"
+                      className="max-w-full h-auto rounded-none transition-transform duration-150 pointer-events-none"
                       style={{ 
                         transform: `scale(${zoomScale})`, 
                         transformOrigin: 'top center',
@@ -1012,10 +968,10 @@ const HomePage = memo(function HomePage() {
                     />
                   </div>
                   {/* View Full Report button */}
-                  <div className="p-4 border-t border-slate-100 bg-slate-50 flex items-center justify-center">
+                  <div className="p-4 border-t border-[#e9edf1] bg-white flex items-center justify-center">
                     <button
                       onClick={() => setShowFullPdf(true)}
-                      className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300"
+                      className="flex items-center gap-2 bg-gradient-to-r from-[#0e7c66] to-[#19a684] hover:from-[#0e7c66] hover:to-[#0e7c66] text-white font-bold px-8 py-3 rounded-none-full hover:shadow-[#0e7c66]/40 hover:scale-105 transition-all duration-150 focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:ring-offset-2 focus-visible:outline-none"
                       type="button"
                     >
                       <Download className="w-5 h-5" />
@@ -1030,17 +986,16 @@ const HomePage = memo(function HomePage() {
       </AnimatePresence>
 
 
-      {/* Enterprise Trial Promotion Section — EMOJIS REPLACED */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+      {/* Enterprise Trial Promotion Section */}
+      <ThemeSection noBg className="py-16 md:py-20 lg:py-24 bg-[#0e7c66] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
         <div className="container-responsive relative z-10">
           <Reveal>
             <div className="text-center text-white max-w-4xl mx-auto">
-              {/* 🎉 → StarIcon */}
               <div className="text-4xl md:text-6xl mb-6 animate-bounce">
-                <StarIcon
-                  className="w-16 h-16 text-yellow-300 mx-auto"
-                  filled={true}
+                <Star
+                  className="w-16 h-16 text-[#e9edf1] mx-auto"
+                  fill="currentColor"
                 />
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -1055,39 +1010,27 @@ const HomePage = memo(function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Link
                   to="/contact"
-                  className="bg-white text-green-800 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 inline-flex items-center justify-center"
+                  className="bg-white text-[#0e7c66] px-8 py-4 rounded-none font-bold text-lg hover:bg-[#d4ede4] transition-all duration-150 inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e7c66] focus-visible:outline-none min-h-[44px]"
                 >
-                  {/* 🚀 → LightningIcon */}
-                  <LightningIcon className="w-5 h-5 mr-2" filled={true} />
+                  <ShieldCheck className="w-5 h-5 mr-2" />
                   {t("home.enterpriseTrialButton")}
                 </Link>
                 <Link
                   to="/contact"
-                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm inline-flex items-center justify-center"
+                  className="border-2 border-white/30 text-white px-8 py-4 rounded-none font-semibold text-lg hover:bg-white/10 hover:border-white transition-all duration-150 backdrop-blur-sm inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e7c66] focus-visible:outline-none min-h-[44px]"
                 >
-                  {/* 📞 → Phone Icon (inline) */}
-                  <svg
+                  <Phone
                     className="w-5 h-5 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.74 21 5 16.26 5 10.5V5z"
-                    />
-                  </svg>
+                  />
                   {t("home.enterpriseTrialContact")}
                 </Link>
               </div>
+              
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <Reveal delayMs={10} className="h-full">
-                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur h-full text-center">
-                    {/* 🛡️ → ShieldIcon */}
-                    <div className="text-2xl mb-3 text-white">
-                      <ShieldIcon className="w-8 h-8 mx-auto" filled={true} />
+                <Reveal delayMs={100} className="h-full">
+                  <div className="bg-white/5 border border-white/10 rounded-none p-6 backdrop-blur h-full text-center hover:bg-white/10 transition-colors">
+                    <div className="text-2xl mb-4 text-[#e9edf1]">
+                      <ShieldCheck className="w-8 h-8 mx-auto" />
                     </div>
                     <h3 className="font-semibold mb-2">
                       {t("home.enterpriseFeature1")}
@@ -1097,13 +1040,11 @@ const HomePage = memo(function HomePage() {
                     </p>
                   </div>
                 </Reveal>
-                <Reveal delayMs={20} className="h-full">
-                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur h-full text-center">
-                    {/* ⚡ → LightningIcon */}
-                    <div className="text-2xl mb-3 text-white">
-                      <LightningIcon
+                <Reveal delayMs={200} className="h-full">
+                  <div className="bg-white/5 border border-white/10 rounded-none p-6 backdrop-blur h-full text-center hover:bg-white/10 transition-colors">
+                    <div className="text-2xl mb-4 text-[#e9edf1]">
+                      <Cpu
                         className="w-8 h-8 mx-auto"
-                        filled={true}
                       />
                     </div>
                     <h3 className="font-semibold mb-2">
@@ -1114,11 +1055,10 @@ const HomePage = memo(function HomePage() {
                     </p>
                   </div>
                 </Reveal>
-                <Reveal delayMs={30} className="h-full">
-                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur h-full text-center">
-                    {/* 🎯 → StarIcon */}
-                    <div className="text-2xl mb-3 text-white">
-                      <StarIcon className="w-8 h-8 mx-auto" filled={true} />
+                <Reveal delayMs={300} className="h-full">
+                  <div className="bg-white/5 border border-white/10 rounded-none p-6 backdrop-blur h-full text-center hover:bg-white/10 transition-colors">
+                    <div className="text-2xl mb-4 text-[#e9edf1]">
+                      <Award className="w-8 h-8 mx-auto" />
                     </div>
                     <h3 className="font-semibold mb-2">
                       {t("home.enterpriseFeature3")}
@@ -1132,329 +1072,138 @@ const HomePage = memo(function HomePage() {
             </div>
           </Reveal>
         </div>
-      </section>
+      </ThemeSection>
 
-      {/* Compliance Standards Section — EMOJIS REPLACED */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-emerald-50/30">
+      {/* Compliance Standards Section - Refactored to Ehasiru Style */}
+      <ThemeSection className="py-16 md:py-24 relative overflow-hidden">
         <div className="container-app">
           <div className="text-center mb-16">
             <Reveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1c2530] mb-6">
                 {t("home.featuresTitle")}{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-emerald-600">
+                <span className="text-[#0e7c66]">
                   {t("home.standards")}
                 </span>
               </h2>
             </Reveal>
             <Reveal delayMs={100}>
-              <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              <p className="text-lg text-[#5a6672] max-w-3xl mx-auto">
                 {t("home.featuresSubtitle")}
               </p>
             </Reveal>
           </div>
 
-          {/* Standards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6 mb-12">
-            <Reveal delayMs={200}>
-              <div className="group bg-white rounded-xl p-4 lg:p-6 shadow-lg border border-slate-200/60 hover:border-blue-300 hover:shadow-xl transition-all duration-300 text-center relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* 🇺🇸 → ShieldIcon */}
-                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300 text-blue-600">
-                    <ShieldIcon className="w-10 h-10 mx-auto" filled={true} />
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    {t("home.nist80088")}
-                  </h3>
-                  <p className="text-xs text-slate-500">
-                    {t("home.nist80088Desc")}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={250}>
-              <div className="group bg-white rounded-xl p-4 lg:p-6 shadow-lg border border-slate-200/60 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 text-center relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* 🇪🇺 → GlobeIcon */}
-                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300 text-emerald-800">
-                    <GlobeIcon className="w-10 h-10 mx-auto" filled={true} />
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
-                    {t("home.gdpr")}
-                  </h3>
-                  <p className="text-xs text-slate-500">{t("home.gdprDesc")}</p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={300}>
-              <div className="group bg-white rounded-xl p-4 lg:p-6 shadow-lg border border-slate-200/60 hover:border-blue-300 hover:shadow-xl transition-all duration-300 text-center relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* 🏥 → HeartIcon */}
-                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300 text-blue-600">
-                    <HeartIcon className="w-10 h-10 mx-auto" filled={true} />
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    {t("home.hipaa")}
-                  </h3>
-                  <p className="text-xs text-slate-500">
-                    {t("home.hipaaDesc")}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={350}>
-              <div className="group bg-white rounded-xl p-4 lg:p-6 shadow-lg border border-slate-200/60 hover:border-purple-300 hover:shadow-xl transition-all duration-300 text-center relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* 📊 → Financial Chart SVG */}
-                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300 text-purple-600">
-                    <svg
-                      className="w-10 h-10 mx-auto"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors">
-                    {t("home.sox")}
-                  </h3>
-                  <p className="text-xs text-slate-500">{t("home.soxDesc")}</p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={400}>
-              <div className="group bg-white rounded-xl p-4 lg:p-6 shadow-lg border border-slate-200/60 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 text-center relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* 🌍 → GlobeIcon */}
-                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300 text-emerald-800">
-                    <GlobeIcon className="w-10 h-10 mx-auto" filled={true} />
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
-                    {t("home.iso27001")}
-                  </h3>
-                  <p className="text-xs text-slate-500">
-                    {t("home.iso27001Desc")}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={450}>
-              <div className="group bg-white rounded-xl p-4 lg:p-6 shadow-lg border border-slate-200/60 hover:border-red-300 hover:shadow-xl transition-all duration-300 text-center relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* 💳 → Cart/Credit Card SVG */}
-                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300 text-red-600">
-                    <svg
-                      className="w-10 h-10 mx-auto"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 5M7 13v5a2 2 0 002 2h6.5M17 17a2 2 0 11-4 0 2 2 0 014 0zM9 17a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">
-                    {t("home.pciDss")}
-                  </h3>
-                  <p className="text-xs text-slate-500">
-                    {t("home.pciDssDesc")}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+          {(() => {
+            // Hindi comment: Relevant Lucide React icons ke saath standards aur certifications update kiye gaye hain
+            const standards = [
+              {
+                id: "nist",
+                icon: <ShieldCheck className="w-6 h-6" />,
+                title: t("home.nist80088"),
+                desc: t("home.nist80088Desc"),
+              },
+              {
+                id: "gdpr",
+                icon: <FileCheck className="w-6 h-6" />,
+                title: t("home.gdpr"),
+                desc: t("home.gdprDesc"),
+              },
+              {
+                id: "hipaa",
+                icon: <HeartPulse className="w-6 h-6" />,
+                title: t("home.hipaa"),
+                desc: t("home.hipaaDesc"),
+              },
+              {
+                id: "sox",
+                icon: (
+                  <Landmark className="w-6 h-6" />
+                ),
+                title: t("home.sox"),
+                desc: t("home.soxDesc"),
+              },
+              {
+                id: "iso",
+                icon: <Award className="w-6 h-6" />,
+                title: t("home.iso27001"),
+                desc: t("home.iso27001Desc"),
+              },
+              {
+                id: "pci",
+                icon: (
+                  <CreditCard className="w-6 h-6" />
+                ),
+                title: t("home.pciDss"),
+                desc: t("home.pciDssDesc"),
+              }
+            ];
 
-          {/* Certifications Row */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
-            <Reveal delayMs={500}>
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 text-center group hover:shadow-xl transition-all duration-300 hover:border-blue-300 hover:-translate-y-1 relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* 🛡️ → ShieldIcon */}
-                  <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300 text-blue-600">
-                    <ShieldIcon className="w-8 h-8 mx-auto" filled={true} />
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
-                    {t("home.commonCriteria")}
-                  </h3>
-                  <p className="text-sm text-emerald-800 font-medium mb-2">
-                    {t("home.commonCriteriaLevel")}
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    {t("home.commonCriteriaDesc")}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={550}>
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 text-center group hover:shadow-xl transition-all duration-300 hover:border-blue-300 hover:-translate-y-1 relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* 🔒 → Lock Icon */}
-                  <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300 text-blue-600">
-                    <svg
-                      className="w-8 h-8 mx-auto"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                      <path d="M7 11V7a5 5 0 0110 0v4" />
-                    </svg>
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
-                    {t("home.fips1402")}
-                  </h3>
-                  <p className="text-sm text-blue-600 font-medium mb-2">
-                    {t("home.fips1402Level")}
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    {t("home.fips1402Desc")}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={600}>
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 text-center group hover:shadow-xl transition-all duration-300 hover:border-purple-300 hover:-translate-y-1 relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* 🏛️ → BuildingIcon */}
-                  <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300 text-purple-600">
-                    <BuildingIcon className="w-8 h-8 mx-auto" filled={true} />
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-1 group-hover:text-purple-600 transition-colors">
-                    NSA/CSS
-                  </h3>
-                  <p className="text-sm text-purple-600 font-medium mb-2">
-                    Approved
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    Evaluated Products List
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={650}>
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 text-center group hover:shadow-xl transition-all duration-300 hover:border-yellow-300 hover:-translate-y-1 relative overflow-hidden">
-                <div className="relative z-10">
-                  {/* ⭐ → StarIcon */}
-                  <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300 text-yellow-800">
-                    <StarIcon className="w-8 h-8 mx-auto" filled={true} />
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-1 group-hover:text-yellow-800 transition-colors">
-                    CSA STAR
-                  </h3>
-                  <p className="text-sm text-yellow-800 font-medium mb-2">
-                    Gold
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    Cloud Security Alliance
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+            const certifications = [
+              {
+                id: "cc",
+                icon: <Award className="w-6 h-6" />,
+                title: t("home.commonCriteria"),
+                level: t("home.commonCriteriaLevel"),
+                desc: t("home.commonCriteriaDesc"),
+              },
+              {
+                id: "fips",
+                icon: (
+                  <Lock className="w-6 h-6" />
+                ),
+                title: t("home.fips1402"),
+                level: t("home.fips1402Level"),
+                desc: t("home.fips1402Desc"),
+              },
+              {
+                id: "nsa",
+                icon: <Landmark className="w-6 h-6" />,
+                title: "NSA/CSS",
+                level: "Approved",
+                desc: "Evaluated Products List",
+              },
+              {
+                id: "csa",
+                icon: <Cloud className="w-6 h-6" />,
+                title: "CSA STAR",
+                level: "Gold",
+                desc: "Cloud Security Alliance",
+              }
+            ];
 
-          {/* Key Features */}
-          <Reveal delayMs={700}>
-            <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-xl border border-slate-200/60">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <HoverIcon>
-                      {(filled) => (
-                        <ShieldIcon
-                          className="w-8 h-8 text-white"
-                          filled={filled}
-                        />
-                      )}
-                    </HoverIcon>
+            return (
+              <>
+                {/* Key Features (Moved to Hero Section) */}
+
+                <Reveal delayMs={750}>
+                  <div className="text-center mt-12">
+                    <Link
+                      to="/compliance"
+                      className="inline-flex items-center justify-center px-6 py-3 rounded-none bg-[#0e7c66] text-white font-medium hover:bg-[#083d28] transition-colors focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:ring-offset-2 focus-visible:outline-none min-h-[44px]"
+                    >
+                      <span>{t("home.exploreComplianceStandards")}</span>
+                      <ArrowRight className="w-5 h-5 ml-2" stroke="currentColor" />
+                    </Link>
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    {t("home.verifiableErasure")}
-                  </h3>
-                  <p className="text-slate-600 text-sm">
-                    {t("home.verifiableErasureDesc")}
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <HoverIcon>
-                      {(filled) => (
-                        <ClipboardIcon
-                          className="w-8 h-8 text-white"
-                          filled={filled}
-                        />
-                      )}
-                    </HoverIcon>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    {t("home.auditReadyReports")}
-                  </h3>
-                  <p className="text-slate-600 text-sm">
-                    {t("home.auditReadyReportsDesc")}
-                  </p>
-                </div>
-                <div className="text-center md:col-span-2 lg:col-span-1">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <HoverIcon>
-                      {(filled) => (
-                        <GlobeIcon
-                          className="w-8 h-8 text-white"
-                          filled={filled}
-                        />
-                      )}
-                    </HoverIcon>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    {t("home.globalStandards")}
-                  </h3>
-                  <p className="text-slate-600 text-sm">
-                    {t("home.globalStandardsDesc")}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delayMs={750}>
-            <div className="text-center mt-12">
-              <Link
-                to="/compliance"
-                className="btn-primary inline-flex items-center justify-center"
-              >
-                <span>{t("home.exploreComplianceStandards")}</span>
-                <HoverIcon>
-                  {(filled) => (
-                    <ArrowRightIcon className="w-5 h-5 ml-2" filled={filled} />
-                  )}
-                </HoverIcon>
-              </Link>
-            </div>
-          </Reveal>
+                </Reveal>
+              </>
+            );
+          })()}
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Remaining sections unchanged — they don’t contain emojis */}
       {/* Why Choose, Features, Industries, Services, Testimonials, etc. remain as-is */}
 
       {/* Why Choose Section */}
-      <section
-        id="why-choose"
-        className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-slate-50/50 to-white"
-      >
+      <ThemeSection alternate id="why-choose" className="py-16 md:py-20 lg:py-24 " >
         <div className="container-responsive">
           <div className="text-center mb-12 lg:mb-16">
             <Reveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-6">
                 {t("home.whyChooseTitle")}
               </h2>
-              <p className="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 {t("home.whyChooseSubtitle")}
               </p>
             </Reveal>
@@ -1465,171 +1214,131 @@ const HomePage = memo(function HomePage() {
                 titleKey: "home.reason1Title",
                 descKey: "home.reason1Desc",
                 icon: (
-                  <HoverIcon>
-                    {(filled) => (
-                      <ShieldIcon
-                        className="w-8 h-8 text-white"
-                        filled={filled}
+                  <Shield
+                        className="w-full h-full text-current"
+                        stroke="currentColor"
                       />
-                    )}
-                  </HoverIcon>
                 ),
-                bgColor: "bg-gradient-to-br from-emerald-500 to-emerald-600",
+                colorTheme: "text-[#0e7c66]",
               },
               {
                 titleKey: "home.reason3Title",
                 descKey: "home.reason3Desc",
                 icon: (
-                  <HoverIcon>
-                    {(filled) => (
-                      <BuildingIcon
-                        className="w-8 h-8 text-white"
-                        filled={filled}
+                  <Building2
+                        className="w-full h-full text-current"
+                        stroke="currentColor"
                       />
-                    )}
-                  </HoverIcon>
                 ),
-                bgColor: "bg-gradient-to-br from-emerald-500 to-emerald-600",
+                colorTheme: "text-[#0e7c66]",
               },
               {
                 titleKey: "home.feature3Title",
                 descKey: "home.feature3Desc",
                 icon: (
-                  <HoverIcon>
-                    {(filled) => (
-                      <ClipboardIcon
-                        className="w-8 h-8 text-white"
-                        filled={filled}
+                  <ClipboardCheck
+                        className="w-full h-full text-current"
+                        stroke="currentColor"
                       />
-                    )}
-                  </HoverIcon>
                 ),
-                bgColor: "bg-gradient-to-br from-teal-500 to-teal-600",
+                colorTheme: "text-teal-900",
               },
               {
                 titleKey: "home.reason2Title",
                 descKey: "home.reason2Desc",
                 icon: (
-                  <HoverIcon>
-                    {(filled) => (
-                      <GlobeIcon
-                        className="w-8 h-8 text-white"
-                        filled={filled}
+                  <Globe
+                        className="w-full h-full text-current"
+                        stroke="currentColor"
                       />
-                    )}
-                  </HoverIcon>
                 ),
-                bgColor: "bg-gradient-to-br from-orange-500 to-orange-600",
+                colorTheme: "text-orange-900",
               },
               {
                 titleKey: "home.feature5Title",
                 descKey: "home.feature5Desc",
                 icon: (
-                  <HoverIcon>
-                    {(filled) => (
-                      <LightningIcon
-                        className="w-8 h-8 text-white"
-                        filled={filled}
+                  <Gauge
+                        className="w-full h-full text-current"
+                        stroke="currentColor"
                       />
-                    )}
-                  </HoverIcon>
                 ),
-                bgColor: "bg-gradient-to-br from-teal-500 to-teal-600",
+                colorTheme: "text-teal-900",
               },
               {
                 titleKey: "home.feature6Title",
                 descKey: "home.feature6Desc",
                 icon: (
-                  <HoverIcon>
-                    {(filled) => (
-                      <HeartIcon
-                        className="w-8 h-8 text-white"
-                        filled={filled}
+                  <Headphones
+                        className="w-full h-full text-current"
+                        stroke="currentColor"
                       />
-                    )}
-                  </HoverIcon>
                 ),
-                bgColor: "bg-gradient-to-br from-rose-500 to-rose-600",
+                colorTheme: "text-rose-900",
               },
             ].map((feature, i) => (
               <Reveal key={feature.titleKey} delayMs={i * 100} className="h-full">
-                <div className="group card hover:shadow-lg hover:-translate-y-1 transition-transform duration-200 ease-out h-full flex flex-col relative overflow-hidden">
-                  {/* Card background overlay */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${
-                      feature.bgColor.includes("blue")
-                        ? "from-blue-50 to-transparent"
-                        : feature.bgColor.includes("emerald")
-                          ? "from-emerald-50 to-transparent"
-                          : feature.bgColor.includes("purple")
-                            ? "from-purple-50 to-transparent"
-                            : feature.bgColor.includes("orange")
-                              ? "from-orange-50 to-transparent"
-                              : feature.bgColor.includes("teal")
-                                ? "from-teal-50 to-transparent"
-                                : "from-rose-50 to-transparent"
-                    } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                  ></div>
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div
-                      className={`w-16 h-16 rounded-2xl ${feature.bgColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-200 will-change-transform`}
-                    >
-                      {feature.icon}
+                {/* Ehasiru-style Light Card with Visible Top-Left Icon */}
+                <div className={`${themeClasses.card.base} ${themeClasses.card.padding} ${themeClasses.card.hoverable}`}>
+                  
+                  <div className="relative z-10 flex-1 flex flex-col">
+                    <div className={`${themeClasses.icon.wrapper} ${themeClasses.icon.wrapperSize.md} mb-6`}>
+                      <div className="w-5 h-5 text-[#0e7c66] group-hover:text-white transition-colors duration-150">
+                        {feature.icon}
+                      </div>
                     </div>
-                    <div className="flex-1 flex flex-col">
-                      <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-brand transition-colors duration-200">
-                        {t(feature.titleKey)}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed flex-grow">
-                        {t(feature.descKey)}
-                      </p>
-                    </div>
+                    
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 group-hover:text-[#0e7c66] transition-colors duration-150">
+                      {t(feature.titleKey)}
+                    </h3>
+                    <p className="text-[#5a6672] leading-relaxed flex-grow">
+                      {t(feature.descKey)}
+                    </p>
                   </div>
                 </div>
               </Reveal>
             ))}
           </div>
           <Reveal delayMs={60}>
-            <div className="bg-white rounded-2xl shadow-xl border border-slate-200/60 p-6 sm:p-8 lg:p-12 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 to-blue-50/50 opacity-60"></div>
+            <div className={`${themeClasses.card.base} ${themeClasses.card.padding}`}>
               <div className="relative z-10">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
                   <Reveal delayMs={20}>
                     <div className="group">
-                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-800 mb-2 group-hover:scale-105 transition-transform duration-300">
+                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0e7c66] mb-2 group-hover:scale-105 transition-transform duration-150">
                         {t("home.devicesCount")}
                       </div>
-                      <div className="text-slate-600 text-sm sm:text-base font-medium">
+                      <div className="text-[#5a6672] text-sm sm:text-base font-medium">
                         {t("home.devices")}
                       </div>
                     </div>
                   </Reveal>
                   <Reveal delayMs={30}>
                     <div className="group">
-                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-105 transition-transform duration-300">
+                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0e7c66] mb-2 group-hover:scale-105 transition-transform duration-150">
                         {t("home.complianceRate")}
                       </div>
-                      <div className="text-slate-600 text-sm sm:text-base font-medium">
+                      <div className="text-[#5a6672] text-sm sm:text-base font-medium">
                         {t("home.compliance")}
                       </div>
                     </div>
                   </Reveal>
                   <Reveal delayMs={40}>
                     <div className="group">
-                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-2xl sm:text-3xl lg:text-[28px] xl:text-[34px] font-bold text-purple-600 mb-2 group-hover:scale-105 transition-transform duration-300 whitespace-nowrap">
+                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-2xl sm:text-3xl lg:text-[28px] xl:text-[34px] font-bold text-[#0e7c66] mb-2 group-hover:scale-105 transition-transform duration-150">
                         {t("home.encryptionStrength")}
                       </div>
-                      <div className="text-slate-600 text-sm sm:text-base font-medium">
+                      <div className="text-[#5a6672] text-sm sm:text-base font-medium">
                         {t("home.encryption")}
                       </div>
                     </div>
                   </Reveal>
                   <Reveal delayMs={50}>
                     <div className="group">
-                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-2 group-hover:scale-105 transition-transform duration-300">
+                      <div className="min-h-[40px] sm:min-h-[48px] lg:min-h-[60px] flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0e7c66] mb-2 group-hover:scale-105 transition-transform duration-150">
                         {t("home.supportAvailability")}
                       </div>
-                      <div className="text-slate-600 text-sm sm:text-base font-medium">
+                      <div className="text-[#5a6672] text-sm sm:text-base font-medium">
                         {t("home.support")}
                       </div>
                     </div>
@@ -1639,299 +1348,157 @@ const HomePage = memo(function HomePage() {
             </div>
           </Reveal>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Industry Solutions Section */}
-      <section
-        id="industries"
-        className="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-white to-emerald-50/30"
-      >
+      <ThemeSection id="industries" className="py-16 md:py-24 border-y border-[#d0d5dc]/50 relative overflow-hidden" >
         <div className="container-responsive">
           <div className="text-center mb-16">
             <Reveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0a2e1e] mb-6">
                 {t("home.industriesTitle").split(" ").slice(0, 2).join(" ")}{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600">
+                <span className="text-[#0e7c66]">
                   {t("home.industriesTitle").split(" ").slice(2).join(" ")}
                 </span>
               </h2>
             </Reveal>
             <Reveal delayMs={100}>
-              <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              <p className="text-lg text-[#5a6672] max-w-3xl mx-auto">
                 {t("home.industriesSubtitle")}
               </p>
             </Reveal>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <Reveal delayMs={200} className="h-full">
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-blue-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <HoverIcon>
-                        {(filled) => (
-                          <HeartIcon
-                            className="w-6 h-6 text-white"
-                            filled={filled}
-                          />
-                        )}
-                      </HoverIcon>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
-                        {t("home.healthcare")}
-                      </h3>
-                      <p className="text-sm text-slate-500">
-                        {t("home.healthcareCompliance")}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-slate-600 mb-4 flex-grow">
-                    {t("home.healthcareDesc")}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full">
-                      Medical Devices
-                    </span>
-                    <span className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full">
-                      PHI Protection
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={250} className="h-full">
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-green-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
+            {[
+              {
+                titleKey: "home.healthcare",
+                subtitleKey: "home.healthcareCompliance",
+                descKey: "home.healthcareDesc",
+                tags: ["Medical Devices", "PHI Protection"],
+                icon: (
+                  <HeartPulse
+                        className="w-5 h-5 text-current"
                         stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
-                        {t("home.financial")}
-                      </h3>
-                      <p className="text-sm text-slate-500">
-                        {t("home.financialCompliance")}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-slate-600 mb-4 flex-grow">
-                    {t("home.financialDesc")}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full">
-                      Trading Systems
-                    </span>
-                    <span className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full">
-                      Customer Data
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={300} className="h-full">
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-purple-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <HoverIcon>
-                        {(filled) => (
-                          <GlobeIcon
-                            className="w-6 h-6 text-white"
-                            filled={filled}
-                          />
-                        )}
-                      </HoverIcon>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
-                        {t("home.government")}
-                      </h3>
-                      <p className="text-sm text-slate-500">
-                        {t("home.governmentCompliance")}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-slate-600 mb-4 flex-grow">
-                    {t("home.governmentDesc")}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">
-                      {t("home.dodStandards")}
-                    </span>
-                    <span className="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">
-                      {t("home.federalAgencies")}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={350} className="h-full">
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <HoverIcon>
-                        {(filled) => (
-                          <BuildingIcon
-                            className="w-6 h-6 text-white"
-                            filled={filled}
-                          />
-                        )}
-                      </HoverIcon>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
-                        {t("home.enterprise")}
-                      </h3>
-                      <p className="text-sm text-slate-500">
-                        {t("home.enterpriseCompliance")}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-slate-600 mb-4 flex-grow">
-                    {t("home.enterpriseDesc")}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full">
-                      Data Centers
-                    </span>
-                    <span className="text-xs px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full">
-                      Cloud Migration
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={400} className="h-full">
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-orange-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <HoverIcon>
-                        {(filled) => (
-                          <GearIcon
-                            className="w-6 h-6 text-white"
-                            filled={filled}
-                          />
-                        )}
-                      </HoverIcon>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
-                        {t("home.itadServices")}
-                      </h3>
-                      <p className="text-sm text-slate-500">
-                        {t("home.itadCompliance")}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-slate-600 mb-4 flex-grow">{t("home.itadDesc")}</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs px-2 py-1 bg-orange-100 text-orange-700 rounded-full">
-                      Asset Recovery
-                    </span>
-                    <span className="text-xs px-2 py-1 bg-orange-100 text-orange-700 rounded-full">
-                      Multi-Client
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={450} className="h-full">
-              <div className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-200/60 hover:border-teal-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
+                      />
+                ),
+              },
+              {
+                titleKey: "home.financial",
+                subtitleKey: "home.financialCompliance",
+                descKey: "home.financialDesc",
+                tags: ["Trading Systems", "Customer Data"],
+                icon: (
+                  <DollarSign className="w-5 h-5 text-current" stroke="currentColor" />
+                ),
+              },
+              {
+                titleKey: "home.government",
+                subtitleKey: "home.governmentCompliance",
+                descKey: "home.governmentDesc",
+                tags: ["home.dodStandards", "home.federalAgencies"],
+                isTagKey: true,
+                icon: (
+                  <Landmark
+                        className="w-5 h-5 text-current"
                         stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                        />
-                      </svg>
+                      />
+                ),
+              },
+              {
+                titleKey: "home.enterprise",
+                subtitleKey: "home.enterpriseCompliance",
+                descKey: "home.enterpriseDesc",
+                tags: ["Data Centers", "Cloud Migration"],
+                icon: (
+                  <Building2
+                        className="w-5 h-5 text-current"
+                        stroke="currentColor"
+                      />
+                ),
+              },
+              {
+                titleKey: "home.itadServices",
+                subtitleKey: "home.itadCompliance",
+                descKey: "home.itadDesc",
+                tags: ["Asset Recovery", "Multi-Client"],
+                icon: (
+                  <RefreshCcw
+                        className="w-5 h-5 text-current"
+                        stroke="currentColor"
+                      />
+                ),
+              },
+              {
+                titleKey: "home.serviceProviders",
+                subtitleKey: "home.serviceProvidersCompliance",
+                descKey: "home.serviceProvidersDesc",
+                tags: ["MSP Solutions", "Revenue Share"],
+                icon: (
+                  <Server className="w-5 h-5 text-current" />
+                ),
+              }
+            ].map((industry, i) => (
+              <Reveal key={industry.titleKey} delayMs={200 + (i * 50)} className="h-full">
+                {/* Ehasiru-style Clean Square Icon Card */}
+                <div className={`${themeClasses.card.base} ${themeClasses.card.padding} ${themeClasses.card.hoverable} hover:border-[#0e7c66]/20`}>
+                  <div className="relative z-10 flex flex-col h-full">
+                    {/* Small square icon top left */}
+                    <div className="mb-6">
+                      <div className={`${themeClasses.icon.wrapper} ${themeClasses.icon.wrapperSize.md} text-[#0e7c66] group-hover:text-white`}>
+                        {industry.icon}
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
-                        {t("home.serviceProviders")}
+                    <div className="mb-4">
+                      <h3 className="text-lg font-bold text-[#0a2e1e] group-hover:text-[#0e7c66] transition-colors mb-1">
+                        {t(industry.titleKey)}
                       </h3>
-                      <p className="text-sm text-slate-500">
-                        {t("home.serviceProvidersCompliance")}
+                      <p className="text-sm text-[#5a6672] font-medium">
+                        {t(industry.subtitleKey)}
                       </p>
                     </div>
-                  </div>
-                  <p className="text-slate-600 mb-4 flex-grow">
-                    {t("home.serviceProvidersDesc")}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs px-2 py-1 bg-teal-100 text-teal-700 rounded-full">
-                      MSP Solutions
-                    </span>
-                    <span className="text-xs px-2 py-1 bg-teal-100 text-teal-700 rounded-full">
-                      Revenue Share
-                    </span>
+                    <p className="text-[#5a6672] mb-6 flex-grow leading-relaxed">
+                      {t(industry.descKey)}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {industry.tags.map(tag => (
+                        <span key={tag} className="text-xs px-2.5 py-1 bg-white text-[#5a6672] border border-[#d0d5dc]/80 rounded-none">
+                          {industry.isTagKey ? t(tag) : tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
           <Reveal delayMs={500}>
             <div className="text-center mt-12">
               <Link
                 to="/solutions"
-                className="btn-primary inline-flex items-center justify-center"
+                className="inline-flex items-center justify-center bg-[#0e7c66] text-white border-2 border-[#0e7c66] hover:bg-[#0a2e1e] focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:ring-offset-2 focus-visible:outline-none min-h-[44px] px-8 py-3 rounded-none font-bold text-lg transition-all duration-150"
               >
                 <span>{t("home.exploreAllIndustrySolutions")}</span>
-                <HoverIcon>
-                  {(filled) => (
-                    <ArrowRightIcon className="w-5 h-5 ml-2" filled={filled} />
-                  )}
-                </HoverIcon>
+                <ArrowRight className="w-5 h-5 ml-2" stroke="currentColor" />
               </Link>
             </div>
           </Reveal>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Services Overview Section */}
-      <section id="services" className="py-16 md:py-24 bg-white relative overflow-hidden">
+      <ThemeSection alternate id="services" className="py-16 md:py-24 relative overflow-hidden">
         <div className="container-app">
           <div className="text-center mb-16">
             <Reveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1c2530] mb-6">
                 {t("home.servicesTitle").split(" ").slice(0, 2).join(" ")}{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                <span className="text-[#0e7c66]">
                   {t("home.servicesTitle").split(" ").slice(2).join(" ")}
                 </span>
               </h2>
             </Reveal>
             <Reveal delayMs={100}>
-              <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              <p className="text-lg text-[#5a6672] max-w-3xl mx-auto">
                 {t("home.servicesSubtitle")}
               </p>
             </Reveal>
@@ -1939,30 +1506,30 @@ const HomePage = memo(function HomePage() {
 
           <div className="relative max-w-6xl mx-auto">
             {/* Navigation Arrows */}
-            <div className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 z-30">
+            <div className="absolute top-1/2 -translate-y-1/2 left-0 sm:-left-4 md:-left-12 z-30">
               <button 
                 onClick={() => setCurrentSlide((prev: number) => Math.max(0, prev - 1))}
                 disabled={currentSlide === 0}
-                className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 ${
-                  currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-slate-50 hover:scale-110 active:scale-95 text-blue-600'
+                className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-[#e9edf1] flex items-center justify-center transition-all duration-150 focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:outline-none ${
+                  currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#d4ede4] hover:scale-110 active:scale-95 text-[#0e7c66]'
                 }`}
                 aria-label="Previous product"
               >
-                <ArrowLeftIcon className="w-5 h-5 md:w-6 md:h-6" />
+                <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
               </button>
             </div>
             
-            <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 z-30">
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 sm:-right-4 md:-right-12 z-30">
               <button 
                 onClick={() => setCurrentSlide((prev: number) => Math.min(products.length - visibleCount, prev + 1))}
                 disabled={currentSlide >= products.length - visibleCount}
-                className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center transition-all duration-300 ${
+                className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-[#e9edf1] flex items-center justify-center transition-all duration-150 focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:outline-none ${
                   currentSlide >= products.length - visibleCount 
-                    ? 'opacity-30 cursor-not-allowed' : 'hover:bg-slate-50 hover:scale-110 active:scale-95 text-blue-600'
+                    ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#d4ede4] hover:scale-110 active:scale-95 text-[#0e7c66]'
                 }`}
                 aria-label="Next product"
               >
-                <ArrowRightIcon className="w-5 h-5 md:w-6 md:h-6" />
+                <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
               </button>
             </div>
 
@@ -1979,9 +1546,8 @@ const HomePage = memo(function HomePage() {
                       <div className="h-full">
                         <Link 
                           to={product.link}
-                          className={`group relative h-full bg-white rounded-2xl p-6 md:p-8 border border-slate-200/60 hover:border-${product.color}-300 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 overflow-hidden block cursor-pointer`}
+                          className="group relative h-full bg-white rounded-none p-6 md:p-8 border border-[#d0d5dc]/60 hover:border-[#0e7c66]/30 transition-all duration-150 block cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:ring-offset-2 focus-visible:outline-none"
                         >
-                          <div className={`absolute inset-0 bg-gradient-to-br from-${product.color}-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                           <CardContent product={product} t={t} isLink={true} />
                         </Link>
                       </div>
@@ -1997,8 +1563,8 @@ const HomePage = memo(function HomePage() {
                 <button
                   key={i}
                   onClick={() => setCurrentSlide(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    currentSlide === i ? 'bg-blue-600 w-6' : 'bg-slate-200 hover:bg-slate-300'
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-150 focus-visible:ring-2 focus-visible:ring-[#0e7c66] focus-visible:ring-offset-2 focus-visible:outline-none ${
+                    currentSlide === i ? 'bg-[#0e7c66] w-6' : 'bg-[#d8dee5] hover:bg-[#d4ede4]'
                   }`}
                   aria-label={`Go to slide ${i + 1}`}
                 />
@@ -2006,129 +1572,88 @@ const HomePage = memo(function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Key Statistics Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-blue-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20"></div>
-          <div className="absolute top-0 left-1/4 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-        </div>
+      <ThemeSection className="py-16 md:py-24 text-[#1c2530] border-y border-[#d0d5dc]/50 relative overflow-hidden">
         <div className="container-app relative z-10">
           <div className="text-center mb-16">
             <Reveal>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0a2e1e]">
                 {t("home.trustedTitle").split(" ").slice(0, 3).join(" ")}{" "}
-                <span className="text-yellow-300">
+                <span className="text-[#0e7c66]">
                   {t("home.trustedTitle").split(" ").slice(3).join(" ")}
                 </span>
               </h2>
             </Reveal>
             <Reveal delayMs={100}>
-              <p className="text-lg text-white/90 max-w-3xl mx-auto">
+              <p className="text-lg text-[#5a6672] max-w-3xl mx-auto">
                 {t("home.trustedSubtitle")}
               </p>
             </Reveal>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <Reveal delayMs={400} className="h-full">
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 h-full">
+              <div className="group bg-white rounded-none p-6 md:p-8 border border-[#d0d5dc]/60 hover:border-[#0e7c66]/30 transition-all duration-150 h-full">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-slate-900"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                  <div className="w-12 h-12 flex-shrink-0 bg-[#d4ede4] rounded-full flex items-center justify-center group-hover:bg-[#0e7c66] transition-colors duration-150">
+                    <ShieldCheck className="w-6 h-6 text-[#0e7c66] group-hover:text-white transition-colors duration-150" />
                   </div>
-                  <h3 className="text-xl font-bold">
+                  <h3 className="text-xl font-bold text-[#0a2e1e] group-hover:text-[#0e7c66] transition-colors">
                     {t("home.militaryGradeSecurity")}
                   </h3>
                 </div>
-                <p className="text-white/90">{t("home.militaryGradeDesc")}</p>
+                <p className="text-[#5a6672]">{t("home.militaryGradeDesc")}</p>
               </div>
             </Reveal>
             <Reveal delayMs={450} className="h-full">
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 h-full">
+              <div className="group bg-white rounded-none p-6 md:p-8 border border-[#d0d5dc]/60 hover:border-[#0e7c66]/30 transition-all duration-150 h-full">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-slate-900"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
+                  <div className="w-12 h-12 flex-shrink-0 bg-[#d4ede4] rounded-full flex items-center justify-center group-hover:bg-[#0e7c66] transition-colors duration-150">
+                    <Layers className="w-6 h-6 text-[#0e7c66] group-hover:text-white transition-colors duration-150" />
                   </div>
-                  <h3 className="text-xl font-bold">
+                  <h3 className="text-xl font-bold text-[#0a2e1e] group-hover:text-[#0e7c66] transition-colors">
                     {t("home.enterpriseScale")}
                   </h3>
                 </div>
-                <p className="text-white/90">{t("home.enterpriseScaleDesc")}</p>
+                <p className="text-[#5a6672]">{t("home.enterpriseScaleDesc")}</p>
               </div>
             </Reveal>
             <Reveal delayMs={500} className="h-full">
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 md:col-span-2 lg:col-span-1 h-full">
+              <div className="group bg-white rounded-none p-6 md:p-8 border border-[#d0d5dc]/60 md:col-span-2 lg:col-span-1 hover:border-[#0e7c66]/30 transition-all duration-150 h-full">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-slate-900"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                  <div className="w-12 h-12 flex-shrink-0 bg-[#d4ede4] rounded-full flex items-center justify-center group-hover:bg-[#0e7c66] transition-colors duration-150">
+                    <FileCheck className="w-6 h-6 text-[#0e7c66] group-hover:text-white transition-colors duration-150" />
                   </div>
-                  <h3 className="text-xl font-bold">
+                  <h3 className="text-xl font-bold text-[#0a2e1e] group-hover:text-[#0e7c66] transition-colors">
                     {t("home.globalCompliance")}
                   </h3>
                 </div>
-                <p className="text-white/90">
+                <p className="text-[#5a6672]">
                   {t("home.globalComplianceDesc")}
                 </p>
               </div>
             </Reveal>
           </div>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Testimonials Section */}
-      {/* <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-slate-50/50">
+      {/* <ThemeSection noBg className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-slate-50/50">
         <div className="container-app">
           <div className="text-center mb-12 lg:mb-16">
             <Reveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1c2530] mb-6">
                 Trusted by Clients
               </h2>
-              <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-[#5a6672] max-w-3xl mx-auto leading-relaxed">
                 See what our customers say about our data erasure solutions
               </p>
             </Reveal>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
             <Reveal delayMs={10}>
-              <div className="card hover:shadow-lg transition-transform duration-200 ease-out hover:-translate-y-1 h-full flex flex-col">
+              <div className="card transition-all duration-150 h-full flex flex-col">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
                     <img loading="lazy" decoding="async"
@@ -2138,7 +1663,7 @@ const HomePage = memo(function HomePage() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-lg">
+                    <h3 className="font-bold text-[#1c2530] text-lg">
                       Marcus Schmidt
                     </h3>
                     <p className="text-blue-600 text-sm font-medium">
@@ -2146,15 +1671,15 @@ const HomePage = memo(function HomePage() {
                     </p>
                   </div>
                 </div>
-                <blockquote className="text-slate-600 italic leading-relaxed flex-1">
+                <blockquote className="text-[#5a6672] italic leading-relaxed flex-1">
                   "{t('home.testimonial1')}"
                 </blockquote>
               </div>
             </Reveal>
             <Reveal delayMs={20}>
-              <div className="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 transform will-change-transform">
+              <div className="bg-white rounded-none p-8 transition-all duration-150 will-change-transform">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#0e7c66] to-[#0e7c66] flex items-center justify-center flex-shrink-0">
                     <img loading="lazy" decoding="async"
                       src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1961&q=80"
                       alt="Elena Rodriguez"
@@ -2162,19 +1687,19 @@ const HomePage = memo(function HomePage() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900 text-lg">
+                    <h3 className="font-semibold text-[#1c2530] text-lg">
                       Elena Rodriguez
                     </h3>
                     <p className="text-blue-600 text-sm font-medium">{t('home.client')}</p>
                   </div>
                 </div>
-                <blockquote className="text-slate-600 italic leading-relaxed">
+                <blockquote className="text-[#5a6672] italic leading-relaxed">
                   "{t('home.testimonial2')}"
                 </blockquote>
               </div>
             </Reveal>
             <Reveal delayMs={30}>
-              <div className="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 transform will-change-transform">
+              <div className="bg-white rounded-none p-8 transition-all duration-150 will-change-transform">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0">
                     <img loading="lazy" decoding="async"
@@ -2184,20 +1709,20 @@ const HomePage = memo(function HomePage() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900 text-lg">
+                    <h3 className="font-semibold text-[#1c2530] text-lg">
                       James Thompson
                     </h3>
                     <p className="text-blue-600 text-sm font-medium">{t('home.client')}</p>
                   </div>
                 </div>
-                <blockquote className="text-slate-600 italic leading-relaxed">
+                <blockquote className="text-[#5a6672] italic leading-relaxed">
                   "{t('home.testimonial3')}"
                 </blockquote>
               </div>
             </Reveal>
           </div>
         </div>
-      </section> */}
+      </ThemeSection> */}
       <FAQSection faqs={homeFAQs} />
     </>
   );
@@ -2209,19 +1734,19 @@ function CardContent({ product, t, isLink = false }: { product: any, t: any, isL
     <div className="relative z-10 h-full flex flex-col">
       <div className="mb-6 text-center md:text-left">
         <div className="flex items-start justify-between mb-4">
-          <div className={`w-14 h-14 flex-shrink-0 bg-gradient-to-br from-${product.color}-500 to-${product.color}-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md shadow-${product.color}-200`}>
-            <product.icon className="w-7 h-7 text-white" />
+          <div className="w-12 h-12 flex-shrink-0 bg-[#d4ede4] rounded-full flex items-center justify-center group-hover:bg-[#0e7c66] transition-colors duration-150">
+            <product.icon className="w-6 h-6 text-[#0e7c66] group-hover:text-white transition-colors duration-150" />
           </div>
           {product.isUpcoming && (
-            <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-700 rounded-full border border-amber-200 shadow-sm">
+            <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-700 rounded-full border border-amber-200">
               Upcoming
             </span>
           )}
         </div>
-        <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-800 transition-colors group-hover:underline">
+        <h3 className="text-xl font-bold text-[#0a2e1e] mb-3 group-hover:text-[#0e7c66] transition-colors group-hover:underline">
           {String(product.title)}
         </h3>
-        <p className="text-sm text-slate-600 line-clamp-2 h-10 mb-6 relative z-20 pointer-events-none">
+        <p className="text-sm text-[#5a6672] line-clamp-2 h-10 mb-6 relative z-20 pointer-events-none">
           {product.desc}
         </p>
       </div>
@@ -2229,33 +1754,29 @@ function CardContent({ product, t, isLink = false }: { product: any, t: any, isL
       <div className="space-y-3 mb-6 flex-grow relative z-20 pointer-events-none">
         {product.features.map((feature: string, fIdx: number) => (
           <div key={fIdx} className="flex items-start gap-3">
-            <div className={`w-5 h-5 rounded-full bg-${product.color}-50 flex items-center justify-center flex-shrink-0 mt-0.5 rotate-0 group-hover:rotate-12 transition-transform`}>
-              <svg className={`w-3.5 h-3.5 text-${product.color}-600`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-              </svg>
+            <div className="w-5 h-5 rounded-full bg-[#d4ede4] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#0e7c66] transition-colors duration-150">
+              <Check className="w-3.5 h-3.5 text-[#0e7c66] group-hover:text-white transition-colors duration-150" strokeWidth={2.5} />
             </div>
-            <span className="text-xs text-slate-700 font-medium leading-tight">
+            <span className="text-xs text-[#0a2e1e] font-medium leading-tight">
               {feature}
             </span>
           </div>
         ))}
       </div>
 
-      <div className="pt-6 border-t border-slate-100 flex items-center justify-between relative z-20 pointer-events-none">
+      <div className="pt-6 border-t border-[#e9edf1] flex items-center justify-between relative z-20 pointer-events-none">
         <div className="flex-grow">
-          <div className="text-lg font-bold text-slate-900">
+          <div className="text-lg font-bold text-[#0a2e1e]">
             {product.price}
           </div>
-          <div className="text-[10px] text-slate-500 font-medium uppercase tracking-wide">
+          <div className="text-[10px] text-[#0e7c66] font-medium uppercase tracking-wide">
             {product.note}
           </div>
         </div>
         {isLink && (
-          <div className={`flex items-center gap-2 text-sm font-bold text-${product.color}-600 group-hover:translate-x-1 transition-transform`}>
+          <div className="flex items-center gap-2 text-sm font-bold text-[#0e7c66] group-hover:translate-x-1 transition-transform">
             {t("home.viewDetails", { defaultValue: "Learn More" })}
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
+            <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
           </div>
         )}
       </div>

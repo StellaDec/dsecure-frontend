@@ -122,7 +122,7 @@ export default function EditUser() {
 
   if (userNotFound) {
     return (
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Error: System User Not Found</h2>
           <p className="text-slate-600 mb-6">The user you're looking for doesn't exist.</p>
@@ -142,7 +142,7 @@ export default function EditUser() {
       {/* SEO Meta Tags */}
       <SEOHeadNative seo={getSEOForPage("edit-user")} />
 
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div className="flex-1 min-w-0">
@@ -169,7 +169,7 @@ export default function EditUser() {
         <div className="max-w-2xl mx-auto">
           {isLoading && !formData.name ? (
             <div className="card p-8 text-center">
-              <div className="animate-spin w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+              <div className="animate-spin w-8 h-8 border-4 border-[#0e7c66] border-t-transparent rounded-none mx-auto mb-4"></div>
               <p className="text-slate-600">Loading user details...</p>
             </div>
           ) : (
@@ -193,7 +193,7 @@ export default function EditUser() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                       placeholder="Enter full name"
                     />
                   </div>
@@ -209,7 +209,7 @@ export default function EditUser() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-slate-50"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66] bg-slate-50"
                       placeholder="user@example.com"
                       disabled
                     />
@@ -228,7 +228,7 @@ export default function EditUser() {
                       name="role"
                       value={formData.role}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     >
                       <option value="user">User</option>
                       <option value="admin">Admin</option>
@@ -244,7 +244,7 @@ export default function EditUser() {
                       name="group"
                       value={formData.group}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     >
                       {groups.map(group => (
                         <option key={group} value={group}>{group}</option>
@@ -267,7 +267,7 @@ export default function EditUser() {
                       onChange={handleInputChange}
                       min="1"
                       max="50"
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     />
                   </div>
                   
@@ -280,7 +280,7 @@ export default function EditUser() {
                       name="status"
                       value={formData.status}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     >
                       <option value="active">Active</option>
                       <option value="inactive">Inactive</option>

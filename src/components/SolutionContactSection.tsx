@@ -180,8 +180,8 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
                   "No-obligation consultation",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                      <CheckIcon className="w-4 h-4 text-emerald-800" />
+                    <div className="w-6 h-6 rounded-full bg-[#d4ede4] flex items-center justify-center">
+                      <CheckIcon className="w-4 h-4 text-[#0a2e1e]" />
                     </div>
                     <span className="text-slate-700">{item}</span>
                   </li>
@@ -191,7 +191,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
               <div className="pt-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 text-emerald-800 font-semibold hover:text-emerald-700 transition-colors"
+                  className="inline-flex items-center gap-2 text-[#0a2e1e] font-semibold hover:text-[#0a2e1e] transition-colors"
                 >
                   Or contact us directly
                   <ArrowRightIcon className="w-5 h-5" />
@@ -202,7 +202,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
 
           {/* Right Column — Enquiry Form */}
           <Reveal delayMs={100}>
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 shadow-2xl">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-none sm:rounded-none p-5 sm:p-8 lg:p-10 shadow-2xl">
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
                 Request Information
               </h3>
@@ -214,7 +214,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Full Name *"
-                    className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                    className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] transition-colors"
                     required
                   />
                 </div>
@@ -225,7 +225,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Email *"
-                    className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                    className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] transition-colors"
                     required
                   />
                 </div>
@@ -236,7 +236,7 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
                     value={formData.organization}
                     onChange={handleInputChange}
                     placeholder="Organization"
-                    className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                    className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] transition-colors"
                   />
                 </div>
                 <div>
@@ -246,13 +246,13 @@ const SolutionContactSection: React.FC<SolutionContactSectionProps> = ({
                     onChange={handleInputChange}
                     rows={4}
                     placeholder="How can we help you?"
-                    className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors resize-none"
+                    className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-[#d4ede4] transition-colors resize-none"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold py-4 rounded-xl hover:from-emerald-600 hover:to-teal-600 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-[#0e7c66] to-[#0a2e1e] text-white font-bold py-4 rounded-none hover:from-[#0e7c66] hover:to-[#0a2e1e] transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isLoading ? "Submitting..." : "Submit Enquiry"}
                 </button>

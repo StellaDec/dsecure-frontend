@@ -41,14 +41,7 @@ interface PerformanceData {
 }
 
 // ✅ Date Helper Functions
-const COLORS = [
-  "#0088FE",
-  "#00C49F",
-  "#FFBB28",
-  "#FF8042",
-  "#8884d8",
-  "#82ca9d",
-];
+const COLORS = ['#0a2e1e', '#0e7c66', '#22a689', '#d4ede4', '#a7d5c5'];
 
 const getPreviousMonthDate = () => {
   const date = new Date();
@@ -86,7 +79,7 @@ const CustomDateInput = ({
       </label>
       <input
         type="date"
-        className="w-full border rounded-lg px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+        className="w-full border rounded-none px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -249,7 +242,7 @@ export default function AdminPerformance() {
 
     // ********** NAYA CODE — Shimmer Skeleton UI **********
     return (
-      <div className="space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6 animate-pulse">
+      <div className="space-y-6 min-h-screen bg-white p-6 animate-pulse">
         {/* Header Skeleton */}
         <div>
           <div className="h-7 bg-slate-200 rounded w-40 mb-2" />
@@ -261,7 +254,7 @@ export default function AdminPerformance() {
           {[1, 2, 3].map((i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-sm border border-slate-200 p-6"
+              className="bg-white rounded-none shadow-sm border border-slate-200 p-6"
             >
               <div className="h-4 bg-slate-200 rounded w-24 mb-3" />
               <div className="h-8 bg-slate-200 rounded w-20 mb-4" />
@@ -271,9 +264,9 @@ export default function AdminPerformance() {
         </div>
 
         {/* Chart Skeleton */}
-        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
           <div className="h-5 bg-slate-200 rounded w-48 mb-6" />
-          <div className="h-64 bg-slate-100 rounded-lg" />
+          <div className="h-64 bg-slate-100 rounded-none" />
         </div>
       </div>
     );
@@ -292,11 +285,11 @@ export default function AdminPerformance() {
     return (
       <>
         <SEOHeadNative seo={getSEOForPage("admin-performance")} />
-        <div className="space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6">
+        <div className="space-y-6 min-h-screen bg-white p-6">
           {/* Header & Filters (Still visible to allow changing filters) */}
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-slate-900">Performance</h1>
+              <h1 className="text-2xl font-bold text-[#0a2e1e]">Performance</h1>
               <p className="text-sm text-slate-600 mt-1">
                 Monitor system performance and erasure metrics
               </p>
@@ -305,9 +298,9 @@ export default function AdminPerformance() {
 
           {/* Filters Card - Matching AdminReports Style */}
           {!isDemo && (
-            <div className="card p-4 space-y-4 bg-white rounded-xl shadow-sm border border-slate-200">
+            <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-4 space-y-4 bg-white rounded-none shadow-sm border border-slate-200">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-semibold text-slate-900">
+                <h2 className="text-lg font-semibold text-[#0a2e1e]">
                   Filters & Search
                 </h2>
                 <button
@@ -325,7 +318,7 @@ export default function AdminPerformance() {
                     Report Owner
                   </label>
                   <select
-                    className="w-full border rounded-lg px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                    className="w-full border rounded-none px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
                     value={selectedUserEmail}
                     onChange={(e) => setSelectedUserEmail(e.target.value)}
                   >
@@ -353,7 +346,7 @@ export default function AdminPerformance() {
                     Year
                   </label>
                   <select
-                    className="w-full border rounded-lg px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                    className="w-full border rounded-none px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(Number(e.target.value))}
                   >
@@ -409,7 +402,7 @@ export default function AdminPerformance() {
             </div>
           )}
 
-          <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-12 text-center mt-6">
+          <div className="bg-white rounded-none shadow-sm border border-slate-200 p-12 text-center mt-6">
             <svg
               className="w-16 h-16 text-slate-400 mx-auto mb-4"
               fill="none"
@@ -423,7 +416,7 @@ export default function AdminPerformance() {
                 d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
               />
             </svg>
-            <h2 className="text-lg font-medium text-slate-900 mb-2">
+            <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
               No Performance Metrics Available
             </h2>
             <p className="text-slate-600">
@@ -452,11 +445,11 @@ export default function AdminPerformance() {
     <>
       <SEOHeadNative seo={getSEOForPage("admin-performance")} />
 
-      <div className="space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6">
+      <div className="space-y-6 min-h-screen bg-white p-6">
         {/* Header & Filters */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
           <div>
-            <h2 className="text-2xl font-bold text-slate-900">Performance</h2>
+            <h2 className="text-2xl font-bold text-[#0a2e1e]">Performance</h2>
             <p className="text-sm text-slate-600 mt-1">
               Monitor system performance and erasure metrics
             </p>
@@ -465,9 +458,9 @@ export default function AdminPerformance() {
 
         {/* Filters Card - Matching AdminReports Style */}
         {!isDemo && (
-          <div className="card p-4 space-y-4 bg-white rounded-xl shadow-sm border border-slate-200">
+          <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-4 space-y-4 bg-white rounded-none shadow-sm border border-slate-200">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-slate-900">
+              <h2 className="text-lg font-semibold text-[#0a2e1e]">
                 Filters & Search
               </h2>
               <button
@@ -485,7 +478,7 @@ export default function AdminPerformance() {
                   Report Owner
                 </label>
                 <select
-                  className="w-full border rounded-lg px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                  className="w-full border rounded-none px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
                   value={selectedUserEmail}
                   onChange={(e) => setSelectedUserEmail(e.target.value)}
                 >
@@ -513,7 +506,7 @@ export default function AdminPerformance() {
                   Year
                 </label>
                 <select
-                  className="w-full border rounded-lg px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
+                  className="w-full border rounded-none px-3 py-2 text-sm xs:text-base sm:text-sm focus:ring-2 focus:ring-brand focus:border-transparent"
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(Number(e.target.value))}
                 >
@@ -579,12 +572,12 @@ export default function AdminPerformance() {
         {/* Top 3 Metric Cards */}
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
           {/* Erasure Method Distribution (Pie Chart) */}
-          <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col h-full min-h-[400px]">
+          <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6 flex flex-col h-full min-h-[400px]">
             <div className="mb-6">
               <p className="text-base md:text-lg text-slate-500 mb-2 font-medium">
                 Erasure Method Distribution
               </p>
-              <p className="text-3xl md:text-4xl font-bold text-slate-900">
+              <p className="text-3xl md:text-4xl font-bold text-[#0a2e1e]">
                 {performanceData.methodMetrics &&
                 performanceData.methodMetrics.length > 0
                   ? performanceData.methodMetrics
@@ -614,7 +607,7 @@ export default function AdminPerformance() {
                           key={`cell-${index}`}
                           fill={COLORS[index % COLORS.length]}
                           strokeWidth={2}
-                          stroke="#fff"
+                          stroke="#0e7c66"
                         />
                       ))}
                     </Pie>
@@ -646,6 +639,9 @@ export default function AdminPerformance() {
                         fontSize: "14px",
                         paddingTop: "20px",
                       }}
+                      formatter={(value) => (
+                        <span className="text-slate-700 font-medium ml-1">{value}</span>
+                      )}
                     />
                   </PieChart>
                 </ResponsiveContainer>
@@ -658,14 +654,14 @@ export default function AdminPerformance() {
           </div>
 
           {/* Erasure Method Distribution List View */}
-          {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col">
+          {/* <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6 flex flex-col">
             <div className="mb-4">
               <p className="text-sm text-slate-500 mb-1">
                 Erasure Method Distribution
               </p>
               {performanceData.methodMetrics &&
                 performanceData.methodMetrics.length > 0 && (
-                  <p className="text-2xl font-bold text-slate-900">
+                  <p className="text-2xl font-bold text-[#0a2e1e]">
                     {performanceData.methodMetrics.reduce(
                       (acc, curr) => acc + curr.count,
                       0,
@@ -688,19 +684,19 @@ export default function AdminPerformance() {
                       >
                         {metric.methodName}
                       </span>
-                      <span className="font-bold text-slate-900">
+                      <span className="font-bold text-[#0a2e1e]">
                         {metric.count}
                       </span>
                     </div>
                     <div className="flex justify-between items-center text-xs text-slate-400 mb-1">
                       <span>Avg: {metric.avgDuration}</span>
-                      <span className="text-green-800 font-medium">
+                      <span className="text-[#0a2e1e] font-medium">
                         {metric.successRate}% Success
                       </span>
                     </div>
                     <div className="w-full bg-slate-100 rounded-full h-1.5">
                       <div
-                        className="bg-green-500 h-1.5 rounded-full"
+                        className="bg-[#0e7c66] h-1.5 rounded-full"
                         style={{ width: `${metric.successRate}%` }}
                       ></div>
                     </div>
@@ -729,9 +725,9 @@ export default function AdminPerformance() {
                       <span
                         className={`px-2 py-1 rounded-full text-xs font-medium ${
                           log.method.includes("DoD")
-                            ? "bg-blue-100 text-blue-700"
+                            ? "bg-[#d4ede4] text-[#0a2e1e]"
                             : log.method.includes("NIST")
-                              ? "bg-purple-100 text-purple-700"
+                              ? "bg-[#d4ede4] text-[#0a2e1e]"
                               : "bg-slate-100 text-slate-700"
                         }`}
                       >
@@ -749,14 +745,14 @@ export default function AdminPerformance() {
           </div> */}
 
           {/* Success Rate */}
-          {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+          {/* <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
             <div className="mb-4">
               <p className="text-sm text-slate-500 mb-1">Success Rate</p>
-              <p className="text-3xl font-bold text-slate-900">{successRate}</p>
+              <p className="text-3xl font-bold text-[#0a2e1e]">{successRate}</p>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-6">
               <div
-                className="bg-green-500 h-2.5 rounded-full transition-all duration-500"
+                className="bg-[#0e7c66] h-2.5 rounded-full transition-all duration-500"
                 style={{ width: successRate }}
               ></div>
             </div>
@@ -764,8 +760,8 @@ export default function AdminPerformance() {
         </div>
 
         {/* Throughput Chart (Monthly breakdown) */}
-        {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-          <h2 className="text-lg font-semibold text-slate-900 mb-6">
+        {/* <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
+          <h2 className="text-lg font-semibold text-[#0a2e1e] mb-6">
             Erasure Trends ({selectedYear})
           </h2>
           <div className="h-64 flex items-end justify-between gap-2 px-4">
@@ -785,7 +781,7 @@ export default function AdminPerformance() {
                     <div className="relative w-full mx-1 flex items-end justify-center h-[85%]">
                       <div
                         style={{ height: `${barHeight}%` }}
-                        className="w-full max-w-[40px] bg-blue-500 rounded-t-md transition-all duration-300 group-hover:bg-blue-600"
+                        className="w-full max-w-[40px] bg-[#0e7c66] rounded-none transition-all duration-300 group-hover:bg-[#0e7c66]"
                       >
                         
                         <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap transition-opacity pointer-events-none z-10">

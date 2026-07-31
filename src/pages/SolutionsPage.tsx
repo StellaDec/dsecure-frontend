@@ -6,20 +6,35 @@ import { getSEOForPage } from "@/utils/seo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { useTranslation } from "react-i18next";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
-import {
-  BuildingIcon,
-  ShieldIcon,
-  HeartIcon,
-  DollarIcon,
-  GlobeIcon,
-  BriefcaseIcon,
-  ChatIcon,
-  ArrowDownIcon,
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  CheckIcon,
-  HoverIcon,
-} from "@/components/FlatIcons";
+import { 
+  Building, 
+  Shield, 
+  Heart, 
+  DollarSign, 
+  Globe, 
+  Briefcase, 
+  MessageCircle, 
+  ArrowDown, 
+  ArrowLeft, 
+  ArrowRight, 
+  Check,
+  Server,
+  Smartphone,
+  Monitor,
+  Cloud,
+  Database,
+  ShieldCheck,
+  Activity,
+  Clock,
+  CheckCircle
+} from "lucide-react";
+import { 
+  ThemeSection, 
+  ThemeSectionHeading, 
+  ThemeCard, 
+  ThemeIconContainer, 
+  themeClasses 
+} from "@/components/ui/Theme";
 
 export default function SolutionsPage() {
   return (
@@ -146,11 +161,7 @@ function SolutionsPageContent() {
       title: t('solutions.enterprise'),
       subtitle: t('solutions.enterpriseSubtitle'),
       description: t('solutions.enterpriseDesc'),
-      icon: (
-        <HoverIcon>
-          {(filled) => <BuildingIcon className="w-8 h-8" filled={filled} />}
-        </HoverIcon>
-      ),
+      icon: <Building className="w-8 h-8" />,
       benefits: [
         t('solutions.enterpriseBenefit1'),
         t('solutions.enterpriseBenefit2'),
@@ -190,11 +201,7 @@ function SolutionsPageContent() {
       title: t('solutions.itad'),
       subtitle: t('solutions.itadSubtitle'),
       description: t('solutions.itadDesc'),
-      icon: (
-        <HoverIcon>
-          {(filled) => <ShieldIcon className="w-8 h-8" filled={filled} />}
-        </HoverIcon>
-      ),
+      icon: <Shield className="w-8 h-8" />,
       benefits: [
         t('solutions.itadBenefit1'),
         t('solutions.itadBenefit2'),
@@ -234,11 +241,7 @@ function SolutionsPageContent() {
       title: t('solutions.healthcare'),
       subtitle: t('solutions.healthcareSubtitle'),
       description: t('solutions.healthcareDesc'),
-      icon: (
-        <HoverIcon>
-          {(filled) => <HeartIcon className="w-8 h-8" filled={filled} />}
-        </HoverIcon>
-      ),
+      icon: <Heart className="w-8 h-8" />,
       benefits: [
         t('solutions.healthcareBenefit1'),
         t('solutions.healthcareBenefit2'),
@@ -268,11 +271,7 @@ function SolutionsPageContent() {
       title: t('solutions.financial'),
       subtitle: t('solutions.financialSubtitle'),
       description: t('solutions.financialDesc'),
-      icon: (
-        <HoverIcon>
-          {(filled) => <DollarIcon className="w-8 h-8" filled={filled} />}
-        </HoverIcon>
-      ),
+      icon: <DollarSign className="w-8 h-8" />,
       benefits: [
         t('solutions.financialBenefit1'),
         t('solutions.financialBenefit2'),
@@ -302,11 +301,7 @@ function SolutionsPageContent() {
       title: t('solutions.government'),
       subtitle: t('solutions.governmentSubtitle'),
       description: t('solutions.governmentDesc'),
-      icon: (
-        <HoverIcon>
-          {(filled) => <GlobeIcon className="w-8 h-8" filled={filled} />}
-        </HoverIcon>
-      ),
+      icon: <Globe className="w-8 h-8" />,
       benefits: [
         t('solutions.governmentBenefit1'),
         t('solutions.governmentBenefit2'),
@@ -347,11 +342,7 @@ function SolutionsPageContent() {
       title: t('solutions.serviceProviders'),
       subtitle: t('solutions.serviceProvidersSubtitle'),
       description: t('solutions.serviceProvidersDesc'),
-      icon: (
-        <HoverIcon>
-          {(filled) => <BriefcaseIcon className="w-8 h-8" filled={filled} />}
-        </HoverIcon>
-      ),
+      icon: <Briefcase className="w-8 h-8" />,
       benefits: [
         t('solutions.serviceProvidersBenefit1'),
         t('solutions.serviceProvidersBenefit2'),
@@ -382,12 +373,7 @@ function SolutionsPageContent() {
       challenge: t('solutions.caseStudy1Challenge'),
       solution: t('solutions.caseStudy1Solution'),
       results: t('solutions.caseStudy1Results'),
-      // 🏥 → HeartIcon
-      logo: (
-        <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-          <HeartIcon className="w-6 h-6 text-red-600" filled={true} />
-        </div>
-      ),
+      logoIcon: Heart,
     },
     {
       company: t('solutions.caseStudy2Company'),
@@ -395,12 +381,7 @@ function SolutionsPageContent() {
       challenge: t('solutions.caseStudy2Challenge'),
       solution: t('solutions.caseStudy2Solution'),
       results: t('solutions.caseStudy2Results'),
-      // 🏦 → DollarIcon
-      logo: (
-        <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-          <DollarIcon className="w-6 h-6 text-blue-600" filled={true} />
-        </div>
-      ),
+      logoIcon: DollarSign,
     },
     {
       company: t('solutions.caseStudy3Company'),
@@ -408,24 +389,7 @@ function SolutionsPageContent() {
       challenge: t('solutions.caseStudy3Challenge'),
       solution: t('solutions.caseStudy3Solution'),
       results: t('solutions.caseStudy3Results'),
-      // ♻️ → Recycle Icon (inline SVG)
-      logo: (
-        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-          <svg
-            className="w-6 h-6 text-green-800"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-            />
-          </svg>
-        </div>
-      ),
+      logoIcon: CheckCircle,
     },
   ];
 
@@ -491,14 +455,7 @@ function SolutionsPageContent() {
       </div>
 
       {/* Hero Section */}
-      <section id="overview" className="relative overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.1),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(6,182,212,0.08),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(255,255,255,0.1)_50%,transparent_70%)]"></div>
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-emerald-200/30 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-32 h-32 bg-teal-200/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-emerald-300/25 rounded-full blur-lg animate-pulse delay-500"></div>
+      <section id="overview" className="relative overflow-hidden bg-white">
         <div className="container-responsive relative py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 xxl:py-18">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
@@ -534,26 +491,12 @@ function SolutionsPageContent() {
               </Reveal>
               <Reveal delayMs={30}>
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-                  <Link to="/contact" className="btn-primary group">
-                    <HoverIcon>
-                      {(filled) => (
-                        <ChatIcon
-                          className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform"
-                          filled={filled}
-                        />
-                      )}
-                    </HoverIcon>
+                  <Link to="/contact" className={`${themeClasses.button.base} ${themeClasses.button.primary} group`}>
+                    <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                     {t('solutions.discussNeeds')}
                   </Link>
-                  <button onClick={() => scrollToSection("solutions")} className="btn-secondary group">
-                    <HoverIcon>
-                      {(filled) => (
-                        <ArrowDownIcon
-                          className="w-5 h-5 mr-2 group-hover:translate-y-0.5 transition-transform"
-                          filled={filled}
-                        />
-                      )}
-                    </HoverIcon>
+                  <button onClick={() => scrollToSection("solutions")} className={`${themeClasses.button.base} ${themeClasses.button.outline} group`}>
+                    <ArrowDown className="w-5 h-5 mr-2 group-hover:translate-y-0.5 transition-transform" />
                     {t('solutions.exploreSolutions')}
                   </button>
                 </div>
@@ -616,109 +559,39 @@ function SolutionsPageContent() {
                       <div className="relative w-full h-full">
                         {/* Central Server/Database Icon */}
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                          <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg">
-                            <svg
-                              className="w-10 h-10 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
-                              />
-                            </svg>
+                          <div className="w-20 h-20 bg-[#0e7c66] rounded-full flex items-center justify-center shadow-lg">
+                            <Server className="w-10 h-10 text-white" />
                           </div>
                         </div>
                         {/* Surrounding Device Icons - Positioned in a circle */}
                         {/* Top Left - Mobile Device */}
                         <div className="absolute top-6 left-12 transform -translate-x-1/2 -translate-y-1/2">
-                          <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                            <svg
-                              className="w-6 h-6 text-blue-600"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                              />
-                            </svg>
+                          <div className="w-12 h-12 bg-[#d4ede4] rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform">
+                            <Smartphone className="w-6 h-6 text-[#0e7c66]" />
                           </div>
                         </div>
                         {/* Top Right - Desktop Computer */}
                         <div className="absolute top-6 right-12 transform translate-x-1/2 -translate-y-1/2">
-                          <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                            <svg
-                              className="w-6 h-6 text-purple-600"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                              />
-                            </svg>
+                          <div className="w-12 h-12 bg-[#d4ede4] rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform">
+                            <Monitor className="w-6 h-6 text-[#0e7c66]" />
                           </div>
                         </div>
                         {/* Bottom Left - Cloud Storage */}
                         <div className="absolute bottom-6 left-12 transform -translate-x-1/2 translate-y-1/2">
-                          <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                            <svg
-                              className="w-6 h-6 text-green-800"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                              />
-                            </svg>
+                          <div className="w-12 h-12 bg-[#d4ede4] rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform">
+                            <Cloud className="w-6 h-6 text-[#0e7c66]" />
                           </div>
                         </div>
                         {/* Bottom Right - Database */}
                         <div className="absolute bottom-6 right-12 transform translate-x-1/2 translate-y-1/2">
-                          <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                            <svg
-                              className="w-6 h-6 text-orange-600"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
-                              />
-                            </svg>
+                          <div className="w-12 h-12 bg-[#d4ede4] rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform">
+                            <Database className="w-6 h-6 text-[#0e7c66]" />
                           </div>
                         </div>
                         {/* Security Shield Overlay */}
                         <div className="absolute top-2 right-2">
-                          <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
-                            <svg
-                              className="w-4 h-4 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
+                          <div className="w-8 h-8 bg-[#0a2e1e] rounded-full flex items-center justify-center">
+                            <ShieldCheck className="w-4 h-4 text-[#6ee7b7]" />
                           </div>
                         </div>
                         {/* Connection Lines */}
@@ -823,13 +696,13 @@ function SolutionsPageContent() {
                   </div>
                   {/* Floating Stats Cards */}
                   <Reveal delayMs={70}>
-                    <div className="absolute -top-4 -right-4 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white p-4 rounded-xl shadow-lg">
+                    <div className="absolute -top-4 -right-4 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white p-4 rounded-none shadow-lg border border-[#d0d5dc]/60">
                       <div className="text-2xl font-bold">10k+</div>
                       <div className="text-xs opacity-90">Devices Secured</div>
                     </div>
                   </Reveal>
                   <Reveal delayMs={80}>
-                    <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-teal-500 to-teal-600 text-white p-4 rounded-xl shadow-lg">
+                    <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-teal-500 to-teal-600 text-white p-4 rounded-none shadow-lg border border-[#d0d5dc]/60">
                       <div className="text-2xl font-bold">99.9%</div>
                       <div className="text-xs opacity-90">Success Rate</div>
                     </div>
@@ -842,44 +715,38 @@ function SolutionsPageContent() {
       </section>
 
       {/* Solutions Grid */}
-      <section
-        id="solutions"
-        className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-slate-50/50"
-      >
+      <ThemeSection alternate id="solutions" className="py-16 md:py-20 lg:py-24">
         <div className="container-responsive">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Solutions by Industry
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Choose your industry to see specialized workflows and compliance
-              features.
-            </p>
-          </div>
-          {/* Industry Selector */}
-          <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-3 md:gap-4 mb-12 max-w-5xl mx-auto">
-            {Object.entries(solutions).map(([key, solution]) => (
-              <button
-                key={key}
-                onClick={() => setActiveIndustry(key as IndustryKey)}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-3 md:px-6 py-3 md:py-4 rounded-xl text-sm md:text-base font-medium transition-all duration-300 min-h-[3.5rem] flex-1 min-w-[140px] md:flex-initial ${
-                  activeIndustry === key
-                    ? "bg-gradient-to-r from-brand to-brand-600 text-white shadow-lg shadow-brand/25 scale-105 z-10"
-                    : "bg-white text-slate-700 hover:bg-slate-50 border-2 border-slate-200 hover:border-slate-300 hover:shadow-md"
-                }`}
-              >
-                <span className="text-xl md:text-2xl flex-shrink-0 leading-none flex items-center justify-center w-6 h-6 md:w-8 md:h-8">
-                  {solution.icon}
-                </span>
-                <span className="leading-tight text-center">
-                  {solution.title}
-                </span>
-              </button>
-            ))}
+          <ThemeSectionHeading subtitle="Choose your industry to see specialized workflows and compliance features." centered>Solutions by Industry</ThemeSectionHeading>
+          {/* Industry Selector (Tab Format) */}
+          <div className="max-w-6xl mx-auto">
+            <div className="border-b border-[#d0d5dc]/80 mb-10 overflow-x-auto">
+              <div className="flex space-x-6 sm:space-x-10 min-w-max px-2 justify-center">
+                {Object.entries(solutions).map(([key, solution]) => {
+                  const isActive = activeIndustry === key;
+                  return (
+                    <button
+                      key={key}
+                      onClick={() => setActiveIndustry(key as IndustryKey)}
+                      className={`pb-3 font-bold text-base sm:text-lg transition-all duration-200 border-b-4 whitespace-nowrap flex items-center gap-2 ${
+                        isActive
+                          ? "border-[#0e7c66] text-[#0e7c66]"
+                          : "border-transparent text-[#2d3748] hover:text-[#0e7c66]"
+                      }`}
+                    >
+                      <span className="w-5 h-5 flex items-center justify-center">
+                        {solution.icon}
+                      </span>
+                      {solution.title}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </div>
           {/* Active Solution Details */}
           <Reveal key={activeIndustry}>
-            <div className="bg-white rounded-2xl shadow-xl border border-slate-200/60 overflow-hidden">
+            <div className="bg-white rounded-none shadow-xl border border-[#d0d5dc]/60 overflow-hidden">
               {/* Solution Header */}
               <div className="text-center p-4 md:p-6 border-b border-slate-200/60 bg-slate-50/50">
                 <div className="text-sm text-slate-500 mb-1">Solution</div>
@@ -890,7 +757,7 @@ function SolutionsPageContent() {
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
                 {/* Solution Overview */}
                 <div className="xl:col-span-2 p-6 md:p-8 lg:p-12">
-                  <div className="inline-flex items-center justify-center w-14 h-14 lg:w-18 lg:h-18 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl text-white mb-4 lg:mb-6 shadow-lg">
+                  <div className="inline-flex items-center justify-center w-14 h-14 lg:w-18 lg:h-18 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full text-white mb-4 lg:mb-6 shadow-lg">
                     <span className="text-2xl lg:text-3xl leading-none flex items-center justify-center">
                       {solutions[activeIndustry].icon}
                     </span>
@@ -917,14 +784,7 @@ function SolutionsPageContent() {
                               className="flex items-center gap-3 group/benefit"
                             >
                               <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                                <HoverIcon>
-                                  {(filled) => (
-                                    <CheckIcon
-                                      className="w-5 h-5 text-emerald-500 group-hover/benefit:scale-110 transition-transform"
-                                      filled={filled}
-                                    />
-                                  )}
-                                </HoverIcon>
+                                <Check className="w-5 h-5 text-[#0e7c66] group-hover/benefit:scale-110 transition-transform" />
                               </div>
                               <span className="text-slate-700 text-sm leading-relaxed">
                                 {benefit}
@@ -943,7 +803,7 @@ function SolutionsPageContent() {
                           (useCase) => (
                             <div
                               key={useCase.title}
-                              className="border border-slate-200 rounded-lg p-3 hover:border-emerald-200 hover:bg-emerald-50/30 transition-colors"
+                              className="border border-[#d0d5dc]/60 rounded-none p-3 hover:border-emerald-200 hover:bg-emerald-50/30 transition-colors"
                             >
                               <div className="font-medium text-slate-900 text-sm">
                                 {useCase.title}
@@ -967,13 +827,13 @@ function SolutionsPageContent() {
                       activeIndustry === "financial") && (
                       <Link
                         to={getIndustryLink(activeIndustry)}
-                        className="btn-primary"
+                        className={`${themeClasses.button.base} ${themeClasses.button.primary}`}
                       >
                         Learn More About {solutions[activeIndustry].title}
                       </Link>
                     )}
 
-                    <Link to="/contact" className="btn-secondary">
+                    <Link to="/contact" className={`${themeClasses.button.base} ${themeClasses.button.outline}`}>
                       Request Demo
                     </Link>
                   </div>
@@ -984,22 +844,8 @@ function SolutionsPageContent() {
                     Why Choose D-Secure?
                   </h3>
                   <div className="space-y-6">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-blue-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                      </div>
+                    <div className="flex items-center gap-4">
+                      <ThemeIconContainer icon={Activity} size="md" />
                       <div>
                         <div className="font-medium text-slate-900 text-sm">
                           Proven Track Record
@@ -1009,22 +855,8 @@ function SolutionsPageContent() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-green-800"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 10V3L4 14h7v7l9-11h-7z"
-                          />
-                        </svg>
-                      </div>
+                    <div className="flex items-center gap-4">
+                      <ThemeIconContainer icon={Clock} size="md" />
                       <div>
                         <div className="font-medium text-slate-900 text-sm">
                           Lightning Fast
@@ -1034,22 +866,8 @@ function SolutionsPageContent() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-purple-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                      </div>
+                    <div className="flex items-center gap-4">
+                      <ThemeIconContainer icon={Heart} size="md" />
                       <div>
                         <div className="font-medium text-slate-900 text-sm">
                           24/7 Support
@@ -1059,22 +877,8 @@ function SolutionsPageContent() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-orange-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                          />
-                        </svg>
-                      </div>
+                    <div className="flex items-center gap-4">
+                      <ThemeIconContainer icon={CheckCircle} size="md" />
                       <div>
                         <div className="font-medium text-slate-900 text-sm">
                           100% Compliant
@@ -1109,13 +913,9 @@ function SolutionsPageContent() {
                         : currentIndex - 1;
                     setActiveIndustry(industries[prevIndex]);
                   }}
-                  className="flex items-center gap-2 px-4 py-2 text-slate-600 hover:text-brand transition-colors rounded-lg hover:bg-white/80"
+                  className="flex items-center gap-2 px-4 py-2 text-slate-600 hover:text-[#0e7c66] transition-colors rounded-none hover:bg-white/80"
                 >
-                  <HoverIcon>
-                    {(filled) => (
-                      <ArrowLeftIcon className="w-4 h-4" filled={filled} />
-                    )}
-                  </HoverIcon>
+                  <ArrowLeft className="w-4 h-4" />
                   <span className="text-sm font-medium">Previous Solution</span>
                 </button>
                 <div className="text-center">
@@ -1134,39 +934,27 @@ function SolutionsPageContent() {
                         : currentIndex + 1;
                     setActiveIndustry(industries[nextIndex]);
                   }}
-                  className="flex items-center gap-2 px-4 py-2 text-slate-600 hover:text-brand transition-colors rounded-lg hover:bg-white/80"
+                  className="flex items-center gap-2 px-4 py-2 text-slate-600 hover:text-[#0e7c66] transition-colors rounded-none hover:bg-white/80"
                 >
                   <span className="text-sm font-medium">Next Solution</span>
-                  <HoverIcon>
-                    {(filled) => (
-                      <ArrowRightIcon className="w-4 h-4" filled={filled} />
-                    )}
-                  </HoverIcon>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
           </Reveal>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Case Studies — EMOJIS REPLACED */}
-      <section id="case-studies" className="py-16 md:py-24 bg-slate-50">
+      <ThemeSection id="case-studies" className="py-16 md:py-24">
         <div className="container-responsive">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Case Studies
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              See how organizations across industries have transformed their
-              data erasure processes with D-Secure.
-            </p>
-          </div>
+          <ThemeSectionHeading subtitle="See how organizations across industries have transformed their data erasure processes with D-Secure." centered>Case Studies</ThemeSectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {caseStudies.map((study) => (
               <Reveal key={study.company} delayMs={100} className="h-full">
-                <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 hover:shadow-xl transition-all duration-300 h-full flex flex-col group/card">
+                <ThemeCard className="h-full flex flex-col group/card hover:shadow-xl hover:-translate-y-1">
                   <div className="mb-6 flex justify-center transform group-hover/card:scale-110 transition-transform duration-300">
-                    {study.logo}
+                    <ThemeIconContainer icon={study.logoIcon} size="lg" />
                   </div>
                   <div className="flex-grow flex flex-col">
                     <h2 className="font-bold text-slate-900 text-lg mb-2 text-center">
@@ -1176,7 +964,7 @@ function SolutionsPageContent() {
                       {study.industry}
                     </div>
                     <div className="space-y-5 text-sm">
-                      <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                      <div className="bg-[#f4fbf8] p-3 rounded-none border border-[#d0d5dc]/60">
                         <div className="font-bold text-slate-900 mb-1 flex items-center gap-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
                           {t('solutions.challenge')}:
@@ -1195,22 +983,22 @@ function SolutionsPageContent() {
                     <div className="font-bold text-slate-900 mb-1 uppercase text-xs tracking-widest opacity-50">
                       {t('solutions.results')}:
                     </div>
-                    <div className="text-emerald-700 font-bold text-base bg-emerald-50 px-3 py-2 rounded-lg inline-block w-full text-center">
+                    <div className="text-[#0e7c66] font-bold text-base bg-[#d4ede4] px-3 py-2 rounded-none inline-block w-full text-center">
                       {study.results}
                     </div>
                   </div>
-                </div>
+                </ThemeCard>
               </Reveal>
             ))}
           </div>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* CTA Section */}
       <section className="py-16 md:py-24">
         <div className="container-responsive">
           <Reveal>
-            <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl p-8 md:p-12 text-center text-white">
+            <div className="bg-[#0a2e1e] rounded-none p-8 border border-[#d0d5dc]/60 md:p-12 text-center text-white">
               <h2 className="text-3xl font-bold mb-4">
                 Ready to Transform Your Data Erasure Process?
               </h2>
@@ -1221,13 +1009,13 @@ function SolutionsPageContent() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to="/contact"
-                  className="bg-white text-emerald-800 px-8 py-3 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  className={`${themeClasses.button.base} bg-white text-[#0e7c66] hover:bg-slate-50 border-2 border-white`}
                 >
                   Schedule Consultation
                 </Link>
                 <Link
                   to="/resources"
-                  className="border-2 border-white/40 text-white px-8 py-3 rounded-xl font-bold hover:bg-white/10 transition-all"
+                  className={`${themeClasses.button.base} border-2 border-white text-white hover:bg-white/10`}
                 >
                   Download Resources
                 </Link>

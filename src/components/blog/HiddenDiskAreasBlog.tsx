@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const HiddenDiskAreasBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-teal-50">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Hidden Disk Areas and Data Security",
@@ -23,16 +23,16 @@ const HiddenDiskAreasBlog: React.FC = () => {
         />
 
         {/* Hero Section */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Compliance
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Erasing Hidden Disk Areas: Critical for Compliance
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Learn the importance of erasing hidden disk areas like HPA, DCO,
                 DFA, and remapped sectors to ensure data security and meet data
                 protection requirements.
@@ -44,21 +44,21 @@ const HiddenDiskAreasBlog: React.FC = () => {
         {/* Main Content */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
+                <p className="text-[#5a6672] leading-loose text-xl">
                   Privileged access controls, encrypted storage media, and
                   multi-factor authentication provide a sense of relief about
                   the security of onsite data storage systems. However, when
                   these systems need upgrading or have reached end of life, they
                   must be{" "}
-                  <strong className="text-emerald-800">
+                  <strong className="text-[#0a2e1e]">
                     erased securely — including wiping hidden disk areas
                   </strong>
                   .
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Most often, risks posed by remnant and hidden data are
                   overlooked. NIST SP 800-88 Rev 1 Guidelines for Media
                   Sanitization highlight that residual data fragments can pose
@@ -68,11 +68,11 @@ const HiddenDiskAreasBlog: React.FC = () => {
               </div>
 
               {/* Warning Box */}
-              <div className="bg-amber-50 border-l-4 border-amber-500 p-8 rounded-r-lg mt-8">
-                <h2 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-8 rounded-none mt-8">
+                <h2 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   Why Complete Sanitization Matters
                 </h2>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Whether it's a periodic hardware refresh, end-of-life asset
                   disposal, or CSR laptop donations — no data-bearing IT asset
                   should leave organizational control without complete media
@@ -86,12 +86,12 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* What are Hidden Areas */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Understanding Hidden Disk Areas
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Hidden areas and remapped sectors may contain various data types
                 including authentication details, deleted data fragments, backup
                 copies, system logs, metadata, and firmware recovery
@@ -100,22 +100,22 @@ const HiddenDiskAreasBlog: React.FC = () => {
               </p>
 
               <div className="space-y-8 mt-8">
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     HPA (Host Protected Area)
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Present on HDDs and SSDs, introduced by ATA-4 standard. This
                     reserved area stores diagnostic utility functions and
                     enables system boot when normal boot processes fail.
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     DCO (Device Configuration Overlay)
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Provides PC vendors the option to customize available
                     storage on a disk. By configuring the same number of sectors
                     in different-sized drives, DCO makes the OS see drives as
@@ -123,11 +123,11 @@ const HiddenDiskAreasBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-emerald-500 pl-8 py-2">
-                  <h2 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     DFA (Disk Firmware Area)
                   </h2>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Also known as the Service Area, DFA remaps sectors
                     identified as "bad" or "failed" to new addresses. This zone
                     also contains elements enabling advanced disk security.
@@ -139,7 +139,7 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* Risks Section */}
           <Reveal>
-            <div className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Why Hidden Data Poses Serious Risks
               </h2>
@@ -152,7 +152,7 @@ const HiddenDiskAreasBlog: React.FC = () => {
                 to leakage.
               </p>
 
-              <div className="bg-white/10 rounded-xl p-6 mb-6">
+              <div className="bg-white/10 rounded-none p-6 mb-6">
                 <h3 className="font-bold text-lg mb-3">Research Finding</h3>
                 <p className="text-white/90 italic">
                   "It is possible to create an HPA that is approximately the
@@ -176,12 +176,12 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* Compliance Requirements */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Compliance Standards Requirements
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 If an organization claims to have erased data from IT assets as
                 per NIST or IEEE guidelines, hidden zones must also be erased.
                 This is critical and cannot be overlooked — non-compliance can
@@ -190,28 +190,28 @@ const HiddenDiskAreasBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
-                <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     NIST Clear
                   </h3>
-                  <p className="text-slate-600 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Removes data from user-addressable areas only. NIST
                     explicitly notifies about remnant data possibly remaining on
                     disk.
                   </p>
-                  <p className="text-amber-600 text-sm mt-2 font-medium">
+                  <p className="text-[#0a2e1e] text-sm mt-2 font-medium">
                     ️ Not suitable for hidden areas
                   </p>
                 </div>
-                <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6">
-                  <h3 className="font-bold text-emerald-700 text-lg mb-3">
+                <div className="bg-[#d4ede4] border-2 border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     NIST Purge
                   </h3>
-                  <p className="text-slate-600 text-lg leading-relaxed">
+                  <p className="text-[#5a6672] text-lg leading-relaxed">
                     Recommended for erasing data from entire storage media,
                     including HPA, DCO, and remapped sectors.
                   </p>
-                  <p className="text-emerald-800 text-sm mt-2 font-medium">
+                  <p className="text-[#0a2e1e] text-sm mt-2 font-medium">
                     {" "}
                     Complete sanitization
                   </p>
@@ -222,13 +222,13 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* Methods for HDD */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 NIST Purge Methods for HDDs
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl p-6 text-white">
+                <div className="bg-[#0e7c66] rounded-none p-6 text-white">
                   <h3 className="font-bold text-lg mb-2">
                     ATA Sanitize Device
                   </h3>
@@ -237,14 +237,14 @@ const HiddenDiskAreasBlog: React.FC = () => {
                     <li>• Cryptographic Erase (CRYPTO SCRAMBLE EXT)</li>
                   </ul>
                 </div>
-                <div className="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-6 text-white">
+                <div className="bg-[#0e7c66] rounded-none p-6 text-white">
                   <h3 className="font-bold text-lg mb-2">SECURE ERASE UNIT</h3>
                   <p className="text-white/90 text-sm">
                     Standard secure erase command for complete drive
                     sanitization
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-cyan-600 to-emerald-600 rounded-xl p-6 text-white md:col-span-2">
+                <div className="bg-[#0e7c66] rounded-none p-6 text-white md:col-span-2">
                   <h3 className="font-bold text-lg mb-2">
                     TCG Cryptographic Erase
                   </h3>
@@ -258,33 +258,33 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* Methods for SSD */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 NIST Purge Methods for SSDs
               </h2>
 
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-slate-50 rounded-xl p-6 text-center">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                <div className="bg-[#f4fbf8] rounded-none p-6 text-center">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                     Block Erase
                   </h3>
-                  <p className="text-slate-600 text-sm">
+                  <p className="text-[#5a6672] text-sm">
                     Sanitize command for flash storage
                   </p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-6 text-center">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                <div className="bg-[#f4fbf8] rounded-none p-6 text-center">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                     Cryptographic Erase
                   </h3>
-                  <p className="text-slate-600 text-sm">
+                  <p className="text-[#5a6672] text-sm">
                     CRYPTO SCRAMBLE EXT command
                   </p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-6 text-center">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                <div className="bg-[#f4fbf8] rounded-none p-6 text-center">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                     TCG SSC
                   </h3>
-                  <p className="text-slate-600 text-sm">
+                  <p className="text-[#5a6672] text-sm">
                     Enterprise-grade cryptographic erase
                   </p>
                 </div>
@@ -294,25 +294,25 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* IEEE Purge */}
           <Reveal>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#d4ede4] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 IEEE Purge Techniques for ATA Devices
               </h2>
-              <ul className="space-y-3 text-slate-700 text-lg">
+              <ul className="space-y-3 text-[#5a6672] text-lg">
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3"></span>
                   Cryptographic Erase
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3"></span>
                   Sanitize Block Erase
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3"></span>
                   Sanitize Overwrite
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3"></span>
                   SECURITY ERASE UNIT (Enhanced Erase Mode)
                 </li>
               </ul>
@@ -321,22 +321,22 @@ const HiddenDiskAreasBlog: React.FC = () => {
 
           {/* Solution */}
           <Reveal>
-            <div className="bg-white rounded-[2rem] shadow-xl border border-slate-200/50 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 The D-Secure Solution
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Executing these techniques through OEM-provided methods requires
                 advanced technical knowledge. Manually performing them on each
                 device is not feasible — too time-consuming and
                 resource-intensive for bulk wiping.
               </p>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Organizations should use certified software like D-Secure Drive
                 Eraser that supports complete media sanitization including
-                hidden disk areas. The software uses methods like <Link to="/products/drive-eraser" className="text-emerald-600 hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-emerald-600 hover:underline font-medium">NIST 800-88</Link></Link>
+                hidden disk areas. The software uses methods like <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link></Link>
                 Clear and Purge to completely erase data — including hidden
                 zones (HPAs, DCOs, DFAs) and remapped sectors. D-Secure Drive
                 Verifier can then verify the erasure outcome and ensure no data

@@ -6,6 +6,8 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import SolutionContactSection from "@/components/SolutionContactSection";
 import SolutionHeroGraphic from "@/components/SolutionHeroGraphic";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeIconContainer, ThemeButton, themeClasses } from "@/components/ui/Theme";
+import { Gift, Globe, FileText, Smartphone, Cloud, LinkIcon, Monitor, HardDrive, Server, CheckCircle, File } from "lucide-react";
 
 /**
  * NonProfitSolutionsPage Component
@@ -126,11 +128,12 @@ const NonProfitSolutionsPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-white">
         {/* ================= HERO SECTION ================= */}
-        <section
+        <ThemeSection
           id="overview"
           className="min-h-[600px] flex items-start pt-8 lg:pt-12 pb-8 lg:pb-12 relative overflow-hidden"
+          noBg
         >
           {/* Background pattern */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -175,32 +178,19 @@ const NonProfitSolutionsPage: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <button
-                    onClick={() => setShowLicenseModal(true)}
-                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-emerald-200/50 transition-all duration-300 transform hover:-translate-y-1"
-                  >
+                  <ThemeButton onClick={() => setShowLicenseModal(true)}>
                     Request Free License
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </button>
+                  </ThemeButton>
                   <a
                     href="https://assets.dsecuretech.com/pdf/DSECURE_NPO%20SOLN.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-50 px-8 py-4 rounded-xl font-bold bg-white transition-all duration-300 shadow-lg"
+                    className={`${themeClasses.button.base} ${themeClasses.button.outline} w-full sm:w-auto gap-2`}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
+                    <FileText className="w-5 h-5" />
                     Solution Overview
                   </a>
                 </div>
@@ -258,33 +248,20 @@ const NonProfitSolutionsPage: React.FC = () => {
               />
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
 
         {/* ================= USE CASES SECTION ================= */}
-        <section
-          id="use-cases"
-          className="py-20"
-          style={{ backgroundColor: "#ffffff" }}
-        >
+        <ThemeSection id="use-cases" alternate>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div
-                className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4"
-                style={{ backgroundColor: "#e8f5e9", color: "#059669" }}
-              >
+              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-emerald-100 text-emerald-800 mb-4 border border-emerald-200">
                 Use Cases
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
+              </span>
+              <ThemeSectionHeading centered>
                 Reliable, Efficient & Cost-Effective Data Wiping
-              </h2>
-              <p
-                className="text-lg max-w-3xl mx-auto"
-                style={{ color: "#6b7280" }}
-              >
+              </ThemeSectionHeading>
+              <p className="text-lg max-w-3xl mx-auto text-slate-600 mt-4">
                 Whether you are donating devices, retiring legacy systems, or
                 managing beneficiary records, D-Secure ensures your
                 organization's data never falls into the wrong hands.
@@ -296,80 +273,57 @@ const NonProfitSolutionsPage: React.FC = () => {
                 {
                   title: "Device Donation & Reuse",
                   desc: "Securely wipe drives and devices using globally recognized erasure standards before donating them for a noble cause. Permanently remove donor, beneficiary, and financial records before reuse.",
-                  icon: "🎁",
+                  icon: Gift,
                 },
                 {
                   title: "Bulk Erasure at Remote Locations",
                   desc: "Wipe 100 drives in a chassis or up to 65,000 over a network using PXE boot. Deploy erasure at facilities without internet through offline USB boot.",
-                  icon: "🌍",
+                  icon: Globe,
                 },
                 {
                   title: "Automated File-Level Erasure",
                   desc: "Schedule erasure of sensitive files, funding details, and PII at regular intervals. Erase specific records without affecting the operating system or other applications.",
-                  icon: "📄",
+                  icon: File,
                 },
                 {
                   title: "Mobile Device Management",
                   desc: "Simultaneously erase and diagnose up to 40 iOS and Android devices. Safely reuse donated phones for field staff and volunteers after certified data erasure.",
-                  icon: "📱",
+                  icon: Smartphone,
                 },
                 {
                   title: "Cloud Console Management",
                   desc: "Centralized admin console for managing users, licenses, and reports. Customize ISO to standardize erasure across all branch locations worldwide.",
-                  icon: "☁️",
+                  icon: Cloud,
                 },
                 {
                   title: "Remote Endpoint Wiping",
                   desc: "Remotely wipe data from Windows endpoint devices via MSI package. Deploy locally or through management tools without physical access to computers.",
-                  icon: "🔗",
+                  icon: LinkIcon,
                 },
               ].map((item) => (
-                <div
-                  key={item.title}
-                  className="p-8 rounded-2xl border bg-slate-50 hover:shadow-lg transition-all group"
-                  style={{ borderColor: "#e5e7eb" }}
-                >
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                    {item.icon}
+                <ThemeCard key={item.title} className="flex flex-col items-start p-6">
+                  <div className="mb-6">
+                    <ThemeIconContainer icon={item.icon} size="lg" />
                   </div>
-                  <h3
-                    className="text-xl font-bold mb-3"
-                    style={{ color: "#1f2937" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: "#6b7280" }}
-                  >
-                    {item.desc}
-                  </p>
-                </div>
+                  <h3 className={`${themeClasses.typography.cardTitle}`}>{item.title}</h3>
+                  <p className={`${themeClasses.typography.cardBody}`}>{item.desc}</p>
+                </ThemeCard>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= SUPPORTED ASSETS SECTION ================= */}
-        <section id="assets" className="py-20 bg-slate-50">
+        <ThemeSection id="assets" noBg className="bg-[#0a2e1e] [&_h2]:!text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div
-                className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4"
-                style={{ backgroundColor: "#e8f5e9", color: "#059669" }}
-              >
+              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-emerald-900/50 text-emerald-100 mb-4 border border-emerald-500/30">
                 Device Support
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
+              </span>
+              <ThemeSectionHeading centered>
                 One Solution for All Device Types
-              </h2>
-              <p
-                className="text-lg max-w-2xl mx-auto"
-                style={{ color: "#6b7280" }}
-              >
+              </ThemeSectionHeading>
+              <p className="text-lg max-w-2xl mx-auto text-emerald-100 mt-4">
                 Sanitize donor records and beneficiary data from any device —
                 whether at your main office or remote field locations.
               </p>
@@ -378,62 +332,47 @@ const NonProfitSolutionsPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
-                  icon: "💻",
+                  icon: Monitor,
                   title: "PCs, Laptops & Macs",
                   desc: "Securely wipe Windows, Mac, and Chromebooks. Support for Apple Silicon (M1–M4) and Intel-based Macs.",
                 },
                 {
-                  icon: "💾",
+                  icon: HardDrive,
                   title: "Drives of All Types",
                   desc: "Erase SATA, PATA, HDD, SSD, NVMe, and M.2 drives. Wipes user-inaccessible areas like HPA & DCO.",
                 },
                 {
-                  icon: "🗄️",
+                  icon: Server,
                   title: "Servers & Data Centers",
                   desc: "Centralized wiping of up to 65,000 server drives simultaneously over a network using PXE boot.",
                 },
                 {
-                  icon: "📱",
+                  icon: Smartphone,
                   title: "Mobile Devices",
                   desc: "Certified erasure for iOS and Android phones and tablets. 50+ diagnostic tests for device health assessment.",
                 },
               ].map((asset) => (
-                <div
-                  key={asset.title}
-                  className="text-center p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all"
-                >
-                  <div className="text-5xl mb-4">{asset.icon}</div>
-                  <h3
-                    className="text-lg font-bold mb-2"
-                    style={{ color: "#1f2937" }}
-                  >
-                    {asset.title}
-                  </h3>
-                  <p className="text-sm" style={{ color: "#6b7280" }}>
-                    {asset.desc}
-                  </p>
-                </div>
+                <ThemeCard key={asset.title} className="flex flex-col items-center text-center p-8">
+                  <div className="mb-6">
+                    <ThemeIconContainer icon={asset.icon} size="lg" />
+                  </div>
+                  <h3 className={`${themeClasses.typography.cardTitle}`}>{asset.title}</h3>
+                  <p className={`${themeClasses.typography.cardBody}`}>{asset.desc}</p>
+                </ThemeCard>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= COMPLIANCE SECTION ================= */}
-        <section
-          id="compliance"
-          className="py-20"
-          style={{ backgroundColor: "#ffffff" }}
-        >
+        <ThemeSection id="compliance" noBg>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2
-                  className="text-3xl md:text-4xl font-bold mb-6"
-                  style={{ color: "#1f2937" }}
-                >
+                <ThemeSectionHeading>
                   Audit-Ready Compliance for Non-Profits
-                </h2>
-                <p className="text-lg mb-8" style={{ color: "#4b5563" }}>
+                </ThemeSectionHeading>
+                <p className="text-lg mb-8 text-slate-600 mt-4">
                   Generate verifiable, tamper-proof audit trails for every
                   sanitized asset. Meet data privacy laws that mandate secure
                   disposal — whether for funding organizations, board reporting,
@@ -448,91 +387,68 @@ const NonProfitSolutionsPage: React.FC = () => {
                     "ISO customization to standardize erasure across locations",
                   ].map((item) => (
                     <li key={item} className="flex items-start space-x-3">
-                      <svg
-                        className="w-5 h-5 text-emerald-500 mt-1"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span style={{ color: "#4b5563" }}>{item}</span>
+                      <CheckCircle className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" />
+                      <span className="text-slate-600">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-emerald-50 p-8 rounded-3xl border border-emerald-100 shadow-inner">
-                <h3
-                  className="text-2xl font-bold mb-6"
-                  style={{ color: "#065f46" }}
-                >
+              <ThemeCard className="p-8">
+                <h3 className="text-2xl font-bold mb-6 text-slate-900">
                   Why Choose D-Secure?
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-700 mb-1">
                       Sustainable Data Disposal
                     </h3>
-                    <p className="text-sm text-emerald-800">
+                    <p className="text-sm text-slate-600">
                       Securely sanitize devices for donation and reuse instead of
                       physical destruction — reducing e-waste and extending
                       device lifecycles.
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-700 mb-1">
                       Cost-Effective for NGOs
                     </h3>
-                    <p className="text-sm text-emerald-800">
+                    <p className="text-sm text-slate-600">
                       Licenses never expire. Use them whenever required for
                       projects without worrying about deadlines or recurring
                       costs.
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-700 mb-1">
                       Global Scalability
                     </h3>
-                    <p className="text-sm text-emerald-800">
+                    <p className="text-sm text-slate-600">
                       From a single office workstation to 65,000 distributed
                       servers — D-Secure scales with your organization's mission.
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-emerald-900 mb-1">
+                    <h3 className="font-bold text-emerald-700 mb-1">
                       Offline & Remote Support
                     </h3>
-                    <p className="text-sm text-emerald-800">
+                    <p className="text-sm text-slate-600">
                       Perform erasure at facilities without internet using USB
                       boot. Reports are saved locally and can be synced later.
                     </p>
                   </div>
                 </div>
-              </div>
+              </ThemeCard>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= FAQ SECTION ================= */}
-        <section id="faq" className="py-20 bg-slate-50">
+        <ThemeSection id="faq" alternate>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4"
-                style={{ color: "#1f2937" }}
-              >
-                Frequently Asked Questions
-              </h2>
-              <p style={{ color: "#6b7280" }}>
-                Common queries about data sanitization for Non-Profit
-                Organizations
-              </p>
-            </div>
-
-            <div className="space-y-4">
+            <ThemeSectionHeading centered>
+              Non-Profit Solutions FAQs
+            </ThemeSectionHeading>
+            <div className="space-y-6 mt-8">
               {[
                 {
                   q: "How many drives can we wipe simultaneously?",
@@ -559,44 +475,23 @@ const NonProfitSolutionsPage: React.FC = () => {
                   a: "Yes, D-Secure supports simultaneous erasure and diagnostics of up to 40 iOS and Android devices. You can run 50+ health-check tests to assess device condition before deciding on reuse or disposal.",
                 },
               ].map((faq) => (
-                <details
-                  key={faq.q}
-                  className="group rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-all border"
-                  style={{ borderColor: "#e5e7eb" }}
-                >
-                  <summary className="flex items-center justify-between cursor-pointer list-none">
-                    <span
-                      className="text-lg font-semibold"
-                      style={{ color: "#1f2937" }}
-                    >
-                      {faq.q}
+                <details key={faq.q} className="group bg-white border border-[#d0d5dc]/60 transition-all">
+                  <summary className="flex items-center justify-between cursor-pointer list-none p-6">
+                    <span className="text-lg font-bold pr-6 text-[#151e29] group-open:text-[#0a2e1e] transition-colors">{faq.q}</span>
+                    <span className="transition-transform group-open:rotate-180 text-emerald-600 flex-shrink-0">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </span>
-                    <svg
-                      className="w-5 h-5 group-open:rotate-180 transition-transform"
-                      style={{ color: "#059669" }}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
                   </summary>
-                  <p
-                    className="mt-4 leading-relaxed"
-                    style={{ color: "#6b7280" }}
-                  >
+                  <div className="px-6 pb-6 text-base leading-relaxed text-[#5a6672] border-t border-[#d0d5dc]/30 pt-4 mt-2 hidden group-open:block">
                     {faq.a}
-                  </p>
+                  </div>
                 </details>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= CONTACT SECTION ================= */}
         <SolutionContactSection source="Non-Profit Solutions Page" subjectPrefix="New Inquiry - Non-Profit Solutions" />

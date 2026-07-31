@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ITAssetLifecycleBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-orange-50/10 to-white">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Complete IT Asset Lifecycle Management",
@@ -22,17 +22,17 @@ const ITAssetLifecycleBlog: React.FC = () => {
           })}
         />
 
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-amber-700 bg-amber-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 IT Asset Management
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 IT Asset Lifecycle Management: From Procurement to Secure
                 Disposal
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Discover how structured IT asset lifecycle management improves
                 security, reduces costs, and ensures compliant end-of-life
                 disposal.
@@ -43,17 +43,17 @@ const ITAssetLifecycleBlog: React.FC = () => {
 
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Understanding IT Asset Lifecycle Management
               </h2>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 <strong>IT Assets</strong> are the backbone of modern business
                 operations. These include devices like laptops, desktops,
                 servers, mobile devices, network equipment, printers, etc.,
                 which collectively make up the organizational IT asset fleet.
               </p>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 Each of these assets moves through a well-defined journey known
                 as the <strong>'IT Asset Lifecycle'</strong>. This journey
                 starts in the strategizing phase and goes through planning,
@@ -63,18 +63,18 @@ const ITAssetLifecycleBlog: React.FC = () => {
                 <strong>IT Asset Lifecycle Management (IT ALM)</strong>.
               </p>
 
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   {" "}
                   Market Insight
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   Gartner has estimated that global IT spending will cross{" "}
-                  <strong className="text-amber-800">
+                  <strong className="text-[#0a2e1e]">
                     $5 trillion USD in 2025
                   </strong>
                   , with data center systems seeing a growth of{" "}
-                  <strong className="text-amber-800">23.2%</strong> —
+                  <strong className="text-[#0a2e1e]">23.2%</strong> —
                   primarily driven by AI hardware requirements. This makes
                   proper IT asset management more critical than ever.
                 </p>
@@ -83,11 +83,11 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Why IT Asset Lifecycle Management Matters
               </h2>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 With the AI boom and increased reliance on digital systems,
                 organizations today are purchasing, utilizing, and retiring IT
                 assets at a rapid pace. This acceleration brings challenges
@@ -96,13 +96,13 @@ const ITAssetLifecycleBlog: React.FC = () => {
                 sustainability goals.
               </p>
 
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-lg mb-8">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-white border-l-4 border-[#0e7c66] p-6 rounded-none mb-8">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   ️ Alarming Statistic
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   According to a 2025 Deloitte IT Asset Management survey:{" "}
-                  <strong className="text-amber-800">
+                  <strong className="text-[#0a2e1e]">
                     "Only 29% of organizations formally include ITAM in their
                     cybersecurity strategy."
                   </strong>{" "}
@@ -113,12 +113,12 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     {" "}
                     Cost Reduction
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-[#5a6672] leading-relaxed">
                     The procurement cycle begins with assessing available IT
                     assets, their effective usage, and requirements. Without
                     this insight, organizations tend to overspend, buying new
@@ -127,12 +127,12 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     utilization, and cost reduction across the entire lifecycle.
                   </p>
                 </div>
-                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     {" "}
                     Increased Efficiency
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-[#5a6672] leading-relaxed">
                     Management of IT assets intelligently drives efficiency with
                     full visibility from deployment to disposal. When inventory
                     tracking is streamlined, assets are optimized, teams spend
@@ -141,12 +141,12 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     and optimized resource planning.
                   </p>
                 </div>
-                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     {" "}
                     Enhanced Security
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-[#5a6672] leading-relaxed">
                     Effective ITAM strengthens security posture by allowing
                     real-time monitoring of devices. IT ALM ensures timely
                     application of software patches, unauthorized devices are
@@ -154,12 +154,12 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     hardware is properly disposed of.
                   </p>
                 </div>
-                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                  <h3 className="font-bold text-slate-900 text-lg mb-3">
+                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     {" "}
                     Sustainability
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-[#5a6672] leading-relaxed">
                     IT ALM provides visibility into resource utilization,
                     maximizing usage, reducing energy consumption, and lowering
                     operational costs. It diminishes carbon footprint and
@@ -172,7 +172,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 The 4 Stages of IT Asset Lifecycle
               </h2>
@@ -185,9 +185,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-amber-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       1
                     </span>
                     <div>
@@ -217,9 +217,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-amber-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       2
                     </span>
                     <div>
@@ -249,9 +249,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6">
+                <div className="bg-white/10 rounded-none p-6">
                   <div className="flex items-start">
-                    <span className="bg-white text-amber-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       3
                     </span>
                     <div>
@@ -280,9 +280,9 @@ const ITAssetLifecycleBlog: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/10 rounded-xl p-6 border-2 border-white/30">
+                <div className="bg-white/10 rounded-none p-6 border-2 border-white/30">
                   <div className="flex items-start">
-                    <span className="bg-white text-amber-800 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
+                    <span className="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-xl">
                       4
                     </span>
                     <div>
@@ -308,7 +308,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
                           • Data leakage during device returns from remote
                           workers
                         </li>
-                        <li>• Security gaps from improper <Link to="/solutions/itad" className="text-amber-600 hover:underline font-medium">ITAD</Link> routing</li>
+                        <li>• Security gaps from improper <Link to="/solutions/itad" className="text-white hover:underline font-medium">ITAD</Link> routing</li>
                       </ul>
                       <p className="text-white/90 leading-relaxed mt-3">
                         <strong>Solution:</strong> Organizations must mandate
@@ -324,11 +324,11 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 The Critical Importance of Secure End-of-Life Disposal
               </h2>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 From experience working with global enterprises, governments,
                 ITADs, and MSPs, the most overlooked part of the lifecycle
                 remains the <strong>IT asset retirement stage</strong>. While
@@ -339,12 +339,12 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-amber-700 text-lg mb-3">
+                <div className="bg-white border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0e7c66] text-lg mb-3">
                     {" "}
                     Common Mistakes
                   </h3>
-                  <ul className="space-y-2 text-slate-700">
+                  <ul className="space-y-2 text-[#5a6672]">
                     <li>• Devices left in storage without tracking</li>
                     <li>• No secure handling during transportation</li>
                     <li>• Missing chain-of-custody documentation</li>
@@ -352,13 +352,13 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     <li>• Relying on deletion instead of secure wiping</li>
                   </ul>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-amber-700 text-lg mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
                     {" "}
                     Best Practices
                   </h3>
-                  <ul className="space-y-2 text-slate-700">
-                    <li>• Certified <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">data wiping</Link> before disposal</li>
+                  <ul className="space-y-2 text-[#5a6672]">
+                    <li>• Certified <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link> before disposal</li>
                     <li>• Audit-ready erasure reports</li>
                     <li>• Chain-of-custody tracking</li>
                     <li>• Verification of erasure completion</li>
@@ -370,46 +370,46 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-white rounded-none border-b border-amber-200 shadow-none p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                D-Secure: Integrating <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Secure Erasure</Link> into IT ALM
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
+                D-Secure: Integrating <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Secure Erasure</Link> into IT ALM
               </h2>
-              <p className="text-slate-700 leading-loose text-lg mb-6">
+              <p className="text-[#5a6672] leading-loose text-lg mb-6">
                 D-Secure promotes the integration of secure data erasure as a
                 part of the ITAM process. Our solutions provide:
               </p>
 
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="border-l-4 border-amber-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
-                    Certified <Link to="/products/drive-eraser" className="text-amber-600 hover:underline font-medium">Data Wiping</Link>
+                <div className="border-l-4 border-[#0e7c66] pl-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
+                    Certified <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Wiping</Link>
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     NIST, DoD, and globally certified erasure methods that
                     guarantee complete data destruction.
                   </p>
                 </div>
-                <div className="border-l-4 border-amber-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                     Audit-Ready Reports
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Tamper-proof certificates and reports that meet regulatory
                     requirements for compliance documentation.
                   </p>
                 </div>
-                <div className="border-l-4 border-amber-500 pl-6">
-                  <h3 className="font-bold text-slate-900 text-lg mb-2">
+                <div className="border-l-4 border-[#0e7c66] pl-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
                     Automated Workflows
                   </h3>
-                  <p className="text-slate-700">
+                  <p className="text-[#5a6672]">
                     Seamless integration with existing ITAM processes for
                     efficient device disposal.
                   </p>
                 </div>
               </div>
 
-              <div className="bg-amber-600 text-white rounded-xl p-6 mt-6">
+              <div className="bg-[#0e7c66] text-white rounded-none p-6 mt-6">
                 <p className="text-lg leading-relaxed">
                   Our automated workflows enable seamless data erasure of
                   devices before they are{" "}
@@ -422,25 +422,25 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Conclusion
               </h2>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 A well-managed IT asset lifecycle is more than tracking serial
                 numbers. It demands a structured approach that allows
                 organizations to know at all times where their assets are, how
                 they are performing, and when they need replacement or secure
                 disposal.
               </p>
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 This becomes even more critical in today's hybrid and
                 distributed work environment, where devices are not located
                 within organizational premises. Proper data sanitization,
                 together with audit-ready proof of erasure, is required to avoid
                 data exposure from end-of-life devices.
               </p>
-              <p className="text-slate-700 leading-loose text-lg font-semibold">
+              <p className="text-[#5a6672] leading-loose text-lg font-semibold">
                 Don't let the retirement stage become your organization's
                 security blind spot. Integrate D-Secure's certified data erasure
                 into your IT Asset Lifecycle Management today.
@@ -449,13 +449,13 @@ const ITAssetLifecycleBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-center">
+        <section className="py-20 bg-[#0e7c66] text-center">
           <Reveal>
             <div className="max-w-5xl mx-auto px-4">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Complete Your IT Asset Lifecycle with D-Secure
               </h2>
-              <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
                 Ensure compliant, secure end-of-life disposal for all your IT
                 assets. Integrate certified data erasure with audit-ready
                 reports into your ITAM processes.
@@ -463,13 +463,13 @@ const ITAssetLifecycleBlog: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-amber-600 hover:to-orange-600 transition-all text-lg"
+                  className="inline-block bg-white text-[#0e7c66] px-8 py-4 rounded-none font-semibold hover:bg-slate-100 transition-all text-lg"
                 >
                   Request Free Demo
                 </Link>
                 <Link
                   to="/all-products"
-                  className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
+                  className="inline-block border-2 border-white text-white px-8 py-4 rounded-none font-semibold hover:bg-white/10 transition-colors text-lg"
                 >
                   View Products
                 </Link>

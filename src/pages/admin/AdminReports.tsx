@@ -204,7 +204,7 @@ export default function AdminReports() {
       {/* SEO Meta Tags */}
       <SEOHeadNative seo={getSEOForPage("admin-reports")} />
 
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
           <div className="flex-1 min-w-0">
@@ -269,7 +269,7 @@ export default function AdminReports() {
               </h2>
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className={`text-sm px-3 py-1 rounded-lg transition-colors ${showFilters ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                className={`text-sm px-3 py-1 rounded-lg transition-colors ${showFilters ? "bg-[#d4ede4] text-[#0a2e1e]" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
               >
                 {showFilters ? "🔼 Hide" : "🔽 Show"} Advanced Filters
               </button>
@@ -286,7 +286,7 @@ export default function AdminReports() {
                   placeholder="Search reports..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                 />
               </div>
               <div>
@@ -298,7 +298,7 @@ export default function AdminReports() {
                   type="date"
                   value={dateFrom}
                   onChange={(e) => setDateFrom(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                 />
               </div>
               <div>
@@ -310,7 +310,7 @@ export default function AdminReports() {
                   type="date"
                   value={dateTo}
                   onChange={(e) => setDateTo(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                 />
               </div>
               <div>
@@ -321,7 +321,7 @@ export default function AdminReports() {
                   id="report-type-filter"
                   value={reportTypeFilter}
                   onChange={(e) => setReportTypeFilter(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                 >
                   <option value="All">All</option>
                   <option value="File & Folder Erasure">
@@ -340,7 +340,7 @@ export default function AdminReports() {
                 </button>
                 <button
                   onClick={handleSaveReport}
-                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-sm"
+                  className="px-4 py-2 bg-[#0e7c66] text-white rounded-lg hover:bg-[#0e7c66] transition-colors text-sm"
                 >
                   Save Report
                 </button>
@@ -475,7 +475,7 @@ export default function AdminReports() {
                     </td>
                     <td 
                       onClick={() => handlePreview(report.reportId)}
-                      className="px-4 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800 cursor-pointer"
+                      className="px-4 py-4 whitespace-nowrap text-sm text-[#0a2e1e] hover:text-[#0a2e1e] cursor-pointer"
                     >
                       {report.reportId}
                     </td>
@@ -483,14 +483,14 @@ export default function AdminReports() {
                       {report.reportType}
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap text-sm text-slate-700">
-                      <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 text-xs font-medium">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-[#d4ede4] text-[#0a2e1e] text-xs font-medium">
                         {report.department}
                       </span>
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap text-sm text-slate-900">
                       {report.totalFiles}
                     </td>
-                    <td className="px-4 py-4 whitespace-nowrap text-sm text-green-800">
+                    <td className="px-4 py-4 whitespace-nowrap text-sm text-[#0a2e1e]">
                       {report.erasedFiles}
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap text-sm text-red-600">
@@ -501,12 +501,12 @@ export default function AdminReports() {
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
                       <span
-                        className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                        className={`inline-flex items-center px-2 py-1 rounded-none text-xs font-medium ${
                           report.status === "Completed"
-                            ? "bg-green-100 text-green-800"
+                            ? "bg-[#d4ede4] text-[#0a2e1e]"
                             : report.status === "Failed"
                               ? "bg-red-100 text-red-800"
-                              : "bg-yellow-100 text-yellow-800"
+                              : "bg-[#d4ede4] text-[#0a2e1e]"
                         }`}
                       >
                         {report.status}
@@ -515,7 +515,7 @@ export default function AdminReports() {
                     <td className="px-4 py-4 whitespace-nowrap">
                       <button
                         onClick={() => handlePreview(report.reportId)}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors text-sm"
+                        className="px-3 py-1 bg-[#d4ede4] text-[#0a2e1e] rounded hover:bg-[#d4ede4] transition-colors text-sm"
                       >
                         Preview
                       </button>

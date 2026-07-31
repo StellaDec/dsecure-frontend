@@ -47,22 +47,22 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
       case 'warning':
         return {
           icon: (
-            <svg className="w-6 h-6 text-yellow-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-[#0a2e1e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
             </svg>
           ),
-          iconBg: 'bg-yellow-100',
-          confirmBtn: 'bg-yellow-600 hover:bg-yellow-700 text-white'
+          iconBg: 'bg-[#d4ede4]',
+          confirmBtn: 'bg-[#0e7c66] hover:bg-[#0e7c66] text-white'
         }
       case 'info':
         return {
           icon: (
-            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-[#0a2e1e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           ),
-          iconBg: 'bg-blue-100',
-          confirmBtn: 'bg-blue-600 hover:bg-blue-700 text-white'
+          iconBg: 'bg-[#d4ede4]',
+          confirmBtn: 'bg-[#0e7c66] hover:bg-[#0e7c66] text-white'
         }
     }
   }
@@ -73,7 +73,7 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
+      <div className="bg-white rounded-none shadow-xl max-w-md w-full">
         <div className="p-6">
           <div className="flex items-center gap-4 mb-4">
             <div className={`p-2 rounded-full ${styles.iconBg}`}>
@@ -89,7 +89,7 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
           <div className="flex justify-end gap-3">
             <button
               onClick={onCancel}
-              className="px-4 py-2 text-slate-700 border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+              className="px-4 py-2 text-slate-700 border border-slate-300 rounded-none hover:bg-slate-50 transition-colors"
               disabled={isLoading}
             >
               {cancelText}
@@ -97,7 +97,7 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
             <button
               onClick={handleConfirm}
               disabled={isLoading}
-              className={`px-4 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 ${styles.confirmBtn}`}
+              className={`px-4 py-2 rounded-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 ${styles.confirmBtn}`}
             >
               {isLoading && (
                 <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">

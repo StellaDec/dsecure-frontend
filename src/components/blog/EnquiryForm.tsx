@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Check } from "lucide-react";
 import './BlogComponents.css';
 
 
@@ -6,6 +7,67 @@ interface EnquiryFormProps {
   blogId: string;
   blogTitle: string;
 }
+
+const CustomSelect = ({ 
+  name, 
+  value, 
+  onChange, 
+  options, 
+  placeholder, 
+  error 
+}: { 
+  name: string, 
+  value: string, 
+  onChange: (e: any) => void, 
+  options: {value: string, label: string}[], 
+  placeholder: string, 
+  error?: string 
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleSelect = (val: string) => {
+    onChange({ target: { name, value: val } });
+    setIsOpen(false);
+  };
+
+  const selectedLabel = options.find(opt => opt.value === value)?.label || placeholder;
+
+  return (
+    <div className="relative" ref={selectRef}>
+      <div 
+        className={`w-full p-3 bg-white border ${error ? 'border-red-500' : 'border-[#d0d5dc]'} rounded-none text-[#0a2e1e] cursor-pointer flex justify-between items-center ${isOpen ? 'border-[#0e7c66] ring-1 ring-[#0e7c66]' : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className={value ? "text-[#0a2e1e]" : "text-[#94a3b8]"}>{selectedLabel}</span>
+        <Check className="w-6 h-6" />
+      </div>
+      {isOpen && (
+        <div className="absolute z-10 w-full mt-1 bg-white border border-[#0e7c66] shadow-lg max-h-60 overflow-y-auto rounded-none">
+          {options.map((opt) => (
+            <div
+              key={opt.value}
+              className={`p-3 cursor-pointer transition-colors ${value === opt.value ? 'bg-[#0e7c66] text-white' : 'hover:bg-[#d4ede4] hover:text-white text-white'}`}
+              onClick={() => handleSelect(opt.value)}
+            >
+              {opt.label}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
   const [formData, setFormData] = useState({
@@ -173,16 +235,13 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
 
   if (isSubmitted) {
     return (
-      <div className="enquiry-form-container">
-        <div className="enquiry-success">
-          <svg className="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-            <polyline points="22 4 12 14.01 9 11.01" />
-          </svg>
-          <h3>Thank You!</h3>
-          <p>Your enquiry has been submitted successfully. We'll get back to you soon.</p>
+      <div className="bg-[#0e7c66] p-8 mt-16 mb-8 rounded-none text-center">
+        <div className="flex flex-col items-center justify-center py-8">
+          <Check className="w-6 h-6" />
+          <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+          <p className="text-[#d4ede4] mb-8">Your enquiry has been submitted successfully. We'll get back to you soon.</p>
           <button 
-            className="enquiry-btn secondary"
+            className="bg-transparent border border-[#0e7c66] text-white hover:bg-[#0e7c66]/20 font-bold py-3 px-6 rounded-none transition-colors"
             onClick={() => setIsSubmitted(false)}
           >
             Send Another Enquiry
@@ -193,14 +252,14 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
   }
 
   return (
-    <div className="enquiry-form-container">
-      <h3 className="enquiry-title">Have Questions About This Topic?</h3>
-      <p className="enquiry-subtitle">Send us an enquiry regarding: <strong>{blogTitle}</strong></p>
+    <div className="bg-[#0e7c66] p-8 mt-16 mb-8 rounded-none">
+      <h3 className="text-2xl font-bold text-white mb-2">Have Questions About This Topic?</h3>
+      <p className="text-[#d4ede4] mb-6">Send us an enquiry regarding: <strong className="text-[#0e7c66]">{blogTitle}</strong></p>
       
-      <form onSubmit={handleSubmit} className="enquiry-form">
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="name">Name *</label>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="name" className="text-sm font-medium text-[#d4ede4]">Name *</label>
             <input
               type="text"
               id="name"
@@ -208,13 +267,13 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Your name"
-              className={errors.name ? 'error' : ''}
+              className={`w-full p-3 bg-white border ${errors.name ? 'border-red-500' : 'border-[#d0d5dc]'} rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66]`}
             />
-            {errors.name && <span className="error-text">{errors.name}</span>}
+            {errors.name && <span className="text-xs text-red-500">{errors.name}</span>}
           </div>
           
-          <div className="form-group">
-            <label htmlFor="email">Email *</label>
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="email" className="text-sm font-medium text-[#d4ede4]">Email *</label>
             <input
               type="email"
               id="email"
@@ -222,15 +281,15 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
               value={formData.email}
               onChange={handleChange}
               placeholder="your@email.com"
-              className={errors.email ? 'error' : ''}
+              className={`w-full p-3 bg-white border ${errors.email ? 'border-red-500' : 'border-[#d0d5dc]'} rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66]`}
             />
-            {errors.email && <span className="error-text">{errors.email}</span>}
+            {errors.email && <span className="text-xs text-red-500">{errors.email}</span>}
           </div>
         </div>
         
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="phone">Phone (Optional)</label>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="phone" className="text-sm font-medium text-[#d4ede4]">Phone (Optional)</label>
             <input
               type="tel"
               id="phone"
@@ -238,54 +297,53 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+91 9876543210"
+              className="w-full p-3 bg-white border border-[#d0d5dc] rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66]"
             />
           </div>
           
-          <div className="form-group">
-            <label htmlFor="country">Country *</label>
-            <select
-              id="country"
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="country" className="text-sm font-medium text-[#d4ede4]">Country *</label>
+            <CustomSelect
               name="country"
               value={formData.country}
               onChange={handleChange}
-              className={errors.country ? 'error' : ''}
-              style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0', background: 'white' }}
-            >
-              <option value="" disabled hidden>Select Country</option>
-              <option value="United States">United States</option>
-              <option value="United Kingdom">United Kingdom</option>
-              <option value="Canada">Canada</option>
-              <option value="Australia">Australia</option>
-              <option value="India">India</option>
-              <option value="Other">Other</option>
-            </select>
-            {errors.country && <span className="error-text">{errors.country}</span>}
+              placeholder="Select Country"
+              error={errors.country}
+              options={[
+                { value: "United States", label: "United States" },
+                { value: "United Kingdom", label: "United Kingdom" },
+                { value: "Canada", label: "Canada" },
+                { value: "Australia", label: "Australia" },
+                { value: "India", label: "India" },
+                { value: "Other", label: "Other" }
+              ]}
+            />
+            {errors.country && <span className="text-xs text-red-500">{errors.country}</span>}
           </div>
         </div>
         
-        <div className="form-group">
-          <label htmlFor="businessType">Business Type *</label>
-          <select
-            id="businessType"
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="businessType" className="text-sm font-medium text-[#d4ede4]">Business Type *</label>
+          <CustomSelect
             name="businessType"
             value={formData.businessType}
             onChange={handleChange}
-            className={errors.businessType ? 'error' : ''}
-            style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #e2e8f0', background: 'white' }}
-          >
-            <option value="" disabled hidden>Select Business Type</option>
-            <option value="Enterprise">Enterprise</option>
-            <option value="SMB">SMB</option>
-            <option value="ITAD / Recycler">ITAD / Recycler</option>
-            <option value="Government / Public Sector">Government / Public Sector</option>
-            <option value="Individual / Home">Individual / Home</option>
-            <option value="Other">Other</option>
-          </select>
-          {errors.businessType && <span className="error-text">{errors.businessType}</span>}
+            placeholder="Select Business Type"
+            error={errors.businessType}
+            options={[
+              { value: "Enterprise", label: "Enterprise" },
+              { value: "SMB", label: "SMB" },
+              { value: "ITAD / Recycler", label: "ITAD / Recycler" },
+              { value: "Government / Public Sector", label: "Government / Public Sector" },
+              { value: "Individual / Home", label: "Individual / Home" },
+              { value: "Other", label: "Other" }
+            ]}
+          />
+          {errors.businessType && <span className="text-xs text-red-500">{errors.businessType}</span>}
         </div>
         
-        <div className="form-group">
-          <label htmlFor="message">Message *</label>
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="message" className="text-sm font-medium text-[#d4ede4]">Message *</label>
           <textarea
             id="message"
             name="message"
@@ -293,9 +351,9 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
             onChange={handleChange}
             placeholder="Your question or enquiry..."
             rows={4}
-            className={errors.message ? 'error' : ''}
+            className={`w-full p-3 bg-white border ${errors.message ? 'border-red-500' : 'border-[#d0d5dc]'} rounded-none text-[#0a2e1e] focus:outline-none focus:border-[#0e7c66] resize-y`}
           />
-          {errors.message && <span className="error-text">{errors.message}</span>}
+          {errors.message && <span className="text-xs text-red-500">{errors.message}</span>}
         </div>
         
         {submitError && (
@@ -306,12 +364,12 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
         
         <button 
           type="submit" 
-          className="enquiry-btn primary"
+          className="mt-4 bg-[#0e7c66] hover:bg-[#0b6251] text-white font-bold py-3 px-6 rounded-none transition-colors flex items-center justify-center gap-2"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
             <>
-              <span className="spinner"></span>
+              <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
               Sending...
             </>
           ) : (

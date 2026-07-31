@@ -1,5 +1,6 @@
 import React, { useState, memo, useEffect, useRef } from 'react';
 import { ARIA_LABELS } from '@/utils/aria-labels';
+import { X } from 'lucide-react';
 
 interface SpecialPricingModalProps {
   isOpen: boolean;
@@ -168,7 +169,7 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
 
   if (!isOpen) return null;
 
-  const inputClass = "w-full px-3 py-2 sm:px-4 sm:py-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm sm:text-base";
+  const inputClass = "w-full px-3 py-2 sm:px-4 sm:py-3 border border-[#d0d5dc] rounded-none focus:outline-none focus:border-[#0e7c66] transition-all text-sm sm:text-base";
   const labelClass = "block text-sm font-semibold text-gray-700 mb-2";
 
   return (
@@ -179,9 +180,9 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
       aria-labelledby="special-pricing-title"
       aria-describedby="special-pricing-desc"
     >
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col">
+      <div className="bg-white rounded-none shadow-2xl w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col border border-[#d0d5dc]">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 sm:p-6 rounded-t-2xl flex-shrink-0">
+        <div className="bg-[#0e7c66] text-white p-4 sm:p-6 flex-shrink-0 border-b border-[#0e7c66]">
           <div className="flex justify-between items-start">
             <div className="flex-1 pr-4">
               <h2 
@@ -192,26 +193,24 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
               >
                 Special Pricing Request
               </h2>
-              <p id="special-pricing-desc" className="text-blue-100 text-sm sm:text-base">MSP, Academic Institute & Non-Profit Pricing</p>
+              <p id="special-pricing-desc" className="text-[#d4ede4] text-sm sm:text-base">MSP, Academic Institute & Non-Profit Pricing</p>
             </div>
             <button
               onClick={handleClose}
               aria-label={ARIA_LABELS.CLOSE_MODAL}
-              className="text-white hover:text-gray-200 transition-colors p-2"
+              className="text-white hover:text-gray-300 transition-colors p-2"
               disabled={isLoading}
             >
-              <svg className="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <X className="w-6 h-6" />
             </button>
           </div>
         </div>
 
         {/* Content */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6">
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-            <h3 className="font-semibold text-blue-900 mb-2">Special Pricing Available For:</h3>
-            <ul className="text-sm text-blue-800 space-y-1">
+          <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-4 mb-6">
+            <h3 className="font-semibold text-[#0a2e1e] mb-2">Special Pricing Available For:</h3>
+            <ul className="text-sm text-[#0a2e1e]/80 space-y-1">
               <li>• Managed Service Providers (MSPs)</li>
               <li>• Academic Institutions & Educational Organizations</li>
               <li>• Non-Profit Organizations & Charities</li>
@@ -354,7 +353,7 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
             </div>
 
             {/* Product Info */}
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+            <div className="bg-gray-50 border border-gray-200 rounded-none p-4">
               <h4 className="font-semibold text-gray-900 mb-2">Product Interest:</h4>
               <p className="text-gray-700">{productName}</p>
             </div>
@@ -365,14 +364,14 @@ const SpecialPricingModal: React.FC<SpecialPricingModalProps> = memo(({
                 type="button"
                 onClick={handleClose}
                 disabled={isLoading}
-                className="flex-1 px-4 py-2 sm:px-6 sm:py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:bg-gray-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+                className="flex-1 px-4 py-2 sm:px-6 sm:py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-none hover:bg-gray-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 Cancel
               </button> */}
               <button
                 type="submit"
                 disabled={isLoading}
-                className="flex-1 px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-sm sm:text-base"
+                className="flex-1 px-4 py-2 sm:px-6 sm:py-3 bg-[#0e7c66] hover:bg-[#0e7c66] text-white font-bold rounded-none transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-sm sm:text-base"
               >
                 {isLoading ? (
                   <>

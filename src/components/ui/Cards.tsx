@@ -41,7 +41,7 @@ export const Card: React.FC<CardProps> = ({
     lg: 'p-8'
   };
 
-  const baseClasses = `bg-white rounded-2xl shadow-lg ${paddingClasses[padding]}`;
+  const baseClasses = `bg-white rounded-none shadow-lg ${paddingClasses[padding]}`;
   const hoverClasses = hover ? 'hover:shadow-xl transition-all duration-300' : '';
   const clickableClasses = clickable ? 'cursor-pointer transform hover:scale-105' : '';
 
@@ -61,8 +61,8 @@ export const IconCard: React.FC<IconCardProps> = ({
   title,
   description,
   action,
-  iconBgColor = 'bg-blue-100',
-  iconColor = 'text-blue-600',
+  iconBgColor = 'bg-[#d4ede4]',
+  iconColor = 'text-[#0a2e1e]',
   className = '',
   hover = true,
   clickable = false,
@@ -75,7 +75,7 @@ export const IconCard: React.FC<IconCardProps> = ({
       clickable={clickable} 
       onClick={onClick}
     >
-      <div className={`w-16 h-16 ${iconBgColor} rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:${iconBgColor.replace('100', '200')} transition-colors`}>
+      <div className={`w-16 h-16 ${iconBgColor} rounded-none flex items-center justify-center mx-auto mb-6 group-hover:${iconBgColor.replace('100', '200')} transition-colors`}>
         <div className={`w-8 h-8 ${iconColor}`}>
           {icon}
         </div>
@@ -108,7 +108,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     >
       {image && (
         <div className="mb-6">
-          <img loading="lazy" decoding="async" src={image} alt={title} className="w-full h-48 object-cover rounded-lg" />
+          <img loading="lazy" decoding="async" src={image} alt={title} className="w-full h-48 object-cover rounded-none" />
         </div>
       )}
       <h3 className="text-xl font-bold text-slate-900 mb-4">{title}</h3>
@@ -118,7 +118,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         <ul className="space-y-2 mb-6">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center text-slate-700">
-              <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-5 h-5 text-[#0a2e1e] mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
               {feature}

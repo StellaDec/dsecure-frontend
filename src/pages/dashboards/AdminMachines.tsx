@@ -10,7 +10,7 @@ import { apiClient } from "@/utils/enhancedApiClient";
 import { authService } from "@/utils/authService";
 import { isDemoMode, DEMO_MACHINES, DEMO_SUBUSERS } from "@/data/demoData";
 import { useSubusers } from "@/hooks/useSubusers";
-import { Group } from "lucide-react";
+import { ArrowRightLeft, Group, Loader2, Monitor, Search, Trash2, X } from 'lucide-react';
 import { useQuery } from "@tanstack/react-query";
 
 // UI Machine interface for table display
@@ -1163,10 +1163,10 @@ export default function AdminMachines() {
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center z-50 p-4">
-        <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl">
+        <div className="bg-white rounded-none max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl">
           {/* Modal Header */}
           <div className="flex items-center justify-between px-6 py-4 border-b sticky top-0 bg-white z-10">
-            <h2 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-[#0a2e1e]">
               {modalTitle}
             </h2>
             <button
@@ -1178,19 +1178,7 @@ export default function AdminMachines() {
               }}
               className="text-slate-400 hover:text-slate-600 transition-colors"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <X className="w-6 h-6" />
             </button>
           </div>
 
@@ -1199,28 +1187,16 @@ export default function AdminMachines() {
             {machinesToShow.map((machine, index) => (
               <div
                 key={machine.machineId || machine.hostname}
-                className={`bg-slate-50 rounded-lg p-4 ${index > 0 ? "mt-4" : ""}`}
+                className={`bg-slate-50 rounded-none p-4 ${index > 0 ? "mt-4" : ""}`}
               >
                 {/* Machine Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-blue-100 rounded-lg">
-                      <svg
-                        className="w-6 h-6 text-blue-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
+                    <div className="p-2 bg-[#d4ede4] rounded-none">
+                      <Monitor className="w-6 h-6 text-[#0a2e1e]" />
                     </div>
                     <div>
-                      <h2 className="font-semibold text-slate-900">
+                      <h2 className="font-semibold text-[#0a2e1e]">
                         {machine.hostname}
                       </h2>
                       <p className="text-sm text-slate-500"></p>
@@ -1232,7 +1208,7 @@ export default function AdminMachines() {
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-medium ${
                       machine.status.includes("Active")
-                        ? "bg-green-100 text-green-800"
+                        ? "bg-[#d4ede4] text-[#0a2e1e]"
                         : machine.status.includes("Expired")
                           ? "bg-red-100 text-red-800"
                           : "bg-slate-200 text-slate-700"
@@ -1253,11 +1229,11 @@ export default function AdminMachines() {
                     <span
                       className={`text-sm font-medium ${
                         machine.license.includes("Enterprise")
-                          ? "text-purple-700"
+                          ? "text-[#0a2e1e]"
                           : machine.license.includes("Premium")
-                            ? "text-blue-700"
+                            ? "text-[#0a2e1e]"
                             : machine.license.includes("Licensed")
-                              ? "text-green-700"
+                              ? "text-[#0a2e1e]"
                               : "text-slate-700"
                       }`}
                     >
@@ -1281,7 +1257,7 @@ export default function AdminMachines() {
                       License Status
                     </p>
                     <p
-                      className={`text-sm font-medium ${machine.licenseActivated ? "text-green-700" : "text-red-700"}`}
+                      className={`text-sm font-medium ${machine.licenseActivated ? "text-[#0a2e1e]" : "text-red-700"}`}
                     >
                       {machine.licenseActivated ? "✓ Active" : "✗ Inactive"}
                     </p>
@@ -1322,7 +1298,7 @@ export default function AdminMachines() {
                 setSelectedMachinesForModal([]);
                 setSelectedMachineForModal(null);
               }}
-              className="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 transition-colors"
             >
               Close
             </button>
@@ -1431,10 +1407,10 @@ export default function AdminMachines() {
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center z-50 p-4">
-        <div className="bg-white rounded-lg max-w-md w-full shadow-xl mt-20">
+        <div className="bg-white rounded-none max-w-md w-full shadow-xl mt-20">
           {/* Modal Header */}
           <div className="flex items-center justify-between px-6 py-4 border-b">
-            <h2 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-[#0a2e1e]">
               Transfer Machines to Subuser
             </h2>
             <button
@@ -1444,19 +1420,7 @@ export default function AdminMachines() {
               }}
               className="text-slate-400 hover:text-slate-600 transition-colors"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <X className="w-6 h-6" />
             </button>
           </div>
 
@@ -1464,7 +1428,7 @@ export default function AdminMachines() {
           <div className="p-6 space-y-4">
             <p className="text-sm text-slate-600">
               Transfer{" "}
-              <span className="font-semibold text-slate-900">
+              <span className="font-semibold text-[#0a2e1e]">
                 {selectedMachines.length} machine(s)
               </span>{" "}
               to a subuser account.
@@ -1478,7 +1442,7 @@ export default function AdminMachines() {
               <select
                 value={selectedSubuserForTransfer}
                 onChange={(e) => setSelectedSubuserForTransfer(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">-- Select a subuser --</option>
                 {subusersData
@@ -1498,7 +1462,7 @@ export default function AdminMachines() {
             </div>
 
             {/* Selected Machines Preview */}
-            <div className="bg-slate-50 rounded-lg p-3 max-h-40 overflow-y-auto">
+            <div className="bg-slate-50 rounded-none p-3 max-h-40 overflow-y-auto">
               <p className="text-xs text-slate-500 mb-2">
                 Machines to transfer:
               </p>
@@ -1522,40 +1486,22 @@ export default function AdminMachines() {
                 setShowTransferModal(false);
                 setSelectedSubuserForTransfer("");
               }}
-              className="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={handleTransferMachines}
               disabled={!selectedSubuserForTransfer || transferLoading}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-2 ${
+              className={`px-4 py-2 text-sm font-medium rounded-none transition-colors flex items-center gap-2 ${
                 !selectedSubuserForTransfer || transferLoading
                   ? "bg-slate-300 text-slate-500 cursor-not-allowed"
-                  : "bg-green-600 text-white hover:bg-green-700"
+                  : "bg-[#0e7c66] text-white hover:bg-[#0e7c66]"
               }`}
             >
               {transferLoading ? (
                 <>
-                  <svg
-                    className="animate-spin w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    ></circle>
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                    ></path>
-                  </svg>
+                  <Loader2 className="animate-spin w-4 h-4" />
                   Transferring...
                 </>
               ) : (
@@ -1577,10 +1523,10 @@ export default function AdminMachines() {
 
       {/* Transfer to Subuser Modal */}
       <TransferModal />
-      <div className="space-y-4 xs:space-y-6 sm:space-y-6 min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-4 xs:p-6 sm:p-6">
+      <div className="space-y-4 xs:space-y-6 sm:space-y-6 min-h-screen bg-white p-4 xs:p-6 sm:p-6">
         <div className="flex flex-col xs:flex-row sm:flex-row items-start xs:items-center sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-bold text-slate-900">
+            <h1 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-bold text-[#0a2e1e]">
               Registered Machines and Asset Inventory
             </h1>
             {selectedMachineIds.size > 0 && (
@@ -1596,7 +1542,7 @@ export default function AdminMachines() {
             <div className="flex items-center gap-2">
               <button
                 onClick={handleBulkViewDetails}
-                className="btn-secondary flex items-center gap-2"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 <svg
                   className="w-4 h-4"
@@ -1621,21 +1567,9 @@ export default function AdminMachines() {
               </button>
               <button
                 onClick={handleBulkErase}
-                className="btn-primary flex items-center gap-2"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-[#0e7c66] text-white hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  />
-                </svg>
+                <Trash2 className="w-4 h-4" />
                 Erase {selectedMachineIds.size} Machines
               </button>
             </div>
@@ -1643,12 +1577,12 @@ export default function AdminMachines() {
           {/* <div className="flex items-center space-x-4">
           
           <div className={`flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium ${
-            loading ? 'bg-yellow-100 text-yellow-800' :
-            isUsingApi ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
+            loading ? 'bg-[#d4ede4] text-[#0a2e1e]' :
+            isUsingApi ? 'bg-[#d4ede4] text-[#0a2e1e]' : 'bg-[#d4ede4] text-[#0a2e1e]'
           }`}>
             <div className={`w-2 h-2 rounded-full ${
-              loading ? 'bg-yellow-500' :
-              isUsingApi ? 'bg-green-500' : 'bg-blue-500'
+              loading ? 'bg-[#0e7c66]' :
+              isUsingApi ? 'bg-[#0e7c66]' : 'bg-[#0e7c66]'
             }`}></div>
             <span>
               {loading ? 'Loading...' : 
@@ -1670,16 +1604,16 @@ export default function AdminMachines() {
         </div>
 
         {/* {!loading && !isUsingApi && (
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <div className="bg-[#d4ede4] border border-[#d4ede4] rounded-none p-4 mb-6">
           <div className="flex items-start space-x-3">
             <div className="flex-shrink-0">
-              <svg className="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+              <svg className="h-5 w-5 text-[#d4ede4]" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
             </div>
             <div className="flex-1">
-              <h2 className="text-sm font-medium text-blue-800">Demo Mode Active</h2>
-              <p className="mt-1 text-sm text-blue-700">
+              <h2 className="text-sm font-medium text-[#0a2e1e]">Demo Mode Active</h2>
+              <p className="mt-1 text-sm text-[#0a2e1e]">
                 You're viewing AI-generated demo data for demonstration purposes. 
                 Connect to your backend API to see real machine data from your database.
               </p>
@@ -1689,9 +1623,9 @@ export default function AdminMachines() {
       )} */}
 
         {/* Advanced Filters */}
-        <div className="card p-4 space-y-4">
+        <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-4 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-[#0a2e1e]">
               Filters & Search
             </h2>
             <button
@@ -1866,12 +1800,12 @@ export default function AdminMachines() {
 
         {/* Export Actions - Commented out */}
         {/* <div className="flex justify-end gap-2">
-          <button className="btn-secondary" onClick={() => exportToCsv('machines.csv', filtered.map(m => ({ ...m })))}>Export All ({filtered.length})</button>
-          <button className="btn-secondary" onClick={() => exportToCsv('machines-page.csv', rows.map(m => ({ ...m })))}>Export Page ({rows.length})</button>
+          <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed" onClick={() => exportToCsv('machines.csv', filtered.map(m => ({ ...m })))}>Export All ({filtered.length})</button>
+          <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed" onClick={() => exportToCsv('machines-page.csv', rows.map(m => ({ ...m })))}>Export Page ({rows.length})</button>
         </div> */}
 
         {/* Table - scroll applied to table body only */}
-        <div className="card-content card-table card overflow-x-auto">
+        <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6-content card-table card overflow-x-auto">
           {loading ? (
             /* ********** NAYA CODE — Shimmer Skeleton UI for Machines ********** */
             <div className="animate-pulse divide-y divide-slate-100">
@@ -1880,8 +1814,8 @@ export default function AdminMachines() {
                   <div className="w-4 h-4 bg-slate-200 rounded" />
                   <div className="h-4 bg-slate-200 rounded w-32" />
                   <div className="h-4 bg-slate-100 rounded w-36" />
-                  <div className="h-6 bg-purple-100 rounded-full w-20" />
-                  <div className="h-6 bg-green-100 rounded-full w-16" />
+                  <div className="h-6 bg-[#d4ede4] rounded-full w-20" />
+                  <div className="h-6 bg-[#d4ede4] rounded-full w-16" />
                 </div>
               ))}
             </div>
@@ -1889,21 +1823,9 @@ export default function AdminMachines() {
           allRows.length === 0 ? (
             <div className="text-center py-12">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
-                <svg
-                  className="w-8 h-8 text-slate-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+                <Monitor className="w-8 h-8 text-slate-400" />
               </div>
-              <h2 className="text-lg font-medium text-slate-900 mb-2">
+              <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                 No Machines Found
               </h2>
               <p className="text-slate-600 mb-6">
@@ -1913,27 +1835,15 @@ export default function AdminMachines() {
           ) : filtered.length === 0 ? (
             <div className="text-center py-12">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
-                <svg
-                  className="w-8 h-8 text-slate-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
+                <Search className="w-8 h-8 text-slate-400" />
               </div>
-              <h2 className="text-lg font-medium text-slate-900 mb-2">
+              <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                 No Results Found
               </h2>
               <p className="text-slate-600 mb-6">
                 No machines match your current filters.
               </p>
-              <button onClick={clearAllFilters} className="btn-primary">
+              <button onClick={clearAllFilters} className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-[#0e7c66] text-white hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed">
                 Clear All Filters
               </button>
             </div>
@@ -1941,9 +1851,9 @@ export default function AdminMachines() {
             <>
               {/* Bulk Action Bar - Shows when machines are selected */}
               {selectedMachineIds.size > 0 && (
-                <div className="flex items-center justify-between bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 mb-4">
+                <div className="flex items-center justify-between bg-[#d4ede4] border border-[#d4ede4] rounded-none px-4 py-3 mb-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-blue-800">
+                    <span className="text-sm font-medium text-[#0a2e1e]">
                       {selectedMachineIds.size} machine
                       {selectedMachineIds.size !== 1 ? "s" : ""} selected
                     </span>
@@ -1959,28 +1869,16 @@ export default function AdminMachines() {
                     {!isSubUser && (
                       <button
                         onClick={() => setShowTransferModal(true)}
-                        className="text-sm px-4 py-1.5 rounded border font-medium transition-colors bg-green-600 text-white hover:bg-green-700 border-green-600 flex items-center gap-2"
+                        className="text-sm px-4 py-1.5 rounded border font-medium transition-colors bg-[#0e7c66] text-white hover:bg-[#0e7c66] border-[#0e7c66] flex items-center gap-2"
                         title={`Transfer ${selectedMachineIds.size} Selected Machines to Subuser`}
                       >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                          />
-                        </svg>
+                        <ArrowRightLeft className="w-4 h-4" />
                         Transfer
                       </button>
                     )}
                     <button
                       onClick={handleBulkViewDetails}
-                      className="text-sm px-4 py-1.5 rounded border font-medium transition-colors bg-blue-600 text-white hover:bg-blue-700 border-blue-600 flex items-center gap-2"
+                      className="text-sm px-4 py-1.5 rounded border font-medium transition-colors bg-[#0e7c66] text-white hover:bg-[#0e7c66] border-[#0e7c66] flex items-center gap-2"
                       title={`View ${selectedMachineIds.size} Selected Machines`}
                     >
                       <svg
@@ -2023,7 +1921,7 @@ export default function AdminMachines() {
                             )
                           }
                           onChange={() => toggleSelectAll(rows)}
-                          className="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500"
+                          className="w-4 h-4 text-[#0a2e1e] rounded border-slate-300 focus:ring-blue-500"
                           title="Select all on this page"
                         />
                       </th>
@@ -2058,12 +1956,12 @@ export default function AdminMachines() {
                                 row.machineId || row.hostname,
                               )
                             }
-                            className="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500"
+                            className="w-4 h-4 text-[#0a2e1e] rounded border-slate-300 focus:ring-blue-500"
                           />
                         </td>
                         <td className="py-3 px-4">
                           <div
-                            className="font-medium text-slate-900 truncate max-w-[200px]"
+                            className="font-medium text-[#0a2e1e] truncate max-w-[200px]"
                             title={row.hostname}
                           >
                             {row.hostname}
@@ -2081,9 +1979,9 @@ export default function AdminMachines() {
                           <span
                             className={`px-2 py-1 rounded-full text-[10px] sm:text-xs font-medium whitespace-nowrap ${
                               row.license === "Enterprise"
-                                ? "bg-purple-100 text-purple-800"
+                                ? "bg-[#d4ede4] text-[#0a2e1e]"
                                 : row.license === "Premium"
-                                  ? "bg-blue-100 text-blue-800"
+                                  ? "bg-[#d4ede4] text-[#0a2e1e]"
                                   : "bg-slate-100 text-slate-800"
                             }`}
                           >
@@ -2095,20 +1993,20 @@ export default function AdminMachines() {
                             className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] sm:text-xs font-medium whitespace-nowrap ${
                               row.status === "online" ||
                               row.status.includes("Active")
-                                ? "bg-green-100 text-green-800"
+                                ? "bg-[#d4ede4] text-[#0a2e1e]"
                                 : row.status === "offline"
                                   ? "bg-red-100 text-red-800"
-                                  : "bg-yellow-100 text-yellow-800"
+                                  : "bg-[#d4ede4] text-[#0a2e1e]"
                             }`}
                           >
                             <span
                               className={`w-2 h-2 rounded-full ${
                                 row.status === "online" ||
                                 row.status.includes("Active")
-                                  ? "bg-green-400"
+                                  ? "bg-[#0e7c66]"
                                   : row.status === "offline"
                                     ? "bg-red-400"
-                                    : "bg-yellow-400"
+                                    : "bg-[#0e7c66]"
                               }`}
                             ></span>
                             {row.status}
@@ -2140,7 +2038,7 @@ export default function AdminMachines() {
                         setPageSize(newSize);
                         setPage(1);
                       }}
-                      className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 cursor-pointer"
+                      className="px-3 py-1.5 border border-slate-300 rounded-none text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66] cursor-pointer"
                     >
                       {pageSizeOptions.map((size) => (
                         <option key={size} value={size}>
@@ -2166,14 +2064,14 @@ export default function AdminMachines() {
                     <button
                       disabled={page <= 1}
                       onClick={() => setPage(page - 1)}
-                      className="px-4 py-2 border border-slate-300 rounded-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors bg-white font-medium shadow-sm"
+                      className="px-4 py-2 border border-slate-300 rounded-none text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors bg-white font-medium shadow-sm"
                     >
                       Previous
                     </button>
                     <button
                       disabled={page >= totalPages}
                       onClick={() => setPage(page + 1)}
-                      className="px-4 py-2 border border-slate-300 rounded-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors bg-white font-medium shadow-sm"
+                      className="px-4 py-2 border border-slate-300 rounded-none text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors bg-white font-medium shadow-sm"
                     >
                       Next
                     </button>

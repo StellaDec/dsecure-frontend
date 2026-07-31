@@ -6,6 +6,27 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import SolutionContactSection from "@/components/SolutionContactSection";
 import SolutionHeroGraphic from "@/components/SolutionHeroGraphic";
+import {
+  themeClasses,
+  ThemeButton,
+  ThemeCard,
+  ThemeIconContainer,
+  ThemeSection,
+  ThemeSectionHeading,
+} from "@/components/ui/Theme";
+import {
+  CheckCircle,
+  Laptop,
+  HardDrive,
+  Smartphone,
+  Network,
+  Usb,
+  Shield,
+  Disc,
+  File,
+  FileText,
+  Cloud
+} from "lucide-react";
 
 /**
  * GovernmentPage Component
@@ -126,11 +147,12 @@ const GovernmentPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-white">
         {/* ================= HERO SECTION ================= */}
-        <section
+        <ThemeSection
           id="overview"
           className="min-h-[600px] flex items-start pt-8 lg:pt-12 pb-8 lg:pb-12 relative overflow-hidden"
+          noBg
         >
           {/* Background pattern */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -152,7 +174,7 @@ const GovernmentPage: React.FC = () => {
                   </div>
                   
                   <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
-                    Solutions for
+                    Solutions for{" "}
                     <span className="block bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent pb-1">
                       Government
                     </span>
@@ -165,22 +187,17 @@ const GovernmentPage: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <button
-                    onClick={() => setShowLicenseModal(true)}
-                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-emerald-200/50 transition-all duration-300 transform hover:-translate-y-1"
-                  >
+                  <ThemeButton onClick={() => setShowLicenseModal(true)}>
                     Request Free License
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </button>
+                  </ThemeButton>
                   <a
-                    href=""
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 border-2 border-emerald-600 text-emerald-700 px-8 py-4 rounded-xl font-bold bg-white transition-all duration-300 shadow-lg pointer-events-none opacity-50 cursor-not-allowed"
+                    href="#"
+                    className={`${themeClasses.button.base} ${themeClasses.button.outline} w-full sm:w-auto gap-2`}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
+                    <FileText className="w-5 h-5" />
                     Solution Overview
                   </a>
                 </div>
@@ -243,23 +260,21 @@ const GovernmentPage: React.FC = () => {
               />
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
-        {/* Compliance Section */}
-        <section
-          id="compliance"
-          className="py-16 md:py-20"
-          style={{ backgroundColor: "#ffffff" }}
-        >
+        <ThemeSection id="compliance" alternate>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ color: "#0f172a" }}>
-                Meet Federal & State Regulations
-              </h2>
-              <p className="text-lg max-w-3xl mx-auto" style={{ color: "#64748b" }}>
-                DSecure enables government organizations to completely sanitize media before it is transferred, disposed of, or reused according to global guidelines.
-              </p>
+            <div className="mb-4 text-center">
+              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                Regulation & Compliance
+              </span>
             </div>
+            <ThemeSectionHeading 
+              centered
+              subtitle="DSecure enables government organizations to completely sanitize media before it is transferred, disposed of, or reused according to global guidelines."
+            >
+              Meet Federal & State Regulations
+            </ThemeSectionHeading>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
@@ -268,62 +283,54 @@ const GovernmentPage: React.FC = () => {
                 { title: "CMMC 2.0", desc: "Maintain cybersecurity maturity for defense contractual obligations." },
                 { title: "SOX & HIPAA", desc: "Compliance for financial and health data held by public bodies." },
               ].map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-100 transition-all group"
-                >
-                  <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 text-emerald-700 group-hover:scale-110 transition-transform">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
-                    </svg>
+                <ThemeCard key={item.title}>
+                  <div className="mb-6">
+                    <ThemeIconContainer icon={CheckCircle} />
                   </div>
-                  <h3 className="text-xl font-bold mb-3" style={{ color: "#1e293b" }}>{item.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#64748b" }}>{item.desc}</p>
-                </div>
+                  <h3 className={`${themeClasses.typography.cardTitle}`}>{item.title}</h3>
+                  <p className={`${themeClasses.typography.cardBody}`}>{item.desc}</p>
+                </ThemeCard>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* Assets Section */}
-        <section
-          id="assets"
-          className="py-16 md:py-20 bg-slate-50 overflow-hidden relative"
-        >
+        <ThemeSection id="assets">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-20 items-center">
               <div className="relative">
                 <div className="absolute -inset-4 bg-emerald-600/5 blur-3xl rounded-full"></div>
                 <div className="relative space-y-4">
-                  <div className="bg-white p-6 rounded-3xl shadow-xl border border-emerald-50 flex items-center gap-6">
-                    <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center text-3xl">💻</div>
+                  <ThemeCard className="flex items-center gap-6 p-6">
+                    <ThemeIconContainer icon={Laptop} size="lg" />
                     <div>
-                      <h4 className="font-bold text-lg">PC/Laptop/Mac</h4>
-                      <p className="text-sm text-slate-500">Sanitize workstations & endpoints</p>
+                      <h4 className="font-bold text-lg text-[#0a2e1e]">PC/Laptop/Mac</h4>
+                      <p className="text-sm text-[#5a6672]">Sanitize workstations & endpoints</p>
                     </div>
-                  </div>
-                  <div className="bg-white p-6 rounded-3xl shadow-xl border border-emerald-50 flex items-center gap-6 ml-8">
-                    <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center text-3xl">💽</div>
+                  </ThemeCard>
+                  <ThemeCard className="flex items-center gap-6 p-6 ml-8">
+                    <ThemeIconContainer icon={HardDrive} size="lg" />
                     <div>
-                      <h4 className="font-bold text-lg">Loose Drives</h4>
-                      <p className="text-sm text-slate-500">HDD, SSD, NVMe, SAS, etc.</p>
+                      <h4 className="font-bold text-lg text-[#0a2e1e]">Loose Drives</h4>
+                      <p className="text-sm text-[#5a6672]">HDD, SSD, NVMe, SAS, etc.</p>
                     </div>
-                  </div>
-                  <div className="bg-white p-6 rounded-3xl shadow-xl border border-emerald-50 flex items-center gap-6">
-                    <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center text-3xl">📱</div>
+                  </ThemeCard>
+                  <ThemeCard className="flex items-center gap-6 p-6">
+                    <ThemeIconContainer icon={Smartphone} size="lg" />
                     <div>
-                      <h4 className="font-bold text-lg">Mobile Devices</h4>
-                      <p className="text-sm text-slate-500">iOS & Android Diagnostics & Erasure</p>
+                      <h4 className="font-bold text-lg text-[#0a2e1e]">Mobile Devices</h4>
+                      <p className="text-sm text-[#5a6672]">iOS & Android Diagnostics & Erasure</p>
                     </div>
-                  </div>
+                  </ThemeCard>
                 </div>
               </div>
 
               <div>
-                <h2 className="text-4xl font-extrabold mb-8" style={{ color: "#0f172a" }}>
+                <ThemeSectionHeading>
                   Secure Media Sanitization for the Entire Agency
-                </h2>
-                <div className="space-y-6">
+                </ThemeSectionHeading>
+                <div className="space-y-6 mt-8">
                   {[
                     "Wipe data at facilities with or without internet",
                     "Bulk erasure of drives at high-security defense establishments",
@@ -331,115 +338,115 @@ const GovernmentPage: React.FC = () => {
                     "Generate tamper-proof audit trails for every sanitized asset",
                   ].map((benefit) => (
                     <div key={benefit} className="flex items-start gap-4">
-                      <div className="mt-1 w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
+                      <div className="mt-1">
+                        <ThemeIconContainer icon={CheckCircle} size="md" />
                       </div>
-                      <p className="text-lg font-medium" style={{ color: "#334155" }}>{benefit}</p>
+                      <p className="text-lg font-medium text-[#334155] mt-2">{benefit}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* Industry Solutions Section */}
-        <section
-          id="solutions"
-          className="py-16 md:py-20"
-          style={{ backgroundColor: "#ffffff" }}
-        >
+        <ThemeSection id="solutions" noBg className="bg-[#0a2e1e]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 md:mb-16 text-emerald-600">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ color: "#0f172a" }}>
+            <div className="mb-4 text-center">
+              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-emerald-900/50 text-emerald-100 border border-emerald-800">
+                Flexible Solutions
+              </span>
+            </div>
+            <div className="[&_h2]:!text-white">
+              <ThemeSectionHeading centered>
                 Erasure Solutions for Govt. Bodies
-              </h2>
+              </ThemeSectionHeading>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8">
               {[
                 { 
                   title: "Network & PXE Wiping", 
                   desc: "Sanitize up to 65,000 devices simultaneously over a network using our scalable PXE boot variant.",
-                  icon: "🌐"
+                  icon: Network
                 },
                 { 
                   title: "USB Boot (Offline)", 
                   desc: "Ideal for defense & research labs without internet. Perform erasure via bootable USB and save reports locally.",
-                  icon: "🔌"
+                  icon: Usb
                 },
                 { 
                   title: "Cloud Admin Console", 
                   desc: "Centralized management of users, licenses, and repositories. Get global visibility of data destruction trails.",
-                  icon: "☁️"
+                  icon: Cloud
                 },
                 { 
                   title: "Mobile Force Diagnostics", 
                   desc: "Minimize operational risk by diagnosing and erasing iOS and Android devices at high speed.",
-                  icon: "🛡️"
+                  icon: Shield
                 },
                 { 
                   title: "ISO Customization", 
                   desc: "Standardize the erasure process across all locations through cloud-hosted customized ISO files.",
-                  icon: "💿"
+                  icon: Disc
                 },
                 { 
                   title: "File Eraser Tool", 
                   desc: "Maintain data privacy by erasing unwanted files and traces regularly from Windows, Mac, or Linux systems.",
-                  icon: "📄"
+                  icon: File
                 },
               ].map((card) => (
-                <div key={card.title} className="flex flex-col items-start bg-white p-6 rounded-3xl border border-slate-100 hover:shadow-xl transition-all">
-                  <div className="text-4xl mb-6">{card.icon}</div>
-                  <h3 className="text-xl font-bold mb-3" style={{ color: "#1e293b" }}>{card.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#64748b" }}>{card.desc}</p>
-                </div>
+                <ThemeCard key={card.title} className="flex flex-col items-start p-6">
+                  <div className="mb-6">
+                    <ThemeIconContainer icon={card.icon} size="lg" />
+                  </div>
+                  <h3 className={`${themeClasses.typography.cardTitle}`}>{card.title}</h3>
+                  <p className={`${themeClasses.typography.cardBody}`}>{card.desc}</p>
+                </ThemeCard>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* FAQ Section */}
-        <section
-          id="faq"
-          className="py-16 md:py-20 bg-slate-50"
-        >
+        <ThemeSection id="faq" alternate>
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-extrabold mb-12 text-center" style={{ color: "#0f172a" }}>
-              Common Inquiries
-            </h2>
-            <div className="space-y-6">
+            <ThemeSectionHeading centered>
+              Government Solutions FAQs
+            </ThemeSectionHeading>
+            <div className="space-y-6 mt-8">
               {[
                 {
-                  q: "Can we use DSecure in zero-internet facilities?",
-                  a: "Absolutely. Our 'Physically delivered' (Offline) variant is specifically designed for high-security establishments like defense labs where internet connectivity is prohibited.",
+                  q: "Does D-Secure comply with NIST 800-88 and DoD data wiping standards?",
+                  a: "Yes, D-Secure strictly adheres to global and federal data sanitization guidelines, including NIST 800-88 (Clear and Purge) and DoD 5220.22-M standards, ensuring compliance for all government agencies.",
                 },
                 {
-                  q: "Does the software support bulk drive erasure?",
-                  a: "Yes. You can wipe up to 100 drives simultaneously in a specialized chassis or target 65,000 over a network using PXE boot solutions.",
+                  q: "Can we use D-Secure in classified or zero-internet federal facilities?",
+                  a: "Absolutely. Our 'Physically delivered' (Offline) variant is specifically designed for high-security establishments, military bases, and defense labs where internet connectivity is prohibited.",
                 },
                 {
-                  q: "How are the reports managed in large agencies?",
-                  a: "Reports can be stored locally on encrypted USB sticks for offline use or centrally aggregated in a tamper-proof cloud repository for global audit readiness.",
+                  q: "How are erasure reports managed for large government agencies and audits?",
+                  a: "Digitally signed, tamper-proof Certificates of Erasure can be stored locally on encrypted USB sticks for offline use, or centrally aggregated in a secure repository for federal audit readiness.",
                 },
               ].map((faq) => (
-                <details key={faq.q} className="group bg-white rounded-3xl p-8 border border-slate-200 shadow-sm open:shadow-lg transition-all">
-                  <summary className="flex items-center justify-between cursor-pointer list-none list-inside">
-                    <span className="text-xl font-bold pr-6" style={{ color: "#1e293b" }}>{faq.q}</span>
-                    <span className="transition-transform group-open:rotate-180 text-emerald-600">
+                <details key={faq.q} className="group bg-white border border-[#d0d5dc]/60 transition-all">
+                  <summary className="flex items-center justify-between cursor-pointer list-none p-6">
+                    <span className="text-xl font-bold pr-6 text-[#151e29] group-open:text-[#0a2e1e] transition-colors">{faq.q}</span>
+                    <span className="transition-transform group-open:rotate-180 text-emerald-600 flex-shrink-0">
                       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </span>
                   </summary>
-                  <p className="mt-6 text-lg leading-relaxed" style={{ color: "#64748b" }}>{faq.a}</p>
+                  <div className="px-6 pb-6 text-lg leading-relaxed text-[#5a6672] border-t border-[#d0d5dc]/30 pt-4 mt-2 hidden group-open:block">
+                    {faq.a}
+                  </div>
                 </details>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= CONTACT SECTION ================= */}
         <SolutionContactSection source="Government Solutions Page" subjectPrefix="New Inquiry - Government Solutions" />

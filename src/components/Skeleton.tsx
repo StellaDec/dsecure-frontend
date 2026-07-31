@@ -49,7 +49,7 @@ export function SkeletonCard({
   contentLines?: number
 }) {
   return (
-    <div className={`bg-white rounded-lg border border-slate-200 ${className}`}>
+    <div className={`bg-white rounded-none border border-slate-200 ${className}`}>
       {hasHeader && (
         <div className="border-b border-slate-200 pb-4 mb-4">
           <Skeleton className="h-6 w-1/2 mb-2" />
@@ -88,7 +88,7 @@ export function SkeletonTable({
   className?: string
 }) {
   return (
-    <div className={`bg-white rounded-lg border border-slate-200 overflow-hidden ${className}`}>
+    <div className={`bg-white rounded-none border border-slate-200 overflow-hidden ${className}`}>
       {hasHeader && (
         <div className="border-b border-slate-200 p-4">
           <div className="grid gap-4" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
@@ -127,7 +127,7 @@ export function SkeletonForm({
   className?: string
 }) {
   return (
-    <div className={`bg-white rounded-lg border border-slate-200 ${className}`}>
+    <div className={`bg-white rounded-none border border-slate-200 ${className}`}>
       {hasTitle && (
         <div className="mb-6">
           <Skeleton className="h-8 w-1/2 mb-2" />
@@ -184,7 +184,7 @@ export function SkeletonStats({
   return (
     <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ${className}`}>
       {Array.from({ length: items }).map((_, i) => (
-        <div key={i} className="bg-white p-6 rounded-lg border border-slate-200">
+        <div key={i} className="bg-white p-6 rounded-none border border-slate-200">
           <div className="flex items-center justify-between mb-4">
             <Skeleton className="h-8 w-8 rounded-full" />
             <Skeleton className="h-4 w-12" />
@@ -206,7 +206,7 @@ export function SkeletonChart({
   className?: string
 }) {
   return (
-    <div className={`bg-white rounded-lg border border-slate-200 p-6 ${className}`}>
+    <div className={`bg-white rounded-none border border-slate-200 p-6 ${className}`}>
       <div className="mb-4">
         <Skeleton className="h-6 w-1/3 mb-2" />
         <Skeleton className="h-4 w-1/2" />
@@ -284,7 +284,7 @@ export function SkeletonPage({
   className?: string
 }) {
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 ${className}`}>
+    <div className={`min-h-screen bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] ${className}`}>
       {hasHeader && (
         <div className="border-b border-slate-200 bg-white p-4">
           <div className="flex items-center justify-between">

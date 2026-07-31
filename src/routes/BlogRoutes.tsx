@@ -206,7 +206,7 @@ export const BlogRoutes = () => (
 
     <Route path="blog/remote-work-data-erasure" element={<RemoteWorkDataErasureBlog />} />
 
-    <Route path="blog/ssd-wipe-bios" element={<SSDWipeBIOSBlog />} />
+    <Route path="blog/ssd-wipe-guide" element={<SSDWipeBIOSBlog />} />
     <Route path="blog/secure-file-erase" element={<SecureFileEraseBlog />} />
 
     <Route path="blog/secure-it-asset-disposal" element={<SecureITAssetDisposalBlog />} />

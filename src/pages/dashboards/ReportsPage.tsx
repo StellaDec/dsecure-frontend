@@ -1,6 +1,8 @@
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
 import React, { useState } from 'react'
+import { Check, ChevronLeft, FileText, Loader2, Search, X } from 'lucide-react';
+
 import Reveal from '@/components/Reveal'
 import { useAuth } from '@/auth/AuthContext'
 import { Link } from 'react-router-dom'
@@ -65,8 +67,8 @@ const ReportsPage: React.FC = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'completed': return 'bg-green-100 text-green-800'
-      case 'running': return 'bg-blue-100 text-blue-800'
+      case 'completed': return 'bg-[#d4ede4] text-[#0a2e1e]'
+      case 'running': return 'bg-[#d4ede4] text-[#0a2e1e]'
       case 'failed': return 'bg-red-100 text-red-800'
       default: return 'bg-gray-100 text-gray-800'
     }
@@ -76,21 +78,15 @@ const ReportsPage: React.FC = () => {
     switch (status) {
       case 'completed':
         return (
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
+          <Check className="w-4 h-4" />
         )
       case 'running':
         return (
-          <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-          </svg>
+          <Loader2 className="w-4 h-4 animate-spin" />
         )
       case 'failed':
         return (
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <X className="w-4 h-4" />
         )
       default:
         return null
@@ -149,7 +145,7 @@ const ReportsPage: React.FC = () => {
             <div className="animate-pulse">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="h-10 w-10 bg-slate-300 rounded-lg"></div>
+                  <div className="h-10 w-10 bg-slate-300 rounded-none"></div>
                   <div className="flex-1">
                     <div className="h-8 bg-slate-300 rounded w-48 mb-2"></div>
                     <div className="h-4 bg-slate-300 rounded w-80"></div>
@@ -163,7 +159,7 @@ const ReportsPage: React.FC = () => {
               </div>
               <div className="space-y-4">
                 {[1, 2, 3, 4, 5].map(i => (
-                  <div key={i} className="card p-6">
+                  <div key={i} className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-6">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className="h-12 w-12 bg-slate-300 rounded-full"></div>
@@ -197,19 +193,17 @@ const ReportsPage: React.FC = () => {
             <div className="flex items-center gap-4 mb-6">
               <Link
                 to="/admin"
-                className="p-2 rounded-lg border border-slate-200 hover:bg-white transition-colors"
+                className="p-2 rounded-none border border-slate-200 hover:bg-white transition-colors"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
+                <ChevronLeft className="w-5 h-5" />
               </Link>
               <div className="flex-1">
-                <h1 className="text-3xl font-bold text-slate-900">Erasure Reports</h1>
+                <h1 className="text-3xl font-bold text-[#0a2e1e]">Erasure Reports</h1>
                 <p className="text-slate-600 mt-1">View and download your erasure regulatory documents and reports</p>
               </div>
               <button
                 onClick={exportAllReports}
-                className="btn-secondary flex items-center gap-2"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -226,15 +220,13 @@ const ReportsPage: React.FC = () => {
                   placeholder="Search reports..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-brand"
+                  className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-none focus:ring-2 focus:ring-brand focus:border-brand"
                 />
-                <svg className="w-5 h-5 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+                <Search className="w-5 h-5 text-slate-400 absolute left-3 top-2.5" />
               </div>
 
               {/* Filter Tabs */}
-              <div className="flex rounded-lg border border-slate-300 bg-white">
+              <div className="flex rounded-none border border-slate-300 bg-white">
                 {[
                   { id: 'all', label: 'All' },
                   { id: 'completed', label: 'Completed' },
@@ -246,8 +238,8 @@ const ReportsPage: React.FC = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-4 py-2 text-sm font-medium transition-colors ${activeTab === tab.id
                         ? 'bg-brand text-white'
-                        : 'text-slate-600 hover:text-slate-900'
-                      } ${tab.id === 'all' ? 'rounded-l-lg' : ''} ${tab.id === 'failed' ? 'rounded-r-lg' : ''}`}
+                        : 'text-slate-600 hover:text-[#0a2e1e]'
+                      } ${tab.id === 'all' ? 'rounded-none' : ''} ${tab.id === 'failed' ? 'rounded-none' : ''}`}
                   >
                     {tab.label}
                   </button>
@@ -260,17 +252,15 @@ const ReportsPage: React.FC = () => {
           <div className="grid gap-4">
             {filteredReports.map((report, index) => (
               <Reveal key={report.id} delayMs={index * 100}>
-                <div className="card p-6 hover:shadow-lg transition-shadow">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-6 hover:shadow-lg transition-shadow">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
+                      <div className="w-12 h-12 rounded-none bg-brand/10 flex items-center justify-center">
+                        <FileText className="w-6 h-6 text-brand" />
                       </div>
                       <div>
                         <div className="flex items-center gap-3">
-                          <h2 className="font-semibold text-slate-900">{report.id}</h2>
+                          <h2 className="font-semibold text-[#0a2e1e]">{report.id}</h2>
                           <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(report.status)}`}>
                             {getStatusIcon(report.status)}
                             {report.status.charAt(0).toUpperCase() + report.status.slice(1)}
@@ -322,10 +312,8 @@ const ReportsPage: React.FC = () => {
           {/* Empty State */}
           {filteredReports.length === 0 && (
             <div className="text-center py-12">
-              <svg className="w-16 h-16 text-slate-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              <h2 className="text-lg font-medium text-slate-900 mb-2">No reports found</h2>
+              <FileText className="w-16 h-16 text-slate-400 mx-auto mb-4" />
+              <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">No reports found</h2>
               <p className="text-slate-600">Try adjusting your search or filter criteria.</p>
             </div>
           )}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Check } from "lucide-react";
 
 
 interface EngagementSectionProps {
@@ -73,30 +74,26 @@ const EngagementSection: React.FC<EngagementSectionProps> = ({ blogId }) => {
     <div className="w-full py-8">
       <div className="flex items-center justify-center gap-4">
         <button 
-          className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+          className={`flex items-center gap-2 px-6 py-3 rounded-none font-medium transition-all duration-200 ${
             userReaction === 'like' 
-              ? 'bg-green-600 text-white shadow-lg scale-105' 
-              : 'bg-slate-100 text-slate-700 hover:bg-green-50 hover:text-green-800 hover:shadow-md'
+              ? 'bg-[#0e7c66] text-white shadow-lg scale-105' 
+              : 'bg-slate-100 text-slate-700 hover:bg-[#d4ede4] hover:text-[#0a2e1e] hover:shadow-md'
           }`}
           onClick={handleLike}
         >
-          <svg viewBox="0 0 24 24" fill={userReaction === 'like' ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
-          </svg>
+          <Check className="w-6 h-6" />
           <span>{likes > 0 ? likes : 'Like'}</span>
         </button>
         
         <button 
-          className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+          className={`flex items-center gap-2 px-6 py-3 rounded-none font-medium transition-all duration-200 ${
             userReaction === 'dislike' 
               ? 'bg-red-600 text-white shadow-lg scale-105' 
               : 'bg-slate-100 text-slate-700 hover:bg-red-50 hover:text-red-600 hover:shadow-md'
           }`}
           onClick={handleDislike}
         >
-          <svg viewBox="0 0 24 24" fill={userReaction === 'dislike' ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" className="w-5 h-5 transform rotate-180">
-            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
-          </svg>
+          <Check className="w-6 h-6" />
           <span>{dislikes > 0 ? dislikes : 'Dislike'}</span>
         </button>
       </div>

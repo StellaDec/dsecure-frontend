@@ -79,7 +79,7 @@ export default function AdminSettings() {
       {/* SEO Meta Tags */}
       <SEOHeadNative seo={getSEOForPage("admin-settings")} />
 
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div className="flex-1 min-w-0">
@@ -145,7 +145,7 @@ export default function AdminSettings() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors ${
                       activeTab === tab.id
-                        ? "bg-emerald-100 text-emerald-700 font-medium"
+                        ? "bg-[#d4ede4] text-[#0a2e1e] font-medium"
                         : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                     }`}
                   >
@@ -185,7 +185,7 @@ export default function AdminSettings() {
                           e.target.value,
                         )
                       }
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     />
                   </div>
                   <div>
@@ -203,7 +203,7 @@ export default function AdminSettings() {
                         )
                       }
                       rows={3}
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -221,7 +221,7 @@ export default function AdminSettings() {
                             e.target.value,
                           )
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                       >
                         <option value="en">English</option>
                         <option value="es">Spanish</option>
@@ -243,7 +243,7 @@ export default function AdminSettings() {
                             e.target.value,
                           )
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                       >
                         <option value="UTC">UTC</option>
                         <option value="EST">Eastern Time</option>
@@ -264,7 +264,7 @@ export default function AdminSettings() {
                           e.target.checked,
                         )
                       }
-                      className="rounded border-slate-300 text-emerald-800 focus:ring-emerald-500"
+                      className="rounded border-slate-300 text-[#0a2e1e] focus:ring-emerald-500"
                     />
                     <label
                       htmlFor="maintenanceMode"
@@ -306,7 +306,7 @@ export default function AdminSettings() {
                             Number.parseInt(e.target.value, 10),
                           )
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                       />
                     </div>
                     <div>
@@ -326,7 +326,7 @@ export default function AdminSettings() {
                             Number.parseInt(e.target.value, 10),
                           )
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                       />
                     </div>
                   </div>
@@ -347,7 +347,7 @@ export default function AdminSettings() {
                           Number.parseInt(e.target.value, 10),
                         )
                       }
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     />
                   </div>
                   <div className="space-y-3">
@@ -363,7 +363,7 @@ export default function AdminSettings() {
                             e.target.checked,
                           )
                         }
-                        className="rounded border-slate-300 text-emerald-800 focus:ring-emerald-500"
+                        className="rounded border-slate-300 text-[#0a2e1e] focus:ring-emerald-500"
                       />
                       <label
                         htmlFor="requireSpecialChars"
@@ -384,7 +384,7 @@ export default function AdminSettings() {
                             e.target.checked,
                           )
                         }
-                        className="rounded border-slate-300 text-emerald-800 focus:ring-emerald-500"
+                        className="rounded border-slate-300 text-[#0a2e1e] focus:ring-emerald-500"
                       />
                       <label
                         htmlFor="twoFactorAuth"
@@ -445,7 +445,7 @@ export default function AdminSettings() {
                               e.target.checked,
                             )
                           }
-                          className="rounded border-slate-300 text-emerald-800 focus:ring-emerald-500"
+                          className="rounded border-slate-300 text-[#0a2e1e] focus:ring-emerald-500"
                         />
                       </div>
                     ),
@@ -474,16 +474,16 @@ export default function AdminSettings() {
                         Total Licenses
                       </div>
                     </div>
-                    <div className="text-center p-4 bg-blue-50 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">
+                    <div className="text-center p-4 bg-[#d4ede4] rounded-lg">
+                      <div className="text-2xl font-bold text-[#0a2e1e]">
                         {settings.license.usedLicenses}
                       </div>
                       <div className="text-sm text-slate-600">
                         Used Licenses
                       </div>
                     </div>
-                    <div className="text-center p-4 bg-green-50 rounded-lg">
-                      <div className="text-2xl font-bold text-green-800">
+                    <div className="text-center p-4 bg-[#d4ede4] rounded-lg">
+                      <div className="text-2xl font-bold text-[#0a2e1e]">
                         {settings.license.availableLicenses}
                       </div>
                       <div className="text-sm text-slate-600">
@@ -506,7 +506,7 @@ export default function AdminSettings() {
                           e.target.value,
                         )
                       }
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     />
                   </div>
                   <div className="flex items-center gap-3">
@@ -521,7 +521,7 @@ export default function AdminSettings() {
                           e.target.checked,
                         )
                       }
-                      className="rounded border-slate-300 text-emerald-800 focus:ring-emerald-500"
+                      className="rounded border-slate-300 text-[#0a2e1e] focus:ring-emerald-500"
                     />
                     <label
                       htmlFor="autoRenewal"

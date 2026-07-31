@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ChromebookDataRisksBlog: React.FC = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-rose-50/20 via-pink-50/10 to-white">
+      <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
             title: "Chromebook Data Security Risks",
@@ -23,16 +23,16 @@ const ChromebookDataRisksBlog: React.FC = () => {
         />
 
         {/* Hero Section - Full Width */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white shadow-none">
           <Reveal>
             <div className="text-center px-6">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-rose-700 bg-rose-100 rounded-full mb-4">
+              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
                 Device Security
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
                 Storing Data on Chromebook? Understand the Hidden Risks
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Chromebooks store sensitive data on built-in SSDs despite their
                 cloud-first design. Understanding these vulnerabilities is
                 essential for protecting your organization's information.
@@ -44,11 +44,11 @@ const ChromebookDataRisksBlog: React.FC = () => {
         {/* Main Content - Full Width */}
         <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               {/* Introduction */}
               <div className="space-y-6">
-                <p className="text-slate-700 leading-loose text-xl">
-                  <strong className="text-rose-800">Chromebooks</strong>{" "}
+                <p className="text-[#5a6672] leading-loose text-xl">
+                  <strong className="text-[#0a2e1e]">Chromebooks</strong>{" "}
                   represent a family of devices including laptops, tablets,
                   convertibles, and detachable form factors running on Chrome OS
                   — a Linux-based operating system from Google. Available from
@@ -56,7 +56,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
                   Samsung, these devices have become increasingly popular in
                   business and education environments.
                 </p>
-                <p className="text-slate-700 leading-loose text-lg">
+                <p className="text-[#5a6672] leading-loose text-lg">
                   Chromebooks primarily rely on the Google Chrome browser to
                   perform tasks and store most data on the cloud. This
                   cloud-focused design allows them to perform well using basic
@@ -72,12 +72,12 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* Risk 1: Local Data Storage */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Risk #1: Local Data Storage — Not Everything Lives in the Cloud
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Although Chromebooks store most data on Google Drive, they have
                 built-in SSDs — similar to Windows laptops or MacBooks — that
                 allow local data storage and application installation. These
@@ -85,11 +85,11 @@ const ChromebookDataRisksBlog: React.FC = () => {
                 overlooked.
               </p>
 
-              <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-3">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none mt-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   The Hidden Vulnerability
                 </h3>
-                <p className="text-slate-700 text-lg leading-loose">
+                <p className="text-[#5a6672] text-lg leading-loose">
                   The fact that Chromebook is primarily designed for web-based
                   computing and cloud storage can divert users' attention from
                   'local data' comprising sensitive information such as web
@@ -101,11 +101,11 @@ const ChromebookDataRisksBlog: React.FC = () => {
               </div>
 
               <div className="space-y-6 mt-6">
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     High-Risk Scenarios
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Consider scenarios when Chromebooks leave your
                     organization's custody: devices handed over for repair or
                     upgrade, equipment exchange programs, or field teams
@@ -114,11 +114,11 @@ const ChromebookDataRisksBlog: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-rose-500 pl-8 py-2">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Potential Consequences
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     These situations can expose sensitive business information
                     or leak individual PII, leading to identity theft, financial
                     fraud, intellectual property theft, data breach incidents,
@@ -131,7 +131,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* Risk 2: Security Vulnerabilities */}
           <Reveal>
-            <div className="bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 rounded-xl shadow-lg p-10 mt-10 text-white">
+            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
                 Risk #2: Built-in Security Features Have Limitations
               </h2>
@@ -144,7 +144,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
                 authentication through cryptographic tokens.
               </p>
 
-              <div className="bg-white/10 rounded-xl p-6 mb-6">
+              <div className="bg-white/10 rounded-none p-6 mb-6">
                 <h3 className="font-bold text-lg mb-3">
                   Historical Vulnerability Example
                 </h3>
@@ -158,7 +158,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-white/10 rounded-xl p-6">
+              <div className="bg-white/10 rounded-none p-6">
                 <h3 className="font-bold text-lg mb-3">The Ongoing Reality</h3>
                 <p className="text-white/90 text-lg leading-loose">
                   Though specific vulnerabilities get fixed, there is no
@@ -172,43 +172,43 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* What Doesn't Work */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 What Doesn't Protect Your Chromebook Data
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 Many users believe standard data removal methods will protect
                 their information. However, common approaches fail to provide
                 genuine security:
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mt-6">
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     File Deletion
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Simply deleting files only removes pointers — actual data
                     remains on the SSD and can be recovered with basic recovery
                     tools.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Formatting
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Formatting prepares the drive for new use but doesn't
                     destroy existing data. Publicly available recovery software
                     can retrieve formatted data.
                   </p>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                  <h3 className="font-bold text-slate-900 text-xl mb-3">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
+                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                     Factory Reset
                   </h3>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     Factory reset returns the device to original settings but
                     cannot guarantee permanent data removal. Data often remains
                     recoverable.
@@ -220,12 +220,12 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* The Solution */}
           <Reveal>
-            <div className="bg-white rounded-xl shadow-md border-b-4 border-rose-400 p-8 md:p-12 space-y-10 text-justify">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Secure <Link to="/products/drive-eraser" className="text-rose-600 hover:underline font-medium">Data Erasure</Link>: The Reliable Solution
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
+                Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Erasure</Link>: The Reliable Solution
               </h2>
 
-              <p className="text-slate-700 leading-loose text-lg">
+              <p className="text-[#5a6672] leading-loose text-lg">
                 The only way to truly nullify data risks on Chromebooks is to
                 permanently remove data such that no one can access or recover
                 it. The data erasure technique addresses this by overwriting
@@ -233,35 +233,35 @@ const ChromebookDataRisksBlog: React.FC = () => {
                 unrecoverable through any method or tool.
               </p>
 
-              <div className="bg-rose-50 border border-rose-200 rounded-xl p-8 mt-6">
-                <h3 className="font-bold text-slate-900 text-xl mb-4">
+              <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-8 mt-6">
+                <h3 className="font-bold text-[#0a2e1e] text-xl mb-4">
                   D-Secure Chromebook Erasure Benefits
                 </h3>
-                <ul className="space-y-4 text-slate-700 text-lg">
+                <ul className="space-y-4 text-[#5a6672] text-lg">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     <strong>Proprietary Overwriting:</strong> Uses advanced
                     techniques to overwrite all existing data on the
                     Chromebook's built-in storage
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     <strong>Complete Peace of Mind:</strong> Enables safe
                     sell-off, return, reallocation, or exchange of devices
                     without data concerns
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     <strong>Easy-to-Use DIY Tool:</strong> Requires minimal
                     technical expertise to deploy
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     <strong>Documented Proof:</strong> Generates tamper-proof
                     certificates after wiping for compliance requirements
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-rose-500 rounded-full mr-3 mt-2.5"></span>
+                    <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
                     <strong>Quick Deployment:</strong> Start erasing in under 15
                     minutes to protect data privacy across all threat scenarios
                   </li>
@@ -272,47 +272,47 @@ const ChromebookDataRisksBlog: React.FC = () => {
 
           {/* Best Practices */}
           <Reveal>
-            <div className="bg-rose-50 border border-rose-200 rounded-xl p-10 mt-10 space-y-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-8">
+              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
                 Best Practices for Chromebook Data Security
               </h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     1
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Inventory Local Data:</strong> Regularly audit what
                     data is stored locally on Chromebook SSDs, not just in the
                     cloud.
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     2
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Erase Before Transfer:</strong> Always perform
                     certified data erasure before devices leave organizational
                     custody for any reason.
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     3
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Document Everything:</strong> Maintain certificates
                     of erasure for all devices processed to demonstrate
                     compliance.
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0e7c66] text-white rounded-full flex items-center justify-center font-bold">
                     4
                   </span>
-                  <p className="text-slate-700 text-lg leading-loose">
+                  <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Include in Policy:</strong> Formally incorporate
                     Chromebook erasure into your organization's data protection
                     policies.

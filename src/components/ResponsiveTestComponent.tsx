@@ -44,11 +44,11 @@ const ResponsiveTestComponent: React.FC = () => {
   ]
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 bg-white border border-slate-200 rounded-lg shadow-lg p-4 max-w-sm">
+    <div className="fixed bottom-4 right-4 z-50 bg-white border border-slate-200 rounded-none shadow-lg p-4 max-w-sm">
       <h3 className="font-bold text-slate-900 mb-3">Responsive Test Panel</h3>
       
       {/* Current Screen Info */}
-      <div className="bg-slate-50 rounded-lg p-3 mb-4">
+      <div className="bg-slate-50 rounded-none p-3 mb-4">
         <div className="text-sm text-slate-600">Current Screen:</div>
         <div className="font-mono text-lg font-bold text-slate-900">
           {screenSize.width} × {screenSize.height}
@@ -95,7 +95,7 @@ const ResponsiveTestComponent: React.FC = () => {
         {/* Button Test */}
         <div className="mb-3">
           <div className="text-xs text-slate-500 mb-1">Responsive Button:</div>
-          <button className="btn-responsive bg-brand text-white rounded-lg">
+          <button className="btn-responsive bg-brand text-white rounded-none">
             Test Button
           </button>
         </div>
@@ -115,11 +115,11 @@ const ResponsiveTestComponent: React.FC = () => {
         <div className="space-y-1">
           <div className="text-xs text-slate-500">Visibility Tests:</div>
           <div className="show-xs bg-red-100 text-red-800 text-xs p-1 rounded">XS Only</div>
-          <div className="show-sm bg-blue-100 text-blue-800 text-xs p-1 rounded">SM Only</div>
-          <div className="show-md bg-green-100 text-green-800 text-xs p-1 rounded">MD Only</div>
-          <div className="show-lg bg-yellow-100 text-yellow-800 text-xs p-1 rounded">LG Only</div>
-          <div className="show-xl bg-purple-100 text-purple-800 text-xs p-1 rounded">XL Only</div>
-          <div className="show-xxl bg-pink-100 text-pink-800 text-xs p-1 rounded">XXL Only</div>
+          <div className="show-sm bg-[#d4ede4] text-[#0a2e1e] text-xs p-1 rounded">SM Only</div>
+          <div className="show-md bg-[#d4ede4] text-[#0a2e1e] text-xs p-1 rounded">MD Only</div>
+          <div className="show-lg bg-[#d4ede4] text-[#0a2e1e] text-xs p-1 rounded">LG Only</div>
+          <div className="show-xl bg-[#d4ede4] text-[#0a2e1e] text-xs p-1 rounded">XL Only</div>
+          <div className="show-xxl bg-[#d4ede4] text-[#0a2e1e] text-xs p-1 rounded">XXL Only</div>
         </div>
       </div>
 

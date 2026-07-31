@@ -45,8 +45,22 @@ export interface FormActivityLog {
   fieldName: string;
   /** Masked value ya filled status */
   fieldStatus: 'focused' | 'filled' | 'submitted';
+  /** Field me type kiya gaya data (masked for sensitive) */
+  fieldValue?: string;
   /** Time spent on field in seconds */
   durationSeconds: number;
+  /** Timestamp */
+  timestamp: number;
+}
+
+// Form submission data capture
+export interface FormSubmissionLog {
+  /** Form ka ID ya name */
+  formId: string;
+  /** Page route path */
+  pagePath: string;
+  /** Captured form data (sensitive fields masked) */
+  formData: Record<string, string>;
   /** Timestamp */
   timestamp: number;
 }
@@ -69,6 +83,8 @@ export interface UserSessionReport {
   clickTrace: UserClickLog[];
   /** Form activity trace */
   formTrace: FormActivityLog[];
+  /** Submitted forms data */
+  formSubmissions?: FormSubmissionLog[];
   /** Calculated Purchase Intent Score (0 - 100) */
   intentScore: number;
   /** Intent level classification */

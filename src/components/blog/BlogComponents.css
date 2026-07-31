@@ -233,54 +233,7 @@
   color: #1e293b;
 }
 
-.comment-form textarea,
-.reply-form textarea {
-  width: 100%;
-  min-height: 120px;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  resize: vertical;
-  color: #1e293b;
-  background: white;
-}
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 12px;
-}
-
-.comment-section input {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  width: 100%;
-  color: #1e293b;
-  background: white;
-}
-
-.comment-section .primary {
-  margin-top: 12px;
-  background: #0f172a;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.comment-section .primary:hover {
-  opacity: 0.9;
-}
-
-.comment-section .primary:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
 
 .comment-card {
   background: #ffffff;

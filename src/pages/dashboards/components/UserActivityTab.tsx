@@ -154,14 +154,14 @@ const UserActivityTab: React.FC<UserActivityTabProps> = ({
                     <span
                       className={`inline-flex items-center gap-1 ${
                         activity.status === "active"
-                          ? "text-green-800"
+                          ? "text-[#0a2e1e]"
                           : "text-slate-500"
                       }`}
                     >
                       <span
                         className={`w-2 h-2 rounded-full ${
                           activity.status === "active"
-                            ? "bg-green-400"
+                            ? "bg-[#0e7c66]"
                             : "bg-slate-400"
                         }`}
                       ></span>
@@ -185,7 +185,7 @@ const UserActivityTab: React.FC<UserActivityTabProps> = ({
                 setActivityPageSize(parseInt(e.target.value, 10));
                 setUserActivityPage(1);
               }}
-              className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+              className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-none text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
             >
               {pageSizeOptions.map((size) => (
                 <option key={size} value={size}>
@@ -216,7 +216,7 @@ const UserActivityTab: React.FC<UserActivityTabProps> = ({
               <button
                 onClick={() => setUserActivityPage((prev) => Math.max(prev - 1, 1))}
                 disabled={userActivityPage === 1}
-                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span className="sm:hidden">Prev</span>
                 <span className="hidden sm:inline">Previous</span>
@@ -234,7 +234,7 @@ const UserActivityTab: React.FC<UserActivityTabProps> = ({
                   userActivityPage >=
                   Math.ceil(effectiveActivityData.length / activityPageSize)
                 }
-                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Next
               </button>

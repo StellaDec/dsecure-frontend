@@ -32,11 +32,11 @@ export default function PageLoadingSkeleton() {
   // Blog pages (listing or detail)
   if (path.startsWith('/blog')) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/30">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-[#0a2e1e]/30">
         <div className="container-app py-12 sm:py-20 space-y-12">
           {/* Blog Hero Skeleton */}
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Skeleton className="h-12 sm:h-16 w-3/4 mx-auto rounded-xl" />
+            <Skeleton className="h-12 sm:h-16 w-3/4 mx-auto rounded-none" />
             <Skeleton className="h-4 sm:h-6 w-full mx-auto" />
             <Skeleton className="h-4 sm:h-6 w-2/3 mx-auto" />
           </div>
@@ -51,9 +51,9 @@ export default function PageLoadingSkeleton() {
           {/* Blog Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-6 space-y-4 shadow-sm">
+              <div key={i} className="bg-white rounded-none border border-slate-200 p-6 space-y-4 shadow-sm">
                 <div className="flex justify-between items-center">
-                  <Skeleton className="h-10 w-10 rounded-lg" />
+                  <Skeleton className="h-10 w-10 rounded-none" />
                   <Skeleton className="h-6 w-20 rounded-full" />
                 </div>
                 <Skeleton className="h-6 w-full" />
@@ -77,7 +77,7 @@ export default function PageLoadingSkeleton() {
   // Dashboard pages (keeping for backward compatibility, but routes to /admin)
   if (path === '/dashboard' || path === '/admin') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e]">
         <div className="container-app py-4 sm:py-8 space-y-6 sm:space-y-8">
           {/* Dashboard header */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -91,7 +91,7 @@ export default function PageLoadingSkeleton() {
           {/* Stats grid - mobile optimized */}
           <div className={`grid ${isMobile ? 'grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'} gap-4 sm:gap-6`}>
             {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="bg-white p-3 sm:p-6 rounded-lg border border-slate-200">
+              <div key={i} className="bg-white p-3 sm:p-6 rounded-none border border-slate-200">
                 <div className="flex items-center justify-between mb-2 sm:mb-4">
                   <Skeleton className="h-6 sm:h-8 w-6 sm:w-8 rounded-full" />
                   <Skeleton className="h-3 sm:h-4 w-8 sm:w-12" />
@@ -126,7 +126,7 @@ export default function PageLoadingSkeleton() {
           <SkeletonForm
             fields={path === '/register' ? 4 : 2}
             hasTitle={true}
-            className="px-4 sm:px-8 py-8 sm:py-12 rounded-2xl bg-white/60 backdrop-blur-xl shadow-2xl"
+            className="px-4 sm:px-8 py-8 sm:py-12 rounded-none bg-white/60 backdrop-blur-xl shadow-2xl"
           />
         </div>
       </div>
@@ -136,7 +136,7 @@ export default function PageLoadingSkeleton() {
   // Pricing page
   if (path === '/pricing') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e]">
         <div className="container-app py-8 sm:py-16 space-y-8 sm:space-y-12">
           {/* Header */}
           <div className="text-center space-y-4">
@@ -147,7 +147,7 @@ export default function PageLoadingSkeleton() {
           {/* Pricing cards */}
           <div className={`grid ${isMobile ? 'grid-cols-1 gap-6' : 'md:grid-cols-3 gap-8'}`}>
             {Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="bg-white rounded-xl p-4 sm:p-8 border border-slate-200 shadow-lg">
+              <div key={i} className="bg-white rounded-none p-4 sm:p-8 border border-slate-200 shadow-lg">
                 <div className="space-y-4 sm:space-y-6">
                   <div className="text-center space-y-2">
                     <Skeleton className="h-5 sm:h-6 w-20 sm:w-24 mx-auto" />
@@ -177,7 +177,7 @@ export default function PageLoadingSkeleton() {
   // Services page
   if (path === '/services') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e]">
         <div className="container-app py-16 space-y-12">
           {/* Hero section */}
           <div className="text-center space-y-6">
@@ -209,7 +209,7 @@ export default function PageLoadingSkeleton() {
   // Solutions page
   if (path === '/solutions') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e]">
         <div className="container-app py-16 space-y-12">
           {/* Header */}
           <div className="text-center space-y-4">
@@ -222,7 +222,7 @@ export default function PageLoadingSkeleton() {
             {Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <Skeleton className="h-12 w-12 rounded-lg" />
+                  <Skeleton className="h-12 w-12 rounded-none" />
                   <Skeleton className="h-8 w-48" />
                 </div>
                 <div className="space-y-4 pl-16">
@@ -240,7 +240,7 @@ export default function PageLoadingSkeleton() {
 
   // Default page skeleton for other pages (home, about, contact, etc.)
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e]">
       <div className="container-app py-8 sm:py-16 space-y-8 sm:space-y-12">
         {/* Hero section */}
         <div className={`grid ${isMobile ? 'grid-cols-1 gap-6' : 'md:grid-cols-2 gap-8'} items-center`}>
@@ -258,7 +258,7 @@ export default function PageLoadingSkeleton() {
             <Skeleton className="h-3 sm:h-4 w-48 sm:w-64" />
           </div>
           <div className={isMobile ? 'order-first' : 'order-first md:order-none'}>
-            <Skeleton className="aspect-[16/10] md:aspect-[4/3] w-full rounded-xl" />
+            <Skeleton className="aspect-[16/10] md:aspect-[4/3] w-full rounded-none" />
           </div>
         </div>
 

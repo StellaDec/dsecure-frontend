@@ -188,7 +188,7 @@ export default function AddUser() {
       <SEOHeadNative seo={getSEOForPage("add-user")} />
 
 
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-[#0e7c66] via-white to-[#0a2e1e] min-h-screen">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div className="flex-1 min-w-0">
@@ -225,8 +225,8 @@ export default function AddUser() {
           {/* Helper for role styles */}
           {(() => {
             const getRoleBadgeStyles = (role: string) => {
-              if (role === "admin") return "bg-purple-100 text-purple-800";
-              if (role === "manager") return "bg-blue-100 text-blue-800";
+              if (role === "admin") return "bg-[#d4ede4] text-[#0a2e1e]";
+              if (role === "manager") return "bg-[#d4ede4] text-[#0a2e1e]";
               return "bg-slate-100 text-slate-800";
             };
 
@@ -237,17 +237,17 @@ export default function AddUser() {
                   <div className="card mb-6">
                     <div className="p-6">
                       <div className="flex items-center gap-3">
-                        <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-emerald-500"></div>
+                        <div className="animate-spin rounded-none h-6 w-6 border-b-2 border-[#0e7c66]"></div>
                         <p className="text-slate-600">Loading your details...</p>
                       </div>
                     </div>
                   </div>
                 ) : loggedInUserData ? (
-                  <div className="card mb-6 bg-gradient-to-br from-emerald-50 to-teal-50">
-                    <div className="px-6 py-4 border-b border-emerald-200">
+                  <div className="card mb-6 bg-gradient-to-br from-[#0e7c66] to-[#0a2e1e]">
+                    <div className="px-6 py-4 border-b border-[#d4ede4]">
                       <div className="flex items-center gap-2">
                         <svg
-                          className="w-5 h-5 text-emerald-800"
+                          className="w-5 h-5 text-[#0a2e1e]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -295,7 +295,7 @@ export default function AddUser() {
                             Role
                           </p>
                           <span
-                            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getRoleBadgeStyles(loggedInUserData.role)}`}
+                            className={`inline-flex items-center px-2.5 py-0.5 rounded-none text-xs font-medium ${getRoleBadgeStyles(loggedInUserData.role)}`}
                           >
                             {loggedInUserData.role}
                           </span>
@@ -339,7 +339,7 @@ export default function AddUser() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     placeholder="Enter full name"
                   />
                 </div>
@@ -355,7 +355,7 @@ export default function AddUser() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     placeholder="user@example.com"
                   />
                 </div>
@@ -375,7 +375,7 @@ export default function AddUser() {
                     onChange={handleInputChange}
                     required
                     minLength={8}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     placeholder="Minimum 8 characters"
                   />
                 </div>
@@ -391,7 +391,7 @@ export default function AddUser() {
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                     placeholder="Confirm password"
                   />
                 </div>
@@ -408,7 +408,7 @@ export default function AddUser() {
                     name="role"
                     value={formData.role}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                   >
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
@@ -424,7 +424,7 @@ export default function AddUser() {
                     name="group"
                     value={formData.group}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                   >
                     {groups.map((group) => (
                       <option key={group} value={group}>
@@ -449,7 +449,7 @@ export default function AddUser() {
                     onChange={handleInputChange}
                     min="1"
                     max="50"
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                   />
                 </div>
 
@@ -462,7 +462,7 @@ export default function AddUser() {
                     name="status"
                     value={formData.status}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                   >
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>

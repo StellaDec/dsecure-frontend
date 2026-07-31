@@ -186,7 +186,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="absolute left-1 top-1/2 transform -translate-y-1/2 h-[calc(100%-8px)] px-2 sm:px-3 text-xs sm:text-sm bg-slate-50 border-r border-slate-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-emerald-500 z-10 w-[100px] sm:w-[120px]"
+            className="absolute left-1 top-1/2 transform -translate-y-1/2 h-[calc(100%-8px)] px-2 sm:px-3 text-xs sm:text-sm bg-slate-50 border-r border-slate-300 rounded-none focus:outline-none focus:ring-1 focus:ring-emerald-500 z-10 w-[100px] sm:w-[120px]"
           >
             <option value="">All</option>
             {categories.map(cat => (
@@ -204,7 +204,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onFocus={() => { setIsFocused(true); setShowDropdown(true); }}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className={`w-full py-3 sm:py-4 ${categories.length > 0 ? 'pl-[138px] sm:pl-[158px]' : 'pl-10 sm:pl-12'} pr-20 sm:pr-24 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm sm:text-base`}
+          className={`w-full py-3 sm:py-4 ${categories.length > 0 ? 'pl-[138px] sm:pl-[158px]' : 'pl-10 sm:pl-12'} pr-20 sm:pr-24 rounded-none border border-slate-300 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66] transition-all text-sm sm:text-base`}
         />
 
         {/* Search Icon */}
@@ -243,7 +243,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         <button
           type="button"
           onClick={() => handleSearch(searchValue)}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-3 sm:px-4 py-2 rounded-md hover:from-emerald-700 hover:to-teal-700 transition-all text-xs sm:text-sm font-medium"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-[#0e7c66] to-[#0a2e1e] text-white px-3 sm:px-4 py-2 rounded-none hover:from-[#0e7c66] hover:to-[#0a2e1e] transition-all text-xs sm:text-sm font-medium"
         >
           Go
         </button>
@@ -251,14 +251,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
       {/* Dropdown Suggestions */}
       {shouldShowDropdown && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-none shadow-xl z-50 max-h-96 overflow-y-auto">
           {/* Recent Searches Header */}
           {!searchValue && recentSearches.length > 0 && (
             <div className="flex items-center justify-between px-4 py-2 border-b border-slate-100">
               <span className="text-xs font-semibold text-slate-500 uppercase">Recent Searches</span>
               <button
                 onClick={clearRecentSearches}
-                className="text-xs text-emerald-800 hover:text-emerald-700 font-medium"
+                className="text-xs text-[#0a2e1e] hover:text-[#0a2e1e] font-medium"
               >
                 Clear
               </button>
@@ -271,8 +271,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
               key={index}
               onClick={() => handleSuggestionClick(suggestion.text)}
               onMouseEnter={() => setHighlightedIndex(index)}
-              className={`w-full text-left px-4 py-3 hover:bg-emerald-50 transition-colors flex items-center gap-3 ${
-                highlightedIndex === index ? 'bg-emerald-50' : 'bg-white'
+              className={`w-full text-left px-4 py-3 hover:bg-[#d4ede4] transition-colors flex items-center gap-3 ${
+                highlightedIndex === index ? 'bg-[#d4ede4]' : 'bg-white'
               }`}
             >
               {/* Icon based on type */}
@@ -281,7 +281,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
               ) : suggestion.type === 'trending' ? (
-                <svg className="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-[#0a2e1e] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
                 </svg>
               ) : (

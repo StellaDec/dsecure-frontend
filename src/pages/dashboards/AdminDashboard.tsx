@@ -4,6 +4,8 @@ import { getSEOForPage } from "../../utils/seo";
 import { useNotification } from "@/contexts/NotificationContext";
 // ✅ NAYA CODE: Added startTransition to allow navigation to interrupt data-sync updates
 import { useState, useMemo, useEffect, startTransition } from "react";
+import { AlertTriangle, ArrowDownToLine, ArrowRightLeft, BadgeCheck, BarChart, BarChart2, Calendar, Check, ChevronDown, ChevronRight, ChevronUp, Clock, Cloud, CreditCard, Database, HardDrive, Download, Edit, FileText, File, Folder, Globe, Info, Key, Loader2, Lock, Mail, MapPin, Package, Plus, RefreshCw, Server, Settings, Tag, TrendingUp, UserPlus, Users, X, Zap } from 'lucide-react';
+
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -14,14 +16,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-const COLORS = [
-  "#0088FE",
-  "#00C49F",
-  "#FFBB28",
-  "#FF8042",
-  "#8884d8",
-  "#82ca9d",
-];
+const COLORS = ['#0a2e1e', '#0e7c66', '#22a689', '#d4ede4', '#a7d5c5'];
 import {
   AdminDashboardAPI,
   type DashboardStats,
@@ -1409,21 +1404,21 @@ export default function AdminDashboard() {
         value: statsData.totalLicenses || "0",
         change: statsData.changes?.totalLicenses?.value || "0",
         trend: statsData.changes?.totalLicenses?.trend || "up",
-        color: "bg-blue-500",
+        color: "bg-[#0e7c66]",
       },
       {
         label: "Active Users",
         value: statsData.activeUsers,
         change: statsData.changes?.activeUsers?.value || "0",
         trend: statsData.changes?.activeUsers?.trend || "up",
-        color: "bg-emerald-500",
+        color: "bg-[#0e7c66]",
       },
       {
         label: "Available Licenses",
         value: statsData.availableLicenses,
         change: statsData.changes?.availableLicenses?.value || "0",
         trend: statsData.changes?.availableLicenses?.trend || "up",
-        color: "bg-orange-500",
+        color: "bg-[#0e7c66]",
       },
       {
         label: "Success Rate",
@@ -1432,7 +1427,7 @@ export default function AdminDashboard() {
           : performanceData.successRate || "0%",
         change: statsData.changes?.successRate?.value || "0%",
         trend: statsData.changes?.successRate?.trend || "up",
-        color: "bg-purple-500",
+        color: "bg-[#0e7c66]",
       },
     ];
   }, [dashboardStats, isDemo, performanceData]);
@@ -1812,12 +1807,12 @@ export default function AdminDashboard() {
   return (
     <>
       <SEOHeadNative seo={getSEOForPage("admin-dashboard")} />
-      <div className="container-app py-8 lg:py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50 min-h-screen">
+      <div className="container-app py-8 lg:py-12 bg-white min-h-screen">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-3 mb-2">
-              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0a2e1e]">
                 {t("dashboard.adminDashboard")}
               </h1>
               {/* Role Badge */}
@@ -1828,7 +1823,7 @@ export default function AdminDashboard() {
               </span>
             </div>
             <p className="mt-2 text-slate-600 flex flex-wrap items-center gap-2">
-              <span className="inline-block w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>
+              <span className="inline-block w-2 h-2 rounded-full bg-[#0e7c66] flex-shrink-0"></span>
               <span className="break-all sm:break-normal">
                 {t("dashboard.welcomeBack")},{" "}
                 {storedUserData?.name ||
@@ -1854,7 +1849,7 @@ export default function AdminDashboard() {
             {/* Profile Button - Always visible with dynamic avatar */}
             <button
               onClick={() => setShowProfileModal(true)}
-              className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-brand-500 to-brand-700 hover:from-brand-600 hover:to-brand-800 rounded-lg transition-all duration-200 shadow-lg"
+              className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-[#0e7c66] hover:from-brand-600 hover:to-brand-800 rounded-none transition-all duration-200 shadow-lg"
             >
               <span>{t("dashboard.profile")}</span>
             </button>
@@ -1863,33 +1858,19 @@ export default function AdminDashboard() {
             {/* {isPrivateCloudEnabled && !isDemo && (
               <button
                 onClick={() => navigate('/admin/private-cloud-setup')}
-                className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 rounded-lg transition-all duration-200 shadow-lg"
+                className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-[#0e7c66] hover:from-[#0e7c66] hover:to-[#0a2e1e] rounded-none transition-all duration-200 shadow-lg"
                 title="Private Cloud Setup"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                </svg>
+                <Cloud className="w-5 h-5" />
                 <span className="hidden sm:inline">Private Cloud</span>
               </button>
             )} */}
             <button
               onClick={() => navigate("/admin/private-cloud-setup")}
-              className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 rounded-lg transition-all duration-200 shadow-lg"
+              className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-[#0e7c66] hover:from-[#0e7c66] hover:to-[#0a2e1e] rounded-none transition-all duration-200 shadow-lg"
               title="Private Cloud Setup"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                />
-              </svg>
+              <Cloud className="w-5 h-5" />
               <span className="hidden sm:inline">Private Cloud</span>
             </button>
 
@@ -1905,28 +1886,10 @@ export default function AdminDashboard() {
                 }
                 setSettingsTab(isSuperAdmin ? "billing" : "password");
               }}
-              className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg transition-all duration-200 shadow-sm"
+              className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-none transition-all duration-200 shadow-sm"
               title="Settings"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
+              <Settings className="w-5 h-5" />
               <span className="hidden sm:inline">Settings</span>
             </button>
 
@@ -1938,22 +1901,10 @@ export default function AdminDashboard() {
                   // Page will handle enabled/disabled state internally
                   navigate('/admin/private-cloud-setup');
                 }}
-                className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-purple-700 bg-purple-50 hover:bg-purple-100 border border-purple-300 rounded-lg transition-all duration-200 shadow-sm"
+                className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-[#0a2e1e] bg-[#d4ede4] hover:bg-[#d4ede4] border border-[#d0d5dc] rounded-none transition-all duration-200 shadow-sm"
                 title="Private Cloud"
               >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                  />
-                </svg>
+                <Cloud className="w-5 h-5" />
                 <span className="hidden sm:inline">Private Cloud</span>
               </button>
             )} */}
@@ -1965,12 +1916,10 @@ export default function AdminDashboard() {
             onClick={() => {
               window.location.href = '/pricing';
             }}
-            className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-emerald-500 to-emerald-700 hover:from-emerald-600 hover:to-emerald-800 rounded-lg transition-all duration-200 shadow-lg"
+            className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-[#0e7c66] hover:from-[#0e7c66] hover:to-[#0a2e1e] rounded-none transition-all duration-200 shadow-lg"
             title="Renew Your License"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
+            <RefreshCw className="w-5 h-5" />
             <span className="hidden sm:inline">Renew License</span>
           </button> */}
 
@@ -1979,21 +1928,9 @@ export default function AdminDashboard() {
               <RoleBased permission="canCreateUser">
                 <button
                   onClick={handleAddUser}
-                  className="btn-secondary flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium"
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium"
                 >
-                  <svg
-                    className="w-4 h-4 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
+                  <Plus className="w-4 h-4 flex-shrink-0" />
                   <span>Add User</span>
                 </button>
               </RoleBased>
@@ -2012,19 +1949,7 @@ export default function AdminDashboard() {
                     name: t("dashboard.overview"),
                     permission: "canViewDashboard", // All roles can see
                     iconSvg: (
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                        />
-                      </svg>
+                      <BarChart className="w-5 h-5" />
                     ),
                   },
                   {
@@ -2032,19 +1957,7 @@ export default function AdminDashboard() {
                     name: t("dashboard.licenses"),
                     permission: "canViewLicenses", // All roles except basic user can see
                     iconSvg: (
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"
-                        />
-                      </svg>
+                      <Key className="w-5 h-5" />
                     ),
                   },
                   {
@@ -2052,19 +1965,7 @@ export default function AdminDashboard() {
                     name: t("dashboard.users"),
                     permission: "canViewAllUsers", // Only admin/superadmin/manager
                     iconSvg: (
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      </svg>
+                      <Users className="w-5 h-5" />
                     ),
                   },
                   {
@@ -2072,19 +1973,7 @@ export default function AdminDashboard() {
                     name: t("dashboard.groups"),
                     permission: "canViewAllUsers", // Only admin/superadmin/manager
                     iconSvg: (
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      </svg>
+                      <Users className="w-5 h-5" />
                     ),
                   },
                   {
@@ -2092,19 +1981,7 @@ export default function AdminDashboard() {
                     name: t("dashboard.userActivity"),
                     permission: "canViewAllUsers", // Only admin/superadmin/manager
                     iconSvg: (
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                        />
-                      </svg>
+                      <BarChart className="w-5 h-5" />
                     ),
                   },
                   {
@@ -2112,19 +1989,7 @@ export default function AdminDashboard() {
                     name: t("dashboard.reports"),
                     permission: "canViewReports", // All roles can see
                     iconSvg: (
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        />
-                      </svg>
+                      <FileText className="w-5 h-5" />
                     ),
                   },
                   {
@@ -2132,19 +1997,7 @@ export default function AdminDashboard() {
                     name: t("dashboard.performance"),
                     permission: "canViewDashboard", // All roles can see
                     iconSvg: (
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                        />
-                      </svg>
+                      <TrendingUp className="w-5 h-5" />
                     ),
                   },
                   {
@@ -2152,19 +2005,7 @@ export default function AdminDashboard() {
                     name: "My Downloads",
                     permission: "canViewDashboard", // All roles can see
                     iconSvg: (
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                        />
-                      </svg>
+                      <Download className="w-5 h-5" />
                     ),
                   },
                 ]
@@ -2187,7 +2028,7 @@ export default function AdminDashboard() {
                       onClick={() => setActiveTab(tab.id)}
                       className={`flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm transition-colors whitespace-nowrap ${
                         activeTab === tab.id
-                          ? "border-emerald-500 text-emerald-800"
+                          ? "border-[#0e7c66] text-[#0a2e1e]"
                           : "border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300"
                       }`}
                     >
@@ -2210,7 +2051,7 @@ export default function AdminDashboard() {
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-xl shadow-sm border border-slate-200 p-6"
+                  className="bg-white rounded-none shadow-sm border border-slate-200 p-6"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-3 h-3 rounded-full bg-slate-200" />
@@ -2223,13 +2064,13 @@ export default function AdminDashboard() {
             </div>
 
             {/* Chart Area Skeleton */}
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+            <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
               <div className="h-5 bg-slate-200 rounded w-40 mb-4" />
-              <div className="h-48 bg-slate-100 rounded-lg" />
+              <div className="h-48 bg-slate-100 rounded-none" />
             </div>
 
             {/* Table Skeleton */}
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+            <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
               <div className="h-5 bg-slate-200 rounded w-32 mb-4" />
               <div className="space-y-3">
                 {[1, 2, 3, 4, 5].map((i) => (
@@ -2258,7 +2099,7 @@ export default function AdminDashboard() {
                   {stats.map((stat) => (
                     <div
                       key={stat.label}
-                      className="card !p-4 lg:!p-6 flex items-start justify-between min-w-0 hover:shadow-lg transition-all duration-200"
+                      className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-4 lg:!p-6 flex items-start justify-between min-w-0 hover:shadow-lg transition-all duration-200"
                     >
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-3 mb-2">
@@ -2269,51 +2110,27 @@ export default function AdminDashboard() {
                             {stat.label}
                           </p>
                         </div>
-                        <p className="text-2xl lg:text-3xl font-bold text-slate-900">
+                        <p className="text-2xl lg:text-3xl font-bold text-[#0a2e1e]">
                           {stat.value}
                         </p>
                       </div>
                       <div
                         className={`flex items-center gap-1 text-sm font-medium ml-2 flex-shrink-0 ${
                           stat.trend === "up"
-                            ? "text-green-800"
+                            ? "text-[#0a2e1e]"
                             : "text-red-600"
                         }`}
                       >
                         <span>{stat.change}</span>
-                        <svg
-                          className={`w-4 h-4 ${
-                            stat.trend === "up" ? "rotate-0" : "rotate-180"
-                          }`}
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L10 4.414 6.707 7.707a1 1 0 01-1.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <ChevronUp className="w-5 h-5" />
                       </div>
                     </div>
                   ))}
                 </div>
               ) : (
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-8 text-center mb-8">
-                  <svg
-                    className="w-12 h-12 text-slate-400 mx-auto mb-3"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    />
-                  </svg>
-                  <h2 className="text-lg font-medium text-slate-900 mb-2">
+                <div className="bg-slate-50 border border-slate-200 rounded-none p-8 text-center mb-8">
+                  <BarChart className="w-12 h-12 text-slate-400 mx-auto mb-3" />
+                  <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                     No Statistics Available
                   </h2>
                   <p className="text-sm text-slate-600">
@@ -2326,50 +2143,50 @@ export default function AdminDashboard() {
             {/* Limited Stats for Manager */}
             <RoleBased permission="canViewAllStats" roles={["Manager"]}>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6 mb-8">
-                <div className="card !p-4 lg:!p-6">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-4 lg:!p-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-blue-500 flex-shrink-0"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#0e7c66] flex-shrink-0"></div>
                     <p className="text-sm font-medium text-slate-600">
                       Total Licenses
                     </p>
                   </div>
-                  <p className="text-2xl lg:text-3xl font-bold text-slate-900">
+                  <p className="text-2xl lg:text-3xl font-bold text-[#0a2e1e]">
                     {dashboardStats?.totalLicenses || 0}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">All licenses</p>
                 </div>
-                <div className="card !p-4 lg:!p-6">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-4 lg:!p-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#0e7c66] flex-shrink-0"></div>
                     <p className="text-sm font-medium text-slate-600">
                       Active Users
                     </p>
                   </div>
-                  <p className="text-2xl lg:text-3xl font-bold text-slate-900">
+                  <p className="text-2xl lg:text-3xl font-bold text-[#0a2e1e]">
                     {activeUsersCount}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">Team members</p>
                 </div>
-                <div className="card !p-4 lg:!p-6">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-4 lg:!p-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-orange-400 flex-shrink-0"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#0e7c66] flex-shrink-0"></div>
                     <p className="text-sm font-medium text-slate-600">
                       Licenses Assigned
                     </p>
                   </div>
-                  <p className="text-2xl lg:text-3xl font-bold text-slate-900">
+                  <p className="text-2xl lg:text-3xl font-bold text-[#0a2e1e]">
                     {billingDetails?.consumedLicenses || billingDetails?.usedLicenses || dashboardStats?.licensesInUse || activeLicensesFromCache || 0}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">In use</p>
                 </div>
-                <div className="card !p-4 lg:!p-6">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-4 lg:!p-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-purple-400 flex-shrink-0"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#0e7c66] flex-shrink-0"></div>
                     <p className="text-sm font-medium text-slate-600">
                       Reports Generated
                     </p>
                   </div>
-                  <p className="text-2xl lg:text-3xl font-bold text-slate-900">
+                  <p className="text-2xl lg:text-3xl font-bold text-[#0a2e1e]">
                     {auditReports.length}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">This month</p>
@@ -2380,50 +2197,50 @@ export default function AdminDashboard() {
             {/* Minimal Stats for User */}
             <RoleBased roles={["user"]}>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6 mb-8">
-                <div className="card !p-4 lg:!p-6">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-4 lg:!p-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-blue-500 flex-shrink-0"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#0e7c66] flex-shrink-0"></div>
                     <p className="text-sm font-medium text-slate-600">
                       Total Licenses
                     </p>
                   </div>
-                  <p className="text-2xl lg:text-3xl font-bold text-slate-900">
+                  <p className="text-2xl lg:text-3xl font-bold text-[#0a2e1e]">
                     {dashboardStats?.totalLicenses || 0}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">All licenses</p>
                 </div>
-                <div className="card !p-4 lg:!p-6">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-4 lg:!p-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#0e7c66] flex-shrink-0"></div>
                     <p className="text-sm font-medium text-slate-600">
                       Active Users
                     </p>
                   </div>
-                  <p className="text-2xl lg:text-3xl font-bold text-slate-900">
+                  <p className="text-2xl lg:text-3xl font-bold text-[#0a2e1e]">
                     {activeUsersCount}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">Team members</p>
                 </div>
-                <div className="card !p-4 lg:!p-6">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-4 lg:!p-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-orange-400 flex-shrink-0"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#0e7c66] flex-shrink-0"></div>
                     <p className="text-sm font-medium text-slate-600">
                       My Licenses
                     </p>
                   </div>
-                  <p className="text-2xl lg:text-3xl font-bold text-slate-900">
+                  <p className="text-2xl lg:text-3xl font-bold text-[#0a2e1e]">
                     {billingDetails?.consumedLicenses || billingDetails?.usedLicenses || dashboardStats?.licensesInUse || activeLicensesFromCache || 0}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">Active licenses</p>
                 </div>
-                <div className="card !p-4 lg:!p-6">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-4 lg:!p-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-purple-400 flex-shrink-0"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#0e7c66] flex-shrink-0"></div>
                     <p className="text-sm font-medium text-slate-600">
                       Available Reports
                     </p>
                   </div>
-                  <p className="text-2xl lg:text-3xl font-bold text-slate-900">
+                  <p className="text-2xl lg:text-3xl font-bold text-[#0a2e1e]">
                     {dashboardStats?.totalReports || 0}
                   </p>
                   <p className="text-sm text-slate-500 mt-2">
@@ -2437,19 +2254,19 @@ export default function AdminDashboard() {
             {activeTab === "overview" && (
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 {/* Recent Reports */}
-                <div className="card !p-0 min-w-0">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-0 min-w-0">
                   <div className="px-4 sm:px-6 py-5 border-b border-slate-200 flex items-center justify-between">
-                    <h2 className="font-semibold text-slate-900">
+                    <h2 className="font-semibold text-[#0a2e1e]">
                       Recent Reports
                     </h2>
                     <Link
                       to="/admin/reports"
-                      className="text-emerald-800 hover:text-emerald-700 text-sm font-medium"
+                      className="text-[#0a2e1e] hover:text-[#0a2e1e] text-sm font-medium"
                     >
                       View All
                     </Link>
                   </div>
-                  <div className="card-content divide-y divide-slate-200 max-h-[300px] min-h-[300px] overflow-y-auto">
+                  <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6-content divide-y divide-slate-200 max-h-[300px] min-h-[300px] overflow-y-auto">
                     {auditReports.length > 0 ? (
                       <>
                         {auditReports
@@ -2467,18 +2284,18 @@ export default function AdminDashboard() {
                                   className={`w-2 h-2 rounded-full flex-shrink-0 mt-2 ${
                                     report.status === "completed" ||
                                     report.status === "Completed"
-                                      ? "bg-green-400"
+                                      ? "bg-[#0e7c66]"
                                       : report.status === "running" ||
                                           report.status === "Running"
-                                        ? "bg-blue-400"
+                                        ? "bg-[#0e7c66]"
                                         : report.status === "pending" ||
                                             report.status === "Pending"
-                                          ? "bg-yellow-400"
+                                          ? "bg-[#0e7c66]"
                                           : "bg-red-400"
                                   }`}
                                 ></div>
                                 <div className="min-w-0 flex-1">
-                                  <div className="font-medium text-slate-900 truncate" title={report.report_name || report.reportType}>
+                                  <div className="font-medium text-[#0a2e1e] truncate" title={report.report_name || report.reportType}>
                                     {report.report_name ||
                                       report.reportType ||
                                       `Report #${
@@ -2520,21 +2337,9 @@ export default function AdminDashboard() {
                     ) : (
                       <div className="px-4 sm:px-6 py-12 text-center">
                         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
-                          <svg
-                            className="w-8 h-8 text-slate-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                            />
-                          </svg>
+                          <FileText className="w-8 h-8 text-slate-400" />
                         </div>
-                        <h2 className="text-lg font-medium text-slate-900 mb-2">
+                        <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                           No Data Available
                         </h2>
                         <p className="text-sm text-slate-600">
@@ -2625,19 +2430,19 @@ export default function AdminDashboard() {
                 </div>
 
                 {/* Recent Sessions */}
-                <div className="card !p-0 min-w-0">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-0 min-w-0">
                   <div className="px-4 sm:px-6 py-5 border-b border-slate-200 flex items-center justify-between">
-                    <h2 className="font-semibold text-slate-900">
+                    <h2 className="font-semibold text-[#0a2e1e]">
                       Recent Sessions
                     </h2>
                     <Link
                       to="/admin/sessions"
-                      className="text-emerald-800 hover:text-emerald-700 text-sm font-medium"
+                      className="text-[#0a2e1e] hover:text-[#0a2e1e] text-sm font-medium"
                     >
                       View All
                     </Link>
                   </div>
-                  <div className="card-content divide-y divide-slate-200 max-h-[300px] min-h-[300px] overflow-y-auto">
+                  <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6-content divide-y divide-slate-200 max-h-[300px] min-h-[300px] overflow-y-auto">
                     {recentSessions.length > 0 ? (
                       <>
                         {recentSessions
@@ -2657,7 +2462,7 @@ export default function AdminDashboard() {
                                     className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
                                       session.session_status === "active" ||
                                       session.session_status === "Active"
-                                        ? "bg-green-100 text-green-700"
+                                        ? "bg-[#d4ede4] text-[#0a2e1e]"
                                         : session.session_status ===
                                               "inactive" ||
                                             session.session_status ===
@@ -2673,7 +2478,7 @@ export default function AdminDashboard() {
                                 {/* Session Details */}
                                 <div className="flex-1 min-w-0">
                                   <div className="flex items-start justify-between gap-3 mb-1">
-                                    <p className="font-medium text-slate-900 text-sm truncate" title={session.user_email}>
+                                    <p className="font-medium text-[#0a2e1e] text-sm truncate" title={session.user_email}>
                                       {session.user_email || "Unknown User"}
                                     </p>
                                     <span className="text-[10px] sm:text-xs text-slate-500 flex-shrink-0 mt-0.5">
@@ -2687,19 +2492,7 @@ export default function AdminDashboard() {
                                   <div className="flex items-center gap-3 text-xs text-slate-500">
                                     {session.ip_address && (
                                       <span className="">
-                                        <svg
-                                          className="w-3 h-3 inline mr-1"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                                          />
-                                        </svg>
+                                        <Globe className="w-3 h-3 inline mr-1" />
                                         {session.ip_address}
                                       </span>
                                     )}
@@ -2717,21 +2510,9 @@ export default function AdminDashboard() {
                     ) : (
                       <div className="px-4 sm:px-6 py-12 text-center">
                         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
-                          <svg
-                            className="w-8 h-8 text-slate-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                            />
-                          </svg>
+                          <Clock className="w-8 h-8 text-slate-400" />
                         </div>
-                        <h2 className="text-lg font-medium text-slate-900 mb-2">
+                        <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                           No Sessions Found
                         </h2>
                         <p className="text-sm text-slate-600">
@@ -2809,23 +2590,21 @@ export default function AdminDashboard() {
 
                 {/* Quick Actions - COMMENTED OUT AS PER REQUIREMENT */}
                 {/* 
-          <div className="card !p-0 min-w-0">
+          <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-0 min-w-0">
             <div className="px-4 sm:px-6 py-5 border-b border-slate-200">
-              <h2 className="font-semibold text-slate-900">Quick Actions</h2>
+              <h2 className="font-semibold text-[#0a2e1e]">Quick Actions</h2>
             </div>
-            <div className="card-content space-y-3 p-4 sm:p-6">
+            <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6-content space-y-3 p-4 sm:p-6">
               <RoleBased permission="canViewAllUsers">
                 <button 
                   onClick={handleManageUsers}
-                  className="w-full flex items-center gap-4 p-4 rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all text-left"
+                  className="w-full flex items-center gap-4 p-4 rounded-none border border-slate-200 hover:border-[#0e7c66] hover:bg-[#f4fbf8] transition-all text-left"
                 >
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-                    </svg>
+                  <div className="w-10 h-10 bg-[#d4ede4] rounded-none flex items-center justify-center flex-shrink-0">
+                    <UserPlus className="w-5 h-5 text-[#0a2e1e]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-slate-900">Manage Users</div>
+                    <div className="font-medium text-[#0a2e1e]">Manage Users</div>
                     <div className="text-sm text-slate-500">Add, edit or remove user accounts</div>
                   </div>
                 </button>
@@ -2834,15 +2613,13 @@ export default function AdminDashboard() {
               <RoleBased permission="canViewGroups">
                 <button 
                   onClick={handleManageGroups}
-                  className="w-full flex items-center gap-4 p-4 rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all text-left"
+                  className="w-full flex items-center gap-4 p-4 rounded-none border border-slate-200 hover:border-[#0e7c66] hover:bg-[#f4fbf8] transition-all text-left"
                 >
-                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
+                  <div className="w-10 h-10 bg-[#d4ede4] rounded-none flex items-center justify-center flex-shrink-0">
+                    <Users className="w-5 h-5 text-[#0a2e1e]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-slate-900">Manage Groups</div>
+                    <div className="font-medium text-[#0a2e1e]">Manage Groups</div>
                     <div className="text-sm text-slate-500">Create and manage user groups</div>
                   </div>
                 </button>
@@ -2851,15 +2628,13 @@ export default function AdminDashboard() {
               <RoleBased permission="canGenerateReports">
                 <button 
                   onClick={handleAdminReports}
-                  className="w-full flex items-center gap-4 p-4 rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all text-left"
+                  className="w-full flex items-center gap-4 p-4 rounded-none border border-slate-200 hover:border-[#0e7c66] hover:bg-[#f4fbf8] transition-all text-left"
                 >
-                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-emerald-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
+                  <div className="w-10 h-10 bg-[#d4ede4] rounded-none flex items-center justify-center flex-shrink-0">
+                    <BarChart2 className="w-5 h-5 text-[#0a2e1e]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-slate-900">Admin Reports</div>
+                    <div className="font-medium text-[#0a2e1e]">Admin Reports</div>
                     <div className="text-sm text-slate-500">Generate and manage admin reports</div>
                   </div>
                 </button>
@@ -2868,16 +2643,13 @@ export default function AdminDashboard() {
               <RoleBased permission="canViewSettings">
                 <button 
                   onClick={handleSystemSettings}
-                  className="w-full flex items-center gap-4 p-4 rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all text-left"
+                  className="w-full flex items-center gap-4 p-4 rounded-none border border-slate-200 hover:border-[#0e7c66] hover:bg-[#f4fbf8] transition-all text-left"
                 >
-                  <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+                  <div className="w-10 h-10 bg-[#d4ede4] rounded-none flex items-center justify-center flex-shrink-0">
+                    <Settings className="w-5 h-5 text-[#0a2e1e]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-slate-900">System Settings</div>
+                    <div className="font-medium text-[#0a2e1e]">System Settings</div>
                     <div className="text-sm text-slate-500">Configure system preferences</div>
                   </div>
                 </button>
@@ -2886,63 +2658,53 @@ export default function AdminDashboard() {
               <RoleBased permission="canViewLicenses">
                 <div className="border-t border-slate-200 pt-6 mt-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-6 h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
-                      </svg>
+                    <div className="w-6 h-6 bg-white rounded-none flex items-center justify-center">
+                      <Server className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900">License Management</h3>
+                    <h3 className="text-lg font-semibold text-[#0a2e1e]">License Management</h3>
                   </div>
                   <div className="grid grid-cols-1 gap-4">
                     <RoleBased permission="canBulkAssignLicenses">
                       <button 
                         onClick={() => handleBulkLicenseAssignment()}
-                        className="group flex items-center gap-4 p-4 rounded-xl border border-slate-200 hover:border-emerald-300 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition-all text-left shadow-sm hover:shadow-md"
+                        className="group flex items-center gap-4 p-4 rounded-none border border-slate-200 hover:border-[#0e7c66] hover: hover:from-[#0e7c66] hover:to-[#0a2e1e] transition-all text-left shadow-sm hover:shadow-md"
                       >
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                          </svg>
+                        <div className="w-12 h-12 bg-[#d4ede4] rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                          <Users className="w-6 h-6 text-white" />
                         </div>
                         <div className="flex-1">
-                          <div className="font-semibold text-slate-900 group-hover:text-emerald-700 transition-colors">Bulk License Assignment</div>
+                          <div className="font-semibold text-[#0a2e1e] group-hover:text-[#0a2e1e] transition-colors">Bulk License Assignment</div>
                           <div className="text-sm text-slate-600 mt-1">Assign licenses to multiple users at once with advanced options</div>
                           <div className="flex items-center gap-2 mt-2">
-                            <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-medium">Quick Setup</span>
+                            <span className="text-xs bg-[#d4ede4] text-[#0a2e1e] px-2 py-1 rounded-full font-medium">Quick Setup</span>
                             <span className="text-xs text-slate-500">•</span>
                             <span className="text-xs text-slate-500">Batch Processing</span>
                           </div>
                         </div>
-                        <div className="text-emerald-500 group-hover:translate-x-1 transition-transform">
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
+                        <div className="text-[#0a2e1e] group-hover:translate-x-1 transition-transform">
+                          <ChevronRight className="w-5 h-5" />
                         </div>
                       </button>
                     </RoleBased>
                     
                     <button 
                       onClick={() => handleLicenseAudit()}
-                      className="group flex items-center gap-4 p-4 rounded-xl border border-slate-200 hover:border-emerald-300 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition-all text-left shadow-sm hover:shadow-md"
+                      className="group flex items-center gap-4 p-4 rounded-none border border-slate-200 hover:border-[#0e7c66] hover: hover:from-[#0e7c66] hover:to-[#0a2e1e] transition-all text-left shadow-sm hover:shadow-md"
                     >
-                      <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
+                      <div className="w-12 h-12 bg-[#d4ede4] rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                        <BarChart className="w-6 h-6 text-white" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-semibold text-slate-900 group-hover:text-emerald-700 transition-colors">License Audit Report</div>
+                        <div className="font-semibold text-[#0a2e1e] group-hover:text-[#0a2e1e] transition-colors">License Audit Report</div>
                         <div className="text-sm text-slate-600 mt-1">Comprehensive analysis of license usage and optimization insights</div>
                         <div className="flex items-center gap-2 mt-2">
-                          <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-medium">Detailed Analytics</span>
+                          <span className="text-xs bg-[#d4ede4] text-[#0a2e1e] px-2 py-1 rounded-full font-medium">Detailed Analytics</span>
                           <span className="text-xs text-slate-500">•</span>
                           <span className="text-xs text-slate-500">Export Available</span>
                         </div>
                       </div>
-                      <div className="text-emerald-500 group-hover:translate-x-1 transition-transform">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                      <div className="text-[#0a2e1e] group-hover:translate-x-1 transition-transform">
+                        <ChevronRight className="w-5 h-5" />
                       </div>
                     </button>
                   </div>
@@ -2957,10 +2719,10 @@ export default function AdminDashboard() {
             {activeTab === "licenses" && (
               <div className="space-y-6">
                 {/* License Overview - Same pattern as AdminLicenses page */}
-                <div className="card !p-0 overflow-hidden">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-0 overflow-hidden">
                   <div className="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
                     <div>
-                      <h2 className="font-semibold text-slate-900">
+                      <h2 className="font-semibold text-[#0a2e1e]">
                         License Details
                       </h2>
                       <p className="text-sm text-slate-600 mt-1">
@@ -3000,25 +2762,7 @@ export default function AdminDashboard() {
                               className="px-4 py-12 text-center text-slate-500"
                             >
                               <div className="flex items-center justify-center gap-2">
-                                <svg
-                                  className="animate-spin w-5 h-5 text-emerald-500"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <circle
-                                    className="opacity-25"
-                                    cx="12"
-                                    cy="12"
-                                    r="10"
-                                    stroke="currentColor"
-                                    strokeWidth="4"
-                                  ></circle>
-                                  <path
-                                    className="opacity-75"
-                                    fill="currentColor"
-                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                  ></path>
-                                </svg>
+                                <Loader2 className="animate-spin w-5 h-5 text-[#0a2e1e]" />
                                 Loading licenses...
                               </div>
                             </td>
@@ -3034,14 +2778,14 @@ export default function AdminDashboard() {
                                 key={license.license_id || index}
                                 className="hover:bg-slate-50"
                               >
-                                <td className="px-4 py-3 whitespace-nowrap text-sm font-mono text-slate-900 max-w-xs overflow-x-auto">
+                                <td className="px-4 py-3 whitespace-nowrap text-sm font-mono text-[#0a2e1e] max-w-xs overflow-x-auto">
                                   {license.license_key || "N/A"}
                                 </td>
                                 <td className="px-4 py-3 whitespace-nowrap text-sm text-slate-600">
                                   {license.user_email || "N/A"}
                                 </td>
                                 <td className="px-4 py-3 whitespace-nowrap">
-                                  <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                  <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-[#d4ede4] text-[#0a2e1e]">
                                     {license.license_type || "N/A"}
                                   </span>
                                 </td>
@@ -3049,14 +2793,14 @@ export default function AdminDashboard() {
                                   <span
                                     className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                                       license.status?.toLowerCase() === "active"
-                                        ? "bg-emerald-100 text-emerald-800"
+                                        ? "bg-[#d4ede4] text-[#0a2e1e]"
                                         : license.status?.toLowerCase() ===
                                             "expired"
                                           ? "bg-red-100 text-red-800"
                                           : license.status?.toLowerCase() ===
                                               "revoked"
-                                            ? "bg-rose-100 text-rose-800"
-                                            : "bg-orange-100 text-orange-800"
+                                            ? "bg-[#d4ede4] text-[#0a2e1e]"
+                                            : "bg-[#d4ede4] text-[#0a2e1e]"
                                     }`}
                                   >
                                     {license.status?.toUpperCase() === "IN_USE"
@@ -3099,7 +2843,7 @@ export default function AdminDashboard() {
                             setLicensePageSize(parseInt(e.target.value, 10));
                             setLicenseDetailsPage(1);
                           }}
-                          className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                          className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-none text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
                         >
                           {pageSizeOptions.map((size: number) => (
                             <option key={size} value={size}>
@@ -3136,7 +2880,7 @@ export default function AdminDashboard() {
                               )
                             }
                             disabled={licenseDetailsPage === 1}
-                            className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                             <span className="sm:hidden">Prev</span>
                             <span className="hidden sm:inline">Previous</span>
@@ -3159,7 +2903,7 @@ export default function AdminDashboard() {
                                 dashboardLicenseList.length / licensePageSize,
                               )
                             }
-                            className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                             Next
                           </button>
@@ -3175,10 +2919,10 @@ export default function AdminDashboard() {
               (isSubusersEnabled ? (
                 <div className="space-y-6">
                   {/* Users Management */}
-                  <div className="card">
+                  <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6">
                     <div className="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
                       <div>
-                        <h2 className="font-semibold text-slate-900">Users</h2>
+                        <h2 className="font-semibold text-[#0a2e1e]">Users</h2>
                         <p className="text-sm text-slate-600 mt-1">
                           Manage all users
                         </p>
@@ -3187,21 +2931,9 @@ export default function AdminDashboard() {
                       <div className="flex flex-col sm:flex-row gap-2">
                         <button
                           onClick={handleAddUser}
-                          className="btn-primary text-sm px-4 py-2 flex items-center gap-2"
+                          className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-[#0e7c66] text-white hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed text-sm px-4 py-2 flex items-center gap-2"
                         >
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M12 4v16m8-8H4"
-                            />
-                          </svg>
+                          <Plus className="w-4 h-4" />
                           Add User
                         </button>
                       </div>
@@ -3211,7 +2943,7 @@ export default function AdminDashboard() {
                       {usersDataLoading && (
                         <div className="flex items-center justify-center py-12">
                           <div className="text-center">
-                            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+                            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#0e7c66] border-r-transparent"></div>
                             <p className="mt-4 text-sm text-slate-600">
                               Loading users data...
                             </p>
@@ -3224,21 +2956,9 @@ export default function AdminDashboard() {
                         displaySubusersData.length === 0 && (
                           <div className="text-center py-12">
                             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
-                              <svg
-                                className="w-8 h-8 text-slate-400"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                                />
-                              </svg>
+                              <Users className="w-8 h-8 text-slate-400" />
                             </div>
-                            <h2 className="text-lg font-medium text-slate-900 mb-2">
+                            <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                               No Users Found
                             </h2>
                             <p className="text-sm text-slate-600">
@@ -3292,7 +3012,7 @@ export default function AdminDashboard() {
                                         className="hover:bg-slate-50"
                                       >
                                         {/* Email */}
-                                        <td className="py-4 font-medium text-slate-900">
+                                        <td className="py-4 font-medium text-[#0a2e1e]">
                                           {subuser.subuser_email}
                                         </td>
 
@@ -3304,12 +3024,12 @@ export default function AdminDashboard() {
                                                 "admin" ||
                                               (subuser as any).defaultRole ===
                                                 "admin"
-                                                ? "bg-purple-100 text-purple-800"
+                                                ? "bg-[#d4ede4] text-[#0a2e1e]"
                                                 : (subuser as any).role ===
                                                       "manager" ||
                                                     (subuser as any)
                                                       .defaultRole === "manager"
-                                                  ? "bg-blue-100 text-blue-800"
+                                                  ? "bg-[#d4ede4] text-[#0a2e1e]"
                                                   : "bg-slate-100 text-slate-800"
                                             }`}
                                           >
@@ -3330,14 +3050,14 @@ export default function AdminDashboard() {
                                             <span
                                               className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                                 subuser.status === "active"
-                                                  ? "bg-green-100 text-green-800"
+                                                  ? "bg-[#d4ede4] text-[#0a2e1e]"
                                                   : subuser.status ===
                                                       "inactive"
                                                     ? "bg-gray-100 text-gray-800"
                                                     : subuser.status ===
                                                         "suspended"
                                                       ? "bg-red-100 text-red-800"
-                                                      : "bg-yellow-100 text-yellow-800"
+                                                      : "bg-[#d4ede4] text-[#0a2e1e]"
                                               }`}
                                             >
                                               {subuser.status}
@@ -3391,7 +3111,7 @@ export default function AdminDashboard() {
                                         <td className="py-4 hidden xl:table-cell">
                                           {(subuser as any)
                                             .license_allocation ? (
-                                            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800">
+                                            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-[#d4ede4] text-[#0a2e1e]">
                                               {
                                                 (subuser as any)
                                                   .license_allocation
@@ -3424,7 +3144,7 @@ export default function AdminDashboard() {
                                     );
                                     setUsersPage(1);
                                   }}
-                                  className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                                  className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-none text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
                                 >
                                   {pageSizeOptions.map((size) => (
                                     <option key={size} value={size}>
@@ -3461,7 +3181,7 @@ export default function AdminDashboard() {
                                       )
                                     }
                                     disabled={usersPage === 1}
-                                    className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                                   >
                                     <span className="sm:hidden">Prev</span>
                                     <span className="hidden sm:inline">
@@ -3487,7 +3207,7 @@ export default function AdminDashboard() {
                                           usersPageSize,
                                       )
                                     }
-                                    className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                                   >
                                     Next
                                   </button>
@@ -3503,21 +3223,9 @@ export default function AdminDashboard() {
               ) : (
                 <div className="text-center py-12">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
-                    <svg
-                      className="w-8 h-8 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                      />
-                    </svg>
+                    <Lock className="w-8 h-8 text-slate-400" />
                   </div>
-                  <h2 className="text-lg font-medium text-slate-900 mb-2">
+                  <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                     Feature Disabled
                   </h2>
                   <p className="text-sm text-slate-600">
@@ -3530,10 +3238,10 @@ export default function AdminDashboard() {
               (isGroupsEnabled ? (
                 <div className="space-y-6">
                   {/* Groups Section */}
-                  <div className="card">
+                  <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6">
                     <div className="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
                       <div>
-                        <h2 className="font-semibold text-slate-900">
+                        <h2 className="font-semibold text-[#0a2e1e]">
                           Groups & Members
                         </h2>
                         <p className="text-sm text-slate-600 mt-1">
@@ -3546,7 +3254,7 @@ export default function AdminDashboard() {
                       {(groupsWithUsersQuery.isLoading && groupsWithUsers.length === 0) && (
                         <div className="flex items-center justify-center py-12">
                           <div className="text-center">
-                            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+                            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#0e7c66] border-r-transparent"></div>
                             <p className="mt-4 text-sm text-slate-600">
                               Loading groups data...
                             </p>
@@ -3558,21 +3266,9 @@ export default function AdminDashboard() {
                       {!groupsWithUsersQuery.isLoading && (groupsWithUsersQuery.data?.length === 0 || groupsWithUsers.length === 0) && (
                         <div className="text-center py-12">
                           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
-                            <svg
-                              className="w-8 h-8 text-slate-400"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                              />
-                            </svg>
+                            <Users className="w-8 h-8 text-slate-400" />
                           </div>
-                          <h2 className="text-lg font-medium text-slate-900 mb-2">
+                          <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                             No Groups Found
                           </h2>
                           <p className="text-sm text-slate-600">
@@ -3587,19 +3283,19 @@ export default function AdminDashboard() {
                           {groupsWithUsers.map((group: any) => (
                             <div
                               key={group.id}
-                              className="card !p-0 overflow-hidden"
+                              className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 !p-0 overflow-hidden"
                             >
                               {/* Group Header */}
                               <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
                                 <div className="flex items-center gap-4 flex-1">
                                   <button
                                     onClick={() => toggleGroup(group.id)}
-                                    className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center text-white font-semibold hover:shadow-lg transition-shadow"
+                                    className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center text-white font-semibold hover:shadow-lg transition-shadow"
                                   >
                                     {(group.name || "G").charAt(0)}
                                   </button>
                                   <div className="flex-1">
-                                    <h2 className="text-lg font-semibold text-slate-900">
+                                    <h2 className="text-lg font-semibold text-[#0a2e1e]">
                                       {group.name}
                                     </h2>
                                     <p className="text-sm text-slate-600">
@@ -3607,7 +3303,7 @@ export default function AdminDashboard() {
                                     </p>
                                   </div>
                                   <div className="flex items-center gap-4">
-                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 text-emerald-800">
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#d4ede4] text-[#0a2e1e]">
                                       {group.users.length} users
                                     </span>
                                     <span className="text-sm text-slate-500">
@@ -3621,21 +3317,9 @@ export default function AdminDashboard() {
                                 <div className="flex items-center gap-2 ml-4">
                                   <button
                                     onClick={() => toggleGroup(group.id)}
-                                    className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+                                    className="p-2 hover:bg-slate-100 rounded-none transition-colors"
                                   >
-                                    <svg
-                                      className={`w-5 h-5 text-slate-600 transition-transform ${expandedGroups.includes(group.id) ? "rotate-180" : ""}`}
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M19 9l-7 7-7-7"
-                                      />
-                                    </svg>
+                                    <ChevronDown className="w-5 h-5" />
                                   </button>
                                 </div>
                               </div>
@@ -3671,10 +3355,10 @@ export default function AdminDashboard() {
                                         >
                                           <td className="px-6 py-4 whitespace-nowrap">
                                             <div className="flex items-center gap-3">
-                                              <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                              <div className="w-8 h-8 bg-[#0e7c66] rounded-full flex items-center justify-center text-white text-sm font-semibold">
                                                 {(user.name || "U").charAt(0)}
                                               </div>
-                                              <span className="font-medium text-slate-900">
+                                              <span className="font-medium text-[#0a2e1e]">
                                                 {user.name}
                                               </span>
                                             </div>
@@ -3686,10 +3370,10 @@ export default function AdminDashboard() {
                                             <span
                                               className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                                 user.role === "User"
-                                                  ? "bg-blue-100 text-blue-800"
+                                                  ? "bg-[#d4ede4] text-[#0a2e1e]"
                                                   : user.role === "Group Admin"
-                                                    ? "bg-amber-100 text-amber-800"
-                                                    : "bg-purple-100 text-purple-800"
+                                                    ? "bg-[#d4ede4] text-[#0a2e1e]"
+                                                    : "bg-[#d4ede4] text-[#0a2e1e]"
                                               }`}
                                             >
                                               {user.role}
@@ -3699,7 +3383,7 @@ export default function AdminDashboard() {
                                             <span
                                               className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                                 user.license > 0
-                                                  ? "bg-emerald-100 text-emerald-800"
+                                                  ? "bg-[#d4ede4] text-[#0a2e1e]"
                                                   : "bg-slate-100 text-slate-800"
                                               }`}
                                             >
@@ -3725,21 +3409,9 @@ export default function AdminDashboard() {
               ) : (
                 <div className="text-center py-12">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
-                    <svg
-                      className="w-8 h-8 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                      />
-                    </svg>
+                    <Lock className="w-8 h-8 text-slate-400" />
                   </div>
-                  <h2 className="text-lg font-medium text-slate-900 mb-2">
+                  <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                     Feature Disabled
                   </h2>
                   <p className="text-sm text-slate-600">
@@ -3750,10 +3422,10 @@ export default function AdminDashboard() {
 
             {activeTab === "activity" &&
               (isSubusersEnabled ? (
-                <div className="card">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6">
                   <div className="px-6 py-5 border-b border-slate-200">
                     <div>
-                      <h2 className="font-semibold text-slate-900">
+                      <h2 className="font-semibold text-[#0a2e1e]">
                         Cloud Users Activity
                       </h2>
                       <p className="text-sm text-slate-600 mt-1">
@@ -3772,21 +3444,9 @@ export default function AdminDashboard() {
                         return (
                           <div className="text-center py-12">
                             <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
-                              <svg
-                                className="w-8 h-8 text-slate-400"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                                />
-                              </svg>
+                              <Users className="w-8 h-8 text-slate-400" />
                             </div>
-                            <h2 className="text-lg font-medium text-slate-900 mb-2">
+                            <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                               No Data Available
                             </h2>
                             <p className="text-slate-600 mb-6">
@@ -3826,7 +3486,7 @@ export default function AdminDashboard() {
                                       key={index}
                                       className="hover:bg-slate-50"
                                     >
-                                      <td className="py-4 font-medium text-slate-900">
+                                      <td className="py-4 font-medium text-[#0a2e1e]">
                                         {activity.email}
                                       </td>
                                       <td className="py-4 text-slate-600">
@@ -3839,14 +3499,14 @@ export default function AdminDashboard() {
                                         <span
                                           className={`inline-flex items-center gap-1 ${
                                             activity.status === "active"
-                                              ? "text-green-800"
+                                              ? "text-[#0a2e1e]"
                                               : "text-slate-500"
                                           }`}
                                         >
                                           <span
                                             className={`w-2 h-2 rounded-full ${
                                               activity.status === "active"
-                                                ? "bg-green-400"
+                                                ? "bg-[#0e7c66]"
                                                 : "bg-slate-400"
                                             }`}
                                           ></span>
@@ -3873,7 +3533,7 @@ export default function AdminDashboard() {
                                     );
                                     setUserActivityPage(1);
                                   }}
-                                  className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                                  className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-none text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
                                 >
                                   {pageSizeOptions.map((size) => (
                                     <option key={size} value={size}>
@@ -3911,7 +3571,7 @@ export default function AdminDashboard() {
                                       )
                                     }
                                     disabled={userActivityPage === 1}
-                                    className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                                   >
                                     <span className="sm:hidden">Prev</span>
                                     <span className="hidden sm:inline">
@@ -3936,7 +3596,7 @@ export default function AdminDashboard() {
                                         activityData.length / activityPageSize,
                                       )
                                     }
-                                    className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                                   >
                                     Next
                                   </button>
@@ -3952,21 +3612,9 @@ export default function AdminDashboard() {
               ) : (
                 <div className="text-center py-12">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
-                    <svg
-                      className="w-8 h-8 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                      />
-                    </svg>
+                    <Lock className="w-8 h-8 text-slate-400" />
                   </div>
-                  <h2 className="text-lg font-medium text-slate-900 mb-2">
+                  <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                     Feature Disabled
                   </h2>
                   <p className="text-sm text-slate-600">
@@ -3976,17 +3624,17 @@ export default function AdminDashboard() {
               ))}
 
             {activeTab === "reports" && (
-              <div className="card">
+              <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6">
                 <div className="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
                   <div>
-                    <h2 className="font-semibold text-slate-900">
+                    <h2 className="font-semibold text-[#0a2e1e]">
                       Erasure Reports
                     </h2>
                     <p className="text-sm text-slate-600 mt-1">
                       View and manage data erasure reports
                     </p>
                   </div>
-                  <Link to="/admin/reports" className="btn-primary text-sm">
+                  <Link to="/admin/reports" className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-colors bg-[#0e7c66] text-white hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed text-sm">
                     View All Reports
                   </Link>
                 </div>
@@ -3995,21 +3643,9 @@ export default function AdminDashboard() {
                   {auditReports.length === 0 ? (
                     <div className="text-center py-12">
                       <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
-                        <svg
-                          className="w-8 h-8 text-slate-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
+                        <FileText className="w-8 h-8 text-slate-400" />
                       </div>
-                      <h2 className="text-lg font-medium text-slate-900 mb-2">
+                      <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                         No Data Available
                       </h2>
                       <p className="text-slate-600 mb-6">
@@ -4051,7 +3687,7 @@ export default function AdminDashboard() {
                                   key={report.report_id || report.id}
                                   className="hover:bg-slate-50"
                                 >
-                                  <td className="py-4 font-medium text-slate-900">
+                                  <td className="py-4 font-medium text-[#0a2e1e]">
                                     #
                                     {report.report_id ||
                                       report.reportId ||
@@ -4089,7 +3725,7 @@ export default function AdminDashboard() {
                                       }
 
                                       return (
-                                        <span className="px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                                        <span className="px-2 py-1 rounded-full text-xs font-medium bg-[#d4ede4] text-[#0a2e1e]">
                                           {reportType}
                                         </span>
                                       );
@@ -4152,12 +3788,12 @@ export default function AdminDashboard() {
                                         <span
                                           className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium ${
                                             statusValue === "completed"
-                                              ? "bg-green-100 text-green-800"
+                                              ? "bg-[#d4ede4] text-[#0a2e1e]"
                                               : statusValue === "running" ||
                                                   statusValue === "pending"
-                                                ? "bg-blue-100 text-blue-800"
+                                                ? "bg-[#d4ede4] text-[#0a2e1e]"
                                                 : statusValue === "warning"
-                                                  ? "bg-yellow-100 text-yellow-800"
+                                                  ? "bg-[#d4ede4] text-[#0a2e1e]"
                                                   : statusValue === "failed"
                                                     ? "bg-red-100 text-red-800"
                                                     : "bg-slate-100 text-slate-800"
@@ -4166,12 +3802,12 @@ export default function AdminDashboard() {
                                           <span
                                             className={`w-2 h-2 rounded-full ${
                                               statusValue === "completed"
-                                                ? "bg-green-500"
+                                                ? "bg-[#0e7c66]"
                                                 : statusValue === "running" ||
                                                     statusValue === "pending"
-                                                  ? "bg-blue-500"
+                                                  ? "bg-[#0e7c66]"
                                                   : statusValue === "warning"
-                                                    ? "bg-yellow-500"
+                                                    ? "bg-[#0e7c66]"
                                                     : statusValue === "failed"
                                                       ? "bg-red-500"
                                                       : "bg-slate-500"
@@ -4218,7 +3854,7 @@ export default function AdminDashboard() {
                                 );
                                 setReportsPage(1);
                               }}
-                              className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                              className="px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-300 rounded-none text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
                             >
                               {pageSizeOptions.map((size) => (
                                 <option key={size} value={size}>
@@ -4253,7 +3889,7 @@ export default function AdminDashboard() {
                                   )
                                 }
                                 disabled={reportsPage === 1}
-                                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                               >
                                 <span className="sm:hidden">Prev</span>
                                 <span className="hidden sm:inline">
@@ -4277,7 +3913,7 @@ export default function AdminDashboard() {
                                     auditReports.length / reportsPageSize,
                                   )
                                 }
-                                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                               >
                                 Next
                               </button>
@@ -4297,7 +3933,7 @@ export default function AdminDashboard() {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-900">
+                    <h2 className="text-2xl font-bold text-[#0a2e1e]">
                       Performance
                     </h2>
                     <p className="text-sm text-slate-600 mt-1">
@@ -4309,26 +3945,14 @@ export default function AdminDashboard() {
                 {erasureMetricsLoading && !displayErasureMetrics ? (
                   <div className="flex items-center justify-center py-12">
                     <div className="text-center">
-                      <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+                      <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#0e7c66] border-r-transparent"></div>
                       <p className="mt-4 text-sm text-slate-600">Loading performance data...</p>
                     </div>
                   </div>
                 ) : erasureMetricsError || !displayErasureMetrics ? (
-                  <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-12 text-center">
-                    <svg
-                      className="w-16 h-16 text-slate-400 mx-auto mb-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                      />
-                    </svg>
-                    <h2 className="text-lg font-medium text-slate-900 mb-2">
+                  <div className="bg-white rounded-none shadow-sm border border-slate-200 p-12 text-center">
+                    <TrendingUp className="w-16 h-16 text-slate-400 mx-auto mb-4" />
+                    <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                       No Performance Metrics Available
                     </h2>
                     <p className="text-slate-600">
@@ -4344,12 +3968,12 @@ export default function AdminDashboard() {
                       {/* Erasure Method Distribution (Pie Chart) */}
                       {/* Erasure Method Distribution (Pie Chart) */}
                       {/* ✅ NAYA CODE: Isolated PieChart component — fixes infinite re-render loop */}
-                      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col min-h-[400px]">
+                      <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6 flex flex-col min-h-[400px]">
                         <div className="mb-6">
                           <p className="text-base md:text-lg text-slate-500 mb-2 font-medium">
                             Erasure Method Breakdown
                           </p>
-                          <p className="text-3xl md:text-4xl font-bold text-slate-900">
+                          <p className="text-3xl md:text-4xl font-bold text-[#0a2e1e]">
                             {displayErasureMetrics?.methodMetrics &&
                             displayErasureMetrics.methodMetrics.length > 0
                               ? displayErasureMetrics.methodMetrics
@@ -4368,12 +3992,12 @@ export default function AdminDashboard() {
                       </div>
 
                       {/* ========== PURANA CODE (COMMENTED OUT) — Inline PieChart that caused infinite re-render loop ==========
-                      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col min-h-[400px]">
+                      <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6 flex flex-col min-h-[400px]">
                         <div className="mb-6">
                           <p className="text-base md:text-lg text-slate-500 mb-2 font-medium">
                             Erasure Method Breakdown
                           </p>
-                          <p className="text-3xl md:text-4xl font-bold text-slate-900">
+                          <p className="text-3xl md:text-4xl font-bold text-[#0a2e1e]">
                             {displayErasureMetrics?.methodMetrics &&
                             displayErasureMetrics.methodMetrics.length > 0
                               ? displayErasureMetrics.methodMetrics
@@ -4398,7 +4022,7 @@ export default function AdminDashboard() {
                                   isAnimationActive={false}
                                 >
                                   {displayErasureMetrics.methodMetrics.map((entry: any, index: number) => (
-                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} strokeWidth={2} stroke="#fff" />
+                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} strokeWidth={2} stroke="#0e7c66" />
                                   ))}
                                 </Pie>
                                 <Tooltip formatter={(value: any, name: any) => {
@@ -4419,14 +4043,14 @@ export default function AdminDashboard() {
                       ========== PURANA CODE END ========== */}
 
                       {/* Erasure Method Distribution List View */}
-                      {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col">
+                      {/* <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6 flex flex-col">
                         <div className="mb-4">
                           <p className="text-sm text-slate-500 mb-1">
                             Erasure Method Distribution
                           </p>
                           {displayErasureMetrics.methodMetrics &&
                             displayErasureMetrics.methodMetrics.length > 0 && (
-                              <p className="text-2xl font-bold text-slate-900">
+                              <p className="text-2xl font-bold text-[#0a2e1e]">
                                 {displayErasureMetrics.methodMetrics.reduce(
                                   (acc: number, curr: MethodMetric) =>
                                     acc + curr.count,
@@ -4451,19 +4075,19 @@ export default function AdminDashboard() {
                                     >
                                       {metric.methodName}
                                     </span>
-                                    <span className="font-bold text-slate-900">
+                                    <span className="font-bold text-[#0a2e1e]">
                                       {metric.count}
                                     </span>
                                   </div>
                                   <div className="flex justify-between items-center text-xs text-slate-400 mb-1">
                                     <span>Avg: {metric.avgDuration}</span>
-                                    <span className="text-green-800 font-medium">
+                                    <span className="text-[#0a2e1e] font-medium">
                                       {metric.successRate}% Success
                                     </span>
                                   </div>
                                   <div className="w-full bg-slate-100 rounded-full h-1.5">
                                     <div
-                                      className="bg-green-500 h-1.5 rounded-full"
+                                      className="bg-[#0e7c66] h-1.5 rounded-full"
                                       style={{
                                         width: `${metric.successRate}%`,
                                       }}
@@ -4499,9 +4123,9 @@ export default function AdminDashboard() {
                                     <span
                                       className={`px-2 py-1 rounded-full text-xs font-medium ${
                                         log.method.includes("DoD")
-                                          ? "bg-blue-100 text-blue-700"
+                                          ? "bg-[#d4ede4] text-[#0a2e1e]"
                                           : log.method.includes("NIST")
-                                            ? "bg-purple-100 text-purple-700"
+                                            ? "bg-[#d4ede4] text-[#0a2e1e]"
                                             : "bg-slate-100 text-slate-700"
                                       }`}
                                     >
@@ -4519,12 +4143,12 @@ export default function AdminDashboard() {
                       </div> */}
 
                       {/* Success Rate */}
-                      {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                      {/* <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
                         <div className="mb-4">
                           <p className="text-sm text-slate-500 mb-1">
                             Success rate
                           </p>
-                          <p className="text-3xl font-bold text-slate-900">
+                          <p className="text-3xl font-bold text-[#0a2e1e]">
                             {displayErasureMetrics.successRate}%
                           </p>
                         </div>
@@ -4557,7 +4181,7 @@ export default function AdminDashboard() {
                             />
                             <path
                               d={`M 0 ${80 - (displayErasureMetrics.successRate / 100) * 60} L 300 ${80 - (displayErasureMetrics.successRate / 100) * 60}`}
-                              stroke="#F59E0B"
+                              stroke="#0e7c66"
                               strokeWidth="2"
                               fill="none"
                             />
@@ -4568,8 +4192,8 @@ export default function AdminDashboard() {
 
                     {/* Detailed Charts Section */}
                     <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
-                      {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                        <h2 className="text-lg font-semibold text-slate-900 mb-6">
+                      {/* <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
+                        <h2 className="text-lg font-semibold text-[#0a2e1e] mb-6">
                           Monthly Erasure Trends
                         </h2>
                         <div className="h-64">
@@ -4594,7 +4218,7 @@ export default function AdminDashboard() {
                                       y={y}
                                       width={barWidth}
                                       height={barHeight}
-                                      fill="#3B82F6"
+                                      fill="#0e7c66"
                                       rx="4"
                                     />
                                     
@@ -4602,7 +4226,7 @@ export default function AdminDashboard() {
                                       x={x + barWidth / 2}
                                       y="185"
                                       textAnchor="middle"
-                                      fill="#64748B"
+                                      fill="#0e7c66"
                                       fontSize="12"
                                     >
                                       {item.month}
@@ -4612,7 +4236,7 @@ export default function AdminDashboard() {
                                       x={x + barWidth / 2}
                                       y={y - 5}
                                       textAnchor="middle"
-                                      fill="#334155"
+                                      fill="#0e7c66"
                                       fontSize="10"
                                       fontWeight="bold"
                                     >
@@ -4627,8 +4251,8 @@ export default function AdminDashboard() {
                       </div> */}
 
                       {/* Erasure By Method (Placeholder) */}
-                      {/* <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                    <h2 className="text-lg font-semibold text-slate-900 mb-6">
+                      {/* <div className="bg-white rounded-none shadow-sm border border-slate-200 p-6">
+                    <h2 className="text-lg font-semibold text-[#0a2e1e] mb-6">
                       Erasure Methods
                     </h2>
                      <div className="flex items-center justify-center h-64 text-slate-500">
@@ -4648,28 +4272,16 @@ export default function AdminDashboard() {
                 onClick={() => setShowBulkLicenseModal(false)}
               >
                 <div
-                  className="bg-white rounded-lg shadow-xl max-w-md w-full"
+                  className="bg-white rounded-none shadow-xl max-w-md w-full"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-2 bg-blue-100 rounded-full">
-                        <svg
-                          className="w-6 h-6 text-blue-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                          />
-                        </svg>
+                      <div className="p-2 bg-[#d4ede4] rounded-full">
+                        <Users className="w-6 h-6 text-[#0a2e1e]" />
                       </div>
                       <div>
-                        <h2 className="text-lg font-semibold text-slate-900">
+                        <h2 className="text-lg font-semibold text-[#0a2e1e]">
                           Bulk License Assignment
                         </h2>
                         <p className="text-sm text-slate-600">
@@ -4688,7 +4300,7 @@ export default function AdminDashboard() {
                           min="1"
                           value={bulkUserCount}
                           onChange={(e) => setBulkUserCount(e.target.value)}
-                          className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:ring-2 focus:ring-blue-500 focus:border-[#0e7c66]"
                           placeholder="Enter number of users"
                           disabled={isLoading}
                         />
@@ -4703,7 +4315,7 @@ export default function AdminDashboard() {
                           min="1"
                           value={bulkLicenseCount}
                           onChange={(e) => setBulkLicenseCount(e.target.value)}
-                          className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:ring-2 focus:ring-blue-500 focus:border-[#0e7c66]"
                           placeholder="Enter licenses per user"
                           disabled={isLoading}
                         />
@@ -4713,7 +4325,7 @@ export default function AdminDashboard() {
                         bulkLicenseCount &&
                         !isNaN(Number(bulkUserCount)) &&
                         !isNaN(Number(bulkLicenseCount)) && (
-                          <div className="bg-blue-50 p-3 rounded-lg">
+                          <div className="bg-[#d4ede4] p-3 rounded-none">
                             <div className="text-sm text-slate-600">
                               <div className="flex justify-between">
                                 <span>Total Users:</span>
@@ -4727,7 +4339,7 @@ export default function AdminDashboard() {
                                   {Number(bulkLicenseCount).toLocaleString()}
                                 </span>
                               </div>
-                              <div className="flex justify-between text-blue-600 font-medium mt-1 pt-1 border-t">
+                              <div className="flex justify-between text-[#0a2e1e] font-medium mt-1 pt-1 border-t">
                                 <span>Total Licenses:</span>
                                 <span>
                                   {(
@@ -4748,7 +4360,7 @@ export default function AdminDashboard() {
                           setBulkUserCount("10");
                           setBulkLicenseCount("5");
                         }}
-                        className="px-4 py-2 text-slate-700 border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+                        className="px-4 py-2 text-slate-700 border border-slate-300 rounded-none hover:bg-slate-50 transition-colors"
                         disabled={isLoading}
                       >
                         Cancel
@@ -4762,22 +4374,10 @@ export default function AdminDashboard() {
                           isNaN(Number(bulkUserCount)) ||
                           isNaN(Number(bulkLicenseCount))
                         }
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                        className="px-4 py-2 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
                       >
                         {isLoading && (
-                          <svg
-                            className="w-4 h-4 animate-spin"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                            />
-                          </svg>
+                          <Loader2 className="w-4 h-4 animate-spin" />
                         )}
                         {isLoading ? "Assigning..." : "Assign Licenses"}
                       </button>
@@ -4794,29 +4394,17 @@ export default function AdminDashboard() {
                 onClick={() => setShowLicenseAuditModal(false)}
               >
                 <div
-                  className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+                  className="bg-white rounded-none shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <div className="p-6 border-b border-slate-200">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg">
-                          <svg
-                            className="w-6 h-6 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                            />
-                          </svg>
+                        <div className="p-2 bg-white rounded-none">
+                          <BarChart className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h2 className="text-xl font-semibold text-slate-900">
+                          <h2 className="text-xl font-semibold text-[#0a2e1e]">
                             License Audit Report
                           </h2>
                           <p className="text-sm text-slate-600">
@@ -4827,21 +4415,9 @@ export default function AdminDashboard() {
                       </div>
                       <button
                         onClick={() => setShowLicenseAuditModal(false)}
-                        className="text-slate-400 hover:text-slate-600 p-2 rounded-lg hover:bg-slate-100 transition-colors"
+                        className="text-slate-400 hover:text-slate-600 p-2 rounded-none hover:bg-slate-100 transition-colors"
                       >
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
+                        <X className="w-5 h-5" />
                       </button>
                     </div>
                   </div>
@@ -4851,21 +4427,9 @@ export default function AdminDashboard() {
                     {userLicenseDetails.length === 0 ? (
                       <div className="text-center py-12">
                         <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
-                          <svg
-                            className="w-8 h-8 text-slate-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
-                            />
-                          </svg>
+                          <Server className="w-8 h-8 text-slate-400" />
                         </div>
-                        <h2 className="text-lg font-medium text-slate-900 mb-2">
+                        <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
                           No License Data Available
                         </h2>
                         <p className="text-slate-600">
@@ -4899,112 +4463,64 @@ export default function AdminDashboard() {
                           return (
                             <>
                               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+                                <div className="bg-white p-6 rounded-none border border-[#d0d5dc]">
                                   <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                                      <svg
-                                        className="w-5 h-5 text-white"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth={2}
-                                          d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
-                                        />
-                                      </svg>
+                                    <div className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center">
+                                      <Server className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                      <div className="text-sm font-medium text-blue-700">
+                                      <div className="text-sm font-medium text-[#0a2e1e]">
                                         Total Licenses
                                       </div>
-                                      <div className="text-2xl font-bold text-blue-900">
+                                      <div className="text-2xl font-bold text-[#0a2e1e]">
                                         {totalLicenses.toLocaleString()}
                                       </div>
                                     </div>
                                   </div>
                                 </div>
 
-                                <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-xl border border-emerald-200">
+                                <div className="bg-white p-6 rounded-none border border-[#d4ede4]">
                                   <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center">
-                                      <svg
-                                        className="w-5 h-5 text-white"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth={2}
-                                          d="M5 13l4 4L19 7"
-                                        />
-                                      </svg>
+                                    <div className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center">
+                                      <Check className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                      <div className="text-sm font-medium text-emerald-700">
+                                      <div className="text-sm font-medium text-[#0a2e1e]">
                                         Active/Used Licenses
                                       </div>
-                                      <div className="text-2xl font-bold text-emerald-900">
+                                      <div className="text-2xl font-bold text-[#0a2e1e]">
                                         {consumedLicenses.toLocaleString()}
                                       </div>
                                     </div>
                                   </div>
                                 </div>
 
-                                <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200">
+                                <div className="bg-white p-6 rounded-none border border-[#d0d5dc]">
                                   <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
-                                      <svg
-                                        className="w-5 h-5 text-white"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth={2}
-                                          d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                                        />
-                                      </svg>
+                                    <div className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center">
+                                      <Package className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                      <div className="text-sm font-medium text-orange-700">
+                                      <div className="text-sm font-medium text-[#0a2e1e]">
                                         Available
                                       </div>
-                                      <div className="text-2xl font-bold text-orange-900">
+                                      <div className="text-2xl font-bold text-[#0a2e1e]">
                                         {availableLicenses.toLocaleString()}
                                       </div>
                                     </div>
                                   </div>
                                 </div>
 
-                                <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
+                                <div className="bg-white p-6 rounded-none border border-[#d0d5dc]">
                                   <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
-                                      <svg
-                                        className="w-5 h-5 text-white"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth={2}
-                                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                                        />
-                                      </svg>
+                                    <div className="w-10 h-10 bg-[#0e7c66] rounded-none flex items-center justify-center">
+                                      <BarChart className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                      <div className="text-sm font-medium text-purple-700">
+                                      <div className="text-sm font-medium text-[#0a2e1e]">
                                         Utilization
                                       </div>
-                                      <div className="text-2xl font-bold text-purple-900">
+                                      <div className="text-2xl font-bold text-[#0a2e1e]">
                                         {utilizationPercent}%
                                       </div>
                                     </div>
@@ -5013,8 +4529,8 @@ export default function AdminDashboard() {
                               </div>
 
                               {/* Utilization Chart - Dynamic Data */}
-                              <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border border-slate-200 mb-8">
-                                <h3 className="text-lg font-semibold text-slate-900 mb-4">
+                              <div className="bg-white p-6 rounded-none border border-slate-200 mb-8">
+                                <h3 className="text-lg font-semibold text-[#0a2e1e] mb-4">
                                   License Utilization Overview
                                 </h3>
                                 <div className="space-y-4">
@@ -5022,13 +4538,13 @@ export default function AdminDashboard() {
                                     <span className="text-sm font-medium text-slate-700">
                                       Overall Utilization
                                     </span>
-                                    <span className="text-lg font-bold text-emerald-800">
+                                    <span className="text-lg font-bold text-[#0a2e1e]">
                                       {utilizationPercent}%
                                     </span>
                                   </div>
                                   <div className="w-full bg-slate-200 rounded-full h-3">
                                     <div
-                                      className="bg-gradient-to-r from-emerald-500 to-teal-500 h-3 rounded-full"
+                                      className="bg-white h-3 rounded-full"
                                       style={{
                                         width: `${Math.min(Number(utilizationPercent), 100)}%`,
                                       }}
@@ -5036,19 +4552,19 @@ export default function AdminDashboard() {
                                   </div>
                                   <div className="grid grid-cols-3 gap-4 text-sm">
                                     <div className="text-center">
-                                      <div className="font-medium text-slate-900">
+                                      <div className="font-medium text-[#0a2e1e]">
                                         Utilized
                                       </div>
-                                      <div className="text-emerald-800 font-semibold">
+                                      <div className="text-[#0a2e1e] font-semibold">
                                         {consumedLicenses.toLocaleString()} (
                                         {utilizationPercent}%)
                                       </div>
                                     </div>
                                     <div className="text-center">
-                                      <div className="font-medium text-slate-900">
+                                      <div className="font-medium text-[#0a2e1e]">
                                         Available
                                       </div>
-                                      <div className="text-orange-600 font-semibold">
+                                      <div className="text-[#0a2e1e] font-semibold">
                                         {availableLicenses.toLocaleString()} (
                                         {totalLicenses > 0
                                           ? (
@@ -5059,10 +4575,10 @@ export default function AdminDashboard() {
                                       </div>
                                     </div>
                                     <div className="text-center">
-                                      <div className="font-medium text-slate-900">
+                                      <div className="font-medium text-[#0a2e1e]">
                                         Products
                                       </div>
-                                      <div className="text-blue-600 font-semibold">
+                                      <div className="text-[#0a2e1e] font-semibold">
                                         {userLicenseDetails.length}
                                       </div>
                                     </div>
@@ -5074,9 +4590,9 @@ export default function AdminDashboard() {
                         })()}
 
                         {/* License Breakdown Table - Dynamic Data */}
-                        <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                        <div className="bg-white border border-slate-200 rounded-none overflow-hidden">
                           <div className="p-4 bg-slate-50 border-b border-slate-200">
-                            <h3 className="text-lg font-semibold text-slate-900">
+                            <h3 className="text-lg font-semibold text-[#0a2e1e]">
                               License Breakdown by Product
                             </h3>
                           </div>
@@ -5126,15 +4642,15 @@ export default function AdminDashboard() {
                                     usagePercent > 80
                                       ? "bg-red-500"
                                       : usagePercent > 60
-                                        ? "bg-orange-500"
-                                        : "bg-blue-500";
+                                        ? "bg-[#0e7c66]"
+                                        : "bg-[#0e7c66]";
 
                                   return (
                                     <tr
                                       key={index}
                                       className="border-t border-slate-200"
                                     >
-                                      <td className="p-4 font-medium text-slate-900">
+                                      <td className="p-4 font-medium text-[#0a2e1e]">
                                         {license.product}
                                       </td>
                                       <td className="p-4 text-slate-600">
@@ -5190,21 +4706,9 @@ export default function AdminDashboard() {
                           );
                           setShowLicenseAuditModal(false);
                         }}
-                        className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-lg hover:from-emerald-600 hover:to-teal-600 transition-colors"
+                        className="flex items-center justify-center gap-2 px-6 py-3 bg-[#0e7c66] text-white rounded-none hover:bg-[#0e7c66] transition-colors"
                       >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
+                        <FileText className="w-4 h-4" />
                         Export Detailed Report
                       </button>
                       <button
@@ -5214,26 +4718,14 @@ export default function AdminDashboard() {
                             "License optimization suggestions have been generated and will be sent to your email",
                           )
                         }
-                        className="flex items-center justify-center gap-2 px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+                        className="flex items-center justify-center gap-2 px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50 transition-colors"
                       >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 10V3L4 14h7v7l9-11h-7z"
-                          />
-                        </svg>
+                        <Zap className="w-4 h-4" />
                         Get Optimization Report
                       </button>
                       <button
                         onClick={() => setShowLicenseAuditModal(false)}
-                        className="flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors"
+                        className="flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-none hover:bg-slate-200 transition-colors"
                       >
                         Close
                       </button>
@@ -5246,32 +4738,20 @@ export default function AdminDashboard() {
             {/* Profile Modal - Matching the attached design */}
             {showProfileModal && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center z-50 p-4">
-                <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full mx-4 transform transition-all relative">
+                <div className="bg-white rounded-none shadow-2xl max-w-sm w-full mx-4 transform transition-all relative">
                   {/* Close Button */}
                   <button
                     onClick={() => {
                       setShowProfileModal(false);
                       setIsEditingProfile(false);
                     }}
-                    className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center text-white hover:bg-white/10 rounded-full transition-colors"
+                    className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center text-white hover:bg-[#0e7c66]/10 rounded-full transition-colors"
                   >
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
+                    <X className="w-5 h-5" />
                   </button>
 
                   {/* Modal Header with Theme Gradient Background */}
-                  <div className="bg-gradient-to-r from-brand-600 via-brand-500 to-brand-700 px-6 py-6 rounded-t-xl text-white">
+                  <div className="bg-[#0e7c66] px-6 py-6 rounded-none text-white">
                     <h2 className="text-xl font-bold mb-0">
                       {isEditingProfile ? "Edit Profile" : "Profile"}
                     </h2>
@@ -5281,7 +4761,7 @@ export default function AdminDashboard() {
                   <div className="p-6">
                     {/* Profile Avatar - Dynamic with First Letter */}
                     <div className="flex justify-center mb-6">
-                      <div className="w-20 h-20 bg-gradient-to-br from-brand-500 to-brand-700 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="w-20 h-20 bg-[#0e7c66] rounded-full flex items-center justify-center shadow-lg">
                         <span className="text-3xl font-bold text-white uppercase">
                           {(profileData?.name || user?.name || "U").charAt(0)}
                         </span>
@@ -5296,7 +4776,7 @@ export default function AdminDashboard() {
                             <span className="font-medium text-slate-700">
                               Name:
                             </span>
-                            <span className="text-slate-900">
+                            <span className="text-[#0a2e1e]">
                               {storedUserData?.name ||
                                 storedUserData?.user_name ||
                                 storedUserData?.subuser_name ||
@@ -5315,7 +4795,7 @@ export default function AdminDashboard() {
                             <span className="font-medium text-slate-700">
                               Email:
                             </span>
-                            <span className="text-slate-900 text-right">
+                            <span className="text-[#0a2e1e] text-right">
                               {profileData?.email ||
                                 storedUserData?.user_email ||
                                 user?.email ||
@@ -5327,7 +4807,7 @@ export default function AdminDashboard() {
                             <span className="font-medium text-slate-700">
                               Phone:
                             </span>
-                            <span className="text-slate-900">
+                            <span className="text-[#0a2e1e]">
                               {profileData?.phone ||
                                 storedUserData?.phone_number ||
                                 "Not provided"}
@@ -5338,7 +4818,7 @@ export default function AdminDashboard() {
                             <span className="font-medium text-slate-700">
                               Role:
                             </span>
-                            <span className="text-slate-900 font-semibold capitalize">
+                            <span className="text-[#0a2e1e] font-semibold capitalize">
                               {currentUserRole}
                             </span>
                           </div>
@@ -5347,7 +4827,7 @@ export default function AdminDashboard() {
                             <span className="font-medium text-slate-700">
                               Department:
                             </span>
-                            <span className="text-slate-900">
+                            <span className="text-[#0a2e1e]">
                               {profileData?.department ||
                                 storedUserData?.department ||
                                 "N/A"}
@@ -5358,7 +4838,7 @@ export default function AdminDashboard() {
                             <span className="font-medium text-slate-700">
                               User Group:
                             </span>
-                            <span className="text-slate-900">
+                            <span className="text-[#0a2e1e]">
                               {storedUserData?.user_group ||
                                 storedUserData?.department ||
                                 "N/A"}
@@ -5368,11 +4848,11 @@ export default function AdminDashboard() {
                           {/* Conditional field for Subuser - Parent User Email */}
                           {storedUserData?.user_type === "subuser" &&
                             storedUserData?.parent_user_email && (
-                              <div className="flex justify-between bg-purple-50 -mx-2 px-2 py-2 rounded-md border border-purple-200">
-                                <span className="font-medium text-purple-700">
+                              <div className="flex justify-between bg-[#d4ede4] -mx-2 px-2 py-2 rounded-none border border-[#d0d5dc]">
+                                <span className="font-medium text-[#0a2e1e]">
                                   Parent User Email:
                                 </span>
-                                <span className="text-purple-900 font-semibold text-right break-all">
+                                <span className="text-[#0a2e1e] font-semibold text-right break-all">
                                   {storedUserData.parent_user_email}
                                 </span>
                               </div>
@@ -5382,7 +4862,7 @@ export default function AdminDashboard() {
                             <span className="font-medium text-slate-700">
                               Time Zone:
                             </span>
-                            <span className="text-slate-900">
+                            <span className="text-[#0a2e1e]">
                               {profileData?.timezone ||
                                 storedUserData?.timezone ||
                                 "Asia/Kolkata"}
@@ -5393,7 +4873,7 @@ export default function AdminDashboard() {
                             <span className="font-medium text-slate-700">
                               Login Time:
                             </span>
-                            <span className="text-slate-900 text-right text-xs">
+                            <span className="text-[#0a2e1e] text-right text-xs">
                               {(() => {
                                 const userTimezone =
                                   profileData?.timezone ||
@@ -5417,7 +4897,7 @@ export default function AdminDashboard() {
                         <span className="font-medium text-slate-700">
                           Private Cloud:
                         </span>
-                        <span className={`font-semibold ${profileData?.is_private_cloud || storedUserData?.is_private_cloud ? 'text-green-800' : 'text-slate-500'}`}>
+                        <span className={`font-semibold ${profileData?.is_private_cloud || storedUserData?.is_private_cloud ? 'text-[#0a2e1e]' : 'text-slate-500'}`}>
                           {profileData?.is_private_cloud || storedUserData?.is_private_cloud ? 'Enabled' : 'Disabled'}
                         </span>
                       </div> */}
@@ -5441,21 +4921,9 @@ export default function AdminDashboard() {
                                   "Asia/Kolkata",
                               });
                             }}
-                            className="bg-brand hover:bg-brand-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors flex items-center justify-center gap-2 mx-auto"
+                            className="bg-brand hover:bg-brand-700 text-white px-6 py-2 rounded-none text-sm font-medium transition-colors flex items-center justify-center gap-2 mx-auto"
                           >
-                            <svg
-                              className="w-4 h-4"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                              />
-                            </svg>
+                            <Edit className="w-4 h-4" />
                             Edit Profile
                           </button>
                         </div>
@@ -5603,7 +5071,7 @@ export default function AdminDashboard() {
                                   user_name: e.target.value,
                                 }))
                               }
-                              className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                              className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                               placeholder="Enter your name"
                               required
                             />
@@ -5623,7 +5091,7 @@ export default function AdminDashboard() {
                                   phone_number: e.target.value,
                                 }))
                               }
-                              className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                              className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                               placeholder="Enter phone number"
                             />
                           </div>
@@ -5652,25 +5120,7 @@ export default function AdminDashboard() {
                                 }}
                                 className="text-xs text-brand hover:text-brand-700 font-medium flex items-center gap-1"
                               >
-                                <svg
-                                  className="w-3 h-3"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                  />
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                  />
-                                </svg>
+                                <MapPin className="w-3 h-3" />
                                 Auto-Detect
                               </button>
                             </div>
@@ -5682,7 +5132,7 @@ export default function AdminDashboard() {
                                   timezone: e.target.value,
                                 }))
                               }
-                              className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                              className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                             >
                               <option value="Asia/Kolkata">
                                 Asia/Kolkata (IST)
@@ -5745,7 +5195,7 @@ export default function AdminDashboard() {
                         type="email"
                         value={profileData?.email || user?.email || ''}
                         disabled
-                        className="w-full px-3 py-2 border border-slate-200 rounded-md bg-slate-50 text-slate-500 cursor-not-allowed"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-none bg-slate-50 text-slate-500 cursor-not-allowed"
                       />
                     </div> */}
 
@@ -5758,7 +5208,7 @@ export default function AdminDashboard() {
                         type="text"
                         value={profileData?.role || user?.role || 'user'}
                         disabled
-                        className="w-full px-3 py-2 border border-slate-200 rounded-md bg-slate-50 text-slate-500 cursor-not-allowed capitalize"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-none bg-slate-50 text-slate-500 cursor-not-allowed capitalize"
                       />
                     </div> */}
 
@@ -5767,7 +5217,7 @@ export default function AdminDashboard() {
                             <button
                               type="button"
                               onClick={() => setIsEditingProfile(false)}
-                              className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-md hover:bg-slate-50 transition-colors"
+                              className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-none hover:bg-slate-50 transition-colors"
                               disabled={profileUpdateLoading}
                             >
                               Cancel
@@ -5775,29 +5225,11 @@ export default function AdminDashboard() {
                             <button
                               type="submit"
                               disabled={profileUpdateLoading}
-                              className="flex-1 bg-brand hover:bg-brand-700 text-white px-4 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                              className="flex-1 bg-brand hover:bg-brand-700 text-white px-4 py-2 rounded-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
                               {profileUpdateLoading ? (
                                 <>
-                                  <svg
-                                    className="animate-spin h-4 w-4"
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <circle
-                                      className="opacity-25"
-                                      cx="12"
-                                      cy="12"
-                                      r="10"
-                                      stroke="currentColor"
-                                      strokeWidth="4"
-                                      fill="none"
-                                    ></circle>
-                                    <path
-                                      className="opacity-75"
-                                      fill="currentColor"
-                                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                    ></path>
-                                  </svg>
+                                  <Loader2 className="animate-spin h-4 w-4" />
                                   Saving...
                                 </>
                               ) : (
@@ -5816,11 +5248,11 @@ export default function AdminDashboard() {
             {/* Settings Modal - Billing & Password */}
             {showSettingsModal && (
               <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4 overflow-y-auto">
-                <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full my-8">
+                <div className="bg-white rounded-none shadow-2xl max-w-2xl w-full my-8">
                   {/* Header */}
                   <div className="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
                     <div>
-                      <h2 className="text-xl font-semibold text-slate-900">
+                      <h2 className="text-xl font-semibold text-[#0a2e1e]">
                         Settings
                       </h2>
                       <p className="text-sm text-slate-600 mt-1">
@@ -5838,19 +5270,7 @@ export default function AdminDashboard() {
                       }}
                       className="text-slate-400 hover:text-slate-600 transition-colors"
                     >
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
+                      <X className="w-6 h-6" />
                     </button>
                   </div>
 
@@ -5863,23 +5283,11 @@ export default function AdminDashboard() {
                           className={`flex-1 px-6 py-3 text-sm font-medium transition-colors ${
                             settingsTab === "billing"
                               ? "text-brand border-b-2 border-brand bg-brand/5"
-                              : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                              : "text-slate-600 hover:text-[#0a2e1e] hover:bg-slate-50"
                           }`}
                         >
                           <div className="flex items-center justify-center gap-2">
-                            <svg
-                              className="w-5 h-5"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                              />
-                            </svg>
+                            <CreditCard className="w-5 h-5" />
                             Billing Usage
                           </div>
                         </button>
@@ -5889,23 +5297,11 @@ export default function AdminDashboard() {
                         className={`flex-1 px-6 py-3 text-sm font-medium transition-colors ${
                           settingsTab === "password"
                             ? "text-brand border-b-2 border-brand bg-brand/5"
-                            : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                            : "text-slate-600 hover:text-[#0a2e1e] hover:bg-slate-50"
                         }`}
                       >
                         <div className="flex items-center justify-center gap-2">
-                          <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                            />
-                          </svg>
+                          <Lock className="w-5 h-5" />
                           Change Password
                         </div>
                       </button>
@@ -5917,7 +5313,7 @@ export default function AdminDashboard() {
                     {settingsTab === "billing" ? (
                       <div className="space-y-6">
                         <div className="flex justify-between items-center mb-4">
-                          <h3 className="text-lg font-semibold text-slate-900">
+                          <h3 className="text-lg font-semibold text-[#0a2e1e]">
                             Billing Usage
                           </h3>
                           {/* <button
@@ -5994,21 +5390,9 @@ export default function AdminDashboard() {
                               // Navigate to checkout with prefilled data
                               window.location.href = `/checkout?${params.toString()}`;
                             }}
-                            className="px-4 py-2 bg-gradient-to-r from-brand to-brand/80 text-white rounded-lg hover:from-brand/90 hover:to-brand/70 transition-all duration-200 flex items-center gap-2 shadow-sm"
+                            className="px-4 py-2  from-brand to-brand/80 text-white rounded-none hover:from-brand/90 hover:to-brand/70 transition-all duration-200 flex items-center gap-2 shadow-sm"
                           >
-                            <svg
-                              className="w-4 h-4"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                              />
-                            </svg>
+                            <RefreshCw className="w-4 h-4" />
                             Renew License
                           </button> */}
                         </div>
@@ -6039,7 +5423,7 @@ export default function AdminDashboard() {
                         Object.keys(billingDetails).length > 0 ? (
                           <div className="space-y-4">
                             {/* Accordion 1: Active License Plan */}
-                            <div className="bg-gradient-to-br from-brand/5 to-brand/10 rounded-lg border border-brand/20 overflow-hidden">
+                            <div className="bg-gradient-to-br from-brand/5 to-brand/10 rounded-none border border-brand/20 overflow-hidden">
                               <button
                                 onClick={() =>
                                   setBillingAccordion((prev) => ({
@@ -6050,23 +5434,11 @@ export default function AdminDashboard() {
                                 className="w-full px-6 py-4 flex items-center justify-between hover:bg-brand/5 transition-colors"
                               >
                                 <div className="flex items-center gap-3">
-                                  <div className="w-10 h-10 bg-brand/20 rounded-lg flex items-center justify-center">
-                                    <svg
-                                      className="w-5 h-5 text-brand"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                                      />
-                                    </svg>
+                                  <div className="w-10 h-10 bg-brand/20 rounded-none flex items-center justify-center">
+                                    <BadgeCheck className="w-5 h-5 text-brand" />
                                   </div>
                                   <div className="text-left">
-                                    <h4 className="text-lg font-semibold text-slate-900">
+                                    <h4 className="text-lg font-semibold text-[#0a2e1e]">
                                       Active License Plan
                                     </h4>
                                     <p className="text-sm text-slate-600">
@@ -6074,23 +5446,7 @@ export default function AdminDashboard() {
                                     </p>
                                   </div>
                                 </div>
-                                <svg
-                                  className={`w-5 h-5 text-slate-600 transition-transform duration-200 ${
-                                    billingAccordion.activePlan
-                                      ? "rotate-180"
-                                      : ""
-                                  }`}
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M19 9l-7 7-7-7"
-                                  />
-                                </svg>
+                                <ChevronDown className="w-5 h-5" />
                               </button>
 
                               <div
@@ -6114,7 +5470,7 @@ export default function AdminDashboard() {
                                   })()}
                                   <div className="grid grid-cols-2 gap-4">
                                     {/* PURANA CODE
-                                      <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4">
+                                      <div className="bg-white/60 backdrop-blur-sm rounded-none p-4">
                                         <p className="text-xs text-slate-600 mb-1">
                                           Plan Type
                                         </p>
@@ -6125,44 +5481,33 @@ export default function AdminDashboard() {
                                             "N/A"}
                                         </p>
                                       </div>
-                                      <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4">
-                                        <p className="text-xs text-slate-600 mb-1">
-                                          Total Licenses
-                                        </p>
-                                        <p className="text-lg font-bold text-slate-900">
-                                          {billingDetails.purchase_details
-                                            ?.total_licenses ||
-                                            billingDetails.total_licenses ||
-                                            0}
-                                        </p>
-                                      </div>
-                                      */}
-
+                                      <div className="bg-white/60 backdrop-blur-sm rounded-none p-4">
                                       {/* NAYA CODE */}
-                                      <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4">
-                                        <p className="text-xs text-slate-600 mb-1">
+                                      <div className="bg-slate-50 rounded-none p-4 flex flex-col h-full border border-slate-100">
+                                        <p className="text-xs text-slate-500 mb-1 shrink-0">
                                           Plan Type
                                         </p>
-                                        <p className="text-lg font-bold text-brand">
-                                          {dashboardLicenseList.length > 0
-                                            ? Array.from(
-                                                new Set(
-                                                  dashboardLicenseList.map(
-                                                    (l) => l.license_type || l.edition || l.type || "D-Secure File Eraser"
+                                        <div className="overflow-y-auto custom-scrollbar max-h-24 pr-2 flex-1">
+                                          <p className="text-sm font-bold text-[#0e7c66] leading-relaxed break-words">
+                                            {dashboardLicenseList.length > 0
+                                              ? Array.from(
+                                                  new Set(
+                                                    dashboardLicenseList.map(
+                                                      (l) => l.license_type || l.edition || l.type || "D-Secure File Eraser"
+                                                    )
                                                   )
-                                                )
-                                              ).join(", ")
-                                            : "D-Secure File Eraser"}
-                                        </p>
+                                                ).join(", ")
+                                              : "D-Secure File Eraser"}
+                                          </p>
+                                        </div>
                                       </div>
-                                      <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4">
-                                        <p className="text-xs text-slate-600 mb-1">
+                                      <div className="bg-slate-50 rounded-none p-4 flex flex-col h-full border border-slate-100">
+                                        <p className="text-xs text-slate-500 mb-1 shrink-0">
                                           Total Licenses
                                         </p>
-                                        <p className="text-lg font-bold text-slate-900">
+                                        <p className="text-xl font-bold text-[#0a2e1e] mt-auto">
                                           {billingDetails?.totalLicenses ||
                                             billingDetails?.total_licenses ||
-                                            dashboardStats?.totalLicenses ||
                                             0}
                                         </p>
                                       </div>
@@ -6172,45 +5517,36 @@ export default function AdminDashboard() {
                               </div>
 
                             {/* Accordion 2: License Usage Stats */}
-                            {/* <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+                            {/* <div className="bg-white rounded-none border border-slate-200 overflow-hidden">
                         <button
                           onClick={() => setBillingAccordion(prev => ({ ...prev, licenseUsage: !prev.licenseUsage }))}
                           className="w-full px-6 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors"
                         >
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                              </svg>
+                            <div className="w-10 h-10 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                              <BarChart className="w-5 h-5 text-[#0a2e1e]" />
                             </div>
                             <div className="text-left">
-                              <h4 className="text-base font-semibold text-slate-900">License Usage</h4>
+                              <h4 className="text-base font-semibold text-[#0a2e1e]">License Usage</h4>
                               <p className="text-sm text-slate-600">Track your license consumption</p>
                             </div>
                           </div>
-                          <svg 
-                            className={`w-5 h-5 text-slate-600 transition-transform duration-200 ${billingAccordion.licenseUsage ? 'rotate-180' : ''}`}
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </svg>
+                          <ChevronDown className="w-5 h-5" />
                         </button>
                         
                         <div className={`transition-all duration-300 ease-in-out ${billingAccordion.licenseUsage ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
                           <div className="px-6 pb-6 space-y-4">
                             <div className="flex justify-between items-center">
                               <span className="text-sm text-slate-600">Total Licenses</span>
-                              <span className="text-lg font-bold text-slate-900">{billingDetails.totalLicenses || 0}</span>
+                              <span className="text-lg font-bold text-[#0a2e1e]">{billingDetails.totalLicenses || 0}</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span className="text-sm text-slate-600">Consumed</span>
-                              <span className="text-lg font-bold text-orange-600">{billingDetails.consumedLicenses || 0}</span>
+                              <span className="text-lg font-bold text-[#0a2e1e]">{billingDetails.consumedLicenses || 0}</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span className="text-sm text-slate-600">Available</span>
-                              <span className="text-lg font-bold text-green-800">{billingDetails.availableLicenses || 0}</span>
+                              <span className="text-lg font-bold text-[#0a2e1e]">{billingDetails.availableLicenses || 0}</span>
                             </div>
                             
                             
@@ -6229,8 +5565,8 @@ export default function AdminDashboard() {
                                     (billingDetails.consumedLicenses / billingDetails.totalLicenses) > 0.8 
                                       ? 'bg-red-500' 
                                       : (billingDetails.consumedLicenses / billingDetails.totalLicenses) > 0.6
-                                        ? 'bg-yellow-500'
-                                        : 'bg-green-500'
+                                        ? 'bg-[#0e7c66]'
+                                        : 'bg-[#0e7c66]'
                                   }`}
                                   style={{ 
                                     width: `${billingDetails.totalLicenses > 0 
@@ -6245,7 +5581,7 @@ export default function AdminDashboard() {
                       </div> */}
 
                             {/* Accordion 3: Plan Details */}
-                            <div className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden">
+                            <div className="bg-slate-50 rounded-none border border-slate-200 overflow-hidden">
                               <button
                                 onClick={() =>
                                   setBillingAccordion((prev) => ({
@@ -6256,23 +5592,11 @@ export default function AdminDashboard() {
                                 className="w-full px-6 py-4 flex items-center justify-between hover:bg-slate-100 transition-colors"
                               >
                                 <div className="flex items-center gap-3">
-                                  <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                                    <svg
-                                      className="w-5 h-5 text-purple-600"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                                      />
-                                    </svg>
+                                  <div className="w-10 h-10 bg-[#d4ede4] rounded-none flex items-center justify-center">
+                                    <Info className="w-5 h-5 text-[#0a2e1e]" />
                                   </div>
                                   <div className="text-left">
-                                    <h4 className="text-base font-semibold text-slate-900">
+                                    <h4 className="text-base font-semibold text-[#0a2e1e]">
                                       Plan Information
                                     </h4>
                                     <p className="text-sm text-slate-600">
@@ -6280,23 +5604,7 @@ export default function AdminDashboard() {
                                     </p>
                                   </div>
                                 </div>
-                                <svg
-                                  className={`w-5 h-5 text-slate-600 transition-transform duration-200 ${
-                                    billingAccordion.planInfo
-                                      ? "rotate-180"
-                                      : ""
-                                  }`}
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M19 9l-7 7-7-7"
-                                  />
-                                </svg>
+                                <ChevronDown className="w-5 h-5" />
                               </button>
 
                               <div
@@ -6341,16 +5649,16 @@ export default function AdminDashboard() {
 
                                     const InfoRow = ({ label, value, isStatus = false }: { label: string, value: string, isStatus?: boolean }) => {
                                       const icon = label === "Expiry Date" ? (
-                                        <svg className="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                        <Calendar className="w-5 h-5 text-brand" />
                                       ) : (
-                                        <svg className="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        <Info className="w-5 h-5 text-brand" />
                                       );
 
-                                      let valueClass = "text-slate-900";
+                                      let valueClass = "text-[#0a2e1e]";
                                       if (isStatus) {
-                                        valueClass = value.toLowerCase() === "active" ? "text-emerald-800" : "text-red-600";
+                                        valueClass = value.toLowerCase() === "active" ? "text-[#0a2e1e]" : "text-red-600";
                                       } else if (value === "Enabled") {
-                                        valueClass = "text-emerald-800";
+                                        valueClass = "text-[#0a2e1e]";
                                       } else if (value === "Disabled") {
                                         valueClass = "text-slate-500";
                                       }
@@ -6391,9 +5699,9 @@ export default function AdminDashboard() {
                                     else if (key.toLowerCase().includes("expir")) displayLabel = "Expiry Date";
 
                                     const icon = key.toLowerCase().includes("expir") || key.toLowerCase().includes("date") ? (
-                                      <svg className="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                      <Calendar className="w-5 h-5 text-brand" />
                                     ) : (
-                                      <svg className="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                      <Info className="w-5 h-5 text-brand" />
                                     );
 
                                     let displayValue = String(value);
@@ -6407,7 +5715,7 @@ export default function AdminDashboard() {
                                           {icon}
                                           <div className="flex-1 flex justify-between items-center">
                                             <span className="text-sm font-medium text-slate-700 capitalize">{displayLabel}</span>
-                                            <span className={`text-sm font-semibold capitalize ${key.toLowerCase() === "status" ? (displayValue.toLowerCase() === "active" ? "text-emerald-800" : "text-red-600") : "text-slate-900"}`}>
+                                            <span className={`text-sm font-semibold capitalize ${key.toLowerCase() === "status" ? (displayValue.toLowerCase() === "active" ? "text-[#0a2e1e]" : "text-red-600") : "text-[#0a2e1e]"}`}>
                                               {displayValue}
                                             </span>
                                           </div>
@@ -6572,30 +5880,12 @@ export default function AdminDashboard() {
                                               className="py-3 border-b border-slate-200 last:border-0"
                                             >
                                               <div className="flex items-start gap-3">
-                                                <svg
-                                                  className="w-5 h-5 text-brand mt-0.5 flex-shrink-0"
-                                                  fill="none"
-                                                  stroke="currentColor"
-                                                  viewBox="0 0 24 24"
-                                                >
-                                                  <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                                  />
-                                                  <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                                  />
-                                                </svg>
+                                                <MapPin className="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
                                                 <div className="flex-1">
                                                   <span className="block text-sm font-medium text-slate-700 mb-1 capitalize">
                                                     {key.replace(/_/g, " ")}
                                                   </span>
-                                                  <span className="text-sm text-slate-900 leading-relaxed">
+                                                  <span className="text-sm text-[#0a2e1e] leading-relaxed">
                                                     {addressLine}
                                                   </span>
                                                 </div>
@@ -6613,7 +5903,7 @@ export default function AdminDashboard() {
                                             <span className="block text-sm font-medium text-slate-700 mb-1 capitalize">
                                               {key.replace(/_/g, " ")}
                                             </span>
-                                            <pre className="text-xs text-slate-900 bg-white p-2 rounded border border-slate-200 overflow-auto">
+                                            <pre className="text-xs text-[#0a2e1e] bg-white p-2 rounded border border-slate-200 overflow-auto">
                                               {JSON.stringify(value, null, 2)}
                                             </pre>
                                           </div>
@@ -6645,37 +5935,13 @@ export default function AdminDashboard() {
                                       // Select appropriate icon
                                       if (key.toLowerCase().includes("email")) {
                                         icon = (
-                                          <svg
-                                            className="w-5 h-5 text-brand"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              strokeLinecap="round"
-                                              strokeLinejoin="round"
-                                              strokeWidth={2}
-                                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                            />
-                                          </svg>
+                                          <Mail className="w-5 h-5 text-brand" />
                                         );
                                       } else if (
                                         key.toLowerCase().includes("date")
                                       ) {
                                         icon = (
-                                          <svg
-                                            className="w-5 h-5 text-brand"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              strokeLinecap="round"
-                                              strokeLinejoin="round"
-                                              strokeWidth={2}
-                                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                            />
-                                          </svg>
+                                          <Calendar className="w-5 h-5 text-brand" />
                                         );
                                       } else if (
                                         key
@@ -6684,54 +5950,18 @@ export default function AdminDashboard() {
                                         key.toLowerCase().includes("years")
                                       ) {
                                         icon = (
-                                          <svg
-                                            className="w-5 h-5 text-brand"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              strokeLinecap="round"
-                                              strokeLinejoin="round"
-                                              strokeWidth={2}
-                                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                            />
-                                          </svg>
+                                          <Clock className="w-5 h-5 text-brand" />
                                         );
                                       } else if (
                                         key.toLowerCase().includes("plan") ||
                                         key.toLowerCase().includes("id")
                                       ) {
                                         icon = (
-                                          <svg
-                                            className="w-5 h-5 text-brand"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              strokeLinecap="round"
-                                              strokeLinejoin="round"
-                                              strokeWidth={2}
-                                              d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
-                                            />
-                                          </svg>
+                                          <Tag className="w-5 h-5 text-brand" />
                                         );
                                       } else {
                                         icon = (
-                                          <svg
-                                            className="w-5 h-5 text-brand"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              strokeLinecap="round"
-                                              strokeLinejoin="round"
-                                              strokeWidth={2}
-                                              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                                            />
-                                          </svg>
+                                          <Info className="w-5 h-5 text-brand" />
                                         );
                                       }
 
@@ -6777,7 +6007,7 @@ export default function AdminDashboard() {
                                               <span className="text-sm font-medium text-slate-700">
                                                 {displayLabel}
                                               </span>
-                                              <span className="text-sm text-slate-900 font-semibold">
+                                              <span className="text-sm text-[#0a2e1e] font-semibold">
                                                 {displayValue}
                                               </span>
                                             </div>
@@ -6791,20 +6021,8 @@ export default function AdminDashboard() {
                             </div>
                           </div>
                         ) : (
-                          <div className="text-center py-12 text-slate-500 bg-slate-50 rounded-lg border border-slate-200">
-                            <svg
-                              className="w-16 h-16 mx-auto mb-3 text-slate-300"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                              />
-                            </svg>
+                          <div className="text-center py-12 text-slate-500 bg-slate-50 rounded-none border border-slate-200">
+                            <CreditCard className="w-16 h-16 mx-auto mb-3 text-slate-300" />
                             <p className="text-base font-medium">
                               No billing details available
                             </p>
@@ -6817,7 +6035,7 @@ export default function AdminDashboard() {
                       </div>
                     ) : (
                       <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-slate-900 mb-4">
+                        <h3 className="text-lg font-semibold text-[#0a2e1e] mb-4">
                           Change Password
                         </h3>
 
@@ -6903,7 +6121,7 @@ export default function AdminDashboard() {
                                     currentPassword: e.target.value,
                                   }))
                                 }
-                                className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand/50 focus:border-brand"
+                                className="w-full px-4 py-2 border border-slate-300 rounded-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                                 placeholder="Enter current password"
                                 required
                               />
@@ -6924,7 +6142,7 @@ export default function AdminDashboard() {
                                     newPassword: e.target.value,
                                   }))
                                 }
-                                className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand/50 focus:border-brand"
+                                className="w-full px-4 py-2 border border-slate-300 rounded-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                                 placeholder="Enter new password (min 6 characters)"
                                 required
                                 minLength={6}
@@ -6940,7 +6158,7 @@ export default function AdminDashboard() {
                           type="password"
                           value={changePasswordForm.confirmPassword}
                           onChange={(e) => setChangePasswordForm(prev => ({ ...prev, confirmPassword: e.target.value }))}
-                          className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-brand/50 focus:border-brand"
+                          className="w-full px-4 py-2 border border-slate-300 rounded-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                           placeholder="Confirm new password"
                           required
                         />
@@ -6957,36 +6175,18 @@ export default function AdminDashboard() {
                                     newPassword: "",
                                   });
                                 }}
-                                className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-md transition-colors"
+                                className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-none transition-colors"
                               >
                                 Cancel
                               </button>
                               <button
                                 type="submit"
                                 disabled={passwordChangeLoading}
-                                className="flex-1 bg-brand hover:bg-brand-700 text-white px-4 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                className="flex-1 bg-brand hover:bg-brand-700 text-white px-4 py-2 rounded-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                               >
                                 {passwordChangeLoading ? (
                                   <>
-                                    <svg
-                                      className="animate-spin h-4 w-4"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <circle
-                                        className="opacity-25"
-                                        cx="12"
-                                        cy="12"
-                                        r="10"
-                                        stroke="currentColor"
-                                        strokeWidth="4"
-                                        fill="none"
-                                      ></circle>
-                                      <path
-                                        className="opacity-75"
-                                        fill="currentColor"
-                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                      ></path>
-                                    </svg>
+                                    <Loader2 className="animate-spin h-4 w-4" />
                                     Changing...
                                   </>
                                 ) : (
@@ -7006,9 +6206,9 @@ export default function AdminDashboard() {
             {/* Add User Modal */}
             {showAddUserModal && (
               <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4">
-                <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+                <div className="bg-white rounded-none shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
                   {/* <div className="px-6 py-5 border-b border-slate-200"> */}
-                  {/* <h2 className="text-xl font-semibold text-slate-900">Add New User</h2> */}
+                  {/* <h2 className="text-xl font-semibold text-[#0a2e1e]">Add New User</h2> */}
                   {/* <p className="text-sm text-slate-600 mt-1">Create a new user account</p> */}
                   {/* </div> */}
                   <div className="px-6 py-5 space-y-4">
@@ -7030,7 +6230,7 @@ export default function AdminDashboard() {
                               name: e.target.value,
                             }))
                           }
-                          className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                           placeholder="Enter full name"
                         />
                       </div>
@@ -7051,7 +6251,7 @@ export default function AdminDashboard() {
                               license_allocation: e.target.value,
                             }))
                           }
-                          className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                           placeholder="Enter license allocation"
                         />
                       </div>
@@ -7073,7 +6273,7 @@ export default function AdminDashboard() {
                             email: e.target.value,
                           }))
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                         placeholder="Enter email address"
                       />
                     </div>
@@ -7095,7 +6295,7 @@ export default function AdminDashboard() {
                               department: e.target.value,
                             }))
                           }
-                          className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                           placeholder="Enter department"
                         />
                       </div>
@@ -7116,7 +6316,7 @@ export default function AdminDashboard() {
                               role: e.target.value,
                             }))
                           }
-                          className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                           placeholder="Enter role (e.g., user, admin, manager)"
                         />
                       </div>
@@ -7138,7 +6338,7 @@ export default function AdminDashboard() {
                             password: e.target.value,
                           }))
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                         placeholder="Enter password"
                       />
                     </div>
@@ -7160,7 +6360,7 @@ export default function AdminDashboard() {
                               phone: e.target.value,
                             }))
                           }
-                          className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                           placeholder="Enter phone number"
                         />
                       </div>
@@ -7181,7 +6381,7 @@ export default function AdminDashboard() {
                               group: e.target.value,
                             }))
                           }
-                          className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                           placeholder="Enter group"
                         />
                       </div>
@@ -7202,14 +6402,14 @@ export default function AdminDashboard() {
                           license_allocation: "0",
                         });
                       }}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
                     >
                       Cancel
                     </button>
                     <button
                       onClick={handleAddUserSubmit}
                       disabled={isLoading}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand-700 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors disabled:opacity-50"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand-700 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors disabled:opacity-50"
                     >
                       {isLoading ? "Creating..." : "Create User"}
                     </button>
@@ -7221,9 +6421,9 @@ export default function AdminDashboard() {
             {/* Add Group Modal */}
             {showAddGroupModal && (
               <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+                <div className="bg-white rounded-none shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
                   <div className="px-6 py-5 border-b border-slate-200">
-                    <h2 className="text-xl font-semibold text-slate-900">
+                    <h2 className="text-xl font-semibold text-[#0a2e1e]">
                       Add New Group
                     </h2>
                     <p className="text-sm text-slate-600 mt-1">
@@ -7248,7 +6448,7 @@ export default function AdminDashboard() {
                             name: e.target.value,
                           }))
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                         placeholder="Enter group name"
                       />
                     </div>
@@ -7269,7 +6469,7 @@ export default function AdminDashboard() {
                             description: e.target.value,
                           }))
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                         placeholder="Enter group description"
                       />
                     </div>
@@ -7291,7 +6491,7 @@ export default function AdminDashboard() {
                             licenses: parseInt(e.target.value) || 0,
                           }))
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                         placeholder="0"
                       />
                     </div>
@@ -7306,14 +6506,14 @@ export default function AdminDashboard() {
                           licenses: 0,
                         });
                       }}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
                     >
                       Cancel
                     </button>
                     <button
                       onClick={handleAddGroupSubmit}
                       disabled={isLoading}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand-700 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors disabled:opacity-50"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand-700 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors disabled:opacity-50"
                     >
                       {isLoading ? "Creating..." : "Create Group"}
                     </button>
@@ -7325,9 +6525,9 @@ export default function AdminDashboard() {
             {/* Assign Licenses Modal */}
             {showAssignLicensesModal && selectedGroupForLicenses && (
               <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+                <div className="bg-white rounded-none shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
                   <div className="px-6 py-5 border-b border-slate-200">
-                    <h2 className="text-xl font-semibold text-slate-900">
+                    <h2 className="text-xl font-semibold text-[#0a2e1e]">
                       Assign Licenses
                     </h2>
                     <p className="text-sm text-slate-600 mt-1">
@@ -7356,7 +6556,7 @@ export default function AdminDashboard() {
                             licenseCount: parseInt(e.target.value) || 1,
                           }))
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                         placeholder="Enter license count"
                       />
                     </div>
@@ -7376,7 +6576,7 @@ export default function AdminDashboard() {
                             licenseType: e.target.value,
                           }))
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                       >
                         <option value="basic">Basic</option>
                         <option value="premium">Premium</option>
@@ -7400,7 +6600,7 @@ export default function AdminDashboard() {
                             expiryDate: e.target.value,
                           }))
                         }
-                        className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                       />
                     </div>
                   </div>
@@ -7415,14 +6615,14 @@ export default function AdminDashboard() {
                           licenseType: "basic",
                         });
                       }}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
                     >
                       Cancel
                     </button>
                     <button
                       onClick={handleAssignLicensesSubmit}
                       disabled={isLoading}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand-700 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors disabled:opacity-50"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand-700 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors disabled:opacity-50"
                     >
                       {isLoading ? "Assigning..." : "Assign Licenses"}
                     </button>
@@ -7434,9 +6634,9 @@ export default function AdminDashboard() {
             {/* System Settings Modal */}
             {showSystemSettingsModal && (
               <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <div className="bg-white rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                   <div className="px-6 py-5 border-b border-slate-200">
-                    <h2 className="text-xl font-semibold text-slate-900">
+                    <h2 className="text-xl font-semibold text-[#0a2e1e]">
                       System Settings
                     </h2>
                     <p className="text-sm text-slate-600 mt-1">
@@ -7456,7 +6656,7 @@ export default function AdminDashboard() {
                           type="text"
                           id="systemName"
                           defaultValue="D-Secure Admin System"
-                          className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                         />
                       </div>
                       <div>
@@ -7470,12 +6670,12 @@ export default function AdminDashboard() {
                           type="email"
                           id="adminEmail"
                           defaultValue="admin@dsecuretech.com"
-                          className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                          className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                         />
                       </div>
                     </div>
                     <div className="border-t border-slate-200 pt-4">
-                      <h3 className="font-medium text-slate-900 mb-3">
+                      <h3 className="font-medium text-[#0a2e1e] mb-3">
                         Security Settings
                       </h3>
                       <div className="space-y-3">
@@ -7512,7 +6712,7 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                     <div className="border-t border-slate-200 pt-4">
-                      <h3 className="font-medium text-slate-900 mb-3">
+                      <h3 className="font-medium text-[#0a2e1e] mb-3">
                         License Settings
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -7523,7 +6723,7 @@ export default function AdminDashboard() {
                           <input
                             type="number"
                             defaultValue="365"
-                            className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                            className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                           />
                         </div>
                         <div>
@@ -7533,7 +6733,7 @@ export default function AdminDashboard() {
                           <input
                             type="number"
                             defaultValue="5"
-                            className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                            className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                           />
                         </div>
                       </div>
@@ -7542,7 +6742,7 @@ export default function AdminDashboard() {
                   <div className="px-6 py-4 border-t border-slate-200 flex gap-3">
                     <button
                       onClick={() => setShowSystemSettingsModal(false)}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-none hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
                     >
                       Cancel
                     </button>
@@ -7554,7 +6754,7 @@ export default function AdminDashboard() {
                         );
                         setShowSystemSettingsModal(false);
                       }}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand-700 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand-700 rounded-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
                     >
                       Save Settings
                     </button>
@@ -7566,9 +6766,9 @@ export default function AdminDashboard() {
             {/* My Downloads Tab */}
             {activeTab === "mydownloads" && (
               <div className="space-y-6">
-                <div className="card">
+                <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6">
                   <div className="px-6 py-5 border-b border-slate-200">
-                    <h2 className="font-semibold text-slate-900">
+                    <h2 className="font-semibold text-[#0a2e1e]">
                       Software Downloads
                     </h2>
                     <p className="text-sm text-slate-600 mt-1">
@@ -7578,25 +6778,13 @@ export default function AdminDashboard() {
                   <div className="p-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                       {/* File Eraser */}
-                      <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200 hover:border-emerald-400 hover:shadow-lg transition-all duration-200">
+                      <div className="group bg-white rounded-none p-6 border border-[#d4ede4] hover:border-[#d4ede4] hover:shadow-lg transition-all duration-200">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
-                            <svg
-                              className="w-6 h-6 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                              />
-                            </svg>
+                          <div className="w-12 h-12 bg-[#d4ede4] rounded-full flex items-center justify-center">
+                            <File className="w-6 h-6 text-[#0a2e1e]" />
                           </div>
                           <div>
-                            <h2 className="text-lg font-bold text-slate-900">
+                            <h2 className="text-lg font-bold text-[#0a2e1e]">
                               File Eraser
                             </h2>
                             <p className="text-xs text-slate-600">
@@ -7616,45 +6804,21 @@ export default function AdminDashboard() {
                               showInfo("Demo Restricted", "Software downloads are not available in demo accounts. Please create a real account.");
                             }
                           }}
-                          className="flex items-center justify-center gap-2 w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 rounded-lg transition-all"
+                          className="flex items-center justify-center gap-2 w-full px-4 py-2 text-sm font-medium text-white bg-[#0e7c66] hover:from-[#0e7c66] hover:to-[#0a2e1e] rounded-none transition-all"
                         >
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                            />
-                          </svg>
+                          <Download className="w-4 h-4" />
                           Download Now
                         </Link>
                       </div>
 
                       {/* Drive Eraser */}
-                      <div className="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200">
+                      <div className="group bg-white rounded-none p-6 border border-[#d0d5dc] hover:border-[#d0d5dc] hover:shadow-lg transition-all duration-200">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                            <svg
-                              className="w-6 h-6 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
-                              />
-                            </svg>
+                          <div className="w-12 h-12 bg-[#d4ede4] rounded-full flex items-center justify-center">
+                            <HardDrive className="w-6 h-6 text-[#0a2e1e]" />
                           </div>
                           <div>
-                            <h2 className="text-lg font-bold text-slate-900">
+                            <h2 className="text-lg font-bold text-[#0a2e1e]">
                               Drive Eraser
                             </h2>
                             <p className="text-xs text-slate-600">
@@ -7673,35 +6837,21 @@ export default function AdminDashboard() {
                               showInfo("Demo Restricted", "Software downloads are not available in demo accounts. Please create a real account.");
                             }
                           }}
-                          className="flex items-center justify-center gap-2 w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg transition-all"
+                          className="flex items-center justify-center gap-2 w-full px-4 py-2 text-sm font-medium text-white bg-[#0e7c66] hover:from-[#0e7c66] hover:to-[#0a2e1e] rounded-none transition-all"
                         >
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                            />
-                          </svg>
+                          <Download className="w-4 h-4" />
                           Download Now
                         </Link>
                       </div>
 
                       {/* Network Eraser - HIDDEN */}
-                      {/* <div className="group bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200 hover:border-purple-400 hover:shadow-lg transition-all duration-200">
+                      {/* <div className="group bg-white rounded-none p-6 border border-[#d0d5dc] hover:border-[#d0d5dc] hover:shadow-lg transition-all duration-200">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                        </svg>
+                      <div className="w-12 h-12 bg-[#d4ede4] rounded-full flex items-center justify-center">
+                        <Globe className="w-6 h-6 text-[#0a2e1e]" />
                       </div>
                       <div>
-                        <h2 className="text-lg font-bold text-slate-900">Network Eraser</h2>
+                        <h2 className="text-lg font-bold text-[#0a2e1e]">Network Eraser</h2>
                         <p className="text-xs text-slate-600">Version 2.0.1</p>
                       </div>
                     </div>
@@ -7710,22 +6860,20 @@ export default function AdminDashboard() {
                     </p>
                     <Link
                       to="/download?product=drive-eraser"
-                      className="flex items-center justify-center gap-2 w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-lg transition-all"
+                      className="flex items-center justify-center gap-2 w-full px-4 py-2 text-sm font-medium text-white bg-[#0e7c66] hover:from-[#0e7c66] hover:to-[#0a2e1e] rounded-none transition-all"
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
+                      <Download className="w-4 h-4" />
                       Download Now
                     </Link>
                   </div> */}
                     </div>
 
                     {/* System Requirements - HIDDEN */}
-                    {/* <div className="mt-8 bg-slate-50 rounded-lg p-6 border border-slate-200">
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">System Requirements</h3>
+                    {/* <div className="mt-8 bg-slate-50 rounded-none p-6 border border-slate-200">
+                  <h3 className="text-sm font-semibold text-[#0a2e1e] mb-3">System Requirements</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-slate-700">
                     <div>
-                      <p className="font-medium text-slate-900 mb-1">Windows</p>
+                      <p className="font-medium text-[#0a2e1e] mb-1">Windows</p>
                       <ul className="text-xs space-y-1">
                         <li>• Windows 10/11 (64-bit)</li>
                         <li>• 4GB RAM minimum</li>
@@ -7733,7 +6881,7 @@ export default function AdminDashboard() {
                       </ul>
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900 mb-1">macOS</p>
+                      <p className="font-medium text-[#0a2e1e] mb-1">macOS</p>
                       <ul className="text-xs space-y-1">
                         <li>• macOS 10.15 or later</li>
                         <li>• 4GB RAM minimum</li>
@@ -7741,7 +6889,7 @@ export default function AdminDashboard() {
                       </ul>
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900 mb-1">Linux</p>
+                      <p className="font-medium text-[#0a2e1e] mb-1">Linux</p>
                       <ul className="text-xs space-y-1">
                         <li>• Ubuntu 20.04+ / CentOS 8+</li>
                         <li>• 4GB RAM minimum</li>
@@ -7762,32 +6910,20 @@ export default function AdminDashboard() {
                 onClick={() => setShowPrivateCloudModal(false)}
               >
                 <div
-                  className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+                  className="bg-white rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Header */}
-                  <div className="px-6 py-5 border-b border-slate-200 bg-gradient-to-r from-purple-500 to-purple-700">
+                  <div className="px-6 py-5 border-b border-slate-200 bg-white">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-white/20 rounded-lg">
-                        <svg
-                          className="w-6 h-6 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                          />
-                        </svg>
+                      <div className="p-2 bg-white/20 rounded-none">
+                        <Cloud className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h2 className="text-xl font-semibold text-white">
                           Private Cloud Setup
                         </h2>
-                        <p className="text-sm text-purple-100 mt-1">
+                        <p className="text-sm text-[#d4ede4] mt-1">
                           Configure your private cloud database connection
                         </p>
                       </div>
@@ -7812,7 +6948,7 @@ export default function AdminDashboard() {
                         }
                         placeholder="Server=myserver;Database=mydb;User Id=myuser;Password=mypass;"
                         rows={3}
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 font-mono text-sm"
+                        className="w-full px-3 py-2 border border-slate-300 rounded-none focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-[#0e7c66] font-mono text-sm"
                       />
                       <p className="text-xs text-slate-500 mt-1">
                         Enter your database connection string
@@ -7825,12 +6961,12 @@ export default function AdminDashboard() {
                         Select Tables to Sync{" "}
                         <span className="text-red-500">*</span>
                       </label>
-                      <div className="border border-slate-300 rounded-lg p-4 bg-slate-50 max-h-64 overflow-y-auto">
+                      <div className="border border-slate-300 rounded-none p-4 bg-slate-50 max-h-64 overflow-y-auto">
                         <div className="space-y-2">
                           {availableTables.map((table) => (
                             <label
                               key={table}
-                              className="flex items-center gap-3 p-2 hover:bg-white rounded-lg cursor-pointer transition-colors"
+                              className="flex items-center gap-3 p-2 hover:bg-white rounded-none cursor-pointer transition-colors"
                             >
                               <input
                                 type="checkbox"
@@ -7856,22 +6992,10 @@ export default function AdminDashboard() {
                                     });
                                   }
                                 }}
-                                className="w-4 h-4 text-purple-600 border-slate-300 rounded focus:ring-purple-500"
+                                className="w-4 h-4 text-[#0a2e1e] border-slate-300 rounded focus:ring-purple-500"
                               />
                               <div className="flex items-center gap-2 flex-1">
-                                <svg
-                                  className="w-4 h-4 text-slate-500"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                                  />
-                                </svg>
+                                <Folder className="w-4 h-4 text-slate-500" />
                                 <span className="text-sm font-medium text-slate-700">
                                   {table}
                                 </span>
@@ -7888,22 +7012,10 @@ export default function AdminDashboard() {
 
                     {/* Migrate Data Switch */}
                     <div className="border-t border-slate-200 pt-4">
-                      <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                      <div className="flex items-center justify-between p-4 bg-[#d4ede4] rounded-none">
                         <div className="flex-1">
                           <label className="flex items-center gap-2 text-sm font-medium text-slate-700 cursor-pointer">
-                            <svg
-                              className="w-5 h-5 text-blue-600"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
-                              />
-                            </svg>
+                            <ArrowDownToLine className="w-5 h-5 text-[#0a2e1e]" />
                             Migrate Data
                           </label>
                           <p className="text-xs text-slate-600 mt-1 ml-7">
@@ -7922,29 +7034,17 @@ export default function AdminDashboard() {
                             }
                             className="sr-only peer"
                           />
-                          <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
+                          <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#0e7c66]"></div>
                         </label>
                       </div>
                     </div>
 
                     {/* Migrate Tables Switch */}
                     <div>
-                      <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                      <div className="flex items-center justify-between p-4 bg-[#d4ede4] rounded-none">
                         <div className="flex-1">
                           <label className="flex items-center gap-2 text-sm font-medium text-slate-700 cursor-pointer">
-                            <svg
-                              className="w-5 h-5 text-green-800"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                              />
-                            </svg>
+                            <ArrowRightLeft className="w-5 h-5 text-[#0a2e1e]" />
                             Migrate Tables
                           </label>
                           <p className="text-xs text-slate-600 mt-1 ml-7">
@@ -7963,32 +7063,20 @@ export default function AdminDashboard() {
                             }
                             className="sr-only peer"
                           />
-                          <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+                          <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#0e7c66]"></div>
                         </label>
                       </div>
                     </div>
 
                     {/* Info Box */}
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                    <div className="bg-[#d4ede4] border border-[#d0d5dc] rounded-none p-4">
                       <div className="flex gap-3">
-                        <svg
-                          className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                          />
-                        </svg>
+                        <AlertTriangle className="w-5 h-5 text-[#0a2e1e] flex-shrink-0 mt-0.5" />
                         <div>
-                          <h3 className="text-sm font-medium text-amber-900 mb-1">
+                          <h3 className="text-sm font-medium text-[#0a2e1e] mb-1">
                             Important Note
                           </h3>
-                          <ul className="text-xs text-amber-800 space-y-1">
+                          <ul className="text-xs text-[#0a2e1e] space-y-1">
                             <li>
                               • Ensure your connection string is correct before
                               proceeding
@@ -8016,7 +7104,7 @@ export default function AdminDashboard() {
                           migrateTables: false,
                         });
                       }}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 rounded-lg transition-colors"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 rounded-none transition-colors"
                       disabled={privateCloudLoading}
                     >
                       Cancel
@@ -8069,29 +7157,11 @@ export default function AdminDashboard() {
                         }
                       }}
                       disabled={privateCloudLoading}
-                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex-1 px-4 py-2 text-sm font-medium text-white bg-[#0e7c66] hover:from-[#0e7c66] hover:to-[#0a2e1e] rounded-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {privateCloudLoading ? (
                         <span className="flex items-center justify-center gap-2">
-                          <svg
-                            className="animate-spin h-4 w-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            ></circle>
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
-                          </svg>
+                          <Loader2 className="animate-spin h-4 w-4" />
                           Setting Up...
                         </span>
                       ) : (

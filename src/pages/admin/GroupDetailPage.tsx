@@ -137,7 +137,7 @@ export default function GroupDetailPage() {
         return (
             <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
                 <div className="text-center">
-                    <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-emerald-600 border-r-transparent"></div>
+                    <div className="inline-block h-12 w-12 animate-spin rounded-none border-4 border-solid border-[#0e7c66] border-r-transparent"></div>
                     <p className="mt-4 text-slate-600">Loading group resources...</p>
                 </div>
             </div>
@@ -152,7 +152,7 @@ export default function GroupDetailPage() {
           title: `${resources?.groupName || 'Group'} Resources - Admin Dashboard | DSecureTech`
       }} />
 
-            <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/30">
+            <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-[#0a2e1e]/30">
                 <div className="container-app py-8">
                     {/* Header */}
                     <div className="flex items-center gap-4 mb-8">
@@ -175,19 +175,19 @@ export default function GroupDetailPage() {
                         {/* Licenses Card */}
                         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                             <div className="flex items-center justify-between mb-4">
-                                <div className="p-3 bg-emerald-100 rounded-lg">
-                                    <svg className="w-6 h-6 text-emerald-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="p-3 bg-[#d4ede4] rounded-lg">
+                                    <svg className="w-6 h-6 text-[#0a2e1e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
                                     </svg>
                                 </div>
-                                <span className="text-xs font-medium text-emerald-800 bg-emerald-50 px-2 py-1 rounded-full">
+                                <span className="text-xs font-medium text-[#0a2e1e] bg-[#d4ede4] px-2 py-1 rounded-none">
                                     {Math.round(((resources?.allocatedLicenses || 0) / (resources?.totalLicenses || 1)) * 100)}% used
                                 </span>
                             </div>
                             <p className="text-sm text-slate-500 mb-1">Total Licenses</p>
                             <p className="text-2xl font-bold text-slate-900">{resources?.totalLicenses || 0}</p>
                             <div className="mt-3 flex gap-4 text-xs">
-                                <span className="text-emerald-800">Available: {resources?.availableLicenses || 0}</span>
+                                <span className="text-[#0a2e1e]">Available: {resources?.availableLicenses || 0}</span>
                                 <span className="text-slate-500">Allocated: {resources?.allocatedLicenses || 0}</span>
                             </div>
                         </div>
@@ -195,8 +195,8 @@ export default function GroupDetailPage() {
                         {/* Keys Card */}
                         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                             <div className="flex items-center justify-between mb-4">
-                                <div className="p-3 bg-blue-100 rounded-lg">
-                                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="p-3 bg-[#d4ede4] rounded-lg">
+                                    <svg className="w-6 h-6 text-[#0a2e1e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
                                     </svg>
                                 </div>
@@ -204,7 +204,7 @@ export default function GroupDetailPage() {
                             <p className="text-sm text-slate-500 mb-1">Active Keys</p>
                             <p className="text-2xl font-bold text-slate-900">{resources?.activeKeys || 0}</p>
                             <div className="mt-3 flex gap-4 text-xs">
-                                <span className="text-blue-600">Total: {resources?.totalKeys || 0}</span>
+                                <span className="text-[#0a2e1e]">Total: {resources?.totalKeys || 0}</span>
                                 <span className="text-red-500">Expired: {resources?.expiredKeys || 0}</span>
                             </div>
                         </div>
@@ -212,8 +212,8 @@ export default function GroupDetailPage() {
                         {/* Users Card */}
                         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                             <div className="flex items-center justify-between mb-4">
-                                <div className="p-3 bg-purple-100 rounded-lg">
-                                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="p-3 bg-[#d4ede4] rounded-lg">
+                                    <svg className="w-6 h-6 text-[#0a2e1e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                                     </svg>
                                 </div>
@@ -221,7 +221,7 @@ export default function GroupDetailPage() {
                             <p className="text-sm text-slate-500 mb-1">Total Users</p>
                             <p className="text-2xl font-bold text-slate-900">{resources?.totalUsers || 0}</p>
                             <div className="mt-3 flex gap-4 text-xs">
-                                <span className="text-green-800">Active: {resources?.activeUsers || 0}</span>
+                                <span className="text-[#0a2e1e]">Active: {resources?.activeUsers || 0}</span>
                                 <span className="text-slate-500">Inactive: {resources?.inactiveUsers || 0}</span>
                             </div>
                         </div>
@@ -229,15 +229,15 @@ export default function GroupDetailPage() {
                         {/* Resigned Users Card */}
                         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                             <div className="flex items-center justify-between mb-4">
-                                <div className="p-3 bg-orange-100 rounded-lg">
-                                    <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="p-3 bg-[#d4ede4] rounded-lg">
+                                    <svg className="w-6 h-6 text-[#0a2e1e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                     </svg>
                                 </div>
                                 {(resources?.resignedUsers || 0) > 0 && (
                                     <button
                                         onClick={() => setShowResignedSection(!showResignedSection)}
-                                        className="text-xs font-medium text-orange-600 hover:text-orange-700"
+                                        className="text-xs font-medium text-[#0a2e1e] hover:text-[#0a2e1e]"
                                     >
                                         View
                                     </button>
@@ -246,15 +246,15 @@ export default function GroupDetailPage() {
                             <p className="text-sm text-slate-500 mb-1">Resigned Users</p>
                             <p className="text-2xl font-bold text-slate-900">{resources?.resignedUsers || 0}</p>
                             {(resources?.resignedUsers || 0) > 0 && (
-                                <p className="mt-3 text-xs text-orange-600">⚠️ Resources pending redistribution</p>
+                                <p className="mt-3 text-xs text-[#0a2e1e]">⚠️ Resources pending redistribution</p>
                             )}
                         </div>
                     </div>
 
                     {/* Resigned Users Section */}
                     {showResignedSection && resignedUsers.length > 0 && canRedistribute && (
-                        <div className="bg-orange-50 border border-orange-200 rounded-xl p-6 mb-8">
-                            <h2 className="font-semibold text-orange-800 mb-4 flex items-center gap-2">
+                        <div className="bg-[#d4ede4] border border-[#d4ede4] rounded-xl p-6 mb-8">
+                            <h2 className="font-semibold text-[#0a2e1e] mb-4 flex items-center gap-2">
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                                 </svg>
@@ -269,13 +269,13 @@ export default function GroupDetailPage() {
                                         </div>
                                         <div className="flex items-center gap-4">
                                             <div className="text-sm">
-                                                <span className="text-orange-600 font-medium">{user.allocatedLicenses} licenses</span>
+                                                <span className="text-[#0a2e1e] font-medium">{user.allocatedLicenses} licenses</span>
                                                 <span className="text-slate-400 mx-2">•</span>
-                                                <span className="text-orange-600 font-medium">{user.activeKeys} keys</span>
+                                                <span className="text-[#0a2e1e] font-medium">{user.activeKeys} keys</span>
                                             </div>
                                             <button
                                                 onClick={() => openTransferModal(user)}
-                                                className="px-3 py-1.5 text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors"
+                                                className="px-3 py-1.5 text-sm font-medium text-white bg-[#0e7c66] hover:bg-[#0e7c66] rounded-lg transition-colors"
                                             >
                                                 Redistribute
                                             </button>
@@ -296,7 +296,7 @@ export default function GroupDetailPage() {
                                     placeholder="Search users..."
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
-                                    className="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                    className="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                                 />
                             </div>
                         </div>
@@ -323,7 +323,7 @@ export default function GroupDetailPage() {
                                                 </div>
                                             </td>
                                             <td className="px-6 py-4">
-                                                <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium ${getRoleBadgeClasses(user.role)}`}>
+                                                <span className={`inline-flex px-2.5 py-1 rounded-none text-xs font-medium ${getRoleBadgeClasses(user.role)}`}>
                                                     {user.role}
                                                 </span>
                                             </td>
@@ -335,8 +335,8 @@ export default function GroupDetailPage() {
                                                 <span className="font-semibold text-slate-900">{user.activeKeys}</span>
                                             </td>
                                             <td className="px-6 py-4">
-                                                <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
-                                                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                                                <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-none text-xs font-medium bg-[#d4ede4] text-[#0a2e1e]">
+                                                    <span className="w-1.5 h-1.5 bg-[#0e7c66] rounded-none" />
                                                     Active
                                                 </span>
                                             </td>
@@ -345,7 +345,7 @@ export default function GroupDetailPage() {
                                                     {canTransfer && (
                                                         <button
                                                             onClick={() => openTransferModal(user)}
-                                                            className="px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-lg transition-colors"
+                                                            className="px-3 py-1.5 text-xs font-medium text-[#0a2e1e] bg-[#d4ede4] hover:bg-[#d4ede4] rounded-lg transition-colors"
                                                         >
                                                             Transfer
                                                         </button>
@@ -353,7 +353,7 @@ export default function GroupDetailPage() {
                                                     {canManageResources && (
                                                         <button
                                                             onClick={() => handleMarkResigned(user)}
-                                                            className="px-3 py-1.5 text-xs font-medium text-orange-700 bg-orange-50 hover:bg-orange-100 rounded-lg transition-colors"
+                                                            className="px-3 py-1.5 text-xs font-medium text-[#0a2e1e] bg-[#d4ede4] hover:bg-[#d4ede4] rounded-lg transition-colors"
                                                         >
                                                             Resign
                                                         </button>
@@ -396,7 +396,7 @@ export default function GroupDetailPage() {
                                             value="license"
                                             checked={transferType === 'license'}
                                             onChange={() => setTransferType('license')}
-                                            className="text-emerald-800 focus:ring-emerald-500"
+                                            className="text-[#0a2e1e] focus:ring-emerald-500"
                                         />
                                         <span className="text-sm text-slate-700">Licenses ({selectedUser.allocatedLicenses} available)</span>
                                     </label>
@@ -407,7 +407,7 @@ export default function GroupDetailPage() {
                                             value="key"
                                             checked={transferType === 'key'}
                                             onChange={() => setTransferType('key')}
-                                            className="text-emerald-800 focus:ring-emerald-500"
+                                            className="text-[#0a2e1e] focus:ring-emerald-500"
                                         />
                                         <span className="text-sm text-slate-700">Keys ({selectedUser.activeKeys} available)</span>
                                     </label>
@@ -421,7 +421,7 @@ export default function GroupDetailPage() {
                                     id="transferTarget"
                                     value={transferTarget}
                                     onChange={(e) => setTransferTarget(e.target.value)}
-                                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                                 >
                                     <option value="">Select user...</option>
                                     {activeUsers.filter((u: GroupUser) => u.id !== selectedUser.id).map((user: GroupUser) => (
@@ -440,7 +440,7 @@ export default function GroupDetailPage() {
                                     max={transferType === 'license' ? selectedUser.allocatedLicenses : selectedUser.activeKeys}
                                     value={transferAmount}
                                     onChange={(e) => setTransferAmount(Number.parseInt(e.target.value, 10) || 1)}
-                                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-[#0e7c66]"
                                 />
                             </div>
                         </div>
@@ -458,7 +458,7 @@ export default function GroupDetailPage() {
                             <button
                                 onClick={handleTransfer}
                                 disabled={!transferTarget || transferAmount < 1 || transferMutation.isPending}
-                                className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                                className="px-4 py-2 bg-[#0e7c66] text-white rounded-lg hover:bg-[#0e7c66] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
                             >
                                 {transferMutation.isPending && (
                                     <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -478,8 +478,8 @@ export default function GroupDetailPage() {
 // --- Helper Functions ---
 function getRoleBadgeClasses(role: string): string {
     switch (role) {
-        case 'admin': return 'bg-purple-100 text-purple-800';
-        case 'manager': return 'bg-blue-100 text-blue-800';
+        case 'admin': return 'bg-[#d4ede4] text-[#0a2e1e]';
+        case 'manager': return 'bg-[#d4ede4] text-[#0a2e1e]';
         case 'user': return 'bg-slate-100 text-slate-800';
         default: return 'bg-gray-100 text-gray-600';
     }
