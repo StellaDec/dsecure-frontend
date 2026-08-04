@@ -77,10 +77,10 @@ const BlogFooterStandard: React.FC<BlogFooterStandardProps> = ({
       </ThemeSection>
 
       {/* Related Products - SEO Internal Linking */}
-      <ProductInternalLinks links={relatedProducts} heading={`Solutions for ${category || 'Your Enterprise'}`} />
+      {/* <ProductInternalLinks links={relatedProducts} heading={`Solutions for ${category || 'Your Enterprise'}`} /> */}
 
       {/* Expert Solution Section - High intent CTA */}
-      <ThemeSection alternate>
+      {/* <ThemeSection alternate>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <Reveal>
             <ExpertSolutionSection 
@@ -89,7 +89,7 @@ const BlogFooterStandard: React.FC<BlogFooterStandardProps> = ({
             />
           </Reveal>
         </div>
-      </ThemeSection>
+      </ThemeSection> */}
 
       {/* Related Articles - Internal Linking */}
       <ThemeSection>

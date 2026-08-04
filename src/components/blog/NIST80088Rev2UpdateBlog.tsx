@@ -326,7 +326,7 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-white py-16">
+      {/* <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <Reveal>
             <h2 className="text-3xl font-bold text-[#0a2e1e] mb-10 text-center">Frequently Asked Questions</h2>
@@ -340,13 +340,14 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
             </div>
           </Reveal>
         </div>
-      </section>
+      </section> */}
 
       <BlogFooterStandard 
         blogId="nist-800-88-rev2-update-2026" 
         blogTitle="NIST SP 800-88 Rev. 2 Explained (2026 Update)" 
         category="Compliance / Standards" 
         tag="Standards" 
+        faqs={faqSchema.mainEntity.map(faq => ({ question: faq.name, answer: faq.acceptedAnswer.text }))}
       />
     </div>
   );

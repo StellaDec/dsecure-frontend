@@ -59,7 +59,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
   return (
     <div className="space-y-16 mt-12">
       {/* Section 1: The Global Landscape */}
-      <Reveal>
+      {/* <Reveal>
         <ThemeCard className="relative overflow-hidden p-8 lg:p-12 border-[#0e7c66]/20 bg-white shadow-sm" interactive={false}>
           <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#d4ede4] rounded-full blur-3xl opacity-50" />
           <h2 className="text-3xl lg:text-4xl font-bold text-[#0a2e1e] mb-6 flex items-center gap-4 relative z-10">
@@ -78,10 +78,10 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             </p>
           </div>
         </ThemeCard>
-      </Reveal>
+      </Reveal> */}
 
       {/* Section 2: Technical Deep Dive */}
-      <Reveal>
+      {/* <Reveal>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-[#0e7c66] rounded-none p-10 text-white shadow-xl">
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 text-white">
@@ -144,10 +144,10 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             </div>
           </ThemeCard>
         </div>
-      </Reveal>
+      </Reveal> */}
 
       {/* Section 3: Industry Specific Insights */}
-      <Reveal>
+      {/* <Reveal>
         <ThemeCard className="bg-white p-12 border border-[#d0d5dc] relative overflow-hidden" interactive={false}>
           <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#d4ede4] rounded-full blur-3xl opacity-30 translate-x-1/2 translate-y-1/2" />
           <ThemeSectionHeading className="mb-10 relative z-10">Why Professional Sanitization Matters Across Industries</ThemeSectionHeading>
@@ -180,10 +180,10 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
              </p>
           </div>
         </ThemeCard>
-      </Reveal>
+      </Reveal> */}
 
       {/* Section 4: Detailed Regulatory Table */}
-      <Reveal>
+      {/* <Reveal>
         <ThemeCard className="p-10 border border-[#d0d5dc] shadow-sm" interactive={false}>
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
              <div>
@@ -254,10 +254,10 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             </table>
           </div>
         </ThemeCard>
-      </Reveal>
+      </Reveal> */}
 
       {/* Section 6: The D-Secure Ecosystem */}
-      <Reveal>
+      {/* <Reveal>
         <div className="bg-[#0e7c66] rounded-none p-12 text-white shadow-xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
             <Shield className="w-96 h-96" />
@@ -291,10 +291,10 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             </div>
           </div>
         </div>
-      </Reveal>
+      </Reveal> */}
 
       {/* Section 7: Final CTA */}
-      <Reveal>
+      {/* <Reveal>
         <div className="max-w-4xl mx-auto text-center py-10 bg-white border border-[#d0d5dc] p-12 rounded-none shadow-sm">
           <ThemeSectionHeading centered>Protect Your Future & Reputation</ThemeSectionHeading>
           <p className="text-xl text-[#5a6672] leading-relaxed italic mb-10 max-w-2xl mx-auto">
@@ -312,7 +312,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             Trusted by leading enterprises and government agencies globally. 100% Audit-Ready.
           </p>
         </div>
-      </Reveal>
+      </Reveal> */}
     </div>
   );
 };
