@@ -4,6 +4,56 @@ export interface FAQ {
 }
 
 export const blogFaqs: Record<string, FAQ[]> = {
+  "local-llm-data-erasure": [
+    {
+      question: "Where are local LLM models stored in Windows 11?",
+      answer: "The location depends on the application and its configuration. Ollama normally stores models and configuration beneath the user’s .ollama directory. GPT4All’s default Windows model-download path is under AppData\\Local\\nomic.ai\\GPT4All. Jan’s default data folder is under AppData\\Roaming\\Jan\\data. LM Studio lets users manage downloaded models locally, while its saved conversation files are stored under %USERPROFILE%\\.lmstudio\\conversations. Administrators must also check custom paths and secondary drives."
+    },
+    {
+      question: "Does uninstalling Ollama delete all downloaded models?",
+      answer: "Not necessarily. Ollama’s Windows documentation states that the .ollama directory contains models and configuration. It also warns that when the OLLAMA_MODELS location has been changed, the uninstaller does not remove downloaded models from that custom location."
+    },
+    {
+      question: "Does uninstalling LM Studio delete saved conversations?",
+      answer: "Uninstalling the visible application should not be used as proof that every conversation was sanitized. LM Studio documents that saved chats are separate JSON files in %USERPROFILE%\\.lmstudio\\conversations on Windows. Those files and any attached or duplicated documents should be included in the organization’s validated cleanup scope."
+    },
+    {
+      question: "Where does Jan store local models and chat history?",
+      answer: "Jan’s default Windows data directory is %APPDATA%\\Jan\\data. Its official documentation says the folder contains downloaded models, conversation threads, settings and logs, and its data-folder structure also includes local files and vector-database components. The folder can be customized, so administrators should confirm the active path in the application."
+    },
+    {
+      question: "Where does GPT4All store models on Windows?",
+      answer: "GPT4All’s documented default download location is C:\\Users\\{username}\\AppData\\Local\\nomic.ai\\GPT4All. Users can change that location in application settings, so the configured path should be recorded before erasure."
+    },
+    {
+      question: "How do I permanently delete a vector database from a laptop?",
+      answer: "First stop the application or service using the database. Identify the collection directory, source documents, extracted text, embedding files, indexes, metadata, backups, synchronized copies and related conversation data. Remove the collection through the application when supported, then erase the approved local files and verify that the application can no longer retrieve the deleted documents. If the device is leaving organizational control or the storage scope is uncertain, use a validated full-drive sanitization process rather than relying only on selective file deletion."
+    },
+    {
+      question: "Does deleting a source document delete its embeddings?",
+      answer: "Not automatically. GPT4All LocalDocs, for example, converts source-folder content into text snippets and embedding vectors for local retrieval. The source file, generated snippets, embedding index and collection metadata should therefore be treated as related but distinct data objects."
+    },
+    {
+      question: "Does formatting an NPU laptop remove all AI data?",
+      answer: "An NPU is a processing accelerator, not the primary long-term storage location for model files and conversations. Those artefacts generally reside on the SSD or NVMe drive. A quick format mainly recreates file-system structures and should not be treated as verified media sanitization. For an AI PC leaving organizational control, use a validated full-drive method selected for the storage media and required assurance level. NIST SP 800-88 Rev. 2 emphasizes a programmatic, risk-based sanitization and validation process rather than treating ordinary formatting as sufficient evidence."
+    },
+    {
+      question: "Can D-Secure File Eraser delete .gguf and .onnx model files?",
+      answer: "D-Secure File Eraser’s public page states that it can target files and folders. A .gguf or .onnx file should therefore be treated like another selected file within a validated erasure job, subject to actual product-version, permission, file-lock and platform support. D-Secure should test and document these exact extensions before claiming dedicated local-LLM application support."
+    },
+    {
+      question: "Can D-Secure automatically discover every local LLM application?",
+      answer: "The current public product material supports file, folder, trace and deployment workflows, but it does not provide sufficient public evidence of a dedicated signature engine that automatically identifies every Ollama, LM Studio, GPT4All, Jan or custom RAG installation. Until such functionality is validated, the article should describe administrator-defined paths and policies rather than automatic universal discovery."
+    },
+    {
+      question: "Is removing a local model the same as machine unlearning?",
+      answer: "No. Removing a model file deletes that local copy. Removing training files deletes stored source material. Neither action necessarily removes the influence of particular training examples from a model that has already learned from them. Model unlearning, retraining or retirement is a separate AI-governance process."
+    },
+    {
+      question: "Are local LLMs safer than cloud AI?",
+      answer: "Local processing may reduce transmission to an external cloud service. Microsoft states that Foundry Local inference input and output remain on the device and that supported Windows AI APIs process data locally through the NPU. However, this transfers more data-lifecycle responsibility to the endpoint owner because models, conversations, documents and caches may persist on local storage."
+    }
+  ],
   "ai-data-center-decommissioning": [
     {
       question: "Why is decommissioning AI servers different from traditional servers?",

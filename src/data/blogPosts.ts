@@ -17,6 +17,19 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "local-llm-data-erasure",
+    slug: "local-llm-data-erasure",
+    title: "How to Securely Erase Local LLM Data from Enterprise AI PCs",
+    excerpt: "Learn where Ollama, LM Studio, GPT4All and Jan store models, chats and vector data—and how enterprises can securely sanitize AI PCs.",
+    link: "/blog/local-llm-data-erasure",
+    tag: "Data Sanitization",
+    category: "Enterprise Security",
+    keywords: "local LLM data erasure, erase local LLM data, AI PC data erasure software, where are local LLM models stored in Windows 11, how to delete Ollama models permanently, LM Studio conversation storage location, how to delete a vector database from a laptop, secure erasure of GGUF model files, AI PC decommissioning, local AI data sanitization",
+    publishDate: "August 15, 2026",
+    author: "Prashant Saini",
+    readTime: "10 min read"
+  },
+  {
     id: "servicenow-data-erasure-itam-workflow",
     slug: "servicenow-data-erasure-itam-workflow",
     title: "ServiceNow Data Erasure Integration: ITAM Workflow Guide",
