@@ -128,7 +128,7 @@ export default function PromoModal() {
               </div>
               <div className="flex items-center gap-3 w-full sm:w-auto mt-4 sm:mt-0">
                 <Link 
-                  to="/pricing-and-plan" 
+                  to="/pricing-and-plan?product=file-eraser" 
                   onClick={() => setShowPromoModal(false)}
                   className="px-8 py-3 bg-[#0e7c66] text-white font-medium hover:bg-[#0b6351] transition-colors shadow-lg shadow-[#0e7c66]/30 flex-1 sm:flex-none text-center flex items-center justify-center gap-2 rounded-none"
                 >

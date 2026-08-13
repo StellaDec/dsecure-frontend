@@ -431,7 +431,7 @@ const HomePage = memo(function HomePage() {
       {new Date().getTime() <= new Date('2026-08-15T23:59:59').getTime() && (
         <div className="w-full bg-[#f4fcf8] border-b border-[#0e7c66]/20">
           <div className="relative w-full flex justify-center">
-            <Link to="/pricing-and-plan" className="block w-full transition-opacity hover:opacity-95 duration-300">
+            <Link to="/pricing-and-plan?product=file-eraser" className="block w-full transition-opacity hover:opacity-95 duration-300">
               <img 
                 src="/banner-strip.jpeg" 
                 alt="Independence Day Offer - Click for Pricing and Plans" 
