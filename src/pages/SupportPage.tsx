@@ -1257,7 +1257,7 @@ const SupportPage: React.FC = () => {
               </ThemeSectionHeading>
             </Reveal>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Write to Us */}
               <Reveal delayMs={100}>
                 <ThemeCard className="text-center group h-full flex flex-col justify-between">
@@ -1314,32 +1314,6 @@ const SupportPage: React.FC = () => {
                 </ThemeCard>
               </Reveal>
 
-              {/* Call Us */}
-              <Reveal delayMs={300}>
-                <ThemeCard className="text-center group h-full flex flex-col justify-between">
-                  <div>
-                    <ThemeIconContainer
-                      icon={Phone}
-                      size="lg"
-                      className="mx-auto mb-6"
-                    />
-                    <h3 className={themeClasses.typography.cardTitle}>
-                      Call Us
-                    </h3>
-                    <p className={`${themeClasses.typography.cardBody} mb-6`}>
-                      We will be happy to assist you. Technical Support in English only.
-                    </p>
-                  </div>
-                  <ThemeButton
-                    variant="outline"
-                    onClick={() => (window.location.href = "tel:+918447750101")}
-                    className="w-full"
-                    icon={<Phone className="w-4 h-4 ml-1" />}
-                  >
-                    +91-844-775-0101
-                  </ThemeButton>
-                </ThemeCard>
-              </Reveal>
             </div>
           </div>
         </ThemeSection>
@@ -1365,15 +1339,6 @@ const SupportPage: React.FC = () => {
                     variant="primary"
                   >
                     Request Free License →
-                  </ThemeButton>
-                  <ThemeButton
-                    onClick={() =>
-                      (window.location.href = "tel:+918447750101")
-                    }
-                    variant="outline"
-                    className="border-white text-white hover:bg-white/10"
-                  >
-                    Need help: +91-844-775-0101
                   </ThemeButton>
                 </div>
               </div>

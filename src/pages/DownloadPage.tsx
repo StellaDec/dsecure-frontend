@@ -5,7 +5,7 @@ import { getSEOForPage } from "@/utils/seo";
 import { showInfoToast } from "@/utils/toast";
 import { Monitor, Laptop, Terminal, Cpu, Download, ChevronDown, Copy, Check, ShieldCheck, Info, HardDrive, SearchCheck, File } from "lucide-react";
 import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeIconContainer, themeClasses } from "@/components/ui/Theme";
-
+import { fetchLatestUpdate, EnhancedUpdateResponse } from "@/services/updatesAPI";
 // --- Types Definitions (Best Practice for maintainability) ---
 interface DownloadInfo {
     url: string;
@@ -142,6 +142,21 @@ const DownloadPage: React.FC = memo(() => {
   const [selectedProduct, setSelectedProduct] =
     useState<string>("drive-eraser");
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [latestUpdate, setLatestUpdate] = useState<EnhancedUpdateResponse | null>(null);
+
+  // Backend se latest update data fetch karo (hardcoded DSErase)
+  useEffect(() => {
+    let isMounted = true;
+    const fetchUpdates = async () => {
+      // Hardcoded 'DSErase' pass kiya gaya hai as per request
+      const data = await fetchLatestUpdate("DSErase");
+      if (isMounted && data) {
+        setLatestUpdate(data);
+      }
+    };
+    fetchUpdates();
+    return () => { isMounted = false; };
+  }, []);
 
   // Initial load logic
   useEffect(() => {
@@ -158,10 +173,31 @@ const DownloadPage: React.FC = memo(() => {
     [selectedProduct],
   );
 
-  const currentDownloads = useMemo(
-    () => DOWNLOAD_LINKS[selectedProduct],
-    [selectedProduct],
-  );
+  const currentDownloads = useMemo(() => {
+    const baseDownloads = DOWNLOAD_LINKS[selectedProduct];
+    
+    // Agar API se latest version aaya hai aur product file-eraser hai toh link dynamically set karo
+    // (Kyunki humne DSErase hardcode fetch kiya hai)
+    if (latestUpdate && selectedProduct === "file-eraser") {
+      const ext = latestUpdate.download_link.split('.').pop() || 'exe';
+      const cleanVersion = latestUpdate.version_number.replace(/\./g, '_');
+      
+      const filename = `D-Secure_Eraser_Setup_v${cleanVersion}.${ext}`;
+
+      if (baseDownloads.windows) {
+        return {
+          ...baseDownloads,
+          windows: {
+            ...baseDownloads.windows,
+            url: latestUpdate.download_link,
+            filename: filename,
+          }
+        };
+      }
+    }
+    
+    return baseDownloads;
+  }, [selectedProduct, latestUpdate]);
 
   // Handle Tab Change
   const handleProductChange = useCallback(

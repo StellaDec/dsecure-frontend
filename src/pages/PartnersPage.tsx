@@ -901,17 +901,17 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                   </p>
 
                   <div className="flex flex-wrap justify-center gap-6">
-                    <button
+                    {/* <button
                       onClick={() => setShowFindPartnerModal(true)}
                       className={`${themeClasses.button.base} bg-[#d4ede4] text-[#0e7c66] hover:bg-white`}
                     >
                       Find Local Partner
                       <ArrowRight className="w-5 h-5 ml-2" />
-                    </button>
+                    </button> */}
 
                     <button
                       onClick={handleContactRedirect}
-                      className={`${themeClasses.button.base} ${themeClasses.button.outline} text-white border-white hover:bg-white hover:text-[#0e7c66]`}
+                      className={`${themeClasses.button.base} text-white border-2 border-white hover:bg-white hover:text-[#0e7c66]`}
                     >
                       Contact D-Secure
                       <MessageSquare className="w-5 h-5 ml-2" />
@@ -1196,6 +1196,20 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                 </div>
 
                 {/* Partners Result List */}
+                <div className="text-center py-24 bg-[#f4fbf8]/40 rounded-none border border-[#d0d5dc]/60">
+                  <div className="w-24 h-24 bg-[#d4ede4] rounded-full flex items-center justify-center mx-auto mb-8 border border-[#0e7c66]/20">
+                    <Globe className="w-12 h-12 text-[#0e7c66]" />
+                  </div>
+                  <h3 className="text-3xl font-black text-[#0a2e1e] mb-4 tracking-tight">
+                    No Partner available yet
+                  </h3>
+                  <p className="text-slate-400 max-w-sm mx-auto font-medium leading-relaxed">
+                    We are currently building our global network. Please check back later.
+                  </p>
+                </div>
+
+                {false && (
+                  <>
                 <div className="space-y-6">
                   {filteredPartners.length > 0 ? (
                     filteredPartners.map((partner, index) => (
@@ -1346,6 +1360,8 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     Next Page
                   </button>
                 </div>
+                  </>
+                )}
               </div>
             </div>
           </div>

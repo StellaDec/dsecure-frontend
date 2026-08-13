@@ -19,6 +19,7 @@ import { SupportRoutes } from "./routes/SupportRoutes";
 import { DashboardRoutes } from "./routes/DashboardRoutes";
 import { AuthRoutes } from "./routes/AuthRoutes";
 import { useSilentActivityTracker } from "./hooks/useSilentActivityTracker";
+import PromoModal from "./components/PromoModal";
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 // Analytics Wrapper
 function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
@@ -59,6 +60,7 @@ export default function App() {
               <ScrollToTop />
               <NetworkStatus />
               <ToastContainer />
+              <PromoModal />
               <Suspense fallback={<PageLoadingSkeleton />}>
                 <Routes>
                   {/* MODULARIZED ROUTES - called as functions, not components, because <Routes> requires <Route> as direct children */}

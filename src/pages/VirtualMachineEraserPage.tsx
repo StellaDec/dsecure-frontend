@@ -3,15 +3,7 @@ import { Link } from "react-router-dom";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import {
-  ShieldIcon,
-  CheckIcon,
-  CloudIcon,
-  GearIcon,
-  ClipboardIcon,
-  ServerIcon,
-} from "@/components/FlatIcons";
-import { FileTextIcon, Monitor, Database, Zap } from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import { getSEOForPage } from "@/utils/seo";
 import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
@@ -20,6 +12,23 @@ import { generateFAQSchema } from "@/utils/seo.core";
 import { FAQSection } from "@/components/FAQSection";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle,
+  Cloud,
+  Database,
+  FileText,
+  FileTextIcon,
+  Globe,
+  Monitor,
+  RefreshCw,
+  Server,
+  Settings,
+  Shield,
+  Star,
+  Zap
+} from 'lucide-react';
 
 const virtualMachineEraserFaqs: FAQItem[] = [
   {
@@ -133,12 +142,12 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
     {
       title: "Cloud Console",
       desc: "Centralized repository of VM erasure reports accessible anytime, maintaining a comprehensive audit trail.",
-      icon: <CloudIcon className="w-8 h-8 text-emerald-500" />,
+      icon: <Cloud className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Global Standards",
       desc: "Supports up to 18 globally recognized erasure methods including NIST 800-88 and US DoD 5220.22-M.",
-      icon: <ShieldIcon className="w-8 h-8 text-emerald-500" />,
+      icon: <Shield className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Quick Deployment",
@@ -151,12 +160,12 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
     {
       title: "Tamper-proof Reports",
       desc: "Generates digitally signed PDF/XML reports with VM size, ID, MAC address and more.",
-      icon: <ClipboardIcon className="w-6 h-6" />,
+      icon: <FileText className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "No License Expiry",
       desc: "Pay-per-use licenses that do not expire until they are used for erasure.",
-      icon: <CheckIcon className="w-6 h-6" />,
+      icon: <CheckCircle className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Full VM Erasure",
@@ -166,7 +175,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
     {
       title: "Centralized Management",
       desc: "Option to create users and distribute erasure licenses across the organization.",
-      icon: <GearIcon className="w-6 h-6" />,
+      icon: <Settings className="w-6 h-6 text-emerald-600" />,
     },
   ];
 
@@ -211,7 +220,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
         </div>
       </div>
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-white">
         {/* ================= HERO SECTION ================= */}
         <section className="pt-6 pb-12 lg:pt-10 lg:pb-16 overflow-hidden">
           <div className="container mx-auto px-4">
@@ -254,7 +263,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Request Early Access
                     </button>
@@ -330,7 +339,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                         }}
                       >
                         <div
-                          className="w-9 h-9 lg:w-10 lg:h-10 bg-white rounded-xl shadow-lg border border-emerald-100 flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl hover:border-emerald-400"
+                          className="w-9 h-9 lg:w-10 lg:h-10 bg-white rounded-none shadow-lg border border-emerald-100 flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl hover:border-emerald-400"
                           style={{
                             animation: `deviceBob 3s ease-in-out infinite ${item.delay}`,
                           }}
@@ -377,14 +386,14 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                     <div className="relative w-[230px] sm:w-[270px] lg:w-[330px]">
                       {/* Screen bezel */}
                       <div
-                        className="bg-slate-900 rounded-t-xl sm:rounded-t-2xl p-1 sm:p-1.5 lg:p-2 shadow-2xl border border-slate-700/50"
+                        className="bg-slate-900 rounded-none sm:rounded-none p-1 sm:p-1.5 lg:p-2 shadow-2xl border border-slate-700/50"
                         style={{
                           boxShadow:
                             "0 15px 50px -10px rgba(0,0,0,0.4), 0 0 30px rgba(16,185,129,0.12)",
                         }}
                       >
                         {/* Screen content */}
-                        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg sm:rounded-xl overflow-hidden">
+                        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-none sm:rounded-none overflow-hidden">
                           {/* Title bar */}
                           <div className="flex items-center justify-between px-3 py-1 bg-slate-800/80 border-b border-slate-700/50">
                             <div className="flex items-center gap-1">
@@ -402,7 +411,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                           <div className="p-2 sm:p-3 lg:p-3.5 space-y-2 sm:space-y-2.5">
                             {/* Top stats row */}
                             <div className="grid grid-cols-3 gap-1 sm:gap-1.5">
-                              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-1 sm:p-1.5 text-center">
+                              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-none p-1 sm:p-1.5 text-center">
                                 <div className="text-emerald-400 font-bold text-[10px] sm:text-xs lg:text-base">
                                   1,240
                                 </div>
@@ -410,7 +419,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                                   VMs Wiped
                                 </div>
                               </div>
-                              <div className="bg-teal-500/10 border border-teal-500/20 rounded-lg p-1 sm:p-1.5 text-center">
+                              <div className="bg-teal-500/10 border border-teal-500/20 rounded-none p-1 sm:p-1.5 text-center">
                                 <div className="text-teal-400 font-bold text-[10px] sm:text-xs lg:text-base">
                                   100%
                                 </div>
@@ -418,7 +427,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                                   Success Rate
                                 </div>
                               </div>
-                              <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-1 sm:p-1.5 text-center">
+                              <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-none p-1 sm:p-1.5 text-center">
                                 <div className="text-cyan-400 font-bold text-[10px] sm:text-xs lg:text-base">
                                   18+
                                 </div>
@@ -429,11 +438,11 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                             </div>
 
                             {/* Active erasure task */}
-                            <div className="bg-slate-800/60 rounded-lg p-1.5 sm:p-2 border border-slate-700/40">
+                            <div className="bg-slate-800/60 rounded-none p-1.5 sm:p-2 border border-slate-700/40">
                               <div className="flex items-center justify-between mb-1">
                                 <div className="flex items-center gap-1">
                                   <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                                    <ShieldIcon className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-white" />
+                                    <Shield className="w-6 h-6 text-emerald-600" />
                                   </div>
                                   <span className="text-[7px] sm:text-[8px] lg:text-[9px] text-white font-medium">
                                     VM Erasure — NIST 800-88
@@ -500,7 +509,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                       {/* Monitor stand */}
                       <div className="flex flex-col items-center">
                         <div className="w-14 sm:w-16 lg:w-20 h-3 sm:h-4 lg:h-5 bg-gradient-to-b from-slate-700 to-slate-800 rounded-b-sm"></div>
-                        <div className="w-20 sm:w-24 lg:w-28 h-1.5 bg-gradient-to-b from-slate-700 to-slate-800 rounded-b-lg shadow-lg"></div>
+                        <div className="w-20 sm:w-24 lg:w-28 h-1.5 bg-gradient-to-b from-slate-700 to-slate-800 rounded-none shadow-lg"></div>
                       </div>
                     </div>
                   </div>
@@ -545,8 +554,8 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {capabilities.map((cap, idx) => (
                 <Reveal key={idx} delayMs={idx * 100} className="h-full">
-                  <div className="bg-emerald-50/50 p-8 rounded-2xl border border-emerald-100 hover:shadow-xl transition-all duration-300 h-full group">
-                    <div className="bg-white p-4 rounded-xl shadow-sm mb-6 w-fit group-hover:scale-110 transition-transform">
+                  <div className="bg-emerald-50/50 p-8 rounded-none border border-emerald-100 hover:shadow-xl transition-all duration-300 h-full group">
+                    <div className="bg-white p-4 rounded-none shadow-sm mb-6 w-fit group-hover:scale-110 transition-transform">
                       {cap.icon}
                     </div>
                     <h3 className="text-xl font-bold text-slate-800 mb-4">{cap.title}</h3>
@@ -574,7 +583,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                     ].map((item, i) => (
                       <div key={i} className="flex gap-4 group">
                         <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center group-hover:bg-emerald-500 transition-colors">
-                          <CheckIcon className="w-6 h-6 text-emerald-400 group-hover:text-white" />
+                          <CheckCircle className="w-6 h-6 text-emerald-600" />
                         </div>
                         <div>
                           <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
@@ -584,10 +593,10 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                     ))}
                   </div>
                 </div>
-                <div className="lg:w-1/3 w-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl">
+                <div className="lg:w-1/3 w-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-none">
                    <div className="text-center space-y-6">
-                      <div className="w-20 h-20 bg-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto">
-                        <ServerIcon className="w-10 h-10 text-emerald-400" />
+                      <div className="w-20 h-20 bg-emerald-500/20 rounded-none flex items-center justify-center mx-auto">
+                        <Server className="w-6 h-6 text-emerald-600" />
                       </div>
                       <h3 className="text-2xl font-bold text-white">Multi-System Architecture</h3>
                       <p className="text-slate-400">Supports erasure in complex setups where the application, VM host, and storage are across multiple systems.</p>
@@ -606,8 +615,8 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((feature, i) => (
-                <div key={i} className="p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/30 transition-all group h-full flex flex-col">
-                   <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
+                <div key={i} className="p-8 rounded-none border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/30 transition-all group h-full flex flex-col">
+                   <div className="w-12 h-12 bg-slate-50 rounded-none flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
                       {feature.icon}
                    </div>
                    <h3 className="text-xl font-bold text-slate-800 mb-3">{feature.title}</h3>
@@ -629,21 +638,21 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                     </p>
                     <div className="grid grid-cols-2 gap-4">
                        {["NIST 800-88", "US DoD 5220.22", "HMG IS5", "NATO", "AFSSI 5020", "Gutmann"].map(s => (
-                          <div key={s} className="flex items-center gap-2 text-sm font-semibold text-slate-700 bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                             <ShieldIcon className="w-4 h-4 text-emerald-500" />
+                          <div key={s} className="flex items-center gap-2 text-sm font-semibold text-slate-700 bg-white p-3 rounded-none border border-slate-200 shadow-sm">
+                             <Shield className="w-6 h-6 text-emerald-600" />
                              {s}
                           </div>
                        ))}
                     </div>
                  </div>
                  <div className="lg:col-span-3">
-                    <div className="bg-emerald-600 rounded-3xl p-8 text-white relative overflow-hidden">
+                    <div className="bg-emerald-600 rounded-none p-8 text-white relative overflow-hidden">
                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-3xl rounded-full"></div>
                        <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
                           <div className="flex-1">
                              <h3 className="text-2xl font-bold mb-4">Digitally Signed Reports</h3>
                              <p className="text-emerald-50 mb-6">Maintain complete accountability with tamper-proof reports containing VM size, ID, MAC address, and more.</p>
-                             <div className="bg-white/10 p-6 rounded-xl border border-white/20">
+                             <div className="bg-white/10 p-6 rounded-none border border-white/20">
                                 <ul className="space-y-3">
                                    {[
                                       "VM Size & ID",
@@ -652,7 +661,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                                       "Verification Result"
                                    ].map(li => (
                                       <li key={li} className="flex items-center gap-3 text-sm font-medium">
-                                         <CheckIcon className="w-4 h-4 text-emerald-300" />
+                                         <CheckCircle className="w-6 h-6 text-emerald-600" />
                                          {li}
                                       </li>
                                    ))}
@@ -693,7 +702,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                            ].map(c => (
                               <div key={c.label} className="flex items-center gap-4">
                                  <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center border border-emerald-100">
-                                    <CheckIcon className="w-5 h-5 text-emerald-600" />
+                                    <CheckCircle className="w-6 h-6 text-emerald-600" />
                                  </div>
                                  <div className="text-left">
                                     <p className="text-xs text-slate-500 uppercase tracking-widest">{c.label}</p>

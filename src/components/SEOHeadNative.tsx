@@ -270,16 +270,19 @@ export const SEOHeadNative: React.FC<SEOHeadProps> = ({
 
       {/* Structured Data — deduped/merged single pass */}
       {finalSchemas.map((schema, index) => (
-        <script key={`schema-${index}`} type="application/ld+json">
-          {formatStructuredData(schema)}
-        </script>
+        <script 
+          key={`schema-${index}`} 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: formatStructuredData(schema) }}
+        />
       ))}
 
       {/* BreadcrumbList Schema */}
       {effectiveSeo.breadcrumbs && effectiveSeo.breadcrumbs.length > 0 && (
-        <script type="application/ld+json">
-          {formatStructuredData(generateBreadcrumbSchema(effectiveSeo.breadcrumbs))}
-        </script>
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: formatStructuredData(generateBreadcrumbSchema(effectiveSeo.breadcrumbs)) }}
+        />
       )}
 
       {/* Performance & compatibility */}

@@ -1,42 +1,7 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import { Link } from "react-router-dom";
-import {
-  Activity,
-  Zap,
-  Smartphone,
-  Shield,
-  FileText,
-  Settings,
-  Globe,
-  Wifi,
-  Battery,
-  Camera,
-  Monitor,
-  Cpu,
-  ChevronDown,
-  Eraser,
-  Layers,
-  Search,
-  CheckCircle,
-  Database,
-  ShieldCheck,
-  Workflow,
-  Layout,
-  RefreshCcw,
-  Server,
-  Bluetooth,
-  Radio,
-  Mic,
-} from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import { getSEOForPage } from "@/utils/seo";
-import {
-  BuildingIcon,
-  GlobeIcon,
-  BriefcaseIcon,
-  ServerIcon,
-  ClipboardIcon,
-  TagIcon,
-} from "@/components/FlatIcons";
 import Reveal from "../components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
@@ -44,6 +9,40 @@ import UpcomingBadge from "../components/ui/UpcomingBadge";
 import { ProductContactForm } from "@/components/forms";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQSection } from "@/components/FAQSection";
+import {
+  Activity,
+  ArrowLeft,
+  ArrowRight,
+  Battery,
+  Bluetooth,
+  BuildingIcon,
+  Camera,
+  CheckCircle,
+  ChevronDown,
+  Cloud,
+  Cpu,
+  Database,
+  Eraser,
+  FileText,
+  Globe,
+  Layers,
+  Layout,
+  Mic,
+  Monitor,
+  Radio,
+  RefreshCcw,
+  RefreshCw,
+  Search,
+  Server,
+  Settings,
+  Shield,
+  ShieldCheck,
+  Smartphone,
+  Star,
+  Wifi,
+  Workflow,
+  Zap
+} from 'lucide-react';
 
 const smartphoneDiagTakeaways = [
   {
@@ -224,7 +223,7 @@ const SmartphoneDiagnosticPage = memo(() => {
     {
       title: "Audit Trail Reports",
       desc: "Tamper-proof PDF/CSV reports with device grading, IMEI metadata, and verifiable hardware health status.",
-      icon: <ClipboardIcon className="w-6 h-6" />,
+      icon: <FileText className="w-6 h-6 text-emerald-600" />,
       color: "from-purple-500 to-pink-600",
     },
   ];
@@ -259,7 +258,7 @@ const SmartphoneDiagnosticPage = memo(() => {
     {
       name: "Deployment",
       versions: "Windows & Barebone (Linux)",
-      icon: <ServerIcon className="w-12 h-12 text-blue-600" />,
+      icon: <Server className="w-6 h-6 text-emerald-600" />,
     },
   ];
 
@@ -355,13 +354,13 @@ const SmartphoneDiagnosticPage = memo(() => {
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all outline-none"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all outline-none"
                     >
                       Request Early Access
                     </button>
                     <button
                       onClick={downloadCatalog}
-                      className="inline-flex items-center justify-center gap-2 border-2 border-teal-500 text-teal-800 px-8 py-4 rounded-xl font-bold hover:bg-teal-50 transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 border-2 border-teal-500 text-teal-800 px-8 py-4 rounded-none font-bold hover:bg-teal-50 transition-all duration-300"
                     >
                       <svg
                         className="w-5 h-5"
@@ -391,8 +390,8 @@ const SmartphoneDiagnosticPage = memo(() => {
 
                   <div className="relative flex flex-col items-center scale-[0.8] lg:scale-90 origin-top">
                     {/* ── MONITOR ── */}
-                    <div className="w-[340px] h-[220px] bg-slate-800 rounded-2xl p-2.5 border-4 border-slate-700 shadow-2xl relative z-20">
-                      <div className="w-full h-full bg-white rounded-lg overflow-hidden relative flex flex-col items-center justify-center border border-slate-200">
+                    <div className="w-[340px] h-[220px] bg-slate-800 rounded-none p-2.5 border-4 border-slate-700 shadow-2xl relative z-20">
+                      <div className="w-full h-full bg-white rounded-none overflow-hidden relative flex flex-col items-center justify-center border border-slate-200">
                         {/* Binary Background Pattern */}
                         <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none font-mono text-[8px] leading-[10px] break-all overflow-hidden p-1">
                           {Array(10)
@@ -450,7 +449,7 @@ const SmartphoneDiagnosticPage = memo(() => {
                     <div className="w-0.5 h-10 bg-slate-400 mt-12 relative z-10 box-border border-r-2 border-slate-300"></div>
 
                     {/* ── HUB ── */}
-                    <div className="w-32 h-10 bg-white border-2 border-slate-300 rounded-lg shadow-md flex items-center justify-around px-2 relative z-20">
+                    <div className="w-32 h-10 bg-white border-2 border-slate-300 rounded-none shadow-md flex items-center justify-around px-2 relative z-20">
                       {[1, 2, 3, 4, 5].map((i) => (
                         <div
                           key={i}
@@ -484,10 +483,10 @@ const SmartphoneDiagnosticPage = memo(() => {
                         { type: "diag", fill: 20 },
                       ].map((phone, i) => (
                         <div key={i} className="flex flex-col items-center">
-                          <div className="w-20 h-32 bg-white rounded-xl border-2 border-slate-300 p-1.5 shadow-lg relative overflow-hidden group/phone hover:border-emerald-400 transition-colors">
+                          <div className="w-20 h-32 bg-white rounded-none border-2 border-slate-300 p-1.5 shadow-lg relative overflow-hidden group/phone hover:border-emerald-400 transition-colors">
                             {/* Filling animation */}
                             <div
-                              className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-emerald-500/40 to-emerald-400/10 rounded-b-lg transition-all duration-1000`}
+                              className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-emerald-500/40 to-emerald-400/10 rounded-none transition-all duration-1000`}
                               style={{ height: `${phone.fill}%` }}
                             ></div>
 
@@ -551,12 +550,12 @@ const SmartphoneDiagnosticPage = memo(() => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {diagnosticTests.map((test, i) => (
                 <Reveal key={test.title} delayMs={i * 100}>
-                  <div className="group relative p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-teal-200 hover:shadow-2xl transition-all h-full overflow-hidden">
+                  <div className="group relative p-8 rounded-none border border-slate-100 bg-slate-50 hover:bg-white hover:border-teal-200 hover:shadow-2xl transition-all h-full overflow-hidden">
                     <div
                       className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${test.color} opacity-[0.03] -mr-16 -mt-16 rounded-full transition-all group-hover:scale-110`}
                     ></div>
                     <div
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${test.color} text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}
+                      className={`w-14 h-14 rounded-none bg-gradient-to-br ${test.color} text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}
                     >
                       {test.icon}
                     </div>
@@ -591,9 +590,9 @@ const SmartphoneDiagnosticPage = memo(() => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {featItems.map((feat, i) => (
                 <Reveal key={feat.title} delayMs={i * 100}>
-                  <div className="p-8 rounded-3xl border border-slate-100 bg-white hover:border-teal-200 hover:shadow-xl transition-all h-full">
+                  <div className="p-8 rounded-none border border-slate-100 bg-white hover:border-teal-200 hover:shadow-xl transition-all h-full">
                     <div
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feat.color} text-white flex items-center justify-center mb-6`}
+                      className={`w-12 h-12 rounded-none bg-gradient-to-br ${feat.color} text-white flex items-center justify-center mb-6`}
                     >
                       {feat.icon}
                     </div>
@@ -628,8 +627,8 @@ const SmartphoneDiagnosticPage = memo(() => {
             <div className="grid md:grid-cols-3 gap-8">
               {platforms.map((p, i) => (
                 <Reveal key={p.name} delayMs={i * 100}>
-                  <div className="p-8 rounded-3xl bg-slate-50 border border-teal-100 shadow-xl hover:shadow-2xl transition-all text-center group">
-                    <div className="w-20 h-20 mx-auto bg-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <div className="p-8 rounded-none bg-slate-50 border border-teal-100 shadow-xl hover:shadow-2xl transition-all text-center group">
+                    <div className="w-20 h-20 mx-auto bg-white rounded-none flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       {p.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">
@@ -667,8 +666,8 @@ const SmartphoneDiagnosticPage = memo(() => {
             <div className="grid md:grid-cols-2 gap-8">
               {useCases.map((use, i) => (
                 <Reveal key={use.title} delayMs={i * 100}>
-                  <div className="flex items-start gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/[0.08] transition-all">
-                    <div className="w-16 h-16 flex-shrink-0 bg-teal-500/20 text-teal-400 rounded-2xl flex items-center justify-center">
+                  <div className="flex items-start gap-6 p-8 rounded-none bg-white/5 border border-white/10 hover:bg-white/[0.08] transition-all">
+                    <div className="w-16 h-16 flex-shrink-0 bg-teal-500/20 text-teal-400 rounded-none flex items-center justify-center">
                       {use.icon}
                     </div>
                     <div className="space-y-3">
@@ -717,7 +716,7 @@ const SmartphoneDiagnosticPage = memo(() => {
                         key={item}
                         className="flex items-center gap-3 text-slate-700"
                       >
-                        <CheckIcon className="w-5 h-5 text-teal-500" />
+                        <CheckCircle className="w-6 h-6 text-emerald-600" />
                         {item}
                       </li>
                     ))}
@@ -725,7 +724,7 @@ const SmartphoneDiagnosticPage = memo(() => {
                 </div>
               </Reveal>
               <Reveal delayMs={200}>
-                <div className="relative p-1 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-3xl overflow-hidden group shadow-2xl">
+                <div className="relative p-1 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-none overflow-hidden group shadow-2xl">
                   <div className="bg-slate-50 p-8 lg:p-12 rounded-[1.6rem] relative">
                     <div className="text-center space-y-4">
                       <p className="text-teal-600 font-bold tracking-widest text-xs">
@@ -736,7 +735,7 @@ const SmartphoneDiagnosticPage = memo(() => {
                         Mint Condition • 100% Functional
                       </p>
                       <div className="pt-8 border-t border-slate-200 grid grid-cols-2 gap-4 text-left">
-                        <div className="p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                        <div className="p-4 bg-white rounded-none shadow-sm border border-slate-100">
                           <p className="text-[10px] text-slate-500 font-bold mb-1 uppercase">
                             IMEI Status
                           </p>
@@ -744,7 +743,7 @@ const SmartphoneDiagnosticPage = memo(() => {
                             Whitelisted
                           </p>
                         </div>
-                        <div className="p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                        <div className="p-4 bg-white rounded-none shadow-sm border border-slate-100">
                           <p className="text-[10px] text-slate-500 font-bold mb-1 uppercase">
                             Processing
                           </p>

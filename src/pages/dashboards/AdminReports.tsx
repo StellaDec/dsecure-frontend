@@ -5,7 +5,7 @@ import { useMemo, useState, useRef, useCallback, useEffect } from "react";
 // ✅ AbortController ref — stale API requests cancel karne ke liye
 let abortControllerRef: AbortController | null = null;
 import React from "react";
-import { AlertTriangle, Check, ChevronLeft, ChevronRight, Download, FileText, Loader2, Search, X } from 'lucide-react';
+import { AlertTriangle, Check, ChevronLeft, ChevronRight, Download, FileText, HardDrive, Loader2, Search, X } from 'lucide-react';
 
 import { exportToCsv, openPrintView } from "@/utils/csv";
 import { useNotification } from "@/contexts/NotificationContext";
@@ -42,9 +42,53 @@ interface ExtendedAdminReport extends AdminReport {
   _details?: any;
 }
 
+// ✅ Drive Eraser Report ka interface
+interface DriveEraserReport {
+  id: number;
+  report_uuid: string;
+  client_email: string;
+  serial_number: string;
+  drive_model: string;
+  erasure_method: string;
+  status: string;
+  report_details_json: string;
+  timestamp: string;
+}
+
 export default function AdminReports() {
   const { showSuccess, showError, showWarning, showInfo } = useNotification();
   const { user } = useAuth();
+
+  // ✅ Active Tab — File Eraser ya Drive Eraser
+  const [activeTab, setActiveTab] = useState<"file_eraser" | "drive_eraser">("file_eraser");
+
+  // ✅ Drive Eraser Reports ke liye states
+  const [driveEraserReports, setDriveEraserReports] = useState<DriveEraserReport[]>([]);
+  const [driveEraserTotalCount, setDriveEraserTotalCount] = useState(0);
+  const [driveEraserLoading, setDriveEraserLoading] = useState(false);
+  const [driveEraserPage, setDriveEraserPage] = useState(1);
+  
+  // 🔹 SAARE FILTERS EK STATE OBJECT MEIN
+  const [driveEraserFilters, setDriveEraserFilters] = useState({
+    search: '',
+    status: '',
+    serial_number: '',
+    drive_model: '',
+    erasure_method: '',
+    report_uuid: '',
+    startDate: '',
+    endDate: ''
+  });
+
+  const handleDriveEraserFilterChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setDriveEraserFilters(prev => ({ ...prev, [name]: value }));
+    setDriveEraserPage(1);
+  };
+
+  const [hasDriveEraserReports, setHasDriveEraserReports] = useState(false);
+  const [selectedDriveReportIds, setSelectedDriveReportIds] = useState<Set<number>>(new Set());
+  const [isDrivePreviewLoading, setIsDrivePreviewLoading] = useState(false);
 
   const [query, setQuery] = useState("");
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -1639,6 +1683,342 @@ export default function AdminReports() {
     }
   };
 
+  // ✅ Drive Eraser Reports fetch karne ka function
+  const loadDriveEraserReports = useCallback(async () => {
+    // ✅ Demo Mode — dummy data se tab dikhao
+    if (isDemo) {
+      let demoData: DriveEraserReport[] = [
+        { id: 9990001, report_uuid: "DS-ERASE-DEMO01-0001", client_email: "demo@dsecure.com", serial_number: "SN-DEMO-HDD-001", drive_model: "Seagate Barracuda 1TB", erasure_method: "NIST SP 800-88 Rev1", status: "COMPLETED", report_details_json: "{}", timestamp: "2026-08-10T14:30:00.0000000Z" },
+        { id: 9990002, report_uuid: "DS-ERASE-DEMO02-0001", client_email: "demo@dsecure.com", serial_number: "SN-DEMO-SSD-002", drive_model: "Samsung 870 EVO 500GB", erasure_method: "DoD 5220.22-M", status: "COMPLETED", report_details_json: "{}", timestamp: "2026-08-09T11:15:00.0000000Z" },
+        { id: 9990003, report_uuid: "DS-ERASE-DEMO03-0001", client_email: "demo@dsecure.com", serial_number: "SN-DEMO-NVM-003", drive_model: "WD Black SN770 1TB", erasure_method: "NIST SP 800-88 Rev1", status: "PENDING", report_details_json: "{}", timestamp: "2026-08-11T09:00:00.0000000Z" },
+        { id: 9990004, report_uuid: "DS-ERASE-DEMO04-0001", client_email: "demo@dsecure.com", serial_number: "SN-DEMO-HDD-004", drive_model: "Toshiba P300 2TB", erasure_method: "Gutmann (35-pass)", status: "COMPLETED", report_details_json: "{}", timestamp: "2026-08-08T16:45:00.0000000Z" },
+        { id: 9990005, report_uuid: "DS-ERASE-DEMO05-0001", client_email: "demo@dsecure.com", serial_number: "SN-DEMO-SSD-005", drive_model: "Crucial MX500 250GB", erasure_method: "DoD 5220.22-M", status: "FAILED", report_details_json: "{}", timestamp: "2026-08-07T08:20:00.0000000Z" },
+        { id: 9990006, report_uuid: "DS-ERASE-DEMO06-0001", client_email: "demo@dsecure.com", serial_number: "SN-DEMO-HDD-006", drive_model: "WD Blue 500GB", erasure_method: "NIST SP 800-88 Rev1", status: "COMPLETED", report_details_json: "{}", timestamp: "2026-08-06T13:10:00.0000000Z" },
+        { id: 9990007, report_uuid: "DS-ERASE-DEMO07-0001", client_email: "demo@dsecure.com", serial_number: "SN-DEMO-NVM-007", drive_model: "Kingston NV2 500GB", erasure_method: "NIST SP 800-88 Rev1", status: "COMPLETED", report_details_json: "{}", timestamp: "2026-08-05T10:30:00.0000000Z" },
+        { id: 9990008, report_uuid: "DS-ERASE-DEMO08-0001", client_email: "demo@dsecure.com", serial_number: "SN-DEMO-SSD-008", drive_model: "Samsung 980 PRO 1TB", erasure_method: "Gutmann (35-pass)", status: "PENDING", report_details_json: "{}", timestamp: "2026-08-04T15:00:00.0000000Z" },
+      ];
+      
+      // Basic mock filtering for demo mode
+      if (driveEraserFilters.status) demoData = demoData.filter(d => d.status.toLowerCase() === driveEraserFilters.status.toLowerCase());
+      if (driveEraserFilters.erasure_method) demoData = demoData.filter(d => d.erasure_method === driveEraserFilters.erasure_method);
+      if (driveEraserFilters.serial_number) demoData = demoData.filter(d => d.serial_number.toLowerCase().includes(driveEraserFilters.serial_number.toLowerCase()));
+      if (driveEraserFilters.drive_model) demoData = demoData.filter(d => d.drive_model.toLowerCase().includes(driveEraserFilters.drive_model.toLowerCase()));
+      if (driveEraserFilters.report_uuid) demoData = demoData.filter(d => d.report_uuid.toLowerCase().includes(driveEraserFilters.report_uuid.toLowerCase()));
+      if (driveEraserFilters.search) {
+        const q = driveEraserFilters.search.toLowerCase();
+        demoData = demoData.filter(d => d.report_uuid.toLowerCase().includes(q) || d.serial_number.toLowerCase().includes(q) || d.drive_model.toLowerCase().includes(q));
+      }
+
+      setDriveEraserTotalCount(demoData.length);
+      setDriveEraserReports(demoData.slice((driveEraserPage - 1) * pageSize, driveEraserPage * pageSize));
+      setHasDriveEraserReports(true);
+      return;
+    }
+
+    const email = getUserEmail();
+    if (!email) return;
+
+    setDriveEraserLoading(true);
+    try {
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
+      const token = authService.getAccessToken();
+      if (!token) {
+        console.warn("⚠️ Drive Eraser: No auth token");
+        setDriveEraserLoading(false);
+        return;
+      }
+
+      const queryParams = new URLSearchParams({
+        email: email,
+        page: driveEraserPage.toString(),
+        pageSize: pageSize.toString()
+      });
+
+      // Append active filters dynamically
+      Object.entries(driveEraserFilters).forEach(([key, value]) => {
+        if (value) {
+          queryParams.append(key, value);
+        }
+      });
+
+      const response = await fetch(
+        `${API_BASE}/api/DriveEraserReports/user-reports?${queryParams.toString()}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success && Array.isArray(data.data)) {
+          setDriveEraserReports(data.data);
+          setDriveEraserTotalCount(data.count || data.data.length);
+          setHasDriveEraserReports(true); // API access hai, reports 0 hon toh bhi tab dikhega
+          console.log(`✅ Drive Eraser: ${data.data.length} reports loaded. Total: ${data.count}`);
+        } else {
+          setDriveEraserReports([]);
+          setDriveEraserTotalCount(0);
+          setHasDriveEraserReports(false);
+        }
+      } else {
+        console.warn("⚠️ Drive Eraser API error:", response.status);
+        setDriveEraserReports([]);
+        setDriveEraserTotalCount(0);
+        setHasDriveEraserReports(false);
+      }
+    } catch (error) {
+      console.error("❌ Drive Eraser fetch error:", error);
+      setDriveEraserReports([]);
+      setDriveEraserTotalCount(0);
+      setHasDriveEraserReports(false);
+    } finally {
+      setDriveEraserLoading(false);
+    }
+  }, [isDemo, driveEraserPage, pageSize, driveEraserFilters]);
+
+  // ✅ Drive Eraser search debounce and effect
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      loadDriveEraserReports();
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [driveEraserFilters, driveEraserPage, pageSize, loadDriveEraserReports]);
+
+  // Since backend handles pagination & filtering, we just use the API result
+  const driveEraserTotalPages = Math.max(1, Math.ceil(driveEraserTotalCount / pageSize));
+  const driveEraserRows = driveEraserReports;
+
+  // Derive unique options for dropdowns based on currently loaded reports
+  const uniqueSerialNumbers = useMemo(() => {
+    return Array.from(new Set(driveEraserReports.map(r => r.serial_number).filter(Boolean))).sort();
+  }, [driveEraserReports]);
+
+  const uniqueDriveModels = useMemo(() => {
+    return Array.from(new Set(driveEraserReports.map(r => r.drive_model).filter(Boolean))).sort();
+  }, [driveEraserReports]);
+
+  // ✅ Drive Eraser PDF download function
+  const handleDriveEraserDownload = async (report: DriveEraserReport) => {
+    if (isDemo) {
+      showInfo("Demo Mode", "PDF download disabled in demo mode");
+      return;
+    }
+    try {
+      showInfo(`Preparing PDF for ${report.report_uuid}...`);
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
+      const token = authService.getAccessToken();
+
+      const response = await fetch(
+        `${API_BASE}/api/DriveEraserReports/${report.id}/export-pdf`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const blob = await response.blob();
+      if (blob.size === 0) {
+        throw new Error("Empty PDF received");
+      }
+
+      // Download trigger
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `drive-eraser-${report.report_uuid}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+
+      showSuccess(`Report ${report.report_uuid} downloaded!`);
+    } catch (error) {
+      console.error("❌ Drive Eraser download error:", error);
+      showError(
+        "Download Failed",
+        `Failed to download report. ${error instanceof Error ? error.message : "Please try again."}`
+      );
+    }
+  };
+
+  // ✅ Drive Eraser: Toggle individual selection
+  const toggleDriveReportSelection = (reportId: number) => {
+    const newSelection = new Set(selectedDriveReportIds);
+    if (newSelection.has(reportId)) newSelection.delete(reportId);
+    else newSelection.add(reportId);
+    setSelectedDriveReportIds(newSelection);
+  };
+
+  // ✅ Drive Eraser: Toggle all selection
+  const toggleSelectAllDrive = (currentPageReports: DriveEraserReport[]) => {
+    const currentPageIds = currentPageReports.map((r) => r.id);
+    const allSelected = currentPageIds.every((id) => selectedDriveReportIds.has(id));
+
+    const newSelection = new Set(selectedDriveReportIds);
+    if (allSelected) {
+      currentPageIds.forEach((id) => newSelection.delete(id));
+    } else {
+      currentPageIds.forEach((id) => newSelection.add(id));
+    }
+    setSelectedDriveReportIds(newSelection);
+  };
+
+  // ✅ Drive Eraser: Bulk Download
+  const handleDriveEraserBulkDownload = async () => {
+    if (isDemo) {
+      showInfo("Demo Mode", "Bulk download is disabled in demo mode");
+      return;
+    }
+
+    if (selectedDriveReportIds.size === 0) {
+      showWarning("No Reports Selected", "Please select at least one report to download");
+      return;
+    }
+
+    try {
+      showInfo(`Preparing ${selectedDriveReportIds.size} reports for download...`);
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
+      const token = authService.getAccessToken();
+
+      const selectedReports = driveEraserReports.filter((r) => selectedDriveReportIds.has(r.id));
+
+      if (selectedReports.length === 1) {
+        // Just download the single PDF directly
+        await handleDriveEraserDownload(selectedReports[0]);
+        setSelectedDriveReportIds(new Set());
+        return;
+      }
+
+      // Multiple selection -> Create ZIP
+      const JSZip = (await import("jszip")).default;
+      const zip = new JSZip();
+      let successCount = 0;
+      let failedCount = 0;
+
+      for (const report of selectedReports) {
+        try {
+          const response = await fetch(`${API_BASE}/api/DriveEraserReports/${report.id}/export-pdf`, {
+            method: "GET",
+            headers: { Authorization: `Bearer ${token}` },
+          });
+
+          if (response.ok) {
+            const blob = await response.blob();
+            if (blob.size > 0) {
+              zip.file(`drive-eraser-${report.report_uuid}.pdf`, blob);
+              successCount++;
+            } else {
+              failedCount++;
+            }
+          } else {
+            failedCount++;
+          }
+        } catch (error) {
+          console.error(`Error downloading drive report ${report.id}:`, error);
+          failedCount++;
+        }
+      }
+
+      if (successCount === 0) {
+        showError("Download Failed", "No reports could be downloaded");
+        return;
+      }
+
+      const zipBlob = await zip.generateAsync({ type: "blob" });
+      const url = window.URL.createObjectURL(zipBlob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `drive-eraser-reports-${new Date().toISOString().split("T")[0]}.zip`;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+
+      setSelectedDriveReportIds(new Set());
+      if (failedCount > 0) {
+        showWarning("Partial Success", `Downloaded ${successCount} reports. ${failedCount} failed.`);
+      } else {
+        showSuccess(`Successfully downloaded ${successCount} reports as ZIP`);
+      }
+    } catch (error) {
+      console.error("Error creating ZIP:", error);
+      showError("Download Failed", "Failed to create ZIP file. Please try again.");
+    }
+  };
+
+  // ✅ Drive Eraser: Preview
+  const handleDriveEraserPreview = async () => {
+    if (isDemo) {
+      showInfo("Demo Mode", "Preview is disabled in demo mode");
+      return;
+    }
+
+    if (selectedDriveReportIds.size === 0) {
+      showWarning("No Reports Selected", "Please select at least one report to preview");
+      return;
+    }
+
+    if (isDrivePreviewLoading) {
+      showInfo("Preview is already in progress...");
+      return;
+    }
+
+    const MAX_PREVIEW_TABS = 5;
+    if (selectedDriveReportIds.size > MAX_PREVIEW_TABS) {
+      showWarning("Too Many Reports", `You can preview maximum ${MAX_PREVIEW_TABS} reports at once.`);
+      return;
+    }
+
+    setIsDrivePreviewLoading(true);
+    setPreviewBlobs([]);
+    setCurrentPreviewIndex(0);
+
+    try {
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
+      const token = authService.getAccessToken();
+      const selectedReports = driveEraserReports.filter((r) => selectedDriveReportIds.has(r.id));
+      const blobs: Blob[] = [];
+
+      for (const report of selectedReports) {
+        try {
+          const response = await fetch(`${API_BASE}/api/DriveEraserReports/${report.id}/export-pdf`, {
+            method: "GET",
+            headers: { Authorization: `Bearer ${token}` },
+          });
+
+          if (response.ok) {
+            const blob = await response.blob();
+            if (blob.size > 0) blobs.push(blob);
+          }
+        } catch (error) {
+          console.error(`Error fetching preview for report ${report.id}:`, error);
+        }
+      }
+
+      if (blobs.length > 0) {
+        setPreviewBlobs(blobs);
+        setShowPreviewModal(true);
+      } else {
+        showError("Preview Failed", "Could not load any previews for the selected reports");
+      }
+    } catch (error) {
+      console.error("Preview error:", error);
+      showError("Preview Error", "Failed to load report previews");
+    } finally {
+      setIsDrivePreviewLoading(false);
+    }
+  };
+
   const uniqueStatuses = useMemo(
     () => [...new Set(allRows.map((r) => r.status))],
     [allRows],
@@ -2784,7 +3164,7 @@ export default function AdminReports() {
             <h1 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-bold text-[#0a2e1e]">
               Audit Reports
             </h1>
-            {selectedReportIds.size > 0 && (
+            {activeTab === "file_eraser" && selectedReportIds.size > 0 && (
               <p className="text-sm text-slate-600 mt-1">
                 {selectedReportIds.size} report
                 {selectedReportIds.size > 1 ? "s" : ""} selected
@@ -2858,6 +3238,48 @@ export default function AdminReports() {
         </div> */}
         </div>
 
+        {/* ✅ Tab Switcher — File Eraser / Drive Eraser */}
+        {hasDriveEraserReports && (
+          <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-none w-fit">
+            <button
+              onClick={() => { setActiveTab("file_eraser"); setPage(1); }}
+              className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-all duration-200 ${
+                activeTab === "file_eraser"
+                  ? "bg-[#0e7c66] text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-800 hover:bg-white"
+              }`}
+            >
+              <FileText className="w-4 h-4" />
+              File Eraser
+              <span className={`text-xs px-1.5 py-0.5 rounded-full ${
+                activeTab === "file_eraser"
+                  ? "bg-white/20 text-white"
+                  : "bg-slate-200 text-slate-600"
+              }`}>
+                {allRows.length}
+              </span>
+            </button>
+            <button
+              onClick={() => { setActiveTab("drive_eraser"); setDriveEraserPage(1); }}
+              className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-none transition-all duration-200 ${
+                activeTab === "drive_eraser"
+                  ? "bg-[#0e7c66] text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-800 hover:bg-white"
+              }`}
+            >
+              <HardDrive className="w-4 h-4" />
+              Drive Eraser
+              <span className={`text-xs px-1.5 py-0.5 rounded-full ${
+                activeTab === "drive_eraser"
+                  ? "bg-white/20 text-white"
+                  : "bg-slate-200 text-slate-600"
+              }`}>
+                {driveEraserReports.length}
+              </span>
+            </button>
+          </div>
+        )}
+
         {/* {!loading && !isUsingApi && (
         <div className="bg-[#d4ede4] border border-[#d4ede4] rounded-none p-4 mb-6">
           <div className="flex items-start space-x-3">
@@ -2877,6 +3299,9 @@ export default function AdminReports() {
         </div>
       )} */}
 
+
+        {/* ✅ FILE ERASER TAB — Filters + Table */}
+        {activeTab === "file_eraser" && (<>
         {/* Advanced Filters */}
         <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-6 p-4 space-y-4">
           <div className="flex items-center justify-between">
@@ -3591,6 +4016,345 @@ export default function AdminReports() {
             </>
           )}
         </div>
+        </>)}
+
+        {/* ✅ DRIVE ERASER TAB — Search + Table + Pagination */}
+        {activeTab === "drive_eraser" && (
+          <>
+            {/* Drive Eraser Filters */}
+            <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden p-4 space-y-4 mb-4">
+              <div className="flex items-center justify-between">
+                <h2 className="text-lg font-semibold text-[#0a2e1e]">
+                  Filters & Search
+                </h2>
+                <button
+                  onClick={() => {
+                    setDriveEraserFilters({ search: '', status: '', serial_number: '', drive_model: '', erasure_method: '', report_uuid: '', startDate: '', endDate: '' });
+                    setDriveEraserPage(1);
+                  }}
+                  className="text-sm text-red-600 hover:text-red-800 font-medium"
+                >
+                  Clear All
+                </button>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* 1. Global Keyword Search */}
+                <input 
+                  type="text" name="search" placeholder="Search anywhere..."
+                  value={driveEraserFilters.search} onChange={handleDriveEraserFilterChange}
+                  className="border border-slate-300 px-3 py-2 rounded text-sm w-full focus:ring-2 focus:ring-[#0e7c66] focus:border-transparent"
+                />
+
+                {/* 2. Status Dropdown */}
+                <select name="status" value={driveEraserFilters.status} onChange={handleDriveEraserFilterChange} className="border border-slate-300 px-3 py-2 rounded text-sm w-full focus:ring-2 focus:ring-[#0e7c66] focus:border-transparent">
+                  <option value="">All Statuses</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Failed">Failed</option>
+                </select>
+
+                {/* 3. Specific: Serial Number Dropdown */}
+                <select name="serial_number" value={driveEraserFilters.serial_number} onChange={handleDriveEraserFilterChange} className="border border-slate-300 px-3 py-2 rounded text-sm w-full focus:ring-2 focus:ring-[#0e7c66] focus:border-transparent">
+                  <option value="">All Serial Numbers</option>
+                  {uniqueSerialNumbers.map(serial => (
+                    <option key={serial} value={serial}>{serial}</option>
+                  ))}
+                </select>
+
+                {/* 4. Specific: Drive Model Dropdown */}
+                <select name="drive_model" value={driveEraserFilters.drive_model} onChange={handleDriveEraserFilterChange} className="border border-slate-300 px-3 py-2 rounded text-sm w-full focus:ring-2 focus:ring-[#0e7c66] focus:border-transparent">
+                  <option value="">All Drive Models</option>
+                  {uniqueDriveModels.map(model => (
+                    <option key={model} value={model}>{model}</option>
+                  ))}
+                </select>
+
+                {/* 5. Specific: Erasure Method Dropdown */}
+                <select name="erasure_method" value={driveEraserFilters.erasure_method} onChange={handleDriveEraserFilterChange} className="border border-slate-300 px-3 py-2 rounded text-sm w-full focus:ring-2 focus:ring-[#0e7c66] focus:border-transparent">
+                  <option value="">All Methods</option>
+                  <option value="NIST SP 800-88 Rev1">NIST SP 800-88 Rev1</option>
+                  <option value="DoD 5220.22-M">DoD 5220.22-M</option>
+                  <option value="Secure Erase">Secure Erase</option>
+                  <option value="Gutmann (35-pass)">Gutmann (35-pass)</option>
+                </select>
+
+                {/* 6. Specific: Report UUID */}
+                <input 
+                  type="text" name="report_uuid" placeholder="Report UUID"
+                  value={driveEraserFilters.report_uuid} onChange={handleDriveEraserFilterChange}
+                  className="border border-slate-300 px-3 py-2 rounded text-sm w-full focus:ring-2 focus:ring-[#0e7c66] focus:border-transparent"
+                />
+
+                {/* 7 & 8. Date Range Picker */}
+                <div className="flex gap-2 lg:col-span-2">
+                  <input 
+                    type="date" name="startDate" 
+                    value={driveEraserFilters.startDate} onChange={handleDriveEraserFilterChange}
+                    className="border border-slate-300 px-3 py-2 rounded text-sm w-full focus:ring-2 focus:ring-[#0e7c66] focus:border-transparent"
+                    title="Start Date"
+                  />
+                  <input 
+                    type="date" name="endDate" 
+                    value={driveEraserFilters.endDate} onChange={handleDriveEraserFilterChange}
+                    className="border border-slate-300 px-3 py-2 rounded text-sm w-full focus:ring-2 focus:ring-[#0e7c66] focus:border-transparent"
+                    title="End Date"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Drive Eraser Table */}
+            <div className="bg-white rounded-none border border-[#d0d5dc] shadow-sm overflow-hidden card-table card overflow-x-auto">
+              {/* Drive Eraser Bulk Actions Bar */}
+              {selectedDriveReportIds.size > 0 && (
+                <div className="bg-brand-50 border-b border-brand-100 px-4 py-3 flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-medium text-brand-700">
+                      {selectedDriveReportIds.size} report{selectedDriveReportIds.size > 1 ? "s" : ""} selected
+                    </span>
+                    <button
+                      onClick={() => setSelectedDriveReportIds(new Set())}
+                      className="text-xs text-brand-600 hover:text-brand-800 font-medium"
+                    >
+                      Clear selection
+                    </button>
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleDriveEraserPreview}
+                      disabled={isDrivePreviewLoading}
+                      className="px-3 py-1.5 bg-white border border-brand-200 text-brand-700 rounded text-sm hover:bg-brand-50 transition-colors flex items-center gap-1.5 shadow-sm disabled:opacity-50"
+                    >
+                      {isDrivePreviewLoading ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <Search className="w-4 h-4" />
+                      )}
+                      Preview
+                    </button>
+                    <button
+                      onClick={handleDriveEraserBulkDownload}
+                      className="px-3 py-1.5 bg-[#0e7c66] text-white rounded text-sm hover:bg-[#0a6b58] transition-colors flex items-center gap-1.5 shadow-sm"
+                    >
+                      <Download className="w-4 h-4" />
+                      Download {selectedDriveReportIds.size > 1 ? "ZIP" : "PDF"}
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {driveEraserLoading ? (
+                <div className="animate-pulse">
+                  <div className="grid grid-cols-6 gap-3 px-4 py-3 bg-slate-50 border-b border-slate-200">
+                    {["w-28", "w-24", "w-24", "w-32", "w-20", "w-16"].map((w, i) => (
+                      <div key={i} className={`h-4 bg-slate-200 rounded ${w}`} />
+                    ))}
+                  </div>
+                  <div className="divide-y divide-slate-100">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <div key={i} className="grid grid-cols-6 gap-3 px-4 py-4 items-center">
+                        <div><div className="h-4 bg-slate-200 rounded w-24" /></div>
+                        <div><div className="h-4 bg-slate-100 rounded w-28" /></div>
+                        <div><div className="h-4 bg-slate-200 rounded w-24" /></div>
+                        <div><div className="h-6 bg-[#d4ede4] rounded-full w-32" /></div>
+                        <div><div className="h-6 bg-[#d4ede4] rounded-full w-16" /></div>
+                        <div><div className="h-8 bg-slate-200 rounded w-8" /></div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : driveEraserReports.length === 0 ? (
+                <div className="text-center py-12">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
+                    <HardDrive className="w-8 h-8 text-slate-400" />
+                  </div>
+                  <h2 className="text-lg font-medium text-[#0a2e1e] mb-2">
+                    No Drive Eraser Reports Found
+                  </h2>
+                  <p className="text-slate-600">
+                    {Object.values(driveEraserFilters).some(v => v !== '')
+                      ? "No reports match your search query or filters."
+                      : "There are no drive eraser reports available."}
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <div className="max-h-[500px] overflow-y-auto">
+                    <table className="w-full text-nowrap min-w-[800px]">
+                      <thead className="sticky top-0 bg-white shadow-sm z-10">
+                        <tr className="text-left text-slate-500 border-b whitespace-nowrap">
+                          <th className="py-3 px-4 w-12 text-center">
+                            <input
+                              type="checkbox"
+                              className="rounded border-slate-300 text-[#0e7c66] focus:ring-[#0e7c66] cursor-pointer w-4 h-4"
+                              checked={
+                                driveEraserRows.length > 0 &&
+                                driveEraserRows.every((r) => selectedDriveReportIds.has(r.id))
+                              }
+                              ref={(input) => {
+                                if (input) {
+                                  const currentPageSelected = driveEraserRows.filter((r) =>
+                                    selectedDriveReportIds.has(r.id),
+                                  ).length;
+                                  input.indeterminate =
+                                    currentPageSelected > 0 &&
+                                    currentPageSelected < driveEraserRows.length;
+                                }
+                              }}
+                              onChange={() => toggleSelectAllDrive(driveEraserRows)}
+                            />
+                          </th>
+                          <th className="py-3 px-4 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 min-w-[160px]">
+                            Report ID
+                          </th>
+                          <th className="py-3 px-4 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 min-w-[110px]">
+                            Date
+                          </th>
+                          <th className="py-3 px-4 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 min-w-[140px]">
+                            Serial Number
+                          </th>
+                          <th className="py-3 px-4 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 min-w-[130px]">
+                            Drive Model
+                          </th>
+                          <th className="py-3 px-4 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 min-w-[160px]">
+                            Erasure Method
+                          </th>
+                          <th className="py-3 px-4 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 min-w-[100px]">
+                            Status
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {driveEraserRows.map((row, i) => (
+                          <tr key={`${row.id}-${i}`} className="border-t hover:bg-slate-50">
+                            <td className="py-3 px-4 text-center">
+                              <input
+                                type="checkbox"
+                                className="rounded border-slate-300 text-[#0e7c66] focus:ring-[#0e7c66] cursor-pointer w-4 h-4"
+                                checked={selectedDriveReportIds.has(row.id)}
+                                onChange={() => toggleDriveReportSelection(row.id)}
+                              />
+                            </td>
+                            <td className="py-3 px-4 font-medium font-mono text-[11px] sm:text-xs text-slate-600">
+                              {row.report_uuid}
+                            </td>
+                            <td className="py-3 px-4 text-xs text-slate-600">
+                              {new Date(row.timestamp).toLocaleDateString("en-CA")}
+                            </td>
+                            <td className="py-3 px-4 font-mono text-xs text-slate-600">
+                              {row.serial_number}
+                            </td>
+                            <td className="py-3 px-4 text-xs text-slate-600">
+                              {row.drive_model}
+                            </td>
+                            <td className="py-3 px-4 text-xs">
+                              <span className="px-2 py-1 rounded-full text-[10px] sm:text-xs font-medium bg-[#d4ede4] text-[#0a2e1e] whitespace-nowrap">
+                                {row.erasure_method}
+                              </span>
+                            </td>
+                            <td className="py-3 px-4">
+                              <span
+                                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-medium whitespace-nowrap ${
+                                  row.status.toLowerCase() === "completed"
+                                    ? "bg-[#d4ede4] text-[#0a2e1e]"
+                                    : row.status.toLowerCase() === "pending"
+                                      ? "bg-amber-50 text-amber-700"
+                                      : row.status.toLowerCase() === "failed"
+                                        ? "bg-red-50 text-red-700"
+                                        : "bg-slate-100 text-slate-800"
+                                }`}
+                              >
+                                <span
+                                  className={`w-1.5 h-1.5 rounded-full ${
+                                    row.status.toLowerCase() === "completed"
+                                      ? "bg-[#0e7c66]"
+                                      : row.status.toLowerCase() === "pending"
+                                        ? "bg-amber-500"
+                                        : row.status.toLowerCase() === "failed"
+                                          ? "bg-red-500"
+                                          : "bg-slate-400"
+                                  }`}
+                                ></span>
+                                <span className="capitalize">{row.status}</span>
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Drive Eraser Pagination */}
+                  <div className="flex flex-col lg:flex-row items-center justify-between gap-4 mt-4 pt-4 border-t px-4 pb-4">
+                    <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+                      <div className="flex items-center gap-2">
+                        <label htmlFor="drivePageSize" className="text-sm text-slate-600 whitespace-nowrap">
+                          Rows per page:
+                        </label>
+                        <select
+                          id="drivePageSize"
+                          value={pageSize}
+                          onChange={(e) => {
+                            const newSize = parseInt(e.target.value, 10);
+                            setPageSize(newSize);
+                            setDriveEraserPage(1);
+                          }}
+                          className="px-2 py-1 border border-slate-300 rounded-none text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                        >
+                          {pageSizeOptions.map((size) => (
+                            <option key={size} value={size}>{size}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <span className="text-sm text-slate-500 whitespace-nowrap">
+                        Showing{" "}
+                        <span className="font-medium text-slate-700">
+                          {driveEraserTotalCount > 0 ? (driveEraserPage - 1) * pageSize + 1 : 0}
+                        </span>{" "}
+                        to{" "}
+                        <span className="font-medium text-slate-700">
+                          {Math.min(driveEraserPage * pageSize, driveEraserTotalCount)}
+                        </span>{" "}
+                        of{" "}
+                        <span className="font-medium text-slate-700">
+                          {driveEraserTotalCount}
+                        </span>{" "}
+                        records
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                      <span className="text-sm text-slate-600 whitespace-nowrap">
+                        Page{" "}
+                        <span className="font-medium text-slate-700">{driveEraserPage}</span>{" "}
+                        of{" "}
+                        <span className="font-medium text-slate-700">{driveEraserTotalPages}</span>
+                      </span>
+                      <div className="flex gap-2">
+                        <button
+                          disabled={driveEraserPage <= 1}
+                          onClick={() => setDriveEraserPage(driveEraserPage - 1)}
+                          className="px-3 py-1.5 border border-slate-300 rounded-none text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors flex items-center gap-1 font-medium text-slate-600"
+                        >
+                          <ChevronLeft className="w-4 h-4" />
+                          Previous
+                        </button>
+                        <button
+                          disabled={driveEraserPage >= driveEraserTotalPages}
+                          onClick={() => setDriveEraserPage(driveEraserPage + 1)}
+                          className="px-3 py-1.5 border border-slate-300 rounded-none text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors flex items-center gap-1 font-medium text-slate-600"
+                        >
+                          Next
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+          </>
+        )}
       </div>
 
       {/* Bulk Settings Modal */}

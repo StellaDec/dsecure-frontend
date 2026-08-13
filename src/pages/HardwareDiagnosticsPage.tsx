@@ -10,37 +10,44 @@ import ProductInternalLinks from "@/components/ProductInternalLinks";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQSection } from "@/components/FAQSection";
 import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
-import {
-  ShieldIcon,
-  CheckIcon,
-  ArrowRightIcon,
-  GlobeIcon,
-  CloudIcon,
-  GearIcon,
-  ServerIcon,
-} from "@/components/FlatIcons";
-import {
-  Cpu,
-  Cpu as CpuIcon,
-  FileTextIcon,
-  LockIcon,
-  RefreshCwIcon,
-  SettingsIcon,
-  User,
-  X,
-  Battery,
-  Wifi,
-  AlertTriangle,
-  Download,
-  Database,
-  Volume2,
-  Bluetooth,
-  Heart,
-  Activity,
-} from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 
 import { useToast } from "@/components/Toast";
 import { blogPosts } from "@/data/blogPosts";
+import {
+  Activity,
+  AlertTriangle,
+  ArrowLeft,
+  ArrowRight,
+  Battery,
+  Bluetooth,
+  CheckCircle,
+  Cloud,
+  Cpu,
+  Cpu as CpuIcon,
+  Database,
+  Download,
+  FileText,
+  FileTextIcon,
+  Globe,
+  GlobeIcon,
+  Heart,
+  LockIcon,
+  RefreshCw,
+  RefreshCwIcon,
+  Server,
+  Settings,
+  SettingsIcon,
+  Shield,
+  Star,
+  User,
+  Volume2,
+  Wifi,
+  X,
+  LayoutGrid,
+  Command,
+  Terminal
+} from 'lucide-react';
 
 const getReadTime = (text: string) => {
   const wordsPerMinute = 200;
@@ -473,7 +480,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
     {
       title: "Diagnose & Grade Devices",
       desc: "Accurately diagnose all internal components and assign grades to IT assets based on health status and performance results.",
-      icon: <ShieldIcon className="w-6 h-6" />,
+      icon: <Shield className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Mac-Native Diagnostics",
@@ -488,17 +495,17 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
     {
       title: "Cloud Console Support",
       desc: "Centralized management of users, licenses, and diagnostics reports. Access and export reports anytime from the cloud.",
-      icon: <CloudIcon className="w-6 h-6" />,
+      icon: <Cloud className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Tamper-proof Signed Reports",
       desc: "Generates secure, digitally signed hardware diagnostics reports in PDF, CSV, and XML formats to prevent data tampering.",
-      icon: <GlobeIcon className="w-6 h-6" />,
+      icon: <Globe className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "PXE & Network Deployment",
       desc: "Deploy via PXE to diagnose up to 255 machines simultaneously. Supports UEFI and Legacy BIOS boot modes.",
-      icon: <ServerIcon className="w-6 h-6" />,
+      icon: <Server className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Enterprise API Integration",
@@ -521,46 +528,32 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
     {
       title: "Evaluate Used IT Assets",
       desc: "Get accurate insights into component functioning before repurposing used IT assets.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-          />
-        </svg>
-      ),
+      icon: <Activity className="w-8 h-8" />,
     },
     {
       title: "Right to Repair",
       desc: "Identify faulty parts by testing device components that can then be repaired or replaced.",
-      icon: <ServerIcon className="w-8 h-8" />,
+      icon: <Settings className="w-8 h-8" />,
     },
     {
       title: "Device Recycling & Resale",
       desc: "Obtain maximum residual value from old IT assets by ensuring peak performance.",
-      icon: <RefreshCwIcon className="w-8 h-8" />,
+      icon: <RefreshCw className="w-8 h-8" />,
     },
     {
       title: "ITAD & Refurbishers",
       desc: "Mass-diagnose incoming inventory efficiently through PXE network boot.",
-      icon: <User className="w-8 h-8" />,
+      icon: <Server className="w-8 h-8" />,
     },
     {
       title: "Meet Industry Standards",
       desc: "Maintain compliance with R2v3, e-Stewards, and other certification standards.",
-      icon: <GlobeIcon className="w-8 h-8" />,
+      icon: <Shield className="w-8 h-8" />,
     },
     {
       title: "Standardize Quality Control",
       desc: "Use customizable ISOs to run consistent diagnostic tests across all processed devices.",
-      icon: <GlobeIcon className="w-8 h-8" />,
+      icon: <CheckCircle className="w-8 h-8" />,
     },
   ];
 
@@ -719,7 +712,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                   </Reveal>
                   <div className="flex flex-col sm:flex-row items-center gap-3">
                     <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
-                      <ShieldIcon className="w-4 h-4" />
+                      <Shield className="w-6 h-6 text-emerald-600" />
                       Accurate Diagnostics Tool
                     </div>
                     <Link
@@ -728,7 +721,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                     >
                       <Activity className="w-4 h-4 animate-pulse" />
                       <span>New: Integrated Solution</span>
-                      <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-6 h-6 text-emerald-600" />
                     </Link>
                   </div>
 
@@ -762,13 +755,13 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                   <div className="flex flex-col sm:flex-row gap-4 relative z-20">
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Request Early Access
                     </button>
                     <button
                       onClick={() => downloadCatalog()}
-                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 px-8 py-4 rounded-none font-bold hover:bg-emerald-50 transition-all duration-300"
                     >
                       <Download className="w-5 h-5 text-emerald-600" />
                       Download Overview
@@ -799,7 +792,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                     ].map((item) => (
                       <div
                         key={item.delay}
-                        className={`absolute ${item.pos} p-2 sm:p-3 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-slate-700/50 shadow-xl ${item.color} animate-float hidden xs:flex`}
+                        className={`absolute ${item.pos} p-2 sm:p-3 bg-slate-900/80 backdrop-blur-md rounded-none border border-slate-700/50 shadow-xl ${item.color} animate-float hidden xs:flex`}
                         style={{ animationDelay: item.delay }}
                       >
                         {item.icon}
@@ -817,7 +810,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                   >
                     {/* Monitor Screen Container */}
                     <div
-                      className="relative z-10 bg-gradient-to-br from-slate-800 to-slate-950 rounded-lg p-1 sm:p-2 border-2 border-slate-700/50 shadow-2xl overflow-hidden"
+                      className="relative z-10 bg-gradient-to-br from-slate-800 to-slate-950 rounded-none p-1 sm:p-2 border-2 border-slate-700/50 shadow-2xl overflow-hidden"
                       style={{
                         transform: "rotateX(-5deg) rotateY(-10deg)",
                         boxShadow: "20px 20px 50px rgba(0,0,0,0.5), inset 0 0 15px rgba(16, 185, 129, 0.05)",
@@ -872,7 +865,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
 
                     {/* Monitor Stand - Base */}
                     <div 
-                      className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 w-32 sm:w-48 h-3 sm:h-4 bg-gradient-to-br from-slate-700 to-slate-900 rounded-t-xl border border-slate-600/40 shadow-xl"
+                      className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 w-32 sm:w-48 h-3 sm:h-4 bg-gradient-to-br from-slate-700 to-slate-900 rounded-none border border-slate-600/40 shadow-xl"
                       style={{
                         transform: "rotateX(75deg)",
                         transformOrigin: "top center",
@@ -950,9 +943,9 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {diagnosticsFeatures.map((item, i) => (
                 <Reveal key={item.name} delayMs={i * 50}>
-                  <div className="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 min-h-[200px] sm:min-h-[250px] md:min-h-[280px] flex flex-col">
+                  <div className="group bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 min-h-[200px] sm:min-h-[250px] md:min-h-[280px] flex flex-col">
                     <div
-                      className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br ${item.color} text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-110 transition-transform flex-shrink-0`}
+                      className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-none sm:rounded-none bg-gradient-to-br ${item.color} text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-110 transition-transform flex-shrink-0`}
                     >
                       {item.icon}
                     </div>
@@ -993,7 +986,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             {/* Coming Soon Placeholder */}
             <Reveal delayMs={100}>
               <div
-                className="relative bg-white overflow-hidden shadow-2xl border border-slate-200/80 rounded-2xl h-[350px] sm:h-[400px] lg:h-[500px] flex flex-col items-center justify-center"
+                className="relative bg-white overflow-hidden shadow-2xl border border-slate-200/80 rounded-none h-[350px] sm:h-[400px] lg:h-[500px] flex flex-col items-center justify-center"
               >
                 {/* Decorative background pattern */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/80"></div>
@@ -1045,7 +1038,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                 <Reveal key={img.alt} delayMs={150 + i * 50}>
                   <div
                     onClick={() => setSelectedImageIndex(i)}
-                    className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                    className="group relative bg-white rounded-none overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                       <img loading="lazy" decoding="async"
@@ -1094,7 +1087,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             <Reveal>
               <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                  <GearIcon className="w-4 h-4" />
+                  <Settings className="w-6 h-6 text-emerald-600" />
                   Simple 4-Step Process
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
@@ -1117,13 +1110,13 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
                   {/* Step 1: Download */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-none p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
                       {/* Step Number Badge */}
                       <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
                         1
                       </div>
                       {/* Icon */}
-                      <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100">
+                      <div className="w-16 h-16 bg-white rounded-none shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100">
                         <svg
                           className="w-8 h-8 text-emerald-800"
                           fill="none"
@@ -1166,14 +1159,14 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
 
                   {/* Step 2: Deploy */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-none p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
                       {/* Step Number Badge */}
                       <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
                         2
                       </div>
                       {/* Icon */}
-                      <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100">
-                        <CloudIcon className="w-8 h-8 text-emerald-800" />
+                      <div className="w-16 h-16 bg-white rounded-none shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100">
+                        <Cloud className="w-6 h-6 text-emerald-600" />
                       </div>
                       {/* Title */}
                       <h3 className="font-bold text-slate-900 mb-2">Deploy</h3>
@@ -1216,13 +1209,13 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
 
                   {/* Step 3: Diagnose */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-none p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
                       {/* Step Number Badge */}
                       <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
                         3
                       </div>
                       {/* Icon */}
-                      <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100 relative">
+                      <div className="w-16 h-16 bg-white rounded-none shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100 relative">
                         <CpuIcon className="w-8 h-8 text-emerald-800" />
                       </div>
                       {/* Title */}
@@ -1253,16 +1246,16 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
 
                   {/* Step 4: Save Reports */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-none p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
                       {/* Step Number Badge */}
                       <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
                         4
                       </div>
                       {/* Icon with checkmark */}
-                      <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100 relative">
+                      <div className="w-16 h-16 bg-white rounded-none shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100 relative">
                         <FileTextIcon className="w-8 h-8 text-emerald-800" />
                         <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
-                          <CheckIcon className="w-3 h-3 text-white" />
+                          <CheckCircle className="w-6 h-6 text-emerald-600" />
                         </div>
                       </div>
                       {/* Title */}
@@ -1304,7 +1297,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
         {/* ================= COMPLIANCE STANDARDS ================= */}
         <section
           id="compliance"
-          className="py-16 lg:py-24 bg-gradient-to-br from-slate-900 to-slate-800"
+          className="py-16 lg:py-24 bg-emerald-950"
         >
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
@@ -1323,9 +1316,9 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
               {complianceStandards.map((std, i) => (
                 <Reveal key={std.name} delayMs={i * 50}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-5 text-center hover:bg-white/20 transition-colors border border-white/10 h-full flex flex-col items-center justify-start min-h-[130px] sm:min-h-[160px]">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-none sm:rounded-none p-3 sm:p-5 text-center hover:bg-white/20 transition-colors border border-white/10 h-full flex flex-col items-center justify-start min-h-[130px] sm:min-h-[160px]">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 mb-2 sm:mb-3 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                      <CheckIcon className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
+                      <CheckCircle className="w-6 h-6 text-emerald-600" />
                     </div>
                     <h3 className="font-bold text-white mb-1 text-sm sm:text-base">
                       {std.name}
@@ -1378,10 +1371,10 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             <Reveal delayMs={100}>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
                 {/* x64 Architecture */}
-                <div className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-lg">
-                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-emerald-100 to-transparent rounded-tr-xl sm:rounded-tr-2xl"></div>
+                <div className="group relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-lg">
+                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-emerald-100 to-transparent rounded-none sm:rounded-none"></div>
                   <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-none sm:rounded-none flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
                       <span className="text-white font-bold text-base sm:text-lg">
                         x64
                       </span>
@@ -1416,10 +1409,10 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                 </div>
 
                 {/* ARM64 Architecture */}
-                <div className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-xl shadow-lg">
-                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-teal-100 to-transparent rounded-tr-xl sm:rounded-tr-2xl"></div>
+                <div className="group relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-xl shadow-lg">
+                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-teal-100 to-transparent rounded-none sm:rounded-none"></div>
                   <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-none sm:rounded-none flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
                       <span className="text-white font-bold text-xs sm:text-sm">
                         ARM64
                       </span>
@@ -1454,10 +1447,10 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                 </div>
 
                 {/* x86 Architecture */}
-                <div className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 hover:border-cyan-300 transition-all duration-300 hover:shadow-xl shadow-lg sm:col-span-2 md:col-span-1">
-                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-cyan-100 to-transparent rounded-tr-xl sm:rounded-tr-2xl"></div>
+                <div className="group relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-slate-200 hover:border-cyan-300 transition-all duration-300 hover:shadow-xl shadow-lg sm:col-span-2 md:col-span-1">
+                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-cyan-100 to-transparent rounded-none sm:rounded-none"></div>
                   <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-none sm:rounded-none flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
                       <span className="text-white font-bold text-base sm:text-lg">
                         x86
                       </span>
@@ -1492,21 +1485,15 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
 
             {/* OS Compatibility Grid */}
             <Reveal delayMs={200}>
-              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-slate-200 shadow-lg">
+              <div className="bg-white rounded-none sm:rounded-none p-4 sm:p-6 lg:p-8 border border-slate-200 shadow-lg">
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
                   Operating System Compatibility
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                   {/* Windows */}
-                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-slate-200">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-blue-500 flex items-center justify-center bg-blue-50 rounded-lg sm:rounded-xl border border-blue-200">
-                      <svg
-                        className="w-6 h-6 sm:w-8 sm:h-8"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
-                      </svg>
+                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-none sm:rounded-none p-3 sm:p-4 border border-slate-200">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-emerald-600 flex items-center justify-center bg-emerald-50 rounded-none sm:rounded-none border border-emerald-200">
+                      <LayoutGrid className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Windows</h4>
@@ -1520,15 +1507,9 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                   </div>
 
                   {/* macOS */}
-                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-slate-200">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-slate-700 flex items-center justify-center bg-slate-100 rounded-lg sm:rounded-xl border border-slate-300">
-                      <svg
-                        className="w-6 h-6 sm:w-8 sm:h-8"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                      </svg>
+                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-none sm:rounded-none p-3 sm:p-4 border border-slate-200">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-emerald-600 flex items-center justify-center bg-emerald-50 rounded-none sm:rounded-none border border-emerald-200">
+                      <Command className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">macOS</h4>
@@ -1543,15 +1524,9 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                   </div>
 
                   {/* Linux */}
-                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-slate-200">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-yellow-800 flex items-center justify-center bg-yellow-50 rounded-lg sm:rounded-xl border border-yellow-200">
-                      <svg
-                        className="w-6 h-6 sm:w-8 sm:h-8"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.117.779.456 1.456 1.003 1.959.508.466 1.17.77 1.924.888.75.12 1.56.083 2.4-.066.93-.164 1.88-.476 2.793-.873l.185-.078c.64-.27 1.29-.56 1.87-.9.574-.334 1.09-.704 1.5-1.128.406-.423.69-.907.815-1.463.124-.552.084-1.172-.128-1.863-.21-.688-.557-1.396-.99-2.112-.433-.718-.94-1.423-1.48-2.09-.107-.132-.218-.264-.33-.396.112-.134.225-.267.34-.4.56-.653 1.11-1.318 1.6-2.01.493-.694.92-1.414 1.23-2.173.156-.38.278-.77.353-1.172.074-.4.106-.815.08-1.244-.05-.857-.34-1.757-.9-2.524-.563-.773-1.376-1.39-2.338-1.77-.963-.38-2.058-.535-3.17-.478-.106.005-.21.015-.315.025V0z" />
-                      </svg>
+                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-none sm:rounded-none p-3 sm:p-4 border border-slate-200">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-emerald-600 flex items-center justify-center bg-emerald-50 rounded-none sm:rounded-none border border-emerald-200">
+                      <Terminal className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Linux</h4>
@@ -1606,8 +1581,8 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               {features.map((f, i) => (
                 <Reveal key={f.title} delayMs={i * 40}>
-                  <div className="group bg-gradient-to-br from-slate-50 to-white rounded-lg sm:rounded-xl p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[220px] flex flex-col">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                  <div className="group bg-gradient-to-br from-slate-50 to-white rounded-none sm:rounded-none p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[220px] flex flex-col">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-none bg-emerald-100 text-emerald-800 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                       {f.icon}
                     </div>
                     <h3 className="font-bold text-slate-900 mb-2">{f.title}</h3>
@@ -1624,15 +1599,15 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
         {/* ================= USE CASES ================= */}
         <section
           id="use-cases"
-          className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-emerald-50"
+          className="py-16 lg:py-24 bg-emerald-950"
         >
           <div className="container mx-auto px-4 max-w-6xl">
             <Reveal>
               <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                   Use Cases
                 </h2>
-                <p className="text-lg text-slate-600">
+                <p className="text-lg text-emerald-50">
                   Trusted by individuals and enterprises worldwide
                 </p>
               </div>
@@ -1641,9 +1616,9 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {useCases.map((u, i) => (
                 <Reveal key={u.title} delayMs={i * 80}>
-                  <div className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-lg hover:shadow-xl transition-shadow border border-slate-100 min-h-[100px] flex flex-col">
+                  <div className="bg-white rounded-none sm:rounded-none p-5 sm:p-8 shadow-lg hover:shadow-xl transition-shadow border border-slate-100 min-h-[100px] flex flex-col">
                     <div className="flex items-start gap-3 sm:gap-5">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-none sm:rounded-none bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center flex-shrink-0">
                         {u.icon}
                       </div>
                       <div>
@@ -1669,25 +1644,25 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
         <FAQSection faqs={hardwareDiagnosticsFaqs} id="faq" />
 
         {/* ================= LATEST INSIGHTS & UPDATES ================= */}
-        <section id="blogs" className="py-16 lg:py-24 bg-white">
+        <section id="blogs" className="py-16 lg:py-24 bg-emerald-950">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                     Technical Blogs
                   </h2>
-                  <p className="text-lg text-slate-600 max-w-2xl">
+                  <p className="text-lg text-emerald-50 max-w-2xl">
                     Expert insights on data security, erasure standards, and
                     best practices
                   </p>
                 </div>
                 <Link
                   to="/blog"
-                  className="inline-flex items-center gap-2 text-emerald-800 font-bold hover:text-emerald-700 transition-colors group"
+                  className="inline-flex items-center gap-2 text-emerald-400 font-bold hover:text-emerald-300 transition-colors group"
                 >
                   View More
-                  <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-6 h-6 text-emerald-400" />
                 </Link>
               </div>
             </Reveal>
@@ -1695,7 +1670,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {relatedBlogs.map((blog, i) => (
                 <Reveal key={blog.id} delayMs={i * 60}>
-                  <div className="relative bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
+                  <div className="relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-emerald-900 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
                     <div className="mb-4">
                       <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
                         {blog.tag}
@@ -1710,7 +1685,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                       {blog.excerpt}
                     </p>
                     <div className="flex items-center text-emerald-800 font-semibold text-sm mb-4 group-hover:gap-2 gap-1 transition-all">
-                      Read Article <ArrowRightIcon className="w-4 h-4" />
+                      Read Article <ArrowRight className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div className="flex items-center justify-between text-xs text-slate-400 mt-auto pt-4 border-t border-slate-100">
                       <span>{blog.publishDate}</span>
@@ -1751,7 +1726,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-3">
                         <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                          <CheckIcon className="w-4 h-4 text-emerald-800" />
+                          <CheckCircle className="w-6 h-6 text-emerald-600" />
                         </div>
                         <span className="text-slate-700">{item}</span>
                       </li>
@@ -1764,14 +1739,14 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                       className="inline-flex items-center gap-2 text-emerald-800 font-semibold hover:text-emerald-700 transition-colors"
                     >
                       Or contact us directly
-                      <ArrowRightIcon className="w-5 h-5" />
+                      <ArrowRight className="w-6 h-6 text-emerald-600" />
                     </Link>
                   </div>
                 </div>
               </Reveal>
 
               <Reveal delayMs={100}>
-                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 shadow-2xl">
+                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-none sm:rounded-none p-5 sm:p-8 lg:p-10 shadow-2xl">
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
                     Request Information
                   </h3>
@@ -1939,7 +1914,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                           value={formData.name}
                           onChange={handleInputChange}
                           placeholder="Full Name *"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                           required
                         />
                       </div>
@@ -1950,7 +1925,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="Email *"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                           required
                         />
                       </div>
@@ -1961,7 +1936,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="Phone Number"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
                       </div>
                       <div>
@@ -1971,7 +1946,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                           value={formData.country}
                           onChange={handleInputChange}
                           placeholder="Country"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
                       </div>
                       <div>
@@ -1981,7 +1956,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                           value={formData.organization}
                           onChange={handleInputChange}
                           placeholder="Organization"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
                       </div>
                       <div>
@@ -1989,7 +1964,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                           name="businessType"
                           value={formData.businessType}
                           onChange={handleInputChange}
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
                         >
                           <option value="" disabled className="text-slate-800">Business Type</option>
                           <option value="Enterprise" className="text-slate-800">Enterprise</option>
@@ -2008,13 +1983,13 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                         onChange={handleInputChange}
                         rows={4}
                         placeholder="How can we help you?"
-                        className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors resize-none"
+                        className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors resize-none"
                       ></textarea>
                     </div>
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold py-4 rounded-xl hover:from-emerald-600 hover:to-teal-600 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold py-4 rounded-none hover:from-emerald-600 hover:to-teal-600 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? "Submitting..." : "Submit Enquiry"}
                     </button>
@@ -2101,7 +2076,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
             <img loading="lazy" decoding="async"
               src={galleryImages[selectedImageIndex].url}
               alt={galleryImages[selectedImageIndex].alt}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-200"
+              className="max-w-full max-h-[90vh] object-contain rounded-none shadow-2xl animate-in zoom-in-95 duration-200"
             />
           </div>
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import DSecureIconOnly from "@/assets/dsecure-icon-only.svg"; // Assuming vite-plugin-svgr or similar, but wait, typical vite import provides url by default.
 import OptimizedImage from "@/components/OptimizedImage";
 import UpcomingBadge from "@/components/ui/UpcomingBadge";
-import { Search, Monitor, Terminal, Database, FileCheck, CheckCircle2, X, ZoomIn, ZoomOut, ShieldCheck, Download, Mail, Check, Trash2, Cloud, Folder, HardDrive, Phone, Coins, DollarSign, ShoppingCart, Lock, Server, Zap, Globe, ArrowRight, ArrowLeft, Shield, Building2, Star, Settings, ClipboardCheck, Heart, Smartphone, Activity, Cpu, File, Usb, Network, Eraser, SearchCheck, ArrowRightLeft, Disc, Snowflake, Bot, Landmark, HeartPulse, RefreshCcw, CreditCard, Award, Headphones, Gauge, Building, Layers } from "lucide-react";
+import { Search, Monitor, Terminal, Database, FileCheck, CheckCircle2, X, ZoomIn, ZoomOut, ShieldCheck, Download, Mail, Check, Trash2, Cloud, Folder, HardDrive, Phone, Coins, DollarSign, ShoppingCart, Lock, Server, Zap, Globe, ArrowRight, ArrowLeft, Shield, Building2, Star, Settings, ClipboardCheck, Heart, Smartphone, Activity, Cpu, File, Usb, Network, Eraser, SearchCheck, ArrowRightLeft, Disc, Snowflake, Bot, Landmark, HeartPulse, RefreshCcw, CreditCard, Award, Headphones, Gauge, Building, Layers, Copy } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, memo, useMemo, useCallback, useState } from "react";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
@@ -22,6 +22,8 @@ const HomePage = memo(function HomePage() {
   const [selectedReportUrl, setSelectedReportUrl] = useState<string>('');
   const [showFullPdf, setShowFullPdf] = useState(false);
   const [zoomScale, setZoomScale] = useState(1);
+
+  const [copied, setCopied] = useState(false);
 
   const handleOpenModal = useCallback((reportUrl: string, thumbnailUrl: string) => {
     setSelectedReportUrl(reportUrl);
@@ -100,12 +102,12 @@ const HomePage = memo(function HomePage() {
         ],
       },
       {
-        id: "system-cleaner",
-        title: "System Cleaner",
+        id: "zero-trace",
+        title: "Zero Trace",
         desc: "A secure data erasure solution built to permanently remove every trace of data from your devices — safely, thoroughly, and beyond recovery.",
         price: "TBA",
         note: "Standard model",
-        link: "/products/system-cleaner",
+        link: "/products/zero-trace",
         icon: Eraser,
         color: "teal",
         isUpcoming: false,
@@ -422,6 +424,37 @@ const HomePage = memo(function HomePage() {
           })) 
         }} 
       />
+
+
+
+      {/* Independence Day Banner Strip - Always Visible Until Expiration */}
+      {new Date().getTime() <= new Date('2026-08-15T23:59:59').getTime() && (
+        <div className="w-full bg-[#f4fcf8] border-b border-[#0e7c66]/20">
+          <div className="relative w-full flex justify-center">
+            <Link to="/pricing-and-plan" className="block w-full transition-opacity hover:opacity-95 duration-300">
+              <img 
+                src="/banner-strip.jpeg" 
+                alt="Independence Day Offer - Click for Pricing and Plans" 
+                className="w-full h-auto rounded-none shadow-md block"
+              />
+            </Link>
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                navigator.clipboard.writeText("IND15");
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+              }}
+              className="absolute left-[41.7%] sm:left-[42.2%] md:left-[42.7%] top-[60%] -translate-y-1/2 flex items-center justify-center p-0.5 sm:p-1 md:p-1.5 text-white bg-transparent hover:bg-white/20 transition-colors z-10"
+              title="Copy Code IND15"
+            >
+              {copied ? <Check className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" /> : <Copy className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />}
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section: Yahan par primary Call to Action (CTA) aur background animations hain */}
       <ThemeSection id="hero" className="py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 xxl:py-18 relative overflow-hidden" >
         <div className="container-responsive relative z-10">
@@ -503,8 +536,8 @@ const HomePage = memo(function HomePage() {
                 <div className="relative flex items-center justify-center min-h-[340px] lg:min-h-[460px]">
                   {/* Hero Illustration Container - Professional Design */}
                   <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[480px] lg:h-[480px] scale-90 sm:scale-100">
-                    {/* Outer Glow Ring */}
-                    <div className="absolute inset-0 rounded-full bg-[#0e7c66]/20 blur-xl"></div>
+                    {/* Outer Glow Ring - White glow */}
+                    <div className="absolute inset-0 rounded-full bg-white/40 blur-md"></div>
 
                     {/* Outer Dashed Circle */}
                     <svg
@@ -1349,6 +1382,8 @@ const HomePage = memo(function HomePage() {
           </Reveal>
         </div>
       </ThemeSection>
+
+
 
       {/* Industry Solutions Section */}
       <ThemeSection id="industries" className="py-16 md:py-24 border-y border-[#d0d5dc]/50 relative overflow-hidden" >

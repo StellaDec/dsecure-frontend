@@ -3,25 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
-import {
-  ShieldIcon,
-  CheckIcon,
-  CloudIcon,
-  GearIcon,
-  ClipboardIcon,
-  ServerIcon,
-} from "@/components/FlatIcons";
-import { 
-  Search, 
-  Monitor, 
-  Database, 
-  FileCheck,
-  HardDrive,
-  Laptop,
-  Server,
-  Check,
-  Clock
-} from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import { getSEOForPage } from "@/utils/seo";
 import { generateFAQSchema } from "@/utils/seo.core";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
@@ -30,6 +12,27 @@ import type { FAQItem, KeyTakeawayItem } from "@/types/seo";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import { ProductContactForm } from "@/components/forms";
 import UpcomingBadge from "@/components/ui/UpcomingBadge";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  CheckCircle,
+  Clock,
+  Cloud,
+  Database,
+  FileCheck,
+  FileText,
+  Globe,
+  HardDrive,
+  Laptop,
+  Monitor,
+  RefreshCw,
+  Search,
+  Server,
+  Settings,
+  Shield,
+  Star
+} from 'lucide-react';
 
 const ScanningHeroVisual = () => {
   const hardwareIcons = [
@@ -77,7 +80,7 @@ const ScanningHeroVisual = () => {
       {hardwareIcons.map((item, index) => (
         <motion.div
           key={item.id}
-          className="absolute p-4 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center text-slate-500 hover:text-emerald-500 hover:border-emerald-200 transition-colors duration-300"
+          className="absolute p-4 bg-white rounded-none shadow-lg border border-slate-100 flex items-center justify-center text-slate-500 hover:text-emerald-500 hover:border-emerald-200 transition-colors duration-300"
           initial={{ x: 0, y: 0, opacity: 0, scale: 0.5 }}
           animate={{ x: item.x, y: item.y, opacity: 1, scale: 1 }}
           transition={{
@@ -105,7 +108,7 @@ const ScanningHeroVisual = () => {
         {/* Frame Corners */}
         <div className="absolute inset-0 border-slate-900">
           <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-slate-800 rounded-tl-lg"></div>
-          <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-slate-800 rounded-tr-lg"></div>
+          <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-slate-800 rounded-none"></div>
           <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-slate-800 rounded-bl-lg"></div>
           <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-slate-800 rounded-br-lg"></div>
         </div>
@@ -237,12 +240,12 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
     {
       title: "Cloud Management Console",
       desc: "Central repository for erasure verification reports with user license management via D-Secure Cloud console.",
-      icon: <CloudIcon className="w-6 h-6" />,
+      icon: <Cloud className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Digitally Signed Reports",
       desc: "Generates detailed verification reports in PDF, XML & CSV formats to meet R2, NAID AAA, and e-Stewards compliance.",
-      icon: <ClipboardIcon className="w-6 h-6" />,
+      icon: <FileText className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "USB or PXE Deployment",
@@ -257,7 +260,7 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
     {
       title: "ISO Customization",
       desc: "Automate verification processes with customized ISO images to save time in repetitive tasks.",
-      icon: <GearIcon className="w-6 h-6" />,
+      icon: <Settings className="w-6 h-6 text-emerald-600" />,
     },
   ];
 
@@ -265,17 +268,17 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
     {
       title: "ITAD & Refurbishers",
       desc: "Verify success of data erasure on wiped drives and devices before resale or disposal to ensure zero data remanence.",
-      icon: <ServerIcon className="w-8 h-8" />,
+      icon: <Server className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Compliance Audits",
       desc: "Meet R2v3 Appendix B requirements for independent verification of 5% of erased drives.",
-      icon: <ShieldIcon className="w-8 h-8" />,
+      icon: <Shield className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "NAID AAA Certification",
       desc: "Utilize independent software for overwriting verification as mandated by NAID AAA section 4.6.",
-      icon: <CheckIcon className="w-8 h-8" />,
+      icon: <CheckCircle className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "e-Stewards Reporting",
@@ -334,7 +337,7 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
                     <UpcomingBadge className="mb-4" />
                   </Reveal>
                   <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
-                    <ShieldIcon className="w-4 h-4" />
+                    <Shield className="w-6 h-6 text-emerald-600" />
                     Complete Erasure Verification
                   </div>
                   <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
@@ -354,11 +357,11 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all text-center"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all text-center"
                     >
                       Request Early Access
                     </button>
-                    <button className="border-2 border-amber-200 text-amber-600 font-bold px-8 py-4 rounded-xl cursor-not-allowed opacity-75 flex items-center justify-center gap-2 transition-all">
+                    <button className="border-2 border-amber-200 text-amber-600 font-bold px-8 py-4 rounded-none cursor-not-allowed opacity-75 flex items-center justify-center gap-2 transition-all">
                       <Clock className="w-5 h-5" />
                       Coming Soon: DataSheet
                     </button>
@@ -394,7 +397,7 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {useCases.map((useCase) => (
                 <Reveal key={useCase.title}>
-                  <div className="bg-emerald-50/50 p-8 rounded-2xl border border-emerald-100 hover:shadow-lg transition-all">
+                  <div className="bg-emerald-50/50 p-8 rounded-none border border-emerald-100 hover:shadow-lg transition-all">
                     <div className="text-emerald-600 mb-6">{useCase.icon}</div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{useCase.title}</h3>
                     <p className="text-slate-600 text-sm leading-relaxed">{useCase.desc}</p>
@@ -415,8 +418,8 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {capabilities.map((cap) => (
                 <Reveal key={cap.title}>
-                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-200 transition-all group">
-                    <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                  <div className="bg-white p-8 rounded-none shadow-sm border border-slate-100 hover:border-emerald-200 transition-all group">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-none flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all">
                       {cap.icon}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{cap.title}</h3>
@@ -445,14 +448,14 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
                   ].map((spec) => (
                     <div key={spec} className="flex items-start gap-4">
                       <div className="mt-1 bg-emerald-500 rounded-full p-1">
-                        <CheckIcon className="w-3 h-3 text-white" />
+                        <CheckCircle className="w-6 h-6 text-emerald-600" />
                       </div>
                       <span className="text-slate-300">{spec}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="bg-slate-800 p-8 rounded-3xl border border-slate-700">
+              <div className="bg-slate-800 p-8 rounded-none border border-slate-700">
                 <div className="space-y-4">
                   <div className="flex justify-between items-center pb-4 border-b border-slate-700">
                     <span className="text-slate-400">Software Variant</span>

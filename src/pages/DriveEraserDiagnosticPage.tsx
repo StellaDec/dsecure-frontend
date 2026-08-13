@@ -10,6 +10,7 @@ import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import ProductInternalLinks from "@/components/ProductInternalLinks";
 import {
+  Search,
   Activity,
   Heart,
   BarChart,
@@ -25,8 +26,22 @@ import {
   User,
   X,
   Shield,
+  ShieldCheck,
   CheckIcon,
   Cloud,
+  CheckCircle,
+  Laptop,
+  Server,
+  Cpu,
+  HardDrive,
+  Database,
+  FileDown,
+  LayoutGrid,
+  Command,
+  Terminal,
+  ChevronLeft,
+  ChevronRight,
+  Usb,
 } from "lucide-react";
 import { ShieldIcon as FlatShieldIcon } from "@/components/FlatIcons";
 import { useToast } from "@/components/Toast";
@@ -338,25 +353,25 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
       title: "Hard Drive Health Monitor",
       desc: "Real-time tracking of disk health, temperature, and performance. Detect potential failures before they happen.",
       icon: <Activity className="w-6 h-6" />,
-      color: "from-rose-500 to-pink-600",
+      color: "text-emerald-600",
     },
     {
       title: "S.M.A.R.T. Analysis",
       desc: "In-depth S.M.A.R.T. attribute monitoring to assess the remaining life and risk-level of your storage drives.",
       icon: <Heart className="w-6 h-6" />,
-      color: "from-emerald-500 to-teal-600",
+      color: "text-emerald-600",
     },
     {
       title: "Performance Benchmarking",
       desc: "Test read/write speeds and IOPS to identify performance bottlenecks in HDDs and SSDs.",
       icon: <BarChart className="w-6 h-6" />,
-      color: "from-blue-500 to-indigo-600",
+      color: "text-emerald-600",
     },
     {
       title: "Audit-Ready Health Score",
       desc: "Generate comprehensive health certificates before erasure to document the physical state of the media.",
       icon: <ClipboardCheck className="w-6 h-6" />,
-      color: "from-amber-500 to-orange-600",
+      color: "text-emerald-600",
     },
   ];
 
@@ -377,7 +392,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
       ],
     },
     {
-      category: "🔵 MANUAL / INTERACTIVE TESTS",
+      category: "🟢 MANUAL / INTERACTIVE TESTS",
       desc: "User-verified physical inspections",
       tests: [
         "Keyboard (Full Key-press Verification)",
@@ -401,81 +416,33 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
       name: "PC & Laptops",
       desc: "Regulatory data wiping for Windows, Mac, and Linux computers. Permanent erasure with tamper-proof certificates for audit compliance.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          />
-        </svg>
+        <Laptop className="w-8 h-8" />
       ),
-      color: "from-blue-500 to-blue-600",
+      color: "text-emerald-600",
     },
     {
       name: "Servers & RAID Arrays",
       desc: "Secure erasure for enterprise servers and RAID configurations. DIY solution that generates certificates meeting global standards like GDPR, HIPAA, and ISO 27001.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
-          />
-        </svg>
+        <Server className="w-8 h-8" />
       ),
-      color: "from-red-500 to-red-600",
+      color: "text-emerald-600",
     },
     {
       name: "SSDs & NVMe Drives",
       desc: "Specialized erasure for solid-state storage ensuring complete data destruction. Deploy via bootable USB (Using UNetbootin) or PXE network boot for maximum flexibility.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-          />
-        </svg>
+        <HardDrive className="w-8 h-8" />
       ),
-      color: "from-cyan-500 to-cyan-600",
+      color: "text-emerald-600",
     },
     {
       name: "HDDs & External Drives",
       desc: "Permanent erasure for traditional hard drives and USB storage. Software supports remote deployment via MSI and provides audit trail for compliance reporting.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-          />
-        </svg>
+        <Usb className="w-8 h-8" />
       ),
-      color: "from-teal-500 to-teal-600",
+      color: "text-emerald-600",
     },
   ];
 
@@ -527,19 +494,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
       title: "Disposal of RAID Servers",
       desc: "Securely erase enterprise RAID arrays before disposal, and private data cannot be recovered.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-          />
-        </svg>
+        <Database className="w-8 h-8" />
       ),
     },
     {
@@ -652,7 +607,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         </div>
       </div>
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-white">
         {/* ================= HERO SECTION ================= */}
         <section className="py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 xxl:py-18">
           <div className="container mx-auto px-4">
@@ -667,17 +622,17 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                     </div>
                     <Link
                       to="/products/drive-eraser"
-                      className="inline-flex items-center gap-2 bg-slate-100/80 backdrop-blur-sm text-slate-600 hover:bg-slate-200 px-4 py-1.5 rounded-full text-sm font-semibold border border-slate-200 transition-all group"
+                      className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-4 py-1.5 rounded-full text-sm font-semibold border border-emerald-100 transition-colors group"
                     >
-                      <FlatShieldIcon className="w-4 h-4" />
+                      <HardDrive className="w-4 h-4 text-emerald-600" />
                       <span>Back to Standard Drive Eraser</span>
-                      <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRightIcon className="w-4 h-4 text-emerald-600 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
 
                   <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
                     Drive Eraser{" "}
-                    <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-emerald-600 to-emerald-600 bg-clip-text text-transparent">
                       Diagnostic & Health
                     </span>
                   </h1>
@@ -709,34 +664,22 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   {/*
                     <Link
                       to="/pricing-and-plan?product=drive-eraser&variant=diagnostics"
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Buy Now
                     </Link>
                     */}
                     <Link
                       to="/contact"
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Contact Sales
                     </Link>
                     <button
                       onClick={downloadCatalog}
-                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-600 px-8 py-4 rounded-xl font-bold bg-white/50 backdrop-blur-sm hover:bg-emerald-50 hover:shadow-lg transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-600 px-8 py-4 rounded-none font-bold bg-white/50 backdrop-blur-sm hover:bg-emerald-50 hover:shadow-lg transition-all duration-300"
                     >
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        />
-                      </svg>
+                      <FileDown className="w-5 h-5" />
                       Download Datasheet
                     </button>
                   </div>
@@ -747,256 +690,148 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                 </div>
               </Reveal>
 
-              {/* Right: Hero Illustration - 3D Product Box */}
+              {/* Right: Hero Illustration - Software Screenshot + 3D Product Box */}
               <Reveal delayMs={100}>
-                <div
-                  className="relative flex items-center justify-center min-h-[320px] sm:min-h-[400px] lg:min-h-[520px] px-6 sm:px-10"
-                  style={{ perspective: "1200px" }}
-                >
-                  {/* Ambient Background Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-300/20 via-transparent to-teal-300/20 blur-3xl"></div>
-
-                  {/* Floating Particles - hidden on very small screens */}
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
-                    <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-emerald-400/60 rounded-full animate-ping"></div>
-                    <div
-                      className="absolute top-3/4 right-1/3 w-1.5 h-1.5 bg-teal-400/50 rounded-full animate-ping"
-                      style={{ animationDelay: "0.5s" }}
-                    ></div>
-                    <div
-                      className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-emerald-300/40 rounded-full animate-ping"
-                      style={{ animationDelay: "1s" }}
-                    ></div>
+                <div className="relative min-h-[350px] sm:min-h-[400px] lg:min-h-[480px]" style={{ perspective: '1200px' }}>
+                  
+                  {/* Left: Dashboard Screenshot — hover par zoom in/out */}
+                  <div 
+                    className="absolute w-[220px] sm:w-[280px] lg:w-[360px] cursor-pointer" 
+                    style={{ 
+                      zIndex: 10,
+                      top: '50%', left: '50%',
+                      transform: 'translate(-85%, -50%) rotate(-8deg)',
+                      transition: 'transform 0.5s ease, z-index 0s',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-88%, -53%) rotate(-8deg) scale(1.08)'; e.currentTarget.style.zIndex = '30'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-85%, -50%) rotate(-8deg) scale(1)'; e.currentTarget.style.zIndex = '10'; }}
+                  >
+                    <div className="border border-[#d0d5dc]/80 rounded-lg overflow-hidden shadow-2xl bg-white">
+                      <img 
+                        loading="lazy" 
+                        decoding="async"
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1775658234/pslimwez6yt64dxdpikz.png"
+                        alt="D-Secure Drive Eraser Diagnostic Software Interface"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
                   </div>
 
-                  {/* Main 3D Container */}
-                  <div
-                    className="relative w-full max-w-[200px] xs:max-w-[240px] sm:max-w-[300px] lg:max-w-[380px] mx-auto transform-gpu"
-                    style={{
-                      transformStyle: "preserve-3d",
-                      animation: "heroFloat 5s ease-in-out infinite",
+                  {/* Right: Erasure Report — hover par zoom in/out */}
+                  <div 
+                    className="absolute w-[160px] sm:w-[200px] lg:w-[240px] cursor-pointer" 
+                    style={{ 
+                      zIndex: 10,
+                      top: '50%', left: '50%',
+                      transform: 'translate(-15%, -50%) rotate(8deg)',
+                      transition: 'transform 0.5s ease, z-index 0s',
                     }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-12%, -53%) rotate(8deg) scale(1.08)'; e.currentTarget.style.zIndex = '30'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-15%, -50%) rotate(8deg) scale(1)'; e.currentTarget.style.zIndex = '10'; }}
                   >
-                    {/* Glow Effect Behind - smaller on mobile */}
-                    <div className="absolute -inset-4 sm:-inset-6 lg:-inset-8 bg-gradient-to-br from-emerald-500/30 to-teal-500/30 blur-2xl sm:blur-3xl rounded-full"></div>
+                    <div className="relative border border-[#d0d5dc]/80 rounded-lg shadow-xl overflow-hidden bg-white">
+                      <img 
+                        loading="lazy" 
+                        decoding="async"
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png"
+                        alt="Drive Eraser Diagnostic Tamper-proof Report"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  </div>
 
-                    {/* Main Hard Drive / Server Unit */}
+                  {/* Center: 3D Product Box — hover par zoom in/out */}
+                  <div 
+                    className="absolute w-[130px] sm:w-[160px] lg:w-[190px] cursor-pointer drop-shadow-2xl" 
+                    style={{ 
+                      zIndex: 20,
+                      top: '50%', left: '50%',
+                      transform: 'translate(-50%, -45%)',
+                      transition: 'transform 0.5s ease, z-index 0s',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.12)'; e.currentTarget.style.zIndex = '30'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-50%, -45%) scale(1)'; e.currentTarget.style.zIndex = '20'; }}
+                  >
                     <div
-                      className="relative bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-5 lg:p-8 shadow-2xl border border-slate-700/50"
+                      className="relative"
                       style={{
-                        transform: "rotateY(-8deg) rotateX(5deg)",
-                        boxShadow:
-                          "0 25px 80px -20px rgba(16, 185, 129, 0.35), 0 10px 40px -10px rgba(0, 0, 0, 0.5)",
+                        transformStyle: 'preserve-3d',
+                        transform: 'rotateY(-12deg) rotateX(2deg) rotate(3deg)',
                       }}
                     >
-                      {/* Top Status Bar */}
-                      <div className="flex items-center justify-between mb-3 sm:mb-4 lg:mb-6">
-                        <div className="flex items-center gap-1.5 sm:gap-2">
-                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
-                          <span className="text-[8px] sm:text-[9px] lg:text-[10px] text-slate-400 font-medium tracking-wider uppercase">
-                            Active
-                          </span>
-                        </div>
-                        <div className="flex gap-1 sm:gap-1.5">
-                          <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-emerald-500 rounded-full"></div>
-                          <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-teal-500 rounded-full"></div>
-                          <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-cyan-500 rounded-full"></div>
-                        </div>
-                      </div>
+                      {/* Main Box - Front Face */}
+                      <div
+                        className="relative bg-gradient-to-br from-[#0a2e1e] via-[#0e7c66] to-[#0a2e1e] rounded-lg shadow-2xl overflow-hidden"
+                        style={{
+                          aspectRatio: '3/4',
+                          boxShadow: '20px 20px 50px rgba(0,0,0,0.35), -3px -3px 10px rgba(255,255,255,0.05), inset 0 0 60px rgba(255,255,255,0.03)',
+                        }}
+                      >
+                        {/* Top Shine Effect */}
+                        <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-white/15 to-transparent"></div>
 
-                      {/* Drive Visualization */}
-                      <div className="relative bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-3 lg:p-5 border border-slate-600/30 mb-3 sm:mb-4 lg:mb-6">
-                        {/* Server Stack Visualization */}
-                        <div className="relative w-full max-w-[180px] sm:max-w-[220px] lg:max-w-[280px] mx-auto space-y-1.5 sm:space-y-2 lg:space-y-3">
-                          {/* Server Unit 1 */}
-                          <div className="relative bg-gradient-to-r from-slate-600 via-slate-700 to-slate-600 rounded-md sm:rounded-lg p-1.5 sm:p-2 lg:p-3 border border-slate-500/40 shadow-lg">
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2">
-                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
-                                <div
-                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"
-                                  style={{ animationDelay: "0.2s" }}
-                                ></div>
-                                <div
-                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-teal-400 rounded-full animate-pulse shadow-lg shadow-teal-400/50"
-                                  style={{ animationDelay: "0.4s" }}
-                                ></div>
-                              </div>
-                              <div className="flex gap-0.5 sm:gap-1">
-                                {[1, 2, 3, 4].map((id) => (
-                                  <div
-                                    key={`srv1-ind-${id}`}
-                                    className="w-0.5 sm:w-1 lg:w-1.5 h-3 sm:h-4 lg:h-5 bg-slate-500/60 rounded-sm"
-                                  ></div>
-                                ))}
-                              </div>
-                            </div>
+                        {/* Side Shadow (3D depth) */}
+                        <div className="absolute top-0 right-0 w-6 h-full bg-gradient-to-l from-black/15 to-transparent"></div>
+
+                        {/* Product Box Content — Proportionally sized for compact box */}
+                        <div className="relative h-full flex flex-col items-center justify-center p-3 lg:p-4">
+                          {/* D-Secure Brand - top left */}
+                          <div className="absolute top-2 left-2 lg:top-3 lg:left-3">
+                            <span className="text-white/80 text-[7px] lg:text-[9px] font-semibold tracking-widest uppercase">
+                              D-Secure
+                            </span>
                           </div>
 
-                          {/* Server Unit 2 - Main with Shield */}
-                          <div className="relative bg-gradient-to-r from-slate-700 via-slate-800 to-slate-700 rounded-md sm:rounded-lg p-2 sm:p-3 lg:p-4 border border-emerald-500/30 shadow-xl shadow-emerald-500/10">
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-2 sm:gap-3">
-                                <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-md sm:rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
-                                  <Activity className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-white animate-pulse" />
-                                </div>
-                                <div className="flex flex-col">
-                                  <span className="text-[8px] sm:text-[9px] lg:text-xs text-emerald-400 font-semibold tracking-tighter">
-                                    DIAGNOSING
-                                  </span>
-                                  <div className="flex items-center gap-2 mt-0.5">
-                                    <div className="w-12 sm:w-16 lg:w-20 h-1 sm:h-1.5 bg-slate-600 rounded-full overflow-hidden">
-                                      <div
-                                        className="h-full bg-gradient-to-r from-emerald-500 to-cyan-400 rounded-full"
-                                        style={{
-                                          width: "98%",
-                                          animation:
-                                            "progressPulse 2s ease-in-out infinite",
-                                        }}
-                                      ></div>
-                                    </div>
-                                    <span className="text-[6px] sm:text-[7px] text-emerald-400/80 font-mono">
-                                      98%
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="flex flex-col items-end gap-0.5 sm:gap-1">
-                                <span className="text-[6px] sm:text-[8px] text-slate-400 font-mono">
-                                  32°C
-                                </span>
-                                <div className="flex gap-0.5">
-                                  {[1, 2, 3].map((id) => (
-                                    <div
-                                      key={`srv2-ind-${id}`}
-                                      className="w-0.5 sm:w-1 h-3 sm:h-4 bg-emerald-500/40 rounded-full"
-                                    ></div>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
+                          {/* Main Icon — Lucide Activity icon for Diagnostic */}
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-white/15 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2 lg:mb-3 border border-white/20 shadow-inner">
+                            <Activity className="w-5 h-5 sm:w-7 sm:h-7 lg:w-9 lg:h-9 text-white drop-shadow-lg" strokeWidth={1.5} />
                           </div>
 
-                          {/* Server Unit 3 */}
-                          <div className="relative bg-gradient-to-r from-slate-600 via-slate-700 to-slate-600 rounded-md sm:rounded-lg p-1.5 sm:p-2 lg:p-3 border border-slate-500/40 shadow-lg">
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2">
-                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50"></div>
-                                <div
-                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-teal-400 rounded-full animate-pulse shadow-lg shadow-teal-400/50"
-                                  style={{ animationDelay: "0.3s" }}
-                                ></div>
-                                <div
-                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"
-                                  style={{ animationDelay: "0.6s" }}
-                                ></div>
-                              </div>
-                              <div className="flex gap-0.5 sm:gap-1">
-                                {[1, 2, 3, 4].map((id) => (
-                                  <div
-                                    key={`srv3-ind-${id}`}
-                                    className="w-0.5 sm:w-1 lg:w-1.5 h-3 sm:h-4 lg:h-5 bg-slate-500/60 rounded-sm"
-                                  ></div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
+                          {/* Product Name */}
+                          <h2 className="text-white text-xs sm:text-[13px] lg:text-sm font-bold tracking-tight text-center mb-0.5 leading-tight">
+                            Drive Eraser
+                            <br />
+                            <span className="text-[10px] sm:text-[11px] lg:text-[12px] text-emerald-300">Diagnostic</span>
+                          </h2>
 
-                          {/* Server Unit 4 */}
-                          <div className="relative bg-gradient-to-r from-slate-600 via-slate-700 to-slate-600 rounded-md sm:rounded-lg p-1.5 sm:p-2 lg:p-3 border border-slate-500/40 shadow-lg">
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2">
-                                <div
-                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"
-                                  style={{ animationDelay: "0.5s" }}
-                                ></div>
-                                <div
-                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"
-                                  style={{ animationDelay: "0.7s" }}
-                                ></div>
-                                <div
-                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-teal-400 rounded-full animate-pulse shadow-lg shadow-teal-400/50"
-                                  style={{ animationDelay: "0.9s" }}
-                                ></div>
-                              </div>
-                              <div className="flex gap-0.5 sm:gap-1">
-                                {[1, 2, 3, 4].map((id) => (
-                                  <div
-                                    key={`srv4-ind-${id}`}
-                                    className="w-0.5 sm:w-1 lg:w-1.5 h-3 sm:h-4 lg:h-5 bg-slate-500/60 rounded-sm"
-                                  ></div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="text-center mt-2 sm:mt-3 lg:mt-4">
-                          <p className="text-emerald-400 font-bold text-[10px] sm:text-xs lg:text-base tracking-[0.2em] uppercase">
-                            Diagnostic & Health
+                          {/* Tagline */}
+                          <p className="text-white/70 text-[6px] sm:text-[7px] lg:text-[9px] text-center tracking-wide uppercase mt-1">
+                            Monitor & Wipe
                           </p>
+
+                          {/* Bottom Badge — Regulatory Erasure */}
+                          <div className="absolute bottom-2 lg:bottom-3 left-1/2 -translate-x-1/2 w-full px-2">
+                            <div className="flex items-center justify-center gap-1 bg-white/10 backdrop-blur-sm px-1.5 py-0.5 lg:px-2 lg:py-1 rounded-full border border-white/20 mx-auto w-fit">
+                              <ShieldCheck className="w-2.5 h-2.5 lg:w-3 lg:h-3 text-emerald-300" strokeWidth={2} />
+                              <span className="text-white/90 text-[5px] sm:text-[6px] lg:text-[7px] font-semibold whitespace-nowrap">
+                                Health & Erasure
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Decorative Lines */}
+                          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                          <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
                         </div>
+
+                        {/* Pulse border */}
+                        <div className="absolute inset-0 border border-white/10 rounded-lg"></div>
                       </div>
 
-                      {/* Bottom Info Panel - Hidden on very small screens */}
-                      <div className="hidden sm:grid grid-cols-3 gap-2 sm:gap-3">
-                        {/* <div className="bg-slate-800/60 rounded-lg p-2 sm:p-3 text-center border border-slate-700/30">
-                          <p className="text-emerald-400 font-bold text-xs sm:text-sm lg:text-base">26+</p>
-                          <p className="text-slate-500 text-[8px] sm:text-[9px] lg:text-[10px] uppercase">Standards</p>
-                        </div> */}
-                        {/* <div className="bg-slate-800/60 rounded-lg p-2 sm:p-3 text-center border border-slate-700/30">
-                          <p className="text-teal-400 font-bold text-xs sm:text-sm lg:text-base">100%</p>
-                          <p className="text-slate-500 text-[8px] sm:text-[9px] lg:text-[10px] uppercase">Verified</p>
-                        </div>
-                        <div className="bg-slate-800/60 rounded-lg p-2 sm:p-3 text-center border border-slate-700/30">
-                          <p className="text-cyan-400 font-bold text-xs sm:text-sm lg:text-base">∞</p>
-                          <p className="text-slate-500 text-[8px] sm:text-[9px] lg:text-[10px] uppercase">License</p>
-                        </div> */}
-                      </div>
-
-                      {/* Branding Footer */}
-                      <div className="mt-2 sm:mt-4 lg:mt-5 pt-2 sm:pt-3 lg:pt-4 border-t border-slate-700/30 flex items-center justify-between">
-                        <span className="text-slate-500 text-[7px] sm:text-[8px] lg:text-[9px] tracking-widest uppercase">
-                          D-Secure™
-                        </span>
-                        <span className="text-slate-600 text-[6px] sm:text-[7px] lg:text-[8px] tracking-wider">
-                          Drive Eraser Pro
-                        </span>
-                      </div>
-
-                      {/* Corner Accent */}
-                      <div className="absolute -top-1 -right-1 w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 overflow-hidden rounded-tr-xl sm:rounded-tr-2xl lg:rounded-tr-3xl">
-                        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-emerald-500/20 to-transparent"></div>
-                      </div>
+                      {/* Right Side Face (3D spine) */}
+                      <div
+                        className="absolute top-0 right-0 w-[20px] lg:w-[28px] h-full bg-gradient-to-l from-[#063d2e] to-[#0a5c48]"
+                        style={{
+                          transform: 'rotateY(90deg) translateZ(0px) translateX(10px)',
+                          transformOrigin: 'left center',
+                          borderRadius: '0 4px 4px 0',
+                        }}
+                      ></div>
                     </div>
 
-                    {/* 3D Side Panel - smaller on mobile */}
-                    <div
-                      className="absolute top-1 -right-1 sm:top-2 sm:-right-2 lg:top-4 lg:-right-4 w-2 sm:w-3 lg:w-5 h-[calc(100%-8px)] sm:h-[calc(100%-16px)] lg:h-[calc(100%-32px)] bg-gradient-to-b from-slate-700 to-slate-800 rounded-r-md sm:rounded-r-lg"
-                      style={{
-                        transform: "rotateY(75deg)",
-                        transformOrigin: "left center",
-                      }}
-                    ></div>
-
-                    {/* Reflection - smaller on mobile */}
-                    <div className="absolute -bottom-4 sm:-bottom-6 lg:-bottom-8 left-1/2 -translate-x-1/2 w-3/4 sm:w-4/5 h-4 sm:h-6 lg:h-8 bg-gradient-to-t from-emerald-500/10 to-transparent blur-lg sm:blur-xl rounded-full"></div>
+                    {/* Bottom Reflection */}
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%] h-10 bg-gradient-to-t from-emerald-600/15 to-transparent blur-xl rounded-full"></div>
                   </div>
-
-                  <style>{`
-                    @keyframes heroFloat {
-                      0%, 100% { transform: translateY(0px) rotateY(-8deg) rotateX(5deg); }
-                      50% { transform: translateY(-12px) rotateY(-5deg) rotateX(3deg); }
-                    }
-                    @keyframes spinDisk {
-                      from { transform: rotate(0deg); }
-                      to { transform: rotate(360deg); }
-                    }
-                    @keyframes progressPulse {
-                      0%, 100% { stroke-dashoffset: 70; opacity: 1; }
-                      50% { stroke-dashoffset: 50; opacity: 0.8; }
-                    }
-                  `}</style>
                 </div>
               </Reveal>
             </div>
@@ -1014,7 +849,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
         <section
           id="diagnostics"
-          className="py-20 bg-slate-50 border-y border-slate-200"
+          className="py-20 bg-emerald-50 border-y border-emerald-100"
         >
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
@@ -1036,9 +871,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   delayMs={i * 100}
                   className="h-full"
                 >
-                  <div className="group h-full bg-white rounded-xl sm:rounded-2xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 flex flex-col">
+                  <div className="group h-full bg-white rounded-none sm:rounded-none p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 flex flex-col">
                     <div
-                      className={`w-12 h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br ${feature.color} text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-lg flex-shrink-0`}
+                      className={`w-12 h-12 md:w-14 md:h-14 rounded-none sm:rounded-none bg-emerald-100 ${feature.color} flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm flex-shrink-0`}
                     >
                       {feature.icon}
                     </div>
@@ -1054,7 +889,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             </div>
 
             {/* Comprehensive Test Suite Grid */}
-            <div className="bg-white rounded-3xl border border-emerald-100 shadow-2xl overflow-hidden p-6 md:p-12 relative">
+            <div className="bg-white rounded-none border border-emerald-100 shadow-2xl overflow-hidden p-6 md:p-12 relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-60"></div>
 
               <Reveal>
@@ -1117,9 +952,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {eraseTypes.map((item, i) => (
                 <Reveal key={item.name} delayMs={i * 50}>
-                  <div className="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 min-h-[200px] sm:min-h-[250px] md:min-h-[280px] flex flex-col">
+                  <div className="group bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 min-h-[200px] sm:min-h-[250px] md:min-h-[280px] flex flex-col">
                     <div
-                      className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br ${item.color} text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-110 transition-transform flex-shrink-0`}
+                      className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-none sm:rounded-none bg-emerald-100 ${item.color} flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all flex-shrink-0`}
                     >
                       {item.icon}
                     </div>
@@ -1146,7 +981,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
               <div className="text-center mb-6 sm:mb-10">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">
                   Try Drive Eraser{" "}
-                  <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-emerald-600 to-emerald-600 bg-clip-text text-transparent">
                     Demo
                   </span>
                 </h2>
@@ -1164,14 +999,14 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                 className={`relative bg-white overflow-hidden shadow-2xl border border-slate-200/80 hover:shadow-emerald-200/30 transition-all duration-500 flex flex-col group ${
                   isFullscreen
                     ? "w-full h-full rounded-none"
-                    : "rounded-2xl h-[450px] sm:h-[500px] lg:h-[600px]"
+                    : "rounded-none h-[450px] sm:h-[500px] lg:h-[600px]"
                 }`}
               >
                 {/* Fullscreen Toggle Button (visible only when demo is active) */}
                 {isDemoActive && (
                   <button
                     onClick={toggleFullscreen}
-                    className="absolute top-12 right-4 z-50 p-2.5 bg-slate-900/80 hover:bg-emerald-600 text-white rounded-xl shadow-lg backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center gap-2"
+                    className="absolute top-12 right-4 z-50 p-2.5 bg-slate-900/80 hover:bg-emerald-600 text-white rounded-none shadow-lg backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center gap-2"
                     title={
                       isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"
                     }
@@ -1230,7 +1065,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="flex flex-col items-center gap-3">
                         <div className="w-20 h-20 rounded-full bg-white/90 backdrop-blur-md border-2 border-emerald-200 shadow-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg">
+                          <div className="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg">
                             <svg
                               className="w-7 h-7 text-white ml-0.5"
                               fill="currentColor"
@@ -1276,7 +1111,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                 <button
                   type="button"
                   onClick={() => setSelectedImageIndex(0)}
-                  className="block w-full text-left group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="block w-full text-left group relative bg-white rounded-none overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img loading="lazy" decoding="async"
@@ -1311,7 +1146,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                 <button
                   type="button"
                   onClick={() => setSelectedImageIndex(1)}
-                  className="block w-full text-left group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="block w-full text-left group relative bg-white rounded-none overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img loading="lazy" decoding="async"
@@ -1346,7 +1181,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                 <button
                   type="button"
                   onClick={() => setSelectedImageIndex(2)}
-                  className="block w-full text-left group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="block w-full text-left group relative bg-white rounded-none overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img loading="lazy" decoding="async"
@@ -1381,7 +1216,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                 <button
                   type="button"
                   onClick={() => setSelectedImageIndex(3)}
-                  className="block w-full text-left group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
+                  className="block w-full text-left group relative bg-white rounded-none overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative">
                     <img loading="lazy" decoding="async"
@@ -1445,19 +1280,19 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         */}
 
         {/* ================= HOW IT WORKS (Help Manual) ================= */}
-        <section id="how-it-works" className="py-16 lg:py-24 bg-white">
+        <section id="how-it-works" className="py-16 lg:py-24 bg-emerald-950">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
               <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                  <Activity className="w-4 h-4" />
+                <div className="inline-flex items-center gap-2 bg-emerald-900/50 border border-emerald-800 text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  <Activity className="w-6 h-6 text-emerald-400" />
                   Life Cycle Management
                 </div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                   Drive Lifecycle{" "}
-                  <span className="text-emerald-800">Workflow</span>
+                  <span className="text-emerald-300">Workflow</span>
                 </h2>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                <p className="text-lg text-slate-300 max-w-2xl mx-auto">
                   From health assessment to secure decommissioning
                 </p>
               </div>
@@ -1467,32 +1302,20 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             <Reveal delayMs={100}>
               <div className="relative max-w-5xl mx-auto">
                 {/* Connecting Line (Desktop) */}
-                <div className="hidden lg:block absolute top-24 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-emerald-200 via-emerald-300 to-emerald-200 z-0"></div>
+                <div className="hidden lg:block absolute top-24 left-[10%] right-[10%] h-0.5 bg-emerald-200 z-0"></div>
 
                 {/* Steps Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
                   {/* Step 1: Download */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
+                    <div className="bg-white rounded-none p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
                       {/* Step Number Badge */}
-                      <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
+                      <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-700 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
                         1
                       </div>
                       {/* Icon */}
-                      <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100">
-                        <svg
-                          className="w-8 h-8 text-emerald-800"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                          />
-                        </svg>
+                      <div className="w-16 h-16 bg-emerald-50 rounded-none shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100">
+                        <Search className="w-8 h-8 text-emerald-800" />
                       </div>
                       {/* Title */}
                       <h3 className="font-bold text-slate-900 mb-2">
@@ -1522,12 +1345,12 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
                   {/* Step 2: Deploy */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
+                    <div className="bg-white rounded-none p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
                       {/* Step Number Badge */}
-                      <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
+                      <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-700 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
                         2
                       </div>
-                      <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100">
+                      <div className="w-16 h-16 bg-emerald-50 rounded-none shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100">
                         <Cloud className="w-8 h-8 text-emerald-800" />
                       </div>
                       {/* Title */}
@@ -1535,13 +1358,13 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       <p className="text-sm text-slate-500 mb-2">
                         Multiple ways to deploy
                       </p>
-                      <div className="text-[10px] text-emerald-600 font-medium mb-3">
+                      <div className="text-[10px] text-emerald-800 font-semibold mb-3">
                         Download USB Tool:{" "}
                         <a
                           href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-windows-702.exe`}
                           target="_blank"
                           rel="noreferrer"
-                          className="hover:underline ml-1"
+                          className="hover:underline hover:text-emerald-700 ml-1"
                         >
                           Win
                         </a>{" "}
@@ -1549,8 +1372,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         <a
                           href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-linux64-702.bin`}
                           target="_blank"
-                          rel="noreferrer"
-                          className="hover:underline ml-1"
+                          className="hover:underline hover:text-emerald-900 ml-1"
                         >
                           Lin
                         </a>{" "}
@@ -1558,21 +1380,20 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         <a
                           href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/tools%20for%20usb%20bootable/unetbootin-mac-702.dmg`}
                           target="_blank"
-                          rel="noreferrer"
-                          className="hover:underline ml-1"
+                          className="hover:underline hover:text-emerald-900 ml-1"
                         >
                           Mac
                         </a>
                       </div>
                       {/* Tags */}
                       <div className="flex flex-wrap justify-center gap-1.5">
-                        <span className="text-[10px] px-2 py-1 bg-white border border-emerald-200 rounded-full text-emerald-700 font-medium">
+                        <span className="text-[10px] px-2 py-1 bg-emerald-50 border border-emerald-200 rounded-full text-emerald-800 font-semibold">
                           USB ISO
                         </span>
-                        <span className="text-[10px] px-2 py-1 bg-white border border-emerald-200 rounded-full text-emerald-700 font-medium">
+                        <span className="text-[10px] px-2 py-1 bg-emerald-50 border border-emerald-200 rounded-full text-emerald-800 font-semibold">
                           PXE Boot
                         </span>
-                        <span className="text-[10px] px-2 py-1 bg-white border border-emerald-200 rounded-full text-emerald-700 font-medium">
+                        <span className="text-[10px] px-2 py-1 bg-emerald-50 border border-emerald-200 rounded-full text-emerald-800 font-semibold">
                           MSI
                         </span>
                       </div>
@@ -1597,16 +1418,16 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
                   {/* Step 3: Erase */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
+                    <div className="bg-white rounded-none p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
                       {/* Step Number Badge */}
-                      <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
+                      <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-700 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
                         3
                       </div>
                       {/* Icon with overlapping shields */}
-                      <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100 relative">
+                      <div className="w-16 h-16 bg-emerald-50 rounded-none shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100 relative">
                         <div className="flex -space-x-2">
                           <Shield className="w-6 h-6 text-emerald-800 relative z-10" />
-                          <Shield className="w-6 h-6 text-emerald-400 relative z-0" />
+                          <Shield className="w-6 h-6 text-emerald-600 relative z-0" />
                         </div>
                       </div>
                       {/* Title */}
@@ -1637,15 +1458,15 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
                   {/* Step 4: Health Reports */}
                   <div className="group">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
+                    <div className="bg-white rounded-none p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center relative overflow-hidden">
                       {/* Step Number Badge */}
-                      <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
+                      <div className="absolute top-3 left-3 w-7 h-7 bg-emerald-700 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
                         4
                       </div>
                       {/* Icon with checkmark */}
-                      <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100 relative">
+                      <div className="w-16 h-16 bg-emerald-50 rounded-none shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-emerald-100 relative">
                         <ClipboardCheck className="w-8 h-8 text-emerald-800" />
-                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
+                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center shadow-sm">
                           <CheckIcon className="w-3 h-3 text-white" />
                         </div>
                       </div>
@@ -1665,19 +1486,19 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             {/* Description Text */}
             <Reveal delayMs={200}>
               <div className="max-w-3xl mx-auto mt-12 text-center">
-                <p className="text-slate-600 leading-relaxed">
-                  <strong className="text-slate-900">
+                <p className="text-slate-300 leading-relaxed">
+                  <strong className="text-white">
                     D-Secure Drive Eraser
                   </strong>{" "}
                   offers the flexibility to wipe drives and devices in both
                   internet-enabled locations and offline facilities. Deploy via{" "}
-                  <strong className="text-emerald-800">USB drive</strong>,{" "}
-                  <strong className="text-emerald-800">PXE boot</strong> over
+                  <strong className="text-emerald-400">USB drive</strong>,{" "}
+                  <strong className="text-emerald-400">PXE boot</strong> over
                   network, or{" "}
-                  <strong className="text-emerald-800">MSI package</strong> for
+                  <strong className="text-emerald-400">MSI package</strong> for
                   remote wiping on Windows endpoints.
                 </p>
-                <p className="text-sm text-slate-500 mt-4">
+                <p className="text-sm text-white mt-4">
                   *Offline variant available for Non-Internet locations
                 </p>
               </div>
@@ -1709,7 +1530,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   onClick={() =>
                     setSelectedImageIndex(galleryImages.length - 1)
                   }
-                  className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
+                  className="relative rounded-none overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
                   aria-label="View Tamper-proof Erasure Report fullscreen"
                 >
                   <img loading="lazy" decoding="async"
@@ -1744,7 +1565,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         {/* ================= COMPLIANCE STANDARDS ================= */}
         <section
           id="compliance"
-          className="py-16 lg:py-24 bg-gradient-to-br from-slate-900 to-slate-800"
+          className="py-16 lg:py-24 bg-emerald-950"
         >
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
@@ -1763,7 +1584,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
               {complianceStandards.map((std, i) => (
                 <Reveal key={std.name} delayMs={i * 50}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-5 text-center hover:bg-white/20 transition-colors border border-white/10 h-full flex flex-col items-center justify-start min-h-[130px] sm:min-h-[160px]">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-none sm:rounded-none p-3 sm:p-5 text-center hover:bg-white/20 transition-colors border border-white/10 h-full flex flex-col items-center justify-start min-h-[130px] sm:min-h-[160px]">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 mb-2 sm:mb-3 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckIcon className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
                     </div>
@@ -1783,25 +1604,13 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         {/* ================= MULTI-ARCHITECTURE SUPPORT ================= */}
         <section
           id="platforms"
-          className="py-16 lg:py-24 bg-gradient-to-br from-emerald-50 to-teal-50"
+          className="py-16 lg:py-24 bg-white"
         >
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
               <div className="text-center mb-14">
                 <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-emerald-200">
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-                    />
-                  </svg>
+                  <Cpu className="w-8 h-8" />
                   Cross-Platform Native
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">
@@ -1818,10 +1627,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             <Reveal delayMs={100}>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
                 {/* x64 Architecture */}
-                <div className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-lg">
-                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-emerald-100 to-transparent rounded-tr-xl sm:rounded-tr-2xl"></div>
+                <div className="group relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-lg">
                   <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-500 rounded-none sm:rounded-none flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
                       <span className="text-white font-bold text-base sm:text-lg">
                         x64
                       </span>
@@ -1856,10 +1664,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                 </div>
 
                 {/* ARM64 Architecture */}
-                <div className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-xl shadow-lg">
-                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-teal-100 to-transparent rounded-tr-xl sm:rounded-tr-2xl"></div>
+                <div className="group relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-lg">
                   <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-500 rounded-none sm:rounded-none flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
                       <span className="text-white font-bold text-xs sm:text-sm">
                         ARM64
                       </span>
@@ -1868,7 +1675,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       <h3 className="text-lg sm:text-xl font-bold text-slate-900">
                         ARM64
                       </h3>
-                      <p className="text-xs sm:text-sm text-teal-600">
+                      <p className="text-xs sm:text-sm text-emerald-600">
                         Growing Ecosystem
                       </p>
                     </div>
@@ -1878,26 +1685,25 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                     mobile, Mac, and servers.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-teal-50 text-teal-700 text-xs rounded-full border border-teal-200">
+                    <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">
                       Apple Silicon
                     </span>
-                    <span className="px-2 py-1 bg-teal-50 text-teal-700 text-xs rounded-full border border-teal-200">
+                    <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">
                       Snapdragon
                     </span>
-                    <span className="px-2 py-1 bg-teal-50 text-teal-700 text-xs rounded-full border border-teal-200">
+                    <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">
                       Graviton
                     </span>
-                    <span className="px-2 py-1 bg-teal-50 text-teal-700 text-xs rounded-full border border-teal-200">
+                    <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">
                       Ampere
                     </span>
                   </div>
                 </div>
 
                 {/* x86 Architecture */}
-                <div className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 hover:border-cyan-300 transition-all duration-300 hover:shadow-xl shadow-lg sm:col-span-2 md:col-span-1">
-                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-cyan-100 to-transparent rounded-tr-xl sm:rounded-tr-2xl"></div>
+                <div className="group relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-lg sm:col-span-2 md:col-span-1">
                   <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-500 rounded-none sm:rounded-none flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform flex-shrink-0">
                       <span className="text-white font-bold text-base sm:text-lg">
                         x86
                       </span>
@@ -1906,7 +1712,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                       <h3 className="text-lg sm:text-xl font-bold text-slate-900">
                         x86 (32-bit)
                       </h3>
-                      <p className="text-xs sm:text-sm text-cyan-600">
+                      <p className="text-xs sm:text-sm text-emerald-600">
                         Legacy Support
                       </p>
                     </div>
@@ -1916,13 +1722,13 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                     enterprise use requiring secure erasure.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs rounded-full border border-cyan-200">
+                    <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">
                       Legacy Intel
                     </span>
-                    <span className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs rounded-full border border-cyan-200">
+                    <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">
                       Pentium
                     </span>
-                    <span className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs rounded-full border border-cyan-200">
+                    <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">
                       Atom
                     </span>
                   </div>
@@ -1932,21 +1738,15 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
 
             {/* OS Compatibility Grid */}
             <Reveal delayMs={200}>
-              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-slate-200 shadow-lg">
+              <div className="bg-white rounded-none sm:rounded-none p-4 sm:p-6 lg:p-8 border border-slate-200 shadow-lg">
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
                   Operating System Compatibility
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                   {/* Windows */}
-                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-slate-200">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-blue-500 flex items-center justify-center bg-blue-50 rounded-lg sm:rounded-xl border border-blue-200">
-                      <svg
-                        className="w-6 h-6 sm:w-8 sm:h-8"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
-                      </svg>
+                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-none sm:rounded-none p-3 sm:p-4 border border-slate-200">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-emerald-600 flex items-center justify-center bg-emerald-50 rounded-none sm:rounded-none border border-emerald-200">
+                      <LayoutGrid className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Windows</h4>
@@ -1960,15 +1760,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   </div>
 
                   {/* macOS */}
-                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-slate-200">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-slate-700 flex items-center justify-center bg-slate-100 rounded-lg sm:rounded-xl border border-slate-300">
-                      <svg
-                        className="w-6 h-6 sm:w-8 sm:h-8"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                      </svg>
+                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-none sm:rounded-none p-3 sm:p-4 border border-slate-200">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-emerald-600 flex items-center justify-center bg-emerald-50 rounded-none sm:rounded-none border border-emerald-200">
+                      <Command className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">macOS</h4>
@@ -1983,15 +1777,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                   </div>
 
                   {/* Linux */}
-                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-slate-200">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-yellow-800 flex items-center justify-center bg-yellow-50 rounded-lg sm:rounded-xl border border-yellow-200">
-                      <svg
-                        className="w-6 h-6 sm:w-8 sm:h-8"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.117.779.456 1.456 1.003 1.959.508.466 1.17.77 1.924.888.75.12 1.56.083 2.4-.066.93-.164 1.88-.476 2.793-.873l.185-.078c.64-.27 1.29-.56 1.87-.9.574-.334 1.09-.704 1.5-1.128.406-.423.69-.907.815-1.463.124-.552.084-1.172-.128-1.863-.21-.688-.557-1.396-.99-2.112-.433-.718-.94-1.423-1.48-2.09-.107-.132-.218-.264-.33-.396.112-.134.225-.267.34-.4.56-.653 1.11-1.318 1.6-2.01.493-.694.92-1.414 1.23-2.173.156-.38.278-.77.353-1.172.074-.4.106-.815.08-1.244-.05-.857-.34-1.757-.9-2.524-.563-.773-1.376-1.39-2.338-1.77-.963-.38-2.058-.535-3.17-.478-.106.005-.21.015-.315.025V0z" />
-                      </svg>
+                  <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 rounded-none sm:rounded-none p-3 sm:p-4 border border-slate-200">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 text-emerald-600 flex items-center justify-center bg-emerald-50 rounded-none sm:rounded-none border border-emerald-200">
+                      <Terminal className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Linux</h4>
@@ -2046,8 +1834,8 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               {features.map((f, i) => (
                 <Reveal key={f.title} delayMs={i * 40}>
-                  <div className="group bg-gradient-to-br from-slate-50 to-white rounded-lg sm:rounded-xl p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[220px] flex flex-col">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                  <div className="group bg-gradient-to-br from-slate-50 to-white rounded-none sm:rounded-none p-4 sm:p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[220px] flex flex-col">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-none bg-emerald-100 text-emerald-800 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                       {f.icon}
                     </div>
                     <h3 className="font-bold text-slate-900 mb-2">{f.title}</h3>
@@ -2064,15 +1852,15 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         {/* ================= USE CASES ================= */}
         <section
           id="use-cases"
-          className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-emerald-50"
+          className="py-16 lg:py-24 bg-emerald-950"
         >
           <div className="container mx-auto px-4 max-w-6xl">
             <Reveal>
               <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                   Use Cases
                 </h2>
-                <p className="text-lg text-slate-600">
+                <p className="text-lg text-emerald-50">
                   Trusted by individuals and enterprises worldwide
                 </p>
               </div>
@@ -2081,9 +1869,9 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {useCases.map((u, i) => (
                 <Reveal key={u.title} delayMs={i * 80}>
-                  <div className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-lg hover:shadow-xl transition-shadow border border-slate-100 min-h-[100px] flex flex-col">
+                  <div className="bg-white rounded-none sm:rounded-none p-5 sm:p-8 shadow-lg hover:shadow-xl transition-shadow border border-slate-100 min-h-[100px] flex flex-col">
                     <div className="flex items-start gap-3 sm:gap-5">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-none sm:rounded-none bg-emerald-500 text-white flex items-center justify-center flex-shrink-0">
                         {u.icon}
                       </div>
                       <div>
@@ -2113,22 +1901,22 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
         />
 
         {/* ================= LATEST INSIGHTS & UPDATES ================= */}
-        <section id="blogs" className="py-16 lg:py-24 bg-white">
+        <section id="blogs" className="py-16 lg:py-24 bg-emerald-950">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                     Technical Blogs
                   </h2>
-                  <p className="text-lg text-slate-600 max-w-2xl">
+                  <p className="text-lg text-emerald-50 max-w-2xl">
                     Expert insights on data security, erasure standards, and
                     best practices
                   </p>
                 </div>
                 <Link
                   to="/blog"
-                  className="inline-flex items-center gap-2 text-emerald-800 font-bold hover:text-emerald-700 transition-colors group"
+                  className="inline-flex items-center gap-2 text-emerald-400 font-bold hover:text-emerald-300 transition-colors group"
                 >
                   View More
                   <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -2139,7 +1927,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {relatedBlogs.map((blog, i) => (
                 <Reveal key={blog.id} delayMs={i * 60}>
-                  <div className="relative bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
+                  <div className="relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-emerald-900 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
                     <div className="mb-4">
                       <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
                         {blog.tag}
@@ -2215,7 +2003,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
               </Reveal>
 
               <Reveal delayMs={100}>
-                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 shadow-2xl">
+                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-none sm:rounded-none p-5 sm:p-8 lg:p-10 shadow-2xl">
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
                     Request Information
                   </h3>
@@ -2391,7 +2179,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           value={formData.name}
                           onChange={handleInputChange}
                           placeholder="Full Name *"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                           required
                         />
                       </div>
@@ -2402,7 +2190,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="Email *"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                           required
                         />
                       </div>
@@ -2413,7 +2201,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="Phone Number"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
                       </div>
                       <div>
@@ -2423,7 +2211,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           value={formData.country}
                           onChange={handleInputChange}
                           placeholder="Country"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
                       </div>
                       <div>
@@ -2433,7 +2221,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           value={formData.organization}
                           onChange={handleInputChange}
                           placeholder="Organization"
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors"
                         />
                       </div>
                       <div>
@@ -2441,7 +2229,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                           name="businessType"
                           value={formData.businessType}
                           onChange={handleInputChange}
-                          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
+                          className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors appearance-none"
                         >
                           <option value="" disabled className="text-slate-800">Business Type</option>
                           <option value="Enterprise" className="text-slate-800">Enterprise</option>
@@ -2460,13 +2248,13 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         onChange={handleInputChange}
                         rows={4}
                         placeholder="How can we help you?"
-                        className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors resize-none"
+                        className="w-full p-4 rounded-none bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors resize-none"
                       ></textarea>
                     </div>
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold py-4 rounded-xl hover:from-emerald-600 hover:to-teal-600 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-emerald-500 text-white font-bold py-4 rounded-none hover:from-emerald-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? "Submitting..." : "Submit Enquiry"}
                     </button>
@@ -2502,19 +2290,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             }}
             className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors z-10"
           >
-            <svg
-              className="w-5 h-5 sm:w-6 sm:h-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {/* Right Arrow */}
@@ -2525,19 +2301,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             }}
             className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors z-10"
           >
-            <svg
-              className="w-5 h-5 sm:w-6 sm:h-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {/* Image Container */}
@@ -2550,7 +2314,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
             <img loading="lazy" decoding="async"
               src={galleryImages[selectedImageIndex].url}
               alt={galleryImages[selectedImageIndex].alt}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-200"
+              className="max-w-full max-h-[90vh] object-contain rounded-none shadow-2xl animate-in zoom-in-95 duration-200"
             />
           </div>
 

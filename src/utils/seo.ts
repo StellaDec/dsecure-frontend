@@ -310,6 +310,23 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Compliance", item: "/compliance" },
     ],
   },
+  // अंतर्राष्ट्रीय कानून और नियम page का SEO
+  "international-laws": {
+    title: "Global Data Protection Laws & Regulations | D-Secure",
+    description: "D-Secure helps comply with 25+ global data protection laws including GDPR, CCPA, HIPAA, DPDP Act, LGPD, and more. Explore international regulations by region.",
+    keywords: generateKeywords([
+      "data protection laws",
+      "international privacy regulations",
+      "GDPR compliance software",
+      "global data erasure compliance",
+      "data privacy laws by country",
+    ]),
+    canonicalUrl: getCanonicalUrl("/international-laws-and-regulations"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "International Laws & Regulations", item: "/international-laws-and-regulations" },
+    ],
+  },
   "request-quote": {
     title: "Request a Quote: Enterprise Erasure Licensing | D-Secure",
     description: "Request a custom quote for enterprise-grade data erasure licensing. Volume discounts available for ITADs, data centers, and global organizations.",
@@ -711,7 +728,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // Privacy policy page ka custom SEO metadata
   "privacy-policy": {
     title: "Privacy Policy | D-Secure Technologies",
-    description: "Review our privacy policy. Learn how D-Secure collects, processes, and protects your personal data when using our software products and website.",
+    description: "Review our comprehensive privacy policy. Learn how D-Secure complies with global data protection standards (GDPR, DPDP Act, CCPA/CPRA) while collecting, processing, and protecting your data.",
+    keywords: generateKeywords(["privacy policy", "GDPR compliance", "DPDP Act", "CCPA CPRA", "data protection", "D-Secure privacy", "data processor exclusion"]),
     canonicalUrl: getCanonicalUrl("/privacy-policy"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -853,6 +871,16 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Terms of Service", item: "/terms-of-service" },
+    ],
+  },
+  // End User License Agreement page
+  "eula": {
+    title: "End User License Agreement (EULA) | D-Secure Technologies",
+    description: "Read the End User License Agreement (EULA) for the use and licensing of BitRaser software from D-Secure Technologies.",
+    canonicalUrl: getCanonicalUrl("/eula"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "EULA", item: "/eula" },
     ],
   },
   // Trust center page ka custom SEO metadata

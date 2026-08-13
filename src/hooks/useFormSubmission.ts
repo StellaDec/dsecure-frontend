@@ -141,81 +141,65 @@ export const useFormSubmission = (
       const formSubmitData = prepareFormData(formData);
       const endpoint = config.endpoint || DEFAULT_FORMSUBMIT_ENDPOINT;
 
-      const response = await fetch(endpoint, {
-        method: "POST",
-        body: formSubmitData,
-      });
+      const userEmail = formData.email || formData.businessEmail;
+      const submissionData = {
+        name: formData.fullName || formData.name || "",
+        email: String(userEmail || ""),
+        company: formData.company || formData.companyName || "",
+        phone: formData.phone || formData.phoneNo || "",
+        country: formData.country || "",
+        businessType: formData.businessType || "",
+        solutionType: formData.eraseOption || formData.partnerType || "",
+        complianceRequirements: formData.compliance || "",
+        message:
+          formData.requirements ||
+          formData.businessDescription ||
+          formData.message ||
+          "",
+        usageType: formData.usage || "",
+        source: document.title,
+        timestamp: new Date().toISOString(),
+      };
 
-      if (response.ok) {
-        const successMessage =
-          config.successMessage ||
-          "Your message has been sent successfully! Our team will get back to you within 24 hours.";
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
-        showToast(successMessage, "success");
+      const [apiResult] = await Promise.allSettled([
+        fetch(`${API_BASE}/api/ContactFormSubmissions`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(submissionData),
+        }),
+        fetch(endpoint, {
+          method: "POST",
+          body: formSubmitData,
+        })
+      ]);
 
-        // Reset form if configured to do so and callback is provided
-        if (config.resetFormAfterSubmit !== false && resetFormCallback) {
-          resetFormCallback();
-        }
-
-        // Redirect if configured
-        if (config.redirectAfterSuccess) {
-          setTimeout(() => {
-            window.location.href = config.redirectAfterSuccess!;
-          }, 2000);
-        }
-
-        // Call success callback
-        if (config.onSuccess) {
-          config.onSuccess(formData);
-        }
-
-        // === Backend API + Power Automate (non-blocking) ===
-        const userEmail = formData.email || formData.businessEmail;
-        const submissionData = {
-          name: formData.fullName || formData.name || "",
-          email: String(userEmail || ""),
-          company: formData.company || formData.companyName || "",
-          phone: formData.phone || formData.phoneNo || "",
-          country: formData.country || "",
-          businessType: formData.businessType || "",
-          solutionType: formData.eraseOption || formData.partnerType || "",
-          complianceRequirements: formData.compliance || "",
-          message:
-            formData.requirements ||
-            formData.businessDescription ||
-            formData.message ||
-            "",
-          usageType: formData.usage || "",
-          source: document.title,
-          timestamp: new Date().toISOString(),
-        };
-
-        try {
-          const API_BASE = import.meta.env.VITE_API_BASE_URL;
-          const POWER_AUTOMATE_URL = import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "";
-
-          // Backend API
-          fetch(`${API_BASE}/api/ContactFormSubmissions`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(submissionData),
-          }).catch(() => {});
-
-          // Power Automate tracking
-          fetch(POWER_AUTOMATE_URL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
-            },
-            body: JSON.stringify(submissionData),
-          }).catch(() => {});
-        } catch (e) {
-          console.error("Backend/Power Automate error:", e);
-        }
-      } else {
+      if (apiResult.status === "rejected" || (apiResult.status === "fulfilled" && !apiResult.value.ok)) {
         throw new Error("Form submission failed");
+      }
+
+      const successMessage =
+        config.successMessage ||
+        "Your message has been sent successfully! Our team will get back to you within 24 hours.";
+
+      showToast(successMessage, "success");
+
+      // Reset form if configured to do so and callback is provided
+      if (config.resetFormAfterSubmit !== false && resetFormCallback) {
+        resetFormCallback();
+      }
+
+      // Redirect if configured
+      if (config.redirectAfterSuccess) {
+        setTimeout(() => {
+          window.location.href = config.redirectAfterSuccess!;
+        }, 2000);
+      }
+
+      // Call success callback
+      if (config.onSuccess) {
+        config.onSuccess(formData);
       }
     } catch (error) {
       console.error("Form submission error:", error);

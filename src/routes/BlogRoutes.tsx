@@ -88,7 +88,7 @@ const MobileDiagnosticsRevolutionBlog = lazy(() => import("../components/blog/Mo
 const NCUAGuidelinesBlog = lazy(() => import("../components/blog/NCUAGuidelinesBlog"));
 const NISTClearPurgeBlog = lazy(() => import("../components/blog/NISTClearPurgeBlog"));
 const NISTTestedErasureSoftwareBlog = lazy(() => import("../components/blog/NISTTestedErasureSoftwareBlog"));
-const NISTVsIEEEBlog = lazy(() => import("../components/blog/NISTVsIEEEBlog"));
+
 const OnsiteVsOffsiteDestructionBlog = lazy(() => import("../components/blog/OnsiteVsOffsiteDestructionBlog"));
 
 const PIIDisposalBreachBlog = lazy(() => import("../components/blog/PIIDisposalBreachBlog"));
@@ -198,7 +198,7 @@ export const BlogRoutes = () => (
     <Route path="blog/ncua-guidelines" element={<NCUAGuidelinesBlog />} />
     <Route path="blog/nist-clear-purge" element={<NISTClearPurgeBlog />} />
     <Route path="blog/nist-tested-erasure-software" element={<NISTTestedErasureSoftwareBlog />} />
-    <Route path="blog/nist-vs-ieee" element={<NISTVsIEEEBlog />} />
+
     <Route path="blog/onsite-vs-offsite-destruction" element={<OnsiteVsOffsiteDestructionBlog />} />
 
     <Route path="blog/pii-disposal-breach" element={<PIIDisposalBreachBlog />} />

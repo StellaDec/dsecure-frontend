@@ -1,8 +1,9 @@
 import React, { useMemo, Suspense } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import NotFoundPage from "@/pages/NotFoundPage";
 import BlogFooterStandard from "@/components/blog/BlogFooterStandard";
 import { blogPosts } from "@/data/blogPosts";
+import { lawsContent } from "@/data/lawsContent";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getBlogSEO } from "@/utils/seo";
 import { FAQ } from "@/utils/seo.core";
@@ -23,6 +24,22 @@ import PageLoadingSkeleton from "@/components/PageLoadingSkeleton";
 
 const BlogPostDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+
+  // Internal links interceptor for markdown content
+  const handleContentClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    const anchor = target.closest('a');
+    
+    if (anchor) {
+      const href = anchor.getAttribute('href');
+      // If it's an internal link starting with /
+      if (href && href.startsWith('/')) {
+        e.preventDefault();
+        navigate(href);
+      }
+    }
+  };
 
   // Relevant blog post ko dhoondna (Find the relevant blog post - Hindi comment as requested)
   const post = useMemo(() => {
@@ -40,7 +57,8 @@ const BlogPostDetail: React.FC = () => {
       author: post.author,
       publishDate: post.publishDate,
       keywords: post.keywords,
-      tag: post.tag
+      tag: post.tag,
+      faqs: post.faqs || lawsContent[post.slug]?.faqs
     });
   }, [post]);
 
@@ -148,7 +166,7 @@ const BlogPostDetail: React.FC = () => {
       <main className="pb-16 bg-[#f4fbf8]">
         <ThemeSection alternate className="!pt-12 !pb-6">
           <div className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8">
-            <Reveal>
+            <Reveal threshold={0}>
               <article className={`${themeClasses.card.base} p-8 md:p-12 space-y-10 text-justify shadow-sm`}>
             {/* Lead Excerpt */}
             <p className="text-xl md:text-2xl text-[#5a6672] leading-relaxed font-medium italic border-l-4 border-[#0e7c66] pl-6 mb-12 bg-[#f4fbf8] p-4">
@@ -157,9 +175,13 @@ const BlogPostDetail: React.FC = () => {
 
             {/* Main Body (Placeholder for actual content if missing) */}
             <div className="text-[#5a6672] leading-relaxed space-y-8 prose prose-emerald max-w-none">
-              {post.content ? (
-                /* In a real app, this would be dangerouslySetInnerHTML or a Markdown renderer */
-                <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }} />
+              {(post.content || lawsContent[post.slug]?.content) ? (
+                /* Law/compliance content ko professional typography ke saath render karna */
+                <div 
+                  className="blog-formatted-content" 
+                  onClick={handleContentClick}
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content || lawsContent[post.slug]?.content || "") }} 
+                />
               ) : (
                 <>
                   <p>

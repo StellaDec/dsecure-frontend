@@ -228,68 +228,49 @@ export const useEnhancedForm = (config: FormConfig) => {
           timestamp: timestampISO,
         };
 
-        // Submit to FormSubmit
-        const response = await fetch(config.endpoint || FORMSUBMIT_ENDPOINT, {
-          method: "POST",
-          body: formSubmitData,
-        });
+        const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
-        if (response.ok) {
-          const successMessage =
-            config.successMessage ||
-            "Form submitted successfully! We will get back to you soon.";
+        const [apiResult] = await Promise.allSettled([
+          fetch(`${apiBaseUrl}/api/ContactFormSubmissions`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(submissionData),
+          }),
+          fetch(config.endpoint || FORMSUBMIT_ENDPOINT, {
+            method: "POST",
+            body: formSubmitData,
+          })
+        ]);
 
-          showGlobalToast(successMessage, "success");
-
-          // Reset form if configured
-          if (config.resetAfterSubmit !== false) {
-            // Form has been reset
-          }
-
-          // Redirect if configured
-          if (config.redirectAfterSuccess) {
-            setTimeout(() => {
-              window.location.href = config.redirectAfterSuccess!;
-            }, 2000);
-          }
-
-          setFormState((prev) => ({
-            ...prev,
-            isSubmitting: false,
-            isValid: true,
-          }));
-
-          // Backend API + Power Automate (non-blocking)
-          try {
-            const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
-            const powerAutomateUrl = import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL;
-
-            // Backend API
-            fetch(`${apiBaseUrl}/api/ContactFormSubmissions`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(submissionData),
-            }).catch(() => {});
-
-            // Power Automate tracking
-            if (powerAutomateUrl) {
-              fetch(powerAutomateUrl, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
-                },
-                body: JSON.stringify(submissionData),
-              }).catch(() => {});
-            }
-          } catch (e) {
-            console.error("Backend/Power Automate error:", e);
-          }
-
-          return true;
-        } else {
+        if (apiResult.status === "rejected" || (apiResult.status === "fulfilled" && !apiResult.value.ok)) {
           throw new Error("Form submission failed");
         }
+
+        const successMessage =
+          config.successMessage ||
+          "Form submitted successfully! We will get back to you soon.";
+
+        showGlobalToast(successMessage, "success");
+
+        // Reset form if configured
+        if (config.resetAfterSubmit !== false) {
+          // Form has been reset
+        }
+
+        // Redirect if configured
+        if (config.redirectAfterSuccess) {
+          setTimeout(() => {
+            window.location.href = config.redirectAfterSuccess!;
+          }, 2000);
+        }
+
+        setFormState((prev) => ({
+          ...prev,
+          isSubmitting: false,
+          isValid: true,
+        }));
+
+        return true;
       } catch (error) {
         console.error("Form submission error:", error);
         const errorMessage =

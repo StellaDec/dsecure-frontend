@@ -5,20 +5,8 @@ import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
-import { ShieldIcon, CheckIcon, ClipboardIcon } from "@/components/FlatIcons";
-import {
-  Activity,
-  Thermometer,
-  Copy,
-  Search,
-  CheckCircle,
-  FileText,
-  Bell,
-  Cpu,
-  BarChart3,
-  RefreshCw,
-  Gauge,
-} from "lucide-react";
+import { Activity, ArrowLeft, ArrowRight, BarChart3, Bell, CheckCircle, Cloud, Copy, Cpu, FileText, Gauge, Globe, RefreshCw, Search, Server, Settings, Shield, Star, Thermometer } from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import { getSEOForPage } from "@/utils/seo";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQSection } from "@/components/FAQSection";
@@ -125,7 +113,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
     {
       title: "S.M.A.R.T. Status",
       desc: "Monitor detailed S.M.A.R.T. attributes such as Reallocated Sector Count to anticipate failures.",
-      icon: <ShieldIcon className="w-6 h-6 text-teal-500" />,
+      icon: <Shield className="w-6 h-6 text-emerald-600" />,
       bg: "bg-teal-50",
     },
     {
@@ -228,7 +216,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                   </Reveal>
 
                   <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
-                    <ShieldIcon className="w-4 h-4" />
+                    <Shield className="w-6 h-6 text-emerald-600" />
                     Advanced Smart Diagnostic Utility
                   </div>
 
@@ -249,13 +237,13 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Request Early Access
                     </button>
                     <button
                       onClick={downloadDatasheet}
-                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 font-bold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 font-bold px-8 py-4 rounded-none hover:bg-emerald-50 transition-all duration-300"
                     >
                       <svg
                         className="w-5 h-5"
@@ -301,11 +289,11 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                     }}
                   >
                     {/* Glow Behind Box */}
-                    <div className="absolute inset-0 bg-emerald-500/40 blur-3xl rounded-3xl scale-110"></div>
+                    <div className="absolute inset-0 bg-emerald-500/40 blur-3xl rounded-none scale-110"></div>
 
                     {/* Main Box - Front Face */}
                     <div
-                      className="relative w-[220px] h-[280px] lg:w-[280px] lg:h-[360px] bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-2xl shadow-2xl overflow-hidden"
+                      className="relative w-[220px] h-[280px] lg:w-[280px] lg:h-[360px] bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-none shadow-2xl overflow-hidden"
                       style={{
                         transform: "rotateY(-12deg) rotateX(5deg)",
                         boxShadow:
@@ -328,7 +316,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                         </div>
 
                         {/* Main Icon */}
-                        <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 lg:mb-6 border border-white/20 shadow-inner">
+                        <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white/15 backdrop-blur-sm rounded-none flex items-center justify-center mb-4 lg:mb-6 border border-white/20 shadow-inner">
                           <Gauge className="w-12 h-12 lg:w-16 lg:h-16 text-white drop-shadow-lg" />
                         </div>
 
@@ -345,7 +333,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                         {/* Bottom Badge */}
                         <div className="absolute bottom-4 lg:bottom-6 left-1/2 -translate-x-1/2">
                           <div className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-white/20">
-                            <ShieldIcon className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-emerald-300" />
+                            <Shield className="w-6 h-6 text-emerald-600" />
                             <span className="text-white/90 text-[9px] lg:text-[11px] font-semibold">
                               Real-time Care
                             </span>
@@ -358,7 +346,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                       </div>
 
                       {/* Animated Pulse Ring */}
-                      <div className="absolute inset-0 border-2 border-white/10 rounded-2xl animate-pulse"></div>
+                      <div className="absolute inset-0 border-2 border-white/10 rounded-none animate-pulse"></div>
                     </div>
 
                     {/* Right Side Face (3D) */}
@@ -377,7 +365,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
 
                   {/* Floating Status Cards */}
                   {/* Card 1: Temperature (Existing) */}
-                  <div className="absolute -top-12 -right-12 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-emerald-50 animate-[float_5s_ease-in-out_infinite] hidden sm:block z-30">
+                  <div className="absolute -top-12 -right-12 bg-white/80 backdrop-blur-md p-4 rounded-none shadow-xl border border-emerald-50 animate-[float_5s_ease-in-out_infinite] hidden sm:block z-30">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-500">
                         <Thermometer className="w-6 h-6" />
@@ -394,7 +382,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                   </div>
 
                   {/* Card 2: Disk Health % */}
-                  <div className="absolute top-1/4 -left-20 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-teal-50 animate-[float_6s_ease-in-out_infinite_0.5s] hidden sm:block z-30">
+                  <div className="absolute top-1/4 -left-20 bg-white/80 backdrop-blur-md p-4 rounded-none shadow-xl border border-teal-50 animate-[float_6s_ease-in-out_infinite_0.5s] hidden sm:block z-30">
                     <div className="flex items-center gap-3">
                       <div className="relative w-11 h-11 flex items-center justify-center">
                         <svg className="w-full h-full -rotate-90">
@@ -435,7 +423,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                   </div>
 
                   {/* Card 3: Performance Gauge */}
-                  <div className="absolute -bottom-10 -right-8 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-cyan-50 animate-[float_5.5s_ease-in-out_infinite_1s] hidden sm:block z-30">
+                  <div className="absolute -bottom-10 -right-8 bg-white/80 backdrop-blur-md p-4 rounded-none shadow-xl border border-cyan-50 animate-[float_5.5s_ease-in-out_infinite_1s] hidden sm:block z-30">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center text-cyan-600">
                         <BarChart3 className="w-6 h-6" />
@@ -537,13 +525,13 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                         txt: "Continuous background health monitoring.",
                       },
                       {
-                        icon: <ClipboardIcon className="w-5 h-5" />,
+                        icon: <FileText className="w-6 h-6 text-emerald-600" />,
                         title: "Custom Thresholds",
                         txt: "Personalized temp alerts for disk safety.",
                       },
                     ].map((item) => (
                       <div key={item.title} className="flex gap-4">
-                        <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 text-emerald-800">
+                        <div className="w-10 h-10 bg-emerald-100 rounded-none flex items-center justify-center flex-shrink-0 text-emerald-800">
                           {item.icon}
                         </div>
                         <div>
@@ -582,9 +570,9 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {mainFeatures.map((feature) => (
                 <Reveal key={feature.title} delayMs={100}>
-                  <div className="bg-white p-8 rounded-2xl border border-emerald-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                  <div className="bg-white p-8 rounded-none border border-emerald-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
                     <div
-                      className={`w-14 h-14 ${feature.bg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
+                      className={`w-14 h-14 ${feature.bg} rounded-none flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
                     >
                       {feature.icon}
                     </div>
@@ -628,7 +616,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                         className="flex items-center gap-3 text-slate-700 font-medium text-sm"
                       >
                         <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                          <CheckIcon className="w-4 h-4 text-emerald-800" />
+                          <CheckCircle className="w-6 h-6 text-emerald-600" />
                         </div>
                         {item}
                       </li>
@@ -636,15 +624,15 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                   </ul>
                   {/* <Link 
                     to="/resources/clone-guide"
-                    className="inline-flex items-center gap-2 bg-emerald-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-emerald-600 transition-all mt-4"
+                    className="inline-flex items-center gap-2 bg-emerald-500 text-white px-6 py-3 rounded-none font-bold hover:bg-emerald-600 transition-all mt-4"
                   >
                     Learn To Clone
-                    <ArrowRightIcon className="w-4 h-4" />
+                    <ArrowRight className="w-6 h-6 text-emerald-600" />
                   </Link> */}
                 </div>
               </Reveal>
               <Reveal delayMs={200}>
-                <div className="relative p-4 bg-white rounded-3xl shadow-2xl group border border-emerald-50 overflow-hidden">
+                <div className="relative p-4 bg-white rounded-none shadow-2xl group border border-emerald-50 overflow-hidden">
                   <CloudinaryImage
                     publicId="dsecure/products/drive-monitor-cloning"
                     alt="Sector-by-Sector Cloning Operation"
@@ -687,7 +675,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
               ].map((item) => (
                 <div
                   key={item.step}
-                  className="space-y-4 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all group"
+                  className="space-y-4 p-8 rounded-none bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all group"
                 >
                   <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto font-bold text-lg group-hover:scale-110 transition-transform">
                     {item.step}
@@ -710,7 +698,7 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                 Technical Specifications
               </h2>
             </div>
-            <div className="max-w-4xl mx-auto border border-emerald-100 rounded-3xl overflow-hidden shadow-sm bg-white/70 backdrop-blur-sm">
+            <div className="max-w-4xl mx-auto border border-emerald-100 rounded-none overflow-hidden shadow-sm bg-white/70 backdrop-blur-sm">
               <table className="w-full text-left border-collapse">
                 <tbody>
                   {[
@@ -775,13 +763,13 @@ const HardDriveMonitorPage: React.FC = memo(function HardDriveMonitorPage() {
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center bg-white text-emerald-700 px-12 py-5 rounded-2xl font-bold transition-all duration-300 hover:scale-105 shadow-xl"
+                    className="inline-flex items-center justify-center bg-white text-emerald-700 px-12 py-5 rounded-none font-bold transition-all duration-300 hover:scale-105 shadow-xl"
                   >
                     Get Business Quote
                   </Link>
                   <button
                     disabled
-                    className="inline-flex items-center justify-center border-2 border-white/30 text-white/50 px-12 py-5 rounded-2xl font-bold cursor-not-allowed opacity-60"
+                    className="inline-flex items-center justify-center border-2 border-white/30 text-white/50 px-12 py-5 rounded-none font-bold cursor-not-allowed opacity-60"
                   >
                     Upcoming
                   </button>

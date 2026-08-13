@@ -4,24 +4,33 @@ import { getSEOForPage } from "@/utils/seo";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
-import { 
-  Activity, 
-  Monitor, 
-  RefreshCcw, 
-  CheckCircle, 
-  Layout, 
-  Shield, 
-  ShieldCheck,
-  Users,
-  Smartphone,
-  Gauge,
-  Zap
-} from "lucide-react";
-import { ArrowRightIcon } from "@/components/FlatIcons";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import Reveal from "@/components/Reveal";
 import { ProductContactForm } from "@/components/forms";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQSection } from "@/components/FAQSection";
+import {
+  Activity,
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle,
+  Cloud,
+  FileText,
+  Gauge,
+  Globe,
+  Layout,
+  Monitor,
+  RefreshCcw,
+  RefreshCw,
+  Server,
+  Settings,
+  Shield,
+  ShieldCheck,
+  Smartphone,
+  Star,
+  Users,
+  Zap
+} from 'lucide-react';
 
 const FreezeStateSmartPage = memo(() => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -187,7 +196,7 @@ const FreezeStateSmartPage = memo(() => {
                       >
                         <ShieldCheck className="w-3.5 h-3.5" />
                         <span>Switch to Advanced Eraser Edition</span>
-                        <ArrowRightIcon className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-6 h-6 text-emerald-600" />
                       </Link>
                     </div>
                   </div>
@@ -201,13 +210,13 @@ const FreezeStateSmartPage = memo(() => {
                   <div className="flex flex-wrap gap-4 pt-4">
                     <button 
                       onClick={() => scrollToSection("contact")}
-                      className="bg-emerald-600 text-white px-6 py-3 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-700 transition-all duration-500 shadow-xl shadow-emerald-600/30 hover:scale-105 active:scale-95 text-xs"
+                      className="bg-emerald-600 text-white px-6 py-3 rounded-none font-black uppercase tracking-widest hover:bg-emerald-700 transition-all duration-500 shadow-xl shadow-emerald-600/30 hover:scale-105 active:scale-95 text-xs"
                     >
                       Request Early Access
                     </button>
                     <button 
                       onClick={() => scrollToSection("telemetry")}
-                      className="bg-white text-slate-900 border-2 border-slate-100 px-6 py-3 rounded-2xl font-black uppercase tracking-widest hover:border-emerald-600 hover:text-emerald-600 transition-all duration-500 active:scale-95 text-xs"
+                      className="bg-white text-slate-900 border-2 border-slate-100 px-6 py-3 rounded-none font-black uppercase tracking-widest hover:border-emerald-600 hover:text-emerald-600 transition-all duration-500 active:scale-95 text-xs"
                     >
                       View Features
                     </button>
@@ -241,7 +250,7 @@ const FreezeStateSmartPage = memo(() => {
                         style={{ top: item.top, left: item.left, right: item.right, bottom: item.bottom }}
                       >
                         <div
-                          className="w-9 h-9 lg:w-10 lg:h-10 bg-white rounded-xl shadow-lg border border-emerald-100 flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl hover:border-emerald-400"
+                          className="w-9 h-9 lg:w-10 lg:h-10 bg-white rounded-none shadow-lg border border-emerald-100 flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl hover:border-emerald-400"
                           style={{ animation: `deviceBob 3s ease-in-out infinite ${item.delay}` }}
                         >
                           <svg className="w-4.5 h-4.5 lg:w-5 lg:h-5 text-emerald-800" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
@@ -257,8 +266,8 @@ const FreezeStateSmartPage = memo(() => {
                   <div className="relative z-10" style={{ animation: "monitorFloat 6s ease-in-out infinite" }}>
                     <div className="absolute -inset-6 lg:-inset-8 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 blur-3xl rounded-full"></div>
                     <div className="relative w-[230px] sm:w-[270px] lg:w-[330px]">
-                      <div className="bg-slate-900 rounded-t-xl sm:rounded-t-2xl p-1 sm:p-1.5 lg:p-2 shadow-2xl border border-slate-700/50">
-                        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg sm:rounded-xl overflow-hidden">
+                      <div className="bg-slate-900 rounded-none sm:rounded-none p-1 sm:p-1.5 lg:p-2 shadow-2xl border border-slate-700/50">
+                        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-none sm:rounded-none overflow-hidden">
                           <div className="flex items-center justify-between px-3 py-1 bg-slate-800/80 border-b border-slate-700/50">
                             <div className="flex items-center gap-1">
                               <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-red-400 rounded-full"></div>
@@ -270,20 +279,20 @@ const FreezeStateSmartPage = memo(() => {
                           </div>
                           <div className="p-2 sm:p-3 lg:p-3.5 space-y-2 sm:space-y-2.5">
                             <div className="grid grid-cols-3 gap-1 sm:gap-1.5">
-                              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-1 sm:p-1.5 text-center">
+                              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-none p-1 sm:p-1.5 text-center">
                                 <div className="text-emerald-400 font-bold text-[10px] sm:text-xs lg:text-base">1,240</div>
                                 <div className="text-[5px] sm:text-[6px] lg:text-[7px] text-slate-500 uppercase">Systems Frozen</div>
                               </div>
-                              <div className="bg-teal-500/10 border border-teal-500/20 rounded-lg p-1 sm:p-1.5 text-center">
+                              <div className="bg-teal-500/10 border border-teal-500/20 rounded-none p-1 sm:p-1.5 text-center">
                                 <div className="text-teal-400 font-bold text-[10px] sm:text-xs lg:text-base">100%</div>
                                 <div className="text-[5px] sm:text-[6px] lg:text-[7px] text-slate-500 uppercase">Rollback Rate</div>
                               </div>
-                              <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-1 sm:p-1.5 text-center">
+                              <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-none p-1 sm:p-1.5 text-center">
                                 <div className="text-cyan-400 font-bold text-[10px] sm:text-xs lg:text-base">99.9%</div>
                                 <div className="text-[5px] sm:text-[6px] lg:text-[7px] text-slate-500 uppercase">Zero Persistence</div>
                               </div>
                             </div>
-                            <div className="bg-slate-800/60 rounded-lg p-1.5 sm:p-2 border border-slate-700/40">
+                            <div className="bg-slate-800/60 rounded-none p-1.5 sm:p-2 border border-slate-700/40">
                               <div className="flex items-center justify-between mb-1">
                                 <div className="flex items-center gap-1">
                                   <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
@@ -317,7 +326,7 @@ const FreezeStateSmartPage = memo(() => {
                       </div>
                       <div className="flex flex-col items-center">
                         <div className="w-14 sm:w-16 lg:w-20 h-3 sm:h-4 lg:h-5 bg-gradient-to-b from-slate-700 to-slate-800 rounded-b-sm"></div>
-                        <div className="w-20 sm:w-24 lg:w-28 h-1.5 bg-gradient-to-b from-slate-700 to-slate-800 rounded-b-lg shadow-lg"></div>
+                        <div className="w-20 sm:w-24 lg:w-28 h-1.5 bg-gradient-to-b from-slate-700 to-slate-800 rounded-none shadow-lg"></div>
                       </div>
                     </div>
                   </div>
@@ -355,8 +364,8 @@ const FreezeStateSmartPage = memo(() => {
                             { icon: <Zap />, title: "Alert Messages", desc: "Remotely configure custom warning messages displayed during system resets." },
                           ].map((item, idx) => (
                             <Reveal key={item.title} delayMs={100 + idx * 50} animation="slide-up">
-                              <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:bg-white hover:shadow-xl group">
-                                 <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-slate-400 mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-sm">
+                              <div className="p-8 rounded-none bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:bg-white hover:shadow-xl group">
+                                 <div className="w-12 h-12 rounded-none bg-white flex items-center justify-center text-slate-400 mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-sm">
                                     {React.cloneElement(item.icon as any, { className: "w-6 h-6" })}
                                  </div>
                                  <h2 className="font-black uppercase tracking-widest text-xs mb-3 text-slate-900">{item.title}</h2>
@@ -422,7 +431,7 @@ const FreezeStateSmartPage = memo(() => {
                        
                     ].map((item) => (
                        <div key={item.title} className="p-10 rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-500 text-left">
-                          <div className="w-14 h-14 rounded-2xl bg-emerald-500 flex items-center justify-center text-white mb-8 shadow-lg">
+                          <div className="w-14 h-14 rounded-none bg-emerald-500 flex items-center justify-center text-white mb-8 shadow-lg">
                              {React.cloneElement(item.icon as any, { className: "w-7 h-7" })}
                           </div>
                           <h4 className="text-xl font-bold uppercase tracking-widest mb-4">{item.title}</h4>
@@ -472,8 +481,8 @@ const FreezeStateSmartPage = memo(() => {
                              </div>
                           </div>
                           <div className="pt-4 flex gap-4">
-                             <div className="flex-1 bg-emerald-600 text-white text-[10px] font-black uppercase py-3 rounded-xl text-center tracking-widest cursor-pointer shadow-lg shadow-emerald-500/20">Automatic Approve</div>
-                             <div className="flex-1 bg-slate-900 text-white text-[10px] font-black uppercase py-3 rounded-xl text-center tracking-widest cursor-pointer shadow-lg">Review First</div>
+                             <div className="flex-1 bg-emerald-600 text-white text-[10px] font-black uppercase py-3 rounded-none text-center tracking-widest cursor-pointer shadow-lg shadow-emerald-500/20">Automatic Approve</div>
+                             <div className="flex-1 bg-slate-900 text-white text-[10px] font-black uppercase py-3 rounded-none text-center tracking-widest cursor-pointer shadow-lg">Review First</div>
                           </div>
                        </div>
                     </Reveal>
@@ -492,7 +501,7 @@ const FreezeStateSmartPage = memo(() => {
                                 { title: "Automated Resets", desc: "Schedule resets immediately after a persistence window expires." },
                              ].map((item) => (
                                 <li key={item.title} className="flex gap-12">
-                                   <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 shrink-0">
+                                   <div className="w-10 h-10 rounded-none bg-white/10 flex items-center justify-center border border-white/20 shrink-0">
                                       <Shield className="w-5 h-5" />
                                    </div>
                                     <div className="space-y-1.5">

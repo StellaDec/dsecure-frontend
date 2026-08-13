@@ -56,9 +56,6 @@ export const debugLog = (
   }
 };
 
-/**
- * Debug error - ALWAYS logs (even in production) for critical errors
- */
 export const debugError = (
   category: LogCategory | string,
   message: string,
@@ -73,14 +70,30 @@ export const debugError = (
   );
 
   if (error) {
-    // Log full error details
+    // Safe stringifier to prevent "Cannot convert object to primitive value" in Sentry/rrweb
+    const safeStringify = (obj: any): string | any => {
+      if (obj === null || obj === undefined) return obj;
+      if (typeof obj !== 'object') return obj;
+      try {
+        String(obj); // Test if it can be converted to primitive
+        return obj;
+      } catch (e) {
+        try {
+          return JSON.stringify(obj);
+        } catch (e2) {
+          return "[Unserializable Object]";
+        }
+      }
+    };
+
+    // Log safe error details
     console.error("Error Details:", {
-      message: error?.message || error,
-      status: error?.response?.status,
-      statusText: error?.response?.statusText,
-      url: error?.config?.url || error?.request?.responseURL,
-      data: error?.response?.data,
-      stack: error?.stack,
+      message: error?.message ? safeStringify(error.message) : safeStringify(error),
+      status: safeStringify(error?.response?.status),
+      statusText: safeStringify(error?.response?.statusText),
+      url: safeStringify(error?.config?.url || error?.request?.responseURL),
+      data: safeStringify(error?.response?.data),
+      stack: safeStringify(error?.stack),
     });
   }
 };

@@ -153,7 +153,7 @@ export const ProductInternalLinks: React.FC<ProductInternalLinksProps> = ({
 
   return (
     // Related products section — internal linking ke liye
-    <ThemeSection alternate aria-label="Related D-Secure Products">
+    <ThemeSection aria-label="Related D-Secure Products">
       <div className="max-w-5xl mx-auto px-4 md:px-8">
         <ThemeSectionHeading 
           centered 

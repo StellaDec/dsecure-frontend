@@ -4,22 +4,34 @@ import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 // import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
-import {
-  ShieldIcon,
-  CheckIcon,
-  ArrowRightIcon,
-  GlobeIcon,
-  CloudIcon,
-  GearIcon,
-  ClipboardIcon,
-  ServerIcon,
-} from "@/components/FlatIcons";
-import { Monitor, Download, X, Search, Zap, ScanSearch, ChevronLeft, ChevronRight, Maximize } from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import { getSEOForPage } from "@/utils/seo";
 import { getReadTime } from "@/utils/readTime";
 import { ProductContactForm } from "@/components/forms";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQSection } from "@/components/FAQSection";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle,
+  ChevronLeft,
+  ChevronRight,
+  Cloud,
+  Download,
+  FileText,
+  Globe,
+  Maximize,
+  Monitor,
+  RefreshCw,
+  ScanSearch,
+  Search,
+  Server,
+  Settings,
+  Shield,
+  Star,
+  X,
+  Zap
+} from 'lucide-react';
 
 const galleryImages = [
   { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900829/gxf91pw0zskqpenqmcyh.png", alt: "Autopilot Detection in Action" },
@@ -173,59 +185,58 @@ const AutopilotDetectionPage: React.FC = memo(
       },
     ];
 
-    const risks = [
+    // Risk cards — Lucide component references (JSX literal nahi)
+    const risks: { title: string; desc: string; icon: React.ElementType }[] = [
       {
         title: "The Re-Enrollment Loop",
         desc: "Even after a full data wipe, Autopilot enrollment remains intact. Resold devices will automatically re-lock to the previous owner's tenant upon internet connection.",
-        icon: <X className="w-6 h-6" />,
+        icon: X,
       },
       {
         title: "R2v3 Compliance Risk",
         desc: "Failing to deregister retired IT assets violates R2v3 (Appendix B) and ISO 27001 standards, which require removal of all enterprise locks and policies.",
-        icon: <ShieldIcon className="w-6 h-6" />,
+        icon: Shield,
       },
       {
         title: "Unusable Liabilities",
         desc: "Locked devices are effectively bricks for the new owner, leading to high return rates, warranty disputes, and damage to your brand reputation.",
-        icon: <Zap className="w-6 h-6" />,
+        icon: Zap,
       },
     ];
 
-    const features = [
+    // Feature cards — Lucide component references
+    const features: { title: string; desc: string; icon: React.ElementType }[] = [
       {
         title: "Automatic UEM Detection",
         desc: "Identify Unified Endpoint Management (UEM) enrollments during the device processing phase without manual intervention.",
-        icon: <Search className="w-6 h-6" />,
+        icon: Search,
       },
       {
         title: "Cloud Verification",
         desc: "Verify device unenrollment directly from the cloud, ensuring assets are truly 'clean' before redistribution.",
-        icon: <CloudIcon className="w-6 h-6" />,
+        icon: Cloud,
       },
       {
         title: "Compliance Certification",
         desc: "Generate tamper-proof reports that certify the successful unenrollment of assets from enterprise UEMs.",
-        icon: <ClipboardIcon className="w-6 h-6" />,
+        icon: FileText,
       },
       {
         title: "Enterprise Automation",
         desc: "Scale your processing facility with fully automated workflows that flag 'stuck' devices instantly.",
-        icon: <ServerIcon className="w-6 h-6" />,
+        icon: Server,
       },
       {
         title: "ERP/API Connectivity",
         desc: "Seamlessly integrate with ITAD management platforms like Makor and RazorERP for centralized asset flagging.",
-        icon: <GearIcon className="w-6 h-6" />,
+        icon: Settings,
       },
       {
         title: "Parallel Processing",
         desc: "Check multiple devices simultaneously via PXE boot, significantly increasing your facility's daily throughput.",
-        icon: <Zap className="w-6 h-6" />,
+        icon: Zap,
       },
     ];
-
-    /* Unused variable cleaned up via lint suggestion */
-    console.log(features.length > 0 ? "Features loaded" : "No features");
 
     const complianceStandards = [
       {
@@ -254,34 +265,36 @@ const AutopilotDetectionPage: React.FC = memo(
       },
     ];
 
-    const platforms = [
+    // Deployment platforms — Lucide component references
+    const platforms: { name: string; desc: string; icon: React.ElementType }[] = [
       {
         name: "USB Boot Mode",
         desc: "Ideal for manual processing. Boot from a specialized D-Secure Detection USB to fetch cloud status instantly.",
-        icon: <Download className="w-10 h-10" />,
+        icon: Download,
       },
       {
         name: "PXE Network Boot",
         desc: "Recommended for bulk volume. Deploy detection across your local network for automated, high-speed auditing.",
-        icon: <ServerIcon className="w-10 h-10" />,
+        icon: Server,
       },
     ];
 
-    const useCases = [
+    // Use-case cards — Lucide component references
+    const useCases: { title: string; desc: string; icon: React.ElementType }[] = [
       {
         title: "ITAD Vendors",
         desc: "Centrally flag locked devices and coordinate deregistration with clients before resale to maintain margins.",
-        icon: <ShieldIcon className="w-6 h-6" />,
+        icon: Shield,
       },
       {
         title: "Enterprise IT",
         desc: "Ensure 100% of retired assets are removed from Intune/Azure AD before they leave organizational control.",
-        icon: <GlobeIcon className="w-6 h-6" />,
+        icon: Globe,
       },
       {
         title: "Refurbishers",
         desc: "Prevent 'failed provisioning' loops for end-users and minimize RMA rates for refurbished inventory.",
-        icon: <Monitor className="w-6 h-6" />,
+        icon: Monitor,
       },
     ];
 
@@ -326,9 +339,9 @@ const AutopilotDetectionPage: React.FC = memo(
           </div>
         </div>
 
-        <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-slate-50">
+        <div className="min-h-screen bg-white">
           {/* ================= HERO SECTION ================= */}
-          <section id="overview" className="py-12 lg:py-20 xl:py-24">
+          <section id="overview" className="py-12 lg:py-20 xl:py-24 bg-white border-b border-slate-100">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
                 <Reveal>
@@ -337,20 +350,20 @@ const AutopilotDetectionPage: React.FC = memo(
                     <UpcomingBadge className="mb-4" />
                   </Reveal> */}
 
-                    <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
-                      <ShieldIcon className="w-4 h-4" />
+                    <div className="inline-flex items-center gap-2 bg-[#d4ede4] text-[#0a2e1e] px-4 py-1.5 text-xs font-bold uppercase tracking-widest">
+                      <Shield className="w-4 h-4 text-[#0e7c66]" />
                       Secure Re-Enrollment Prevention
                     </div>
 
-                    <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
+                    <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0a2e1e] leading-tight">
                       D-Secure{" "}
-                      <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                      <span className="text-[#0e7c66]">
                         Autopilot Detection Tool
                       </span>
                       : Touchless Recheck
                     </h1>
 
-                    <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
+                    <p className="text-lg lg:text-xl text-[#5a6672] leading-relaxed max-w-xl">
                       Identify Windows Autopilot and Intune enrolled devices
                       automatically. Ensure assets are fully unenrolled from
                       UEMs before they leave your facility.
@@ -361,14 +374,14 @@ const AutopilotDetectionPage: React.FC = memo(
                         onClick={() =>
                           navigate("/pricing-and-plan?product=autopilot-mdm")
                         }
-                        className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                        className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                       >
                         Buy Now
-                        <ArrowRightIcon className="w-5 h-5" />
+                        <ArrowRight className="w-6 h-6 text-emerald-600" />
                       </button> */}
                       <button
                         onClick={() => scrollToSection("contact")}
-                        className="inline-flex items-center justify-center gap-2 bg-white text-emerald-700 border border-emerald-200 font-bold px-8 py-4 rounded-xl shadow-sm hover:bg-emerald-50 hover:-translate-y-0.5 transition-all"
+                        className="inline-flex items-center justify-center gap-2 bg-[#0e7c66] text-white font-bold px-8 py-4 rounded-none hover:bg-[#0a2e1e] transition-colors"
                       >
                         Contact Sales
                       </button>
@@ -378,59 +391,147 @@ const AutopilotDetectionPage: React.FC = memo(
                   </div>
                 </Reveal>
 
-                {/* Right: 3D Product Box Illustration */}
+                {/* Right: Hero Illustration - Dashboard, Product Box, Report */}
                 <Reveal delayMs={100}>
-                  <div
-                    className="relative flex items-center justify-center min-h-[400px]"
-                    style={{ perspective: "1000px" }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/30 via-transparent to-teal-200/30 blur-3xl"></div>
-
-                    <div
-                      className="relative animate-[float_4s_ease-in-out_infinite]"
-                      style={{ transformStyle: "preserve-3d" }}
+                  <div className="relative min-h-[350px] sm:min-h-[400px] lg:min-h-[480px]" style={{ perspective: '1200px' }}>
+                    
+                    {/* Left: Dashboard Screenshot — hover par zoom in/out */}
+                    <div 
+                      className="absolute w-[220px] sm:w-[280px] lg:w-[360px] cursor-pointer" 
+                      style={{ 
+                        zIndex: 10,
+                        top: '50%', left: '50%',
+                        transform: 'translate(-85%, -50%) rotate(-8deg)',
+                        transition: 'transform 0.5s ease, z-index 0s',
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-88%, -53%) rotate(-8deg) scale(1.08)'; e.currentTarget.style.zIndex = '30'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-85%, -50%) rotate(-8deg) scale(1)'; e.currentTarget.style.zIndex = '10'; }}
                     >
-                      <div className="absolute inset-0 bg-emerald-500/40 blur-3xl rounded-3xl scale-110"></div>
+                      <div className="border border-[#d0d5dc]/80 rounded-lg overflow-hidden shadow-2xl bg-white">
+                        <img 
+                          loading="lazy" 
+                          decoding="async"
+                          src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/cpgikzcbf6fduwquvc7n.png"
+                          alt="D-Secure Autopilot Detection Software Interface"
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </div>
 
+                    {/* Right: Erasure Report — hover par zoom in/out */}
+                    <div 
+                      className="absolute w-[160px] sm:w-[200px] lg:w-[240px] cursor-pointer" 
+                      style={{ 
+                        zIndex: 10,
+                        top: '50%', left: '50%',
+                        transform: 'translate(-15%, -50%) rotate(8deg)',
+                        transition: 'transform 0.5s ease, z-index 0s',
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-12%, -53%) rotate(8deg) scale(1.08)'; e.currentTarget.style.zIndex = '30'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-15%, -50%) rotate(8deg) scale(1)'; e.currentTarget.style.zIndex = '10'; }}
+                    >
+                      <div className="relative border border-[#d0d5dc]/80 rounded-lg shadow-xl overflow-hidden bg-white">
+                        <img 
+                          loading="lazy" 
+                          decoding="async"
+                          src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1782904367/q70fjrmxun0kstjanwsp.png"
+                          alt="Autopilot Detection Tamper-proof Report"
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Center: 3D Product Box — hover par zoom in/out */}
+                    <div 
+                      className="absolute w-[130px] sm:w-[160px] lg:w-[190px] cursor-pointer drop-shadow-2xl" 
+                      style={{ 
+                        zIndex: 20,
+                        top: '50%', left: '50%',
+                        transform: 'translate(-50%, -45%)',
+                        transition: 'transform 0.5s ease, z-index 0s',
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.12)'; e.currentTarget.style.zIndex = '30'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-50%, -45%) scale(1)'; e.currentTarget.style.zIndex = '20'; }}
+                    >
                       <div
-                        className="relative w-[240px] h-[320px] lg:w-[300px] lg:h-[400px] bg-gradient-to-br from-emerald-600 via-teal-600 to-slate-800 rounded-2xl shadow-2xl overflow-hidden"
-                        style={{ transform: "rotateY(-12deg) rotateX(5deg)" }}
+                        className="relative"
+                        style={{
+                          transformStyle: 'preserve-3d',
+                          transform: 'rotateY(-12deg) rotateX(2deg) rotate(3deg)',
+                        }}
                       >
-                        <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/20 to-transparent"></div>
-                        <div className="relative h-full flex flex-col items-center justify-center p-8">
-                          <div className="absolute top-6 left-6 uppercase tracking-widest text-white/80 text-xs font-semibold">
-                            D-Secure
-                          </div>
+                        {/* Main Box - Front Face */}
+                        <div
+                          className="relative bg-gradient-to-br from-[#0a2e1e] via-[#0e7c66] to-[#0a2e1e] rounded-lg shadow-2xl overflow-hidden"
+                          style={{
+                            aspectRatio: '3/4',
+                            boxShadow: '20px 20px 50px rgba(0,0,0,0.35), -3px -3px 10px rgba(255,255,255,0.05), inset 0 0 60px rgba(255,255,255,0.03)',
+                          }}
+                        >
+                          {/* Top Shine Effect */}
+                          <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-white/15 to-transparent"></div>
 
-                          <div className="w-24 h-24 lg:w-32 lg:h-32 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20 shadow-inner">
-                            <ScanSearch className="w-12 h-12 lg:w-16 lg:h-16 text-white" />
-                          </div>
+                          {/* Side Shadow (3D depth) */}
+                          <div className="absolute top-0 right-0 w-6 h-full bg-gradient-to-l from-black/15 to-transparent"></div>
 
-                          <h3 className="text-white text-2xl lg:text-4xl font-bold text-center mb-2">
-                            Autopilot
-                          </h3>
-                          <p className="text-white/70 text-xs lg:text-sm text-center uppercase tracking-widest">
-                            Detection & Recheck
-                          </p>
-
-                          <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-                            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-                              <CheckIcon className="w-4 h-4 text-emerald-300" />
-                              <span className="text-white font-semibold text-xs">
-                                Cloud Verified
+                          {/* Product Box Content */}
+                          <div className="relative h-full flex flex-col items-center justify-center p-3 lg:p-4">
+                            {/* D-Secure Brand - top left */}
+                            <div className="absolute top-2 left-2 lg:top-3 lg:left-3">
+                              <span className="text-white/80 text-[7px] lg:text-[9px] font-semibold tracking-widest uppercase">
+                                D-Secure
                               </span>
                             </div>
+
+                            {/* Main Icon */}
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-white/15 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2 lg:mb-3 border border-white/20 shadow-inner">
+                              <ScanSearch className="w-5 h-5 sm:w-7 sm:h-7 lg:w-9 lg:h-9 text-white drop-shadow-lg" strokeWidth={1.5} />
+                            </div>
+
+                            {/* Product Name */}
+                            <h2 className="text-white text-xs sm:text-[13px] lg:text-sm font-bold tracking-tight text-center mb-0.5 leading-tight">
+                              Autopilot
+                              <br />
+                              <span className="text-[10px] sm:text-[11px] lg:text-[12px] text-emerald-300">Detection</span>
+                            </h2>
+
+                            {/* Tagline */}
+                            <p className="text-white/70 text-[6px] sm:text-[7px] lg:text-[9px] text-center tracking-wide uppercase mt-1">
+                              Touchless Recheck
+                            </p>
+
+                            {/* Bottom Badge */}
+                            <div className="absolute bottom-2 lg:bottom-3 left-1/2 -translate-x-1/2 w-full px-2">
+                              <div className="flex items-center justify-center gap-1 bg-white/10 backdrop-blur-sm px-1.5 py-0.5 lg:px-2 lg:py-1 rounded-full border border-white/20 mx-auto w-fit">
+                                <CheckCircle className="w-2.5 h-2.5 lg:w-3 lg:h-3 text-emerald-300" strokeWidth={2} />
+                                <span className="text-white/90 text-[5px] sm:text-[6px] lg:text-[7px] font-semibold whitespace-nowrap">
+                                  Cloud Verified
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Decorative Lines */}
+                            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                            <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
                           </div>
+
+                          {/* Pulse border */}
+                          <div className="absolute inset-0 border border-white/10 rounded-lg"></div>
                         </div>
+
+                        {/* Right Side Face (3D spine) */}
+                        <div
+                          className="absolute top-0 right-0 w-[20px] lg:w-[28px] h-full bg-gradient-to-l from-[#063d2e] to-[#0a5c48]"
+                          style={{
+                            transform: 'rotateY(90deg) translateZ(0px) translateX(10px)',
+                            transformOrigin: 'left center',
+                            borderRadius: '0 4px 4px 0',
+                          }}
+                        ></div>
                       </div>
-                      {/* Shadow/Side faces */}
-                      <div
-                        className="absolute top-0 right-0 w-10 h-full bg-emerald-900 rounded-r-lg"
-                        style={{
-                          transform: "rotateY(90deg) translateX(20px)",
-                          transformOrigin: "left center",
-                        }}
-                      ></div>
+
+                      {/* Bottom Reflection */}
+                      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%] h-10 bg-gradient-to-t from-emerald-600/15 to-transparent blur-xl rounded-full"></div>
                     </div>
                   </div>
                 </Reveal>
@@ -447,71 +548,44 @@ const AutopilotDetectionPage: React.FC = memo(
           </div>
         </section>
 
-        <section id="how-it-works" className="py-20 bg-white">
+        <ThemeSection id="how-it-works">
             <div className="container mx-auto px-4 max-w-7xl">
               <Reveal>
-                <div className="text-center mb-16">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                    Touchless Recheck Workflow
-                  </h2>
-                  <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                    Complete automation from detection to certification without
-                    manual intervention.
-                  </p>
-                </div>
+                <ThemeSectionHeading centered subtitle="Complete automation from detection to certification without manual intervention.">
+                  Touchless Recheck Workflow
+                </ThemeSectionHeading>
               </Reveal>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative max-w-5xl mx-auto">
                 {/* Connector lines (Desktop) */}
-                <div className="hidden md:block absolute top-12 left-[16.66%] right-[16.66%] h-0.5 bg-emerald-100 -z-0"></div>
+                <div className="hidden md:block absolute top-12 left-[16.66%] right-[16.66%] h-0.5 bg-[#d4ede4] -z-0"></div>
 
                 {[
-                  {
-                    step: "01",
-                    title: "Detect",
-                    desc: "Flags devices still enrolled in Autopilot or Intune during processing.",
-                    icon: <Search className="w-6 h-6" />,
-                  },
-                  {
-                    step: "02",
-                    title: "Verify",
-                    desc: "Cloud-based recheck confirms unenrolment status automatically.",
-                    icon: <CloudIcon className="w-6 h-6" />,
-                  },
-                  {
-                    step: "03",
-                    title: "Certify",
-                    desc: "Tamper-proof report confirms the complete unenrollment status.",
-                    icon: <ClipboardIcon className="w-6 h-6" />,
-                  },
+                  { step: "01", title: "Detect", desc: "Flags devices still enrolled in Autopilot or Intune during processing.", icon: Search },
+                  { step: "02", title: "Verify", desc: "Cloud-based recheck confirms unenrolment status automatically.", icon: Cloud },
+                  { step: "03", title: "Certify", desc: "Tamper-proof report confirms the complete unenrollment status.", icon: FileText },
                 ].map((item, idx) => (
                   <Reveal key={idx} delayMs={idx * 100}>
                     <div className="relative z-10 flex flex-col items-center text-center">
-                      <div className="w-24 h-24 rounded-2xl bg-white border-2 border-emerald-500 shadow-xl flex items-center justify-center mb-6 group hover:bg-emerald-600 transition-colors">
-                        <div className="text-emerald-600 group-hover:text-white">
-                          {item.icon}
-                        </div>
-                        <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs ring-4 ring-white">
+                      <div className="relative mb-6">
+                        <ThemeIconContainer icon={item.icon} size="lg" />
+                        <div className="absolute -top-2 -right-2 w-7 h-7 bg-[#0e7c66] text-white flex items-center justify-center font-bold text-xs">
                           {item.step}
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        {item.desc}
-                      </p>
+                      <h3 className="text-xl font-bold text-[#0a2e1e] mb-2">{item.title}</h3>
+                      <p className="text-sm text-[#5a6672] leading-relaxed">{item.desc}</p>
                     </div>
                   </Reveal>
                 ))}
               </div>
             </div>
-          </section>
+          </ThemeSection>
 
           {/* ================= SEE IN ACTION / DEMO SECTION ================= */}
           <section
             id="demo"
-            className="py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-emerald-50"
+            className="py-16 lg:py-20 bg-[#f4fbf8]"
           >
             <div className="container mx-auto px-4 max-w-6xl">
               <Reveal>
@@ -530,12 +604,12 @@ const AutopilotDetectionPage: React.FC = memo(
               <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
                 {/* Main Demo Card */}
                 <Reveal delayMs={100}>
-                  <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 hover:shadow-emerald-200/30 transition-shadow duration-500 flex flex-col group p-1">
+                  <div className="relative bg-white rounded-none overflow-hidden shadow-2xl border border-slate-200/80 hover:shadow-emerald-200/30 transition-shadow duration-500 flex flex-col group p-1">
                     {/* Interactive Sandbox iframe */}
-                    <div ref={iframeContainerRef} className="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-xl bg-slate-900 group/iframe">
+                    <div ref={iframeContainerRef} className="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-none bg-slate-900 group/iframe">
                       <button 
                         onClick={toggleFullScreen}
-                        className="absolute top-4 right-4 z-10 p-2 bg-slate-900/60 hover:bg-emerald-600 text-white rounded-lg opacity-0 group-hover/iframe:opacity-100 transition-all duration-300 backdrop-blur-sm flex items-center justify-center"
+                        className="absolute top-4 right-4 z-10 p-2 bg-slate-900/60 hover:bg-emerald-600 text-white rounded-none opacity-0 group-hover/iframe:opacity-100 transition-all duration-300 backdrop-blur-sm flex items-center justify-center"
                         title="Toggle Fullscreen"
                       >
                         <Maximize className="w-5 h-5" />
@@ -577,7 +651,7 @@ const AutopilotDetectionPage: React.FC = memo(
                       <Reveal key={index} delayMs={150 + index * 50}>
                         <button
                           onClick={() => setSelectedGalleryIndex(index)}
-                          className="group relative bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 w-full aspect-[4/3] flex items-center justify-center cursor-zoom-in"
+                          className="group relative bg-white rounded-none overflow-hidden shadow-md border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 w-full aspect-[4/3] flex items-center justify-center cursor-zoom-in"
                         >
                           <img
                             src={img.url}
@@ -610,92 +684,72 @@ const AutopilotDetectionPage: React.FC = memo(
           </section>
 
           {/* ================= THE HIDDEN RISK ================= */}
-          <section
-            id="risks"
-            className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-emerald-50"
-          >
+          <ThemeSection id="risks" noBg className="py-12 md:py-16 lg:py-20" style={{ background: '#0a2e1e' }}>
             <div className="container mx-auto px-4 max-w-7xl">
               <Reveal>
-                <div className="text-center mb-16">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 text-emerald-700">
+                <div className="mb-12 md:mb-16 text-center mx-auto">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                     The Hidden Risk
                   </h2>
-                  <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                    Why simple data erasure isn't enough for enterprise-enrolled
-                    assets.
+                  <p className="text-lg text-white/70 max-w-3xl mx-auto">
+                    Why simple data erasure isn't enough for enterprise-enrolled assets.
                   </p>
                 </div>
               </Reveal>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {risks.map((risk, i) => (
                   <Reveal key={i} delayMs={i * 80}>
-                    <div className="bg-white rounded-2xl p-8 border-l-4 border-emerald-500 hover:shadow-2xl transition-all duration-300 h-full">
-                      <div className="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6">
-                        {risk.icon}
+                    <div className="bg-white/10 border border-white/20 border-l-4 border-l-[#0e7c66] p-6 sm:p-8 h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-150">
+                      <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mb-6">
+                        <risk.icon className="w-6 h-6 text-white" strokeWidth={2} />
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3">
-                        {risk.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed text-sm">
-                        {risk.desc}
-                      </p>
+                      <h3 className="text-xl font-bold text-white mb-3">{risk.title}</h3>
+                      <p className="text-white/70 leading-relaxed text-sm">{risk.desc}</p>
                     </div>
                   </Reveal>
                 ))}
               </div>
             </div>
-          </section>
+          </ThemeSection>
 
           {/* ================= KEY FEATURES ================= */}
-          <section id="features" className="py-20 lg:py-28 bg-white">
+          <ThemeSection id="features">
             <div className="container mx-auto px-4 max-w-7xl">
               <Reveal>
-                <div className="text-center mb-16">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                    Key Features
-                  </h2>
-                  <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                    Advanced automated auditing for high-volume ITAD and
-                    enterprise environments.
-                  </p>
-                </div>
+                <ThemeSectionHeading centered subtitle="Advanced automated auditing for high-volume ITAD and enterprise environments.">
+                  Key Features
+                </ThemeSectionHeading>
               </Reveal>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {features.map((feature, i) => (
                   <Reveal key={i} delayMs={i * 50}>
-                    <div className="group bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-emerald-500 hover:bg-white transition-all duration-300 h-full">
-                      <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                        {feature.icon}
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3">
-                        {feature.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">
-                        {feature.desc}
-                      </p>
-                    </div>
+                    <ThemeCard className="h-full">
+                      <ThemeIconContainer icon={feature.icon} size="md" className="mb-6" />
+                      <h3 className="text-xl font-bold text-[#0a2e1e] mb-3 group-hover:text-[#0e7c66] transition-colors">{feature.title}</h3>
+                      <p className="text-[#5a6672] text-sm leading-relaxed">{feature.desc}</p>
+                    </ThemeCard>
                   </Reveal>
                 ))}
               </div>
             </div>
-          </section>
+          </ThemeSection>
 
           {/* ================= REPORT SECTION ================= */}
-          <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-emerald-50/50 border-b border-slate-100">
+          <ThemeSection alternate>
             <div className="container mx-auto px-4 max-w-7xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <Reveal>
                   <div className="space-y-6">
-                    <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold">
-                      <ShieldIcon className="w-4 h-4" />
+                    <div className="inline-flex items-center gap-2 bg-[#d4ede4] text-[#0a2e1e] px-4 py-1.5 text-xs font-bold uppercase tracking-widest">
+                      <Shield className="w-4 h-4 text-[#0e7c66]" />
                       Audit-Ready Documentation
                     </div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-[#0a2e1e]">
                       Comprehensive Detection Report
                     </h2>
-                    <p className="text-lg text-slate-600 leading-relaxed">
+                    <p className="text-lg text-[#5a6672] leading-relaxed">
                       After every Autopilot scan, a digitally signed PDF report is generated
                       containing hardware IDs, device specifications, BIOS details,
                       and final enrollment status — ready to present during compliance audits.
@@ -706,7 +760,7 @@ const AutopilotDetectionPage: React.FC = memo(
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
                     <button
                       onClick={() => setSelectedImage("https://res.cloudinary.com/dhwi5wevf/image/upload/v1782904367/q70fjrmxun0kstjanwsp.png")}
-                      className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 group cursor-pointer w-full text-left p-0 bg-white block aspect-[3/4] hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
+                      className="relative rounded-none overflow-hidden shadow-xl border border-slate-200 group cursor-pointer w-full text-left p-0 bg-white block aspect-[3/4] hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
                       aria-label="View Autopilot Detection Report Page 1 fullscreen"
                     >
                       <img
@@ -725,7 +779,7 @@ const AutopilotDetectionPage: React.FC = memo(
 
                     <button
                       onClick={() => setSelectedImage("https://res.cloudinary.com/dhwi5wevf/image/upload/v1782904366/vwil0boyhukg6zscxeug.png")}
-                      className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 group cursor-pointer w-full text-left p-0 bg-white block aspect-[3/4] hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl sm:mt-12"
+                      className="relative rounded-none overflow-hidden shadow-xl border border-slate-200 group cursor-pointer w-full text-left p-0 bg-white block aspect-[3/4] hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl sm:mt-12"
                       aria-label="View Autopilot Detection Report Page 2 fullscreen"
                     >
                       <img
@@ -745,12 +799,13 @@ const AutopilotDetectionPage: React.FC = memo(
                 </Reveal>
               </div>
             </div>
-          </section>
+          </ThemeSection>
 
           {/* ================= COMPLIANCE (Dark Section) ================= */}
           <section
             id="compliance"
-            className="py-20 lg:py-28 bg-slate-900 text-white overflow-hidden relative"
+            className="py-20 lg:py-28 text-white overflow-hidden relative"
+            style={{ background: '#0a2e1e' }}
           >
             <div className="container mx-auto px-4 relative z-10">
               <Reveal>
@@ -758,20 +813,20 @@ const AutopilotDetectionPage: React.FC = memo(
                   <h2 className="text-3xl lg:text-5xl font-bold mb-6">
                     Fully Audit-Ready Certification
                   </h2>
-                  <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+                  <p className="text-lg text-white/70 max-w-3xl mx-auto">
                     Our solution provides verifiable proof that asset control
                     has been completely severed from enterprise systems.
                   </p>
                 </div>
               </Reveal>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {complianceStandards.map((std) => (
                   <Reveal key={std.name}>
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors h-full flex flex-col items-center text-center">
-                      <CheckIcon className="w-8 h-8 text-emerald-400 mb-4" />
-                      <h4 className="font-bold text-lg mb-2">{std.name}</h4>
-                      <p className="text-xs text-slate-400">{std.desc}</p>
+                    <div className="border border-white/20 p-6 hover:bg-white/10 transition-colors h-full flex flex-col items-center text-center">
+                      <CheckCircle className="w-6 h-6 text-[#0e7c66] mb-3" />
+                      <h4 className="font-bold text-base mb-2">{std.name}</h4>
+                      <p className="text-xs text-white/60">{std.desc}</p>
                     </div>
                   </Reveal>
                 ))}
@@ -780,89 +835,58 @@ const AutopilotDetectionPage: React.FC = memo(
           </section>
 
           {/* ================= PLATFORMS & DEPLOYMENT ================= */}
-          <section
-            id="platforms"
-            className="py-20 lg:py-28 bg-white border-b border-slate-100"
-          >
+          <ThemeSection id="platforms">
             <div className="container mx-auto px-4 max-w-7xl">
               <Reveal>
-                <div className="text-center mb-16">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                    Deployment Modes
-                  </h2>
-                  <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                    Flexible deployment options to fit any processing scale—from
-                    single devices to entire server racks.
-                  </p>
-                </div>
+                <ThemeSectionHeading centered subtitle="Flexible deployment options to fit any processing scale — from single devices to entire server racks.">
+                  Deployment Modes
+                </ThemeSectionHeading>
               </Reveal>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {platforms.map((platform, i) => (
                   <Reveal key={i} delayMs={i * 100}>
-                    <div className="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-[2rem] border border-emerald-100 hover:border-emerald-500 hover:shadow-xl transition-all duration-300 group">
-                      <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-emerald-600 group-hover:scale-110 transition-transform">
-                        {platform.icon}
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                        {platform.name}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed">
-                        {platform.desc}
-                      </p>
-                    </div>
+                    <ThemeCard className="h-full">
+                      <ThemeIconContainer icon={platform.icon} size="lg" className="mb-6" />
+                      <h3 className="text-2xl font-bold text-[#0a2e1e] mb-4">{platform.name}</h3>
+                      <p className="text-[#5a6672] leading-relaxed">{platform.desc}</p>
+                    </ThemeCard>
                   </Reveal>
                 ))}
               </div>
             </div>
-          </section>
+          </ThemeSection>
 
           {/* ================= USE CASES ================= */}
-          <section id="use-cases" className="py-20 lg:py-28 bg-slate-50">
+          <ThemeSection id="use-cases" alternate>
             <div className="container mx-auto px-4 max-w-7xl">
               <Reveal>
-                <div className="text-center mb-16">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                    Who Is It For?
-                  </h2>
-                  <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                    D-Secure Autopilot Detection streamlines asset disposition
-                    for professional electronics recyclers and corporate IT
-                    teams.
-                  </p>
-                </div>
+                <ThemeSectionHeading centered subtitle="D-Secure Autopilot Detection streamlines asset disposition for professional electronics recyclers and corporate IT teams.">
+                  Who Is It For?
+                </ThemeSectionHeading>
               </Reveal>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {useCases.map((useCase, i) => (
                   <Reveal key={i} delayMs={i * 80}>
-                    <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100">
-                      <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-6">
-                        {useCase.icon}
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3">
-                        {useCase.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">
-                        {useCase.desc}
-                      </p>
-                    </div>
+                    <ThemeCard className="h-full">
+                      <ThemeIconContainer icon={useCase.icon} size="md" className="mb-6" />
+                      <h3 className="text-xl font-bold text-[#0a2e1e] mb-3">{useCase.title}</h3>
+                      <p className="text-[#5a6672] text-sm leading-relaxed">{useCase.desc}</p>
+                    </ThemeCard>
                   </Reveal>
                 ))}
               </div>
             </div>
-          </section>
+          </ThemeSection>
 
           {/* ================= TECHNICAL SPECIFICATIONS ================= */}
-          <section
-            id="tech-specs"
-            className="py-20 lg:py-28 bg-white overflow-hidden"
-          >
+          <ThemeSection id="tech-specs">
             <div className="container mx-auto px-4 max-w-7xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <Reveal>
                   <div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-[#0a2e1e] mb-8">
                       Technical Specifications
                     </h2>
                     <div className="space-y-6">
@@ -911,15 +935,16 @@ const AutopilotDetectionPage: React.FC = memo(
                   </div>
                 </Reveal>
                 <Reveal delayMs={200}>
-                  <div className="relative">
-                    <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full"></div>
-                    <div className="bg-slate-900 rounded-[2.5rem] p-8 lg:p-12 text-white relative border border-slate-800 shadow-2xl">
-                      <div className="flex items-center gap-4 mb-8">
-                        <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center">
-                          <Zap className="w-6 h-6 text-white" />
-                        </div>
-                        <h3 className="text-xl font-bold">Smart Audit Logic</h3>
+                  <div
+                    className="p-8 lg:p-12 text-white relative border border-[#0e7c66]/30 shadow-2xl"
+                    style={{ background: '#0a2e1e' }}
+                  >
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="w-12 h-12 bg-[#0e7c66] flex items-center justify-center">
+                        <Zap className="w-6 h-6 text-white" />
                       </div>
+                      <h3 className="text-xl font-bold">Smart Audit Logic</h3>
+                    </div>
                       <ul className="space-y-4">
                         {[
                           "Automatic HWID generation during boot",
@@ -929,19 +954,18 @@ const AutopilotDetectionPage: React.FC = memo(
                           "Detailed tenant ID and enrollment profiles",
                         ].map((item, i) => (
                           <li key={i} className="flex items-start gap-3">
-                            <CheckIcon className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="w-6 h-6 text-emerald-600" />
                             <span className="text-slate-300 text-sm leading-relaxed">
                               {item}
                             </span>
                           </li>
                         ))}
                       </ul>
-                    </div>
                   </div>
                 </Reveal>
               </div>
             </div>
-          </section>
+          </ThemeSection>
 
           {/* ================= FAQ SECTION ================= */}
           <FAQSection faqs={autopilotFaqs} id="faq" />
@@ -949,13 +973,9 @@ const AutopilotDetectionPage: React.FC = memo(
           {/* ================= CONTACT / CTA ================= */}
           <section
             id="contact"
-            className="py-24 lg:py-40 bg-white border-t overflow-hidden relative"
+            className="py-24 lg:py-40 bg-white border-t"
           >
-            {/* Subtle background patterns */}
-            <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-[140px] translate-x-1/4 translate-y-1/4 pointer-events-none"></div>
-            <div className="absolute bottom-0 right-10 w-96 h-96 bg-teal-300 rounded-full translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-            <div className="container mx-auto px-4 max-w-7xl relative z-10">
+            <div className="container mx-auto px-4 max-w-7xl">
               {/* <div className="bg-gradient-to-br from-emerald-900 to-teal-900 rounded-[3rem] p-8 lg:p-16 text-center text-white mb-16 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 blur-3xl rounded-full"></div>
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/20 blur-3xl rounded-full"></div>
@@ -971,10 +991,10 @@ const AutopilotDetectionPage: React.FC = memo(
                   onClick={() =>
                     navigate("/pricing-and-plan?product=autopilot-mdm")
                   }
-                  className="relative z-10 inline-flex items-center justify-center gap-2 bg-white text-emerald-900 font-bold px-10 py-5 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all text-lg"
+                  className="relative z-10 inline-flex items-center justify-center gap-2 bg-white text-emerald-900 font-bold px-10 py-5 rounded-none shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all text-lg"
                 >
                   Buy Now - $1
-                  <ArrowRightIcon className="w-5 h-5" />
+                  <ArrowRight className="w-6 h-6 text-emerald-600" />
                 </button>
               </div> */}
 
@@ -1045,7 +1065,7 @@ const AutopilotDetectionPage: React.FC = memo(
                 <img
                   src={selectedGalleryIndex !== null ? galleryImages[selectedGalleryIndex].url : selectedImage!}
                   alt={selectedGalleryIndex !== null ? galleryImages[selectedGalleryIndex].alt : "Report Fullscreen"}
-                  className="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl cursor-default"
+                  className="w-full h-auto max-h-[85vh] object-contain rounded-none shadow-2xl cursor-default"
                 />
 
                 {selectedGalleryIndex !== null && (

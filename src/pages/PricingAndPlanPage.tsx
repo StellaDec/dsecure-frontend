@@ -2,7 +2,7 @@ import React, { useState, memo, useEffect } from "react";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { ARIA_LABELS } from "@/utils/aria-labels";
 import CustomLicenseModal, {
   CustomLicenseData,
@@ -19,7 +19,7 @@ import {
 // Dodo Payments Overlay Checkout SDK
 import { initDodoCheckout, openOverlayCheckout, openPaymentLinkCheckout } from "@/utils/dodoCheckout";
 import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
-import { Check, ChevronDown, CheckCircle, Shield, Server, Settings, Zap, Monitor, Code, Tag } from "lucide-react";
+import { Check, ChevronDown, CheckCircle, Shield, Server, Settings, Zap, Monitor, Code, Tag, Copy } from "lucide-react";
 
 const PricingAndPlanPage: React.FC = memo(() => {
   const { toast, showToast, hideToast } = useToast();
@@ -49,6 +49,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
   const [showSpecialPricingModal, setShowSpecialPricingModal] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("basic");
   const [isBuyNowLoading, setIsBuyNowLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState("eraser"); // "eraser" or "diagnostics"
   const [driveEraserVariant, setDriveEraserVariant] = useState("standard"); // "standard" or "diagnostics"
   const [fileEraserVariant, setFileEraserVariant] = useState("standard"); // "standard" or "network"
@@ -1649,10 +1650,36 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
   return (
     <>
-      <SEOHeadNative
-        seo={pageSEO}
-        structuredData={pricingSchema}
-      />
+      <SEOHeadNative seo={pageSEO} structuredData={pricingSchema} />
+
+      {/* Independence Day Banner Strip - Always Visible Until Expiration */}
+      {new Date().getTime() <= new Date('2026-08-15T23:59:59').getTime() && (
+        <div className="w-full bg-[#f4fcf8] border-b border-[#0e7c66]/20">
+          <div className="relative w-full flex justify-center">
+            <Link to="/pricing-and-plan" className="block w-full transition-opacity hover:opacity-95 duration-300">
+              <img 
+                src="/banner-strip.jpeg" 
+                alt="Independence Day Offer - Click for Pricing and Plans" 
+                className="w-full h-auto rounded-none shadow-md block"
+              />
+            </Link>
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                navigator.clipboard.writeText("IND15");
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+              }}
+              className="absolute left-[41.7%] sm:left-[42.2%] md:left-[42.7%] top-[60%] -translate-y-1/2 flex items-center justify-center p-0.5 sm:p-1 md:p-1.5 text-white bg-transparent hover:bg-white/20 transition-colors z-10"
+              title="Copy Code IND15"
+            >
+              {copied ? <Check className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" /> : <Copy className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />}
+            </button>
+          </div>
+        </div>
+      )}
+
 
       <ThemeSection className="min-h-screen">
         <div className="container mx-auto px-4 xs:px-6 sm:px-6 md:px-8 max-w-7xl">
@@ -1668,7 +1695,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
             {/* Tab Switcher (Sub-header position) */}
             <div className="flex justify-center mb-8">
               <div className="border-b border-[#d0d5dc]/80 overflow-x-auto w-full max-w-lg">
-                <div 
+                <div
                   role="tablist"
                   aria-label="Product Category Switcher"
                   className="flex space-x-6 sm:space-x-10 min-w-max px-2 justify-center"
@@ -1738,7 +1765,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
           {/* Category Selection (Tab Switcher) */}
           <div className="flex justify-center mb-10 xs:mb-12 sm:mb-12 md:mb-12 px-2 xs:px-4">
             <div className="border-b border-[#d0d5dc]/80 overflow-x-auto w-full max-w-5xl flex justify-center">
-              <div 
+              <div
                 role="tablist"
                 aria-label="Product Sub-category"
                 className="flex space-x-6 sm:space-x-10 min-w-max px-2"
@@ -1812,70 +1839,110 @@ const PricingAndPlanPage: React.FC = memo(() => {
                           ? "Drive Eraser - Key Features:"
                           : `${getCurrentProduct().title} - Key Features:`}
                       </h3>
-                      
+
                       {/* Standard Features (always visible) */}
                       {getProductFeatures(selectedCategory, selectedPlan)
-                        .filter(f => !f.startsWith("AUTOMATIC TESTS") && !f.startsWith("MANUAL / INTERACTIVE TESTS") && !/^\d+\./.test(f))
+                        .filter(
+                          (f) =>
+                            !f.startsWith("AUTOMATIC TESTS") &&
+                            !f.startsWith("MANUAL / INTERACTIVE TESTS") &&
+                            !/^\d+\./.test(f),
+                        )
                         .map((feature, index) => (
                           <div
                             key={index}
                             className="flex items-center space-x-3 p-2 rounded-none"
                           >
-                            <Check className="w-4 h-4 text-[#0e7c66] flex-shrink-0" strokeWidth={3} />
-                            <span className="text-sm font-medium text-gray-700">{feature}</span>
+                            <Check
+                              className="w-4 h-4 text-[#0e7c66] flex-shrink-0"
+                              strokeWidth={3}
+                            />
+                            <span className="text-sm font-medium text-gray-700">
+                              {feature}
+                            </span>
                           </div>
                         ))}
 
                       {/* Advanced Diagnostics Accordion (if applicable) */}
-                      {selectedCategory === "drive-eraser" && driveEraserVariant === "diagnostics" && (
-                        <div className="mt-4 border border-teal-100 rounded-2xl overflow-hidden bg-teal-50/30">
-                          <button
-                            onClick={() => setIsTestsExpanded(!isTestsExpanded)}
-                            className="w-full flex items-center justify-between p-4 bg-teal-50/50 hover:bg-teal-100/50 transition-colors"
-                          >
-                            <div className="flex items-center gap-2">
-                              <Settings className="w-5 h-5 text-teal-900" />
-                              <span className="text-sm font-bold text-teal-900">Advanced Hardware Diagnostics (21 Tests)</span>
-                            </div>
-                            <ChevronDown className={`w-5 h-5 text-[#0e7c66] transition-transform duration-300 ${isTestsExpanded ? "rotate-180" : ""}`} />
-                          </button>
-                          
-                          <div className={`transition-all duration-300 ease-in-out ${isTestsExpanded ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}>
-                            <div className="p-4 pt-0 grid grid-cols-1 md:grid-cols-2 gap-x-6">
-                              {getProductFeatures(selectedCategory, selectedPlan)
-                                .filter(f => f.startsWith("AUTOMATIC TESTS") || f.startsWith("MANUAL / INTERACTIVE TESTS") || /^\d+\./.test(f))
-                                .map((feature, index) => {
-                                  const isHeader = feature.startsWith("AUTOMATIC TESTS") || feature.startsWith("MANUAL / INTERACTIVE TESTS");
-                                  return (
-                                    <div
-                                      key={index}
-                                      className={`p-2 rounded-lg ${isHeader ? "col-span-full mt-4 mb-2 bg-white/60 shadow-sm border border-teal-100" : "flex items-center space-x-2"}`}
-                                    >
-                                      {isHeader ? (
-                                        <span className="text-xs font-bold uppercase tracking-wider text-teal-900">{feature}</span>
-                                      ) : (
-                                        <>
-                                          <div className="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />
-                                          <span className="text-xs font-medium text-gray-600">{feature}</span>
-                                        </>
-                                      )}
-                                    </div>
-                                  );
-                                })}
+                      {selectedCategory === "drive-eraser" &&
+                        driveEraserVariant === "diagnostics" && (
+                          <div className="mt-4 border border-teal-100 rounded-2xl overflow-hidden bg-teal-50/30">
+                            <button
+                              onClick={() =>
+                                setIsTestsExpanded(!isTestsExpanded)
+                              }
+                              className="w-full flex items-center justify-between p-4 bg-teal-50/50 hover:bg-teal-100/50 transition-colors"
+                            >
+                              <div className="flex items-center gap-2">
+                                <Settings className="w-5 h-5 text-teal-900" />
+                                <span className="text-sm font-bold text-teal-900">
+                                  Advanced Hardware Diagnostics (21 Tests)
+                                </span>
+                              </div>
+                              <ChevronDown
+                                className={`w-5 h-5 text-[#0e7c66] transition-transform duration-300 ${isTestsExpanded ? "rotate-180" : ""}`}
+                              />
+                            </button>
+
+                            <div
+                              className={`transition-all duration-300 ease-in-out ${isTestsExpanded ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
+                            >
+                              <div className="p-4 pt-0 grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                                {getProductFeatures(
+                                  selectedCategory,
+                                  selectedPlan,
+                                )
+                                  .filter(
+                                    (f) =>
+                                      f.startsWith("AUTOMATIC TESTS") ||
+                                      f.startsWith(
+                                        "MANUAL / INTERACTIVE TESTS",
+                                      ) ||
+                                      /^\d+\./.test(f),
+                                  )
+                                  .map((feature, index) => {
+                                    const isHeader =
+                                      feature.startsWith("AUTOMATIC TESTS") ||
+                                      feature.startsWith(
+                                        "MANUAL / INTERACTIVE TESTS",
+                                      );
+                                    return (
+                                      <div
+                                        key={index}
+                                        className={`p-2 rounded-lg ${isHeader ? "col-span-full mt-4 mb-2 bg-white/60 shadow-sm border border-teal-100" : "flex items-center space-x-2"}`}
+                                      >
+                                        {isHeader ? (
+                                          <span className="text-xs font-bold uppercase tracking-wider text-teal-900">
+                                            {feature}
+                                          </span>
+                                        ) : (
+                                          <>
+                                            <div className="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />
+                                            <span className="text-xs font-medium text-gray-600">
+                                              {feature}
+                                            </span>
+                                          </>
+                                        )}
+                                      </div>
+                                    );
+                                  })}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      )}
+                        )}
                     </div>
 
                     {/* Drive Eraser Variant Selection */}
                     {selectedCategory === "drive-eraser" && (
                       <div className="mb-6 p-4 bg-[#f4fbf8] rounded-none border border-[#d0d5dc]">
-                        <label id="drive-eraser-variant-label" className="block text-xs xs:text-sm font-bold text-emerald-900 mb-3">
+                        <label
+                          id="drive-eraser-variant-label"
+                          className="block text-xs xs:text-sm font-bold text-emerald-900 mb-3"
+                        >
                           Product Variant:
                         </label>
-                        <div 
-                          role="radiogroup" 
+                        <div
+                          role="radiogroup"
                           aria-labelledby="drive-eraser-variant-label"
                           className="grid grid-cols-1 gap-2"
                         >
@@ -1904,7 +1971,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
                             </span>
                             {driveEraserVariant === "standard" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -1936,7 +2006,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
                             </div>
                             {driveEraserVariant === "diagnostics" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -1976,7 +2049,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
                             </span>
                             {fileEraserVariant === "standard" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -2005,11 +2081,16 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               <span className="text-sm font-bold text-emerald-800">
                                 $50.00
                               </span>
-                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">Upcoming</span>
+                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">
+                                Upcoming
+                              </span>
                             </div>
                             {fileEraserVariant === "network" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -2049,7 +2130,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
                             </span>
                             {freezeStateVariant === "standard" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -2078,11 +2162,16 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               <span className="text-sm font-bold text-emerald-800">
                                 $85.00
                               </span>
-                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">Upcoming</span>
+                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">
+                                Upcoming
+                              </span>
                             </div>
                             {freezeStateVariant === "smart" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -2111,11 +2200,16 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               <span className="text-sm font-bold text-emerald-800">
                                 $90.00
                               </span>
-                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">Upcoming</span>
+                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">
+                                Upcoming
+                              </span>
                             </div>
                             {freezeStateVariant === "advanced" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -2153,13 +2247,18 @@ const PricingAndPlanPage: React.FC = memo(() => {
                             </span>
                             {forensicImagingVariant === "basic" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
 
                           <button
-                            onClick={() => setForensicImagingVariant("advanced")}
+                            onClick={() =>
+                              setForensicImagingVariant("advanced")
+                            }
                             className={`flex items-center justify-between p-3 rounded-none border-2 transition-colors ${
                               forensicImagingVariant === "advanced"
                                 ? "bg-white border-[#0e7c66]"
@@ -2180,17 +2279,24 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               <span className="text-sm font-bold text-emerald-800">
                                 $10,526
                               </span>
-                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">Upcoming</span>
+                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">
+                                Upcoming
+                              </span>
                             </div>
                             {forensicImagingVariant === "advanced" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
 
                           <button
-                            onClick={() => setForensicImagingVariant("hardware")}
+                            onClick={() =>
+                              setForensicImagingVariant("hardware")
+                            }
                             className={`flex items-center justify-between p-3 rounded-none border-2 transition-colors ${
                               forensicImagingVariant === "hardware"
                                 ? "bg-white border-[#0e7c66]"
@@ -2211,11 +2317,16 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               <span className="text-sm font-bold text-emerald-800">
                                 $31,579
                               </span>
-                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">Upcoming</span>
+                              <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 rounded-full font-bold">
+                                Upcoming
+                              </span>
                             </div>
                             {forensicImagingVariant === "hardware" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -2253,7 +2364,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
                             </span>
                             {autopilotCreditType === "standard" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -2281,7 +2395,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
                             </span>
                             {autopilotCreditType === "advanced" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -2301,7 +2418,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
                                 Combo Credit
                               </span>
                               <span className="text-[10px] text-gray-500">
-                                {selectedLicenses !== "custom" && !isNaN(Number(selectedLicenses))
+                                {selectedLicenses !== "custom" &&
+                                !isNaN(Number(selectedLicenses))
                                   ? `${Number(selectedLicenses) * 0.8} Standard & ${Number(selectedLicenses) * 0.2} Advanced`
                                   : "80% Standard & 20% Advanced"}
                               </span>
@@ -2311,7 +2429,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
                             </span>
                             {autopilotCreditType === "combo" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                <Check
+                                  className="w-2.5 h-2.5 text-white"
+                                  strokeWidth={3}
+                                />
                               </div>
                             )}
                           </button>
@@ -2338,23 +2459,23 @@ const PricingAndPlanPage: React.FC = memo(() => {
                           {selectedCategory === "hardware-diagnostics" ? (
                             /* Numeric Counter for Diagnostics */
                             <div className="flex items-center gap-4 bg-gray-50 p-2 rounded-2xl border-2 border-gray-200">
-                                <button
-                                  onClick={() => {
-                                    const current =
-                                      Number.parseInt(selectedLicenses) || 100;
-                                    if (current > 100) {
-                                      setSelectedLicenses(
-                                        (current - 100).toString(),
-                                      );
-                                    } else if (current === 100) {
-                                      setSelectedLicenses("1");
-                                    }
-                                  }}
-                                  aria-label={ARIA_LABELS.DECREASE_QUANTITY}
-                                  className="w-12 h-12 rounded-xl bg-white border-2 border-gray-200 flex items-center justify-center text-2xl font-bold text-gray-600 hover:border-teal-500 hover:text-teal-600 transition-all shadow-sm active:scale-95"
-                                >
-                                  −
-                                </button>
+                              <button
+                                onClick={() => {
+                                  const current =
+                                    Number.parseInt(selectedLicenses) || 100;
+                                  if (current > 100) {
+                                    setSelectedLicenses(
+                                      (current - 100).toString(),
+                                    );
+                                  } else if (current === 100) {
+                                    setSelectedLicenses("1");
+                                  }
+                                }}
+                                aria-label={ARIA_LABELS.DECREASE_QUANTITY}
+                                className="w-12 h-12 rounded-xl bg-white border-2 border-gray-200 flex items-center justify-center text-2xl font-bold text-gray-600 hover:border-teal-500 hover:text-teal-600 transition-all shadow-sm active:scale-95"
+                              >
+                                −
+                              </button>
                               <div className="flex-1 text-center">
                                 <div className="text-xl font-bold text-gray-900">
                                   {selectedLicenses}
@@ -2363,23 +2484,23 @@ const PricingAndPlanPage: React.FC = memo(() => {
                                   Licenses
                                 </div>
                               </div>
-                                <button
-                                  onClick={() => {
-                                    const current =
-                                      Number.parseInt(selectedLicenses) || 100;
-                                    if (current === 1) {
-                                      setSelectedLicenses("100");
-                                    } else {
-                                      setSelectedLicenses(
-                                        (current + 100).toString(),
-                                      );
-                                    }
-                                  }}
-                                  aria-label={ARIA_LABELS.INCREASE_QUANTITY}
-                                  className="w-12 h-12 rounded-xl bg-white border-2 border-gray-200 flex items-center justify-center text-2xl font-bold text-gray-600 hover:border-teal-500 hover:text-teal-600 transition-all shadow-sm active:scale-95"
-                                >
-                                  +
-                                </button>
+                              <button
+                                onClick={() => {
+                                  const current =
+                                    Number.parseInt(selectedLicenses) || 100;
+                                  if (current === 1) {
+                                    setSelectedLicenses("100");
+                                  } else {
+                                    setSelectedLicenses(
+                                      (current + 100).toString(),
+                                    );
+                                  }
+                                }}
+                                aria-label={ARIA_LABELS.INCREASE_QUANTITY}
+                                className="w-12 h-12 rounded-xl bg-white border-2 border-gray-200 flex items-center justify-center text-2xl font-bold text-gray-600 hover:border-teal-500 hover:text-teal-600 transition-all shadow-sm active:scale-95"
+                              >
+                                +
+                              </button>
                             </div>
                           ) : (
                             /* Standard Dropdown for other products */
@@ -2424,12 +2545,14 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
             {/* Enhanced Pricing Card */}
             <div className="lg:col-span-1">
-              <ThemeCard interactive={false} className="lg:sticky lg:top-8 border-2 border-[#d0d5dc]">
+              <ThemeCard
+                interactive={false}
+                className="lg:sticky lg:top-8 border-2 border-[#d0d5dc]"
+              >
                 {/* Price Display */}
                 <div className="text-center mb-6 xs:mb-8 sm:mb-8 relative">
                   {/* Discount Label */}
                   {/* Discount label hidden as per request */}
-
 
                   <div className="flex flex-col items-center justify-center mb-2">
                     {/* Strike-through price hidden as per request */}
@@ -2500,10 +2623,15 @@ const PricingAndPlanPage: React.FC = memo(() => {
                   <ThemeButton
                     onClick={handleBuyNow}
                     disabled={
-                      (!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
-                         (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
-                       selectedLicenses !== "custom" && 
-                       selectedPlan !== "custom") ||
+                      (!(
+                        (selectedCategory === "drive-eraser" &&
+                          (driveEraserVariant === "standard" ||
+                            driveEraserVariant === "diagnostics")) ||
+                        (selectedCategory === "file-eraser" &&
+                          fileEraserVariant === "standard")
+                      ) &&
+                        selectedLicenses !== "custom" &&
+                        selectedPlan !== "custom") ||
                       isBuyNowLoading
                     }
                     onMouseEnter={() => {
@@ -2521,12 +2649,18 @@ const PricingAndPlanPage: React.FC = memo(() => {
                     variant="primary"
                     className="w-full mb-4 xs:mb-5 sm:mb-6 flex justify-center py-3 xs:py-4 text-base xs:text-lg"
                   >
-                    {!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
-                       (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
-                     selectedLicenses !== "custom" && 
-                     selectedPlan !== "custom"
+                    {!(
+                      (selectedCategory === "drive-eraser" &&
+                        (driveEraserVariant === "standard" ||
+                          driveEraserVariant === "diagnostics")) ||
+                      (selectedCategory === "file-eraser" &&
+                        fileEraserVariant === "standard")
+                    ) &&
+                    selectedLicenses !== "custom" &&
+                    selectedPlan !== "custom"
                       ? "Coming Soon"
-                      : selectedLicenses === "custom" || selectedPlan === "custom"
+                      : selectedLicenses === "custom" ||
+                          selectedPlan === "custom"
                         ? "Request Custom Quote"
                         : "Buy Now"}
                   </ThemeButton>
@@ -2535,48 +2669,31 @@ const PricingAndPlanPage: React.FC = memo(() => {
                 {/* Trust Indicators */}
                 <div className="flex flex-col items-center">
                   <div className="space-y-3 inline-flex flex-col items-start">
-                    <div className="flex items-center space-x-2 text-sm text-gray-600">
-                      <svg
-                        className="w-5 h-5 text-green-500 shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span>We offer discounts for multiple licenses</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-sm text-gray-600">
-                      <svg
-                        className="w-5 h-5 text-green-500 shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span>Free worldwide shipping</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-sm text-gray-600">
-                      <svg
-                        className="w-5 h-5 text-green-500 shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span>Instant activation & support</span>
-                    </div>
+                    {(selectedCategory === "drive-eraser"
+                      ? [
+                          "Instant License Delivery",
+                          "Free Setup Assistance",
+                          "Offline Operation",
+                          "Digital Report Signing"
+                        ]
+                      : [
+                          "Instant License Delivery",
+                          "Free Setup Assistance",
+                          "Free Technical Support",
+                          "Free Software Updates",
+                          "Offline Operation",
+                          "Digital Report Signing",
+                          "Crash-resistant report storage",
+                          "Instant report search, filtering & sorting"
+                        ]
+                    ).map((text, idx) => (
+                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
+                        <svg className="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span>{text}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </ThemeCard>
@@ -2593,7 +2710,6 @@ const PricingAndPlanPage: React.FC = memo(() => {
               </span>
             </div>
           </div>
-
         </div>
       </ThemeSection>
 
@@ -2603,29 +2719,31 @@ const PricingAndPlanPage: React.FC = memo(() => {
           <ThemeSectionHeading centered>
             Frequently Asked Questions
           </ThemeSectionHeading>
-            <div className="space-y-4 max-w-4xl mx-auto">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-200 rounded-lg overflow-hidden"
+          <div className="space-y-4 max-w-4xl mx-auto">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="border border-gray-200 rounded-lg overflow-hidden"
+              >
+                <button
+                  onClick={() =>
+                    setExpandedFaq(expandedFaq === index ? null : index)
+                  }
+                  className="w-full px-4 xs:px-5 sm:px-6 py-3 xs:py-4 text-left text-sm xs:text-base font-semibold text-gray-900 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center"
                 >
-                  <button
-                    onClick={() =>
-                      setExpandedFaq(expandedFaq === index ? null : index)
-                    }
-                    className="w-full px-4 xs:px-5 sm:px-6 py-3 xs:py-4 text-left text-sm xs:text-base font-semibold text-gray-900 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center"
-                  >
-                    <span>{faq.question}</span>
-                    <ChevronDown className={`w-5 h-5 transform transition-transform ${expandedFaq === index ? "rotate-180" : ""}`} />
-                  </button>
-                  {expandedFaq === index && (
-                    <div className="px-4 xs:px-5 sm:px-6 py-3 xs:py-4 text-sm xs:text-base text-gray-700 bg-white">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+                  <span>{faq.question}</span>
+                  <ChevronDown
+                    className={`w-5 h-5 transform transition-transform ${expandedFaq === index ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {expandedFaq === index && (
+                  <div className="px-4 xs:px-5 sm:px-6 py-3 xs:py-4 text-sm xs:text-base text-gray-700 bg-white">
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </ThemeSection>
 
@@ -2648,64 +2766,114 @@ const PricingAndPlanPage: React.FC = memo(() => {
         <Reveal>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <ThemeSectionHeading centered>Strategic Licensing & ROI Framework</ThemeSectionHeading>
+              <ThemeSectionHeading centered>
+                Strategic Licensing & ROI Framework
+              </ThemeSectionHeading>
               <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed mt-4">
-                Understanding the total cost of ownership (TCO) and the long-term value of data sanitization is critical for IT leaders and security officers. D-Secure offers a transparent, scalable pricing architecture designed for global enterprises.
+                Understanding the total cost of ownership (TCO) and the
+                long-term value of data sanitization is critical for IT leaders
+                and security officers. D-Secure offers a transparent, scalable
+                pricing architecture designed for global enterprises.
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div>
-                <h3 className="text-2xl font-bold text-[#0a2e1e] mb-6">Choosing Your Licensing Model</h3>
+                <h3 className="text-2xl font-bold text-[#0a2e1e] mb-6">
+                  Choosing Your Licensing Model
+                </h3>
                 <div className="space-y-8 text-slate-600 leading-relaxed">
                   <div>
-                    <h4 className="text-lg font-bold text-[#0a2e1e] mb-2">1. Pay-Per-Use (The Consumption Model)</h4>
+                    <h4 className="text-lg font-bold text-[#0a2e1e] mb-2">
+                      1. Pay-Per-Use (The Consumption Model)
+                    </h4>
                     <p className="text-sm">
-                      Ideal for ITAD (IT Asset Disposition) centers and service providers with fluctuating volumes. This model ensures you only pay for what you erase. Every successful erasure consumes one 'credit', which includes a cryptographically signed certificate. This eliminates high upfront costs and aligns spending directly with revenue-generating activities.
+                      Ideal for ITAD (IT Asset Disposition) centers and service
+                      providers with fluctuating volumes. This model ensures you
+                      only pay for what you erase. Every successful erasure
+                      consumes one 'credit', which includes a cryptographically
+                      signed certificate. This eliminates high upfront costs and
+                      aligns spending directly with revenue-generating
+                      activities.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-[#0a2e1e] mb-2">2. Annual Subscription (The Continuity Model)</h4>
+                    <h4 className="text-lg font-bold text-[#0a2e1e] mb-2">
+                      2. Annual Subscription (The Continuity Model)
+                    </h4>
                     <p className="text-sm">
-                      Best for corporate environments with consistent decommissioning needs. An annual subscription provides unlimited erasures for a fixed number of workstations or servers. This model simplifies budgeting and ensures that your team never hesitates to sanitize a drive due to credit constraints, fostering a stronger security culture.
+                      Best for corporate environments with consistent
+                      decommissioning needs. An annual subscription provides
+                      unlimited erasures for a fixed number of workstations or
+                      servers. This model simplifies budgeting and ensures that
+                      your team never hesitates to sanitize a drive due to
+                      credit constraints, fostering a stronger security culture.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-[#0a2e1e] mb-2">3. Site Licensing (The Enterprise Standard)</h4>
+                    <h4 className="text-lg font-bold text-[#0a2e1e] mb-2">
+                      3. Site Licensing (The Enterprise Standard)
+                    </h4>
                     <p className="text-sm">
-                      For large-scale data centers and government entities, we offer site-wide or global licenses. This provides the ultimate flexibility, allowing you to deploy D-Secure across your entire infrastructure without tracking individual disk counts, essential for rapid response scenarios and mass hardware refreshes.
+                      For large-scale data centers and government entities, we
+                      offer site-wide or global licenses. This provides the
+                      ultimate flexibility, allowing you to deploy D-Secure
+                      across your entire infrastructure without tracking
+                      individual disk counts, essential for rapid response
+                      scenarios and mass hardware refreshes.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <ThemeCard interactive={false} className="border border-slate-200 shadow-xl">
-                <h3 className="text-2xl font-bold text-[#0a2e1e] mb-6">ROI Analysis: Secure Erasure vs. Shredding</h3>
+              <ThemeCard
+                interactive={false}
+                className="border border-slate-200 shadow-xl"
+              >
+                <h3 className="text-2xl font-bold text-[#0a2e1e] mb-6">
+                  ROI Analysis: Secure Erasure vs. Shredding
+                </h3>
                 <div className="space-y-6">
                   <div className="flex justify-between items-end pb-4 border-b border-slate-100">
                     <div>
-                      <p className="font-bold text-[#0a2e1e]">Hardware Resale Recovery</p>
-                      <p className="text-xs text-slate-500">Erasure keeps hardware functional for resale.</p>
+                      <p className="font-bold text-[#0a2e1e]">
+                        Hardware Resale Recovery
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Erasure keeps hardware functional for resale.
+                      </p>
                     </div>
                     <p className="text-[#0e7c66] font-bold">+45% Value</p>
                   </div>
                   <div className="flex justify-between items-end pb-4 border-b border-slate-100">
                     <div>
-                      <p className="font-bold text-[#0a2e1e]">Logistics & Handling Costs</p>
-                      <p className="text-xs text-slate-500">Eliminate secure transport of physical media.</p>
+                      <p className="font-bold text-[#0a2e1e]">
+                        Logistics & Handling Costs
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Eliminate secure transport of physical media.
+                      </p>
                     </div>
                     <p className="text-[#0e7c66] font-bold">-60% Cost</p>
                   </div>
                   <div className="flex justify-between items-end pb-4 border-b border-slate-100">
                     <div>
-                      <p className="font-bold text-[#0a2e1e]">E-Waste Compliance Fines</p>
-                      <p className="text-xs text-slate-500">Avoid environmental penalties from shredding.</p>
+                      <p className="font-bold text-[#0a2e1e]">
+                        E-Waste Compliance Fines
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Avoid environmental penalties from shredding.
+                      </p>
                     </div>
                     <p className="text-[#0e7c66] font-bold">-100% Risk</p>
                   </div>
                   <div className="mt-8 p-4 bg-slate-50 rounded-none border-l-4 border-[#0e7c66]">
                     <p className="text-sm text-[#0a2e1e] leading-relaxed italic">
-                      "Organizations typically realize a full ROI on D-Secure within the first 6 months by reclaiming the residual value of their decommissioned laptops and server drives, while simultaneously meeting stringent ESG (Environmental, Social, and Governance) targets."
+                      "Organizations typically realize a full ROI on D-Secure
+                      within the first 6 months by reclaiming the residual value
+                      of their decommissioned laptops and server drives, while
+                      simultaneously meeting stringent ESG (Environmental,
+                      Social, and Governance) targets."
                     </p>
                   </div>
                 </div>
@@ -2713,33 +2881,59 @@ const PricingAndPlanPage: React.FC = memo(() => {
             </div>
 
             <div className="mt-24 bg-[#f4fbf8] p-8 xs:p-10 sm:p-12 border border-[#d0d5dc]/50">
-              <h3 className="text-3xl font-bold text-[#0a2e1e] mb-12 text-center">Enterprise Feature Deep Dive</h3>
+              <h3 className="text-3xl font-bold text-[#0a2e1e] mb-12 text-center">
+                Enterprise Feature Deep Dive
+              </h3>
               <div className="grid md:grid-cols-3 gap-8">
-                <ThemeCard interactive={false} className="border border-slate-200">
+                <ThemeCard
+                  interactive={false}
+                  className="border border-slate-200"
+                >
                   <div className="mb-6">
                     <ThemeIconContainer icon={Monitor} color="primary" />
                   </div>
-                  <h4 className="text-xl font-bold text-[#0a2e1e] mb-4">Central Management Console</h4>
+                  <h4 className="text-xl font-bold text-[#0a2e1e] mb-4">
+                    Central Management Console
+                  </h4>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    Manage 10,000+ assets from a single pane of glass. Push erasure tasks over the network, monitor progress in real-time, and aggregate reports into a unified dashboard for global compliance audits.
+                    Manage 10,000+ assets from a single pane of glass. Push
+                    erasure tasks over the network, monitor progress in
+                    real-time, and aggregate reports into a unified dashboard
+                    for global compliance audits.
                   </p>
                 </ThemeCard>
-                <ThemeCard interactive={false} className="border border-slate-200">
+                <ThemeCard
+                  interactive={false}
+                  className="border border-slate-200"
+                >
                   <div className="mb-6">
                     <ThemeIconContainer icon={Code} color="primary" />
                   </div>
-                  <h4 className="text-xl font-bold text-[#0a2e1e] mb-4">RESTful API Integration</h4>
+                  <h4 className="text-xl font-bold text-[#0a2e1e] mb-4">
+                    RESTful API Integration
+                  </h4>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    Seamlessly integrate data erasure into your existing ITAM (IT Asset Management) or ServiceNow workflows. Automate the generation of tickets and certificates without manual intervention.
+                    Seamlessly integrate data erasure into your existing ITAM
+                    (IT Asset Management) or ServiceNow workflows. Automate the
+                    generation of tickets and certificates without manual
+                    intervention.
                   </p>
                 </ThemeCard>
-                <ThemeCard interactive={false} className="border border-slate-200">
+                <ThemeCard
+                  interactive={false}
+                  className="border border-slate-200"
+                >
                   <div className="mb-6">
                     <ThemeIconContainer icon={Tag} color="primary" />
                   </div>
-                  <h4 className="text-xl font-bold text-[#0a2e1e] mb-4">Hardware White-Labeling</h4>
+                  <h4 className="text-xl font-bold text-[#0a2e1e] mb-4">
+                    Hardware White-Labeling
+                  </h4>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    For service providers and hardware resellers, we offer fully white-labeled software and certificates. Maintain your brand identity while providing world-class, NIST-compliant data sanitization services.
+                    For service providers and hardware resellers, we offer fully
+                    white-labeled software and certificates. Maintain your brand
+                    identity while providing world-class, NIST-compliant data
+                    sanitization services.
                   </p>
                 </ThemeCard>
               </div>
@@ -2748,11 +2942,15 @@ const PricingAndPlanPage: React.FC = memo(() => {
             <div className="mt-20 p-10 bg-[#0a2e1e] text-white">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4">Custom Enterprise Licensing</h3>
+                  <h3 className="text-2xl font-bold mb-4">
+                    Custom Enterprise Licensing
+                  </h3>
                   <p className="text-slate-300 mb-6">
-                    Need a global agreement or specialized deployment terms? Our sales team can design a bespoke licensing structure that fits your unique infrastructure and compliance roadmap.
+                    Need a global agreement or specialized deployment terms? Our
+                    sales team can design a bespoke licensing structure that
+                    fits your unique infrastructure and compliance roadmap.
                   </p>
-                  <ThemeButton 
+                  <ThemeButton
                     onClick={() => setShowCustomModal(true)}
                     variant="primary"
                   >
@@ -2762,15 +2960,21 @@ const PricingAndPlanPage: React.FC = memo(() => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 p-4 bg-white/5 border border-white/10">
                     <CheckCircle className="w-5 h-5 text-[#0e7c66]" />
-                    <p className="text-sm font-medium">Bulk License Discounts (1,000+ units)</p>
+                    <p className="text-sm font-medium">
+                      Bulk License Discounts (1,000+ units)
+                    </p>
                   </div>
                   <div className="flex items-center gap-4 p-4 bg-white/5 border border-white/10">
                     <CheckCircle className="w-5 h-5 text-[#0e7c66]" />
-                    <p className="text-sm font-medium">Non-Profit & Educational Pricing Available</p>
+                    <p className="text-sm font-medium">
+                      Non-Profit & Educational Pricing Available
+                    </p>
                   </div>
                   <div className="flex items-center gap-4 p-4 bg-white/5 border border-white/10">
                     <CheckCircle className="w-5 h-5 text-[#0e7c66]" />
-                    <p className="text-sm font-medium">Government & Defense Procurement Support</p>
+                    <p className="text-sm font-medium">
+                      Government & Defense Procurement Support
+                    </p>
                   </div>
                 </div>
               </div>
@@ -2789,7 +2993,6 @@ const PricingAndPlanPage: React.FC = memo(() => {
           isLoading={isSpecialPricingSubmitting}
         />
       )}
-
     </>
   );
 });

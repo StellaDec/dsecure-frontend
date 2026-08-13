@@ -3,18 +3,34 @@ import { Link } from "react-router-dom";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
-import {
-  CheckIcon,
-  ArrowRightIcon,
-  GearIcon,
-} from "@/components/FlatIcons";
-import { FileTextIcon, Download, Zap, Database, HardDrive, Server, RefreshCcw, Activity, Usb } from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import { getSEOForPage } from "@/utils/seo";
 import ProductInternalLinks, { PRODUCT_LINKS } from "@/components/ProductInternalLinks";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import type { KeyTakeawayItem } from "@/types/seo";
+import {
+  Activity,
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle,
+  Cloud,
+  Database,
+  Download,
+  FileText,
+  FileTextIcon,
+  Globe,
+  HardDrive,
+  RefreshCcw,
+  RefreshCw,
+  Server,
+  Settings,
+  Shield,
+  Star,
+  Usb,
+  Zap
+} from 'lucide-react';
 
 const removableMediaTakeaways: KeyTakeawayItem[] = [
   {
@@ -205,13 +221,13 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                   <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Request Early Access
                     </button>
                     <a 
                       href="/contact" 
-                      className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 rounded-xl font-bold text-lg transition-all hover:border-emerald-300 flex items-center justify-center gap-3 shadow-md"
+                      className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 rounded-none font-bold text-lg transition-all hover:border-emerald-300 flex items-center justify-center gap-3 shadow-md"
                     >
                       <Download className="w-5 h-5 text-emerald-600" />
                       Download Overview
@@ -241,11 +257,11 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                       style={{ transformStyle: 'preserve-3d', animation: 'float 4s ease-in-out infinite' }}
                     >
                       {/* Glow Behind */}
-                      <div className="absolute inset-0 bg-emerald-500/30 blur-3xl rounded-3xl scale-125"></div>
+                      <div className="absolute inset-0 bg-emerald-500/30 blur-3xl rounded-none scale-125"></div>
 
                       {/* USB-like 3D Object (Represented as a premium product box with USB focus) */}
                       <div 
-                        className="relative w-[240px] h-[320px] bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-2xl shadow-2xl overflow-hidden"
+                        className="relative w-[240px] h-[320px] bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-none shadow-2xl overflow-hidden"
                         style={{ 
                           transform: 'rotateY(-12deg) rotateX(5deg)',
                           boxShadow: '25px 25px 60px rgba(0,0,0,0.3), -5px -5px 20px rgba(255,255,255,0.1), inset 0 0 80px rgba(255,255,255,0.05)'
@@ -260,7 +276,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                           </div>
 
                           {/* Main Icon - USB/External Drive */}
-                          <div className="w-28 h-28 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 border border-white/20 shadow-inner group-hover:scale-110 transition-transform duration-500">
+                          <div className="w-28 h-28 bg-white/15 backdrop-blur-sm rounded-none flex items-center justify-center mb-6 border border-white/20 shadow-inner group-hover:scale-110 transition-transform duration-500">
                              <Usb className="w-16 h-16 text-white drop-shadow-xl" />
                           </div>
 
@@ -276,14 +292,14 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                       </div>
 
                       {/* Multi-drive Visual (Floating mini-cards to show simultaneous erasure) */}
-                      <div className="absolute -right-12 top-10 w-24 h-24 bg-white/40 backdrop-blur-md rounded-xl shadow-lg border border-white/40 flex items-center justify-center animate-[float_5s_ease-in-out_infinite_1s]" style={{ transform: 'translateZ(50px)' }}>
-                         <div className="w-12 h-12 bg-emerald-500 rounded-lg flex items-center justify-center text-white shadow-inner">
+                      <div className="absolute -right-12 top-10 w-24 h-24 bg-white/40 backdrop-blur-md rounded-none shadow-lg border border-white/40 flex items-center justify-center animate-[float_5s_ease-in-out_infinite_1s]" style={{ transform: 'translateZ(50px)' }}>
+                         <div className="w-12 h-12 bg-emerald-500 rounded-none flex items-center justify-center text-white shadow-inner">
                             <Zap className="w-6 h-6" />
                          </div>
                       </div>
-                      <div className="absolute -left-16 bottom-20 w-20 h-20 bg-white/40 backdrop-blur-md rounded-xl shadow-lg border border-white/40 flex items-center justify-center animate-[float_6s_ease-in-out_infinite_0.5s]" style={{ transform: 'translateZ(30px)' }}>
-                         <div className="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center text-white shadow-inner">
-                            <CheckIcon className="w-5 h-5" />
+                      <div className="absolute -left-16 bottom-20 w-20 h-20 bg-white/40 backdrop-blur-md rounded-none shadow-lg border border-white/40 flex items-center justify-center animate-[float_6s_ease-in-out_infinite_0.5s]" style={{ transform: 'translateZ(30px)' }}>
+                         <div className="w-10 h-10 bg-teal-500 rounded-none flex items-center justify-center text-white shadow-inner">
+                            <CheckCircle className="w-6 h-6 text-emerald-600" />
                          </div>
                       </div>
 
@@ -328,8 +344,8 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {capabilities.map((item, i) => (
                 <Reveal key={item.name} delayMs={item.name === "USB Thumb Drives" ? 0 : item.name === "SD & MicroSD Cards" ? 100 : item.name === "CompactFlash & Micro Drives" ? 200 : 300}>
-                  <div className="group bg-slate-50 hover:bg-white rounded-2xl p-8 border border-slate-200 hover:border-emerald-300 hover:shadow-2xl hover:shadow-emerald-200/20 transition-all duration-500 text-center">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+                  <div className="group bg-slate-50 hover:bg-white rounded-none p-8 border border-slate-200 hover:border-emerald-300 hover:shadow-2xl hover:shadow-emerald-200/20 transition-all duration-500 text-center">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-none flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
                        {item.icon}
                     </div>
                     <h2 className="text-xl font-bold text-slate-900 mb-4">{item.name}</h2>
@@ -384,7 +400,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                 <div className="space-y-8">
                   <Reveal delayMs={100}>
                     <div className="flex gap-6">
-                      <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0 text-emerald-400 border border-emerald-500/30">
+                      <div className="w-12 h-12 bg-emerald-500/20 rounded-none flex items-center justify-center flex-shrink-0 text-emerald-400 border border-emerald-500/30">
                         <Zap className="w-6 h-6" />
                       </div>
                       <div>
@@ -395,8 +411,8 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                   </Reveal>
                   <Reveal delayMs={200}>
                     <div className="flex gap-6">
-                      <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0 text-blue-400 border border-blue-500/30">
-                        <GearIcon className="w-6 h-6" />
+                      <div className="w-12 h-12 bg-blue-500/20 rounded-none flex items-center justify-center flex-shrink-0 text-blue-400 border border-blue-500/30">
+                        <Settings className="w-6 h-6 text-emerald-600" />
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-2">Flexible Deployment</h3>
@@ -406,8 +422,8 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                   </Reveal>
                   <Reveal delayMs={300}>
                     <div className="flex gap-6">
-                      <div className="w-12 h-12 bg-teal-500/20 rounded-xl flex items-center justify-center flex-shrink-0 text-teal-400 border border-teal-500/30">
-                        <CheckIcon className="w-6 h-6" />
+                      <div className="w-12 h-12 bg-teal-500/20 rounded-none flex items-center justify-center flex-shrink-0 text-teal-400 border border-teal-500/30">
+                        <CheckCircle className="w-6 h-6 text-emerald-600" />
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-2">Managed Console Integration</h3>
@@ -420,7 +436,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
 
               <div className="flex-1 w-full">
                 <Reveal delayMs={400}>
-                   <div className="bg-gradient-to-br from-emerald-600 to-teal-800 p-1 rounded-3xl shadow-2xl">
+                   <div className="bg-gradient-to-br from-emerald-600 to-teal-800 p-1 rounded-none shadow-2xl">
                       <div className="bg-slate-900 rounded-[22px] p-8 lg:p-12 overflow-hidden relative">
                          <div className="absolute top-0 right-0 p-4 opacity-20"><RefreshCcw className="w-24 h-24 animate-spin-slow" /></div>
                          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">Why Choose D-Secure?</h2>
@@ -435,7 +451,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                             ].map((item, idx) => (
                                <li key={item} className="flex items-center gap-3 text-slate-300">
                                 <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-slate-900 flex-shrink-0">
-                                   <ArrowRightIcon className="w-3 h-3" />
+                                   <ArrowRight className="w-6 h-6 text-emerald-600" />
                                 </div>
                                 <span>{item}</span>
                               </li>
@@ -443,7 +459,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                          </ul>
                          <button 
                            onClick={() => scrollToSection("contact")}
-                           className="mt-10 w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold rounded-xl transition-all shadow-lg hover:shadow-emerald-500/20 uppercase tracking-widest text-sm"
+                           className="mt-10 w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold rounded-none transition-all shadow-lg hover:shadow-emerald-500/20 uppercase tracking-widest text-sm"
                          >
                             Explore Case Studies
                          </button>
@@ -470,7 +486,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
               </div>
             </Reveal>
 
-            <div className="bg-emerald-50 rounded-3xl p-8 lg:p-12 border border-emerald-100">
+            <div className="bg-emerald-50 rounded-none p-8 lg:p-12 border border-emerald-100">
                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                   <div className="lg:col-span-2">
                      <Reveal>
@@ -479,12 +495,12 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                            Every erasure process generates a digitally signed, tamper-proof certificate of erasure. This detailed report includes hardware asset identifiers, erasure standard used, and verification result, providing 100% proof of compliance for audits.
                         </p>
                         <div className="grid grid-cols-2 gap-4">
-                           <div className="flex items-center gap-2 p-3 bg-white rounded-xl border border-emerald-200">
-                              <CheckIcon className="w-5 h-5 text-emerald-500" />
+                           <div className="flex items-center gap-2 p-3 bg-white rounded-none border border-emerald-200">
+                              <CheckCircle className="w-6 h-6 text-emerald-600" />
                               <span className="text-sm font-bold text-slate-800">Tamper-Proof PDF</span>
                            </div>
-                           <div className="flex items-center gap-2 p-3 bg-white rounded-xl border border-emerald-200">
-                              <CheckIcon className="w-5 h-5 text-emerald-500" />
+                           <div className="flex items-center gap-2 p-3 bg-white rounded-none border border-emerald-200">
+                              <CheckCircle className="w-6 h-6 text-emerald-600" />
                               <span className="text-sm font-bold text-slate-800">XML Export Ready</span>
                            </div>
                         </div>
@@ -492,7 +508,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                   </div>
                   <div className="relative group">
                      <Reveal delayMs={300}>
-                        <div className="bg-white p-6 rounded-2xl shadow-xl border border-white rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                        <div className="bg-white p-6 rounded-none shadow-xl border border-white rotate-3 group-hover:rotate-0 transition-transform duration-500">
                            <FileTextIcon className="w-16 h-16 text-emerald-600 mb-4" />
                            <div className="space-y-3">
                               <div className="h-3 w-3/4 bg-slate-100 rounded"></div>

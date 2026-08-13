@@ -144,35 +144,6 @@ export const blogPosts: BlogPost[] = [
     author: "Nitesh Kushwaha"
   },
   
-  
-  
-  {
-    id: "sustainable-it-reuse",
-    slug: "sustainable-it-reuse",
-    title: "IT Asset Reuse: A Sustainable Solution",
-    excerpt: "Why reuse beats recycling every time. The environmental case for securely refurbishing your old tech.",
-    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1600&h=900&fit=crop",
-    link: "/blog/sustainable-it-reuse",
-    tag: "Circular Economy",
-    category: "Sustainability",
-    keywords: "IT reuse, electronic waste reduction",
-    publishDate: "February 04, 2026",
-    author: "Nitesh Kushwaha"
-  },
-  {
-    id: "reduce-carbon-footprint",
-    slug: "reduce-carbon-footprint",
-    title: "How Data Erasure Promotes Sustainability",
-    excerpt: "Understanding embodied carbon and why keeping a laptop in use for 5 years is the best thing you can do for the planet.",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&h=900&fit=crop",
-    link: "/blog/reduce-carbon-footprint",
-    tag: "Green Tech",
-    category: "Sustainability",
-    keywords: "embodied carbon, sustainable IT practices",
-    publishDate: "March 08, 2026",
-    author: "Prashant Saini"
-  },
-  
   {
     id: "erasure-verification-process",
     slug: "erasure-verification-process",
@@ -185,19 +156,6 @@ export const blogPosts: BlogPost[] = [
     keywords: "verification,  purge, readback verification",
     publishDate: "January 19, 2026",
     author: "Prashant Saini"
-  },
-  {
-    id: "hardware-diagnostics",
-    slug: "hardware-diagnostics",
-    title: "Hardware Diagnostics for Refurbishers",
-    excerpt: "Increase resale value by certifying health alongside data safety. Testing batteries, screens, and drives automatically.",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1600&h=900&fit=crop",
-    link: "/blog/hardware-diagnostics",
-    tag: "Refurbishing",
-    category: "ITAD",
-    keywords: "hardware diagnostics, resale value grading",
-    publishDate: "March 27, 2026",
-    author: "Nitesh Kushwaha"
   },
   {
     id: "data-minimization",
@@ -347,18 +305,6 @@ export const blogPosts: BlogPost[] = [
     author: "Nitesh Kushwaha"
   },
   {
-    id: "change-healthcare-attack",
-    slug: "change-healthcare-attack",
-    title: "Change Healthcare Attack Analysis",
-    excerpt: "Lessons learned from the Change Healthcare cyberattack and implications for healthcare data security.",
-    link: "/blog/change-healthcare-attack",
-    tag: "Case Study",
-    category: "Healthcare",
-    keywords: "healthcare breach, ransomware, data protection",
-    publishDate: "April 20, 2026",
-    author: "Prashant Saini"
-  },
-  {
     id: "chromebook-data-risks",
     slug: "chromebook-data-risks",
     title: "Chromebook Data Security Risks",
@@ -386,18 +332,6 @@ export const blogPosts: BlogPost[] = [
     author: "Nitesh Kushwaha"
   },
   {
-    id: "cybersecurity-data-destruction",
-    slug: "cybersecurity-data-destruction",
-    title: "Cybersecurity and Data Destruction",
-    excerpt: "How data destruction fits into your overall cybersecurity strategy.",
-    link: "/blog/cybersecurity-data-destruction",
-    tag: "Security",
-    category: "Security Strategy",
-    keywords: "cybersecurity, data destruction, defense in depth",
-    publishDate: "February 21, 2026",
-    author: "Prashant Saini"
-  },
-  {
     id: "dsecure-operations",
     slug: "dsecure-operations",
     title: " Operations Guide",
@@ -408,31 +342,6 @@ export const blogPosts: BlogPost[] = [
     keywords: "D-Secure, operations, best practices",
     publishDate: "March 02, 2026",
     author: "Nitesh Kushwaha"
-  },
-  {
-    id: "dark-data-risks",
-    slug: "dark-data-risks",
-    title: "Dark Data: Hidden Security Risks",
-    excerpt: "The hidden dangers of dark data and strategies for identification and erasure.",
-    link: "/blog/dark-data-risks",
-    tag: "Risk Management",
-    category: "Security",
-    keywords: "dark data, data discovery, ROT data",
-    publishDate: "February 04, 2026",
-    author: "Prashant Saini"
-  },
-  
-  {
-    id: "data-disposal-guidelines",
-    slug: "data-disposal-guidelines",
-    title: "Enterprise Data Disposal Guidelines",
-    excerpt: "Step-by-step guidelines for implementing secure data disposal in enterprise environments.",
-    link: "/blog/data-disposal-guidelines",
-    tag: "Enterprise",
-    category: "Best Practices",
-    keywords: "data disposal, enterprise, policy",
-    publishDate: "March 25, 2026",
-    author: "Prashant Saini"
   },
   {
     id: "data-erasure-disaster-recovery",
@@ -458,19 +367,6 @@ export const blogPosts: BlogPost[] = [
     publishDate: "March 14, 2026",
     author: "Prashant Saini"
   },
-  
-  {
-    id: "data-privacy-obligations",
-    slug: "data-privacy-obligations",
-    title: "Global Data Privacy Obligations",
-    excerpt: "Understanding your data privacy obligations across different jurisdictions.",
-    link: "/blog/data-privacy-obligations",
-    tag: "Compliance",
-    category: "Regulatory",
-    keywords: "data privacy, , CCPA, global compliance",
-    publishDate: "March 22, 2026",
-    author: "Prashant Saini"
-  },
   {
     id: "data-remanence",
     slug: "data-remanence",
@@ -494,18 +390,6 @@ export const blogPosts: BlogPost[] = [
     keywords: "data remediation, erasure, risk reduction",
     publishDate: "April 21, 2026",
     author: "Prashant Saini"
-  },
-  {
-    id: "data-retention-privacy",
-    slug: "data-retention-privacy",
-    title: "Data Retention and Privacy Balance",
-    excerpt: "Balancing data retention requirements with privacy obligations and security best practices.",
-    link: "/blog/data-retention-privacy",
-    tag: "Privacy",
-    category: "Compliance",
-    keywords: "data retention, privacy, policy",
-    publishDate: "April 02, 2026",
-    author: "Nitesh Kushwaha"
   },
   {
     id: "degaussing-risks",
@@ -909,18 +793,6 @@ export const blogPosts: BlogPost[] = [
     keywords: "framework, IT disposal, enterprise",
     publishDate: "April 01, 2026",
     author: "Nitesh Kushwaha"
-  },
-  {
-    id: "secure-smartphone-erasure",
-    slug: "secure-smartphone-erasure",
-    title: "Secure Smartphone Erasure",
-    excerpt: "Ensuring complete data erasure on iOS and Android devices.",
-    link: "/blog/secure-smartphone-erasure",
-    tag: "Mobile",
-    category: "Guide",
-    keywords: "smartphone, iOS, Android, mobile erasure",
-    publishDate: "January 04, 2026",
-    author: "Prashant Saini"
   },
   {
     id: "server-erasure",
@@ -1513,4 +1385,356 @@ export const blogPosts: BlogPost[] = [
     author: "D-Secure Editorial Team",
     readTime: "9 min read"
   }
+,
+  {
+    id: "everything-you-need-to-know-to-ensure-GDPR-EU-Compliance",
+    slug: "everything-you-need-to-know-to-ensure-GDPR-EU-Compliance",
+    title: "General Data Protection Regulation Compliance Guide",
+    excerpt: "Everything you need to know about All Regions compliance, data security requirements, and secure data disposal.",
+    link: "/blog/everything-you-need-to-know-to-ensure-GDPR-EU-Compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "All Regions compliance, General Data Protection Regulation data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "uk-dpa-compliance",
+    slug: "uk-dpa-compliance",
+    title: "UK Data Protection Act 2018 & UK GDPR Compliance Guide",
+    excerpt: "Everything you need to know about UK DPA 2018 compliance, data security requirements, and secure data disposal.",
+    link: "/blog/uk-dpa-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "UK DPA 2018 compliance, UK Data Protection Act 2018 & UK GDPR data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "bdsg-compliance",
+    slug: "bdsg-compliance",
+    title: "Bundesdatenschutzgesetz — Germany\ Compliance Guide",
+    excerpt: "Everything you need to know about BDSG compliance, data security requirements, and secure data disposal.",
+    link: "/blog/bdsg-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "BDSG compliance, Bundesdatenschutzgesetz — Germany\ data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "fdpa-compliance",
+    slug: "fdpa-compliance",
+    title: "French Data Protection Act (Loi Informatique et Libertés) Compliance Guide",
+    excerpt: "Everything you need to know about FDPA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/fdpa-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "FDPA compliance, French Data Protection Act (Loi Informatique et Libertés) data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "fadp-compliance",
+    slug: "fadp-compliance",
+    title: "Switzerland\ Compliance Guide",
+    excerpt: "Everything you need to know about FADP compliance, data security requirements, and secure data disposal.",
+    link: "/blog/fadp-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "FADP compliance, Switzerland\ data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "deciphered-the-basics-of-CCPA",
+    slug: "deciphered-the-basics-of-CCPA",
+    title: "California Consumer Privacy Act / California Privacy Rights Act Compliance Guide",
+    excerpt: "Everything you need to know about CCPA / CPRA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/deciphered-the-basics-of-CCPA",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "CCPA / CPRA compliance, California Consumer Privacy Act / California Privacy Rights Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "hipaa-compliance",
+    slug: "hipaa-compliance",
+    title: "Health Insurance Portability and Accountability Act Compliance Guide",
+    excerpt: "Everything you need to know about HIPAA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/hipaa-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "HIPAA compliance, Health Insurance Portability and Accountability Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "glba-compliance",
+    slug: "glba-compliance",
+    title: "Gramm-Leach-Bliley Act Compliance Guide",
+    excerpt: "Everything you need to know about GLBA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/glba-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "GLBA compliance, Gramm-Leach-Bliley Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "sox-compliance",
+    slug: "sox-compliance",
+    title: "Sarbanes-Oxley Act Compliance Guide",
+    excerpt: "Everything you need to know about SOX compliance, data security requirements, and secure data disposal.",
+    link: "/blog/sox-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "SOX compliance, Sarbanes-Oxley Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "us-privacy-act-compliance",
+    slug: "us-privacy-act-compliance",
+    title: "US Privacy Act of 1974 Compliance Guide",
+    excerpt: "Everything you need to know about US Privacy Act compliance, data security requirements, and secure data disposal.",
+    link: "/blog/us-privacy-act-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "US Privacy Act compliance, US Privacy Act of 1974 data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "new-york-data-privacy-law",
+    slug: "new-york-data-privacy-law",
+    title: "New York Privacy Act 2021 Compliance Guide",
+    excerpt: "Everything you need to know about NYPA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/new-york-data-privacy-law",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "NYPA compliance, New York Privacy Act 2021 data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "tdpsa-compliance",
+    slug: "tdpsa-compliance",
+    title: "Texas Data Privacy and Security Act Compliance Guide",
+    excerpt: "Everything you need to know about TDPSA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/tdpsa-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "TDPSA compliance, Texas Data Privacy and Security Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "vcdpa-compliance",
+    slug: "vcdpa-compliance",
+    title: "Virginia Consumer Data Protection Act Compliance Guide",
+    excerpt: "Everything you need to know about VCDPA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/vcdpa-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "VCDPA compliance, Virginia Consumer Data Protection Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "mhmda-compliance",
+    slug: "mhmda-compliance",
+    title: "Washington: My Health My Data Act Compliance Guide",
+    excerpt: "Everything you need to know about MHMDA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/mhmda-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "MHMDA compliance, Washington: My Health My Data Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "pipeda-compliance",
+    slug: "pipeda-compliance",
+    title: "Personal Information Protection & Electronic Documents Act Compliance Guide",
+    excerpt: "Everything you need to know about PIPEDA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/pipeda-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "PIPEDA compliance, Personal Information Protection & Electronic Documents Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "dpdp-compliance",
+    slug: "dpdp-compliance",
+    title: "India\ Compliance Guide",
+    excerpt: "Everything you need to know about DPDP Act compliance, data security requirements, and secure data disposal.",
+    link: "/blog/dpdp-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "DPDP Act compliance, India\ data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "appi-compliance",
+    slug: "appi-compliance",
+    title: "Japan\ Compliance Guide",
+    excerpt: "Everything you need to know about APPI compliance, data security requirements, and secure data disposal.",
+    link: "/blog/appi-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "APPI compliance, Japan\ data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "pipl-compliance",
+    slug: "pipl-compliance",
+    title: "China\ Compliance Guide",
+    excerpt: "Everything you need to know about PIPL compliance, data security requirements, and secure data disposal.",
+    link: "/blog/pipl-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "PIPL compliance, China\ data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "philippines-dpa-compliance",
+    slug: "philippines-dpa-compliance",
+    title: "Philippines Data Privacy Act Compliance Guide",
+    excerpt: "Everything you need to know about DPA 2012 compliance, data security requirements, and secure data disposal.",
+    link: "/blog/philippines-dpa-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "DPA 2012 compliance, Philippines Data Privacy Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "privacy-act-au-compliance",
+    slug: "privacy-act-au-compliance",
+    title: "Australia\ Compliance Guide",
+    excerpt: "Everything you need to know about Privacy Act 1988 compliance, data security requirements, and secure data disposal.",
+    link: "/blog/privacy-act-au-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "Privacy Act 1988 compliance, Australia\ data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "nz-privacy-act-compliance",
+    slug: "nz-privacy-act-compliance",
+    title: "New Zealand Privacy Act 2020 Compliance Guide",
+    excerpt: "Everything you need to know about Privacy Act 2020 compliance, data security requirements, and secure data disposal.",
+    link: "/blog/nz-privacy-act-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "Privacy Act 2020 compliance, New Zealand Privacy Act 2020 data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "pdpl-sa-compliance",
+    slug: "pdpl-sa-compliance",
+    title: "Saudi Arabia\ Compliance Guide",
+    excerpt: "Everything you need to know about PDPL compliance, data security requirements, and secure data disposal.",
+    link: "/blog/pdpl-sa-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "PDPL compliance, Saudi Arabia\ data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "popia-compliance",
+    slug: "popia-compliance",
+    title: "Protection of Personal Information Act Compliance Guide",
+    excerpt: "Everything you need to know about POPIA compliance, data security requirements, and secure data disposal.",
+    link: "/blog/popia-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "POPIA compliance, Protection of Personal Information Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "lgpd-compliance",
+    slug: "lgpd-compliance",
+    title: "Brazil\ Compliance Guide",
+    excerpt: "Everything you need to know about LGPD compliance, data security requirements, and secure data disposal.",
+    link: "/blog/lgpd-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "LGPD compliance, Brazil\ data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "lfpdppp-compliance",
+    slug: "lfpdppp-compliance",
+    title: "Mexico\ Compliance Guide",
+    excerpt: "Everything you need to know about LFPDPPP compliance, data security requirements, and secure data disposal.",
+    link: "/blog/lfpdppp-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "LFPDPPP compliance, Mexico\ data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "ley-25326-compliance",
+    slug: "ley-25326-compliance",
+    title: "Argentina Personal Data Protection Act Compliance Guide",
+    excerpt: "Everything you need to know about Ley 25.326 compliance, data security requirements, and secure data disposal.",
+    link: "/blog/ley-25326-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "Ley 25.326 compliance, Argentina Personal Data Protection Act data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
+  {
+    id: "peru-pdp-compliance",
+    slug: "peru-pdp-compliance",
+    title: "Peru Personal Data Protection Law Compliance Guide",
+    excerpt: "Everything you need to know about Ley 29733 compliance, data security requirements, and secure data disposal.",
+    link: "/blog/peru-pdp-compliance",
+    tag: "Compliance",
+    category: "Compliance",
+    keywords: "Ley 29733 compliance, Peru Personal Data Protection Law data protection, secure data erasure, privacy laws, data destruction requirements",
+    publishDate: "August 13, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "8 min read"
+  },
 ];

@@ -4,39 +4,44 @@ import { getSEOForPage } from "@/utils/seo";
 import ProductInternalLinks, {
   PRODUCT_LINKS,
 } from "@/components/ProductInternalLinks";
-import {
-  ShieldIcon,
-  CheckIcon,
-  GearIcon,
-  ClipboardIcon,
-  TagIcon,
-} from "@/components/FlatIcons";
 import Reveal from "@/components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import ThemeAwareLogo from "../components/ThemeAwareLogo";
 import { ProductContactForm } from "@/components/forms";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
-import {
-  FileCheck,
-  ShieldCheck as ShieldCheckIcon,
-  Workflow,
-  Activity,
-  Cpu,
-  Cloud,
-  Zap,
-  HardDrive as HardDriveIcon,
-  Database as DatabaseIcon,
-  Layers as LayersIcon,
-  Search as SearchIcon,
-  Lock as LockIcon,
-  Boxes as BoxesIcon,
-  RefreshCcw as RefreshCcwIcon,
-  FileText as FileTextIcon,
-  ChevronDown,
-} from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQSection } from "@/components/FAQSection";
+import {
+  Activity,
+  ArrowLeft,
+  ArrowRight,
+  Boxes as BoxesIcon,
+  CheckCircle,
+  ChevronDown,
+  Cloud,
+  Cpu,
+  Database as DatabaseIcon,
+  FileCheck,
+  FileText,
+  FileText as FileTextIcon,
+  Globe,
+  HardDrive as HardDriveIcon,
+  Layers as LayersIcon,
+  Lock as LockIcon,
+  RefreshCcw as RefreshCcwIcon,
+  RefreshCw,
+  Search as SearchIcon,
+  Server,
+  Settings,
+  Shield,
+  ShieldCheck as ShieldCheckIcon,
+  Star,
+  TagIcon,
+  Workflow,
+  Zap
+} from 'lucide-react';
 
 const forensicImagingTakeaways = [
   {
@@ -212,7 +217,7 @@ const ForensicImagingPage = memo(() => {
     {
       title: "Internal Corporate Audit",
       desc: "Securely document internal policy violations, IP theft, or employee misconduct with admissible evidence.",
-      icon: <ClipboardIcon className="w-6 h-6" />,
+      icon: <FileText className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Data Recovery",
@@ -272,7 +277,7 @@ const ForensicImagingPage = memo(() => {
     {
       title: "Direct API Access",
       desc: "Integrate with Case Management and Digital Asset Management systems via our secure REST API.",
-      icon: <GearIcon className="w-5 h-5" />,
+      icon: <Settings className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Custom Metadata",
@@ -343,7 +348,7 @@ const ForensicImagingPage = memo(() => {
                     </div>
                     <div className="flex items-center gap-3 overflow-x-auto no-scrollbar pb-2 lg:pb-0 flex-nowrap">
                       <div className="flex-shrink-0 inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-bold border border-emerald-200 shadow-sm h-10">
-                        <ShieldIcon className="w-4 h-4" />
+                        <Shield className="w-6 h-6 text-emerald-600" />
                         Forensic-Grade Acquisition
                       </div>
                     </div>
@@ -386,13 +391,13 @@ const ForensicImagingPage = memo(() => {
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Request Early Access
                     </button>
                     <button
                       onClick={() => scrollToSection("acquisition-types")}
-                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-200 bg-white text-emerald-800 font-bold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-200 bg-white text-emerald-800 font-bold px-8 py-4 rounded-none hover:bg-emerald-50 transition-all duration-300"
                     >
                       View Acquisition Specs
                     </button>
@@ -468,7 +473,7 @@ const ForensicImagingPage = memo(() => {
                         }}
                       >
                         <div
-                          className="w-9 h-9 lg:w-10 lg:h-10 bg-white rounded-xl shadow-lg border border-emerald-100 flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl hover:border-emerald-400"
+                          className="w-9 h-9 lg:w-10 lg:h-10 bg-white rounded-none shadow-lg border border-emerald-100 flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl hover:border-emerald-400"
                           style={{
                             animation: `deviceBob 3s ease-in-out infinite ${item.delay}`,
                           }}
@@ -515,14 +520,14 @@ const ForensicImagingPage = memo(() => {
                     <div className="relative w-[230px] sm:w-[270px] lg:w-[330px]">
                       {/* Screen bezel */}
                       <div
-                        className="bg-slate-900 rounded-t-xl sm:rounded-t-2xl p-1 sm:p-1.5 lg:p-2 shadow-2xl border border-slate-700/50"
+                        className="bg-slate-900 rounded-none sm:rounded-none p-1 sm:p-1.5 lg:p-2 shadow-2xl border border-slate-700/50"
                         style={{
                           boxShadow:
                             "0 15px 50px -10px rgba(0,0,0,0.4), 0 0 30px rgba(16,185,129,0.12)",
                         }}
                       >
                         {/* Screen content */}
-                        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg sm:rounded-xl overflow-hidden">
+                        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-none sm:rounded-none overflow-hidden">
                           {/* Title bar */}
                           <div className="flex items-center justify-between px-3 py-1 bg-slate-800/80 border-b border-slate-700/50">
                             <div className="flex items-center gap-1">
@@ -540,7 +545,7 @@ const ForensicImagingPage = memo(() => {
                           <div className="p-2 sm:p-3 lg:p-3.5 space-y-2 sm:space-y-2.5">
                             {/* Top stats row */}
                             <div className="grid grid-cols-3 gap-1 sm:gap-1.5">
-                              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-1 sm:p-1.5 text-center">
+                              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-none p-1 sm:p-1.5 text-center">
                                 <div className="text-emerald-400 font-bold text-[10px] sm:text-xs lg:text-base">
                                   1,450
                                 </div>
@@ -548,7 +553,7 @@ const ForensicImagingPage = memo(() => {
                                   Drives Imaged
                                 </div>
                               </div>
-                              <div className="bg-teal-500/10 border border-teal-500/20 rounded-lg p-1 sm:p-1.5 text-center">
+                              <div className="bg-teal-500/10 border border-teal-500/20 rounded-none p-1 sm:p-1.5 text-center">
                                 <div className="text-teal-400 font-bold text-[10px] sm:text-xs lg:text-base">
                                   100%
                                 </div>
@@ -556,7 +561,7 @@ const ForensicImagingPage = memo(() => {
                                   Integrity
                                 </div>
                               </div>
-                              <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-1 sm:p-1.5 text-center">
+                              <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-none p-1 sm:p-1.5 text-center">
                                 <div className="text-cyan-400 font-bold text-[10px] sm:text-xs lg:text-base">
                                   26+
                                 </div>
@@ -567,7 +572,7 @@ const ForensicImagingPage = memo(() => {
                             </div>
 
                             {/* Active task */}
-                            <div className="bg-slate-800/60 rounded-lg p-1.5 sm:p-2 border border-slate-700/40">
+                            <div className="bg-slate-800/60 rounded-none p-1.5 sm:p-2 border border-slate-700/40">
                               <div className="flex items-center justify-between mb-1">
                                 <div className="flex items-center gap-1">
                                   <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
@@ -638,7 +643,7 @@ const ForensicImagingPage = memo(() => {
                       {/* Monitor stand */}
                       <div className="flex flex-col items-center">
                         <div className="w-14 sm:w-16 lg:w-20 h-3 sm:h-4 lg:h-5 bg-gradient-to-b from-slate-700 to-slate-800 rounded-b-sm"></div>
-                        <div className="w-20 sm:w-24 lg:w-28 h-1.5 bg-gradient-to-b from-slate-700 to-slate-800 rounded-b-lg shadow-lg"></div>
+                        <div className="w-20 sm:w-24 lg:w-28 h-1.5 bg-gradient-to-b from-slate-700 to-slate-800 rounded-none shadow-lg"></div>
                       </div>
                     </div>
                   </div>
@@ -699,7 +704,7 @@ const ForensicImagingPage = memo(() => {
                   step: "02",
                   title: "Setup",
                   desc: "Configure hash algorithms (MD5/SHA) and select output format (E01/dd).",
-                  icon: <GearIcon className="w-6 h-6" />,
+                  icon: <Settings className="w-6 h-6 text-emerald-600" />,
                 },
                 {
                   step: "03",
@@ -718,11 +723,11 @@ const ForensicImagingPage = memo(() => {
                   key={item.title}
                   delayMs={Number.parseInt(item.step) * 100}
                 >
-                  <div className="relative p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-emerald-200 hover:shadow-xl transition-all group">
+                  <div className="relative p-10 rounded-none bg-slate-50 border border-slate-100 hover:bg-white hover:border-emerald-200 hover:shadow-xl transition-all group">
                     <span className="absolute top-6 right-6 text-4xl font-black text-slate-200 group-hover:text-emerald-100 transition-colors">
                       {item.step}
                     </span>
-                    <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                    <div className="w-12 h-12 rounded-none bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all">
                       {item.icon}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">
@@ -757,12 +762,12 @@ const ForensicImagingPage = memo(() => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {acquisitionTypes.map((type, i) => (
                 <Reveal key={type.title} delayMs={i * 100}>
-                  <div className="group relative p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-emerald-200 hover:shadow-2xl transition-all h-full overflow-hidden text-left">
+                  <div className="group relative p-8 rounded-none border border-slate-100 bg-slate-50 hover:bg-white hover:border-emerald-200 hover:shadow-2xl transition-all h-full overflow-hidden text-left">
                     <div
                       className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${type.color} opacity-[0.03] -mr-16 -mt-16 rounded-full transition-all group-hover:scale-110`}
                     ></div>
                     <div
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${type.color} text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}
+                      className={`w-14 h-14 rounded-none bg-gradient-to-br ${type.color} text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}
                     >
                       {type.icon}
                     </div>
@@ -790,7 +795,7 @@ const ForensicImagingPage = memo(() => {
                       key={s.title}
                       className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 hover:border-emerald-300 hover:bg-white hover:shadow-xl transition-all duration-300 group"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-white text-emerald-600 flex items-center justify-center mb-6 shadow-sm border border-slate-50 group-hover:scale-110 transition-transform">
+                      <div className="w-10 h-10 rounded-none bg-white text-emerald-600 flex items-center justify-center mb-6 shadow-sm border border-slate-50 group-hover:scale-110 transition-transform">
                         {s.icon}
                       </div>
                       <h3 className="font-bold text-slate-900 mb-2">
@@ -827,9 +832,9 @@ const ForensicImagingPage = memo(() => {
                     ].map((item) => (
                       <li
                         key={item}
-                        className="flex items-center gap-3 text-slate-700 bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/50"
+                        className="flex items-center gap-3 text-slate-700 bg-emerald-50/50 p-3 rounded-none border border-emerald-100/50"
                       >
-                        <CheckIcon className="w-5 h-5 text-emerald-500" />
+                        <CheckCircle className="w-6 h-6 text-emerald-600" />
                         <span className="font-semibold text-sm">{item}</span>
                       </li>
                     ))}
@@ -868,7 +873,7 @@ const ForensicImagingPage = memo(() => {
               {verificationFeatures.map((f) => (
                 <Reveal key={f.title}>
                   <div className="text-center p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-500 group">
-                    <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-500">
+                    <div className="w-16 h-16 rounded-none bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-500">
                       {React.cloneElement(f.icon as any, {
                         className: "w-8 h-8",
                       })}
@@ -911,7 +916,7 @@ const ForensicImagingPage = memo(() => {
                 <Reveal key={feat.title} delayMs={i * 100}>
                   <div className="p-10 rounded-[2.5rem] border border-slate-100 bg-slate-50 hover:bg-white hover:border-emerald-200 transition-all h-full text-left relative overflow-hidden group">
                     <div className="absolute -right-4 -top-4 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-colors"></div>
-                    <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6 group-hover:rotate-12 group-hover:scale-110 transition-all">
+                    <div className="w-12 h-12 rounded-none bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6 group-hover:rotate-12 group-hover:scale-110 transition-all">
                       {feat.icon}
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 mb-4">
@@ -949,8 +954,8 @@ const ForensicImagingPage = memo(() => {
             <div className="grid md:grid-cols-2 gap-8">
               {useCases.map((use, i) => (
                 <Reveal key={use.title} delayMs={i * 100}>
-                  <div className="flex items-start gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/[0.08] transition-all text-left">
-                    <div className="w-16 h-16 flex-shrink-0 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center">
+                  <div className="flex items-start gap-6 p-8 rounded-none bg-white/5 border border-white/10 hover:bg-white/[0.08] transition-all text-left">
+                    <div className="w-16 h-16 flex-shrink-0 bg-emerald-500/20 text-emerald-400 rounded-none flex items-center justify-center">
                       {use.icon}
                     </div>
                     <div className="space-y-3">

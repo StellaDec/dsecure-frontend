@@ -4,20 +4,30 @@ import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import {
-  ShieldIcon,
-  CheckIcon,
-  GlobeIcon,
-  GearIcon,
-  ClipboardIcon,
-  ServerIcon,
-  ArrowRightIcon,
-} from "@/components/FlatIcons";
-import { Monitor, HardDrive, Cpu, Smartphone, Cloud, CheckCircle2, RefreshCw, Server as LucideServer } from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import { FAQSection } from "@/components/FAQSection";
 import SolutionContactSection from "@/components/SolutionContactSection";
 import ProductInternalLinks from "@/components/ProductInternalLinks";
 import { blogPosts } from "@/data/blogPosts";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle,
+  CheckCircle2,
+  Cloud,
+  Cpu,
+  FileText,
+  Globe,
+  HardDrive,
+  Monitor,
+  RefreshCw,
+  Server,
+  Server as LucideServer,
+  Settings,
+  Shield,
+  Smartphone,
+  Star
+} from 'lucide-react';
 
 const getReadTime = (text: string) => {
   const wordsPerMinute = 200;
@@ -30,7 +40,7 @@ const relatedBlogs = blogPosts.slice(0, 4);
 
 // Assuming we have basic SEO setup. Fallback provided.
 const getSEOForPage = (id: string) => ({
-  title: "System Cleaner | D-Secure",
+  title: "Zero Trace | D-Secure",
   description: "Secure data erasure solution built to permanently remove every trace of data from your devices.",
   keywords: "system cleaner, data erasure, wipe data, secure delete",
 });
@@ -48,30 +58,30 @@ const generateFAQSchema = (faqs: any[]) => ({
   }))
 });
 
-const systemCleanerFaqs = [
+const zeroTraceFaqs = [
   {
-    question: "Once System Cleaner erases my data, is there any way to get it back?",
-    answer: "No. System Cleaner overwrites your data using industry-standard methods, well beyond what simple deletion or formatting provides. Once the process completes, the data cannot be recovered — not through recovery software, and not through professional data-recovery services."
+    question: "Once Zero Trace erases my data, is there any way to get it back?",
+    answer: "No. Zero Trace overwrites your data using industry-standard methods, well beyond what simple deletion or formatting provides. Once the process completes, the data cannot be recovered — not through recovery software, and not through professional data-recovery services."
   },
   {
-    question: "Does System Cleaner work on SSDs as well as traditional hard drives?",
-    answer: "Yes. System Cleaner is built to handle both HDDs and SSDs, applying the right erasure approach for each drive type to ensure a complete, secure wipe."
+    question: "Does Zero Trace work on SSDs as well as traditional hard drives?",
+    answer: "Yes. Zero Trace is built to handle both HDDs and SSDs, applying the right erasure approach for each drive type to ensure a complete, secure wipe."
   },
   {
-    question: "What makes System Cleaner different from just deleting files or formatting my drive?",
-    answer: "Deleting files or formatting a drive only removes the 'pointer' to your data — the actual files usually remain recoverable. System Cleaner physically overwrites the data itself, following industry-leading sanitization standards, so there's nothing left to recover."
+    question: "What makes Zero Trace different from just deleting files or formatting my drive?",
+    answer: "Deleting files or formatting a drive only removes the 'pointer' to your data — the actual files usually remain recoverable. Zero Trace physically overwrites the data itself, following industry-leading sanitization standards, so there's nothing left to recover."
   },
   {
-    question: "Is System Cleaner meant for personal use, or is it built for businesses?",
-    answer: "Both. System Cleaner is simple enough for individuals wiping a personal device before resale or donation, while also offering the depth and reliability businesses need for IT asset disposal at scale."
+    question: "Is Zero Trace meant for personal use, or is it built for businesses?",
+    answer: "Both. Zero Trace is simple enough for individuals wiping a personal device before resale or donation, while also offering the depth and reliability businesses need for IT asset disposal at scale."
   },
   {
-    question: "Does System Cleaner remove my installed programs too, or just my files?",
-    answer: "Yes. Before the deep erase begins, System Cleaner automatically clears out third-party software and leftover files from your system, so nothing is left behind once the drive is wiped."
+    question: "Does Zero Trace remove my installed programs too, or just my files?",
+    answer: "Yes. Before the deep erase begins, Zero Trace automatically clears out third-party software and leftover files from your system, so nothing is left behind once the drive is wiped."
   }
 ];
 
-const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
+const ZeroTracePage: React.FC = memo(function ZeroTracePage() {
   const [activeSection, setActiveSection] = useState("");
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [isDemoActive, setIsDemoActive] = useState(false);
@@ -166,18 +176,18 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
   const steps = [
     {
       title: "System Cleanup",
-      desc: "System Cleaner scans your device and removes third-party applications, leftover installers, and background processes, clearing the way for an unobstructed wipe.",
-      icon: <ShieldIcon className="w-8 h-8" />,
+      desc: "Zero Trace scans your device and removes third-party applications, leftover installers, and background processes, clearing the way for an unobstructed wipe.",
+      icon: <Shield className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Deep Drive Erasure",
-      desc: "System Cleaner then runs a thorough, multi-pass overwrite across the entire drive, following industry-leading data sanitization practices.",
-      icon: <GearIcon className="w-8 h-8" />,
+      desc: "Zero Trace then runs a thorough, multi-pass overwrite across the entire drive, following industry-leading data sanitization practices.",
+      icon: <Settings className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Irrecoverable Results",
       desc: "Once complete, your data isn't just 'deleted' — it's structurally destroyed. No software, service, or specialist can bring it back.",
-      icon: <CheckIcon className="w-8 h-8" />,
+      icon: <CheckCircle className="w-6 h-6 text-emerald-600" />,
     },
   ];
 
@@ -185,22 +195,22 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
     {
       title: "Full Third-Party Software Removal",
       desc: "Clears installed programs before the wipe begins.",
-      icon: <CheckIcon className="w-6 h-6 text-emerald-500" />,
+      icon: <CheckCircle className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Industry-Standard Data Sanitization",
       desc: "Follows recognized, thorough erasure methods.",
-      icon: <ShieldIcon className="w-6 h-6 text-blue-500" />,
+      icon: <Shield className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Truly Irrecoverable Erasure",
       desc: "Goes far beyond what delete, format, or factory reset can do.",
-      icon: <ClipboardIcon className="w-6 h-6 text-amber-500" />,
+      icon: <FileText className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "Works Across Drive Types",
       desc: "Built to handle both HDDs and SSDs.",
-      icon: <ServerIcon className="w-6 h-6 text-purple-500" />,
+      icon: <Server className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "One-Click Simplicity",
@@ -210,7 +220,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
     {
       title: "Enterprise & Compliance Ready",
       desc: "Suited for organizations that need to prove secure data destruction.",
-      icon: <GlobeIcon className="w-6 h-6 text-indigo-500" />,
+      icon: <Globe className="w-6 h-6 text-emerald-600" />,
     },
   ];
 
@@ -236,8 +246,8 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
   return (
     <>
       <SEOHeadNative 
-        seo={getSEOForPage("system-cleaner")} 
-        structuredData={generateFAQSchema(systemCleanerFaqs)} 
+        seo={getSEOForPage("zero-trace")} 
+        structuredData={generateFAQSchema(zeroTraceFaqs)} 
       />
 
       <div className="container mx-auto px-4 pt-4 pb-1">
@@ -245,7 +255,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
           items={[
             { name: 'Home', path: '/' },
             { name: 'Products', path: '/products' },
-            { name: 'System Cleaner', path: '/products/system-cleaner' },
+            { name: 'Zero Trace', path: '/products/zero-trace' },
           ]}
         />
       </div>
@@ -299,7 +309,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
                 <div className="space-y-8">
                   <div className="flex flex-col sm:flex-row items-center gap-3">
                     <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
-                      <ShieldIcon className="w-4 h-4" />
+                      <Shield className="w-6 h-6 text-emerald-600" />
                       Erase Completely. Protect Permanently.
                     </div>
                   </div>
@@ -307,7 +317,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
                   <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
                     D-Secure{" "}
                     <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                      System Cleaner
+                      Zero Trace
                     </span>
                   </h1>
 
@@ -319,7 +329,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
 
                     <Link
                       to="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-emerald-50 text-emerald-700 rounded-xl font-semibold transition-all border-2 border-emerald-200 hover:border-emerald-300"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-emerald-50 text-emerald-700 rounded-none font-semibold transition-all border-2 border-emerald-200 hover:border-emerald-300"
                     >
                       Talk to Sales
                     </Link>
@@ -335,12 +345,12 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
 
 
                   {/* Main Monitor Base Shadow */}
-                  <div className="absolute inset-0 bg-emerald-500/10 rounded-2xl blur-2xl transform translate-y-4 group-hover:translate-y-6 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-emerald-500/10 rounded-none blur-2xl transform translate-y-4 group-hover:translate-y-6 transition-all duration-500" />
                   
                   {/* Monitor Hardware */}
                   <div className="relative flex flex-col items-center z-10 w-full transform transition-transform duration-500 group-hover:-translate-y-2">
                     {/* Monitor Screen */}
-                    <div className="bg-[#1a202c] w-full rounded-xl overflow-hidden shadow-2xl border border-slate-700/50 flex flex-col relative">
+                    <div className="bg-[#1a202c] w-full rounded-none overflow-hidden shadow-2xl border border-slate-700/50 flex flex-col relative">
                       {/* Top Bar macOS style */}
                       <div className="bg-[#2d3748]/50 border-b border-slate-700/50 px-4 py-2.5 flex items-center justify-between">
                         <div className="flex gap-1.5">
@@ -356,24 +366,24 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
                       <div className="p-4 sm:p-5 lg:p-6 flex flex-col gap-4 sm:gap-5">
                         {/* Top Stats */}
                         <div className="grid grid-cols-3 gap-2 sm:gap-3">
-                          <div className="bg-[#2d3748]/40 border border-emerald-500/20 rounded-lg p-2 sm:p-4 flex flex-col items-center justify-center relative overflow-hidden group/stat hover:bg-[#2d3748]/60 transition-colors">
+                          <div className="bg-[#2d3748]/40 border border-emerald-500/20 rounded-none p-2 sm:p-4 flex flex-col items-center justify-center relative overflow-hidden group/stat hover:bg-[#2d3748]/60 transition-colors">
                             <div className="absolute inset-0 bg-emerald-500/5" />
                             <span className="text-lg sm:text-2xl font-bold text-emerald-400 mb-0.5 sm:mb-1">14.2<span className="text-sm">GB</span></span>
                             <span className="text-[8px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-widest text-center">Space Freed</span>
                           </div>
-                          <div className="bg-[#2d3748]/40 border border-emerald-500/20 rounded-lg p-2 sm:p-4 flex flex-col items-center justify-center relative overflow-hidden group/stat hover:bg-[#2d3748]/60 transition-colors">
+                          <div className="bg-[#2d3748]/40 border border-emerald-500/20 rounded-none p-2 sm:p-4 flex flex-col items-center justify-center relative overflow-hidden group/stat hover:bg-[#2d3748]/60 transition-colors">
                             <div className="absolute inset-0 bg-emerald-500/5" />
                             <span className="text-lg sm:text-2xl font-bold text-emerald-400 mb-0.5 sm:mb-1">100%</span>
                             <span className="text-[8px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-widest text-center">Secure Clean</span>
                           </div>
-                          <div className="bg-[#2d3748]/40 border border-slate-600/30 rounded-lg p-2 sm:p-4 flex flex-col items-center justify-center relative overflow-hidden group/stat hover:bg-[#2d3748]/60 transition-colors">
+                          <div className="bg-[#2d3748]/40 border border-slate-600/30 rounded-none p-2 sm:p-4 flex flex-col items-center justify-center relative overflow-hidden group/stat hover:bg-[#2d3748]/60 transition-colors">
                             <span className="text-lg sm:text-2xl font-bold text-cyan-400 mb-0.5 sm:mb-1">50+</span>
                             <span className="text-[8px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-widest text-center">Apps Cleaned</span>
                           </div>
                         </div>
 
                         {/* Progress Bar Area */}
-                        <div className="bg-[#2d3748]/30 border border-slate-600/30 rounded-lg p-3 sm:p-4">
+                        <div className="bg-[#2d3748]/30 border border-slate-600/30 rounded-none p-3 sm:p-4">
                            <div className="flex items-center justify-between mb-3">
                              <div className="flex items-center gap-2">
                                <div className="bg-emerald-500/20 p-1 sm:p-1.5 rounded-md text-emerald-400">
@@ -423,7 +433,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
                     </div>
                     {/* Stand */}
                     <div className="w-20 sm:w-24 h-5 sm:h-6 bg-gradient-to-b from-[#2d3748] to-[#1a202c] border-x border-slate-700/50 relative z-0" />
-                    <div className="w-28 sm:w-32 h-1.5 sm:h-2 bg-[#1a202c] rounded-b-xl border border-t-0 border-slate-700/50 shadow-xl relative z-0" />
+                    <div className="w-28 sm:w-32 h-1.5 sm:h-2 bg-[#1a202c] rounded-none border border-t-0 border-slate-700/50 shadow-xl relative z-0" />
                   </div>
                 </div>
               </Reveal>
@@ -443,7 +453,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
                   Most people assume that deleting a file, emptying the recycle bin, or formatting a drive removes their data for good. It doesn't. These actions only remove the *pointer* to your files — the actual data usually stays fully intact on the drive and can be pulled back using freely available recovery software.
                 </p>
                 <p className="text-lg text-slate-600 leading-relaxed mt-4">
-                  This gap is a real risk. Old laptops, discarded hard drives, and recycled company devices are a common source of data leaks, identity theft, and compliance failures. System Cleaner closes that gap by physically overwriting your data so it can never be reconstructed.
+                  This gap is a real risk. Old laptops, discarded hard drives, and recycled company devices are a common source of data leaks, identity theft, and compliance failures. Zero Trace closes that gap by physically overwriting your data so it can never be reconstructed.
                 </p>
               </div>
             </Reveal>
@@ -456,7 +466,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
             <Reveal>
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                  How System Cleaner Works
+                  How Zero Trace Works
                 </h2>
                 <p className="text-xl text-slate-600">
                   A simple, two-stage process for total peace of mind.
@@ -467,8 +477,8 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {steps.map((step, index) => (
                 <Reveal key={`step-${index}`} delayMs={index * 100}>
-                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 h-full flex flex-col items-center text-center hover:-translate-y-1 transition-transform">
-                    <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                  <div className="bg-white rounded-none p-8 shadow-lg border border-slate-100 h-full flex flex-col items-center text-center hover:-translate-y-1 transition-transform">
+                    <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-none flex items-center justify-center mb-6">
                       {step.icon}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">
@@ -491,10 +501,10 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
             <Reveal>
               <div className="text-center mb-10">
                 <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  See System Cleaner in Action
+                  See Zero Trace in Action
                 </h2>
                 <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  Watch how D-Secure System Cleaner permanently destroys sensitive
+                  Watch how D-Secure Zero Trace permanently destroys sensitive
                   data with audit-ready documentation
                 </p>
               </div>
@@ -510,14 +520,14 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
                   className={`relative bg-white overflow-hidden shadow-2xl border border-slate-200/80 hover:shadow-emerald-200/30 transition-shadow duration-500 flex flex-col group ${
                     isFullscreen
                       ? "w-full h-full rounded-none"
-                      : "rounded-2xl h-full min-h-[800px]"
+                      : "rounded-none h-full min-h-[800px]"
                   }`}
                 >
                   {/* Fullscreen Toggle Button (visible only when demo is active) */}
                   {isDemoActive && (
                     <button
                       onClick={toggleFullscreen}
-                      className="absolute top-12 right-4 z-50 p-2.5 bg-slate-900/80 hover:bg-emerald-600 text-white rounded-xl shadow-lg backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center gap-2"
+                      className="absolute top-12 right-4 z-50 p-2.5 bg-slate-900/80 hover:bg-emerald-600 text-white rounded-none shadow-lg backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center gap-2"
                       title={
                         isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"
                       }
@@ -595,7 +605,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
                     <iframe
                       src="https://system-cleaner-dsecure-web.vercel.app/"
                       className="w-full h-full flex-1 border-0"
-                      title="D-Secure System Cleaner Demo"
+                      title="D-Secure Zero Trace Demo"
                       sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                       loading="lazy"
                       allow="clipboard-read; clipboard-write; fullscreen"
@@ -622,8 +632,8 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <Reveal key={`feature-${index}`} delayMs={index * 100}>
-                  <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-shadow">
-                    <div className="bg-white w-12 h-12 rounded-xl flex items-center justify-center shadow-sm mb-4">
+                  <div className="p-6 rounded-none bg-slate-50 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div className="bg-white w-12 h-12 rounded-none flex items-center justify-center shadow-sm mb-4">
                       {feature.icon}
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 mb-2">
@@ -643,7 +653,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
             <Reveal>
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Who Uses System Cleaner
+                  Who Uses Zero Trace
                 </h2>
                 <p className="text-xl text-slate-400 max-w-2xl mx-auto">
                   Simple enough for anyone to use, thorough enough for the world's strictest data-destruction requirements.
@@ -654,7 +664,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {whoUsesIt.map((useCase, index) => (
                 <Reveal key={`usecase-${index}`} delayMs={index * 100}>
-                  <div className="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl hover:bg-slate-800 transition-colors h-full">
+                  <div className="bg-slate-800/50 border border-slate-700 p-6 rounded-none hover:bg-slate-800 transition-colors h-full">
                     <h3 className="text-xl font-bold text-emerald-400 mb-3">
                       {useCase.title}
                     </h3>
@@ -666,31 +676,31 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
           </div>
         </section>
 
-        <ProductInternalLinks currentProduct="system-cleaner" />
+        <ProductInternalLinks currentProduct="zero-trace" />
 
         {/* FAQ */}
-        <FAQSection id="faq" faqs={systemCleanerFaqs} />
+        <FAQSection id="faq" faqs={zeroTraceFaqs} />
 
         {/* ================= LATEST INSIGHTS & UPDATES ================= */}
-        <section id="blogs" className="py-16 lg:py-24 bg-white">
+        <section id="blogs" className="py-16 lg:py-24 bg-emerald-950">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                     Technical Blogs
                   </h2>
-                  <p className="text-lg text-slate-600 max-w-2xl">
+                  <p className="text-lg text-emerald-50 max-w-2xl">
                     Expert insights on data security, erasure standards, and
                     best practices
                   </p>
                 </div>
                 <Link
                   to="/blog"
-                  className="inline-flex items-center gap-2 text-emerald-800 font-bold hover:text-emerald-700 transition-colors group"
+                  className="inline-flex items-center gap-2 text-emerald-400 font-bold hover:text-emerald-300 transition-colors group"
                 >
                   View More
-                  <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-6 h-6 text-emerald-400" />
                 </Link>
               </div>
             </Reveal>
@@ -698,7 +708,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {relatedBlogs.map((blog, i) => (
                 <Reveal key={blog.id} delayMs={i * 60}>
-                  <div className="relative bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
+                  <div className="relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-emerald-900 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
                     <div className="mb-4">
                       <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
                         {blog.tag}
@@ -713,7 +723,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
                       {blog.excerpt}
                     </p>
                     <div className="flex items-center text-emerald-800 font-semibold text-sm mb-4 group-hover:gap-2 gap-1 transition-all">
-                      Read Article <ArrowRightIcon className="w-4 h-4" />
+                      Read Article <ArrowRight className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div className="flex items-center justify-between text-xs text-slate-400 mt-auto pt-4 border-t border-slate-100">
                       <span>{blog.publishDate}</span>
@@ -729,7 +739,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
         </section>
 
         {/* CONTACT SECTION */}
-        <SolutionContactSection source="System Cleaner Page" subjectPrefix="System Cleaner Enquiry" />
+        <SolutionContactSection source="Zero Trace Page" subjectPrefix="Zero Trace Enquiry" />
 
         {/* CTA */}
         <section className="py-20 bg-emerald-600 relative overflow-hidden">
@@ -747,7 +757,7 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
 
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold transition-all hover:bg-emerald-700"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-none font-semibold transition-all hover:bg-emerald-700"
                   >
                     Talk to Sales
                   </Link>
@@ -761,4 +771,4 @@ const SystemCleanerPage: React.FC = memo(function SystemCleanerPage() {
   );
 });
 
-export default SystemCleanerPage;
+export default ZeroTracePage;

@@ -1,44 +1,42 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import { Link } from "react-router-dom";
 import { getSEOForPage } from "@/utils/seo";
-import {
-  Zap,
-  ChevronDown,
-  Database,
-  Server,
-  Layers,
-  ArrowUpRight,
-  CheckCircle,
-  Briefcase,
-  Activity,
-  ShieldCheck,
-  Search,
-  Settings,
-  Monitor,
-  Cloud,
-  Globe,
-  Lock,
-  FileSearch,
-  BarChart3,
-  RefreshCcw,
-  ArrowLeftRight,
-} from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import Reveal from "@/components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import { ProductContactForm } from "@/components/forms";
-import {
-  ShieldIcon,
-  CheckIcon,
-  GlobeIcon,
-  CloudIcon,
-  GearIcon,
-  ClipboardIcon,
-  ServerIcon,
-} from "@/components/FlatIcons";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQSection } from "@/components/FAQSection";
+import {
+  Activity,
+  ArrowLeft,
+  ArrowLeftRight,
+  ArrowRight,
+  ArrowUpRight,
+  BarChart3,
+  Briefcase,
+  CheckCircle,
+  ChevronDown,
+  Cloud,
+  Database,
+  FileSearch,
+  FileText,
+  Globe,
+  Layers,
+  Lock,
+  Monitor,
+  RefreshCcw,
+  RefreshCw,
+  Search,
+  Server,
+  Settings,
+  Shield,
+  ShieldCheck,
+  Star,
+  Zap
+} from 'lucide-react';
 
 const dataMigrationTakeaways = [
   { title: "Zero-Loss Transition", desc: "Securely migrate workloads across Cloud, Database, and Hybrid infrastructure." },
@@ -63,7 +61,7 @@ const migrationTypes = [
   {
     title: "Storage Migration",
     desc: "Moving data from aging hardware to high-performance SSDs or modern san/nas systems.",
-    icon: <ServerIcon className="w-6 h-6" />,
+    icon: <Server className="w-6 h-6 text-emerald-600" />,
     color: "from-blue-500 to-indigo-600"
   },
   {
@@ -81,7 +79,7 @@ const migrationTypes = [
   {
     title: "Cloud Migration",
     desc: "Lifting and shifting on-premises workloads to public cloud environments (AWS, Azure, GCP).",
-    icon: <CloudIcon className="w-6 h-6" />,
+    icon: <Cloud className="w-6 h-6 text-emerald-600" />,
     color: "from-cyan-500 to-blue-600"
   }
 ];
@@ -194,7 +192,7 @@ const DataMigrationPage = memo(() => {
                   </Reveal>
 
                   <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-bold border border-emerald-200 shadow-sm">
-                    <ShieldIcon className="w-4 h-4" />
+                    <Shield className="w-6 h-6 text-emerald-600" />
                     Enterprise-Grade Data Transfer
                   </div>
 
@@ -212,13 +210,13 @@ const DataMigrationPage = memo(() => {
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Request Early Access
                     </button>
                     <button
                       onClick={() => scrollToSection("strategy")}
-                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 font-bold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 font-bold px-8 py-4 rounded-none hover:bg-emerald-50 transition-all duration-300"
                     >
                       View Strategies
                     </button>
@@ -245,11 +243,11 @@ const DataMigrationPage = memo(() => {
                     }}
                   >
                     {/* Glow Behind Box */}
-                    <div className="absolute inset-0 bg-emerald-500/40 blur-3xl rounded-3xl scale-110"></div>
+                    <div className="absolute inset-0 bg-emerald-500/40 blur-3xl rounded-none scale-110"></div>
 
                     {/* Main Box - Front Face */}
                     <div
-                      className="relative w-[220px] h-[280px] lg:w-[280px] lg:h-[360px] bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-2xl shadow-2xl overflow-hidden"
+                      className="relative w-[220px] h-[280px] lg:w-[280px] lg:h-[360px] bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-none shadow-2xl overflow-hidden"
                       style={{
                         transform: "rotateY(-12deg) rotateX(5deg)",
                         boxShadow: "25px 25px 60px rgba(0,0,0,0.3), -5px -5px 20px rgba(255,255,255,0.1), inset 0 0 80px rgba(255,255,255,0.05)",
@@ -265,7 +263,7 @@ const DataMigrationPage = memo(() => {
                         </div>
 
                         {/* Main Icon - Transfer/Sync Icon */}
-                        <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 lg:mb-6 border border-white/20 shadow-inner">
+                        <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white/15 backdrop-blur-sm rounded-none flex items-center justify-center mb-4 lg:mb-6 border border-white/20 shadow-inner">
                           <ArrowLeftRight className="w-12 h-12 lg:w-16 lg:h-16 text-white drop-shadow-lg" />
                         </div>
 
@@ -279,7 +277,7 @@ const DataMigrationPage = memo(() => {
 
                         <div className="absolute bottom-4 lg:bottom-6 left-1/2 -translate-x-1/2">
                           <div className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-white/20">
-                            <CheckIcon className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-emerald-300" />
+                            <CheckCircle className="w-6 h-6 text-emerald-600" />
                             <span className="text-white/90 text-[9px] lg:text-[11px] font-semibold uppercase tracking-wider">Secure Sync</span>
                           </div>
                         </div>
@@ -345,7 +343,7 @@ const DataMigrationPage = memo(() => {
                  <Reveal key={item.title} delayMs={idx * 100}>
                     <div className="relative p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-500 h-full group text-center">
                        <span className="absolute top-4 right-6 text-4xl font-black text-slate-200/50 group-hover:text-emerald-500/10 transition-colors uppercase">{item.step}</span>
-                       <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
+                       <div className="w-12 h-12 rounded-none bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
                           {React.cloneElement(item.icon as any, { className: "w-6 h-6" })}
                        </div>
                        <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">{item.title}</h3>
@@ -379,7 +377,7 @@ const DataMigrationPage = memo(() => {
                       { title: "Agentless Discovery", desc: "Scan your entire infrastructure without installing software on source machines, reducing complexity.", icon: <Search /> },
                     ].map(item => (
                       <div key={item.title} className="flex gap-6 items-start group">
-                        <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-emerald-400 border border-white/10 shrink-0 group-hover:bg-emerald-500/10 transition-colors">
+                        <div className="w-12 h-12 rounded-none bg-white/5 flex items-center justify-center text-emerald-400 border border-white/10 shrink-0 group-hover:bg-emerald-500/10 transition-colors">
                           {React.cloneElement(item.icon as any, { className: "w-6 h-6" })}
                         </div>
                         <div>
@@ -400,7 +398,7 @@ const DataMigrationPage = memo(() => {
                     </div>
                     
                     <div className="space-y-8 relative z-10">
-                       <div className="p-6 bg-slate-700/50 rounded-2xl border border-white/10">
+                       <div className="p-6 bg-slate-700/50 rounded-none border border-white/10">
                           <div className="flex justify-between items-center mb-4">
                              <span className="text-[10px] font-bold tracking-widest text-emerald-400 uppercase">Migration Flow Velocity</span>
                              <span className="text-xs font-mono text-emerald-400">985 MB/s</span>
@@ -411,19 +409,19 @@ const DataMigrationPage = memo(() => {
                        </div>
 
                        <div className="grid grid-cols-2 gap-4">
-                          <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+                          <div className="p-4 bg-white/5 rounded-none border border-white/10">
                              <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Data Consistence</p>
                              <p className="text-lg font-bold">99.999%</p>
                           </div>
-                          <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+                          <div className="p-4 bg-white/5 rounded-none border border-white/10">
                              <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Latency Offset</p>
                              <p className="text-lg font-bold text-emerald-400">-42ms</p>
                           </div>
                        </div>
 
-                       <div className="p-6 bg-emerald-500 rounded-2xl shadow-xl shadow-emerald-900/40">
+                       <div className="p-6 bg-emerald-500 rounded-none shadow-xl shadow-emerald-900/40">
                           <div className="flex items-center gap-4">
-                             <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+                             <div className="w-10 h-10 rounded-none bg-white/20 flex items-center justify-center">
                                 <ShieldCheck className="w-5 h-5 text-white" />
                              </div>
                              <div>
@@ -464,8 +462,8 @@ const DataMigrationPage = memo(() => {
                         { title: "Audit Continuity", desc: "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary/Annexure).", icon: <BarChart3 /> },
                         { title: "Access Control", desc: "Granular RBAC and MFA for migration operators.", icon: <Settings /> },
                       ].map(item => (
-                        <div key={item.title} className="p-6 rounded-2xl bg-slate-50 border border-slate-100 group hover:border-emerald-200 transition-colors">
-                          <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-emerald-600 mb-4 shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                        <div key={item.title} className="p-6 rounded-none bg-slate-50 border border-slate-100 group hover:border-emerald-200 transition-colors">
+                          <div className="w-10 h-10 rounded-none bg-white flex items-center justify-center text-emerald-600 mb-4 shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all">
                              {React.cloneElement(item.icon as any, { className: "w-5 h-5" })}
                           </div>
                           <h3 className="font-bold text-slate-900 mb-1 text-sm">{item.title}</h3>
@@ -482,7 +480,7 @@ const DataMigrationPage = memo(() => {
                    <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/20 transition-colors"></div>
                    
                    <div className="flex items-center gap-4 mb-10">
-                      <div className="w-14 h-14 rounded-2xl bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                      <div className="w-14 h-14 rounded-none bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
                          <ShieldCheck className="w-8 h-8 text-white" />
                       </div>
                       <div>
@@ -498,7 +496,7 @@ const DataMigrationPage = memo(() => {
                         { label: "NIST 800-88", value: "Compliant with media sanitization guidelines" },
                         { label: "ISO 27001", value: "Information security management systems compliance" }
                       ].map(std => (
-                        <div key={std.label} className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                        <div key={std.label} className="flex gap-4 p-4 rounded-none bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                            <div className="mt-1"><CheckCircle className="w-4 h-4 text-emerald-400" /></div>
                            <div>
                               <p className="text-sm font-bold text-white">{std.label}</p>
@@ -510,7 +508,7 @@ const DataMigrationPage = memo(() => {
 
                    <div className="mt-10 pt-10 border-t border-white/10">
                       <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mb-4">Tamper-proof Audit Report with Certificate</p>
-                      <div className="flex bg-slate-800 rounded-xl p-4 items-center justify-between">
+                      <div className="flex bg-slate-800 rounded-none p-4 items-center justify-between">
                          <div className="flex items-center gap-3">
                             <FileSearch className="w-5 h-5 text-emerald-400" />
                             <span className="text-xs font-medium text-slate-300">Final_Integrity_Report.pdf</span>
@@ -565,7 +563,7 @@ const DataMigrationPage = memo(() => {
                ].map((useCase, idx) => (
                  <Reveal key={useCase.title} delayMs={idx * 100}>
                     <div className="group bg-white rounded-[2.5rem] p-10 border border-slate-200 hover:border-emerald-300 hover:shadow-2xl transition-all duration-500 h-full flex flex-col items-center text-center">
-                       <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-inner">
+                       <div className="w-16 h-16 rounded-none bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-inner">
                           {React.cloneElement(useCase.icon as any, { className: "w-8 h-8" })}
                        </div>
                        <h2 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">{useCase.title}</h2>
@@ -625,9 +623,9 @@ const DataMigrationPage = memo(() => {
                  }
                ].map((spec, idx) => (
                  <Reveal key={spec.category} delayMs={idx * 100}>
-                    <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-300 h-full">
+                    <div className="bg-slate-50 rounded-none p-8 border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-300 h-full">
                        <div className="flex items-center gap-4 mb-6">
-                          <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                          <div className="w-10 h-10 rounded-none bg-emerald-100 text-emerald-600 flex items-center justify-center">
                              {React.cloneElement(spec.icon as any, { className: "w-5 h-5" })}
                           </div>
                           <h3 className="text-lg font-bold text-slate-900 tracking-tight">{spec.category}</h3>
@@ -669,7 +667,7 @@ const DataMigrationPage = memo(() => {
                    { title: "Audit Portal", desc: "Historical migration analytics.", icon: <BarChart3 /> }
                  ].map((feat, idx) => (
                     <Reveal key={feat.title} delayMs={idx * 50}>
-                       <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-colors group">
+                       <div className="p-6 rounded-none bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-colors group">
                           <div className="text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
                              {React.cloneElement(feat.icon as any, { className: "w-6 h-6" })}
                           </div>

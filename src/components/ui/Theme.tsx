@@ -163,22 +163,24 @@ export const ThemeIconContainer: React.FC<ThemeIconContainerProps> = ({
 export interface ThemeSectionHeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   subtitle?: string;
   centered?: boolean;
+  light?: boolean;
 }
 
 export const ThemeSectionHeading: React.FC<ThemeSectionHeadingProps> = ({ 
   children, 
   subtitle,
   centered = false,
+  light = false,
   className = '',
   ...props
 }) => {
   return (
     <div className={`mb-12 md:mb-16 ${centered ? 'text-center mx-auto' : ''} ${className}`} {...props}>
-      <h2 className={`${themeClasses.typography.sectionHeading}`}>
+      <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight ${light ? 'text-white' : 'text-[#0a2e1e]'}`}>
         {children}
       </h2>
       {subtitle && (
-        <p className={`${themeClasses.typography.sectionSubtitle} ${centered ? 'mx-auto' : ''}`}>
+        <p className={`text-lg max-w-3xl ${centered ? 'mx-auto' : ''} ${light ? 'text-white/70' : 'text-[#5a6672]'}`}>
           {subtitle}
         </p>
       )}

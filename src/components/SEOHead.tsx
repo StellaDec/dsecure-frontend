@@ -333,16 +333,19 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
          * BreadcrumbList alag se inject hota hai (always safe, no duplicates).
          */}
         {finalSchemas.map((schema, index) => (
-          <script key={`schema-${index}`} type="application/ld+json">
-            {formatStructuredData(schema)}
-          </script>
+          <script 
+            key={`schema-${index}`} 
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: formatStructuredData(schema) }}
+          />
         ))}
 
         {/* BreadcrumbList Schema — hamesha alag script tag mein (safe, no duplication risk) */}
         {effectiveSeo.breadcrumbs && effectiveSeo.breadcrumbs.length > 0 && (
-          <script type="application/ld+json">
-            {formatStructuredData(generateBreadcrumbSchema(effectiveSeo.breadcrumbs))}
-          </script>
+          <script 
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: formatStructuredData(generateBreadcrumbSchema(effectiveSeo.breadcrumbs)) }}
+          />
         )}
 
         {/* Performance & compatibility */}

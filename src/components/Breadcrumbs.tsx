@@ -94,9 +94,10 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
     <>
       {/* BreadcrumbList Schema — Google rich snippet ke liye */}
       {includeSchema && (
-        <script type="application/ld+json">
-          {generateBreadcrumbSchema(items)}
-        </script>
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: generateBreadcrumbSchema(items) }}
+        />
       )}
 
       {/* Visual Breadcrumb Navigation */}

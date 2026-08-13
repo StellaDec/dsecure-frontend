@@ -3,7 +3,7 @@ export interface FAQ {
   answer: string;
 }
 
-export const blogFaqs: Record<string, FAQ[]> = {
+const _blogFaqs: Record<string, FAQ[]> = {
   "local-llm-data-erasure": [
     {
       question: "Where are local LLM models stored in Windows 11?",
@@ -1575,3 +1575,16 @@ export const blogFaqs: Record<string, FAQ[]> = {
     }
   ]
 };
+
+import { lawsContent } from './lawsContent';
+
+export const blogFaqs: Record<string, FAQ[]> = { ..._blogFaqs };
+
+Object.keys(lawsContent).forEach(slug => {
+  if (lawsContent[slug].faqs && lawsContent[slug].faqs.length > 0) {
+    if (!blogFaqs[slug]) {
+      blogFaqs[slug] = [];
+    }
+    blogFaqs[slug].push(...lawsContent[slug].faqs);
+  }
+});

@@ -124,35 +124,22 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
         solutionType: "Early Access",
       };
 
-      // 1. Backend Submission
+      // 1. Backend Submission & FormSubmit (Email)
       const API_BASE = import.meta.env.VITE_API_BASE_URL;
-      const apiResponse = await fetch(`${API_BASE}/api/ContactFormSubmissions`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(submissionData),
-      });
-
-      // 2. FormSubmit (Email)
-      const emailResponse = await fetch(FORMSUBMIT_ENDPOINT, {
-        method: "POST",
-        body: formSubmitData,
-        headers: { Accept: "application/json" },
-      });
-
-      // 3. Power Automate (Non-blocking)
-      const powerAutomateUrl = import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL;
-      if (powerAutomateUrl) {
-        fetch(powerAutomateUrl, {
+      const [apiResult] = await Promise.allSettled([
+        fetch(`${API_BASE}/api/ContactFormSubmissions`, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(submissionData),
-        }).catch(() => {});
-      }
+        }),
+        fetch(FORMSUBMIT_ENDPOINT, {
+          method: "POST",
+          body: formSubmitData,
+          headers: { Accept: "application/json" },
+        })
+      ]);
 
-      if (!apiResponse.ok || !emailResponse.ok) {
+      if (apiResult.status === "rejected" || (apiResult.status === "fulfilled" && !apiResult.value.ok)) {
         throw new Error("Submission failed. Please try again.");
       }
 

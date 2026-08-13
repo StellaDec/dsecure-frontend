@@ -68,9 +68,15 @@ function SolutionsPageContent() {
   const [isNavVisible, setIsNavVisible] = useState(false);
 
   const sectionNavItems = [
-    { id: "overview", label: t('solutions.overview', { defaultValue: "Overview" }) },
-    { id: "solutions", label: t('solutions.solutions', { defaultValue: "Solutions" }) },
-    { id: "case-studies", label: t('solutions.caseStudies', { defaultValue: "Case Studies" }) },
+    {
+      id: "overview",
+      label: t("solutions.overview", { defaultValue: "Overview" }),
+    },
+    {
+      id: "solutions",
+      label: t("solutions.solutions", { defaultValue: "Solutions" }),
+    },
+    // { id: "case-studies", label: t('solutions.caseStudies', { defaultValue: "Case Studies" }) },
   ];
 
   useEffect(() => {
@@ -158,209 +164,209 @@ function SolutionsPageContent() {
 
   const solutions = {
     enterprise: {
-      title: t('solutions.enterprise'),
-      subtitle: t('solutions.enterpriseSubtitle'),
-      description: t('solutions.enterpriseDesc'),
+      title: t("solutions.enterprise"),
+      subtitle: t("solutions.enterpriseSubtitle"),
+      description: t("solutions.enterpriseDesc"),
       icon: <Building className="w-8 h-8" />,
       benefits: [
-        t('solutions.enterpriseBenefit1'),
-        t('solutions.enterpriseBenefit2'),
-        t('solutions.enterpriseBenefit3'),
-        t('solutions.enterpriseBenefit4'),
-        t('solutions.enterpriseBenefit5'),
-        t('solutions.enterpriseBenefit6'),
+        t("solutions.enterpriseBenefit1"),
+        t("solutions.enterpriseBenefit2"),
+        t("solutions.enterpriseBenefit3"),
+        t("solutions.enterpriseBenefit4"),
+        t("solutions.enterpriseBenefit5"),
+        t("solutions.enterpriseBenefit6"),
       ],
       useCases: [
         {
-          title: t('solutions.enterpriseUseCase1Title'),
-          description: t('solutions.enterpriseUseCase1Desc'),
+          title: t("solutions.enterpriseUseCase1Title"),
+          description: t("solutions.enterpriseUseCase1Desc"),
         },
         {
-          title: t('solutions.enterpriseUseCase2Title'),
-          description: t('solutions.enterpriseUseCase2Desc'),
+          title: t("solutions.enterpriseUseCase2Title"),
+          description: t("solutions.enterpriseUseCase2Desc"),
         },
         {
-          title: t('solutions.enterpriseUseCase3Title'),
-          description: t('solutions.enterpriseUseCase3Desc'),
+          title: t("solutions.enterpriseUseCase3Title"),
+          description: t("solutions.enterpriseUseCase3Desc"),
         },
         {
-          title: t('solutions.enterpriseUseCase4Title'),
-          description: t('solutions.enterpriseUseCase4Desc'),
+          title: t("solutions.enterpriseUseCase4Title"),
+          description: t("solutions.enterpriseUseCase4Desc"),
         },
         {
-          title: t('solutions.enterpriseUseCase5Title'),
-          description: t('solutions.enterpriseUseCase5Desc'),
+          title: t("solutions.enterpriseUseCase5Title"),
+          description: t("solutions.enterpriseUseCase5Desc"),
         },
         {
-          title: t('solutions.enterpriseUseCase6Title'),
-          description: t('solutions.enterpriseUseCase6Desc'),
+          title: t("solutions.enterpriseUseCase6Title"),
+          description: t("solutions.enterpriseUseCase6Desc"),
         },
       ],
     },
     itad: {
-      title: t('solutions.itad'),
-      subtitle: t('solutions.itadSubtitle'),
-      description: t('solutions.itadDesc'),
+      title: t("solutions.itad"),
+      subtitle: t("solutions.itadSubtitle"),
+      description: t("solutions.itadDesc"),
       icon: <Shield className="w-8 h-8" />,
       benefits: [
-        t('solutions.itadBenefit1'),
-        t('solutions.itadBenefit2'),
-        t('solutions.itadBenefit3'),
-        t('solutions.itadBenefit4'),
-        t('solutions.itadBenefit5'),
-        t('solutions.itadBenefit6'),
+        t("solutions.itadBenefit1"),
+        t("solutions.itadBenefit2"),
+        t("solutions.itadBenefit3"),
+        t("solutions.itadBenefit4"),
+        t("solutions.itadBenefit5"),
+        t("solutions.itadBenefit6"),
       ],
       useCases: [
         {
-          title: t('solutions.itadUseCase1Title'),
-          description: t('solutions.itadUseCase1Desc'),
+          title: t("solutions.itadUseCase1Title"),
+          description: t("solutions.itadUseCase1Desc"),
         },
         {
-          title: t('solutions.itadUseCase2Title'),
-          description: t('solutions.itadUseCase2Desc'),
+          title: t("solutions.itadUseCase2Title"),
+          description: t("solutions.itadUseCase2Desc"),
         },
         {
-          title: t('solutions.itadUseCase3Title'),
-          description: t('solutions.itadUseCase3Desc'),
+          title: t("solutions.itadUseCase3Title"),
+          description: t("solutions.itadUseCase3Desc"),
         },
         {
-          title: t('solutions.itadUseCase4Title'),
-          description: t('solutions.itadUseCase4Desc'),
+          title: t("solutions.itadUseCase4Title"),
+          description: t("solutions.itadUseCase4Desc"),
         },
         {
-          title: t('solutions.itadUseCase5Title'),
-          description: t('solutions.itadUseCase5Desc'),
+          title: t("solutions.itadUseCase5Title"),
+          description: t("solutions.itadUseCase5Desc"),
         },
         {
-          title: t('solutions.itadUseCase6Title'),
-          description: t('solutions.itadUseCase6Desc'),
+          title: t("solutions.itadUseCase6Title"),
+          description: t("solutions.itadUseCase6Desc"),
         },
       ],
     },
     healthcare: {
-      title: t('solutions.healthcare'),
-      subtitle: t('solutions.healthcareSubtitle'),
-      description: t('solutions.healthcareDesc'),
+      title: t("solutions.healthcare"),
+      subtitle: t("solutions.healthcareSubtitle"),
+      description: t("solutions.healthcareDesc"),
       icon: <Heart className="w-8 h-8" />,
       benefits: [
-        t('solutions.healthcareBenefit1'),
-        t('solutions.healthcareBenefit2'),
-        t('solutions.healthcareBenefit3'),
-        t('solutions.healthcareBenefit4'),
+        t("solutions.healthcareBenefit1"),
+        t("solutions.healthcareBenefit2"),
+        t("solutions.healthcareBenefit3"),
+        t("solutions.healthcareBenefit4"),
       ],
       useCases: [
         {
-          title: t('solutions.healthcareUseCase1Title'),
-          description: t('solutions.healthcareUseCase1Desc'),
+          title: t("solutions.healthcareUseCase1Title"),
+          description: t("solutions.healthcareUseCase1Desc"),
         },
         {
-          title: t('solutions.healthcareUseCase2Title'),
-          description: t('solutions.healthcareUseCase2Desc'),
+          title: t("solutions.healthcareUseCase2Title"),
+          description: t("solutions.healthcareUseCase2Desc"),
         },
         {
-          title: t('solutions.healthcareUseCase3Title'),
-          description: t('solutions.healthcareUseCase3Desc'),
+          title: t("solutions.healthcareUseCase3Title"),
+          description: t("solutions.healthcareUseCase3Desc"),
         },
         {
-          title: t('solutions.healthcareUseCase4Title'),
-          description: t('solutions.healthcareUseCase4Desc'),
+          title: t("solutions.healthcareUseCase4Title"),
+          description: t("solutions.healthcareUseCase4Desc"),
         },
       ],
     },
     financial: {
-      title: t('solutions.financial'),
-      subtitle: t('solutions.financialSubtitle'),
-      description: t('solutions.financialDesc'),
+      title: t("solutions.financial"),
+      subtitle: t("solutions.financialSubtitle"),
+      description: t("solutions.financialDesc"),
       icon: <DollarSign className="w-8 h-8" />,
       benefits: [
-        t('solutions.financialBenefit1'),
-        t('solutions.financialBenefit2'),
-        t('solutions.financialBenefit3'),
-        t('solutions.financialBenefit4'),
+        t("solutions.financialBenefit1"),
+        t("solutions.financialBenefit2"),
+        t("solutions.financialBenefit3"),
+        t("solutions.financialBenefit4"),
       ],
       useCases: [
         {
-          title: t('solutions.financialUseCase1Title'),
-          description: t('solutions.financialUseCase1Desc'),
+          title: t("solutions.financialUseCase1Title"),
+          description: t("solutions.financialUseCase1Desc"),
         },
         {
-          title: t('solutions.financialUseCase2Title'),
-          description: t('solutions.financialUseCase2Desc'),
+          title: t("solutions.financialUseCase2Title"),
+          description: t("solutions.financialUseCase2Desc"),
         },
         {
-          title: t('solutions.financialUseCase3Title'),
-          description: t('solutions.financialUseCase3Desc'),
+          title: t("solutions.financialUseCase3Title"),
+          description: t("solutions.financialUseCase3Desc"),
         },
         {
-          title: t('solutions.financialUseCase4Title'),
-          description: t('solutions.financialUseCase4Desc'),
+          title: t("solutions.financialUseCase4Title"),
+          description: t("solutions.financialUseCase4Desc"),
         },
       ],
     },
     government: {
-      title: t('solutions.government'),
-      subtitle: t('solutions.governmentSubtitle'),
-      description: t('solutions.governmentDesc'),
+      title: t("solutions.government"),
+      subtitle: t("solutions.governmentSubtitle"),
+      description: t("solutions.governmentDesc"),
       icon: <Globe className="w-8 h-8" />,
       benefits: [
-        t('solutions.governmentBenefit1'),
-        t('solutions.governmentBenefit2'),
-        t('solutions.governmentBenefit3'),
-        t('solutions.governmentBenefit4'),
-        t('solutions.governmentBenefit5'),
-        t('solutions.governmentBenefit6'),
-        t('solutions.governmentBenefit7'),
+        t("solutions.governmentBenefit1"),
+        t("solutions.governmentBenefit2"),
+        t("solutions.governmentBenefit3"),
+        t("solutions.governmentBenefit4"),
+        t("solutions.governmentBenefit5"),
+        t("solutions.governmentBenefit6"),
+        t("solutions.governmentBenefit7"),
       ],
       useCases: [
         {
-          title: t('solutions.governmentUseCase1Title'),
-          description: t('solutions.governmentUseCase1Desc'),
+          title: t("solutions.governmentUseCase1Title"),
+          description: t("solutions.governmentUseCase1Desc"),
         },
         {
-          title: t('solutions.governmentUseCase2Title'),
-          description: t('solutions.governmentUseCase2Desc'),
+          title: t("solutions.governmentUseCase2Title"),
+          description: t("solutions.governmentUseCase2Desc"),
         },
         {
-          title: t('solutions.governmentUseCase3Title'),
-          description: t('solutions.governmentUseCase3Desc'),
+          title: t("solutions.governmentUseCase3Title"),
+          description: t("solutions.governmentUseCase3Desc"),
         },
         {
-          title: t('solutions.governmentUseCase4Title'),
-          description: t('solutions.governmentUseCase4Desc'),
+          title: t("solutions.governmentUseCase4Title"),
+          description: t("solutions.governmentUseCase4Desc"),
         },
         {
-          title: t('solutions.governmentUseCase5Title'),
-          description: t('solutions.governmentUseCase5Desc'),
+          title: t("solutions.governmentUseCase5Title"),
+          description: t("solutions.governmentUseCase5Desc"),
         },
         {
-          title: t('solutions.governmentUseCase6Title'),
-          description: t('solutions.governmentUseCase6Desc'),
+          title: t("solutions.governmentUseCase6Title"),
+          description: t("solutions.governmentUseCase6Desc"),
         },
       ],
     },
     serviceProviders: {
-      title: t('solutions.serviceProviders'),
-      subtitle: t('solutions.serviceProvidersSubtitle'),
-      description: t('solutions.serviceProvidersDesc'),
+      title: t("solutions.serviceProviders"),
+      subtitle: t("solutions.serviceProvidersSubtitle"),
+      description: t("solutions.serviceProvidersDesc"),
       icon: <Briefcase className="w-8 h-8" />,
       benefits: [
-        t('solutions.serviceProvidersBenefit1'),
-        t('solutions.serviceProvidersBenefit2'),
-        t('solutions.serviceProvidersBenefit3'),
-        t('solutions.serviceProvidersBenefit4'),
+        t("solutions.serviceProvidersBenefit1"),
+        t("solutions.serviceProvidersBenefit2"),
+        t("solutions.serviceProvidersBenefit3"),
+        t("solutions.serviceProvidersBenefit4"),
       ],
       useCases: [
         {
-          title: t('solutions.serviceProvidersUseCase1Title'),
-          description: t('solutions.serviceProvidersUseCase1Desc'),
+          title: t("solutions.serviceProvidersUseCase1Title"),
+          description: t("solutions.serviceProvidersUseCase1Desc"),
         },
         {
-          title: t('solutions.serviceProvidersUseCase2Title'),
-          description: t('solutions.serviceProvidersUseCase2Desc'),
+          title: t("solutions.serviceProvidersUseCase2Title"),
+          description: t("solutions.serviceProvidersUseCase2Desc"),
         },
         {
-          title: t('solutions.serviceProvidersUseCase3Title'),
-          description: t('solutions.serviceProvidersUseCase3Desc'),
+          title: t("solutions.serviceProvidersUseCase3Title"),
+          description: t("solutions.serviceProvidersUseCase3Desc"),
         },
       ],
     },
@@ -368,27 +374,27 @@ function SolutionsPageContent() {
 
   const caseStudies = [
     {
-      company: t('solutions.caseStudy1Company'),
-      industry: t('solutions.caseStudy1Industry'),
-      challenge: t('solutions.caseStudy1Challenge'),
-      solution: t('solutions.caseStudy1Solution'),
-      results: t('solutions.caseStudy1Results'),
+      company: t("solutions.caseStudy1Company"),
+      industry: t("solutions.caseStudy1Industry"),
+      challenge: t("solutions.caseStudy1Challenge"),
+      solution: t("solutions.caseStudy1Solution"),
+      results: t("solutions.caseStudy1Results"),
       logoIcon: Heart,
     },
     {
-      company: t('solutions.caseStudy2Company'),
-      industry: t('solutions.caseStudy2Industry'),
-      challenge: t('solutions.caseStudy2Challenge'),
-      solution: t('solutions.caseStudy2Solution'),
-      results: t('solutions.caseStudy2Results'),
+      company: t("solutions.caseStudy2Company"),
+      industry: t("solutions.caseStudy2Industry"),
+      challenge: t("solutions.caseStudy2Challenge"),
+      solution: t("solutions.caseStudy2Solution"),
+      results: t("solutions.caseStudy2Results"),
       logoIcon: DollarSign,
     },
     {
-      company: t('solutions.caseStudy3Company'),
-      industry: t('solutions.caseStudy3Industry'),
-      challenge: t('solutions.caseStudy3Challenge'),
-      solution: t('solutions.caseStudy3Solution'),
-      results: t('solutions.caseStudy3Results'),
+      company: t("solutions.caseStudy3Company"),
+      industry: t("solutions.caseStudy3Industry"),
+      challenge: t("solutions.caseStudy3Challenge"),
+      solution: t("solutions.caseStudy3Solution"),
+      results: t("solutions.caseStudy3Results"),
       logoIcon: CheckCircle,
     },
   ];
@@ -473,31 +479,37 @@ function SolutionsPageContent() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  {t('solutions.heroTag')}
+                  {t("solutions.heroTag")}
                 </div>
               </Reveal>
               <Reveal delayMs={10}>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
-                  {t('solutions.heroTitle')}{" "}
+                  {t("solutions.heroTitle")}{" "}
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600">
-                    {t('solutions.heroTitleHighlight')}
+                    {t("solutions.heroTitleHighlight")}
                   </span>
                 </h1>
               </Reveal>
               <Reveal delayMs={20}>
                 <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
-                  {t('solutions.heroSubtitle')}
+                  {t("solutions.heroSubtitle")}
                 </p>
               </Reveal>
               <Reveal delayMs={30}>
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-                  <Link to="/contact" className={`${themeClasses.button.base} ${themeClasses.button.primary} group`}>
+                  <Link
+                    to="/contact"
+                    className={`${themeClasses.button.base} ${themeClasses.button.primary} group`}
+                  >
                     <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                    {t('solutions.discussNeeds')}
+                    {t("solutions.discussNeeds")}
                   </Link>
-                  <button onClick={() => scrollToSection("solutions")} className={`${themeClasses.button.base} ${themeClasses.button.outline} group`}>
+                  <button
+                    onClick={() => scrollToSection("solutions")}
+                    className={`${themeClasses.button.base} ${themeClasses.button.outline} group`}
+                  >
                     <ArrowDown className="w-5 h-5 mr-2 group-hover:translate-y-0.5 transition-transform" />
-                    {t('solutions.exploreSolutions')}
+                    {t("solutions.exploreSolutions")}
                   </button>
                 </div>
               </Reveal>
@@ -515,7 +527,7 @@ function SolutionsPageContent() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>{t('solutions.industriesServed')}</span>
+                    <span>{t("solutions.industriesServed")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg
@@ -529,7 +541,7 @@ function SolutionsPageContent() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>{t('solutions.complianceRate')}</span>
+                    <span>{t("solutions.complianceRate")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg
@@ -543,7 +555,7 @@ function SolutionsPageContent() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>{t('solutions.expertSupport')}</span>
+                    <span>{t("solutions.expertSupport")}</span>
                   </div>
                 </div>
               </Reveal>
@@ -715,9 +727,18 @@ function SolutionsPageContent() {
       </section>
 
       {/* Solutions Grid */}
-      <ThemeSection alternate id="solutions" className="py-16 md:py-20 lg:py-24">
+      <ThemeSection
+        alternate
+        id="solutions"
+        className="py-16 md:py-20 lg:py-24"
+      >
         <div className="container-responsive">
-          <ThemeSectionHeading subtitle="Choose your industry to see specialized workflows and compliance features." centered>Solutions by Industry</ThemeSectionHeading>
+          <ThemeSectionHeading
+            subtitle="Choose your industry to see specialized workflows and compliance features."
+            centered
+          >
+            Solutions by Industry
+          </ThemeSectionHeading>
           {/* Industry Selector (Tab Format) */}
           <div className="max-w-6xl mx-auto">
             <div className="border-b border-[#d0d5dc]/80 mb-10 overflow-x-auto">
@@ -774,46 +795,42 @@ function SolutionsPageContent() {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 lg:mb-8">
                     <div>
                       <h3 className="font-semibold text-slate-900 mb-4">
-                        {t('solutions.keyBenefits')}
+                        {t("solutions.keyBenefits")}
                       </h3>
                       <div className="space-y-3">
-                        {solutions[activeIndustry].benefits.map(
-                          (benefit) => (
-                            <div
-                              key={benefit}
-                              className="flex items-center gap-3 group/benefit"
-                            >
-                              <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                                <Check className="w-5 h-5 text-[#0e7c66] group-hover/benefit:scale-110 transition-transform" />
-                              </div>
-                              <span className="text-slate-700 text-sm leading-relaxed">
-                                {benefit}
-                              </span>
+                        {solutions[activeIndustry].benefits.map((benefit) => (
+                          <div
+                            key={benefit}
+                            className="flex items-center gap-3 group/benefit"
+                          >
+                            <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                              <Check className="w-5 h-5 text-[#0e7c66] group-hover/benefit:scale-110 transition-transform" />
                             </div>
-                          )
-                        )}
+                            <span className="text-slate-700 text-sm leading-relaxed">
+                              {benefit}
+                            </span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                     <div>
                       <h3 className="font-semibold text-slate-900 mb-4">
-                        {t('solutions.useCases')}
+                        {t("solutions.useCases")}
                       </h3>
                       <div className="space-y-3">
-                        {solutions[activeIndustry].useCases.map(
-                          (useCase) => (
-                            <div
-                              key={useCase.title}
-                              className="border border-[#d0d5dc]/60 rounded-none p-3 hover:border-emerald-200 hover:bg-emerald-50/30 transition-colors"
-                            >
-                              <div className="font-medium text-slate-900 text-sm">
-                                {useCase.title}
-                              </div>
-                              <div className="text-slate-600 text-xs mt-1">
-                                {useCase.description}
-                              </div>
+                        {solutions[activeIndustry].useCases.map((useCase) => (
+                          <div
+                            key={useCase.title}
+                            className="border border-[#d0d5dc]/60 rounded-none p-3 hover:border-emerald-200 hover:bg-emerald-50/30 transition-colors"
+                          >
+                            <div className="font-medium text-slate-900 text-sm">
+                              {useCase.title}
                             </div>
-                          )
-                        )}
+                            <div className="text-slate-600 text-xs mt-1">
+                              {useCase.description}
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -833,7 +850,10 @@ function SolutionsPageContent() {
                       </Link>
                     )}
 
-                    <Link to="/contact" className={`${themeClasses.button.base} ${themeClasses.button.outline}`}>
+                    <Link
+                      to="/contact"
+                      className={`${themeClasses.button.base} ${themeClasses.button.outline}`}
+                    >
                       Request Demo
                     </Link>
                   </div>
@@ -946,6 +966,7 @@ function SolutionsPageContent() {
       </ThemeSection>
 
       {/* Case Studies — EMOJIS REPLACED */}
+      {/* Case Studies */}
       <ThemeSection id="case-studies" className="py-16 md:py-24">
         <div className="container-responsive">
           <ThemeSectionHeading subtitle="See how organizations across industries have transformed their data erasure processes with D-Secure." centered>Case Studies</ThemeSectionHeading>
@@ -966,7 +987,7 @@ function SolutionsPageContent() {
                     <div className="space-y-5 text-sm">
                       <div className="bg-[#f4fbf8] p-3 rounded-none border border-[#d0d5dc]/60">
                         <div className="font-bold text-slate-900 mb-1 flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#0e7c66]"></span>
                           {t('solutions.challenge')}:
                         </div>
                         <div className="text-slate-600 leading-relaxed italic">"{study.challenge}"</div>

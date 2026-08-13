@@ -45,6 +45,7 @@ import {
   type Subuser,
   type Session,
 } from "@/utils/enhancedApiClient";
+import { fetchLatestUpdate } from '@/services/updatesAPI';
 import {
   useSubusers,
   useCreateSubuser,
@@ -576,6 +577,23 @@ export default function AdminDashboard() {
 
   // ✅ OPTIMIZED: Update stored user data useEffect removed (now using useMemo above)
   const isDemo = isDemoMode();
+
+  // Dynamic version state for File Eraser
+  const [dseVersion, setDseVersion] = useState("2.0.1");
+
+  useEffect(() => {
+    if (!isDemo) {
+      fetchLatestUpdate("DSErase").then(data => {
+        if (data && data.version_number) {
+          let v = data.version_number;
+          if (v.length === 4 && !isNaN(Number(v))) {
+            v = v.split('').join('.');
+          }
+          setDseVersion(v);
+        }
+      }).catch(() => {});
+    }
+  }, [isDemo]);
 
   // Check if user has private cloud access
   const isPrivateCloudEnabled =
@@ -6788,7 +6806,7 @@ export default function AdminDashboard() {
                               File Eraser
                             </h2>
                             <p className="text-xs text-slate-600">
-                              Version 2.0.1
+                              Version {dseVersion}
                             </p>
                           </div>
                         </div>

@@ -6,18 +6,15 @@ import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import Reveal from "@/components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import {
-  ShieldIcon,
-  CheckIcon,
-  ArrowRightIcon,
-  GlobeIcon,
-  CloudIcon,
-  GearIcon,
-  ClipboardIcon,
-  ServerIcon,
-} from "@/components/FlatIcons";
 import { blogPosts } from "@/data/blogPosts";
-import { File, Monitor, Download, X, Search, ZoomIn } from "lucide-react";
+import { File, Monitor, Download, X, Search, ZoomIn, Shield, ShieldCheck, CheckCircle, ArrowRight, Globe, Cloud, Settings, FileText, Server, Trash2, HardDrive, Timer, Clock, Check, UploadCloud, FolderSync, ShieldAlert, BadgeCheck } from "lucide-react";
+import {
+  ThemeSection,
+  ThemeSectionHeading,
+  ThemeCard,
+  ThemeButton,
+  ThemeIconContainer,
+} from "@/components/ui/Theme";
 import { getSEOForPage } from "@/utils/seo";
 import { generateFAQSchema } from "@/utils/seo.core";
 import { useToast } from "@/components/Toast";
@@ -342,122 +339,32 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     {
       name: "Files & Folders",
       desc: "Regulatory data wiping for individual files, folders, and partitions without affecting the entire drive, with multi-pass overwrite algorithms.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-          />
-        </svg>
-      ),
-      color: "from-blue-500 to-blue-600",
+      icon: FolderSync,
     },
     {
       name: "Free Space & Deleted Data",
       desc: "Permanently wipe unused disk space and previously deleted files to prevent any chance of forensic recovery.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-          />
-        </svg>
-      ),
-      color: "from-red-500 to-red-600",
+      icon: Trash2,
     },
     {
       name: "Cloud Storage Data",
       desc: "Remove data from connected cloud platforms like Google Drive, OneDrive, Dropbox, and iCloud.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-          />
-        </svg>
-      ),
-      color: "from-cyan-500 to-cyan-600",
+      icon: UploadCloud,
     },
     {
       name: "High-Speed Erasure",
       desc: "Simultaneously erase multiple files and drives with optimized algorithms for maximum efficiency.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg>
-      ),
-      color: "from-amber-500 to-orange-600",
+      icon: Timer,
     },
     {
       name: "Automate Erasure Tasks",
       desc: "Schedule automatic data destruction routines based on specific triggers or time intervals.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-      color: "from-purple-500 to-purple-600",
+      icon: Clock,
     },
     {
       name: "Volume Erase",
       desc: "Completely erase volume partitions including boot sectors, partition tables, and all data structures.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M5 14l6-6m-3 6V8a2 2 0 012-2h6a2 2 0 012 2v6m2 4H7a2 2 0 01-2-2v-2a2 2 0 012-2h10a2 2 0 012 2v2a2 2 0 01-2 2z"
-          />
-        </svg>
-      ),
-      color: "from-emerald-500 to-emerald-600",
+      icon: HardDrive,
     },
   ];
 
@@ -495,108 +402,52 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     {
       title: "27+ Erasure Standards",
       desc: "Support for NIST 800-88, DoD 5220.22-M, Gutmann, HMG, and other internationally recognized erasure methods.",
-      icon: <ShieldIcon className="w-6 h-6" />,
+      icon: Shield,
     },
     {
       title: "Multi-Language Support",
       desc: "User-friendly interface available in 20+ languages for global enterprise deployment.",
-      icon: <GlobeIcon className="w-6 h-6" />,
+      icon: Globe,
     },
     {
       title: "Cloud Data Erasure",
       desc: "Securely remove files from connected cloud storage services with verifiable deletion.",
-      icon: <CloudIcon className="w-6 h-6" />,
+      icon: Cloud,
     },
     {
       title: "Scheduled Erasure",
       desc: "Automate data destruction with scheduled tasks for regular cleanup and compliance maintenance.",
-      icon: <GearIcon className="w-6 h-6" />,
+      icon: Settings,
     },
     {
       title: "Drag & Drop Selection",
       desc: "Intuitive file selection with drag-and-drop interface for quick and easy data erasure.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
-          />
-        </svg>
-      ),
+      icon: File,
     },
     {
       title: "Detailed PDF Reports",
       desc: "Generate comprehensive, tamper-proof erasure certificates for audit and compliance documentation.",
-      icon: <ClipboardIcon className="w-6 h-6" />,
+      icon: FileText,
     },
     {
       title: "Enterprise Scalability",
       desc: "Deploy across thousands of endpoints with centralized management and monitoring.",
-      icon: <ServerIcon className="w-6 h-6" />,
+      icon: Server,
     },
     {
       title: "Custom Branding",
       desc: "White-label solution with your organization's branding for client-facing reports.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-          />
-        </svg>
-      ),
+      icon: BadgeCheck,
     },
     {
       title: "Encryption",
       desc: "Military-grade encryption secures data before erasure, preventing unauthorized access during the process.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-          />
-        </svg>
-      ),
+      icon: ShieldAlert,
     },
     {
       title: "Centralized Logging",
       desc: "Maintain a centralized immutable log of all erasure activities for security audits.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-          />
-        </svg>
-      ),
+      icon: Server,
     },
   ];
 
@@ -604,50 +455,22 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     {
       title: "Individual Privacy Protection",
       desc: "Stop identity theft before it happens. Recovered financial records and personal photos can be used for blackmail if not permanently erased.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-          />
-        </svg>
-      ),
+      icon: Shield,
     },
     {
       title: "Enterprise Data Governance",
       desc: "Don't let your secrets become public. Deleted corporate data in the wrong hands leads to massive financial loss and reputation destruction.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-          />
-        </svg>
-      ),
+      icon: Server,
     },
     {
       title: "Cloud Data Exposure",
       desc: "Deleting files in the cloud doesn't mean they are gone. Ghost copies leave you vulnerable to breaches indefinitely without secure erasure.",
-      icon: <CloudIcon className="w-8 h-8" />,
+      icon: Cloud,
     },
     {
       title: "Avoid Compliance Fines",
       desc: "Regulatory fines can bankrupt a business. Failing to prove verifiable data destruction guarantees penalties under GDPR, HIPAA, and SOX.",
-      icon: <ClipboardIcon className="w-8 h-8" />,
+      icon: FileText,
     },
   ];
 
@@ -657,7 +480,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
         "overwrite-guide",
         "ssd-wipe-guide",
         "data-erasure-myths",
-        "best-data-erasure-methods",
+        "local-llm-data-erasure",
       ].includes(post.id),
     )
     .slice(0, 4);
@@ -770,7 +593,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
         </div>
       </div>
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <div className="min-h-screen bg-white">
         {/* ================= HERO SECTION ================= */}
         <section className="py-8 lg:py-12 xl:py-16">
           <div className="container mx-auto px-4">
@@ -779,18 +602,18 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
               <Reveal>
                 <div className="space-y-8">
                   <div className="flex flex-col sm:flex-row items-center gap-3">
-                    <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
-                      <ShieldIcon className="w-4 h-4" />
+                    <div className="inline-flex items-center gap-2 bg-[#d4ede4] text-[#0e7c66] px-4 py-2 rounded-full text-sm font-semibold">
+                      <Shield className="w-4 h-4" />
                       Enterprise-Grade File Erasure
                     </div>
                     {/* Link to Network Edition */}
                     <Link 
                       to="/products/file-eraser-network"
-                      className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 hover:bg-blue-100 px-4 py-2 rounded-full text-sm font-semibold border border-blue-100 transition-colors group"
+                      className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-4 py-2 rounded-full text-sm font-semibold border border-emerald-100 transition-colors group"
                     >
-                      <Monitor className="w-4 h-4 animate-pulse text-blue-500" />
+                      <Monitor className="w-4 h-4 animate-pulse text-emerald-600" />
                       <span>New: Network Edition Available</span>
-                      <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
 
@@ -823,13 +646,12 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link
-                      to="/pricing-and-plan?product=file-eraser"
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                    <ThemeButton
+                      onClick={() => window.location.href = "/pricing-and-plan?product=file-eraser"}
                     >
                       Buy Now
-                    </Link>
+                    </ThemeButton>
                     {/*
                     <Link
                       to="/contact"
@@ -838,154 +660,159 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                       Contact Sales
                     </Link>
                     */}
-                    <button
+                    <ThemeButton
+                      variant="outline"
                       onClick={downloadCatalog}
-                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition-all duration-300"
+                      icon={<Download className="w-5 h-5" />}
                     >
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        />
-                      </svg>
                       Download Datasheet
-                    </button>
+                    </ThemeButton>
                   </div>
                 </div>
 
                 
               </Reveal>
 
-              {/* Right: Hero Illustration - 3D Product Box */}
+              {/* Right: Hero Illustration - Software Screenshot + 3D Product Box */}
               <Reveal delayMs={100}>
-                <div
-                  className="relative flex items-center justify-center min-h-[400px] lg:min-h-[500px]"
-                  style={{ perspective: "1000px" }}
-                >
-                  {/* Background Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/30 via-transparent to-teal-200/30 blur-3xl"></div>
-
-                  {/* Floating Particles */}
-                  <div className="absolute top-[10%] left-[15%] w-2 h-2 bg-emerald-400 rounded-full animate-[ping_3s_ease-in-out_infinite] opacity-40"></div>
-                  <div className="absolute top-[20%] right-[12%] w-1.5 h-1.5 bg-teal-400 rounded-full animate-[ping_2.5s_ease-in-out_infinite_0.5s] opacity-40"></div>
-                  <div className="absolute bottom-[15%] left-[10%] w-2 h-2 bg-cyan-400 rounded-full animate-[ping_2.8s_ease-in-out_infinite_1s] opacity-40"></div>
-                  <div className="absolute bottom-[20%] right-[15%] w-1.5 h-1.5 bg-emerald-500 rounded-full animate-[ping_3.2s_ease-in-out_infinite_0.3s] opacity-40"></div>
-
-                  {/* 3D Product Box Container */}
-                  <div
-                    className="relative animate-[float_4s_ease-in-out_infinite]"
-                    style={{
-                      transformStyle: "preserve-3d",
-                      animation: "float 4s ease-in-out infinite",
+                <div className="relative min-h-[350px] sm:min-h-[400px] lg:min-h-[480px]" style={{ perspective: '1200px' }}>
+                  
+                  {/* Left: Dashboard Screenshot — hover par zoom in/out */}
+                  <div 
+                    className="absolute w-[220px] sm:w-[280px] lg:w-[360px] cursor-pointer" 
+                    style={{ 
+                      zIndex: 10,
+                      top: '50%', left: '50%',
+                      transform: 'translate(-85%, -50%) rotate(-8deg)',
+                      transition: 'transform 0.5s ease, z-index 0s',
                     }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-88%, -53%) rotate(-8deg) scale(1.08)'; e.currentTarget.style.zIndex = '30'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-85%, -50%) rotate(-8deg) scale(1)'; e.currentTarget.style.zIndex = '10'; }}
                   >
-                    {/* Glow Behind Box */}
-                    <div className="absolute inset-0 bg-emerald-500/40 blur-3xl rounded-3xl scale-110"></div>
-
-                    {/* Main Box - Front Face */}
-                    <div
-                      className="relative w-[220px] h-[280px] lg:w-[280px] lg:h-[360px] bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-2xl shadow-2xl overflow-hidden"
-                      style={{
-                        transform: "rotateY(-12deg) rotateX(5deg)",
-                        boxShadow:
-                          "25px 25px 60px rgba(0,0,0,0.3), -5px -5px 20px rgba(255,255,255,0.1), inset 0 0 80px rgba(255,255,255,0.05)",
-                      }}
-                    >
-                      {/* Top Shine Effect */}
-                      <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/20 to-transparent"></div>
-
-                      {/* Side Shadow (3D Effect) */}
-                      <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-black/20 to-transparent"></div>
-
-                      {/* Content */}
-                      <div className="relative h-full flex flex-col items-center justify-center p-6 lg:p-8">
-                        {/* D-Secure Badge */}
-                        <div className="absolute top-4 left-4 lg:top-6 lg:left-6">
-                          <span className="text-white/80 text-[10px] lg:text-xs font-semibold tracking-widest uppercase">
-                            D-Secure
-                          </span>
-                        </div>
-
-                        {/* Main Icon */}
-                        <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 lg:mb-6 border border-white/20 shadow-inner">
-                          <svg
-                            className="w-12 h-12 lg:w-16 lg:h-16 text-white drop-shadow-lg"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                            />
-                          </svg>
-                        </div>
-
-                        {/* Product Name */}
-                        <h2 className="text-white text-xl lg:text-3xl font-bold tracking-tight text-center mb-1 lg:mb-2">
-                          File Eraser
-                        </h2>
-
-                        {/* Tagline */}
-                        <p className="text-white/70 text-[10px] lg:text-xs text-center tracking-wide uppercase">
-                          Secure Data Destruction
-                        </p>
-
-                        {/* Bottom Badge */}
-                        <div className="absolute bottom-4 lg:bottom-6 left-1/2 -translate-x-1/2">
-                          <div className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-white/20">
-                            <svg
-                              className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-emerald-300"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1.06 13.54L7.4 12l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z" />
-                            </svg>
-                            <span className="text-white/90 text-[9px] lg:text-[11px] font-semibold">
-                              Regulatory Erasure
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Decorative Lines */}
-                        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                        <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-                      </div>
-
-                      {/* Animated Pulse Ring */}
-                      <div className="absolute inset-0 border-2 border-white/10 rounded-2xl animate-pulse"></div>
+                    <div className="border border-[#d0d5dc]/80 rounded-lg overflow-hidden shadow-2xl bg-white">
+                      <img 
+                        loading="lazy" 
+                        decoding="async"
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/rrewuevqba6xopawa2n8.png"
+                        alt="D-Secure File Eraser Software Interface"
+                        className="w-full h-auto object-cover"
+                      />
                     </div>
-
-                    {/* Right Side Face (3D) */}
-                    <div
-                      className="absolute top-0 right-0 w-[30px] lg:w-[40px] h-full bg-gradient-to-l from-emerald-800 to-emerald-700 rounded-r-lg"
-                      style={{
-                        transform:
-                          "rotateY(90deg) translateZ(0px) translateX(15px)",
-                        transformOrigin: "left center",
-                      }}
-                    ></div>
-
-                    {/* Bottom Reflection */}
-                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[180px] lg:w-[240px] h-16 bg-gradient-to-t from-emerald-600/20 to-transparent blur-xl rounded-full"></div>
                   </div>
 
-                  {/* CSS Animation Keyframes */}
-                  <style>{`
-                    @keyframes float {
-                      0%, 100% { transform: translateY(0px) rotateY(-12deg) rotateX(5deg); }
-                      50% { transform: translateY(-15px) rotateY(-8deg) rotateX(3deg); }
-                    }
-                  `}</style>
+                  {/* Right: Erasure Report — hover par zoom in/out */}
+                  <div 
+                    className="absolute w-[160px] sm:w-[200px] lg:w-[240px] cursor-pointer" 
+                    style={{ 
+                      zIndex: 10,
+                      top: '50%', left: '50%',
+                      transform: 'translate(-15%, -50%) rotate(8deg)',
+                      transition: 'transform 0.5s ease, z-index 0s',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-12%, -53%) rotate(8deg) scale(1.08)'; e.currentTarget.style.zIndex = '30'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-15%, -50%) rotate(8deg) scale(1)'; e.currentTarget.style.zIndex = '10'; }}
+                  >
+                    <div className="relative border border-[#d0d5dc]/80 rounded-lg shadow-xl overflow-hidden bg-white">
+                      <img 
+                        loading="lazy" 
+                        decoding="async"
+                        src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1784175102/sc7uwieizwc6c4iszuib.png"
+                        alt="File Eraser Tamper-proof Report"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Center: 3D Product Box — hover par zoom in/out */}
+                  <div 
+                    className="absolute w-[130px] sm:w-[160px] lg:w-[190px] cursor-pointer drop-shadow-2xl" 
+                    style={{ 
+                      zIndex: 20,
+                      top: '50%', left: '50%',
+                      transform: 'translate(-50%, -45%)',
+                      transition: 'transform 0.5s ease, z-index 0s',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.12)'; e.currentTarget.style.zIndex = '30'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-50%, -45%) scale(1)'; e.currentTarget.style.zIndex = '20'; }}
+                  >
+                      <div
+                        className="relative"
+                        style={{
+                          transformStyle: 'preserve-3d',
+                          transform: 'rotateY(-12deg) rotateX(2deg) rotate(3deg)',
+                        }}
+                      >
+                      {/* Main Box - Front Face */}
+                      <div
+                        className="relative bg-gradient-to-br from-[#0a2e1e] via-[#0e7c66] to-[#0a2e1e] rounded-lg shadow-2xl overflow-hidden"
+                        style={{
+                          aspectRatio: '3/4',
+                          boxShadow: '20px 20px 50px rgba(0,0,0,0.35), -3px -3px 10px rgba(255,255,255,0.05), inset 0 0 60px rgba(255,255,255,0.03)',
+                        }}
+                      >
+                        {/* Top Shine Effect */}
+                        <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-white/15 to-transparent"></div>
+
+                        {/* Side Shadow (3D depth) */}
+                        <div className="absolute top-0 right-0 w-6 h-full bg-gradient-to-l from-black/15 to-transparent"></div>
+
+                        {/* Product Box Content — Proportionally sized for compact box */}
+                        <div className="relative h-full flex flex-col items-center justify-center p-3 lg:p-4">
+                          {/* D-Secure Brand - top left */}
+                          <div className="absolute top-2 left-2 lg:top-3 lg:left-3">
+                            <span className="text-white/80 text-[7px] lg:text-[9px] font-semibold tracking-widest uppercase">
+                              D-Secure
+                            </span>
+                          </div>
+
+                          {/* Main Icon — Lucide File icon */}
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-white/15 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2 lg:mb-3 border border-white/20 shadow-inner">
+                            <File className="w-5 h-5 sm:w-7 sm:h-7 lg:w-9 lg:h-9 text-white drop-shadow-lg" strokeWidth={1.5} />
+                          </div>
+
+                          {/* Product Name */}
+                          <h2 className="text-white text-xs sm:text-sm lg:text-base font-bold tracking-tight text-center mb-0.5">
+                            File Eraser
+                          </h2>
+
+                          {/* Tagline */}
+                          <p className="text-white/70 text-[6px] sm:text-[7px] lg:text-[9px] text-center tracking-wide uppercase">
+                            Secure Data Destruction
+                          </p>
+
+                          {/* Bottom Badge — Regulatory Erasure */}
+                          <div className="absolute bottom-2 lg:bottom-3 left-1/2 -translate-x-1/2">
+                            <div className="flex items-center gap-1 bg-white/10 backdrop-blur-sm px-1.5 py-0.5 lg:px-2.5 lg:py-1 rounded-full border border-white/20">
+                              <ShieldCheck className="w-2.5 h-2.5 lg:w-3 lg:h-3 text-emerald-300" strokeWidth={2} />
+                              <span className="text-white/90 text-[5px] sm:text-[6px] lg:text-[8px] font-semibold whitespace-nowrap">
+                                Regulatory Erasure
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Decorative Lines */}
+                          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                          <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                        </div>
+
+                        {/* Pulse border */}
+                        <div className="absolute inset-0 border border-white/10 rounded-lg"></div>
+                      </div>
+
+                      {/* Right Side Face (3D spine) */}
+                      <div
+                        className="absolute top-0 right-0 w-[20px] lg:w-[28px] h-full bg-gradient-to-l from-[#063d2e] to-[#0a5c48]"
+                        style={{
+                          transform: 'rotateY(90deg) translateZ(0px) translateX(10px)',
+                          transformOrigin: 'left center',
+                          borderRadius: '0 4px 4px 0',
+                        }}
+                      ></div>
+                    </div>
+
+                    {/* Bottom Reflection */}
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%] h-10 bg-gradient-to-t from-emerald-600/15 to-transparent blur-xl rounded-full"></div>
+                  </div>
                 </div>
               </Reveal>
             </div>
@@ -993,17 +820,12 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
         </section>
 
         {/* ================= REPORTS SECTION ================= */}
-        <section id="reports" className="py-16 lg:py-24 bg-white border-b border-slate-100">
+        <ThemeSection id="reports" alternate>
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Erasure Reports
-                </h2>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  View detailed erasure reports required for compliance and auditing purposes.
-                </p>
-              </div>
+              <ThemeSectionHeading centered subtitle="View detailed erasure reports required for compliance and auditing purposes.">
+                Erasure Reports
+              </ThemeSectionHeading>
             </Reveal>
 
             <div className="flex flex-col lg:flex-row gap-8">
@@ -1013,10 +835,10 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveReportTab(tab.id)}
-                    className={`text-left px-6 py-4 rounded-xl transition-all duration-300 font-semibold ${
+                    className={`text-left px-6 py-4 transition-all duration-300 font-semibold border ${
                       activeReportTab === tab.id
-                        ? "bg-emerald-500 text-white shadow-lg lg:scale-105"
-                        : "bg-slate-50 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800"
+                        ? "bg-[#0e7c66] text-white border-[#0e7c66] shadow-lg lg:scale-105"
+                        : "bg-white text-[#5a6672] border-[#d0d5dc]/60 hover:bg-[#d4ede4] hover:text-[#0a2e1e]"
                     }`}
                   >
                     {tab.label}
@@ -1060,16 +882,15 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
             {/* View All Reports Button */}
             <div className="mt-12 text-center flex justify-center">
-              <Link
-                to="/reports-and-certificates"
-                className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300"
+              <ThemeButton
+                onClick={() => window.location.href = "/reports-and-certificates"}
+                icon={<ArrowRight className="w-5 h-5" />}
               >
                 View All Reports
-                <ArrowRightIcon className="w-5 h-5" />
-              </Link>
+              </ThemeButton>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= WHAT YOU CAN ERASE ================= */}
         
@@ -1080,58 +901,39 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
           </div>
         </section>
 
-        <section id="erase-types" className="py-16 lg:py-24 bg-white">
+        <ThemeSection id="erase-types">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  What You Can Erase
-                </h2>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  Comprehensive data destruction capabilities for all types of
-                  sensitive information
-                </p>
-              </div>
+              <ThemeSectionHeading centered subtitle="Comprehensive data destruction capabilities for all types of sensitive information">
+                What You Can Erase
+              </ThemeSectionHeading>
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {eraseTypes.map((item, i) => (
                 <Reveal key={item.name} delayMs={i * 50}>
-                  <div className="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-xl transition-all duration-300">
-                    <div
-                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}
-                    >
-                      {item.icon}
-                    </div>
-                    <h2 className="text-xl font-bold text-slate-900 mb-3">
+                  <ThemeCard className="h-full">
+                    <ThemeIconContainer size="lg" icon={item.icon} className="mb-5" />
+                    <h2 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#0e7c66] transition-colors">
                       {item.name}
                     </h2>
                     <p className="text-slate-600 leading-relaxed">
                       {item.desc}
                     </p>
-                  </div>
+                  </ThemeCard>
                 </Reveal>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= VIDEO SECTION ================= */}
-        <section
-          id="demo"
-          className="py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-emerald-50"
-        >
+        <ThemeSection id="demo" alternate>
           <div className="container mx-auto px-4 max-w-6xl">
             <Reveal>
-              <div className="text-center mb-10">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  See File Eraser in Action
-                </h2>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  Watch how D-Secure File Eraser permanently destroys sensitive
-                  data with audit-ready documentation
-                </p>
-              </div>
+              <ThemeSectionHeading centered subtitle="Watch how D-Secure File Eraser permanently destroys sensitive data with audit-ready documentation">
+                See File Eraser in Action
+              </ThemeSectionHeading>
             </Reveal>
 
             {/* Media Grid - 1 Video + 2 Screenshots */}
@@ -1543,21 +1345,15 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
               </div>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= HOW IT WORKS (Help Manual) ================= */}
-        <section id="how-it-works" className="py-16 lg:py-24 bg-white">
+        <ThemeSection id="how-it-works">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
-              <div className="text-center mb-16">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  How To Use <span className="text-emerald-800">D-Secure</span>{" "}
-                  File Eraser?
-                </h2>
-                <p className="text-lg text-slate-600">
-                  Downloadable Software For Windows, Mac & Linux OS
-                </p>
-              </div>
+              <ThemeSectionHeading centered subtitle="Downloadable Software For Windows, Mac & Linux OS">
+                How To Use <span className="text-[#0e7c66]">D-Secure</span> File Eraser?
+              </ThemeSectionHeading>
             </Reveal>
 
             <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -1569,10 +1365,10 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     <div className="flex flex-col md:flex-row items-start justify-between gap-6 relative z-10">
                       {/* Step 1: Download */}
                       <div className="text-center flex-1 w-full md:w-auto flex flex-col items-center group">
-                        <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100 group-hover:border-emerald-300 transition-colors w-28 h-28 flex items-center justify-center mb-4 relative">
-                          <CloudIcon className="w-10 h-10 text-emerald-800" />
+                        <div className="bg-[#d4ede4] rounded-2xl p-6 border border-[#a8dbc8] group-hover:border-[#0e7c66] transition-colors w-28 h-28 flex items-center justify-center mb-4 relative">
+                          <Cloud className="w-10 h-10 text-[#0e7c66]" />
                           <div className="absolute -bottom-2">
-                            <Download className="w-5 h-5 text-emerald-500 bg-white rounded-full p-0.5 shadow-sm" />
+                            <Download className="w-5 h-5 text-[#0e7c66] bg-white rounded-full p-0.5 shadow-sm" />
                           </div>
                         </div>
                         <p className="font-semibold text-slate-800 text-sm max-w-[120px]">
@@ -1582,13 +1378,13 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
                       {/* Arrow 1 */}
                       <div className="hidden md:flex items-center justify-center h-28 text-slate-300">
-                        <ArrowRightIcon className="w-6 h-6" />
+                        <ArrowRight className="w-6 h-6" />
                       </div>
 
                       {/* Step 2: Install */}
                       <div className="text-center flex-1 w-full md:w-auto flex flex-col items-center group">
-                        <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100 group-hover:border-emerald-300 transition-colors w-28 h-28 flex items-center justify-center mb-4">
-                          <Monitor className="w-10 h-10 text-emerald-800" />
+                        <div className="bg-[#d4ede4] rounded-2xl p-6 border border-[#a8dbc8] group-hover:border-[#0e7c66] transition-colors w-28 h-28 flex items-center justify-center mb-4">
+                          <Monitor className="w-10 h-10 text-[#0e7c66]" />
                         </div>
                         <p className="font-semibold text-slate-800 text-sm max-w-[120px]">
                           Install D-Secure File Eraser
@@ -1597,13 +1393,13 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
                       {/* Arrow 2 */}
                       <div className="hidden md:flex items-center justify-center h-28 text-slate-300">
-                        <ArrowRightIcon className="w-6 h-6" />
+                        <ArrowRight className="w-6 h-6" />
                       </div>
 
                       {/* Step 3: Select */}
                       <div className="text-center flex-1 w-full md:w-auto flex flex-col items-center group">
-                        <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100 group-hover:border-emerald-300 transition-colors w-28 h-28 flex items-center justify-center mb-4">
-                          <ClipboardIcon className="w-10 h-10 text-emerald-800" />
+                        <div className="bg-[#d4ede4] rounded-2xl p-6 border border-[#a8dbc8] group-hover:border-[#0e7c66] transition-colors w-28 h-28 flex items-center justify-center mb-4">
+                          <FileText className="w-10 h-10 text-[#0e7c66]" />
                         </div>
                         <p className="font-semibold text-slate-800 text-sm max-w-[140px]">
                           Select Files/Folders/ Volumes To Erase
@@ -1612,15 +1408,15 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
 
                       {/* Arrow 3 */}
                       <div className="hidden md:flex items-center justify-center h-28 text-slate-300">
-                        <ArrowRightIcon className="w-6 h-6" />
+                        <ArrowRight className="w-6 h-6" />
                       </div>
 
                       {/* Step 4: Erase */}
                       <div className="text-center flex-1 w-full md:w-auto flex flex-col items-center group">
-                        <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100 group-hover:border-emerald-300 transition-colors w-28 h-28 flex items-center justify-center mb-4 relative">
-                          <File className="w-10 h-10 text-emerald-800" />
+                        <div className="bg-[#d4ede4] rounded-2xl p-6 border border-[#a8dbc8] group-hover:border-[#0e7c66] transition-colors w-28 h-28 flex items-center justify-center mb-4 relative">
+                          <File className="w-10 h-10 text-[#0e7c66]" />
                           <div className="absolute bottom-1 right-1 bg-white rounded-full p-0.5 shadow-sm">
-                            <ShieldIcon className="w-4 h-4 text-emerald-500" />
+                            <Shield className="w-4 h-4 text-[#0e7c66]" />
                           </div>
                         </div>
                         <p className="font-semibold text-slate-800 text-sm max-w-[120px]">
@@ -1657,10 +1453,10 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                       <Link
                         to="/support/help-manual/complete-manual"
-                        className="inline-flex items-center gap-2 text-emerald-800 font-bold hover:text-emerald-700 transition-colors group"
+                        className="inline-flex items-center gap-2 text-[#0e7c66] font-bold hover:text-[#083d28] transition-colors group"
                       >
                         Help Manual
-                        <ClipboardIcon className="w-4 h-4" />
+                        <FileText className="w-4 h-4" />
                       </Link>
                     </div>
 
@@ -1670,7 +1466,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         className="inline-flex items-center gap-2 text-slate-500 hover:text-slate-700 transition-colors text-sm font-medium"
                       >
                         <div className="p-1 border border-slate-300 rounded">
-                          <ClipboardIcon className="w-4 h-4" />
+                          <FileText className="w-4 h-4" />
                         </div>
                         Help Manual
                       </Link>
@@ -1680,7 +1476,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
               </div>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
          {/* ================= TAMPER PROOF REPORT ================= */}
         {false && (
@@ -1689,8 +1485,8 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <Reveal>
                 <div className="space-y-6">
-                  <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold">
-                    <ShieldIcon className="w-4 h-4" />
+                  <div className="inline-flex items-center gap-2 bg-[#d4ede4] text-[#0e7c66] px-4 py-2 rounded-full text-sm font-semibold">
+                    <Shield className="w-4 h-4" />
                     Audit-Ready Documentation
                   </div>
                   <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
@@ -1739,141 +1535,103 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
         )}
 
         {/* ================= COMPLIANCE STANDARDS ================= */}
-        <section
-          id="compliance"
-          className="py-16 lg:py-24 bg-gradient-to-br from-slate-900 to-slate-800"
-        >
+        <ThemeSection id="compliance" alternate>
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                  Compliance-Ready by Design
-                </h2>
-                <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-                  D-Secure File Eraser supports organizational compliance
-                  initiatives by aligning with widely accepted data protection
-                  principles and secure erasure best practices
-                </p>
-              </div>
+              <ThemeSectionHeading centered subtitle="D-Secure File Eraser supports organizational compliance initiatives by aligning with widely accepted data protection principles and secure erasure best practices">
+                Compliance-Ready by Design
+              </ThemeSectionHeading>
             </Reveal>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {complianceStandards.map((std, i) => (
                 <Reveal key={std.name} delayMs={i * 50}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center hover:bg-white/20 transition-colors border border-white/10 h-full flex flex-col items-center">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                      <CheckIcon className="w-6 h-6 text-emerald-400" />
-                    </div>
-                    <h2 className="font-bold text-white mb-2">{std.name}</h2>
-                    <p className="text-xs text-slate-300 leading-relaxed flex-grow">
+                  <ThemeCard className="h-full text-center items-center">
+                    <ThemeIconContainer size="md" icon={CheckCircle} className="mb-4" />
+                    <h2 className="font-bold text-slate-900 mb-2">{std.name}</h2>
+                    <p className="text-xs text-slate-600 leading-relaxed flex-grow">
                       {std.desc}
                     </p>
-                  </div>
+                  </ThemeCard>
                 </Reveal>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= PLATFORM SUPPORT ================= */}
-        <section
-          id="platforms"
-          className="py-16 lg:py-24 bg-gradient-to-br from-emerald-50 to-teal-50"
-        >
+        <ThemeSection id="platforms">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Multi-Platform Support
-                </h2>
-                <p className="text-lg text-slate-600">
-                  Full support across your entire technology ecosystem
-                </p>
-              </div>
+              <ThemeSectionHeading centered subtitle="Full support across your entire technology ecosystem">
+                Multi-Platform Support
+              </ThemeSectionHeading>
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {platforms.map((p, i) => (
                 <Reveal key={p.name} delayMs={i * 80}>
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col items-center text-center h-full">
-                    <div className="w-16 h-16 flex-shrink-0 text-emerald-800 flex items-center justify-center bg-emerald-50 rounded-2xl mb-4">
+                  <ThemeCard className="h-full items-center text-center">
+                    <div className="w-16 h-16 flex-shrink-0 text-[#0e7c66] flex items-center justify-center bg-[#d4ede4] rounded-full mb-4">
                       {p.icon}
                     </div>
                     <div className="flex-1">
-                      <h2 className="text-xl font-bold text-slate-900 mb-2">
+                      <h2 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#0e7c66] transition-colors">
                         {p.name}
                       </h2>
                       <p className="text-sm text-slate-500">{p.versions}</p>
                     </div>
-                  </div>
+                  </ThemeCard>
                 </Reveal>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
        
 
         {/* ================= KEY FEATURES ================= */}
-        <section id="features" className="py-16 lg:py-24 bg-white">
+        <ThemeSection id="features" alternate>
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Powerful Features
-                </h2>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  Enterprise-grade capabilities designed for security
-                  professionals
-                </p>
-              </div>
+              <ThemeSectionHeading centered subtitle="Enterprise-grade capabilities designed for security professionals">
+                Powerful Features
+              </ThemeSectionHeading>
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
               {features.map((f, i) => (
                 <Reveal key={f.title} delayMs={i * 40}>
-                  <div className="group bg-gradient-to-br from-slate-50 to-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                    <div className="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors flex-shrink-0">
-                      {f.icon}
-                    </div>
-                    <h2 className="font-bold text-slate-900 mb-2">{f.title}</h2>
+                  <ThemeCard className="h-full">
+                    <ThemeIconContainer size="md" icon={f.icon as any} className="mb-4" />
+                    <h2 className="font-bold text-slate-900 mb-2 group-hover:text-[#0e7c66] transition-colors">{f.title}</h2>
                     <p className="text-sm text-slate-600 leading-relaxed flex-grow">
                       {f.desc}
                     </p>
-                  </div>
+                  </ThemeCard>
                 </Reveal>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= USE CASES ================= */}
-        <section
-          id="use-cases"
-          className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-emerald-50"
-        >
+        <ThemeSection id="use-cases">
           <div className="container mx-auto px-4 max-w-6xl">
             <Reveal>
-              <div className="text-center mb-14">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                  Use Cases
-                </h2>
-                <p className="text-lg text-slate-600">
-                  Trusted by individuals and enterprises worldwide
-                </p>
-              </div>
+              <ThemeSectionHeading centered subtitle="Trusted by individuals and enterprises worldwide">
+                Use Cases
+              </ThemeSectionHeading>
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {useCases.map((u, i) => (
                 <Reveal key={u.title} delayMs={i * 80}>
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-slate-100 h-full flex flex-col">
-                    <div className="flex items-start gap-5 flex-1">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center flex-shrink-0">
-                        {u.icon}
-                      </div>
+                  <ThemeCard className="h-full">
+                    <div className="flex flex-col sm:flex-row items-start gap-5 flex-1">
+                      <ThemeIconContainer size="lg" icon={u.icon as any} />
                       <div>
-                        <h2 className="text-xl font-bold text-slate-900 mb-2">
+                        <h2 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#0e7c66] transition-colors">
                           {u.title}
                         </h2>
                         <p className="text-slate-600 leading-relaxed">
@@ -1881,33 +1639,33 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </ThemeCard>
                 </Reveal>
               ))}
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
         {/* ================= RELATED RESOURCES (BLOG) ================= */}
-        <section id="blogs" className="py-16 lg:py-24 bg-white">
+        <section id="blogs" className="py-16 lg:py-24 bg-emerald-950">
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                     Technical Blogs
                   </h2>
-                  <p className="text-lg text-slate-600 max-w-2xl">
+                  <p className="text-lg text-emerald-50 max-w-2xl">
                     Expert insights on data security, erasure standards, and
                     best practices
                   </p>
                 </div>
                 <Link
                   to="/blog"
-                  className="inline-flex items-center gap-2 text-emerald-800 font-bold hover:text-emerald-700 transition-colors group"
+                  className="inline-flex items-center gap-2 text-emerald-400 font-bold hover:text-emerald-300 transition-colors group mb-6 md:mb-0"
                 >
                   View More
-                  <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </Reveal>
@@ -1915,22 +1673,22 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedBlogs.map((blog, i) => (
                 <Reveal key={blog.id} delayMs={i * 60}>
-                  <div className="relative bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
+                  <div className="relative bg-white rounded-none sm:rounded-none p-4 sm:p-6 border border-emerald-900 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 h-full flex flex-col group">
                     <div className="mb-4">
                       <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
                         {blog.tag}
                       </span>
                     </div>
-                    <h2 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-800 transition-colors line-clamp-2">
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-800 transition-colors line-clamp-2">
                       <Link to={blog.link} className="after:absolute after:inset-0">
                         {blog.title}
                       </Link>
-                    </h2>
+                    </h3>
                     <p className="text-slate-600 text-sm mb-4 leading-relaxed flex-grow line-clamp-3">
                       {blog.excerpt}
                     </p>
                     <div className="flex items-center text-emerald-800 font-semibold text-sm mb-4 group-hover:gap-2 gap-1 transition-all">
-                      Read Article <ArrowRightIcon className="w-4 h-4" />
+                      Read Article <ArrowRight className="w-4 h-4" />
                     </div>
                     <div className="flex items-center justify-between text-xs text-slate-400 mt-auto pt-4 border-t border-slate-100">
                       <span>{blog.publishDate}</span>
@@ -1951,7 +1709,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
         <FAQSection faqs={fileEraserFaqs} />
 
         {/* ================= ENQUIRY / CTA SECTION ================= */}
-        <section id="contact" className="py-20 lg:py-28 bg-white border-t">
+        <ThemeSection id="contact">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
               <Reveal>
@@ -1972,9 +1730,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                       "No-obligation consultation",
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-3">
-                        <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                          <CheckIcon className="w-4 h-4 text-emerald-800" />
-                        </div>
+                        <ThemeIconContainer size="md" icon={CheckCircle as any} />
                         <span className="text-slate-700">{item}</span>
                       </li>
                     ))}
@@ -1983,10 +1739,10 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                   <div className="pt-4">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 text-emerald-800 font-semibold hover:text-emerald-700 transition-colors"
+                      className="inline-flex items-center gap-2 text-[#0e7c66] font-semibold hover:text-[#083d28] transition-colors"
                     >
                       Or contact us directly
-                      <ArrowRightIcon className="w-5 h-5" />
+                      <ArrowRight className="w-5 h-5" />
                     </Link>
                   </div>
                 </div>
@@ -2233,19 +1989,19 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 transition-colors resize-none"
                       ></textarea>
                     </div>
-                    <button
+                    <ThemeButton
                       type="submit"
                       disabled={isLoading}
-                      className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold py-4 rounded-xl hover:from-emerald-600 hover:to-teal-600 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full"
                     >
                       {isLoading ? "Submitting..." : "Submit Enquiry"}
-                    </button>
+                    </ThemeButton>
                   </form>
                 </div>
               </Reveal>
             </div>
           </div>
-        </section>
+        </ThemeSection>
 
       </div>
 
@@ -2385,22 +2141,22 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
           aria-modal="true"
         >
           <div
-            className="relative w-full max-w-5xl h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-5xl h-[90vh] bg-white rounded-none shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200 border border-slate-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
             <div className="flex items-center justify-between p-4 border-b border-slate-100 bg-slate-50">
               <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                <ShieldIcon className="w-5 h-5 text-emerald-600" />
+                <Shield className="w-5 h-5 text-[#0e7c66]" />
                 {showFullPdf ? "Full Erasure Report" : "Erasure Certificate Preview"}
               </h3>
               <div className="flex items-center gap-2">
                 {/* Zoom controls - sirf certificate view mein dikhenge */}
                 {!showFullPdf && (
-                  <div className="flex items-center gap-1 bg-slate-100 rounded-lg px-2 py-1">
+                  <div className="flex items-center gap-1 bg-slate-100 rounded-none px-2 py-1">
                     <button
                       onClick={() => setReportZoom((z) => Math.max(0.5, z - 0.25))}
-                      className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded transition-colors"
+                      className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded-none transition-colors"
                       aria-label="Zoom out"
                       type="button"
                     >
@@ -2409,7 +2165,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     <span className="text-xs font-semibold text-slate-600 min-w-[3rem] text-center">{Math.round(reportZoom * 100)}%</span>
                     <button
                       onClick={() => setReportZoom((z) => Math.min(3, z + 0.25))}
-                      className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded transition-colors"
+                      className="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded-none transition-colors"
                       aria-label="Zoom in"
                       type="button"
                     >
@@ -2419,7 +2175,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                 )}
                 <button
                   onClick={() => { setIsReportModalOpen(false); setShowFullPdf(false); setReportZoom(1); }}
-                  className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-200 rounded-full transition-colors"
+                  className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-200 rounded-none transition-colors"
                   aria-label="Close report modal"
                   type="button"
                 >
@@ -2445,7 +2201,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                   <img
                     src={`/images/reports/${selectedReportId}.png`}
                     alt="Erasure Certificate"
-                    className="max-w-full h-auto rounded-lg shadow-lg transition-transform duration-300"
+                    className="max-w-full h-auto rounded-none shadow-lg transition-transform duration-300 border border-slate-200"
                     style={{ transform: `scale(${reportZoom})`, transformOrigin: 'top center' }}
                     draggable={false}
                   />
@@ -2454,7 +2210,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                 <div className="p-4 border-t border-slate-100 bg-slate-50 flex items-center justify-center">
                   <button
                     onClick={() => setShowFullPdf(true)}
-                    className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300"
+                    className="flex items-center gap-2 bg-[#0e7c66] hover:bg-[#0a2e1e] text-white font-bold px-8 py-3 rounded-none shadow-none transition-colors duration-200"
                     type="button"
                   >
                     <Download className="w-5 h-5" />

@@ -4,27 +4,31 @@ import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import UpcomingBadge from "../components/ui/UpcomingBadge";
 import Reveal from "@/components/Reveal";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
-import {
-  ShieldIcon,
-  CheckIcon,
-  GlobeIcon,
-  GearIcon,
-  ClipboardIcon,
-  ServerIcon,
-} from "@/components/FlatIcons";
-import {
-  Zap,
-  Database,
-  Monitor,
-  RefreshCcw,
-  HardDriveDownload,
-} from "lucide-react";
+import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
 import { ProductContactForm } from "@/components/forms/ProductContactForm";
 import { getSEOForPage } from "@/utils/seo";
 import { generateFAQSchema } from "@/utils/seo.core";
 import { FAQSection } from "@/components/FAQSection";
 import { KeyTakeaways } from "@/components/KeyTakeaways";
 import { FAQItem, KeyTakeawayItem } from "@/types/seo";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle,
+  Cloud,
+  Database,
+  FileText,
+  Globe,
+  HardDriveDownload,
+  Monitor,
+  RefreshCcw,
+  RefreshCw,
+  Server,
+  Settings,
+  Shield,
+  Star,
+  Zap
+} from 'lucide-react';
 
 const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
   const [activeSection, setActiveSection] = useState("");
@@ -205,7 +209,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
                     >
                       Request Early Access
                     </button>
@@ -215,7 +219,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                         e.preventDefault();
                         scrollToSection("capabilities");
                       }}
-                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500 text-emerald-800 px-8 py-4 rounded-none font-bold hover:bg-emerald-50 transition-all duration-300"
                     >
                       View Capabilities
                     </a>
@@ -251,11 +255,11 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                     }}
                   >
                     {/* Glow Behind Box */}
-                    <div className="absolute inset-0 bg-emerald-500/40 blur-3xl rounded-3xl scale-110"></div>
+                    <div className="absolute inset-0 bg-emerald-500/40 blur-3xl rounded-none scale-110"></div>
 
                     {/* Main Box - Front Face */}
                     <div
-                      className="relative w-[220px] h-[280px] lg:w-[280px] lg:h-[360px] bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-3xl shadow-2xl overflow-hidden"
+                      className="relative w-[220px] h-[280px] lg:w-[280px] lg:h-[360px] bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-none shadow-2xl overflow-hidden"
                       style={{
                         transform: "rotateY(-12deg) rotateX(8deg)",
                         boxShadow:
@@ -279,7 +283,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                         </div>
 
                         {/* Main Icon */}
-                        <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 lg:mb-6 border border-white/20 shadow-inner">
+                        <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white/15 backdrop-blur-sm rounded-none flex items-center justify-center mb-4 lg:mb-6 border border-white/20 shadow-inner">
                           <HardDriveDownload className="w-10 h-10 lg:w-14 lg:h-14 text-white drop-shadow-lg" />
                         </div>
 
@@ -296,7 +300,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                         {/* Bottom Badge */}
                         <div className="absolute bottom-3 lg:bottom-4 left-1/2 -translate-x-1/2">
                           <div className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-white/20">
-                            <CheckIcon className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-emerald-300" />
+                            <CheckCircle className="w-6 h-6 text-emerald-600" />
                             <span className="text-white/90 text-[9px] lg:text-[11px] font-semibold">
                               Regulatory Reimaging
                             </span>
@@ -309,10 +313,10 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                       </div>
 
                       {/* Main Box Edge Shine */}
-                      <div className="absolute inset-0 border border-white/20 rounded-3xl pointer-events-none"></div>
+                      <div className="absolute inset-0 border border-white/20 rounded-none pointer-events-none"></div>
 
                       {/* Animated Pulse Ring */}
-                      <div className="absolute inset-0 border-2 border-white/10 rounded-2xl animate-pulse"></div>
+                      <div className="absolute inset-0 border-2 border-white/10 rounded-none animate-pulse"></div>
                     </div>
 
                     {/* Right Side Face (3D) */}
@@ -362,17 +366,17 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
               {
                 title: "Reduced Processing Cost",
                 desc: "Eliminate manual technician steps, allowing your team to focus on higher-value tasks.",
-                icon: <GearIcon className="w-6 h-6" />
+                icon: <Settings className="w-6 h-6 text-emerald-600" />
               },
               {
                 title: "Marketplace Trust",
                 desc: "Deliver consistent, standardized builds that lower dispute and return rates.",
-                icon: <ShieldIcon className="w-6 h-6" />
+                icon: <Shield className="w-6 h-6 text-emerald-600" />
               }
             ].map((item) => (
               <Reveal key={item.title}>
-                <div className="bg-white p-8 rounded-3xl border border-slate-200 hover:shadow-xl transition-all">
-                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 mb-6">
+                <div className="bg-white p-8 rounded-none border border-slate-200 hover:shadow-xl transition-all">
+                  <div className="w-12 h-12 bg-emerald-50 rounded-none flex items-center justify-center text-emerald-600 mb-6">
                     {item.icon}
                   </div>
                   <h2 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h2>
@@ -404,7 +408,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                   ].map((feature) => (
                     <div key={feature} className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mt-1">
-                        <CheckIcon className="w-4 h-4 text-emerald-800" />
+                        <CheckCircle className="w-6 h-6 text-emerald-600" />
                       </div>
                       <span className="text-slate-700 font-medium">{feature}</span>
                     </div>
@@ -421,11 +425,11 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                     View every lifecycle event in one place. Our management portal doesn't just log wipes—it tracks the entire journey from secure erasure to successful OS deployment.
                   </p>
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+                    <div className="p-4 bg-white/5 rounded-none border border-white/10">
                       <p className="text-2xl font-bold text-white mb-1">Erase</p>
                       <p className="text-xs text-slate-400 uppercase tracking-widest">Regulatory Wipe</p>
                     </div>
-                    <div className="p-4 bg-emerald-500/10 rounded-2xl border border-emerald-500/20">
+                    <div className="p-4 bg-emerald-500/10 rounded-none border border-emerald-500/20">
                       <p className="text-2xl font-bold text-emerald-400 mb-1">Reimage</p>
                       <p className="text-xs text-emerald-400/60 uppercase tracking-widest">OS Deployment</p>
                     </div>
@@ -457,7 +461,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                 step: "01",
                 title: "Regulatory Erasure",
                 desc: "Device is securely erased using standards-compliant algorithms.",
-                icon: <ShieldIcon className="w-8 h-8" />
+                icon: <Shield className="w-6 h-6 text-emerald-600" />
               },
               {
                 step: "02",
@@ -475,12 +479,12 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                 step: "04",
                 title: "Unified Reporting",
                 desc: "All events are logged centrally for a complete audit trail.",
-                icon: <ClipboardIcon className="w-8 h-8" />
+                icon: <FileText className="w-6 h-6 text-emerald-600" />
               }
             ].map((item) => (
               <Reveal key={item.step} animation="slide-up">
                 <div className="relative z-10 space-y-6">
-                  <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center text-slate-900 shadow-lg shadow-emerald-500/20">
+                  <div className="w-16 h-16 bg-emerald-500 rounded-none flex items-center justify-center text-slate-900 shadow-lg shadow-emerald-500/20">
                     {item.icon}
                   </div>
                   <div>
@@ -516,7 +520,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                   "Support redeployment",
                   "Zero manual reimages"
                 ],
-                icon: <GlobeIcon className="w-6 h-6" />
+                icon: <Globe className="w-6 h-6 text-emerald-600" />
               },
               {
                 title: "Leasing Providers",
@@ -525,18 +529,18 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
                   "Faster turnaround",
                   "Audit-ready inventory"
                 ],
-                icon: <ServerIcon className="w-6 h-6" />
+                icon: <Server className="w-6 h-6 text-emerald-600" />
               }
             ].map((group) => (
               <div key={group.title} className="p-8 rounded-[2rem] bg-emerald-50 border border-emerald-100 space-y-6 hover:bg-emerald-100 transition-colors">
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-emerald-600 shadow-sm">
+                <div className="w-12 h-12 bg-white rounded-none flex items-center justify-center text-emerald-600 shadow-sm">
                   {group.icon}
                 </div>
                 <h2 className="text-2xl font-bold text-slate-900">{group.title}</h2>
                 <ul className="space-y-3">
                   {group.list.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-slate-700">
-                      <CheckIcon className="w-4 h-4 text-emerald-600" />
+                      <CheckCircle className="w-6 h-6 text-emerald-600" />
                       <span className="font-medium">{item}</span>
                     </li>
                   ))}

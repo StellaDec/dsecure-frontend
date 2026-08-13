@@ -1,11 +1,12 @@
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ChevronLeft, Monitor } from 'lucide-react';
 
 import Reveal from '@/components/Reveal'
 import { useAuth } from '@/auth/AuthContext'
 import { Link } from 'react-router-dom'
+import { fetchLatestUpdate } from '@/services/updatesAPI';
 
 interface Agent {
   id: string
@@ -16,20 +17,46 @@ interface Agent {
   description: string
   iconSvg: React.ReactElement
   compatibility: string[]
+  url?: string
 }
 
 const DownloadAgentPage: React.FC = () => {
   const { user } = useAuth()
   const [selectedPlatform, setSelectedPlatform] = useState('all')
+  const [dseVersion, setDseVersion] = useState('3.2.1')
+  const [dseUrl, setDseUrl] = useState('')
+  const [dseChangelog, setDseChangelog] = useState('Complete data erasure solution for Windows systems including drives, files, and network storage.')
+
+  useEffect(() => {
+    const isDemoMode = localStorage.getItem("demo_mode") === "true";
+    if (!isDemoMode) {
+      const loadUpdate = async () => {
+        const updateData = await fetchLatestUpdate("DSErase");
+        if (updateData && updateData.version_number) {
+          let v = updateData.version_number;
+          if (v.length === 4 && !isNaN(Number(v))) {
+            v = v.split('').join('.');
+          }
+          setDseVersion(v);
+          setDseUrl(updateData.download_link);
+          if (updateData.changelog) {
+            setDseChangelog(updateData.changelog);
+          }
+        }
+      };
+      loadUpdate();
+    }
+  }, []);
 
   const agents: Agent[] = [
     {
       id: 'windows-agent',
-      name: 'D-Secure Windows Agent',
-      version: '3.2.1',
+      name: 'D-Secure File Eraser',
+      version: dseVersion,
       size: '45.2 MB',
+      url: dseUrl,
       platform: 'windows',
-      description: 'Complete data erasure solution for Windows systems including drives, files, and network storage.',
+      description: dseChangelog,
       iconSvg: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2z" /></svg>,
       compatibility: ['Windows 10', 'Windows 11', 'Windows Server 2019', 'Windows Server 2022']
     },
@@ -100,8 +127,26 @@ const DownloadAgentPage: React.FC = () => {
     : agents.filter(agent => agent.platform === selectedPlatform)
 
   const downloadAgent = (agent: Agent) => {
-    // Simulate download
+    // Simulate or actual download
     console.log(`Downloading ${agent.name} v${agent.version}...`)
+    
+    if (agent.url) {
+      // Create a temporary anchor element to trigger download
+      const link = document.createElement('a');
+      link.href = agent.url;
+      // Extract filename from URL or generate one
+      let filename = 'download';
+      if (agent.id === 'windows-agent') {
+        filename = `D-Secure_Eraser_Setup_v${agent.version.replace(/\./g, "_")}.exe`;
+      }
+      link.setAttribute('download', filename);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      // Existing behavior or demo mode placeholder
+      alert(`${agent.name} download will be available shortly.`);
+    }
   }
 
   const getInstallationInstructions = (platform: string) => {

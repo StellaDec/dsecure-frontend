@@ -9,6 +9,7 @@ import { indexedDBService } from "@/services/indexedDBService";
 import { authService } from "@/utils/authService";
 import { Download, Monitor, Laptop, Terminal } from 'lucide-react';
 import { ThemeCard, ThemeButton, ThemeIconContainer, themeClasses } from '@/components/ui/Theme';
+import { fetchLatestUpdate } from '@/services/updatesAPI';
 
 interface DownloadStats {
   totalDownloads: number;
@@ -23,6 +24,21 @@ interface DownloadStats {
 export default function AdminDownloads() {
   const isDemo = isDemoMode();
   const { showInfo } = useNotification();
+  const [dseVersion, setDseVersion] = useState("2.0.1");
+
+  useEffect(() => {
+    if (!isDemo) {
+      fetchLatestUpdate("DSErase").then(data => {
+        if (data && data.version_number) {
+          let v = data.version_number;
+          if (v.length === 4 && !isNaN(Number(v))) {
+            v = v.split('').join('.');
+          }
+          setDseVersion(v);
+        }
+      }).catch(() => {});
+    }
+  }, [isDemo]);
 
   // Aggregated product stats
   const [products, setProducts] = useState<any[]>([]);
@@ -440,10 +456,14 @@ export default function AdminDownloads() {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-lg font-semibold text-slate-900">
-                        {product.name}
+                        {product.name === "DSecure Drive Eraser" ? "D-Secure Drive Eraser" : product.name}
                       </h3>
                       <p className="text-sm text-slate-600 mt-1">
-                        Version {product.version}
+                        Version {(() => {
+                          const v = (product.name.includes("File Eraser") || product.name.includes("DSErase")) ? dseVersion : product.version;
+                          if (v && v.length === 4 && !isNaN(Number(v))) return v.split('').join('.');
+                          return v;
+                        })()}
                       </p>
                     </div>
                     <div className="text-right">
@@ -499,28 +519,34 @@ export default function AdminDownloads() {
                         {product.platforms.linux}
                       </p>
                     </div>
-                  </div>
-
-                  <div className="mt-4 pt-4 border-t border-slate-200 flex items-center justify-between">
-                    <span className="text-sm text-slate-600">
-                      Last download:{" "}
-                      {new Date(product.lastDownload).toLocaleDateString()}
-                    </span>
-                    <Link
-                      to={`/download?product=${product.name.toLowerCase().replace(" ", "-")}`}
-                      onClick={(e) => {
-                        if (isDemo) {
-                          e.preventDefault();
-                          showInfo(
-                            "Demo Restricted",
-                            "Software downloads are not available in demo accounts. Please create a real account.",
-                          );
-                        }
-                      }}
-                      className="text-sm text-[#0a2e1e] hover:text-[#0a2e1e] font-medium"
-                    >
-                      View Details →
-                    </Link>
+                    <div className="mt-4 pt-4 border-t border-slate-200 flex items-center justify-between">
+                      {/* <span className="text-sm text-slate-600">
+                        Last download:{" "}
+                        {new Date(product.lastDownload).toLocaleDateString()}
+                      </span> */}
+                      <Link
+                        to={(() => {
+                          const n = product.name.toLowerCase();
+                          if (n.includes("file eraser") || n.includes("dse")) return "/download?product=file-eraser";
+                          if (n.includes("drive eraser")) return "/download?product=drive-eraser";
+                          if (n.includes("enterprise")) return "/download?product=enterprise";
+                          if (n.includes("mobile")) return "/download?product=mobile";
+                          return "/download";
+                        })()}
+                        onClick={(e) => {
+                          if (isDemo) {
+                            e.preventDefault();
+                            showInfo(
+                              "Demo Restricted",
+                              "Software downloads are not available in demo accounts. Please create a real account."
+                            );
+                          }
+                        }}
+                        className="text-sm text-[#0a2e1e] hover:text-[#0a2e1e] font-medium"
+                      >
+                        View Details →
+                      </Link>
+                    </div>
                   </div>
                 </ThemeCard>
               ))

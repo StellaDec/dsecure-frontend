@@ -93,53 +93,50 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
         timestamp: timestampISO,
       };
 
-      // Reset form and show success immediately for better UX
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        country: "",
-        businessType: "",
-        organization: "",
-        message: "",
-      });
-      setIsLoading(false);
-      showToast(
-        "Thank you! Your enquiry has been submitted successfully.",
-        "success",
-      );
-
       try {
-        // === 1. SUBMIT TO BACKEND API (DATABASE) ===
         const API_BASE = import.meta.env.VITE_API_BASE_URL;
-        const apiResponse = await fetch(`${API_BASE}/api/ContactFormSubmissions`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(submissionData),
-        });
+        
+        // Wait for both APIs to complete before showing success
+        const [apiResult] = await Promise.allSettled([
+          fetch(`${API_BASE}/api/ContactFormSubmissions`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(submissionData),
+          }),
+          fetch(import.meta.env.VITE_FORMSUBMIT_ENDPOINT, {
+            method: "POST",
+            body: formSubmitData,
+            headers: { Accept: "application/json" },
+          })
+        ]);
 
-        // === 2. SUBMIT TO FORMSUBMIT (EMAIL & WEBHOOK) ===
-        await fetch(import.meta.env.VITE_FORMSUBMIT_ENDPOINT, {
-          method: "POST",
-          body: formSubmitData,
-          headers: { Accept: "application/json" },
-        });
-
-        // === 3. Microsoft Excel + Teams tracking (non-blocking) ===
-        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
-          },
-          body: JSON.stringify(submissionData),
-        }).catch(() => {});
-
-        if (!apiResponse.ok) {
-          console.error("Backend submission failed:", await apiResponse.json());
+        if (apiResult.status === "rejected" || (apiResult.status === "fulfilled" && !apiResult.value.ok)) {
+          throw new Error("Backend API submission failed");
         }
-      } catch (error) {
+
+        // Reset form and show success ONLY after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          country: "",
+          businessType: "",
+          organization: "",
+          message: "",
+        });
+        setIsLoading(false);
+        showToast(
+          "Thank you! Your enquiry has been submitted successfully.",
+          "success",
+        );
+
+      } catch (error: any) {
         console.error("Submission error:", error);
+        showToast(
+          "Failed to send message. Please try again later.",
+          "error",
+        );
+        setIsLoading(false);
       }
     } catch (error: any) {
       console.error("Form error:", error);
@@ -178,7 +175,7 @@ export const ProductContactForm: React.FC<ProductContactFormProps> = ({
       </Reveal>
 
       <Reveal delayMs={200}>
-        <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 lg:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+        <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 lg:p-10 shadow-2xl relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#0e7c66]/5 blur-3xl -mr-16 -mt-16 group-hover:bg-[#0e7c66]/10 transition-all duration-500"></div>
           
           <form className="space-y-5 relative z-10" onSubmit={handleSubmit}>

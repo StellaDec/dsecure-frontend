@@ -160,14 +160,17 @@ export default function MainLayout() {
           <div className="mx-auto max-w-7xl xxl:max-w-[1536px] px-4 xs:px-4 sm:px-6 md:px-6 lg:px-8 xl:px-10 xxl:px-12 h-16 xs:h-18 sm:h-20 md:h-20 lg:h-22 xl:h-24 xxl:h-24 flex items-center justify-between gap-4">
             <Link
               to="/"
-              className="flex items-center gap-2 xs:gap-3 font-bold text-slate-800 hover:opacity-80 transition-opacity flex-shrink-0"
+              className="relative flex items-center gap-2 xs:gap-3 font-bold text-slate-800 flex-shrink-0 hover:opacity-90 transition-opacity"
               aria-label="D-Secure homepage"
             >
-              <ThemeAwareLogo
-                className="h-6 xs:h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 xxl:h-12 w-auto"
-                responsive={true}
-                priority
-              />
+              <div className="absolute inset-0 bg-[#FF9933]/20 blur-[16px] rounded-full"></div>
+              <div className="relative">
+                <ThemeAwareLogo
+                  className="h-6 xs:h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 xxl:h-12 w-auto"
+                  responsive={true}
+                  priority
+                />
+              </div>
             </Link>
 
             {/* Centered Navigation */}
@@ -517,9 +520,9 @@ export default function MainLayout() {
                                 </span>
                               </Link>
 
-                              {/* System Cleaner */}
+                              {/* Zero Trace */}
                               <Link
-                                to="/products/system-cleaner"
+                                to="/products/zero-trace"
                                 className={`group/card ${themeClasses.card.base} p-5 hover:bg-[#f4fbf8] hover:-translate-y-1 hover:shadow-md cursor-pointer h-full`}
                                 onClick={() => setProductsDropdownOpen(false)}
                               >
@@ -528,7 +531,7 @@ export default function MainLayout() {
                                     <Eraser className="w-5 h-5 text-[#0e7c66] group-hover/card:text-white transition-colors duration-150" />
                                   </div>
                                   <h4 className="font-bold text-[#0a2e1e] group-hover/card:text-[#0e7c66] transition-colors duration-150">
-                                    System Cleaner
+                                    Zero Trace
                                   </h4>
                                 </div>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3 flex-grow">
@@ -1659,13 +1662,13 @@ export default function MainLayout() {
                       </Link>
                       <Link
                         onClick={() => setOpen(false)}
-                        to="/products/system-cleaner"
+                        to="/products/zero-trace"
                         className="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                       >
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-md flex items-center justify-center flex-shrink-0 text-white">
                           <Eraser className="w-4 h-4" />
                         </div>
-                        <span className="font-medium">System Cleaner</span>
+                        <span className="font-medium">Zero Trace</span>
                       </Link>
                     </div>
 
@@ -2047,7 +2050,7 @@ export default function MainLayout() {
             <Outlet />
           </Suspense>
         </main>
-        <footer className="mt-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <footer className="mt-auto bg-gradient-to-br from-slate-900 via-slate-800 to-[#0a2e1e]/80 relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.1),transparent_50%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.05),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(255,255,255,0.02)_50%,transparent_70%)]"></div>
@@ -2411,8 +2414,8 @@ export default function MainLayout() {
                     © {new Date().getFullYear()} D-Secure Technologies Pvt. Ltd.
                     All rights reserved.
                   </p>
-                  <div className="flex items-center gap-2 text-green-400">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <div className="flex items-center gap-2 text-emerald-500">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
                     <span className="text-xs">All systems operational</span>
                   </div>
                 </div>
@@ -2440,13 +2443,20 @@ export default function MainLayout() {
                     Terms of Service
                   </Link>
                   <Link
+                    to="/eula"
+                    className="hover:text-brand transition-colors"
+                    aria-label="Read our End User License Agreement"
+                  >
+                    EULA
+                  </Link>
+                  <Link
                     to="/cookie-policy"
                     className="hover:text-brand transition-colors"
                     aria-label="Read our Cookie Policy"
                   >
                     Cookie Policy
                   </Link>
-                  <Link
+                  {/* <Link
                     to="/security"
                     className="hover:text-brand transition-colors"
                     aria-label="View our security practices and certifications"
@@ -2459,7 +2469,7 @@ export default function MainLayout() {
                     aria-label="Check system status and service availability"
                   >
                     Status
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>

@@ -438,12 +438,6 @@ const GetStartedPage: React.FC = memo(() => {
                   >
                     Contact Support
                   </Link>
-                  <a
-                    href="tel:+91-844-775-0101"
-                    className="bg-white/20 hover:bg-white/30 border-2 border-white text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 inline-flex items-center justify-center"
-                  >
-                    Call: +91-844-775-0101
-                  </a>
                 </div>
               </div>
             </Reveal>

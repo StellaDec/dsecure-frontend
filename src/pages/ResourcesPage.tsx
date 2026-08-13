@@ -560,62 +560,86 @@ function ResourcesPageContent() {
                 </p>
               </Reveal>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Reveal delayMs={10}>
-                <ThemeCard className="group p-8 flex flex-col hover:-translate-y-2 relative overflow-hidden h-full">
-                  <div className="flex items-center justify-between mb-4">
-                    <ThemeIconContainer icon={BookOpen} size="lg" />
-                  </div>
-                  <div className="relative flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors duration-300">
-                      Technical Documentation
-                    </h3>
-                    <p className="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">
-                      Comprehensive user guides, implementation documentation,
-                      and quick-start resources for administrators.
-                    </p>
-                    <div className="flex items-center justify-between mt-auto">
-                      <Link 
-                        to="/resources/documentation"
-                        className="flex items-center text-teal-600 text-sm font-semibold group-hover:text-teal-700 transition-colors after:absolute after:inset-0 z-20"
-                      >
-                        Explore Documentation
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                      </Link>
-                      <div className="text-xs text-slate-400 font-medium relative z-10">
-                        15+ Guides
+                <Link to="/resources/documentation" className="block h-full">
+                  <ThemeCard className="group p-8 flex flex-col hover:-translate-y-2 relative overflow-hidden h-full">
+                    <div className="flex items-center justify-between mb-4">
+                      <ThemeIconContainer icon={BookOpen} size="lg" />
+                    </div>
+                    <div className="relative flex-1 flex flex-col">
+                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors duration-300">
+                        Technical Documentation
+                      </h3>
+                      <p className="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">
+                        Comprehensive user guides, implementation documentation,
+                        and quick-start resources for administrators.
+                      </p>
+                      <div className="flex items-center justify-between mt-auto">
+                        <div className="flex items-center text-teal-600 text-sm font-semibold group-hover:text-teal-700 transition-colors">
+                          Explore Documentation
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                        </div>
+                        <div className="text-xs text-slate-400 font-medium relative z-10">
+                          15+ Guides
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </ThemeCard>
+                  </ThemeCard>
+                </Link>
               </Reveal>
               <Reveal delayMs={15}>
-                <ThemeCard className="group p-8 flex flex-col hover:-translate-y-2 relative overflow-hidden h-full">
-                  <div className="flex items-center justify-between mb-4">
-                    <ThemeIconContainer icon={Newspaper} size="lg" />
-                  </div>
-                  <div className="relative flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors duration-300">
-                      Industry Insights & Blog
-                    </h3>
-                    <p className="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">
-                      Stay updated with the latest trends, expert insights, and
-                      best practices in data sanitization and security.
-                    </p>
-                    <div className="flex items-center justify-between mt-auto">
-                      <Link 
-                        to="/blog"
-                        className="flex items-center text-teal-600 text-sm font-semibold group-hover:text-teal-700 transition-colors after:absolute after:inset-0 z-20"
-                      >
-                        Read Latest Articles
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                      </Link>
-                      <div className="text-xs text-slate-400 font-medium relative z-10">
-                        Weekly Updates
+                <Link to="/blog" className="block h-full">
+                  <ThemeCard className="group p-8 flex flex-col hover:-translate-y-2 relative overflow-hidden h-full">
+                    <div className="flex items-center justify-between mb-4">
+                      <ThemeIconContainer icon={Newspaper} size="lg" />
+                    </div>
+                    <div className="relative flex-1 flex flex-col">
+                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors duration-300">
+                        Industry Insights & Blog
+                      </h3>
+                      <p className="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">
+                        Stay updated with the latest trends, expert insights, and
+                        best practices in data sanitization and security.
+                      </p>
+                      <div className="flex items-center justify-between mt-auto">
+                        <div className="flex items-center text-teal-600 text-sm font-semibold group-hover:text-teal-700 transition-colors">
+                          Read Latest Articles
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                        </div>
+                        <div className="text-xs text-slate-400 font-medium relative z-10">
+                          Weekly Updates
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </ThemeCard>
+                  </ThemeCard>
+                </Link>
+              </Reveal>
+              <Reveal delayMs={20}>
+                <Link to="/international-laws-and-regulations" className="block h-full">
+                  <ThemeCard className="group p-8 flex flex-col hover:-translate-y-2 relative overflow-hidden h-full">
+                    <div className="flex items-center justify-between mb-4">
+                      <ThemeIconContainer icon={ShieldCheck} size="lg" />
+                    </div>
+                    <div className="relative flex-1 flex flex-col">
+                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors duration-300">
+                        International Data Privacy Laws
+                      </h3>
+                      <p className="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">
+                        Comprehensive overview of global data protection laws, including GDPR, HIPAA, and regional privacy regulations.
+                      </p>
+                      <div className="flex items-center justify-between mt-auto">
+                        <div className="flex items-center text-teal-600 text-sm font-semibold group-hover:text-teal-700 transition-colors">
+                          Explore Laws
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                        </div>
+                        <div className="text-xs text-slate-400 font-medium relative z-10">
+                          27+ Laws
+                        </div>
+                      </div>
+                    </div>
+                  </ThemeCard>
+                </Link>
               </Reveal>
             </div>
             {/* <Reveal delayMs={50}>
@@ -668,34 +692,36 @@ function ResourcesPageContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {filteredFeaturedResources.map((resource, i) => (
                 <Reveal key={resource.id} delayMs={i * 100}>
-                  <ThemeCard className="group h-full flex flex-col hover:-translate-y-1 relative">
-                    <div className="p-6 flex-1 flex flex-col relative z-10">
-                      <div className="flex items-center justify-between mb-4">
-                        <div>{getIcon(resource)}</div>
-                        <span className="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs font-medium">
-                          Featured
-                        </span>
+                  <Link to={resource.referenceUrl} className="block h-full">
+                    <ThemeCard className="group h-full flex flex-col hover:-translate-y-1 relative">
+                      <div className="p-6 flex-1 flex flex-col relative z-10">
+                        <div className="flex items-center justify-between mb-4">
+                          <div>{getIcon(resource)}</div>
+                          <span className="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs font-medium">
+                            Featured
+                          </span>
+                        </div>
+                        <h3 className="font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors duration-300">
+                          {resource.title}
+                        </h3>
+                        <p className="text-slate-600 text-sm mb-4 flex-grow">
+                          {resource.description}
+                        </p>
+                        <div className="flex items-center justify-between text-xs text-slate-500 mb-4">
+                          <span>{resource.pages}</span>
+                          <span className="capitalize">{resource.type}</span>
+                        </div>
+                        <div className="mt-auto">
+                          <div className="block w-full">
+                            <ThemeButton className="w-full text-sm inline-flex items-center justify-center rounded-none relative z-20 pointer-events-none">
+                              <BookOpen className="w-4 h-4 mr-1" />
+                              Read Article
+                            </ThemeButton>
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors duration-300">
-                        {resource.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm mb-4 flex-grow">
-                        {resource.description}
-                      </p>
-                      <div className="flex items-center justify-between text-xs text-slate-500 mb-4">
-                        <span>{resource.pages}</span>
-                        <span className="capitalize">{resource.type}</span>
-                      </div>
-                      <div className="mt-auto">
-                        <Link to={resource.referenceUrl} className="after:absolute after:inset-0 z-20 block w-full">
-                          <ThemeButton className="w-full text-sm inline-flex items-center justify-center rounded-none">
-                            <BookOpen className="w-4 h-4 mr-1" />
-                            Read Article
-                          </ThemeButton>
-                        </Link>
-                      </div>
-                    </div>
-                  </ThemeCard>
+                    </ThemeCard>
+                  </Link>
                 </Reveal>
               ))}
             </div>
@@ -737,31 +763,33 @@ function ResourcesPageContent() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredResources.map((resource, i) => (
                 <Reveal key={resource.id} delayMs={i * 50}>
-                  <ThemeCard className="group p-6 h-full flex flex-col hover:-translate-y-1 relative">
-                    <div className="flex items-start justify-between mb-4 relative z-10">
-                      <div>{getIcon(resource)}</div>
-                      <span className="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs font-medium capitalize">
-                        {resource.type}
-                      </span>
-                    </div>
-                    <h3 className="font-bold text-slate-900 mb-2 text-sm group-hover:text-teal-600 transition-colors duration-300 relative z-10">
-                      {resource.title}
-                    </h3>
-                    <p className="text-slate-600 text-xs mb-4 leading-relaxed flex-grow relative z-10">
-                      {resource.description}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-slate-500 mb-4 relative z-10">
-                      <span>{resource.pages}</span>
-                    </div>
-                    <div className="mt-auto relative z-10">
-                      <Link to={resource.referenceUrl} className="after:absolute after:inset-0 z-20 block w-full">
-                        <ThemeButton className="w-full text-xs inline-flex items-center justify-center rounded-none">
-                          <BookOpen className="w-3 h-3 mr-1" />
-                          Read Article
-                        </ThemeButton>
-                      </Link>
-                    </div>
-                  </ThemeCard>
+                  <Link to={resource.referenceUrl} className="block h-full">
+                    <ThemeCard className="group p-6 h-full flex flex-col hover:-translate-y-1 relative">
+                      <div className="flex items-start justify-between mb-4 relative z-10">
+                        <div>{getIcon(resource)}</div>
+                        <span className="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs font-medium capitalize">
+                          {resource.type}
+                        </span>
+                      </div>
+                      <h3 className="font-bold text-slate-900 mb-2 text-sm group-hover:text-teal-600 transition-colors duration-300 relative z-10">
+                        {resource.title}
+                      </h3>
+                      <p className="text-slate-600 text-xs mb-4 leading-relaxed flex-grow relative z-10">
+                        {resource.description}
+                      </p>
+                      <div className="flex items-center justify-between text-xs text-slate-500 mb-4 relative z-10">
+                        <span>{resource.pages}</span>
+                      </div>
+                      <div className="mt-auto relative z-10">
+                        <div className="block w-full">
+                          <ThemeButton className="w-full text-xs inline-flex items-center justify-center rounded-none relative z-20 pointer-events-none">
+                            <BookOpen className="w-3 h-3 mr-1" />
+                            Read Article
+                          </ThemeButton>
+                        </div>
+                      </div>
+                    </ThemeCard>
+                  </Link>
                 </Reveal>
               ))}
             </div>

@@ -34,7 +34,7 @@ const PricingAndPlanPage = lazy(() => import("../pages/PricingAndPlanPage"));
 const DriveEraserPage = lazy(() => import("../pages/DriveEraserPage"));
 const DriveEraserDiagnosticPage = lazy(() => import("../pages/DriveEraserDiagnosticPage"));
 const FileEraserPage = lazy(() => import("../pages/FileEraserPage"));
-const SystemCleanerPage = lazy(() => import("../pages/SystemCleanerPage"));
+const ZeroTracePage = lazy(() => import("../pages/SystemCleanerPage"));
 const HardwareDiagnosticsPage = lazy(() => import("../pages/HardwareDiagnosticsPage"));
 const HardDriveMonitorPage = lazy(() => import("../pages/HardDriveMonitorPage"));
 const CheckoutPage = lazy(() => import("../pages/CheckoutPage"));
@@ -45,8 +45,9 @@ const DiagnosticsPage = lazy(() => import("../pages/DiagnosticsPage"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const LegalPolicy = lazy(() => import("../pages/LegalPolicy"));
 const TermsOfServicePage = lazy(() => import("../pages/TermsOfServicePage"));
+const EulaPage = lazy(() => import("../pages/EulaPage"));
 const CookiePolicyPage = lazy(() => import("../pages/CookiePolicyPage"));
-const SecurityPage = lazy(() => import("../pages/SecurityPage"));
+// const SecurityPage = lazy(() => import("../pages/SecurityPage"));
 const WhatIsDSecurePage = lazy(() => import("../pages/WhatIsDSecurePage"));
 const WhyDSecurePage = lazy(() => import("../pages/WhyDSecurePage"));
 const AIOverviewPage = lazy(() => import("../pages/AIOverviewPage"));
@@ -55,7 +56,7 @@ const WhitepaperPage = lazy(() => import("../pages/WhitepaperPage"));
 const UseCasesPage = lazy(() => import("../pages/UseCasesPage"));
 const FounderPage = lazy(() => import("../pages/FounderPage"));
 const TrustCenterPage = lazy(() => import("../pages/TrustCenterPage"));
-const StatusPage = lazy(() => import("../pages/StatusPage"));
+// const StatusPage = lazy(() => import("../pages/StatusPage"));
 const DataHygieneFrameworkPage = lazy(() => import("../pages/DataHygieneFrameworkPage"));
 const GlossaryPage = lazy(() => import("../pages/GlossaryPage"));
 const PartnersPage = lazy(() => import("../pages/PartnersPage"));
@@ -108,6 +109,9 @@ const HIPAACompliancePage = lazy(
 );
 const DoDCompliancePage = lazy(
   () => import("../pages/compliance/DoDCompliancePage"),
+);
+const InternationalLawsPage = lazy(
+  () => import("../pages/compliance/InternationalLawsPage"),
 );
 const MacErasurePage = lazy(() => import("../pages/solutions/MacErasurePage"));
 const BlanccoAlternativePage = lazy(
@@ -203,6 +207,7 @@ export const PublicRoutes = () => (
     <Route path="compliance/gdpr" element={<GDPRCompliancePage />} />
     <Route path="compliance/hipaa" element={<HIPAACompliancePage />} />
     <Route path="compliance/dod-5220-22-m" element={<DoDCompliancePage />} />
+    <Route path="international-laws-and-regulations" element={<InternationalLawsPage />} />
     <Route path="solutions/mac-erasure" element={<MacErasurePage />} />
     <Route
       path="solutions/blancco-alternative"
@@ -234,7 +239,7 @@ export const PublicRoutes = () => (
       element={<DriveEraserDiagnosticPage />}
     />
     <Route path="products/file-eraser" element={<FileEraserPage />} />
-    <Route path="products/system-cleaner" element={<SystemCleanerPage />} />
+    <Route path="products/zero-trace" element={<ZeroTracePage />} />
     <Route
       path="products/file-eraser-network"
       element={<FileEraserNetworkPage />}
@@ -292,8 +297,9 @@ export const PublicRoutes = () => (
     <Route path="privacy-policy" element={<PrivacyPolicy />} />
     <Route path="legal-policy" element={<LegalPolicy />} />
     <Route path="terms-of-service" element={<TermsOfServicePage />} />
+    <Route path="eula" element={<EulaPage />} />
     <Route path="cookie-policy" element={<CookiePolicyPage />} />
-    <Route path="security" element={<SecurityPage />} />
+    {/* <Route path="security" element={<SecurityPage />} /> */}
     <Route path="what-is-d-secure" element={<WhatIsDSecurePage />} />
     <Route path="why-d-secure" element={<WhyDSecurePage />} />
     <Route path="ai-overview" element={<AIOverviewPage />} />
@@ -302,7 +308,7 @@ export const PublicRoutes = () => (
     <Route path="use-cases" element={<UseCasesPage />} />
     <Route path="founder" element={<FounderPage />} />
     <Route path="trust-center" element={<TrustCenterPage />} />
-    <Route path="status" element={<StatusPage />} />
+    {/* <Route path="status" element={<StatusPage />} /> */}
     <Route
       path="data-hygiene-framework"
       element={<DataHygieneFrameworkPage />}

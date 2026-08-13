@@ -1,11 +1,23 @@
 import Reveal from "@/components/Reveal";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  DollarIcon,
-  GearIcon,
-  HoverIcon,
-} from "@/components/FlatIcons";
+import { 
+  ThemeSection, 
+  ThemeCard, 
+  ThemeButton, 
+  ThemeIconContainer, 
+  ThemeSectionHeading 
+} from "@/components/ui/Theme";
+import { 
+  DollarSign, 
+  Settings, 
+  Clock, 
+  MessageSquare, 
+  Headset, 
+  MapPin, 
+  Phone, 
+  Mail 
+} from "lucide-react";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "@/utils/seo";
 
@@ -615,22 +627,14 @@ function ContactPageContent() {
     {
       title: "Sales Inquiries",
       description: "Get pricing information and discuss your requirements",
-      icon: (
-        <HoverIcon>
-          {(filled) => <DollarIcon className="w-6 h-6" filled={filled} />}
-        </HoverIcon>
-      ),
+      icon: <ThemeIconContainer icon={DollarSign} size="md" />,
       contact: "sales@dsecuretech.com",
       hours: "9 AM - 6 PM PST",
     },
     {
       title: "Technical Support",
       description: "24/7 support for existing customers",
-      icon: (
-        <HoverIcon>
-          {(filled) => <GearIcon className="w-6 h-6" filled={filled} />}
-        </HoverIcon>
-      ),
+      icon: <ThemeIconContainer icon={Settings} size="md" />,
       contact: "support@dsecuretech.com",
       hours: "24/7",
     },
@@ -725,33 +729,29 @@ function ContactPageContent() {
       )}
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
-        <div className="container-responsive py-6 xs:py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 xxl:py-18">
+      <ThemeSection className="pt-24 pb-16">
+        <div className="container-responsive">
           <div className="text-center max-w-3xl mx-auto">
             <Reveal>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+              <ThemeSectionHeading 
+                centered
+                subtitle="Ready to secure your data with industry-leading erasure solutions? Our experts are here to help you find the perfect fit for your organization."
+              >
                 Contact D-Secure for Enterprise Data Solutions Software
-              </h1>
-            </Reveal>
-            <Reveal delayMs={10}>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Ready to secure your data with industry-leading erasure
-                solutions? Our experts are here to help you find the perfect fit
-                for your organization.
-              </p>
+              </ThemeSectionHeading>
             </Reveal>
           </div>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Contact Form & Info */}
-      <section className="py-10 md:py-18">
+      <ThemeSection>
         <div className="container-app">
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <Reveal>
-                <div className="bg-white rounded-2xl shadow-xl border border-slate-200/60 p-8 md:p-12">
+                <ThemeCard interactive={false} className="p-8 md:p-12 border border-slate-200/60 shadow-xl">
                   <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">
                     Submit Enquiry
                   </h2>
@@ -1304,109 +1304,52 @@ function ContactPageContent() {
                       value="dhruv.rai@dsecuretech.com"
                     />
 
-                    <button
+                    <ThemeButton
                       type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg text-lg font-medium transition-colors duration-200"
+                      className="w-full"
                       disabled={isLoading}
                     >
                       {isLoading ? "Submitting..." : "Submit Enquiry"}
-                    </button>
+                    </ThemeButton>
                   </form>
-                </div>
+                </ThemeCard>
               </Reveal>
             </div>
 
             {/* Contact Information */}
             <div className="space-y-8">
               <Reveal delayMs={10}>
-                <div className="bg-white rounded-2xl shadow-lg border border-slate-200/60 p-6">
-                  <h3 className="font-bold text-slate-900 mb-4">
+                <ThemeCard interactive={false}>
+                  <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">
                     Quick Response
                   </h3>
-                  <div className="space-y-3 text-sm">
+                  <div className="space-y-4 text-sm">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                        <svg
-                          className="w-4 h-4 text-green-800"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
+                      <ThemeIconContainer icon={Clock} size="md" className="w-10 h-10" />
                       <span className="text-slate-700">
                         Response within 12 Business Hours
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                        <svg
-                          className="w-4 h-4 text-green-800"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle cx="12" cy="12" r="9" strokeWidth={2} />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 7v5l3 3"
-                          />
-                        </svg>
-                      </div>
+                      <ThemeIconContainer icon={Clock} size="md" className="w-10 h-10" />
                       <span className="text-slate-700">
                         (9 AM - 6 PM ) [03:30 - 12:30 UTC]
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <svg
-                          className="w-4 h-4 text-blue-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                          />
-                        </svg>
-                      </div>
+                      <ThemeIconContainer icon={MessageSquare} size="md" className="w-10 h-10" />
                       <span className="text-slate-700">
                         Live chat available
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                        <svg
-                          className="w-4 h-4 text-purple-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                      </div>
+                      <ThemeIconContainer icon={Headset} size="md" className="w-10 h-10" />
                       <span className="text-slate-700">
                         Expert technical support
                       </span>
                     </div>
                   </div>
-                </div>
+                </ThemeCard>
               </Reveal>
 
               {/* <Reveal delayMs={20}>
@@ -1433,72 +1376,67 @@ function ContactPageContent() {
             </div>
           </div>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Support Options */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-emerald-50 via-teal-50/30 to-cyan-50">
+      <ThemeSection alternate>
         <div className="container-responsive">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              How Can We Help?
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Choose the right contact method for your specific needs.
-            </p>
-          </div>
+          <ThemeSectionHeading 
+            centered 
+            subtitle="Choose the right contact method for your specific needs."
+          >
+            How Can We Help?
+          </ThemeSectionHeading>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {supportOptions.map((option, i) => (
               <Reveal key={i} delayMs={i * 100}>
-                <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 text-center hover:shadow-xl transition-shadow duration-300">
-                  <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mx-auto mb-4 text-slate-600">
+                <ThemeCard className="text-center h-full flex flex-col items-center">
+                  <div className="mb-4">
                     {option.icon}
                   </div>
-                  <h3 className="font-bold text-slate-900 mb-2">
+                  <h3 className="text-xl font-bold text-[#0a2e1e] mb-2">
                     {option.title}
                   </h3>
-                  <p className="text-slate-600 text-sm mb-4">
+                  <p className="text-slate-600 text-sm mb-4 flex-grow">
                     {option.description}
                   </p>
-                  <div className="space-y-1 text-xs text-slate-500 mb-4">
+                  <div className="space-y-1 text-xs text-slate-500 mb-6">
                     <div>{option.contact}</div>
                     <div>{option.hours}</div>
                   </div>
-                  <button className="w-full btn-secondary text-sm">
-                    <Link to="/contact" className="w-full">
+                  <Link to="/contact" className="w-full">
+                    <ThemeButton variant="outline" className="w-full text-sm">
                       Contact Now
-                    </Link>
-                  </button>
-                </div>
+                    </ThemeButton>
+                  </Link>
+                </ThemeCard>
               </Reveal>
             ))}
           </div>
         </div>
-      </section>
+      </ThemeSection>
 
       {/* Office Locations */}
-      <section className="py-16 md:py-24">
+      <ThemeSection>
         <div className="container-app">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Global Offices
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              With offices around the world, we're here to support you in your
-              timezone.
-            </p>
-          </div>
+          <ThemeSectionHeading 
+            centered 
+            subtitle="With offices around the world, we're here to support you in your timezone."
+          >
+            Global Offices
+          </ThemeSectionHeading>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {offices
               .filter((office) => office.isActive)
               .map((office, i) => (
                 <Reveal key={office.id} delayMs={i * 100}>
-                  <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-200/60 hover:shadow-xl transition-shadow duration-300">
+                  <ThemeCard>
                     {/* Header with Company Logo & Info */}
                     <div className="flex items-start gap-4 mb-6">
                       <div className="flex-shrink-0">
-                        <div className="relative w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center overflow-hidden">
+                        <div className="relative w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center overflow-hidden">
                           {office.company.logoUrl ||
                           office.company.logo?.startsWith("http") ? (
                             <img
@@ -1507,7 +1445,7 @@ function ContactPageContent() {
                                 office.company.logo
                               }
                               alt={`${office.company.name} logo`}
-                              className="w-full h-full object-contain rounded-xl bg-white"
+                              className="w-full h-full object-contain bg-white"
                               onError={(e) => {
                                 // Fallback to company initials if image fails to load
                                 const target = e.target as HTMLImageElement;
@@ -1528,7 +1466,7 @@ function ContactPageContent() {
                           )}
                           {/* Fallback content for failed images */}
                           <div
-                            className="logo-fallback absolute inset-0 w-full h-full bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl items-center justify-center text-white font-bold text-lg"
+                            className="logo-fallback absolute inset-0 w-full h-full bg-gradient-to-br from-emerald-500 to-teal-600 items-center justify-center text-white font-bold text-lg"
                             style={{
                               display:
                                 office.company.logoUrl ||
@@ -1593,25 +1531,7 @@ function ContactPageContent() {
                     <div className="space-y-3 text-sm text-slate-600 mb-4">
                       {/* Address */}
                       <div className="flex items-start gap-3">
-                        <svg
-                          className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                        </svg>
+                        <MapPin className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                         <span className="whitespace-pre-line">
                           {office.location.address}
                         </span>
@@ -1620,22 +1540,10 @@ function ContactPageContent() {
                       {/* Primary Phone - Only show if phone exists */}
                       {office.contacts.primary.phone && (
                         <div className="flex items-center gap-3">
-                          <svg
-                            className="w-4 h-4 text-slate-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                            />
-                          </svg>
+                          <Phone className="w-4 h-4 text-slate-400" />
                           <a
                             href={`tel:${office.contacts.primary.phone}`}
-                            className="hover:text-emerald-800 transition-colors"
+                            className="hover:text-[#0e7c66] transition-colors"
                           >
                             {office.contacts.primary.phone}
                           </a>
@@ -1645,22 +1553,10 @@ function ContactPageContent() {
                       {/* Primary Email - Only show if email exists */}
                       {office.contacts.primary.email && (
                         <div className="flex items-center gap-3">
-                          <svg
-                            className="w-4 h-4 text-slate-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                          </svg>
+                          <Mail className="w-4 h-4 text-slate-400" />
                           <a
                             href={`mailto:${office.contacts.primary.email}`}
-                            className="hover:text-emerald-800 transition-colors"
+                            className="hover:text-[#0e7c66] transition-colors"
                           >
                             {office.contacts.primary.email}
                           </a>
@@ -1669,19 +1565,7 @@ function ContactPageContent() {
 
                       {/* Working Hours & Timezone */}
                       <div className="flex items-center gap-3">
-                        <svg
-                          className="w-4 h-4 text-slate-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
+                        <Clock className="w-4 h-4 text-slate-400" />
                         <span>
                           {office.location.workingHours} •{" "}
                           {office.location.timezone}
@@ -1713,17 +1597,21 @@ function ContactPageContent() {
                         {office.contacts.primary.email && (
                           <a
                             href={`mailto:${office.contacts.primary.email}?subject=Meeting Request - ${office.location.city} Office`}
-                            className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white text-center py-2 px-3 rounded-lg text-sm font-medium transition-colors"
+                            className="flex-1"
                           >
-                            Contact Office
+                            <ThemeButton className="w-full text-sm h-10 py-0" variant="primary">
+                              Contact Office
+                            </ThemeButton>
                           </a>
                         )}
                         {office.contacts.primary.phone && (
                           <a
                             href={`tel:${office.contacts.primary.phone}`}
-                            className="flex-1 border border-slate-300 hover:border-emerald-500 text-slate-700 hover:text-emerald-800 text-center py-2 px-3 rounded-lg text-sm font-medium transition-colors"
+                            className="flex-1"
                           >
-                            Call Now
+                            <ThemeButton className="w-full text-sm h-10 py-0" variant="outline">
+                              Call Now
+                            </ThemeButton>
                           </a>
                         )}
                       </div>
@@ -1756,12 +1644,12 @@ function ContactPageContent() {
                         </div>
                       </div>
                     )}
-                  </div>
+                  </ThemeCard>
                 </Reveal>
               ))}
           </div>
         </div>
-      </section>
+      </ThemeSection>
     </>
   );
 }

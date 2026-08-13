@@ -113,7 +113,7 @@ const eraserSolutions = [
     isUpcoming: true,
   },
   {
-    title: "System Cleaner",
+    title: "Zero Trace",
     desc: "A secure data erasure solution built to permanently remove every trace of data from your devices — safely, thoroughly, and beyond recovery.",
     features: [
       "Protected OS Processing",
@@ -123,7 +123,7 @@ const eraserSolutions = [
     ],
     icon: Eraser,
     color: "teal",
-    link: "/products/system-cleaner",
+    link: "/products/zero-trace",
     isUpcoming: false,
   },
 ];
