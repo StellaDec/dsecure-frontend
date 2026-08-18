@@ -41,7 +41,7 @@ const lunEraserTakeaways: KeyTakeawayItem[] = [
     description: "Erase specific LUNs while leaving the host OS and adjacent volumes fully active.",
   },
   {
-    title: "Tamper-Proof Audit Trail",
+    title: "Tamper-Evident Audit Trail",
     description: "Generates digitally signed reports containing LUN ID, Port, and Path information.",
   },
   {
@@ -212,7 +212,7 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                 
                 <Reveal delayMs={200}>
                   <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-6 max-w-2xl mx-auto lg:mx-0">
-                    Erase data in active storage environments while allowing your operating system to remain intact, guaranteeing your LUNs are properly sanitized with tamper-proof audit reports with certificate.
+                    Erase data in active storage environments while allowing your operating system to remain intact, guaranteeing your LUNs are properly sanitized with tamper-evident audit reports with certificate.
                   </p>
                 </Reveal>
 
@@ -423,7 +423,7 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-2">Global GRC Alignment</h3>
-                        <p className="text-slate-400 leading-relaxed">Strengthen your Enterprise GRC strategy with tamper-proof audit reports with certificate that pass any audit.</p>
+                        <p className="text-slate-400 leading-relaxed">Strengthen your Enterprise GRC strategy with tamper-evident audit reports with certificate that pass any audit.</p>
                       </div>
                     </div>
                   </Reveal>
@@ -439,8 +439,8 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                          <ul className="space-y-4">
                             {[
                               "Erase LUNs while OS remains active",
-                              "Tamper-proof reporting for LUN ID, Port, Path",
-                              "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+                              "Tamper-evident reporting for LUN ID, Port, Path",
+                              "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
                               "Support for virtual servers on public clouds",
                               "SMS/Email alerts upon completion",
                               "Compliance with ISO 27001 & EU GDPR",
@@ -489,12 +489,12 @@ const LUNEraserPage: React.FC = memo(function LUNEraserPage() {
                      <Reveal>
                         <h2 className="text-2xl font-bold text-slate-900 mb-4">Complete Audit Trail</h2>
                         <p className="text-slate-600 mb-8 leading-relaxed">
-                           Achieve 100% data sanitization of logical unit numbers (LUNs) through data erasure. D-Secure provides a detailed, tamper-proof audit report with certificate (Page 1: Certificate, Page 2+: Summary) for every LUN erased, providing a full audit trail to meet compliance with stringent data privacy regulations.
+                           Achieve 100% data sanitization of logical unit numbers (LUNs) through data erasure. D-Secure provides a detailed, tamper-evident audit report with certificate (Page 1: Certificate, Page 2+: Summary) for every LUN erased, providing a full audit trail to meet compliance with stringent data privacy regulations.
                         </p>
                         <div className="grid grid-cols-2 gap-4">
                            <div className="flex items-center gap-2 p-3 bg-white rounded-none border border-emerald-200">
                               <CheckCircle className="w-6 h-6 text-emerald-600" />
-                              <span className="text-sm font-bold text-slate-800">Tamper-Proof Audit Trail</span>
+                              <span className="text-sm font-bold text-slate-800">Tamper-Evident Audit Trail</span>
                            </div>
                            <div className="flex items-center gap-2 p-3 bg-white rounded-none border border-emerald-200">
                               <CheckCircle className="w-6 h-6 text-emerald-600" />

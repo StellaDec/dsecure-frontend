@@ -29,7 +29,7 @@ const navigationTree: NavItem[] = [
         content: (
             <>
                 <p className="text-slate-700 leading-relaxed mb-4"><strong><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></strong> is a boot-based, enterprise-grade hardware testing solution designed to comprehensively evaluate the health and functionality of computer systems. Operating independently of the host operating system, it boots from a USB or PXE environment to ensure accurate, low-level hardware access without OS interference.</p>
-                <p className="text-slate-700 leading-relaxed mb-4"><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link> performs rigorous testing across <strong>21+ hardware components</strong> including Motherboard, CPU, RAM, Display, Storage, Battery, Wi-Fi, Bluetooth, Audio, USB Ports, Fingerprint Sensor, Camera, and Keyboard. Each diagnostic operation generates a Tamper-proof audit report with a definitive <strong>Pass/Fail/Warning</strong> grade that can be uploaded to the D-Secure Cloud Console for centralized reporting.</p>
+                <p className="text-slate-700 leading-relaxed mb-4"><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link> performs rigorous testing across <strong>21+ hardware components</strong> including Motherboard, CPU, RAM, Display, Storage, Battery, Wi-Fi, Bluetooth, Audio, USB Ports, Fingerprint Sensor, Camera, and Keyboard. Each diagnostic operation generates a Tamper-evident audit report with a definitive <strong>Pass/Fail/Warning</strong> grade that can be uploaded to the D-Secure Cloud Console for centralized reporting.</p>
                 <p className="text-slate-700 leading-relaxed mb-6">The software features an intuitive graphical interface with a step-by-step wizard that guides users through component detection, test configuration, interactive testing, progress monitoring, and completion verification. It is the perfect tool for IT administrators, refurbishers, ITAD companies, and quality assurance teams.</p>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">Key Features:</h3>
                 <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4">
@@ -40,7 +40,7 @@ const navigationTree: NavItem[] = [
                     <li><strong>Automated & Interactive Testing</strong> — Runs automated backend tests alongside interactive tests (e.g., typing on the keyboard, confirming audio playback).</li>
                     <li><strong>Wi-Fi & LAN Connectivity</strong> — Connect via Wi-Fi networks or LAN/Ethernet for cloud license validation and report upload.</li>
                     <li><strong>Offline Mode</strong> — Operate in air-gapped environments with offline activation and local report storage.</li>
-                    <li><strong>Compliance Reports</strong> — Generate Tamper-proof audit reports with certificates including system details, test results, and final grades.</li>
+                    <li><strong>Compliance Reports</strong> — Generate Tamper-evident audit reports with certificates including system details, test results, and final grades.</li>
                     <li><strong>Cloud Integration</strong> — Automatic report upload to D-Secure Cloud Console for centralized management.</li>
                     <li><strong>Multi-Theme Support</strong> — Switch between Light, Dark, D-Secure Green, and D-Secure Light themes.</li>
                 </ul>
@@ -328,7 +328,7 @@ const navigationTree: NavItem[] = [
                                 </p>
                                 <div className="bg-emerald-50 border-emerald-500 border rounded-lg p-6 mb-6">
                                     <h5 className="text-emerald-800 font-bold mb-2">Diagnostics Completed!</h5>
-                                    <p className="text-emerald-700 text-sm">A Tamper-proof audit report with a certificate has been automatically generated detailing the health of all 21+ components. You can view it by clicking the "View Report" button.</p>
+                                    <p className="text-emerald-700 text-sm">A Tamper-evident audit report with a certificate has been automatically generated detailing the health of all 21+ components. You can view it by clicking the "View Report" button.</p>
                                 </div>
                                 <p className="text-slate-700 leading-relaxed mb-4">
                                     The final report includes full system details, the tests executed, and the precise pass/fail status of all components. You can save this report locally to a USB drive or upload it directly to the D-Secure Cloud Console.
@@ -357,7 +357,7 @@ const navigationTree: NavItem[] = [
                             <li><strong>Reports Table</strong> — Report ID, System Serial, Test Suite, Date, Status, Action</li>
                         </ul>
                         <div className="p-4 bg-slate-50 border rounded-lg mb-6">
-                            <p className="text-sm text-slate-600 italic">Note: Reports are cryptographically signed to ensure tamper-proof integrity. The **Certificate (Page 1)** is designed for quick compliance audits, with subsequent pages providing full forensic audit trails of the hardware health.</p>
+                            <p className="text-sm text-slate-600 italic">Note: Reports are cryptographically signed to ensure tamper-evident integrity. The **Certificate (Page 1)** is designed for quick compliance audits, with subsequent pages providing full forensic audit trails of the hardware health.</p>
                         </div>
                         <ImageManual src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1777550947/okrzyl9tgp4tnlhqskba.jpg" alt="Reports Interface" />
                     </>
@@ -713,4 +713,4 @@ const CompleteDSecureDaignosticManual: React.FC = () => {
     );
 };
 
-export default CompleteDSecureDaignosticManual;
+export default CompleteDSecureDaignosticManual;

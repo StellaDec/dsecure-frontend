@@ -1,433 +1,344 @@
-// Phase 2.5 mein thin content fix kiya: 11.6KB → 24KB+ expansion.
-// H2 sections: 4 → 8, FAQ section added, CE vs Overwrite comparison table added.
-
 import React from "react";
 import { Link } from "react-router-dom";
 import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
 import { getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
-import { blogFaqs } from "@/data/blogFaqs";
+import { FAQSection } from "@/components/FAQSection";
 
 const CryptographicEraseBlog: React.FC = () => {
-    return (
-      <div className="min-h-screen bg-white">
-        <SEOHead
-          seo={getBlogSEO({
-            title: "Cryptographic Erasure & NIST 800-88: The Complete Guide",
-            excerpt: "Learn how cryptographic erasure (Crypto Erase) meets NIST 800-88 Purge standards, providing the fastest and most secure method for sanitizing self-encrypting drives (SEDs).",
-            slug: "cryptographic-erase",
-            author: "D-Secure Editorial Team",
-            publishDate: "April 28, 2025",
-            keywords: "nist sp 800-88 cryptographic erase, cryptographic erasure, encryption, key destruction, purge sanitization, SED, self-encrypting drive",
-            category: "Technical Guide",
-            tag: "Technical",
-          })}
-        />
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is cryptographic erase under NIST SP 800-88?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's a Purge-level sanitization method, defined in Section 3.2 of NIST SP 800-88 Rev. 2, that destroys the encryption key protecting a drive's data rather than overwriting the data itself. Once the key is gone, the remaining ciphertext is permanently unreadable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is cryptographic erase as secure as overwriting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For properly encrypted drives without escrowed keys, CE meets Purge-level assurance under NIST guidance. It's classified as Purge rather than Destroy because future advances in computing — including quantum computing — could theoretically weaken the encryption it depends on."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can cryptographic erase be used on any drive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. CE only works on self-encrypting drives (SEDs) with active, hardware-level encryption — typically implementing TCG Opal, TCG Enterprise, or IEEE 1667. Standard, non-encrypted HDDs and SSDs need overwrite-based sanitization instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does cryptographic erase remove data from the drive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, and this trips people up. CE leaves the encrypted data physically in place — it only destroys the key needed to decrypt it. The data becomes unreadable, but it isn't erased in the traditional sense."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I combine cryptographic erase with an overwrite?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NIST recommends CE plus a follow-up overwrite for the highest assurance cases — classified data, long confidentiality windows, or any scenario where key escrow can't be ruled out."
+        }
+      }
+    ]
+  };
 
-        {/* Hero */}
-        <section className="py-16 bg-white shadow-none">
-          <Reveal>
-            <div className="text-center px-6 max-w-5xl mx-auto">
-              <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
-                NIST SP 800-88 Rev.2
-              </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight">
-                Cryptographic Erase Guide: NIST SP 800-88 Standards & Implementation
-              </h1>
-              <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
-                Understand how Cryptographic Erase sanitizes encryption keys to
-                prevent access to encrypted data, as defined by NIST guidelines —
-                the fastest purge-level sanitization method for self-encrypting drives.
-              </p>
-            </div>
-          </Reveal>
-        </section>
+  const faqs = [
+    {
+      question: "What is cryptographic erase under NIST SP 800-88?",
+      answer: "It's a Purge-level sanitization method, defined in Section 3.2 of NIST SP 800-88 Rev. 2, that destroys the encryption key protecting a drive's data rather than overwriting the data itself. Once the key is gone, the remaining ciphertext is permanently unreadable."
+    },
+    {
+      question: "Is cryptographic erase as secure as overwriting?",
+      answer: "For properly encrypted drives without escrowed keys, CE meets Purge-level assurance under NIST guidance. It's classified as Purge rather than Destroy because future advances in computing — including quantum computing — could theoretically weaken the encryption it depends on."
+    },
+    {
+      question: "Can cryptographic erase be used on any drive?",
+      answer: "No. CE only works on self-encrypting drives (SEDs) with active, hardware-level encryption — typically implementing TCG Opal, TCG Enterprise, or IEEE 1667. Standard, non-encrypted HDDs and SSDs need overwrite-based sanitization instead."
+    },
+    {
+      question: "Does cryptographic erase remove data from the drive?",
+      answer: "No, and this trips people up. CE leaves the encrypted data physically in place — it only destroys the key needed to decrypt it. The data becomes unreadable, but it isn't erased in the traditional sense."
+    },
+    {
+      question: "When should I combine cryptographic erase with an overwrite?",
+      answer: "NIST recommends CE plus a follow-up overwrite for the highest assurance cases — classified data, long confidentiality windows, or any scenario where key escrow can't be ruled out."
+    }
+  ];
 
-        {/* Main Content */}
-        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
-          {/* Section 1: CE Explained */}
-          <Reveal>
-            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                Cryptographic Erase Explained
-              </h2>
-              <p className="text-[#5a6672] leading-loose text-lg">
-                Under Section 3.2 of NIST SP 800-88 Rev.2,{" "}
-                <strong className="text-[#0a2e1e]">
-                  Cryptographic Erase (CE)
-                </strong>{" "}
-                is a purge sanitization technique that sanitizes the key used to
-                encrypt data or prevents access to this key. By erasing the key
-                itself, access to the encrypted information is prevented,
-                leaving the encrypted data (ciphertext) on the storage media —
-                but rendering it permanently unrecoverable without the
-                corresponding decryption key.
-              </p>
-              <p className="text-[#5a6672] leading-loose text-lg">
-                Since CE performs key sanitization rather than data overwriting,
-                it is comparatively faster than other sanitization techniques
-                and provides high assurance. A typical cryptographic erase
-                operation completes in seconds regardless of drive capacity,
-                compared to hours for a full overwrite of a multi-terabyte drive.
-              </p>
-              <p className="text-[#5a6672] leading-loose text-lg">
-                Many modern storage devices — particularly enterprise SSDs and
-                NVMe drives — feature integrated symmetric-key encryption
-                that is always active and encrypts all stored data.
-                Self-encrypting drives (SEDs) implementing the TCG Opal or
-                IEEE 1667 standards are the most common devices that support
-                cryptographic erasure as a sanitization mechanism.
-              </p>
-            </div>
-          </Reveal>
+  return (
+    <div className="min-h-screen bg-white">
+      <SEOHead
+        seo={getBlogSEO({
+          title: "Cryptographic Erase Explained: What NIST SP 800-88 Requires",
+          excerpt: "Cryptographic Erase (CE) under NIST SP 800-88 Rev. 2: how it works, when it's Purge-level, and when overwrite is the safer call.",
+          slug: "cryptographic-erase",
+          author: "Prashant Saini",
+          publishDate: "August 2026",
+          keywords: "nist sp 800-88 cryptographic erase, cryptographic erasure, encryption, key destruction, purge sanitization, SED, self-encrypting drive, CE vs overwrite",
+          category: "Technical Guide",
+          tag: "Technical",
+        })}
+      />
 
-          {/* Section 2: How CE Works */}
-          <Reveal>
-            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                How Cryptographic Erase Works: Technical Process
-              </h2>
-              <p className="text-[#5a6672] leading-loose text-lg mb-6">
-                The cryptographic erase process involves a carefully orchestrated
-                sequence of operations that ensure the encryption key is
-                permanently destroyed, making all encrypted data on the drive
-                irrecoverable.
-              </p>
-              <div className="space-y-6">
-                <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
-                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Step 1: Authentication</h3>
-                  <p className="text-[#0a2e1e] leading-relaxed">
-                    The erasure software authenticates with the drive's security
-                    subsystem using the administrative credentials (SID or PSID
-                    for TCG Opal drives). This establishes authorized access to
-                    the drive's key management functions.
-                  </p>
-                </div>
-                <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
-                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Step 2: Key Regeneration / Destruction</h3>
-                  <p className="text-[#0a2e1e] leading-relaxed">
-                    The software issues a command to the drive's crypto controller
-                    to either destroy the current Media Encryption Key (MEK) or
-                    regenerate it with a new random key. Both operations
-                    permanently sever the relationship between the ciphertext
-                    on the platters/NAND and the key needed to decrypt it.
-                  </p>
-                </div>
-                <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
-                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Step 3: Verification</h3>
-                  <p className="text-[#0a2e1e] leading-relaxed">
-                    Post-CE verification confirms that the drive's encryption
-                    state has been reset and the previous MEK is no longer
-                    accessible. The drive may also be read-verified to confirm
-                    that all data appears as random ciphertext (unreadable).
-                  </p>
-                </div>
-                <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
-                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Step 4: Certificate Generation</h3>
-                  <p className="text-[#0a2e1e] leading-relaxed">
-                    A tamper-proof erasure certificate is generated documenting
-                    the drive serial number, model, capacity, CE method used,
-                    verification result, operator identity, and timestamp —
-                    providing audit-ready evidence of sanitization.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
+      {/* Hero */}
+      <section className="py-16 bg-white shadow-none">
+        <Reveal>
+          <div className="text-center px-6 max-w-5xl mx-auto">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
+              NIST SP 800-88 Rev.2
+            </span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-6 leading-tight">
+              Cryptographic erase, explained: what NIST SP 800-88 actually requires
+            </h1>
+            <p className="text-lg md:text-xl text-[#5a6672] mb-4">
+              By Prashant Saini, D-Secure Technologies | Last updated: August 2026
+            </p>
+            <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
+              A client once asked me why their SSD erasure job finished in eight seconds when their old HDD wipe used to run overnight. The honest answer: we weren't overwriting anything. We were destroying a key.
+            </p>
+          </div>
+        </Reveal>
+      </section>
 
-          {/* Section 3: NIST Guidelines */}
-          <Reveal>
-            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                NIST Guidelines for Cryptographic Erase
-              </h2>
+      {/* Main Content */}
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
+        <Reveal>
+          <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <p className="text-[#5a6672] leading-loose text-lg font-medium">
+              <strong>Cryptographic Erase (CE) is a Purge-level sanitization technique, defined under Section 3.2 of NIST SP 800-88 Rev. 2, that destroys the encryption key protecting a drive's data instead of overwriting the data itself.</strong> Once the key is gone, the ciphertext left behind on the drive is permanently unreadable — no decryption key, no recovery path. It's the fastest sanitization method NIST recognizes, and it's quietly become the default for enterprise SSDs and NVMe drives. But it comes with real conditions attached, and knowing when <em>not</em> to rely on it matters just as much as knowing how it works.
+            </p>
 
-              <div className="space-y-6">
-                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
-                    3.2.1. Strength of Cryptography for CE
-                  </h3>
-                  <p className="text-[#5a6672] text-lg leading-loose mb-3">
-                    The cryptographic algorithm and its mode of operation must
-                    be designed and implemented to ensure that no unauthorized
-                    party can determine the decryption key or recover the
-                    plaintext without possessing the legitimate decryption key.
-                  </p>
-                  <p className="text-[#5a6672] text-lg leading-loose">
-                    NIST SP 800-88 R2 cites ISO/IEC 27040 for referring to the
-                    strength of cryptography:
-                  </p>
-                  <ul className="space-y-2 text-[#5a6672] mt-3">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2"></span>
-                      The security strength of the cryptographic algorithm used
-                      for target data encryption is at least 128 bits
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2"></span>
-                      The level or bits of entropy of the random number sources
-                      are at least the number of bits of the cryptographic keys
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2"></span>
-                      AES-256 or AES-128 in XTS mode is the most common
-                      implementation in modern SEDs
-                    </li>
-                  </ul>
-                </div>
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mt-12 mb-6">
+              What cryptographic erase actually does
+            </h2>
+            <p className="text-[#5a6672] leading-loose text-lg">
+              CE doesn't touch your data. It sanitizes the key used to encrypt it. Since the drive's stored data — the ciphertext — stays exactly where it is, CE isn't "deleting" anything in the traditional sense. It's cutting the one thread that makes that ciphertext meaningful.
+            </p>
+            <p className="text-[#5a6672] leading-loose text-lg">
+              That's also why it's fast. Overwriting a multi-terabyte drive means physically rewriting every addressable sector — hours, sometimes most of a day. Destroying a 256-bit key takes seconds, regardless of how large the drive is. Same security outcome, radically different time cost, which is exactly why CE has become the go-to method for high-volume SSD and NVMe environments.
+            </p>
+            <p className="text-[#5a6672] leading-loose text-lg">
+              CE only works on <strong>self-encrypting drives (SEDs)</strong> — drives with integrated, always-on symmetric-key encryption. Most enterprise SSDs and NVMe drives ship this way now, typically implementing TCG Opal or IEEE 1667.
+            </p>
 
-                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
-                    3.2.2. Applicability of CE and Supported Devices
-                  </h3>
-                  <p className="text-[#5a6672] text-lg leading-loose">
-                    CE is only limited to sanitizing keys corresponding to
-                    encrypted data. Therefore, it is a prerequisite that no
-                    sensitive data has previously been stored in non-encrypted
-                    form (plaintext) on the storage media. Sanitization of
-                    sensitive data stored in plaintext requires the use of other
-                    sanitization techniques like <Link to="/blog/overwrite-guide" className="text-[#0e7c66] hover:underline font-medium">overwriting</Link>.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-[#0e7c66] pl-8 py-2 bg-[#f4fbf8]/50 rounded-none">
-                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
-                    Important Considerations & Limitations
-                  </h3>
-                  <ul className="space-y-2 text-[#5a6672]">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2"></span>
-                      CE should not be considered an assured method on media
-                      that have been escrowed or have a backup, unless the
-                      organization is confident about storage and management of
-                      encryption keys outside of the storage media
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2"></span>
-                      For highly sensitive information, CE may not be
-                      considered, especially when confidentiality protections
-                      span a long time, as data recovery in the future can be a
-                      security concern due to quantum computing advances
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2"></span>
-                      Due to computational capabilities in the future or
-                      cryptographic weaknesses, recovery of encryption keys may
-                      be possible — this is why NIST classifies CE as "Purge"
-                      rather than "Destroy" level sanitization
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Section 4: CE vs Overwrite Comparison */}
-          <Reveal>
-            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                Cryptographic Erase vs. Overwrite: Comparison
-              </h2>
-              <p className="text-[#5a6672] leading-loose text-lg mb-6">
-                Understanding when to use Cryptographic Erase versus traditional
-                overwrite methods is essential for selecting the right
-                sanitization approach based on your security requirements,
-                device type, and compliance obligations.
-              </p>
-              <div className="overflow-hidden rounded-none border border-[#d0d5dc]">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-[#f4fbf8]">
-                      <th className="px-6 py-4 font-semibold text-[#0a2e1e] border-b border-[#d0d5dc]">Criteria</th>
-                      <th className="px-6 py-4 font-semibold text-[#0a2e1e] border-b border-[#d0d5dc]">Cryptographic Erase</th>
-                      <th className="px-6 py-4 font-semibold text-[#0a2e1e] border-b border-[#d0d5dc]">Overwrite (Clear/Purge)</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-200">
-                    <tr>
-                      <td className="px-6 py-4 font-medium text-[#0a2e1e]">Speed</td>
-                      <td className="px-6 py-4 text-[#5a6672]">Seconds (key destruction only)</td>
-                      <td className="px-6 py-4 text-[#5a6672]">Hours (entire drive surface)</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 font-medium text-[#0a2e1e]">NIST Classification</td>
-                      <td className="px-6 py-4 text-[#5a6672]">Purge</td>
-                      <td className="px-6 py-4 text-[#5a6672]">Clear (1-pass) or Purge (multi-pass)</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 font-medium text-[#0a2e1e]">Device Requirement</td>
-                      <td className="px-6 py-4 text-[#5a6672]">Self-Encrypting Drive (SED) required</td>
-                      <td className="px-6 py-4 text-[#5a6672]">Works on any storage device</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 font-medium text-[#0a2e1e]">Data Residue</td>
-                      <td className="px-6 py-4 text-[#5a6672]">Ciphertext remains (unreadable)</td>
-                      <td className="px-6 py-4 text-[#5a6672]">All data replaced with pattern</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 font-medium text-[#0a2e1e]">Quantum Risk</td>
-                      <td className="px-6 py-4 text-[#5a6672]">Future quantum attacks may break encryption</td>
-                      <td className="px-6 py-4 text-[#5a6672]">No quantum risk — data physically overwritten</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 font-medium text-[#0a2e1e]">Best For</td>
-                      <td className="px-6 py-4 text-[#5a6672]">High-volume SSD environments, time-critical</td>
-                      <td className="px-6 py-4 text-[#5a6672]">Mixed media, highest assurance needed</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none mt-4">
-                <h3 className="font-bold text-[#0a2e1e] mb-2">⚠️ Recommendation</h3>
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mt-12 mb-6">
+              How it actually runs, step by step
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">1. Authentication</h3>
                 <p className="text-[#0a2e1e] leading-relaxed">
-                  For maximum security assurance, NIST recommends combining
-                  Cryptographic Erase with a subsequent overwrite pass. D-Secure
-                  supports this "CE + Overwrite" combined approach for
-                  organizations that require the highest level of sanitization
-                  certainty, particularly for classified or highly regulated data.
+                  The erasure software authenticates against the drive's security subsystem using administrative credentials — the SID or PSID on TCG Opal drives. This is what unlocks access to the drive's key management functions in the first place.
+                </p>
+              </div>
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">2. Key regeneration or destruction</h3>
+                <p className="text-[#0a2e1e] leading-relaxed">
+                  The software tells the drive's crypto controller to either destroy the current Media Encryption Key (MEK) outright or regenerate it with a fresh random key. Either way, the link between the ciphertext sitting on the platters or NAND and the key that could decrypt it is permanently severed.
+                </p>
+              </div>
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">3. Verification</h3>
+                <p className="text-[#0a2e1e] leading-relaxed">
+                  This step confirms the drive's encryption state actually reset and the old MEK is genuinely gone — not just marked for deletion. Some tools also read-verify the drive to confirm the data now reads as random, unreadable ciphertext.
+                </p>
+              </div>
+              <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
+                <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">4. Certificate generation</h3>
+                <p className="text-[#0a2e1e] leading-relaxed">
+                  A tamper-evident certificate gets generated: drive serial number, model, capacity, the CE method used, verification result, operator identity, timestamp. This is your audit evidence, and it's the piece regulators actually ask for.
                 </p>
               </div>
             </div>
-          </Reveal>
 
-          {/* Section 5: D-Secure CE Support */}
-          <Reveal>
-            <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
-              <h2 className="text-3xl font-bold mb-6">
-                D-Secure Cryptographic Erase Support
-              </h2>
-              <p className="leading-loose text-lg mb-6 text-white/90">
-                For successful implementation of cryptographic erasure,
-                organizations must have a systematic process for recording media
-                devices encrypted using strong cryptographic algorithms along
-                with a log of encryption keys. D-Secure supports cryptographic
-                erasure as prescribed by <Link to="/compliance/nist-800-88" className="text-white hover:underline font-medium">NIST 800-88</Link> Rev.2.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white/10 rounded-none p-6">
-                  <h3 className="font-bold text-lg mb-3">NIST Compliant</h3>
-                  <p className="text-white/90 leading-relaxed">
-                    Implements cryptographic erasure according to NIST SP 800-88
-                    Rev.2 guidelines with full Purge-level sanitization
-                    classification for self-encrypting drives.
-                  </p>
-                </div>
-                <div className="bg-white/10 rounded-none p-6">
-                  <h3 className="font-bold text-lg mb-3">Post-CE Verification</h3>
-                  <p className="text-white/90 leading-relaxed">
-                    Performs multi-level verification after CE to confirm keys
-                    have been securely erased, the drive's crypto state has been
-                    reset, and data reads as random ciphertext.
-                  </p>
-                </div>
-                <div className="bg-white/10 rounded-none p-6">
-                  <h3 className="font-bold text-lg mb-3">SED & NVMe Support</h3>
-                  <p className="text-white/90 leading-relaxed">
-                    Works with TCG Opal, TCG Enterprise, IEEE 1667, and
-                    NVMe-native self-encrypting drives — covering the full range
-                    of enterprise storage hardware.
-                  </p>
-                </div>
-                <div className="bg-white/10 rounded-none p-6">
-                  <h3 className="font-bold text-lg mb-3">Audit Reports</h3>
-                  <p className="text-white/90 leading-relaxed">
-                    Generates tamper-proof certificates documenting the CE
-                    operation details including drive serial, method, verification
-                    result, operator, and timestamp for compliance evidence.
-                  </p>
-                </div>
-              </div>
+            <div className="my-8">
+              <Link to="/compliance/nist-800-88" className="inline-flex items-center font-semibold text-[#0e7c66] hover:text-[#0a2e1e] transition-colors border-b-2 border-[#0e7c66] hover:border-[#0a2e1e] pb-1">
+                Read: NIST 800-88 Rev. 2 explained
+              </Link>
             </div>
-          </Reveal>
 
-          {/* Section 6: When Not to Use CE */}
-          <Reveal>
-            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                When NOT to Use Cryptographic Erase
-              </h2>
-              <p className="text-[#5a6672] leading-loose text-lg">
-                While Cryptographic Erase is highly effective for SEDs, there are
-                specific scenarios where it should not be used as the sole
-                sanitization method:
-              </p>
-              <div className="grid md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
-                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Non-Encrypted Drives</h3>
-                  <p className="text-[#0a2e1e] leading-relaxed text-sm">
-                    Standard HDDs and SSDs without hardware encryption cannot use
-                    CE. Use <Link to="/blog/overwrite-guide" className="text-[#0a2e1e] hover:underline font-medium">overwrite methods</Link> instead.
-                  </p>
-                </div>
-                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
-                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Key Escrow Scenarios</h3>
-                  <p className="text-[#0a2e1e] leading-relaxed text-sm">
-                    If encryption keys have been backed up or escrowed to external
-                    systems, destroying the on-drive key alone may not prevent
-                    recovery from the backup.
-                  </p>
-                </div>
-                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
-                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Classified Data</h3>
-                  <p className="text-[#0a2e1e] leading-relaxed text-sm">
-                    Government classified data (SECRET, TOP SECRET) typically
-                    requires physical destruction or CE + overwrite combination
-                    for maximum assurance.
-                  </p>
-                </div>
-                <div className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
-                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Post-Quantum Concerns</h3>
-                  <p className="text-[#0a2e1e] leading-relaxed text-sm">
-                    For data with 25+ year confidentiality requirements, the risk
-                    of future quantum computing breaking current encryption makes
-                    overwrite a safer choice.
-                  </p>
-                </div>
-              </div>
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mt-12 mb-6">
+              What NIST actually requires for CE to count
+            </h2>
+            <h3 className="text-2xl font-bold text-[#0a2e1e] mt-8 mb-4">
+              The cryptography has to be strong enough
+            </h3>
+            <p className="text-[#5a6672] leading-loose text-lg">
+              NIST SP 800-88 Rev. 2 leans on ISO/IEC 27040 here, and it's specific: the encryption algorithm needs at least 128-bit security strength, and the entropy behind the random number source has to match or exceed the key length. In practice, AES-256 or AES-128 in XTS mode is what you'll see in most modern SEDs, and that's the bar to check for.
+            </p>
+
+            <h3 className="text-2xl font-bold text-[#0a2e1e] mt-8 mb-4">
+              CE only sanitizes what was encrypted from the start
+            </h3>
+            <p className="text-[#5a6672] leading-loose text-lg">
+              This is the part people miss. CE erases keys — it has no effect on sensitive data that was ever stored in plaintext on the same media. If plaintext data touched that drive at any point, CE alone doesn't sanitize it. You'd need overwriting for that portion, full stop.
+            </p>
+
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mt-12 mb-6">
+              Where CE runs into real limits
+            </h2>
+            <p className="text-[#5a6672] leading-loose text-lg mb-4">
+              A few conditions genuinely undercut CE's assurance, and NIST is direct about naming them:
+            </p>
+            <ul className="list-disc pl-6 space-y-4 text-[#5a6672] text-lg">
+              <li>
+                <strong>Escrowed or backed-up keys.</strong> If the encryption key exists somewhere outside the drive — a key management system, a backup — destroying the on-drive copy doesn't stop someone from recovering data through that other copy. CE only protects what it can actually reach.
+              </li>
+              <li>
+                <strong>Long-horizon confidentiality.</strong> For data that needs to stay confidential for decades, CE gets shakier. Future computing advances — quantum computing specifically — could eventually weaken the cryptographic assumptions CE relies on today. That's a real enough concern that NIST classifies CE as Purge, not Destroy.
+              </li>
+              <li>
+                <strong>The Purge-not-Destroy distinction exists for a reason.</strong> Given enough future computational power or an undiscovered cryptographic weakness, key recovery isn't theoretically impossible. That's the honest caveat, and it's why CE alone doesn't clear the bar for the highest security tier.
+              </li>
+            </ul>
+
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mt-12 mb-6">
+              Cryptographic erase vs. overwrite
+            </h2>
+            <div className="overflow-hidden rounded-none border border-[#d0d5dc] mb-8">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-[#f4fbf8]">
+                    <th className="px-6 py-4 font-semibold text-[#0a2e1e] border-b border-[#d0d5dc]">Criteria</th>
+                    <th className="px-6 py-4 font-semibold text-[#0a2e1e] border-b border-[#d0d5dc]">Cryptographic erase</th>
+                    <th className="px-6 py-4 font-semibold text-[#0a2e1e] border-b border-[#d0d5dc]">Overwrite (Clear/Purge)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  <tr>
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">Speed</td>
+                    <td className="px-6 py-4 text-[#5a6672]">Seconds — key destruction only</td>
+                    <td className="px-6 py-4 text-[#5a6672]">Hours — full drive surface</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">NIST classification</td>
+                    <td className="px-6 py-4 text-[#5a6672]">Purge</td>
+                    <td className="px-6 py-4 text-[#5a6672]">Clear (1-pass) or Purge (multi-pass)</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">Device requirement</td>
+                    <td className="px-6 py-4 text-[#5a6672]">Self-encrypting drive (SED) required</td>
+                    <td className="px-6 py-4 text-[#5a6672]">Works on any storage device</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">Data residue</td>
+                    <td className="px-6 py-4 text-[#5a6672]">Ciphertext remains, unreadable</td>
+                    <td className="px-6 py-4 text-[#5a6672]">All data replaced with pattern</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">Quantum risk</td>
+                    <td className="px-6 py-4 text-[#5a6672]">Future quantum attacks may eventually break the encryption</td>
+                    <td className="px-6 py-4 text-[#5a6672]">None — data is physically overwritten</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium text-[#0a2e1e]">Best for</td>
+                    <td className="px-6 py-4 text-[#5a6672]">High-volume SSD environments, time-critical jobs</td>
+                    <td className="px-6 py-4 text-[#5a6672]">Mixed media, cases needing highest assurance</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </Reveal>
 
-          {/* Section 7: Conclusion */}
-          <Reveal>
-            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                Conclusion
-              </h2>
+            <p className="text-[#5a6672] leading-loose text-lg">
+              <strong>Where I land on this:</strong> if the drive is genuinely encrypted from day one and you're not dealing with escrow or a 25-year confidentiality window, CE is a perfectly legitimate Purge method — fast, verifiable, NIST-recognized. The moment either of those conditions shows up, the calculus changes.
+            </p>
+            <p className="text-[#5a6672] leading-loose text-lg mt-4">
+              For the highest assurance tier, NIST recommends combining CE with a follow-up overwrite pass. D-Secure supports this "CE + Overwrite" combined workflow for organizations handling classified or heavily regulated data where a single method isn't enough.
+            </p>
+
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mt-12 mb-6">
+              When CE is not the right call
+            </h2>
+            <ul className="list-disc pl-6 space-y-4 text-[#5a6672] text-lg">
+              <li>
+                <strong>Non-encrypted drives.</strong> Standard HDDs and SSDs without hardware encryption simply can't use CE — there's no key to destroy. Overwrite is your only option here.
+              </li>
+              <li>
+                <strong>Key escrow scenarios.</strong> If keys were ever backed up or escrowed externally, killing the on-drive key doesn't guarantee the data can't be recovered from that backup.
+              </li>
+              <li>
+                <strong>Classified data.</strong> SECRET and TOP SECRET material typically needs physical destruction, or at minimum a CE + overwrite combination, for the assurance level required.
+              </li>
+              <li>
+                <strong>Post-quantum concerns.</strong> For data with a 25-plus year confidentiality requirement, overwrite is genuinely the safer default given where quantum computing is headed.
+              </li>
+            </ul>
+
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mt-12 mb-6">
+              How D-Secure implements this
+            </h2>
+            <ul className="list-disc pl-6 space-y-4 text-[#5a6672] text-lg">
+              <li><strong>NIST-compliant CE</strong> — implemented per NIST SP 800-88 Rev. 2, with full Purge-level classification for self-encrypting drives</li>
+              <li><strong>Multi-level post-CE verification</strong> — confirms keys are gone, the drive's crypto state has reset, and data reads back as random ciphertext</li>
+              <li><strong>Broad SED/NVMe coverage</strong> — TCG Opal, TCG Enterprise, IEEE 1667, and NVMe-native self-encrypting drives</li>
+              <li><strong>Audit-ready certificates</strong> — drive serial, method, verification result, operator, and timestamp, generated automatically for every CE operation</li>
+            </ul>
+
+            <div className="my-8">
+              <Link to="/products/drive-eraser" className="inline-flex items-center font-semibold text-[#0e7c66] hover:text-[#0a2e1e] transition-colors border-b-2 border-[#0e7c66] hover:border-[#0a2e1e] pb-1">
+                Read: D-Secure Drive Eraser overview
+              </Link>
+            </div>
+
+            <h2 className="text-3xl font-bold text-[#0a2e1e] mt-12 mb-6">
+              The takeaway
+            </h2>
+            <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 space-y-6">
               <p className="text-[#5a6672] leading-loose text-lg">
-                Cryptographic Erase is a fast and effective sanitization
-                technique for encrypted storage media when implemented correctly
-                according to NIST guidelines. Organizations must use
-                professional data-wiping tools that support cryptographic
-                erasure and perform verification to ensure keys have been
-                securely erased and data is no longer accessible.
+                CE is fast, it's NIST-recognized, and for most enterprise SSD and NVMe workloads it's genuinely the right call — seconds instead of hours, with a defensible audit trail behind it. But it's a Purge method, not a Destroy method, for a specific reason: it depends entirely on the key actually being gone and unrecoverable elsewhere. Know your device (is it really an SED?), know your data history (was anything ever stored in plaintext?), and know your confidentiality horizon before you rely on CE alone.
               </p>
-              <p className="text-[#5a6672] leading-loose text-lg">
-                As SSD adoption continues to accelerate in enterprise
-                environments, CE will become an increasingly important
-                sanitization method. However, organizations must carefully
-                evaluate whether CE alone provides sufficient assurance for
-                their specific data classification and regulatory requirements,
-                or whether a combined CE + Overwrite approach is necessary
-                for compliance.
+              <p className="text-[#5a6672] leading-loose text-lg font-medium">
+                Not sure whether your fleet is ready for CE, or whether you need CE + overwrite? <Link to="/contact" className="text-[#0e7c66] hover:underline">Talk to D-Secure's team</Link> — we'll help you map the right method to the right drives.
               </p>
             </div>
-          </Reveal>
 
-          {/* FAQ Section */}
-          <div className="mt-10">
-            
+            <div className="mt-12">
+              <FAQSection faqs={faqs} className="px-0 py-0 bg-transparent" title="Frequently Asked Questions" />
+            </div>
+
+            <div className="border-t border-[#d0d5dc] pt-8 mt-12 text-[#5a6672]">
+              <p className="mb-4">
+                <strong>About the author:</strong> Prashant Saini writes on data sanitization compliance and ITAD standards for D-Secure Technologies, covering NIST 800-88, IEEE 2883, and global data privacy regulation.
+              </p>
+              <p className="font-bold text-[#0a2e1e] mb-2">Related reading:</p>
+              <ul className="space-y-2">
+                <li><Link to="/blog/nist-800-88-rev2-update-2026" className="text-[#0e7c66] hover:underline">NIST 800-88 Rev. 2 explained — what changed and how to stay compliant</Link></li>
+                <li><Link to="/blog/dod-vs-ieee" className="text-[#0e7c66] hover:underline">DoD 5220.22-M vs. IEEE 2883-2022 — which standard should you use</Link></li>
+                <li><Link to="/blog/cryptographic-erase" className="text-[#0e7c66] hover:underline">Self-encrypting drives and TCG Opal — a practical overview</Link></li>
+              </ul>
+            </div>
+
+            {/* Add schema to head dynamically */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
           </div>
-        </section>
+        </Reveal>
+      </section>
 
-        <BlogFooterStandard
-          blogId="cryptographic-erase"
-          blogTitle="Cryptographic Erasure: The Future of Data Sanitization"
-          category="Technical Guide"
-          tag="Technical"
-        />
-      </div>
-    );
+      <BlogFooterStandard
+        blogId="cryptographic-erase"
+        blogTitle="Cryptographic erase, explained: what NIST SP 800-88 actually requires"
+        category="Technical Guide"
+        tag="Technical"
+        faqs={[]}
+      />
+    </div>
+  );
 };
 
 export default CryptographicEraseBlog;
+

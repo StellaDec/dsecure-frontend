@@ -130,7 +130,7 @@ const navigationTree: NavItem[] = [
             <CheckCircle className="w-4 h-4 text-emerald-500" /> Capture SCSI Status Return Codes
           </li>
           <li className="flex items-center gap-2">
-            <CheckCircle className="w-4 h-4 text-emerald-500" /> Tamper-proof Digitally Signed Report
+            <CheckCircle className="w-4 h-4 text-emerald-500" /> Tamper-evident Digitally Signed Report
           </li>
         </ul>
       </div>

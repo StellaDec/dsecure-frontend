@@ -235,17 +235,17 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
 
                 <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
-                    4. Use Certified Remote Wiping Software
+                    4. Use compliant Remote Wiping Software
                   </h3>
                   <p className="text-white/90 leading-relaxed">
-                    Always use a certified{" "}
+                    Always use a compliant{" "}
                     <Link
                       to="/products/drive-eraser"
                       className="text-white hover:underline font-medium"
                     >
                       data wiping
                     </Link>{" "}
-                    tool instead of free alternatives. Product certifications
+                    tool instead of free alternatives. Product alignments
                     from global bodies like Common Criteria (CC), ADISA, and
                     NIST serve as proof of the tool's efficacy and build trust.
                   </p>
@@ -455,7 +455,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
               </div>
               <p className="text-[#5a6672] leading-loose text-lg mt-6">
-                Certified remote erasure software bridges this gap by gathering hardware serial numbers, wiping algorithms used, and timestamped success logs before communicating back to the central reporting server—producing a tamper-proof certificate equivalent to physical lab erasure.
+                compliant remote erasure software bridges this gap by gathering hardware serial numbers, wiping algorithms used, and timestamped success logs before communicating back to the central reporting server—producing a tamper-evident certificate of erasure equivalent to physical lab erasure.
               </p>
             </div>
           </Reveal>
@@ -485,11 +485,11 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 </div>
                 <div className="border-l-4 border-[#0e7c66] pl-6">
                   <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
-                    Global Certifications
+                    Global alignments
                   </h3>
                   <p className="text-[#5a6672]">
                     Tested and approved by NIST, Common Criteria, ADISA, NYCE,
-                    STQC, and other international certification bodies.
+                    STQC, and other international alignment bodies.
                   </p>
                 </div>
                 <div className="border-l-4 border-[#0e7c66] pl-6">
@@ -513,7 +513,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                     Audit-Ready Reports
                   </h3>
                   <p className="text-[#5a6672]">
-                    Generates tamper-proof erasure reports & certificates that
+                    Generates tamper-evident erasure reports & certificates that
                     serve as verifiable audit trails.
                   </p>
                 </div>
@@ -549,7 +549,7 @@ const RemoteWorkDataErasureBlog: React.FC = () => {
                 strategy.
               </p>
               <p className="text-[#5a6672] leading-loose text-lg">
-                By implementing these best practices and using certified remote
+                By implementing these best practices and using compliant remote
                 data erasure solutions like D-Secure, organizations can maintain
                 robust data security across their entire distributed workforce
                 while staying compliant with regulatory requirements.

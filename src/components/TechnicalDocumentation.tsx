@@ -128,7 +128,7 @@ const TechnicalDocumentation: React.FC = () => {
                   {
                     icon: FileSignature,
                     title: "Verification Module",
-                    desc: "Generates tamper-proof, cryptographically signed auditable reports for every erasure operation.",
+                    desc: "Generates tamper-evident, cryptographically signed auditable reports for every erasure operation.",
                   },
                   {
                     icon: LayoutDashboard,
@@ -278,10 +278,10 @@ const TechnicalDocumentation: React.FC = () => {
                     <ThemeIconContainer icon={FileCheck} size="md" />
                   </div>
                   <h3 className="text-2xl font-bold text-[#0a2e1e] mb-4">
-                    Audit & Compliance Certification
+                    Audit & Compliance Verification
                   </h3>
                   <p className="text-[#5a6672] leading-relaxed mb-4">
-                    D-Secure's Verification Module generates tamper-proof PDF & XML reports embedded with:
+                    D-Secure's Verification Module generates tamper-evident PDF & XML reports embedded with:
                   </p>
                   <ul className="space-y-2 text-[#5a6672]">
                     <li className="flex items-center gap-2">

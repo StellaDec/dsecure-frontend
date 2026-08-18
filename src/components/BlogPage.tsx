@@ -4,6 +4,8 @@ import Reveal from "./Reveal";
 import { getSEOForPage } from "@/utils/seo";
 import { SEOHead } from "@/components/SEOHead";
 import { blogPosts } from "@/data/blogPosts";
+import { lawsContent } from "@/data/lawsContent";
+import { getReadTime } from "@/utils/readTime";
 import { BookOpen, Search } from "lucide-react";
 
 const BlogPage: React.FC = () => {
@@ -81,11 +83,11 @@ const BlogPage: React.FC = () => {
                           <span className="inline-block px-3 py-1 text-xs font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full">
                             {blog.tag}
                           </span>
-                          {blog.readTime && (
-                            <span className="text-xs text-[#5a6672]">
-                              {blog.readTime}
-                            </span>
-                          )}
+                          {/* Dynamic read time — content se calculate karo agar field nahi hai
+                              lawsContent fallback: slug match par depend karta hai, mismatch ho to wrong estimate aayega */}
+                          <span className="text-xs text-[#5a6672]">
+                            {blog.readTime || getReadTime(blog.content || lawsContent[blog.slug]?.content || blog.excerpt)}
+                          </span>
                         </div>
                         <h2 className="text-lg font-bold text-[#0a2e1e] mb-3 leading-snug group-hover:text-[#0e7c66] transition-colors duration-200 flex-1">
                           {blog.title}

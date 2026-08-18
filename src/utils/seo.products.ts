@@ -4,7 +4,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
   "drive-eraser": {
     title: "Secure Data Erasure Software | D-Secure Drive Eraser",
     description:
-      "Enterprise secure data erasure software to permanently wipe HDDs, SSDs & NVMe. Achieve GDPR & HIPAA compliance with tamper-proof ITAD certificates.",
+      "Enterprise secure data erasure software to permanently wipe HDDs, SSDs & NVMe. Achieve GDPR & HIPAA compliance with tamper-evident ITAD certificates.",
     keywords: generateKeywords([
       "secure data erasure software",
       "secure data erasure",
@@ -51,7 +51,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
           features: [
             "NIST 800-88 Purge & Clear",
             "Department of Defense (DoD) Wiping",
-            "Tamper-proof audit reports with certificate",
+            "Tamper-evident audit reports with certificate",
             "Native Apple Silicon Support",
             "Industrial Parallel Engine (100+ Drives)",
           ],
@@ -82,7 +82,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
             name: "Can I erase multiple SSDs simultaneously?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes, D-Secure supports industrial-scale parallel erasure. You can wipe 100+ SSDs or HDDs simultaneously on a single machine, with each drive receiving its own tamper-proof certificate.",
+              text: "Yes, D-Secure supports industrial-scale parallel erasure. You can wipe 100+ SSDs or HDDs simultaneously on a single machine, with each drive receiving its own tamper-evident certificate.",
             },
           },
           {
@@ -168,7 +168,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
   "file-eraser": {
     title: "Secure File Erasure Software | D-Secure File Shredder",
     description:
-      "Permanently shred files, folders & free space. D-Secure File Eraser provides automated, NIST-compliant secure deletion with tamper-proof certificates.",
+      "Permanently shred files, folders & free space. D-Secure File Eraser provides automated, NIST-compliant secure deletion with tamper-evident certificates.",
     keywords: generateKeywords([
       "secure file erasure software",
       "secure file erasure",
@@ -382,12 +382,12 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ),
   },
   "smartphone-eraser": {
-    title: "Smartphone Eraser: Certified iOS/Android Wipe | D-Secure",
+    title: "Smartphone Eraser: Enterprise iOS/Android Wipe | D-Secure",
     description:
-      "Permanently wipe data from iPhones & Android devices. D-Secure Smartphone Eraser is R2v3, GDPR & HIPAA compliant with tamper-proof audit certificates.",
+      "Permanently wipe data from iPhones & Android devices. D-Secure Smartphone Eraser is R2v3, GDPR & HIPAA compliant with tamper-evident audit certificates.",
     keywords: generateKeywords([
       "smartphone eraser software India",
-      "iPhone data wipe certified NIST",
+      "iPhone data wipe NIST aligned",
       "Android factory reset secure India",
       "mobile ITAD erasure solution",
       "R2v3 mobile data destruction",
@@ -439,7 +439,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
             name: "Is D-Secure Smartphone Eraser R2v3 compliant?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes, our smartphone erasure tool is designed to meet R2v3, ADISA, and GDPR requirements, providing tamper-proof certificates for every mobile device wiped.",
+              text: "Yes, our smartphone erasure tool is designed to meet R2v3, ADISA, and GDPR requirements, providing tamper-evident certificates for every mobile device wiped.",
             },
           },
           {
@@ -664,7 +664,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
   "virtual-machine-eraser": {
     title: "VM Eraser: Secure Cloud & Hypervisor Wipe | D-Secure",
     description:
-      "Certified data erasure for VMware, Hyper-V, AWS & Azure. Permanently sanitize virtual disks — NIST compliant with tamper-proof audit reports.",
+      "verifiable data erasure for VMware, Hyper-V, AWS & Azure. Permanently sanitize virtual disks — NIST compliant with tamper-evident audit reports.",
     keywords: generateKeywords([
       "virtual machine eraser",
       "VM data erasure software",
@@ -697,7 +697,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
   "removable-media-eraser": {
     title: "Removable Media Eraser: USB & SD Wipe | D-Secure",
     description:
-      "Compliance-grade erasure for USBs, SD cards & external disks. D-Secure provides tamper-proof audit reports and certificates for secure data sanitization.",
+      "Compliance-grade erasure for USBs, SD cards & external disks. D-Secure provides tamper-evident audit reports and certificates for secure data sanitization.",
     keywords: generateKeywords([
       "USB eraser",
       "SD card wiping",
@@ -742,7 +742,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
   "lun-eraser": {
     title: "LUN Eraser: SAN & NAS Storage Sanitization | D-Secure",
     description:
-      "Erase active LUNs in SAN & NAS storage without disrupting data. NIST 800-88 compliant — tamper-proof certificates for secure enterprise decommissioning.",
+      "Erase active LUNs in SAN & NAS storage without disrupting data. NIST 800-88 compliant — tamper-evident certificates for secure enterprise decommissioning.",
     keywords: generateKeywords([
       "LUN eraser software",
       "SAN data erasure",

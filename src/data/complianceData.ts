@@ -46,7 +46,7 @@ export const standards: Standards = {
       {
         clause: "Section 4.3",
         requirement: "Documentation of Sanitization",
-        evidence: "Tamper-Proof Certificate of Destruction",
+        evidence: "Tamper-Evident Certificate of Destruction",
       },
     ],
     implementation:
@@ -151,7 +151,7 @@ export const standards: Standards = {
       {
         clause: "Section 802",
         requirement: "Secure retention and disposal of records",
-        evidence: "Tamper-Proof Audit Trail",
+        evidence: "Tamper-Evident Audit Trail",
       },
       {
         clause: "Section 302",
@@ -160,7 +160,7 @@ export const standards: Standards = {
       },
     ],
     implementation:
-      "D-Secure supports SOX compliance through tamper-proof audit trails, secure data handling, and management reporting.",
+      "D-Secure supports SOX compliance through tamper-evident audit trails, secure data handling, and management reporting.",
   },
   pci: {
     title: "PCI DSS",

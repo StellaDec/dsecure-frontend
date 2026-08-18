@@ -390,7 +390,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
       icon: <Server className="w-6 h-6" />,
     },
     {
-      title: "Tamper-Proof Reports",
+      title: "Tamper-Evident Reports",
       desc: "Automatically generate signed, audit-trail reports for every deletion to meet regulatory compliance.",
       icon: <FileText className="w-6 h-6" />,
     },
@@ -474,7 +474,7 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
   const fileEraserNetworkTakeaways = [
     { title: "Domain Erase", desc: "Permanently erase files across domain-connected endpoint devices." },
     { title: "Centralized Management", desc: "Centralized admin console for scheduling network erasure tasks." },
-    { title: "Audit Reports", desc: "Generates cryptographically signed, tamper-proof erasure reports." },
+    { title: "Audit Reports", desc: "Generates cryptographically signed, tamper-evident erasure reports." },
     { title: "Global Compliance", desc: "Complies with NIST 800-88, DoD 5220.22-M, and GDPR." },
   ];
 
@@ -485,8 +485,8 @@ const FileEraserNetwork: React.FC = memo(function FileEraserNetwork() {
       a: "It is a specialized software that allows IT administrators to permanently erase files, folders, and system traces from all domain-connected computers across an organization from a centralized console.",
     },
     {
-      q: "Does it generate tamper-proof reports?",
-      a: "Yes, it generates a cryptographically signed, tamper-proof erasure report for every machine, documenting the list of files erased and the standard used for audit trails.",
+      q: "Does it generate tamper-evident reports?",
+      a: "Yes, it generates a cryptographically signed, tamper-evident erasure report for every machine, documenting the list of files erased and the standard used for audit trails.",
     },
     {
       q: "What is the license model?",

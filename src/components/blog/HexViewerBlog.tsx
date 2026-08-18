@@ -386,7 +386,7 @@ const HexViewerBlog: React.FC = () => {
                   <ul className="space-y-2 text-[#0a2e1e]">
                     <li>• NIST 800-88 verification evidence</li>
                     <li>• IEEE 2883 post-erasure confirmation</li>
-                    <li>• Tamper-proof verification logs</li>
+                    <li>• Tamper-evident verification logs</li>
                     <li>• Integrated with erasure certificate generation</li>
                     <li>• Audit-ready forensic documentation</li>
                   </ul>

@@ -62,7 +62,7 @@ const ErasureAsAServiceDSecureBlog: React.FC = () => {
             </p>
             <p className="text-[#5a6672] leading-loose text-lg">
               EAAS allows organizations to offload secure data sanitization to
-              certified service providers who deliver standardized, verifiable,
+              compliant service providers who deliver standardized, verifiable,
               and regulation-compliant erasure at scale. This model reduces
               Total Cost of Ownership (TCO), mitigates breach risk, and ensures
               consistent end-of-life IT asset management across geographically
@@ -170,7 +170,7 @@ const ErasureAsAServiceDSecureBlog: React.FC = () => {
               How D-Secure Empowers Service Providers for EAAS
             </h2>
             <p className="text-[#5a6672] leading-loose text-lg">
-              D-Secure provides a comprehensive portfolio of certified data
+              D-Secure provides a comprehensive portfolio of verifiable data
               sanitization solutions that enable MSPs, MSSPs, and ITADs to
               deliver secure erasure services across diverse device ecosystems
               and operating environments.
@@ -190,7 +190,7 @@ const ErasureAsAServiceDSecureBlog: React.FC = () => {
                   <li>• 24+ internationally recognized sanitization standards</li>
                   <li>• NIST SP 800-88 Clear & Purge compliant</li>
                   <li>• 65,000+ concurrent drives via network deployment</li>
-                  <li>• Tamper-proof erasure certificates</li>
+                  <li>• Tamper-evident certificates of erasure</li>
                 </ul>
               </div>
 
@@ -212,7 +212,7 @@ const ErasureAsAServiceDSecureBlog: React.FC = () => {
             </div>
 
             <p className="text-[#5a6672] leading-loose text-lg">
-              Beyond wiping, D-Secure generates tamper-proof erasure
+              Beyond wiping, D-Secure generates tamper-evident erasure
               certificates aligned with NIST SP 800-88 documentation guidelines,
               enabling organizations to demonstrate compliance with regulations
               such as GDPR, SOX, CPRA, HIPAA, and ISO 27001.
@@ -251,9 +251,9 @@ const ErasureAsAServiceDSecureBlog: React.FC = () => {
                 </p>
               </div>
               <div className="bg-white/10 rounded-none p-6">
-                <h3 className="font-bold text-lg mb-3">Certified Trust</h3>
+                <h3 className="font-bold text-lg mb-3">compliant Trust</h3>
                 <p className="text-white/90 leading-relaxed">
-                  Validated by NIST, Common Criteria, ADISA, STQC, and other
+                  Aligned with NIST 800-88, DoD 5220.22-M, and other
                   international bodies — giving clients confidence in the
                   security of the erasure process.
                 </p>
@@ -295,7 +295,7 @@ const ErasureAsAServiceDSecureBlog: React.FC = () => {
             <p className="text-[#5a6672] leading-loose text-lg">
               For MSPs and ITADs, EAAS represents a high-margin, recurring
               revenue stream that complements existing service offerings. As
-              data privacy regulations expand globally, the demand for certified
+              data privacy regulations expand globally, the demand for compliant
               data erasure services is growing rapidly — creating a significant
               market opportunity for service providers who can deliver compliant,
               scalable sanitization.
@@ -324,7 +324,7 @@ const ErasureAsAServiceDSecureBlog: React.FC = () => {
               As data privacy regulations continue to expand in scope and
               enforcement, Erasure as a Service has become a strategic offering
               for MSPs, MSSPs, and ITADs seeking to deliver compliant and secure
-              end-of-life data management. By adopting D-Secure's certified data
+              end-of-life data management. By adopting D-Secure's verifiable data
               erasure platforms, service providers can offer scalable,
               audit-ready, and regulation-aligned sanitization services that
               reduce breach exposure, enhance client trust, and open new revenue

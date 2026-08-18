@@ -3,6 +3,8 @@ import BlogFooterStandard from "./BlogFooterStandard";
 import { Link } from "react-router-dom";
 import Reveal from "@/components/Reveal";
 import { blogPosts } from "@/data/blogPosts";
+import { lawsContent } from "@/data/lawsContent";
+import { getReadTime } from "@/utils/readTime";
 import SEOHead from "@/components/SEOHead";
 import { getSEOForPage } from "@/utils/seo";
 import { Shield as ShieldIcon, Server as ServerIcon, Globe as GlobeIcon, Clipboard as ClipboardIcon, Database as DatabaseIcon, Smartphone as MobileIcon, Zap as LightningIcon, ArrowRight as ArrowRightIcon, Check as CheckIcon, Briefcase as BriefcaseIcon, DollarSign as DollarIcon, Star as StarIcon, Layers as LayersIcon, Cpu as CpuIcon, Scale as ScaleIcon, FileText as FileTextIcon, BookOpen as BookOpenIcon, AlertTriangle as AlertTriangleIcon, Laptop as LaptopIcon, HardDrive as HardDriveIcon, Activity as ActivityIcon, Building2 as BuildingIcon, Heart as HeartIcon, Search as SearchIcon, Loader2 as Loader2Icon } from "lucide-react";
@@ -64,13 +66,7 @@ const getTagConfig = (tag: string) => {
   return categoryConfig[tag] || { icon: ShieldIcon };
 };
 
-// Reading time calculate karna (Hindi comment added as per rules)
-const getReadTime = (excerpt: string) => {
-  const wordsPerMinute = 200;
-  const wordCount = excerpt.split(/\s+/).length * 8;
-  const minutes = Math.ceil(wordCount / wordsPerMinute);
-  return `${minutes} min read`;
-};
+
 
 // Featured category cards
 const featuredCategories = [
@@ -262,7 +258,8 @@ const BlogPage: React.FC = () => {
                           {blog.excerpt}
                         </p>
                         <div className="flex items-center justify-between mt-auto">
-                          <span className="text-xs text-[#5a6672]">{getReadTime(blog.excerpt)}</span>
+                          {/* readTime field pehle check karo, nahi hai toh full content se calculate karo */}
+                          <span className="text-xs text-[#5a6672]">{blog.readTime || getReadTime(blog.content || lawsContent[blog.slug]?.content || blog.excerpt)}</span>
                           <span className="flex items-center gap-1 text-[#0e7c66] text-sm font-semibold group-hover:gap-2 transition-all">
                             Read <ArrowRightIcon className="w-4 h-4" />
                           </span>
@@ -361,7 +358,8 @@ const BlogPage: React.FC = () => {
                             {blog.tag}
                           </span>
                           <span className="text-xs text-[#5a6672]">
-                            {getReadTime(blog.excerpt)}
+                            {/* readTime field pehle check karo, nahi hai toh content se calculate */}
+                            {blog.readTime || getReadTime(blog.content || lawsContent[blog.slug]?.content || blog.excerpt)}
                           </span>
                         </div>
                       </div>

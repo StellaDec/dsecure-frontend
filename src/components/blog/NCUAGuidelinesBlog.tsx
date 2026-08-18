@@ -11,7 +11,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
         <SEOHead
           seo={getBlogSEO({
             title: "NCUA Guidelines on Third-Party Data Disposal",
-            excerpt: "Credit unions must adhere to strict NCUA guidelines regarding data disposal. Learn how to manage third-party risk and implement certified erasure protocols.",
+            excerpt: "Credit unions must adhere to strict NCUA guidelines regarding data disposal. Learn how to manage third-party risk and implement compliant erasure protocols.",
             slug: "ncua-guidelines",
             author: "D-Secure Editorial Team",
             publishDate: "December 14, 2026",
@@ -268,7 +268,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
                   </h3>
                   <p className="text-white/90 leading-relaxed">
                     To dispose of paper-based information securely, utilize
-                    certified disposal services that ensure the information is
+                    compliant disposal services that ensure the information is
                     rendered unreadable, or shred the information on-site using
                     cross-cut shredders.
                   </p>
@@ -286,7 +286,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
                   <ul className="space-y-2 text-white/90">
                     <li>
                       • <strong>Software-based Overwriting:</strong> Replacing
-                      data with random information using certified tools
+                      data with random information using compliant tools
                     </li>
                     <li>
                       • <strong>Degaussing:</strong> Using magnetic fields to
@@ -444,7 +444,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
                     Detailed Destruction Records
                   </h3>
                   <p className="text-[#5a6672] leading-relaxed">
-                    Generates secure, tamper-proof erasure reports and
+                    Generates secure, tamper-evident erasure reports and
                     certificates, providing an audit trail for compliance
                     documentation.
                   </p>
@@ -487,7 +487,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
                 confidentiality.
               </p>
               <p className="text-[#5a6672] leading-loose text-lg">
-                Using a certified data erasure solution like D-Secure helps
+                Using a Enterprise-grade data erasure solution like D-Secure helps
                 third-party vendors meet NCUA compliance requirements while
                 providing the documentation necessary for audit trails and
                 regulatory examinations.
@@ -508,7 +508,7 @@ const NCUAGuidelinesBlog: React.FC = () => {
               </h2>
               <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
                 Ensure your credit union and third-party vendors meet all NCUA
-                data disposal requirements with our certified data erasure
+                data disposal requirements with our Enterprise-grade data erasure
                 solutions. Generate audit-ready reports and maintain compliance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

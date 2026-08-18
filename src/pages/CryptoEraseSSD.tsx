@@ -349,7 +349,7 @@ const CryptoEraseSSDGuide: React.FC = () => {
                           </tr>
                           <tr>
                             <td className="px-6 py-4 text-sm font-bold text-slate-900">D-Secure License</td>
-                            <td className="px-6 py-4 text-sm text-slate-600">Active enterprise license for generating tamper-proof <Link to="/support/help-manual/complete-manual" className="text-emerald-600 hover:underline">compliance reports</Link>.</td>
+                            <td className="px-6 py-4 text-sm text-slate-600">Active enterprise license for generating tamper-evident <Link to="/support/help-manual/complete-manual" className="text-emerald-600 hover:underline">compliance reports</Link>.</td>
                           </tr>
                         </tbody>
                       </table>

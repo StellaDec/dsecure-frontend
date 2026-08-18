@@ -139,7 +139,7 @@ const ProductVideosPage: React.FC = memo(() => {
     {
       id: 9,
       title: "Compliance and Regulatory Reports",
-      description: "Generate tamper-proof regulatory documents and compliance reports for audit purposes and regulatory requirements.",
+      description: "Generate tamper-evident regulatory documents and compliance reports for audit purposes and regulatory requirements.",
       duration: "11:29",
       category: "enterprise",
       difficulty: "Intermediate",

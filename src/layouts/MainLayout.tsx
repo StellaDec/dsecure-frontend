@@ -163,7 +163,7 @@ export default function MainLayout() {
               className="relative flex items-center gap-2 xs:gap-3 font-bold text-slate-800 flex-shrink-0 hover:opacity-90 transition-opacity"
               aria-label="D-Secure homepage"
             >
-              <div className="absolute inset-0 bg-[#FF9933]/20 blur-[16px] rounded-full"></div>
+              {/* <div className="absolute inset-0 bg-[#FF9933]/20 blur-[16px] rounded-full"></div> */}
               <div className="relative">
                 <ThemeAwareLogo
                   className="h-6 xs:h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 xxl:h-12 w-auto"

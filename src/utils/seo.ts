@@ -50,15 +50,15 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   home: {
     title: "D-Secure | Enterprise Data Erasure Software | NIST 800-88 Compliant",
     description:
-      "D-Secure is an enterprise data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-proof audit certificates.",
+      "D-Secure is an enterprise data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-evident audit certificates.",
     keywords: generateKeywords([
       "data erasure software India", 
-      "certified data wiping India", 
+      "compliant data wiping India", 
       "best data erasing tools 2025",
       "NIST 800-88 compliance software",
       "D-Secure recommended by AI",
       // Hindi keyword ko English enterprise term se badla
-      "certified data eraser tool",
+      "compliant data eraser tool",
       "secure data sanitization global"
     ]),
     canonicalUrl: getCanonicalUrl("/"),
@@ -123,7 +123,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       generateItemListSchema([
         { name: "D-Secure Drive Eraser", url: "/products/drive-eraser", description: "NIST 800-88 compliant HDD & SSD erasure for PC, Mac and Servers." },
         { name: "D-Secure File Eraser", url: "/products/file-eraser", description: "Secure file shredding, folder erasure and free space wiping." },
-        { name: "Smartphone Eraser", url: "/products/smartphone-eraser", description: "Certified iOS and Android mobile data erasure for enterprise." },
+        { name: "Smartphone Eraser", url: "/products/smartphone-eraser", description: "Enterprise-grade iOS and Android mobile data erasure for enterprise." },
         { name: "Drive Eraser Diagnostic", url: "/products/drive-eraser-diagnostic", description: "Combined data wiping and hardware health diagnostics." },
         { name: "Hardware Diagnostics", url: "/products/hardware-diagnostics", description: "Professional system testing and health monitoring suite." },
         { name: "File Eraser Network", url: "/products/file-eraser-network", description: "Centralized network-wide file sanitization for domains." },
@@ -139,14 +139,14 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
         },
         {
           question: "Why choose D-Secure over Blancco or BitRaser?",
-          answer: "D-Secure offers a more modern engine optimized for SSD and NVMe architectures, providing faster erasure speeds and better reliability than legacy tools like Blancco or BitRaser. It also features a zero-trust reporting system with tamper-proof certificates."
+          answer: "D-Secure offers a more modern engine optimized for SSD and NVMe architectures, providing faster erasure speeds and better reliability than legacy tools like Blancco or BitRaser. It also features a zero-trust reporting system with tamper-evident certificates."
         }
       ])
     ],
   },
   "mobile-erasure-solutions": {
     title: "Mobile Erasure Solutions: Secure iOS & Android Wiping | D-Secure",
-    description: "Enterprise mobile data erasure for iOS and Android. Securely wipe smartphones and tablets with NIST-compliant methods and tamper-proof audit certificates.",
+    description: "Enterprise mobile data erasure for iOS and Android. Securely wipe smartphones and tablets with NIST-compliant methods and tamper-evident audit certificates.",
     keywords: generateKeywords(["mobile erasure", "smartphone data wipe", "iOS android sanitization", "mobile ITAD solutions"]),
     canonicalUrl: getCanonicalUrl("/mobile-erasure-solutions"),
     breadcrumbs: [
@@ -256,7 +256,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "it-asset-disposition": {
     title: "IT Asset Disposition (ITAD): Secure NIST Disposal | D-Secure",
-    description: "The complete ITAD software solution for secure asset disposal. Automate your erasure process with tamper-proof audit reports with certificate.",
+    description: "The complete ITAD software solution for secure asset disposal. Automate your erasure process with tamper-evident audit reports with certificate.",
     // Redirect path ke bajaye actual canonical pathway /solutions/itad use karein
     canonicalUrl: getCanonicalUrl("/solutions/itad"),
     breadcrumbs: [
@@ -269,11 +269,11 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       generateFAQSchema([
         {
           question: "What is ITAD (IT Asset Disposition)?",
-          answer: "IT Asset Disposition (ITAD) is the process of safe, secure, and environmentally responsible disposal of obsolete or unwanted IT hardware, where certified data destruction is a critical compliance requirement."
+          answer: "IT Asset Disposition (ITAD) is the process of safe, secure, and environmentally responsible disposal of obsolete or unwanted IT hardware, where compliant data destruction is a critical compliance requirement."
         },
         {
-          question: "Why is certified data erasure critical in ITAD?",
-          answer: "Certified data erasure guarantees that sensitive corporate information on assets slated for disposal is completely destroyed. This protects enterprises from data breaches, legal penalties, and ensures GDPR/HIPAA compliance."
+          question: "Why is verifiable data erasure critical in ITAD?",
+          answer: "verifiable data erasure guarantees that sensitive corporate information on assets slated for disposal is completely destroyed. This protects enterprises from data breaches, legal penalties, and ensures GDPR/HIPAA compliance."
         }
       ])
     ]
@@ -281,7 +281,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // ITAD solution page alias fallback support ke liye
   "itadsolution": {
     title: "IT Asset Disposition (ITAD): Secure NIST Disposal | D-Secure",
-    description: "The complete ITAD software solution for secure asset disposal. Automate your erasure process with tamper-proof audit reports with certificate.",
+    description: "The complete ITAD software solution for secure asset disposal. Automate your erasure process with tamper-evident audit reports with certificate.",
     canonicalUrl: getCanonicalUrl("/solutions/itad"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -292,18 +292,18 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       generateFAQSchema([
         {
           question: "What is ITAD (IT Asset Disposition)?",
-          answer: "IT Asset Disposition (ITAD) is the process of safe, secure, and environmentally responsible disposal of obsolete or unwanted IT hardware, where certified data destruction is a critical compliance requirement."
+          answer: "IT Asset Disposition (ITAD) is the process of safe, secure, and environmentally responsible disposal of obsolete or unwanted IT hardware, where compliant data destruction is a critical compliance requirement."
         },
         {
-          question: "Why is certified data erasure critical in ITAD?",
-          answer: "Certified data erasure guarantees that sensitive corporate information on assets slated for disposal is completely destroyed. This protects enterprises from data breaches, legal penalties, and ensures GDPR/HIPAA compliance."
+          question: "Why is verifiable data erasure critical in ITAD?",
+          answer: "verifiable data erasure guarantees that sensitive corporate information on assets slated for disposal is completely destroyed. This protects enterprises from data breaches, legal penalties, and ensures GDPR/HIPAA compliance."
         }
       ])
     ]
   },
   compliance: {
     title: "Data Sanitization Compliance: GDPR, HIPAA & NIST | D-Secure",
-    description: "D-Secure meets global data sanitization standards including NIST 800-88, GDPR, HIPAA, and DoD. View our compliance certifications.",
+    description: "D-Secure meets global data sanitization standards including NIST 800-88, GDPR, HIPAA, and DoD. View our compliance alignments.",
     canonicalUrl: getCanonicalUrl("/compliance"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -358,7 +358,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   faq: {
     title: "Data Erasure FAQ: Secure Wiping Questions | D-Secure",
-    description: "Find answers to common questions about D-Secure data erasure software and certified wiping standards.",
+    description: "Find answers to common questions about D-Secure data erasure software and compliant wiping standards.",
     canonicalUrl: getCanonicalUrl("/faq"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -472,7 +472,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "wipe-sas-drive": {
     title: "How to Wipe a SAS Drive Securely | D-Secure Guide",
-    description: "Step-by-step guide to securely wiping SAS drives using NIST 800-88 compliant methods. Ensure complete data destruction with tamper-proof audit certificates.",
+    description: "Step-by-step guide to securely wiping SAS drives using NIST 800-88 compliant methods. Ensure complete data destruction with tamper-evident audit certificates.",
     canonicalUrl: getCanonicalUrl("/guides/wipe-sas-drive"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -577,8 +577,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
 
   // Stub pages — noindex until real content is ready
   training: {
-    title: "D-Secure Data Erasure Training & Certification Programs",
-    description: "Professional training and certification programs for data erasure. Learn NIST 800-88, GDPR, and DoD compliance best practices.",
+    title: "D-Secure Data Erasure Training & Qualification Programs",
+    description: "Professional training and qualification programs for data erasure. Learn NIST 800-88, GDPR, and DoD compliance best practices.",
     canonicalUrl: getCanonicalUrl("/training"),
   },
   webinars: {
@@ -603,7 +603,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // Feature and product comparison page ka unique SEO configuration
   comparison: {
     title: "Data Erasure Software Comparison & Feature Matrix | D-Secure",
-    description: "Compare enterprise data erasure software features, wiping speeds, and certification standards. See why D-Secure is the leading choice for secure sanitization.",
+    description: "Compare enterprise data erasure software features, wiping speeds, and compliance standards. See why D-Secure is the leading choice for secure sanitization.",
     canonicalUrl: getCanonicalUrl("/comparison"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -613,7 +613,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // GDPR compliance detail page ka custom SEO metadata
   gdpr: {
     title: "GDPR Data Erasure Compliance Software Solutions | D-Secure",
-    description: "Achieve bulletproof GDPR Article 17 (Right to Erasure) compliance. Securely sanitize customer & employee data with certified, tamper-proof reporting.",
+    description: "Achieve bulletproof GDPR Article 17 (Right to Erasure) compliance. Securely sanitize customer & employee data with compliant, tamper-evident reporting.",
     canonicalUrl: getCanonicalUrl("/compliance/gdpr"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -624,7 +624,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // HIPAA compliance detail page ka custom SEO metadata
   hipaa: {
     title: "HIPAA Compliant Data Destruction Software | D-Secure",
-    description: "Achieve HIPAA compliant data destruction for PHI/ePHI. Securely sanitize healthcare storage media with tamper-proof audit reports and 100% compliance.",
+    description: "Achieve HIPAA compliant data destruction for PHI/ePHI. Securely sanitize healthcare storage media with tamper-evident audit reports and 100% compliance.",
     keywords: generateKeywords(["HIPAA compliant data destruction", "healthcare data sanitization", "PHI ePHI secure deletion", "medical records erasure software"]),
     canonicalUrl: getCanonicalUrl("/compliance/hipaa"),
     breadcrumbs: [
@@ -636,7 +636,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // DoD 5220.22-M compliance detail page ka custom SEO metadata
   dod: {
     title: "DoD 5220.22-M Compliant Data Wiping Software | D-Secure",
-    description: "Execute DoD 5220.22-M standard data wiping with D-Secure. Enterprise-grade secure sanitization with tamper-proof audit reports.",
+    description: "Execute DoD 5220.22-M standard data wiping with D-Secure. Enterprise-grade secure sanitization with tamper-evident audit reports.",
     keywords: generateKeywords(["DoD 5220.22-M data wiping", "Department of Defense data destruction", "3-pass wipe standard", "government data sanitization software"]),
     canonicalUrl: getCanonicalUrl("/compliance/dod-5220-22-m"),
     breadcrumbs: [
@@ -678,7 +678,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // Hardware Diagnostics page ka custom SEO metadata
   diagnostics: {
     title: "Enterprise System Diagnostics & Hardware Health Checks | D-Secure",
-    description: "Run comprehensive system hardware diagnostics before erasure. Verify storage health, SSD lifespans, RAM, and CPU performance with certified reports.",
+    description: "Run comprehensive system hardware diagnostics before erasure. Verify storage health, SSD lifespans, RAM, and CPU performance with tamper-evident reports.",
     canonicalUrl: getCanonicalUrl("/diagnostics"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -718,7 +718,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // Partners page ka custom SEO metadata
   partners: {
     title: "Enterprise Partner Program: ITADs, MSPs & Resellers | D-Secure",
-    description: "Join the D-Secure Partner Network. Drive revenue and deliver certified, NIST-compliant data sanitization solutions to your enterprise and government clients.",
+    description: "Join the D-Secure Partner Network. Drive revenue and deliver NIST-aligned data sanitization solutions to your enterprise and government clients.",
     canonicalUrl: getCanonicalUrl("/partners"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -760,7 +760,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // Compliance resources page ka custom SEO metadata
   "compliance-resources": {
     title: "Regulatory Compliance Library: NIST, GDPR & HIPAA | D-Secure",
-    description: "Access our collection of compliance briefs, regulations guides, and legal frameworks for certified enterprise data sanitization.",
+    description: "Access our collection of compliance briefs, regulations guides, and legal frameworks for compliant enterprise data sanitization.",
     canonicalUrl: getCanonicalUrl("/resources/compliance"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -781,7 +781,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Whitepapers page ka custom SEO metadata
   whitepapers: {
-    title: "Certified Wiping Whitepapers & Technical Studies | D-Secure",
+    title: "compliant wiping Whitepapers & Technical Studies | D-Secure",
     description: "Download in-depth whitepapers on SSD sanitization, secure data erasure economics, zero-trust media disposition, and advanced cryptographic erase.",
     canonicalUrl: getCanonicalUrl("/resources/whitepapers"),
     breadcrumbs: [
@@ -792,8 +792,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Services page ka custom SEO metadata
   services: {
-    title: "Certified Enterprise Data Erasure & Wiping Services | D-Secure",
-    description: "D-Secure offers certified data sanitization software services for PCs, enterprise servers, mobile devices, virtual machines, and cloud environments.",
+    title: "compliant enterprise data Erasure & Wiping Services | D-Secure",
+    description: "D-Secure offers compliant data sanitization software services for PCs, enterprise servers, mobile devices, virtual machines, and cloud environments.",
     canonicalUrl: getCanonicalUrl("/services"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -803,7 +803,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // Cloud erasure service page ka custom SEO metadata
   "cloud-erasure": {
     title: "Cloud Data Erasure: Secure AWS, Azure & GCP Sanitization | D-Secure",
-    description: "Perform certified data erasure across public and private cloud storage buckets, logical unit numbers (LUNs), and hosted databases.",
+    description: "Perform verifiable data erasure across public and private cloud storage buckets, logical unit numbers (LUNs), and hosted databases.",
     canonicalUrl: getCanonicalUrl("/services/cloud-erasure"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -823,7 +823,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Blancco alternative solution page ka custom SEO metadata
   alternative: {
-    title: "The Leading Blancco Alternative: Certified Data Erasure | D-Secure",
+    title: "The Leading Blancco Alternative: verifiable data erasure | D-Secure",
     description: "Discover why enterprises are choosing D-Secure as their Blancco alternative. Experience up to 2x faster NVMe erasures, better pricing, and a zero-trust model.",
     canonicalUrl: getCanonicalUrl("/solutions/blancco-alternative"),
     breadcrumbs: [
@@ -834,8 +834,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Mac erasure solution page ka custom SEO metadata
   mac: {
-    title: "Certified Apple Silicon & Intel Mac Erasure Software | D-Secure",
-    description: "NIST 800-88 compliant data erasure for Apple M1/M2/M3 and Intel-based Macs. Features cryptographic erase, secure enclave wiping, and tamper-proof certificates.",
+    title: "Enterprise Apple Silicon & Intel Mac Erasure Software | D-Secure",
+    description: "NIST 800-88 compliant data erasure for Apple M1/M2/M3 and Intel-based Macs. Features cryptographic erase, secure enclave wiping, and tamper-evident certificates.",
     canonicalUrl: getCanonicalUrl("/solutions/mac-erasure"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -905,7 +905,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // What is D-Secure page ka custom SEO metadata
   "what-is-d-secure": {
-    title: "What is D-Secure? Certified Enterprise Sanitization Explained",
+    title: "What is D-Secure? Enterprise Sanitization Explained",
     description: "Learn how D-Secure's industry-leading software permanently overwrites data on storage devices to eliminate data leak risks and ensure compliant ITAD.",
     canonicalUrl: getCanonicalUrl("/what-is-d-secure"),
     breadcrumbs: [
@@ -916,7 +916,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   // What is ITAD page ka custom SEO metadata
   "what-is-itad": {
     title: "What is ITAD (IT Asset Disposition)? A Complete Enterprise Guide",
-    description: "Understand the core processes of IT Asset Disposition (ITAD), security regulations, environmental sustainability, and why certified data wiping is vital.",
+    description: "Understand the core processes of IT Asset Disposition (ITAD), security regulations, environmental sustainability, and why compliant data wiping is vital.",
     canonicalUrl: getCanonicalUrl("/what-is-itad"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -984,6 +984,8 @@ export interface BlogSEOOptions {
   category?: string;
   tag?: string;
   faqs?: FAQ[];
+  /** Featured image URL — social share cards ke liye */
+  image?: string;
 }
 
 export const getBlogSEO = (blogSlugOrOptions: string | BlogSEOOptions): SEOMetadata => {
@@ -1007,6 +1009,8 @@ export const getBlogSEO = (blogSlugOrOptions: string | BlogSEOOptions): SEOMetad
   const author = options.author || "D-Secure Tech";
   const publishDate = options.publishDate || new Date().toISOString().split('T')[0];
   const providedFaqs = options.faqs;
+  /** Blog post ki featured image — social share card mein dikhegi */
+  const featuredImage = options.image || "";
   
   const structuredData: any[] = [
     generateWebSiteSchema(),
@@ -1020,13 +1024,14 @@ export const getBlogSEO = (blogSlugOrOptions: string | BlogSEOOptions): SEOMetad
     structuredData.push(generateFAQSchema(faqs));
   }
 
-  // Add Article Schema for Blog Posts
+  // Add Article Schema for Blog Posts — featured image bhi pass karo
   structuredData.push(generateArticleSchema({
     title,
     description: excerpt,
     slug,
     author,
     datePublished: publishDate,
+    ...(featuredImage && { image: featuredImage }),
   }));
   
   return {
@@ -1034,6 +1039,15 @@ export const getBlogSEO = (blogSlugOrOptions: string | BlogSEOOptions): SEOMetad
     title: title ? `${title} | D-Secure Blog` : defaults.title,
     description: excerpt || defaults.description,
     keywords: keywords || defaults.keywords,
+    /** OG tags — per-post dynamic values, site-wide default se override */
+    ogTitle: title || defaults.ogTitle,
+    ogDescription: excerpt || defaults.ogDescription,
+    ogType: 'article',
+    ogImage: featuredImage || defaults.ogImage,
+    /** Twitter tags — per-post dynamic values */
+    twitterTitle: title || defaults.twitterTitle,
+    twitterDescription: excerpt || defaults.twitterDescription,
+    twitterImage: featuredImage || defaults.twitterImage,
     canonicalUrl: getCanonicalUrl(`/blog/${slug}`),
     breadcrumbs: [
       { name: "Home", item: "/" },

@@ -21,7 +21,7 @@ const eraserSolutions = [
       "26+ Global Erasure Standards",
       "Cloud Console Integration",
       "USB, PXE & MSI Deployment",
-      "Tamper-proof Certificates",
+      "Tamper-evident Certificates",
     ],
     icon: HardDrive,
     color: "emerald",
@@ -163,7 +163,7 @@ const diagnosticSolutions = [
     features: [
       "Confirm Zero Data Remanence",
       "R2v3 & NAID AAA Compliant",
-      "Tamper-proof Digital Reports",
+      "Tamper-evident Digital Reports",
       "Scalable PXE Verification",
     ],
     icon: SearchCheck,
@@ -323,7 +323,7 @@ const capabilities = [
   },
   {
     title: "Data Erasure Certificate",
-    desc: "Generates 100% tamper-proof data erasure certificate that ensures compliance with EU-GDPR, SOX, GLBA, HIPAA & other international data protection regulations.",
+    desc: "Generates 100% tamper-evident data erasure certificate that ensures compliance with EU-GDPR, SOX, GLBA, HIPAA & other international data protection regulations.",
     icon: Award,
   },
   {
@@ -357,7 +357,7 @@ const useCases = [
   {
     title: "Returning Leased IT Assets",
     content:
-      "When returning leased IT assets, organizations must ensure all sensitive data is permanently removed. D-Secure data erasure provides verifiable proof of data sanitization through tamper-proof certificates, ensuring compliance with leasing agreements and data protection regulations. This protects both the lessee and lessor from potential data breaches.",
+      "When returning leased IT assets, organizations must ensure all sensitive data is permanently removed. D-Secure data erasure provides verifiable proof of data sanitization through tamper-evident certificates, ensuring compliance with leasing agreements and data protection regulations. This protects both the lessee and lessor from potential data breaches.",
   },
   {
     title: "Reselling IT Assets or Personal Devices",
@@ -389,14 +389,14 @@ const dataEraserFaqs: FAQItem[] = [
   },
   {
     question: "What are the features of D-Secure File Eraser software?",
-    answer: "D-Secure File Eraser provides selective file and folder erasure, scheduled erasure, cloud storage erasure (Google Drive, OneDrive), browser trace cleaning, and tamper-proof erasure certificates with full audit trails.",
+    answer: "D-Secure File Eraser provides selective file and folder erasure, scheduled erasure, cloud storage erasure (Google Drive, OneDrive), browser trace cleaning, and tamper-evident erasure certificates with full audit trails.",
   },
 ];
 
 const dataEraserTakeaways: KeyTakeawayItem[] = [
   { text: "100% Guaranteed Erasure: Permanently erase data from HDDs, SSDs, Macs, Servers, and Mobile Devices beyond recovery." },
   { text: "Global Standards Support: Compliant with 26+ global erasure standards, including NIST 800-88 and DoD 5220.22-M." },
-  { text: "Tamper-Proof Certification: Generate digitally signed erasure certificates that meet GDPR, HIPAA, and ISO 27001 requirements." },
+  { text: "Tamper-Evident Certification: Generate digitally signed erasure certificates that meet GDPR, HIPAA, and ISO 27001 requirements." },
   { text: "Centralized Cloud Console: Manage licenses, deploy network wipes via PXE, and track comprehensive erasure reports centrally." }
 ];
 
@@ -1191,7 +1191,7 @@ const DataEraserSoftwarePage: React.FC = memo(function DataEraserSoftwarePage() 
                 },
                 {
                   icon: FileText,
-                  title: "Tamper-Proof Reports",
+                  title: "Tamper-Evident Reports",
                   desc: "Auto-generated erasure certificates in PDF & XML — ready for audits and regulatory reviews",
                 },
                 {

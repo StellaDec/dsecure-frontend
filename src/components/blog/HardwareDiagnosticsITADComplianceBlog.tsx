@@ -64,7 +64,7 @@ const HardwareDiagnosticsITADComplianceBlog: React.FC = () => {
             <p className="text-[#5a6672] leading-loose text-lg">
               International standards mandate such validation. R2v3 requires
               testing and repair before reuse. The e-Stewards standard obligates
-              certified recyclers to verify electronic equipment prior to
+              compliant recyclers to verify electronic equipment prior to
               refurbishment. In Europe, WEEE directives also require functional
               testing to distinguish reusable electronics from waste.
               Diagnostics therefore forms the technical backbone of compliance,
@@ -152,10 +152,10 @@ const HardwareDiagnosticsITADComplianceBlog: React.FC = () => {
               R2v3 vs e-Stewards: Diagnostic Requirements Comparison
             </h2>
             <p className="text-[#5a6672] leading-loose text-lg mb-6">
-              Both R2v3 and e-Stewards certifications require functional testing, but
+              Both R2v3 and e-Stewards alignments require functional testing, but
               their specific requirements differ in scope, documentation, and enforcement.
               Understanding these differences is essential for ITAD companies pursuing
-              or maintaining dual certification.
+              or maintaining dual alignment.
             </p>
 
             <div className="overflow-hidden rounded-none border border-[#d0d5dc]">
@@ -302,7 +302,7 @@ const HardwareDiagnosticsITADComplianceBlog: React.FC = () => {
               purpose-built tools for high-volume <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link> environments. They
               support USB and PXE network boot, allow simultaneous testing of
               multiple systems, perform over 20 automated and manual checks, and
-              generate tamper-proof diagnostic reports for audit and
+              generate tamper-evident diagnostic reports for audit and
               compliance verification.
             </p>
             <p className="text-[#5a6672] leading-loose text-lg">
@@ -326,7 +326,7 @@ const HardwareDiagnosticsITADComplianceBlog: React.FC = () => {
               <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
                 <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">Reporting & Compliance</h3>
                 <ul className="space-y-2 text-[#0a2e1e]">
-                  <li>• Tamper-proof diagnostic certificates</li>
+                  <li>• Tamper-evident diagnostic certificates</li>
                   <li>• Per-component pass/fail grading</li>
                   <li>• Asset inventory with serial numbers</li>
                   <li>• Cloud dashboard for centralized management</li>
@@ -375,7 +375,7 @@ const HardwareDiagnosticsITADComplianceBlog: React.FC = () => {
             <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
               D-Secure Hardware Diagnostics enables high-volume ITAD operations to test,
               grade, and certify IT assets for R2v3, e-Stewards, and WEEE compliance
-              with tamper-proof reporting and scalable deployment.
+              with tamper-evident reporting and scalable deployment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

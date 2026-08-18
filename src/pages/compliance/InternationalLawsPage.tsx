@@ -264,8 +264,8 @@ function InternationalLawsContent() {
                   Ensure Global Compliance with D-Secure
                 </h2>
                 <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-                  D-Secure's certified data erasure software helps you comply with all major
-                  international data protection regulations. Get tamper-proof audit certificates
+                  D-Secure's Enterprise-grade data erasure software helps you comply with all major
+                  international data protection regulations. Get tamper-evident audit certificates
                   that stand up to regulatory scrutiny.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -303,7 +303,7 @@ function InternationalLawsContent() {
             {([
               {
                 icon: ShieldCheck,
-                title: 'Tamper-Proof Certificates',
+                title: 'Tamper-Evident Certificates',
                 description: 'Cryptographically signed erasure certificates that cannot be forged or altered.',
               },
               {

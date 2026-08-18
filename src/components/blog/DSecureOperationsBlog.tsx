@@ -52,7 +52,7 @@ const DSecureOperationsBlog: React.FC = () => {
                   <strong className="text-[#0a2e1e]">
                     fully operational and thriving
                   </strong>
-                  , providing secure, reliable, and certified data erasure and
+                  , providing secure, reliable, and Enterprise-grade data erasure and
                   diagnostic solutions to customers across the globe. Our
                   operations and commitment remain steadfast as we continue to
                   grow and expand our services.

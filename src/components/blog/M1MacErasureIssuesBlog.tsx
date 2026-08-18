@@ -297,7 +297,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                     Audit Certificates
                   </h3>
                   <p className="text-[#5a6672]">
-                    Generates tamper-proof certificates for compliance and audit
+                    Generates tamper-evident certificates for compliance and audit
                     requirements.
                   </p>
                 </div>
@@ -314,7 +314,7 @@ const M1MacErasureIssuesBlog: React.FC = () => {
                 Securely Erase Your M1 Mac with D-Secure
               </h2>
               <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Avoid common M1 Mac erasure issues with our certified solution.
+                Avoid common M1 Mac erasure issues with our compliant solution.
                 Get automatic chip detection, proper erasure methods, and
                 audit-ready certificates.
               </p>

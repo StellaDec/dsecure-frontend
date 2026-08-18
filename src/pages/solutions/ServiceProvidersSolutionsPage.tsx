@@ -276,7 +276,7 @@ const ServiceProvidersSolutionsPage: React.FC = () => {
                 },
                 {
                   title: "Cloud Admin Console",
-                  desc: "Global visibility of erasure records and centralized license management through a tamper-proof repository.",
+                  desc: "Global visibility of erasure records and centralized license management through a tamper-evident repository.",
                   icon: Cloud,
                 },
               ].map((item) => (
@@ -354,7 +354,7 @@ const ServiceProvidersSolutionsPage: React.FC = () => {
                 Regulatory & Audit Readiness
               </ThemeSectionHeading>
               <p className="text-lg max-w-2xl mx-auto text-emerald-100 mt-4">
-                Generate verifiable, tamper-proof audit trails for every sanitized asset to meet your client's compliance needs.
+                Generate verifiable, tamper-evident audit trails for every sanitized asset to meet your client's compliance needs.
               </p>
             </div>
 

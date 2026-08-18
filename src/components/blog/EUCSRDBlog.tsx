@@ -301,7 +301,7 @@ const EUCSRDBlog: React.FC = () => {
                     IT assets that need replacement or have reached end-of-life
                     can be donated after confidential data is permanently
                     removed. Organizations must invest in proper data disposal
-                    using certified erasure tools like D-Secure that generate
+                    using compliant erasure tools like D-Secure that generate
                     erasure reports and certificates for compliance with
                     EU-GDPR, UK-GDPR, and BDSG. The software also provides ESG
                     reports showing CO2 emissions saved through device reuse.

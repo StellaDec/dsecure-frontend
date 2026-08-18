@@ -179,7 +179,7 @@ const ReportsAndCertificatesPage: React.FC = () => {
                   Reports & <span className="text-[#0e7c66]">Certificates</span>
                 </h1>
                 <p className="text-xl text-[#5a6672] leading-relaxed mb-8">
-                  Explore our comprehensive, tamper-proof audit trails. Download sample reports and certificates for our data erasure, diagnostics, and verification solutions.
+                  Explore our comprehensive, tamper-evident audit trails. Download sample reports and certificates for our data erasure, diagnostics, and verification solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <ThemeButton onClick={() => { document.getElementById('reports')?.scrollIntoView({ behavior: 'smooth' }); }}>

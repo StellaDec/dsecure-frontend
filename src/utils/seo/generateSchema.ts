@@ -24,7 +24,7 @@ export function DSecureOrganizationSchema(): Record<string, unknown> {
       height: '60',
     },
     description:
-      'Leading provider of NIST 800-88 certified enterprise data erasure, sanitization, and lifecycle governance solutions trusted by 1000+ organizations worldwide.',
+      'Leading provider of NIST 800-88 Aligned enterprise data erasure, sanitization, and lifecycle governance solutions trusted by 1000+ organizations worldwide.',
     foundingDate: SEO_SITE_CONFIG.foundingYear,
     sameAs: [...SOCIAL_PROFILES],
     contactPoint: [
@@ -437,7 +437,7 @@ export function DSecureLocalBusinessSchema(): Record<string, unknown> {
     url: SEO_SITE_CONFIG.baseUrl,
     email: SEO_SITE_CONFIG.supportEmail,
     description:
-      'Enterprise data erasure and sanitization software company providing NIST 800-88 certified solutions globally.',
+      'Enterprise data erasure and sanitization software company providing NIST 800-88 Aligned solutions globally.',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IN',

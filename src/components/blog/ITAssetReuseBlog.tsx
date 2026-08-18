@@ -20,7 +20,7 @@ const ITAssetReuseBlog: React.FC = () => {
             slug: "it-asset-reuse",
             author: "D-Secure Editorial Team",
             publishDate: "June 1, 2025",
-            keywords: "IT asset reuse, refurbishment, circular economy, e-waste reduction, ITAD reuse, certified erasure, R2v3 compliance",
+            keywords: "IT asset reuse, refurbishment, circular economy, e-waste reduction, ITAD reuse, compliant erasure, R2v3 compliance",
             category: "Best Practices",
             tag: "Sustainability",
           })}
@@ -72,7 +72,7 @@ const ITAssetReuseBlog: React.FC = () => {
               <p className="text-[#5a6672] leading-loose text-lg">
                 However, reuse without proper <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">data sanitization</Link> creates
                 significant security risks. Every device being prepared for reuse
-                must undergo certified data erasure to ensure no sensitive
+                must undergo Enterprise-grade data erasure to ensure no sensitive
                 information — corporate data, customer PII, financial records, or
                 intellectual property — accompanies the device into its next
                 lifecycle.
@@ -139,7 +139,7 @@ const ITAssetReuseBlog: React.FC = () => {
                     WEEE Directive (EU), Extended Producer Responsibility (EPR)
                     regulations, and <Link to="/blog/scope-3-emissions-itad" className="text-[#0e7c66] hover:underline font-medium">Scope 3 emission reporting</Link> requirements
                     are driving organizations toward reuse-first strategies.
-                    Documented reuse with certified erasure demonstrates
+                    Documented reuse with compliant erasure demonstrates
                     environmental responsibility and regulatory compliance.
                   </p>
                 </div>
@@ -226,13 +226,13 @@ const ITAssetReuseBlog: React.FC = () => {
               </h2>
               <p className="leading-loose text-lg mb-6 text-white/90">
                 Secure <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">data erasure</Link> is
-                the prerequisite for IT asset reuse. D-Secure provides certified
+                the prerequisite for IT asset reuse. D-Secure provides compliant
                 data wiping that enables organizations to safely repurpose,
                 donate, or resell IT equipment with full compliance assurance.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 rounded-none p-6">
-                  <h3 className="font-bold text-lg mb-3">Certified Erasure</h3>
+                  <h3 className="font-bold text-lg mb-3">compliant erasure</h3>
                   <p className="text-white/90 leading-relaxed">
                     NIST 800-88, DoD 5220.22-M, and IEEE 2883 compliant erasure
                     ensures devices are safe for reuse without any data leakage
@@ -242,7 +242,7 @@ const ITAssetReuseBlog: React.FC = () => {
                 <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">Audit Certificates</h3>
                   <p className="text-white/90 leading-relaxed">
-                    Tamper-proof certificates with device serial, erasure method,
+                    Tamper-evident certificates with device serial, erasure method,
                     verification result, and timestamp prove data has been
                     securely and permanently erased for regulatory audits.
                   </p>
@@ -299,10 +299,10 @@ const ITAssetReuseBlog: React.FC = () => {
                   </p>
                 </div>
                 <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
-                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Step 3: Certified Data Erasure</h3>
+                  <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">Step 3: Enterprise-grade data erasure</h3>
                   <p className="text-[#0a2e1e] leading-relaxed">
                     Perform NIST 800-88 compliant erasure with verification on all
-                    reuse-eligible devices. Generate tamper-proof certificates
+                    reuse-eligible devices. Generate tamper-evident certificates
                     for each device. Physical destruction for devices that fail
                     diagnostics.
                   </p>
@@ -336,13 +336,13 @@ const ITAssetReuseBlog: React.FC = () => {
               <p className="text-[#5a6672] leading-loose text-lg">
                 IT asset reuse is a sustainable practice that benefits
                 organizations financially while reducing environmental impact.
-                By implementing certified data erasure solutions, organizations
+                By implementing Enterprise-grade data erasure solutions, organizations
                 can safely repurpose IT equipment, support circular economy
                 principles, and achieve their sustainability goals.
               </p>
               <p className="text-[#5a6672] leading-loose text-lg">
                 The key to successful reuse is combining hardware diagnostics
-                with certified data erasure — ensuring every device that enters
+                with Enterprise-grade data erasure — ensuring every device that enters
                 its second life is both functionally verified and data-clean.
                 D-Secure provides the complete platform for organizations and
                 ITADs to implement reuse programs at scale with full regulatory

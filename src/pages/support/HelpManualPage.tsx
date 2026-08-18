@@ -207,7 +207,7 @@ const HelpManualPage: React.FC = memo(() => {
           id: 52,
           title: "Regulatory Document Generation",
           description:
-            "Creating tamper-proof regulatory documents of data destruction",
+            "Creating tamper-evident regulatory documents of data destruction",
           url: "/support/manual/certificate-generation",
           pageCount: 8,
         },

@@ -64,7 +64,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
                 Another important difference is that storage in these MacBooks
                 is soldered directly onto the motherboard. This means the drive
                 cannot be physically removed and erased separately, making
-                certified, Mac-compatible data erasure software essential for
+                compliant, Mac-compatible data erasure software essential for
                 businesses.
               </p>
             </div>
@@ -216,7 +216,7 @@ const MacM1ErasureKnownIssues: React.FC = () => {
             </h2>
 
             <p className="text-[#5a6672] leading-relaxed mb-6">
-              D-Secure provides certified, Mac-compatible data erasure that
+              D-Secure provides compliant, Mac-compatible data erasure that
               aligns with modern Apple security requirements while delivering
               audit-ready documentation.
             </p>

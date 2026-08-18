@@ -180,7 +180,7 @@ const LocalLLMErasureBlog: React.FC = () => {
               
               <h3 className="text-2xl font-bold text-[#0a2e1e] mt-8 mb-4">5. Retain defensible audit evidence</h3>
               <p className="text-[#5a6672] leading-loose text-lg">
-                The erasure record should identify asset details (hostname, serial), the user scope, the AI applications found (Ollama, LM Studio), target locations, the method used, start/completion time, verification evidence, and final disposition. D-Secure File Eraser and Drive Eraser provide digitally signed, tamper-proof certificates that capture this information.
+                The erasure record should identify asset details (hostname, serial), the user scope, the AI applications found (Ollama, LM Studio), target locations, the method used, start/completion time, verification evidence, and final disposition. D-Secure File Eraser and Drive Eraser provide digitally signed, tamper-evident certificates that capture this information.
               </p>
             </div>
           </Reveal>

@@ -379,7 +379,7 @@ const IEEE2883ComplianceBlog: React.FC = () => {
                       </div>
                     </button>
                   </div>
-                  <p className="text-sm text-[#5a6672] mt-4 text-center italic">Tamper-proof reports proving successful erasure and device health.</p>
+                  <p className="text-sm text-[#5a6672] mt-4 text-center italic">Tamper-evident reports proving successful erasure and device health.</p>
                 </div>
               </div>
             </Reveal>
@@ -503,7 +503,7 @@ const IEEE2883ComplianceBlog: React.FC = () => {
               Compliant
             </h2>
             <p className="text-xl text-white/80 mb-12">
-              D-Secure provides enterprise tools to implement Clear and Purge methods across your entire IT infrastructure — with full audit trails and certified reports.
+              D-Secure provides enterprise tools to implement Clear and Purge methods across your entire IT infrastructure — with full audit trails and compliant reports.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

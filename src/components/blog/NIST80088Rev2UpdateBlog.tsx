@@ -4,66 +4,52 @@ import SEOHead from "@/components/SEOHead";
 import { getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
+import { FAQSection } from "../FAQSection";
 
 const NIST80088Rev2UpdateBlog: React.FC = () => {
+  // Markdown se sync kiya — 5 FAQs
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Is NIST 800-88 Rev. 1 still valid for compliance purposes?",
+        "name": "Is NIST 800-88 Rev. 1 still valid?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. As of September 26, 2025, Rev. 1 has been formally withdrawn and archived by NIST. Organizations citing it in policy documents or vendor requirements should update to Rev. 2 to remain aligned with the current federal standard."
+          "text": "No. It was officially withdrawn on September 26, 2025. Any policy, RFP, or audit checklist still pointing to it is working off an archived document."
         }
       },
       {
         "@type": "Question",
-        "name": "Do I need to re-wipe drives that were sanitized under Rev. 1 guidance?",
+        "name": "Does NIST 800-88 Rev. 2 still use Clear, Purge, and Destroy?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not necessarily. Rev. 2 doesn't invalidate past erasure events performed correctly under Rev. 1's Clear/Purge/Destroy framework. What needs updating is your ongoing policy and documentation process going forward, particularly around audit trails, degaussing language, and media-specific method selection."
+          "text": "Yes — those three categories are still there. What changed is how you get to them. Decisions now start with data confidentiality and reuse intent, and the technical execution detail moved to IEEE 2883-2022 instead of living inside Rev. 2's own tables."
         }
       },
       {
         "@type": "Question",
-        "name": "Does Rev. 2 require multiple overwrite passes for hard drives?",
+        "name": "Is one overwrite pass really enough under Rev. 2?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No — for modern magnetic HDDs, a single verified overwrite pass is now considered sufficient. Legacy multi-pass requirements (3-pass, 7-pass, Gutmann) are no longer necessary and add processing time without proportional security benefit on current hardware."
+          "text": "For modern magnetic HDDs, yes — a single, verified pass is considered sufficient. That doesn't carry over to flash media, which still needs purpose-built sanitization methods."
         }
       },
       {
         "@type": "Question",
-        "name": "Is degaussing still an acceptable sanitization method under Rev. 2?",
+        "name": "Does Rev. 2 cover cloud and virtual machine sanitization?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Degaussing alone is no longer treated as sufficient for a Destroy-level outcome on much of today's magnetic media under Rev. 2. Organizations relying on degaussing as their primary destruction method should review current guidance and consider pairing it with physical destruction where required."
+          "text": "Yes, explicitly. VM disk images, cloud storage buckets, and shared infrastructure are all in scope now, including KMS key deletion and getting a Certificate of Deletion from the cloud provider."
         }
       },
       {
         "@type": "Question",
-        "name": "How does NIST 800-88 Rev. 2 relate to IEEE 2883-2022?",
+        "name": "How does this connect to India's DPDP Act?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Rev. 2 removes its own device-specific technique tables and instead defers to IEEE 2883-2022 for the technical specifics of sanitization methods across different media types, while Rev. 2 itself focuses on the organizational program, risk-based decision flow, and documentation requirements."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Rev. 2 apply to cloud and virtual environments?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Unlike Rev. 1, which was largely written around physical devices, Rev. 2 explicitly extends its scope to virtual machine disk images, cloud storage buckets, and shared storage infrastructure, with expectations around KMS key deletion and provider-issued Certificates of Deletion."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does NIST 800-88 Rev. 2 relate to India's DPDP Act, 2023?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The DPDP Act mandates data erasure once its purpose is served but doesn't prescribe a technical method. NIST 800-88 Rev. 2, paired with IEEE 2883-2022, gives Indian data fiduciaries a defensible, auditable technical standard to satisfy that erasure obligation and document it for regulators or Data Principal grievances."
+          "text": "DPDP mandates erasure but stays silent on the technical method. Rev. 2's Clear/Purge/Destroy framework and audit-trail requirements give Indian data fiduciaries a defensible standard to point to when that obligation gets questioned."
         }
       }
     ]
@@ -73,8 +59,8 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
     <div className="min-h-screen bg-white">
       <SEOHead
         seo={getBlogSEO({
-          title: "NIST SP 800-88 Rev. 2 Explained (2026 Update)",
-          excerpt: "NIST SP 800-88 Rev. 1 was withdrawn in September 2025. This 2026 guide covers every Rev. 2 change — validation, cryptographic erase, degaussing, cloud sanitization, IEEE 2883-2022 — plus what it means for DPDP Act compliance in India.",
+          title: "NIST 800-88 Rev. 2, Explained: What Changed, What Got Withdrawn, and What to Do About It",
+          excerpt: "NIST 800-88 Rev. 2 replaced Rev. 1 in Sept 2025. See what changed, what's withdrawn, and how Indian enterprises stay DPDP-compliant in 2026.",
           slug: "nist-800-88-rev2-update-2026",
           author: "Prashant Saini",
           publishDate: "July 17, 2026",
@@ -93,10 +79,10 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
               Compliance / Standards - 2026 Update
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight max-w-5xl mx-auto">
-              NIST SP 800-88 Rev. 2 Explained: What Changed, What's Withdrawn, and How to Stay Compliant in 2026
+              NIST 800-88 Rev. 2, Explained: What Changed, What Got Withdrawn, and What to Do About It
             </h1>
             <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
-              If your organization's data disposal policy still references "NIST 800-88 Rev. 1," it's time for an update — that document no longer exists as an active standard.
+              <em>By Prashant Saini, D-Secure Technologies | Last updated: August 2026</em>
             </p>
           </div>
         </Reveal>
@@ -107,13 +93,13 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
         <Reveal>
           <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
             <p className="text-[#5a6672] leading-loose text-lg">
-              On September 26, 2025, the National Institute of Standards and Technology officially withdrawn Special Publication 800-88 Revision 1 and replaced it with <strong>Revision 2</strong>, marking the first major overhaul of the federal media sanitization guidelines in more than a decade.
+              I still see RFPs land on our desk citing "NIST 800-88 Rev. 1." Every time, I have to send the same reply: that document doesn't exist anymore. It was withdrawn.
             </p>
             <p className="text-[#5a6672] leading-loose text-lg">
-              For IT directors, compliance officers, and ITAD professionals — in the U.S., in India, and everywhere in between — this isn't a minor version bump. Rev. 2 changes how sanitization decisions are made, what counts as acceptable proof, and which technologies fall under its scope. It also quietly retires a technique many organizations still rely on. Anyone still building compliance programs, RFPs, or audit checklists around the 2014 guidance is now working from an archived document.
+              NIST pulled Rev. 1 on September 26, 2025 and replaced it with Rev. 2 — the first real overhaul of federal media sanitization guidance in over a decade. And it's not a cosmetic update. Rev. 2 changes how sanitization decisions get made, what counts as proof, and quietly retires a technique a lot of ITAD vendors still lean on out of habit.
             </p>
             <p className="text-[#5a6672] leading-loose text-lg">
-              This guide breaks down exactly what changed, why it changed, what NIST's own change log says, and what your organization needs to do about it — including how Indian enterprises operating under the DPDP Act 2023 should read this update.
+              This is my attempt to lay out what actually changed, why NIST made the call, and — since most of the people reading this are managing compliance out of India — what it means if you're operating under the DPDP Act.
             </p>
           </div>
         </Reveal>
@@ -124,171 +110,197 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Main Article Content */}
           <div className="lg:col-span-8">
-            <Reveal>
               <div className="prose prose-lg prose-slate max-w-none text-justify">
                 
-                <h2 className="text-2xl font-bold text-[#0a2e1e] mb-6">Why NIST Retired a Standard That Had Been Stable Since 2014</h2>
-                <p className="text-[#5a6672] leading-relaxed mb-6">
-                  Rev. 1 was written in a world that looked very different from today's IT environment. Magnetic hard drives were still the dominant storage medium, SSDs were a growing but secondary concern, and the idea of sanitizing a virtual machine snapshot or a cloud storage bucket barely registered as a use case. A decade later, the storage landscape has been rebuilt from the ground up:
-                </p>
-                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-8">
-                  <li><strong>Flash-based storage became dominant.</strong> SSDs and NVMe drives use wear-leveling and over-provisioned memory that standard overwrite passes cannot reliably reach.</li>
-                  <li><strong>Self-encrypting drives (SEDs) became common</strong>, introducing cryptographic erasure as a legitimate — and often faster — sanitization method, but only when key management can be verified.</li>
-                  <li><strong>Storage moved off physical premises.</strong> Cloud buckets, virtualized infrastructure, and shared storage arrays don't fit neatly into a framework built around "a drive you can physically hold."</li>
-                  <li><strong>Breach costs kept climbing</strong>, and industry research on redeployed devices still carrying live data has pushed regulators toward treating sanitization as an ongoing risk-management discipline, not a one-time technical task.</li>
-                </ul>
-                <p className="text-[#5a6672] leading-relaxed mb-12">
-                  NIST's own change notes for Rev. 2 confirm the shift directly: the document's focus has moved from prescribing hands-on sanitization steps to establishing an organization-wide <strong>media sanitization program</strong> — one that aligns with existing frameworks like SP 800-53 and ISO/IEC 27040, rather than standing alone.
-                </p>
+                  <div className="mb-12">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#0a2e1e] mb-6">
+                      Why bother retiring something that had been stable since 2014?
+                    </h2>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-6">
+                      Because the storage world Rev. 1 was written for barely exists anymore. In 2014, magnetic HDDs ran the show. SSDs were a side concern. Nobody was seriously asking how you sanitize a cloud bucket or a VM snapshot, because that wasn't really a use case yet.
+                    </p>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-4">
+                      A decade changed a lot of that:
+                    </p>
+                    <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-6 text-lg">
+                      <li><strong>Flash took over.</strong> SSDs and NVMe drives use wear-leveling and over-provisioned memory that a standard overwrite pass simply can't reach — not fully, anyway.</li>
+                      <li><strong>Self-encrypting drives went mainstream</strong>, which made cryptographic erasure a real, often faster option — but only if you can actually verify the key management behind it.</li>
+                      <li><strong>Storage stopped being a physical thing you could point at.</strong> Cloud buckets, virtualized infrastructure, shared arrays — none of that fits a framework built around "a drive you can hold in your hand."</li>
+                      <li><strong>Breach costs kept climbing</strong>, and enough redeployed devices turned up with live data on them that regulators started treating sanitization as ongoing risk management instead of a one-time task you tick off.</li>
+                    </ul>
+                    <p className="text-[#5a6672] leading-loose text-lg">
+                      NIST's own change notes say this outright: Rev. 2 is less a technical manual now and more a blueprint for running an organization-wide sanitization <em>program</em>, one that's supposed to sit alongside SP 800-53 and ISO/IEC 27040 rather than stand apart from them.
+                    </p>
+                  </div>
+                  
+                  <div className="mb-12">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#0a2e1e] mb-6">
+                      What Rev. 2 actually changes — the parts that matter
+                    </h2>
+                    
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">Sanitization stops being a task and becomes a program</h3>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-8">
+                      Under Rev. 1, most teams treated sanitization as an end-of-life checkbox — wipe, log, done. Rev. 2 wants a documented policy, someone named as accountable, and alignment with the rest of your security framework. Honestly, this tracks with what I've seen: sanitization failures are rarely about picking the wrong overwrite pattern. They're process gaps — nobody owned the step, or nobody checked it happened.
+                    </p>
 
-                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-8 pb-4 border-b border-[#d0d5dc]">What NIST 800-88 Rev. 2 Actually Changes</h2>
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">The decision now starts with data and reuse, not a device lookup table</h3>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-4">
+                      Rev. 1 gave you appendix tables — find your device, apply the matching technique. Rev. 2 throws those tables out and reorders the whole sequence around four questions instead:
+                    </p>
+                    <ol className="list-decimal pl-6 space-y-3 text-[#5a6672] mb-6 text-lg">
+                      <li><strong>Data confidentiality category</strong> — Low, Moderate, or High under FIPS 199, or your own internal classification</li>
+                      <li><strong>Information Storage Media (ISM) type</strong> — the new umbrella term for "electronic media," now covering cloud storage, virtual disks, and shared infrastructure explicitly</li>
+                      <li><strong>Reuse intent</strong> — is this device going back into service internally, leaving the organization, or being retired for good? That call now comes <em>before</em> you pick a method, not after</li>
+                      <li><strong>Encryption status</strong> — was the media encrypted from day one, with an implementation you can actually verify?</li>
+                    </ol>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-8 italic">
+                      Worth flagging clearly: Rev. 2 does not add more device-specific tables. It strips the old ones out entirely and points you to IEEE 2883-2022 for the technical how-to.
+                    </p>
 
-                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 mt-8">1. Sanitization Is Now a Program, Not a Task</h3>
-                <p className="text-[#5a6672] leading-relaxed mb-8">
-                  Under Rev. 1, most organizations treated media sanitization as a checkbox at the end of a device's life — wipe it, generate a report, move on. Rev. 2 restructures this entirely. Organizations are now expected to maintain a documented <strong>media sanitization policy</strong>, assign accountable personnel, and align that policy with broader security frameworks. This matters because most sanitization failures were never caused by choosing the wrong overwrite pattern. They were caused by process gaps. Rev. 2 targets that root cause directly.
-                </p>
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">Verification and validation are no longer the same thing</h3>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-8">
+                      Rev. 1 was loose about what "verified" meant. Rev. 2 splits it: <strong>verification</strong> checks that a technique ran correctly on one specific device. <strong>Validation</strong> is a program-level call — is this method demonstrably effective for an entire class of media, backed by lab testing, vendor documentation, or independent attestation? Different questions, different evidence.
+                    </p>
 
-                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 mt-8">2. The Decision Flow Now Starts With Confidentiality and Reuse — Not With Device Tables</h3>
-                <p className="text-[#5a6672] leading-relaxed mb-4">
-                  Rev. 1 asked a fairly simple question: which sanitization technique should be applied to this device, based on detailed device-by-device tables in its appendices? Rev. 2 removes those tables entirely and reframes the decision sequence around four factors:
-                </p>
-                <ol className="list-decimal pl-6 space-y-3 text-[#5a6672] mb-6">
-                  <li><strong>Data confidentiality category</strong> — based on FIPS 199 (Low, Moderate, High) or an organization's own classification policy.</li>
-                  <li><strong>Information Storage Media (ISM) type</strong> — Rev. 2 replaces the older term "electronic media" with the broader "Information Storage Media," a category that now explicitly includes cloud storage, virtual disks, and shared infrastructure alongside physical drives.</li>
-                  <li><strong>Reuse intent</strong> — will the device be redeployed internally, transferred externally, or retired permanently? This now comes <em>before</em> method selection, not after.</li>
-                  <li><strong>Encryption status</strong> — was the media encrypted from initial deployment with a verifiable, validated implementation?</li>
-                </ol>
-                <div className="bg-[#f4fbf8] rounded-none p-6 mb-8 border border-[#d0d5dc]">
-                  <p className="text-[#5a6672] leading-relaxed italic">
-                    <strong>An important correction worth flagging here:</strong> Rev. 2 does <em>not</em> add more granular device-specific tables. It does the opposite — it strips out the static, device-by-device technique tables that Rev. 1 relied on. In their place, Rev. 2 points organizations to <strong>IEEE 2883-2022</strong> for the actual technical, media-specific execution detail.
-                  </p>
-                </div>
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">Your audit trail can't be a spreadsheet anymore</h3>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-8">
+                      Every sanitization event now needs a structured, traceable digital record. The updated Certificate of Sanitization adds a documented validation status on top of the usual manufacturer, model, serial number, and method fields.
+                    </p>
 
-                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 mt-8">3. Verification and Validation Are Now Two Separate Processes</h3>
-                <p className="text-[#5a6672] leading-relaxed mb-4">
-                  This is one of the more technical but consequential changes. Rev. 1 treated "verifying" an erasure loosely. Rev. 2 formally separates:
-                </p>
-                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-8">
-                  <li><strong>Verification</strong> — confirming that the sanitization technique was executed correctly on the specific device.</li>
-                  <li><strong>Validation</strong> — a program-level determination that a sanitization <em>method</em> is demonstrably effective for an entire class of ISM, established through lab testing, vendor documentation, or independent attestation.</li>
-                </ul>
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">One overwrite pass is enough for modern HDDs</h3>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-8">
+                      This one's overdue. Researchers have argued for years that a single, well-executed, verified overwrite pass does the job on modern magnetic media. Rev. 2 finally says so in writing. Multiple passes mostly just add time and drive wear at this point — though flash media is a different story and still needs purpose-built methods.
+                    </p>
 
-                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 mt-8">4. Digital Audit Trails Are No Longer Optional</h3>
-                <p className="text-[#5a6672] leading-relaxed mb-8">
-                  Rev. 2 formalizes the expectation that every sanitization event produces a durable, traceable record — not a paper log or a spreadsheet entry, but a structured digital record that supports audit, accountability, and long-term traceability. The updated Certificate of Sanitization now also expects a documented validation status alongside the usual manufacturer, model, serial number, and method fields.
-                </p>
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">Degaussing got demoted</h3>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-8">
+                      Degaussing on its own no longer clears the bar for a Destroy-level outcome on a lot of modern magnetic media. If your vendor SOW still lists "degauss and dispose" as a standalone Destroy method, it's worth a second look before your next contract renewal.
+                    </p>
 
-                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 mt-8">5. Single-Pass Overwrite Is Now Considered Sufficient for Modern HDDs</h3>
-                <p className="text-[#5a6672] leading-relaxed mb-8">
-                  For years, some organizations continued specifying legacy multi-pass overwrite methods — largely out of habit. Rev. 2 confirms what data sanitization researchers have argued for years: for modern magnetic media, a single well-executed overwrite pass, properly verified, is sufficient. Multiple passes add processing time and drive wear without a meaningful security benefit on modern hardware. This doesn't apply uniformly, though — flash-based media still requires purpose-built methods.
-                </p>
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">Cryptographic erase finally gets real attention — with a warning attached</h3>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-8">
+                      Rev. 2 is one of the few places where it addresses cryptographic erase (CE) directly instead of punting to IEEE 2883. It pushes organizations toward FIPS 140-3 validated modules, ties CE's assurance explicitly to zeroizing the actual keys (not just deleting a data pointer), and adds a caveat I find genuinely interesting: for data with a long confidentiality shelf life, future computing advances — quantum included — could eventually undercut the assumptions CE relies on. Worth thinking about if you're erasing anything with a multi-decade sensitivity window.
+                    </p>
 
-                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 mt-8">6. Degaussing Is Downgraded — A Change Most Guides Are Missing</h3>
-                <p className="text-[#5a6672] leading-relaxed mb-8">
-                  Degaussing, long treated as an acceptable Purge or even Destroy technique for magnetic media, is explicitly walked back. Rev. 2 clarifies that degaussing on its own no longer meets the bar for a Destroy-level sanitization outcome for many modern magnetic media types. Organizations that still specify "degauss and dispose" should review that language.
-                </p>
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">Cloud, VM, and shared infrastructure are explicitly in scope now</h3>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-8">
+                      If you're decommissioning cloud services, Rev. 2 expects you to delete encryption keys through the provider's KMS, remove every associated file, bucket, volume, and snapshot — not just the main volume — get a Certificate of Deletion from the provider, and hold onto that evidence for a meaningful stretch.
+                    </p>
 
-                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 mt-8">7. Cryptographic Erase Gets Formal Treatment — and a Quantum-Era Caveat</h3>
-                <p className="text-[#5a6672] leading-relaxed mb-4">
-                  Cryptographic erase (CE) is one of the few techniques Rev. 2 addresses directly rather than deferring to IEEE 2883. The updated guidance:
-                </p>
-                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-8">
-                  <li>Recommends organizations move their encryption posture toward <strong>FIPS 140-3</strong> validated modules.</li>
-                  <li>Explicitly ties CE's assurance to <strong>zeroization</strong> of the encryption keys themselves, not just deletion of the data pointer.</li>
-                  <li>Adds a forward-looking caution: for data with a long confidentiality lifespan, future advances in computing — including quantum computing — could eventually weaken the cryptographic assumptions CE relies on.</li>
-                </ul>
+                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-4">Method selection now defers to IEEE 2883-2022</h3>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-4">
+                      Instead of prescribing every technique itself, Rev. 2 hands technical execution off to IEEE 2883-2022. You end up with a two-layer system: NIST 800-88 Rev. 2 for program structure and risk classification, IEEE 2883-2022 for the actual media-specific how-to.
+                    </p>
+                    <p className="text-[#5a6672] leading-loose text-lg mb-12">
+                      <Link to="/blog/ieee-2883-2022-data-sanitization" className="text-[#0e7c66] hover:underline font-medium">Read more: IEEE 2883-2022 explained</Link>
+                    </p>
+                  </div>
 
-                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 mt-8">8. Expanded Scope: Cloud, Virtual, and Shared Infrastructure</h3>
-                <p className="text-[#5a6672] leading-relaxed mb-4">
-                  Rev. 2 explicitly extends coverage to virtual machine disk images, cloud storage buckets, and shared storage infrastructure. Organizations decommissioning cloud services are now expected to:
-                </p>
-                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-8">
-                  <li>Delete encryption keys through the provider's Key Management System (KMS).</li>
-                  <li>Remove all associated files, storage buckets, volumes, and snapshots — not just the primary volume.</li>
-                  <li>Obtain a Certificate of Deletion from the cloud service provider as documentary evidence.</li>
-                  <li>Retain that evidence for audit purposes for a meaningful retention period.</li>
-                </ul>
-
-                <h3 className="text-xl font-bold text-[#0a2e1e] mb-4 mt-8">9. Method Selection Now Points to IEEE 2883-2022</h3>
-                <p className="text-[#5a6672] leading-relaxed mb-12">
-                  Rather than prescribing every sanitization method itself, Rev. 2 defers to <strong>IEEE 2883-2022</strong> — a more technically detailed standard focused specifically on sanitization methods for modern storage technologies. This creates a two-layer compliance model: NIST 800-88 Rev. 2 for program structure and risk classification; IEEE 2883-2022 for the technical execution details.
-                </p>
-
-                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">Rev. 1 vs. Rev. 2 — Quick Comparison</h2>
+                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">Rev. 1 vs. Rev. 2, side by side</h2>
                 <div className="overflow-x-auto mb-12">
                   <table className="w-full border-collapse bg-white rounded-none shadow-none border border-[#d0d5dc] text-left">
                     <thead>
                       <tr className="bg-[#0e7c66] text-white">
-                        <th className="px-6 py-4">Area</th>
-                        <th className="px-6 py-4">Rev. 1 (2014, Withdrawn)</th>
-                        <th className="px-6 py-4 text-[#0e7c66]">Rev. 2 (2025, Current)</th>
+                        <th className="px-6 py-4 font-semibold">Area</th>
+                        <th className="px-6 py-4 font-semibold">Rev. 1 (2014, withdrawn)</th>
+                        <th className="px-6 py-4 font-semibold">Rev. 2 (2025, current)</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-200">
                       <tr>
                         <td className="px-6 py-4 font-semibold text-[#0a2e1e]">Framing</td>
                         <td className="px-6 py-4 text-[#5a6672]">One-time technical task</td>
-                        <td className="px-6 py-4 text-[#0e7c66] font-medium">Ongoing organizational program</td>
+                        <td className="px-6 py-4 text-[#0a2e1e] font-medium">Ongoing organizational program</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4 font-semibold text-[#0a2e1e]">Decision starting point</td>
-                        <td className="px-6 py-4 text-[#5a6672]">Choose a wiping technique from device tables</td>
-                        <td className="px-6 py-4 text-[#0e7c66] font-medium">Classify data confidentiality and reuse intent first</td>
+                        <td className="px-6 py-4 text-[#5a6672]">Pick a technique from device tables</td>
+                        <td className="px-6 py-4 text-[#0a2e1e] font-medium">Classify confidentiality and reuse intent first</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4 font-semibold text-[#0a2e1e]">Device-specific tables</td>
                         <td className="px-6 py-4 text-[#5a6672]">Included directly, by device type</td>
-                        <td className="px-6 py-4 text-[#0e7c66] font-medium">Removed — deferred to IEEE 2883-2022 to avoid obsolescence</td>
+                        <td className="px-6 py-4 text-[#0a2e1e] font-medium">Removed — deferred to IEEE 2883-2022</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4 font-semibold text-[#0a2e1e]">Verification</td>
                         <td className="px-6 py-4 text-[#5a6672]">Loosely defined</td>
-                        <td className="px-6 py-4 text-[#0e7c66] font-medium">Formally separated from Validation</td>
+                        <td className="px-6 py-4 text-[#0a2e1e] font-medium">Formally separated from validation</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4 font-semibold text-[#0a2e1e]">Cloud / VM / shared storage</td>
                         <td className="px-6 py-4 text-[#5a6672]">Not addressed</td>
-                        <td className="px-6 py-4 text-[#0e7c66] font-medium">Explicitly in scope, with KMS + Certificate of Deletion expectations</td>
+                        <td className="px-6 py-4 text-[#0a2e1e] font-medium">Explicitly in scope, with KMS + Certificate of Deletion</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
 
-                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">What This Means for Indian Enterprises Under the DPDP Act</h2>
-                <p className="text-[#5a6672] leading-relaxed mb-6">
-                  The <strong>Digital Personal Data Protection (DPDP) Act, 2023</strong> requires that personal data be erased once its stated purpose has been served, once consent is withdrawn, or once a specified retention period lapses — whichever comes first. The Act doesn't prescribe a specific technical sanitization method, which is precisely the gap NIST 800-88 Rev. 2 is well-suited to fill for Indian organizations.
+                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">What this means if you're working under India's DPDP Act</h2>
+                <p className="text-[#5a6672] leading-loose text-lg mb-6">
+                  The DPDP Act, 2023 says personal data has to be erased once its purpose is served, consent is withdrawn, or the retention window closes — whichever hits first. What it doesn't say is <em>how</em>. That's the gap Rev. 2 fills for Indian organizations, and it's a bigger deal than it sounds:
                 </p>
-                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-12">
-                  <li><strong>DPDP's "erasure" obligation</strong> needs a defensible technical standard behind it to survive an audit or a Data Principal grievance. NIST 800-88 Rev. 2's Clear/Purge/Destroy framework is exactly that evidentiary backbone.</li>
-                  <li><strong>DPDP's data fiduciary accountability model</strong> mirrors Rev. 2's shift toward a documented, owned, auditable <em>program</em> rather than an ad hoc technical action.</li>
-                  <li><strong>Cross-border data processing</strong> is common for Indian ITAD operators, GCCs, and IT services firms. Aligning sanitization practice with NIST 800-88 Rev. 2 and IEEE 2883-2022 gives these organizations one technical standard that simultaneously satisfies contractual obligations under GDPR, HIPAA, PCI DSS 4.0 and supports DPDP documentation.</li>
-                  <li><strong>Sector regulators in India</strong> increasingly reference international sanitization standards as evidence of "reasonable security practices" under Indian law. A Rev. 2-aligned program strengthens that position directly.</li>
+                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-6 text-lg">
+                  <li>An erasure obligation without a defensible technical standard behind it doesn't hold up well against a Data Principal grievance or an audit. Rev. 2's Clear/Purge/Destroy framework gives you that backbone.</li>
+                  <li>DPDP's whole accountability model — the data fiduciary owns the outcome — mirrors exactly what Rev. 2 is pushing: a documented, owned program instead of an ad hoc action taken once and forgotten.</li>
+                  <li>A lot of Indian ITAD operators, GCCs, and IT services firms handle cross-border data. Aligning with Rev. 2 and IEEE 2883-2022 gives them one technical standard that quietly satisfies GDPR, HIPAA, and PCI DSS 4.0 obligations at the same time as DPDP documentation — one workflow instead of five.</li>
+                  <li>Indian regulators increasingly point to international sanitization standards as evidence of "reasonable security practices." A Rev. 2-aligned program strengthens that argument directly, not just on paper.</li>
                 </ul>
-
-                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">Is Your Organization Rev. 2 Ready? A Quick Self-Check</h2>
-                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-12">
-                  <li>Does your written sanitization policy still cite "NIST 800-88 Rev. 1"? If yes, it needs updating.</li>
-                  <li>Does your vendor contract or SOW still specify "degauss" as a standalone Destroy method for magnetic media?</li>
-                  <li>Can you produce a <em>digital</em>, tamper-evident audit trail for every sanitization event, including a documented validation status?</li>
-                  <li>Does your process distinguish between verifying a specific erasure and validating that the chosen method fits the media type?</li>
-                  <li>If you rely on cryptographic erase, can you demonstrate FIPS 140-3-aligned key management and key zeroization?</li>
-                  <li>Are cloud storage, virtual machine images, and shared infrastructure included in your sanitization scope?</li>
-                </ul>
-
-                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">How D-Secure Supports NIST 800-88 Rev. 2</h2>
-                <p className="text-[#5a6672] leading-relaxed mb-6">
-                  D-Secure's erasure architecture was built around the same principles Rev. 2 formalizes — sanitization as a documented, verifiable, ongoing program rather than a one-time technical action.
+                <p className="text-[#5a6672] leading-loose text-lg mb-12">
+                  <Link to="/blog/dpdp-compliance" className="text-[#0e7c66] hover:underline font-medium">Read more: DPDP Act 2023 data erasure requirements</Link>
                 </p>
-                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-12">
-                  <li><strong>Clear and Purge methods mapped to IEEE 2883-2022</strong> across HDDs, SATA SSDs, NVMe drives, and RAID arrays.</li>
-                  <li><strong>Cryptographic erase support built around key zeroization</strong> and validated encryption modules, directly addressing Rev. 2's tightened CE expectations.</li>
-                  <li><strong>Digitally signed, tamper-proof audit trails</strong> in both PDF and XML — generated automatically for every erasure event, with verification and validation status recorded separately.</li>
-                  <li><strong>Coverage beyond physical drives</strong>, including file-and-folder erasure across cloud-synced storage, virtual machine sanitization, and Certificate-of-Deletion-style documentation for logical storage.</li>
-                  <li><strong>REST API, ServiceNow, and ERP integrations</strong> that let sanitization operate as part of a continuous IT asset lifecycle program.</li>
-                  <li><strong>DPDP Act 2023-mapped compliance documentation</strong>, giving Indian enterprises a single workflow that satisfies both domestic erasure obligations and international audit requirements.</li>
+
+                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">A quick gut-check: are you actually Rev. 2 ready?</h2>
+                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-6 text-lg">
+                  <li>Does your written policy still cite "NIST 800-88 Rev. 1"?</li>
+                  <li>Does a vendor contract or SOW still list "degauss" as a standalone Destroy method for magnetic media?</li>
+                  <li>Can you produce a digital, tamper-evident audit trail for every sanitization event — including a documented validation status?</li>
+                  <li>Does your process actually distinguish verifying an erasure from validating that the method fits the media type, or are you using the words interchangeably?</li>
+                  <li>If you rely on cryptographic erase, can you show FIPS 140-3-aligned key management and key zeroization, or is that assumed?</li>
+                  <li>Is cloud storage, VM images, and shared infrastructure part of your sanitization scope at all?</li>
                 </ul>
+                <p className="text-[#5a6672] leading-loose text-lg mb-12">
+                  If you hesitated on more than one of these, that's a gap worth closing before your next audit — not after.
+                </p>
+
+                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">Where D-Secure fits into this</h2>
+                <p className="text-[#5a6672] leading-loose text-lg mb-6">
+                  We built our erasure architecture around the same idea Rev. 2 formalizes: sanitization as something documented and verifiable, not a one-time action you take and forget.
+                </p>
+                <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-6 text-lg">
+                  <li>Clear and Purge methods mapped to IEEE 2883-2022 across HDDs, SATA SSDs, NVMe drives, and RAID arrays</li>
+                  <li>Cryptographic erase support built around key zeroization and validated encryption modules — directly addressing Rev. 2's tightened CE expectations</li>
+                  <li>Digitally signed, tamper-evident audit trails in both PDF and XML, generated automatically per erasure event, with verification and validation status logged separately</li>
+                  <li>Coverage beyond physical drives: file-and-folder erasure across cloud-synced storage, VM sanitization, and Certificate-of-Deletion-style documentation for logical storage</li>
+                  <li>REST API, ServiceNow, and ERP integrations so sanitization runs as part of a continuous IT asset lifecycle rather than a separate manual step</li>
+                  <li>DPDP Act 2023-mapped documentation, so Indian enterprises get one workflow that satisfies domestic erasure obligations and international audit requirements at once</li>
+                </ul>
+                <p className="text-[#5a6672] leading-loose text-lg mb-12">
+                  <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Read more: D-Secure Drive Eraser overview</Link>
+                </p>
+
+                <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">Where this leaves you</h2>
+                <p className="text-[#5a6672] leading-loose text-lg mb-6">
+                  Rev. 2 isn't a footnote update you can skim past. It reframes sanitization as a governed program, splits verification from validation, finally gives cryptographic erase proper treatment, and pulls cloud and virtual infrastructure into scope. If your policy still reads like it's 2014, you're technically out of step with the current guideline — and for Indian enterprises under DPDP, Rev. 2 is fast becoming the evidentiary backbone regulators expect to see when they ask.
+                </p>
+                <p className="text-[#5a6672] leading-loose text-lg mb-12">
+                  <strong>Want to check where your sanitization program actually stands against Rev. 2?</strong> <Link to="/contact" className="text-[#0e7c66] hover:underline font-semibold">Talk to D-Secure's team</Link> — we'll walk through it with you.
+                </p>
+                
+                <hr className="border-[#d0d5dc] mb-8" />
+                <p className="text-[#5a6672] leading-relaxed italic mb-8">
+                  <strong>About the author:</strong> Prashant Saini writes on data sanitization compliance and ITAD standards for D-Secure Technologies, covering NIST 800-88, IEEE 2883, and global data privacy regulation.
+                </p>
+                
+                <div className="bg-slate-50 p-6 rounded-lg">
+                  <h4 className="text-sm font-bold text-slate-800 mb-4 uppercase tracking-wider">Related reading:</h4>
+                  <ul className="text-sm space-y-3">
+                    <li><Link to="/blog/ieee-2883-2022-data-sanitization" className="text-[#0e7c66] hover:underline font-medium">IEEE 2883-2022 — the technical standard behind Rev. 2</Link></li>
+                    <li><Link to="/blog/cryptographic-erase" className="text-[#0e7c66] hover:underline font-medium">Cryptographic erase vs. overwrite — which method fits your drives</Link></li>
+                    <li><Link to="/blog/dpdp-compliance" className="text-[#0e7c66] hover:underline font-medium">DPDP Act 2023 compliance checklist for ITAD and data erasure</Link></li>
+                  </ul>
+                </div>
               </div>
-            </Reveal>
           </div>
 
           {/* Sidebar */}
@@ -301,7 +313,7 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
                   Use our free NIST 800-88 Compliance Checker to evaluate your data erasure policy against Rev. 2 standards.
                 </p>
                 <Link
-                  to="/tools/nist-800-88-checker"
+                  to="/tools/nist-800-88-compliance-checker"
                   className="block w-full py-3 px-4 bg-[#0e7c66] text-white text-center rounded-none font-semibold hover:bg-[#0e7c66] transition-colors"
                 >
                   Start Assessment
@@ -310,12 +322,12 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
 
               <div className="bg-[#0e7c66] rounded-none p-8 text-white">
                 <h3 className="text-xl font-bold mb-6">Request Consultation</h3>
-                <p className="text-[#5a6672] text-sm mb-6">
+                <p className="text-white/90 text-sm mb-6">
                   Need help evaluating whether your current sanitization workflow aligns with NIST 800-88 Rev. 2? Talk to our compliance experts.
                 </p>
                 <Link
                   to="/contact"
-                  className="block w-full py-3 px-4 bg-[#0e7c66] text-white text-center rounded-none font-semibold hover:bg-[#0e7c66] transition-colors"
+                  className="block w-full py-3 px-4 bg-white text-[#0e7c66] text-center rounded-none font-semibold hover:bg-gray-100 transition-colors"
                 >
                   Contact Experts
                 </Link>
@@ -326,28 +338,20 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      {/* <section className="bg-white py-16">
+      <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <Reveal>
-            <h2 className="text-3xl font-bold text-[#0a2e1e] mb-10 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {faqSchema.mainEntity.map((faq, idx) => (
-                <div key={idx} className="bg-[#f4fbf8] rounded-none p-6 border border-[#d0d5dc]">
-                  <h3 className="text-lg font-bold text-[#0a2e1e] mb-3">{faq.name}</h3>
-                  <p className="text-[#5a6672] leading-relaxed">{faq.acceptedAnswer.text}</p>
-                </div>
-              ))}
-            </div>
+            <FAQSection faqs={faqSchema.mainEntity.map(faq => ({ question: faq.name, answer: faq.acceptedAnswer.text }))} title="Frequently Asked Questions" />
           </Reveal>
         </div>
-      </section> */}
+      </section>
 
       <BlogFooterStandard 
         blogId="nist-800-88-rev2-update-2026" 
-        blogTitle="NIST SP 800-88 Rev. 2 Explained (2026 Update)" 
+        blogTitle="NIST 800-88 Rev. 2, Explained: What Changed, What Got Withdrawn, and What to Do About It" 
         category="Compliance / Standards" 
         tag="Standards" 
-        faqs={faqSchema.mainEntity.map(faq => ({ question: faq.name, answer: faq.acceptedAnswer.text }))}
+        faqs={[]}
       />
     </div>
   );

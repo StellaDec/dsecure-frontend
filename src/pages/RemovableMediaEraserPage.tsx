@@ -47,7 +47,7 @@ const removableMediaTakeaways: KeyTakeawayItem[] = [
   },
   {
     title: "Regulatory Compliance",
-    description: "Generates tamper-proof certificates compliant with NIST 800-88 and ISO 27001.",
+    description: "Generates tamper-evident certificates compliant with NIST 800-88 and ISO 27001.",
   }
 ];
 
@@ -213,7 +213,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
 
                 <Reveal delayMs={200}>
                   <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-6 max-w-2xl mx-auto lg:mx-0">
-                    Permanently destroy data from removable storage including USB drives, SD cards, and CompactFlash memory with tamper-proof reporting and global compliance.
+                    Permanently destroy data from removable storage including USB drives, SD cards, and CompactFlash memory with tamper-evident reporting and global compliance.
                   </p>
                 </Reveal>
 
@@ -373,7 +373,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                   Another critical hurdle in flash sanitization is the presence of "bad blocks" and over-provisioned space. NAND flash often contains cells that are marked as unusable by the controller but may still contain readable data from previous write operations. Traditional overwriting methods frequently fail to reach these hidden areas. D-Secure's Removable Media Eraser is engineered to address these complexities by utilizing hardware-level commands such as Block Erase and Cryptographic Purge. These methods ensure that every physical cell, including hidden and retired blocks, is properly sanitized according to NIST 800-88 Revision 1 standards.
                 </p>
                 <p>
-                  Furthermore, the diversity of flash controllers in the market makes it difficult to implement a one-size-fits-all solution. Different manufacturers use proprietary wear-leveling and garbage collection algorithms that can interfere with standard erasure processes. Our solution is rigorously tested across thousands of removable media variants to guarantee that the erasure commands are executed correctly by the hardware controller. By providing a tamper-proof certificate of erasure, we give organizations the confidence that their portable storage devices are truly data-free before they are reassigned or disposed of.
+                  Furthermore, the diversity of flash controllers in the market makes it difficult to implement a one-size-fits-all solution. Different manufacturers use proprietary wear-leveling and garbage collection algorithms that can interfere with standard erasure processes. Our solution is rigorously tested across thousands of removable media variants to guarantee that the erasure commands are executed correctly by the hardware controller. By providing a tamper-evident certificate of erasure, we give organizations the confidence that their portable storage devices are truly data-free before they are reassigned or disposed of.
                 </p>
               </div>
             </div>
@@ -443,7 +443,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                          <ul className="space-y-4">
                             {[
                               "ISO & NIST standards support",
-                              "100% Tamper-proof reporting",
+                              "100% Tamper-evident reporting",
                               "Digitally signed erasure certificates",
                               "Prevention of data loss and fraud",
                               "Customized consolidated reports",
@@ -492,12 +492,12 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                      <Reveal>
                         <h2 className="text-2xl font-bold text-slate-900 mb-4">Bulletproof Audit Trail</h2>
                         <p className="text-slate-600 mb-8 leading-relaxed">
-                           Every erasure process generates a digitally signed, tamper-proof certificate of erasure. This detailed report includes hardware asset identifiers, erasure standard used, and verification result, providing 100% proof of compliance for audits.
+                           Every erasure process generates a digitally signed, tamper-evident certificate of erasure. This detailed report includes hardware asset identifiers, erasure standard used, and verification result, providing 100% proof of compliance for audits.
                         </p>
                         <div className="grid grid-cols-2 gap-4">
                            <div className="flex items-center gap-2 p-3 bg-white rounded-none border border-emerald-200">
                               <CheckCircle className="w-6 h-6 text-emerald-600" />
-                              <span className="text-sm font-bold text-slate-800">Tamper-Proof PDF</span>
+                              <span className="text-sm font-bold text-slate-800">Tamper-Evident PDF</span>
                            </div>
                            <div className="flex items-center gap-2 p-3 bg-white rounded-none border border-emerald-200">
                               <CheckCircle className="w-6 h-6 text-emerald-600" />

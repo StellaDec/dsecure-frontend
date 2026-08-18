@@ -77,7 +77,7 @@ const AIDataCenterDecommissioningBlog: React.FC = () => {
                     Cryptographic Erase (Crypto Erase)
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
-                    The most effective method for sanitizing Self-Encrypting Drives (SEDs) common in enterprise AI servers is a Cryptographic Erase. This process securely deletes the Media Encryption Key (MEK), instantly rendering all data on the drive cryptographically inaccessible. When executed via certified <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">data erasure software</Link>, this method complies with NIST SP 800-88 Purge requirements and preserves the NVMe drive for resale or repurposing.
+                    The most effective method for sanitizing Self-Encrypting Drives (SEDs) common in enterprise AI servers is a Cryptographic Erase. This process securely deletes the Media Encryption Key (MEK), instantly rendering all data on the drive cryptographically inaccessible. When executed via compliant <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">data erasure software</Link>, this method complies with NIST SP 800-88 Purge requirements and preserves the NVMe drive for resale or repurposing.
                   </p>
                 </div>
 
@@ -141,10 +141,10 @@ const AIDataCenterDecommissioningBlog: React.FC = () => {
                 Streamlining Decommissioning with D-Secure
               </h2>
               <p className="text-[#5a6672] leading-loose text-lg">
-                D-Secure Drive Eraser is engineered to meet the extreme demands of AI data center environments. Utilizing PXE-based network boot capabilities, D-Secure can simultaneously execute certified NVMe cryptographic erasures across hundreds of rack-mounted GPU servers without requiring drives to be removed.
+                D-Secure Drive Eraser is engineered to meet the extreme demands of AI data center environments. Utilizing PXE-based network boot capabilities, D-Secure can simultaneously execute compliant NVMe cryptographic erasures across hundreds of rack-mounted GPU servers without requiring drives to be removed.
               </p>
               <p className="text-[#5a6672] leading-loose text-lg">
-                Upon completion, the software automatically generates a digitally signed, tamper-proof Certificate of Erasure for every drive, mapping serial numbers to specific racks and servers. This provides an unbroken chain of custody and guarantees full audit readiness for compliance officers.
+                Upon completion, the software automatically generates a digitally signed, tamper-evident Certificate of Erasure for every drive, mapping serial numbers to specific racks and servers. This provides an unbroken chain of custody and guarantees full audit readiness for compliance officers.
               </p>
             </div>
           </Reveal>
@@ -163,7 +163,7 @@ const AIDataCenterDecommissioningBlog: React.FC = () => {
                 Secure Your AI Infrastructure Today
               </h2>
               <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Deploy NIST-certified data erasure software designed for high-density NVMe and GPU server environments.
+                Deploy NIST-aligned data erasure software designed for high-density NVMe and GPU server environments.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

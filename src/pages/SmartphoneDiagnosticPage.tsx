@@ -222,7 +222,7 @@ const SmartphoneDiagnosticPage = memo(() => {
     },
     {
       title: "Audit Trail Reports",
-      desc: "Tamper-proof PDF/CSV reports with device grading, IMEI metadata, and verifiable hardware health status.",
+      desc: "Tamper-evident PDF/CSV reports with device grading, IMEI metadata, and verifiable hardware health status.",
       icon: <FileText className="w-6 h-6 text-emerald-600" />,
       color: "from-purple-500 to-pink-600",
     },
@@ -748,7 +748,7 @@ const SmartphoneDiagnosticPage = memo(() => {
                             Processing
                           </p>
                           <p className="text-xs text-slate-900 font-bold">
-                            Tamper-Proof PDF
+                            Tamper-Evident PDF
                           </p>
                         </div>
                       </div>

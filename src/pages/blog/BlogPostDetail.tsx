@@ -8,6 +8,7 @@ import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getBlogSEO } from "@/utils/seo";
 import { FAQ } from "@/utils/seo.core";
 import { sanitizeHtml } from "@/utils/sanitizeHtml";
+import { getReadTime } from "@/utils/readTime";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import { 
@@ -58,7 +59,9 @@ const BlogPostDetail: React.FC = () => {
       publishDate: post.publishDate,
       keywords: post.keywords,
       tag: post.tag,
-      faqs: post.faqs || lawsContent[post.slug]?.faqs
+      faqs: post.faqs || lawsContent[post.slug]?.faqs,
+      // Featured image — social share cards mein dikhegi
+      image: post.image,
     });
   }, [post]);
 
@@ -79,7 +82,8 @@ const BlogPostDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHeadNative seo={seoData} />
+      {/* publishedTime aur author pass karo — article:published_time aur article:author OG tags ke liye */}
+      <SEOHeadNative seo={seoData} publishedTime={post.publishDate} author={post.author} />
 
       {/* Breadcrumb Navigation — Blog SEO ke liye */}
       <div className="container mx-auto px-4 max-w-4xl pt-4 pb-1">
@@ -124,7 +128,8 @@ const BlogPostDetail: React.FC = () => {
               </span>
               <span className="flex items-center gap-1.5 text-white/70 text-sm">
                 <ClockIcon className="w-4 h-4" />
-                {post.readTime || '5 min read'}
+                {/* Dynamic read time — full content se calculate karo, hardcoded fallback mat use karo */}
+                {post.readTime || getReadTime(post.content || lawsContent[post.slug]?.content || post.excerpt)}
               </span>
             </div>
           </Reveal>

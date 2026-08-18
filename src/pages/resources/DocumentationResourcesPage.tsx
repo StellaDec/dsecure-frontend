@@ -288,7 +288,7 @@ function DocumentationResourcesContent() {
                 Need Technical Assistance?
               </h2>
               <p className="text-base md:text-lg mb-8 text-[#d0d5dc] max-w-2xl mx-auto">
-                Our certified security engineers are available to assist with custom deployment architecture and regulatory compliance.
+                Our qualified security engineers are available to assist with custom deployment architecture and regulatory compliance.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link

@@ -226,7 +226,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     // },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1784175102/sc7uwieizwc6c4iszuib.png",
-      alt: "Tamper-proof Erasure Report",
+      alt: "Tamper-evident Erasure Report",
     },
   ];
 
@@ -371,7 +371,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
   const platforms = [
     {
       name: "Windows",
-      versions: "Windows 10, 11, Server 2016+ etc.",
+      versions: "Windows 10, 11 & Server 2016+. Minimum Requirements: 64-bit operating system, x64 processor, and 4GB RAM.",
       icon: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
           <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
@@ -379,7 +379,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
       ),
     },
     {
-      name: "macOS",
+      name: "macOS (Coming Soon)",
       versions: "Monterey, Ventura, Sonoma, Sequoia etc.",
       icon: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
@@ -388,7 +388,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
       ),
     },
     {
-      name: "Linux",
+      name: "Linux (Coming Soon)",
       versions: "Ubuntu, CentOS, Debian, RHEL etc.",
       icon: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
@@ -426,7 +426,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
     },
     {
       title: "Detailed PDF Reports",
-      desc: "Generate comprehensive, tamper-proof erasure certificates for audit and compliance documentation.",
+      desc: "Generate comprehensive, tamper-evident erasure certificates for audit and compliance documentation.",
       icon: FileText,
     },
     {
@@ -627,7 +627,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
                     Securely shred files, folders, and free space beyond recovery. 
                     D-Secure File Eraser provides NIST-compliant data sanitization 
-                    with tamper-proof certificates for GDPR & HIPAA compliance.
+                    with tamper-evident certificates for GDPR & HIPAA compliance.
                   </p>
 
                   {/* Compliance Badges */}
@@ -717,7 +717,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                         loading="lazy" 
                         decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1784175102/sc7uwieizwc6c4iszuib.png"
-                        alt="File Eraser Tamper-proof Report"
+                        alt="File Eraser Tamper-evident Report"
                         className="w-full h-auto object-cover"
                       />
                     </div>
@@ -1490,7 +1490,7 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     Audit-Ready Documentation
                   </div>
                   <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
-                    Tamper-proof Erasure Report
+                    Tamper-evident Erasure Report
                   </h2>
                   <p className="text-lg text-slate-600 leading-relaxed">
                     Generates digitally signed reports of erasure to help meet statutory & regulatory compliance. Option to save reports locally or on secure cloud console in PDF format
@@ -1501,11 +1501,11 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                 <button
                   onClick={() => setSelectedImageIndex(galleryImages.length - 1)}
                   className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
-                  aria-label="View Tamper-proof Erasure Report fullscreen"
+                  aria-label="View Tamper-evident Erasure Report fullscreen"
                 >
                   <img loading="lazy" decoding="async"
                     src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1784175102/sc7uwieizwc6c4iszuib.png"
-                    alt="Tamper-proof Erasure Report"
+                    alt="Tamper-evident Erasure Report"
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent pointer-events-none"></div>

@@ -85,7 +85,7 @@ export default function AIOverviewPage() {
                     <span className="text-emerald-500 mr-3 mt-1 font-bold">✓</span>
                     <span>
                       <strong className="text-slate-900">Verification Engine:</strong>{" "}
-                      Generates tamper-proof, digitally signed Certificates of
+                      Generates tamper-evident, digitally signed Certificates of
                       Destruction containing device serial numbers, operator IDs,
                       and exact erasure methodology.
                     </span>
@@ -249,7 +249,7 @@ export default function AIOverviewPage() {
                     <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center font-bold text-emerald-800 group-hover:bg-emerald-500 group-hover:text-white transition-all">5</div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Immutable Certification (Phase 05)</h4>
-                      <p className="text-slate-600">The process concludes with the generation of an encrypted, tamper-proof Certificate of Destruction, which is automatically pushed to the enterprise SIEM/ERP system.</p>
+                      <p className="text-slate-600">The process concludes with the generation of an encrypted, tamper-evident Certificate of Destruction, which is automatically pushed to the enterprise SIEM/ERP system.</p>
                     </div>
                   </div>
                 </div>
@@ -269,7 +269,7 @@ export default function AIOverviewPage() {
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 list-none p-0">
                     <li className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:bg-slate-800 hover:border-emerald-500/30 transition-all">
                       <strong className="text-emerald-400 block mb-2">Legal Safe Harbor:</strong>
-                      In the event of an audit or litigation, D-Secure's tamper-proof logs provide the "Defensible Evidence" required to prove that the organization took every reasonable step to secure sensitive data.
+                      In the event of an audit or litigation, D-Secure's tamper-evident logs provide the "Defensible Evidence" required to prove that the organization took every reasonable step to secure sensitive data.
                     </li>
                     <li className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:bg-slate-800 hover:border-emerald-500/30 transition-all">
                       <strong className="text-emerald-400 block mb-2">Operational Velocity:</strong>

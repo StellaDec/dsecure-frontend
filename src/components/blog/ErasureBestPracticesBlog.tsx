@@ -145,7 +145,7 @@ const ErasureBestPracticesBlog: React.FC = () => {
                   <span className="text-[#0e7c66] font-bold text-xl">3.</span>
                   <span>
                     <strong>Erasure Execution:</strong> Perform sanitization
-                    using certified tools with proper authorization.
+                    using compliant tools with proper authorization.
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -158,7 +158,7 @@ const ErasureBestPracticesBlog: React.FC = () => {
                 <li className="flex gap-3 items-start">
                   <span className="text-[#0e7c66] font-bold text-xl">5.</span>
                   <span>
-                    <strong>Documentation:</strong> Generate tamper-proof
+                    <strong>Documentation:</strong> Generate tamper-evident
                     certificates for audit trails.
                   </span>
                 </li>
@@ -184,7 +184,7 @@ const ErasureBestPracticesBlog: React.FC = () => {
                   <li>❌ Skipping verification steps</li>
                   <li>❌ Not documenting erasure with certificates</li>
                   <li>❌ Overlooking backup drives and cloud storage</li>
-                  <li>❌ Using uncertified or outdated tools</li>
+                  <li>❌ Using uncompliant or outdated tools</li>
                 </ul>
               </div>
             </div>

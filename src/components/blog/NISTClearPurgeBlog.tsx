@@ -390,7 +390,7 @@ const NISTClearPurgeBlog: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <Reveal>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
-              Certified <Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link> Media Sanitization
+              compliant <Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link> Media Sanitization
             </h2>
             <p className="text-xl text-white/80 mb-12">
               D-Secure provides the enterprise tools needed to implement Clear, Purge, and Destroy methods across your entire IT infrastructure.

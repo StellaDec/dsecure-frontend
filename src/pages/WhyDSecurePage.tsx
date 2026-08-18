@@ -75,7 +75,7 @@ export default function WhyDSecurePage() {
                 Unmatched Verification & Auditability
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed">
-                D-Secure provides cryptographic erasure coupled with tamper-proof
+                D-Secure provides cryptographic erasure coupled with tamper-evident
                 logs. Every sanitization action generates a digitally signed
                 Certificate of Destruction, ensuring your internal teams and
                 external auditors have absolute, verifiable proof of data removal.
@@ -205,7 +205,7 @@ export default function WhyDSecurePage() {
                             <tr>
                               <td className="py-4 pr-4 font-semibold">ISO/IEC 27001</td>
                               <td className="py-4 px-4">Evidence-based asset disposal controls (A.8.3.2) and information labeling.</td>
-                              <td className="py-4 pl-4 text-emerald-700">Unified global security posture and certification.</td>
+                              <td className="py-4 pl-4 text-emerald-700">Unified global security posture and compliance.</td>
                             </tr>
                           </tbody>
                         </table>
@@ -247,10 +247,10 @@ export default function WhyDSecurePage() {
                           24+ Erasure Algorithms
                         </div>
                         <div className="bg-emerald-800/50 px-4 py-2 rounded-lg border border-emerald-700 text-sm font-mono">
-                          NIST 800-88 Certified
+                          NIST 800-88 Aligned
                         </div>
                         <div className="bg-emerald-800/50 px-4 py-2 rounded-lg border border-emerald-700 text-sm font-mono">
-                          Tamper-Proof Logs
+                          Tamper-Evident Logs
                         </div>
                         <div className="bg-emerald-800/50 px-4 py-2 rounded-lg border border-emerald-700 text-sm font-mono">
                           API-First Integration

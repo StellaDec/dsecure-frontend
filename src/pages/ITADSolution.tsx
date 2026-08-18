@@ -71,9 +71,9 @@
 //               <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition">
 //                 <span className="text-3xl">📜</span>
 //               </div>
-//               <h2 className="text-xl font-bold text-gray-900 mb-3">Compliance Certificates</h2>
+//               <h2 className="text-xl font-bold text-gray-900 mb-3">Compliance Reports</h2>
 //               <p className="text-gray-600 leading-relaxed">
-//                 Generate tamper-proof erasure certificates with detailed audit 
+//                 Generate tamper-evident erasure certificates with detailed audit 
 //                 trails for compliance and regulatory requirements.
 //               </p>
 //             </div>
@@ -192,7 +192,7 @@
 //                 </li>
 //                 <li className="flex items-start">
 //                   <span className="text-[#2563eb] font-bold mr-3 text-xl">✓</span>
-//                   <span className="text-gray-700">Verified destruction certificates</span>
+//                   <span className="text-gray-700">Verified destruction reports</span>
 //                 </li>
 //               </ul>
 //             </div>
@@ -272,7 +272,7 @@
 //                 Our data erasure solution uses military-grade sanitization algorithms that 
 //                 overwrite data multiple times, making recovery impossible even with forensic 
 //                 tools. We support NIST 800-88, DoD 5220.22-M, and 15+ international standards, 
-//                 all verified with tamper-proof certificates.
+//                 all verified with tamper-evident reports.
 //               </p>
 //             </div>
 
@@ -282,17 +282,17 @@
 //               </h2>
 //               <p className="text-gray-600 leading-relaxed">
 //                 D-Secure supports GDPR, HIPAA, SOX, PCI DSS, CCPA, ISO 27001, NIST 800-88, 
-//                 Common Criteria, FedRAMP, and industry-specific regulations across 
+//                 FedRAMP, and industry-specific regulations across 
 //                 healthcare, finance, government, and enterprise sectors.
 //               </p>
 //             </div>
 
 //             <div className="bg-white p-6 rounded-xl border-l-4 border-[#2563eb] hover:shadow-md transition">
 //               <h2 className="text-xl font-bold text-gray-900 mb-3">
-//                 Do you provide certificates of data destruction?
+//                 Do you provide reports of data destruction?
 //               </h2>
 //               <p className="text-gray-600 leading-relaxed">
-//                 Yes, we generate digitally signed, tamper-proof certificates for every 
+//                 Yes, we generate digitally signed, tamper-evident reports for every 
 //                 erased device containing asset details, erasure method, timestamp, and 
 //                 verification results. These certificates serve as legal proof for audits 
 //                 and compliance requirements.
@@ -457,7 +457,7 @@
 //           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 //             {[
 //               { icon: '🔐', title: 'regulated Data Erasure', desc: 'Military-grade data sanitization using NIST 800-88 standards.' },
-//               { icon: '📜', title: 'Compliance Regulatory Documents', desc: 'Tamper-proof regulatory documents with detailed audit trails.' },
+//               { icon: '📜', title: 'Compliance Regulatory Documents', desc: 'Tamper-evident regulatory documents with detailed audit trails.' },
 //               { icon: '📈', title: 'Asset Management', desc: 'Track assets from deployment through secure disposal.' },
 //               { icon: '♻️', title: 'Sustainable E-Waste', desc: 'Environmentally responsible disposal practices.' }
 //             ].map((feature, idx) => (
@@ -583,15 +583,15 @@
 //               },
 //               {
 //                 q: 'How secure is your data erasure process?',
-//                 a: 'Our solution uses military-grade sanitization algorithms that overwrite data multiple times. We support NIST 800-88, DoD 5220.22-M, and 15+ international standards, all verified with tamper-proof regulatory documents.'
+//                 a: 'Our solution uses military-grade sanitization algorithms that overwrite data multiple times. We support NIST 800-88, DoD 5220.22-M, and 15+ international standards, all verified with tamper-evident regulatory documents.'
 //               },
 //               {
 //                 q: 'Which compliance standards do you support?',
-//                 a: 'D-Secure supports GDPR, HIPAA, SOX, PCI DSS, CCPA, ISO 27001, NIST 800-88, Common Criteria, FedRAMP, and industry-specific regulations across multiple sectors.'
+//                 a: 'D-Secure supports GDPR, HIPAA, SOX, PCI DSS, CCPA, ISO 27001, NIST 800-88, FedRAMP, and industry-specific regulations across multiple sectors.'
 //               },
 //               {
 //                 q: 'Do you provide regulatory documents of data destruction?',
-//                 a: 'Yes, we generate digitally signed, tamper-proof regulatory documents for every erased device with complete asset details, erasure method, timestamp, and verification results.'
+//                 a: 'Yes, we generate digitally signed, tamper-evident regulatory documents for every erased device with complete asset details, erasure method, timestamp, and verification results.'
 //               },
 //               {
 //                 q: 'Can you handle large-scale enterprise deployments?',
@@ -748,7 +748,7 @@
 //           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 //             {[
 //               { icon: '🔐', title: 'regulated Data Erasure', desc: 'Military-grade data sanitization using NIST 800-88 standards.' },
-//               { icon: '📜', title: 'Compliance Certificates', desc: 'Tamper-proof certificates with detailed audit trails.' },
+//               { icon: '📜', title: 'Compliance Reports', desc: 'tamper-evident reports with detailed audit trails.' },
 //               { icon: '📈', title: 'Asset Management', desc: 'Track assets from deployment through secure disposal.' },
 //               { icon: '♻️', title: 'Sustainable E-Waste', desc: 'Environmentally responsible disposal practices.' }
 //             ].map((feature, idx) => (
@@ -874,15 +874,15 @@
 //               },
 //               {
 //                 q: 'How secure is your data erasure process?',
-//                 a: 'Our solution uses military-grade sanitization algorithms that overwrite data multiple times. We support NIST 800-88, DoD 5220.22-M, and 15+ international standards, all verified with tamper-proof certificates.'
+//                 a: 'Our solution uses military-grade sanitization algorithms that overwrite data multiple times. We support NIST 800-88, DoD 5220.22-M, and 15+ international standards, all verified with tamper-evident reports.'
 //               },
 //               {
 //                 q: 'Which compliance standards do you support?',
-//                 a: 'D-Secure supports GDPR, HIPAA, SOX, PCI DSS, CCPA, ISO 27001, NIST 800-88, Common Criteria, FedRAMP, and industry-specific regulations across multiple sectors.'
+//                 a: 'D-Secure supports GDPR, HIPAA, SOX, PCI DSS, CCPA, ISO 27001, NIST 800-88, FedRAMP, and industry-specific regulations across multiple sectors.'
 //               },
 //               {
-//                 q: 'Do you provide certificates of data destruction?',
-//                 a: 'Yes, we generate digitally signed, tamper-proof certificates for every erased device with complete asset details, erasure method, timestamp, and verification results.'
+//                 q: 'Do you provide reports of data destruction?',
+//                 a: 'Yes, we generate digitally signed, tamper-evident reports for every erased device with complete asset details, erasure method, timestamp, and verification results.'
 //               },
 //               {
 //                 q: 'Can you handle large-scale enterprise deployments?',
@@ -1086,7 +1086,7 @@ const ITADSolution: React.FC = () => {
 
                 {/* Compliance Badges */}
                 <div className="flex flex-wrap items-center gap-3 pt-6 border-t border-emerald-100/50">
-                  {["NIST 800-88", "GDPR", "ISO 27001", "R2 Certified"].map(
+                  {["NIST 800-88", "GDPR", "ISO 27001", "R2 Compliant"].map(
                     (badge) => (
                       <div
                         key={badge}
@@ -1304,7 +1304,7 @@ const ITADSolution: React.FC = () => {
                 {
                   icon: FileText,
                   title: "Compliance Regulatory Documents",
-                  desc: "Tamper-proof regulatory documents with detailed audit trails.",
+                  desc: "Tamper-evident regulatory documents with detailed audit trails.",
                 },
                 {
                   icon: TrendingUp,
@@ -1472,15 +1472,15 @@ const ITADSolution: React.FC = () => {
                 },
                 {
                   q: "How secure is your data erasure process?",
-                  a: "Our solution uses military-grade sanitization algorithms that overwrite data multiple times. We support NIST 800-88, DoD 5220.22-M, and 15+ international standards, all verified with tamper-proof regulatory documents.",
+                  a: "Our solution uses military-grade sanitization algorithms that overwrite data multiple times. We support NIST 800-88, DoD 5220.22-M, and 15+ international standards, all verified with tamper-evident regulatory documents.",
                 },
                 {
                   q: "Which compliance standards do you support?",
-                  a: "D-Secure supports GDPR, HIPAA, SOX, PCI DSS, CCPA, ISO 27001, NIST 800-88, Common Criteria, FedRAMP, and industry-specific regulations across multiple sectors.",
+                  a: "D-Secure supports GDPR, HIPAA, SOX, PCI DSS, CCPA, ISO 27001, NIST 800-88, FedRAMP, and industry-specific regulations across multiple sectors.",
                 },
                 {
                   q: "Do you provide regulatory documents of data destruction?",
-                  a: "Yes, we generate digitally signed, tamper-proof regulatory documents for every erased device with complete asset details, erasure method, timestamp, and verification results.",
+                  a: "Yes, we generate digitally signed, tamper-evident regulatory documents for every erased device with complete asset details, erasure method, timestamp, and verification results.",
                 },
                 {
                   q: "Can you handle large-scale enterprise deployments?",

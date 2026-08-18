@@ -29,7 +29,7 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
         "name": "Does BIOS Secure Erase guarantee NIST 800-88 compliance?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Without a tamper-proof certificate of erasure, BIOS Secure Erase cannot satisfy audit requirements for NIST 800-88, HIPAA, or GDPR."
+          "text": "No. Without a tamper-evident certificate of erasure, BIOS Secure Erase cannot satisfy audit requirements for NIST 800-88, HIPAA, or GDPR."
         }
       },
       {
@@ -281,7 +281,7 @@ const WipeSSDFromBIOSGuide: React.FC = () => {
                     <tr>
                       <td className="border p-3">Erasure Reports</td>
                       <td className="border p-3">No</td>
-                      <td className="border p-3">Tamper-proof certificates</td>
+                      <td className="border p-3">Tamper-evident certificates</td>
                     </tr>
                     <tr className="bg-white">
                       <td className="border p-3">Scalability</td>

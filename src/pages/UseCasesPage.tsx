@@ -33,7 +33,7 @@ export default function UseCasesPage() {
       challenge:
         "Ensuring no data leaks during wide-scale hardware decommissioning across multiple agencies.",
       solution:
-        "Centralized governance console with tamper-proof audit trails for cross-agency verification.",
+        "Centralized governance console with tamper-evident audit trails for cross-agency verification.",
       icon: "🏛️",
     },
     {

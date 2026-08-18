@@ -58,25 +58,35 @@ const PricingAndPlanPage: React.FC = memo(() => {
   const [autopilotCreditType, setAutopilotCreditType] = useState<"standard" | "advanced" | "combo">("standard");
   const [isTestsExpanded, setIsTestsExpanded] = useState(false); // Hardware diagnostics tests accordion state
 
+  // Navigate ref — useEffect dependency se hataane ke liye
+  const navigateRef = React.useRef(navigate);
+  navigateRef.current = navigate;
+
+  // SDK init sirf ek baar karo — StrictMode double-fire prevent
+  const sdkInitialized = React.useRef(false);
+
   // Reset loading state when component mounts (handles back navigation)
   useEffect(() => {
     setIsBuyNowLoading(false);
   }, []);
 
-  //  Dodo Payments SDK initialize on mount — overlay mode
+  //  Dodo Payments SDK initialize on mount — sirf ek baar
   useEffect(() => {
+    if (sdkInitialized.current) return;
+    sdkInitialized.current = true;
+
     initDodoCheckout({
       onComplete: () => {
         console.log(' Payment complete — redirecting to success page');
         setIsBuyNowLoading(false);
-        navigate('/order-success');
+        navigateRef.current('/order-success');
       },
       onClose: () => {
         console.log(' User ne checkout band kiya');
         setIsBuyNowLoading(false);
       },
     });
-  }, [navigate]);
+  }, []);
 
   // Read URL parameters and set initial state
   useEffect(() => {
@@ -677,8 +687,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
           : "D-Secure File Eraser Professional",
       subtitle:
         fileEraserVariant === "network"
-          ? "Enterprise network-wide file sanitization and management across your domain. (Available for Windows 10/11)"
-          : "Complete File, Folder & Application Trace Elimination. (Available for Windows 10/11)",
+          ? <>Enterprise network-wide file sanitization and management across your domain. (Available for Windows 10/11 <strong>x64</strong> operating system)</>
+          : <>Complete File, Folder &amp; Application Trace Elimination. (Available for Windows 10/11 <strong>x64</strong> operating system)</>,
       image: getProductIcon("file-eraser", 64),
       imageCategory: "file-eraser",
       version: fileEraserVariant === "network" ? "Network Edition" : "Professional",
@@ -1102,7 +1112,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
         "10+ Automated Component Health Tests",
         "12+ Manual Assessment & Interaction Tests",
         "MDM Enrollment Detection (Mac)",
-        "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+        "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
         "Centralized Cloud Management Console",
         "Customizable ISO Standardization",
       ];
@@ -1120,7 +1130,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
         "Secure File & Folder Deletion",
         "30+ International Erasure Algorithms",
         "Real-time Progress Monitoring",
-        "Windows, Mac & Linux Support",
+        "Windows Support Only",
         "Free Space Cleaning",
         "Local PDF Reports",
       ];
@@ -1161,7 +1171,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
         "MDM Removal Capability",
         "Diagnostic Health Check",
         "Full Device Factory Reset",
-        "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+        "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
         "Auto-Detection & Batch Wiping",
       ];
     } else if (category === "smartphone-diagnostic") {
@@ -1198,7 +1208,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
           "Real-time Hardware Monitoring",
           "Predictive Failure Analysis",
           "Freeze Protection Integrity Check",
-          "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+          "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
           "Auto-Alerting System",
         ];
       }
@@ -1207,7 +1217,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
           "Government-Grade Sanitization",
           "30+ International Standards",
           "High-Volume Throughput",
-          "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+          "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
           "Hardware-Level Integration",
           "Secure Asset Disposal Chain",
         ];
@@ -1411,8 +1421,14 @@ const PricingAndPlanPage: React.FC = memo(() => {
   // ... inside PricingAndPlanPage component ...
 
   const handleBuyNow = async () => {
-    // 1. Prevent double clicks
+    // 1. Prevent double clicks — timestamp-based guard (React StrictMode safe)
     if (isBuyNowLoading) return;
+    const now = Date.now();
+    if ((window as any).__lastCheckoutTime && now - (window as any).__lastCheckoutTime < 3000) {
+      console.warn('⚠️ Checkout debounce — 3 second cooldown active');
+      return;
+    }
+    (window as any).__lastCheckoutTime = now;
 
     setIsBuyNowLoading(true);
 
@@ -1475,6 +1491,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
         const FILE_ERASER_PRODUCT_IDS: Record<string, string> = {
           "1": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER,
           "10": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_10,
+          "25": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_10,
           "50": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_50,
           "100": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_100,
           "250": import.meta.env.VITE_DODO_PRODUCT_FILE_ERASER_250,
@@ -1483,9 +1500,12 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
         const pid = FILE_ERASER_PRODUCT_IDS[selectedLicenses];
         if (pid) {
-          openOverlayCheckout(pid, 1, "https://dsecuretech.com/order-success");
+          await openOverlayCheckout(pid, 1);
           return;
         }
+        setShowCustomModal(true);
+        setIsBuyNowLoading(false);
+        return;
       }
 
       // ── Drive Eraser (Standard) ke liye Product-based Overlay Checkout ──
@@ -1505,9 +1525,12 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
         const pid = DRIVE_ERASER_PRODUCT_IDS[selectedLicenses];
         if (pid) {
-          openOverlayCheckout(pid, 1, "https://dsecuretech.com/order-success");
+          await openOverlayCheckout(pid, 1);
           return;
         }
+        setShowCustomModal(true);
+        setIsBuyNowLoading(false);
+        return;
       }
 
       // ── Drive Eraser Diagnostic ke liye Product-based Overlay Checkout ──
@@ -1527,28 +1550,31 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
         const pid = DIAGNOSTIC_PRODUCT_IDS[selectedLicenses];
         if (pid) {
-          openOverlayCheckout(pid, 1, "https://dsecuretech.com/order-success");
+          await openOverlayCheckout(pid, 1);
           return;
         }
+        setShowCustomModal(true);
+        setIsBuyNowLoading(false);
+        return;
       }
 
       // ── Autopilot MDM Advanced & Combo ke liye Payment Link Checkout ──
       if (selectedCategory === "autopilot-mdm") {
         if (autopilotCreditType === "advanced") {
-          openPaymentLinkCheckout(`${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/session/cks_0Nj4TS4xCTnavVJs9SDUg`);
+          await openPaymentLinkCheckout(`${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/session/cks_0Nj4TS4xCTnavVJs9SDUg`);
           return;
         } else if (autopilotCreditType === "combo") {
-          openPaymentLinkCheckout(`${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/session/cks_0Nj4TmltwSMpAOZgqlpcp`);
+          await openPaymentLinkCheckout(`${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/session/cks_0Nj4TmltwSMpAOZgqlpcp`);
           return;
         }
       }
 
       // ── Default: Overlay Checkout — SDK apna full-screen overlay dikhayega ──
-      openOverlayCheckout(
+      await openOverlayCheckout(
         checkoutProductId,
-        quantity,
-        'https://dsecuretech.com/order-success'
+        quantity
       );
+      return;
 
     } catch (error) {
       console.error("Checkout error:", error);
@@ -2649,7 +2675,12 @@ const PricingAndPlanPage: React.FC = memo(() => {
                     variant="primary"
                     className="w-full mb-4 xs:mb-5 sm:mb-6 flex justify-center py-3 xs:py-4 text-base xs:text-lg"
                   >
-                    {!(
+                    {isBuyNowLoading ? (
+                      <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    ) : !(
                       (selectedCategory === "drive-eraser" &&
                         (driveEraserVariant === "standard" ||
                           driveEraserVariant === "diagnostics")) ||
@@ -2701,15 +2732,16 @@ const PricingAndPlanPage: React.FC = memo(() => {
           </div>
 
           {/* OS Compatibility */}
+          {/* 
           <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-4 mb-8">
             <div className="text-center">
               <span className="text-[#0e7c66] font-bold">
-                OS Compatibility: Windows, Mac, Linux, DOS & Chrome OS |
-                regulated: NIST SP 800-88, DoD 5220.22-M, Common Criteria |
+                OS Compatibility: Windows | regulated: NIST SP 800-88, DoD 5220.22-M, HIPAA etc |
                 Instant Delivery Available
               </span>
             </div>
           </div>
+          */}
         </div>
       </ThemeSection>
 

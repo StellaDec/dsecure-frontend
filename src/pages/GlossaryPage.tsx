@@ -46,7 +46,7 @@ export default function GlossaryPage() {
       category: "Compliance"
     },
     {
-      term: "Tamper-Proof Audit Log",
+      term: "Tamper-Evident Audit Log",
       definition: "A system-generated record of sanitization events that cannot be modified or deleted, ensuring the integrity of compliance evidence.",
       category: "Technical"
     },

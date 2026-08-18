@@ -215,7 +215,7 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                     </span>
                     <div>
                       <h3 className="text-xl font-bold mb-3">
-                        Generate Tamper-Proof Audit Trails
+                        Generate Tamper-Evident Audit Trails
                       </h3>
                       <p className="text-white/90 leading-relaxed">
                         Ensure{" "}
@@ -225,7 +225,7 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                         >
                           data wiping
                         </Link>{" "}
-                        utility generates digital tamper-proof reports and
+                        utility generates digital tamper-evident reports and
                         certificates that serve as audit trails for meeting
                         compliance with global data privacy regulations.
                       </p>
@@ -363,7 +363,7 @@ const DataErasureDisasterRecoveryBlog: React.FC = () => {
                   destruction
                 </li>
                 <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                  Generate tamper-proof certificates for regulatory compliance
+                  Generate tamper-evident certificates for regulatory compliance
                 </li>
               </ul>
             </div>

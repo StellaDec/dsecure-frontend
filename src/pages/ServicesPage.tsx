@@ -135,7 +135,7 @@ function ServicesPageContent() {
         'NIST 800-88 regulated methods',
         'Support for 1000+ device types',
         'Automated inventory management',
-        'Tamper-proof regulatory documents',
+        'Tamper-evident regulatory documents',
         'Real-time progress tracking'
       ],
       specs: [

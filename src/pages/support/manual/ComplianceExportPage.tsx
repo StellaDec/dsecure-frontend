@@ -11,7 +11,7 @@ const ComplianceExportPage: React.FC = memo(() => {
   const faqs = [
     {
       id: 1,
-      question: "Are D-Secure certificates tamper-proof?",
+      question: "Are D-Secure certificates tamper-evident?",
       answer: "Yes. Every PDF certificate is digitally signed with an X.509 certificate. Any unauthorized modification to the document text will immediately invalidate the digital signature, alerting auditors of tampering."
     },
     {
@@ -36,7 +36,7 @@ const ComplianceExportPage: React.FC = memo(() => {
         seo={getSEOForPage("support-manual-compliance-export", { 
           title: "Enterprise Compliance Reporting & Audit Exports | D-Secure Manual", 
           canonicalUrl: "/support/manual/compliance-export",
-          description: "Technical guide to generating and verifying tamper-proof audit trails using JSON-LD, PDF, and Cryptographic Signatures for regulatory compliance."
+          description: "Technical guide to generating and verifying tamper-evident audit trails using JSON-LD, PDF, and Cryptographic Signatures for regulatory compliance."
         })} 
       /> */}
 

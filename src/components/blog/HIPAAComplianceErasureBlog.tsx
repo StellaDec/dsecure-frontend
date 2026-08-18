@@ -20,7 +20,7 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
         seo={getBlogSEO({
           title: "HIPAA Compliance and Data Erasure",
           excerpt:
-            "Meeting HIPAA requirements for PHI disposal through certified data erasure.",
+            "Meeting HIPAA requirements for PHI disposal through Enterprise-grade data erasure.",
           slug: "hipaa-compliance-erasure",
           author: "D-Secure Editorial Team",
           publishDate: "February 8, 2025",
@@ -277,10 +277,10 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
 
               <div className="bg-white/10 rounded-none p-6">
                 <h3 className="text-xl font-bold mb-3">
-                  Tamper-Proof Audit Trails
+                  Tamper-Evident Audit Trails
                 </h3>
                 <p className="text-white/90 leading-relaxed">
-                  Generates 100% tamper-proof digital reports and certificates
+                  Generates 100% tamper-evident digital reports and certificates
                   that serve as documented proof of destruction — meeting HIPAA
                   audit requirements.
                 </p>
@@ -367,7 +367,7 @@ const HIPAAComplianceErasureBlog: React.FC = () => {
                 methods
               </li>
               <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                Tamper-proof certificates provide proof of destruction for
+                Tamper-evident certificates provide proof of destruction for
                 audits
               </li>
               <li className="border-l-4 border-[#0e7c66] pl-8 py-2">

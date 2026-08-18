@@ -23,7 +23,7 @@ const CertificateGenerationPage: React.FC = memo(() => {
                   <span className="text-emerald-800">Generation</span>
                 </h1>
                 <p className="text-xl text-slate-700 max-w-3xl mx-auto">
-                  Generate tamper-proof regulatory documents of data destruction
+                  Generate tamper-evident regulatory documents of data destruction
                   with D-Secure's comprehensive documentation system. Create
                   legally admissible, compliance-ready regulatory documents with
                   advanced security features.
@@ -354,7 +354,7 @@ const CertificateGenerationPage: React.FC = memo(() => {
                       Ready to Generate Regulatory Documents?
                     </h2>
                     <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
-                      Create tamper-proof regulatory documents of data
+                      Create tamper-evident regulatory documents of data
                       destruction that meet the highest compliance and legal
                       standards.
                     </p>

@@ -156,7 +156,7 @@ const ZeroTrustDisposalBlog: React.FC = () => {
                 <li className="flex gap-3 items-start">
                   <span className="text-[#0e7c66] font-bold text-xl">4.</span>
                   <span>
-                    <strong>Verify Documentation:</strong> Use Tamper-proof
+                    <strong>Verify Documentation:</strong> Use Tamper-evident
                     audit reports with certificate including digital signatures.
                     Validate against central records.
                   </span>
@@ -217,7 +217,7 @@ const ZeroTrustDisposalBlog: React.FC = () => {
                 <div className="flex items-center gap-2 mb-3">
                   <GlobeIcon className="w-5 h-5 text-[#0e7c66]" filled={true} />
                   <h3 className="font-bold text-[#0a2e1e]">
-                    Tamper-Proof Audit Reports
+                    Tamper-Evident Audit Reports
                   </h3>
                 </div>
                 <p className="text-sm text-[#5a6672]">

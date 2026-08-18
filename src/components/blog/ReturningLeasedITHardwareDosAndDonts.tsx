@@ -90,7 +90,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                   <strong>✅ Plan the Return in Advance:</strong> Prepare a
                   structured return plan well before lease expiry. Reconcile
                   serial numbers, configurations, and asset ownership, perform
-                  business data backups, and schedule certified erasure. This
+                  business data backups, and schedule compliant erasure. This
                   avoids last-minute errors, missed devices, and contractual
                   disputes. Begin planning at least 90 days before the lease
                   expiration date to allow for asset auditing, backup
@@ -136,13 +136,13 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
 
               <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-6 rounded-none">
                 <p>
-                  <strong>✅ Execute Certified Data Erasure:</strong> Before physical
+                  <strong>✅ Execute Enterprise-grade data erasure:</strong> Before physical
                   handover, apply <Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST SP 800-88</Link> compliant Clear or Purge methods
                   to all internal and external storage. Verification and
                   audit-ready erasure certificates are essential for legal
                   defensibility. Use enterprise-grade tools like
                   <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium"> D-Secure Drive Eraser</Link> that
-                  generate tamper-proof certificates with device serial numbers,
+                  generate tamper-evident certificates with device serial numbers,
                   timestamps, and verification results.
                 </p>
               </div>
@@ -184,9 +184,9 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
 
               <div className="bg-[#f4fbf8] border-l-4 border-red-400 p-6 rounded-none">
                 <p>
-                  <strong>❌ Avoid Uncertified Wiping Tools:</strong> Free or
+                  <strong>❌ Avoid Uncompliant wiping Tools:</strong> Free or
                   consumer-grade utilities do not provide forensic-grade erasure
-                  or compliance evidence. Enterprises require certified solutions
+                  or compliance evidence. Enterprises require enterprise-grade solutions
                   that generate immutable erasure certificates and verification
                   logs. A simple "factory reset" or "format" is NOT data
                   sanitization — data remains recoverable with standard forensic
@@ -283,7 +283,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
                   <tr className="hover:bg-[#d4ede4]/30 transition-colors">
                     <td className="px-6 py-4 font-medium text-[#0a2e1e]">ISO 27001</td>
                     <td className="px-6 py-4 text-slate-600">Asset disposal controls (A.11.2.7)</td>
-                    <td className="px-6 py-4 text-slate-600">Certification loss + audit failure</td>
+                    <td className="px-6 py-4 text-slate-600">alignment loss + audit failure</td>
                   </tr>
                 </tbody>
               </table>
@@ -315,9 +315,9 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
               <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d4ede4]">
                 <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">Erasure Phase (30–7 Days)</h3>
                 <ul className="space-y-2 text-[#0a2e1e]">
-                  <li>• Perform certified NIST 800-88 data erasure</li>
+                  <li>• Perform compliant NIST 800-88 data erasure</li>
                   <li>• Verify erasure with 100% sector validation</li>
-                  <li>• Generate tamper-proof erasure certificates</li>
+                  <li>• Generate tamper-evident erasure certificates</li>
                   <li>• Run hardware diagnostics to document condition</li>
                   <li>• Sanitize all external/attached storage media</li>
                 </ul>
@@ -355,7 +355,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
             <p className="text-slate-700 leading-loose mb-4">
               Data breaches from returned leased equipment are more common than
               most organizations realize. When leased devices are returned
-              without certified erasure, the data on those devices becomes the
+              without compliant erasure, the data on those devices becomes the
               responsibility of whoever receives them next — which could be
               another enterprise, a refurbisher, or even a secondary market
               buyer in a different country.
@@ -374,7 +374,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
               <p className="text-[#0a2e1e] leading-relaxed">
                 Formatting, factory reset, or deleting files is NOT data
                 sanitization. These methods leave data fully recoverable with
-                standard forensic tools. Only certified, verification-grade
+                standard forensic tools. Only compliant, verification-grade
                 erasure tools like D-Secure provide compliance-ready proof
                 that data has been permanently destroyed.
               </p>
@@ -390,7 +390,7 @@ const ReturningLeasedITHardwareDosAndDonts: React.FC = () => {
             </h2>
             <p className="text-slate-700 leading-loose mb-4">
               For organizations returning leased IT assets, D-Secure provides
-              certified data sanitization aligned with <Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link>, ISO 27001,
+              verifiable data sanitization aligned with <Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link>, ISO 27001,
               GDPR, HIPAA, SOX, CCPA, and global privacy regulations. D-Secure
               ensures irreversible data removal, audit-ready certificates,
               chain-of-custody documentation, and centralized compliance

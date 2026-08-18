@@ -217,8 +217,8 @@ const AutopilotDetectionPage: React.FC = memo(
         icon: Cloud,
       },
       {
-        title: "Compliance Certification",
-        desc: "Generate tamper-proof reports that certify the successful unenrollment of assets from enterprise UEMs.",
+        title: "Compliance Verification",
+        desc: "Generate tamper-evident reports that certify the successful unenrollment of assets from enterprise UEMs.",
         icon: FileText,
       },
       {
@@ -435,7 +435,7 @@ const AutopilotDetectionPage: React.FC = memo(
                           loading="lazy" 
                           decoding="async"
                           src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1782904367/q70fjrmxun0kstjanwsp.png"
-                          alt="Autopilot Detection Tamper-proof Report"
+                          alt="Autopilot Detection Tamper-evident Report"
                           className="w-full h-auto object-cover"
                         />
                       </div>
@@ -563,7 +563,7 @@ const AutopilotDetectionPage: React.FC = memo(
                 {[
                   { step: "01", title: "Detect", desc: "Flags devices still enrolled in Autopilot or Intune during processing.", icon: Search },
                   { step: "02", title: "Verify", desc: "Cloud-based recheck confirms unenrolment status automatically.", icon: Cloud },
-                  { step: "03", title: "Certify", desc: "Tamper-proof report confirms the complete unenrollment status.", icon: FileText },
+                  { step: "03", title: "Certify", desc: "Tamper-evident report confirms the complete unenrollment status.", icon: FileText },
                 ].map((item, idx) => (
                   <Reveal key={idx} delayMs={idx * 100}>
                     <div className="relative z-10 flex flex-col items-center text-center">
@@ -911,7 +911,7 @@ const AutopilotDetectionPage: React.FC = memo(
                         /* {
                           label: "Report Format",
                           value:
-                            "Tamper-proof PDF / CSV / JSON (Makor/Razor Ready)",
+                            "Tamper-evident PDF / CSV / JSON (Makor/Razor Ready)",
                         },
                         {
                           label: "Minimum Specs",

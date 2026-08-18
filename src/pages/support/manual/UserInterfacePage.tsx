@@ -136,7 +136,7 @@ const UserInterfacePage: React.FC = memo(() => {
           id: 32,
           title: "Regulatory Document Generation System",
           description:
-            "Create tamper-proof destruction regulatory documents with digital signatures and compliance data",
+            "Create tamper-evident destruction regulatory documents with digital signatures and compliance data",
           url: "/support/manual/certificate-generation",
           pageCount: 3,
         },

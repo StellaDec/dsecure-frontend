@@ -214,7 +214,7 @@ const DataErasureForNonProfits: React.FC = () => {
                   <h3 className="font-bold text-[#0e7c66]">Audit-Ready Documentation</h3>
                 </div>
                 <p className="text-sm text-slate-600">
-                  Generates tamper-proof erasure reports and certificates for
+                  Generates tamper-evident erasure reports and certificates for
                   internal and external audits.
                 </p>
               </div>

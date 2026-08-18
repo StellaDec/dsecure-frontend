@@ -31,8 +31,8 @@ const GDPRErasureChecklistPage: React.FC = () => {
     },
     {
       id: "media",
-      title: "Certified Sanitization",
-      description: "Are you using software that provides tamper-proof certificates of erasure for each device?",
+      title: "Enterprise-grade Sanitization",
+      description: "Are you using software that provides tamper-evident certificates of erasure for each device?",
       checked: false
     },
     {
@@ -107,7 +107,7 @@ const GDPRErasureChecklistPage: React.FC = () => {
             "name": "How to Audit GDPR Right to Erasure Compliance",
             "step": [
               { "@type": "HowToStep", "position": 1, "name": "Review Policy", "text": "Check whether your organization has a documented data erasure policy for handling Right to Erasure requests." },
-              { "@type": "HowToStep", "position": 2, "name": "Verify Sanitization Method", "text": "Confirm you use certified software that provides tamper-proof erasure certificates." },
+              { "@type": "HowToStep", "position": 2, "name": "Verify Sanitization Method", "text": "Confirm you use enterprise-grade software that provides tamper-evident erasure certificates." },
               { "@type": "HowToStep", "position": 3, "name": "Check Third Parties", "text": "Ensure downstream processors are notified and can verify data deletion." }
             ]
           }
@@ -156,12 +156,12 @@ const GDPRErasureChecklistPage: React.FC = () => {
                   Compliance with the **Right to Erasure (Article 17)** is not merely a legal procedure; it is a technical challenge that requires precision in data sanitization. Under GDPR, simply deleting a file or reformatting a drive is insufficient. These methods only remove the pointers to the data, leaving the actual binary information intact and recoverable by specialized software.
                 </p>
                 <p>
-                  To achieve "irreversible erasure" as expected by Supervisory Authorities, organizations must use certified data erasure software that overwrites data across all sectors of the storage media. This includes hidden areas such as the Host Protected Area (HPA) and Device Configuration Overlay (DCO) which often harbor sensitive residual data.
+                  To achieve "irreversible erasure" as expected by Supervisory Authorities, organizations must use Enterprise-grade data erasure software that overwrites data across all sectors of the storage media. This includes hidden areas such as the Host Protected Area (HPA) and Device Configuration Overlay (DCO) which often harbor sensitive residual data.
                 </p>
               </div>
               <div className="space-y-4">
                 <p>
-                  A critical pillar of GDPR compliance is the **Principle of Accountability**. This means that when a data subject requests erasure, the Data Controller must be able to prove that the erasure occurred. D-Secure facilitates this by generating automated, tamper-proof certificates of erasure. These certificates contain detailed hardware information, timestamps, and the specific sanitization method used (e.g., NIST 800-88 Purge).
+                  A critical pillar of GDPR compliance is the **Principle of Accountability**. This means that when a data subject requests erasure, the Data Controller must be able to prove that the erasure occurred. D-Secure facilitates this by generating automated, tamper-evident certificates of erasure. These certificates contain detailed hardware information, timestamps, and the specific sanitization method used (e.g., NIST 800-88 Purge).
                 </p>
                 <p>
                   Failing to provide this level of technical verification can lead to severe penalties. By integrating D-Secure into your decommissioning workflow, you ensure that every asset—from servers to mobile devices—meets the highest global standards for data destruction, protecting both your customers' privacy and your organization's reputation.
@@ -338,7 +338,7 @@ const GDPRErasureChecklistPage: React.FC = () => {
                   At the heart of the GDPR lies the Principle of Accountability (Article 5(2)), which requires organizations to not only comply with data protection principles but also to be able to demonstrate that compliance at any time. When it comes to the "Right to Erasure," the ability to prove that data has been permanently and irreversibly destroyed is paramount. A simple verbal confirmation or an unverified internal log is often insufficient to satisfy a Supervisory Authority's audit. Organizations must implement technical measures that provide deterministic proof of sanitization, ensuring that the lifecycle of personal data is closed with the same level of security with which it was opened.
                 </p>
                 <p>
-                  This accountability extends to the management of third-party data processors. Under Article 28, Data Controllers are responsible for ensuring that their processors also adhere to strict data protection standards, including secure disposal. By utilizing a standardized erasure protocol and requiring tamper-proof certificates of erasure from all partners in the supply chain, organizations can mitigate the risk of "downstream" data leaks. D-Secure's centralized reporting platform allows for the seamless aggregation of these certificates, providing a unified view of an organization's compliance posture across all physical and virtual storage assets, regardless of their location.
+                  This accountability extends to the management of third-party data processors. Under Article 28, Data Controllers are responsible for ensuring that their processors also adhere to strict data protection standards, including secure disposal. By utilizing a standardized erasure protocol and requiring tamper-evident certificates of erasure from all partners in the supply chain, organizations can mitigate the risk of "downstream" data leaks. D-Secure's centralized reporting platform allows for the seamless aggregation of these certificates, providing a unified view of an organization's compliance posture across all physical and virtual storage assets, regardless of their location.
                 </p>
                 <p>
                   Furthermore, a risk-based approach to sanitization allows organizations to tailor their disposal methods to the sensitivity of the data and the type of media involved. While "Clear" level sanitization might be appropriate for low-risk data on internal assets, high-sensitivity records on mobile devices or cloud-based LUNs demand "Purge" or "Cryptographic Erasure" to ensure absolute security. Documenting these decision-making processes is a key part of the Accountability Framework. By following the steps in this checklist and utilizing D-Secure's professional tools, your organization can move from a reactive "hope-for-the-best" strategy to a proactive, audit-ready compliance model that stands up to the most rigorous legal scrutiny.

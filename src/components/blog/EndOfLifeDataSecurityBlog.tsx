@@ -271,7 +271,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
-                    <strong>Tamper-Proof Certificates:</strong> Generates
+                    <strong>Tamper-Evident Certificates:</strong> Generates
                     detailed reports and certificates for audit compliance and
                     regulatory requirements
                   </li>
@@ -307,7 +307,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                 </div>
                 <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
                   <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
-                    Use Certified Tools
+                    Use compliant Tools
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     Never rely on simple formatting or deletion. Use
@@ -332,7 +332,7 @@ const EndOfLifeDataSecurityBlog: React.FC = () => {
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     When using third-party ITADs, verify their data destruction
-                    processes and certifications. Require documented proof of
+                    processes and alignments. Require documented proof of
                     sanitization for every device transferred to their custody.
                   </p>
                 </div>

@@ -221,7 +221,7 @@ export default function ComparisonPage() {
                     <p>• **Efficiency:** 1 operator can manage 500+ wipes simultaneously.</p>
                     <p>• **Compliance:** Automated logs reduce audit preparation time by 90%.</p>
                     <p>• **Risk:** Near-zero liability for data leaks due to 'Purge-level' sanitization.</p>
-                    <p>• **Lifecycle:** Maximizes hardware resale value through certified, clean data states.</p>
+                    <p>• **Lifecycle:** Maximizes hardware resale value through verifiable, clean data states.</p>
                   </div>
                 </div>
               </Reveal>

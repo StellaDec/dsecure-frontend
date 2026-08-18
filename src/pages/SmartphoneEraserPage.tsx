@@ -31,7 +31,7 @@ const smartphoneEraserTakeaways: KeyTakeawayItem[] = [
   },
   {
     title: "Verifiable Audit Trail",
-    description: "Generate tamper-proof erasure certificates for every device to ensure regulatory compliance.",
+    description: "Generate tamper-evident erasure certificates for every device to ensure regulatory compliance.",
   }
 ];
 
@@ -209,7 +209,7 @@ const SmartphoneEraserPage = memo(() => {
     },
     {
       title: "Automatic Verification",
-      desc: "Every erasure is automatically verified and generates a tamper-proof certificate beyond the scope of recovery.",
+      desc: "Every erasure is automatically verified and generates a tamper-evident certificate beyond the scope of recovery.",
       icon: ShieldCheck,
     },
     {
@@ -229,7 +229,7 @@ const SmartphoneEraserPage = memo(() => {
     },
     {
       title: "Customizable Reports",
-      desc: "Add your company logo and watermark to tamper-proof PDF, CSV, and XML reports.",
+      desc: "Add your company logo and watermark to tamper-evident PDF, CSV, and XML reports.",
       icon: FileText,
     }
   ];
@@ -476,7 +476,7 @@ const SmartphoneEraserPage = memo(() => {
                 { step: "01", title: "Connect", desc: "Plug in up to 40 devices per workstation using standard USB hubs.", icon: <Smartphone className="w-6 h-6" /> },
                 { step: "02", title: "Config", desc: "Software auto-detects model, OS, and IMEI metadata instantly.", icon: <Cpu className="w-6 h-6" /> },
                 { step: "03", title: "Erase", desc: "Run regulatory erasure in parallel across all connected devices.", icon: <Eraser className="w-6 h-6" /> },
-                { step: "04", title: "Verify", desc: "Generate tamper-proof reports and print identification labels.", icon: <FileCheck className="w-6 h-6" /> },
+                { step: "04", title: "Verify", desc: "Generate tamper-evident reports and print identification labels.", icon: <FileCheck className="w-6 h-6" /> },
               ].map((item) => (
                 <Reveal key={item.title} delayMs={Number.parseInt(item.step) * 100} className="h-full">
                   <div className="relative p-10 rounded-none bg-slate-50 border border-slate-100 hover:bg-white hover:border-emerald-200 hover:shadow-xl transition-all group h-full flex flex-col">
@@ -533,7 +533,7 @@ const SmartphoneEraserPage = memo(() => {
                     Audit-Ready Implementation
                   </div>
                   <h2 className="text-3xl lg:text-5xl font-bold text-white leading-tight">
-                    Global Certification <br />
+                    Global Compliance <br />
                     <span className="text-[#0e7c66]">& Compliance</span>
                   </h2>
                   <p className="text-lg text-white/70 leading-relaxed">
@@ -553,7 +553,7 @@ const SmartphoneEraserPage = memo(() => {
                       "British HMG IS5 (3 Pass)",
                       "US Army AR 380-19",
                       "US Air Force AFSSI-5020",
-                      "Common Criteria (EAL 2)",
+
                       "ISO 27001 Compliant",
                     ].map((std) => (
                       <div key={std} className="flex items-center gap-3 text-white/80 font-medium text-sm">
@@ -571,7 +571,7 @@ const SmartphoneEraserPage = memo(() => {
                     <div className="w-20 h-20 bg-[#0a2e1e] border border-[#0e7c66]/30 text-[#0e7c66] flex items-center justify-center mb-4">
                       <FileCheck className="w-10 h-10" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white">Tamper-Proof Certificates</h3>
+                    <h3 className="text-2xl font-bold text-white">Tamper-Evident Certificates</h3>
                     <p className="text-white/60 max-w-sm">
                       Each erasure generates a verifiable JSON or PDF certificate signed with a cryptographical hash for complete audit readiness.
                     </p>

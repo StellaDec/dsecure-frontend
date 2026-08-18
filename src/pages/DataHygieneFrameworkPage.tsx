@@ -20,7 +20,7 @@ export default function DataHygieneFrameworkPage() {
       icon: "🛡️"
     },
     {
-      title: "Tamper-Proof Certification",
+      title: "Tamper-Evident Certification",
       description: "Generating immutable certificates of destruction anchored in auditable session logs.",
       icon: "📜"
     },
@@ -80,7 +80,7 @@ export default function DataHygieneFrameworkPage() {
                   <div className="flex items-start p-4 bg-white rounded-xl shadow-sm border-l-4 border-brand">
                     <div>
                       <h3 className="font-bold text-slate-900">Audit-Ready 24/7</h3>
-                      <p className="text-slate-600 text-sm">Instant access to tamper-proof certificates for regulatory inspectors.</p>
+                      <p className="text-slate-600 text-sm">Instant access to tamper-evident certificates for regulatory inspectors.</p>
                     </div>
                   </div>
                 </div>

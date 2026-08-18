@@ -71,7 +71,7 @@ export default function TrustCenterPage() {
                  </div>
                  <h2 className="text-2xl font-bold text-slate-900">Regulatory Compliance Alignment</h2>
                </div>
-               <p className="text-slate-600 mb-6 max-w-3xl">We engineer our solutions to help organizations meet and exceed global regulatory standards for data disposal. Learn how our tamper-proof verification engine aligns with your industry requirements.</p>
+               <p className="text-slate-600 mb-6 max-w-3xl">We engineer our solutions to help organizations meet and exceed global regulatory standards for data disposal. Learn how our tamper-evident verification engine aligns with your industry requirements.</p>
                
                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-slate-100">
                   <div className="text-center p-4">

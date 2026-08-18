@@ -4,8 +4,14 @@ import { ProductImage } from '@/components/ProductImage';
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from '../utils/seo';
 import { apiClient as api } from '@/utils/enhancedApiClient';
+import { ThemeButton } from '@/components/ui/Theme';
+import {
+  CheckCircle, XCircle, Package, CreditCard, User, FileText,
+  HelpCircle, Download, LayoutDashboard, ArrowLeft, Clock,
+  Mail, Headphones, BookOpen
+} from 'lucide-react';
 
-// API Response interfaces matching backend schema
+// API Response interfaces — backend schema ke according
 interface BillingAddress {
   street: string;
   city: string;
@@ -138,6 +144,7 @@ export default function OrderSuccessPage() {
     fetchOrderDetails();
   }, [navigate, searchParams]);
 
+  // Currency format helper
   const formatCurrency = (amount: number, currency: string = 'USD') => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -145,6 +152,7 @@ export default function OrderSuccessPage() {
     }).format(amount);
   };
 
+  // Date format helper
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -155,10 +163,11 @@ export default function OrderSuccessPage() {
     });
   };
 
+  // Status color helper — Theme palette ke according
   const getStatusColor = (status: string) => {
     const statusLower = status.toLowerCase();
     if (statusLower === 'confirmed' || statusLower === 'paid' || statusLower === 'success' || statusLower === 'completed') {
-      return 'bg-green-100 text-green-800';
+      return 'bg-[#d4ede4] text-[#0e7c66]';
     }
     if (statusLower === 'pending') {
       return 'bg-yellow-100 text-yellow-800';
@@ -166,48 +175,47 @@ export default function OrderSuccessPage() {
     if (statusLower === 'failed' || statusLower === 'cancelled') {
       return 'bg-red-100 text-red-800';
     }
-    return 'bg-gray-100 text-gray-800';
+    return 'bg-gray-100 text-[#5a6672]';
   };
 
+  // Product category detect karo naam se
   const getProductCategory = (productName: string): string => {
     if (productName.toLowerCase().includes('drive')) return 'drive-eraser';
     if (productName.toLowerCase().includes('file')) return 'file-eraser';
     return 'drive-eraser';
   };
 
+  // ── Loading State ──
   if (loading) {
     return (
       <>
         <SEOHeadNative seo={seo} />
-        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="min-h-screen flex items-center justify-center bg-[#f4fbf8]">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-teal-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600 text-lg">Loading order details...</p>
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#0e7c66] mx-auto"></div>
+            <p className="mt-4 text-[#5a6672] text-lg">Loading order details...</p>
           </div>
         </div>
       </>
     );
   }
 
+  // ── Error State ──
   if (error) {
     return (
       <>
         <SEOHeadNative seo={seo} />
-        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="min-h-screen flex items-center justify-center bg-[#f4fbf8]">
           <div className="text-center max-w-md mx-auto px-4">
+            {/* Icon container — rounded-full as per theme */}
             <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 mb-6">
-              <svg className="h-8 w-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <XCircle className="h-8 w-8 text-red-600" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Error Loading Order</h2>
-            <p className="text-gray-600 mb-6">{error}</p>
-            <Link
-              to="/pricing-and-plan"
-              className="inline-flex items-center px-6 py-3 bg-teal-600 text-white font-semibold rounded-xl hover:bg-teal-700 transition-colors"
-            >
+            <h2 className="text-2xl font-bold text-[#0a2e1e] mb-2">Error Loading Order</h2>
+            <p className="text-[#5a6672] mb-6">{error}</p>
+            <ThemeButton onClick={() => navigate('/pricing-and-plan')} variant="primary">
               Go to Pricing
-            </Link>
+            </ThemeButton>
           </div>
         </div>
       </>
@@ -221,88 +229,70 @@ export default function OrderSuccessPage() {
   return (
     <>
       <SEOHeadNative seo={seo} />
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-gray-100 py-8 sm:py-12">
+      <div className="min-h-screen bg-[#f4fbf8] py-8 sm:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Success Header */}
+
+          {/* ── Success Header ── */}
           <div className="text-center mb-10">
-            <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mb-6 shadow-lg">
-              <svg
-                className="h-12 w-12 text-green-800"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+            {/* Icon container — rounded-full (Theme rule: icons circular) */}
+            <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-[#d4ede4] mb-6">
+              <CheckCircle className="h-12 w-12 text-[#0e7c66]" strokeWidth={2} />
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+            <h1 className="text-3xl sm:text-4xl font-bold text-[#0a2e1e] mb-3">
               Order Confirmed!
             </h1>
-            <p className="text-lg text-gray-600 mb-2">
+            <p className="text-lg text-[#5a6672] mb-2">
               Thank you for your purchase,{" "}
-              <span className="font-semibold">{customer_info.name}</span>!
+              <span className="font-semibold text-[#0a2e1e]">{customer_info.name}</span>!
             </p>
-            <p className="text-gray-500">
+            <p className="text-[#5a6672]">
               A confirmation email has been sent to{" "}
-              <span className="font-medium">{customer_info.email}</span>
+              <span className="font-medium text-[#0a2e1e]">{customer_info.email}</span>
             </p>
           </div>
 
-          {/* Main Content Grid */}
+          {/* ── Main Content Grid ── */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            {/* Left Column - Order & Product Details */}
+
+            {/* Left Column — Order & Product Details */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Order Information Card */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-teal-600 to-teal-700 px-6 py-4">
+
+              {/* Order Information Card — rounded-none, border-[#d0d5dc] */}
+              <div className="bg-white rounded-none border border-[#d0d5dc] overflow-hidden">
+                <div className="bg-[#0e7c66] px-6 py-4">
                   <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <Package className="w-5 h-5" />
                     Order Details
                   </h2>
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <span className="text-sm text-gray-500">Order ID</span>
-                      <p className="font-mono font-semibold text-gray-900">
+                      <span className="text-sm text-[#5a6672]">Order ID</span>
+                      <p className="font-mono font-semibold text-[#0a2e1e]">
                         #{order_details.order_id}
                       </p>
                     </div>
                     <div>
-                      <span className="text-sm text-gray-500">Order Date</span>
-                      <p className="font-medium text-gray-900">
+                      <span className="text-sm text-[#5a6672]">Order Date</span>
+                      <p className="font-medium text-[#0a2e1e]">
                         {formatDate(order_details.order_date)}
                       </p>
                     </div>
                     <div>
-                      <span className="text-sm text-gray-500">Status</span>
+                      <span className="text-sm text-[#5a6672]">Status</span>
                       <p>
                         <span
-                          className={`inline-flex px-3 py-1 text-xs font-semibold rounded-full ${getStatusColor(order_details.status)}`}
+                          className={`inline-flex px-3 py-1 text-xs font-semibold rounded-none ${getStatusColor(order_details.status)}`}
                         >
                           {order_details.status.toUpperCase()}
                         </span>
                       </p>
                     </div>
                     <div>
-                      <span className="text-sm text-gray-500">Payment ID</span>
+                      <span className="text-sm text-[#5a6672]">Payment ID</span>
                       <p
-                        className="font-mono text-sm text-gray-700 truncate"
+                        className="font-mono text-sm text-[#5a6672] truncate"
                         title={order_details.dodo_payment_id}
                       >
                         {order_details.dodo_payment_id || "N/A"}
@@ -313,26 +303,15 @@ export default function OrderSuccessPage() {
               </div>
 
               {/* Product Details Card */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
+              <div className="bg-white rounded-none border border-[#d0d5dc] overflow-hidden">
+                <div className="bg-[#0a2e1e] px-6 py-4">
                   <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                      <path
-                        fillRule="evenodd"
-                        d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <FileText className="w-5 h-5" />
                     Product Details
                   </h2>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-center gap-4">
                     <ProductImage
                       category={getProductCategory(product_details.name)}
                       productName={product_details.name}
@@ -341,41 +320,20 @@ export default function OrderSuccessPage() {
                       className="flex-shrink-0"
                     />
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-gray-900">
+                      <h3 className="text-lg font-bold text-[#0a2e1e]">
                         {product_details.name}
                       </h3>
-                      <p className="text-gray-600 text-sm mt-1">
+                      <p className="text-[#5a6672] text-sm mt-1">
                         {product_details.summary}
                       </p>
                       <div className="mt-3 flex flex-wrap gap-3">
-                        <span className="inline-flex items-center px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-sm font-medium">
-                          <svg
-                            className="w-4 h-4 mr-1"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
+                        <span className="inline-flex items-center px-3 py-1 bg-[#d4ede4] text-[#0e7c66] rounded-none text-sm font-medium">
+                          <Clock className="w-4 h-4 mr-1" />
                           {product_details.duration_years} Year
                           {product_details.duration_years > 1 ? "s" : ""}
                         </span>
-                        <span className="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
-                          <svg
-                            className="w-4 h-4 mr-1"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                            <path
-                              fillRule="evenodd"
-                              d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
+                        <span className="inline-flex items-center px-3 py-1 bg-[#d4ede4] text-[#0e7c66] rounded-none text-sm font-medium">
+                          <Package className="w-4 h-4 mr-1" />
                           {product_details.quantity} License
                           {product_details.quantity > 1 ? "s" : ""}
                         </span>
@@ -386,59 +344,49 @@ export default function OrderSuccessPage() {
               </div>
 
               {/* Customer Information Card */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4">
+              <div className="bg-white rounded-none border border-[#d0d5dc] overflow-hidden">
+                <div className="bg-[#0a2e1e] px-6 py-4">
                   <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <User className="w-5 h-5" />
                     Customer Information
                   </h2>
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <span className="text-sm text-gray-500">Name</span>
-                      <p className="font-medium text-gray-900">
+                      <span className="text-sm text-[#5a6672]">Name</span>
+                      <p className="font-medium text-[#0a2e1e]">
                         {customer_info.name}
                       </p>
                     </div>
                     <div>
-                      <span className="text-sm text-gray-500">Email</span>
-                      <p className="font-medium text-gray-900">
+                      <span className="text-sm text-[#5a6672]">Email</span>
+                      <p className="font-medium text-[#0a2e1e]">
                         {customer_info.email}
                       </p>
                     </div>
                     {customer_info.phone && (
                       <div>
-                        <span className="text-sm text-gray-500">Phone</span>
-                        <p className="font-medium text-gray-900">
+                        <span className="text-sm text-[#5a6672]">Phone</span>
+                        <p className="font-medium text-[#0a2e1e]">
                           {customer_info.phone}
                         </p>
                       </div>
                     )}
                     {customer_info.company_name && (
                       <div>
-                        <span className="text-sm text-gray-500">Company</span>
-                        <p className="font-medium text-gray-900">
+                        <span className="text-sm text-[#5a6672]">Company</span>
+                        <p className="font-medium text-[#0a2e1e]">
                           {customer_info.company_name}
                         </p>
                       </div>
                     )}
                     {customer_info.billing_address?.formatted && (
                       <div className="sm:col-span-2">
-                        <span className="text-sm text-gray-500">
+                        <span className="text-sm text-[#5a6672]">
                           Billing Address
                         </span>
-                        <p className="font-medium text-gray-900">
+                        <p className="font-medium text-[#0a2e1e]">
                           {customer_info.billing_address.formatted}
                         </p>
                       </div>
@@ -448,32 +396,27 @@ export default function OrderSuccessPage() {
               </div>
             </div>
 
-            {/* Right Column - Payment & Invoice */}
+            {/* Right Column — Payment & Invoice */}
             <div className="space-y-6">
+
               {/* Payment Summary Card */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-green-600 to-green-700 px-6 py-4">
+              <div className="bg-white rounded-none border border-[#d0d5dc] overflow-hidden">
+                <div className="bg-[#0e7c66] px-6 py-4">
                   <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" />
-                    </svg>
+                    <CreditCard className="w-5 h-5" />
                     Payment Summary
                   </h2>
                 </div>
                 <div className="p-6">
                   <div className="text-center mb-6">
-                    <div className="text-4xl font-bold text-gray-900">
+                    <div className="text-4xl font-bold text-[#0a2e1e]">
                       {formatCurrency(
                         payment_info.amount,
                         payment_info.currency,
                       )}
                     </div>
                     {payment_info.tax_amount > 0 && (
-                      <p className="text-sm text-gray-500 mt-1">
+                      <p className="text-sm text-[#5a6672] mt-1">
                         Includes{" "}
                         {formatCurrency(
                           payment_info.tax_amount,
@@ -484,40 +427,40 @@ export default function OrderSuccessPage() {
                     )}
                   </div>
 
-                  <div className="space-y-3 border-t pt-4">
+                  <div className="space-y-3 border-t border-[#d0d5dc] pt-4">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Status</span>
+                      <span className="text-[#5a6672]">Status</span>
                       <span
-                        className={`px-2 py-0.5 rounded-full text-xs font-semibold ${getStatusColor(payment_info.status)}`}
+                        className={`px-2 py-0.5 rounded-none text-xs font-semibold ${getStatusColor(payment_info.status)}`}
                       >
                         {payment_info.status.toUpperCase()}
                       </span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Method</span>
-                      <span className="font-medium text-gray-900 capitalize">
+                      <span className="text-[#5a6672]">Method</span>
+                      <span className="font-medium text-[#0a2e1e] capitalize">
                         {payment_info.method}
                       </span>
                     </div>
                     {payment_info.card_last_four && (
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">Card</span>
-                        <span className="font-medium text-gray-900">
+                        <span className="text-[#5a6672]">Card</span>
+                        <span className="font-medium text-[#0a2e1e]">
                           {payment_info.card_network} ••••{" "}
                           {payment_info.card_last_four}
                         </span>
                       </div>
                     )}
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Date</span>
-                      <span className="font-medium text-gray-900">
+                      <span className="text-[#5a6672]">Date</span>
+                      <span className="font-medium text-[#0a2e1e]">
                         {formatDate(payment_info.payment_date)}
                       </span>
                     </div>
                     {payment_info.transaction_id && (
                       <div className="text-sm">
-                        <span className="text-gray-500">Transaction ID</span>
-                        <p className="font-mono text-xs text-gray-700 mt-1 break-all">
+                        <span className="text-[#5a6672]">Transaction ID</span>
+                        <p className="font-mono text-xs text-[#5a6672] mt-1 break-all">
                           {payment_info.transaction_id}
                         </p>
                       </div>
@@ -528,40 +471,30 @@ export default function OrderSuccessPage() {
 
               {/* Invoice Card */}
               {invoice_info && (
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-4">
+                <div className="bg-white rounded-none border border-[#d0d5dc] overflow-hidden">
+                  <div className="bg-[#0a2e1e] px-6 py-4">
                     <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                      <svg
-                        className="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      <FileText className="w-5 h-5" />
                       Invoice
                     </h2>
                   </div>
                   <div className="p-6">
                     <div className="space-y-3 mb-4">
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">Invoice #</span>
-                        <span className="font-mono font-medium text-gray-900">
+                        <span className="text-[#5a6672]">Invoice #</span>
+                        <span className="font-mono font-medium text-[#0a2e1e]">
                           {invoice_info.invoice_number}
                         </span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">Date</span>
-                        <span className="font-medium text-gray-900">
+                        <span className="text-[#5a6672]">Date</span>
+                        <span className="font-medium text-[#0a2e1e]">
                           {formatDate(invoice_info.date)}
                         </span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">Total</span>
-                        <span className="font-bold text-gray-900">
+                        <span className="text-[#5a6672]">Total</span>
+                        <span className="font-bold text-[#0a2e1e]">
                           {formatCurrency(
                             invoice_info.total_amount,
                             invoice_info.currency,
@@ -574,19 +507,9 @@ export default function OrderSuccessPage() {
                       href={`https://live.dodopayments.com/invoices/payments/${order_details.dodo_payment_id}`}
                       target="_blank"
                       rel="nofollow noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full bg-orange-50 hover:bg-orange-100 text-orange-700 font-semibold py-3 px-4 rounded-xl transition-colors border border-orange-200"
+                      className="flex items-center justify-center gap-2 w-full bg-[#d4ede4] hover:bg-[#0e7c66] text-[#0e7c66] hover:text-white font-semibold py-3 px-4 rounded-none transition-colors duration-150 border border-[#d0d5dc]"
                     >
-                      <svg
-                        className="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      <Download className="w-5 h-5" />
                       Download Invoice PDF
                     </a>
                   </div>
@@ -595,118 +518,68 @@ export default function OrderSuccessPage() {
             </div>
           </div>
 
-          {/* Next Steps */}
-          <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-8 border border-blue-100">
-            <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                  clipRule="evenodd"
-                />
-              </svg>
+          {/* ── Next Steps ── */}
+          <div className="bg-white rounded-none p-6 mb-8 border border-[#d0d5dc]">
+            <h3 className="text-lg font-bold text-[#0a2e1e] mb-4 flex items-center gap-2">
+              <HelpCircle className="w-5 h-5 text-[#0e7c66]" />
               What Happens Next?
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="flex items-start space-x-3 bg-white/60 rounded-xl p-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-bold text-blue-600">1</span>
+              {[
+                { step: 1, icon: Mail, title: 'Email Confirmation', desc: 'Within 5 minutes' },
+                { step: 2, icon: Package, title: 'License Delivery', desc: 'Within 24 hours' },
+                { step: 3, icon: Headphones, title: 'Support Access', desc: 'Immediate access' },
+                { step: 4, icon: BookOpen, title: 'Onboarding', desc: 'Within 48 hours' },
+              ].map((item) => (
+                <div key={item.step} className="flex items-start space-x-3 bg-[#f4fbf8] rounded-none p-4 border border-[#d0d5dc]/40">
+                  {/* Step number — rounded-full (Theme rule: icons circular) */}
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#d4ede4] rounded-full flex items-center justify-center">
+                    <span className="text-sm font-bold text-[#0e7c66]">{item.step}</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#0a2e1e]">{item.title}</p>
+                    <p className="text-sm text-[#5a6672]">{item.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-semibold text-blue-900">
-                    Email Confirmation
-                  </p>
-                  <p className="text-sm text-blue-700">Within 5 minutes</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 bg-white/60 rounded-xl p-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-bold text-blue-600">2</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-blue-900">
-                    License Delivery
-                  </p>
-                  <p className="text-sm text-blue-700">Within 24 hours</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 bg-white/60 rounded-xl p-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-bold text-blue-600">3</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-blue-900">Support Access</p>
-                  <p className="text-sm text-blue-700">Immediate access</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 bg-white/60 rounded-xl p-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-bold text-blue-600">4</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-blue-900">Onboarding</p>
-                  <p className="text-sm text-blue-700">Within 48 hours</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Action Buttons */}
+          {/* ── Action Buttons — ThemeButton component use karo ── */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            <Link
-              to="/support"
-              className="flex items-center justify-center gap-2 bg-white hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-xl transition-all"
+            <ThemeButton
+              onClick={() => navigate('/support')}
+              variant="outline"
+              className="flex items-center justify-center gap-2"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <Headphones className="w-5 h-5" />
               Contact Support
-            </Link>
-            <Link
-              to="/admin/downloads"
-              className="flex items-center justify-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl"
+            </ThemeButton>
+            <ThemeButton
+              onClick={() => navigate('/admin/downloads')}
+              variant="primary"
+              className="flex items-center justify-center gap-2"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <Download className="w-5 h-5" />
               Download Center
-            </Link>
-            <Link
-              to="/admin"
-              className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl"
+            </ThemeButton>
+            <ThemeButton
+              onClick={() => navigate('/admin')}
+              variant="primary"
+              className="flex items-center justify-center gap-2"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <LayoutDashboard className="w-5 h-5" />
               Admin Dashboard
-            </Link>
+            </ThemeButton>
           </div>
 
-          {/* Footer */}
+          {/* ── Footer Link ── */}
           <div className="text-center">
             <Link
               to="/all-products"
-              className="text-teal-600 hover:text-teal-700 font-medium transition-colors inline-flex items-center gap-1"
+              className="text-[#0e7c66] hover:text-[#0a2e1e] font-medium transition-colors duration-150 inline-flex items-center gap-1"
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <ArrowLeft className="w-4 h-4" />
               Return to Products
             </Link>
           </div>

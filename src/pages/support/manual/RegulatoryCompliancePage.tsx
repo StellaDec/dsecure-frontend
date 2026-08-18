@@ -12,7 +12,7 @@ const RegulatoryCompliancePage: React.FC = memo(() => {
     {
       id: 1,
       question: "How does D-Secure help with GDPR Article 17?",
-      answer: "GDPR Article 17 (Right to Erasure) requires that organizations completely delete personal data upon request. D-Secure provides the necessary tamper-proof certificates of destruction that legally prove the data was erased according to state-of-the-art standards, satisfying DPO audit requirements."
+      answer: "GDPR Article 17 (Right to Erasure) requires that organizations completely delete personal data upon request. D-Secure provides the necessary tamper-evident certificates of destruction that legally prove the data was erased according to state-of-the-art standards, satisfying DPO audit requirements."
     },
     {
       id: 2,
@@ -70,7 +70,7 @@ const RegulatoryCompliancePage: React.FC = memo(() => {
                   The General Data Protection Regulation (GDPR) is arguably the most stringent data privacy regime on the planet. For enterprises operating in or serving the European Union, data sanitization is no longer a "best practice"—it is a legal mandate with non-compliance penalties reaching up to €20 million or 4% of global annual turnover.
                 </p>
                 <p>
-                  Specific focus is placed on <strong>Article 17 (Right to Erasure)</strong> and <strong>Article 32 (Security of Processing)</strong>. D-Secure solves the GDPR gap by replacing the "deletion" myth (which leaves file pointers on disk) with certified cryptographic erasure that satisfies the most conservative EU Data Protection Authorities (DPAs).
+                  Specific focus is placed on <strong>Article 17 (Right to Erasure)</strong> and <strong>Article 32 (Security of Processing)</strong>. D-Secure solves the GDPR gap by replacing the "deletion" myth (which leaves file pointers on disk) with compliant cryptographic erasure that satisfies the most conservative EU Data Protection Authorities (DPAs).
                 </p>
 
                 <div className="bg-slate-50 border-l-4 border-emerald-500 p-8 rounded-r-xl my-10">

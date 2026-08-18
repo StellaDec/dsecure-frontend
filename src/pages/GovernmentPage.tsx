@@ -335,7 +335,7 @@ const GovernmentPage: React.FC = () => {
                     "Wipe data at facilities with or without internet",
                     "Bulk erasure of drives at high-security defense establishments",
                     "Target loose drives in a rack or chassis with PXE boot",
-                    "Generate tamper-proof audit trails for every sanitized asset",
+                    "Generate tamper-evident audit trails for every sanitized asset",
                   ].map((benefit) => (
                     <div key={benefit} className="flex items-start gap-4">
                       <div className="mt-1">
@@ -427,7 +427,7 @@ const GovernmentPage: React.FC = () => {
                 },
                 {
                   q: "How are erasure reports managed for large government agencies and audits?",
-                  a: "Digitally signed, tamper-proof Certificates of Erasure can be stored locally on encrypted USB sticks for offline use, or centrally aggregated in a secure repository for federal audit readiness.",
+                  a: "Digitally signed, tamper-evident Certificates of Erasure can be stored locally on encrypted USB sticks for offline use, or centrally aggregated in a secure repository for federal audit readiness.",
                 },
               ].map((faq) => (
                 <details key={faq.q} className="group bg-white border border-[#d0d5dc]/60 transition-all">

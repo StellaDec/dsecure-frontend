@@ -690,7 +690,7 @@ const DataGuardianAwardPage: React.FC = () => {
                       Verifiable Erasure
                     </h3>
                     <p className="text-slate-600 text-xs sm:text-sm">
-                      Tamper-proof certificates with digital signatures and
+                      Tamper-evident certificates with digital signatures and
                       cryptographic verification
                     </p>
                   </div>

@@ -18,6 +18,7 @@ import { useGroups } from "@/hooks/useDashboardData";
 import { apiClient } from "@/utils/enhancedApiClient";
 import { authService } from "@/utils/authService";
 import { useNavigate } from "react-router-dom";
+import { EncryptionService, isEncryptedResponse } from "@/utils/EncryptionService";
 import { isDemoMode, DEMO_AUDIT_REPORTS, DEMO_SUBUSERS } from "@/data/demoData";
 import { useSubusers } from "@/hooks/useSubusers";
 import { indexedDBService } from "@/services/indexedDBService";
@@ -1716,14 +1717,19 @@ export default function AdminReports() {
     }
 
     const email = getUserEmail();
-    if (!email) return;
+    console.log("🔍 [Drive Eraser Debug] Email fetched from getUserEmail():", email);
+    if (!email) {
+      console.warn("⚠️ [Drive Eraser Debug] No email found, skipping fetch.");
+      return;
+    }
 
     setDriveEraserLoading(true);
     try {
       const API_BASE = import.meta.env.VITE_API_BASE_URL;
       const token = authService.getAccessToken();
+      console.log("🔍 [Drive Eraser Debug] Auth Token exists?", !!token);
       if (!token) {
-        console.warn("⚠️ Drive Eraser: No auth token");
+        console.warn("⚠️ [Drive Eraser Debug] Drive Eraser: No auth token");
         setDriveEraserLoading(false);
         return;
       }
@@ -1751,15 +1757,27 @@ export default function AdminReports() {
           },
         }
       );
+      
+      console.log(`🔍 [Drive Eraser Debug] API Response Status: ${response.status}`);
 
       if (response.ok) {
-        const data = await response.json();
-        if (data.success && Array.isArray(data.data)) {
+        let data = await response.json();
+        
+        // Decrypt if necessary
+        if (isEncryptedResponse(data)) {
+          console.log("🔍 [Drive Eraser Debug] Encrypted response detected, decrypting...");
+          const isCompressed = data.compressed !== false;
+          data = EncryptionService.decrypt(data.data, isCompressed);
+        }
+
+        console.log("🔍 [Drive Eraser Debug] API Response Data:", JSON.stringify(data, null, 2));
+        if (data && data.success && Array.isArray(data.data)) {
           setDriveEraserReports(data.data);
           setDriveEraserTotalCount(data.count || data.data.length);
           setHasDriveEraserReports(true); // API access hai, reports 0 hon toh bhi tab dikhega
           console.log(`✅ Drive Eraser: ${data.data.length} reports loaded. Total: ${data.count}`);
         } else {
+          console.warn("⚠️ [Drive Eraser Debug] API response format unexpected:", data);
           setDriveEraserReports([]);
           setDriveEraserTotalCount(0);
           setHasDriveEraserReports(false);
@@ -3279,7 +3297,6 @@ export default function AdminReports() {
             </button>
           </div>
         )}
-
         {/* {!loading && !isUsingApi && (
         <div className="bg-[#d4ede4] border border-[#d4ede4] rounded-none p-4 mb-6">
           <div className="flex items-start space-x-3">

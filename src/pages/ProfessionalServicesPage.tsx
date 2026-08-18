@@ -37,9 +37,9 @@ export default function ProfessionalServicesPage() {
     },
     {
       title: "Technical Training",
-      description: "Certified proficiency programs for internal IT teams to master high-assurance sanitization and audit protocols.",
+      description: "Qualified proficiency programs for internal IT teams to master high-assurance sanitization and audit protocols.",
       icon: <StarIcon className="w-8 h-8 text-orange-600" filled={true} />,
-      details: ["On-Site Workshops", "Virtual Sandbox Labs", "Certification Cohorts"]
+      details: ["On-Site Workshops", "Virtual Sandbox Labs", "Qualification Cohorts"]
     }
   ];
 

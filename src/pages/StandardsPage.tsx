@@ -142,7 +142,7 @@ export default function StandardsPage() {
                         <td className="p-4 font-bold text-slate-900">BSI-2011-VS</td>
                         <td className="p-4">Germany / EU</td>
                         <td className="p-4">Multi-pass Overwrite + Verification</td>
-                        <td className="p-4"><span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold uppercase">Certified</span></td>
+                        <td className="p-4"><span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold uppercase">Compliant</span></td>
                       </tr>
                       <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
                         <td className="p-4 font-bold text-slate-900">HMG Infosec No. 5</td>

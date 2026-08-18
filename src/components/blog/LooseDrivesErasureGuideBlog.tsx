@@ -75,7 +75,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                 <p className="text-[#5a6672] leading-loose text-lg">
                   If these drives are not properly wiped before discarding, they
                   become a significant source of data theft and leakage. A
-                  certified secure wiping solution ensures safe data destruction
+                  compliant secure wiping solution ensures safe data destruction
                   before IT asset resale or reuse. Understanding different types
                   of loose drives and ideal practices for their sanitization is
                   essential for every organization managing substantial IT
@@ -224,7 +224,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
 
               <p className="text-[#5a6672] leading-loose text-lg">
                 To perform data sanitization, a loose drive must be extracted from its host device
-                and connected to a dedicated host or chassis. D-Secure Drive Eraser is a leading, enterprise-grade loose drive eraser software that provides the secure, certified approach needed for high-volume sanitization of all loose drive types.
+                and connected to a dedicated host or chassis. D-Secure Drive Eraser is a leading, enterprise-grade loose drive eraser software that provides the secure, compliant approach needed for high-volume sanitization of all loose drive types.
               </p>
 
               <div className="bg-[#f4fbf8] p-8 md:p-12 space-y-6 border-l-4 border-[#0e7c66] prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
@@ -250,7 +250,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
-                    Generates customized tamper-proof certificates and audit
+                    Generates customized tamper-evident certificates and audit
                     trails
                   </li>
                   <li className="flex items-start">
@@ -317,7 +317,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
                       Generate Certificate
                     </h3>
                     <p className="text-[#5a6672] text-lg leading-loose">
-                      Upon completion, generate tamper-proof erasure
+                      Upon completion, generate tamper-evident erasure
                       certificates for compliance documentation and audit trail
                       requirements.
                     </p>
@@ -797,7 +797,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               <p className="text-[#5a6672] leading-loose text-lg">
                 Whether dealing with loose drives extracted from laptops, IT
                 servers, CCTV systems, printers, or any other equipment,
-                choosing certified data erasure software is paramount for
+                choosing Enterprise-grade data erasure software is paramount for
                 security and compliance. The risks of inadequate
                 erasure—customer privacy violations, brand reputation damage,
                 and regulatory penalties—far outweigh the investment in proper
@@ -806,7 +806,7 @@ const LooseDrivesErasureGuideBlog: React.FC = () => {
               <p className="text-[#5a6672] leading-loose text-lg">
                 D-Secure provides the comprehensive capabilities needed for
                 secure loose drive erasure, supporting both internet-connected
-                and offline environments while generating the tamper-proof
+                and offline environments while generating the tamper-evident
                 documentation essential for audit trail requirements.
               </p>
             </div>

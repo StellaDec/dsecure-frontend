@@ -129,7 +129,7 @@ const WipeComputerDonatingBlog: React.FC = () => {
                         If hiring a third-party IT asset recycler, ensure they
                         offer secure <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">data wiping</Link> using reliable and
                         compliance-verified solutions. Check their
-                        certifications and compliance with laws and regulations.
+                        alignments and compliance with laws and regulations.
                       </p>
                     </div>
                   </div>
@@ -207,7 +207,7 @@ const WipeComputerDonatingBlog: React.FC = () => {
                     <li>• Logically overwrites all data</li>
                     <li>• Data destroyed beyond recovery</li>
                     <li>• Uses international erasure standards</li>
-                    <li>• Generates tamper-proof certificates</li>
+                    <li>• Generates tamper-evident certificates</li>
                   </ul>
                 </div>
               </div>
@@ -245,10 +245,10 @@ const WipeComputerDonatingBlog: React.FC = () => {
                 </div>
                 <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
-                    Tamper-Proof Documentation
+                    Tamper-Evident Documentation
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-relaxed">
-                    Offers tamper-proof certificates and erasure reports that
+                    Offers tamper-evident certificates and erasure reports that
                     act as audit trails for regulatory compliance.
                   </p>
                 </div>

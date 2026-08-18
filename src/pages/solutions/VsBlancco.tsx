@@ -43,7 +43,7 @@ const comparisonFeatures = [
     better: "dsecure"
   },
   {
-    feature: "Tamper-Proof Reporting",
+    feature: "Tamper-Evident Reporting",
     dsecure: "2048-bit RSA Signed PDF Certificates",
     blancco: "Standard PDF Export",
     better: "dsecure"

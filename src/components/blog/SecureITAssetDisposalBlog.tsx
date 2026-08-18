@@ -104,7 +104,7 @@ const SecureITAssetDisposalBlog: React.FC = () => {
                       must be chosen to ensure complete data destruction with no
                       traces left behind. Organizations can prevent breaches by
                       destroying data at their own facility or partnering with
-                      certified <Link to="/solutions/itad" className="text-white hover:underline font-medium">ITAD</Link> service providers.
+                      compliant <Link to="/solutions/itad" className="text-white hover:underline font-medium">ITAD</Link> service providers.
                     </p>
                   </div>
                 </div>
@@ -282,7 +282,7 @@ const SecureITAssetDisposalBlog: React.FC = () => {
                   Onsite Destruction
                 </h3>
                 <ul className="text-[#5a6672] space-y-2">
-                  <li>• Use certified data destruction tools</li>
+                  <li>• Use compliant data destruction tools</li>
                   <li>
                     • Apply shredding/degaussing for non-functional devices
                   </li>
@@ -298,7 +298,7 @@ const SecureITAssetDisposalBlog: React.FC = () => {
                   <li>• When organizations lack resources or tools</li>
                   <li>• For multi-location facilities</li>
                   <li>• Data center decommissioning</li>
-                  <li>• Look for e-Stewards, WEEE, R2V3 certifications</li>
+                  <li>• Look for e-Stewards, WEEE, R2V3 alignments</li>
                 </ul>
               </div>
             </div>
@@ -307,7 +307,7 @@ const SecureITAssetDisposalBlog: React.FC = () => {
                 Selecting an <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link> Partner
               </h3>
               <p className="text-lg text-[#5a6672] leading-loose">
-                Consider certifications (e-Stewards, WEEE, R2V3), environmental
+                Consider alignments (e-Stewards, WEEE, R2V3), environmental
                 sustainability practices, expertise in bulk asset disposal, and
                 ability to assess IT asset health for maximum value recovery.
               </p>
@@ -344,7 +344,7 @@ const SecureITAssetDisposalBlog: React.FC = () => {
                 economy
               </li>
               <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                Send non-functional assets to certified recycling facilities
+                Send non-functional assets to compliant recycling facilities
               </li>
             </ul>
           </div>

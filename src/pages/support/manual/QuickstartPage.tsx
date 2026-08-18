@@ -111,7 +111,7 @@ const QuickStartTutorial: React.FC = memo(() => {
           id: 32,
           title: "Regulatory Document Generation",
           description:
-            "Create tamper-proof erasure regulatory documents for audit compliance",
+            "Create tamper-evident erasure regulatory documents for audit compliance",
           url: "/support/manual/certificate-generation",
           pageCount: 2,
         },

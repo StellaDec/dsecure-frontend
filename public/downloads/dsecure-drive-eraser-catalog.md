@@ -9,7 +9,7 @@ D-Secure Drive Eraser is a comprehensive data sanitization solution designed to 
 - **Multi-Platform Support** - Windows, Linux, macOS compatible  
 - **USB & PXE Boot** - Deploy across networks and standalone systems
 - **Cloud Console Integration** - Centralized management and reporting
-- **Digitally Signed Certificates** - Tamper-proof erasure verification
+- **Digitally Signed Certificates** - Tamper-evident erasure verification
 - **Compliance Ready** - GDPR, HIPAA, SOX compliant
 
 ### Technical Specifications

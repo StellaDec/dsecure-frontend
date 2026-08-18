@@ -10,14 +10,14 @@ const CommonCriteriaBlog: React.FC = () => {
       <div className="min-h-screen bg-white">
         <SEOHead
           seo={getBlogSEO({
-            title: "Common Criteria Certified Data Wiping: Why It Matters",
-            excerpt: "Understand the importance of Common Criteria (ISO/IEC 15408) certification for data erasure software and why government agencies mandate it.",
+            title: "Common Criteria Aligned Data Wiping: Why It Matters",
+            excerpt: "Understand the importance of Common Criteria (ISO/IEC 15408) alignment for data erasure software and how D-Secure builds compliant solutions.",
             slug: "common-criteria",
             author: "D-Secure Editorial Team",
             publishDate: "February 10, 2025",
-            keywords: "Common Criteria, EAL certification, security standards",
+            keywords: "Common Criteria, EAL compliance, security standards",
             category: "Compliance",
-            tag: "Certification",
+            tag: "compliance",
           })}
         />
 
@@ -25,15 +25,14 @@ const CommonCriteriaBlog: React.FC = () => {
           <Reveal>
             <div className="text-center px-6">
               <span className="inline-block px-4 py-1 text-sm font-medium text-[#0e7c66] bg-[#d4ede4] rounded-full mb-4">
-                Certification & Compliance
+                Standards & Compliance
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2e1e] mb-8 leading-tight">
-                Common Criteria Certified <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Wiping</Link> Software
+                Common Criteria Compliant <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Wiping</Link> Software
               </h1>
               <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
-                D-Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Drive Eraser</Link> is Common Criteria certified for
-                Evaluation Assurance Level 2 (EAL2), solidifying its status as a
-                trusted and certified data erasure solution.
+                D-Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Drive Eraser</Link> is built in alignment with the rigorous
+                Evaluation Assurance Level 2 (EAL2) guidelines of the Common Criteria standard.
               </p>
             </div>
           </Reveal>
@@ -43,61 +42,18 @@ const CommonCriteriaBlog: React.FC = () => {
           <Reveal>
             <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
               <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                What is Common Criteria Certification?
+                What is the Common Criteria Standard?
               </h2>
               <p className="text-lg text-[#5a6672] leading-loose mb-6">
-                Common Criteria Certified software undergoes rigorous testing
-                and verification by a competent Common Criteria Test Laboratory
-                (CCTL). These test laboratories are spread globally across
-                Certificate Authorizing Member countries that are part of the
-                Common Criteria Recognition Arrangement (CCRA).
+                The Common Criteria for Information Technology Security Evaluation (referred to as Common Criteria or CC) is an international standard (ISO/IEC 15408) for computer security certification. While official certification requires testing by a competent Common Criteria Test Laboratory (CCTL), many software vendors align their development practices with CC guidelines to ensure robust security postures.
               </p>
               <div className="bg-white border-l-4 border-[#0e7c66] p-6 rounded-none">
                 <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
                   About CCRA
                 </h3>
                 <p className="text-lg text-[#5a6672] leading-loose">
-                  The{" "}
-                  <strong>
-                    Common Criteria Recognition Arrangement (CCRA)
-                  </strong>{" "}
-                  is a multiparty international agreement to mutually recognize
-                  and accept the evaluation of IT products based on the Common
-                  Criteria Certification methodology. There are 18 member
-                  countries including Australia, Canada, France, Germany, India,
-                  Japan, Netherlands, and more.
+                  The <strong>Common Criteria Recognition Arrangement (CCRA)</strong> is a multiparty international agreement to mutually recognize and accept the evaluation of IT products based on the Common Criteria methodology. There are 18 member countries including Australia, Canada, France, Germany, India, Japan, Netherlands, and more.
                 </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                Certification Authorities Worldwide
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
-                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
-                    India - IC3S
-                  </h3>
-                  <p className="text-[#5a6672] text-lg leading-relaxed">
-                    The Indian CC Certification Scheme (IC3S) operates within
-                    the Standardization Testing and Quality Certification
-                    Directorate (STQC), part of the Ministry of Electronics &
-                    Information Technology under the Government of India.
-                  </p>
-                </div>
-                <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
-                  <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
-                    Netherlands - TrustCB
-                  </h3>
-                  <p className="text-[#5a6672] text-lg leading-relaxed">
-                    TrustCB B.V., accredited by the Dutch Accreditation Council,
-                    certifies IT security products, processes, and services
-                    according to international and industry standards.
-                  </p>
-                </div>
               </div>
             </div>
           </Reveal>
@@ -105,56 +61,52 @@ const CommonCriteriaBlog: React.FC = () => {
           <Reveal>
             <div className="bg-[#0e7c66] rounded-none shadow-none p-10 mt-10 text-white">
               <h2 className="text-3xl font-bold mb-6">
-                D-Secure <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">Drive Eraser</Link> Evaluation Process
+                D-Secure's Alignment with EAL2 Principles
               </h2>
               <p className="text-lg leading-loose mb-8">
-                D-Secure <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">Drive Eraser</Link> underwent exhaustive testing for Common
-                Criteria certification with the following evaluation
-                methodology:
+                At D-Secure, we develop our <Link to="/products/drive-eraser" className="text-white hover:underline font-medium">Drive Eraser</Link> solution utilizing the Common
+                Criteria Evaluation Assurance Level 2 (EAL2) guidelines as a foundational security framework:
               </p>
 
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">
-                    Evaluation Framework
+                    Development Framework
                   </h3>
                   <ul className="space-y-2 text-white/90">
                     <li>
-                      • Software evaluated based on Common Criteria Standard
-                      Version 3.1 Revision 5
+                      • Software architecture designed following Common Criteria Standard Version 3.1 Revision 5 guidelines.
                     </li>
                     <li>
-                      • Testing performed at accredited Common Criteria Test
-                      Laboratory (CCTL)
+                      • Comprehensive documentation of functional specifications and design architectures.
                     </li>
                     <li>
-                      • Compliance with EAL2 (Evaluation Assurance Level 2)
-                      requirements
+                      • Strict configuration management and secure delivery procedures.
                     </li>
                   </ul>
                 </div>
 
                 <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">
-                    Testing Components for EAL2 Compliance
+                    Internal Verification Practices
                   </h3>
                   <div className="grid md:grid-cols-3 gap-4 mt-4">
                     <div className="bg-white/10 rounded-none p-4 text-center">
                       <h4 className="font-bold mb-2">Developer Testing</h4>
                       <p className="text-sm text-white/80">
-                        Comprehensive test coverage analysis
+                        Comprehensive test coverage analysis in-house.
                       </p>
                     </div>
                     <div className="bg-white/10 rounded-none p-4 text-center">
-                      <h4 className="font-bold mb-2">Independent Testing</h4>
+                      <h4 className="font-bold mb-2">Algorithm Verification</h4>
                       <p className="text-sm text-white/80">
-                        Evaluation team verification
+                        Ensuring erasure protocols meet NIST and DoD standards.
                       </p>
                     </div>
                     <div className="bg-white/10 rounded-none p-4 text-center">
-                      <h4 className="font-bold mb-2">Penetration Testing</h4>
+                      <h4 className="font-bold mb-2">Vulnerability Assessment</h4>
                       <p className="text-sm text-white/80">
-                        Security vulnerability assessment
+                        Continuous internal security and penetration testing.
                       </p>
                     </div>
                   </div>
@@ -164,80 +116,9 @@ const CommonCriteriaBlog: React.FC = () => {
           </Reveal>
 
           <Reveal>
-            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
+            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8 mt-12">
               <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                Evaluation Results & Findings
-              </h2>
-
-              <div className="space-y-6">
-                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
-                    Developer Testing Results
-                  </h3>
-                  <p className="text-[#5a6672] text-lg leading-relaxed">
-                    Evaluators analyzed the developer's test coverage and found
-                    them complete and satisfactory. The correspondence between
-                    tests identified in developer documentation and the
-                    functional specification was complete.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
-                    Independent Testing Results
-                  </h3>
-                  <p className="text-[#5a6672] text-lg leading-relaxed">
-                    The evaluation team simulated the developer's tests and
-                    successfully reproduced them at CCTL. They analyzed code
-                    snippets to ascertain erasure algorithm implementations meet
-                    requirements of standards. The product was found to comply
-                    with the Security Target.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                  <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
-                    Vulnerability & Penetration Testing
-                  </h3>
-                  <p className="text-[#5a6672] text-lg leading-relaxed">
-                    No vulnerabilities were found in the public domain. The
-                    application has no external interfaces with IP addresses or
-                    network-level access, and no vulnerabilities have ever been
-                    reported. Testing revealed the software contains no
-                    exploitable vulnerability for 'Basic Attack Potential.'
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="bg-[#d4ede4] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-6">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                Official Validator Comments
-              </h2>
-              <blockquote className="text-lg text-[#5a6672] leading-loose italic border-l-4 border-[#0e7c66] pl-6 py-4 bg-white rounded-none">
-                "The results of the evaluation of product and process
-                documentation, testing, and vulnerability assessment confirm
-                that D-Secure <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">Drive Eraser</Link> satisfies all the security functional
-                requirements and assurance requirements as defined. Hence, the
-                TOE (Target of Evaluation) is recommended for EAL2
-                Certification."
-              </blockquote>
-              <p className="text-lg text-[#5a6672] leading-loose mt-6">
-                Following this comprehensive evaluation, D-Secure Drive Eraser
-                received the prestigious{" "}
-                <strong>Common Criteria EAL2 Certification</strong>,
-                establishing it as a trusted, tested, and certified data erasure
-                solution.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                What EAL2 Certification Means for You
+                Why Standard Alignment Matters
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
@@ -245,10 +126,7 @@ const CommonCriteriaBlog: React.FC = () => {
                     For Enterprises
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-relaxed">
-                    Confidence that your data erasure solution has been
-                    independently verified by international authorities. Meets
-                    stringent security requirements for government and regulated
-                    industries.
+                    Confidence that your data erasure solution is built on internationally recognized security frameworks. Meets stringent security requirements for government and regulated industries.
                   </p>
                 </div>
                 <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
@@ -256,9 +134,7 @@ const CommonCriteriaBlog: React.FC = () => {
                     For <Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link> Providers
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-relaxed">
-                    Offer your clients proven, certified data destruction
-                    services. Differentiate your business with internationally
-                    recognized credentials.
+                    Offer your clients proven, compliant data destruction services. Differentiate your business by utilizing software developed under strict security methodologies.
                   </p>
                 </div>
                 <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
@@ -266,8 +142,7 @@ const CommonCriteriaBlog: React.FC = () => {
                     For Compliance Officers
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-relaxed">
-                    Demonstrate due diligence with certified tools. Simplify
-                    audit processes with independent third-party validation.
+                    Demonstrate due diligence with compliant tools. Simplify audit processes with software that generates tamper-evident Certificates of Destruction.
                   </p>
                 </div>
                 <div className="bg-[#d4ede4] rounded-none p-6 border border-[#d0d5dc]">
@@ -275,9 +150,7 @@ const CommonCriteriaBlog: React.FC = () => {
                     For EaaS Providers
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-relaxed">
-                    If you're offering Erasure as a Service (EaaS), use
-                    certified drive-wiping software that meets the highest
-                    international standards.
+                    If you're offering Erasure as a Service (EaaS), use software that aligns with the highest international security standards to build client trust.
                   </p>
                 </div>
               </div>
@@ -285,10 +158,9 @@ const CommonCriteriaBlog: React.FC = () => {
           </Reveal>
         </section>
 
-
       <BlogFooterStandard 
         blogId="common-criteria" 
-        blogTitle="Common Criteria (ISO/IEC 15408) for Data Erasure" category="Compliance" tag="Certification" 
+        blogTitle="Common Criteria (ISO/IEC 15408) for Data Erasure" category="Compliance" tag="compliance" 
       />
       </div>
     );

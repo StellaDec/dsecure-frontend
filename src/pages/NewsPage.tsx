@@ -24,8 +24,8 @@ export default function NewsPage() {
     },
     {
       date: '2025-12-20',
-      title: 'NIST 800-88 Compliance Certification',
-      excerpt: 'D-Secure Tech achieves full NIST 800-88 compliance certification.',
+      title: 'NIST 800-88 Compliance',
+      excerpt: 'D-Secure Tech achieves full NIST 800-88 compliance.',
       category: 'Certifications'
     }
   ];

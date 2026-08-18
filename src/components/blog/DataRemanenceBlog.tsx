@@ -13,7 +13,7 @@ const DataRemanenceBlog: React.FC = () => {
             title:
               "What is data remanence? Why deleted data is still recoverable",
             excerpt:
-              "Deleting a file removes the pointer, not the data. Data remanence explains why 'deleted' drives are still readable — and what certified erasure actually does about it.",
+              "Deleting a file removes the pointer, not the data. Data remanence explains why 'deleted' drives are still readable — and what compliant erasure actually does about it.",
             slug: "data-remanence",
             author: "D-Secure Editorial Team",
             publishDate: "May 15, 2026",
@@ -301,7 +301,7 @@ const DataRemanenceBlog: React.FC = () => {
               </p>
               <p className="text-lg text-[#5a6672] leading-loose font-semibold mt-4">
                 Implementing a combination of countermeasures is beneficial in
-                challenging situations. D-Secure provides certified solutions
+                challenging situations. D-Secure provides enterprise-grade solutions
                 that address all aspects of data remanence prevention.
               </p>
             </div>

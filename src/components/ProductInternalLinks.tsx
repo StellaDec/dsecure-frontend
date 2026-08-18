@@ -70,7 +70,7 @@ export const PRODUCT_LINKS: Record<string, RelatedProduct> = {
   "smartphone-eraser": {
     href: "/products/smartphone-eraser",
     label: "Smartphone Eraser",
-    description: "Certified iOS & Android mobile data wipe",
+    description: "compliant iOS & Android mobile data wipe",
     icon: Smartphone,
   },
   "smartphone-diagnostic": {

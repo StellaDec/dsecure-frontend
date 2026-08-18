@@ -11,7 +11,7 @@ export default function DoDCompliancePage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "DoD 5220.22-M Compliant Data Wiping Software Guide",
-    "description": "Execute DoD 5220.22-M 3-pass standard data wiping with D-Secure. Enterprise-grade secure sanitization with tamper-proof audit reports.",
+    "description": "Execute DoD 5220.22-M 3-pass standard data wiping with D-Secure. Enterprise-grade secure sanitization with tamper-evident audit reports.",
     "publisher": {
       "@type": "Organization",
       "name": "D-Secure",
@@ -36,7 +36,7 @@ export default function DoDCompliancePage() {
     {
       title: "Audit Certification",
       description: "Defense contractors and government agencies must maintain an audit trail proving that data destruction was executed according to Department of Defense regulations.",
-      solution: "D-Secure generates tamper-proof certificates detailing the algorithm used (DoD 5220.22-M), hardware specs, and digital signatures for compliance audits."
+      solution: "D-Secure generates tamper-evident certificates detailing the algorithm used (DoD 5220.22-M), hardware specs, and digital signatures for compliance audits."
     }
   ];
 
@@ -70,7 +70,7 @@ export default function DoDCompliancePage() {
     },
     {
       q: "Does D-Secure support the 7-pass DoD method (DoD 5220.22-M ECE)?",
-      a: "Yes. D-Secure includes both the standard 3-pass DoD method and the extended 7-pass DoD 5220.22-M ECE method, which involves two 3-pass wipes and a final random overwrite pass. Both methods generate fully compliant, tamper-proof certificates."
+      a: "Yes. D-Secure includes both the standard 3-pass DoD method and the extended 7-pass DoD 5220.22-M ECE method, which involves two 3-pass wipes and a final random overwrite pass. Both methods generate fully compliant, tamper-evident certificates."
     }
   ];
 
@@ -95,7 +95,7 @@ export default function DoDCompliancePage() {
                 Secure Data Wiping to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">DoD 5220.22-M</span> Standards
               </h1>
               <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
-                Meet the Department of Defense requirements for data sanitization. D-Secure empowers defense contractors and federal agencies to wipe storage media with 3-pass precision and tamper-proof reporting.
+                Meet the Department of Defense requirements for data sanitization. D-Secure empowers defense contractors and federal agencies to wipe storage media with 3-pass precision and tamper-evident reporting.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/pricing-and-plan" className="btn bg-blue-600 hover:bg-blue-500 text-white border-transparent px-6 py-3 rounded-lg font-medium transition-colors">
@@ -221,7 +221,7 @@ export default function DoDCompliancePage() {
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                   <ClipboardIcon className="w-48 h-48" filled={true} />
                 </div>
-                <h2 className="text-2xl font-bold mb-6 relative z-10">Tamper-proof audit reports for Government IT</h2>
+                <h2 className="text-2xl font-bold mb-6 relative z-10">Tamper-evident audit reports for Government IT</h2>
                 <p className="text-slate-300 mb-6 relative z-10">Defense auditors expect documented proof. D-Secure provides:</p>
                 <ul className="space-y-4 mb-8 relative z-10 text-slate-300">
                   <li className="flex items-center gap-3">

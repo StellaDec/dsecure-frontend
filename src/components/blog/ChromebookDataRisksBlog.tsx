@@ -257,7 +257,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
-                    <strong>Documented Proof:</strong> Generates tamper-proof
+                    <strong>Documented Proof:</strong> Generates tamper-evident
                     certificates after wiping for compliance requirements
                   </li>
                   <li className="flex items-start">
@@ -294,7 +294,7 @@ const ChromebookDataRisksBlog: React.FC = () => {
                   </span>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     <strong>Erase Before Transfer:</strong> Always perform
-                    certified data erasure before devices leave organizational
+                    Enterprise-grade data erasure before devices leave organizational
                     custody for any reason.
                   </p>
                 </div>

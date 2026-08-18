@@ -4,7 +4,7 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   "solutions/data-erasure-banking-finance": {
     title: "Banking & Financial Data Erasure: PCI-DSS & SOX | D-Secure",
     description:
-      "Secure data erasure solutions for banks & financial firms. Achieve 100% compliance with PCI-DSS, SOX, and GLBA with tamper-proof audit trails.",
+      "Secure data erasure solutions for banks & financial firms. Achieve 100% compliance with PCI-DSS, SOX, and GLBA with tamper-evident audit trails.",
     keywords: generateKeywords([
       "banking data erasure",
       "financial data destruction",
@@ -14,7 +14,7 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
       "GLBA compliance",
       "FACTA disposal rule",
       "banking ITAD solutions",
-      "certified financial data wiping",
+      "compliant financial data wiping",
     ]),
     canonicalUrl: getCanonicalUrl("/solutions/data-erasure-banking-finance"),
     breadcrumbs: [
@@ -46,11 +46,11 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   "solutions/government": {
     title: "Data Erasure Solutions for Government | NIST 800-88 & DoD",
     description:
-      "Secure data destruction for government and defense. Meet NIST 800-88, DoD 5220.22-M, and CMMC standards with tamper-proof audit trails.",
+      "Secure data destruction for government and defense. Meet NIST 800-88, DoD 5220.22-M, and CMMC standards with tamper-evident audit trails.",
     keywords: generateKeywords([
       "data erasure solutions for government",
       "government data security",
-      "NIST 800-88 certified wiping",
+      "NIST 800-88 compliant wiping",
       "military data erasure software",
       "DoD 5220.22-M standard",
       "CMMC compliance data sanitization",
@@ -66,7 +66,7 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "solutions/itad": {
     title: "Data Erasure Solutions for ITAD & Asset Disposal",
-    description: "Secure data wiping for ITAD and recyclers. Ensure compliance with tamper-proof audit reports and certificates during hardware retirement.",
+    description: "Secure data wiping for ITAD and recyclers. Ensure compliance with tamper-evident audit reports and certificates during hardware retirement.",
     keywords: generateKeywords([
       "data erasure solutions for itad",
       "ITAD data erasure software",
@@ -127,7 +127,7 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   "enterprise-solutions": {
     title: "Data Erasure Solutions for Enterprise | D-Secure",
     description:
-      "Enterprise-grade data erasure solutions for large organizations. Wipe servers and drives with PXE boot and tamper-proof audit trails. NIST 800-88 compliant.",
+      "Enterprise-grade data erasure solutions for large organizations. Wipe servers and drives with PXE boot and tamper-evident audit trails. NIST 800-88 compliant.",
     keywords: generateKeywords([
       "data erasure solutions for enterprise",
       "enterprise data erasure software",
@@ -149,7 +149,7 @@ export const INDUSTRY_SEO: Record<string, Partial<SEOMetadata>> = {
   "solutions/service-providers": {
     title: "MSP & Service Provider Data Erasure Solutions | D-Secure",
     description:
-      "Data erasure for MSPs. Offer certified sanitization as a service with centralized audit trails, white-label reporting, and scalable licensing.",
+      "Data erasure for MSPs. Offer Enterprise-grade Sanitization as a service with centralized audit trails, white-label reporting, and scalable licensing.",
     keywords: generateKeywords([
       "MSP data erasure",
       "service provider data wiping",

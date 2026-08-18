@@ -80,7 +80,7 @@ const ITADSelectionGuideBlog: React.FC = () => {
                     <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none">
                         <h3 className="font-bold text-[#0a2e1e] mb-2">Erasure Verification</h3>
                         <p className="text-[#0a2e1e]">
-                            Further, ITADs must also follow the erasure verification process as recommended by SERI and NAID-AAA to randomly verify erased devices for any traces of data left behind. Plan-IT-ROI, a sizeable <Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link> company based out of New Jersey that is R2 and NAID-AAA certified recommends D-Secure Drive Verifier for performing erasure verification.
+                            Further, ITADs must also follow the erasure verification process as recommended by SERI and NAID-AAA to randomly verify erased devices for any traces of data left behind. Plan-IT-ROI, a sizeable <Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link> company based out of New Jersey that is R2 and NAID-AAA compliant recommends D-Secure Drive Verifier for performing erasure verification.
                         </p>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ const ITADSelectionGuideBlog: React.FC = () => {
                         According to the Deloitte 2024 CxO Sustainability Report, 69% of organizations require suppliers and business partners to meet certain sustainability criteria. Organizations like Google and Infosys have been committed to removing their waste completely by following a zero waste to landfill policy.
                     </p>
                     <p className="text-[#5a6672] leading-relaxed">
-                        Not only can businesses implement such policies to reach their ESG goals company-wide but also select an <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link> partner that takes on IT disposal in an environmentally sustainable way. Certification bodies like e-Stewards, SERI, and NAID ensure that ITADs certified by them perform recycling carefully and responsibly. By pulling out reusable components and securely managing waste, certified ITADs prevent valuable materials from being wasted.
+                        Not only can businesses implement such policies to reach their ESG goals company-wide but also select an <Link to="/solutions/itad" className="text-[#0e7c66] hover:underline font-medium">ITAD</Link> partner that takes on IT disposal in an environmentally sustainable way. alignment bodies like e-Stewards, SERI, and NAID ensure that ITADs compliant by them perform recycling carefully and responsibly. By pulling out reusable components and securely managing waste, certified ITADs prevent valuable materials from being wasted.
                     </p>
                     <div className="bg-[#d4ede4] border-l-4 border-[#0e7c66] p-6 rounded-none">
                         <p className="text-[#0a2e1e]">
@@ -163,7 +163,7 @@ const ITADSelectionGuideBlog: React.FC = () => {
              <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
                 <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
                 <p className="leading-relaxed mb-6">
-                    Identifying risks, taking proactive measures, and meeting the set goals regardless of uncertain and turbulent periods are responsibilities of IT Sourcing, Procurement, and Vendor Management leaders. By partnering with a competent and certified IT asset disposition company, risks associated with data leakage, data theft, loss of IT assets, and chain of custody are reduced. Certified ITADs also ensure responsible recycling to promote sustainability.
+                    Identifying risks, taking proactive measures, and meeting the set goals regardless of uncertain and turbulent periods are responsibilities of IT Sourcing, Procurement, and Vendor Management leaders. By partnering with a competent and compliant IT asset disposition company, risks associated with data leakage, data theft, loss of IT assets, and chain of custody are reduced. Certified ITADs also ensure responsible recycling to promote sustainability.
                 </p>
                 <Link
                     to="/contact"

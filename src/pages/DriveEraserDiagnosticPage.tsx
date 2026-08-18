@@ -250,7 +250,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
     },
     {
     url:"https://res.cloudinary.com/dhwi5wevf/image/upload/v1778242571/fjqwejrbgdzvvetpj7dy.png",
-    alt: "Tamper-proof Erasure Report",
+    alt: "Tamper-evident Erasure Report",
     },
   ];
 
@@ -414,7 +414,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
   const eraseTypes = [
     {
       name: "PC & Laptops",
-      desc: "Regulatory data wiping for Windows, Mac, and Linux computers. Permanent erasure with tamper-proof certificates for audit compliance.",
+      desc: "Regulatory data wiping for Windows, Mac, and Linux computers. Permanent erasure with tamper-evident certificates for audit compliance.",
       icon: (
         <Laptop className="w-8 h-8" />
       ),
@@ -734,7 +734,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                         loading="lazy" 
                         decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png"
-                        alt="Drive Eraser Diagnostic Tamper-proof Report"
+                        alt="Drive Eraser Diagnostic Tamper-evident Report"
                         className="w-full h-auto object-cover"
                       />
                     </div>
@@ -1516,7 +1516,7 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                     Audit-Ready Documentation
                   </div>
                   <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
-                    Tamper-proof Diagnostic Report
+                    Tamper-evident Diagnostic Report
                   </h2>
                   <p className="text-lg text-slate-600 leading-relaxed">
                     Generates digitally signed reports of erasure to help meet
@@ -1531,11 +1531,11 @@ const DriveEraserDiagnosticPage: React.FC = memo(function DriveEraserDiagnosticP
                     setSelectedImageIndex(galleryImages.length - 1)
                   }
                   className="relative rounded-none overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
-                  aria-label="View Tamper-proof Erasure Report fullscreen"
+                  aria-label="View Tamper-evident Erasure Report fullscreen"
                 >
                   <img loading="lazy" decoding="async"
                     src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778233927/r3mpk0vohwxanxppbchv.png"
-                    alt="Tamper-proof Erasure Report"
+                    alt="Tamper-evident Erasure Report"
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent pointer-events-none"></div>

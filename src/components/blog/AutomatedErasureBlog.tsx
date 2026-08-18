@@ -34,7 +34,7 @@ const AutomatedErasureBlog: React.FC = () => {
                     Automate Data Erasure at Scale
                 </h1>
                 <p className="text-lg md:text-xl text-[#5a6672] max-w-3xl mx-auto leading-relaxed">
-                    Wiping drives one by one doesn't scale. Discover how enterprise IT teams and ITADs automate bulk erasure, schedule wipes remotely, and generate tamper-proof audit certificates automatically.
+                    Wiping drives one by one doesn't scale. Discover how enterprise IT teams and ITADs automate bulk erasure, schedule wipes remotely, and generate tamper-evident audit certificates automatically.
                 </p>
             </div>
         </Reveal>
@@ -89,7 +89,7 @@ const AutomatedErasureBlog: React.FC = () => {
                         <div className="flex-1 text-center p-4 bg-white rounded-none shadow-none border border-[#d0d5dc] relative w-full">
                             <div className="bg-[#0e7c66] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mx-auto mb-3">4</div>
                             <h3 className="font-bold text-[#0a2e1e] text-sm">Certificate Export</h3>
-                            <p className="text-xs text-[#5a6672] mt-2">Tamper-proof audit logs and PDFs are auto-generated and synced.</p>
+                            <p className="text-xs text-[#5a6672] mt-2">Tamper-evident audit logs and PDFs are auto-generated and synced.</p>
                         </div>
                     </div>
                 </div>

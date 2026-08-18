@@ -26,7 +26,7 @@ export const ProductImage = memo<ProductImageProps>(({
   
   const sizeConfig = useMemo(() => ({
     small: { container: 'w-16 h-16', icon: 'w-8 h-8', text: 'text-xs' },
-    medium: { container: 'w-24 h-24', icon: 'w-12 h-12', text: 'text-sm' },
+    medium: { container: 'w-28 h-28', icon: 'w-10 h-10', text: 'text-xs' },
     large: { container: 'w-48 h-64', icon: 'w-16 h-16', text: 'text-lg' },
   }), []);
   
@@ -51,9 +51,9 @@ export const ProductImage = memo<ProductImageProps>(({
   }, [category]);
   
   return (
-    <div className={`${currentSize.container} bg-[#0e7c66] rounded-none border border-[#0e7c66] p-4 flex flex-col items-center justify-center text-white ${className}`}>
-      {/* Product Icon */}
-      <div className={`mb-3 flex items-center justify-center rounded-full bg-white/20 ${size === 'large' ? 'p-6' : size === 'medium' ? 'p-4' : 'p-2'}`}>
+    <div className={`${currentSize.container} bg-[#0e7c66] rounded-none border border-[#0e7c66] p-3 flex flex-col items-center justify-center text-white overflow-hidden ${className}`}>
+      {/* Product Icon — centered */}
+      <div className={`mb-2 flex items-center justify-center rounded-full bg-white/20 ${size === 'large' ? 'p-6' : size === 'medium' ? 'p-3' : 'p-2'}`}>
         <IconComponent className={`${currentSize.icon} text-white drop-shadow-md`} strokeWidth={1.5} />
       </div>
       

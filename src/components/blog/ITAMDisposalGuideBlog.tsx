@@ -143,7 +143,7 @@ const ITAMDisposalGuideBlog: React.FC = () => {
                     <div className="bg-white border-l-4 border-[#0e7c66] p-6 rounded-none">
                         <h3 className="font-bold text-[#0a2e1e] mb-2">13. Due Diligence When Hiring Third Parties</h3>
                         <p className="text-[#5a6672] text-sm">
-                            Lapses on the data destruction vendor side can lead to massive data breach episodes that may result in substantial penalties and non-compliance with laws and regulations. You must gather evidence like certifications for vendors performing data destruction and check historical records before onboarding vendors.
+                            Lapses on the data destruction vendor side can lead to massive data breach episodes that may result in substantial penalties and non-compliance with laws and regulations. You must gather evidence like alignments for vendors performing data destruction and check historical records before onboarding vendors.
                         </p>
                     </div>
                 </div>

@@ -98,7 +98,7 @@ export default function WhatIsDSecurePage() {
                   <span className="text-emerald-800 mr-3 mt-1">•</span>
                   <p className="text-slate-600 text-lg leading-relaxed">
                     We deploy cryptographic erasure, 24+ global overwrite
-                    standards (including NIST 800-88), and tamper-proof
+                    standards (including NIST 800-88), and tamper-evident
                     verification nodes.
                   </p>
                 </li>

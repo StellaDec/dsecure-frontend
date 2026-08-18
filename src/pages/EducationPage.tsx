@@ -300,7 +300,7 @@ const EducationPage: React.FC = () => {
                   icon: FileText,
                 },
                 {
-                  title: "Tamper-proof Reports",
+                  title: "Tamper-evident Reports",
                   desc: "Automated compliance-verified certificates generated for every asset wiped, providing a clear audit trail for regulators.",
                   icon: CheckCircle,
                 },

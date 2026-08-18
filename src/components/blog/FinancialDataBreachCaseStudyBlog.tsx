@@ -216,11 +216,11 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                 </div>
                 <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
                   <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
-                    Tamper-Proof Documentation
+                    Tamper-Evident Documentation
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     Professional erasure software generates digital reports for
-                    every wiped device. D-Secure creates tamper-proof
+                    every wiped device. D-Secure creates tamper-evident
                     certificates uploaded to secure cloud storage, providing
                     immutable and legally-valid records to help organizations
                     attain failsafe regulatory compliance.
@@ -265,7 +265,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                     2
                   </span>
                   <p className="text-[#5a6672] text-lg leading-loose">
-                    <strong>Maintain tamper-proof certificates</strong> for
+                    <strong>Maintain tamper-evident certificates</strong> for
                     every device processed, creating an immutable audit trail
                     for regulatory compliance.
                   </p>
@@ -313,7 +313,7 @@ const FinancialDataBreachCaseStudyBlog: React.FC = () => {
                 it such that no tool or technique can retrieve it. Data erasure
                 technology enables this solution through professional software
                 tools. Beyond wiping assurance through systematic implementation
-                and certified records, data erasure also nullifies incidental
+                and compliant records, data erasure also nullifies incidental
                 risks from missing hardware, failed encryption, and vendor
                 mismanagement.
               </p>

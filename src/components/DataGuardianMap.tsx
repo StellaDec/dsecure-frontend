@@ -25,7 +25,7 @@ const DataGuardianMap: React.FC = () => {
   const { MapContainer, TileLayer, Marker, Popup, L } = MapComponents;
 
   // Initialize icon only when needed (client-side)
-  const certifiedMarkerIcon = L.divIcon({
+  const compliantMarkerIcon = L.divIcon({
     className: "custom-marker",
     html: `<div style="
           width: 40px;
@@ -63,7 +63,7 @@ const DataGuardianMap: React.FC = () => {
       />
 
       {/* InfoTree Computers - Dubai */}
-      <Marker position={[25.2048, 55.2708]} icon={certifiedMarkerIcon}>
+      <Marker position={[25.2048, 55.2708]} icon={compliantMarkerIcon}>
         <Popup>
           <div style={{ minWidth: "200px", padding: "8px" }}>
             <h3
@@ -83,7 +83,7 @@ const DataGuardianMap: React.FC = () => {
                 marginBottom: "4px",
               }}
             >
-              CERTIFIED TO:
+              COMPLIANT WITH:
             </p>
             <p
               style={{
@@ -99,7 +99,7 @@ const DataGuardianMap: React.FC = () => {
       </Marker>
 
       {/* Revent Store - UAE */}
-      <Marker position={[24.4539, 54.3773]} icon={certifiedMarkerIcon}>
+      <Marker position={[24.4539, 54.3773]} icon={compliantMarkerIcon}>
         <Popup>
           <div style={{ minWidth: "200px", padding: "8px" }}>
             <h3
@@ -119,7 +119,7 @@ const DataGuardianMap: React.FC = () => {
                 marginBottom: "4px",
               }}
             >
-              CERTIFIED TO:
+              COMPLIANT WITH:
             </p>
             <p
               style={{

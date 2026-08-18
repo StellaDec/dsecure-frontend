@@ -11,7 +11,7 @@ export default function HIPAACompliancePage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "HIPAA Compliant Data Destruction Software Guide",
-    "description": "Ensure HIPAA compliance for PHI and ePHI with D-Secure. Securely sanitize healthcare storage media with tamper-proof audit reports.",
+    "description": "Ensure HIPAA compliance for PHI and ePHI with D-Secure. Securely sanitize healthcare storage media with tamper-evident audit reports.",
     "publisher": {
       "@type": "Organization",
       "name": "D-Secure",
@@ -36,7 +36,7 @@ export default function HIPAACompliancePage() {
     {
       title: "Audit & Accountability",
       description: "Covered entities must be able to demonstrate that ePHI was properly disposed of to HHS Office for Civil Rights (OCR) auditors.",
-      solution: "D-Secure auto-generates tamper-proof audit reports detailing exactly when, how, and what data was erased to prove compliance to OCR auditors."
+      solution: "D-Secure auto-generates tamper-evident audit reports detailing exactly when, how, and what data was erased to prove compliance to OCR auditors."
     }
   ];
 
@@ -66,7 +66,7 @@ export default function HIPAACompliancePage() {
     },
     {
       q: "How does D-Secure prove compliance during an OCR audit?",
-      a: "D-Secure generates a digitally signed, tamper-proof Certificate of Erasure for every single drive or device wiped. This report includes the hardware serial number, the exact algorithm used, the timestamp, and the operator's identity."
+      a: "D-Secure generates a digitally signed, tamper-evident Certificate of Erasure for every single drive or device wiped. This report includes the hardware serial number, the exact algorithm used, the timestamp, and the operator's identity."
     },
     {
       q: "Do you support solid-state drives (SSDs) and NVMe storage commonly used in modern medical equipment?",
@@ -179,7 +179,7 @@ export default function HIPAACompliancePage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900">Preventing ePHI Leaks</h3>
-                      <p className="text-slate-600">Disposing of medical hardware without tamper-proof audit reports is a direct violation of HIPAA. Formatting drives is not enough to stop data recovery of patient records.</p>
+                      <p className="text-slate-600">Disposing of medical hardware without tamper-evident audit reports is a direct violation of HIPAA. Formatting drives is not enough to stop data recovery of patient records.</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -208,7 +208,7 @@ export default function HIPAACompliancePage() {
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                   <ClipboardIcon className="w-48 h-48" filled={true} />
                 </div>
-                <h2 className="text-2xl font-bold mb-6 relative z-10">Tamper-proof audit reports for HHS OCR</h2>
+                <h2 className="text-2xl font-bold mb-6 relative z-10">Tamper-evident audit reports for HHS OCR</h2>
                 <p className="text-slate-300 mb-6 relative z-10">HHS OCR auditors expect documented proof. D-Secure provides:</p>
                 <ul className="space-y-4 mb-8 relative z-10 text-slate-300">
                   <li className="flex items-center gap-3">

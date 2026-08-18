@@ -334,7 +334,7 @@ const HiddenDiskAreasBlog: React.FC = () => {
               </p>
 
               <p className="text-[#5a6672] leading-loose text-lg">
-                Organizations should use certified software like D-Secure Drive
+                Organizations should use enterprise-grade software like D-Secure Drive
                 Eraser that supports complete media sanitization including
                 hidden disk areas. The software uses methods like <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-[#0e7c66] hover:underline font-medium">NIST 800-88</Link></Link>
                 Clear and Purge to completely erase data — including hidden

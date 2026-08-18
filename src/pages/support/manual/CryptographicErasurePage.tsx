@@ -117,7 +117,7 @@ const CryptographicErasurePage: React.FC = memo(() => {
           id: 42,
           title: "Regulatory Document Generation",
           description:
-            "Tamper-proof erasure regulatory documents and audit trails",
+            "Tamper-evident erasure regulatory documents and audit trails",
           url: "/support/manual/certificate-generation",
           pageCount: 2,
         },

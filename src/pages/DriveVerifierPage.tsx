@@ -168,7 +168,7 @@ const driveVerifierFaqs: FAQItem[] = [
   },
   {
     question: "What reporting formats does it support?",
-    answer: "It generates tamper-proof, digitally signed reports in PDF, XML, and CSV formats that integrate directly with your ERP or inventory management systems."
+    answer: "It generates tamper-evident, digitally signed reports in PDF, XML, and CSV formats that integrate directly with your ERP or inventory management systems."
   }
 ];
 
@@ -276,13 +276,13 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
       icon: <Shield className="w-6 h-6 text-emerald-600" />,
     },
     {
-      title: "NAID AAA Certification",
+      title: "NAID AAA Alignment",
       desc: "Utilize independent software for overwriting verification as mandated by NAID AAA section 4.6.",
       icon: <CheckCircle className="w-6 h-6 text-emerald-600" />,
     },
     {
       title: "e-Stewards Reporting",
-      desc: "Generate tamper-proof records of successful sanitization required under Appendix D Section 8.9.4.",
+      desc: "Generate tamper-evident records of successful sanitization required under Appendix D Section 8.9.4.",
       icon: <FileCheck className="w-8 h-8" />,
     },
   ];

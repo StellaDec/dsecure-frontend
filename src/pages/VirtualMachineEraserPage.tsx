@@ -45,7 +45,7 @@ const virtualMachineEraserFaqs: FAQItem[] = [
   },
   {
     q: "Is the report compliant with GDPR?",
-    a: "Yes, the software generates detailed, tamper-proof reports that help you comply with a wide range of global data protection laws including EU-GDPR, HIPAA, and PCI-DSS.",
+    a: "Yes, the software generates detailed, tamper-evident reports that help you comply with a wide range of global data protection laws including EU-GDPR, HIPAA, and PCI-DSS.",
   },
 ];
 
@@ -56,7 +56,7 @@ const virtualMachineEraserTakeaways: KeyTakeawayItem[] = [
   },
   {
     title: "Audit-Ready Reporting",
-    description: "Generate tamper-proof, digitally signed PDF/XML reports with VM details and MAC addresses.",
+    description: "Generate tamper-evident, digitally signed PDF/XML reports with VM details and MAC addresses.",
   },
   {
     title: "18+ Global Standards",
@@ -158,7 +158,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
 
   const features = [
     {
-      title: "Tamper-proof Reports",
+      title: "Tamper-evident Reports",
       desc: "Generates digitally signed PDF/XML reports with VM size, ID, MAC address and more.",
       icon: <FileText className="w-6 h-6 text-emerald-600" />,
     },
@@ -248,7 +248,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
                     Permanently erase Virtual Machines hosted on VMware ESXi and Microsoft Hyper-V. 
-                    Ensure 100% compliance with audit-ready tamper-proof reports.
+                    Ensure 100% compliance with audit-ready tamper-evident reports.
                   </p>
 
                   <div className="flex flex-wrap items-center gap-3">
@@ -651,7 +651,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
                        <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
                           <div className="flex-1">
                              <h3 className="text-2xl font-bold mb-4">Digitally Signed Reports</h3>
-                             <p className="text-emerald-50 mb-6">Maintain complete accountability with tamper-proof reports containing VM size, ID, MAC address, and more.</p>
+                             <p className="text-emerald-50 mb-6">Maintain complete accountability with tamper-evident reports containing VM size, ID, MAC address, and more.</p>
                              <div className="bg-white/10 p-6 rounded-none border border-white/20">
                                 <ul className="space-y-3">
                                    {[

@@ -60,7 +60,7 @@ export const BlogRegistry: Record<string, any> = {
   'hex-viewer': getBlogComponent('HexViewerBlog'),
   'hidden-disk-areas': getBlogComponent('HiddenDiskAreasBlog'),
   'hipaa-compliance-erasure': getBlogComponent('HIPAAComplianceErasureBlog'),
-  'how-to-erase-mac': getBlogComponent('HowToEraseMacBlog'),
+  'how-to-erasure-mac': getBlogComponent('HowToEraseMacBlog'),
   'ieee-2883-2022-data-sanitization': getBlogComponent('IEEE2883ComplianceBlog'),
   'it-asset-lifecycle': getBlogComponent('ITAssetLifecycleBlog'),
   'it-asset-reuse': getBlogComponent('ITAssetReuseBlog'),
@@ -96,4 +96,5 @@ export const BlogRegistry: Record<string, any> = {
   'physical-destruction-vs-data-wiping': getBlogComponent('PhysicalDestructionVsWipingBlog'),
   'chain-of-custody': getBlogComponent('ChainOfCustodyBlog'),
   'nist-800-88-rev2-update-2026': getBlogComponent('NIST80088Rev2UpdateBlog'),
+  'adisa-alignment-itad-data-erasure': getBlogComponent('ADISACertificationBlog'),
 };

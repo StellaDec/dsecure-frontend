@@ -33,8 +33,8 @@ const navigationTree: NavItem[] = [
     title: "About D-Secure Drive Eraser",
     content: (
       <>
-        <p className="text-slate-700 leading-relaxed mb-4"><strong><Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link></strong> is a boot-based, enterprise-grade drive sanitization solution designed to permanently and irreversibly erase all data from storage devices including HDDs, SSDs, NVMe drives, and USB storage. The software boots from a USB or PXE environment, operating independently of the host operating system to ensure complete and Tamper-proof audit reports with certificate for data destruction.</p>
-        <p className="text-slate-700 leading-relaxed mb-4"><Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link> supports <strong>20+ internationally recognized erasure standards</strong> including NIST SP 800-88 Rev1, DoD 5220.22-M (3-pass and 7-pass), and custom overwrite methods. Each erasure operation generates a Tamper-proof audit report with certificate that can be uploaded to the D-Secure Cloud Console for centralized reporting and audit trail management.</p>
+        <p className="text-slate-700 leading-relaxed mb-4"><strong><Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link></strong> is a boot-based, enterprise-grade drive sanitization solution designed to permanently and irreversibly erase all data from storage devices including HDDs, SSDs, NVMe drives, and USB storage. The software boots from a USB or PXE environment, operating independently of the host operating system to ensure complete and Tamper-evident audit reports with certificate for data destruction.</p>
+        <p className="text-slate-700 leading-relaxed mb-4"><Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link> supports <strong>20+ internationally recognized erasure standards</strong> including NIST SP 800-88 Rev1, DoD 5220.22-M (3-pass and 7-pass), and custom overwrite methods. Each erasure operation generates a Tamper-evident audit report with certificate that can be uploaded to the D-Secure Cloud Console for centralized reporting and audit trail management.</p>
         <p className="text-slate-700 leading-relaxed mb-6">The software features an intuitive graphical interface with a step-by-step wizard that guides users through drive detection, wipe configuration, destructive confirmation, wipe progress monitoring, and completion verification. It requires no prior technical expertise and is suitable for IT administrators, ITAD companies, data centers, and compliance teams.</p>
         <h3 className="text-lg font-semibold text-slate-800 mb-3">Key Features:</h3>
         <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4">
@@ -45,7 +45,7 @@ const navigationTree: NavItem[] = [
           <li><strong>Enterprise Dashboard</strong> — View license status, network connection, recent activity, and statistics at a glance.</li>
           <li><strong>Wi-Fi & LAN Connectivity</strong> — Connect via Wi-Fi networks or LAN/Ethernet for cloud license validation and report upload.</li>
           <li><strong>Offline Mode</strong> — Operate in air-gapped environments with offline activation and local report storage.</li>
-          <li><strong>Compliance Reports</strong> — Generate Tamper-proof audit reports with certificate including drive details, method used, and verification status.</li>
+          <li><strong>Compliance Reports</strong> — Generate Tamper-evident audit reports with certificate including drive details, method used, and verification status.</li>
           <li><strong>Cloud Integration</strong> — Automatic report upload to D-Secure Cloud Console for centralized management.</li>
           <li><strong>Multi-Theme Support</strong> — Switch between Light, Dark, D-Secure Green, and D-Secure Light themes.</li>
         </ul>
@@ -382,7 +382,7 @@ const navigationTree: NavItem[] = [
                 <p className="text-slate-700 leading-relaxed mb-4">Upon completion, the system shows a <strong>Success Notification</strong>. This means every sector of the drive has been successfully overwritten.</p>
                 <div className="bg-emerald-50 border-emerald-500 border rounded-lg p-6 mb-6">
                   <h5 className="text-emerald-800 font-bold mb-2">Drive Sanitized Successfully!</h5>
-                  <p className="text-emerald-700 text-sm">A Tamper-proof audit report with certificate has been automatically generated. You can view it by clicking the "View Report" button.</p>
+                  <p className="text-emerald-700 text-sm">A Tamper-evident audit report with certificate has been automatically generated. You can view it by clicking the "View Report" button.</p>
                 </div>
                 <p className="text-slate-700 leading-relaxed mb-4">The report includes full drive details, the algorithm used (e.g., NIST 800-88), and verification status. You can save it to a USB or upload it directly to the D-Secure cloud.</p>
                 <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
@@ -408,7 +408,7 @@ const navigationTree: NavItem[] = [
               <li><strong>Reports Table</strong> — Report ID, Drive Serial, Method, Date, Status, Action</li>
             </ul>
             <div className="p-4 bg-slate-50 border rounded-lg mb-6">
-              <p className="text-sm text-slate-600 italic">Note: Reports are cryptographically signed to ensure tamper-proof integrity. The **Certificate (Page 1)** is designed for quick compliance audits, with subsequent pages providing full forensic audit trails.</p>
+              <p className="text-sm text-slate-600 italic">Note: Reports are cryptographically signed to ensure tamper-evident integrity. The **Certificate (Page 1)** is designed for quick compliance audits, with subsequent pages providing full forensic audit trails.</p>
             </div>
             <ImageManual src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1777550947/okrzyl9tgp4tnlhqskba.jpg" alt="Reports Interface" />
           </>

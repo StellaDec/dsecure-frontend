@@ -25,7 +25,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
       return "The mobile device lifecycle is fraught with hidden data risks that traditional security protocols often overlook. From corporate smartphones containing sensitive emails to consumer trade-ins with personal PII, the sheer volume of data stored on high-density flash memory requires a rigorous, software-based approach to sanitization. Simple factory resets are no longer sufficient in an era where data recovery tools are becoming increasingly sophisticated and accessible to malicious actors.";
     }
     if (isCompliance) {
-      return "The global regulatory landscape is shifting at an unprecedented pace, driven by concerns over data privacy and corporate accountability. With the enforcement of strict data sovereignty laws like GDPR, CCPA, and India's DPDP Act, enterprises must transition from 'best effort deletion' to 'certified, verifiable sanitization.' This shift is essential not only for maintaining audit readiness but also for mitigating the catastrophic financial and reputational risks associated with data breaches.";
+      return "The global regulatory landscape is shifting at an unprecedented pace, driven by concerns over data privacy and corporate accountability. With the enforcement of strict data sovereignty laws like GDPR, CCPA, and India's DPDP Act, enterprises must transition from 'best effort deletion' to 'compliant, verifiable sanitization.' This shift is essential not only for maintaining audit readiness but also for mitigating the catastrophic financial and reputational risks associated with data breaches.";
     }
     if (isESG) {
       return "Sustainability in IT is no longer a peripheral concern—it is a core business strategy. The 'linear' model of IT asset disposal, which often involves physical shredding and waste, is being replaced by the 'circular' economy. Secure data erasure is the key enabler of this transition, allowing organizations to extend the life of their hardware, reduce Scope 3 carbon emissions, and contribute to a more sustainable technological future.";
@@ -122,7 +122,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
             </h3>
             <div className="space-y-6 text-[#5a6672] leading-relaxed">
               <p>
-                Standard wiping tools often leave you in the dark. D-Secure provides a <strong className="text-[#0a2e1e]">Tamper-Proof Audit Trail</strong> that acts as your legal shield. Every sanitization process generates a 100% verifiable certificate of destruction.
+                Standard wiping tools often leave you in the dark. D-Secure provides a <strong className="text-[#0a2e1e]">Tamper-Evident Audit Trail</strong> that acts as your legal shield. Every sanitization process generates a 100% verifiable certificate of destruction.
               </p>
               <div className="space-y-4">
                 <div className="bg-[#f4fbf8] p-4 rounded-none border border-[#0e7c66]/20">
@@ -170,7 +170,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
               <ThemeIconContainer icon={Globe} size="lg" />
               <h3 className="text-xl font-bold text-[#0a2e1e]">Legal Immunity</h3>
               <p className="text-[#5a6672] text-sm leading-relaxed">
-                Relying on "we think we wiped it" is not a legal defense. With a digitally signed, tamper-proof certificate of destruction, your organization is legally protected against claims of data negligence. This is the ultimate insurance policy for your corporate data assets.
+                Relying on "we think we wiped it" is not a legal defense. With a digitally signed, tamper-evident certificate of destruction, your organization is legally protected against claims of data negligence. This is the ultimate insurance policy for your corporate data assets.
               </p>
             </div>
           </div>
@@ -230,7 +230,7 @@ const StandardDeepDive: React.FC<StandardDeepDiveProps> = ({ category, blogTitle
                   </td>
                   <td className="py-5 px-4">Global Standard</td>
                   <td className="py-5 px-4 text-sm">Purge and Clear Verification Standards</td>
-                  <td className="py-5 px-4 text-[#0a2e1e] font-bold text-sm">Certified Native Support</td>
+                  <td className="py-5 px-4 text-[#0a2e1e] font-bold text-sm">compliant Native Support</td>
                 </tr>
                 <tr className="border-b border-[#d0d5dc]/50 hover:bg-[#f4fbf8] transition-colors">
                   <td className="py-5 px-4">

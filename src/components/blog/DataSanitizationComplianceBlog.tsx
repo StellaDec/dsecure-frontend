@@ -143,7 +143,7 @@ const DataSanitizationComplianceBlog: React.FC = () => {
                             <h3 className="font-bold text-[#0a2e1e]">Automated Compliance Reporting</h3>
                         </div>
                         <p className="text-sm text-[#5a6672]">
-                            Tamper-proof certificates with SHA-256 digital signatures for every asset sanitized.
+                            Tamper-evident certificates with SHA-256 digital signatures for every asset sanitized.
                         </p>
                     </div>
                 </div>
@@ -155,7 +155,7 @@ const DataSanitizationComplianceBlog: React.FC = () => {
              <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8">
                 <h2 className="text-2xl font-bold mb-4">Final Thoughts</h2>
                 <p className="leading-relaxed mb-6">
-                    Compliance is the cost of doing business. Protect your organization with a certified data erasure process today.
+                    Compliance is the cost of doing business. Protect your organization with a Enterprise-grade data erasure process today.
                 </p>
                 <Link
                     to="/all-products"

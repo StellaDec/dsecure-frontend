@@ -159,11 +159,11 @@ const UltratestComparisonBlog: React.FC = () => {
                 </div>
                 <div className="bg-white/10 rounded-none p-6">
                   <h3 className="font-bold text-lg mb-3">
-                    Superior Certifications
+                    Superior alignments
                   </h3>
                   <p className="text-white/90 text-sm">
-                    Multiple certifications including Common Criteria, ADISA
-                    PCT, NIST, NYCE, and STQC — proving competence in rendering
+                    Multiple compliance alignments including NIST 800-88, DoD 5220.22-M
+                    — proving competence in rendering
                     data irrecoverable.
                   </p>
                 </div>
@@ -240,7 +240,7 @@ const UltratestComparisonBlog: React.FC = () => {
                     </tr>
                     <tr>
                       <td className="border border-[#d0d5dc] px-4 py-3 font-semibold">
-                        Certifications
+                        alignments
                       </td>
                       <td className="border border-[#d0d5dc] px-4 py-3">
                         ADISA PA only
@@ -265,7 +265,7 @@ const UltratestComparisonBlog: React.FC = () => {
                 While Ultratest Genesis offers an integrated hardware solution,
                 D-Secure provides a more flexible, scalable, and cost-effective
                 alternative for organizations of all sizes. With superior
-                certifications, broader device support, and flexible deployment
+                alignments, broader device support, and flexible deployment
                 options, D-Secure is the smarter choice for secure data erasure.
               </p>
             </div>

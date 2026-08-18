@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import { FAQ } from "@/utils/seo.core";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
 
 interface FAQSectionProps {
@@ -9,8 +8,11 @@ interface FAQSectionProps {
 }
 
 /**
- * FAQSection Component
- * Adds SEO-optimized FAQs with Schema.org markup.
+ * FAQSection Component — SSR-friendly FAQ accordion
+ * Answer text hamesha DOM mein present rehta hai (SEO crawlers ke liye),
+ * lekin visually collapsed rehta hai CSS max-height:0 se.
+ * AnimatePresence hata diya kyunki wo conditional rendering karta tha
+ * jisse server HTML mein answers missing ho jaate the.
  */
 const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -46,25 +48,22 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
                     {faq.question}
                   </span>
                   <ChevronDown 
-                    className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#0a2e1e]" : "text-[#5a6672]"}`} 
+                    className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#0a2e1e]" : "text-[#5a6672]"}`} 
                   />
                 </button>
                 
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="p-4 pt-0 text-[#5a6672] leading-relaxed prose prose-sm max-w-none">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/* Answer hamesha DOM mein rehta hai — SSR/SEO ke liye zaroori.
+                    CSS max-height se visually collapse/expand hota hai. */}
+                <div
+                  className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${
+                    isOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                  aria-hidden={!isOpen}
+                >
+                  <div className="p-4 pt-0 text-[#5a6672] leading-relaxed prose prose-sm max-w-none">
+                    {faq.answer}
+                  </div>
+                </div>
               </div>
             );
           })}

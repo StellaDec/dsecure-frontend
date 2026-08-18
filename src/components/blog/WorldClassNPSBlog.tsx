@@ -254,7 +254,7 @@ const WorldClassNPSBlog: React.FC = () => {
                   </div>
                   <p className="text-[#5a6672] text-lg leading-relaxed italic">
                     "A remarkable solution showcasing impressive features,
-                    competitive edge, product certifications, and complimentary
+                    competitive edge, product alignments, and complimentary
                     24/5 customer service. DOD compliance is a notable benefit.
                     Fulfills its commitments as a valuable option for reliable
                     data erasure."
@@ -279,7 +279,7 @@ const WorldClassNPSBlog: React.FC = () => {
                     "Great experience with <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">secure erasure</Link> of hard drives and
                     SSDs. Technical and customer support team were very prompt
                     in resolving queries, and the detailed product demo was
-                    superb. The certified software is simple to use and highly
+                    superb. The enterprise-grade software is simple to use and highly
                     recommended."
                   </p>
                 </div>
@@ -296,7 +296,7 @@ const WorldClassNPSBlog: React.FC = () => {
                   </div>
                   <p className="text-[#5a6672] text-lg leading-relaxed italic">
                     "As an MSP partner, we provide services to <Link to="/solutions/itad" className="text-[#0a2e1e] hover:underline font-medium">ITAD</Link> companies,
-                    financial and government institutions. Valid certification
+                    financial and government institutions. Valid alignment
                     minimizes risks and ensures GDPR and ISO 27001 compliance.
                     Tech and sales support is always efficient — a real partner
                     we can count on."

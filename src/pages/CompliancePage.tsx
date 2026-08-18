@@ -56,36 +56,11 @@ function CompliancePageContent() {
 
 
 
-  const certifications = [
-    {
-      name: "Common Criteria",
-      level: "EAL 4+",
-      description: "International standard for computer security regulation",
-      icon: "🛡️",
-    },
-    {
-      name: "FIPS 140-2",
-      level: "Level 3",
-      description: "Cryptographic module validation standard",
-      icon: "🔐",
-    },
-    {
-      name: "NSA/CSS",
-      level: "Approved",
-      description: "Listed on NSA/CSS Evaluated Products List",
-      icon: "🏛️",
-    },
-    {
-      name: "CSA STAR",
-      level: "Gold",
-      description: "Cloud Security Alliance regulation",
-      icon: "⭐",
-    },
-  ];
+
 
   const auditFeatures = [
     {
-      title: "Tamper-Proof Regulatory Documents",
+      title: "Tamper-Evident Regulatory Documents",
       description:
         "Cryptographically signed regulatory documents that cannot be forged.",
       icon: (
@@ -162,7 +137,7 @@ function CompliancePageContent() {
               Supported Standards & Regulations
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              D-Secure is Compliant and compliant with major international
+              D-Secure is aligned and compliant with major international
               standards and regulations.
             </p>
           </div>
@@ -260,7 +235,7 @@ function CompliancePageContent() {
                       {standards[activeStandard].deepDiveUrl && (
                         <div className="mt-auto">
                           <Link 
-                            to={standards[activeStandard].deepDiveUrl}
+                            to={standards[activeStandard].deepDiveUrl!}
                             className="inline-flex w-full items-center justify-center px-4 py-3 bg-brand hover:bg-brand/90 text-white rounded-lg font-medium transition-colors"
                           >
                             View Comprehensive {standards[activeStandard].title} Guide
@@ -411,30 +386,7 @@ function CompliancePageContent() {
         </div>
       </section>
 
-      {/* Certifications */}
-      {/* <section className="py-16 md:py-24 bg-slate-50">
-        <div className="container-app">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Third-Party Certifications</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              D-Secure holds the highest level certifications from leading security organizations worldwide.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((cert, i) => (
-              <Reveal key={i} delayMs={i*100}>
-                <div className="bg-white rounded-xl p-6 text-center shadow-lg border border-slate-200/60">
-                  <div className="text-4xl mb-4">{cert.icon}</div>
-                  <h3 className="font-bold text-slate-900 mb-2">{cert.name}</h3>
-                  <div className="text-purple-600 font-semibold mb-3">{cert.level}</div>
-                  <p className="text-slate-600 text-sm">{cert.description}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Audit & Reporting Features */}
       <section className="py-16 md:py-24">

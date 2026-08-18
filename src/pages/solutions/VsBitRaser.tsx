@@ -65,7 +65,7 @@ export default function VsBitRaser() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-bold mb-8">
               <Lock className="w-4 h-4" />
-              <span>Certified Industrial Sanitization</span>
+              <span>Enterprise-grade Industrial Sanitization</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8">
               D-Secure <span className="text-emerald-500">vs</span> BitRaser
@@ -140,7 +140,7 @@ export default function VsBitRaser() {
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 flex-shrink-0 font-bold text-xl">2</div>
                   <div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">Tamper-Proof Certificates</h4>
+                    <h4 className="text-xl font-bold text-slate-900 mb-2">Tamper-Evident Certificates</h4>
                     <p className="text-slate-600 leading-relaxed">We provide 2048-bit RSA signed PDF reports, ensuring that certificates cannot be edited after generation, providing superior legal proof for high-security audits.</p>
                   </div>
                 </div>

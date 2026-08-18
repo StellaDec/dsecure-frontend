@@ -34,7 +34,7 @@ const ServerErasureBlog: React.FC = () => {
               <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
                 Discover how D-Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Drive Eraser</Link> can securely wipe servers and
                 storage devices to permanently erase confidential data with
-                certified compliance.
+                compliant compliance.
               </p>
             </div>
           </Reveal>
@@ -311,11 +311,11 @@ const ServerErasureBlog: React.FC = () => {
                   drives in a server
                 </li>
                 <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                  <strong>Certified Compliance:</strong> Meet GDPR, HIPAA, SOX,
+                  <strong>compliant Compliance:</strong> Meet GDPR, HIPAA, SOX,
                   and other regulatory requirements
                 </li>
                 <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                  <strong>Tamper-Proof Reports:</strong> Digitally signed
+                  <strong>Tamper-Evident Reports:</strong> Digitally signed
                   certificates auto-uploaded to cloud
                 </li>
                 <li className="border-l-4 border-[#0e7c66] pl-8 py-2">

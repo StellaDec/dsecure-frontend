@@ -80,7 +80,7 @@ const GetStartedPage: React.FC = memo(() => {
         "Deploy D-Secure Enterprise across server infrastructure",
         "Inventory all storage devices and RAID configurations",
         "Configure parallel erasure jobs for multiple drives",
-        "Set compliance standards (NIST 800-88, Common Criteria)",
+        "Set compliance standards (NIST 800-88, DoD 5220.22-M)",
         "Execute batch erasure with monitoring dashboard",
         "Generate audit reports and compliance regulatory documents"
       ],

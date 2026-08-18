@@ -130,7 +130,7 @@ const HomePage = memo(function HomePage() {
         isUpcoming: true,
         features: [
           "Bulk processing",
-          "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+          "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
           "Support iOS & Android",
           "Full Factory Reset",
         ],
@@ -199,7 +199,7 @@ const HomePage = memo(function HomePage() {
         features: [
           "Erasure Verification",
           "Compliance Auditing",
-          "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+          "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
           "USB & PXE Support",
         ],
       },
@@ -266,7 +266,7 @@ const HomePage = memo(function HomePage() {
         isUpcoming: true, // Already true, confirmed
         features: [
           "Bit-for-bit imaging",
-          "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+          "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
           "E01 & Raw formats",
           "Hashing verification",
         ],
@@ -353,7 +353,7 @@ const HomePage = memo(function HomePage() {
           "Advanced Algorithms",
           "Deep Freeze Wiping",
           "Sector Level Control",
-          "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+          "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
         ],
       },
       {
@@ -666,7 +666,7 @@ const HomePage = memo(function HomePage() {
                           </div>
                         </div>
 
-                        {/* Floating Badge - Removed NIST Certified */}
+                        {/* Floating Badge - Removed NIST Aligned */}
                       </div>
                     </div>
 
@@ -833,7 +833,7 @@ const HomePage = memo(function HomePage() {
                 <FileCheck className="w-8 h-8 text-[#0e7c66]" />
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#1c2530]">
-                Certified & Tamper-Proof Reports
+                Verifiable & Tamper-Evident Reports
               </h2>
               <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-[#5a6672]">
                 Every erasure and diagnostic process is backed by digitally signed, compliance-ready certificates and comprehensive reports.
@@ -863,7 +863,7 @@ const HomePage = memo(function HomePage() {
               {
                 id: "autopilot",
                 title: "Autopilot / MDM Certificate",
-                desc: "Certified verification of device enrollment status.",
+                desc: "Verifiable verification of device enrollment status.",
                 pdfUrl: "https://assets.dsecuretech.com/Reports/Autopilot/DSecureAutopilotReport_1.pdf",
                 thumbUrl: "/images/reports/autopilot_thumb.png",
                 imgSrc: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1784545652/f7bfazl9lgawdsitaqys.png",

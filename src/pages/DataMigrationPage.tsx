@@ -338,7 +338,7 @@ const DataMigrationPage = memo(() => {
                  { step: "02", title: "Planning", desc: "Strategy formulation & pilot testing.", icon: <Briefcase /> },
                  { step: "03", title: "Execution", desc: "Byte-level secure data transfer.", icon: <Activity /> },
                  { step: "04", title: "Validation", desc: "Post-migration checksum & logic verification.", icon: <ShieldCheck /> },
-                 { step: "05", title: "Reporting", desc: "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary).", icon: <FileSearch /> },
+                 { step: "05", title: "Reporting", desc: "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary).", icon: <FileSearch /> },
                ].map((item, idx) => (
                  <Reveal key={item.title} delayMs={idx * 100}>
                     <div className="relative p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-500 h-full group text-center">
@@ -459,7 +459,7 @@ const DataMigrationPage = memo(() => {
                       {[
                         { title: "AES-256 Encryption", desc: "End-to-end encryption for data in transit and at rest.", icon: <Lock /> },
                         { title: "Immutable Hashing", desc: "MD5/SHA-256 verification for absolute data parity.", icon: <ShieldCheck /> },
-                        { title: "Audit Continuity", desc: "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary/Annexure).", icon: <BarChart3 /> },
+                        { title: "Audit Continuity", desc: "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary/Annexure).", icon: <BarChart3 /> },
                         { title: "Access Control", desc: "Granular RBAC and MFA for migration operators.", icon: <Settings /> },
                       ].map(item => (
                         <div key={item.title} className="p-6 rounded-none bg-slate-50 border border-slate-100 group hover:border-emerald-200 transition-colors">
@@ -507,7 +507,7 @@ const DataMigrationPage = memo(() => {
                    </div>
 
                    <div className="mt-10 pt-10 border-t border-white/10">
-                      <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mb-4">Tamper-proof Audit Report with Certificate</p>
+                      <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mb-4">Tamper-evident Audit Report with Certificate</p>
                       <div className="flex bg-slate-800 rounded-none p-4 items-center justify-between">
                          <div className="flex items-center gap-3">
                             <FileSearch className="w-5 h-5 text-emerald-400" />

@@ -75,7 +75,7 @@ export const COMPLIANCE_STANDARDS = [
   'SOX',
   'PCI DSS',
   'ISO 27001',
-  'Common Criteria EAL 4+',
+  'NIST 800-88',
   'FIPS 140-2',
   'FedRAMP',
   'R2',

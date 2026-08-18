@@ -1,61 +1,67 @@
 /**
- * Dodo Payments Overlay Checkout Utility
- * Overlay checkout SDK se payment form full-screen overlay mein dikhta hai
- * Product-based aur Payment Link dono support karta hai
+ * Dodo Payments Checkout Utility
+ * Session-based overlay checkout using backend API
  */
 
 import { DodoPayments } from 'dodopayments-checkout';
 import type { CheckoutEvent } from 'dodopayments-checkout';
+import { api } from './apiClient';
 
-// SDK kis mode mein initialized hai track karne ke liye
-let currentLinkType: 'static' | 'session' | null = null;
+let isInitialized = false;
+let isCheckoutOpen = false;
 
-/**
- * Checkout ke liye callback types
- */
 interface CheckoutCallbacks {
-  /** Jab checkout successfully complete ho jaye */
   onComplete?: () => void;
-  /** Jab user checkout band kare */
   onClose?: () => void;
 }
 
-// Callbacks store karna zaroori hai taaki event handler mein access ho sake
 let storedCallbacks: CheckoutCallbacks = {};
 
-/**
- * SDK ko specific linkType ke saath initialize karo
- * Agar already same linkType se init ho chuka hai toh skip karega
- */
-function ensureInitialized(linkType: 'static' | 'session', callbacks?: CheckoutCallbacks): void {
-  // Callbacks store karo
+const dsecureTheme = {
+  bgPrimary: '#ffffff',
+  bgSecondary: '#f0fdfa',
+  borderPrimary: '#ccfbf1',
+  borderSecondary: '#99f6e4',
+  textPrimary: '#0f172a',
+  textSecondary: '#475569',
+  textPlaceholder: '#94a3b8',
+  textError: '#dc2626',
+  textSuccess: '#0d9488',
+  buttonPrimary: '#0d9488',
+  buttonPrimaryHover: '#0f766e',
+  buttonTextPrimary: '#ffffff',
+  buttonSecondary: '#f0fdfa',
+  buttonSecondaryHover: '#ccfbf1',
+  buttonTextSecondary: '#0d9488',
+  inputFocusBorder: '#14b8a6',
+};
+
+function ensureInitialized(callbacks?: CheckoutCallbacks): void {
   if (callbacks) {
     storedCallbacks = callbacks;
   }
+  
+  if (isInitialized) return;
 
-  // Agar same linkType se already initialized hai toh skip karo
-  if (currentLinkType === linkType) return;
-
-  // SDK ko required mode mein initialize karo
   DodoPayments.Initialize({
     mode: 'live',
-    displayType: 'overlay',
-    linkType: linkType,
+    displayType: 'overlay', // OVERLAY MODE
+    linkType: 'session',    // SESSION MODE (No double checkout bug)
     onEvent: (event: CheckoutEvent) => {
-      console.log('🔔 Dodo Checkout Event:', event.event_type, event.data);
-
-      // Event types ke basis par callbacks trigger karo
+      console.log('🔔 Dodo Checkout Event:', event.event_type);
       switch (event.event_type) {
-        case 'checkout.closed':
-          storedCallbacks.onClose?.();
+        case 'checkout.opened': 
+          isCheckoutOpen = true; 
+          break;
+        case 'checkout.closed': 
+          isCheckoutOpen = false; 
+          storedCallbacks.onClose?.(); 
           break;
         case 'checkout.redirect':
         case 'checkout.redirect_requested':
-          storedCallbacks.onComplete?.();
-          break;
-        case 'checkout.keys_provided':
-          // License keys mil gaye — payment complete
-          storedCallbacks.onComplete?.();
+        case 'checkout.keys_provided': 
+          isCheckoutOpen = false; 
+          storedCallbacks.onComplete?.(); 
           break;
         default:
           break;
@@ -63,89 +69,98 @@ function ensureInitialized(linkType: 'static' | 'session', callbacks?: CheckoutC
     },
   });
 
-  currentLinkType = linkType;
+  isInitialized = true;
 }
 
-/**
- * Dodo Payments SDK ko product mode (static) mein initialize karo
- * Page mount hone pe call hota hai
- */
 export function initDodoCheckout(callbacks?: CheckoutCallbacks): void {
-  ensureInitialized('static', callbacks);
+  ensureInitialized(callbacks);
 }
 
-// D-Secure website ke colors se matching theme config
-const dsecureTheme = {
-  bgPrimary: '#ffffff',
-  bgSecondary: '#f0fdfa',        // teal-50 — light teal background
-  borderPrimary: '#ccfbf1',      // teal-100
-  borderSecondary: '#99f6e4',    // teal-200
-  textPrimary: '#0f172a',        // slate-900
-  textSecondary: '#475569',      // slate-500
-  textPlaceholder: '#94a3b8',    // slate-400
-  textError: '#dc2626',
-  textSuccess: '#0d9488',        // teal-600
-  buttonPrimary: '#0d9488',      // teal-600 — main brand color
-  buttonPrimaryHover: '#0f766e', // teal-700
-  buttonTextPrimary: '#ffffff',
-  buttonSecondary: '#f0fdfa',    // teal-50
-  buttonSecondaryHover: '#ccfbf1', // teal-100
-  buttonTextSecondary: '#0d9488',  // teal-600
-  inputFocusBorder: '#14b8a6',   // teal-500
-};
-
 /**
- * Product-based overlay checkout open karo (Drive Eraser etc.)
- * 
- * @param productId - Dodo Payments product ID (e.g., "pdt_0NVH5wJYMX70syW3ioj9R")
- * @param quantity - Kitne licenses chahiye
- * @param redirectUrl - Payment complete hone ke baad redirect URL (optional)
+ * Product-based checkout — overlay mode using backend session API
  */
-export function openOverlayCheckout(
+export async function openOverlayCheckout(
   productId: string,
   quantity: number,
-  redirectUrl?: string
-): void {
-  // Static mode mein ensure karo
-  ensureInitialized('static');
+  _redirectUrl?: string
+): Promise<void> {
+  if (isCheckoutOpen) {
+    console.warn('⚠️ Checkout already open — skipping');
+    return;
+  }
 
-  DodoPayments.Checkout.open({
-    products: [{ productId, quantity }],
-    redirectUrl: redirectUrl,
-    options: {
-      themeConfig: dsecureTheme as any,
-      payButtonText: 'Pay Now',
-    },
-  });
+  try {
+    console.log('🚀 Creating checkout session for product:', productId);
+    
+    // Call backend API to create session (GET request as per backend configuration)
+    const response = await api.get('/api/CheckoutLinks/create-session', {
+      params: {
+        productId,
+        quantity,
+      }
+    });
+
+    const checkoutUrl = response.data?.checkoutUrl || response.data?.url || response.data;
+    
+    if (typeof checkoutUrl === 'string' && checkoutUrl.startsWith('http')) {
+      console.log('🚀 Opening Dodo Overlay for session:', checkoutUrl);
+      
+      // Ensure SDK is ready before opening
+      ensureInitialized();
+      isCheckoutOpen = true;
+
+      // Open the overlay
+      DodoPayments.Checkout.open({
+        checkoutUrl: checkoutUrl,
+        options: {
+          themeConfig: dsecureTheme as unknown as Record<string, string>,
+          payButtonText: 'Pay Now',
+        },
+      });
+    } else {
+      console.error("Invalid response from create-session API:", response.data);
+      alert("Failed to initialize checkout session. Invalid response.");
+    }
+  } catch (error) {
+    console.error("Error calling create-session API:", error);
+    alert("Network error while creating checkout session.");
+    throw error; // Let PricingAndPlanPage handle the loading state
+  }
 }
 
 /**
- * Payment Link based overlay checkout open karo (File Eraser etc.)
- * Dodo pe se banayi gayi session URLs ke liye
- * 
- * @param checkoutUrl - Dodo session checkout URL
+ * Payment Link / Session based checkout — overlay mode
  */
-export function openPaymentLinkCheckout(checkoutUrl: string): void {
-  // Payment links ke liye session mode chahiye
-  ensureInitialized('session');
+export async function openPaymentLinkCheckout(checkoutUrl: string): Promise<void> {
+  if (isCheckoutOpen) {
+    console.warn('⚠️ Checkout already open — skipping');
+    return;
+  }
+
+  console.log('🚀 Opening payment link in overlay:', checkoutUrl);
+  ensureInitialized();
+  isCheckoutOpen = true;
 
   DodoPayments.Checkout.open({
     checkoutUrl: checkoutUrl,
     options: {
-      themeConfig: dsecureTheme as any,
+      themeConfig: dsecureTheme as unknown as Record<string, string>,
       payButtonText: 'Pay Now',
     },
   });
 }
 
 /**
- * Checkout band karo (agar user manually close kare)
+ * Close the overlay checkout programmatically
  */
 export function closeOverlayCheckout(): void {
   try {
-    DodoPayments.Checkout.close();
+    if (isInitialized && isCheckoutOpen) {
+      DodoPayments.Checkout.close();
+      isCheckoutOpen = false;
+    }
   } catch (error) {
-    console.warn('Checkout close mein error:', error);
+    console.warn('Error closing checkout overlay:', error);
   }
 }
 

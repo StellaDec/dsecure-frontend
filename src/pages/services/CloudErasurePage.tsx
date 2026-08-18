@@ -72,7 +72,7 @@ function CloudErasureContent() {
       name: 'Blockchain Verification',
       description: 'Immutable proof of erasure with blockchain attestation',
       technology: 'Distributed ledger technology',
-      coverage: 'Tamper-proof audit trails'
+      coverage: 'Tamper-evident audit trails'
     }
   ]
 
@@ -104,7 +104,7 @@ function CloudErasureContent() {
     },
     {
       title: 'Blockchain Verification',
-      description: 'Immutable proof of erasure with distributed ledger technology and tamper-proof audit trails',
+      description: 'Immutable proof of erasure with distributed ledger technology and tamper-evident audit trails',
       icon: <ShieldIcon className="w-5 h-5" filled={true} />
     },
     {

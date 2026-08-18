@@ -25,7 +25,7 @@ export default function TrainingPage() {
           <div className="container-responsive relative z-10 text-center max-w-4xl mx-auto">
             <Reveal>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-                Professional <span className="text-emerald-400">Certification</span>
+                Professional <span className="text-emerald-400">Qualification</span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed">
                 Elevate your organizational proficiency with D-Secure's technical training ecosystem. Master the science of data sanitization and earn industry-recognized credentials.
@@ -35,7 +35,7 @@ export default function TrainingPage() {
                   to="/contact"
                   className="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-3"
                 >
-                  Enroll in Certification
+                  Enroll in Qualification
                   <ArrowRightIcon className="w-5 h-5" filled={true} />
                 </Link>
                 <Link
@@ -65,14 +65,14 @@ export default function TrainingPage() {
               {[
                 {
                   level: "Level 1",
-                  title: "Certified D-Secure Operator (CDSO)",
+                  title: "Qualified D-Secure Operator (QDSO)",
                   focus: "Day-to-day operations, asset tracking, and standard erasure workflows.",
                   curriculum: ["Basic Hardware Profiling", "NIST 800-88 Clear Concepts", "Certificate Generation", "Mobile App Operations"],
                   icon: <ActivityIcon className="w-10 h-10 text-blue-500" filled={true} />
                 },
                 {
                   level: "Level 2",
-                  title: "Certified Sanitization Engineer (CSE)",
+                  title: "Enterprise-grade Sanitization Engineer (CSE)",
                   focus: "Advanced architecture, PXE deployment, and cryptographic validation.",
                   curriculum: ["Network Boot Configuration", "SSD Cryptographic Erasure", "Custom ISO Scripting", "Forensic Verification Audits"],
                   icon: <ShieldIcon className="w-10 h-10 text-emerald-500" filled={true} />
@@ -81,7 +81,7 @@ export default function TrainingPage() {
                   level: "Level 3",
                   title: "Data Governance Architect (DGA)",
                   focus: "Enterprise-wide policy design, compliance integration, and risk mitigation.",
-                  curriculum: ["SIEM/API Integration Strategy", "Global Compliance Matrices", "Tamper-proof Ledger Mgmt", "Infrastructure Scalability"],
+                  curriculum: ["SIEM/API Integration Strategy", "Global Compliance Matrices", "Tamper-evident Ledger Mgmt", "Infrastructure Scalability"],
                   icon: <BuildingIcon className="w-10 h-10 text-purple-500" filled={true} />
                 }
               ].map((item, index) => (
@@ -172,7 +172,7 @@ export default function TrainingPage() {
             <Reveal>
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold text-slate-900 mb-6">Why Invest in D-Secure Training?</h2>
-                <p className="text-lg text-slate-600">The ROI of professional certification extends far beyond basic operational knowledge.</p>
+                <p className="text-lg text-slate-600">The ROI of professional qualification extends far beyond basic operational knowledge.</p>
               </div>
             </Reveal>
 
@@ -201,7 +201,7 @@ export default function TrainingPage() {
                     <ClipboardIcon className="w-8 h-8" filled={true} />
                   </div>
                   <h4 className="text-xl font-bold text-slate-900 mb-4">Internal Advocacy</h4>
-                  <p className="text-slate-600 leading-relaxed">Certified professionals become internal champions, ensuring data hygiene standards are maintained across the organization.</p>
+                  <p className="text-slate-600 leading-relaxed">Qualified professionals become internal champions, ensuring data hygiene standards are maintained across the organization.</p>
                 </div>
               </Reveal>
             </div>
@@ -214,7 +214,7 @@ export default function TrainingPage() {
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">Secure Your Team's Expertise</h2>
               <p className="text-xl mb-12 opacity-90 text-white">
-                Contact our education team to design a custom training roadmap for your enterprise or to enroll in our next certification cohort.
+                Contact our education team to design a custom training roadmap for your enterprise or to enroll in our next qualification cohort.
               </p>
               <div className="flex flex-wrap justify-center gap-6">
                 <Link

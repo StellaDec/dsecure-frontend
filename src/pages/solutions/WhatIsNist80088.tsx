@@ -78,7 +78,7 @@ export default function WhatIsNist80088() {
                     How D-Secure Implements NIST 800-88
                   </h3>
                   <p className="text-blue-100 text-lg leading-relaxed mb-8">
-                    D-Secure is built on the NIST framework. Our industrial erasure engine automatically selects the correct sanitization protocol based on the media type (HDD, SSD, NVMe) and generates a **Tamper-proof audit reports with certificate** (2K RSA signed) for legal verification.
+                    D-Secure is built on the NIST framework. Our industrial erasure engine automatically selects the correct sanitization protocol based on the media type (HDD, SSD, NVMe) and generates a **Tamper-evident audit reports with certificate** (2K RSA signed) for legal verification.
                   </p>
                   <Link to="/contact" className="w-full sm:w-auto px-10 py-5 bg-white text-blue-600 rounded-2xl font-extrabold text-xl shadow-lg hover:bg-blue-50 transition-all flex items-center justify-center gap-2">
                     Connect for Compliance Audit <ArrowRight className="w-5 h-5" />

@@ -19,9 +19,9 @@ const MobileErasureGuideBlog: React.FC = () => {
       {/* SEO: Compliance ke liye mobile data erasure optimized title aur description set kiya */}
       <SEOHead
         seo={getBlogSEO({
-          title: "Certified mobile data erasure: smartphones, tablets, and MDM",
+          title: "compliant mobile data erasure: smartphones, tablets, and MDM",
           excerpt:
-            "Factory reset doesn't meet NIST 800-88 or GDPR requirements. Certified mobile erasure does — here's how it works for iOS, Android, and MDM-managed device fleets.",
+            "Factory reset doesn't meet NIST 800-88 or GDPR requirements. compliant mobile erasure does — here's how it works for iOS, Android, and MDM-managed device fleets.",
           slug: "mobile-erasure-guide",
           author: "D-Secure Editorial Team",
           publishDate: "January 28, 2025",
@@ -427,7 +427,7 @@ const MobileErasureGuideBlog: React.FC = () => {
 
       <BlogFooterStandard
         blogId="mobile-erasure-guide"
-        blogTitle="Certified mobile data erasure: smartphones, tablets, and MDM"
+        blogTitle="compliant mobile data erasure: smartphones, tablets, and MDM"
       />
     </div>
   );

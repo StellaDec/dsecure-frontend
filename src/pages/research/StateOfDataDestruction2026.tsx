@@ -157,7 +157,7 @@ const StateOfDataDestruction2026: React.FC = () => {
                 <ul className="pl-6 space-y-8 text-slate-600 mb-20 leading-relaxed text-lg">
                    <li><strong>API-First Sanitization:</strong> Eliminate manual scans. All data destruction should be triggered via inventory API hooks (ServiceNow/Jira).</li>
                    <li><strong>Cryptographic Priority:</strong> Move to NIST 800-88 Purge via Crypto-E to protect SSD lifespan and ensure zero-second bit-shredding.</li>
-                   <li><strong>Immutable Audit Trails:</strong> Use digitally signed, tamper-proof certificates that bridge from the hardware serial to the compliance vault.</li>
+                   <li><strong>Immutable Audit Trails:</strong> Use digitally signed, tamper-evident certificates that bridge from the hardware serial to the compliance vault.</li>
                    <li><strong>Edge Sanitization:</strong> Erase devices at the point of origin (data center floor) rather than the point of aggregation (warehouse).</li>
                 </ul>
               </Reveal>

@@ -11,7 +11,7 @@ const DataErasureMythsBlog: React.FC = () => {
         <SEOHead
           seo={getBlogSEO({
             title: "Data Deletion vs. Data Erasure: Busting the 5 Biggest Myths",
-            excerpt: "Deleting a file does not erase it. Uncover the truth behind data deletion myths, formatting, factory resets, and why only certified data erasure guarantees permanent destruction.",
+            excerpt: "Deleting a file does not erase it. Uncover the truth behind data deletion myths, formatting, factory resets, and why only Enterprise-grade data erasure guarantees permanent destruction.",
             slug: "data-erasure-myths",
             author: "D-Secure Editorial Team",
             publishDate: "February 27, 2025",
@@ -304,7 +304,7 @@ const DataErasureMythsBlog: React.FC = () => {
           <Reveal>
             <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 mt-10 space-y-8">
               <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                The Reliable Solution: Certified Data Erasure
+                The Reliable Solution: Enterprise-grade data erasure
               </h2>
 
               <p className="text-[#5a6672] leading-loose text-lg">
@@ -335,7 +335,7 @@ const DataErasureMythsBlog: React.FC = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
-                    Generates tamper-proof certificates for compliance
+                    Generates tamper-evident certificates for compliance
                     documentation
                   </li>
                   <li className="flex items-start">
@@ -419,7 +419,7 @@ const DataErasureMythsBlog: React.FC = () => {
                         Data Erasure
                       </td>
                       <td className="border border-[#d0d5dc] p-4">
-                        Certified destruction
+                        compliant destruction
                       </td>
                       <td className="border border-[#d0d5dc] p-4 text-[#0a2e1e] font-bold">
                         ✓ Verified permanent destruction

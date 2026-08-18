@@ -85,7 +85,7 @@ export default function CustomerStoriesPage() {
                   <h3 className="text-4xl font-bold text-slate-900 mb-2">Zero</h3>
                   <p className="text-lg font-semibold text-purple-600 mb-4">Compliance Breach Incidents</p>
                   <p className="text-slate-600 leading-relaxed">
-                    In over a decade of operation, zero D-Secure certified clients have faced data leak penalties or audit failures related to hardware disposal.
+                    In over a decade of operation, zero D-Secure enterprise clients have faced data leak penalties or audit failures related to hardware disposal.
                   </p>
                 </div>
               </Reveal>
@@ -138,7 +138,7 @@ export default function CustomerStoriesPage() {
                           <li>• PXE-based network boot for mass parallelization.</li>
                           <li>• Automated asset discovery and hardware profiling.</li>
                           <li>• Real-time progress monitoring via Cloud Console.</li>
-                          <li>• Tamper-proof XML report generation.</li>
+                          <li>• Tamper-evident XML report generation.</li>
                         </ul>
                       </div>
                       <div>
@@ -251,7 +251,7 @@ export default function CustomerStoriesPage() {
                       The "Gold Standard" Audit
                     </h4>
                     <p className="text-slate-400 text-base leading-relaxed">
-                      Every customer story conclude with a **Final Proof of Sanitization (FPS)** report. These reports are cryptographically hashed and stored in our tamper-proof ledger, ensuring that five years from now, our clients can prove with 100% certainty that a specific serial number was sanitized according to global standards.
+                      Every customer story conclude with a **Final Proof of Sanitization (FPS)** report. These reports are cryptographically hashed and stored in our tamper-evident ledger, ensuring that five years from now, our clients can prove with 100% certainty that a specific serial number was sanitized according to global standards.
                     </p>
                   </div>
                 </div>

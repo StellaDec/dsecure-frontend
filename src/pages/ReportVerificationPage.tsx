@@ -120,7 +120,7 @@ export default function ReportVerificationPage() {
               D-Secure Universal Report Verification
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Securely verify the authenticity and tamper-proof status of any D-Secure generated report.
+              Securely verify the authenticity and tamper-evident status of any D-Secure generated report.
             </p>
           </div>
 

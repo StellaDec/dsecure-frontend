@@ -15,7 +15,7 @@ const HowToEraseMacBlog: React.FC = () => {
               "How to Securely Erase Mac Devices (M1, M2, M3 & Intel) | Enterprise Mac Data Erasure",
             excerpt:
               "Guide for IT teams to securely erase Macs, including Apple Silicon. Learn why factory resets fail compliance.",
-            slug: "how-to-erase-mac",
+            slug: "how-to-erasure-mac",
             author: "D-Secure Editorial Team",
             publishDate: "February 13, 2025",
             keywords:
@@ -80,7 +80,7 @@ const HowToEraseMacBlog: React.FC = () => {
                   but they don't satisfy organizational requirements for secure
                   data disposal. Built-in erasure tools don't generate proof of
                   data destruction, making them unsuitable for enterprise
-                  environments where compliance documentation from a <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline">certified drive eraser</Link> is mandatory.
+                  environments where compliance documentation from a <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline">compliant drive eraser</Link> is mandatory.
                 </p>
               </div>
 
@@ -378,7 +378,7 @@ const HowToEraseMacBlog: React.FC = () => {
                     Digitally Signed Erasure Reports
                   </h2>
                   <p className="text-[#5a6672] text-lg leading-loose">
-                    Generates tamper-proof erasure reports for every device,
+                    Generates tamper-evident erasure reports for every device,
                     including timestamps, hardware information, erasure status,
                     method used, and technician details.
                   </p>
@@ -445,7 +445,7 @@ const HowToEraseMacBlog: React.FC = () => {
         </section>
 
         <BlogFooterStandard 
-          blogId="how-to-erase-mac" 
+          blogId="how-to-erasure-mac" 
           blogTitle="How to Securely Erase Mac Devices (M1, M2, M3 & Intel) | Enterprise Mac Data Erasure" category="Technical Guide" tag="Mac" 
         />
       </div>

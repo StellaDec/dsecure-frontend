@@ -150,7 +150,7 @@ const navigationTree: NavItem[] = [
           { step: "03", title: "Unlock", text: "Remove ATA passwords or frozen states preventing erasure." },
           { step: "04", title: "Erase", text: "Execute selected method (e.g., NIST 800-88 Purge)." },
           { step: "05", title: "Verify", text: "Post-erasure verification scan (10-100% of drive)." },
-          { step: "06", title: "Certify", text: "Generate tamper-proof erasure certificate for compliance." }
+          { step: "06", title: "Certify", text: "Generate tamper-evident erasure certificate for compliance." }
         ].map((item, idx) => (
           <div key={idx} className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
             <span className="text-2xl font-black text-emerald-200">{item.step}</span>

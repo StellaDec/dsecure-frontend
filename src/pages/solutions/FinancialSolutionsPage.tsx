@@ -658,7 +658,7 @@ const FinancialSolutionsPage: React.FC = () => {
               {[
                 {
                   q: "Does D-Secure help meet PCI-DSS and GDPR compliances?",
-                  a: "Yes, D-Secure ensures permanent data destruction and generates tamper-proof certificates that serve as verifiable proof of compliance for PCI-DSS, GDPR, GLBA, and other strict financial regulations.",
+                  a: "Yes, D-Secure ensures permanent data destruction and generates tamper-evident certificates that serve as verifiable proof of compliance for PCI-DSS, GDPR, GLBA, and other strict financial regulations.",
                 },
                 {
                   q: "Can we erase endpoint devices at remote bank branches?",
@@ -666,7 +666,7 @@ const FinancialSolutionsPage: React.FC = () => {
                 },
                 {
                   q: "How secure are the generated erasure reports?",
-                  a: "Our erasure reports are digitally signed and completely tamper-proof. They can be centrally managed in our Cloud Console or saved locally for seamless integration with your bank's audit systems.",
+                  a: "Our erasure reports are digitally signed and completely tamper-evident. They can be centrally managed in our Cloud Console or saved locally for seamless integration with your bank's audit systems.",
                 },
                 {
                   q: "Can we erase specific sensitive financial files instead of the whole drive?",

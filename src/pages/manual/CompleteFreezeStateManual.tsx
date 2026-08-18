@@ -480,7 +480,7 @@ const navigationTree: NavItem[] = [
               <div className="lg:col-span-2 space-y-4">
                  <h4 className="text-3xl font-black tracking-tighter uppercase italic">Forensic Integrity Guaranteed</h4>
                  <p className="text-lg text-slate-400 font-medium leading-relaxed">
-                    D-Secure FreezeState ensures that every byte of session data is removed beyond physical recovery. Our Advanced Eraser is certified for usage in mission-critical banking, government, and healthcare infrastructure.
+                    D-Secure FreezeState ensures that every byte of session data is removed beyond physical recovery. Our Advanced Eraser is aligned for usage in mission-critical banking, government, and healthcare infrastructure.
                  </p>
               </div>
               <div className="flex justify-center flex-col items-center gap-6">

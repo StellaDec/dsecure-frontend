@@ -85,7 +85,7 @@ const VerificationOverviewPage: React.FC = memo(() => {
                       ✓ Regulatory Document Generation
                     </h3>
                     <p className="text-slate-700">
-                      Tamper-proof audit regulatory documents
+                      Tamper-evident audit regulatory documents
                     </p>
                   </div>
                 </div>

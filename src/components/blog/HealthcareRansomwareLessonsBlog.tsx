@@ -186,7 +186,7 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
 
                 <li>
                   <strong>Adopt Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Erasure</Link>:</strong> Unused and retired
-                  systems must be wiped using certified data erasure methods to
+                  systems must be wiped using Enterprise-grade data erasure methods to
                   prevent residual data exposure.
                 </li>
 
@@ -217,7 +217,7 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
               <div className="bg-white p-6 rounded-none border">
                 <div className="flex items-center gap-2 mb-3">
                   <ClipboardIcon className="w-5 h-5 text-[#0e7c66]" filled />
-                  <h3 className="font-bold">Certified Data Erasure</h3>
+                  <h3 className="font-bold">Enterprise-grade data erasure</h3>
                 </div>
                 <p className="text-sm text-[#5a6672]">
                   Securely erase sensitive data from devices before reuse,
@@ -231,7 +231,7 @@ const HealthcareRansomwareLessonsBlog: React.FC = () => {
                   <h3 className="font-bold">Compliance & Audit Proof</h3>
                 </div>
                 <p className="text-sm text-[#5a6672]">
-                  Generate tamper-proof erasure certificates aligned with global
+                  Generate tamper-evident erasure certificates aligned with global
                   data protection regulations.
                 </p>
               </div>

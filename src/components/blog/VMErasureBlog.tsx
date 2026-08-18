@@ -293,7 +293,7 @@ const VMErasureBlog: React.FC = () => {
                   <p className="leading-loose">
                     VM erasure reports are crucial for meeting compliance with
                     regulations like EU-GDPR, CCPA, HIPAA, SOX, and standards
-                    like ISO 27001. These tamper-proof, verifiable reports serve
+                    like ISO 27001. These tamper-evident, verifiable reports serve
                     as audit-ready documents.
                   </p>
                 </div>

@@ -257,7 +257,7 @@ const ZeroTrustSanitization: React.FC = () => {
                                { l: "Phase 2: Authentication", d: "Cryptographic challenge to verify local controller integrity." },
                                { l: "Phase 3: Execution", d: "NIST 800-88 Purge via native firmware commands." },
                                { l: "Phase 4: Audit Extraction", d: "Collection of post-erasure entropy data for verification." },
-                               { l: "Phase 5: Cert Generation", d: "Signing of tamper-proof Erasure Certificate via D-Secure Vault." }
+                               { l: "Phase 5: Cert Generation", d: "Signing of tamper-evident Erasure Certificate via D-Secure Vault." }
                              ].map((item, idx) => (
                                <div key={item.l} className="flex gap-10 group/item hover:translate-x-2 transition-transform">
                                   <div className="text-emerald-500 font-black text-xs pt-1 opacity-50">0{idx+1}</div>

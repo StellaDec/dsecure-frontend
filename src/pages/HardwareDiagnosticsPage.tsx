@@ -78,7 +78,7 @@ const hardwareDiagnosticsFaqs: FAQItem[] = [
     a: "The tool performs 10+ automated tests (CPU, RAM, SMART, Battery, CMOS, Motherboard) and provides guided manual tests for Keyboard, Display, Audio, Webcam, and USB ports for 100% component verification.",
   },
   {
-    q: "Are the diagnostics reports tamper-proof?",
+    q: "Are the diagnostics reports tamper-evident?",
     a: "Yes, every report is digitally signed and generated in non-editable PDF, XML, and CSV formats. This ensures the integrity of the hardware health data for audits and resale grading.",
   },
 ];
@@ -464,7 +464,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
       versions: "Server-grade hardware & workstations",
       features: [
         "Simultaneous Multi-Machine",
-        "Tamper-proof Report Logs",
+        "Tamper-evident Report Logs",
         "Centralized Cloud Console",
         "ERP / API Integration",
       ],
@@ -498,7 +498,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
       icon: <Cloud className="w-6 h-6 text-emerald-600" />,
     },
     {
-      title: "Tamper-proof Signed Reports",
+      title: "Tamper-evident Signed Reports",
       desc: "Generates secure, digitally signed hardware diagnostics reports in PDF, CSV, and XML formats to prevent data tampering.",
       icon: <Globe className="w-6 h-6 text-emerald-600" />,
     },
@@ -547,7 +547,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
     },
     {
       title: "Meet Industry Standards",
-      desc: "Maintain compliance with R2v3, e-Stewards, and other certification standards.",
+      desc: "Maintain compliance with R2v3, e-Stewards, and other compliance standards.",
       icon: <Shield className="w-8 h-8" />,
     },
     {
@@ -733,7 +733,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-                    Comprehensive hardware health assessment for PC, Laptop, Desktop & Apple Mac (Intel & Silicon M1-M4). Simultaneously diagnose up to 255 machines via PXE boot and generate tamper-proof reports for asset grading and compliance.
+                    Comprehensive hardware health assessment for PC, Laptop, Desktop & Apple Mac (Intel & Silicon M1-M4). Simultaneously diagnose up to 255 machines via PXE boot and generate tamper-evident reports for asset grading and compliance.
                   </p>
 
                   {/* Compliance Badges */}
@@ -1307,7 +1307,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                 </h2>
                 <p className="text-lg text-slate-300 max-w-3xl mx-auto">
                   D-Secure Hardware Diagnostics supports IT asset auditing procedures
-                  and ethical recycling practices by providing tamper-proof
+                  and ethical recycling practices by providing tamper-evident
                   hardware grading records.
                 </p>
               </div>

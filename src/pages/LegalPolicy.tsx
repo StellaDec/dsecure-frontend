@@ -79,10 +79,7 @@ const LegalPolicy: React.FC = () => {
                   </p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
                     <li>NIST 800-88 Guidelines for Media Sanitization</li>
-                    <li>
-                      Common Criteria for Information Technology Security
-                      Evaluation
-                    </li>
+
                     <li>GDPR compliance for data protection</li>
                     <li>ISO/IEC standards for information security</li>
                   </ul>

@@ -19,7 +19,7 @@ const faqs: FAQItem[] = [
   {
     category: 'general',
     question: "What is D-Secure and how does it work?",
-    answer: "D-Secure is a certified data erasure SaaS platform designed for enterprises and IT asset managers. It uses advanced algorithms to overwrite data on HDDs, SSDs, and NVMe drives with 100% mathematical certainty, ensuring that no data recovery software can ever retrieve the original information."
+    answer: "D-Secure is a Enterprise-grade data erasure SaaS platform designed for enterprises and IT asset managers. It uses advanced algorithms to overwrite data on HDDs, SSDs, and NVMe drives with 100% mathematical certainty, ensuring that no data recovery software can ever retrieve the original information."
   },
   {
     category: 'general',
@@ -49,7 +49,7 @@ const faqs: FAQItem[] = [
   {
     category: 'compliance',
     question: "Is D-Secure NIST 800-88 and GDPR compliant?",
-    answer: "Absolutely. D-Secure is fully aligned with NIST 800-88 Rev. 1 (Clear, Purge, and Destroy) and supports GDPR Article 17 ('Right to be Forgotten'). Every erasure event generates a 2048-bit RSA-signed tamper-proof PDF certificate that serves as legal proof of compliance."
+    answer: "Absolutely. D-Secure is fully aligned with NIST 800-88 Rev. 1 (Clear, Purge, and Destroy) and supports GDPR Article 17 ('Right to be Forgotten'). Every erasure event generates a 2048-bit RSA-signed tamper-evident PDF certificate that serves as legal proof of compliance."
   },
   {
     category: 'erasure',
@@ -109,12 +109,12 @@ const faqs: FAQItem[] = [
   {
     category: 'compliance',
     question: "What is IT Asset Disposition (ITAD)?",
-    answer: "ITAD is the business of disposing of obsolete or unwanted IT equipment in a safe and ecologically responsible way. D-Secure is a critical tool for ITAD companies to ensure that every asset they remarket or recycle has been certified clean of sensitive data."
+    answer: "ITAD is the business of disposing of obsolete or unwanted IT equipment in a safe and ecologically responsible way. D-Secure is a critical tool for ITAD companies to ensure that every asset they remarket or recycle has been verifiably clean of sensitive data."
   },
   {
     category: 'technical',
     question: "What happens if the erasure process is interrupted?",
-    answer: "D-Secure's engine is built with resilience. If a process is interrupted by power loss or accidental disconnection, the drive will be flagged as 'Failed' until a complete, successful wipe is completed and verified. This prevents 'partial' erasures from being mistakenly certified."
+    answer: "D-Secure's engine is built with resilience. If a process is interrupted by power loss or accidental disconnection, the drive will be flagged as 'Failed' until a complete, successful wipe is completed and verified. This prevents 'partial' erasures from being mistakenly verified."
   }
 ];
 
@@ -270,7 +270,7 @@ const DSecureFAQPage: React.FC = () => {
             {/* CTA Card */}
             <div className="bg-gradient-to-br from-blue-700 to-indigo-900 rounded-3xl p-8 text-white shadow-2xl sticky top-24">
               <h2 className="text-2xl font-extrabold mb-4 leading-tight">
-                Ready for Certified Erasure?
+                Ready for compliant erasure?
               </h2>
               <p className="text-blue-100 mb-8 leading-relaxed">
                 Contact our enterprise team for a demo or volume pricing
@@ -298,7 +298,7 @@ const DSecureFAQPage: React.FC = () => {
                     <Shield className="w-5 h-5 text-blue-200" />
                   </div>
                   <div>
-                    <h3 className="font-bold">NIST Certified</h3>
+                    <h3 className="font-bold">NIST Aligned</h3>
                     <p className="text-xs text-blue-200">
                       Audit-proof reporting
                     </p>

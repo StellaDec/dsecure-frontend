@@ -277,7 +277,7 @@ const DataRemediationErasureBlog: React.FC = () => {
                     SSDs, and servers
                   </li>
                   <li>
-                    • Professional and certified erasure tools ensure compliance
+                    • Professional and compliant erasure tools ensure compliance
                   </li>
                 </ul>
               </div>
@@ -307,7 +307,7 @@ const DataRemediationErasureBlog: React.FC = () => {
                   Sensitive
                 </li>
                 <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
-                  Use certified data erasure tools for permanent sanitization
+                  Use Enterprise-grade data erasure tools for permanent sanitization
                 </li>
                 <li className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   Stay compliant with evolving data protection laws

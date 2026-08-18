@@ -103,7 +103,7 @@ const FinancialServices: React.FC = () => {
                       },
                       {
                         title: "Auditable Reports",
-                        desc: "Generate tamper-proof digital regulatory documents for every data erasure operation.",
+                        desc: "Generate tamper-evident digital regulatory documents for every data erasure operation.",
                         img: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1760090536/bwfxnasge68rv2y4pgyj.jpg",
                       },
                     ].map((item, i) => (

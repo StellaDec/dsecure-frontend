@@ -349,7 +349,7 @@ const FileEraserGuide: React.FC = () => {
                         </li>
                         <li className="flex items-start">
                           <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0" />
-                          Integrate with <Link to="/support/cloud-console-guide" className="text-emerald-400 hover:underline">Cloud Console</Link> for audit-ready certification.
+                          Integrate with <Link to="/support/cloud-console-guide" className="text-emerald-400 hover:underline">Cloud Console</Link> for audit-ready reporting.
                         </li>
                         <li className="flex items-start">
                           <ChevronRight className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0" />

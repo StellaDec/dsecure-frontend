@@ -340,11 +340,11 @@ const ITADMarketGrowthBlog: React.FC = () => {
                 </div>
                 <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   <h3 className="font-bold text-[#0e7c66] text-xl mb-2">
-                    Certifications
+                    alignments
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-relaxed">
                     Look for e-Stewards, R2, NAID, and other industry
-                    certifications that demonstrate compliance capability.
+                    alignments that demonstrate compliance capability.
                   </p>
                 </div>
                 <div className="border-l-4 border-[#0e7c66] pl-8 py-2">

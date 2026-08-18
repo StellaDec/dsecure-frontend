@@ -94,7 +94,7 @@ export const generateOrganizationSchema = () => ({
     caption: "D-Secure Tech Logo"
   },
   description: "D-Secure provides NIST 800-88 compliant data erasure software. The modern alternative to tools like Blancco and BitRaser for secure enterprise sanitization.",
-  slogan: "Certified Data Erasure for a Secure Future",
+  slogan: "verifiable data erasure for a Secure Future",
   foundingDate: "2025",
   foundingLocation: {
     "@type": "Place",
@@ -127,7 +127,7 @@ export const generateOrganizationSchema = () => ({
     "Enterprise Data Security",
     "NIST 800-88 rev 1 clear purge destroy",
     "India Data Protection Act (DPDP)",
-    "Certified Hard Drive Erasure",
+    "Compliant Hard Drive Erasure",
     "AI Training Data Sanitization"
   ],
   // Social profiles - Knowledge Panel aur brand verification ke liye
@@ -255,7 +255,7 @@ export const generateSoftwareProductSchema = (
     softwareVersion: "2025.1.0",
     featureList: options.features || [
       "NIST 800-88 Compliance",
-      "Tamper-proof audit reports with certificate",
+      "Tamper-evident audit reports with certificate",
       "Native Apple Silicon Support",
       "Cloud-Managed Console",
       "REST API Integration"
@@ -397,11 +397,11 @@ export const getDefaultSEO = (): SEOMetadata => ({
   title:
     "D-Secure | Enterprise Data Erasure Software | NIST 800-88 Compliant",
   description:
-    "D-Secure is an enterprise data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-proof audit certificates.",
+    "D-Secure is an enterprise data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-evident audit certificates.",
   keywords: generateKeywords(),
   ogTitle: "D-Secure Tech - Enterprise Data Erasure Software",
   ogDescription:
-    "D-Secure is an enterprise data erasure software — NIST 800-88, GDPR & HIPAA compliant. Securely wipe HDDs, SSDs and mobile devices with tamper-proof audit certificates.",
+    "D-Secure is an enterprise data erasure software — NIST 800-88, GDPR & HIPAA compliant. Securely wipe HDDs, SSDs and mobile devices with tamper-evident audit certificates.",
   ogImage: SEO_CONFIG.defaultImage,
   ogType: "website",
   fragment: "!",

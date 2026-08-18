@@ -177,7 +177,7 @@ const SecurityPage: React.FC = () => {
                       D-Secure leverages industry-leading cryptographic primitives to ensure that your data is not only erased but protected throughout its lifecycle. For data in transit, we enforce <strong>TLS 1.3</strong> with Perfect Forward Secrecy (PFS), preventing any retroactive decryption of traffic even in the event of a long-term key compromise.
                     </p>
                     <p className="leading-relaxed">
-                      Our reporting engine utilizes <strong>ECDSA (Elliptic Curve Digital Signature Algorithm)</strong> with P-384 curves to sign every erasure certificate. This ensures that the PDF reports you receive are mathematically tamper-proof. Any modification to a single character in a D-Secure report will invalidate its digital signature, which can be verified using our public portal.
+                      Our reporting engine utilizes <strong>ECDSA (Elliptic Curve Digital Signature Algorithm)</strong> with P-384 curves to sign every erasure certificate. This ensures that the PDF reports you receive are mathematically tamper-evident. Any modification to a single character in a D-Secure report will invalidate its digital signature, which can be verified using our public portal.
                     </p>
                   </div>
 

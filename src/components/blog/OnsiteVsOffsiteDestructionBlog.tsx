@@ -107,7 +107,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     Functional storage media can be securely erased onsite using
-                    certified data erasure software. However, devices that are
+                    Enterprise-grade data erasure software. However, devices that are
                     inaccessible or have faults such as multiple bad sectors may
                     need specialized offsite processing through physical
                     destruction methods like degaussing or shredding.
@@ -120,7 +120,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     For large volumes of IT devices — several thousand units —
-                    offsite data destruction with a certified{" "}
+                    offsite data destruction with a compliant{" "}
                     <Link
                       to="/solutions/itad"
                       className="text-[#0e7c66] hover:underline font-medium"
@@ -277,8 +277,8 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                 <ul className="space-y-4 text-[#5a6672] text-lg">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2.5"></span>
-                    <strong>Certifications:</strong> Look for credible
-                    certifications like R2, e-Stewards, or NAID-AAA, which
+                    <strong>alignments:</strong> Look for credible
+                    alignments like R2, e-Stewards, or NAID-AAA, which
                     demonstrate commitment to data protection and sustainability
                     through regular independent audits.
                   </li>
@@ -316,7 +316,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                   >
                     ITAD
                   </Link>{" "}
-                  partner. By selecting the right certified vendor,
+                  partner. By selecting the right compliant vendor,
                   organizations can ensure secure and compliant disposal while
                   focusing on core business operations.
                 </p>
@@ -348,7 +348,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                     <tr>
                       <td className="border-b border-[#d0d5dc] px-6 py-4 font-semibold text-[#0a2e1e]">Confidential (IP, Financials)</td>
                       <td className="border-b border-[#d0d5dc] border-l px-6 py-4 bg-[#d4ede4]">Recommended. <br/><span className="text-sm text-[#5a6672]">Prevents intellectual property theft before devices leave the premises.</span></td>
-                      <td className="border-b border-[#d0d5dc] border-l px-6 py-4">Viable with strict vetting. <br/><span className="text-sm text-[#5a6672]">Requires a highly certified <Link to="/solutions/itad" className="text-[#0e7c66] hover:text-[#0e7c66] underline">ITAD partner</Link> with GPS-tracked transport.</span></td>
+                      <td className="border-b border-[#d0d5dc] border-l px-6 py-4">Viable with strict vetting. <br/><span className="text-sm text-[#5a6672]">Requires a highly compliant <Link to="/solutions/itad" className="text-[#0e7c66] hover:text-[#0e7c66] underline">ITAD partner</Link> with GPS-tracked transport.</span></td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4 font-semibold text-[#0a2e1e]">Regulated (PII, PHI, HIPAA)</td>
@@ -417,7 +417,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                 <div className="bg-[#d4ede4] border border-[#d0d5dc] rounded-none p-6">
                   <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">On-site Cryptographic / Software Certificate</h3>
                   <p className="text-[#5a6672]">
-                    Generates a tamper-proof digital signature directly from the hardware <em>before</em> it ever leaves the building. It proves mathematically that all sectors were overwritten, including hidden sectors (HPA/DCO), satisfying the highest NIST 800-88 Purge standards.
+                    Generates a tamper-evident digital signature directly from the hardware <em>before</em> it ever leaves the building. It proves mathematically that all sectors were overwritten, including hidden sectors (HPA/DCO), satisfying the highest NIST 800-88 Purge standards.
                   </p>
                 </div>
               </div>
@@ -445,8 +445,8 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     Wipe PCs, laptops, tablets, smartphones, and other storage
-                    media at organizational premises using certified D-Secure
-                    software, generating tamper-proof certificates immediately.
+                    media at organizational premises using compliant D-Secure
+                    software, generating tamper-evident certificates immediately.
                   </p>
                 </div>
                 <div className="bg-[#d4ede4] border border-[#d0d5dc] rounded-none p-6">
@@ -454,7 +454,7 @@ const OnsiteVsOffsiteDestructionBlog: React.FC = () => {
                     Step 2: Offsite Processing
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
-                    Ship sanitized devices to a certified{" "}
+                    Ship sanitized devices to a compliant{" "}
                     <Link
                       to="/solutions/itad"
                       className="text-[#0a2e1e] hover:underline font-medium"

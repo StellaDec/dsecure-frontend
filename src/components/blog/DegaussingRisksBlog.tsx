@@ -366,7 +366,7 @@ const DegaussingRisksBlog: React.FC = () => {
                     Certificate of Destruction
                   </h3>
                   <p className="text-white/90 text-sm leading-relaxed">
-                    Tamper-proof certificates are automatically generated for
+                    Tamper-evident certificates are automatically generated for
                     audit compliance and regulatory requirements.
                   </p>
                 </div>
@@ -496,7 +496,7 @@ const DegaussingRisksBlog: React.FC = () => {
                 Choose Reliable Data Erasure Over Degaussing
               </h2>
               <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Eliminate human error with D-Secure's automated, certified data
+                Eliminate human error with D-Secure's automated, verifiable data
                 erasure solutions. Get complete data destruction with
                 verification and compliance documentation.
               </p>

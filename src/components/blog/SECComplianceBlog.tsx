@@ -132,7 +132,7 @@ const SECComplianceBlog: React.FC = () => {
                         <div className="space-y-2 text-sm text-[#5a6672]">
                             <div className="flex items-start gap-2">
                                 <CheckIcon className="w-4 h-4 text-[#0e7c66] mt-0.5 flex-shrink-0" filled={true} />
-                                <span>Verify vendor's data destruction certifications (R2, e-Stewards, NAID AAA)</span>
+                                <span>Verify vendor's data destruction alignments (R2, e-Stewards, NAID AAA)</span>
                             </div>
                             <div className="flex items-start gap-2">
                                 <CheckIcon className="w-4 h-4 text-[#0e7c66] mt-0.5 flex-shrink-0" filled={true} />

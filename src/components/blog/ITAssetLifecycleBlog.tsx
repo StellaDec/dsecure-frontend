@@ -358,7 +358,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     Best Practices
                   </h3>
                   <ul className="space-y-2 text-[#5a6672]">
-                    <li>• Certified <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link> before disposal</li>
+                    <li>• compliant <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium">data wiping</Link> before disposal</li>
                     <li>• Audit-ready erasure reports</li>
                     <li>• Chain-of-custody tracking</li>
                     <li>• Verification of erasure completion</li>
@@ -382,10 +382,10 @@ const ITAssetLifecycleBlog: React.FC = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="border-l-4 border-[#0e7c66] pl-6">
                   <h3 className="font-bold text-[#0a2e1e] text-lg mb-2">
-                    Certified <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Wiping</Link>
+                    compliant <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Data Wiping</Link>
                   </h3>
                   <p className="text-[#5a6672]">
-                    NIST, DoD, and globally certified erasure methods that
+                    NIST, DoD, and globally compliant erasure methods that
                     guarantee complete data destruction.
                   </p>
                 </div>
@@ -394,7 +394,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
                     Audit-Ready Reports
                   </h3>
                   <p className="text-[#5a6672]">
-                    Tamper-proof certificates and reports that meet regulatory
+                    Tamper-evident certificates and reports that meet regulatory
                     requirements for compliance documentation.
                   </p>
                 </div>
@@ -442,7 +442,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </p>
               <p className="text-[#5a6672] leading-loose text-lg font-semibold">
                 Don't let the retirement stage become your organization's
-                security blind spot. Integrate D-Secure's certified data erasure
+                security blind spot. Integrate D-Secure's Enterprise-grade data erasure
                 into your IT Asset Lifecycle Management today.
               </p>
             </div>
@@ -457,7 +457,7 @@ const ITAssetLifecycleBlog: React.FC = () => {
               </h2>
               <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
                 Ensure compliant, secure end-of-life disposal for all your IT
-                assets. Integrate certified data erasure with audit-ready
+                assets. Integrate Enterprise-grade data erasure with audit-ready
                 reports into your ITAM processes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -182,7 +182,7 @@ export const BlogRoutes = () => (
     <Route path="blog/healthcare-data-breach-case-study" element={<HealthcareDataBreachCaseStudyBlog />} />
     <Route path="blog/hex-viewer" element={<HexViewerBlog />} />
     <Route path="blog/hidden-disk-areas" element={<HiddenDiskAreasBlog />} />
-    <Route path="blog/how-to-erase-mac" element={<HowToEraseMacBlog />} />
+    <Route path="blog/how-to-erasure-mac" element={<HowToEraseMacBlog />} />
 
     <Route path="blog/itad-market-growth" element={<ITADMarketGrowthBlog />} />
 

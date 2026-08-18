@@ -458,7 +458,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
                 {
                   icon: Cloud,
                   title: "Cloud Console Utility",
-                  desc: "Centralized admin console for managing users, licenses, and maintaining a repository of tamper-proof audit reports with certificate.",
+                  desc: "Centralized admin console for managing users, licenses, and maintaining a repository of tamper-evident audit reports with certificate.",
                 },
               ].map((feature, idx) => (
                 <ThemeCard key={idx} className="group bg-[#f4fbf8]">
@@ -550,7 +550,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
                   desc: "Ensures compliance with US government standards for media sanitization.",
                   features: [
                     "Clear, Purge, and Destroy guidelines",
-                    "Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
+                    "Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)",
                     "Cryptographic erase support",
                   ],
                 },
@@ -560,18 +560,10 @@ const EnterpriseSolutionsPage: React.FC = () => {
                   features: [
                     "PHI and ePHI data protection",
                     "Right to be forgotten compliance",
-                    "Tamper-proof audit trails",
+                    "Tamper-evident audit trails",
                   ],
                 },
-                {
-                  title: "Common Criteria EAL2",
-                  desc: "Internationally recognized IC3S security standard verification.",
-                  features: [
-                    "Regulatory security controls",
-                    "Independent lab validation",
-                    "Government-grade trust",
-                  ],
-                },
+
               ].map((solution, idx) => (
                 <ThemeCard key={idx} className="bg-[#f4fbf8]">
                   <h3 className="text-2xl font-bold mb-3 text-[#0a2e1e]">
@@ -634,8 +626,8 @@ const EnterpriseSolutionsPage: React.FC = () => {
                   a: "Yes. Our bootable USB solutions are ideal for high-security facilities (like military or R&D environments) with strict internet usage policies, allowing offline erasure and secure report saving.",
                 },
                 {
-                  q: "Where are the tamper-proof audit reports with certificate saved?",
-                  a: "For internet-connected endpoints, tamper-proof, digitally signed certificates are instantly uploaded to a secure, centralized Cloud Console. For offline tasks, they can be saved locally.",
+                  q: "Where are the tamper-evident audit reports with certificate saved?",
+                  a: "For internet-connected endpoints, tamper-evident, digitally signed certificates are instantly uploaded to a secure, centralized Cloud Console. For offline tasks, they can be saved locally.",
                 },
               ].map((faq, idx) => (
                 <details

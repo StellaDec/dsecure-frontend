@@ -356,7 +356,7 @@ const SecureFileEraseBlog: React.FC = () => {
                     Quality Indicators
                   </h3>
                   <ul className="text-[#5a6672] space-y-2">
-                    <li>• Third-party certifications</li>
+                    <li>• Third-party alignments</li>
                     <li>• Proof of destruction certificates</li>
                     <li>• Audit trail capabilities</li>
                     <li>• Multi-platform support</li>

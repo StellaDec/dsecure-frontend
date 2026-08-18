@@ -283,7 +283,7 @@ const CCPAViolationBlog: React.FC = () => {
                   Permanent Erasure
                 </h3>
                 <p className="text-[#5a6672] text-lg leading-relaxed">
-                  Use certified data erasure software that overwrites data
+                  Use Enterprise-grade data erasure software that overwrites data
                   beyond recovery, not just simple deletion.
                 </p>
               </div>

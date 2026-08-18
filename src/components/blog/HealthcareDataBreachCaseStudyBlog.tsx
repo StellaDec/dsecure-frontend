@@ -250,11 +250,11 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                 </div>
                 <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-6">
                   <h3 className="font-bold text-[#0a2e1e] text-xl mb-3">
-                    Certified Software Solutions
+                    enterprise-grade software Solutions
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     Modern data sanitization tools like D-Secure offer
-                    certified, secure solutions for onsite media sanitization.
+                    compliant, secure solutions for onsite media sanitization.
                     Data is permanently destroyed with no recovery possible,
                     even by specialists in laboratory environments.
                   </p>
@@ -264,7 +264,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                     Immutable Certificates
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
-                    Professional erasure software provides tamper-proof
+                    Professional erasure software provides tamper-evident
                     certificates and detailed reports for every sanitized
                     device. These documents serve as documented support for
                     auditing purposes and regulatory compliance.
@@ -318,8 +318,8 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                     3
                   </span>
                   <p className="text-[#5a6672] text-lg leading-loose">
-                    <strong>Use certified data erasure software</strong> that
-                    provides tamper-proof documentation meeting HIPAA and other
+                    <strong>Use Enterprise-grade data erasure software</strong> that
+                    provides tamper-evident documentation meeting HIPAA and other
                     regulatory compliance requirements.
                   </p>
                 </div>
@@ -356,7 +356,7 @@ const HealthcareDataBreachCaseStudyBlog: React.FC = () => {
                 minimal compared to the devastating consequences of a breach:
                 regulatory penalties reaching millions of dollars, irreparable
                 reputation damage, loss of patient trust, and potential legal
-                action. Protect your organization and patients with certified
+                action. Protect your organization and patients with compliant
                 data erasure solutions like D-Secure.
               </p>
             </div>

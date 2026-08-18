@@ -37,7 +37,7 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
   // ... (In a real scenario, all 300+ blog entries would go here)
   "blog-erase-data-pc-laptop-desktop": {
     title: "How to Erase Data from PC, Laptop & Desktop Safely",
-    description: "Factory reset doesn't delete data permanently. Learn the certified steps to erase your PC, laptop or desktop using NIST-compliant software.",
+    description: "Factory reset doesn't delete data permanently. Learn the verifiable steps to erase your PC, laptop or desktop using NIST-compliant software.",
     keywords: generateKeywords(["erase data from PC", "wipe laptop before selling", "delete data desktop permanently", "NIST data erasure software"]),
     canonicalUrl: getCanonicalUrl("/blog/erase-data-pc-laptop-desktop"),
     breadcrumbs: [
@@ -61,7 +61,7 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
   // Page 8: Erase Mac Data Safely Using D-Secure
   "blog-erase-mac-data-safely": {
     title: "How to Erase Mac Data Safely: NIST Compliant | D-Secure",
-    description: "Securely erase MacBook, iMac, and Mac Pro using D-Secure's NIST 800-88 compliant software with tamper-proof certificates.",
+    description: "Securely erase MacBook, iMac, and Mac Pro using D-Secure's NIST 800-88 compliant software with tamper-evident certificates.",
     keywords: generateKeywords(["erase Mac data safely", "secure Mac data erasure enterprise", "MacBook wipe NIST compliant", "Mac data destruction certificate", "GDPR HIPAA Mac erasure compliance"]),
     canonicalUrl: getCanonicalUrl("/blog/erase-mac-data-safely-using-dsecure"),
     breadcrumbs: [
@@ -112,7 +112,7 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Hardware diagnostics importance blog ka custom SEO metadata
   "blog/hardware-diagnostics": {
-    title: "Hardware Diagnostics in ITAD & Certified Wiping | D-Secure",
+    title: "Hardware Diagnostics in ITAD & compliant wiping | D-Secure",
     description: "Learn why comprehensive hardware diagnostics are crucial before data erasure. Verify storage, RAM, and CPU health to compile unified certificates.",
     keywords: generateKeywords(["hardware diagnostics ITAD", "hard drive health check before wipe", "diagnostics data sanitization software"]),
     canonicalUrl: getCanonicalUrl("/blog/hardware-diagnostics"),
@@ -125,8 +125,8 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
   // ITAD vendor selection guide blog ka custom SEO metadata
   "blog/itad-selection-guide": {
     title: "Enterprise ITAD Vendor Selection Guide & Best Practices | D-Secure",
-    description: "How to select the right IT Asset Disposition (ITAD) vendor. Enterprise checklist covering security compliance, certified sanitization, and ESG recycling standards.",
-    keywords: generateKeywords(["ITAD vendor selection guide", "IT asset disposition best practices", "enterprise certified computer wiping"]),
+    description: "How to select the right IT Asset Disposition (ITAD) vendor. Enterprise checklist covering security compliance, Enterprise-grade Sanitization, and ESG recycling standards.",
+    keywords: generateKeywords(["ITAD vendor selection guide", "IT asset disposition best practices", "enterprise compliant computer wiping"]),
     canonicalUrl: getCanonicalUrl("/blog/itad-selection-guide"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -137,7 +137,7 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
   // MSP Security and Wiping blog ka custom SEO metadata
   "blog/msp-data-erasure": {
     title: "MSPs and the Cybersecurity Imperative: Secure Data Sanitization | D-Secure",
-    description: "Why MSPs must integrate certified data sanitization and NIST 800-88 wiping into their cybersecurity portfolios to protect client networks.",
+    description: "Why MSPs must integrate compliant data sanitization and NIST 800-88 wiping into their cybersecurity portfolios to protect client networks.",
     keywords: generateKeywords(["MSP cybersecurity data destruction", "managed service providers drive wiping", "NIST 800-88 compliance for MSPs"]),
     canonicalUrl: getCanonicalUrl("/blog/msp-data-erasure"),
     breadcrumbs: [
@@ -149,7 +149,7 @@ export const BLOG_SEO: Record<string, Partial<SEOMetadata>> = {
   // Returning leased IT hardware dos and donts blog ka custom SEO metadata
   "blog/returning-leased-it-hardware-dos-and-donts": {
     title: "Returning Leased IT Hardware: Do's & Don'ts for Enterprises | D-Secure",
-    description: "Avoid massive penalties and data breaches when returning leased IT assets. Step-by-step compliance guide for certified drive wiping and asset recovery.",
+    description: "Avoid massive penalties and data breaches when returning leased IT assets. Step-by-step compliance guide for compliant drive wiping and asset recovery.",
     keywords: generateKeywords(["returning leased computer hardware", "leased computer wipe compliance", "avoid leased hardware data leakage penalties"]),
     canonicalUrl: getCanonicalUrl("/blog/returning-leased-it-hardware-dos-and-donts"),
     breadcrumbs: [

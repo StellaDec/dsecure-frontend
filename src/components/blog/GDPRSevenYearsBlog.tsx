@@ -269,7 +269,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
               </h2>
               <p className="text-[#5a6672] leading-loose text-lg">
                 The Right to Erasure remains one of the most challenging GDPR
-                requirements for organizations. D-Secure provides certified data
+                requirements for organizations. D-Secure provides verifiable data
                 erasure solutions that help businesses meet GDPR's stringent
                 data destruction requirements with audit-ready documentation.
               </p>
@@ -277,7 +277,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="bg-[#f4fbf8] rounded-none p-6">
                   <h3 className="text-xl font-bold text-[#0a2e1e] mb-3">
-                    Certified Data Destruction
+                    compliant data destruction
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     Permanently erase personal data from storage devices using
@@ -291,7 +291,7 @@ const GDPRSevenYearsBlog: React.FC = () => {
                     Audit-Ready Documentation
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose">
-                    Generate tamper-proof certificates and detailed erasure
+                    Generate tamper-evident certificates and detailed erasure
                     reports that demonstrate compliance during regulatory audits
                     and data protection assessments.
                   </p>

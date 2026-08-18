@@ -287,7 +287,7 @@ const NonProfitSolutionsPage: React.FC = () => {
                 },
                 {
                   title: "Mobile Device Management",
-                  desc: "Simultaneously erase and diagnose up to 40 iOS and Android devices. Safely reuse donated phones for field staff and volunteers after certified data erasure.",
+                  desc: "Simultaneously erase and diagnose up to 40 iOS and Android devices. Safely reuse donated phones for field staff and volunteers after Enterprise-grade data erasure.",
                   icon: Smartphone,
                 },
                 {
@@ -349,7 +349,7 @@ const NonProfitSolutionsPage: React.FC = () => {
                 {
                   icon: Smartphone,
                   title: "Mobile Devices",
-                  desc: "Certified erasure for iOS and Android phones and tablets. 50+ diagnostic tests for device health assessment.",
+                  desc: "compliant erasure for iOS and Android phones and tablets. 50+ diagnostic tests for device health assessment.",
                 },
               ].map((asset) => (
                 <ThemeCard key={asset.title} className="flex flex-col items-center text-center p-8">
@@ -373,14 +373,14 @@ const NonProfitSolutionsPage: React.FC = () => {
                   Audit-Ready Compliance for Non-Profits
                 </ThemeSectionHeading>
                 <p className="text-lg mb-8 text-slate-600 mt-4">
-                  Generate verifiable, tamper-proof audit trails for every
+                  Generate verifiable, tamper-evident audit trails for every
                   sanitized asset. Meet data privacy laws that mandate secure
                   disposal — whether for funding organizations, board reporting,
                   or partner transparency requirements.
                 </p>
                 <ul className="space-y-4">
                   {[
-                    "Tamper-proof erasure certificates for audit purposes",
+                    "Tamper-evident erasure certificates for audit purposes",
                     "Compliance with EU-GDPR, HIPAA, PCI-DSS, CCPA & DPDPA",
                     "Software-based certificates as proof of secure sanitization",
                     "Centralized cloud repository for all reports & certificates",
@@ -464,7 +464,7 @@ const NonProfitSolutionsPage: React.FC = () => {
                 },
                 {
                   q: "Does D-Secure help with regulatory compliance?",
-                  a: "Yes. D-Secure performs secure erasure on devices and generates verifiable audit trails that help comply with global data protection laws like EU-GDPR, HIPAA, CCPA, GLBA, and DPDPA. Every erasure produces a tamper-proof certificate.",
+                  a: "Yes. D-Secure performs secure erasure on devices and generates verifiable audit trails that help comply with global data protection laws like EU-GDPR, HIPAA, CCPA, GLBA, and DPDPA. Every erasure produces a tamper-evident certificate.",
                 },
                 {
                   q: "Can we customize the erasure reports with our organization's branding?",

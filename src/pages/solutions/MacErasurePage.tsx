@@ -11,7 +11,7 @@ export default function MacErasurePage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Mac Data Erasure Software for Apple Silicon (M1-M4) & Intel",
-    "description": "Securely wipe MacBooks, iMacs, and Mac Minis. D-Secure provides tamper-proof audit reports with certificate for Apple Silicon (M1, M2, M3, M4) and Intel Macs with verifiable reporting.",
+    "description": "Securely wipe MacBooks, iMacs, and Mac Minis. D-Secure provides tamper-evident audit reports with certificate for Apple Silicon (M1, M2, M3, M4) and Intel Macs with verifiable reporting.",
     "publisher": {
       "@type": "Organization",
       "name": "D-Secure",
@@ -125,7 +125,7 @@ export default function MacErasurePage() {
                       <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
                         <CheckIcon className="w-4 h-4" filled={true} />
                       </div>
-                      <span className="font-medium text-slate-800">Tamper-proof audit reports with certificate (Page 1: Certificate, Page 2+: Summary)</span>
+                      <span className="font-medium text-slate-800">Tamper-evident audit reports with certificate (Page 1: Certificate, Page 2+: Summary)</span>
                     </li>
                   </ul>
                 </div>
@@ -171,7 +171,7 @@ export default function MacErasurePage() {
           <Reveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Upgrade Your Mac Wiping Workflow</h2>
             <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
-              Stop fighting with incompatible boot disks. Use D-Secure to safely, quickly, and compliantly erase modern Mac hardware with tamper-proof audit reports.
+              Stop fighting with incompatible boot disks. Use D-Secure to safely, quickly, and compliantly erase modern Mac hardware with tamper-evident audit reports.
             </p>
             <Link to="/contact" className="btn bg-white text-slate-900 hover:bg-slate-100 border-transparent shadow-lg hover:shadow-xl px-8 py-4 font-bold rounded-xl text-lg transition-all hover:-translate-y-1">
               Talk to Our Enterprise Team

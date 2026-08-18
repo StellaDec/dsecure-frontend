@@ -72,13 +72,13 @@ export default function WhatIsITAD() {
                   <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
                     <TrendingDown className="w-10 h-10 text-indigo-600 mb-6" />
                     <h4 className="font-bold text-xl mb-4 text-slate-900">Value Recovery</h4>
-                    <p className="text-slate-600">Maximizing the resale value of retired equipment by providing certified proof of sanitization to the next buyer.</p>
+                    <p className="text-slate-600">Maximizing the resale value of retired equipment by providing verifiable proof of sanitization to the next buyer.</p>
                   </div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-12">Why D-Secure is the ITAD Partner's Engine</h3>
                 <p className="text-lg text-slate-700 mb-8 leading-relaxed">
-                  D-Secure provides the data erasure engine that powers ITAD operations globally. Our platform supports mass-parallel erasure, allowing operators to wipe hundreds of drives simultaneously with automated, tamper-proof audit reports with certificate (2K RSA signed). 
+                  D-Secure provides the data erasure engine that powers ITAD operations globally. Our platform supports mass-parallel erasure, allowing operators to wipe hundreds of drives simultaneously with automated, tamper-evident audit reports with certificate (2K RSA signed). 
                 </p>
                 <div className="bg-blue-600 rounded-[2.5rem] p-10 text-white my-12">
                   <h4 className="text-2xl font-bold mb-4">Case Study: 30% Efficiency Gain</h4>

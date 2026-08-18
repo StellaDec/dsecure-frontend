@@ -41,7 +41,7 @@ const comparisonFeatures = [
   },
   {
     feature: "Reporting Engine",
-    dsecure: "Unified Cloud Console / Tamper-Proof 2K RSA PDFs",
+    dsecure: "Unified Cloud Console / Tamper-Evident 2K RSA PDFs",
     whitecanyon: "Local File Logs / Central Management Hub",
     better: "dsecure"
   },
@@ -133,7 +133,7 @@ export default function VsWhiteCanyon() {
                 <ShieldCheck className="w-16 h-16 text-blue-200 mb-8 transform group-hover:scale-110 transition-transform" />
                 <h3 className="text-3xl font-bold mb-6">Unrivaled Reporting Integrity</h3>
                 <p className="text-blue-100 text-lg leading-relaxed mb-8">
-                  WhiteCanyon's local log generation is being replaced by D-Secure's central, tamper-proof audit reports with certificate (2K RSA signed). Ensure that your certificates can't be modified after generation.
+                  WhiteCanyon's local log generation is being replaced by D-Secure's central, tamper-evident audit reports with certificate (2K RSA signed). Ensure that your certificates can't be modified after generation.
                 </p>
                 <div className="grid grid-cols-2 gap-6 pt-8 border-t border-blue-400/30">
                   <div>

@@ -12,7 +12,7 @@ const SecurityAssurancePage: React.FC = () => {
       subsections: [
         {
           id: 11,
-          title: "Cryptographic Tamper-Proofing",
+          title: "Cryptographic Tamper-Evidenting",
           description: "Digital signatures and hashing for secure audit trails.",
           url: "#integrity",
           pageCount: 1

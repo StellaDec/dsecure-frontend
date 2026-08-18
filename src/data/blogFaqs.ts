@@ -83,7 +83,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How do I prove compliance during a data audit?",
-      answer: "Compliance is proven through tamper-proof certificates of destruction that document the device serial number, method used, verification status, and timestamp for each sanitized asset."
+      answer: "Compliance is proven through tamper-evident certificates of destruction that document the device serial number, method used, verification status, and timestamp for each sanitized asset."
     },
     {
       question: "What are the standard guidelines for secure data disposal?",
@@ -161,7 +161,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "What does HIPAA require for data erasure?",
-      answer: "HIPAA requires covered entities to implement safeguards for ePHI disposal. Compliance-verified data erasure with tamper-proof certificates satisfies HIPAA's Administrative and Technical Safeguard requirements for media sanitization."
+      answer: "HIPAA requires covered entities to implement safeguards for ePHI disposal. Compliance-verified data erasure with tamper-evident certificates satisfies HIPAA's Administrative and Technical Safeguard requirements for media sanitization."
     },
     {
       question: "What happens if healthcare organizations fail to properly erase data?",
@@ -189,7 +189,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Does D-Secure provide certificates for ePHI destruction?",
-      answer: "Yes, D-Secure generates tamper-proof, HIPAA-compliant certificates of destruction for every asset sanitized, providing the necessary audit trail for legal and regulatory compliance."
+      answer: "Yes, D-Secure generates tamper-evident, HIPAA-compliant certificates of destruction for every asset sanitized, providing the necessary audit trail for legal and regulatory compliance."
     }
   ],
   "gdpr-seven-years": [
@@ -199,7 +199,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Does GDPR require a certificate of data destruction?",
-      answer: "While not explicitly named, the GDPR's accountability principle requires you to prove that data was handled securely. A tamper-proof certificate of erasure is the best evidence of compliance."
+      answer: "While not explicitly named, the GDPR's accountability principle requires you to prove that data was handled securely. A tamper-evident certificate of erasure is the best evidence of compliance."
     },
     {
       question: "What has GDPR changed in 7 years?",
@@ -207,7 +207,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How does GDPR's right to erasure affect IT disposal?",
-      answer: "Article 17 mandates permanent data destruction upon request. Organizations must prove erasure with tamper-proof documentation—making tamper-proof certificates essential for GDPR compliance."
+      answer: "Article 17 mandates permanent data destruction upon request. Organizations must prove erasure with tamper-evident documentation—making tamper-evident certificates essential for GDPR compliance."
     },
     {
       question: "When did EU-GDPR come into force?",
@@ -263,7 +263,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Is factory reset enough for iPads?",
-      answer: "Factory reset removes the encryption key but may not provide auditable proof of destruction. Compliance-verified erasure generates tamper-proof certificates required for regulatory compliance in enterprise environments."
+      answer: "Factory reset removes the encryption key but may not provide auditable proof of destruction. Compliance-verified erasure generates tamper-evident certificates required for regulatory compliance in enterprise environments."
     }
   ],
   "server-erasure": [
@@ -319,7 +319,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Which compliance standards require certificates of destruction?",
-      answer: "Global data privacy regulations like GDPR, HIPAA, and the DPDP Act require organizations to provide verifiable proof of data disposal. D-Secure generates these tamper-proof certificates automatically."
+      answer: "Global data privacy regulations like GDPR, HIPAA, and the DPDP Act require organizations to provide verifiable proof of data disposal. D-Secure generates these tamper-evident certificates automatically."
     },
     {
       question: "How do I securely dispose of many hard drives?",
@@ -371,7 +371,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Is the 'Delete' key enough to destroy sensitive files?",
-      answer: "No, pressing delete simply marks the space as available. The file fragments stay on the drive. Only certified data erasure software that overwrites every sector can guarantee permanent destruction."
+      answer: "No, pressing delete simply marks the space as available. The file fragments stay on the drive. Only Enterprise-grade data erasure software that overwrites every sector can guarantee permanent destruction."
     },
     {
       question: "Can data be recovered from a physically damaged drive?",
@@ -403,7 +403,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Why might I need an alternative to Dell's built-in data wipe?",
-      answer: "Dell's built-in wipe may not support all storage types (e.g., NVMe SSDs), lacks tamper-proof certification, and may not comply with global standards like NIST 800-88 or IEEE 2883 required by regulated industries."
+      answer: "Dell's built-in wipe may not support all storage types (e.g., NVMe SSDs), lacks tamper-evident alignment, and may not comply with global standards like NIST 800-88 or IEEE 2883 required by regulated industries."
     },
     {
       question: "Does D-Secure work on Dell laptops and desktops?",
@@ -411,7 +411,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How does D-Secure compare to Dell Data Wipe?",
-      answer: "D-Secure supports 26+ international erasure standards, generates tamper-proof certificates, works across all OEM hardware, and provides centralized cloud reporting—capabilities Dell Data Wipe lacks."
+      answer: "D-Secure supports 26+ international erasure standards, generates tamper-evident certificates, works across all OEM hardware, and provides centralized cloud reporting—capabilities Dell Data Wipe lacks."
     },
     {
       question: "Can Dell Data Wipe erase SSDs securely?",
@@ -445,7 +445,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Is BIOS-level SSD wiping secure for corporate use?",
-      answer: "While secure, BIOS-level wiping often lacks the tamper-proof certificates required for corporate compliance. For auditable proof, professional software like D-Secure is recommended."
+      answer: "While secure, BIOS-level wiping often lacks the tamper-evident certificates required for corporate compliance. For auditable proof, professional software like D-Secure is recommended."
     },
     {
       question: "Does BIOS wiping support NVMe drives?",
@@ -503,7 +503,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Does D-Secure support SEC Rule 17a-4 compliance?",
-      answer: "D-Secure helps firms comply with the broader security requirements by providing tamper-proof certificates of destruction for retired hardware carrying sensitive financial data."
+      answer: "D-Secure helps firms comply with the broader security requirements by providing tamper-evident certificates of destruction for retired hardware carrying sensitive financial data."
     },
     {
       question: "What happened in the Morgan Stanley data breach?",
@@ -511,7 +511,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How could compliance-verified erasure have prevented the Morgan Stanley breach?",
-      answer: "Compliance-verified erasure before equipment disposition would have destroyed all client data with tamper-proof documentation—providing SEC-auditable proof that assets were properly sanitized before leaving Morgan Stanley's control."
+      answer: "Compliance-verified erasure before equipment disposition would have destroyed all client data with tamper-evident documentation—providing SEC-auditable proof that assets were properly sanitized before leaving Morgan Stanley's control."
     },
     {
       question: "Why was Morgan Stanley fined for data disposal failures?",
@@ -652,20 +652,20 @@ const _blogFaqs: Record<string, FAQ[]> = {
   ],
   "common-criteria": [
     {
-      question: "What is Common Criteria (ISO/IEC 15408)?",
-      answer: "Common Criteria is an international standard for computer security certification, ensuring that IT products meet specific security claims for government and enterprise use."
+      question: "What is NIST 800-88 (ISO/IEC 15408)?",
+      answer: "NIST 800-88 is an international standard for computer security alignment, ensuring that IT products meet specific security claims for government and enterprise use."
     },
     {
-      question: "Why is Common Criteria important for data erasure software?",
+      question: "Why is NIST 800-88 important for data erasure software?",
       answer: "It provides independent verification that the software's security functions, such as its erasure algorithms and reporting, perform as specified."
     },
     {
-      question: "Does D-Secure meet Common Criteria standards?",
-      answer: "D-Secure utilizes compliance-verified algorithms and follows Common Criteria principles to ensure that data wiping is verifiable and meets high-security requirements."
+      question: "Does D-Secure meet NIST 800-88 standards?",
+      answer: "D-Secure utilizes compliance-verified algorithms and follows NIST 800-88 principles to ensure that data wiping is verifiable and meets high-security requirements."
     },
     {
       question: "What is an EAL (Evaluation Assurance Level)?",
-      answer: "EAL is a numerical grade (1-7) assigned to an IT product following a Common Criteria evaluation, representing the depth and rigor of the security assessment."
+      answer: "EAL is a numerical grade (1-7) assigned to an IT product following a NIST 800-88 evaluation, representing the depth and rigor of the security assessment."
     }
   ],
   "cryptographic-erase": [
@@ -699,7 +699,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
   "erasure-best-practices": [
     {
       question: "What are the best practices for enterprise data destruction?",
-      answer: "Best practices include using NIST 800-88 compliant software, maintaining a secure chain of custody, verifying 100% of erasures, and generating tamper-proof reports for audits."
+      answer: "Best practices include using NIST 800-88 compliant software, maintaining a secure chain of custody, verifying 100% of erasures, and generating tamper-evident reports for audits."
     },
     {
       question: "How often should a data destruction policy be reviewed?",
@@ -871,7 +871,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How can organizations prevent dumpster diving data breaches?",
-      answer: "Organizations should implement compliance-verified data erasure on all storage media before disposal, maintain chain-of-custody documentation, and use tamper-proof certificates to prove data destruction."
+      answer: "Organizations should implement compliance-verified data erasure on all storage media before disposal, maintain chain-of-custody documentation, and use tamper-evident certificates to prove data destruction."
     }
   ],
   "eu-csrd": [
@@ -881,7 +881,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Does CSRD require proof of sustainable IT practices?",
-      answer: "Yes, CSRD mandates auditable sustainability disclosures. Tamper-proof erasure certificates serve as verifiable evidence of circular economy practices in IT asset management."
+      answer: "Yes, CSRD mandates auditable sustainability disclosures. Tamper-evident erasure certificates serve as verifiable evidence of circular economy practices in IT asset management."
     },
     {
       question: "How does data security impact a company's ESG score?",
@@ -967,11 +967,11 @@ const _blogFaqs: Record<string, FAQ[]> = {
   "free-vs-pro-eraser": [
     {
       question: "Are free data erasure tools reliable?",
-      answer: "Free tools typically lack verification, certification, and audit trails. They may not address hidden areas, remapped sectors, or generate compliance-ready documentation required by regulations."
+      answer: "Free tools typically lack verification, alignment, and audit trails. They may not address hidden areas, remapped sectors, or generate compliance-ready documentation required by regulations."
     },
     {
       question: "What does a professional eraser offer over free tools?",
-      answer: "Professional erasers like D-Secure provide 26+ standards, tamper-proof certificates, post-erasure verification, centralized reporting, and regulatory compliance support that free tools cannot match."
+      answer: "Professional erasers like D-Secure provide 26+ standards, tamper-evident certificates, post-erasure verification, centralized reporting, and regulatory compliance support that free tools cannot match."
     }
   ],
   "government-device-theft": [
@@ -995,7 +995,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
   "government-it-disposal": [
     {
       question: "What are the requirements for government IT disposal?",
-      answer: "Government IT disposal must follow NIST 800-88 guidelines, maintain chain-of-custody documentation, and generate tamper-proof certificates proving data destruction for audit compliance."
+      answer: "Government IT disposal must follow NIST 800-88 guidelines, maintain chain-of-custody documentation, and generate tamper-evident certificates proving data destruction for audit compliance."
     },
     {
       question: "Can government agencies reuse IT equipment after erasure?",
@@ -1010,7 +1010,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How can healthcare organizations prevent disposal-related breaches?",
-      answer: "Implement compliance-verified data erasure with tamper-proof certificates for all retired devices. D-Secure's HIPAA-aligned erasure provides documented proof of ePHI destruction for OCR audits."
+      answer: "Implement compliance-verified data erasure with tamper-evident certificates for all retired devices. D-Secure's HIPAA-aligned erasure provides documented proof of ePHI destruction for OCR audits."
     }
   ],
   "healthcare-ransomware-lessons": [
@@ -1042,10 +1042,10 @@ const _blogFaqs: Record<string, FAQ[]> = {
       answer: "No, most free and basic erasure tools cannot access HPA/DCO regions. D-Secure detects and sanitizes all hidden areas, ensuring complete data destruction with no residual data in protected regions."
     }
   ],
-  "how-to-erase-mac": [
+  "how-to-erasure-mac": [
     {
       question: "How do I securely erase a Mac?",
-      answer: "Use D-Secure's Mac-specific variant that supports T1, T2, M1, M2, and M3 chips. It communicates directly with Apple's Secure Enclave for complete sanitization with tamper-proof documentation."
+      answer: "Use D-Secure's Mac-specific variant that supports T1, T2, M1, M2, and M3 chips. It communicates directly with Apple's Secure Enclave for complete sanitization with tamper-evident documentation."
     },
     {
       question: "Does Disk Utility securely erase Mac SSDs?",
@@ -1053,7 +1053,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Can D-Secure erase Mac computers with Apple silicon?",
-      answer: "Yes, D-Secure has a dedicated Mac variant that supports M1, M2, M3, T1, and T2 chip Macs, performing compliance-verified erasure with tamper-proof documentation."
+      answer: "Yes, D-Secure has a dedicated Mac variant that supports M1, M2, M3, T1, and T2 chip Macs, performing compliance-verified erasure with tamper-evident documentation."
     },
     {
       question: "Is erasing a Mac different from erasing a PC?",
@@ -1081,7 +1081,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
   "itad-selection-guide": [
     {
       question: "How do I choose the right ITAD vendor?",
-      answer: "Evaluate ITAD vendors on certifications (R2, e-Stewards, ISO 27001), erasure methodology (software vs physical), chain-of-custody processes, environmental practices, and compliance documentation quality."
+      answer: "Evaluate ITAD vendors on alignments (R2, e-Stewards, ISO 27001), erasure methodology (software vs physical), chain-of-custody processes, environmental practices, and compliance documentation quality."
     },
     {
       question: "Should organizations perform erasure in-house or outsource to ITAD?",
@@ -1100,12 +1100,12 @@ const _blogFaqs: Record<string, FAQ[]> = {
       answer: "Compliance-verified vendors (like those with R2 or e-Stewards) follow strict data security and environmental standards, ensuring your retired assets are handled legally and ethically."
     },
     {
-      question: "What certifications should I look for in an ITAD partner?",
-      answer: "Key certifications include R2v3, e-Stewards, ISO 27001 (Security), and ISO 14001 (Environment). D-Secure provides the underlying software that enables these vendors to meet high-security standards."
+      question: "What alignments should I look for in an ITAD partner?",
+      answer: "Key alignments include R2v3, e-Stewards, ISO 27001 (Security), and ISO 14001 (Environment). D-Secure provides the underlying software that enables these vendors to meet high-security standards."
     },
     {
       question: "What should organizations look for in ITAD procurement?",
-      answer: "Essential criteria include compliance-verified erasure capabilities, chain-of-custody documentation, regulatory compliance support, environmental certifications (R2/e-Stewards), and transparent pricing with auditable processes."
+      answer: "Essential criteria include compliance-verified erasure capabilities, chain-of-custody documentation, regulatory compliance support, environmental alignments (R2/e-Stewards), and transparent pricing with auditable processes."
     },
     {
       question: "How does data erasure software fit into ITAD procurement?",
@@ -1165,7 +1165,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
   "legal-ethical-erasure": [
     {
       question: "What are the legal requirements for data erasure?",
-      answer: "GDPR, HIPAA, SOX, PCI-DSS, and other regulations mandate verifiable data destruction. Organizations must maintain documented proof of erasure—tamper-proof certificates are essential for legal compliance."
+      answer: "GDPR, HIPAA, SOX, PCI-DSS, and other regulations mandate verifiable data destruction. Organizations must maintain documented proof of erasure—tamper-evident certificates are essential for legal compliance."
     },
     {
       question: "What ethical obligations exist around data erasure?",
@@ -1177,7 +1177,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "What documentation proves ethical data handling?",
-      answer: "Tamper-proof erasure certificates, chain-of-custody logs, compliance audit reports, and sustainability metrics collectively demonstrate both legal compliance and ethical data stewardship."
+      answer: "Tamper-evident erasure certificates, chain-of-custody logs, compliance audit reports, and sustainability metrics collectively demonstrate both legal compliance and ethical data stewardship."
     },
     {
       question: "What are statutory requirements for data disposal?",
@@ -1193,7 +1193,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How do certificates of destruction satisfy privacy audits?",
-      answer: "They provide tamper-proof evidence that an organization has fulfilled its obligation to securely destroy sensitive data, documenting the 'what, when, how, and who' of the disposal process."
+      answer: "They provide tamper-evident evidence that an organization has fulfilled its obligation to securely destroy sensitive data, documenting the 'what, when, how, and who' of the disposal process."
     },
     {
       question: "What happened in the Marriott data breach?",
@@ -1227,7 +1227,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Is it possible to generate individual erasure certificates for each loose drive?",
-      answer: "Yes, D-Secure automatically generates a separate, tamper-proof, and digitally signed PDF erasure certificate for every single loose drive sanitized. Each certificate captures critical metadata such as the drive's serial number, model, capacity, bad sector count, the exact erasure standard applied, and post-erasure verification details, which are fully compliant with GDPR, HIPAA, and ISO 27001 auditing."
+      answer: "Yes, D-Secure automatically generates a separate, tamper-evident, and digitally signed PDF erasure certificate for every single loose drive sanitized. Each certificate captures critical metadata such as the drive's serial number, model, capacity, bad sector count, the exact erasure standard applied, and post-erasure verification details, which are fully compliant with GDPR, HIPAA, and ISO 27001 auditing."
     },
     {
       question: "How does D-Secure handle SSDs versus HDDs during loose drive erasure?",
@@ -1291,7 +1291,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How do MSPs deliver erasure services?",
-      answer: "MSPs deploy D-Secure remotely to client sites, manage erasure operations from a centralized cloud console, and deliver tamper-proof certificates and compliance reports directly to clients."
+      answer: "MSPs deploy D-Secure remotely to client sites, manage erasure operations from a centralized cloud console, and deliver tamper-evident certificates and compliance reports directly to clients."
     },
     {
       question: "What revenue model works best for MSP erasure?",
@@ -1302,8 +1302,8 @@ const _blogFaqs: Record<string, FAQ[]> = {
       answer: "Offering compliance-verified erasure demonstrates security leadership and differentiates MSPs from competitors. It also reduces liability by ensuring proper disposition of client data across all managed environments."
     },
     {
-      question: "What security certifications should MSPs pursue for erasure services?",
-      answer: "MSPs should pursue SOC 2 Type II, ISO 27001, and NAID AAA certification for erasure services. D-Secure's compliance documentation supports these certification requirements."
+      question: "What security alignments should MSPs pursue for erasure services?",
+      answer: "MSPs should pursue SOC 2 Type II, ISO 27001, and NAID AAA alignment for erasure services. D-Secure's compliance documentation supports these alignment requirements."
     }
   ],
   "ncua-guidelines": [
@@ -1313,11 +1313,11 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How should credit unions comply with NCUA disposal requirements?",
-      answer: "Credit unions should implement compliance-verified erasure for all retiring IT equipment, maintain disposal logs with tamper-proof certificates, and include data destruction in their information security program."
+      answer: "Credit unions should implement compliance-verified erasure for all retiring IT equipment, maintain disposal logs with tamper-evident certificates, and include data destruction in their information security program."
     },
     {
       question: "How should credit unions manage third-party data disposal?",
-      answer: "Credit unions must ensure that third-party vendors (ITAD, cloud providers) follow NCUA-compliant media sanitization practices. This includes verifying their erasure methods and collecting tamper-proof certificates for every asset."
+      answer: "Credit unions must ensure that third-party vendors (ITAD, cloud providers) follow NCUA-compliant media sanitization practices. This includes verifying their erasure methods and collecting tamper-evident certificates for every asset."
     },
     {
       question: "What is the biggest risk in third-party disposal for NCUA compliance?",
@@ -1359,7 +1359,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Does D-Secure software provide NIST 800-88 certificates in India?",
-      answer: "Yes, D-Secure provides tamper-proof, audit-ready sanitization certificates that mapped directly to NIST 800-88 standards and help Indian enterprises meet statutory compliance requirements."
+      answer: "Yes, D-Secure provides tamper-evident, audit-ready sanitization certificates that mapped directly to NIST 800-88 standards and help Indian enterprises meet statutory compliance requirements."
     }
   ],
   "pii-disposal-breach": [
@@ -1405,7 +1405,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "What is the best way to prove compliance when returning leased devices?",
-      answer: "Always perform a NIST-compliant erasure and generate a tamper-proof certificate of destruction. This provides legal proof that the data was sanitized before the device left your custody."
+      answer: "Always perform a NIST-compliant erasure and generate a tamper-evident certificate of destruction. This provides legal proof that the data was sanitized before the device left your custody."
     }
   ],
   "remote-work-data-erasure": [
@@ -1431,7 +1431,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Is remote wiping secure enough for compliance?",
-      answer: "Yes, provided the software generates a verifiable, tamper-proof certificate of erasure documenting the NIST-compliant method used and success of the operation."
+      answer: "Yes, provided the software generates a verifiable, tamper-evident certificate of erasure documenting the NIST-compliant method used and success of the operation."
     }
   ],
   "automate-data-erasure": [
@@ -1463,7 +1463,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "What should an enterprise erasure certificate include?",
-      answer: "A compliant certificate must include device serial number, model, capacity, erasure method used, verification percentage, pass/fail status, operator identity, timestamp, and a tamper-proof digital signature."
+      answer: "A compliant certificate must include device serial number, model, capacity, erasure method used, verification percentage, pass/fail status, operator identity, timestamp, and a tamper-evident digital signature."
     },
     {
       question: "How long should erasure certificates be retained for audit purposes?",
@@ -1495,10 +1495,10 @@ const _blogFaqs: Record<string, FAQ[]> = {
   "hardware-diagnostics-itad-compliance": [
     {
       question: "What is hardware diagnostics in the context of ITAD?",
-      answer: "Hardware diagnostics in ITAD refers to automated and manual testing of IT asset components — CPU, memory, storage, display, battery, network interfaces, and peripherals — to determine if a device is suitable for reuse, refurbishment, or must be recycled. It forms the technical backbone of compliance with R2v3 and e-Stewards certifications."
+      answer: "Hardware diagnostics in ITAD refers to automated and manual testing of IT asset components — CPU, memory, storage, display, battery, network interfaces, and peripherals — to determine if a device is suitable for reuse, refurbishment, or must be recycled. It forms the technical backbone of compliance with R2v3 and e-Stewards alignments."
     },
     {
-      question: "Why is hardware diagnostics required for R2v3 certification?",
+      question: "Why is hardware diagnostics required for R2v3 alignment?",
       answer: "R2v3 (Responsible Recycling Standard version 3) requires certified recyclers and ITADs to perform functional testing on all equipment before determining its disposition path. Without documented diagnostic results, devices cannot be classified for reuse or refurbishment, violating core R2v3 requirements."
     },
     {
@@ -1521,11 +1521,11 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Does DBAN provide audit certificates for compliance?",
-      answer: "No. The free version of DBAN does not produce tamper-proof, digitally signed certificates required by frameworks like GDPR, HIPAA, or ISO 27001. D-Secure generates cryptographic, audit-ready reports for every sanitization."
+      answer: "No. The free version of DBAN does not produce tamper-evident, digitally signed certificates required by frameworks like GDPR, HIPAA, or ISO 27001. D-Secure generates cryptographic, audit-ready reports for every sanitization."
     },
     {
       question: "What is the best free DBAN alternative for enterprise?",
-      answer: "While there are free tools available, enterprises require certified solutions. D-Secure offers enterprise-grade sanitization that meets NIST 800-88 Purge standards, providing the security and compliance documentation that free alternatives lack."
+      answer: "While there are free tools available, enterprises require enterprise-grade solutions. D-Secure offers enterprise-grade sanitization that meets NIST 800-88 Purge standards, providing the security and compliance documentation that free alternatives lack."
     },
     {
       question: "How does D-Secure handle NVMe erasure compared to DBAN?",

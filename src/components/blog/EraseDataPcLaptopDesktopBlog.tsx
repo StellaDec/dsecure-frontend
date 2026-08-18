@@ -207,7 +207,7 @@ const EraseDataPcLaptopDesktopBlog: React.FC = () => {
             </h2>
 
             <p className="leading-relaxed mb-6 text-white/80 max-w-2xl mx-auto">
-              While BIOS wipes and DBAN are fine for personal use, businesses require certified erasure with tamper-proof audit trails for compliance (NIST, HIPAA, GDPR).
+              While BIOS wipes and DBAN are fine for personal use, businesses require compliant erasure with tamper-evident audit trails for compliance (NIST, HIPAA, GDPR).
             </p>
 
             <Link

@@ -188,7 +188,7 @@ const DataHoardingBlog: React.FC = () => {
                 Data hoarding poses significant risks including increased data
                 breach vulnerability, compliance violations, and higher
                 operational costs. Organizations must implement proper data
-                retention policies and use certified data erasure solutions to
+                retention policies and use Enterprise-grade data erasure solutions to
                 eliminate redundant data and protect sensitive information.
               </p>
             </div>

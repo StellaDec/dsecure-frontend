@@ -200,7 +200,7 @@ const partnerTypes = {
       {
         title: "Standards Compliant",
         description:
-          "Our software follows international standards like NIST, ADISA, and Common Criteria to ensure the highest level of data erasure compliance.",
+          "Our software aligns with international standards like NIST and ADISA to ensure the highest level of data erasure compliance.",
       },
       {
         title: "Trusted Brand Quality",
@@ -2043,7 +2043,7 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
                     <p className="text-[#5a6672] leading-relaxed">
                       Our team of Compliant professionals ensures complete data
                       destruction compliance with international standards
-                      including NIST 800-88, DOD 5220.22-M, and Common Criteria.
+                      including NIST 800-88 and DOD 5220.22-M.
                       We provide comprehensive regulatory documents of
                       destruction for audit purposes and maintain the highest
                       levels of security throughout the data erasure process.

@@ -90,7 +90,7 @@ const FAQsPage: React.FC = memo(() => {
     {
       id: 11,
       question: "How do I get a regulatory document of data destruction?",
-      answer: "D-Secure automatically generates tamper-proof regulatory documents upon successful completion of erasure operations. These regulatory documents include device details, erasure methods used, timestamps, and digital signatures for legal compliance and audit purposes.",
+      answer: "D-Secure automatically generates tamper-evident regulatory documents upon successful completion of erasure operations. These regulatory documents include device details, erasure methods used, timestamps, and digital signatures for legal compliance and audit purposes.",
       category: "security"
     },
     {

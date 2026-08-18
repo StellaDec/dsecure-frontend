@@ -66,8 +66,8 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "audit-verification": {
-    title: "Audit Verification: Validating Tamper-Proof Erasure Logs | D-Secure",
-    description: "Detailed walkthrough of Audit Verification: Validating Tamper-Proof Erasure Logs. Learn secure procedures and industry best practices for enterprise-grade data destruction.",
+    title: "Audit Verification: Validating Tamper-Evident Erasure Logs | D-Secure",
+    description: "Detailed walkthrough of Audit Verification: Validating Tamper-Evident Erasure Logs. Learn secure procedures and industry best practices for enterprise-grade data destruction.",
     keywords: generateKeywords(["audit", "verification", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/audit-verification"),
     breadcrumbs: [
@@ -151,8 +151,8 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "certificate-generation": {
     title: "Erasure Certificate Generation: Compliance Docs | D-Secure",
-    description: "Generate tamper-proof data erasure certificates with D-Secure. Supports PDF, XML, and JSON formats for GDPR, HIPAA & NIST 800-88 compliance.",
-    keywords: generateKeywords(["data erasure certificate generation", "tamper-proof erasure certificate", "NIST 800-88 compliance document", "GDPR data destruction certificate", "audit-ready erasure report", "ITAD compliance certificate"]),
+    description: "Generate tamper-evident data erasure certificates with D-Secure. Supports PDF, XML, and JSON formats for GDPR, HIPAA & NIST 800-88 compliance.",
+    keywords: generateKeywords(["data erasure certificate generation", "tamper-evident erasure certificate", "NIST 800-88 compliance document", "GDPR data destruction certificate", "audit-ready erasure report", "ITAD compliance certificate"]),
     canonicalUrl: getCanonicalUrl("/support/manual/certificate-generation"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -366,8 +366,8 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "destruction-standards": {
-    title: "Destruction Standards: Certified Physical Destruction Protocols | D-Secure",
-    description: "Technical manual for Destruction Standards: Certified Physical Destruction Protocols. A vital resource for IT professionals managing high-security data erasure cycles.",
+    title: "Destruction Standards: Compliant Physical Destruction Protocols | D-Secure",
+    description: "Technical manual for Destruction Standards: Compliant Physical Destruction Protocols. A vital resource for IT professionals managing high-security data erasure cycles.",
     keywords: generateKeywords(["destruction", "standards", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/destruction-standards"),
     breadcrumbs: [
@@ -546,8 +546,8 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "erasure-reports": {
-    title: "Erasure Reports: Tamper-Proof Compliance Documentation Guide | D-Secure",
-    description: "In-depth documentation on Erasure Reports: Tamper-Proof Compliance Documentation Guide. A vital resource for IT professionals managing high-security data erasure cycles.",
+    title: "Erasure Reports: Tamper-Evident Compliance Documentation Guide | D-Secure",
+    description: "In-depth documentation on Erasure Reports: Tamper-Evident Compliance Documentation Guide. A vital resource for IT professionals managing high-security data erasure cycles.",
     keywords: generateKeywords(["erasure", "reports", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/erasure-reports"),
     breadcrumbs: [
@@ -738,8 +738,8 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "hdd-destruction": {
-    title: "HDD Destruction: Certified Methods for Magnetic Disk Sanitization | D-Secure",
-    description: "Security guidelines for HDD Destruction: Certified Methods for Magnetic Disk Sanitization. Learn secure procedures and industry best practices for enterprise-grade data destruction.",
+    title: "HDD Destruction: Secure Methods for Magnetic Disk Sanitization | D-Secure",
+    description: "Security guidelines for HDD Destruction: Secure Methods for Magnetic Disk Sanitization. Learn secure procedures and industry best practices for enterprise-grade data destruction.",
     keywords: generateKeywords(["destruction", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/hdd-destruction"),
     breadcrumbs: [
@@ -1470,8 +1470,8 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "overwrite-patterns": {
-    title: "Overwrite Patterns: Certified Data Destruction Algorithms | D-Secure",
-    description: "In-depth documentation on Overwrite Patterns: Certified Data Destruction Algorithms. Master the technical workflows for compliant and permanent data sanitization.",
+    title: "Overwrite Patterns: compliant data destruction Algorithms | D-Secure",
+    description: "In-depth documentation on Overwrite Patterns: compliant data destruction Algorithms. Master the technical workflows for compliant and permanent data sanitization.",
     keywords: generateKeywords(["overwrite", "patterns", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/overwrite-patterns"),
     breadcrumbs: [
@@ -1806,8 +1806,8 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "security-assurance": {
-    title: "Security Assurance: Certified Methods for Data Protection | D-Secure",
-    description: "In-depth documentation on Security Assurance: Certified Methods for Data Protection. A vital resource for IT professionals managing high-security data erasure cycles.",
+    title: "Security Assurance: Verifiable Methods for Data Protection | D-Secure",
+    description: "In-depth documentation on Security Assurance: Verifiable Methods for Data Protection. A vital resource for IT professionals managing high-security data erasure cycles.",
     keywords: generateKeywords(["security", "assurance", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/security-assurance"),
     breadcrumbs: [
@@ -2010,8 +2010,8 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "use-cases": {
-    title: "Use Cases: Enterprise Scenarios for Certified Data Sanitization | D-Secure",
-    description: "Detailed walkthrough of Use Cases: Enterprise Scenarios for Certified Data Sanitization. Master the technical workflows for compliant and permanent data sanitization.",
+    title: "Use Cases: Enterprise Scenarios for compliant data sanitization | D-Secure",
+    description: "Detailed walkthrough of Use Cases: Enterprise Scenarios for compliant data sanitization. Master the technical workflows for compliant and permanent data sanitization.",
     keywords: generateKeywords(["cases", "guide", "manual", "guide", "d-secure"]),
     canonicalUrl: getCanonicalUrl("/support/manual/use-cases"),
     breadcrumbs: [

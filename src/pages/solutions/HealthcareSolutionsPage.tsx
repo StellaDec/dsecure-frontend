@@ -283,7 +283,7 @@ const HealthcareSolutionsPage: React.FC = () => {
                 },
                 {
                   title: "HITECH Act",
-                  desc: "Maintain detailed audit trails and tamper-proof certificates to reduce data breach risks and meet HITECH requirements.",
+                  desc: "Maintain detailed audit trails and tamper-evident certificates to reduce data breach risks and meet HITECH requirements.",
                   icon: Lock,
                 },
               ].map((comp, idx) => (
@@ -387,7 +387,7 @@ const HealthcareSolutionsPage: React.FC = () => {
                       Audit-Ready Reporting
                     </h3>
                     <p className="text-sm text-slate-600">
-                      Generate tamper-proof audit trails for every erasure task
+                      Generate tamper-evident audit trails for every erasure task
                       instantly.
                     </p>
                   </div>
@@ -425,7 +425,7 @@ const HealthcareSolutionsPage: React.FC = () => {
               {[
                 {
                   q: "How does D-Secure help with HIPAA compliance?",
-                  a: "D-Secure uses industry-standard wiping methods (NIST 800-88, DoD) to permanently erase PHI from medical devices and drives, providing a tamper-proof certificate as proof of compliance for audits.",
+                  a: "D-Secure uses industry-standard wiping methods (NIST 800-88, DoD) to permanently erase PHI from medical devices and drives, providing a tamper-evident certificate as proof of compliance for audits.",
                 },
                 {
                   q: "Can I erase medical devices remotely?",

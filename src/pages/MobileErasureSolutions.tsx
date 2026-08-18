@@ -93,7 +93,7 @@ const MobileErasureSolutions: React.FC = () => {
                       img: "https://images.unsplash.com/photo-1611078489935-0cb964de46b4?auto=format&fit=crop&w=800&q=80",
                     },
                     {
-                      title: "Tamper-Proof Reporting",
+                      title: "Tamper-Evident Reporting",
                       desc: "Generates cryptographically signed regulatory documents of erasure for every device, ensuring audit compliance.",
                       img: "https://images.unsplash.com/photo-1605902711622-cfb43c4437b0?auto=format&fit=crop&w=800&q=80",
                     },

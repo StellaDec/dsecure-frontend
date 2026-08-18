@@ -50,7 +50,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
     { text: "NIST 800-88 & DoD 5220.22-M compliant data erasure software." },
     { text: "Securely wipes HDDs, SSDs, and NVMe drives permanently." },
     {
-      text: "Generates tamper-proof audit certificates for regulatory compliance.",
+      text: "Generates tamper-evident audit certificates for regulatory compliance.",
     },
     {
       text: "Deployable via bootable USB, PXE network boot, or cloud console.",
@@ -173,7 +173,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1778239910/dwzvvyiiyhlntaw9cheh.png",
-      alt: "Tamper-proof Erasure Report",
+      alt: "Tamper-evident Erasure Report",
     },
   ];
 
@@ -285,7 +285,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
   const eraseTypes = [
     {
       name: "PC & Laptops",
-      desc: "Regulatory data wiping for Windows, Mac, and Linux computers. Permanent erasure with tamper-proof certificates for audit compliance.",
+      desc: "Regulatory data wiping for Windows, Mac, and Linux computers. Permanent erasure with tamper-evident certificates for audit compliance.",
       icon: Laptop,
       color: "from-blue-500 to-blue-600",
     },
@@ -640,7 +640,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                         loading="lazy" 
                         decoding="async"
                         src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778239910/dwzvvyiiyhlntaw9cheh.png"
-                        alt="Drive Eraser Tamper-proof Report"
+                        alt="Drive Eraser Tamper-evident Report"
                         className="w-full h-auto object-cover"
                       />
                     </div>
@@ -1326,7 +1326,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                     Audit-Ready Documentation
                   </div>
                   <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
-                    Tamper-proof Diagnostic Report
+                    Tamper-evident Diagnostic Report
                   </h2>
                   <p className="text-lg text-slate-600 leading-relaxed">
                     Generates digitally signed reports of erasure to help meet
@@ -1342,11 +1342,11 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                     setSelectedImageIndex(galleryImages.length - 1)
                   }
                   className="relative rounded-none overflow-hidden shadow-2xl border border-slate-200 group cursor-pointer w-full max-w-[320px] sm:max-w-[400px] mx-auto text-left p-0 border-none bg-slate-50 block"
-                  aria-label="View Tamper-proof Erasure Report fullscreen"
+                  aria-label="View Tamper-evident Erasure Report fullscreen"
                 >
                   <img
                     src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1778239910/dwzvvyiiyhlntaw9cheh.png"
-                    alt="Tamper-proof Erasure Report"
+                    alt="Tamper-evident Erasure Report"
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 block"
                   />
                   <div className="absolute inset-0 bg-emerald-900/10 pointer-events-none"></div>

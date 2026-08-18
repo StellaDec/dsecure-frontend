@@ -207,7 +207,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                     failsafe technologies to safely wipe and recycle drives
                     ensures proper data protection. While degaussing or physical
                     destruction renders devices unusable, these methods have
-                    their limitations. Organizations should consider certified
+                    their limitations. Organizations should consider compliant
                     data erasure solutions that provide verifiable proof of
                     permanent data destruction while potentially allowing device
                     reuse.
@@ -298,17 +298,17 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
               </h2>
 
               <p className="text-[#5a6672] leading-loose text-lg">
-                D-Secure provides certified data erasure solutions that
+                D-Secure provides Enterprise-grade data erasure solutions that
                 permanently destroy sensitive data before device disposal,
                 eliminating dumpster diving risks entirely. Our software has
-                been tested and approved by leading certification authorities,
+                been tested and approved by leading alignment authorities,
                 ensuring compliance with global data protection standards.
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="bg-white rounded-none p-6 shadow-none">
                   <h3 className="font-bold text-[#0a2e1e] text-lg mb-3">
-                    Certified Erasure
+                    compliant erasure
                   </h3>
                   <p className="text-[#5a6672] leading-loose">
                     Supports 24+ international standards including <Link to="/products/drive-eraser" className="text-[#0a2e1e] hover:underline font-medium"><Link to="/compliance/nist-800-88" className="text-[#0a2e1e] hover:underline font-medium">NIST 800-88</Link></Link>
@@ -320,7 +320,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                     Audit Documentation
                   </h3>
                   <p className="text-[#5a6672] leading-loose">
-                    Generates tamper-proof certificates and detailed reports for
+                    Generates tamper-evident certificates and detailed reports for
                     regulatory compliance and audit requirements.
                   </p>
                 </div>
@@ -347,7 +347,7 @@ const DumpsterDivingDataBreachBlog: React.FC = () => {
                 The connection between dumpster diving, unsafe data disposal,
                 and data breaches is undeniable. What organizations consider
                 worthless garbage often contains treasures for cybercriminals.
-                With proper awareness, employee training, and certified data
+                With proper awareness, employee training, and verifiable data
                 destruction solutions, organizations can eliminate this attack
                 vector entirely.
               </p>

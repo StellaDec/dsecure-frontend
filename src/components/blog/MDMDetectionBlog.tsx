@@ -392,7 +392,7 @@ const MDMDetectionBlog: React.FC = () => {
                 </li>
                 <li>
                   • <strong>Unified Reporting:</strong> Documents both erasure
-                  results and MDM status in a single tamper-proof report
+                  results and MDM status in a single tamper-evident report
                 </li>
               </ul>
               <p className="text-[#5a6672] leading-loose text-lg font-semibold mt-4">

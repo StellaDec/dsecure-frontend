@@ -115,7 +115,7 @@ const FreezeStateAdvancedPage = memo(() => {
     },
     {
       title: "Audit Reports",
-      desc: "Tamper-proof certificates generated automatically on reboot.",
+      desc: "Tamper-evident certificates generated automatically on reboot.",
     }
   ];
 
@@ -429,7 +429,7 @@ const FreezeStateAdvancedPage = memo(() => {
                        <div className="grid grid-cols-2 gap-6">
                           {[
                             { icon: <HardDrive />, title: "Native SSD Trim", desc: "Full compatibility with SSD NAND Flash wear leveling logic." },
-                            { icon: <Cpu />, title: "UEFI Secure Boot", desc: "Integrates at the firmware level for tamper-proof execution." },
+                            { icon: <Cpu />, title: "UEFI Secure Boot", desc: "Integrates at the firmware level for tamper-evident execution." },
                             { icon: <ShieldAlert />, title: "Auto-Fail Safe", desc: "Self-locking mechanism if sanitization verification fails." },
                             { icon: <Archive />, title: "Custom Passes", desc: "Configure up to 35-pass Guttman-grade overwriting." },
                           ].map((item) => (
@@ -538,7 +538,7 @@ const FreezeStateAdvancedPage = memo(() => {
                            <span className="text-emerald-400">Sanitization Reports</span>
                         </h2>
                         <p className="text-lg text-slate-400 font-medium leading-relaxed">
-                           Accountability is built-in. Advanced Eraser automatically generates tamper-proof sanitization certificates for every reboot. These reports provide forensic proof of erasure compliance.
+                           Accountability is built-in. Advanced Eraser automatically generates tamper-evident sanitization certificates for every reboot. These reports provide forensic proof of erasure compliance.
                         </p>
                        <ul className="space-y-10 mt-16">
                           {[
