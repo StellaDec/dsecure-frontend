@@ -7,17 +7,49 @@ import { Link } from "react-router-dom";
 import { FAQSection } from "../FAQSection";
 
 const NIST80088Rev2UpdateBlog: React.FC = () => {
-  // Markdown se sync kiya — 5 FAQs
+  // GSC long-tail queries ko target karne wale FAQs
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Is NIST 800-88 Rev. 1 still valid?",
+        "name": "Is NIST SP 800-88 Rev. 2 the current final version?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. It was officially withdrawn on September 26, 2025. Any policy, RFP, or audit checklist still pointing to it is working off an archived document."
+          "text": "Yes. NIST SP 800-88 Rev. 2 is the final, officially published version of the media sanitization guidelines, released on September 26, 2025. It is not a draft — it is the active, controlling standard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When was NIST 800-88 Rev. 2 officially published?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NIST published the final version of SP 800-88 Rev. 2 on September 26, 2025, replacing the 2014 Rev. 1 guidance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happened to NIST SP 800-88 Rev. 1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rev. 1 was officially withdrawn by NIST on September 26, 2025 — the same day Rev. 2 became final. Rev. 1 is now archived for historical reference only and should not be used for current compliance programs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a newer version than Rev. 2 in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. As of 2026, NIST SP 800-88 Rev. 2 remains the current and only active version of the standard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I download the official NIST SP 800-88 Rev. 2 document?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The full text is freely available from the NIST Computer Security Resource Center at csrc.nist.gov — no purchase required, as NIST publications are public domain."
         }
       },
       {
@@ -55,20 +87,48 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
     ]
   };
 
+  // GEO: Article structured data — AI engines isko cite karte hain
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "NIST SP 800-88 Rev. 2 Final Guidelines for Media Sanitization (September 2025)",
+    "description": "NIST SP 800-88 Rev. 2 final media sanitization guidelines replaced Rev. 1 in September 2025. Covers what changed, what's withdrawn, and compliance for Indian enterprises.",
+    "author": {
+      "@type": "Person",
+      "name": "Prashant Saini",
+      "jobTitle": "Data Sanitization Compliance Writer",
+      "worksFor": { "@type": "Organization", "name": "D-Secure Technologies" }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "D-Secure Technologies",
+      "url": "https://dsecuretech.com"
+    },
+    "datePublished": "2026-07-17",
+    "dateModified": "2026-08-18",
+    "mainEntityOfPage": "https://dsecuretech.com/blog/nist-800-88-rev2-update-2026",
+    "keywords": "NIST SP 800-88 Rev. 2, media sanitization, September 2025, final guidelines, data erasure, IEEE 2883-2022, DPDP Act",
+    "about": [
+      { "@type": "Thing", "name": "NIST SP 800-88", "description": "Guidelines for Media Sanitization published by the National Institute of Standards and Technology" },
+      { "@type": "Thing", "name": "IEEE 2883-2022", "description": "Standard for Sanitizing Storage" },
+      { "@type": "Thing", "name": "DPDP Act 2023", "description": "India's Digital Personal Data Protection Act" }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
         seo={getBlogSEO({
-          title: "NIST 800-88 Rev. 2, Explained: What Changed, What Got Withdrawn, and What to Do About It",
-          excerpt: "NIST 800-88 Rev. 2 replaced Rev. 1 in Sept 2025. See what changed, what's withdrawn, and how Indian enterprises stay DPDP-compliant in 2026.",
+          title: "NIST SP 800-88 Rev. 2 (Final, September 2025) — Official Media Sanitization Guidelines Explained",
+          excerpt: "NIST SP 800-88 Rev. 2 final media sanitization guidelines replaced Rev. 1 in September 2025. See what changed in the official 2025 revision and how Indian enterprises stay compliant in 2026.",
           slug: "nist-800-88-rev2-update-2026",
           author: "Prashant Saini",
           publishDate: "July 17, 2026",
-          keywords: "NIST 800-88 Rev 2, NIST SP 800-88 Revision 2 2026, IEEE 2883-2022 compliance, data sanitization program, Clear Purge Destroy NIST 800-88, cryptographic erase FIPS 140-3, DPDP Act data deletion compliance, cloud data sanitization certificate of deletion, media sanitization program India",
+          keywords: "NIST SP 800-88 Rev. 2 final 2025, NIST SP 800-88 Rev. 2 media sanitization official 2025, NIST SP 800-88 Rev. 2 final media sanitization 2025, NIST SP 800-88 Rev. 2 guidelines for media sanitization September 2025, NIST SP 800-88 Rev. 2 final September 2025, NIST SP 800-88 Revision 2 final media sanitization, NIST 800-88, NIST SP 800-88 latest revision 2026, NIST SP 800-88 Rev. 2 final guidelines for media sanitization, IEEE 2883-2022 compliance, Clear Purge Destroy NIST 800-88, cryptographic erase FIPS 140-3, DPDP Act data deletion compliance, media sanitization program India",
           category: "Compliance / Standards",
           tag: "Standards",
         })}
-        structuredData={[faqSchema]}
+        structuredData={[faqSchema, articleSchema]}
       />
 
       {/* Hero Section */}
@@ -79,13 +139,29 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
               Compliance / Standards - 2026 Update
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a2e1e] mb-8 leading-tight max-w-5xl mx-auto">
-              NIST 800-88 Rev. 2, Explained: What Changed, What Got Withdrawn, and What to Do About It
+              NIST SP 800-88 Rev. 2 (Final, September 2025) — Official Media Sanitization Guidelines Explained
             </h1>
             <p className="text-xl md:text-2xl text-[#5a6672] max-w-4xl mx-auto leading-relaxed">
               <em>By Prashant Saini, D-Secure Technologies | Last updated: August 2026</em>
             </p>
           </div>
         </Reveal>
+      </section>
+
+      {/* Quick Status Box — fold ke andar, hero ke turant baad */}
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 pb-2">
+        <div className="bg-[#f4fbf8] border border-[#d4ede4] rounded-lg p-6">
+          <h2 className="text-lg font-bold text-[#0a2e1e] mb-4 flex items-center gap-2">
+            <span>📋</span> Quick Status
+          </h2>
+          <ul className="space-y-2 text-[#5a6672] text-base">
+            <li><strong>Status:</strong> Final / Active (current standard)</li>
+            <li><strong>Published:</strong> September 26, 2025</li>
+            <li><strong>Supersedes:</strong> NIST SP 800-88 Rev. 1 (Dec 2014) — officially withdrawn same date</li>
+            <li><strong>Official source:</strong> csrc.nist.gov (<a href="https://doi.org/10.6028/NIST.SP.800-88r2" target="_blank" rel="noopener noreferrer" className="text-[#0e7c66] hover:underline">doi.org/10.6028/NIST.SP.800-88r2</a>)</li>
+            <li><strong>As of 2026:</strong> Rev. 2 remains the current, mandatory NIST standard — no newer revision exists</li>
+          </ul>
+        </div>
       </section>
 
       {/* Intro Section */}
@@ -103,6 +179,16 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
             </p>
           </div>
         </Reveal>
+      </section>
+
+      {/* GEO: Key Takeaway Block — AI engines cite this directly */}
+      <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 pb-4">
+        <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-r-lg">
+          <h2 className="text-lg font-bold text-[#0a2e1e] mb-3">Key Takeaway</h2>
+          <p className="text-[#5a6672] leading-relaxed text-base mb-0">
+            <strong>NIST SP 800-88 Rev. 2</strong>, published as the final official revision in <strong>September 2025</strong>, replaced the withdrawn Rev. 1 (2014). It reframes media sanitization from a one-time technical task into an ongoing organizational program. Key changes include: formal separation of verification and validation, removal of device-specific lookup tables in favor of IEEE 2883-2022 references, explicit coverage of cloud and virtual machine sanitization, demotion of degaussing as a standalone Destroy method, tightened cryptographic erase requirements with FIPS 140-3 alignment, and confirmation that a single verified overwrite pass is sufficient for modern magnetic HDDs.
+          </p>
+        </div>
       </section>
 
       {/* Main Content Grid */}
@@ -348,7 +434,7 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
 
       <BlogFooterStandard 
         blogId="nist-800-88-rev2-update-2026" 
-        blogTitle="NIST 800-88 Rev. 2, Explained: What Changed, What Got Withdrawn, and What to Do About It" 
+        blogTitle="NIST SP 800-88 Rev. 2 (Final, September 2025) — Official Media Sanitization Guidelines Explained" 
         category="Compliance / Standards" 
         tag="Standards" 
         faqs={[]}

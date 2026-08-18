@@ -68,14 +68,27 @@ export const blogPosts: BlogPost[] = [
     author: "Nitesh Kushwaha"
   },
   {
+    id: "data-sanitization-risk-2026-india-itad",
+    slug: "data-sanitization-risk-2026-india-itad",
+    title: "Data Sanitization Risk 2026: Why Data Destruction Alone Isn't Enough",
+    excerpt: "Data sanitization risk assessment for 2026: is physical destruction enough? Learn why Indian ITADs and enterprises need certified data erasure software over destruction alone. Covers chain of custody risk, crypto erase vs data erasure, and audit-ready disposal.",
+    link: "/blog/data-sanitization-risk-2026-india-itad",
+    tag: "Risk Management",
+    category: "Data Security",
+    keywords: "data sanitization risk 2026, data sanitization risk assessment, data destruction vs data erasure, is physical destruction enough to erase data, chain of custody data disposal, ITAD data security India, secure data disposal for enterprises India, NIST SP 800-88 data erasure, certified data erasure software, e-waste data security risk, data breach retired IT assets, crypto erase vs data erasure, cryptographic erasure risk, tamper evident certificate of erasure, audit ready data disposal, data recovery after hard drive destruction",
+    publishDate: "August 18, 2026",
+    author: "Prashant Saini",
+    readTime: "8 min read"
+  },
+  {
     id: "nist-800-88-rev2-update-2026",
     slug: "nist-800-88-rev2-update-2026",
-    title: "NIST SP 800-88 Rev. 2 Explained (2026 Update): What Changed, What's Withdrawn, IEEE 2883, and How Indian Enterprises Stay Compliant",
-    excerpt: "NIST SP 800-88 Rev. 1 was withdrawn in September 2025. This 2026 guide covers every Rev. 2 change — validation, cryptographic erase, degaussing, cloud sanitization, IEEE 2883-2022 — plus what it means for DPDP Act compliance in India.",
+    title: "NIST SP 800-88 Rev. 2 (Final, September 2025) — Official Media Sanitization Guidelines Explained",
+    excerpt: "NIST SP 800-88 Rev. 2 final media sanitization guidelines replaced Rev. 1 in September 2025. This official 2026 guide covers every Rev. 2 change — validation, cryptographic erase, degaussing, cloud sanitization, IEEE 2883-2022 — plus what it means for DPDP Act compliance in India.",
     link: "/blog/nist-800-88-rev2-update-2026",
     tag: "Standards",
     category: "Compliance",
-    keywords: "NIST 800-88 Rev 2, NIST SP 800-88 Revision 2 2026, IEEE 2883-2022 compliance, data sanitization program, Clear Purge Destroy NIST 800-88, cryptographic erase FIPS 140-3, DPDP Act data deletion compliance, cloud data sanitization certificate of deletion, media sanitization program India",
+    keywords: "NIST SP 800-88 Rev. 2 final 2025, NIST SP 800-88 Rev. 2 media sanitization official 2025, NIST SP 800-88 Rev. 2 final media sanitization 2025, NIST SP 800-88 Rev. 2 guidelines for media sanitization September 2025, NIST SP 800-88 Rev. 2 final September 2025, NIST SP 800-88 Revision 2 final media sanitization, NIST 800-88, NIST SP 800-88 latest revision 2026, NIST SP 800-88 Rev 2 media sanitization 2025, NIST SP 800-88 Rev. 2 final guidelines for media sanitization, IEEE 2883-2022 compliance, Clear Purge Destroy NIST 800-88, DPDP Act data deletion compliance, media sanitization program India",
     publishDate: "July 17, 2026",
     author: "Prashant Saini",
     readTime: "12 min read"

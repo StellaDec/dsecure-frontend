@@ -9,6 +9,7 @@ const DBANAlternativeBlog = lazy(() => import("../components/blog/DBANAlternativ
 const ServiceNowDataErasureBlog = lazy(() => import("../components/blog/ServiceNowDataErasureBlog"));
 const LocalLLMErasureBlog = lazy(() => import("../components/blog/LocalLLMErasureBlog"));
 const DataSanitizationComplianceBlog = lazy(() => import("../components/blog/DataSanitizationComplianceBlog"));
+const DataSanitizationRisk2026Blog = lazy(() => import("../components/blog/DataSanitizationRisk2026Blog"));
 
 const ErasureBestPracticesBlog = lazy(() => import("../components/blog/ErasureBestPracticesBlog"));
 const AutomatedErasureBlog = lazy(() => import("../components/blog/AutomatedErasureBlog"));
@@ -119,6 +120,7 @@ export const BlogRoutes = () => (
     <Route path="blog/local-llm-data-erasure" element={<LocalLLMErasureBlog />} />
 
     <Route path="blog/data-sanitization-compliance" element={<DataSanitizationComplianceBlog />} />
+    <Route path="blog/data-sanitization-risk-2026-india-itad" element={<DataSanitizationRisk2026Blog />} />
 
     <Route path="blog/erasure-best-practices" element={<ErasureBestPracticesBlog />} />
     <Route path="blog/automate-data-erasure" element={<AutomatedErasureBlog />} />
