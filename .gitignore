@@ -232,3 +232,6 @@ skills-lock.json
 
 public/sitemap-*.xml
 !public/sitemap.xml
+
+# API Credentials / Keys
+public/pk/

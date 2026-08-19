@@ -172,6 +172,8 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
     description: "Full guide to configuring and managing D-Secure Freeze State. Learn how to protect system configurations and restore them on reboot.",
     keywords: generateKeywords(["freeze state manual", "reboot to restore guide", "system protection documentation"]),
     canonicalUrl: getCanonicalUrl("/support/manual/complete-freeze-state-manual"),
+    // Thin manual page — crawl budget bachane ke liye noindex
+    noindex: true,
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Support", item: "/support" },
@@ -196,6 +198,8 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
     description: "Comprehensive technical documentation for D-Secure Network File Eraser. Enterprise deployment, domain integration, and bulk erasure guides.",
     keywords: generateKeywords(["network file eraser", "enterprise erasure manual", "domain data wiping"]),
     canonicalUrl: getCanonicalUrl("/support/manual/network-file"),
+    // Network File manual bhi noindex — user ne exclude list mein nahi rakha
+    noindex: true,
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Support", item: "/support" },
@@ -208,6 +212,8 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
     description: "Technical guide for setting up and configuring D-Secure systems for optimal performance and compliance.",
     keywords: generateKeywords(["system setup", "configuration guide", "D-Secure technical manual"]),
     canonicalUrl: getCanonicalUrl("/support/manual/system-setup"),
+    // Thin setup hub page — crawl budget preserve karo
+    noindex: true,
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Support", item: "/support" },
@@ -220,6 +226,8 @@ export const SUPPORT_SEO: Record<string, Partial<SEOMetadata>> = {
     description: "Learn how to use D-Secure effectively for day-to-day data erasure operations and workflow management.",
     keywords: generateKeywords(["user operations", "workflow guide", "D-Secure usage"]),
     canonicalUrl: getCanonicalUrl("/support/manual/working-with-dsecure"),
+    // Thin workflow hub page — noindex
+    noindex: true,
     breadcrumbs: [
       { name: "Home", item: "/" },
       { name: "Support", item: "/support" },

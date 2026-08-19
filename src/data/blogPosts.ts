@@ -68,6 +68,19 @@ export const blogPosts: BlogPost[] = [
     author: "Nitesh Kushwaha"
   },
   {
+    id: "windows-file-deletion-vs-formatting",
+    slug: "windows-file-deletion-vs-formatting",
+    title: "How to Delete Files Securely in Windows: Why Formatting Isn't Enough",
+    excerpt: "How to delete files securely in Windows — deleting, quick format, and full format don't permanently erase data. Learn what actually works and when you need dedicated erasure software.",
+    link: "/blog/windows-file-deletion-vs-formatting",
+    tag: "Windows",
+    category: "Data Security",
+    keywords: "how to delete files securely, how to securely delete files Windows, secure file deletion, permanently delete files Windows, does formatting delete files, quick format vs full format Windows, secure erase Windows drive, SSD formatting limitations, certificate of erasure, how to permanently erase files from hard drive, securely wipe files before selling PC",
+    publishDate: "August 19, 2026",
+    author: "Prashant Saini",
+    readTime: "6 min read"
+  },
+  {
     id: "data-sanitization-risk-2026-india-itad",
     slug: "data-sanitization-risk-2026-india-itad",
     title: "Data Sanitization Risk 2026: Why Data Destruction Alone Isn't Enough",

@@ -2,14 +2,16 @@ import { SEOMetadata, generateKeywords, getCanonicalUrl, generateSoftwareProduct
 
 export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
   "drive-eraser": {
-    title: "Secure Data Erasure Software | D-Secure Drive Eraser",
+    // Transactional Intent — "Buy", "Download", "Get" focus
+    title: "Buy Drive Eraser Software | Download Secure Data Wiping Tool | D-Secure",
     description:
-      "Enterprise secure data erasure software to permanently wipe HDDs, SSDs & NVMe. Achieve GDPR & HIPAA compliance with tamper-evident ITAD certificates.",
+      "Purchase D-Secure Drive Eraser — enterprise data erasure software to permanently wipe HDDs, SSDs & NVMe. Buy now for NIST 800-88 & GDPR compliant certificates.",
     keywords: generateKeywords([
-      "secure data erasure software",
-      "secure data erasure",
+      "buy drive eraser software",
+      "download drive eraser",
+      "purchase data erasure software",
+      "drive eraser software download",
       "data erasure software",
-      "drive eraser software",
       "NIST 800-88 compliant HDD SSD eraser",
       "secure hard drive wipe",
       "enterprise data erasure software India",
@@ -166,27 +168,28 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "file-eraser": {
-    title: "Secure File Erasure Software | D-Secure File Shredder",
+    // Transactional Intent — "Buy", "Download" focus
+    title: "Buy File Eraser Software | Download Secure File Shredder for Windows",
     description:
-      "Permanently shred files, folders & free space. D-Secure File Eraser provides automated, NIST-compliant secure deletion with tamper-evident certificates.",
+      "Download & Buy D-Secure File Eraser — the enterprise file shredder for Windows. Permanently erase files, wipe free space & sanitize folders. Try free or purchase now.",
     keywords: generateKeywords([
-      "secure file erasure software",
-      "secure file erasure",
-      "file eraser software Windows",
+      "buy file eraser software",
+      "download file eraser",
+      "purchase file shredder windows",
+      "file eraser software download",
+      "secure file eraser buy",
+      "file shredder software windows",
       "secure file deletion enterprise",
       "file shredder GDPR compliant",
-      "permanent file delete tool",
       "free space wipe software",
       "data sanitization windows",
       "D-Secure File Eraser",
-      "file eraser software",
-      "secure file deletion",
+      "secure file erasure",
+      "file eraser software Windows",
       "BCWipe alternative India",
       "Eraser software alternative",
       "best file shredder software India",
       "international file erasure standards",
-      "file shredder ",
-      "file eraser",
     ]),
     canonicalUrl: getCanonicalUrl("/products/file-eraser"),
     breadcrumbs: [

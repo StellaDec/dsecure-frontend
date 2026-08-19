@@ -28,6 +28,8 @@ interface ManualPageTemplateProps {
   keywords: string;
   sections: ManualSection[];
   seoKey?: string;
+  // Noindex flag — thin manual hub pages ko search se hide karne ke liye
+  noindex?: boolean;
   heroContent?: React.ReactNode;
   quickAccessItems?: Array<{
     title: string;
@@ -53,6 +55,7 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
   keywords,
   sections,
   seoKey,
+  noindex = true,
   heroContent,
   quickAccessItems,
   ctaTitle,
@@ -90,7 +93,7 @@ const ManualPageTemplate: React.FC<ManualPageTemplateProps> = memo(({
 
   return (
     <>
-      <SEOHead seo={seoData} />
+      <SEOHead seo={seoData} noindex={noindex} />
 
       <div className="min-h-screen bg-slate-50">
         {/* Header Section */}
