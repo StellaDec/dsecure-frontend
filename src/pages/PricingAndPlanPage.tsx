@@ -2599,8 +2599,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                   disabled={
                     (!(
                       (selectedCategory === "drive-eraser" &&
-                        (driveEraserVariant === "standard" ||
-                          driveEraserVariant === "diagnostics")) ||
+                        driveEraserVariant === "standard") ||
                       (selectedCategory === "file-eraser" &&
                         fileEraserVariant === "standard")
                     ) &&
@@ -2630,8 +2629,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                     </svg>
                   ) : !(
                     (selectedCategory === "drive-eraser" &&
-                      (driveEraserVariant === "standard" ||
-                        driveEraserVariant === "diagnostics")) ||
+                      driveEraserVariant === "standard") ||
                     (selectedCategory === "file-eraser" &&
                       fileEraserVariant === "standard")
                   ) &&
