@@ -578,8 +578,9 @@ export default function AdminDashboard() {
   // ✅ OPTIMIZED: Update stored user data useEffect removed (now using useMemo above)
   const isDemo = isDemoMode();
 
-  // Dynamic version state for File Eraser
+  // Dynamic version state for File Eraser and Drive Eraser
   const [dseVersion, setDseVersion] = useState("2.0.1");
+  const [dsDriveVersion, setDsDriveVersion] = useState("2.0.1");
 
   useEffect(() => {
     if (!isDemo) {
@@ -590,6 +591,16 @@ export default function AdminDashboard() {
             v = v.split('').join('.');
           }
           setDseVersion(v);
+        }
+      }).catch(() => {});
+
+      fetchLatestUpdate("DSDrive").then(data => {
+        if (data && data.version_number) {
+          let v = data.version_number;
+          if (v.length === 4 && !isNaN(Number(v))) {
+            v = v.split('').join('.');
+          }
+          setDsDriveVersion(v);
         }
       }).catch(() => {});
     }
@@ -6840,7 +6851,7 @@ export default function AdminDashboard() {
                               Drive Eraser
                             </h2>
                             <p className="text-xs text-slate-600">
-                              Version 2.0.1
+                              Version {dsDriveVersion}
                             </p>
                           </div>
                         </div>

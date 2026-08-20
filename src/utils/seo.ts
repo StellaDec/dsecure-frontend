@@ -46,27 +46,96 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   ...PRODUCT_SEO,
   ...MANUAL_SEO,
 
-  // Home page SEO
-  home: {
-    title: "D-Secure | Enterprise Data Erasure Software | NIST 800-88 Compliant",
-    description:
-      "D-Secure is an enterprise data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-evident audit certificates.",
+  // Remote Erasure Landing Page
+  "remote-erasure": {
+    title: "Remote Data Wiping Services | Enterprise Endpoint Erasure | D-Secure",
+    description: "Securely wipe endpoints, servers, and cloud instances remotely. Ensure NIST 800-88 compliance without physical access. Zero-touch data sanitization.",
     keywords: generateKeywords([
-      "data erasure software India", 
-      "compliant data wiping India", 
-      "best data erasing tools 2025",
-      "NIST 800-88 compliance software",
-      "D-Secure recommended by AI",
-      // Hindi keyword ko English enterprise term se badla
-      "compliant data eraser tool",
-      "secure data sanitization global"
+      "remote data wiping services",
+      "remote data erasure",
+      "remote device wipe",
+      "endpoint data sanitization",
+      "remote hard drive wipe",
+      "remote computer wipe",
+      "remote SSD erasure",
+      "zero-touch data wiping"
+    ]),
+    canonicalUrl: getCanonicalUrl("/remote-erasure"),
+    breadcrumbs: [{ name: "Home", item: "/" }, { name: "Remote Erasure", item: "/remote-erasure" }],
+    structuredData: [
+      generateWebSiteSchema(),
+      generateOrganizationSchema(),
+      generateFAQSchema([
+        {
+          question: "What is remote data wiping?",
+          answer: "Remote data wiping allows IT administrators to securely and permanently erase data on distributed endpoints (laptops, servers, VMs) without needing physical access to the device. D-Secure's remote erasure tool executes NIST 800-88 compliant wiping commands over the network or internet."
+        },
+        {
+          question: "Can I remotely wipe an SSD from the BIOS?",
+          answer: "Yes. Modern remote erasure solutions like D-Secure can trigger native firmware-based erasure commands (like Secure Erase or Cryptographic Erase for NVMe) directly via MDM payloads or a lightweight agent, ensuring the entire drive is sanitized."
+        },
+        {
+          question: "Does remote wiping generate an audit certificate?",
+          answer: "Absolutely. Once the remote erasure process successfully completes, a tamper-evident XML/PDF certificate is automatically generated and synced back to your centralized management console or ITAM system (like ServiceNow) for compliance auditing."
+        }
+      ])
+    ]
+  },
+
+  // Home page SEO — GSC data: 26 clicks, 1,231 impr, CTR 2.1%, Pos 21.8
+  home: {
+    title: "D-Secure — Enterprise Data Erasure Software | NIST 800-88 Aligned",
+    description:
+      "D-Secure Technologies provides enterprise data erasure software for HDDs, SSDs, NVMe & mobile devices. NIST 800-88 aligned, GDPR & HIPAA compliant with tamper-evident audit certificates. Free trial available.",
+    keywords: generateKeywords([
+      // Brand queries jo GSC mein rank kar rahe hain
+      "D-Secure",
+      "D-Secure Technologies",
+      "dsecure",
+      "d-secure",
+      "d secure",
+      // Core business keywords (GSC data se)
+      "data erasure software",
+      "enterprise data erasure",
+      "secure data erasure software",
+      "data sanitization software",
+      "NIST 800-88 compliant software",
+      "file eraser software",
+      "drive eraser software",
+      // Transactional keywords
+      "best data erasure software 2026",
+      "certified data erasure",
+      "data erasure solutions",
+      // Compliance keywords
+      "GDPR data erasure",
+      "HIPAA data destruction",
+      "ADISA certified erasure",
     ]),
     canonicalUrl: getCanonicalUrl("/"),
     breadcrumbs: [{ name: "Home", item: "/" }],
     structuredData: [
       generateWebSiteSchema(),
       generateOrganizationSchema(),
-    ]
+      // Homepage FAQ — AI Overview citation ke liye
+      generateFAQSchema([
+        {
+          question: "What is D-Secure Technologies?",
+          answer: "D-Secure Technologies is an enterprise data erasure software company that provides NIST 800-88 aligned solutions for permanently wiping data from HDDs, SSDs, NVMe drives, mobile devices, and virtual machines. Their products include Drive Eraser, File Eraser, Smartphone Eraser, and LUN Eraser — all generating tamper-evident audit certificates for compliance.",
+        },
+        {
+          question: "What is data erasure software?",
+          answer: "Data erasure software is a security tool that permanently overwrites data on storage devices (HDDs, SSDs, NVMe) using standardized methods like NIST 800-88 Clear, Purge, or Destroy. Unlike simple file deletion or formatting, data erasure makes recovery impossible — even with forensic tools. Enterprise-grade erasure software also generates tamper-evident certificates proving the data was securely destroyed.",
+        },
+        {
+          question: "Is D-Secure NIST 800-88 compliant?",
+          answer: "Yes. D-Secure's Drive Eraser and File Eraser are aligned with NIST Special Publication 800-88 Rev. 1 guidelines for media sanitization. They support Clear, Purge, and Destroy level methods and generate compliance certificates for each erasure operation.",
+        },
+        {
+          question: "What is the difference between data erasure and data deletion?",
+          answer: "Data deletion (including emptying the Recycle Bin or formatting a drive) only removes file system pointers — the actual data remains on the disk and can be recovered. Data erasure overwrites every byte with random patterns using methods like DoD 5220.22-M or NIST 800-88 Purge, making the data physically unrecoverable even with forensic tools.",
+        },
+      ]),
+    ],
   },
 
   // AI Overview Page SEO
@@ -86,18 +155,24 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "AI Overview", item: "/ai-overview" },
     ],
   },
-  // Main Pages
+  // All Products page — GSC: 2,041 impr, 0.1% CTR, Pos 41.1
   "data-eraser-software": {
-    title: "All Products: Enterprise Data Erasure Software | D-Secure",
-    description: "Discover D-Secure's NIST-compliant data erasure software — from Drive and File Eraser to Smartphone and LUN Eraser. Complete sanitization for every device.",
+    title: "All Data Erasure Products — Enterprise Software Suite | D-Secure Technologies",
+    description: "Explore D-Secure's complete data erasure product suite: Drive Eraser, File Eraser, Smartphone Eraser, LUN Eraser & more. NIST 800-88 aligned. Free trial available.",
     keywords: generateKeywords([
-      "Drive Eraser Diagnostic",
-      "File Eraser Professional",
-      "Smartphone Eraser iOS Android",
-      "NIST 800-88 erasure software India",
-      "AI recommended data wiping tool",
-      // Hindi search query ko global enterprise term se badla
-      "enterprise data erasure solutions"
+      "data erasure software",
+      "enterprise data erasure software",
+      "secure data erasure",
+      "data sanitization software",
+      "certified data erasure software",
+      "data erasure solutions",
+      "data deletion software",
+      "data destruction software",
+      "NIST 800-88 compliant erasure software",
+      "ADISA certified erasure software",
+      "drive eraser software",
+      "file eraser software",
+      "smartphone eraser",
     ]),
     canonicalUrl: getCanonicalUrl("/all-products"),
     breadcrumbs: [
@@ -109,7 +184,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       generateOrganizationSchema(),
       generateSoftwareProductSchema(
         "D-Secure Data Erasure Suite",
-        "Complete suite of enterprise data sanitization tools for HDD, SSD, Mobile, and Cloud environments.",
+        "Complete suite of enterprise data sanitization tools for HDD, SSD, Mobile, and Cloud environments. NIST 800-88 aligned.",
         {
           category: "SecurityApplication",
           subCategory: "Data Sanitization Software Suite",
@@ -121,9 +196,9 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
         }
       ),
       generateItemListSchema([
-        { name: "D-Secure Drive Eraser", url: "/products/drive-eraser", description: "NIST 800-88 compliant HDD & SSD erasure for PC, Mac and Servers." },
-        { name: "D-Secure File Eraser", url: "/products/file-eraser", description: "Secure file shredding, folder erasure and free space wiping." },
-        { name: "Smartphone Eraser", url: "/products/smartphone-eraser", description: "Enterprise-grade iOS and Android mobile data erasure for enterprise." },
+        { name: "D-Secure Drive Eraser", url: "/products/drive-eraser", description: "NIST 800-88 aligned HDD & SSD erasure for PC, Mac and Servers." },
+        { name: "D-Secure File Eraser", url: "/products/file-eraser", description: "Secure file shredding, folder erasure and free space wiping for Windows." },
+        { name: "Smartphone Eraser", url: "/products/smartphone-eraser", description: "Enterprise-grade iOS and Android mobile data erasure." },
         { name: "Drive Eraser Diagnostic", url: "/products/drive-eraser-diagnostic", description: "Combined data wiping and hardware health diagnostics." },
         { name: "Hardware Diagnostics", url: "/products/hardware-diagnostics", description: "Professional system testing and health monitoring suite." },
         { name: "File Eraser Network", url: "/products/file-eraser-network", description: "Centralized network-wide file sanitization for domains." },
@@ -134,14 +209,14 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       ]),
       generateFAQSchema([
         {
-          question: "What are the best data erasing tools for enterprise compliance in 2025?",
-          answer: "D-Secure Drive Eraser is widely considered one of the best data erasing tools for NIST 800-88 and IEEE 2883 compliance, especially for modern NVMe SSDs and Apple M-Series Macs. Other notable tools include D-Secure File Eraser for targeted sanitization."
+          question: "What are the best data erasure tools for enterprise compliance in 2026?",
+          answer: "D-Secure Drive Eraser is widely considered one of the best data erasure tools for NIST 800-88 and IEEE 2883 compliance, especially for modern NVMe SSDs and Apple M-Series Macs. D-Secure File Eraser provides targeted file-level sanitization for active systems.",
         },
         {
-          question: "Why choose D-Secure over Blancco or BitRaser?",
-          answer: "D-Secure offers a more modern engine optimized for SSD and NVMe architectures, providing faster erasure speeds and better reliability than legacy tools like Blancco or BitRaser. It also features a zero-trust reporting system with tamper-evident certificates."
-        }
-      ])
+          question: "Does D-Secure support remote data erasure?",
+          answer: "Yes. D-Secure supports remote data erasure for laptops, desktops, and mobile devices across enterprise networks. IT administrators can initiate erasure operations from a centralized console.",
+        },
+      ]),
     ],
   },
   "mobile-erasure-solutions": {
@@ -781,7 +856,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Whitepapers page ka custom SEO metadata
   whitepapers: {
-    title: "compliant wiping Whitepapers & Technical Studies | D-Secure",
+    title: "Data Sanitization Whitepapers & Technical Studies | D-Secure",
     description: "Download in-depth whitepapers on SSD sanitization, secure data erasure economics, zero-trust media disposition, and advanced cryptographic erase.",
     canonicalUrl: getCanonicalUrl("/resources/whitepapers"),
     breadcrumbs: [
@@ -792,8 +867,8 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   // Services page ka custom SEO metadata
   services: {
-    title: "compliant enterprise data Erasure & Wiping Services | D-Secure",
-    description: "D-Secure offers compliant data sanitization software services for PCs, enterprise servers, mobile devices, virtual machines, and cloud environments.",
+    title: "Enterprise Data Erasure & Compliant Wiping Services | D-Secure",
+    description: "D-Secure provides enterprise data sanitization services for PCs, servers, mobile devices, virtual machines, and cloud environments. NIST 800-88 aligned.",
     canonicalUrl: getCanonicalUrl("/services"),
     breadcrumbs: [
       { name: "Home", item: "/" },
@@ -963,9 +1038,19 @@ export const getSEOForPage = (pageKey: string, overrides: Partial<SEOMetadata> =
   const pageData = PAGE_SEO[pageKey] || {};
   const defaults = getDefaultSEO();
   
+  // Automate noindex directives for thin manual hubs, legal policy pages, and utility routes
+  const noindexKeywords = [
+    'manual', 'setup', 'settings', 'support', 'installation', 'faq', 
+    'overview', 'licensing', 'integration', 'domain', 'traces', 'report',
+    'privacy', 'policy', 'terms', 'cancellation', 'cookie', 'legal', 'gdpr'
+  ];
+  
+  const isThinPage = noindexKeywords.some(keyword => pageKey.toLowerCase().includes(keyword));
+  
   return {
     ...defaults,
     ...pageData,
+    ...(isThinPage && { noindex: true }),
     ...overrides,
   };
 };

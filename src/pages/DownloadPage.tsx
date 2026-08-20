@@ -60,24 +60,20 @@ const DOWNLOAD_LINKS: Record<string, ProductDownloads> = {
         import.meta.env.VITE_DRIVE_ERASER_ISO_DOWNLOAD_LINK ||
         `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/x64x86/Drive%20Eraser/D-Secure-Drive-Eraser(v1.0.0x64-arch-amd).iso`,
       filename: "D-Secure-Drive-Eraser-x64.iso",
-      size: "450 MB",
+      size: "1.3 GB",
       arch: "x64x86 (ISO Image)",
     },
     macos: {
-      url:
-        import.meta.env.VITE_DRIVE_ERASER_ISO_DOWNLOAD_LINK ||
-        `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/x64x86/Drive%20Eraser/D-Secure-Drive-Eraser(v1.0.0x64-arch-amd).iso`,
-      filename: "D-Secure-Drive-Eraser-x64.iso",
-      size: "450 MB",
-      arch: "x64x86 (ISO Image)",
+      url: "#",
+      filename: "D-Secure-Drive-Eraser-x86.iso",
+      size: "1.3 GB",
+      arch: "x86 (ISO Image)",
     },
     linux: {
-      url: `${import.meta.env.VITE_DOWNLOADS_BASE_URL}/drive-eraser-diagnostic-x64-v1/D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso`,
-      filename: "D-SECURE-DRIVE-ERASER-DIAGNOSTICS-x64-v1.0.0.0.iso",
-      size: "Less than 1 GB",
-      arch: "x64 (ISO Image)",
-      sha256:
-        "4032b90a67fd9556b8ba82af8f3581a328385d7c03f34d33332705f3eb0a7af4",
+      url: "#",
+      filename: "D-Secure-Drive-Eraser-ARM.iso",
+      size: "1.3 GB",
+      arch: "ARM (ISO Image)",
     },
   },
   "drive-eraser-diagnostic": {
@@ -144,19 +140,30 @@ const DownloadPage: React.FC = memo(() => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [latestUpdate, setLatestUpdate] = useState<EnhancedUpdateResponse | null>(null);
 
-  // Backend se latest update data fetch karo (hardcoded DSErase)
+  // Product code mapping - har product ke liye alag API code
+  const PRODUCT_CODE_MAP: Record<string, string> = {
+    "drive-eraser": "DSDrive",
+    "file-eraser": "DSErase",
+  };
+
+  // Backend se latest update data fetch karo (selected product ke basis pe)
   useEffect(() => {
     let isMounted = true;
     const fetchUpdates = async () => {
-      // Hardcoded 'DSErase' pass kiya gaya hai as per request
-      const data = await fetchLatestUpdate("DSErase");
-      if (isMounted && data) {
+      // Selected product ka API code nikaalo, agar nahi hai toh skip karo
+      const productCode = PRODUCT_CODE_MAP[selectedProduct];
+      if (!productCode) {
+        setLatestUpdate(null);
+        return;
+      }
+      const data = await fetchLatestUpdate(productCode);
+      if (isMounted) {
         setLatestUpdate(data);
       }
     };
     fetchUpdates();
     return () => { isMounted = false; };
-  }, []);
+  }, [selectedProduct]);
 
   // Initial load logic
   useEffect(() => {
@@ -176,23 +183,47 @@ const DownloadPage: React.FC = memo(() => {
   const currentDownloads = useMemo(() => {
     const baseDownloads = DOWNLOAD_LINKS[selectedProduct];
     
-    // Agar API se latest version aaya hai aur product file-eraser hai toh link dynamically set karo
-    // (Kyunki humne DSErase hardcode fetch kiya hai)
-    if (latestUpdate && selectedProduct === "file-eraser") {
+    // Agar API se latest version aaya hai toh dynamically link update karo
+    if (latestUpdate) {
       const ext = latestUpdate.download_link.split('.').pop() || 'exe';
       const cleanVersion = latestUpdate.version_number.replace(/\./g, '_');
-      
-      const filename = `D-Secure_Eraser_Setup_v${cleanVersion}.${ext}`;
 
-      if (baseDownloads.windows) {
+      // Drive Eraser ke liye - windowsAmd, macos, linux sab mein ISO link update karo
+      if (selectedProduct === "drive-eraser") {
+        const filename = `D-Secure-Drive-Eraser-v${cleanVersion}.${ext}`;
         return {
           ...baseDownloads,
-          windows: {
-            ...baseDownloads.windows,
+          windowsAmd: baseDownloads.windowsAmd ? {
+            ...baseDownloads.windowsAmd,
             url: latestUpdate.download_link,
             filename: filename,
-          }
+          } : baseDownloads.windowsAmd,
+          macos: {
+            ...baseDownloads.macos,
+            url: latestUpdate.download_link,
+            filename: filename,
+          },
+          linux: {
+            ...baseDownloads.linux,
+            url: latestUpdate.download_link,
+            filename: filename,
+          },
         };
+      }
+
+      // File Eraser ke liye - windows key mein link update karo
+      if (selectedProduct === "file-eraser") {
+        const filename = `D-Secure_Eraser_Setup_v${cleanVersion}.${ext}`;
+        if (baseDownloads.windows) {
+          return {
+            ...baseDownloads,
+            windows: {
+              ...baseDownloads.windows,
+              url: latestUpdate.download_link,
+              filename: filename,
+            }
+          };
+        }
       }
     }
     
@@ -333,156 +364,125 @@ const DownloadPage: React.FC = memo(() => {
             </div>
 
             {/* Download Buttons Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#d0d5dc]/60 bg-[#f4fbf8]">
-              {/* --- WINDOWS BUTTON --- */}
-              <div className="relative group">
+            {selectedProduct.includes("drive-eraser") ? (
+              /* Drive Eraser ke liye sirf x64 Architecture - single full-width button */
+              <div className="bg-[#f4fbf8]">
                 <button
-                  onClick={(e) =>
-                    selectedProduct.includes("drive-eraser")
-                      ? toggleDropdown("windows-drive", e)
-                      : handleDownload("windows", e)
-                  }
+                  onClick={(e) => handleDownload("windowsAmd", e)}
                   type="button"
-                  className="w-full flex flex-col items-center p-8 hover:bg-white transition-colors duration-150 h-full"
+                  className="w-full flex flex-col items-center p-10 hover:bg-white transition-colors duration-150"
                 >
-                  <ThemeIconContainer icon={selectedProduct.includes("drive-eraser") ? Cpu : Monitor} size="lg" className="mb-4" />
+                  <ThemeIconContainer icon={Cpu} size="lg" className="mb-4" />
                   <h3 className={themeClasses.typography.cardTitle}>
-                    {selectedProduct.includes("drive-eraser")
-                      ? "x64 Architecture"
-                      : "Windows"}
+                    x64 Architecture
                   </h3>
-                  <p className={`${themeClasses.typography.cardBody} text-sm mb-4`}>
-                    {selectedProduct.includes("drive-eraser")
-                      ? "AMD/Intel (x64x86)"
-                      : "x64 & ARM64"}
+                  <p className={`${themeClasses.typography.cardBody} text-sm mb-1`}>
+                    AMD/Intel (x64)
+                  </p>
+                  <p className={`${themeClasses.typography.cardBody} text-xs mb-4`}>
+                    {currentDownloads.windowsAmd?.size || "1.3 GB"} • ISO Image
                   </p>
                   <div className="mt-auto flex items-center gap-2 text-[#0e7c66] font-bold text-sm tracking-wide uppercase">
                     <Download className="w-4 h-4" />
                     Download
-                    {selectedProduct.includes("drive-eraser") && <ChevronDown className="w-4 h-4 ml-1" />}
                   </div>
                 </button>
-
-                {/* Windows Dropdown (Only for Drive Eraser) */}
-                {openDropdown === "windows-drive" && (
-                  <DropdownMenu>
-                    <DropdownItem
-                      title="AMD/Intel (x64x86)"
-                      subtitle="For standard PCs"
-                      onClick={(e) => handleDownload("windowsAmd", e)}
-                      size={currentDownloads.windowsAmd?.size}
-                    />
-                  </DropdownMenu>
-                )}
               </div>
+            ) : (
+              /* File Eraser / Diagnostic ke liye 3-column grid */
+              <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#d0d5dc]/60 bg-[#f4fbf8]">
+                {/* --- WINDOWS BUTTON --- */}
+                <div className="relative group">
+                  <button
+                    onClick={(e) => handleDownload("windows", e)}
+                    type="button"
+                    className="w-full flex flex-col items-center p-8 hover:bg-white transition-colors duration-150 h-full"
+                  >
+                    <ThemeIconContainer icon={Monitor} size="lg" className="mb-4" />
+                    <h3 className={themeClasses.typography.cardTitle}>Windows</h3>
+                    <p className={`${themeClasses.typography.cardBody} text-sm mb-4`}>x64 & ARM64</p>
+                    <div className="mt-auto flex items-center gap-2 text-[#0e7c66] font-bold text-sm tracking-wide uppercase">
+                      <Download className="w-4 h-4" />
+                      Download
+                    </div>
+                  </button>
+                </div>
 
-              {/* --- macOS BUTTON --- */}
-              <div className="relative group">
-                <button
-                  onClick={(e) => {
-                    if (currentDownloads.macos?.url === "#") {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      showInfoToast("macOS version will be available soon. Stay tuned!");
-                    } else {
-                      toggleDropdown("macos", e);
-                    }
-                  }}
-                  type="button"
-                  className="w-full flex flex-col items-center p-8 hover:bg-white transition-colors duration-150 h-full"
-                >
-                  <ThemeIconContainer icon={selectedProduct.includes("drive-eraser") ? Cpu : Laptop} size="lg" className="mb-4" />
-                  <h3 className={themeClasses.typography.cardTitle}>
-                    {selectedProduct.includes("drive-eraser")
-                      ? "x86 Architecture"
-                      : "macOS"}
-                  </h3>
-                  <p className={`${themeClasses.typography.cardBody} text-sm mb-4`}>
-                    {selectedProduct.includes("drive-eraser")
-                      ? "AMD/Intel (x64x86)"
-                      : "Intel & Apple Silicon"}
-                  </p>
-                  <div className="mt-auto flex items-center gap-2 text-[#0e7c66] font-bold text-sm tracking-wide uppercase">
-                    <Download className="w-4 h-4" />
-                    Download
-                    <ChevronDown className="w-4 h-4 ml-1" />
-                  </div>
-                </button>
+                {/* --- macOS BUTTON --- */}
+                <div className="relative group">
+                  <button
+                    onClick={(e) => {
+                      if (currentDownloads.macos?.url === "#") {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        showInfoToast("macOS version will be available soon. Stay tuned!");
+                      } else {
+                        toggleDropdown("macos", e);
+                      }
+                    }}
+                    type="button"
+                    className="w-full flex flex-col items-center p-8 hover:bg-white transition-colors duration-150 h-full"
+                  >
+                    <ThemeIconContainer icon={Laptop} size="lg" className="mb-4" />
+                    <h3 className={themeClasses.typography.cardTitle}>macOS</h3>
+                    <p className={`${themeClasses.typography.cardBody} text-sm mb-4`}>Intel & Apple Silicon</p>
+                    <div className="mt-auto flex items-center gap-2 text-[#0e7c66] font-bold text-sm tracking-wide uppercase">
+                      <Download className="w-4 h-4" />
+                      Download
+                      <ChevronDown className="w-4 h-4 ml-1" />
+                    </div>
+                  </button>
 
-                {openDropdown === "macos" && (
-                  <DropdownMenu>
-                    <DropdownItem
-                      title={
-                        selectedProduct.includes("drive-eraser")
-                          ? "AMD/Intel (x64x86)"
-                          : "Universal Installer"
+                  {openDropdown === "macos" && (
+                    <DropdownMenu>
+                      <DropdownItem
+                        title="Universal Installer"
+                        subtitle="For Intel & M1/M2/M3"
+                        onClick={(e) => handleDownload("macos", e)}
+                        size={currentDownloads.macos.size}
+                      />
+                    </DropdownMenu>
+                  )}
+                </div>
+
+                {/* --- LINUX BUTTON --- */}
+                <div className="relative group">
+                  <button
+                    onClick={(e) => {
+                      if (currentDownloads.linux?.url === "#") {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        showInfoToast("Linux version will be available soon. Stay tuned!");
+                      } else {
+                        toggleDropdown("linux", e);
                       }
-                      subtitle={
-                        selectedProduct.includes("drive-eraser")
-                          ? "For standard PCs"
-                          : "For Intel & M1/M2/M3"
-                      }
-                      onClick={(e) => handleDownload("macos", e)}
-                      size={currentDownloads.macos.size}
-                    />
-                  </DropdownMenu>
-                )}
+                    }}
+                    type="button"
+                    className="w-full flex flex-col items-center p-8 hover:bg-white transition-colors duration-150 h-full"
+                  >
+                    <ThemeIconContainer icon={Terminal} size="lg" className="mb-4" />
+                    <h3 className={themeClasses.typography.cardTitle}>Linux</h3>
+                    <p className={`${themeClasses.typography.cardBody} text-sm mb-4`}>DEB & RPM</p>
+                    <div className="mt-auto flex items-center gap-2 text-[#0e7c66] font-bold text-sm tracking-wide uppercase">
+                      <Download className="w-4 h-4" />
+                      Download
+                      <ChevronDown className="w-4 h-4 ml-1" />
+                    </div>
+                  </button>
+
+                  {openDropdown === "linux" && (
+                    <DropdownMenu>
+                      <DropdownItem
+                        title=".DEB Package"
+                        subtitle="For Ubuntu, Debian, Mint"
+                        onClick={(e) => handleDownload("linux", e)}
+                        size={currentDownloads.linux.size}
+                      />
+                    </DropdownMenu>
+                  )}
+                </div>
               </div>
-
-              {/* --- LINUX BUTTON --- */}
-              <div className="relative group">
-                <button
-                  onClick={(e) => {
-                    if (currentDownloads.linux?.url === "#") {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      showInfoToast("Linux version will be available soon. Stay tuned!");
-                    } else {
-                      toggleDropdown("linux", e);
-                    }
-                  }}
-                  type="button"
-                  className="w-full flex flex-col items-center p-8 hover:bg-white transition-colors duration-150 h-full"
-                >
-                  <ThemeIconContainer icon={selectedProduct.includes("drive-eraser") ? Cpu : Terminal} size="lg" className="mb-4" />
-                  <h3 className={themeClasses.typography.cardTitle}>
-                    {selectedProduct.includes("drive-eraser")
-                      ? "ARM Architecture"
-                      : "Linux"}
-                  </h3>
-                  <p className={`${themeClasses.typography.cardBody} text-sm mb-4`}>
-                    {selectedProduct.includes("drive-eraser")
-                      ? "AMD/Intel (x64x86)"
-                      : "DEB & RPM"}
-                  </p>
-                  <div className="mt-auto flex items-center gap-2 text-[#0e7c66] font-bold text-sm tracking-wide uppercase">
-                    <Download className="w-4 h-4" />
-                    Download
-                    <ChevronDown className="w-4 h-4 ml-1" />
-                  </div>
-                </button>
-
-                {openDropdown === "linux" && (
-                  <DropdownMenu>
-                    <DropdownItem
-                      title={
-                        selectedProduct.includes("drive-eraser")
-                          ? "AMD/Intel (x64x86)"
-                          : ".DEB Package"
-                      }
-                      subtitle={
-                        selectedProduct.includes("drive-eraser")
-                          ? "For standard PCs"
-                          : "For Ubuntu, Debian, Mint"
-                      }
-                      onClick={(e) => handleDownload("linux", e)}
-                      size={currentDownloads.linux.size}
-                    />
-                    {/* Add RPM logic here if URL is different, currently mapping both to 'linux' key */}
-                  </DropdownMenu>
-                )}
-              </div>
-            </div>
+            )}
             
             {/* --- SHA256 Verification Section --- */}
             {currentSha256 && (

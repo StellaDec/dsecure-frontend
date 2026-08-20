@@ -17,6 +17,32 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "best-data-erasure-software-2026",
+    slug: "best-data-erasure-software-2026",
+    title: "The 5 Best Data Erasure Software Solutions for Enterprises in 2026",
+    excerpt: "Looking for the best data erasure software? We review the top 5 enterprise data wiping tools of 2026, comparing NIST 800-88 compliance, SSD support, and pricing.",
+    link: "/blog/best-data-erasure-software-2026",
+    tag: "Data Erasure",
+    category: "Software Review",
+    keywords: "best data erasure software, data erasure tools, enterprise data wiping software, NIST 800-88 software, secure data erasure software 2026",
+    publishDate: "August 20, 2026",
+    author: "Prashant Saini",
+    readTime: "12 min read"
+  },
+  {
+    id: "ieee-2883-complete-guide",
+    slug: "ieee-2883-complete-guide",
+    title: "IEEE 2883-2022 Complete Guide: The Modern Standard for Data Sanitization",
+    excerpt: "Everything you need to know about IEEE 2883-2022 data sanitization standard. Learn how it updates legacy methods for NVMe, SSDs, and modern enterprise storage.",
+    link: "/blog/ieee-2883-complete-guide",
+    tag: "IEEE 2883",
+    category: "Standards",
+    keywords: "ieee 2883-2022, ieee 2883 compliant data erasure, ieee data sanitization standard, ieee 2883 vs nist 800-88, data sanitization standard",
+    publishDate: "August 20, 2026",
+    author: "Prashant Saini",
+    readTime: "9 min read"
+  },
+  {
     id: "local-llm-data-erasure",
     slug: "local-llm-data-erasure",
     title: "How to Securely Erase Local LLM Data from Enterprise AI PCs",
@@ -438,24 +464,24 @@ export const blogPosts: BlogPost[] = [
   {
     id: "dod-vs-ieee",
     slug: "dod-vs-ieee",
-    title: "DoD vs IEEE Standards Comparison",
-    excerpt: "Comprehensive comparison of DoD and IEEE data sanitization standards.",
+    title: "DoD 5220.22-M vs IEEE 2883: Which Data Wiping Standard Should You Use?",
+    excerpt: "Complete comparison of DoD 5220.22-M and IEEE 2883-2022 data sanitization standards. Find which standard fits your enterprise compliance needs.",
     link: "/blog/dod-vs-ieee",
     tag: "Standards",
     category: "Comparison",
-    keywords: "DoD, IEEE, standards, comparison",
+    keywords: "dod 5220.22-m, dod vs ieee, ieee 2883-2022, ieee 2883 vs nist 800-88, dod data sanitization standards, dod short vs dod 5220.22-m, dod 5220.22-m ece, ieee 2883 certified, ieee data erasure standard",
     publishDate: "April 10, 2026",
     author: "Nitesh Kushwaha"
   },
   {
     id: "dod-wiping-standard",
     slug: "dod-wiping-standard",
-    title: "DoD Data Wiping Standard Explained",
-    excerpt: "Complete guide to DoD 5220.22-M data wiping standard and its applications.",
+    title: "DoD 5220.22-M Data Wiping Standard Explained — Complete Guide (2026)",
+    excerpt: "What is DoD 5220.22-M? Learn how this military-grade data wiping standard works, its 3-pass vs 7-pass methods, and when to use it for enterprise data destruction.",
     link: "/blog/dod-wiping-standard",
     tag: "Standards",
     category: "Technical Guide",
-    keywords: "DoD 5220.22-M, wiping standard, military",
+    keywords: "DoD 5220.22-M, dod wiping standard, dod data sanitization, dod 5220.22 m data sanitization method, dod wipe standards, us dod 5220.22-m, dod 5220.22 m ece",
     publishDate: "March 06, 2026",
     author: "Prashant Saini"
   },
@@ -588,12 +614,12 @@ export const blogPosts: BlogPost[] = [
   {
     id: "how-to-erasure-mac",
     slug: "how-to-erasure-mac",
-    title: "How to Securely Erase Mac Devices",
-    excerpt: "Complete guide to secure data erasure for Mac computers including M-series chips.",
+    title: "How to Securely Erase Mac Data — M1/M2/M3/M4 Wipe Guide (2026)",
+    excerpt: "Complete guide to securely erase MacBook, iMac, and Mac Pro data including Apple Silicon M-series chips. NIST 800-88 aligned methods explained.",
     link: "/blog/how-to-erasure-mac",
     tag: "Mac",
     category: "Technical Guide",
-    keywords: "Mac, Apple, secure erase, M1, M2",
+    keywords: "how to erase mac, secure erase mac, mac os erasure, mac data wipe, apple silicon erasure, M1 M2 M3 mac erase",
     publishDate: "March 06, 2026",
     author: "Nitesh Kushwaha"
   },
@@ -697,12 +723,12 @@ export const blogPosts: BlogPost[] = [
   {
     id: "nist-clear-purge",
     slug: "nist-clear-purge",
-    title: "NIST Clear vs Purge Explained",
-    excerpt: "Understanding the difference between  Clear and Purge methods.",
+    title: "NIST 800-88 Clear vs Purge vs Destroy — What's the Difference? (2026)",
+    excerpt: "NIST 800-88 defines 3 sanitization methods: Clear, Purge, and Destroy. Learn the differences, when to use each, and which method your compliance framework requires.",
     link: "/blog/nist-clear-purge",
     tag: "Standards",
     category: "Technical Guide",
-    keywords: "NIST, Clear, Purge, 800-88",
+    keywords: "nist clear vs purge, nist 800-88 clear purge destroy, nist purge technique, nist sanitization methods, nist 800-88 compliant software",
     publishDate: "March 28, 2026",
     author: "Prashant Saini"
   },
@@ -786,12 +812,12 @@ export const blogPosts: BlogPost[] = [
   {
     id: "ssd-wipe-bios",
     slug: "ssd-wipe-bios",
-    title: "SSD Wipe from BIOS Guide",
-    excerpt: "How to perform secure SSD erasure through BIOS-based tools.",
+    title: "How to Wipe SSD from BIOS — Step-by-Step Secure Erase Guide (2026)",
+    excerpt: "Step-by-step guide to securely wipe SSD or NVMe drives from BIOS/UEFI. Covers Secure Erase, Sanitize commands, and NIST 800-88 aligned methods.",
     link: "/blog/ssd-wipe-bios",
     tag: "Technical",
     category: "Guide",
-    keywords: "SSD, BIOS, secure erase, UEFI",
+    keywords: "wipe ssd from bios, how to wipe ssd from bios, secure erase bios, bios secure erase, ssd secure erase uefi, how to reset ssd in bios, how to format ssd from bios, how to erase ssd from bios, erase ssd from bios",
     publishDate: "February 18, 2026",
     author: "Prashant Saini"
   },

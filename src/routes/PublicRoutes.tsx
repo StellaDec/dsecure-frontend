@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 // Core Pages
 const HomePage = lazy(() => import("../pages/HomePage"));
 const ServicesPage = lazy(() => import("../pages/ServicesPage"));
+const RemoteErasurePage = lazy(() => import("../pages/RemoteErasurePage"));
 const CloudErasurePage = lazy(() => import("../pages/services/CloudErasurePage"));
 const SolutionsPage = lazy(() => import("../pages/SolutionsPage"));
 const EnterpriseSolutionsPage = lazy(() => import("../pages/solutions/EnterpriseSolutionsPage"));
@@ -12,6 +13,7 @@ const EducationPage = lazy(() => import("../pages/EducationPage"));
 const FinancialSolutionsPage = lazy(() => import("../pages/solutions/FinancialSolutionsPage"));
 const FinancialServices = lazy(() => import("../pages/FinancialServices"));
 const GovernmentPage = lazy(() => import("../pages/GovernmentPage"));
+const RemoteErasureRoute = <Route path="remote-erasure" element={<RemoteErasurePage />} />;
 const HealthcareSolutionsPage = lazy(() => import("../pages/solutions/HealthcareSolutionsPage"));
 const ServiceProvidersSolutionsPage = lazy(() => import("../pages/solutions/ServiceProvidersSolutionsPage"));
 const NonProfitSolutionsPage = lazy(() => import("../pages/solutions/NonProfitSolutionsPage"));
@@ -162,6 +164,7 @@ export const PublicRoutes = () => (
       }
     />
     <Route path="solutions/government" element={<GovernmentPage />} />
+    {RemoteErasureRoute}
     <Route path="solutions/healthcare" element={<HealthcareSolutionsPage />} />
     <Route
       path="solutions/service-providers"

@@ -656,7 +656,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
       subtitle:
         driveEraserVariant === "diagnostics"
           ? "Professional Data Erasure with Integrated Hardware Diagnostics & SMART Health Analysis."
-          : "Secure Data Erasure Software for HDD, SSD, PC, Laptop, Mac, Chromebook & Server. (Available for Intel x64 and x86)",
+          : "Secure Data Erasure Software for HDD, SSD, PC, Laptop, Mac, Chromebook & Server. (Available for Intel & AMD x64)",
       image: getProductIcon("drive-eraser", 64),
       imageCategory: "drive-eraser",
       version: "V1.0.0.0 Enterprise",
@@ -2594,107 +2594,60 @@ const PricingAndPlanPage: React.FC = memo(() => {
                 </div>
 
                 {/* Action Button */}
-                {selectedCategory === "drive-eraser" ? (
-                  <>
-                    {/*
-                    <button
-                      onClick={handleBuyNow}
-                      disabled={
-                        (!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
-                           (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
-                         selectedLicenses !== "custom" && 
-                         selectedPlan !== "custom") ||
-                        isBuyNowLoading
-                      }
-                      onMouseEnter={() => {
-                        //  Prefetch on hover for even faster response
-                        if (
-                          selectedLicenses !== "custom" &&
-                          selectedPlan !== "custom" &&
-                          !isBuyNowLoading
-                        ) {
-                          // Prefetch checkout domain connection
-                          const img = new Image();
-                          img.src = `${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/favicon.ico`;
-                        }
-                      }}
-                      className={`w-full font-bold py-3 xs:py-4 px-4 xs:px-5 sm:px-6 rounded-xl mb-4 xs:mb-5 sm:mb-6 text-base xs:text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2 ${
-                        !((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
-                          (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
-                        selectedLicenses !== "custom" && 
-                        selectedPlan !== "custom"
-                          ? "bg-gradient-to-r from-slate-300 to-slate-400 text-white cursor-not-allowed opacity-70"
-                          : `bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white hover:shadow-xl transform hover:scale-105 active:scale-95 disabled:opacity-70 disabled:hover:scale-100 ${isBuyNowLoading ? "cursor-wait" : "cursor-pointer"}`
-                      }`}
-                    >
-                      {!((selectedCategory === "drive-eraser" && (driveEraserVariant === "standard" || driveEraserVariant === "diagnostics")) || 
-                         (selectedCategory === "file-eraser" && fileEraserVariant === "standard")) && 
-                       selectedLicenses !== "custom" && 
-                       selectedPlan !== "custom"
-                        ? "Coming Soon"
-                        : selectedLicenses === "custom" || selectedPlan === "custom"
-                          ? "Request Custom Quote"
-                          : "Buy Now"}
-                    </button>
-                    */}
-                    <ThemeButton
-                      onClick={() => navigate("/contact")}
-                      variant="primary"
-                      className="w-full mb-4 xs:mb-5 sm:mb-6 flex justify-center py-3 xs:py-4 text-base xs:text-lg"
-                    >
-                      Contact Sales
-                    </ThemeButton>
-                  </>
-                ) : (
-                  <ThemeButton
-                    onClick={handleBuyNow}
-                    disabled={
-                      (!(
-                        (selectedCategory === "drive-eraser" &&
-                          (driveEraserVariant === "standard" ||
-                            driveEraserVariant === "diagnostics")) ||
-                        (selectedCategory === "file-eraser" &&
-                          fileEraserVariant === "standard")
-                      ) &&
-                        selectedLicenses !== "custom" &&
-                        selectedPlan !== "custom") ||
-                      isBuyNowLoading
-                    }
-                    onMouseEnter={() => {
-                      //  Prefetch on hover for even faster response
-                      if (
-                        selectedLicenses !== "custom" &&
-                        selectedPlan !== "custom" &&
-                        !isBuyNowLoading
-                      ) {
-                        // Prefetch checkout domain connection
-                        const img = new Image();
-                        img.src = `${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/favicon.ico`;
-                      }
-                    }}
-                    variant="primary"
-                    className="w-full mb-4 xs:mb-5 sm:mb-6 flex justify-center py-3 xs:py-4 text-base xs:text-lg"
-                  >
-                    {isBuyNowLoading ? (
-                      <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                    ) : !(
+                <ThemeButton
+                  onClick={handleBuyNow}
+                  disabled={
+                    (!(
                       (selectedCategory === "drive-eraser" &&
                         (driveEraserVariant === "standard" ||
                           driveEraserVariant === "diagnostics")) ||
                       (selectedCategory === "file-eraser" &&
                         fileEraserVariant === "standard")
                     ) &&
-                    selectedLicenses !== "custom" &&
-                    selectedPlan !== "custom"
-                      ? "Coming Soon"
-                      : selectedLicenses === "custom" ||
-                          selectedPlan === "custom"
-                        ? "Request Custom Quote"
-                        : "Buy Now"}
-                  </ThemeButton>
+                      selectedLicenses !== "custom" &&
+                      selectedPlan !== "custom") ||
+                    isBuyNowLoading
+                  }
+                  onMouseEnter={() => {
+                    //  Prefetch on hover for even faster response
+                    if (
+                      selectedLicenses !== "custom" &&
+                      selectedPlan !== "custom" &&
+                      !isBuyNowLoading
+                    ) {
+                      // Prefetch checkout domain connection
+                      const img = new Image();
+                      img.src = `${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/favicon.ico`;
+                    }
+                  }}
+                  variant="primary"
+                  className="w-full mb-4 xs:mb-5 sm:mb-6 flex justify-center py-3 xs:py-4 text-base xs:text-lg"
+                >
+                  {isBuyNowLoading ? (
+                    <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  ) : !(
+                    (selectedCategory === "drive-eraser" &&
+                      (driveEraserVariant === "standard" ||
+                        driveEraserVariant === "diagnostics")) ||
+                    (selectedCategory === "file-eraser" &&
+                      fileEraserVariant === "standard")
+                  ) &&
+                  selectedLicenses !== "custom" &&
+                  selectedPlan !== "custom"
+                    ? "Coming Soon"
+                    : selectedLicenses === "custom" ||
+                        selectedPlan === "custom"
+                      ? "Request Custom Quote"
+                      : "Buy Now"}
+                </ThemeButton>
+
+                {selectedCategory === "drive-eraser" && (
+                  <div className="text-xs text-emerald-700 bg-emerald-50 p-2 rounded-md mb-4 text-center font-medium border border-emerald-100">
+                    Note: Current release is the cloud version (login with email and password). All reports are stored on the cloud.
+                  </div>
                 )}
 
                 {/* Trust Indicators */}

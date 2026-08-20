@@ -28,6 +28,7 @@ const EXCLUDED_ROUTES = [
   "/download",
   "/private-cloud-setup",
   "/profile",
+  // Support and Manual thin pages (noindex)
   "/support/help-manual",
   "/support/cloud-console-guide",
   "/support/file-eraser-guide",
@@ -41,6 +42,29 @@ const EXCLUDED_ROUTES = [
   "/support/retain-os-guide",
   "/support/m1-mac-wipe-guide",
   "/wipe-mac-m1",
+  "/support/manual/installation",
+  "/support/manual/system-setup",
+  "/support/manual/working-with-dsecure",
+  "/support/help-manual/faqs",
+  "/support/help-manual/report-management",
+  "/support/help-manual/schedule-settings",
+  "/support/help-manual/complete-manual",
+  "/support/help-manual/complete-network-manual",
+  "/support/help-manual/complete-drive-manual",
+  "/support/help-manual/complete-freeze-state-manual",
+  "/support/help-manual/complete-diagnostic-manual",
+  "/support/help-manual/network-file",
+  // Legal and Policy pages (noindex/low SEO value)
+  "/legal-policy",
+  "/privacy-policy",
+  "/terms-of-service",
+  "/cookie-policy",
+  "/eula",
+  // Other utility pages
+  "/verify-report",
+  "/early-access",
+  "/generate-report",
+  "/contact",
   "*",
 ];
 

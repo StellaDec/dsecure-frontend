@@ -168,28 +168,30 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "file-eraser": {
-    // Transactional Intent — "Buy", "Download" focus
-    title: "Buy File Eraser Software | Download Secure File Shredder for Windows",
+    // Transactional + Informational Intent — "how to delete files securely" query match (133K impr, pos 1.0)
+    title: "How to Delete Files Securely — Free File Eraser Download for Windows | D-Secure",
     description:
-      "Download & Buy D-Secure File Eraser — the enterprise file shredder for Windows. Permanently erase files, wipe free space & sanitize folders. Try free or purchase now.",
+      "Learn how to delete files securely and permanently on Windows 10/11 x64. Download D-Secure File Eraser — free trial available. NIST 800-88 aligned, no recovery possible.",
     keywords: generateKeywords([
-      "buy file eraser software",
+      "how to delete files securely",
+      "secure file deletion",
+      "file eraser",
+      "file eraser software",
+      "secure file eraser",
       "download file eraser",
-      "purchase file shredder windows",
-      "file eraser software download",
-      "secure file eraser buy",
       "file shredder software windows",
-      "secure file deletion enterprise",
-      "file shredder GDPR compliant",
+      "buy file eraser software",
       "free space wipe software",
       "data sanitization windows",
       "D-Secure File Eraser",
+      "automated file eraser",
+      "automate file erasure",
+      "eraser file shredder",
+      "file erasure",
       "secure file erasure",
-      "file eraser software Windows",
-      "BCWipe alternative India",
+      "GDPR file shredder",
+      "BCWipe alternative",
       "Eraser software alternative",
-      "best file shredder software India",
-      "international file erasure standards",
     ]),
     canonicalUrl: getCanonicalUrl("/products/file-eraser"),
     breadcrumbs: [
@@ -200,11 +202,11 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     structuredData: [
       generateSoftwareProductSchema(
         "D-Secure File Eraser",
-        "Securely erase individual files and folders with audit-proof reporting.",
+        "Securely erase individual files and folders with audit-proof reporting. NIST 800-88 aligned.",
         {
           category: "SecurityApplication",
           subCategory: "Data Privacy & Security",
-          os: "Windows, Windows Server",
+          os: "Windows 10/11 (x64), Windows Server",
           // ratingValue: 4.8,
           // reviewCount: 512,
           price: "39.99",
@@ -218,10 +220,65 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
           ],
         },
       ),
+      // HowTo schema — "how to delete files securely" query ke liye AI citation
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: "How to Delete Files Securely on Windows",
+        description: "Step-by-step guide to permanently and securely delete files from your Windows PC so they cannot be recovered.",
+        totalTime: "PT5M",
+        supply: [{ "@type": "HowToSupply", name: "D-Secure File Eraser software" }],
+        tool: [{ "@type": "HowToTool", name: "Windows 10/11 PC (x64)" }],
+        step: [
+          {
+            "@type": "HowToStep",
+            name: "Download D-Secure File Eraser",
+            text: "Download and install D-Secure File Eraser from dsecuretech.com. A free trial is available.",
+            url: "https://www.dsecuretech.com/products/file-eraser",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Select files or folders to erase",
+            text: "Open D-Secure File Eraser and drag-and-drop the files or folders you want to permanently delete.",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Choose erasure method",
+            text: "Select a NIST 800-88 aligned wiping method: Quick Erase (1-pass), DoD 5220.22-M (3-pass), or Gutmann (35-pass) based on your security requirements.",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Start secure deletion",
+            text: "Click 'Erase Now' to permanently delete the selected files. The software overwrites every byte, making recovery impossible even with forensic tools.",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Verify with audit certificate",
+            text: "After erasure, D-Secure generates a tamper-evident certificate proving the files were securely deleted per NIST 800-88 guidelines.",
+          },
+        ],
+      },
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
+          {
+            "@type": "Question",
+            // Primary GSC query match — 133K impressions
+            name: "How to delete files securely on Windows?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "To securely delete files on Windows, use a dedicated file eraser like D-Secure File Eraser. Simply dragging files to the Recycle Bin or pressing Delete does not permanently remove data — it only removes the file pointer, leaving the actual data recoverable. D-Secure overwrites every byte using NIST 800-88 aligned methods (DoD 5220.22-M or Gutmann), ensuring no recovery is possible even with forensic tools.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is deleting a file the same as securely erasing it?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "No. Deleting a file (even emptying the Recycle Bin) only removes the file system pointer. The actual data remains on the disk and can be recovered using free recovery tools. Secure file erasure overwrites the data with random patterns multiple times, making recovery physically impossible.",
+            },
+          },
           {
             "@type": "Question",
             name: "Can I securely wipe free space on my hard drive?",
@@ -232,10 +289,10 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
           },
           {
             "@type": "Question",
-            name: "How does file shredding work?",
+            name: "What is the best free file eraser for Windows?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "D-Secure uses military-grade algorithms like US DoD 5220.22-M and Gutmann method to overwrite individual files multiple times, ensuring they cannot be recovered by any software or hardware tools.",
+              text: "D-Secure File Eraser offers a free trial with full features for Windows 10/11 (x64). It supports NIST 800-88 aligned wiping methods, scheduled erasure, and tamper-evident audit certificates — making it a professional-grade file eraser with a free entry point.",
             },
           },
           {

@@ -4,6 +4,8 @@ import MainLayout from "../layouts/MainLayout";
 
 // Blog Pages
 const BlogPage = lazy(() => import("../components/blog/BlogPage"));
+const BestDataErasureSoftware2026Blog = lazy(() => import("../components/blog/BestDataErasureSoftware2026Blog"));
+const IEEE2883GuideBlog = lazy(() => import("../components/blog/IEEE2883GuideBlog"));
 const AIDataCenterDecommissioningBlog = lazy(() => import("../components/blog/AIDataCenterDecommissioningBlog"));
 const DBANAlternativeBlog = lazy(() => import("../components/blog/DBANAlternativeBlog"));
 const ServiceNowDataErasureBlog = lazy(() => import("../components/blog/ServiceNowDataErasureBlog"));
@@ -115,6 +117,8 @@ const WindowsFileDeletionVsFormattingBlog = lazy(() => import("../components/blo
 export const BlogRoutes = () => (
   <Route element={<MainLayout />}>
     <Route path="blog" element={<BlogPage />} />
+    <Route path="blog/best-data-erasure-software-2026" element={<BestDataErasureSoftware2026Blog />} />
+    <Route path="blog/ieee-2883-complete-guide" element={<IEEE2883GuideBlog />} />
     <Route path="blog/ai-data-center-decommissioning" element={<AIDataCenterDecommissioningBlog />} />
     <Route path="blog/dban-alternative-ssd-nvme-data-erasure" element={<DBANAlternativeBlog />} />
     <Route path="blog/servicenow-data-erasure-itam-workflow" element={<ServiceNowDataErasureBlog />} />

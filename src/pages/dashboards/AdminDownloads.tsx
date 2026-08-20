@@ -25,6 +25,7 @@ export default function AdminDownloads() {
   const isDemo = isDemoMode();
   const { showInfo } = useNotification();
   const [dseVersion, setDseVersion] = useState("2.0.1");
+  const [dsDriveVersion, setDsDriveVersion] = useState("2.0.1");
 
   useEffect(() => {
     if (!isDemo) {
@@ -35,6 +36,16 @@ export default function AdminDownloads() {
             v = v.split('').join('.');
           }
           setDseVersion(v);
+        }
+      }).catch(() => {});
+
+      fetchLatestUpdate("DSDrive").then(data => {
+        if (data && data.version_number) {
+          let v = data.version_number;
+          if (v.length === 4 && !isNaN(Number(v))) {
+            v = v.split('').join('.');
+          }
+          setDsDriveVersion(v);
         }
       }).catch(() => {});
     }
@@ -460,7 +471,8 @@ export default function AdminDownloads() {
                       </h3>
                       <p className="text-sm text-slate-600 mt-1">
                         Version {(() => {
-                          const v = (product.name.includes("File Eraser") || product.name.includes("DSErase")) ? dseVersion : product.version;
+                          const v = (product.name.includes("File Eraser") || product.name.includes("DSErase")) ? dseVersion : 
+                                    (product.name.includes("Drive Eraser") ? dsDriveVersion : product.version);
                           if (v && v.length === 4 && !isNaN(Number(v))) return v.split('').join('.');
                           return v;
                         })()}

@@ -548,26 +548,20 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                  {/*
                     <Link
                       to="/pricing-and-plan?product=drive-eraser"
                       className="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
                     >
-                      <RefreshCw>
-                        {(filled) => (
-                          <LightningIcon className="w-5 h-5" filled={filled} />
-                        )}
-                      </RefreshCw>
+                      <Zap className="w-5 h-5" />
                       Buy Now
                     </Link>
-                    */}
-                    <Link
+                    {/* <Link
                       to="/contact"
                       className="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
                     >
                       <Briefcase className="w-5 h-5" />
                       Contact Sales
-                    </Link>
+                    </Link> */}
                     <button
                       type="button"
                       onClick={downloadCatalog}
