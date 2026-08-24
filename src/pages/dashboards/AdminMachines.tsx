@@ -16,6 +16,7 @@ import { useQuery } from "@tanstack/react-query";
 // UI Machine interface for table display
 interface UIMachine {
   hostname: string;
+  macAddress?: string; // ✅ MAC address store karo taaki baad mein reports se hostname resolve ho sake
   eraseOption: string;
   license: string;
   status: string;
@@ -76,56 +77,7 @@ export default function AdminMachines() {
   const currentUserEmail = getUserEmail();
   const isDemo = isDemoMode();
 
-  // ✅ Fetch audit reports to map Hostname from details
-  useEffect(() => {
-    const fetchReportsForMapping = async () => {
-      if (isDemo) return;
 
-      try {
-        // Fetch all reports for this user to ensure we can map mac addresses
-        const response = await apiClient.getFilteredAuditReports({
-          userEmail: currentUserEmail,
-          // We fetch all to be safe, or we could fetch by active filters if we needed optimization
-        });
-
-        if (response.success && response.data) {
-          // Ensure we handle the response format (array vs object with reports array)
-          const responseData = response.data as any;
-          let reports = [];
-          if (responseData.reports && Array.isArray(responseData.reports)) {
-            reports = responseData.reports;
-          } else if (Array.isArray(response.data)) {
-            reports = response.data;
-          }
-
-          // Pre-parse details to avoid re-parsing in render loop
-          const parsedReports = reports.map((r: any) => {
-            let details = null;
-            if (r.report_details_json) {
-              try {
-                details =
-                  typeof r.report_details_json === "string"
-                    ? JSON.parse(r.report_details_json)
-                    : r.report_details_json;
-              } catch (e) {
-                /* ignore */
-              }
-            }
-            return {
-              ...r,
-              _details: details,
-            };
-          });
-
-          setAllReports(parsedReports);
-        }
-      } catch (error) {
-        // console.error("Error fetching reports for machine mapping:", error);
-      }
-    };
-
-    fetchReportsForMapping();
-  }, [currentUserEmail, isDemo]);
 
   // ✅ Get user role for RBAC filtering
   const getUserRole = (): string => {
@@ -197,6 +149,104 @@ export default function AdminMachines() {
     currentUserEmail,
     !!currentUserEmail && !isDemo,
   );
+
+  // ✅ Saari paginated reports fetch karne ka helper (email optional)
+  // Backend pageSize=500 se paginated response bhejta hai, isliye saare pages fetch karna zaroori hai
+  const fetchAllPages = async (email?: string): Promise<any[]> => {
+    let allReportsResult: any[] = [];
+    let currentPage = 0;
+    let totalPages = 1; // Pehle page se pata chalega kitne pages hain
+
+    while (currentPage < totalPages) {
+      // Admin ke liye bina userEmail ke call karo — backend isAdminView=true se saari reports bhejta hai
+      const filters: Record<string, any> = { page: currentPage };
+      if (email) filters.userEmail = email;
+
+      const response = await apiClient.getFilteredAuditReports(filters);
+
+      if (response.success && response.data) {
+        const responseData = response.data as any;
+
+        // totalPages update karo pehle response se
+        if (responseData.totalPages != null) {
+          totalPages = responseData.totalPages;
+        }
+
+        // Reports extract karo
+        if (responseData.reports && Array.isArray(responseData.reports)) {
+          allReportsResult = [...allReportsResult, ...responseData.reports];
+        } else if (Array.isArray(response.data)) {
+          allReportsResult = [...allReportsResult, ...response.data];
+          break; // Non-paginated response, ek hi page hai
+        } else if (response.data) {
+          allReportsResult.push(response.data);
+          break;
+        }
+      } else {
+        break; // API error, loop band karo
+      }
+
+      currentPage++;
+    }
+
+    return allReportsResult;
+  };
+
+  // ✅ Fetch audit reports to map Hostname from details
+  useEffect(() => {
+    const fetchReportsForMapping = async () => {
+      if (isDemo) return;
+
+      try {
+        let allFetchedReports: any[] = [];
+
+        if (isSuperAdmin || isGroupAdmin) {
+          // Admin ke liye: bina userEmail ke fetch karo — saari 686 reports ek sath aayengi
+          allFetchedReports = await fetchAllPages();
+          console.log(`📊 [Reports Debug] Admin view: all pages fetched: ${allFetchedReports.length}`);
+        } else {
+          // SubUser ke liye: sirf apni email ki reports
+          allFetchedReports = await fetchAllPages(currentUserEmail);
+          console.log(`📊 [Reports Debug] User view: fetched for ${currentUserEmail}: ${allFetchedReports.length}`);
+        }
+
+        // Duplicates hatao (report_id se)
+        const uniqueMap = new Map<string, any>();
+        allFetchedReports.forEach((r) => {
+          const key = r.report_id || r.id || JSON.stringify(r);
+          if (!uniqueMap.has(key)) uniqueMap.set(key, r);
+        });
+        allFetchedReports = Array.from(uniqueMap.values());
+
+        console.log(`📊 [Reports Debug] Total unique reports fetched for mapping: ${allFetchedReports.length}`);
+
+        // Pre-parse details taaki render loop mein baar baar parse na karna pade
+        const parsedReports = allFetchedReports.map((r: any) => {
+          let details = null;
+          if (r.report_details_json) {
+            try {
+              details = typeof r.report_details_json === "string"
+                  ? JSON.parse(r.report_details_json)
+                  : r.report_details_json;
+            } catch (e) {
+              /* ignore */
+            }
+          }
+          return {
+            ...r,
+            _details: details,
+          };
+        });
+
+        setAllReports(parsedReports);
+
+      } catch (error) {
+        console.error("❌ [Reports Debug] Error fetching reports for machine mapping:", error);
+      }
+    };
+
+    fetchReportsForMapping();
+  }, [currentUserEmail, isDemo, subusersData.length]);
 
   // ✅ Fetch groups for filter dropdown - using same endpoint as AdminGroups
   const [groupsData, setGroupsData] = useState<any[]>([]);
@@ -353,7 +403,11 @@ export default function AdminMachines() {
         }
 
         const uiMachines: UIMachine[] = filteredMachines.map((machine: any) => {
+          // ✅ Hostname priority: computer_name > hostname > macAddress > fingerprintHash
+          // Backend mein abhi computer_name nahi aata — jab add hoga toh automatically pick ho jayega
           const hostname =
+            machine.computer_name ||
+            machine.computerName ||
             machine.hostname ||
             machine.macAddress ||
             machine.mac_address ||
@@ -361,58 +415,10 @@ export default function AdminMachines() {
             machine.fingerprint_hash?.substring(0, 12) ||
             "Unknown Device";
 
-          // ✅ Report Integration Logic
-          // Find report for this machine to get computer name
+          // ✅ MAC address separately store karo — reports se hostname resolve baad mein hoga (useMemo mein)
           const machineMac = (machine.mac_address || machine.macAddress || "")
             .toLowerCase()
             .trim();
-
-          let reportComputerName = null;
-
-          if (machineMac && allReports.length > 0) {
-            // Find report with matching MAC address
-            const matchingReport = allReports.find((report: any) => {
-              // Check direct mac_address field on report
-              const reportMacRaw = report.mac_address || report.macAddress;
-              if (
-                reportMacRaw &&
-                reportMacRaw.toLowerCase().trim() === machineMac
-              )
-                return true;
-
-              // Check inside report_details_json (parsed as _details)
-              const detailsMac =
-                report._details?.mac_address || report._details?.macAddress;
-              if (detailsMac && detailsMac.toLowerCase().trim() === machineMac)
-                return true;
-
-              return false;
-            });
-
-            if (matchingReport) {
-              // Try to get computer name from report details
-              reportComputerName =
-                matchingReport._details?.computer_name ||
-                matchingReport._details?.ComputerName ||
-                matchingReport.computer_name ||
-                matchingReport.computerName;
-
-              // Fallback: check erasure_log array
-              if (
-                !reportComputerName &&
-                matchingReport._details?.erasure_log &&
-                Array.isArray(matchingReport._details.erasure_log) &&
-                matchingReport._details.erasure_log.length > 0
-              ) {
-                reportComputerName =
-                  matchingReport._details.erasure_log[0].computer_name ||
-                  matchingReport._details.erasure_log[0].ComputerName;
-              }
-            }
-          }
-
-          // Prioritize report computer name, then existing hostname logic
-          const finalHostname = reportComputerName || hostname;
 
           let licenseDetails: any = null;
           let eraseOption = "Standard Erase";
@@ -588,7 +594,8 @@ export default function AdminMachines() {
           }
 
           return {
-            hostname,
+            hostname, // ✅ Raw hostname — reports se resolve useMemo mein hoga
+            macAddress: machineMac, // ✅ MAC address store karo report matching ke liye
             eraseOption,
             license,
             status,
@@ -645,12 +652,71 @@ export default function AdminMachines() {
 
   const [allRows, setAllRows] = useState<UIMachine[]>([]);
 
-  // Update allRows when machinesData changes
+  // ✅ Reports se hostname resolve karo — queryFn ke bahar taaki timing issue na ho
+  // Jab machinesData ya allReports change ho, hostnames re-compute honge
+  const resolvedMachines = useMemo(() => {
+    if (!machinesData || machinesData.length === 0) return [];
+    // Agar reports nahi hain toh raw data return karo (MAC address dikhega)
+    if (allReports.length === 0) return machinesData;
+
+    const normalizeMac = (mac: string) => (mac || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+    return machinesData.map((machine) => {
+      const machineMac = normalizeMac(machine.macAddress || "");
+      if (!machineMac) return machine;
+
+      // Report dhundho jismein same MAC address ho (formatting ignore karke)
+      const matchingReport = allReports.find((report: any) => {
+        const reportMacRaw = normalizeMac(report.mac_address || report.macAddress);
+        if (reportMacRaw && reportMacRaw === machineMac) return true;
+
+        const detailsMac = normalizeMac(report._details?.mac_address || report._details?.macAddress);
+        if (detailsMac && detailsMac === machineMac) return true;
+
+        return false;
+      });
+
+      if (!matchingReport) return machine;
+
+      // Computer name extract karo — multiple key variants try karo
+      let computerName =
+        matchingReport._details?.computer_name ||
+        matchingReport._details?.ComputerName ||
+        matchingReport._details?.Computer_Name ||
+        matchingReport._details?.computerName ||
+        matchingReport._details?.hostname ||
+        matchingReport._details?.Hostname ||
+        matchingReport._details?.host_name ||
+        matchingReport.computer_name ||
+        matchingReport.computerName;
+
+      // Fallback: erasure_log array mein bhi check karo
+      if (
+        !computerName &&
+        matchingReport._details?.erasure_log &&
+        Array.isArray(matchingReport._details.erasure_log) &&
+        matchingReport._details.erasure_log.length > 0
+      ) {
+        computerName =
+          matchingReport._details.erasure_log[0].computer_name ||
+          matchingReport._details.erasure_log[0].ComputerName;
+      }
+
+      if (computerName) {
+        return { ...machine, hostname: computerName };
+      }
+      return machine;
+    });
+  }, [machinesData, allReports]);
+
+  // ✅ Resolved machines ko allRows mein sync karo
   useEffect(() => {
-    if (machinesData) {
+    if (resolvedMachines && resolvedMachines.length > 0) {
+      setAllRows(resolvedMachines);
+    } else if (machinesData) {
       setAllRows(machinesData);
     }
-  }, [machinesData]);
+  }, [resolvedMachines, machinesData]);
 
   const [selectedMachineIds, setSelectedMachineIds] = useState<Set<string>>(
     new Set(),

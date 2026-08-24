@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight, FileText } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
@@ -230,6 +231,7 @@ const normalizeSession = (raw: any): MappedSession => {
 };
 
 export default function AdminSessions() {
+  const navigate = useNavigate();
   const { showError, showInfo } = useNotification();
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -284,7 +286,7 @@ export default function AdminSessions() {
       // console.warn("🔴 Session already expired, logging out...");
       authService.clearTokens();
       indexedDBService.clearAll().catch(() => {});
-      window.location.href = "/login";
+      navigate("/login");
       return;
     }
 
@@ -303,7 +305,7 @@ export default function AdminSessions() {
       );
       authService.clearTokens();
       indexedDBService.clearAll().catch(() => {});
-      window.location.href = "/login";
+      navigate("/login");
     }, effectiveTimeout);
 
     return () => clearTimeout(logoutTimer);

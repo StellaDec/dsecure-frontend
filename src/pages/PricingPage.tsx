@@ -1566,7 +1566,7 @@ function PricingPageContent() {
                       <tr className="border-b border-slate-100 hover:bg-slate-50">
                         <td className="p-4 font-medium text-slate-900 relative">
                           <div className="flex items-center gap-2">
-                            <span>XML Report Format</span>
+                            <span>JSON Report Format</span>
                             <div
                               className="relative"
                               onMouseEnter={() => showTooltip("xml-format")}

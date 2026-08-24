@@ -229,7 +229,7 @@ const SmartphoneEraserPage = memo(() => {
     },
     {
       title: "Customizable Reports",
-      desc: "Add your company logo and watermark to tamper-evident PDF, CSV, and XML reports.",
+      desc: "Add your company logo and watermark to tamper-evident PDF and CSV reports.",
       icon: FileText,
     }
   ];
@@ -578,7 +578,7 @@ const SmartphoneEraserPage = memo(() => {
                     <div className="pt-6 border-t border-white/10 w-full grid grid-cols-2 gap-8 text-left">
                        <div>
                           <p className="text-xs text-white/50 font-bold mb-2 tracking-widest">OUTPUT FORMATS</p>
-                          <p className="text-sm text-white/90">PDF, CSV, XML, JSON</p>
+                          <p className="text-sm text-white/90">PDF, CSV, JSON</p>
                        </div>
                        <div>
                           <p className="text-xs text-white/50 font-bold mb-2 tracking-widest">VALIDITY</p>

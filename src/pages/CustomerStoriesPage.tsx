@@ -138,7 +138,7 @@ export default function CustomerStoriesPage() {
                           <li>• PXE-based network boot for mass parallelization.</li>
                           <li>• Automated asset discovery and hardware profiling.</li>
                           <li>• Real-time progress monitoring via Cloud Console.</li>
-                          <li>• Tamper-evident XML report generation.</li>
+                          <li>• Tamper-evident report generation.</li>
                         </ul>
                       </div>
                       <div>

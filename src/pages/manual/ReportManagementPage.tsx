@@ -235,7 +235,7 @@ const ReportManagementPage: React.FC = () => {
                   <div className="bg-gray-50 rounded-lg p-6">
                     <p className="text-gray-700 mb-4">
                       You can save a report for future use once it has been
-                      generated. The report can be saved in PDF or XML format.
+                      generated. The report can be saved in PDF format.
                     </p>
                     <ol className="space-y-3 text-gray-700 list-decimal list-inside">
                       <li>Go to D-SecureFile Eraser.</li>
@@ -245,7 +245,7 @@ const ReportManagementPage: React.FC = () => {
                         Report.
                       </li>
                       <li>
-                        Choose format (PDF/XML) and location, then click Save.
+                        Choose format (PDF) and location, then click Save.
                       </li>
                       <li>
                         A message “Selected report saved successfully!” appears.

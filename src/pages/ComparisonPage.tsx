@@ -25,7 +25,7 @@ export default function ComparisonPage() {
     },
     {
       feature: "Reporting Integrity",
-      dsecure: "Cryptographically hashed, digitally signed XML/PDF reports stored in immutable ledgers.",
+      dsecure: "Cryptographically hashed, digitally signed PDF reports stored in immutable ledgers.",
       legacy: "Simple text/CSV logs vulnerable to manual editing and unauthorized modification.",
       impact: "Audit-ready proof vs. disputed evidence."
     },

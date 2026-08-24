@@ -76,7 +76,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Can I preview or save reports for compliance?",
-      answer: "Yes. In the Reports section, select any report and click Action → Preview to view it on-screen. To save, select the report, click Save, choose PDF or XML format, select a destination folder, and click Save. PDF reports are formatted for printing and sharing, while XML reports can be imported into other systems for analysis."
+      answer: "Yes. In the Reports section, select any report and click Action → Preview to view it on-screen. To save, select the report, click Save, choose PDF format, select a destination folder, and click Save. PDF reports are formatted for printing and sharing, while reports can be imported into other systems for analysis."
     },
     {
       question: "Can I save multiple reports at once?",

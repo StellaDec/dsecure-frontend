@@ -176,7 +176,7 @@ export default function ImplementationPage() {
                           </tr>
                           <tr className="border-b border-white/5">
                             <td className="py-4">Reporting Engine</td>
-                            <td className="py-4">XML, JSON, CSV, API, Signed PDF</td>
+                            <td className="py-4"> JSON, CSV, API, Signed PDF</td>
                           </tr>
                           <tr className="border-b border-white/5">
                             <td className="py-4">Hardware Profile</td>

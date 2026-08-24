@@ -604,7 +604,7 @@ const sections: Section[] = [
           },
           {
             type: "step",
-            text: "Sort columns; Action tab offers Preview and Send to Cloud; Save exports PDF/XML.",
+            text: "Sort columns; Action tab offers Preview and Send to Cloud; Save exports PDF.",
           },
         ],
       },
@@ -615,7 +615,7 @@ const sections: Section[] = [
           { type: "step", text: "Action → Preview (one at a time)." },
           {
             type: "step",
-            text: "Select the report → Save → choose PDF or XML → pick location → Save.",
+            text: "Select the report → Save → choose PDF → pick location → Save.",
           },
         ],
       },
@@ -840,7 +840,7 @@ const sections: Section[] = [
         blocks: [
           {
             type: "p",
-            text: "Yes. In the Reports section, select any report and click Action → Preview to view it on-screen. To save, select the report, click Save, choose PDF or XML format, select a destination folder, and click Save. PDF reports are formatted for printing and sharing, while XML reports can be imported into other systems for analysis.",
+            text: "Yes. In the Reports section, select any report and click Action → Preview to view it on-screen. To save, select the report, click Save, choose PDF format, select a destination folder, and click Save. PDF reports are formatted for printing and sharing, while reports can be imported into other systems for analysis.",
           },
         ],
       },

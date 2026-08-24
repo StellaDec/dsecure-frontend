@@ -120,9 +120,9 @@ function CompliancePageContent() {
                 <a href="#standards" className="btn-primary">
                   Explore Standards
                 </a>
-                <a href="/contact" className="btn-secondary">
+                <Link to="/contact" className="btn-secondary">
                   Compliance Consultation
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -317,12 +317,12 @@ function CompliancePageContent() {
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-slate-200">
-                    <a
-                      href="/contact"
+                    <Link
+                      to="/contact"
                       className="w-full btn-secondary text-center block"
                     >
                       Get Compliance Report
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -435,18 +435,18 @@ function CompliancePageContent() {
                 requirements.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="bg-white text-purple-600 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 transition-colors"
                 >
                   Schedule Compliance Review
-                </a>
-                <a
-                  href="/resources"
+                </Link>
+                <Link
+                  to="/resources"
                   className="border border-white/30 text-white px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors"
                 >
                   Download Compliance Guide
-                </a>
+                </Link>
               </div>
             </div>
           </Reveal>

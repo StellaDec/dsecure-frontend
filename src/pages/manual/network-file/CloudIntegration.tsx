@@ -196,7 +196,7 @@ const CloudIntegration: React.FC = () => {
                   <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                   <div>
                     <strong className="text-gray-900">Download Reports</strong>
-                    <p className="text-sm text-gray-600">Export reports in PDF or XML format</p>
+                    <p className="text-sm text-gray-600">Export reports in PDF format</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

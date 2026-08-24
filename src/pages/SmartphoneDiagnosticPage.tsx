@@ -788,7 +788,7 @@ const SmartphoneDiagnosticPage = memo(() => {
             },
             {
               q: "Are the diagnostic reports customizable?",
-              a: "Yes, you can customize the generated PDF, CSV, or XML reports with your company logo and watermark. All reports are verifiable and serve as proper audit trails.",
+              a: "Yes, you can customize the generated PDF or CSV reports with your company logo and watermark. All reports are verifiable and serve as proper audit trails.",
             },
           ]}
         />

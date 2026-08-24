@@ -61,7 +61,7 @@ const driveEraserDiagnosticFaqs = [
     a: "No, D-Secure is designed with a user-friendly interface. Simply boot from USB, select your drive and erasure standard, and the software handles everything automatically.",
   },
   {
-    q: "Can I sign my file, like XML, jar file with my e-Signature?",
+    q: "Can I sign my file, like  jar file with my e-Signature?",
     a: "Yes, D-Secure supports custom digital signatures for reports. You can integrate your organization's PKI for enhanced security.",
   },
   {

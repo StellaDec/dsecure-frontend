@@ -3274,7 +3274,7 @@ export default function AdminReports() {
                   ? "bg-white/20 text-white"
                   : "bg-slate-200 text-slate-600"
               }`}>
-                {allRows.length}
+                {filtered.length}
               </span>
             </button>
             <button

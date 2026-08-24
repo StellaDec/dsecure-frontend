@@ -79,7 +79,7 @@ const hardwareDiagnosticsFaqs: FAQItem[] = [
   },
   {
     q: "Are the diagnostics reports tamper-evident?",
-    a: "Yes, every report is digitally signed and generated in non-editable PDF, XML, and CSV formats. This ensures the integrity of the hardware health data for audits and resale grading.",
+    a: "Yes, every report is digitally signed and generated in non-editable PDF and CSV formats. This ensures the integrity of the hardware health data for audits and resale grading.",
   },
 ];
 
@@ -499,7 +499,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
     },
     {
       title: "Tamper-evident Signed Reports",
-      desc: "Generates secure, digitally signed hardware diagnostics reports in PDF, CSV, and XML formats to prevent data tampering.",
+      desc: "Generates secure, digitally signed hardware diagnostics reports in PDF and CSV formats to prevent data tampering.",
       icon: <Globe className="w-6 h-6 text-emerald-600" />,
     },
     {

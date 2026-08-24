@@ -142,7 +142,7 @@ const DBANAlternativeBlog: React.FC = () => {
               </li>
             </ul>
             <p className="text-[#5a6672] leading-loose text-lg">
-              <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">D-Secure Drive Eraser</Link> is built around these requirements — supporting HDDs, SSDs and NVMe drives, USB and PXE deployment, centralized operations, and tamper-evident PDF/XML certificates, aligned to NIST SP 800-88 sanitization guidance.
+              <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">D-Secure Drive Eraser</Link> is built around these requirements — supporting HDDs, SSDs and NVMe drives, USB and PXE deployment, centralized operations, and tamper-evident PDF certificates, aligned to NIST SP 800-88 sanitization guidance.
             </p>
           </div>
         </Reveal>
@@ -285,7 +285,7 @@ const DBANAlternativeBlog: React.FC = () => {
                   <tr>
                     <td className="px-6 py-4 font-medium text-[#0a2e1e]">Audit certificate</td>
                     <td className="px-6 py-4 text-[#5a6672]">No compliant proof</td>
-                    <td className="px-6 py-4 text-[#0a2e1e] font-semibold">Tamper-evident PDF and XML certificate</td>
+                    <td className="px-6 py-4 text-[#0a2e1e] font-semibold">Tamper-evident PDF certificate</td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4 font-medium text-[#0a2e1e]">Central management</td>
@@ -322,7 +322,7 @@ const DBANAlternativeBlog: React.FC = () => {
             </div>
 
             <p className="text-[#5a6672] leading-loose text-lg">
-              D-Secure Drive Eraser supports HDD, SSD and NVMe media, 27+ erasure methods, tamper-evident PDF and XML reports, and multiple deployment options aligned with NIST SP 800-88 sanitization guidance. As with any procurement decision, confirm exact drive model and firmware compatibility during evaluation.
+              D-Secure Drive Eraser supports HDD, SSD and NVMe media, 27+ erasure methods, tamper-evident PDF reports, and multiple deployment options aligned with NIST SP 800-88 sanitization guidance. As with any procurement decision, confirm exact drive model and firmware compatibility during evaluation.
             </p>
           </div>
         </Reveal>
@@ -427,7 +427,7 @@ const DBANAlternativeBlog: React.FC = () => {
               <div>
                 <h3 className="text-2xl font-bold text-[#0a2e1e] mb-3">3. Audit-ready certificates by default</h3>
                 <p className="text-[#5a6672] leading-loose text-lg">
-                  Every completed erasure should generate tamper-evident PDF and XML documentation with device and operation details. XML records in particular are useful for ITAD companies and enterprises feeding data into an ERP, ITSM or asset-management system without manual re-entry.
+                  Every completed erasure should generate tamper-evident PDF documentation with device and operation details. JSON records in particular are useful for ITAD companies and enterprises feeding data into an ERP, ITSM or asset-management system without manual re-entry.
                 </p>
               </div>
 

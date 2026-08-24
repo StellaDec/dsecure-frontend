@@ -46,6 +46,7 @@ export const BlogRegistry: Record<string, any> = {
   'end-of-life-data-security': getBlogComponent('EndOfLifeDataSecurityBlog'),
   'erase-data-pc-laptop-desktop': getBlogComponent('EraseDataPcLaptopDesktopBlog'),
   'erasure-as-a-service-dsecure': getBlogComponent('ErasureAsAServiceDSecureBlog'),
+  'enterprise-data-erasure-compliance-guide': getBlogComponent('EnterpriseDataErasureComplianceGuideBlog'),
   'erasure-best-practices': getBlogComponent('ErasureBestPracticesBlog'),
   'erasure-verification-process': getBlogComponent('ErasureVerificationBlog'),
   'eu-csrd': getBlogComponent('EUCSRDBlog'),

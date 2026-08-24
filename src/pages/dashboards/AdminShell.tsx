@@ -1,7 +1,7 @@
 import { BarChart2, Download, FileText, Monitor, UserPlus, Users } from 'lucide-react';
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../../utils/seo";
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, Suspense } from "react";
 
 import { useAuth } from "@/auth/AuthContext";
@@ -17,6 +17,7 @@ export default function AdminShell() {
   const user = auth?.user;
   // ✅ NAYA CODE: useLocation for forcing Outlet re-mount on sidebar navigation
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Helper to get user data from storage if context is not yet populated
   const getUserDataFromStorage = () => {
@@ -76,7 +77,7 @@ export default function AdminShell() {
       );
       authService.clearTokens();
       indexedDBService.clearAll().catch(() => {});
-      window.location.href = "/login";
+      navigate("/login");
     };
 
     const resetTimer = () => {

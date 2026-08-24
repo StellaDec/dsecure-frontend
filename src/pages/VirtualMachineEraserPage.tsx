@@ -56,7 +56,7 @@ const virtualMachineEraserTakeaways: KeyTakeawayItem[] = [
   },
   {
     title: "Audit-Ready Reporting",
-    description: "Generate tamper-evident, digitally signed PDF/XML reports with VM details and MAC addresses.",
+    description: "Generate tamper-evident, digitally signed PDF reports with VM details and MAC addresses.",
   },
   {
     title: "18+ Global Standards",
@@ -159,7 +159,7 @@ const VirtualMachineEraserPage: React.FC = memo(function VirtualMachineEraserPag
   const features = [
     {
       title: "Tamper-evident Reports",
-      desc: "Generates digitally signed PDF/XML reports with VM size, ID, MAC address and more.",
+      desc: "Generates digitally signed PDF reports with VM size, ID, MAC address and more.",
       icon: <FileText className="w-6 h-6 text-emerald-600" />,
     },
     {

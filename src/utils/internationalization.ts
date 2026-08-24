@@ -51,7 +51,7 @@ i18n
     },
 
     react: {
-      useSuspense: true, // Enable suspense for better loading experience
+      useSuspense: false, // Suspense false — sync rendering with bundled English
     },
   });
 

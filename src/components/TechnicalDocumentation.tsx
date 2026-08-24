@@ -281,7 +281,7 @@ const TechnicalDocumentation: React.FC = () => {
                     Audit & Compliance Verification
                   </h3>
                   <p className="text-[#5a6672] leading-relaxed mb-4">
-                    D-Secure's Verification Module generates tamper-evident PDF & XML reports embedded with:
+                    D-Secure's Verification Module generates tamper-evident PDF & reports embedded with:
                   </p>
                   <ul className="space-y-2 text-[#5a6672]">
                     <li className="flex items-center gap-2">

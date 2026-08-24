@@ -2246,10 +2246,6 @@ export default function MainLayout() {
                         <Link
                           to="/#industries"
                           className="hover:text-brand transition-colors hover:translate-x-1 transform duration-200 inline-block"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            globalThis.location.href = "/#industries";
-                          }}
                         >
                           All Industries
                         </Link>

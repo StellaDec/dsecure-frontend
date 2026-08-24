@@ -4,37 +4,64 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import "./critical.css";
-import "./responsive.css";
+// responsive.css ko async load karo — above-the-fold ke liye zaruri nahi (14KB render-block bachega)
+if (typeof window !== 'undefined') {
+  const loadResponsiveCss = () => { import("./responsive.css"); };
+  if ('requestIdleCallback' in window) {
+    (window as typeof window & { requestIdleCallback: (cb: () => void) => void })
+      .requestIdleCallback(loadResponsiveCss);
+  } else {
+    setTimeout(loadResponsiveCss, 100);
+  }
+}
+
 import { HelmetProvider } from "react-helmet-async";
 import { ToastProvider } from './components/Toast';
-import { preloadCriticalResources } from './utils/performanceOptimizer';
 import i18n from './utils/internationalization'; // Initialize i18n
 import { I18nextProvider } from 'react-i18next';
-import * as Sentry from "@sentry/react";
-import posthog from 'posthog-js';
 
-if (import.meta.env.VITE_POSTHOG_KEY) {
-  posthog.init(import.meta.env.VITE_POSTHOG_KEY, {
-    api_host: import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com',
-    person_profiles: 'identified_only',
-  });
-}
+// ─── Sentry aur PostHog ko React mount ke BAAD async load karo ───
+// ~300KB JS first paint ko block nahi karega
+const deferSdk = (fn: () => void) => {
+  if ('requestIdleCallback' in window) {
+    (window as typeof window & { requestIdleCallback: (cb: () => void) => void })
+      .requestIdleCallback(fn);
+  } else {
+    // Fallback — 2s delay se load karo
+    setTimeout(fn, 2000);
+  }
+};
 
-if (import.meta.env.VITE_SENTRY_DSN) {
-  Sentry.init({
-    dsn: import.meta.env.VITE_SENTRY_DSN,
-    integrations: [
-      Sentry.browserTracingIntegration(),
-      Sentry.replayIntegration(),
-    ],
-    tracesSampleRate: 1.0,
-    replaysSessionSampleRate: 0.1,
-    replaysOnErrorSampleRate: 1.0,
-  });
-}
+deferSdk(() => {
+  if (import.meta.env.VITE_SENTRY_DSN) {
+    import("@sentry/react").then((Sentry) => {
+      Sentry.init({
+        dsn: import.meta.env.VITE_SENTRY_DSN,
+        integrations: [
+          Sentry.browserTracingIntegration(),
+          Sentry.replayIntegration(),
+        ],
+        tracesSampleRate: 1.0,
+        replaysSessionSampleRate: 0.1,
+        replaysOnErrorSampleRate: 1.0,
+      });
+    });
+  }
+});
+
+deferSdk(() => {
+  if (import.meta.env.VITE_POSTHOG_KEY) {
+    import("posthog-js").then((mod) => {
+      mod.default.init(import.meta.env.VITE_POSTHOG_KEY, {
+        api_host: import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com',
+        person_profiles: 'identified_only',
+      });
+    });
+  }
+});
 
 // -------------------------------------------------------------------------------
-// ?? GLOBAL CONSOLE SUPPRESSOR - Keeps browser console clean in production
+// 🔇 GLOBAL CONSOLE SUPPRESSOR - Keeps browser console clean in production
 // -------------------------------------------------------------------------------
 // Enable console in development, disable in production
 const ENABLE_CONSOLE = import.meta.env.DEV;
@@ -49,10 +76,8 @@ if (!ENABLE_CONSOLE) {
 }
 // -------------------------------------------------------------------------------
 
-// Preload critical resources
-import { addResourceHints } from "./utils/performanceOptimizer";
-addResourceHints();
-preloadCriticalResources();
+// Resource hints already in index.html (lines 41-44) — JS duplication hataya
+// preloadCriticalResources ek empty function tha — remove kiya
 
 // Optimized performance monitoring
 if ("performance" in window && import.meta.env.PROD) {
@@ -80,26 +105,6 @@ if ("serviceWorker" in navigator && import.meta.env.PROD) {
   });
 }
 
-// Microsoft Clarity — deferred loading (production only)
-// Main thread block nahi hoga — idle callback se load hoga
-if (import.meta.env.PROD && import.meta.env.VITE_CLARITY_ID) {
-  const loadClarity = () => {
-    import('./utils/microsoftClarity').then((module) => {
-      // Default export ek class instance hai jisme .init() method hai
-      module.default.init();
-    }).catch(() => {
-      // Clarity load fail hua — silently ignore
-    });
-  };
-
-  if ('requestIdleCallback' in window) {
-    (window as typeof window & { requestIdleCallback: (cb: () => void) => void })
-      .requestIdleCallback(loadClarity);
-  } else {
-    // Fallback — 3s delay se load karo
-    setTimeout(loadClarity, 3000);
-  }
-}
 
 // Handle redirects from 404.html
 const redirectPath = sessionStorage.getItem("redirectPath");
@@ -119,6 +124,7 @@ if (sessionStorage.redirect) {
 const rootElement = document.getElementById("root")!;
 const isPrerendered = "prerendered" in rootElement.dataset;
 
+// ToastProvider sirf App.tsx mein hai — yahan se hataya (duplicate tha)
 const appWrapper = (
   <React.StrictMode>
     <HelmetProvider>
@@ -141,15 +147,15 @@ const mountApp = () => {
     ReactDOM.hydrateRoot(rootElement, appWrapper);
   } else {
     // Standard SPA initialization for Dev mode or un-prerendered routes
-    rootElement.innerHTML = '';
+    // We intentionally DO NOT clear rootElement.innerHTML here.
+    // This allows the initial HTML skeleton from index.html to remain visible
+    // while React parses and fetches lazy-loaded modules, dramatically improving FCP.
+    // React 18 createRoot will automatically replace the container contents upon first commit.
     const root = ReactDOM.createRoot(rootElement);
     root.render(appWrapper);
   }
 };
 
-// Wait for i18next to load before hydrating, otherwise it renders keys momentarily
-if (i18n.isInitialized) {
-  mountApp();
-} else {
-  i18n.on('initialized', mountApp);
-}
+// React ko turant mount karo — English translations already bundled hain
+// i18n.resources mein en/translation hai, toh keys flash nahi hongi
+mountApp();

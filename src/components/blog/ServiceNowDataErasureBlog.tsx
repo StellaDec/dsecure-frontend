@@ -14,12 +14,12 @@ const ServiceNowDataErasureBlog: React.FC = () => {
           seo={getBlogSEO({
             title: "ServiceNow Data Erasure Integration: ITAM Workflow Guide",
             excerpt:
-              "Learn how to integrate data erasure with ServiceNow and other ITAM platforms. Automate your asset retirement workflow, generate XML certificates, and maintain a secure chain of custody.",
+              "Learn how to integrate data erasure with ServiceNow and other ITAM platforms. Automate your asset retirement workflow, generate Digital Certificates, and maintain a secure chain of custody.",
             slug: "servicenow-data-erasure-itam-workflow",
             author: "Prashant Saini",
             publishDate: "August 15, 2026",
             keywords:
-              "ServiceNow data erasure, ITAM workflow, asset retirement integration, automated data destruction, IT asset management sanitization, ServiceNow hardware asset management, XML certificate of erasure, ServiceNow ITAM security",
+              "ServiceNow data erasure, ITAM workflow, asset retirement integration, automated data destruction, IT asset management sanitization, ServiceNow hardware asset management, Digital Certificate of erasure, ServiceNow ITAM security",
             category: "ITAM",
             tag: "Integration",
           })}
@@ -156,7 +156,7 @@ const ServiceNowDataErasureBlog: React.FC = () => {
                         Evidence
                       </h3>
                       <p className="text-sm text-[#5a6672]">
-                        XML certificate sent to CMDB via API
+                        Digital Certificate sent to CMDB via API
                       </p>
                     </div>
                   </div>
@@ -219,7 +219,7 @@ const ServiceNowDataErasureBlog: React.FC = () => {
               </p>
               <p className="text-[#5a6672] leading-loose text-lg">
                 This typically requires the erasure software to generate a
-                structured data file—such as XML or JSON—that an API can
+                structured data file—such as JSON—that an API can
                 process.
               </p>
               <p className="text-[#5a6672] leading-loose text-lg mb-4">
@@ -251,7 +251,7 @@ const ServiceNowDataErasureBlog: React.FC = () => {
           <Reveal>
             <div className="prose prose-emerald prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-[#0a2e1e] prose-p:leading-loose text-[#5a6672] text-justify mb-8 mt-10">
               <h2 className="text-3xl font-bold text-[#0a2e1e] mb-6">
-                Why XML Certificates Matter for ServiceNow
+                Why Digital Certificates Matter for ServiceNow
               </h2>
               <p className="text-[#5a6672] leading-loose text-lg">
                 Many erasure tools generate only PDF reports. While a PDF is
@@ -263,7 +263,7 @@ const ServiceNowDataErasureBlog: React.FC = () => {
                 it is vulnerable to errors if the PDF layout changes.
               </p>
               <p className="text-[#5a6672] leading-loose text-lg">
-                A structured XML or JSON certificate provides data in a
+                A structured JSON certificate provides data in a
                 predictable format. An integration script running in ServiceNow
                 or another ITSM tool can easily locate the `SerialNumber` node,
                 extract the value, query the database, find the asset and update
@@ -276,7 +276,7 @@ const ServiceNowDataErasureBlog: React.FC = () => {
                 >
                   D-Secure Drive Eraser
                 </Link>{" "}
-                can generate both PDF certificates for human auditors and XML
+                can generate both PDF certificates for human auditors 
                 certificates designed for automated API integration.
               </p>
             </div>
@@ -319,7 +319,7 @@ const ServiceNowDataErasureBlog: React.FC = () => {
                 Automate Your ITAM Compliance Workflow
               </h2>
               <p className="text-white/80 leading-relaxed text-lg mb-8 max-w-3xl mx-auto">
-                Explore how D-Secure's XML reporting capabilities and
+                Explore how D-Secure's JSON reporting capabilities and
                 centralized management console can help you build secure,
                 verifiable integrations with your existing IT Asset Management
                 platform.

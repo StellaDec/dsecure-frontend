@@ -76,7 +76,7 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
         },
         {
           question: "Does remote wiping generate an audit certificate?",
-          answer: "Absolutely. Once the remote erasure process successfully completes, a tamper-evident XML/PDF certificate is automatically generated and synced back to your centralized management console or ITAM system (like ServiceNow) for compliance auditing."
+          answer: "Absolutely. Once the remote erasure process successfully completes, a tamper-evident PDF certificate is automatically generated and synced back to your centralized management console or ITAM system (like ServiceNow) for compliance auditing."
         }
       ])
     ]

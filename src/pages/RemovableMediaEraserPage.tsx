@@ -501,7 +501,7 @@ const RemovableMediaEraserPage: React.FC = memo(function RemovableMediaEraserPag
                            </div>
                            <div className="flex items-center gap-2 p-3 bg-white rounded-none border border-emerald-200">
                               <CheckCircle className="w-6 h-6 text-emerald-600" />
-                              <span className="text-sm font-bold text-slate-800">XML Export Ready</span>
+                              <span className="text-sm font-bold text-slate-800">JSON Export Ready</span>
                            </div>
                         </div>
                      </Reveal>

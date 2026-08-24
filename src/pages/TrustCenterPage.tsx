@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { SEOHeadNative } from "@/components/SEOHeadNative";
 import { getSEOForPage } from "../utils/seo";
 
@@ -40,8 +41,8 @@ export default function TrustCenterPage() {
                </div>
                <p className="text-slate-600 mb-6">Learn how we protect our infrastructure and your data through continuous monitoring and third-party penetration testing.</p>
                <ul className="space-y-3">
-                 <li><a href="/security" className="text-brand hover:text-brand-dark font-medium flex items-center">Platform Security Architecture <span className="ml-1">→</span></a></li>
-                 <li><a href="#" className="text-brand hover:text-brand-dark font-medium flex items-center">Vulnerability Disclosure Program <span className="ml-1">→</span></a></li>
+                 <li><Link to="/security" className="text-brand hover:text-brand-dark font-medium flex items-center">Platform Security Architecture <span className="ml-1">→</span></Link></li>
+                 <li><Link to="/contact" className="text-brand hover:text-brand-dark font-medium flex items-center">Vulnerability Disclosure Program <span className="ml-1">→</span></Link></li>
                  <li><span className="text-slate-400">SOC 2 Type II Report (Available under NDA)</span></li>
                </ul>
             </div>
@@ -56,10 +57,10 @@ export default function TrustCenterPage() {
                </div>
                <p className="text-slate-600 mb-6">Review our commitments to data privacy, intellectual property, and acceptable use policies governing the D-Secure platform.</p>
                <ul className="space-y-3">
-                 <li><a href="/privacy-policy" className="text-brand hover:text-brand-dark font-medium flex items-center">Privacy Policy <span className="ml-1">→</span></a></li>
-                 <li><a href="/terms-of-service" className="text-brand hover:text-brand-dark font-medium flex items-center">Terms of Service <span className="ml-1">→</span></a></li>
-                 <li><a href="/cookie-policy" className="text-brand hover:text-brand-dark font-medium flex items-center">Cookie Policy <span className="ml-1">→</span></a></li>
-                 <li><a href="/legal-policy" className="text-brand hover:text-brand-dark font-medium flex items-center">Legal Notice <span className="ml-1">→</span></a></li>
+                 <li><Link to="/privacy-policy" className="text-brand hover:text-brand-dark font-medium flex items-center">Privacy Policy <span className="ml-1">→</span></Link></li>
+                 <li><Link to="/terms-of-service" className="text-brand hover:text-brand-dark font-medium flex items-center">Terms of Service <span className="ml-1">→</span></Link></li>
+                 <li><Link to="/cookie-policy" className="text-brand hover:text-brand-dark font-medium flex items-center">Cookie Policy <span className="ml-1">→</span></Link></li>
+                 <li><Link to="/legal-policy" className="text-brand hover:text-brand-dark font-medium flex items-center">Legal Notice <span className="ml-1">→</span></Link></li>
                </ul>
             </div>
 
@@ -156,9 +157,9 @@ export default function TrustCenterPage() {
                      </span>
                      All Systems Operational
                   </div>
-                  <a href="/status" className="px-6 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg font-medium transition-colors border border-slate-700">
+                  <Link to="/status" className="px-6 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg font-medium transition-colors border border-slate-700">
                      View Status Page
-                  </a>
+                  </Link>
                </div>
             </div>
 

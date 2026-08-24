@@ -142,7 +142,7 @@ function ServicesPageContent() {
         { label: 'Supported Devices', value: '1000+ Models' },
         { label: 'Erasure Standards', value: 'DOD, NIST, BSI, CSEC' },
         { label: 'Processing Speed', value: 'Up to 100 devices/hour' },
-        { label: 'Regulatory Document Format', value: 'PDF, XML, JSON' }
+        { label: 'Regulatory Document Format', value: 'PDF, JSON' }
       ]
     },
     network: {
@@ -743,7 +743,7 @@ function ServicesPageContent() {
                             ['Local PDF Reports', false, true, true, true, true, true],
                             ['White-Label Reports', false, false, true, true, true, true],
                             ['Cloud Report Upload/Sync', false, false, 'slow', 'improved', 'fast', 'fastest'],
-                            ['XML Report Format', false, false, false, false, 'coming', true],
+                            ['JSON Report Format', false, false, false, false, 'coming', true],
                             ['Audit-Grade Regulatory Documents', false, true, true, true, true, true],
                             ['User/Action Logs', false, false, false, true, true, true]
                           ].map(([feature, base, standard, cloud, network, pro, enterprise], index) => (

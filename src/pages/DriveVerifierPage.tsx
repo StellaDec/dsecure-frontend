@@ -154,7 +154,7 @@ const ScanningHeroVisual = () => {
 const driveVerifierTakeaways: KeyTakeawayItem[] = [
   { text: "Complete erasure verification tool to scan drives and examine bit patterns for data traces." },
   { text: "Supports SATA, PATA, SCSI, SAS, NVMe, USB, and SD cards with simultaneous verification over PXE." },
-  { text: "Generates digitally signed reports (PDF, XML, CSV) compliant with R2v3, NAID AAA, and e-Stewards." },
+  { text: "Generates digitally signed reports (PDF, CSV) compliant with R2v3, NAID AAA, and e-Stewards." },
 ];
 
 const driveVerifierFaqs: FAQItem[] = [
@@ -168,7 +168,7 @@ const driveVerifierFaqs: FAQItem[] = [
   },
   {
     question: "What reporting formats does it support?",
-    answer: "It generates tamper-evident, digitally signed reports in PDF, XML, and CSV formats that integrate directly with your ERP or inventory management systems."
+    answer: "It generates tamper-evident, digitally signed reports in PDF and CSV formats that integrate directly with your ERP or inventory management systems."
   }
 ];
 
@@ -244,7 +244,7 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
     },
     {
       title: "Digitally Signed Reports",
-      desc: "Generates detailed verification reports in PDF, XML & CSV formats to meet R2, NAID AAA, and e-Stewards compliance.",
+      desc: "Generates detailed verification reports in PDF & CSV formats to meet R2, NAID AAA, and e-Stewards compliance.",
       icon: <FileText className="w-6 h-6 text-emerald-600" />,
     },
     {
@@ -467,7 +467,7 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
                   </div>
                   <div className="flex justify-between items-center pb-4 border-b border-slate-700">
                     <span className="text-slate-400">Report Formats</span>
-                    <span className="font-medium">PDF, XML, CSV</span>
+                    <span className="font-medium">PDF, CSV</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-slate-400">Verification Methods</span>

@@ -356,7 +356,7 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
                 <ul className="list-disc pl-6 space-y-3 text-[#5a6672] mb-6 text-lg">
                   <li>Clear and Purge methods mapped to IEEE 2883-2022 across HDDs, SATA SSDs, NVMe drives, and RAID arrays</li>
                   <li>Cryptographic erase support built around key zeroization and validated encryption modules — directly addressing Rev. 2's tightened CE expectations</li>
-                  <li>Digitally signed, tamper-evident audit trails in both PDF and XML, generated automatically per erasure event, with verification and validation status logged separately</li>
+                  <li>Digitally signed, tamper-evident audit trails in both PDF, generated automatically per erasure event, with verification and validation status logged separately</li>
                   <li>Coverage beyond physical drives: file-and-folder erasure across cloud-synced storage, VM sanitization, and Certificate-of-Deletion-style documentation for logical storage</li>
                   <li>REST API, ServiceNow, and ERP integrations so sanitization runs as part of a continuous IT asset lifecycle rather than a separate manual step</li>
                   <li>DPDP Act 2023-mapped documentation, so Indian enterprises get one workflow that satisfies domestic erasure obligations and international audit requirements at once</li>

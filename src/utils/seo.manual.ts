@@ -151,7 +151,7 @@ export const MANUAL_SEO: Record<string, Partial<SEOMetadata>> = {
   },
   "certificate-generation": {
     title: "Erasure Certificate Generation: Compliance Docs | D-Secure",
-    description: "Generate tamper-evident data erasure certificates with D-Secure. Supports PDF, XML, and JSON formats for GDPR, HIPAA & NIST 800-88 compliance.",
+    description: "Generate tamper-evident data erasure certificates with D-Secure. Supports PDF and JSON formats for GDPR, HIPAA & NIST 800-88 compliance.",
     keywords: generateKeywords(["data erasure certificate generation", "tamper-evident erasure certificate", "NIST 800-88 compliance document", "GDPR data destruction certificate", "audit-ready erasure report", "ITAD compliance certificate"]),
     canonicalUrl: getCanonicalUrl("/support/manual/certificate-generation"),
     breadcrumbs: [

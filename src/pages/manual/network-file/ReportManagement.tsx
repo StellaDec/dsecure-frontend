@@ -249,7 +249,7 @@ const ReportManagement: React.FC = () => {
                 </div>
 
                 <div className="bg-white rounded-lg p-4 border border-red-200">
-                  <h4 className="font-semibold text-gray-900 mb-2">XML Format</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">format</h4>
                   <ul className="space-y-1 text-gray-700">
                     <li>• Machine-readable format</li>
                     <li>• Can be imported into other systems</li>
@@ -265,7 +265,7 @@ const ReportManagement: React.FC = () => {
               <ol className="space-y-2 text-gray-700">
                 <li>1. Select the report(s) you want to export</li>
                 <li>2. Click <strong>Action</strong> → <strong>Save</strong></li>
-                <li>3. Choose format (PDF or XML)</li>
+                <li>3. Choose format (PDF)</li>
                 <li>4. Select destination folder</li>
                 <li>5. Click <strong>Save</strong> to export</li>
               </ol>

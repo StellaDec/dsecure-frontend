@@ -17,6 +17,41 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "enterprise-data-erasure-compliance-guide",
+    slug: "enterprise-data-erasure-compliance-guide",
+    title: "Enterprise Data Erasure Compliance Guide | D-Secure",
+    excerpt: "Learn what GDPR, HIPAA, PCI DSS, NIST 800-88, and India's DPDP Act require for data erasure — and why deleting a drive isn't enough.",
+    link: "/blog/enterprise-data-erasure-compliance-guide",
+    tag: "Data Erasure",
+    category: "Compliance",
+    keywords: "enterprise data erasure compliance, data erasure, GDPR erasure, HIPAA erasure, DPDP Act data deletion, NIST 800-88, secure data sanitization",
+    publishDate: "August 24, 2026",
+    author: "Anshu",
+    readTime: "8 min read",
+    faqs: [
+      {
+        question: "How long does enterprise-grade data erasure actually take?",
+        answer: "It depends on media type, capacity, and the standard applied, but a single modern SSD or HDD typically finishes a certified overwrite-and-verify cycle in well under an hour. The bigger time saving comes from parallel deployment — erasing dozens or hundreds of devices at once — rather than any single device's speed."
+      },
+      {
+        question: "Can data still be erased from a drive that's damaged or won't boot?",
+        answer: "A drive that's mechanically or electronically damaged enough to prevent software communication usually can't be sanitized through standard overwrite methods, and physical destruction becomes the appropriate path. Drives in a limited or diagnostic boot state can often still be reached through bootable USB or PXE-based tools."
+      },
+      {
+        question: "Is software-based erasure actually accepted by auditors and regulators?",
+        answer: "Yes, provided it follows a recognized standard and produces verifiable documentation. Auditors generally care about outcomes and evidence — a digitally signed erasure report showing the standard applied, the verification result, and the device identifier — not the specific mechanism used."
+      },
+      {
+        question: "Does erasing a device reduce its resale or donation value?",
+        answer: "No — properly erased devices are fully functional afterward and can be resold, donated, or redeployed exactly as before. This is one of the main advantages software-based sanitization has over physical destruction."
+      },
+      {
+        question: "Does India's DPDP Act require a specific erasure standard?",
+        answer: "No — like GDPR, the DPDP Act, 2023 doesn't name a specific technical standard. It requires that personal data be erased when the underlying lawful basis for retention ends. In practice, organizations satisfy this by applying a recognized method such as NIST 800-88 and keeping a verifiable erasure report, the same evidence auditors expect for GDPR or HIPAA."
+      }
+    ]
+  },
+  {
     id: "best-data-erasure-software-2026",
     slug: "best-data-erasure-software-2026",
     title: "The 5 Best Data Erasure Software Solutions for Enterprises in 2026",
@@ -59,11 +94,11 @@ export const blogPosts: BlogPost[] = [
     id: "servicenow-data-erasure-itam-workflow",
     slug: "servicenow-data-erasure-itam-workflow",
     title: "ServiceNow Data Erasure Integration: ITAM Workflow Guide",
-    excerpt: "Learn how to integrate data erasure with ServiceNow and other ITAM platforms. Automate your asset retirement workflow, generate XML certificates, and maintain a secure chain of custody.",
+    excerpt: "Learn how to integrate data erasure with ServiceNow and other ITAM platforms. Automate your asset retirement workflow, generate Digital Certificates, and maintain a secure chain of custody.",
     link: "/blog/servicenow-data-erasure-itam-workflow",
     tag: "Integration",
     category: "ITAM",
-    keywords: "ServiceNow data erasure, ITAM workflow, asset retirement integration, automated data destruction, IT asset management sanitization, ServiceNow hardware asset management, XML certificate of erasure, ServiceNow ITAM security",
+    keywords: "ServiceNow data erasure, ITAM workflow, asset retirement integration, automated data destruction, IT asset management sanitization, ServiceNow hardware asset management, Digital Certificate of erasure, ServiceNow ITAM security",
     publishDate: "August 15, 2026",
     author: "Prashant Saini",
     readTime: "12 min read"

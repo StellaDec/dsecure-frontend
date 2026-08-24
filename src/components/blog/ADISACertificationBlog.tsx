@@ -201,7 +201,7 @@ const ADISACertificationBlog: React.FC = () => {
             </h2>
             <div className="bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-10 space-y-6">
               <p className="text-[#5a6672] leading-loose text-lg">
-                D-Secure Drive Eraser is built around NIST SP 800-88 sanitization guidance, with tamper-evident PDF and XML certificates generated for every completed erasure job — covering device identification, method used, verification status and operator details. D-Secure Hardware Diagnostics supports condition assessment and grading ahead of redeployment or recycling, which feeds into broader R2v3-aligned disposition workflows.
+                D-Secure Drive Eraser is built around NIST SP 800-88 sanitization guidance, with tamper-evident PDF certificates generated for every completed erasure job — covering device identification, method used, verification status and operator details. D-Secure Hardware Diagnostics supports condition assessment and grading ahead of redeployment or recycling, which feeds into broader R2v3-aligned disposition workflows.
               </p>
               <p className="text-[#5a6672] leading-loose text-lg font-medium">
                 To be clear on scope: D-Secure does not currently hold ADISA Product Assurance certification or Common Criteria evaluation. For ITAD partners whose enterprise contracts specifically require ADISA-certified tooling, that's a distinction worth knowing upfront rather than discovering during an audit.

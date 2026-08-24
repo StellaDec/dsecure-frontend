@@ -1347,7 +1347,7 @@ class EnhancedApiClient {
     return this.request<AuditReport[]>(`/api/EnhancedAuditReports/by-mac-address/${encodeURIComponent(macAddress)}`)
   }
 
-  // ✅ Get filtered audit reports with query parameters
+  // ✅ Paginated audit reports fetch karo - page parameter se saare pages laaye ja sakte hain
   async getFilteredAuditReports(filters: {
     userEmail?: string;
     search?: string;
@@ -1356,6 +1356,7 @@ class EnhancedApiClient {
     dateTo?: string;
     reportType?: string;
     groupName?: string;
+    page?: number;
   }): Promise<ApiResponse<AuditReport[]>> {
     const params = new URLSearchParams();
     
@@ -1366,6 +1367,7 @@ class EnhancedApiClient {
     if (filters.dateTo) params.append('dateTo', filters.dateTo);
     if (filters.reportType) params.append('reportType', filters.reportType);
     if (filters.groupName) params.append('groupName', filters.groupName);
+    if (filters.page != null) params.append('page', String(filters.page));
     
     const queryString = params.toString();
     const url = `/api/EnhancedAuditReports/all-filtered-reports${queryString ? `?${queryString}` : ''}`;

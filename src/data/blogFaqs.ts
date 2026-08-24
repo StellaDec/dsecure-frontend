@@ -1550,7 +1550,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
       answer: "ServiceNow supports attachments and record updates through platform APIs. A custom integration may use this capability to link an erasure certificate to the relevant asset record."
     },
     {
-      question: "Why use an XML Certificate of Erasure?",
+      question: "Why use a Digital Certificate of Erasure?",
       answer: "XML contains structured fields that systems can process automatically. It may be used to update device serial numbers, erasure methods, job statuses and verification results without manually re-entering every value."
     },
     {

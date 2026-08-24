@@ -98,7 +98,7 @@ export default function RemoteErasurePage() {
                 },
                 {
                   title: 'Automated Audit Trails',
-                  desc: 'Generate tamper-evident XML/PDF certificates for every remote wipe automatically.',
+                  desc: 'Generate tamper-evident PDF certificates for every remote wipe automatically.',
                   icon: <DatabaseIcon className="w-6 h-6 text-emerald-600" filled={true} />
                 }
               ].map((feature, idx) => (

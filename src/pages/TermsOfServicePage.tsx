@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SEOHeadNative } from '@/components/SEOHeadNative';
 import { getSEOForPage } from '../utils/seo';
 import {
@@ -224,9 +225,9 @@ export default function TermsOfServicePage() {
                     </ul>
                     <p className="leading-relaxed">
                       For software-specific usage rights, please refer to our{' '}
-                      <a href="/eula" className="text-[#0e7c66] hover:underline font-semibold">
+                      <Link to="/eula" className="text-[#0e7c66] hover:underline font-semibold">
                         End User License Agreement (EULA)
-                      </a>.
+                      </Link>.
                     </p>
                   </div>
                 </section>
@@ -263,9 +264,9 @@ export default function TermsOfServicePage() {
                   <div className="space-y-4 text-slate-800">
                     <p className="leading-relaxed">
                       Your use of D-Secure's services is also governed by our{' '}
-                      <a href="/privacy-policy" className="text-[#0e7c66] hover:underline font-semibold">
+                      <Link to="/privacy-policy" className="text-[#0e7c66] hover:underline font-semibold">
                         Privacy Policy
-                      </a>
+                      </Link>
                       , which is incorporated into these Terms by reference. By using our services, you
                       consent to the data practices described therein.
                     </p>

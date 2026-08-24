@@ -384,7 +384,7 @@ const ErasingFiles: React.FC = () => {
                 </div>
               </div>
               <p className="text-gray-700 mb-3">
-                Each summary includes unique Report ID for tracking. Access full report anytime from <strong>Home → Reports</strong>. Export to PDF or XML for compliance documentation, audits, or regulatory submissions.
+                Each summary includes unique Report ID for tracking. Access full report anytime from <strong>Home → Reports</strong>. Export to PDF for compliance documentation, audits, or regulatory submissions.
               </p>
               <div className="bg-blue-50 rounded-lg p-3 border border-blue-300 text-sm">
                 <p className="text-blue-900"><strong>Best Practice:</strong> Archive all erasure reports for 7+ years to demonstrate compliance during audits (GDPR Article 30, SOX Section 404).</p>

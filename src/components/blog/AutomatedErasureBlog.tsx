@@ -130,7 +130,7 @@ const AutomatedErasureBlog: React.FC = () => {
                         <p className="text-[#0e7c66]">curl <span className="text-white">-X GET</span> https://api.dsecure.com/v1/certificates/7A9F3 <span className="text-white">-H</span> "Authorization: Bearer $TOKEN"</p>
                     </div>
                     <p className="text-[#5a6672] mt-4">
-                        With these tools, you can build proprietary asset tracking pipelines where erasure happens completely headlessly, generating XML/JSON reports that ingest directly into systems like ServiceNow or Jira.
+                        With these tools, you can build proprietary asset tracking pipelines where erasure happens completely headlessly, generating JSON reports that ingest directly into systems like ServiceNow or Jira.
                     </p>
                 </div>
 

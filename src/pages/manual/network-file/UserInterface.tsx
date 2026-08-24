@@ -152,7 +152,7 @@ const UserInterface: React.FC = () => {
                     Access comprehensive erasure reports for audit trails and compliance documentation.
                   </p>
                   <p className="text-xs text-gray-600">
-                    Filter reports by date, type, or computer. Preview reports before exporting to PDF or XML. Send reports to D-Secure Cloud for centralized management.
+                    Filter reports by date, type, or computer. Preview reports before exporting to PDF. Send reports to D-Secure Cloud for centralized management.
                   </p>
                 </div>
 
@@ -382,10 +382,10 @@ const UserInterface: React.FC = () => {
             <div className="border-l-4 border-teal-600 pl-4 py-3 bg-teal-50/50 rounded hover:bg-teal-50 transition-colors">
               <p className="font-semibold text-gray-900 mb-2 text-base">Save / Export / Download</p>
               <p className="text-sm text-gray-700 mb-1">
-                Exports reports, task lists, computer lists, or logs to your local system as PDF, XML, or CSV files.
+                Exports reports, task lists, computer lists, or logs to your local system as PDF, or CSV files.
               </p>
               <p className="text-xs text-gray-600">
-                <strong>Formats available:</strong> Reports (PDF/XML), Lists (CSV), allowing easy integration with other systems.
+                <strong>Formats available:</strong> Reports (PDF), Lists (CSV), allowing easy integration with other systems.
               </p>
             </div>
           </div>

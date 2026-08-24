@@ -34,7 +34,7 @@ const eraserSolutions = [
     features: [
       "30+ International Algorithms",
       "Scheduled Erasure Tasks",
-      "Detailed PDF/XML Reports",
+      "Detailed PDF Reports",
       "Cloud Storage Support",
     ],
     icon: File,
@@ -318,7 +318,7 @@ const capabilities = [
   },
   {
     title: "Reports for Audit Trails",
-    desc: "Generates data erasure reports for audit trails with the option to customize and save reports in various formats like PDF, and XML.",
+    desc: "Generates data erasure reports for audit trails with the option to customize and save reports in various formats like PDF, .",
     icon: FileText,
   },
   {
