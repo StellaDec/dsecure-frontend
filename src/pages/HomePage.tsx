@@ -436,6 +436,7 @@ const HomePage = memo(function HomePage() {
                 src="/banner-strip.jpeg" 
                 alt="Independence Day Offer - Click for Pricing and Plans" 
                 className="w-full h-auto rounded-none shadow-md block"
+                fetchPriority="high"
               />
             </Link>
             <button 

@@ -4,16 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import "./critical.css";
-// responsive.css ko async load karo — above-the-fold ke liye zaruri nahi (14KB render-block bachega)
-if (typeof window !== 'undefined') {
-  const loadResponsiveCss = () => { import("./responsive.css"); };
-  if ('requestIdleCallback' in window) {
-    (window as typeof window & { requestIdleCallback: (cb: () => void) => void })
-      .requestIdleCallback(loadResponsiveCss);
-  } else {
-    setTimeout(loadResponsiveCss, 100);
-  }
-}
+import "./responsive.css";
 
 import { HelmetProvider } from "react-helmet-async";
 import { ToastProvider } from './components/Toast';
