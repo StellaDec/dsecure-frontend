@@ -2,6 +2,8 @@ import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "@/auth/AuthContext";
 import { useState, useEffect, useCallback, Suspense, lazy } from "react";
 import PageLoadingSkeleton from "@/components/PageLoadingSkeleton";
+const ProductsMegaMenu = lazy(() => import("../components/layout/ProductsMegaMenu"));
+const SolutionsMegaMenu = lazy(() => import("../components/layout/SolutionsMegaMenu"));
 import {
   Zap,
   Smartphone,
