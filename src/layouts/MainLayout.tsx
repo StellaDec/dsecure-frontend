@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "@/auth/AuthContext";
-import { useState, useEffect, useCallback, Suspense } from "react";
+import { useState, useEffect, useCallback, Suspense, lazy } from "react";
 import PageLoadingSkeleton from "@/components/PageLoadingSkeleton";
 import {
   Zap,
@@ -199,7 +199,7 @@ export default function MainLayout() {
                 </button>
 
                 {/* Dropdown Panel — Zoho-style mega menu */}
-                {productsDropdownOpen && <React.Suspense fallback={null}><ProductsMegaMenu setProductsDropdownOpen={setProductsDropdownOpen} productsDropdownTab={productsDropdownTab} setProductsDropdownTab={setProductsDropdownTab} /></React.Suspense>}
+                {productsDropdownOpen && <Suspense fallback={null}><ProductsMegaMenu setProductsDropdownOpen={setProductsDropdownOpen} productsDropdownTab={productsDropdownTab} setProductsDropdownTab={setProductsDropdownTab} /></Suspense>}
               </div>
               {/* Solutions Dropdown */}
               <div data-solutions-dropdown>
@@ -214,7 +214,7 @@ export default function MainLayout() {
                 </button>
 
                 {/* Dropdown Panel — Zoho-style mega menu */}
-                {solutionsDropdownOpen && <React.Suspense fallback={null}><SolutionsMegaMenu setSolutionsDropdownOpen={setSolutionsDropdownOpen} /></React.Suspense>}
+                {solutionsDropdownOpen && <Suspense fallback={null}><SolutionsMegaMenu setSolutionsDropdownOpen={setSolutionsDropdownOpen} /></Suspense>}
               </div>
               <NavLink
                 to="/resources"
