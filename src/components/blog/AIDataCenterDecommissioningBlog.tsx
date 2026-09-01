@@ -152,11 +152,6 @@ const AIDataCenterDecommissioningBlog: React.FC = () => {
 
           {/* FAQ Section */}
           <Reveal>
-            <FAQSection 
-              faqs={blogFaqs["ai-data-center-decommissioning"]} 
-              title="Frequently Asked Questions" 
-              className="mt-16 bg-[#f4fbf8] border border-[#d0d5dc] rounded p-8"
-            />
           </Reveal>
         </section>
 

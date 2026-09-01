@@ -295,13 +295,6 @@ const ErasureVerificationBlog: React.FC = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="bg-white py-16">
-          <div className="max-w-4xl mx-auto px-4 md:px-8">
-            <Reveal>
-              <FAQSection faqs={blogFaqs["erasure-verification-process"]} title="Frequently Asked Questions" />
-            </Reveal>
-          </div>
-        </section>
 
         <BlogFooterStandard 
           blogId="erasure-verification-process" 

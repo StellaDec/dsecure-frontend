@@ -328,13 +328,6 @@ const ErasureBestPracticesBlog: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <Reveal>
-            <FAQSection faqs={blogFaqs["erasure-best-practices"]} title="Frequently Asked Questions" />
-          </Reveal>
-        </div>
-      </section>
 
       {/* Standardized Blog Footer */}
       <BlogFooterStandard 

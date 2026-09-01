@@ -336,11 +336,6 @@ const ServiceNowDataErasureBlog: React.FC = () => {
 
           {/* FAQ Section */}
           <Reveal>
-            <FAQSection 
-              faqs={blogFaqs["servicenow-data-erasure-itam-workflow"]} 
-              title="Frequently Asked Questions" 
-              className="mt-16 bg-white border border-[#d0d5dc] rounded p-8"
-            />
           </Reveal>
         </section>
 

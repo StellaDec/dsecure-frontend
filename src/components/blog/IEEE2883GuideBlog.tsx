@@ -337,7 +337,6 @@ export default function IEEE2883GuideBlog() {
               <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
                 Frequently Asked Questions
               </h2>
-              <FAQSection faqs={faqs} />
             </div>
           </div>
         </article>

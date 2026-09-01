@@ -506,7 +506,6 @@ export default function WindowsFileDeletionVsFormattingBlog() {
 
             {/* FAQ Section */}
             <div className="mt-12">
-              <FAQSection faqs={faqs} title="Frequently Asked Questions" />
             </div>
           </div>
         </article>

@@ -332,11 +332,6 @@ const FreeVsProEraserBlog: React.FC = () => {
 
           {/* FAQ Section */}
           <Reveal>
-            <FAQSection 
-              faqs={blogFaqs["free-vs-pro-eraser"]} 
-              title="Frequently Asked Questions" 
-              className="mt-16 bg-[#f4fbf8] border border-[#d0d5dc] rounded-none p-8"
-            />
           </Reveal>
         </section>
 

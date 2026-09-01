@@ -417,7 +417,6 @@ export default function EnterpriseDataErasureComplianceGuideBlog() {
             <hr className="border-slate-200 my-12" />
 
             <div className="mt-12">
-              <FAQSection faqs={faqs} title="Frequently Asked Questions" />
             </div>
 
             <hr className="border-slate-200 my-12" />

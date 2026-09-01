@@ -263,13 +263,6 @@ const ITAMDisposalGuideBlog: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <Reveal>
-            <FAQSection faqs={blogFaqs["itam-disposal-guide"]} title="Frequently Asked Questions" />
-          </Reveal>
-        </div>
-      </section>
 
       {/* Unified Blog Footer */}
       <BlogFooterStandard 

@@ -237,11 +237,6 @@ const LocalLLMErasureBlog: React.FC = () => {
 
           {/* FAQs */}
           <Reveal>
-            <FAQSection 
-              faqs={blogFaqs["local-llm-data-erasure"]} 
-              title="Frequently Asked Questions" 
-              className="mt-16 bg-white border border-[#d0d5dc] rounded p-8"
-            />
           </Reveal>
         </section>
 

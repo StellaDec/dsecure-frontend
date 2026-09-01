@@ -194,14 +194,6 @@ const DataErasure250TBBlog: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* FAQ Section */}
-      <section className="bg-[#f4fbf8] py-16 border-t border-[#d4ede4]">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <Reveal>
-            <FAQSection faqs={blogFaqs["250tb-data-erasure-results"]} title="Frequently Asked Questions" />
-          </Reveal>
-        </div>
-      </section>
 
       {/* Unified Blog Footer */}
       <BlogFooterStandard 
