@@ -2003,9 +2003,12 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
           </div>
         </ThemeSection>
 
-        <div className="flex justify-center pb-12">
+        <div className="flex justify-center gap-6 pb-12 items-center flex-wrap">
           <a href="https://launchbuff.com/products/d-secure-file-eraser-ubn6he" target="_blank" rel="noopener noreferrer" title="Featured on LaunchBuff">
             <img src="https://launchbuff.com/badge-featured-dark.svg" alt="Featured on LaunchBuff" width="256" height="80" />
+          </a>
+          <a href="https://postyourstartup.co/startup/d-secure?ref=badge" target="_blank" rel="noopener noreferrer" title="Featured on PostYourStartup">
+            <img src="https://postyourstartup.co/api/badge/d-secure?theme=light" alt="Featured on PostYourStartup" width="212" height="55" />
           </a>
         </div>
 
