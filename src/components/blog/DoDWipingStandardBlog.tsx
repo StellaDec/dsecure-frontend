@@ -256,7 +256,7 @@ const DoDWipingStandardBlog: React.FC = () => {
 
             <script
               type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026') }}
             />
           </div>
         </Reveal>

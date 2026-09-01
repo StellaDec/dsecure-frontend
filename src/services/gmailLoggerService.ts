@@ -20,7 +20,7 @@ import {
 export function getGmailConfig(): GmailConfig {
   return {
     userEmail: import.meta.env.VITE_GMAIL_USER || '',
-    appPassword: import.meta.env.VITE_GMAIL_APP_PASSWORD || '',
+    appPassword: import.meta.env.GMAIL_APP_PASSWORD || '',
     receiverEmail: import.meta.env.VITE_GMAIL_RECEIVER || import.meta.env.VITE_GMAIL_USER || '',
   };
 }

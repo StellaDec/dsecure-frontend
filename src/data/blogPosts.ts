@@ -17,6 +17,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "250tb-data-erasure-results",
+    slug: "250tb-data-erasure-results",
+    title: "250+ TB of Enterprise Data Securely Erased in a Single Month",
+    excerpt: "D-Secure customers securely erased 250+ TB of enterprise data in July 2026 alone. See the methodology, standards, and verification behind the results.",
+    link: "/blog/250tb-data-erasure-results",
+    tag: "Data Security",
+    category: "Case Studies & Results",
+    keywords: "enterprise data erasure, secure data wiping volume, ITAD data destruction scale, NIST 800-88 compliance, data sanitization proof, secure wipe logs",
+    publishDate: "August 10, 2026",
+    author: "Prashant",
+    readTime: "6 min read"
+  },
+  {
+    id: "forensic-preservation-vs-secure-erasure-data-breach",
+    slug: "forensic-preservation-vs-secure-erasure-data-breach",
+    title: "Data Breach Response: Forensic Preservation vs. Secure Laptop Erasure",
+    excerpt: "Wiping a compromised device too early can destroy the evidence you need for containment and legal response. Here's how to sequence preservation and secure erasure correctly.",
+    link: "/blog/forensic-preservation-vs-secure-erasure-data-breach",
+    tag: "Incident Response",
+    category: "Security",
+    keywords: "securely erase devices after a data breach, how to completely wipe a compromised laptop, comprehensive file erasure without skipping folders, NIST 800-88 sanitization report format, post breach forensic hold vs wipe",
+    publishDate: "August 31, 2026",
+    author: "Prashant Saini",
+    readTime: "8 min read",
+    image: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1788179473/sxppsesvgx8elividond.jpg"
+  },
+  {
     id: "enterprise-data-erasure-compliance-guide",
     slug: "enterprise-data-erasure-compliance-guide",
     title: "Enterprise Data Erasure Compliance Guide | D-Secure",

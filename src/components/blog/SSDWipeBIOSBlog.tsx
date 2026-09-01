@@ -235,7 +235,11 @@ const SSDWipeBIOSBlog: React.FC = () => {
           </Reveal>
         </section>
 
-        <section className="max-w-[95%] lg:max-w-6xl mx-auto px-4 md:px-8 py-12">
+        <section className="max-w-[95%] lg:max-w-7xl mx-auto px-4 md:px-8 py-12">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            
+            {/* Main Content Column */}
+            <div className="lg:w-2/3 w-full">
           {/* Quick Answer */}
           <Reveal>
             <div className="bg-[#f4fbf8] border-l-4 border-[#0e7c66] p-6 rounded-none mb-10">
@@ -486,7 +490,44 @@ const SSDWipeBIOSBlog: React.FC = () => {
             <FAQSection faqs={faqItems} title="Frequently Asked Questions" />
           </Reveal>
 
+            </div> {/* End Main Content Column */}
 
+            {/* Sidebar Column */}
+            <aside className="lg:w-1/3 w-full">
+              <div className="sticky top-32">
+                <div className="bg-[#f4fbf8] border border-[#d0d5dc] p-6 rounded-none shadow-sm">
+                  <h3 className="text-xl font-bold text-[#0a2e1e] mb-6">Further Reading & Related Guides</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                      <Link to="/blog/forensic-preservation-vs-secure-erasure-data-breach" className="text-[#0a2e1e] hover:text-[#0e7c66] transition-colors text-base font-medium leading-snug">
+                        Data Breach Response: Forensic Preservation vs. Secure Laptop Erasure
+                      </Link>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                      <Link to="/blog/ieee-2883-complete-guide" className="text-[#0a2e1e] hover:text-[#0e7c66] transition-colors text-base font-medium leading-snug">
+                        IEEE 2883 Complete Guide: Modern Data Sanitization Standard
+                      </Link>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                      <Link to="/blog/itam-disposal-guide" className="text-[#0a2e1e] hover:text-[#0e7c66] transition-colors text-base font-medium leading-snug">
+                        ITAM Disposal Guide: Secure End-of-Life Asset Management
+                      </Link>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                      <Link to="/blog/erasure-verification-process" className="text-[#0a2e1e] hover:text-[#0e7c66] transition-colors text-base font-medium leading-snug">
+                        The Importance of the Erasure Verification Process in Compliance
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </aside>
+
+          </div>
         </section>
 
         <section className="py-20 bg-[#0e7c66] text-center">

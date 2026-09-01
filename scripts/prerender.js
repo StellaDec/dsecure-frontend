@@ -559,6 +559,7 @@ async function prerender() {
         
         if (closingDivPos > contentStart) {
           html = html.substring(0, contentStart) + appHtml + html.substring(closingDivPos);
+          html = html.replace('<div id="root">', '<div id="root" data-prerendered="true">');
         }
       } else {
         // Fallback for dev mode where footer might be different: try finding last div before script
@@ -568,6 +569,7 @@ async function prerender() {
         
         if (closingDivPos > contentStart) {
           html = html.substring(0, contentStart) + appHtml + html.substring(closingDivPos);
+          html = html.replace('<div id="root">', '<div id="root" data-prerendered="true">');
         }
       }
     }

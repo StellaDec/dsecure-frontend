@@ -37,14 +37,8 @@ const comparisonFeatures = [
   },
   {
     feature: "Activation Model",
-    dsecure: "Zero-Trust SaaS / Offline Tokens / PXE",
+    dsecure: "Online and Offline Activation",
     bitraser: "USB Dongle / Online Management Console",
-    better: "dsecure"
-  },
-  {
-    feature: "API for ITAD",
-    dsecure: "Native Webhooks for RazorERP/IQity Integration",
-    bitraser: "Standard Cloud Export",
     better: "dsecure"
   }
 ];

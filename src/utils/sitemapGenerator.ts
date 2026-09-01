@@ -166,7 +166,7 @@ export function updateSitemapTimestamp(): SitemapUrl[] {
 }
 
 export default {
-  generateSitemap
+  generateSitemapXML,
   generateRobotsTxt,
   updateSitemapTimestamp,
   siteRoutes

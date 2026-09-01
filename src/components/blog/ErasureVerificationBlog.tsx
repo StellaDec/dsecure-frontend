@@ -1,14 +1,27 @@
 import React from "react";
 import BlogFooterStandard from "./BlogFooterStandard";
 import SEOHead from "@/components/SEOHead";
-import { getSEOForPage } from "@/utils/seo";
+import { getBlogSEO } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
+import { FAQSection } from "@/components/FAQSection";
+import { blogFaqs } from "@/data/blogFaqs";
 
 const ErasureVerificationBlog: React.FC = () => {
     return (
       <div className="min-h-screen bg-white">
-        <SEOHead seo={getSEOForPage("blog-erasure-verification-process")} />
+        <SEOHead 
+          seo={getBlogSEO({
+            title: "NIST-Compliant Erasure Verification Process Explained",
+            excerpt: "Learn why data erasure verification is critical for NIST compliance. Discover how readback verification ensures data is permanently sanitized and irrecoverable.",
+            slug: "erasure-verification-process",
+            author: "D-Secure Editorial Team",
+            publishDate: "August 10, 2026",
+            keywords: "erasure verification process explained, data erasure verification, what is data purge in data sanitization, readback verification data erasure, secure data erasure standards and methods",
+            category: "Technical Guide",
+            tag: "Data Security",
+          })} 
+        />
 
         {/* Hero Section */}
         <section className="py-16 bg-white shadow-none">
@@ -280,6 +293,16 @@ const ErasureVerificationBlog: React.FC = () => {
             </div>
           </Reveal>
         </section>
+
+        {/* FAQ Section */}
+        <section className="bg-white py-16">
+          <div className="max-w-4xl mx-auto px-4 md:px-8">
+            <Reveal>
+              <FAQSection faqs={blogFaqs["erasure-verification-process"]} title="Frequently Asked Questions" />
+            </Reveal>
+          </div>
+        </section>
+
         <BlogFooterStandard 
           blogId="erasure-verification-process" 
           blogTitle="The Critical Importance of Data Erasure Verification" 

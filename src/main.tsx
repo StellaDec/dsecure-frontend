@@ -134,8 +134,21 @@ const appWrapper = (
 
 const mountApp = () => {
   if (isPrerendered) {
-    // Hydrate statically pre-rendered HTML sent by Node SSG
-    ReactDOM.hydrateRoot(rootElement, appWrapper);
+    try {
+      // Hydrate statically pre-rendered HTML sent by Node SSG
+      // onRecoverableError silences React 18 hydration mismatch warnings in the browser
+      ReactDOM.hydrateRoot(rootElement, appWrapper, {
+        onRecoverableError: (err) => {
+          // production mein in errors ko hide kiya jayega, user ko kuch show nahi hoga
+        }
+      });
+    } catch (e) {
+      // Agar hydration buri tarah fail hota hai (e.g. extension interference), 
+      // toh gracefully fallback to client-side rendering (CSR)
+      rootElement.innerHTML = "";
+      const root = ReactDOM.createRoot(rootElement);
+      root.render(appWrapper);
+    }
   } else {
     // Standard SPA initialization for Dev mode or un-prerendered routes
     // We intentionally DO NOT clear rootElement.innerHTML here.

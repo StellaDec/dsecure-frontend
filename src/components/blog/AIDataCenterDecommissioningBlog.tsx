@@ -8,6 +8,7 @@ import { getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { blogFaqs } from "@/data/blogFaqs";
+import { FAQSection } from "@/components/FAQSection";
 
 const AIDataCenterDecommissioningBlog: React.FC = () => {
     return (
@@ -20,7 +21,7 @@ const AIDataCenterDecommissioningBlog: React.FC = () => {
             slug: "ai-data-center-decommissioning",
             author: "D-Secure Editorial Team",
             publishDate: "July 22, 2026",
-            keywords: "AI data center decommissioning, AI server decommissioning, GPU server data erasure, NVMe data sanitization, secure server decommissioning, AI infrastructure lifecycle management, NVMe cryptographic erase, in-rack data erasure, NIST SP 800-88 Rev. 2",
+            keywords: "AI data center decommissioning secure GPU NVMe erasure, AI server decommissioning best practices, secure GPU data erasure methods, NVMe data sanitization techniques cryptographic erase, in-rack data erasure for AI servers, NIST SP 800-88 Rev. 2 data center decommissioning, AI infrastructure lifecycle management decommissioning phase, GPU server data wiping standards, NVMe secure erase methods",
             category: "Data Center ITAD",
             tag: "Decommissioning",
           })}
@@ -150,9 +151,13 @@ const AIDataCenterDecommissioningBlog: React.FC = () => {
           </Reveal>
 
           {/* FAQ Section */}
-          <div className="mt-10">
-            
-          </div>
+          <Reveal>
+            <FAQSection 
+              faqs={blogFaqs["ai-data-center-decommissioning"]} 
+              title="Frequently Asked Questions" 
+              className="mt-16 bg-[#f4fbf8] border border-[#d0d5dc] rounded p-8"
+            />
+          </Reveal>
         </section>
 
         {/* CTA */}

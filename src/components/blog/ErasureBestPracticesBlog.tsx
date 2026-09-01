@@ -1,9 +1,11 @@
 import React from "react";
 import SEOHead from "@/components/SEOHead";
-import { getSEOForPage } from "@/utils/seo";
+import { getBlogSEO } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ShieldIcon, CheckIcon, ClipboardIcon, GlobeIcon, StarIcon, ArrowRightIcon, HoverIcon } from "@/components/FlatIcons";
+import { FAQSection } from "@/components/FAQSection";
+import { blogFaqs } from "@/data/blogFaqs";
 import BlogFooterStandard from "./BlogFooterStandard";
 
 const ErasureBestPracticesBlog: React.FC = () => {
@@ -12,7 +14,18 @@ const ErasureBestPracticesBlog: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead seo={getSEOForPage("blog-erasure-best-practices")} />
+      <SEOHead 
+        seo={getBlogSEO({
+          title: "10 Crucial Data Erasure Best Practices | D-Secure",
+          excerpt: "Enterprise-grade strategies for implementing secure, compliant, and efficient data erasure across your organization.",
+          slug: "erasure-best-practices",
+          author: "D-Secure Editorial Team",
+          publishDate: "July 25, 2026",
+          keywords: "10 crucial data erasure best practices, data erasure checklist secure disposal policy, data erasure policy, secure IT asset disposition, NIST 800-88 compliance, secure erasure process",
+          category: "Best Practices",
+          tag: "Data Security",
+        })} 
+      />
 
       {/* Hero Section */}
       <section className="py-16 bg-white shadow-none">
@@ -312,6 +325,15 @@ const ErasureBestPracticesBlog: React.FC = () => {
             </div>
           </div>
         </Reveal>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <Reveal>
+            <FAQSection faqs={blogFaqs["erasure-best-practices"]} title="Frequently Asked Questions" />
+          </Reveal>
+        </div>
       </section>
 
       {/* Standardized Blog Footer */}

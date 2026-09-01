@@ -10,8 +10,10 @@ const AIDataCenterDecommissioningBlog = lazy(() => import("../components/blog/AI
 const DBANAlternativeBlog = lazy(() => import("../components/blog/DBANAlternativeBlog"));
 const ServiceNowDataErasureBlog = lazy(() => import("../components/blog/ServiceNowDataErasureBlog"));
 const LocalLLMErasureBlog = lazy(() => import("../components/blog/LocalLLMErasureBlog"));
+const DataErasure250TBBlog = lazy(() => import("../components/blog/DataErasure250TBBlog"));
 const DataSanitizationComplianceBlog = lazy(() => import("../components/blog/DataSanitizationComplianceBlog"));
 const DataSanitizationRisk2026Blog = lazy(() => import("../components/blog/DataSanitizationRisk2026Blog"));
+const ForensicPreservationBlog = lazy(() => import("../components/blog/ForensicPreservationBlog"));
 
 const ErasureBestPracticesBlog = lazy(() => import("../components/blog/ErasureBestPracticesBlog"));
 const AutomatedErasureBlog = lazy(() => import("../components/blog/AutomatedErasureBlog"));
@@ -126,6 +128,8 @@ export const BlogRoutes = () => (
 
     <Route path="blog/data-sanitization-compliance" element={<DataSanitizationComplianceBlog />} />
     <Route path="blog/data-sanitization-risk-2026-india-itad" element={<DataSanitizationRisk2026Blog />} />
+    <Route path="blog/250tb-data-erasure-results" element={<DataErasure250TBBlog />} />
+    <Route path="blog/forensic-preservation-vs-secure-erasure-data-breach" element={<ForensicPreservationBlog />} />
 
     <Route path="blog/erasure-best-practices" element={<ErasureBestPracticesBlog />} />
     <Route path="blog/automate-data-erasure" element={<AutomatedErasureBlog />} />

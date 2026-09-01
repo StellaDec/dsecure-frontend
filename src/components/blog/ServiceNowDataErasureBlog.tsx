@@ -6,6 +6,7 @@ import { getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { blogFaqs } from "@/data/blogFaqs";
+import { FAQSection } from "@/components/FAQSection";
 
 const ServiceNowDataErasureBlog: React.FC = () => {
     return (
@@ -19,7 +20,7 @@ const ServiceNowDataErasureBlog: React.FC = () => {
             author: "Prashant Saini",
             publishDate: "August 15, 2026",
             keywords:
-              "ServiceNow data erasure, ITAM workflow, asset retirement integration, automated data destruction, IT asset management sanitization, ServiceNow hardware asset management, Digital Certificate of erasure, ServiceNow ITAM security",
+              "ServiceNow Data Erasure Integration ITAM Workflow Guide, ServiceNow ITAM automated data destruction asset retirement, ServiceNow hardware asset management data sanitization, Digital Certificate of Erasure ServiceNow ITAM, ServiceNow ITAM security data erasure integration",
             category: "ITAM",
             tag: "Integration",
           })}
@@ -334,9 +335,13 @@ const ServiceNowDataErasureBlog: React.FC = () => {
           </Reveal>
 
           {/* FAQ Section */}
-          <div className="mt-16">
-            
-          </div>
+          <Reveal>
+            <FAQSection 
+              faqs={blogFaqs["servicenow-data-erasure-itam-workflow"]} 
+              title="Frequently Asked Questions" 
+              className="mt-16 bg-white border border-[#d0d5dc] rounded p-8"
+            />
+          </Reveal>
         </section>
 
         <BlogFooterStandard

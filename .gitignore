@@ -209,6 +209,7 @@ SEO_VERIFICATION_REPORT.md
 
 # AI Agent & Editor Tooling
 .agent/skills
+.agents/skills
 .roo/skills
 .trae/skills
 .vibe/skills
@@ -235,3 +236,4 @@ public/sitemap-*.xml
 
 # API Credentials / Keys
 public/pk/
+public/debug.html

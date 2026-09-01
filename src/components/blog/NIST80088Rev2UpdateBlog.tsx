@@ -14,74 +14,58 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Is NIST SP 800-88 Rev. 2 the current final version?",
+        "name": "When was the NIST SP 800-88 Rev. 2 final September 2025 official publication?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. NIST SP 800-88 Rev. 2 is the final, officially published version of the media sanitization guidelines, released on September 26, 2025. It is not a draft — it is the active, controlling standard."
+          "text": "The NIST SP 800-88 Rev. 2 final September 2025 official publication was released by NIST on September 26, 2025, effectively withdrawing the old Rev. 1 guidelines. It is the current and active standard for data erasure."
         }
       },
       {
         "@type": "Question",
-        "name": "When was NIST 800-88 Rev. 2 officially published?",
+        "name": "Where can I find a NIST SP 800-88 Rev. 2 final 2025 summary?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "NIST published the final version of SP 800-88 Rev. 2 on September 26, 2025, replacing the 2014 Rev. 1 guidance."
+          "text": "A brief NIST SP 800-88 Rev. 2 final 2025 summary: It shifts sanitization from a technical task to an ongoing program, relies on IEEE 2883-2022 for media-specific erasure methods, clarifies cloud and VM sanitization, and tightens rules around cryptographic erasure and validation."
         }
       },
       {
         "@type": "Question",
-        "name": "What happened to NIST SP 800-88 Rev. 1?",
+        "name": "Can you provide NIST SP 800-88 Rev. 2 Clear Purge Destroy explained?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Rev. 1 was officially withdrawn by NIST on September 26, 2025 — the same day Rev. 2 became final. Rev. 1 is now archived for historical reference only and should not be used for current compliance programs."
+          "text": "NIST SP 800-88 Rev. 2 Clear Purge Destroy explained: Clear offers basic protection against software recovery tools. Purge uses advanced firmware commands (like NVMe Sanitize) to stop forensic laboratory recovery. Destroy means physical pulverization or incineration."
         }
       },
       {
         "@type": "Question",
-        "name": "Is there a newer version than Rev. 2 in 2026?",
+        "name": "How does NIST SP 800-88 Rev. 2 and IEEE 2883-2022 compliance work together?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. As of 2026, NIST SP 800-88 Rev. 2 remains the current and only active version of the standard."
+          "text": "NIST SP 800-88 Rev. 2 and IEEE 2883-2022 compliance go hand-in-hand. Rev. 2 establishes the risk framework and definitions for Clear, Purge, and Destroy, while IEEE 2883-2022 provides the exact manufacturer-specific commands required to execute those methods on modern storage media."
         }
       },
       {
         "@type": "Question",
-        "name": "Where can I download the official NIST SP 800-88 Rev. 2 document?",
+        "name": "Does NIST SP 800-88 Rev. 2 satisfy DPDP Act India data deletion compliance?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The full text is freely available from the NIST Computer Security Resource Center at csrc.nist.gov — no purchase required, as NIST publications are public domain."
+          "text": "Yes, implementing NIST SP 800-88 Rev. 2 is the best path for DPDP Act India data deletion compliance. The DPDP Act requires data erasure but doesn't specify how. Using NIST Rev. 2 gives fiduciaries a verifiable, defensible audit trail of compliance."
         }
       },
       {
         "@type": "Question",
-        "name": "Does NIST 800-88 Rev. 2 still use Clear, Purge, and Destroy?",
+        "name": "How do I build a media sanitization program India NIST SP 800-88?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — those three categories are still there. What changed is how you get to them. Decisions now start with data confidentiality and reuse intent, and the technical execution detail moved to IEEE 2883-2022 instead of living inside Rev. 2's own tables."
+          "text": "To build a media sanitization program India NIST SP 800-88, organizations must create written policies mapping asset sensitivity to Purge or Destroy methods, utilize certified erasure software, and generate digital Certificates of Erasure to comply with both global standards and domestic DPDP rules."
         }
       },
       {
         "@type": "Question",
-        "name": "Is one overwrite pass really enough under Rev. 2?",
+        "name": "What is the NIST SP 800-88 Revision 2 current status?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For modern magnetic HDDs, yes — a single, verified pass is considered sufficient. That doesn't carry over to flash media, which still needs purpose-built sanitization methods."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Rev. 2 cover cloud and virtual machine sanitization?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, explicitly. VM disk images, cloud storage buckets, and shared infrastructure are all in scope now, including KMS key deletion and getting a Certificate of Deletion from the cloud provider."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does this connect to India's DPDP Act?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "DPDP mandates erasure but stays silent on the technical method. Rev. 2's Clear/Purge/Destroy framework and audit-trail requirements give Indian data fiduciaries a defensible standard to point to when that obligation gets questioned."
+          "text": "The NIST SP 800-88 Revision 2 current status is 'Final and Active'. It was officially adopted in late 2025 and remains the mandatory federal standard for media sanitization. There are no newer drafts or revisions as of 2026."
         }
       }
     ]
@@ -107,7 +91,7 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
     "datePublished": "2026-07-17",
     "dateModified": "2026-08-18",
     "mainEntityOfPage": "https://dsecuretech.com/blog/nist-800-88-rev2-update-2026",
-    "keywords": "NIST SP 800-88 Rev. 2, media sanitization, September 2025, final guidelines, data erasure, IEEE 2883-2022, DPDP Act",
+    "keywords": "NIST SP 800-88 Rev. 2 final September 2025 official publication, NIST SP 800-88 Rev. 2 final 2025 summary, NIST SP 800-88 Rev. 2 Clear Purge Destroy explained, NIST SP 800-88 Rev. 2 and IEEE 2883-2022 compliance, NIST SP 800-88 Rev. 2 DPDP Act India data deletion compliance, media sanitization program India NIST SP 800-88, NIST SP 800-88 Revision 2 current status",
     "about": [
       { "@type": "Thing", "name": "NIST SP 800-88", "description": "Guidelines for Media Sanitization published by the National Institute of Standards and Technology" },
       { "@type": "Thing", "name": "IEEE 2883-2022", "description": "Standard for Sanitizing Storage" },
@@ -124,7 +108,7 @@ const NIST80088Rev2UpdateBlog: React.FC = () => {
           slug: "nist-800-88-rev2-update-2026",
           author: "Prashant Saini",
           publishDate: "July 17, 2026",
-          keywords: "NIST SP 800-88 Rev. 2 final 2025, NIST SP 800-88 Rev. 2 media sanitization official 2025, NIST SP 800-88 Rev. 2 final media sanitization 2025, NIST SP 800-88 Rev. 2 guidelines for media sanitization September 2025, NIST SP 800-88 Rev. 2 final September 2025, NIST SP 800-88 Revision 2 final media sanitization, NIST 800-88, NIST SP 800-88 latest revision 2026, NIST SP 800-88 Rev. 2 final guidelines for media sanitization, IEEE 2883-2022 compliance, Clear Purge Destroy NIST 800-88, cryptographic erase FIPS 140-3, DPDP Act data deletion compliance, media sanitization program India",
+          keywords: "NIST SP 800-88 Rev. 2 final September 2025 official publication, NIST SP 800-88 Rev. 2 final 2025 summary, NIST SP 800-88 Rev. 2 Clear Purge Destroy explained, NIST SP 800-88 Rev. 2 and IEEE 2883-2022 compliance, NIST SP 800-88 Rev. 2 DPDP Act India data deletion compliance, media sanitization program India NIST SP 800-88, NIST SP 800-88 Revision 2 current status",
           category: "Compliance / Standards",
           tag: "Standards",
         })}

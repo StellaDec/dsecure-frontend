@@ -100,6 +100,8 @@ const EarlyAccessPage = lazy(() => import("../pages/EarlyAccessPage"));
 const FileEraserNetworkPage = lazy(() => import("../pages/FileEraserNetwork"));
 const ReportVerificationPage = lazy(() => import("../pages/ReportVerificationPage"));
 const ReportsAndCertificatesPage = lazy(() => import("../pages/ReportsAndCertificatesPage"));
+const CaseStudyHomePage = lazy(() => import("../pages/CaseStudyHomePage"));
+const CaseStudyDetailPage = lazy(() => import("../pages/CaseStudyDetailPage"));
 
 // SEO Competitive Strategy Pages
 const NIST80088Page = lazy(() => import("../pages/compliance/NIST80088Page"));
@@ -337,6 +339,8 @@ export const PublicRoutes = () => (
     <Route path="resources/clone-guide" element={<CloneGuidePage />} />
     <Route path="verify-report" element={<ReportVerificationPage />} />
     <Route path="reports-and-certificates" element={<ReportsAndCertificatesPage />} />
+    <Route path="case-studies" element={<CaseStudyHomePage />} />
+    <Route path="case-studies/:slug" element={<CaseStudyDetailPage />} />
     {/* Priority 1 SEO Redirects */}
     <Route path="itad" element={<Navigate to="/solutions/itad" replace />} />
     <Route path="erasure" element={<Navigate to="/all-products" replace />} />

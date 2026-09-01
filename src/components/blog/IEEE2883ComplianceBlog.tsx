@@ -5,6 +5,9 @@ import { getBlogSEO } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ChevronRight, X, ExternalLink, Check } from "lucide-react";
+import { FAQSection } from "@/components/FAQSection";
+import { blogFaqs } from "@/data/blogFaqs";
+
 const IEEE2883ComplianceBlog: React.FC = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
@@ -73,7 +76,7 @@ const IEEE2883ComplianceBlog: React.FC = () => {
           slug: "ieee-2883-2022-data-sanitization",
           author: "D-Secure Editorial Team",
           publishDate: "May 08, 2026",
-          keywords: "IEEE 2883-2022, Data Sanitization, NVMe Erasure, DPDP Compliance, ITAD India, Drive Eraser",
+          keywords: "IEEE 2883-2022 Data Sanitization standard overview, IEEE 2883-2022 NVMe Erasure, IEEE 2883-2022 Clear Purge Destruct, IEEE 2883-2022 DPDP Compliance India, IEEE 2883-2022 ITAD India, IEEE 2883-2022 key features and requirements",
           category: "Technical Guide",
           tag: "Standards",
         })}
@@ -519,6 +522,15 @@ const IEEE2883ComplianceBlog: React.FC = () => {
                 View Enterprise Plans
               </Link>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <Reveal>
+            <FAQSection faqs={blogFaqs["ieee-2883-compliance"]} title="Frequently Asked Questions" />
           </Reveal>
         </div>
       </section>

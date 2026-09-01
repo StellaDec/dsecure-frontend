@@ -2003,6 +2003,12 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
           </div>
         </ThemeSection>
 
+        <div className="flex justify-center pb-12">
+          <a href="https://launchbuff.com/products/d-secure-file-eraser-ubn6he" target="_blank" rel="noopener noreferrer" title="Featured on LaunchBuff">
+            <img src="https://launchbuff.com/badge-featured-dark.svg" alt="Featured on LaunchBuff" width="256" height="80" />
+          </a>
+        </div>
+
       </div>
 
       {/* Lightbox Modal with Gallery Navigation */}

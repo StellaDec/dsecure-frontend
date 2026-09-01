@@ -21,7 +21,8 @@
     "analytics:verify": "echo 'Analytics Verification...' && echo 'GA4: G-6B20XY3K81' && echo 'Clarity: tkbibktdah'",
     "test": "vitest",
     "test:run": "vitest run",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "doctor": "npx react-doctor@latest"
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.3",
@@ -93,6 +94,8 @@
     "jsdom": "^29.0.1",
     "marked": "^18.0.9",
     "postcss": "^8.4.47",
+    "react-doctor": "^0.9.12",
+    "react-scan": "^0.5.7",
     "rollup-plugin-visualizer": "^6.0.5",
     "tailwindcss": "^3.4.14",
     "terser": "^5.46.0",

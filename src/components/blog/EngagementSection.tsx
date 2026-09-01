@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check } from "lucide-react";
-
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 
 interface EngagementSectionProps {
   blogId: string;
@@ -81,7 +80,7 @@ const EngagementSection: React.FC<EngagementSectionProps> = ({ blogId }) => {
           }`}
           onClick={handleLike}
         >
-          <Check className="w-6 h-6" />
+          <ThumbsUp className="w-5 h-5" />
           <span>{likes > 0 ? likes : 'Like'}</span>
         </button>
         
@@ -93,7 +92,7 @@ const EngagementSection: React.FC<EngagementSectionProps> = ({ blogId }) => {
           }`}
           onClick={handleDislike}
         >
-          <Check className="w-6 h-6" />
+          <ThumbsDown className="w-5 h-5" />
           <span>{dislikes > 0 ? dislikes : 'Dislike'}</span>
         </button>
       </div>

@@ -6,6 +6,7 @@ import { getBlogSEO } from '@/utils/seo';
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { blogFaqs } from "@/data/blogFaqs";
+import { FAQSection } from "@/components/FAQSection";
 
 const LocalLLMErasureBlog: React.FC = () => {
     return (
@@ -19,7 +20,7 @@ const LocalLLMErasureBlog: React.FC = () => {
             author: "Prashant Saini",
             publishDate: "August 15, 2026",
             keywords:
-              "local LLM data erasure, erase local LLM data, AI PC data erasure software, where are local LLM models stored in Windows 11, how to delete Ollama models permanently, LM Studio conversation storage location, how to delete a vector database from a laptop, secure erasure of GGUF model files, AI PC decommissioning, local AI data sanitization",
+              "securely erase local LLM data enterprise AI PCs, where are local LLM models stored Windows 11, how to delete Ollama models permanently, LM Studio conversation storage location, how to delete a vector database from a laptop securely, secure erasure of GGUF model files, AI PC decommissioning data sanitization, local AI data sanitization enterprise, NIST 800-88 secure data erasure for enterprise, DoD 5220.22-M data erasure standards",
             category: "Enterprise Security",
             tag: "Data Sanitization",
           })}
@@ -235,28 +236,13 @@ const LocalLLMErasureBlog: React.FC = () => {
           </Reveal>
 
           {/* FAQs */}
-          {/* <Reveal>
-            <div className="mt-16">
-              <h2 className="text-3xl font-bold text-[#0a2e1e] mb-8 text-center">
-                Frequently Asked Questions
-              </h2>
-              <div className="max-w-4xl mx-auto space-y-4">
-                {blogFaqs["local-llm-data-erasure"]?.map((faq, index) => (
-                  <div
-                    key={index}
-                    className="bg-white border border-[#d0d5dc] p-6 rounded"
-                  >
-                    <h3 className="text-xl font-bold text-[#0a2e1e] mb-3">
-                      {faq.question}
-                    </h3>
-                    <p className="text-[#5a6672] leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal> */}
+          <Reveal>
+            <FAQSection 
+              faqs={blogFaqs["local-llm-data-erasure"]} 
+              title="Frequently Asked Questions" 
+              className="mt-16 bg-white border border-[#d0d5dc] rounded p-8"
+            />
+          </Reveal>
         </section>
 
         <BlogFooterStandard 

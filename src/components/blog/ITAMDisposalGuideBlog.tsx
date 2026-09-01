@@ -1,16 +1,29 @@
 import React from "react";
 import SEOHead from "@/components/SEOHead";
-import { getSEOForPage } from "@/utils/seo";
+import { getBlogSEO } from "@/utils/seo";
 import Reveal from "@/components/Reveal";
 import { Link } from "react-router-dom";
 import { ServerIcon, ClipboardIcon, DatabaseIcon, ShieldIcon, ArrowRightIcon, HoverIcon } from "@/components/FlatIcons";
+import { FAQSection } from "@/components/FAQSection";
+import { blogFaqs } from "@/data/blogFaqs";
 import BlogFooterStandard from "./BlogFooterStandard";
 
 const ITAMDisposalGuideBlog: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead seo={getSEOForPage('blog-itam-disposal-guide')} />
+      <SEOHead 
+        seo={getBlogSEO({
+          title: "IT Asset Manager's Guide to Secure IT Asset Disposal",
+          excerpt: "Essential ITAD best practices for IT Asset Managers to prevent data breaches, maintain compliance, and implement secure data sanitization.",
+          slug: "itam-disposal-guide",
+          author: "D-Secure Editorial Team",
+          publishDate: "July 28, 2026",
+          keywords: "secure IT asset disposal for ITAMs, IT asset disposition best practices ITAM, importance of secure ITAD for IT asset managers, ITAD regulations and compliance 2024 2025 2026, data sanitization methods ITAD, sustainable IT asset disposal",
+          category: "ITAM Playbook",
+          tag: "ITAD",
+        })} 
+      />
 
       {/* Hero Section */}
       <section className="py-16 bg-white shadow-none">
@@ -247,6 +260,15 @@ const ITAMDisposalGuideBlog: React.FC = () => {
                 </Link>
             </div>
         </Reveal>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <Reveal>
+            <FAQSection faqs={blogFaqs["itam-disposal-guide"]} title="Frequently Asked Questions" />
+          </Reveal>
+        </div>
       </section>
 
       {/* Unified Blog Footer */}
