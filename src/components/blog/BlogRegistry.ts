@@ -100,5 +100,6 @@ export const BlogRegistry: Record<string, any> = {
   'chain-of-custody': lazy(() => import('./ChainOfCustodyBlog')),
   'nist-800-88-rev2-update-2026': lazy(() => import('./NIST80088Rev2UpdateBlog')),
   'adisa-alignment-itad-data-erasure': lazy(() => import('./ADISACertificationBlog')),
+  'itad-scope-3-reporting': lazy(() => import('./Scope3ReportingBlog')),
 };
 

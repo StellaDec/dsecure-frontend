@@ -1851,4 +1851,17 @@ export const blogPosts: BlogPost[] = [
     author: "D-Secure Editorial Team",
     readTime: "8 min read"
   },
+  {
+    id: "itad-scope-3-reporting",
+    slug: "itad-scope-3-reporting",
+    title: "ITAD, Secure Data Erasure, and the Growing Importance of Scope 3 Reporting",
+    excerpt: "The CSRD and ESRS put IT Asset Disposition (ITAD) and secure data erasure in a more important position for Scope 3 emissions reporting.",
+    link: "/blog/itad-scope-3-reporting",
+    tag: "Sustainability",
+    category: "Compliance",
+    keywords: "ITAD, Secure Data Erasure, Scope 3 Reporting, CSRD, ESRS, GHG Protocol, Circularity",
+    publishDate: "September 02, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "7 min read"
+  }
 ];

@@ -1667,6 +1667,24 @@ const _blogFaqs: Record<string, FAQ[]> = {
       question: "Can D-Secure integrate with ServiceNow?",
       answer: "Yes, D-Secure Drive Eraser generates highly structured JSON and XML Digital Certificates of Erasure designed specifically for REST API integration with ServiceNow, Jira Service Management, and other enterprise ITAM platforms, automating the entire asset retirement and sanitization workflow."
     }
+  ],
+  "itad-scope-3-reporting": [
+    {
+      "question": "How does ITAD relate to Scope 3 sustainability reporting?",
+      "answer": "IT Asset Disposition (ITAD) helps organizations manage the end-of-life process for hardware. Proper ITAD provides documentation showing whether assets were reused, recycled, or destroyed, which can be relevant for reporting Scope 3 emissions related to waste generation and capital goods lifecycle."
+    },
+    {
+      "question": "Why is secure data erasure necessary before an asset can be reused?",
+      "answer": "Organizations cannot safely reuse or resell retired IT assets if they still contain sensitive corporate or personal data. Secure data erasure removes this security barrier, allowing the functional hardware to enter a secondary lifecycle rather than being unnecessarily destroyed."
+    },
+    {
+      "question": "What is the connection between data security and circular procurement?",
+      "answer": "Circular procurement aims to extend the useful life of products and reduce the need for new manufacturing. Data security (via verifiable erasure) is the enabling step that allows organizations to confidently release their used assets back into the circular economy without risking a data breach."
+    },
+    {
+      "question": "Does the CSRD require companies to track IT asset disposal?",
+      "answer": "While the CSRD does not explicitly mandate \"IT asset tracking\" by name, its ESRS standards require covered organizations to report on material sustainability impacts. If an organization has a large IT estate, the disposal and lifecycle management of those assets can become a relevant component of its broader environmental and waste reporting."
+    }
   ]
 };
 

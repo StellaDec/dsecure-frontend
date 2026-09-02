@@ -55,7 +55,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
   const [fileEraserVariant, setFileEraserVariant] = useState("standard"); // "standard" or "network"
   const [freezeStateVariant, setFreezeStateVariant] = useState("standard"); // "standard", "smart", or "advanced"
   const [forensicImagingVariant, setForensicImagingVariant] = useState("basic"); // "basic", "advanced", or "hardware"
-  const [autopilotCreditType, setAutopilotCreditType] = useState<"standard" | "advanced" | "combo">("standard");
+  const [autopilotCreditType, setAutopilotCreditType] = useState<"standard" | "advanced" | "combo">("advanced");
   const [isTestsExpanded, setIsTestsExpanded] = useState(false); // Hardware diagnostics tests accordion state
 
   // Navigate ref — useEffect dependency se hataane ke liye
@@ -834,28 +834,13 @@ const PricingAndPlanPage: React.FC = memo(() => {
       showDeliveryOptions: false,
     },
     "autopilot-mdm": {
-      title: 
-        autopilotCreditType === "combo" 
-          ? "Autopilot Detector (Combo Credit)" 
-          : autopilotCreditType === "advanced" 
-            ? "Autopilot Detector (Advanced Credit)" 
-            : "Autopilot Detector (Standard Credit)",
+      title: "Autopilot Detector (Advanced Credit)",
       subtitle: "Instantly detect Autopilot & MDM status on devices. (Available for Windows)",
       image: getProductIcon("drive-eraser", 64),
       imageCategory: "autopilot-mdm",
       version: "V1.0.0.0",
-      basePrice: 
-        autopilotCreditType === "combo" 
-          ? 1.5 
-          : autopilotCreditType === "advanced" 
-            ? 2 
-            : 1,
-      originalPrice: 
-        autopilotCreditType === "combo" 
-          ? 3 
-          : autopilotCreditType === "advanced" 
-            ? 4 
-            : 2,
+      basePrice: 2,
+      originalPrice: 4,
       discountPercentage: "50% OFF",
       selectionLabel: "Number of Licenses:",
       selectionNote: "(Pay-per-use)",
@@ -1021,13 +1006,13 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
       if (category === "autopilot-mdm" && licenseCount > 0) {
         let discount = 0;
-        if (licenseCount >= 1000) discount = 0.70;
-        else if (licenseCount >= 500) discount = 0.60;
-        else if (licenseCount >= 250) discount = 0.50;
-        else if (licenseCount >= 100) discount = 0.40;
-        else if (licenseCount >= 50) discount = 0.35;
-        else if (licenseCount >= 25) discount = 0.32;
-        else if (licenseCount >= 10) discount = 0.30;
+        if (licenseCount >= 1000) discount = 0.25; // 2000 * (1 - 0.25) = 1500
+        else if (licenseCount >= 500) discount = 0.20;
+        else if (licenseCount >= 250) discount = 0.15;
+        else if (licenseCount >= 100) discount = 0.10;
+        else if (licenseCount >= 50) discount = 0.05;
+        else if (licenseCount >= 25) discount = 0.02;
+        else if (licenseCount >= 10) discount = 0.00;
         
         price = price * (1 - discount);
       }
@@ -2367,6 +2352,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                           Credit Type:
                         </label>
                         <div className="grid grid-cols-1 gap-2">
+                          {/* 
                           <button
                             onClick={() => setAutopilotCreditType("standard")}
                             className={`flex items-center justify-between p-3 rounded-none border-2 transition-colors ${
@@ -2397,6 +2383,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               </div>
                             )}
                           </button>
+                          */}
 
                           <button
                             onClick={() => setAutopilotCreditType("advanced")}
@@ -2416,9 +2403,9 @@ const PricingAndPlanPage: React.FC = memo(() => {
                                 Detailed Device Insights + Bootable
                               </span>
                             </div>
-                            <span className="text-sm font-bold text-emerald-800">
+                            {/* <span className="text-sm font-bold text-emerald-800">
                               Premium
-                            </span>
+                            </span> */}
                             {autopilotCreditType === "advanced" && (
                               <div className="w-4 h-4 rounded-full bg-[#0e7c66] flex items-center justify-center">
                                 <Check
@@ -2429,6 +2416,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                             )}
                           </button>
 
+                          {/* 
                           <button
                             onClick={() => setAutopilotCreditType("combo")}
                             className={`flex items-center justify-between p-3 rounded-none border-2 transition-colors ${
@@ -2462,6 +2450,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               </div>
                             )}
                           </button>
+                          */}
                         </div>
                       </div>
                     )}

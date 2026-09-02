@@ -115,6 +115,7 @@ const Windows10EOSBlog = lazy(() => import("../components/blog/Windows10EOSBlog"
 const WipeComputerDonatingBlog = lazy(() => import("../components/blog/WipeComputerDonatingBlog"));
 const WorldClassNPSBlog = lazy(() => import("../components/blog/WorldClassNPSBlog"));
 const WindowsFileDeletionVsFormattingBlog = lazy(() => import("../components/blog/WindowsFileDeletionVsFormattingBlog"));
+const Scope3ReportingBlog = lazy(() => import("../components/blog/Scope3ReportingBlog"));
 
 export const BlogRoutes = () => (
   <Route element={<MainLayout />}>
@@ -231,5 +232,6 @@ export const BlogRoutes = () => (
     <Route path="blog/wipe-computer-donating" element={<WipeComputerDonatingBlog />} />
     <Route path="blog/world-class-nps" element={<WorldClassNPSBlog />} />
     <Route path="blog/windows-file-deletion-vs-formatting" element={<WindowsFileDeletionVsFormattingBlog />} />
+    <Route path="blog/itad-scope-3-reporting" element={<Scope3ReportingBlog />} />
   </Route>
 );
