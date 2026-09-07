@@ -65,7 +65,7 @@ const AutomatedErasureBlog: React.FC = () => {
                         <div className="flex-1 text-center p-4 bg-white rounded-none shadow-none border border-[#d0d5dc] relative w-full">
                             <div className="bg-[#0e7c66] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mx-auto mb-3">1</div>
                             <h3 className="font-bold text-[#0a2e1e] text-sm">Intake & Connect</h3>
-                            <p className="text-xs text-[#5a6672] mt-2">PXE boot or network connect multiple devices to the central server.</p>
+                            <p className="text-xs text-[#5a6672] mt-2">PXE boot (Coming Soon) or network connect multiple devices to the central server.</p>
                         </div>
                         <ArrowRightIcon className="w-6 h-6 text-[#d4ede4] hidden md:block" />
                         

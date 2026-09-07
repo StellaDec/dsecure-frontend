@@ -208,11 +208,11 @@ const ServerErasureBlog: React.FC = () => {
 
                 <div className="bg-white/10 rounded-none p-6">
                   <h3 className="text-xl font-bold mb-3">
-                    2. Network PXE-Boot Solution
+                    2. Network PXE-Boot Solution (Coming Soon)
                   </h3>
                   <p className="text-white/90 leading-relaxed mb-4">
                     Wipe multiple servers simultaneously over a network using
-                    PXE boot technology. Perfect for enterprise-scale
+                    PXE boot (Coming Soon) technology. Perfect for enterprise-scale
                     operations.
                   </p>
                   <ul className="space-y-2 text-white/90">
@@ -275,7 +275,7 @@ const ServerErasureBlog: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-[#0e7c66] text-lg mb-4">
-                    PXE Boot Requirements
+                    PXE Boot Requirements (Coming Soon)
                   </h3>
                   <ul className="space-y-3 text-[#5a6672] text-lg">
                     <li className="border-l-4 border-[#0e7c66] pl-8 py-2">

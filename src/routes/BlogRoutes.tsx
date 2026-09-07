@@ -116,6 +116,8 @@ const WipeComputerDonatingBlog = lazy(() => import("../components/blog/WipeCompu
 const WorldClassNPSBlog = lazy(() => import("../components/blog/WorldClassNPSBlog"));
 const WindowsFileDeletionVsFormattingBlog = lazy(() => import("../components/blog/WindowsFileDeletionVsFormattingBlog"));
 const Scope3ReportingBlog = lazy(() => import("../components/blog/Scope3ReportingBlog"));
+// M&A Legacy System Erasure Gap blog post lazy import
+const MALegacySystemErasureGapBlog = lazy(() => import("../components/blog/MALegacySystemErasureGapBlog"));
 
 export const BlogRoutes = () => (
   <Route element={<MainLayout />}>
@@ -233,5 +235,6 @@ export const BlogRoutes = () => (
     <Route path="blog/world-class-nps" element={<WorldClassNPSBlog />} />
     <Route path="blog/windows-file-deletion-vs-formatting" element={<WindowsFileDeletionVsFormattingBlog />} />
     <Route path="blog/itad-scope-3-reporting" element={<Scope3ReportingBlog />} />
+    <Route path="blog/ma-legacy-system-erasure-gap" element={<MALegacySystemErasureGapBlog />} />
   </Route>
 );

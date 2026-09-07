@@ -1200,7 +1200,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                           USB ISO
                         </span>
                         <span className="text-[10px] px-2 py-1 bg-emerald-50 border border-emerald-200 rounded-full text-emerald-800 font-semibold">
-                          PXE Boot
+                          PXE Boot (Coming Soon)
                         </span>
                         <span className="text-[10px] px-2 py-1 bg-emerald-50 border border-emerald-200 rounded-full text-emerald-800 font-semibold">
                           MSI
@@ -1296,7 +1296,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                   offers the flexibility to wipe drives and devices in both
                   internet-enabled locations and offline facilities. Deploy via{" "}
                   <strong className="text-emerald-400">USB drive</strong>,{" "}
-                  <strong className="text-emerald-400">PXE boot</strong> over
+                  <strong className="text-emerald-400">PXE boot (Coming Soon)</strong> over
                   network, or{" "}
                   <strong className="text-emerald-400">MSI package</strong> for
                   remote wiping on Windows endpoints.

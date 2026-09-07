@@ -67,7 +67,7 @@ export default function IntegrationsPage() {
         },
         {
           title: 'Microsoft SCCM / MECM',
-          description: 'Zero-touch PXE boot integration for mass-erasure of enterprise PC fleets directly from the ConfigMgr console.',
+          description: 'Zero-touch PXE boot (Coming Soon) integration for mass-erasure of enterprise PC fleets directly from the ConfigMgr console.',
           details: 'Custom Task Sequence templates included.'
         },
         {

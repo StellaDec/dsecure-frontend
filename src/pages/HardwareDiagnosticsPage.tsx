@@ -89,7 +89,7 @@ const hardwareDiagnosticsTakeaways: KeyTakeawayItem[] = [
     description: "Diagnose PCs, Laptops, Desktops, and Apple Macs (Intel & Silicon M1-M4) assessing health across critical hardware layers.",
   },
   {
-    title: "Mass PXE Deployment",
+    title: "Mass PXE Deployment (Coming Soon)",
     description: "Boot and diagnose up to 255 machines simultaneously over the network for high-volume ITAD facilities.",
   },
   {
@@ -367,8 +367,8 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
       color: "from-emerald-500 to-emerald-600",
     },
     {
-      name: "PXE Boot for Mass Diagnostics",
-      desc: "Deploy diagnostics via PXE network boot to test up to 255 machines simultaneously. Ideal for high-volume ITAD facilities and large-scale asset audits.",
+      name: "PXE Boot (Coming Soon) for Mass Diagnostics",
+      desc: "Deploy diagnostics via PXE network boot (Coming Soon) to test up to 255 machines simultaneously. Ideal for high-volume ITAD facilities and large-scale asset audits.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -448,7 +448,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
       name: "Laptop & Desktops",
       versions: "All major OEM brands supported",
       features: [
-        "Network Boot (PXE)",
+        "Network Boot (PXE - Coming Soon)",
         "USB Boot (UEFI/Legacy)",
         "Offline Diagnostics Mode",
         "Customizable ISO Support",
@@ -503,7 +503,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
       icon: <Globe className="w-6 h-6 text-emerald-600" />,
     },
     {
-      title: "PXE & Network Deployment",
+      title: "PXE & Network Deployment (Coming Soon)",
       desc: "Deploy via PXE to diagnose up to 255 machines simultaneously. Supports UEFI and Legacy BIOS boot modes.",
       icon: <Server className="w-6 h-6 text-emerald-600" />,
     },
@@ -733,7 +733,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-                    Comprehensive hardware health assessment for PC, Laptop, Desktop & Apple Mac (Intel & Silicon M1-M4). Simultaneously diagnose up to 255 machines via PXE boot and generate tamper-evident reports for asset grading and compliance.
+                    Comprehensive hardware health assessment for PC, Laptop, Desktop & Apple Mac (Intel & Silicon M1-M4). Simultaneously diagnose up to 255 machines via PXE boot (Coming Soon) and generate tamper-evident reports for asset grading and compliance.
                   </p>
 
                   {/* Compliance Badges */}
@@ -1179,7 +1179,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                           USB ISO
                         </span>
                         <span className="text-[10px] px-2 py-1 bg-white border border-emerald-200 rounded-full text-emerald-700 font-medium">
-                          PXE Boot
+                          PXE Boot (Coming Soon)
                         </span>
                         <span className="text-[10px] px-2 py-1 bg-white border border-emerald-200 rounded-full text-emerald-700 font-medium">
                           EXE
@@ -1281,7 +1281,7 @@ const HardwareDiagnosticsPage: React.FC = memo(function FileEraserPage() {
                   offers the flexibility to test devices efficiently in both
                   internet-enabled facilities and offline environments. Deploy via{" "}
                   <strong className="text-emerald-800">USB drive</strong>,{" "}
-                  <strong className="text-emerald-800">PXE boot</strong> over
+                  <strong className="text-emerald-800">PXE boot (Coming Soon)</strong> over
                   network, or{" "}
                   <strong className="text-emerald-800">MSI package</strong> for
                   remote diagnostics.

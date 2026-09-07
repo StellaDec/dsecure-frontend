@@ -242,7 +242,7 @@ const ComplianceStandardsPage: React.FC = memo(() => {
                 </h2>
                 <p>
                   In large enterprise deployments involving dozens of
-                  technicians or automated PXE boot servers, leaving algorithm
+                  technicians or automated PXE boot (Coming Soon) servers, leaving algorithm
                   selection to a drop-down menu introduces massive human error
                   risks. A technician might accidentally execute a "fast 1-pass"
                   wipe on a high-risk server containing PCI-DSS data.

@@ -45,7 +45,7 @@ function FeaturesPageContent() {
     },
     {
       title: 'Network Erasure',
-      description: 'PXE boot and LAN-based erasure for remote device management',
+      description: 'PXE boot (Coming Soon) and LAN-based erasure for remote device management',
       icon: <CloudIcon className="w-6 h-6" filled={true} />
     },
     {

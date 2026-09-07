@@ -228,7 +228,7 @@ const PrivateCloudBlog: React.FC = () => {
 
                 <div className="border-l-4 border-[#0e7c66] pl-8 py-2">
                   <h2 className="font-bold text-[#0a2e1e] text-xl mb-3">
-                    Scalability via PXE Boot
+                    Scalability via PXE Boot (Coming Soon)
                   </h2>
                   <p className="text-[#5a6672] text-lg leading-loose">
                     D-Secure <Link to="/products/drive-eraser" className="text-[#0e7c66] hover:underline font-medium">Drive Eraser</Link> can be deployed over WAN or LAN via

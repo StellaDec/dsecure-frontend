@@ -23,7 +23,7 @@ const comparisonFeatures = [
   },
   {
     feature: "Deployment Speed",
-    dsecure: "Instant PXE / URL-based Booting",
+    dsecure: "Instant PXE (Coming Soon) / URL-based Booting",
     whitecanyon: "Manual Software Installation / Deployment Tools",
     better: "dsecure"
   },

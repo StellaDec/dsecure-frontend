@@ -248,8 +248,8 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
       icon: <FileText className="w-6 h-6 text-emerald-600" />,
     },
     {
-      title: "USB or PXE Deployment",
-      desc: "Deploy via bootable USB or over network using PXE boot for scalable simultaneous verification of multiple devices.",
+      title: "USB or PXE Deployment (Coming Soon)",
+      desc: "Deploy via bootable USB or over network using PXE boot (Coming Soon) for scalable simultaneous verification of multiple devices.",
       icon: <Monitor className="w-6 h-6" />,
     },
     {
@@ -463,7 +463,7 @@ const DriveVerifierPage: React.FC = memo(function DriveVerifierPage() {
                   </div>
                   <div className="flex justify-between items-center pb-4 border-b border-slate-700">
                     <span className="text-slate-400">Deployment</span>
-                    <span className="font-medium">Bootable USB / PXE Boot</span>
+                    <span className="font-medium">Bootable USB / PXE Boot (Coming Soon)</span>
                   </div>
                   <div className="flex justify-between items-center pb-4 border-b border-slate-700">
                     <span className="text-slate-400">Report Formats</span>

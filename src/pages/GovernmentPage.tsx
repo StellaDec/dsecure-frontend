@@ -334,7 +334,7 @@ const GovernmentPage: React.FC = () => {
                   {[
                     "Wipe data at facilities with or without internet",
                     "Bulk erasure of drives at high-security defense establishments",
-                    "Target loose drives in a rack or chassis with PXE boot",
+                    "Target loose drives in a rack or chassis with PXE boot (Coming Soon)",
                     "Generate tamper-evident audit trails for every sanitized asset",
                   ].map((benefit) => (
                     <div key={benefit} className="flex items-start gap-4">
@@ -367,8 +367,8 @@ const GovernmentPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8">
               {[
                 { 
-                  title: "Network & PXE Wiping", 
-                  desc: "Sanitize up to 65,000 devices simultaneously over a network using our scalable PXE boot variant.",
+                  title: "Network & PXE Wiping (Coming Soon)", 
+                  desc: "Sanitize up to 65,000 devices simultaneously over a network using our scalable PXE boot (Coming Soon) variant.",
                   icon: Network
                 },
                 { 

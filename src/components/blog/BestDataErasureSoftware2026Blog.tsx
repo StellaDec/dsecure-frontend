@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     question: "How do enterprises handle data erasure for remote and distributed workforces?",
-    answer: "With remote work becoming permanent for many enterprises, data erasure software must support distributed wiping without requiring physical device return. Modern solutions like D-Secure offer URL-based or PXE boot deployment that allows IT teams to remotely trigger certified erasure on laptops and workstations anywhere in the world. The erasure certificate is automatically uploaded to a centralized cloud console, giving compliance teams real-time visibility across all locations. This is a key differentiator from legacy tools that require physical USB dongles or on-site technicians for every device.",
+    answer: "With remote work becoming permanent for many enterprises, data erasure software must support distributed wiping without requiring physical device return. Modern solutions like D-Secure offer URL-based or PXE boot (Coming Soon) deployment that allows IT teams to remotely trigger certified erasure on laptops and workstations anywhere in the world. The erasure certificate is automatically uploaded to a centralized cloud console, giving compliance teams real-time visibility across all locations. This is a key differentiator from legacy tools that require physical USB dongles or on-site technicians for every device.",
   }
 ];
 
@@ -316,7 +316,7 @@ export default function BestDataErasureSoftware2026Blog() {
                     <td className="border border-slate-200 p-4">Transparent, from $25/license</td>
                     <td className="border border-slate-200 p-4 text-emerald-600 font-medium">Perpetual (no expiry)</td>
                     <td className="border border-slate-200 p-4">NIST 800-88, DoD 5220.22-M, IEEE 2883</td>
-                    <td className="border border-slate-200 p-4 text-emerald-600 font-medium">Yes — URL/PXE boot</td>
+                    <td className="border border-slate-200 p-4 text-emerald-600 font-medium">Yes — URL/PXE boot (Coming Soon)</td>
                   </tr>
                   <tr>
                     <td className="border border-slate-200 p-4 font-semibold">Blancco</td>

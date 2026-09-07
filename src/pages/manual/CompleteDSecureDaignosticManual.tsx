@@ -28,12 +28,12 @@ const navigationTree: NavItem[] = [
         title: "About D-Secure Drive Diagnostic",
         content: (
             <>
-                <p className="text-slate-700 leading-relaxed mb-4"><strong><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></strong> is a boot-based, enterprise-grade hardware testing solution designed to comprehensively evaluate the health and functionality of computer systems. Operating independently of the host operating system, it boots from a USB or PXE environment to ensure accurate, low-level hardware access without OS interference.</p>
+                <p className="text-slate-700 leading-relaxed mb-4"><strong><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link></strong> is a boot-based, enterprise-grade hardware testing solution designed to comprehensively evaluate the health and functionality of computer systems. Operating independently of the host operating system, it boots from a USB or PXE (Coming Soon) environment to ensure accurate, low-level hardware access without OS interference.</p>
                 <p className="text-slate-700 leading-relaxed mb-4"><Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link> performs rigorous testing across <strong>21+ hardware components</strong> including Motherboard, CPU, RAM, Display, Storage, Battery, Wi-Fi, Bluetooth, Audio, USB Ports, Fingerprint Sensor, Camera, and Keyboard. Each diagnostic operation generates a Tamper-evident audit report with a definitive <strong>Pass/Fail/Warning</strong> grade that can be uploaded to the D-Secure Cloud Console for centralized reporting.</p>
                 <p className="text-slate-700 leading-relaxed mb-6">The software features an intuitive graphical interface with a step-by-step wizard that guides users through component detection, test configuration, interactive testing, progress monitoring, and completion verification. It is the perfect tool for IT administrators, refurbishers, ITAD companies, and quality assurance teams.</p>
                 <h3 className="text-lg font-semibold text-slate-800 mb-3">Key Features:</h3>
                 <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4">
-                    <li><strong>Boot-Based Operation</strong> — Boots from USB or PXE, independent of the host OS for accurate low-level hardware diagnostics.</li>
+                    <li><strong>Boot-Based Operation</strong> — Boots from USB or PXE (Coming Soon), independent of the host OS for accurate low-level hardware diagnostics.</li>
                     <li><strong>Automatic Hardware Detection</strong> — Scans and identifies all internal and external components accurately.</li>
                     <li><strong>21+ Comprehensive Tests</strong> — Evaluates everything from CPU and RAM to Fingerprint, Audio, and Wi-Fi.</li>
                     <li><strong>Pass/Fail Grading System</strong> — Automatically grades components as Pass, Fail, or Warning based on health thresholds.</li>
@@ -153,7 +153,7 @@ const navigationTree: NavItem[] = [
                 title: "Welcome Screen & System Summary",
                 content: (
                     <>
-                        <p className="text-slate-700 leading-relaxed mb-4">When the system boots using <Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link> (via USB or PXE), the <strong>Welcome Screen</strong> is displayed. This screen provides an initial overview of your system hardware and serves as the starting point for the testing process.</p>
+                        <p className="text-slate-700 leading-relaxed mb-4">When the system boots using <Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link> (via USB or PXE - Coming Soon), the <strong>Welcome Screen</strong> is displayed. This screen provides an initial overview of your system hardware and serves as the starting point for the testing process.</p>
                         <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4 mb-4">
                             <li><strong>Product Name & Version</strong> — <Link to="/products/drive-eraser-diagnostic" className="text-brand hover:underline">D-Secure Drive Diagnostic</Link>, Boot Edition 1.0.0vbeta</li>
                             <li><strong>Boot Mode</strong> — UEFI or Legacy BIOS</li>

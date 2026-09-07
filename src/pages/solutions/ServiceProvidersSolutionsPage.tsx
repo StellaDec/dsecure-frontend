@@ -266,7 +266,7 @@ const ServiceProvidersSolutionsPage: React.FC = () => {
                 },
                 {
                   title: "Onsite & Offsite Erasure",
-                  desc: "Flexible deployment via USB boot or PXE network to handle client relocations or data center decommissioning.",
+                  desc: "Flexible deployment via USB boot or PXE network (Coming Soon) to handle client relocations or data center decommissioning.",
                   icon: Network,
                 },
                 {
@@ -387,7 +387,7 @@ const ServiceProvidersSolutionsPage: React.FC = () => {
               {[
                 {
                   q: "How many drives can we wipe simultaneously as an MSP?",
-                  a: "Administrators can perform centralized network wiping on up to 65,000 drives simultaneously using PXE boot, targeting servers across global branch networks or data centers.",
+                  a: "Administrators can perform centralized network wiping on up to 65,000 drives simultaneously using PXE boot (Coming Soon), targeting servers across global branch networks or data centers.",
                 },
                 {
                   q: "Do the data erasure licenses expire?",

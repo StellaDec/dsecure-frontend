@@ -154,7 +154,7 @@ const UltratestComparisonBlog: React.FC = () => {
                   </h3>
                   <p className="text-white/90 text-sm">
                     Available in cloud, network cloud, and offline variants.
-                    Deploy using USB solution or via PXE boot.
+                    Deploy using USB solution or via PXE boot (Coming Soon).
                   </p>
                 </div>
                 <div className="bg-white/10 rounded-none p-6">

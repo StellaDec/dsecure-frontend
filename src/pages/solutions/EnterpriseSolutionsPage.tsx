@@ -443,7 +443,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
                 {
                   icon: Server,
                   title: "Network Server Wiping",
-                  desc: "Wipe up to 65,000 drives simultaneously over a network using PXE boot, with support for RAID dismantling.",
+                  desc: "Wipe up to 65,000 drives simultaneously over a network using PXE boot (Coming Soon), with support for RAID dismantling.",
                 },
                 {
                   icon: FolderMinus,
@@ -611,7 +611,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
               {[
                 {
                   q: "What types of drives can be erased over the network?",
-                  a: "Administrators can perform centralized network wiping on up to 65,000 drives simultaneously using PXE boot, targeting servers, laptops, and desktop fleets seamlessly.",
+                  a: "Administrators can perform centralized network wiping on up to 65,000 drives simultaneously using PXE boot (Coming Soon), targeting servers, laptops, and desktop fleets seamlessly.",
                 },
                 {
                   q: "Does it support automatic RAID dismantling?",

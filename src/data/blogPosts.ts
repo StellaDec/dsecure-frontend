@@ -1863,5 +1863,20 @@ export const blogPosts: BlogPost[] = [
     publishDate: "September 02, 2026",
     author: "D-Secure Editorial Team",
     readTime: "7 min read"
+  },
+  {
+    // Marriott M&A Legacy System Erasure Gap Case Study blog post metadata
+    id: "ma-legacy-system-erasure-gap",
+    slug: "ma-legacy-system-erasure-gap",
+    title: "Marriott Bought a Hotel Chain. It Also Bought a Breach That Had Already Been Running for Two Years.",
+    excerpt: "M&A due diligence checklists cover financials and legal exposure, but often ignore what's still running on acquired servers. Discover the legacy system erasure gap and how to solve it.",
+    link: "/blog/ma-legacy-system-erasure-gap",
+    tag: "M&A Security",
+    category: "Compliance",
+    keywords: "M&A cybersecurity risk, legacy system erasure gap, Marriott Starwood breach case study, post merger data disposition, enterprise IT asset disposition, certified data erasure, zombie IT systems, Transition Services Agreement data security",
+    publishDate: "September 07, 2026",
+    author: "D-Secure Editorial Team",
+    readTime: "9 min read",
+    image: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1788783055/nc20reaqyrgr04yisc3q.jpg"
   }
 ];

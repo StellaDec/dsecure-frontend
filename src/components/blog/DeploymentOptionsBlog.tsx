@@ -171,7 +171,7 @@ const DeploymentOptionsBlog: React.FC = () => {
 
                 <div className="border-l-4 border-[#0e7c66] pl-8 py-4">
                   <h3 className="font-bold text-[#0a2e1e] text-2xl mb-4">
-                    2. Using PXE Boot
+                    2. Using PXE Boot (Coming Soon)
                   </h3>
                   <p className="text-[#5a6672] text-lg leading-loose mb-4">
                     With this method, you can erase up to{" "}
@@ -187,7 +187,7 @@ const DeploymentOptionsBlog: React.FC = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-[#0e7c66] rounded-full mr-3 mt-2"></span>
-                      Configure the PXE Server to enable PXE boot for required
+                      Configure the PXE Server to enable PXE boot (Coming Soon) for required
                       network services
                     </li>
                     <li className="flex items-start">

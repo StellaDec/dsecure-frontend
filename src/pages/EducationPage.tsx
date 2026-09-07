@@ -391,7 +391,7 @@ const EducationPage: React.FC = () => {
                 </p>
                 <ul className="space-y-4">
                   {[
-                    "Network PXE booting for mass wiping of entire computer labs",
+                    "Network PXE booting (Coming Soon) for mass wiping of entire computer labs",
                     "USB sanitization for hybrid work laptops and off-site staff",
                     "Cloud-based management for central tracking across multiple campuses",
                     "Sustainability-focused disposal through high-grade reusable wiping",

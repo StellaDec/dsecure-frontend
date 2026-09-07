@@ -365,7 +365,7 @@ const HealthcareSolutionsPage: React.FC = () => {
                 </p>
                 <ul className="space-y-4">
                   {[
-                    "PXE Boot solution for mass wiping of network servers",
+                    "PXE Boot solution (Coming Soon) for mass wiping of network servers",
                     "USB Boot solution for on-site standalone machine erasure",
                     "MSI Package for remote Windows endpoint wiping",
                     "Centralized Cloud Console for license & report management",

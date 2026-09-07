@@ -591,7 +591,7 @@ const FinancialSolutionsPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "PXE Boot Solution",
+                  title: "PXE Boot Solution (Coming Soon)",
                   desc: "Erase up to 65,000 drives simultaneously over a network. Ideal for data center decommissioning in large banks.",
                   icon: Server,
                 },
@@ -674,7 +674,7 @@ const FinancialSolutionsPage: React.FC = () => {
                 },
                 {
                   q: "Does D-Secure support enterprise servers and data center decommissioning?",
-                  a: "Yes, using our PXE Boot Solution, IT administrators can wipe up to 65,000 drives simultaneously over a secure network, making it highly scalable for large financial institution data centers.",
+                  a: "Yes, using our PXE Boot Solution (Coming Soon), IT administrators can wipe up to 65,000 drives simultaneously over a secure network, making it highly scalable for large financial institution data centers.",
                 },
               ].map((faq, idx) => (
                 <details

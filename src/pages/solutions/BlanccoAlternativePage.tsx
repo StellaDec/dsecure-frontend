@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 const comparisonFeatures = [
   {
     feature: "Deployment Architecture",
-    dsecure: "Zero-Touch Cloud/PXE/USB (Instant Setup)",
+    dsecure: "Zero-Touch Cloud/PXE (Coming Soon)/USB (Instant Setup)",
     blancco: "Complex Management Servers (Heavy Configuration)",
     better: "dsecure"
   },
@@ -141,7 +141,7 @@ export default function BlanccoAlternativePage() {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">Zero-Touch Automation</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Forget manual USB booting. Deploy D-Secure via PXE, Network, or Cloud Agents for massive scale without physical intervention.
+                  Forget manual USB booting. Deploy D-Secure via PXE (Coming Soon), Network, or Cloud Agents for massive scale without physical intervention.
                 </p>
               </div>
 

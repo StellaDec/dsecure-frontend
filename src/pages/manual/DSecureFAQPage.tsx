@@ -64,7 +64,7 @@ const faqs: FAQItem[] = [
   {
     category: 'technical',
     question: "Can I use D-Secure over a network via PXE?",
-    answer: "Yes. Our Drive Eraser Network version supports PXE (Preboot Execution Environment) booting. This allows IT teams to wipe hundreds of decommissioned laptops or servers over a LAN without needing physical bootable media for each device."
+    answer: "Yes. Our Drive Eraser Network version supports PXE (Preboot Execution Environment) booting (Coming Soon). This allows IT teams to wipe hundreds of decommissioned laptops or servers over a LAN without needing physical bootable media for each device."
   },
   {
     category: 'erasure',

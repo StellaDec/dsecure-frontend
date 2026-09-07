@@ -338,7 +338,7 @@ const capabilities = [
   },
   {
     title: "Centrally Managed Bulk Erasure",
-    desc: "Use the network cloud variant to wipe multiple devices or drives over a local network through PXE boot, while managing, monitoring, and reporting through the cloud console.",
+    desc: "Use the network cloud variant to wipe multiple devices or drives over a local network through PXE boot (Coming Soon), while managing, monitoring, and reporting through the cloud console.",
     icon: Database,
   },
   {

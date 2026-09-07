@@ -13,7 +13,7 @@ const WindowsCompliancePage: React.FC = memo(() => {
     {
       id: 1,
       question: "Can D-Secure wipe multiple Windows PCs at once?",
-      answer: "Absolutely. By utilizing our PXE Network Boot deployment, you can trigger simultaneous erasures on hundreds of Windows workstations or servers over your corporate LAN without manual intervention on each device."
+      answer: "Absolutely. By utilizing our PXE Network Boot (Coming Soon) deployment, you can trigger simultaneous erasures on hundreds of Windows workstations or servers over your corporate LAN without manual intervention on each device."
     },
     {
       id: 2,
@@ -192,7 +192,7 @@ const WindowsCompliancePage: React.FC = memo(() => {
                 <hr className="my-12 border-slate-200" />
 
                 <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                  4. Enterprise Deployments via PXE (Network Boot)
+                  4. Enterprise Deployments via PXE (Network Boot - Coming Soon)
                 </h2>
                 <p>
                   For large-scale corporate environments (e.g., global call
@@ -204,7 +204,7 @@ const WindowsCompliancePage: React.FC = memo(() => {
                 </p>
 
                 <h3 className="text-2xl font-bold text-slate-800 mt-8 mb-4">
-                  The PXE Execution Workflow
+                  The PXE Execution Workflow (Coming Soon)
                 </h3>
                 <ol className="list-decimal space-y-4 pl-6 text-slate-700">
                   <li>

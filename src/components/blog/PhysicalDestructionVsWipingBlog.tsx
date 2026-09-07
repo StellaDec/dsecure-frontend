@@ -97,7 +97,7 @@ const PhysicalDestructionVsWipingBlog: React.FC = () => {
                             </div>
                         </div>
                         <p className="text-white/80 text-lg leading-relaxed">
-                            Furthermore, using solutions like D-Secure allows you to perform automated data erasure via PXE boot directly inside your data center, eliminating all chain of custody risks before the hardware ever unplugs from the rack.
+                            Furthermore, using solutions like D-Secure allows you to perform automated data erasure via PXE boot (Coming Soon) directly inside your data center, eliminating all chain of custody risks before the hardware ever unplugs from the rack.
                         </p>
                     </div>
                 </Reveal>

@@ -101,5 +101,7 @@ export const BlogRegistry: Record<string, any> = {
   'nist-800-88-rev2-update-2026': lazy(() => import('./NIST80088Rev2UpdateBlog')),
   'adisa-alignment-itad-data-erasure': lazy(() => import('./ADISACertificationBlog')),
   'itad-scope-3-reporting': lazy(() => import('./Scope3ReportingBlog')),
+  // M&A Legacy System Erasure Gap blog post lazy loaded
+  'ma-legacy-system-erasure-gap': lazy(() => import('./MALegacySystemErasureGapBlog')),
 };
 

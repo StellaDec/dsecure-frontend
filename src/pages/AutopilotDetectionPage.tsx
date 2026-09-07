@@ -33,24 +33,21 @@ import {
   Zap
 } from 'lucide-react';
 
+// See D-Secure Autopilot Detection in Action section ke gallery screenshots (side-extension button cropped)
 const galleryImages = [
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900829/gxf91pw0zskqpenqmcyh.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900829/xgs5jrdap2wsigl6qojv.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900829/wivbftt6fvj3e0immtxc.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/fkjqw32dvfo2qoyvbjt6.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/rfrisa46sw3vtwq6h0mf.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900829/wkpyjljk8preij7lwvk1.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/voqh2eka0js4w4yarvfw.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/piw7h3rpxcqxgakzvwsl.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/moxtoxzqtmwpdixles6g.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900828/bog9kdzcyxxowsbciqtp.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/jtgchvtpyh6l0tn4ghve.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/eerupedbpykv6i6gdmzg.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/b2tukty3rf019qfbcgom.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/fxudhnk0epcuvdymmexz.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/cpgikzcbf6fduwquvc7n.png", alt: "Autopilot Detection in Action" },
-  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1782901753/lteeyrwnw9udzt9ikiub.png", alt: "Autopilot Detection in Action" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/c_crop,g_north_west,h_695,w_1490/v1788769227/woedq0w2anhfv0yoytpd.png", alt: "Autopilot Detection in Action - Initial Device Scan" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/c_crop,g_north_west,h_694,w_1490/v1788769226/i0ky4fj3xqnray4oepny.png", alt: "Autopilot Detection in Action - Cloud Verification" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1788769223/iik41slcld5wo8fwikrv.png", alt: "Autopilot Detection in Action - Hardware & BIOS Info" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/c_crop,g_north_west,h_693,w_1490/v1788769222/j62ygknfhnjgagi2b2jo.png", alt: "Autopilot Detection in Action - Identifier Extraction" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/c_crop,g_north_west,h_691,w_1490/v1788769218/zpz5ywnnkgwi1i1j3veu.png", alt: "Autopilot Detection in Action - Autopilot Cloud Lookup" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1788769209/u2hvrmvfimyjrj8sodpc.png", alt: "Autopilot Detection in Action - Batch Configuration" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/c_crop,g_north_west,h_693,w_1490/v1788769200/ngnkiopooyatb9js5kah.png", alt: "Autopilot Detection in Action - Status Confirmation" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1788769200/wzd4zlw6jitqvnvadgqm.png", alt: "Autopilot Detection in Action - Audit Details" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1788769200/r0s8lxeplxloewdia8zg.png", alt: "Autopilot Detection in Action - Hash Verification" },
+  { url: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1788769199/hictr7g1frmqeyg94rsh.png", alt: "Autopilot Detection in Action - Diagnostic Summary" },
 ];
+
+
 
 const AutopilotDetectionPage: React.FC = memo(
   function AutopilotDetectionPage() {
@@ -150,7 +147,8 @@ const AutopilotDetectionPage: React.FC = memo(
       },
       {
         title: "Scale Processing",
-        desc: "Deploy via USB or PXE to process multiple assets simultaneously.",
+        // PXE boot abhi coming soon hai
+        desc: "Deploy via USB or PXE (Coming Soon) to process multiple assets simultaneously.",
       }
     ];
 
@@ -173,7 +171,8 @@ const AutopilotDetectionPage: React.FC = memo(
       },
       {
         q: "Can this be run at scale over a network?",
-        a: "Yes. Using PXE (Network) Boot, you can process high volumes of assets simultaneously, with results automatically synced to your cloud dashboard or ERP system.",
+        // PXE network boot feature ke aane ki jankari
+        a: "Network PXE Boot support is coming soon. Once available, you can process high volumes of assets simultaneously, with results automatically synced to your cloud dashboard or ERP system.",
       },
       {
         q: "Which compliance standards does it support?",
@@ -233,7 +232,8 @@ const AutopilotDetectionPage: React.FC = memo(
       },
       {
         title: "Parallel Processing",
-        desc: "Check multiple devices simultaneously via PXE boot, significantly increasing your facility's daily throughput.",
+        // PXE mass check feature coming soon hai
+        desc: "Check multiple devices simultaneously via PXE boot (Coming Soon), significantly increasing your facility's daily throughput.",
         icon: Zap,
       },
     ];
@@ -265,8 +265,13 @@ const AutopilotDetectionPage: React.FC = memo(
       },
     ];
 
-    // Deployment platforms — Lucide component references
-    const platforms: { name: string; desc: string; icon: React.ElementType }[] = [
+    // Deployment platforms — Lucide component references aur coming soon status
+    const platforms: {
+      name: string;
+      desc: string;
+      icon: React.ElementType;
+      isComingSoon?: boolean;
+    }[] = [
       {
         name: "USB Boot Mode",
         desc: "Ideal for manual processing. Boot from a specialized D-Secure Detection USB to fetch cloud status instantly.",
@@ -276,6 +281,63 @@ const AutopilotDetectionPage: React.FC = memo(
         name: "PXE Network Boot",
         desc: "Recommended for bulk volume. Deploy detection across your local network for automated, high-speed auditing.",
         icon: Server,
+        isComingSoon: true, // PXE Boot feature abhi coming soon state mein hai
+      },
+    ];
+
+    // USB Boot Mode workflow ke steps
+    interface UsbBootStep {
+      step: string;
+      title: string;
+      desc: string;
+    }
+
+    const usbBootSteps: UsbBootStep[] = [
+      {
+        step: "01",
+        title: "Prepare the Boot Drive",
+        desc: "Install or update Ventoy on your engineering USB, then copy the D-Secure Autopilot Bootable ISO to the drive root — no sub-folders required.",
+      },
+      {
+        step: "02",
+        title: "Boot the Target Device",
+        desc: "Power on the asset, select the USB from the manufacturer boot menu (F12 / F10 / Esc), and launch the D-Secure application directly from Ventoy.",
+      },
+      {
+        step: "03",
+        title: "Auto-Detect & Configure",
+        desc: "The application identifies hardware, BIOS, and TPM details instantly. Apply a saved .dsad configuration profile automatically, or select one manually for the batch.",
+      },
+      {
+        step: "04",
+        title: "Scan for Autopilot",
+        desc: "One click triggers a live Microsoft Autopilot enrollment lookup — no local OS, no manual intervention.",
+      },
+      {
+        step: "05",
+        title: "Verify & Move On",
+        desc: "Enrollment status (Enrolled / Unenrolled / Locked) displays instantly alongside the serial and model — confirm the match and process the next unit.",
+      },
+    ];
+
+    // Batch processing ki features list
+    interface BatchProcessingFeature {
+      title: string;
+      desc: string;
+    }
+
+    const batchProcessingFeatures: BatchProcessingFeature[] = [
+      {
+        title: "Reusable Configuration Profiles",
+        desc: "Save .dsad files with Wi-Fi, login, and custom asset metadata (asset_tag, cost_center) so every technician runs an identical, error-free scan.",
+      },
+      {
+        title: "No OS Dependency",
+        desc: "Works on devices with corrupted, missing, or inaccessible operating systems.",
+      },
+      {
+        title: "Consistent Identifiers",
+        desc: "Every scan captures manufacturer, model, serial, UUID, BIOS version, and TPM status for the compliance record.",
       },
     ];
 
@@ -370,21 +432,33 @@ const AutopilotDetectionPage: React.FC = memo(
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                      {/* <button
+                      {/* Buy Now button ko uncomment kiya aur theme match ki */}
+                      <button
                         onClick={() =>
                           navigate("/pricing-and-plan?product=autopilot-mdm")
                         }
-                        className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold px-8 py-4 rounded-none shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                        className="inline-flex items-center justify-center gap-2 bg-[#0e7c66] text-white font-bold px-8 py-4 rounded-none hover:bg-[#0a2e1e] transition-colors"
                       >
                         Buy Now
-                        <ArrowRight className="w-6 h-6 text-emerald-600" />
-                      </button> */}
-                      <button
+                        {/* <Cart className="w-5 h-5 text-white" /> */}
+                      </button>
+                      {/* Contact Sales button ko comment out kiya */}
+                      {/* <button
                         onClick={() => scrollToSection("contact")}
                         className="inline-flex items-center justify-center gap-2 bg-[#0e7c66] text-white font-bold px-8 py-4 rounded-none hover:bg-[#0a2e1e] transition-colors"
                       >
                         Contact Sales
-                      </button>
+                      </button> */}
+                      {/* User Guide PDF button */}
+                      <a
+                        href="https://downloads.dsecuretech.com/documents/pdf/D-Secure_Autopilot_Guide_.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 border border-[#0e7c66] text-[#0e7c66] hover:bg-[#0e7c66] hover:text-white font-bold px-8 py-4 rounded-none transition-colors"
+                      >
+                        <FileText className="w-5 h-5" />
+                        User Guide
+                      </a>
                     </div>
 
                     
@@ -411,7 +485,7 @@ const AutopilotDetectionPage: React.FC = memo(
                         <img 
                           loading="lazy" 
                           decoding="async"
-                          src="https://res.cloudinary.com/dhwi5wevf/image/upload/v1782900827/cpgikzcbf6fduwquvc7n.png"
+                          src="https://res.cloudinary.com/dhwi5wevf/image/upload/c_crop,g_north_west,h_695,w_1490/v1788769227/woedq0w2anhfv0yoytpd.png"
                           alt="D-Secure Autopilot Detection Software Interface"
                           className="w-full h-auto object-cover"
                         />
@@ -846,13 +920,88 @@ const AutopilotDetectionPage: React.FC = memo(
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {platforms.map((platform, i) => (
                   <Reveal key={i} delayMs={i * 100}>
-                    <ThemeCard className="h-full">
-                      <ThemeIconContainer icon={platform.icon} size="lg" className="mb-6" />
+                    <ThemeCard className="h-full relative overflow-hidden">
+                      <div className="flex items-start justify-between mb-6">
+                        <ThemeIconContainer icon={platform.icon} size="lg" />
+                        {/* Agar platform coming soon hai toh badge render karein */}
+                        {platform.isComingSoon && (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 shadow-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                            Coming Soon
+                          </span>
+                        )}
+                      </div>
                       <h3 className="text-2xl font-bold text-[#0a2e1e] mb-4">{platform.name}</h3>
                       <p className="text-[#5a6672] leading-relaxed">{platform.desc}</p>
                     </ThemeCard>
                   </Reveal>
                 ))}
+              </div>
+
+              {/* ================= HOW USB BOOT MODE WORKS ================= */}
+              <div className="mt-16 pt-12 border-t border-slate-200">
+                <Reveal>
+                  <div className="text-center max-w-3xl mx-auto mb-12">
+                    <div className="inline-flex items-center gap-2 bg-[#d4ede4] text-[#0a2e1e] px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-4">
+                      Pre-OS Detection Workflow
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0a2e1e] mb-4">
+                      How USB Boot Mode Works
+                    </h3>
+                    <p className="text-[#5a6672] text-base sm:text-lg leading-relaxed">
+                      A fully offline, pre-OS detection workflow for devices where a live-Windows agent isn't practical — built on a bootable ISO and Ventoy.
+                    </p>
+                  </div>
+                </Reveal>
+
+                {/* 5-Step Process Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+                  {usbBootSteps.map((stepItem, idx) => (
+                    <Reveal key={idx} delayMs={idx * 80}>
+                      <div className="bg-white border border-slate-200 p-6 flex flex-col h-full hover:border-[#0e7c66] hover:shadow-md transition-all duration-200 relative group">
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-2xl font-black text-[#0e7c66]">
+                            {stepItem.step}
+                          </span>
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#0e7c66]/20 group-hover:bg-[#0e7c66] transition-colors" />
+                        </div>
+                        <h4 className="text-lg font-bold text-[#0a2e1e] mb-2 leading-snug">
+                          {stepItem.title}
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#5a6672] leading-relaxed">
+                          {stepItem.desc}
+                        </p>
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+
+                {/* Built for Batch Processing Box */}
+                <Reveal delayMs={200}>
+                  <div className="bg-[#f4fbf8] border border-[#d4ede4] p-6 sm:p-8 lg:p-10">
+                    <div className="mb-6">
+                      <h4 className="text-xl sm:text-2xl font-bold text-[#0a2e1e] mb-2 flex items-center gap-2.5">
+                        <CheckCircle className="w-6 h-6 text-[#0e7c66]" />
+                        Built for Batch Processing
+                      </h4>
+                      <div className="h-0.5 w-16 bg-[#0e7c66]"></div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                      {batchProcessingFeatures.map((feature, idx) => (
+                        <div key={idx} className="space-y-2">
+                          <h5 className="font-bold text-[#0a2e1e] text-base flex items-start gap-2">
+                            <span className="text-[#0e7c66] font-bold">•</span>
+                            {feature.title}
+                          </h5>
+                          <p className="text-sm text-[#5a6672] leading-relaxed pl-3.5">
+                            {feature.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Reveal>
               </div>
             </div>
           </ThemeSection>
@@ -906,7 +1055,7 @@ const AutopilotDetectionPage: React.FC = memo(
                         }, */
                         {
                           label: "Deployment",
-                          value: "x86/x64 Bootable ISO (USB 3.0 / PXE)",
+                          value: "x86/x64 Bootable ISO (USB 3.0 / PXE - Coming Soon)",
                         },
                         /* {
                           label: "Report Format",

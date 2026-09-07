@@ -33,12 +33,12 @@ const navigationTree: NavItem[] = [
     title: "About D-Secure Drive Eraser",
     content: (
       <>
-        <p className="text-slate-700 leading-relaxed mb-4"><strong><Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link></strong> is a boot-based, enterprise-grade drive sanitization solution designed to permanently and irreversibly erase all data from storage devices including HDDs, SSDs, NVMe drives, and USB storage. The software boots from a USB or PXE environment, operating independently of the host operating system to ensure complete and Tamper-evident audit reports with certificate for data destruction.</p>
+        <p className="text-slate-700 leading-relaxed mb-4"><strong><Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link></strong> is a boot-based, enterprise-grade drive sanitization solution designed to permanently and irreversibly erase all data from storage devices including HDDs, SSDs, NVMe drives, and USB storage. The software boots from a USB or PXE (Coming Soon) environment, operating independently of the host operating system to ensure complete and Tamper-evident audit reports with certificate for data destruction.</p>
         <p className="text-slate-700 leading-relaxed mb-4"><Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link> supports <strong>20+ internationally recognized erasure standards</strong> including NIST SP 800-88 Rev1, DoD 5220.22-M (3-pass and 7-pass), and custom overwrite methods. Each erasure operation generates a Tamper-evident audit report with certificate that can be uploaded to the D-Secure Cloud Console for centralized reporting and audit trail management.</p>
         <p className="text-slate-700 leading-relaxed mb-6">The software features an intuitive graphical interface with a step-by-step wizard that guides users through drive detection, wipe configuration, destructive confirmation, wipe progress monitoring, and completion verification. It requires no prior technical expertise and is suitable for IT administrators, ITAD companies, data centers, and compliance teams.</p>
         <h3 className="text-lg font-semibold text-slate-800 mb-3">Key Features:</h3>
         <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4">
-          <li><strong>Boot-Based Operation</strong> — Boots from USB or PXE, independent of host OS for maximum security.</li>
+          <li><strong>Boot-Based Operation</strong> — Boots from USB or PXE (Coming Soon), independent of host OS for maximum security.</li>
           <li><strong>Automatic Hardware Detection</strong> — Scans SATA, NVMe, and USB controllers to detect all connected storage devices.</li>
           <li><strong>20+ Erasure Standards</strong> — Supports NIST SP 800-88, DoD 5220.22-M, and custom overwrite patterns.</li>
           <li><strong>Multiple Verification Levels</strong> — Full verification, sample verification (10%), or no verification options.</li>
@@ -158,7 +158,7 @@ const navigationTree: NavItem[] = [
         title: "Welcome Screen & System Summary",
         content: (
           <>
-            <p className="text-slate-700 leading-relaxed mb-4">When the system boots using <Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link> (via USB or PXE), the <strong>Welcome Screen</strong> is displayed. This screen provides an overview of your system hardware and serves as the starting point for the drive sanitization process.</p>
+            <p className="text-slate-700 leading-relaxed mb-4">When the system boots using <Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link> (via USB or PXE - Coming Soon), the <strong>Welcome Screen</strong> is displayed. This screen provides an overview of your system hardware and serves as the starting point for the drive sanitization process.</p>
             <ul className="list-disc list-inside space-y-2 text-slate-700 ml-4 mb-4">
               <li><strong>Product Name & Version</strong> — <Link to="/products/drive-eraser" className="text-brand hover:underline">D-Secure Drive Eraser</Link>, Boot Edition 1.0.0vbeta</li>
               <li><strong>Boot Mode</strong> — UEFI or Legacy BIOS</li>

@@ -27,19 +27,23 @@ const PricingAndPlanPage: React.FC = memo(() => {
   const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState("drive-eraser");
   // Har product ke liye alag quantity maintain karne ke liye state object
-  const [licenseQuantities, setLicenseQuantities] = useState<Record<string, string>>({
+  const [licenseQuantities, setLicenseQuantities] = useState<
+    Record<string, string>
+  >({
     "drive-eraser": "1",
     "file-eraser": "1",
     "hardware-diagnostics": "100",
-    "smart-diagnostic": "1"
+    "smart-diagnostic": "1",
+    "autopilot-mdm": "10",
   });
-  // Current selected category ki quantity nikalna
-  const selectedLicenses = licenseQuantities[selectedCategory] || "1";
+  // Current selected category ki quantity nikalna (autopilot ke liye default 10)
+  const selectedLicenses =
+    licenseQuantities[selectedCategory] ||
+    (selectedCategory === "autopilot-mdm" ? "10" : "1");
   // Quantity update karne wala helper function
   const setSelectedLicenses = (val: string) => {
-    setLicenseQuantities(prev => ({ ...prev, [selectedCategory]: val }));
+    setLicenseQuantities((prev) => ({ ...prev, [selectedCategory]: val }));
   };
-
 
   const [selectedYears, setSelectedYears] = useState("1");
   const [selectedOS, setSelectedOS] = useState("Select");
@@ -55,7 +59,9 @@ const PricingAndPlanPage: React.FC = memo(() => {
   const [fileEraserVariant, setFileEraserVariant] = useState("standard"); // "standard" or "network"
   const [freezeStateVariant, setFreezeStateVariant] = useState("standard"); // "standard", "smart", or "advanced"
   const [forensicImagingVariant, setForensicImagingVariant] = useState("basic"); // "basic", "advanced", or "hardware"
-  const [autopilotCreditType, setAutopilotCreditType] = useState<"standard" | "advanced" | "combo">("advanced");
+  const [autopilotCreditType, setAutopilotCreditType] = useState<
+    "standard" | "advanced" | "combo"
+  >("advanced");
   const [isTestsExpanded, setIsTestsExpanded] = useState(false); // Hardware diagnostics tests accordion state
 
   // Navigate ref — useEffect dependency se hataane ke liye
@@ -77,12 +83,12 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
     initDodoCheckout({
       onComplete: () => {
-        console.log(' Payment complete — redirecting to success page');
+        console.log(" Payment complete — redirecting to success page");
         setIsBuyNowLoading(false);
-        navigateRef.current('/order-success');
+        navigateRef.current("/order-success");
       },
       onClose: () => {
-        console.log(' User ne checkout band kiya');
+        console.log(" User ne checkout band kiya");
         setIsBuyNowLoading(false);
       },
     });
@@ -110,14 +116,12 @@ const PricingAndPlanPage: React.FC = memo(() => {
       if (mappedPlan) {
         setSelectedPlan(mappedPlan);
       }
-
     }
 
     const productFromUrl = searchParams.get("product");
     if (productFromUrl) {
       setSelectedCategory(productFromUrl);
     }
-
 
     // Read section parameter to expand File Eraser section if needed
     const sectionFromUrl = searchParams.get("section");
@@ -152,7 +156,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
       productFromUrl === "forensic-imaging"
     ) {
       // DEFAULT: Agar data-migration ya forensic-imaging (hidden) URL mein ho toh Freeze State dikhao
-      if (productFromUrl === "data-migration" || productFromUrl === "forensic-imaging") {
+      if (
+        productFromUrl === "data-migration" ||
+        productFromUrl === "forensic-imaging"
+      ) {
         setSelectedCategory("freeze-state");
       }
       setActiveTab("migration");
@@ -383,35 +390,34 @@ const PricingAndPlanPage: React.FC = memo(() => {
   ];
 
   // Tab categorization
-    const filteredCategories = categories.filter((cat) => {
-      if (activeTab === "eraser") {
-        return (
-          cat.id === "drive-eraser" ||
-          cat.id === "file-eraser"
-          // cat.id === "virtual-machine-eraser" ||
-          // cat.id === "smartphone-eraser"
-        );
-      }
-      if (activeTab === "migration") {
-        return (
-          cat.id === "freeze-state"
-          // cat.id === "data-migration" ||
-          // cat.id === "forensic-imaging"
-        );
-      }
-      if (activeTab === "tools") {
-        return cat.id === "autopilot-mdm";
-      }
-      // Diagnostic is now hidden
-      return false;
-      /* 
+  const filteredCategories = categories.filter((cat) => {
+    if (activeTab === "eraser") {
+      return (
+        cat.id === "drive-eraser" || cat.id === "file-eraser"
+        // cat.id === "virtual-machine-eraser" ||
+        // cat.id === "smartphone-eraser"
+      );
+    }
+    if (activeTab === "migration") {
+      return (
+        cat.id === "freeze-state"
+        // cat.id === "data-migration" ||
+        // cat.id === "forensic-imaging"
+      );
+    }
+    if (activeTab === "tools") {
+      return cat.id === "autopilot-mdm";
+    }
+    // Diagnostic is now hidden
+    return false;
+    /* 
       return (
         cat.id === "hardware-diagnostics" ||
         cat.id === "smart-diagnostic"
         // cat.id === "smartphone-diagnostic"
       );
       */
-    });
+  });
 
   // Plans configuration with their features and pricing based on D-Secure feature matrix
   const planOptions = [
@@ -686,32 +692,33 @@ const PricingAndPlanPage: React.FC = memo(() => {
           ? "D-Secure File Eraser Network"
           : "D-Secure File Eraser Professional",
       subtitle:
-        fileEraserVariant === "network"
-          ? <>Enterprise network-wide file sanitization and management across your domain. (Available for Windows 10/11 <strong>x64</strong> operating system)</>
-          : <>Complete File, Folder &amp; Application Trace Elimination. (Available for Windows 10/11 <strong>x64</strong> operating system)</>,
+        fileEraserVariant === "network" ? (
+          <>
+            Enterprise network-wide file sanitization and management across your
+            domain. (Available for Windows 10/11 <strong>x64</strong> operating
+            system)
+          </>
+        ) : (
+          <>
+            Complete File, Folder &amp; Application Trace Elimination.
+            (Available for Windows 10/11 <strong>x64</strong> operating system)
+          </>
+        ),
       image: getProductIcon("file-eraser", 64),
       imageCategory: "file-eraser",
-      version: fileEraserVariant === "network" ? "Network Edition" : "Professional",
+      version:
+        fileEraserVariant === "network" ? "Network Edition" : "Professional",
       basePrice: fileEraserVariant === "network" ? 50 : 39.99,
       originalPrice: fileEraserVariant === "network" ? 50 : 39.99,
       discountPercentage: "Volume Discount",
       selectionLabel: "Number of Licenses:",
       selectionNote: "(Pay per year license)",
-      options: [
-        "1",
-        "10",
-        "50",
-        "100",
-        "250",
-        "500",
-        "custom",
-      ],
+      options: ["1", "10", "50", "100", "250", "500", "custom"],
       showDeliveryOptions: false,
     },
     "hardware-diagnostics": {
       title: "D-Secure Hardware Diagnostics",
-      subtitle:
-        "Hardware Health Testing for Laptops, PCs, Desktops & Servers.",
+      subtitle: "Hardware Health Testing for Laptops, PCs, Desktops & Servers.",
       image: getProductIcon("drive-eraser", 64),
       imageCategory: "hardware-diagnostics",
       version: "V1.0.0.0",
@@ -736,8 +743,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
     },
     "smart-diagnostic": {
       title: "D-Secure Smart Diagnostic",
-      subtitle:
-        "Real-time Disk Health & Performance Monitoring.",
+      subtitle: "Real-time Disk Health & Performance Monitoring.",
       image: getProductIcon("drive-eraser", 64),
       imageCategory: "smart-diagnostic",
       version: "V1.0.0.0",
@@ -796,16 +802,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
       discountPercentage: "50% OFF",
       selectionLabel: "Number of Licenses:",
       selectionNote: "(Pay-per-use)",
-      options: [
-        "1",
-        "10",
-        "50",
-        "100",
-        "250",
-        "500",
-        "1000",
-        "custom",
-      ],
+      options: ["1", "10", "50", "100", "250", "500", "1000", "custom"],
       showDeliveryOptions: false,
     },
     "smartphone-diagnostic": {
@@ -820,38 +817,22 @@ const PricingAndPlanPage: React.FC = memo(() => {
       discountPercentage: "50% OFF",
       selectionLabel: "Number of Licenses:",
       selectionNote: "(Pay per year license)",
-      options: [
-        "1",
-        "10",
-        "25",
-        "50",
-        "100",
-        "250",
-        "500",
-        "1000",
-        "custom",
-      ],
+      options: ["1", "10", "25", "50", "100", "250", "500", "1000", "custom"],
       showDeliveryOptions: false,
     },
     "autopilot-mdm": {
-      title: "Autopilot Detector (Advanced Credit)",
-      subtitle: "Instantly detect Autopilot & MDM status on devices. (Available for Windows)",
+      title: "Autopilot Detector",
+      subtitle:
+        "Instantly detect Autopilot & MDM status on devices. (Available for Windows)",
       image: getProductIcon("drive-eraser", 64),
       imageCategory: "autopilot-mdm",
       version: "V1.0.0.0",
       basePrice: 2,
       originalPrice: 4,
       discountPercentage: "50% OFF",
-      selectionLabel: "Number of Licenses:",
+      selectionLabel: "Number of Credits:",
       selectionNote: "(Pay-per-use)",
-      options: [
-        "10",
-        "50",
-        "100",
-        "500",
-        "1000",
-        "custom",
-      ],
+      options: ["10", "50", "100", "500", "1000", "1500", "custom"],
       showDeliveryOptions: false,
     },
     "data-migration": {
@@ -865,17 +846,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
       discountPercentage: "50% OFF",
       selectionLabel: "Number of Licenses:",
       selectionNote: "(Pay-per-use)",
-      options: [
-        "1",
-        "10",
-        "25",
-        "50",
-        "100",
-        "250",
-        "500",
-        "1000",
-        "custom",
-      ],
+      options: ["1", "10", "25", "50", "100", "250", "500", "1000", "custom"],
       showDeliveryOptions: false,
     },
     "freeze-state": {
@@ -909,17 +880,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
       discountPercentage: "50% OFF",
       selectionLabel: "Number of Licenses:",
       selectionNote: `(Starting from $${freezeStateVariant === "smart" ? 85 : freezeStateVariant === "advanced" ? 90 : 80})`,
-      options: [
-        "1",
-        "10",
-        "25",
-        "50",
-        "100",
-        "250",
-        "500",
-        "1000",
-        "custom",
-      ],
+      options: ["1", "10", "25", "50", "100", "250", "500", "1000", "custom"],
       showDeliveryOptions: false,
     },
     "forensic-imaging": {
@@ -951,13 +912,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
       discountPercentage: "50% OFF",
       selectionLabel: "Number of Units:",
       selectionNote: `(Starting from $${forensicImagingVariant === "advanced" ? "10,526" : forensicImagingVariant === "hardware" ? "31,579" : "1,053"})`,
-      options: [
-        "1",
-        "5",
-        "10",
-        "25",
-        "custom",
-      ],
+      options: ["1", "5", "10", "25", "custom"],
       showDeliveryOptions: forensicImagingVariant === "hardware",
     },
   };
@@ -992,12 +947,17 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
       if (category === "drive-eraser" && licenseCount > 0) {
         let discount = 0;
-        if (licenseCount >= 1000) discount = 0.80; // 80%
-        else if (licenseCount >= 100) discount = 0.75; // 75%
-        else if (licenseCount >= 50) discount = 0.70; // 70%
-        else if (licenseCount >= 25) discount = 0.65; // 65%
-        else if (licenseCount >= 10) discount = 0.55; // 55%
-        else if (licenseCount >= 5) discount = 0.30; // 30%
+        if (licenseCount >= 1000)
+          discount = 0.8; // 80%
+        else if (licenseCount >= 100)
+          discount = 0.75; // 75%
+        else if (licenseCount >= 50)
+          discount = 0.7; // 70%
+        else if (licenseCount >= 25)
+          discount = 0.65; // 65%
+        else if (licenseCount >= 10)
+          discount = 0.55; // 55%
+        else if (licenseCount >= 5) discount = 0.3; // 30%
 
         price = price * (1 - discount);
         // Explicitly handle Qty 5 to match 87.75 if basePrice is 25
@@ -1006,15 +966,20 @@ const PricingAndPlanPage: React.FC = memo(() => {
 
       if (category === "autopilot-mdm" && licenseCount > 0) {
         let discount = 0;
-        if (licenseCount >= 1000) discount = 0.25; // 2000 * (1 - 0.25) = 1500
-        else if (licenseCount >= 500) discount = 0.20;
+        if (licenseCount >= 1500)
+          discount = 1 - 2000 / (product.basePrice * 1500); // 1500 credits ke liye total price $2000
+        else if (licenseCount >= 1000)
+          discount = 0.25; // 2000 * (1 - 0.25) = 1500
+        else if (licenseCount >= 500) discount = 0.2;
         else if (licenseCount >= 250) discount = 0.15;
-        else if (licenseCount >= 100) discount = 0.10;
+        else if (licenseCount >= 100) discount = 0.1;
         else if (licenseCount >= 50) discount = 0.05;
         else if (licenseCount >= 25) discount = 0.02;
-        else if (licenseCount >= 10) discount = 0.00;
-        
+        else if (licenseCount >= 10) discount = 0.0;
+
         price = price * (1 - discount);
+        // Explicitly 1500 credits ke liye price $2000 set kiya
+        if (licenseCount === 1500) price = 2000;
       }
 
       return Math.round(price * 100) / 100;
@@ -1028,18 +993,18 @@ const PricingAndPlanPage: React.FC = memo(() => {
     ) {
       const yearCount = Number.parseInt(years);
       let price = product.basePrice * licenseCount * yearCount;
-      
+
       if (category === "file-eraser" && licenseCount > 0) {
         let discount = 0;
-        if (licenseCount >= 500) discount = 0.60;
-        else if (licenseCount >= 250) discount = 0.50;
-        else if (licenseCount >= 100) discount = 0.40;
+        if (licenseCount >= 500) discount = 0.6;
+        else if (licenseCount >= 250) discount = 0.5;
+        else if (licenseCount >= 100) discount = 0.4;
         else if (licenseCount >= 50) discount = 0.35;
-        else if (licenseCount >= 10) discount = 0.30;
-        
+        else if (licenseCount >= 10) discount = 0.3;
+
         price = price * (1 - discount);
       }
-      
+
       return Math.round(price * 100) / 100;
     }
 
@@ -1093,7 +1058,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
     } else if (category === "hardware-diagnostics") {
       return [
         "PC, Laptops & Mac (Intel & Silicon M1-M4)",
-        "PXE Mass Diagnostics (up to 255 Machines)",
+        "PXE Mass Diagnostics (Coming Soon) (up to 255 Machines)",
         "10+ Automated Component Health Tests",
         "12+ Manual Assessment & Interaction Tests",
         "MDM Enrollment Detection (Mac)",
@@ -1247,7 +1212,6 @@ const PricingAndPlanPage: React.FC = memo(() => {
     }
     return [];
   };
-
 
   const getDisplayPrice = () => {
     if (selectedLicenses === "custom" || selectedPlan === "custom")
@@ -1409,8 +1373,11 @@ const PricingAndPlanPage: React.FC = memo(() => {
     // 1. Prevent double clicks — timestamp-based guard (React StrictMode safe)
     if (isBuyNowLoading) return;
     const now = Date.now();
-    if ((window as any).__lastCheckoutTime && now - (window as any).__lastCheckoutTime < 3000) {
-      console.warn('⚠️ Checkout debounce — 3 second cooldown active');
+    if (
+      (window as any).__lastCheckoutTime &&
+      now - (window as any).__lastCheckoutTime < 3000
+    ) {
+      console.warn("⚠️ Checkout debounce — 3 second cooldown active");
       return;
     }
     (window as any).__lastCheckoutTime = now;
@@ -1463,7 +1430,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
         selectedCategory === "drive-eraser" &&
         driveEraserVariant === "diagnostics"
       ) {
-        checkoutProductId = import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_1;
+        checkoutProductId = import.meta.env
+          .VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_1;
       }
 
       // ── OLD REDIRECT CODE (commented out) ──
@@ -1494,7 +1462,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
       }
 
       // ── Drive Eraser (Standard) ke liye Product-based Overlay Checkout ──
-      if (selectedCategory === "drive-eraser" && driveEraserVariant === "standard") {
+      if (
+        selectedCategory === "drive-eraser" &&
+        driveEraserVariant === "standard"
+      ) {
         const DRIVE_ERASER_PRODUCT_IDS: Record<string, string> = {
           "1": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER,
           "5": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_5,
@@ -1519,7 +1490,10 @@ const PricingAndPlanPage: React.FC = memo(() => {
       }
 
       // ── Drive Eraser Diagnostic ke liye Product-based Overlay Checkout ──
-      if (selectedCategory === "drive-eraser" && driveEraserVariant === "diagnostics") {
+      if (
+        selectedCategory === "drive-eraser" &&
+        driveEraserVariant === "diagnostics"
+      ) {
         const DIAGNOSTIC_PRODUCT_IDS: Record<string, string> = {
           "1": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_1,
           "5": import.meta.env.VITE_DODO_PRODUCT_DRIVE_ERASER_DIAG_5,
@@ -1543,24 +1517,41 @@ const PricingAndPlanPage: React.FC = memo(() => {
         return;
       }
 
-      // ── Autopilot MDM Advanced & Combo ke liye Payment Link Checkout ──
+      // ── Autopilot Detector ke liye Product-based Overlay Checkout ──
       if (selectedCategory === "autopilot-mdm") {
-        if (autopilotCreditType === "advanced") {
-          await openPaymentLinkCheckout(`${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/session/cks_0Nj4TS4xCTnavVJs9SDUg`);
-          return;
-        } else if (autopilotCreditType === "combo") {
-          await openPaymentLinkCheckout(`${import.meta.env.VITE_DODOPAYMENTS_BASE_URL}/session/cks_0Nj4TmltwSMpAOZgqlpcp`);
+        const AUTOPILOT_PRODUCT_IDS: Record<string, string> = {
+          "10":
+            import.meta.env.VITE_DODO_PRODUCT_AUTOPILOT_10 ||
+            "pdt_0Nn56vWfHnzjChnVaNPu0",
+          "50":
+            import.meta.env.VITE_DODO_PRODUCT_AUTOPILOT_50 ||
+            "pdt_0Nn57HK53G2N80zVc4soB",
+          "100":
+            import.meta.env.VITE_DODO_PRODUCT_AUTOPILOT_100 ||
+            "pdt_0Nn584uxNfz3vcvwFEM7o",
+          "500":
+            import.meta.env.VITE_DODO_PRODUCT_AUTOPILOT_500 ||
+            "pdt_0Nn58L0536puXbb3Q3DLJ",
+          "1000":
+            import.meta.env.VITE_DODO_PRODUCT_AUTOPILOT_1000 ||
+            "pdt_0Nn58it1Sel08Ddh7uiEh",
+          "1500":
+            import.meta.env.VITE_DODO_PRODUCT_AUTOPILOT_1500 || "",
+        };
+
+        const pid = AUTOPILOT_PRODUCT_IDS[selectedLicenses];
+        if (pid) {
+          await openOverlayCheckout(pid, 1);
           return;
         }
+        setShowCustomModal(true);
+        setIsBuyNowLoading(false);
+        return;
       }
 
       // ── Default: Overlay Checkout — SDK apna full-screen overlay dikhayega ──
-      await openOverlayCheckout(
-        checkoutProductId,
-        quantity
-      );
+      await openOverlayCheckout(checkoutProductId, quantity);
       return;
-
     } catch (error) {
       console.error("Checkout error:", error);
       showToast("Something went wrong. Please try again.", "error");
@@ -1608,52 +1599,53 @@ const PricingAndPlanPage: React.FC = memo(() => {
   const pricingSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "D-Secure Data Erasure Software",
-    "applicationCategory": "SecurityApplication",
-    "operatingSystem": "Windows, macOS, Linux",
-    "offers": {
+    name: "D-Secure Data Erasure Software",
+    applicationCategory: "SecurityApplication",
+    operatingSystem: "Windows, macOS, Linux",
+    offers: {
       "@type": "AggregateOffer",
-      "priceCurrency": "USD",
-      "lowPrice": "10.00",
-      "highPrice": "500.00",
-      "offerCount": "10",
+      priceCurrency: "USD",
+      lowPrice: "10.00",
+      highPrice: "500.00",
+      offerCount: "10",
       // Google Search Console 'Missing field' warnings fix karne ke liye
-      "hasMerchantReturnPolicy": {
+      hasMerchantReturnPolicy: {
         "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 30,
-        "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/FreeReturn"
+        applicableCountry: "US",
+        returnPolicyCategory:
+          "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/FreeReturn",
       },
-      "shippingDetails": {
+      shippingDetails: {
         "@type": "OfferShippingDetails",
-        "shippingRate": {
+        shippingRate: {
           "@type": "MonetaryAmount",
-          "value": "0",
-          "currency": "USD"
+          value: "0",
+          currency: "USD",
         },
-        "shippingDestination": {
+        shippingDestination: {
           "@type": "DefinedRegion",
-          "addressCountry": "US"
+          addressCountry: "US",
         },
-        "deliveryTime": {
+        deliveryTime: {
           "@type": "ShippingDeliveryTime",
-          "handlingTime": {
+          handlingTime: {
             "@type": "QuantitativeValue",
-            "minValue": 0,
-            "maxValue": 0,
-            "unitCode": "DAY"
+            minValue: 0,
+            maxValue: 0,
+            unitCode: "DAY",
           },
-          "transitTime": {
+          transitTime: {
             "@type": "QuantitativeValue",
-            "minValue": 0,
-            "maxValue": 0,
-            "unitCode": "DAY"
-          }
-        }
-      }
-    }
+            minValue: 0,
+            maxValue: 0,
+            unitCode: "DAY",
+          },
+        },
+      },
+    },
   };
 
   // getSEOForPage ek baar hi call karo — double call se schema duplication hoti thi
@@ -1664,17 +1656,20 @@ const PricingAndPlanPage: React.FC = memo(() => {
       <SEOHeadNative seo={pageSEO} structuredData={pricingSchema} />
 
       {/* Independence Day Banner Strip - Always Visible Until Expiration */}
-      {new Date().getTime() <= new Date('2026-08-15T23:59:59').getTime() && (
+      {new Date().getTime() <= new Date("2026-08-15T23:59:59").getTime() && (
         <div className="w-full bg-[#f4fcf8] border-b border-[#0e7c66]/20">
           <div className="relative w-full flex justify-center">
-            <Link to="/pricing-and-plan?product=file-eraser" className="block w-full transition-opacity hover:opacity-95 duration-300">
-              <img 
-                src="/banner-strip.jpeg" 
-                alt="Independence Day Offer - Click for Pricing and Plans" 
+            <Link
+              to="/pricing-and-plan?product=file-eraser"
+              className="block w-full transition-opacity hover:opacity-95 duration-300"
+            >
+              <img
+                src="/banner-strip.jpeg"
+                alt="Independence Day Offer - Click for Pricing and Plans"
                 className="w-full h-auto rounded-none shadow-md block"
               />
             </Link>
-            <button 
+            <button
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -1685,12 +1680,15 @@ const PricingAndPlanPage: React.FC = memo(() => {
               className="absolute left-[41.7%] sm:left-[42.2%] md:left-[42.7%] top-[60%] -translate-y-1/2 flex items-center justify-center p-0.5 sm:p-1 md:p-1.5 text-white bg-transparent hover:bg-white/20 transition-colors z-10"
               title="Copy Code IND15"
             >
-              {copied ? <Check className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" /> : <Copy className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />}
+              {copied ? (
+                <Check className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+              ) : (
+                <Copy className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+              )}
             </button>
           </div>
         </div>
       )}
-
 
       <ThemeSection className="min-h-screen">
         <div className="container mx-auto px-4 xs:px-6 sm:px-6 md:px-8 max-w-7xl">
@@ -2397,7 +2395,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                               <span
                                 className={`text-sm font-bold ${autopilotCreditType === "advanced" ? "text-emerald-700" : "text-gray-700"}`}
                               >
-                                Advanced Credit
+                                Autopilot Credit
                               </span>
                               <span className="text-[10px] text-gray-500">
                                 Detailed Device Insights + Bootable
@@ -2530,7 +2528,9 @@ const PricingAndPlanPage: React.FC = memo(() => {
                                 <option key={option} value={option}>
                                   {option === "custom"
                                     ? " Custom Quantity"
-                                    : `${option} licenses`}
+                                    : selectedCategory === "autopilot-mdm"
+                                      ? `${option} credits`
+                                      : `${option} licenses`}
                                 </option>
                               ))}
                             </select>
@@ -2582,7 +2582,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                   <div className="text-xs text-gray-500">{getPriceNote()}</div>
                 </div>
 
-                {/* Action Button */}
+                {/* Action Button - Autopilot, Drive Eraser Standard aur File Eraser Standard ke liye Buy Now enable hai */}
                 <ThemeButton
                   onClick={handleBuyNow}
                   disabled={
@@ -2590,7 +2590,8 @@ const PricingAndPlanPage: React.FC = memo(() => {
                       (selectedCategory === "drive-eraser" &&
                         driveEraserVariant === "standard") ||
                       (selectedCategory === "file-eraser" &&
-                        fileEraserVariant === "standard")
+                        fileEraserVariant === "standard") ||
+                      selectedCategory === "autopilot-mdm"
                     ) &&
                       selectedLicenses !== "custom" &&
                       selectedPlan !== "custom") ||
@@ -2612,28 +2613,48 @@ const PricingAndPlanPage: React.FC = memo(() => {
                   className="w-full mb-4 xs:mb-5 sm:mb-6 flex justify-center py-3 xs:py-4 text-base xs:text-lg"
                 >
                   {isBuyNowLoading ? (
-                    <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    <svg
+                      className="animate-spin h-6 w-6 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
                     </svg>
                   ) : !(
-                    (selectedCategory === "drive-eraser" &&
-                      driveEraserVariant === "standard") ||
-                    (selectedCategory === "file-eraser" &&
-                      fileEraserVariant === "standard")
-                  ) &&
-                  selectedLicenses !== "custom" &&
-                  selectedPlan !== "custom"
-                    ? "Coming Soon"
-                    : selectedLicenses === "custom" ||
-                        selectedPlan === "custom"
-                      ? "Request Custom Quote"
-                      : "Buy Now"}
+                      (selectedCategory === "drive-eraser" &&
+                        driveEraserVariant === "standard") ||
+                      (selectedCategory === "file-eraser" &&
+                        fileEraserVariant === "standard") ||
+                      selectedCategory === "autopilot-mdm"
+                    ) &&
+                    selectedLicenses !== "custom" &&
+                    selectedPlan !== "custom" ? (
+                    "Coming Soon"
+                  ) : selectedLicenses === "custom" ||
+                    selectedPlan === "custom" ? (
+                    "Request Custom Quote"
+                  ) : (
+                    "Buy Now"
+                  )}
                 </ThemeButton>
 
                 {selectedCategory === "drive-eraser" && (
                   <div className="text-xs text-emerald-700 bg-emerald-50 p-2 rounded-md mb-4 text-center font-medium border border-emerald-100">
-                    Note: Current release is the cloud version (login with email and password). All reports are stored on the cloud.
+                    Note: Current release is the cloud version (login with email
+                    and password). All reports are stored on the cloud.
                   </div>
                 )}
 
@@ -2645,7 +2666,7 @@ const PricingAndPlanPage: React.FC = memo(() => {
                           "Instant License Delivery",
                           "Free Setup Assistance",
                           "Offline Operation",
-                          "Digital Report Signing"
+                          "Digital Report Signing",
                         ]
                       : [
                           "Instant License Delivery",
@@ -2655,12 +2676,23 @@ const PricingAndPlanPage: React.FC = memo(() => {
                           "Offline Operation",
                           "Digital Report Signing",
                           "Crash-resistant report storage",
-                          "Instant report search, filtering & sorting"
+                          "Instant report search, filtering & sorting",
                         ]
                     ).map((text, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
-                        <svg className="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <div
+                        key={idx}
+                        className="flex items-center space-x-2 text-sm text-gray-600"
+                      >
+                        <svg
+                          className="w-5 h-5 text-green-500 shrink-0"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                         <span>{text}</span>
                       </div>

@@ -277,7 +277,7 @@ const NonProfitSolutionsPage: React.FC = () => {
                 },
                 {
                   title: "Bulk Erasure at Remote Locations",
-                  desc: "Wipe 100 drives in a chassis or up to 65,000 over a network using PXE boot. Deploy erasure at facilities without internet through offline USB boot.",
+                  desc: "Wipe 100 drives in a chassis or up to 65,000 over a network using PXE boot (Coming Soon). Deploy erasure at facilities without internet through offline USB boot.",
                   icon: Globe,
                 },
                 {
@@ -344,7 +344,7 @@ const NonProfitSolutionsPage: React.FC = () => {
                 {
                   icon: Server,
                   title: "Servers & Data Centers",
-                  desc: "Centralized wiping of up to 65,000 server drives simultaneously over a network using PXE boot.",
+                  desc: "Centralized wiping of up to 65,000 server drives simultaneously over a network using PXE boot (Coming Soon).",
                 },
                 {
                   icon: Smartphone,
@@ -452,7 +452,7 @@ const NonProfitSolutionsPage: React.FC = () => {
               {[
                 {
                   q: "How many drives can we wipe simultaneously?",
-                  a: "You can wipe up to 100 drives at a time on a single machine using USB boot. For network-based erasure, you can simultaneously wipe up to 65,000 drives over PXE boot, making it ideal for large-scale operations across multiple offices.",
+                  a: "You can wipe up to 100 drives at a time on a single machine using USB boot. For network-based erasure, you can simultaneously wipe up to 65,000 drives over PXE boot (Coming Soon), making it ideal for large-scale operations across multiple offices.",
                 },
                 {
                   q: "Do D-Secure licenses expire?",

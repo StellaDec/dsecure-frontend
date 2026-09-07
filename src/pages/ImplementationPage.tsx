@@ -75,7 +75,7 @@ export default function ImplementationPage() {
                 {
                   phase: "02",
                   title: "Architecture",
-                  desc: "Configuration of PXE boot environments, Cloud Console synchronization, and API integration design.",
+                  desc: "Configuration of PXE boot environments (Coming Soon), Cloud Console synchronization, and API integration design.",
                   color: "bg-teal-50"
                 },
                 {

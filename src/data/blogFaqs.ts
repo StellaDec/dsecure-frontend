@@ -1049,7 +1049,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "What are the features and benefits of professional data erasure software?",
-      answer: "Professional data erasure software features benefits that free tools lack, primarily focusing on compliance and security. Key benefits include automated wiping at scale (via PXE boot), tamper-evident Certificates of Erasure, 100% post-wipe verification, cloud reporting dashboards, and support for complex RAID arrays and NVMe drives."
+      answer: "Professional data erasure software features benefits that free tools lack, primarily focusing on compliance and security. Key benefits include automated wiping at scale (via PXE boot (Coming Soon)), tamper-evident Certificates of Erasure, 100% post-wipe verification, cloud reporting dashboards, and support for complex RAID arrays and NVMe drives."
     },
     {
       question: "What are the key differences between free and professional data wiping solutions?",
@@ -1309,7 +1309,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "Can D-Secure erase multiple loose drives simultaneously?",
-      answer: "Absolutely. D-Secure is built for high-throughput enterprise sanitization, supporting simultaneous parallel erasure of dozens of loose drives from a single console. This can be achieved through multi-slot drive enclosures, specialized PCIe expansion cards, or by network booting multiple host machines using PXE boot. The software performs simultaneous sanitization at maximum bus speeds without any performance degradation per drive."
+      answer: "Absolutely. D-Secure is built for high-throughput enterprise sanitization, supporting simultaneous parallel erasure of dozens of loose drives from a single console. This can be achieved through multi-slot drive enclosures, specialized PCIe expansion cards, or by network booting multiple host machines using PXE boot (Coming Soon). The software performs simultaneous sanitization at maximum bus speeds without any performance degradation per drive."
     },
     {
       question: "What data sanitization standards are supported for loose drive erasure?",
@@ -1649,7 +1649,7 @@ const _blogFaqs: Record<string, FAQ[]> = {
     },
     {
       question: "How does ServiceNow ITAM handle automated data destruction for asset retirement?",
-      answer: "Using API integrations, a status change in ServiceNow (e.g., 'Pending Retirement') can trigger an automated data destruction job via PXE boot or network deployment. Once the software successfully erases the device to NIST 800-88 standards, it automatically sends a JSON or XML payload back to ServiceNow to update the asset record."
+      answer: "Using API integrations, a status change in ServiceNow (e.g., 'Pending Retirement') can trigger an automated data destruction job via PXE boot (Coming Soon) or network deployment. Once the software successfully erases the device to NIST 800-88 standards, it automatically sends a JSON or XML payload back to ServiceNow to update the asset record."
     },
     {
       question: "Why is ServiceNow hardware asset management data sanitization critical?",
@@ -1684,6 +1684,29 @@ const _blogFaqs: Record<string, FAQ[]> = {
     {
       "question": "Does the CSRD require companies to track IT asset disposal?",
       "answer": "While the CSRD does not explicitly mandate \"IT asset tracking\" by name, its ESRS standards require covered organizations to report on material sustainability impacts. If an organization has a large IT estate, the disposal and lifecycle management of those assets can become a relevant component of its broader environmental and waste reporting."
+    }
+  ],
+  // M&A Legacy System Erasure Gap blog FAQs
+  "ma-legacy-system-erasure-gap": [
+    {
+      "question": "Why did the UK ICO fine Marriott if the breach started before the acquisition?",
+      "answer": "The ICO clarified that Marriott was not primarily penalized for the pre-acquisition intrusion under Starwood's watch. Rather, the penalty was imposed for post-acquisition negligence: Marriott continued operating Starwood's legacy reservation systems for roughly two years without conducting adequate technical security assessments, maintaining proper asset oversight, or decommissioning unneeded systems holding 500 million guest records."
+    },
+    {
+      "question": "What is the difference between 'inherited exposure' and 'integration debt' in M&A?",
+      "answer": "Inherited exposure refers to dormant malware, prior breaches, or existing software vulnerabilities already present inside the target company before closing. Integration debt refers to the operational and security backlog created after closing—redundant servers, duplicate applications, and orphaned storage devices that linger indefinitely because retiring and sanitizing legacy IT assets takes lower priority than business consolidation."
+    },
+    {
+      "question": "What are 'zombie systems' and why are they dangerous after a merger?",
+      "answer": "Zombie systems are legacy servers, databases, or applications that remain powered on and connected to enterprise networks, holding historical customer records or intellectual property, but have no active business owner or monitoring. Because nobody actively uses or patches them, they become prime targets for ransomware gangs and unauthorized access."
+    },
+    {
+      "question": "How do Transition Services Agreements (TSAs) in divestitures create data risk?",
+      "answer": "Under a TSA, a parent company temporarily hosts systems for a divested business unit. Gaps arise when shared systems are extended past contractual deadlines, customer data from the sold division lingers on parent hardware, or employee permissions remain unsegregated. Without certified data separation and verifiable erasure, both parties face severe regulatory exposure under GDPR, HIPAA, and FTC rules."
+    },
+    {
+      "question": "How does D-Secure software help close the M&A legacy erasure gap?",
+      "answer": "D-Secure Drive Eraser and File Eraser provide automated, high-speed data sanitization across servers, loose storage drives, NVMe SSDs, and employee laptops in full compliance with NIST SP 800-88 Rev. 2 and IEEE 2883-2022. Each sanitized asset generates a digitally signed, tamper-proof Certificate of Erasure with serial-number tracking, providing irrefutable audit trails for regulators, compliance boards, and M&A integration teams."
     }
   ]
 };

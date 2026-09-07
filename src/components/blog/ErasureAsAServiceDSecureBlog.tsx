@@ -184,7 +184,7 @@ const ErasureAsAServiceDSecureBlog: React.FC = () => {
                 <p className="text-[#0a2e1e] leading-relaxed mb-4">
                   Multi-platform solution for permanent data removal from
                   desktops, laptops, Macs, and servers. Supports Cloud,
-                  Network, PXE Boot, and Offline deployment.
+                  Network, PXE Boot (Coming Soon), and Offline deployment.
                 </p>
                 <ul className="space-y-1 text-[#0a2e1e] text-sm">
                   <li>• 24+ internationally recognized sanitization standards</li>

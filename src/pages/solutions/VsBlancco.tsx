@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const comparisonFeatures = [
   {
     feature: "Deployment Architecture",
-    dsecure: "Zero-Touch Cloud/PXE/USB (Instant Setup)",
+    dsecure: "Zero-Touch Cloud/PXE (Coming Soon)/USB (Instant Setup)",
     blancco: "Complex Management Servers (Heavy Configuration)",
     better: "dsecure"
   },

@@ -111,7 +111,7 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
     },
     {
       question: "Is technician interaction required during reimaging?",
-      answer: "The process is designed to be zero-touch. Once the erasure workflow triggers the PXE boot, the reimaging applies automatically without manual intervention."
+      answer: "The process is designed to be zero-touch. Once the erasure workflow triggers the PXE boot (Coming Soon), the reimaging applies automatically without manual intervention."
     },
     {
       question: "How is the reimaging event reported?",
@@ -465,8 +465,8 @@ const AssetReimagingPage: React.FC = memo(function AssetReimagingPage() {
               },
               {
                 step: "02",
-                title: "PXE Boot Trigger",
-                desc: "Workflow automatically triggers PXE boot into WinPE environment.",
+                title: "PXE Boot Trigger (Coming Soon)",
+                desc: "Workflow automatically triggers PXE boot (Coming Soon) into WinPE environment.",
                 icon: <Monitor className="w-8 h-8" />
               },
               {
