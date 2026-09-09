@@ -397,8 +397,9 @@ export const getDefaultSEO = (): SEOMetadata => ({
   // Query-first format: Google exact search term pehle evaluate karta hai
   title:
     "Enterprise Data Erasure Software — NIST 800-88 Compliant | D-Secure",
+  // Optimal length (148 chars) taaki Google SERP snippet mein truncate na ho
   description:
-    "Enterprise data erasure software for permanently wiping HDDs, SSDs, servers & mobile devices with 100% verifiable NIST 800-88 & GDPR audit-ready certificates.",
+    "D-Secure offers enterprise data erasure software for HDDs, SSDs, & mobile. NIST 800-88 & GDPR compliant with tamper-evident certificates. Try free!",
   keywords: generateKeywords(),
   ogTitle: "D-Secure Tech - Enterprise Data Erasure Software",
   ogDescription:

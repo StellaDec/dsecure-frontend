@@ -114,63 +114,63 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
 
-  // Gallery images array for lightbox navigation
+  // Gallery images array lightbox navigation ke liye - SEO optimized alt tags ke saath
   const galleryImages = [
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/rrewuevqba6xopawa2n8.png",
-      alt: "Dashboard View",
+      alt: "D-Secure File Eraser - Centralized Management Dashboard",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185419/ot4kpilynrfgw9vuzrbf.png",
-      alt: "Erasure Report",
+      alt: "Verifiable File Erasure Certificate and Compliance Report",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/ctujrrfv3h1visi1jrvz.png",
-      alt: "File Selection",
+      alt: "Permanent file shredder file and folder selection interface",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/ykhnzzsbwdeuncs9uvem.png",
-      alt: "Erasure Progress",
+      alt: "DoD and NIST 800-88 compliant file erasure progress monitor",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/bjklx7nvvam1m2h122zo.png",
-      alt: "File Eraser Screenshot 5",
+      alt: "D-Secure File Eraser drive and partition free space wiping",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/lxs0usvvneldpij0dqwo.png",
-      alt: "File Eraser Screenshot 6",
+      alt: "Automated schedule file wiping and retention settings",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/oax8dj4tw1pitsbnbr31.png",
-      alt: "File Eraser Screenshot 7",
+      alt: "Internet history and browser temporary files erasure screen",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/cninfubwl4z6u9bhoi3f.png",
-      alt: "File Eraser Screenshot 8",
+      alt: "System traces and Windows temp file deletion tool",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185418/dns8j5kip5vxyczqoipe.png",
-      alt: "File Eraser Screenshot 9",
+      alt: "Detailed audit trail and sanitization log viewer",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185417/k6uywfbzsktkrdzmojnm.png",
-      alt: "File Eraser Screenshot 10",
+      alt: "Multi-standard erasure algorithm selection panel",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185417/lsjiymvrj0x7jmgempbe.png",
-      alt: "File Eraser Screenshot 11",
+      alt: "Cloud storage sync traces permanent removal interface",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185417/ndoby2cwwxxsngynqp5e.png",
-      alt: "File Eraser Screenshot 12",
+      alt: "Enterprise licensing and active policy configuration",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185417/slvfga3d5nx66jv7uxug.png",
-      alt: "File Eraser Screenshot 13",
+      alt: "Tamper-proof digital certificate preview and export",
     },
     {
       url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1772185417/fpnm8lqq46ftsw0ny0ca.png",
-      alt: "File Eraser Screenshot 14",
+      alt: "D-Secure secure file shredder completion summary screen",
     },
     // {
     //   url: "https://res.cloudinary.com/dhwi5wevf/image/upload/f_auto,q_auto/v1770615237/vytjbf7yigyyo6nc5qhv.png",
@@ -617,10 +617,11 @@ const FileEraserPage: React.FC = memo(function FileEraserPage() {
                     </Link>
                   </div>
 
+                  {/* Mukhya H1 Heading - High search intent keyword: Secure File Shredder Software */}
                   <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
-                    D-Secure{" "}
+                    D-Secure File Eraser —{" "}
                     <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                      File Eraser
+                      Secure File Shredder Software
                     </span>
                   </h1>
 

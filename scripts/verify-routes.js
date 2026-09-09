@@ -255,6 +255,79 @@ expectedRedirectSources.forEach((src) => {
   );
 });
 
+// 15. Check Keyword Research & Content SEO Upgrades
+// Meta description length checks (must be <= 160 characters for SERP)
+const metaDescMatch = seoCoreContent.match(/description:\s*"([^"]+)"/);
+assert(
+  metaDescMatch && metaDescMatch[1].length <= 160 && metaDescMatch[1].length >= 120,
+  `seo.core.ts meta description length is optimal (${metaDescMatch ? metaDescMatch[1].length : 0} chars, <= 160)`
+);
+assert(
+  indexHtmlContent.includes('content="D-Secure offers enterprise data erasure software for HDDs, SSDs, & mobile. NIST 800-88 & GDPR compliant with tamper-evident certificates. Try free!"'),
+  "index.html static meta description matches optimized 148-character length"
+);
+
+// HomePage heading hierarchy & keywords
+const homePagePath = path.join(rootDir, "src", "pages", "HomePage.tsx");
+const homePageContent = fs.readFileSync(homePagePath, "utf8");
+assert(
+  homePageContent.includes('<h2 className="sr-only">Enterprise Data Erasure Capabilities</h2>'),
+  "HomePage.tsx maintains valid semantic heading hierarchy with sr-only h2 before h3 feature cards"
+);
+assert(
+  homePageContent.includes("Data Erasure Reports & Tamper-Evident Certificates"),
+  "HomePage.tsx contains target keyword rich H2: Data Erasure Reports & Tamper-Evident Certificates"
+);
+
+// DriveEraserPage keywords & headings
+const driveEraserPath = path.join(rootDir, "src", "pages", "DriveEraserPage.tsx");
+const driveEraserContent = fs.readFileSync(driveEraserPath, "utf8");
+assert(
+  driveEraserContent.includes("D-Secure Drive Eraser permanently wipes entire HDDs, SSDs, and NVMe drives"),
+  "DriveEraserPage.tsx hero copy contains primary target query keyword phrase"
+);
+assert(
+  driveEraserContent.includes("What D-Secure Drive Eraser Can Wipe"),
+  "DriveEraserPage.tsx contains upgraded H2: What D-Secure Drive Eraser Can Wipe"
+);
+
+// FileEraserPage H1 & Gallery Alt Tags
+const fileEraserPath = path.join(rootDir, "src", "pages", "FileEraserPage.tsx");
+const fileEraserContent = fs.readFileSync(fileEraserPath, "utf8");
+assert(
+  fileEraserContent.includes("Secure File Shredder Software"),
+  "FileEraserPage.tsx H1 contains primary search intent keyword: Secure File Shredder Software"
+);
+assert(
+  fileEraserContent.includes('alt: "Verifiable File Erasure Certificate and Compliance Report"') &&
+  fileEraserContent.includes('alt: "DoD and NIST 800-88 compliant file erasure progress monitor"'),
+  "FileEraserPage.tsx gallery images contain keyword-rich descriptive alt tags"
+);
+
+// Product SEO titles in seo.products.ts
+const seoProductsPath = path.join(rootDir, "src", "utils", "seo.products.ts");
+const seoProductsContent = fs.readFileSync(seoProductsPath, "utf8");
+assert(
+  seoProductsContent.includes("Buy Drive Eraser Software | NIST 800-88 Hard Drive Wipe | D-Secure"),
+  "seo.products.ts contains optimized high-intent title for drive-eraser"
+);
+assert(
+  seoProductsContent.includes("How to Delete Files Securely — File Eraser for Windows | D-Secure"),
+  "seo.products.ts contains condensed high-intent title for file-eraser"
+);
+
+// Long-tail FAQ keywords in seoFaqs.ts
+const seoFaqsPath = path.join(rootDir, "src", "data", "seoFaqs.ts");
+const seoFaqsContent = fs.readFileSync(seoFaqsPath, "utf8");
+assert(
+  seoFaqsContent.includes("How to securely wipe a hard drive before selling?"),
+  "seoFaqs.ts includes Drive Eraser long-tail selling intent FAQ"
+);
+assert(
+  seoFaqsContent.includes("How to permanently delete files so they cannot be recovered?"),
+  "seoFaqs.ts includes File Eraser long-tail permanent deletion FAQ"
+);
+
 console.log(`\n========================================`);
 if (errors === 0) {
   console.log("🎉 ALL VERIFICATION CHECKS PASSED!");

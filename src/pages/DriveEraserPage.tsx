@@ -526,7 +526,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                   </h1>
 
                   <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-                    Securely wipe entire HDDs, SSDs, and NVMe drives with
+                    D-Secure Drive Eraser permanently wipes entire HDDs, SSDs, and NVMe drives with
                     industry-leading data sanitization standards. NIST 800-88
                     and DoD 5220.22-M compliant erasure for enterprise data
                     security and audit-readiness.
@@ -753,7 +753,7 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
           <div className="container mx-auto px-4 max-w-7xl">
             <Reveal>
               <ThemeSectionHeading centered subtitle="Comprehensive data destruction capabilities for all types of sensitive information">
-                What You Can Erase
+                What D-Secure Drive Eraser Can Wipe
               </ThemeSectionHeading>
             </Reveal>
 

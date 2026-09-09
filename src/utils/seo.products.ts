@@ -2,8 +2,8 @@ import { SEOMetadata, generateKeywords, getCanonicalUrl, generateSoftwareProduct
 
 export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
   "drive-eraser": {
-    // Transactional Intent — "Buy", "Download", "Get" focus
-    title: "Buy Drive Eraser Software | Download Secure Data Wiping Tool | D-Secure",
+    // Transactional Intent — "Buy", "Hard Drive Wipe" long-tail focus
+    title: "Buy Drive Eraser Software | NIST 800-88 Hard Drive Wipe | D-Secure",
     description:
       "Purchase D-Secure Drive Eraser — enterprise data erasure software to permanently wipe HDDs, SSDs & NVMe. Buy now for NIST 800-88 & GDPR compliant certificates.",
     keywords: generateKeywords([
@@ -169,8 +169,8 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     ],
   },
   "file-eraser": {
-    // Transactional + Informational Intent — "how to delete files securely" query match (133K impr, pos 1.0)
-    title: "How to Delete Files Securely — Free File Eraser Download for Windows | D-Secure",
+    // Transactional + Informational Intent — "how to delete files securely" query match
+    title: "How to Delete Files Securely — File Eraser for Windows | D-Secure",
     description:
       "Learn how to delete files securely and permanently on Windows 10/11 x64. Download D-Secure File Eraser — free trial available. NIST 800-88 aligned, no recovery possible.",
     keywords: generateKeywords([

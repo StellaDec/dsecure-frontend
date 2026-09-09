@@ -801,6 +801,8 @@ const HomePage = memo(function HomePage() {
           <ThemeSection alternate className="relative w-full pt-1 pb-24">
             <div className="relative z-20 -mt-12 container-responsive px-4">
               <Reveal delayMs={700}>
+                {/* Semantic H2 heading hierarchy compliance for accessibility & SEO */}
+                <h2 className="sr-only">Enterprise Data Erasure Capabilities</h2>
                 <div className={`${themeClasses.card.base} ${themeClasses.card.padding}`}>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {features.map((feat, idx) => (
@@ -833,8 +835,9 @@ const HomePage = memo(function HomePage() {
               <div className="inline-flex items-center justify-center p-3 bg-[#e6f4ef] rounded-none mb-6 border border-[#0e7c66]/20">
                 <FileCheck className="w-8 h-8 text-[#0e7c66]" />
               </div>
+              {/* High-volume keyword-aligned H2 */}
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#1c2530]">
-                Verifiable & Tamper-Evident Reports
+                Data Erasure Reports & Tamper-Evident Certificates
               </h2>
               <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-[#5a6672]">
                 Every erasure and diagnostic process is backed by digitally signed, compliance-ready certificates and comprehensive reports.

@@ -65,6 +65,11 @@ export const homeFAQs: FAQItem[] = [
 
 export const driveEraserFAQs: FAQItem[] = [
   {
+    // High-volume long-tail search intent
+    question: "How to securely wipe a hard drive before selling?",
+    answer: "To securely wipe a hard drive before selling a computer, laptop, or external storage device, standard formatting is insufficient because data recovery tools can easily retrieve personal files, passwords, and sensitive financial data. You must use certified data sanitization software like D-Secure Drive Eraser that overwrites every storage sector in accordance with NIST SP 800-88 Clear or Purge guidelines. D-Secure boots directly from a USB or network, completely sanitizes the drive, and provides a tamper-evident audit certificate confirming 100% data destruction — ensuring no residual data remains before the hardware changes hands."
+  },
+  {
     question: "How does D-Secure Drive Eraser permanently wipe an HDD?",
     answer: "D-Secure Drive Eraser permanently sanitizes a hard disk drive (HDD) by writing new data patterns across every addressable sector on the disk, overwriting the original content so that it cannot be recovered — even with advanced forensic tools or magnetic analysis techniques. Unlike standard deletion or formatting, which only removes the file system's reference to stored data while leaving the underlying content physically intact, Drive Eraser applies recognised overwriting standards such as NIST SP 800-88 (Clear), DoD 5220.22-M (3-pass and 7-pass), HMG IS5 Baseline and Enhanced, and IEEE 2883-2022, among others. Once the overwrite passes complete, the software performs a verification pass to confirm that all sectors have been correctly processed. The entire operation is documented in a tamper-evident, digitally signed certificate in PDF format, providing an auditable record suitable for GDPR, HIPAA, PCI DSS, and India's DPDP Act 2023 compliance reviews. Drive Eraser supports erasure of up to 32 drives simultaneously on a single machine."
   },
@@ -127,6 +132,11 @@ export const driveEraserFAQs: FAQItem[] = [
 ];
 
 export const fileEraserFAQs: FAQItem[] = [
+  {
+    // High-volume long-tail search intent
+    question: "How to permanently delete files so they cannot be recovered?",
+    answer: "When you delete a file using the Recycle Bin on Windows or Trash on macOS, the operating system only removes the directory pointer to the file, leaving the actual file contents intact on disk sectors until overwritten by chance. To permanently delete files so they cannot be recovered by forensic software or data recovery tools, you need a dedicated file shredder like D-Secure File Eraser. It uses multi-pass overwriting algorithms (such as DoD 5220.22-M and NIST 800-88 Clear) to overwrite the selected files, folders, and free space with random patterns, and generates an auditable deletion certificate for compliance."
+  },
   {
     question: "What is the difference between deleting a file and permanently erasing it?",
     answer: "Deleting a file through your operating system — whether by emptying the Recycle Bin on Windows, using the Trash on macOS, or issuing a rm command on Linux — does not remove the underlying data from your storage device. The operating system simply removes the file's directory entry, marking that space as available for future use. The original file content remains physically intact on the disk and is fully recoverable using widely available file recovery software, sometimes in seconds. Permanent file erasure, by contrast, overwrites the actual data stored at that location with new patterns, rendering the original content unrecoverable. D-Secure File Eraser applies recognised overwriting algorithms — drawn from a library of 30+ international wiping standards — directly to the file's storage sectors, then verifies that the overwrite completed successfully. This distinction is critical for compliance with GDPR Article 17, HIPAA, and PCI DSS 4.0, all of which require that data be rendered unrecoverable, not merely deleted."
