@@ -143,15 +143,23 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   const effectiveModifiedTime = modifiedTime || '';
 
   /**
-   * Hreflang URLs auto-generate karo — SEO duplicate content penalty se bachne ke liye
-   * Format: https://dsecuretech.com/{lang}/path ya x-default ke liye without lang prefix
+   * Worldwide hreflang URLs set karo:
+   * hrefLang="en" aur hrefLang="x-default" dono canonical URL par point karte hain.
+   * Fake 404 hreflangs (/hi, /es, /fr, /de, /ja, /zh) completely eliminate ho gaye.
    */
   const generateHreflangUrls = (canonical: string): HreflangEntry[] => {
     if (alternateLanguages && alternateLanguages.length > 0) {
+      const hasXDefault = alternateLanguages.some((entry) => entry.lang === "x-default");
+      if (!hasXDefault) {
+        return [...alternateLanguages, { lang: "x-default", url: canonical }];
+      }
       return alternateLanguages;
     }
-    // Auto-generation temporarily disabled until translated routes exist
-    return [];
+    // Worldwide hreflangs — English aur fallback x-default
+    return [
+      { lang: "en", url: canonical },
+      { lang: "x-default", url: canonical },
+    ];
   };
 
   // Strict canonical URL normalization — duplicate page errors rokne ke liye
@@ -233,16 +241,10 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         {/* Canonical URL */}
         <link rel="canonical" href={finalCanonical} />
 
-        {/* Hreflang — only render if explicitly provided */}
-        {hreflangUrls.length > 0 && (
-          <>
-            {hreflangUrls.map(({ lang, url }) => (
-              <link key={lang} rel="alternate" hrefLang={lang} href={url} />
-            ))}
-            {/* x-default — language-neutral canonical */}
-            <link rel="alternate" hrefLang="x-default" href={finalCanonical} />
-          </>
-        )}
+        {/* Worldwide Hreflangs — English aur x-default */}
+        {hreflangUrls.map(({ lang, url }) => (
+          <link key={lang} rel="alternate" hrefLang={lang} href={url} />
+        ))}
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content={effectiveSeo.ogType || 'website'} />

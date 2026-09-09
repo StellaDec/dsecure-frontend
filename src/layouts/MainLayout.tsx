@@ -2331,6 +2331,23 @@ export default function MainLayout() {
                           Case Studies
                         </Link>
                       </li>
+                      {/* SEO aur internal linking ke liye tools links */}
+                      <li>
+                        <Link
+                          to="/tools/nist-800-88-compliance-checker"
+                          className="hover:text-brand transition-colors hover:translate-x-1 transform duration-200 inline-block"
+                        >
+                          NIST 800-88 Checker
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/tools/roi-calculator"
+                          className="hover:text-brand transition-colors hover:translate-x-1 transform duration-200 inline-block"
+                        >
+                          ROI Calculator
+                        </Link>
+                      </li>
                     </ul>
                   </div>
 

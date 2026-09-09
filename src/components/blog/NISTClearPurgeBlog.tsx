@@ -345,7 +345,7 @@ const NISTClearPurgeBlog: React.FC = () => {
                   Not sure which method to use? Use our NIST 800-88 compliance tool.
                 </p>
                 <Link
-                  to="/tools/nist-800-88-checker"
+                  to="/tools/nist-800-88-compliance-checker"
                   className="block w-full py-3 px-4 bg-[#0e7c66] text-white text-center rounded-none font-semibold hover:bg-[#0e7c66] transition-colors"
                 >
                   Start Compliance Check

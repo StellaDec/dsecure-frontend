@@ -616,6 +616,17 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "SSD Erasure Pass Calculator", item: "/tools/ssd-pass-calculator" },
     ],
   },
+  "roi-calculator": {
+    title: "Data Erasure ROI Calculator — Estimate Enterprise Cost Savings | D-Secure",
+    description: "Calculate your return on investment and cost savings with D-Secure automated data erasure software vs hardware destruction and physical shredding.",
+    keywords: "data erasure ROI calculator, data destruction cost savings, IT asset disposition ROI, software wiping vs shredding cost, enterprise sanitization ROI",
+    canonicalUrl: getCanonicalUrl("/tools/roi-calculator"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Free Tools", item: "/tools/roi-calculator" },
+      { name: "ROI Calculator", item: "/tools/roi-calculator" },
+    ],
+  },
   "nist-800-88-compliance-checker": {
     title: "NIST 800-88 Compliance Checker — Media Sanitization Audit Tool | D-Secure",
     description: "Audit your data destruction process against NIST SP 800-88 Rev. 1 guidelines. Free compliance checker for Clear, Purge, and Destroy methods.",

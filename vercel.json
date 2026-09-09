@@ -4,6 +4,16 @@
   "framework": "vite",
   "redirects": [
     {
+      "source": "/tools/nist-800-88-checker",
+      "destination": "/tools/nist-800-88-compliance-checker",
+      "permanent": true
+    },
+    {
+      "source": "/support/faq",
+      "destination": "/support/faqs",
+      "permanent": true
+    },
+    {
       "source": "/pricing",
       "destination": "/pricing-and-plan",
       "permanent": true

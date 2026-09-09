@@ -10,6 +10,21 @@ const currentDate = new Date().toISOString().split("T")[0];
 
 const appTsxPath = path.join(__dirname, "..", "src", "App.tsx");
 const routesDir = path.join(__dirname, "..", "src", "routes");
+const vercelJsonPath = path.join(__dirname, "..", "vercel.json");
+
+// vercel.json se sabhi 301 redirects dynamically load karo
+let vercelRedirects = [];
+if (fs.existsSync(vercelJsonPath)) {
+  try {
+    const vercelConfig = JSON.parse(fs.readFileSync(vercelJsonPath, "utf8"));
+    if (Array.isArray(vercelConfig.redirects)) {
+      vercelRedirects = vercelConfig.redirects;
+      console.log(`🧭 Loaded ${vercelRedirects.length} redirect rules from vercel.json.`);
+    }
+  } catch (err) {
+    console.warn("⚠️ Failed to load or parse vercel.json:", err.message);
+  }
+}
 
 // Sitemap se exclude karne wale routes — admin, dashboard, aur protected routes
 const EXCLUDED_ROUTES = [
@@ -73,7 +88,7 @@ const PRIORITY_ROUTES = {
   "/": { changefreq: "weekly", priority: "1.0" },
   "/services": { changefreq: "weekly", priority: "0.9" },
   "/solutions": { changefreq: "weekly", priority: "0.9" },
-  "/support/faq": { changefreq: "weekly", priority: "0.8" },
+  "/support/faqs": { changefreq: "weekly", priority: "0.8" },
   "/blogs": { changefreq: "weekly", priority: "0.8" },
   "/contact": { changefreq: "monthly", priority: "0.7" },
   "/about": { changefreq: "monthly", priority: "0.6" },
@@ -84,6 +99,7 @@ const PRIORITY_ROUTES = {
   "/tools/nist-800-88-compliance-checker": { changefreq: "monthly", priority: "0.8" },
   "/tools/ssd-pass-calculator": { changefreq: "monthly", priority: "0.8" },
   "/tools/gdpr-erasure-checklist": { changefreq: "monthly", priority: "0.8" },
+  "/tools/roi-calculator": { changefreq: "monthly", priority: "0.8" },
 };
 
 /**
@@ -299,13 +315,16 @@ function extractRoutesFromFiles() {
 
 
 
-  // Filter out excluded routes and prefixes, and ensure uniqueness
+  // Filter out excluded routes, 301 redirects, and ensure uniqueness
   const seen = new Set();
+  const blockedRedirects = [];
+
   const finalRoutes = Array.from(allRoutes)
     .filter((route) => {
       if (!route || seen.has(route)) return false;
       seen.add(route);
       
+      // 1. Check karo ki EXCLUDED_ROUTES mein toh nahi hai (admin, dashboard, protected routes)
       const isExcluded = EXCLUDED_ROUTES.some((excluded) => {
         if (excluded === "*") return route === "*";
         return (
@@ -314,11 +333,35 @@ function extractRoutesFromFiles() {
           (excluded !== "/" && route.startsWith(excluded))
         );
       });
-      return !isExcluded;
+      if (isExcluded) return false;
+
+      // 2. Check karo ki vercel.json ke kisi 301 redirect se match toh nahi hota (0 GSC Errors)
+      const matchingRedirect = vercelRedirects.find((rule) =>
+        matchesRedirectRule(rule.source, route)
+      );
+      if (matchingRedirect) {
+        blockedRedirects.push({
+          route,
+          source: matchingRedirect.source,
+          destination: matchingRedirect.destination,
+        });
+        return false;
+      }
+
+      return true;
     })
     .sort((a, b) => a.localeCompare(b));
 
-  console.log(`✅ Extracted ${finalRoutes.length} unique routes from source files.`);
+  if (blockedRedirects.length > 0) {
+    console.log(
+      `🚫 Auto-filtered ${blockedRedirects.length} 301 redirect URLs from sitemap (0 GSC Errors):`
+    );
+    blockedRedirects.forEach((b) =>
+      console.log(`   - ${b.route} -> ${b.destination} (matched: ${b.source})`)
+    );
+  }
+
+  console.log(`✅ Extracted ${finalRoutes.length} unique 200 OK canonical routes from source files.`);
   return finalRoutes;
 }
 
@@ -331,6 +374,29 @@ function normalizePath(p) {
     clean = clean.slice(0, -1);
   }
   return clean;
+}
+
+/**
+ * Vercel redirect rule matching logic (301 redirects ko sitemap se block karne ke liye)
+ * Handle karta hai: exact strings, :path*, :param+, regex patterns
+ */
+function matchesRedirectRule(sourcePattern, routePath) {
+  const cleanRoute = normalizePath(routePath);
+  const cleanSource = normalizePath(sourcePattern);
+
+  // Exact match case
+  if (cleanRoute === cleanSource) return true;
+
+  try {
+    const regexStr = cleanSource
+      .replace(/:[a-zA-Z0-9_]+\*/g, ".*")
+      .replace(/:[a-zA-Z0-9_]+\+/g, ".+")
+      .replace(/:[a-zA-Z0-9_]+/g, "[^/]+");
+    const regex = new RegExp(`^${regexStr}$`);
+    return regex.test(cleanRoute);
+  } catch {
+    return cleanRoute === cleanSource;
+  }
 }
 
 function generateSitemap() {

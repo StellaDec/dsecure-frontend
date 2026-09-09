@@ -50,6 +50,7 @@ const routes = [
   "/glossary",
   "/partners",
   "/support",
+  "/support/faqs",
   "/enterprise",
   "/healthcare-services",
   "/itad-solution",
@@ -69,7 +70,11 @@ const routes = [
   "/solutions?industry=enterprise",
   "/solutions?industry=financial",
   "/solutions?industry=government",
-  "/solutions?industry=healthcare",
+  "/tools/roi-calculator",
+  "/tools/nist-800-88-compliance-checker",
+  "/tools/data-breach-calculator",
+  "/tools/ssd-pass-calculator",
+  "/tools/gdpr-erasure-checklist",
   "/llms.txt",
   "/llms-full.txt",
 ];
@@ -112,11 +117,45 @@ if (supportPathMatch) {
   });
 }
 
+// vercel.json se 301 redirects load karo
+let vercelRedirects = [];
+if (fs.existsSync('./vercel.json')) {
+  try {
+    const vConfig = JSON.parse(fs.readFileSync('./vercel.json', 'utf8'));
+    if (Array.isArray(vConfig.redirects)) {
+      vercelRedirects = vConfig.redirects;
+    }
+  } catch (e) {
+    console.warn('Could not read vercel.json', e.message);
+  }
+}
+
+function matchesRedirect(sourcePattern, routePath) {
+  const cleanRoute = routePath.replace(/\/$/, '') || '/';
+  const cleanSource = sourcePattern.replace(/\/$/, '') || '/';
+  if (cleanRoute === cleanSource) return true;
+  try {
+    const regexStr = cleanSource
+      .replace(/:[a-zA-Z0-9_]+\*/g, '.*')
+      .replace(/:[a-zA-Z0-9_]+\+/g, '.+')
+      .replace(/:[a-zA-Z0-9_]+/g, '[^/]+');
+    return new RegExp(`^${regexStr}$`).test(cleanRoute);
+  } catch {
+    return cleanRoute === cleanSource;
+  }
+}
+
+// 301 Redirects ko sitemap se filter karo (0 GSC Errors)
+const validCanonicalRoutes = routes.filter(r => {
+  const isRedirect = vercelRedirects.some(v => matchesRedirect(v.source, r));
+  return !isRedirect;
+});
+
 let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 `;
 
-routes.forEach(route => {
+validCanonicalRoutes.forEach(route => {
   // Give home page priority 1.0, main pages 0.8, query params 0.5
   let priority = '0.7';
   let changefreq = 'weekly';

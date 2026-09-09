@@ -17,9 +17,9 @@ import {
   formDataTransformers,
 } from "@/hooks/useFormSubmission";
 // Dodo Payments Overlay Checkout SDK
-import { initDodoCheckout, openOverlayCheckout, openPaymentLinkCheckout } from "@/utils/dodoCheckout";
+import { initDodoCheckout, openOverlayCheckout } from "@/utils/dodoCheckout";
 import { ThemeSection, ThemeSectionHeading, ThemeCard, ThemeButton, ThemeIconContainer } from "@/components/ui/Theme";
-import { Check, ChevronDown, CheckCircle, Shield, Server, Settings, Zap, Monitor, Code, Tag, Copy } from "lucide-react";
+import { Check, ChevronDown, CheckCircle, Settings, Monitor, Code, Tag, Copy, ArrowRight } from "lucide-react";
 
 const PricingAndPlanPage: React.FC = memo(() => {
   const { toast, showToast, hideToast } = useToast();
@@ -2981,6 +2981,97 @@ const PricingAndPlanPage: React.FC = memo(() => {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Comparison aur assessment tools ke internal links taaki buyers compare kar sakein aur SEO equity mile */}
+            <div className="mt-20">
+              <div className="text-center mb-10">
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                  Evaluating Industry Alternatives?
+                </h3>
+                <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+                  See how D-Secure stacks up against legacy data sanitization software in features, pricing transparency, and NIST compliance.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                <ThemeCard className="p-6 flex flex-col justify-between">
+                  <div>
+                    <span className="text-xs font-semibold px-2.5 py-1 bg-[#d4ede4] text-[#0e7c66] inline-block mb-3">
+                      Comparison
+                    </span>
+                    <h4 className="text-xl font-bold text-slate-900 mb-2">
+                      D-Secure vs Blancco
+                    </h4>
+                    <p className="text-sm text-slate-600 mb-4">
+                      Compare compliance certifications, cloud management capabilities, and total cost of ownership against Blancco Drive Eraser.
+                    </p>
+                  </div>
+                  <Link
+                    to="/vs/blancco"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-[#0e7c66] hover:text-[#083d28] mt-2 group"
+                  >
+                    <span>View Blancco Comparison</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </ThemeCard>
+
+                <ThemeCard className="p-6 flex flex-col justify-between">
+                  <div>
+                    <span className="text-xs font-semibold px-2.5 py-1 bg-[#d4ede4] text-[#0e7c66] inline-block mb-3">
+                      Comparison
+                    </span>
+                    <h4 className="text-xl font-bold text-slate-900 mb-2">
+                      D-Secure vs BitRaser
+                    </h4>
+                    <p className="text-sm text-slate-600 mb-4">
+                      Explore key differences in erasure speeds, automated tamper-proof audit trails, and bulk deployment pricing vs Stellar BitRaser.
+                    </p>
+                  </div>
+                  <Link
+                    to="/vs/bitraser"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-[#0e7c66] hover:text-[#083d28] mt-2 group"
+                  >
+                    <span>View BitRaser Comparison</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </ThemeCard>
+
+                <ThemeCard className="p-6 flex flex-col justify-between">
+                  <div>
+                    <span className="text-xs font-semibold px-2.5 py-1 bg-[#d4ede4] text-[#0e7c66] inline-block mb-3">
+                      Comparison
+                    </span>
+                    <h4 className="text-xl font-bold text-slate-900 mb-2">
+                      D-Secure vs WipeDrive
+                    </h4>
+                    <p className="text-sm text-slate-600 mb-4">
+                      Analyze hardware diagnostic depth, NVMe/SSD secure purge support, and licensing flexibility compared to WhiteCanyon WipeDrive.
+                    </p>
+                  </div>
+                  <Link
+                    to="/vs/whitecanyon"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-[#0e7c66] hover:text-[#083d28] mt-2 group"
+                  >
+                    <span>View WipeDrive Comparison</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </ThemeCard>
+              </div>
+
+              {/* Free Assessment Tools CTA box */}
+              <div className="mt-8 p-6 bg-[#f4fbf8] border border-[#d0d5dc]/60 text-center">
+                <p className="text-sm text-slate-700">
+                  Planning budget allocation? Calculate potential migration savings with our free{" "}
+                  <Link to="/tools/roi-calculator" className="text-[#0e7c66] font-semibold hover:underline">
+                    Erasure ROI Calculator
+                  </Link>{" "}
+                  or check data sanitization standards using our{" "}
+                  <Link to="/tools/nist-800-88-compliance-checker" className="text-[#0e7c66] font-semibold hover:underline">
+                    NIST 800-88 Compliance Checker
+                  </Link>.
+                </p>
               </div>
             </div>
           </div>

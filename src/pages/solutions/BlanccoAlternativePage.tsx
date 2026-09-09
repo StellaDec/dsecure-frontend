@@ -131,6 +131,41 @@ export default function BlanccoAlternativePage() {
           </div>
         </section>
 
+        {/* Head-to-head compare pages aur ROI calculator ke internal links */}
+        <section className="py-12 bg-emerald-50/50 border-y border-emerald-100">
+          <div className="container-app text-center">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">
+              Looking for Detailed Head-to-Head Technical Breakdowns?
+            </h3>
+            <p className="text-slate-600 max-w-2xl mx-auto mb-6 text-sm md:text-base">
+              Explore deep feature matrices, audit reports comparison, and compliance benchmark analyses.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                to="/vs/blancco"
+                className="px-6 py-3 bg-white border border-emerald-300 hover:border-emerald-600 text-emerald-800 font-semibold rounded-xl shadow-sm hover:shadow transition-all inline-flex items-center gap-2 text-sm"
+              >
+                <span>Read D-Secure vs Blancco In-Depth</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/vs/bitraser"
+                className="px-6 py-3 bg-white border border-emerald-300 hover:border-emerald-600 text-emerald-800 font-semibold rounded-xl shadow-sm hover:shadow transition-all inline-flex items-center gap-2 text-sm"
+              >
+                <span>Read D-Secure vs BitRaser In-Depth</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/tools/roi-calculator"
+                className="px-6 py-3 bg-white border border-emerald-300 hover:border-emerald-600 text-emerald-800 font-semibold rounded-xl shadow-sm hover:shadow transition-all inline-flex items-center gap-2 text-sm"
+              >
+                <span>Calculate Migration ROI</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Key Differentiation Cards */}
         <section className="py-24">
           <div className="container-app">

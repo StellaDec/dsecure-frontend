@@ -17,7 +17,6 @@ import { SEOMetadata, formatStructuredData, generateBreadcrumbSchema } from '@/u
  * so the only variable under test is the helmet-vs-native rendering mechanism.
  */
 
-const SUPPORTED_LANGUAGES = ['en', 'hi', 'es', 'fr', 'de', 'ja', 'zh'] as const;
 
 const GOOGLE_SITE_VERIFICATION = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION || '';
 const BING_SITE_VERIFICATION = import.meta.env.VITE_BING_SITE_VERIFICATION || '';
@@ -116,16 +115,24 @@ export const SEOHeadNative: React.FC<SEOHeadProps> = ({
   const effectivePublishedTime = publishedTime || '';
   const effectiveModifiedTime = modifiedTime || '';
 
+  /**
+   * Worldwide hreflang URLs set karo:
+   * hrefLang="en" aur hrefLang="x-default" dono canonical URL par point karte hain.
+   * Fake 404 hreflangs (/hi, /es, /fr, /de, /ja, /zh) completely eliminate ho gaye.
+   */
   const generateHreflangUrls = (canonical: string): HreflangEntry[] => {
     if (alternateLanguages && alternateLanguages.length > 0) {
+      const hasXDefault = alternateLanguages.some((entry) => entry.lang === "x-default");
+      if (!hasXDefault) {
+        return [...alternateLanguages, { lang: "x-default", url: canonical }];
+      }
       return alternateLanguages;
     }
-    const baseUrl = 'https://dsecuretech.com';
-    const path = canonical.replace(baseUrl, '') || '/';
-    return SUPPORTED_LANGUAGES.map(lang => ({
-      lang,
-      url: lang === 'en' ? canonical : `${baseUrl}/${lang}${path}`,
-    }));
+    // Worldwide hreflangs — English aur fallback x-default
+    return [
+      { lang: "en", url: canonical },
+      { lang: "x-default", url: canonical },
+    ];
   };
 
   const normalizeCanonical = (rawUrl: string): string => {
@@ -182,11 +189,10 @@ export const SEOHeadNative: React.FC<SEOHeadProps> = ({
       {/* Canonical URL */}
       <link rel="canonical" href={finalCanonical} />
 
-      {/* Hreflang — 7 languages */}
+      {/* Worldwide Hreflang Links (en aur x-default) */}
       {hreflangUrls.map(({ lang, url }) => (
         <link key={lang} rel="alternate" hrefLang={lang} href={url} />
       ))}
-      <link rel="alternate" hrefLang="x-default" href={finalCanonical} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={effectiveSeo.ogType || 'website'} />

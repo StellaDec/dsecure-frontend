@@ -132,6 +132,7 @@ const NIST80088CheckerPage = lazy(() => import("../pages/tools/NIST80088CheckerP
 const DataBreachCalculatorPage = lazy(() => import("../pages/tools/DataBreachCalculatorPage"));
 const SSDPassCalculatorPage = lazy(() => import("@/pages/tools/SSDPassCalculatorPage"));
 const GDPRErasureChecklistPage = lazy(() => import("@/pages/tools/GDPRErasureChecklistPage"));
+const ROICalculatorPage = lazy(() => import("../pages/ROICalculatorPage"));
 const ResearchHubPage = lazy(() => import("../pages/research/ResearchHubPage"));
 const StateOfDataDestruction2026 = lazy(() => import("../pages/research/StateOfDataDestruction2026"));
 const StandardsComparisonInfo = lazy(() => import("../pages/research/StandardsComparisonInfo"));
@@ -228,6 +229,7 @@ export const PublicRoutes = () => (
     <Route path="tools/data-breach-calculator" element={<DataBreachCalculatorPage />} />
     <Route path="tools/ssd-pass-calculator" element={<SSDPassCalculatorPage />} />
     <Route path="tools/gdpr-erasure-checklist" element={<GDPRErasureChecklistPage />} />
+    <Route path="tools/roi-calculator" element={<ROICalculatorPage />} />
     <Route path="resources/research" element={<ResearchHubPage />} />
     <Route path="research/state-of-data-destruction-2026" element={<StateOfDataDestruction2026 />} />
     <Route path="research/media-sanitization-comparison-2026" element={<StandardsComparisonInfo />} />
