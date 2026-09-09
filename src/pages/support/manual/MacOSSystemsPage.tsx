@@ -814,11 +814,12 @@ const MacOSSystemsPage: React.FC = memo(() => {
                   environment.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  {/* Mac Erasure ka active solution route */}
                   <Link
-                    to="/services/macos-erasure"
+                    to="/solutions/mac-erasure"
                     className="bg-white text-emerald-700 hover:bg-emerald-50 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-base sm:text-lg"
                   >
-                    macOS Erasure Services
+                    macOS Erasure Solutions
                   </Link>
                   <Link
                     to="/contact"

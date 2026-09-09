@@ -71,4 +71,38 @@ describe('Internal Routes & SEO Link Integrity', () => {
     expect(faqRedirect?.destination).toBe('/support/faqs');
     expect(faqRedirect?.permanent).toBe(true);
   });
+
+  // request-demo route ka SEO metadata check karna
+  test('request-demo route ka canonical URL aur title valid hona chahiye', () => {
+    const seo = getSEOForPage('request-demo');
+
+    // Title aur canonical URL ka validation
+    expect(seo.title).toContain('Schedule Live Demo');
+    expect(seo.canonicalUrl).toBe('https://dsecuretech.com/request-demo');
+    expect(seo.breadcrumbs).toBeDefined();
+    expect(seo.breadcrumbs?.some(b => b.item === '/request-demo')).toBe(true);
+  });
+
+  // Comparison report se identify huye legacy routes ka 301 redirect validation
+  test('vercel.json me report ke sabhi legacy routes ke permanent 301 redirects hone chahiye', () => {
+    const redirects = (vercelConfig as { redirects?: Array<{ source: string; destination: string; permanent: boolean }> }).redirects || [];
+    const expectedLegacyRedirects = [
+      { source: '/compliance/ieee-2883', destination: '/blog/ieee-2883-complete-guide' },
+      { source: '/services/cryptographic-erasure', destination: '/blog/cryptographic-erase' },
+      { source: '/services/macos-erasure', destination: '/solutions/mac-erasure' },
+      { source: '/services/windows-erasure', destination: '/products/drive-eraser' },
+      { source: '/support/api-docs', destination: '/support/manual/api-integration' },
+      { source: '/support/integrations-hub', destination: '/integrations' },
+      { source: '/implementation', destination: '/support/manual/implementation-practices' },
+      { source: '/solutions/financial-services', destination: '/solutions/data-erasure-banking-finance' },
+      { source: '/careers', destination: '/about' },
+    ];
+
+    expectedLegacyRedirects.forEach(({ source, destination }) => {
+      const matched = redirects.find((r) => r.source === source);
+      expect(matched).toBeDefined();
+      expect(matched?.destination).toBe(destination);
+      expect(matched?.permanent).toBe(true);
+    });
+  });
 });

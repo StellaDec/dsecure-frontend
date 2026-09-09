@@ -394,10 +394,11 @@ export const generateItemListSchema = (items: { name: string; url: string; descr
 });
 
 export const getDefaultSEO = (): SEOMetadata => ({
+  // Query-first format: Google exact search term pehle evaluate karta hai
   title:
-    "D-Secure | Enterprise Data Erasure Software | NIST 800-88 Compliant",
+    "Enterprise Data Erasure Software — NIST 800-88 Compliant | D-Secure",
   description:
-    "D-Secure is an enterprise data erasure software for NIST 800-88 & GDPR compliance. Securely wipe HDDs, SSDs & mobile devices with tamper-evident audit certificates.",
+    "Enterprise data erasure software for permanently wiping HDDs, SSDs, servers & mobile devices with 100% verifiable NIST 800-88 & GDPR audit-ready certificates.",
   keywords: generateKeywords(),
   ogTitle: "D-Secure Tech - Enterprise Data Erasure Software",
   ogDescription:

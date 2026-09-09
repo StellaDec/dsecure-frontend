@@ -66,6 +66,7 @@ const SupportPage = lazy(() => import("../pages/SupportPage"));
 const EnterprisePage = lazy(() => import("../pages/EnterprisePage"));
 const HealthcareServices = lazy(() => import("../pages/HealthcareServices"));
 const ITADSolution = lazy(() => import("../pages/ITADSolution"));
+const RequestDemoPage = lazy(() => import("../pages/RequestDemoPage"));
 const ApiTestPage = lazy(() => import("../pages/ApiTestPage"));
 const BlogPage = lazy(() => import("../components/blog/BlogPage"));
 const BlogPostDetail = lazy(() => import("../pages/blog/BlogPostDetail"));
@@ -341,6 +342,8 @@ export const PublicRoutes = () => (
     <Route path="resources/clone-guide" element={<CloneGuidePage />} />
     <Route path="verify-report" element={<ReportVerificationPage />} />
     <Route path="reports-and-certificates" element={<ReportsAndCertificatesPage />} />
+    {/* Request Demo - Active Commercial Page */}
+    <Route path="request-demo" element={<RequestDemoPage />} />
     <Route path="case-studies" element={<CaseStudyHomePage />} />
     <Route path="case-studies/:slug" element={<CaseStudyDetailPage />} />
     {/* Priority 1 SEO Redirects */}

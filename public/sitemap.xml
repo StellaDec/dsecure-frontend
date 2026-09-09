@@ -1045,6 +1045,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://dsecuretech.com/request-demo</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://dsecuretech.com/research/erasure-speed-benchmark-2026</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>

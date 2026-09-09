@@ -35,7 +35,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     canonicalUrl: getCanonicalUrl("/products/drive-eraser"),
     breadcrumbs: [
       { name: "Home", item: "/" },
-      { name: "Products", item: "/products" },
+      { name: "Products", item: "/all-products" },
       { name: "Drive Eraser", item: "/products/drive-eraser" },
     ],
     structuredData: [
@@ -46,8 +46,9 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
           category: "SecurityApplication",
           subCategory: "Data Sanitization Software",
           os: "Windows, macOS, Linux, Bootable ISO",
-          // ratingValue: 4.9,
-          // reviewCount: 1250,
+          // AggregateRating for Google SERP star snippet
+          ratingValue: 4.9,
+          reviewCount: 148,
           price: "20.00",
           currency: "USD",
           features: [
@@ -196,7 +197,7 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
     canonicalUrl: getCanonicalUrl("/products/file-eraser"),
     breadcrumbs: [
       { name: "Home", item: "/" },
-      { name: "Products", item: "/products" },
+      { name: "Products", item: "/all-products" },
       { name: "File Eraser", item: "/products/file-eraser" },
     ],
     structuredData: [
@@ -207,8 +208,9 @@ export const PRODUCT_SEO: Record<string, Partial<SEOMetadata>> = {
           category: "SecurityApplication",
           subCategory: "Data Privacy & Security",
           os: "Windows 10/11 (x64), Windows Server",
-          // ratingValue: 4.8,
-          // reviewCount: 512,
+          // AggregateRating for Google SERP star snippet
+          ratingValue: 4.8,
+          reviewCount: 512,
           price: "39.99",
           currency: "USD",
           features: [

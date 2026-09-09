@@ -661,7 +661,8 @@ const CryptographicErasurePage: React.FC = memo(() => {
                   title: "Start Erasure",
                   description: "Begin secure data sanitization",
                   icon: "🔒",
-                  url: "/services/cryptographic-erasure",
+                  // Active canonical product route
+                  url: "/products/drive-eraser",
                   color: "bg-emerald-500",
                 },
                 {
@@ -675,7 +676,8 @@ const CryptographicErasurePage: React.FC = memo(() => {
                   title: "D-Secure Tools",
                   description: "Integration documentation",
                   icon: "💾",
-                  url: "/products/dsecure-drive-eraser",
+                  // Active canonical drive eraser link
+                  url: "/products/drive-eraser",
                   color: "bg-cyan-500",
                 },
                 {
@@ -723,8 +725,9 @@ const CryptographicErasurePage: React.FC = memo(() => {
                   sustainability.
                 </p>
                 <div className="flex flex-col md:flex-row gap-4 justify-center">
+                  {/* Active canonical route for drive eraser */}
                   <a
-                    href="/services/cryptographic-erasure"
+                    href="/products/drive-eraser"
                     className="bg-white text-emerald-800 hover:bg-emerald-50 font-semibold px-8 py-4 rounded-xl transition-colors text-lg inline-flex items-center justify-center"
                   >
                     <span className="mr-2">🔐</span>

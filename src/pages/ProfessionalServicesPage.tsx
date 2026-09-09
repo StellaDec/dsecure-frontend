@@ -66,8 +66,9 @@ export default function ProfessionalServicesPage() {
                   Consult an Expert
                   <ArrowRightIcon className="w-5 h-5" filled={true} />
                 </Link>
+                {/* Implementation Practices guide ka active route */}
                 <Link
-                  to="/implementation"
+                  to="/support/manual/implementation-practices"
                   className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-all border border-white/20"
                 >
                   View Deployment Framework

@@ -100,6 +100,8 @@ const PRIORITY_ROUTES = {
   "/tools/ssd-pass-calculator": { changefreq: "monthly", priority: "0.8" },
   "/tools/gdpr-erasure-checklist": { changefreq: "monthly", priority: "0.8" },
   "/tools/roi-calculator": { changefreq: "monthly", priority: "0.8" },
+  // High-intent commercial consultation
+  "/request-demo": { changefreq: "monthly", priority: "0.8" },
 };
 
 /**

@@ -24,6 +24,56 @@
       "permanent": true
     },
     {
+      "source": "/compliance/ieee-2883",
+      "destination": "/blog/ieee-2883-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/services/cryptographic-erasure",
+      "destination": "/blog/cryptographic-erase",
+      "permanent": true
+    },
+    {
+      "source": "/services/macos-erasure",
+      "destination": "/solutions/mac-erasure",
+      "permanent": true
+    },
+    {
+      "source": "/services/windows-erasure",
+      "destination": "/products/drive-eraser",
+      "permanent": true
+    },
+    {
+      "source": "/support/api-docs",
+      "destination": "/support/manual/api-integration",
+      "permanent": true
+    },
+    {
+      "source": "/support/integrations-hub",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/implementation",
+      "destination": "/support/manual/implementation-practices",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/financial-services",
+      "destination": "/solutions/data-erasure-banking-finance",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/financial",
+      "destination": "/solutions/data-erasure-banking-finance",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
       "source": "/(de|fr|es|zh|ja)(/.*)?",
       "destination": "/",
       "permanent": true

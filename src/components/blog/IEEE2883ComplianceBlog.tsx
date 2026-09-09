@@ -500,7 +500,8 @@ const IEEE2883ComplianceBlog: React.FC = () => {
           <Reveal>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
               Make Your Erasure{" "}
-              <Link to="/compliance/ieee-2883" className="text-[#0e7c66] hover:underline font-medium">
+              {/* IEEE 2883 Guide ka active link aur visible white text */}
+              <Link to="/blog/ieee-2883-complete-guide" className="text-white hover:text-white/80 underline font-bold">
                 IEEE 2883-2022
               </Link>{" "}
               Compliant

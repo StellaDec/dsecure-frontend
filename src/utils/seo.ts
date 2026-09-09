@@ -305,6 +305,23 @@ export const PAGE_SEO: Record<string, Partial<SEOMetadata>> = {
       { name: "Download", item: "/download" },
     ],
   },
+  // Request Demo Page - Live Enterprise Consultation
+  "request-demo": {
+    title: "Schedule Live Demo | Enterprise Data Erasure Software | D-Secure",
+    description: "Request a personalized live demo of D-Secure Enterprise Data Erasure Software. See how our automated NIST 800-88 sanitization, PXE boot & reporting works.",
+    keywords: generateKeywords([
+      "request demo data erasure",
+      "live demo drive eraser",
+      "enterprise data wiping demo",
+      "NIST 800-88 software demo",
+      "D-Secure live demonstration",
+    ]),
+    canonicalUrl: getCanonicalUrl("/request-demo"),
+    breadcrumbs: [
+      { name: "Home", item: "/" },
+      { name: "Request Demo", item: "/request-demo" },
+    ],
+  },
   // Solutions & Compliance
   "data-erasure": {
     title: "Data Erasure Guide: Secure Sanitization | D-Secure",

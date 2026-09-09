@@ -517,10 +517,11 @@ const DriveEraserPage: React.FC = memo(function DriveEraserPage() {
                     </Link>
                   </div>
 
+                  {/* Primary Commercial Search Intent H1 */}
                   <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
-                    D-Secure{" "}
+                    D-Secure Drive Eraser —{" "}
                     <span className="text-emerald-600">
-                      Drive Eraser
+                      Certified Data Wiping Software
                     </span>
                   </h1>
 

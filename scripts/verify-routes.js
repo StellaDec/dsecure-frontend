@@ -146,6 +146,115 @@ assert(
   "sitemap.xml does not contain typo route /support/faq"
 );
 
+// 11. Check comparison report broken link fixes
+const ieeeBlogPath = path.join(rootDir, "src", "components", "blog", "IEEE2883ComplianceBlog.tsx");
+const ieeeBlogContent = fs.readFileSync(ieeeBlogPath, "utf8");
+assert(
+  ieeeBlogContent.includes('/blog/ieee-2883-complete-guide') && !ieeeBlogContent.includes('to="/compliance/ieee-2883"'),
+  "IEEE2883ComplianceBlog.tsx points to active /blog/ieee-2883-complete-guide and dead /compliance/ieee-2883 is removed"
+);
+
+const cryptoPagePath = path.join(rootDir, "src", "pages", "support", "manual", "CryptographicErasurePage.tsx");
+const cryptoPageContent = fs.readFileSync(cryptoPagePath, "utf8");
+assert(
+  !cryptoPageContent.includes('url: "/services/cryptographic-erasure"') &&
+  !cryptoPageContent.includes('url: "/products/dsecure-drive-eraser"') &&
+  !cryptoPageContent.includes('href="/services/cryptographic-erasure"'),
+  "CryptographicErasurePage.tsx dead links (/services/cryptographic-erasure, /products/dsecure-drive-eraser) are fixed"
+);
+
+const macPagePath = path.join(rootDir, "src", "pages", "support", "manual", "MacOSSystemsPage.tsx");
+const macPageContent = fs.readFileSync(macPagePath, "utf8");
+assert(
+  macPageContent.includes('to="/solutions/mac-erasure"') && !macPageContent.includes('to="/services/macos-erasure"'),
+  "MacOSSystemsPage.tsx points to active /solutions/mac-erasure and dead /services/macos-erasure is removed"
+);
+
+const winPagePath = path.join(rootDir, "src", "pages", "support", "manual", "WindowsSystemsPage.tsx");
+const winPageContent = fs.readFileSync(winPagePath, "utf8");
+assert(
+  winPageContent.includes('to="/products/drive-eraser"') && !winPageContent.includes('to="/services/windows-erasure"'),
+  "WindowsSystemsPage.tsx points to active /products/drive-eraser and dead /services/windows-erasure is removed"
+);
+
+const intPagePath = path.join(rootDir, "src", "pages", "IntegrationsPage.tsx");
+const intPageContent = fs.readFileSync(intPagePath, "utf8");
+assert(
+  intPageContent.includes('to="/support/manual/api-integration"') &&
+  intPageContent.includes('to="/solutions"') &&
+  !intPageContent.includes('to="/support/api-docs"') &&
+  !intPageContent.includes('to="/support/integrations-hub"'),
+  "IntegrationsPage.tsx points to active routes (/support/manual/api-integration, /solutions) and dead links removed"
+);
+
+const profServicesPath = path.join(rootDir, "src", "pages", "ProfessionalServicesPage.tsx");
+const profServicesContent = fs.readFileSync(profServicesPath, "utf8");
+assert(
+  profServicesContent.includes('to="/support/manual/implementation-practices"') && !profServicesContent.includes('to="/implementation"'),
+  "ProfessionalServicesPage.tsx points to active /support/manual/implementation-practices and dead /implementation removed"
+);
+
+// 12. Check Request Demo route & SEO
+assert(
+  publicRoutes.includes('path="request-demo"') && publicRoutes.includes("RequestDemoPage"),
+  "PublicRoutes.tsx mounts /request-demo with RequestDemoPage"
+);
+assert(
+  seoContent.includes('"request-demo":') && seoContent.includes('/request-demo'),
+  "seo.ts registers SEO metadata for request-demo"
+);
+assert(
+  sitemapContent.includes("<loc>https://dsecuretech.com/request-demo</loc>"),
+  "sitemap.xml includes active canonical URL https://dsecuretech.com/request-demo"
+);
+
+// 13. Check Search-Intent Title & H1 Alignments
+const translationPath = path.join(rootDir, "src", "locales", "en", "translation.json");
+const translationContent = fs.readFileSync(translationPath, "utf8");
+assert(
+  translationContent.includes('"title": "Enterprise Data Erasure Software &"'),
+  "translation.json hero title updated to high-volume commercial query phrase"
+);
+
+const seoCorePath = path.join(rootDir, "src", "utils", "seo.core.ts");
+const seoCoreContent = fs.readFileSync(seoCorePath, "utf8");
+assert(
+  seoCoreContent.includes("Enterprise Data Erasure Software — NIST 800-88 Compliant | D-Secure"),
+  "seo.core.ts default title updated to query-first keyword format"
+);
+
+const indexHtmlPath = path.join(rootDir, "index.html");
+const indexHtmlContent = fs.readFileSync(indexHtmlPath, "utf8");
+assert(
+  indexHtmlContent.includes("<title>Enterprise Data Erasure Software — NIST 800-88 Compliant | D-Secure</title>"),
+  "index.html title updated to query-first keyword format"
+);
+
+// 14. Check vercel.json permanent 301 redirects and sitemap exclusions
+const expectedRedirectSources = [
+  "/compliance/ieee-2883",
+  "/services/cryptographic-erasure",
+  "/services/macos-erasure",
+  "/services/windows-erasure",
+  "/support/api-docs",
+  "/support/integrations-hub",
+  "/implementation",
+  "/solutions/financial-services",
+  "/careers",
+];
+
+expectedRedirectSources.forEach((src) => {
+  const r = vercel.redirects.find((item) => item.source === src);
+  assert(
+    r && r.permanent === true,
+    `vercel.json contains permanent 301 redirect for ${src}`
+  );
+  assert(
+    !sitemapContent.includes(`https://dsecuretech.com${src}<`),
+    `sitemap.xml strictly excludes redirected/blocked route ${src}`
+  );
+});
+
 console.log(`\n========================================`);
 if (errors === 0) {
   console.log("🎉 ALL VERIFICATION CHECKS PASSED!");

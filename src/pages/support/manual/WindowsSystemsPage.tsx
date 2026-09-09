@@ -829,11 +829,12 @@ const WindowsSystemsPage: React.FC = memo(() => {
                   erasure procedures for your Windows environment.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  {/* Windows / PC ke liye Drive Eraser ka active route */}
                   <Link
-                    to="/services/windows-erasure"
+                    to="/products/drive-eraser"
                     className="bg-white text-emerald-700 hover:bg-emerald-50 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-base sm:text-lg"
                   >
-                    Windows Erasure Services
+                    Drive Eraser Software
                   </Link>
                   <Link
                     to="/contact"

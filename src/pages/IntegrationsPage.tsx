@@ -98,8 +98,9 @@ export default function IntegrationsPage() {
                 Extend the power of D-Secure across your entire technology stack. Our high-assurance APIs and pre-built connectors transform data sanitization into a programmable, audited workflow.
               </p>
               <div className="flex flex-wrap justify-center gap-6">
+                {/* API Integration manual guide ka active route */}
                 <Link
-                  to="/support/api-docs"
+                  to="/support/manual/api-integration"
                   className="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-500/20 flex items-center gap-3"
                 >
                   View API Documentation
@@ -221,11 +222,12 @@ export default function IntegrationsPage() {
                 >
                   Schedule Tech Call
                 </Link>
+                {/* Solutions hub ka active canonical route */}
                 <Link
-                  to="/support/integrations-hub"
+                  to="/solutions"
                   className="px-10 py-4 bg-blue-800 text-white font-bold rounded-xl hover:bg-blue-900 transition-all border border-blue-500/50"
                 >
-                  Browse Apps
+                  Explore Solutions
                 </Link>
               </div>
             </Reveal>
