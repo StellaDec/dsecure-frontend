@@ -199,6 +199,10 @@ export default function FailurePage() {
         '_webhook',
         `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
       );
+      formSubmitData.append('_webhookContentType', 'application/json');
+      formSubmitData.append('_webhookExtraData', 'true');
+      formSubmitData.append('sendAutoReply', 'true');
+      formSubmitData.append('customer_email', supportForm.email.trim());
       // Disable captcha
       formSubmitData.append('_captcha', 'false');
       // Table template for email

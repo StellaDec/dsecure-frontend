@@ -1382,12 +1382,12 @@ const SupportPage: React.FC = () => {
         <PartnershipForm
           customConfig={{
             endpoint: import.meta.env.VITE_FORMSUBMIT_ENDPOINT,
-            requiredFields: {
-              fullName: "Full Name",
-              businessEmail: "Business Email",
-              companyName: "Company Name",
-              partnerType: "Partnership Type",
-            },
+            requiredFields: [
+              "fullName",
+              "businessEmail",
+              "companyName",
+              "partnerType",
+            ],
             successMessage:
               "Partnership request submitted successfully! We will review your application and get back to you soon.",
           }}

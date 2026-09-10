@@ -133,6 +133,11 @@ const CheckoutPage = memo(function CheckoutPage() {
       showError('Terms Required', 'Please agree to the terms and conditions');
       return;
     }
+    // Agar payment data available nahi hai toh aage na badhein
+    if (!paymentData) {
+      showError('Payment Error', 'Payment information is missing');
+      return;
+    }
 
     setLoading(true);
 
@@ -141,14 +146,94 @@ const CheckoutPage = memo(function CheckoutPage() {
       // Here you would integrate with actual payment processor
       await new Promise(resolve => setTimeout(resolve, 2000));
 
+      const orderId = `DSC-${Date.now()}`;
+      const now = new Date();
+      const timestampISO = now.toISOString();
+      const timestampLocal = now.toLocaleString("en-IN", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZoneName: "short",
+      });
+
+      // FormSubmit ke liye FormData taiyar karein (Admin email + Customer auto-reply)
+      const formSubmitData = new FormData();
+      formSubmitData.append(
+        "_webhook",
+        `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
+      );
+      formSubmitData.append("_webhookContentType", "application/json");
+      formSubmitData.append("_webhookExtraData", "true");
+      formSubmitData.append("_captcha", "false");
+      formSubmitData.append("_template", "table");
+      formSubmitData.append("_next", window.location.href);
+      formSubmitData.append("orderId", orderId);
+      formSubmitData.append("name", `${customerInfo.firstName} ${customerInfo.lastName}`.trim());
+      formSubmitData.append("email", customerInfo.email.trim());
+      formSubmitData.append("phone", customerInfo.phone.trim());
+      formSubmitData.append("company", customerInfo.company.trim() || "Not provided");
+      formSubmitData.append("country", customerInfo.country);
+      formSubmitData.append("address", `${customerInfo.address}, ${customerInfo.city}, ${customerInfo.state} ${customerInfo.zipCode}`);
+      formSubmitData.append("productName", paymentData.productName);
+      formSubmitData.append("quantity", paymentData.quantity);
+      formSubmitData.append("duration", paymentData.duration);
+      formSubmitData.append("totalPrice", `$${paymentData.totalPrice}`);
+      formSubmitData.append("paymentMethod", paymentMethod);
+      formSubmitData.append("timestamp", timestampLocal);
+      formSubmitData.append("source", "Checkout Page - Complete Purchase");
+      formSubmitData.append(
+        "_subject",
+        `New Order Confirmed #${orderId} - ${paymentData.productName} - D-Secure Tech`,
+      );
+      formSubmitData.append("_cc", import.meta.env.VITE_FORM_CC_EMAILS);
+      formSubmitData.append("sendAutoReply", "true");
+      formSubmitData.append("customer_email", customerInfo.email.trim());
+      formSubmitData.append("_replyto", customerInfo.email.trim());
+
+      // Backend Database API ke liye submission data
+      const submissionData = {
+        name: `${customerInfo.firstName} ${customerInfo.lastName}`.trim(),
+        email: customerInfo.email.trim(),
+        company: customerInfo.company.trim() || "",
+        phone: customerInfo.phone.trim(),
+        country: customerInfo.country,
+        businessType: "Customer",
+        solutionType: paymentData.productName,
+        complianceRequirements: "",
+        message: `Order ID: ${orderId} | Product: ${paymentData.productName} | Qty: ${paymentData.quantity} | Total: $${paymentData.totalPrice} | Method: ${paymentMethod}`,
+        usageType: "Purchase",
+        source: "Checkout Page",
+        timestamp: timestampISO,
+      };
+
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
+      const FORMSUBMIT_ENDPOINT = import.meta.env.VITE_FORMSUBMIT_ENDPOINT;
+
+      // Backend Database aur FormSubmit par dispatch karein
+      await Promise.allSettled([
+        fetch(`${API_BASE}/api/ContactFormSubmissions`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(submissionData),
+        }),
+        fetch(FORMSUBMIT_ENDPOINT, {
+          method: "POST",
+          body: formSubmitData,
+          headers: { Accept: "application/json" },
+        }),
+      ]);
+
       // Store order data
       const orderData = {
-        orderId: `DSC-${Date.now()}`,
+        orderId,
         ...paymentData,
         customer: customerInfo,
         paymentMethod,
         status: 'confirmed',
-        orderDate: new Date().toISOString()
+        orderDate: timestampISO
       };
 
       localStorage.setItem('orderData', JSON.stringify(orderData));

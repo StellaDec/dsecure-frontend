@@ -62,23 +62,103 @@ export default function PaymentPage() {
     setContactFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  // Enterprise sales contact submission handle karein
   const handleSalesContact = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsProcessing(true);
 
     try {
-      // Simulate sending contact request
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const now = new Date();
+      const timestampLocal = now.toLocaleString("en-IN", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZoneName: "short",
+      });
+      const timestampISO = now.toISOString();
 
-      // Show success message
+      // FormSubmit ke liye FormData taiyar karein
+      const formSubmitData = new FormData();
+      formSubmitData.append(
+        "_webhook",
+        `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
+      );
+      formSubmitData.append("_webhookContentType", "application/json");
+      formSubmitData.append("_webhookExtraData", "true");
+      formSubmitData.append("sendAutoReply", "true");
+      formSubmitData.append("_captcha", "false");
+      formSubmitData.append("_template", "table");
+      formSubmitData.append("_replyto", contactFormData.email.trim());
+      formSubmitData.append("customer_email", contactFormData.email.trim());
+      formSubmitData.append(
+        "_subject",
+        `Enterprise Sales Inquiry: ${selectedPlan?.title || "Custom Plan"} - D-Secure Tech`,
+      );
+      formSubmitData.append(
+        "_cc",
+        import.meta.env.VITE_FORM_CC_EMAILS,
+      );
+
+      formSubmitData.append("name", contactFormData.name.trim());
+      formSubmitData.append("email", contactFormData.email.trim());
+      formSubmitData.append("company", contactFormData.company.trim());
+      formSubmitData.append("phone", contactFormData.phone.trim());
+      formSubmitData.append("message", contactFormData.message.trim());
+      formSubmitData.append("selectedPlan", selectedPlan?.title || "Enterprise Plan");
+      formSubmitData.append("timestamp", timestampLocal);
+      formSubmitData.append("source", "Payment Page - Enterprise Sales Contact");
+
+      // Backend Database API ke liye submission data
+      const submissionData = {
+        name: contactFormData.name.trim(),
+        email: contactFormData.email.trim(),
+        company: contactFormData.company.trim(),
+        phone: contactFormData.phone.trim(),
+        country: "",
+        businessType: "Enterprise",
+        solutionType: selectedPlan?.title || "Enterprise Licensing",
+        complianceRequirements: "",
+        message: contactFormData.message.trim(),
+        usageType: "Enterprise",
+        source: "Payment Page - Enterprise Sales Contact",
+        timestamp: timestampISO,
+      };
+
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
+      const FORMSUBMIT_ENDPOINT = import.meta.env.VITE_FORMSUBMIT_ENDPOINT;
+
+      await Promise.allSettled([
+        fetch(`${API_BASE}/api/ContactFormSubmissions`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(submissionData),
+        }),
+        fetch(FORMSUBMIT_ENDPOINT, {
+          method: "POST",
+          body: formSubmitData,
+          headers: { Accept: "application/json" },
+        }),
+      ]);
+
+      // Form reset karein aur success state dikhayein
+      setContactFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        message: ''
+      });
       setShowSalesSuccess(true);
       setShowContactForm(false);
 
-      // Auto-hide success message after 5 seconds
+      // 5 second baad success message hide karein
       setTimeout(() => {
         setShowSalesSuccess(false);
       }, 5000);
-    } catch (error) {
+    } catch (error: unknown) {
       console.error('Failed to send contact request:', error);
     } finally {
       setIsProcessing(false);

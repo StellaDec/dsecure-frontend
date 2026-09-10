@@ -18,7 +18,7 @@ const CustomSelect = ({
 }: { 
   name: string, 
   value: string, 
-  onChange: (e: any) => void, 
+  onChange: (e: { target: { name: string; value: string } }) => void, 
   options: {value: string, label: string}[], 
   placeholder: string, 
   error?: string 
@@ -136,15 +136,20 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
       });
       const timestampISO = now.toISOString();
 
-      // Prepare FormSubmit data
+      // FormSubmit ke liye FormData taiyar karein
       const formSubmitData = new FormData();
       formSubmitData.append(
         "_webhook",
         `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
       );
+      // Auto-reply aur webhook metadata fields - backend customer ko confirmation email bhejega
+      formSubmitData.append("_webhookContentType", "application/json");
+      formSubmitData.append("_webhookExtraData", "true");
+      formSubmitData.append("sendAutoReply", "true");
       formSubmitData.append("_captcha", "false");
       formSubmitData.append("_template", "table");
       formSubmitData.append("_replyto", formData.email.trim());
+      formSubmitData.append("customer_email", formData.email.trim());
       formSubmitData.append(
         "_subject",
         `Blog Enquiry: ${blogTitle} - D-Secure Tech`,
@@ -163,69 +168,82 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ blogId, blogTitle }) => {
       formSubmitData.append("blogId", blogId);
       formSubmitData.append("blogTitle", blogTitle);
       formSubmitData.append("timestamp", timestampLocal);
-      formSubmitData.append("source", "Blog Enquiry Form");
+      formSubmitData.append("source", `Blog Enquiry - ${blogTitle}`);
 
-      // Submit to backend API
+      // Backend Database API ke liye submission data
       const submissionData = {
         name: formData.name.trim(),
         email: formData.email.trim(),
+        company: "",
         phone: formData.phone?.trim() || "",
         country: formData.country?.trim() || "",
         businessType: formData.businessType?.trim() || "",
+        solutionType: "Blog Enquiry",
+        complianceRequirements: "",
         message: formData.message.trim(),
+        usageType: "",
         blogId: blogId,
         blogTitle: blogTitle,
-        source: "Blog Enquiry Form",
+        source: `Blog Enquiry - ${blogTitle}`,
         timestamp: timestampISO,
       };
 
-      // Submit to backend
+      // Backend API aur FormSubmit dono par submit karein
       const API_BASE = import.meta.env.VITE_API_BASE_URL;
-      const apiResponse = await fetch(
-        `${API_BASE}/api/ContactFormSubmissions`,
-        {
+      const [apiResponse, formSubmitResponse] = await Promise.allSettled([
+        fetch(
+          `${API_BASE}/api/ContactFormSubmissions`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(submissionData),
+          },
+        ),
+        fetch(FORMSUBMIT_ENDPOINT, {
+          method: "POST",
+          body: formSubmitData,
+          headers: {
+            Accept: "application/json",
+          },
+        }),
+      ]);
+
+      // Microsoft Excel + Teams tracking (non-blocking)
+      if (import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL) {
+        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY || "",
           },
           body: JSON.stringify(submissionData),
-        },
-      );
+        }).catch(() => {});
+      }
 
-      // Submit to FormSubmit for email notifications
-      await fetch(FORMSUBMIT_ENDPOINT, {
-        method: "POST",
-        body: formSubmitData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
+      const isFormSubmitOk =
+        formSubmitResponse.status === "fulfilled" && formSubmitResponse.value.ok;
+      const isApiOk =
+        apiResponse.status === "fulfilled" && apiResponse.value.ok;
 
-      // Microsoft Excel + Teams tracking (non-blocking)
-      fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL || "", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY,
-        },
-        body: JSON.stringify(submissionData),
-      }).catch(() => {});
-
-      if (!apiResponse.ok) {
-        console.warn("Backend submission had issues, but FormSubmit was sent");
+      // Agar dono fail ho tabhi error throw karein
+      if (!isFormSubmitOk && !isApiOk) {
+        throw new Error("Failed to send enquiry. Please try again.");
       }
 
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: "", email: "", phone: "", country: "", businessType: "", message: "" });
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Form submission error:", error);
       setIsSubmitting(false);
-      setSubmitError(error.message || "Failed to send enquiry. Please try again.");
+      const message = error instanceof Error ? error.message : "Failed to send enquiry. Please try again.";
+      setSubmitError(message);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement> | { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name]) {

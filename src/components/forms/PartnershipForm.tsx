@@ -169,7 +169,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
       onSuccess: (data) => {
         // Call external onSubmit if provided (for backward compatibility)
         if (onSubmit) {
-          onSubmit(data as PartnershipFormData);
+          onSubmit(data as unknown as PartnershipFormData);
         }
         // Close modal on success
         if (onClose) {

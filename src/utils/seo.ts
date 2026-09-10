@@ -1099,6 +1099,7 @@ export interface BlogSEOOptions {
   faqs?: FAQ[];
   /** Featured image URL — social share cards ke liye */
   image?: string;
+  featuredImage?: string;
 }
 
 export const getBlogSEO = (blogSlugOrOptions: string | BlogSEOOptions): SEOMetadata => {
@@ -1123,7 +1124,7 @@ export const getBlogSEO = (blogSlugOrOptions: string | BlogSEOOptions): SEOMetad
   const publishDate = options.publishDate || new Date().toISOString().split('T')[0];
   const providedFaqs = options.faqs;
   /** Blog post ki featured image — social share card mein dikhegi */
-  const featuredImage = options.image || "";
+  const featuredImage = options.image || options.featuredImage || "";
   
   const structuredData: any[] = [
     generateWebSiteSchema(),

@@ -91,15 +91,8 @@ describe("SEOHead FAQPage Deduplication", () => {
     // canUseDOM = false se Helmet context mein links synchronously populate karta hai
     HelmetProvider.canUseDOM = false;
 
-    interface HelmetContextType {
-      helmet?: {
-        link?: {
-          toComponent: () => React.ReactElement<{ rel: string; hrefLang?: string; href?: string }>[];
-        };
-      };
-    }
-
-    const helmetContext: HelmetContextType = {};
+    // HelmetServerState ke anusaar context banayein
+    const helmetContext: { helmet?: import("react-helmet-async").HelmetServerState } = {};
     render(
       <BrowserRouter>
         <HelmetProvider context={helmetContext}>
@@ -112,7 +105,7 @@ describe("SEOHead FAQPage Deduplication", () => {
       </BrowserRouter>
     );
 
-    const linkElements = helmetContext.helmet?.link?.toComponent() || [];
+    const linkElements = (helmetContext.helmet?.link?.toComponent() || []) as React.ReactElement<{ rel: string; hrefLang?: string; href?: string }>[];
     const alternateLinks = linkElements.filter(
       (el) => el.props.rel === "alternate" && el.props.hrefLang
     );

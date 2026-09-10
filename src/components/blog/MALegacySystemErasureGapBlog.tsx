@@ -37,7 +37,8 @@ const MALegacySystemErasureGapBlog: React.FC = () => {
             "M&A cybersecurity risk, legacy system erasure gap, Marriott Starwood breach case study, post merger data disposition, enterprise IT asset disposition, certified data erasure, zombie IT systems, Transition Services Agreement data security",
           category: "Compliance",
           tag: "M&A Security",
-          featuredImage: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1788783055/nc20reaqyrgr04yisc3q.jpg",
+          // Featured image URL BlogSEOOptions format ke anusaar
+          image: "https://res.cloudinary.com/dhwi5wevf/image/upload/v1788783055/nc20reaqyrgr04yisc3q.jpg",
         })}
       />
 

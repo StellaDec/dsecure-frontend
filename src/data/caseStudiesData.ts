@@ -111,7 +111,8 @@ export const caseStudies: CaseStudy[] = [
     title: 'A Southeast Asian IT Solutions Leader Secures Large-Scale File Data with D-Secure File Eraser',
     summary:
       'A 20+ year old IT solutions company serving SMEs to MNCs across Southeast Asia partnered with D-Secure to securely erase over 250 TB of sensitive file and folder data — smoothly and without disruption to ongoing operations.',
-    industry: 'Managed IT Services',
+    // Valid IndustryFilter type use karein
+    industry: 'MSP',
     product: 'File Eraser',
     results: [
       { label: 'Data Erased', value: '250+ TB' },

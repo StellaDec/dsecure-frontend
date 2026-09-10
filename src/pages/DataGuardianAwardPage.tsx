@@ -218,6 +218,9 @@ const DataGuardianAwardPage: React.FC = () => {
         "_webhook",
         `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
       );
+      formSubmitData.append("_webhookContentType", "application/json");
+      formSubmitData.append("_webhookExtraData", "true");
+      formSubmitData.append("sendAutoReply", "true");
       formSubmitData.append("_captcha", "false");
       formSubmitData.append("_template", "table");
 
@@ -226,6 +229,7 @@ const DataGuardianAwardPage: React.FC = () => {
       formSubmitData.append("email", formData.email.trim());
       formSubmitData.append("message", formData.message.trim());
       formSubmitData.append("_replyto", formData.email.trim());
+      formSubmitData.append("customer_email", formData.email.trim());
 
       // Additional fields
       formSubmitData.append("company", formData.company?.trim() || "");

@@ -90,9 +90,13 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
       // Prepare data for email (FormSubmit)
       const formSubmitData = new FormData();
       formSubmitData.append("_webhook", `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`);
+      formSubmitData.append("_webhookContentType", "application/json");
+      formSubmitData.append("_webhookExtraData", "true");
+      formSubmitData.append("sendAutoReply", "true");
       formSubmitData.append("_captcha", "false");
       formSubmitData.append("_template", "table");
       formSubmitData.append("_replyto", formData.email.trim());
+      formSubmitData.append("customer_email", formData.email.trim());
       formSubmitData.append("_subject", `Early Access Request: ${formData.fullName}`);
       formSubmitData.append(
         "_cc",
@@ -126,7 +130,7 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
 
       // 1. Backend Submission & FormSubmit (Email)
       const API_BASE = import.meta.env.VITE_API_BASE_URL;
-      const [apiResult] = await Promise.allSettled([
+      const [apiResult, formSubmitResult] = await Promise.allSettled([
         fetch(`${API_BASE}/api/ContactFormSubmissions`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -139,7 +143,13 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
         })
       ]);
 
-      if (apiResult.status === "rejected" || (apiResult.status === "fulfilled" && !apiResult.value.ok)) {
+      const isFormSubmitOk =
+        formSubmitResult.status === "fulfilled" && formSubmitResult.value.ok;
+      const isApiOk =
+        apiResult.status === "fulfilled" && apiResult.value.ok;
+
+      // Agar dono fail ho tabhi error throw karein
+      if (!isFormSubmitOk && !isApiOk) {
         throw new Error("Submission failed. Please try again.");
       }
 

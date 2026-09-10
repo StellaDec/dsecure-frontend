@@ -1110,8 +1110,15 @@ const PartnersPage: React.FC = memo(function PartnersPage() {
           onClose={() => setShowPartnerModal(false)}
           preSelectedPartnerType={activePartnerType}
           customConfig={{
-            ...formConfigurations.partnership,
             endpoint: import.meta.env.VITE_FORMSUBMIT_ENDPOINT,
+            requiredFields: [
+              "fullName",
+              "businessEmail",
+              "companyName",
+              "partnerType",
+            ],
+            successMessage:
+              "Partnership application submitted successfully! We will contact you soon.",
             onSuccess: () => {
               setShowPartnerModal(false);
               showToast(

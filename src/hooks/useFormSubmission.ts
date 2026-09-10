@@ -1,36 +1,35 @@
 import { useState } from 'react';
 import { showToast } from '@/utils/toast';
 
-// Types for form submission
+// Form submission ke liye configuration interface
 export interface FormSubmissionConfig {
   endpoint?: string;
-  requiredFields: string[];
+  // Array ya Object dono format ko allow karein taaki runtime type crash na ho
+  requiredFields?: string[] | Record<string, string>;
   successMessage?: string;
   errorMessage?: string;
   resetFormAfterSubmit?: boolean;
-  customValidation?: (data: Record<string, any>) => string | null;
-  transformData?: (data: Record<string, any>) => Record<string, any>;
-  onSuccess?: (data: Record<string, any>) => void;
+  customValidation?: (data: Record<string, unknown>) => string | null;
+  transformData?: (data: Record<string, unknown>) => Record<string, unknown>;
+  onSuccess?: (data: Record<string, unknown>) => void;
   onError?: (error: Error) => void;
   redirectAfterSuccess?: string;
 }
 
 export interface UseFormSubmissionResult {
   isSubmitting: boolean;
-  submitForm: (formData: Record<string, any>) => Promise<void>;
+  submitForm: (formData: Record<string, unknown> | object) => Promise<void>;
   resetForm: () => void;
 }
 
-// FIXED: Single FormSubmit endpoint for all forms
+// FormSubmit ka default endpoint
 const DEFAULT_FORMSUBMIT_ENDPOINT =
   import.meta.env.VITE_FORMSUBMIT_ENDPOINT;
 
 /**
- * Custom hook for form submission with FormSubmit.co
- * Works with any form data structure and can be used with the useForm hook
- * @param config Configuration object for form submission
- * @param resetFormCallback Optional callback to reset the form (from useForm hook)
- * @returns Object with submission handlers and state
+ * Reusable form submission hook jo FormSubmit aur Backend API dono ko handle karta hai
+ * @param config Form submission ki configuration
+ * @param resetFormCallback Form reset karne ke liye optional callback
  */
 export const useFormSubmission = (
   config: FormSubmissionConfig,
@@ -38,17 +37,30 @@ export const useFormSubmission = (
 ): UseFormSubmissionResult => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const validateForm = (data: Record<string, any>): string | null => {
-    // Check required fields with better validation
-    for (const field of config.requiredFields) {
+  // Form data ko validate karne ka helper function
+  const validateForm = (data: Record<string, unknown>): string | null => {
+    // Required fields ko normalize karein - chahe Array ho ya Object dictionary
+    const requiredFieldList: string[] = Array.isArray(config.requiredFields)
+      ? config.requiredFields
+      : config.requiredFields && typeof config.requiredFields === "object"
+        ? Object.keys(config.requiredFields)
+        : [];
+
+    for (const field of requiredFieldList) {
       const value = data[field];
       if (!value || (typeof value === "string" && value.trim() === "")) {
-        const fieldName = field.replace(/([A-Z])/g, " $1").toLowerCase();
+        const fieldName =
+          config.requiredFields &&
+          typeof config.requiredFields === "object" &&
+          !Array.isArray(config.requiredFields) &&
+          config.requiredFields[field]
+            ? config.requiredFields[field]
+            : field.replace(/([A-Z])/g, " $1").toLowerCase();
         return `Please fill in the ${fieldName} field.`;
       }
     }
 
-    // Email validation for email fields
+    // Email validation
     if (data.email && typeof data.email === "string") {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(data.email.trim())) {
@@ -56,7 +68,7 @@ export const useFormSubmission = (
       }
     }
 
-    // Phone validation for phone fields
+    // Phone validation
     if (data.phone && typeof data.phone === "string") {
       const phoneRegex = /^[\+]?[\d\s\-\(\)]{10,}$/;
       if (!phoneRegex.test(data.phone.replace(/\s/g, ""))) {
@@ -64,7 +76,7 @@ export const useFormSubmission = (
       }
     }
 
-    // Custom validation
+    // Custom validation agar provide kiya gaya ho
     if (config.customValidation) {
       return config.customValidation(data);
     }
@@ -72,31 +84,34 @@ export const useFormSubmission = (
     return null;
   };
 
-  const prepareFormData = (data: Record<string, any>): FormData => {
+  // FormSubmit ke liye FormData prepare karein
+  const prepareFormData = (data: Record<string, unknown>): FormData => {
     const formSubmitData = new FormData();
 
-    // Transform data if transformer is provided
+    // Data transformer apply karein agar provide kiya gaya ho
     const transformedData = config.transformData
       ? config.transformData(data)
       : data;
 
-    // Append all form fields
+    // Sabhi form fields append karein
     Object.entries(transformedData).forEach(([key, value]) => {
       if (value !== null && value !== undefined) {
         formSubmitData.append(key, String(value));
       }
     });
 
-    // Add FormSubmit configuration for better delivery and formatting
-    formSubmitData.append("_next", window.location.href); // Redirect back to same page
-    formSubmitData.append("_captcha", "false"); // Disable built-in captcha
-    formSubmitData.append("_template", "table"); // Use table format for email
-    formSubmitData.append(
-      "_subject",
-      `New Form Submission from ${document.title} - D-Secure Tech`,
-    );
+    // FormSubmit ki standard configuration
+    formSubmitData.append("_next", window.location.href);
+    formSubmitData.append("_captcha", "false");
+    formSubmitData.append("_template", "table");
+    if (!formSubmitData.has("_subject")) {
+      formSubmitData.append(
+        "_subject",
+        `New Form Submission from ${document.title} - D-Secure Tech`,
+      );
+    }
 
-    // Use Backend Webhook for Auto-Response instead of FormSubmit's built-in feature
+    // Backend Webhook aur Auto-Reply flags
     formSubmitData.append(
       "_webhook",
       `${import.meta.env.VITE_API_BASE_URL}/api/formsubmit/webhook`,
@@ -105,7 +120,7 @@ export const useFormSubmission = (
     formSubmitData.append("_webhookExtraData", "true");
     formSubmitData.append("sendAutoReply", "true");
 
-    // Set reply-to and explicit customer_email for the backend
+    // Reply-to aur customer email set karein
     const userEmail = data.email || data.businessEmail;
     if (userEmail) {
       formSubmitData.append("_replyto", String(userEmail));
@@ -116,9 +131,9 @@ export const useFormSubmission = (
       "_cc",
       import.meta.env.VITE_FORM_CC_EMAILS,
     );
-    formSubmitData.append("_bcc", ""); // No BCC emails
+    formSubmitData.append("_bcc", "");
 
-    // Add metadata for tracking
+    // Tracking metadata
     formSubmitData.append("timestamp", new Date().toISOString());
     formSubmitData.append("userAgent", navigator.userAgent);
     formSubmitData.append("referrer", document.referrer || "Direct");
@@ -127,9 +142,10 @@ export const useFormSubmission = (
     return formSubmitData;
   };
 
-  const submitForm = async (formData: Record<string, any>): Promise<void> => {
-    // Validate form
-    const validationError = validateForm(formData);
+  // Form submit karne ka mukhya function
+  const submitForm = async (formData: Record<string, unknown> | object): Promise<void> => {
+    const data = formData as Record<string, unknown>;
+    const validationError = validateForm(data);
     if (validationError) {
       showToast(validationError, "error");
       return;
@@ -138,32 +154,36 @@ export const useFormSubmission = (
     setIsSubmitting(true);
 
     try {
-      const formSubmitData = prepareFormData(formData);
+      const formSubmitData = prepareFormData(data);
       const endpoint = config.endpoint || DEFAULT_FORMSUBMIT_ENDPOINT;
 
-      const userEmail = formData.email || formData.businessEmail;
+      const userEmail = data.email || data.businessEmail;
+      // Backend Database API ke liye structured data
       const submissionData = {
-        name: formData.fullName || formData.name || "",
+        name: String(data.fullName || data.name || data.contactName || "Anonymous Visitor"),
         email: String(userEmail || ""),
-        company: formData.company || formData.companyName || "",
-        phone: formData.phone || formData.phoneNo || "",
-        country: formData.country || "",
-        businessType: formData.businessType || "",
-        solutionType: formData.eraseOption || formData.partnerType || "",
-        complianceRequirements: formData.compliance || "",
-        message:
-          formData.requirements ||
-          formData.businessDescription ||
-          formData.message ||
-          "",
-        usageType: formData.usage || "",
+        company: String(data.company || data.companyName || data.organization || data.organizationName || ""),
+        phone: String(data.phone || data.phoneNo || ""),
+        country: String(data.country || ""),
+        businessType: String(data.businessType || data.organizationType || ""),
+        solutionType: String(data.eraseOption || data.partnerType || data.formType || "Online Form"),
+        complianceRequirements: String(data.compliance || data.complianceRequirements || ""),
+        message: String(
+          data.requirements ||
+          data.businessDescription ||
+          data.additionalInfo ||
+          data.message ||
+          "Automated request submission"
+        ),
+        usageType: String(data.usage || ""),
         source: document.title,
         timestamp: new Date().toISOString(),
       };
 
       const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
-      const [apiResult] = await Promise.allSettled([
+      // Backend Database API aur FormSubmit dono ko parallel bhein
+      const [apiResult, formSubmitResult] = await Promise.allSettled([
         fetch(`${API_BASE}/api/ContactFormSubmissions`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -172,11 +192,30 @@ export const useFormSubmission = (
         fetch(endpoint, {
           method: "POST",
           body: formSubmitData,
-        })
+          headers: { Accept: "application/json" },
+        }),
       ]);
 
-      if (apiResult.status === "rejected" || (apiResult.status === "fulfilled" && !apiResult.value.ok)) {
+      const isFormSubmitOk =
+        formSubmitResult.status === "fulfilled" && formSubmitResult.value.ok;
+      const isApiOk =
+        apiResult.status === "fulfilled" && apiResult.value.ok;
+
+      // Agar dono request fail ho jayein tabhi user ko error throw karein
+      if (!isFormSubmitOk && !isApiOk) {
         throw new Error("Form submission failed");
+      }
+
+      // Power Automate tracking (non-blocking)
+      if (import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL) {
+        fetch(import.meta.env.VITE_POWER_AUTOMATE_HTTP_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": import.meta.env.VITE_POWER_AUTOMATE_API_KEY || "",
+          },
+          body: JSON.stringify(submissionData),
+        }).catch(() => {});
       }
 
       const successMessage =
@@ -185,21 +224,21 @@ export const useFormSubmission = (
 
       showToast(successMessage, "success");
 
-      // Reset form if configured to do so and callback is provided
+      // Agar configure ho toh form reset karein
       if (config.resetFormAfterSubmit !== false && resetFormCallback) {
         resetFormCallback();
       }
 
-      // Redirect if configured
+      // Agar redirect URL ho toh redirect karein
       if (config.redirectAfterSuccess) {
         setTimeout(() => {
           window.location.href = config.redirectAfterSuccess!;
         }, 2000);
       }
 
-      // Call success callback
+      // Success callback call karein
       if (config.onSuccess) {
-        config.onSuccess(formData);
+        config.onSuccess(data);
       }
     } catch (error) {
       console.error("Form submission error:", error);
@@ -209,7 +248,7 @@ export const useFormSubmission = (
 
       showToast(errorMessage, "error");
 
-      // Call error callback
+      // Error callback call karein
       if (config.onError) {
         config.onError(error as Error);
       }
@@ -234,20 +273,20 @@ export const useFormSubmission = (
 // Utility function for common form data transformations
 export const formDataTransformers = {
   // Combine country code and phone number
-  combinePhoneNumber: (data: Record<string, any>) => ({
+  combinePhoneNumber: (data: Record<string, unknown>) => ({
     ...data,
     phone: data.countryCode && data.phone ? `${data.countryCode} ${data.phone}` : data.phone
   }),
 
   // Add timestamp
-  addTimestamp: (data: Record<string, any>) => ({
+  addTimestamp: (data: Record<string, unknown>) => ({
     ...data,
     timestamp: new Date().toISOString(),
     submissionDate: new Date().toLocaleString()
   }),
 
   // Clean empty fields
-  removeEmptyFields: (data: Record<string, any>) => {
+  removeEmptyFields: (data: Record<string, unknown>) => {
     const cleaned = { ...data };
     Object.keys(cleaned).forEach(key => {
       if (cleaned[key] === '' || cleaned[key] === null || cleaned[key] === undefined) {
@@ -264,7 +303,7 @@ export const formConfigs = {
   contact: {
     requiredFields: ['name', 'email', 'message'],
     successMessage: 'Your query has been sent successfully! Our sales and tech team will resolve your query within 12 hours.',
-    transformData: (data: Record<string, any>) => 
+    transformData: (data: Record<string, unknown>) => 
       formDataTransformers.addTimestamp(
         formDataTransformers.combinePhoneNumber(
           formDataTransformers.removeEmptyFields(data)
@@ -276,7 +315,7 @@ export const formConfigs = {
   partnership: {
     requiredFields: ['fullName', 'businessEmail', 'companyName', 'partnerType'],
     successMessage: 'Partner application submitted successfully! We will contact you soon.',
-    transformData: (data: Record<string, any>) => 
+    transformData: (data: Record<string, unknown>) => 
       formDataTransformers.addTimestamp(
         formDataTransformers.removeEmptyFields(data)
       )
@@ -286,7 +325,7 @@ export const formConfigs = {
   license: {
     requiredFields: ['fullName', 'email', 'company', 'usage'],
     successMessage: 'Free license request submitted successfully! We will send you the license details soon.',
-    transformData: (data: Record<string, any>) => 
+    transformData: (data: Record<string, unknown>) => 
       formDataTransformers.addTimestamp(
         formDataTransformers.removeEmptyFields(data)
       )
@@ -303,7 +342,7 @@ export const formConfigs = {
   support: {
     requiredFields: ['name', 'email', 'subject', 'description'],
     successMessage: 'Support ticket created successfully! We will respond within 24 hours.',
-    transformData: (data: Record<string, any>) => ({
+    transformData: (data: Record<string, unknown>) => ({
       ...formDataTransformers.addTimestamp(data),
       priority: data.priority || 'normal',
       category: data.category || 'general'
