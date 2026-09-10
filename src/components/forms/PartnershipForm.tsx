@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useForm, validationRules } from "@/hooks";
-import { useFormSubmission, formConfigs } from "@/hooks/useFormSubmission";
+import { useFormSubmission, formConfigs, type FormSubmissionConfig } from "@/hooks/useFormSubmission";
 import { showGlobalToast } from "@/utils/enhancedFormSystem";
 import { X } from "lucide-react";
 import { themeClasses } from "@/components/ui/Theme";
@@ -106,7 +106,8 @@ export interface PartnershipFormProps {
   showPrivacyPolicy?: boolean;
   submitButtonText?: string;
   preSelectedPartnerType?: string;
-  customConfig?: any; // Allow custom form submission configuration
+  // Custom configuration strictly typed
+  customConfig?: FormSubmissionConfig;
 }
 
 // Default initial values for the partnership form
@@ -176,7 +177,7 @@ export const PartnershipForm: React.FC<PartnershipFormProps> = ({
           setTimeout(() => onClose(), 2000);
         }
       },
-      onError: (error: any) => {
+      onError: (error: unknown) => {
         console.error('Partnership form submission error:', error);
         showGlobalToast('Failed to submit partnership application. Please try again.', 'error');
       }
